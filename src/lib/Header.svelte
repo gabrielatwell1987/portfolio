@@ -3,12 +3,13 @@
 </script>
 
 <nav>
-    <Logo/><h2>Gabriel Atwell</h2>
+    <Logo/><h2>Gabe Atwell</h2>
 
     <div class="a">
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/photos">Photos</a>
+        <a href="/resume">Resume</a>
         <a href="/contact">Contact</a>
     </div>
 </nav>
@@ -29,8 +30,8 @@
         text-decoration: none;
         font-weight: 700;
         color: antiquewhite;
-        margin-left: 10rem;
-        margin-right: 2rem;
+        margin-left: 8rem;
+        margin-right: 1rem;
     }
     a:hover {
         color: #f00;
