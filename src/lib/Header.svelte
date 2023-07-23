@@ -1,9 +1,14 @@
 <script>
-    import Logo from '$lib/Logo.svelte';
+    import Laptop from '$lib/Laptop.svelte';
+    import Man from '$lib/Man.svelte';
 </script>
 
 <nav>
-    <Logo/><h2>Gabe Atwell</h2>
+    <div class="logo">
+        <Man/>
+    </div>
+
+    <h2>Gabe Atwell</h2>
 
     <div class="a">
         <a href="/">Home</a>
@@ -49,5 +54,10 @@
         justify-content: space-around;
         align-items: center;
         height: 5em;
+    }
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
