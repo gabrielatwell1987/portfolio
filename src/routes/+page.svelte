@@ -1,16 +1,23 @@
 <script>
-    import {fade} from 'svelte/transition';
     import Laptop2 from '$lib/Laptop2.svelte';
+    import {gsap} from 'gsap/dist/gsap';
+    import {onMount} from 'svelte';
+
+    onMount(() => {
+        gsap.fromTo('.laptop', {scale: 0}, {scale: 1, duration: 3, ease: 'back'})
+    })
 </script>
 
-<main transition:fade>
+<main class="laptop">
     <Laptop2/>
+</main>
+<div class="text">
     <h2>UI/UX Designer</h2>
     <p>A one stop shop for all of your web development needs.</p>
-</main>
+</div>
 
 <style>
-    main  {
+    .text, main  {
         text-align: center;
     }
     /* img {

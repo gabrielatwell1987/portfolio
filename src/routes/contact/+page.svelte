@@ -1,15 +1,20 @@
 <script>
-    import {fade, fly} from 'svelte/transition';
     import Discord from '$lib/Discord.svelte';
     import Reddit from '$lib/Reddit.svelte';
+    import {gsap} from 'gsap/dist/gsap';
+    import {onMount} from 'svelte';
+
+    onMount(() => {
+        gsap.to('.pic', {borderRadius: "50%", rotate: 360, repeat: 1, duration: 2, yoyo: true})
+    })
 </script>
 
-<main out:fade in:fly="{{y: 200, duration: 2000}}">
+<main>
     <h2>Email:</h2>
     <p><a href="mailto:gatwell702@gmail.com">gatwell702@gmail.com</a></p>
     <h2>Phone:</h2>
     <p>(702) 726-1097</p>
-    <img src="gabe.png" alt="Gabe" width="250" height="800">
+    <img class="pic" src="gabe.png" alt="Gabe" width="250" height="800">
 </main>
 
 <footer>
