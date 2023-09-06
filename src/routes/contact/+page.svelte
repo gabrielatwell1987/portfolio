@@ -5,16 +5,13 @@
     import {onMount} from 'svelte';
 
     onMount(() => {
-        gsap.to('.pic', {borderRadius: "50%", rotate: 360, repeat: 1, duration: 2, yoyo: true})
+        gsap.to('.pic', {borderRadius: "50%", rotate: -360, repeat: 1, duration: 4, yoyo: true})
     })
 </script>
 
 <main>
-    <h2>Email:</h2>
-    <p><a href="mailto:gatwell702@gmail.com">gatwell702@gmail.com</a></p>
-    <h2>Phone:</h2>
-    <p>(702) 726-1097</p>
-    <img class="pic" src="gabe.png" alt="Gabe" width="250" height="800">
+    <h2><a href="mailto:gabriel.atwell@proton.me">Email</a></h2>
+    <img class="pic" src="logo2.png" alt="Gabe" width="400" height="1000">
 </main>
 
 <footer>
@@ -34,15 +31,12 @@
         text-decoration: underline;
         font-size: 2rem;
     }
-    p {
-        font-size: 1rem;
-    }
     img {
         border-radius: 50%;
     }
     a {
         text-decoration: none;
-        color: rgb(0, 174, 255);
+        color: red;
     }
     a:hover {
         color: crimson;

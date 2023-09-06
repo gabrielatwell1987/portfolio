@@ -9,7 +9,8 @@
 </script>
 
 <main class="laptop">
-    <Laptop2/>
+    <!-- <Laptop2/> -->
+    <img src="logo.png" alt="Logo">
 </main>
 <div class="text">
     <h2>UI/UX Designer</h2>
@@ -27,8 +28,16 @@
     h2 {
         font-weight: 800;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: red;
+        font-size: 2rem;
     }
     p {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    img {
+        border-radius: 50%;
+    }
+    .text {
+        margin-top: 1rem;
     }
 </style>

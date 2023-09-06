@@ -1,9 +1,18 @@
 <script>
-    import {fly} from 'svelte/transition';
+    import {gsap} from 'gsap/dist/gsap';
+    import {onMount} from 'svelte';
+
+    onMount(() => {
+        gsap.fromTo('.laptop', {y: 200}, {y: 0, duration: 1.5})
+        gsap.fromTo('.links', {y: 200}, {y: 0, duration: 1.5}, "<")
+        gsap.fromTo('.texts', {y: -200}, {y: 0, duration: 1.5}, "<")
+    })
 </script>
 
-<div class="content" out:fly={{y: -200}}>
-    <h1>Actual websites that I've built</h1>
+<div class="content">
+    <h1 class="texts">Actual websites that I've built</h1>
+
+    <img class="laptop" src="logo4.png" alt="computer">
 
     <div class="links">
         <a href="https://gabe1.vercel.app" target="_blank">Web Dev Website</a><br>
@@ -39,5 +48,8 @@
     }
     .links {
         text-align: center;
+    }
+    .laptop {
+        margin-left: 32%;
     }
 </style>

@@ -4,12 +4,12 @@
 
     onMount(() => {
         gsap.fromTo('.main', {opacity: 0}, {opacity: 1, duration: 3})
-        let tl = gsap.timeline({defaults: {delay: 1, repeat: -1, yoyo: true}});
+        let tl = gsap.timeline({defaults: {repeat: -1, yoyo: true}});
         tl
           .to('.a', {borderRadius: "50%", duration: 3})
-          .to('.b', {borderRadius: "50%", duration: 3}, "-=3")
-          .to('.c', {borderRadius: "50%", duration: 3}, "-=3")
-          .to('.d', {borderRadius: "50%", duration: 3}, "-=3")
+          .to('.b', {borderRadius: "50%", duration: 3}, "<")
+          .to('.c', {borderRadius: "50%", duration: 3}, "<")
+          .to('.d', {borderRadius: "50%", duration: 3}, "<")
     })
 </script>
 
