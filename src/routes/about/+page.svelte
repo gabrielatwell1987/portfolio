@@ -14,7 +14,7 @@
 
 <main>
     <div class="logos">
-        <img src="logo3.png" alt="">
+        <img src="nerd.png" alt="">
     </div>
 
     <div class="a">
