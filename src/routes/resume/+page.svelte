@@ -34,7 +34,7 @@
         text-align: center;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 2.5rem;
-        color: red;
+        color: lightskyblue;
     }
     a {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -44,7 +44,7 @@
         color: lightgray;
     }
     a:hover {
-        color: #f00;
+        color: blue;
     }
     .links {
         text-align: center;

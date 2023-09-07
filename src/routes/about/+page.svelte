@@ -38,7 +38,7 @@
 <style>
     h1 {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-        color: red;
+        color: lightskyblue;
         font-size: 2.5rem;
         font-weight: 800;
         text-align: center;
@@ -48,6 +48,7 @@
         font-size: 1.5rem;
         font-weight: 800;
         text-align: center;
+        color: lightskyblue;
     }
     p {
         font-family: Arial, Helvetica, sans-serif;

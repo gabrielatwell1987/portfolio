@@ -28,7 +28,7 @@
     h2 {
         font-weight: 800;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: red;
+        color: lightskyblue;
         font-size: 2.5rem;
     }
     p {

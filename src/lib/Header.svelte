@@ -26,7 +26,7 @@
         text-align: center;
         font-family: 'Courier New', Courier, monospace;
         font-size: 1.5rem;
-        color: crimson;
+        color: lightskyblue;
         margin-top: 0.5rem;
         padding-top: 2rem;
         margin-top: 1rem;
@@ -37,12 +37,12 @@
         font-size: .9rem;
         text-decoration: none;
         font-weight: 900;
-        color: antiquewhite;
+        color: lightskyblue;
         margin-left: 8rem;
         margin-right: 1rem;
     }
     a:hover {
-        color: crimson;
+        color: blue;
     }
     .c {
         margin-right: 1rem;

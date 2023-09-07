@@ -36,9 +36,9 @@
     }
     a {
         text-decoration: none;
-        color: red;
+        color: lightskyblue;
     }
     a:hover {
-        color: crimson;
+        color: blue;
     }
 </style>

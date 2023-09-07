@@ -29,6 +29,6 @@
     }
     h2 {
         font-size: 2.5rem;
-        color: crimson;
+        color: lightskyblue;
     }
 </style>
