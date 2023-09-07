@@ -19,9 +19,7 @@
 
     <div class="d">
         <h1>About Gabriel Atwell</h1>
-        <p>Gabriel Atwell is a web developer. It has been a road that he has enjoyed completely. He started out with the basics:
-            HTML, CSS, and JavaScript. He then moved on to more advanced topics such as: Svelte/Sveltekit and Node.js. He has begun to teach himself the backend of web development on his 
-            spare time. He is a very visual person. He is a very hard worker and is willing to work long hours.
+        <p>Gabriel Atwell is a web developer. He started out with the basics: HTML, CSS, and JavaScript. He then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js, and GSAP. He has begun to teach himself the backend of web development on his spare time, but is a complete frontend developer. He is a very visual person. He is a very hard worker and is willing to work long hours.
         </p>
 
         <br>
