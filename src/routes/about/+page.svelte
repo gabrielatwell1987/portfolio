@@ -4,10 +4,10 @@
     import {onMount} from 'svelte';
 
     onMount(() => {
-        let tl = gsap.timeline({defaults: {duration: 1}})
+        let tl = gsap.timeline()
         tl
-          .fromTo('.logos', {scale: 0}, {scale: 1, ease: "back.out"})
-          .fromTo('.d', {y: -200}, {y: 0}, "<")
+          .fromTo('.logos', {scale: 0}, {scale: 1, duration: 3, ease: "back.out"})
+          .fromTo('.d', {y: -200}, {y: 0, duration: 1}, "<")
     })
 </script>
 
