@@ -6,8 +6,8 @@
     onMount(() => {
         let tl = gsap.timeline({defaults: {duration: 1}})
         tl
-          .fromTo('.logos', {scale: 0}, {scale: 1, duration: 3, ease: "back.out"})
-          .fromTo('.a', {y: -200}, {y: 0}, "<")
+          .fromTo('.logos', {scale: 0}, {scale: 1, ease: "back.out"})
+          .fromTo('.d', {y: -200}, {y: 0}, "<")
     })
 </script>
 
@@ -17,7 +17,7 @@
         <img src="nerd.png" alt="">
     </div>
 
-    <div class="a">
+    <div class="d">
         <h1>About Gabriel Atwell</h1>
         <p>Gabriel Atwell is a web developer. It has been a road that he has enjoyed completely. He started out with the basics:
             HTML, CSS, and JavaScript. He then moved on to more advanced topics such as: Svelte/Sveltekit and Node.js. He has begun to teach himself the backend of web development on his 
