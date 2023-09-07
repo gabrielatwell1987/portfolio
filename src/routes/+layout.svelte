@@ -7,7 +7,3 @@
     <br>
     <slot></slot>
 </main>
-
-<style>
-    
-</style>

@@ -52,8 +52,8 @@
         font-family: Arial, Helvetica, sans-serif;
         font-size: .8rem;
     }
-    .a {
-        /* padding-left: 2rem; */
+    .d {
+        padding: 2rem;
         text-align: center;
     }
     .logo {
