@@ -9,7 +9,6 @@
 </script>
 
 <main class="laptop">
-    <!-- <Laptop2/> -->
     <img src="logo.png" alt="Logo">
 </main>
 <div class="text">
