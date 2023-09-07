@@ -29,7 +29,7 @@
         font-weight: 800;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         color: red;
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     p {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

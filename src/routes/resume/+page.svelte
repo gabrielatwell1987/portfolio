@@ -33,7 +33,7 @@
     h1 {
         text-align: center;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 3.5rem;
+        font-size: 2.5rem;
         color: red;
     }
     a {

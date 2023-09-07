@@ -29,7 +29,7 @@
     }
     h2 {
         text-decoration: underline;
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     img {
         border-radius: 50%;

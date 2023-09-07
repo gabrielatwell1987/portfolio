@@ -5,7 +5,7 @@
 </script>
 
 <nav>
-    <div class="logos">
+    <div class="logoss">
         <A/>
         <h2 class="text">GABEatwell</h2>
     </div>
@@ -56,7 +56,7 @@
         align-items: center;
         height: 5em;
     }
-    .logos {
+    .logoss {
         display: flex;
         justify-content: center;
         align-items: center;

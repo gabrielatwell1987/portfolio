@@ -28,7 +28,7 @@
         text-align: center;
     }
     h2 {
-        font-size: 5rem;
+        font-size: 2.5rem;
         color: crimson;
     }
 </style>
