@@ -24,10 +24,6 @@
         <h3>What is Gabriel's future</h3>
         <p class="a">Gabriel sees a lot of future in web development. Mainly in e-commerce or in building/maintaining actual apps for companies.</p>
     </div>
-
-    <!-- <div class="logo">
-        <Exclamation/>
-    </div> -->
 </main>
 
 <style>
@@ -53,9 +49,6 @@
         padding: 2rem;
         text-align: center;
     }
-    /* .logo {
-        margin-top: 5rem;
-    } */
     .logos {
         display: flex;
         justify-content: center;
