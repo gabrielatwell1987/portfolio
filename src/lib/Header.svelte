@@ -6,7 +6,7 @@
 
 <nav>
     <div class="logoss">
-        <img src="A.png" alt="A" width="100">
+        <img src="A2.png" class="anarchy" alt="A" width="50">
         <h2 class="text">GABEatwell</h2>
     </div>
 
@@ -63,5 +63,8 @@
     }
     .text {
         margin-left: 1rem;
+    }
+    .anarchy {
+        border-radius: 50%;
     }
 </style>

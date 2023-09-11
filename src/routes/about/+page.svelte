@@ -14,23 +14,20 @@
 
 <main>
     <div class="logos">
-        <img src="nerd.png" alt="">
+        <img class="img" src="atwell1.png" width="350" alt="">
     </div>
 
     <div class="d">
         <h1>About Gabriel Atwell</h1>
         <p class="p">Gabriel Atwell is a web developer. He started out with the basics: HTML, CSS, and JavaScript. He then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js, and GSAP. He has begun to teach himself the backend of web development on his spare time, but is a complete frontend developer. He is a very visual person. He is a very hard worker and is willing to work long hours.
         </p>
-
-        <br>
-
         <h3>What is Gabriel's future</h3>
         <p class="a">Gabriel sees a lot of future in web development. Mainly in e-commerce or in building/maintaining actual apps for companies.</p>
     </div>
-    <br><br>
-    <div class="logo">
+
+    <!-- <div class="logo">
         <Exclamation/>
-    </div>
+    </div> -->
 </main>
 
 <style>
@@ -56,9 +53,9 @@
         padding: 2rem;
         text-align: center;
     }
-    .logo {
+    /* .logo {
         margin-top: 5rem;
-    }
+    } */
     .logos {
         display: flex;
         justify-content: center;
@@ -67,5 +64,8 @@
     }
     .p {
         padding: 2rem;
+    }
+    .img {
+        border-radius: 40%;
     }
 </style>
