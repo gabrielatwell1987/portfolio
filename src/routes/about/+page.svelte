@@ -14,7 +14,7 @@
 
 <main>
     <div class="logos">
-        <img class="img" src="atwell.png" width="350" alt="">
+        <img class="img" src="atwell1.png" width="350" alt="">
     </div>
 
     <div class="d">
