@@ -14,15 +14,6 @@
     <img class="pic" src="logo2.png" alt="Gabe" width="400" height="1000">
 </main>
 
-<footer>
-    <a href="https://www.reddit.com/u/gatwell702">
-        <Reddit/>
-    </a>
-    <a href="https://www.discord.com">
-        <Discord/>
-    </a>
-</footer>
-
 <style>
     main {
         text-align: center;
@@ -33,12 +24,5 @@
     }
     img {
         border-radius: 50%;
-    }
-    a {
-        text-decoration: none;
-        color: lightskyblue;
-    }
-    a:hover {
-        color: blue;
     }
 </style>
