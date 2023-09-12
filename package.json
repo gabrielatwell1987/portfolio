@@ -12,6 +12,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
+		"carbon-components-svelte": "^0.80.0",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.26.0",
@@ -22,6 +23,9 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"gsap": "^3.12.2"
+		"@supabase/supabase-js": "^2.33.2",
+		"gsap": "^3.12.2",
+		"svelte-forms-lib": "^2.0.1",
+		"yup": "^1.2.0"
 	}
 }
