@@ -5,7 +5,7 @@
     import {onMount} from 'svelte';
 
     onMount(() => {
-        gsap.to('.pic', {borderRadius: "50%", rotate: -360, repeat: 1, duration: 4, yoyo: true})
+        gsap.to('.pic', {borderRadius: "50%", rotate: -360, repeat: -1, duration: 4, yoyo: true, ease: "sine.in"})
     })
 </script>
 
