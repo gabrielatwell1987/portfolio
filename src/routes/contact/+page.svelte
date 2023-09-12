@@ -3,7 +3,6 @@
     import Reddit from '$lib/Reddit.svelte';
     import {gsap} from 'gsap/dist/gsap';
     import {onMount} from 'svelte';
-    import ContactForm from '$lib/ContactForm.svelte';
 
     onMount(() => {
         gsap.to('.pic', {borderRadius: "50%", rotate: -360, repeat: 1, duration: 4, yoyo: true})
@@ -13,7 +12,6 @@
 <main>
     <h2><a href="mailto:gabriel.atwell@proton.me">Email</a></h2>
     <img class="pic" src="logo2.png" alt="Gabe" width="400" height="1000">
-    <!-- <ContactForm /> -->
 </main>
 
 <footer>
