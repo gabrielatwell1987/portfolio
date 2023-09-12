@@ -6,7 +6,7 @@
 
 <nav>
     <div class="logoss">
-        <img src="A2.png" class="anarchy" alt="A" width="50">
+        <img src="A.jpg" class="anarchy" alt="A" width="50">
         <h2 class="text">GABEatwell</h2>
     </div>
 
