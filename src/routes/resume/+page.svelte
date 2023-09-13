@@ -56,8 +56,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 35%;
-        margin-left: 31rem;
+        width: 25%;
+        margin-left: 36rem;
     }
     .laptop {
         margin-left: 32%;

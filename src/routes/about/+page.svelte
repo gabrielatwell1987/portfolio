@@ -48,6 +48,11 @@
     .d {
         padding: 2rem;
         text-align: center;
+        background-color: black;
+        border: 3px solid white;
+        border-radius: 8px;
+        width: 75%;
+        margin-left: 12.5rem;
     }
     .logos {
         display: flex;

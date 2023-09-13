@@ -12,8 +12,8 @@
     <img src="logo.png" alt="Logo">
 </main>
 <div class="text">
-    <h2>UI/UX Designer</h2>
-    <p>A one stop shop for all of your web development needs.</p>
+    <h2>UI Designer</h2>
+    <p>A frontend developer.</p>
 </div>
 
 <style>
