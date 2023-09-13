@@ -1,5 +1,4 @@
 <script>
-    import Laptop2 from '$lib/Laptop2.svelte';
     import {gsap} from 'gsap/dist/gsap';
     import {onMount} from 'svelte';
 
@@ -20,10 +19,6 @@
     .text, main  {
         text-align: center;
     }
-    /* img {
-        padding-bottom: 2rem;
-        border-radius: 50%;
-    } */
     h2 {
         font-weight: 800;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
