@@ -10,7 +10,7 @@
 </script>
 
 <div class="content">
-    <h1 class="texts">Actual websites that I've built</h1>
+    <h1 class="texts">Websites that I've built</h1>
 
     <img class="laptop" src="logo4.png" alt="computer">
 
@@ -41,13 +41,23 @@
         font-size: 1.5rem;
         text-decoration: none;
         font-weight: 700;
-        color: lightgray;
+        color: black;
     }
     a:hover {
         color: blue;
     }
     .links {
         text-align: center;
+        background-color: darkgrey;
+        border: 3px solid white;
+        border-radius: 8px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        margin-left: 23rem;
     }
     .laptop {
         margin-left: 32%;
