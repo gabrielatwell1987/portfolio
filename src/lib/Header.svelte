@@ -60,9 +60,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-left: 2rem;
     }
     .text {
-        margin-left: 1rem;
+        margin-left: 1.5rem;
     }
     .anarchy {
         border-radius: 50%;
