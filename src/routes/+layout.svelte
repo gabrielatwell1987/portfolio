@@ -3,6 +3,7 @@
     import Header2 from '$lib/Header2.svelte';
     import Discord from '$lib/Discord.svelte';
     import Reddit from '$lib/Reddit.svelte';
+    import '../app.css';
 </script>
 
 <main>
