@@ -39,13 +39,13 @@
         font-weight: 900;
         color: lightskyblue;
         margin-left: 8rem;
-        margin-right: 1rem;
+        margin-right: -7rem;
     }
     a:hover {
         color: blue;
     }
     .c {
-        margin-right: 1rem;
+        margin-right: .5rem;
     }
     nav {
         background-color: #303030;
@@ -67,5 +67,11 @@
     }
     .anarchy {
         border-radius: 50%;
+    }
+    @media (max-width: 727px) {
+        .c {
+            display: flex;
+            justify-content: space-around;
+        }
     }
 </style>
