@@ -83,6 +83,7 @@
             width: 55%;
             margin-left: 24%;
             display: block;
+            padding: .8rem;
         }
         h1, h3, .p, .a {
             font-size: 1rem;

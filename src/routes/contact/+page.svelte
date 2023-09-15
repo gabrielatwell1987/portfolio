@@ -40,6 +40,7 @@
         .contactinfo {
             display: block;
             text-align: center;
+            padding: .8rem;
         }
     }
 </style>

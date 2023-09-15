@@ -74,5 +74,9 @@
             text-align: center;
             margin-left: 3rem;
         }
+        .links {
+            width: 50%;
+            margin-left: 30%;
+        }
     }
 </style>
