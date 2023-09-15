@@ -14,6 +14,8 @@
     <img class="pic" src="logo2.png" alt="Gabe" width="400" height="1000">
 </main>
 
+<p class="contactinfo">You can contact me through email and I'll get back to you.</p>
+
 <style>
     main {
         text-align: center;
@@ -21,6 +23,9 @@
     h2 {
         text-decoration: underline;
         font-size: 2.5rem;
+    }
+    .contactinfo {
+        display: none;
     }
     img {
         border-radius: 50%;
@@ -31,6 +36,10 @@
         }
         h2 {
             font-size: 1.5rem;
+        }
+        .contactinfo {
+            display: block;
+            text-align: center;
         }
     }
 </style>
