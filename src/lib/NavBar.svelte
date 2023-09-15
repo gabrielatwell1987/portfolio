@@ -51,7 +51,8 @@
         color: blue;
     }
     .c {
-        margin-right: .5rem;
+        /* margin-right: .5rem; */
+        display: none;
     }
     nav {
         background-color: #303030;
