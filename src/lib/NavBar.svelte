@@ -55,6 +55,7 @@
         justify-content: space-around;
         align-items: center;
         height: 5em;
+        width: 100%;
     }
     .logoss {
         display: flex;
@@ -67,6 +68,22 @@
     }
     .anarchy {
         border-radius: 50%;
+    }
+    @media (max-width: 1250px) {
+        nav {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            height: 2em;
+        }
+        .logoss {
+            display: none;
+        }
+        .c {
+            margin-right: 12rem;
+        }
     }
     @media (max-width: 727px) {
         .c {

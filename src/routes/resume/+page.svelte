@@ -15,17 +15,17 @@
     <img class="laptop" src="logo4.png" alt="computer">
 
     <div class="links">
-        <a href="https://gabe1.vercel.app" target="_blank">Web Dev Website</a><br>
-        <a href="https://gabe2.vercel.app" target="_blank">Horizontal Scroller</a><br>
-        <a href="https://gabe3.vercel.app" target="_blank">Random User</a><br>
-        <a href="https://gabe4.vercel.app" target="_blank">Starbucks Clone</a><br>
-        <a href="https://formapp-three.vercel.app" target="_blank">Form Application</a><br>
-        <a href="https://kindler.vercel.app" target="_blank">CRUD-type Application</a><br>
-        <a href="https://github-vert.vercel.app" target="_blank">Github API</a><br>
-        <a href="https://appity.vercel.app" target="_blank">Code Snippet</a><br>
-        <a href="https://pokedex.vercel.app" target="_blank">Pokedex</a><br>
-        <a href="https://svelteflix-delta.vercel.app" target="_blank">Netflix Clone</a><br>
-        <a href="https://blog-until-you-die.vercel.app" target="_blank">Blog Until You Die</a>
+        <a class="linksize" href="https://gabe1.vercel.app" target="_blank">Web Dev Website</a><br>
+        <a class="linksize" href="https://gabe2.vercel.app" target="_blank">Horizontal Scroller</a><br>
+        <a class="linksize" href="https://gabe3.vercel.app" target="_blank">Random User</a><br>
+        <a class="linksize" href="https://gabe4.vercel.app" target="_blank">Starbucks Clone</a><br>
+        <a class="linksize" href="https://formapp-three.vercel.app" target="_blank">Form Application</a><br>
+        <a class="linksize" href="https://kindler.vercel.app" target="_blank">CRUD-type Application</a><br>
+        <a class="linksize" href="https://github-vert.vercel.app" target="_blank">Github API</a><br>
+        <a class="linksize" href="https://appity.vercel.app" target="_blank">Code Snippet</a><br>
+        <a class="linksize" href="https://pokedex.vercel.app" target="_blank">Pokedex</a><br>
+        <a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank">Netflix Clone</a><br>
+        <a class="linksize" href="https://blog-until-you-die.vercel.app" target="_blank">Blog Until You Die</a>
     </div>
 </div>
 
@@ -57,9 +57,22 @@
         justify-content: center;
         align-items: center;
         width: 25%;
-        margin-left: 36rem;
+        margin-left: 40%;
     }
     .laptop {
         margin-left: 32%;
+    }
+    @media (max-width: 1250px) {
+        .laptop {
+            display: none;
+        }
+        .linksize {
+            font-size: .8rem;
+        }
+        .texts {
+            font-size: 1rem;
+            text-align: center;
+            margin-left: 3rem;
+        }
     }
 </style>

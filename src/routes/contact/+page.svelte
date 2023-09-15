@@ -25,4 +25,12 @@
     img {
         border-radius: 50%;
     }
+    @media (max-width: 1250px) {
+        .pic {
+            display: none;
+        }
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
 </style>

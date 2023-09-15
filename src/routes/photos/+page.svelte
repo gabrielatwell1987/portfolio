@@ -16,7 +16,7 @@
 
 <main class="main">
     <h2>Photos</h2>
-    <br><br><br>
+    <br>
     <div class="photos">
         <img class="a" src="gabe.png" alt="Gabe" width="250" height="400"><br><br>
         <img class="b" src="gabe2.png" alt="Gabe" width="300" height="350"><br><br>
@@ -43,6 +43,15 @@
         justify-content: center;
         align-items: center;
         width: 35%;
-        margin-left: 31rem;
+        margin-left: 32%;
+    }
+    @media (max-width: 1250px) {
+        .photos {
+            width: 25%;
+            margin-left: 38%;
+        }
+        h2 {
+            font-size: 1rem;
+        }
     }
 </style>

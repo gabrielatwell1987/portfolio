@@ -1,19 +1,18 @@
 <script>
-    import Header from '$lib/Header.svelte';
-    import Header2 from '$lib/Header2.svelte';
+    import NavBar from '$lib/NavBar.svelte';
+    import NavBar2 from '$lib/NavBar2.svelte';
     import Discord from '$lib/Discord.svelte';
     import Reddit from '$lib/Reddit.svelte';
-    import '../app.css';
 </script>
 
-<main>
-    <Header />
+<main class="desktop">
+    <NavBar />
     <br>
     <slot></slot>
 </main>
 
-<main class="b">
-    <Header2 />
+<main class="mobile">
+    <NavBar2 />
     <br>
     <slot></slot>
 </main>
@@ -37,29 +36,12 @@
     a:hover {
         color: blue;
     }
-    .b {
+    .mobile {
         display: none;
     }
-    @media screen and (max-width: 480px) {
+    @media (max-width: 1250px) {
         footer {
             display: none;
         }
-        /* main {
-            display: none;
-        }
-        .b {
-            display: block;
-        } */
-    }
-    @media screen and (max-width: 767px), screen and (max-width: 945px) {
-        footer {
-            display: none;
-        }
-        /* .b {
-            display: none;
-        }
-        main {
-            display: block;
-        } */
     }
 </style>

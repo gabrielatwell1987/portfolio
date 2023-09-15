@@ -14,12 +14,9 @@
     <h2>UI Designer</h2>
     <p>A frontend developer.</p>
 </div>
-<div class="links">
+<div class="biomobile">
     <h1>Gabriel Atwell</h1>
-    <a href="/about">About</a>
-    <a href="/photos">Photos</a>
-    <a href="/resume">Resume</a>
-    <a href="/contact">Contact</a>
+    <p class="center">This is my portfolio website. Please click on a link to learn more!</p>
 </div>
 
 <style>
@@ -40,34 +37,25 @@
     }
     .text {
         margin-top: 1rem;
+        
     }
-    .links {
+    .biomobile {
         display: none;
     }
-    @media (max-width: 480px), screen and (max-width: 767px) {
-        h2 {
-            font-size: 1rem;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            color: lightskyblue;
-            font-weight: 400;
-        }
+    @media (max-width: 1250px) {
         .laptop {
-            /* display: none; */
-            width: 50%;
-            margin-left: 8rem;
+            display: none;
         }
         .text {
             display: none;
         }
-        .links {
+        .biomobile {
+            display: block;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            margin-top: 5rem;
-            display: none;
+            /* margin-left: 42%; */
         }
-        h1 {
-            margin-bottom: 3rem;
+        h2, p {
+            font-size: 1rem;
         }
     }
 </style>

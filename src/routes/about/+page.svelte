@@ -66,4 +66,16 @@
     .img {
         border-radius: 40%;
     }
+    @media (max-width: 1250px) {
+        .logos {
+            display: none;
+        }
+        .d {
+            width: 55%;
+            margin-left: 24%;
+        }
+        h1, h3, .p, .a {
+            font-size: 1rem;
+        }
+    }
 </style>
