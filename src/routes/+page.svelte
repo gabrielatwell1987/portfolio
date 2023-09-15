@@ -52,6 +52,7 @@
         .biomobile {
             display: block;
             text-align: center;
+            padding: .8rem;
             /* margin-left: 42%; */
         }
         h2, p {
