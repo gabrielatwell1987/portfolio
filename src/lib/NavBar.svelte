@@ -19,6 +19,12 @@
         <a href="/resume">Resume</a>
         <a href="/contact">Contact</a>
     </div>
+    <div class="d">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/resume">Resume</a>
+        <a href="/contact">Contact</a>
+    </div>
 </nav>
 
 <style>
@@ -81,12 +87,12 @@
         .logoss {
             display: none;
         }
-        .c {
+        .d {
             margin-right: 12rem;
         }
     }
     @media (max-width: 727px) {
-        .c {
+        .d {
             display: flex;
             justify-content: space-around;
         }
