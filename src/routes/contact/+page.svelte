@@ -41,6 +41,7 @@
             display: block;
             text-align: center;
             padding: .8rem;
+            margin-left: 1.5rem;
         }
     }
 </style>
