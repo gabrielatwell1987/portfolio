@@ -24,6 +24,9 @@
         <h3>What is Gabriel's future</h3>
         <p class="a">Gabriel sees a lot of future in web development. Mainly in e-commerce or in building/maintaining actual apps for companies.</p>
     </div>
+    <div class="e">
+        <p>This is Gabriel Atwell's portfolio. He has created this from Sveltekit and GSAP.</p>
+    </div>
 </main>
 
 <style>
@@ -54,6 +57,9 @@
         width: 75%;
         margin-left: 12.5rem;
     }
+    .e {
+        display: none;
+    }
     .logos {
         display: flex;
         justify-content: center;
@@ -71,8 +77,12 @@
             display: none;
         }
         .d {
+            display: none;
+        }
+        .e {
             width: 55%;
             margin-left: 24%;
+            display: block;
         }
         h1, h3, .p, .a {
             font-size: 1rem;
