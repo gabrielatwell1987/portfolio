@@ -15,10 +15,10 @@
     <p>A frontend developer.</p>
 </div>
 <div class="biomobile">
-    <h1>Gabriel Atwell</h1>
+    <h1 class="name">Gabriel Atwell</h1>
     <br>
     <img class="atwelllogo" src="atwell.png" alt="logo" width="200px">
-    <br>
+    <br><br><br>
     <p class="center">This is my portfolio website. Please click on a link to learn more!</p>
 </div>
 
@@ -63,6 +63,9 @@
         }
         .atwelllogo {
             background-color: rgb(88, 88, 88);
+        }
+        .name {
+            margin-left: 1rem;
         }
     }
 </style>

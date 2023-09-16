@@ -25,6 +25,7 @@
         <p class="a">Gabriel sees a lot of future in web development. Mainly in e-commerce or in building/maintaining actual apps for companies.</p> -->
     </div>
     <div class="mobilepagetext nodisplay">
+        <h1 class="about-title">About Me</h1>
         <img class="skull" src="logo2.png" alt="logo" width="250px">
         <p>This is Gabriel Atwell's portfolio. He has created this from Sveltekit and GSAP. This website is meant to showcase his frontend skills.</p>
     </div>
@@ -99,8 +100,8 @@
             background-color: transparent;
             color: white;
         }
-        h1, .p {
-            font-size: 1rem;
+        h1, .p, .about-title {
+            font-size: 1.5rem;
         }
     }
 </style>

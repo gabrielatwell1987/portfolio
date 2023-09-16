@@ -10,7 +10,7 @@
 </script>
 
 <main>
-    <h2><a href="mailto:gabriel.atwell@proton.me">Email</a></h2>
+    <h2><a href="mailto:gabriel.atwell@proton.me">Contact Me</a></h2>
     <img class="pic" src="logo2.png" alt="Gabe" width="400" height="1000">
 </main>
 
