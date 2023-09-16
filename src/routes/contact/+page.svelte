@@ -10,7 +10,6 @@
 </script>
 
 <main>
-    <!-- <h2><a href="mailto:gabriel.atwell@proton.me">Contact Me</a></h2> -->
     <img class="pic" src="logo2.png" alt="Gabe" width="400" height="1000">
     <h2 class="contact-text">You can email me at <a href="mailto:gabriel.atwell@proton.me">gabriel.atwell@proton.me</a></h2>
 </main>
