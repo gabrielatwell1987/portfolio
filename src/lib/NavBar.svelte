@@ -2,6 +2,12 @@
     import Laptop from '$lib/Laptop.svelte';
     import Man from '$lib/Man.svelte';
     import A from '$lib/A.svelte';
+    // import {gsap} from 'gsap/dist/gsap';
+    // import {onMount} from 'svelte';
+
+    // onMount(() => {
+    //     gsap.from('.d', {y: 0})
+    // })
 </script>
 
 <nav>
@@ -95,7 +101,9 @@
     @media (max-width: 727px) {
         .d {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-evenly;
+            /* width: 100%; */
+            margin-left: -2rem;
         }
     }
 </style>

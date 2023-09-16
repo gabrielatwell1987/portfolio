@@ -15,6 +15,7 @@
 </main>
 
 <p class="contactinfo">You can contact me through email and I'll get back to you.</p>
+<img class="mobilelogo" src="logo.png" alt="logo" width="200px">
 
 <style>
     main {
@@ -30,6 +31,9 @@
     img {
         border-radius: 50%;
     }
+    .mobilelogo {
+        display: none;
+    }
     @media (max-width: 1250px) {
         .pic {
             display: none;
@@ -42,6 +46,10 @@
             text-align: center;
             padding: .8rem;
             margin-left: 1.5rem;
+        }
+        .mobilelogo {
+            display: block;
+            margin-left: 24%;
         }
     }
 </style>

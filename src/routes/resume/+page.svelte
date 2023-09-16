@@ -57,7 +57,7 @@
         justify-content: center;
         align-items: center;
         width: 25%;
-        margin-left: 40%;
+        margin-left: 37%;
     }
     .laptop {
         margin-left: 32%;
@@ -72,11 +72,16 @@
         .texts {
             font-size: 1rem;
             text-align: center;
-            margin-left: 3rem;
+            margin-left: 2rem;
         }
         .links {
             width: 50%;
-            margin-left: 30%;
+            margin-left: 27%;
+            background-color: transparent;
+            border: none;
+        }
+        .linksize {
+            color: white;
         }
     }
 </style>
