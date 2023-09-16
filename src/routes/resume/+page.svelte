@@ -83,5 +83,8 @@
         .linksize {
             color: white;
         }
+        .texts {
+            margin-left: 3rem;
+        }
     }
 </style>

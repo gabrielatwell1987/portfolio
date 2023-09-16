@@ -49,7 +49,7 @@
         }
         .mobilelogo {
             display: block;
-            margin-left: 24%;
+            margin-left: 41%;
         }
     }
 </style>
