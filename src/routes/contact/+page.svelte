@@ -15,19 +15,6 @@
     <h2 class="contact-text">You can email me at <a href="mailto:gabriel.atwell@proton.me">gabriel.atwell@proton.me</a></h2>
 </main>
 
-<!-- <form method="POST">
-    <label for="name">Name</label>
-    <input name="name" type="text" placeholder="Name">
-    <br>
-    <label for="subject">Subject</label>
-    <input name="subject" type="subject" placeholder="Subject">
-    <br>
-    <label for="body">Message</label>
-    <textarea name="body" type="text" placeholder="Message" />
-    <br><br><br>
-    <button type="submit">Submit</button>
-</form> -->
-
 <p class="contactinfo">You can contact me through email and I'll get back to you.</p>
 <img class="mobilelogo" src="logo.png" alt="logo" width="200px">
 
@@ -50,31 +37,6 @@
     .mobilelogo {
         display: none;
     }
-    /* label {
-        text-align: center;
-    }
-    form {
-        margin-top: 3.5rem;
-        background-color: #353535;
-        border: 3px solid white;
-        width: 45%;
-        margin-left: 27%;
-    }
-    button {
-        width: 20%;
-        margin-left: 40%;
-        background-color: lightblue;
-        color: black;
-    }
-    button:hover {
-        background-color: blue;
-        color: white;
-
-    }
-    input, textarea {
-        width: 40%;
-        margin-left: 30%;
-    } */
     @media (max-width: 1250px) {
         .pic {
             display: none;
