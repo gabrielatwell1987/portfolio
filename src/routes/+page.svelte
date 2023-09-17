@@ -13,7 +13,7 @@
 
 <div class="text">
     <h2>UI Designer</h2>
-    <p>A frontend developer.</p>
+    <p>A frontend developer</p>
 </div>
 
 <div class="biomobile">

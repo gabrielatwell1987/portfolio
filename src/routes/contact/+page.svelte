@@ -1,6 +1,7 @@
 <script>
     import Discord from '$lib/Discord.svelte';
     import Reddit from '$lib/Reddit.svelte';
+    import Briefcase from '$lib/Briefcase.svelte';
     import {gsap} from 'gsap/dist/gsap';
     import {onMount} from 'svelte';
 
@@ -10,7 +11,8 @@
 </script>
 
 <main>
-    <img class="pic" src="logo2.png" alt="Gabe" width="400" height="1000">
+    <!-- <img class="pic" src="logo2.png" alt="Gabe" width="400" height="1000"> -->
+    <Briefcase />
     <h2 class="contact-text">You can email me at <a href="mailto:gabriel.atwell@proton.me">gabriel.atwell@proton.me</a></h2>
 </main>
 

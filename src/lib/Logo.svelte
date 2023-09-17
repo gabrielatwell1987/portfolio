@@ -6,5 +6,6 @@
 <style>
     svg {
         margin-left: 2rem;
+        width: 12%;
     }
 </style>

@@ -1,7 +1,6 @@
 <script>
     import Laptop from '$lib/Laptop.svelte';
     import Man from '$lib/Man.svelte';
-    import A from '$lib/A.svelte';
     import Logo from '$lib/Logo.svelte';
     // import {gsap} from 'gsap/dist/gsap';
     // import {onMount} from 'svelte';
