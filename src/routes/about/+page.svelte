@@ -39,13 +39,6 @@
         font-weight: 800;
         text-align: center;
     }
-    /* h3 {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 1.5rem;
-        font-weight: 800;
-        text-align: center;
-        color: lightskyblue;
-    } */
     p {
         font-family: Arial, Helvetica, sans-serif;
         font-size: .8rem;

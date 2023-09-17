@@ -16,7 +16,7 @@
 
 <main class="main">
     <h2>Photos</h2>
-    <br>
+    
     <div class="photos">
         <img class="a" src="gabe.png" alt="Gabe" width="250" height="400"><br><br>
         <img class="b" src="gabe2.png" alt="Gabe" width="300" height="350"><br><br>
@@ -32,6 +32,7 @@
     h2 {
         font-size: 2.5rem;
         color: lightskyblue;
+        margin-bottom: 2rem;
     }
     .photos {
         background-color: rgb(49, 45, 45);

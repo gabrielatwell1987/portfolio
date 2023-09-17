@@ -10,10 +10,12 @@
 <main class="laptop">
     <img src="logo.png" alt="Logo">
 </main>
+
 <div class="text">
     <h2>UI Designer</h2>
     <p>A frontend developer.</p>
 </div>
+
 <div class="biomobile">
     <h1 class="name">Gabriel Atwell</h1>
     <br>
