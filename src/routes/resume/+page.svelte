@@ -13,9 +13,9 @@
 <div class="content">
     <h1 class="texts">Websites that I've built</h1>
 
-    <!-- <img class="laptop" src="logo4.png" alt="computer"> -->
+    <img class="laptop" src="logo4.png" alt="computer">
 
-    <Misfits />
+    <!-- <Misfits /> -->
 
     <div class="links">
         <a class="linksize" href="https://gabe1.vercel.app" target="_blank">Web Dev Website</a><br>
