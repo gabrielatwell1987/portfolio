@@ -3,7 +3,7 @@
     import {onMount} from 'svelte';
 
     onMount(() => {
-        gsap.fromTo('.laptop', {opacity: 0}, {opacity: 1, duration: 5})
+        gsap.fromTo('.laptop', {opacity: 0, scale: 0}, {opacity: 1, scale: 1, duration: 3})
     })
 </script>
 

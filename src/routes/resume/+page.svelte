@@ -4,9 +4,11 @@
     import Misfits from '$lib/Misfits.svelte';
 
     onMount(() => {
-        gsap.fromTo('.laptop', {y: 200}, {y: 0, duration: 1.5})
-        gsap.fromTo('.links', {y: 200}, {y: 0, duration: 1.5}, "<")
-        gsap.fromTo('.texts', {y: -200}, {y: 0, duration: 1.5}, "<")
+        let tl = gsap.timeline({defaults: {duration: 2}})
+        tl
+          .fromTo('.laptop', {scale: 0}, {scale: 1})
+          .fromTo('.links', {x: 500}, {x: 0}, "<")
+          .fromTo('.texts', {x: -500}, {x: 0}, "<")
     })
 </script>
 
@@ -14,8 +16,6 @@
     <h1 class="texts">Websites that I've built</h1>
 
     <img class="laptop" src="logo4.png" alt="computer">
-
-    <!-- <Misfits /> -->
 
     <div class="links">
         <a class="linksize" href="https://gabe1.vercel.app" target="_blank">Web Dev Website</a><br>
@@ -70,7 +70,7 @@
             display: none;
         }
         .linksize {
-            font-size: .8rem;
+            font-size: 1rem;
         }
         .texts {
             font-size: 1.5rem;

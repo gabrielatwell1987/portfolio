@@ -59,6 +59,9 @@
     }
     .c {
         /* margin-right: .5rem; */
+        display: block;
+    }
+    .d {
         display: none;
     }
     nav {
@@ -97,6 +100,9 @@
         }
         .d {
             margin-right: 12rem;
+        }
+        .c {
+            display: none;
         }
     }
     @media (max-width: 727px) {

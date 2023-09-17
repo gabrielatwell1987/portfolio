@@ -3,13 +3,14 @@
     import {onMount} from 'svelte';
 
     onMount(() => {
-        gsap.fromTo('.main', {opacity: 0}, {opacity: 1, duration: 3})
-        let tl = gsap.timeline({defaults: {repeat: -1, yoyo: true}});
+        // gsap.fromTo('.main', {opacity: 0}, {opacity: 1, duration: 3})
+        let tl = gsap.timeline({defaults: {duration: 3}});
         tl
-          .to('.a', {borderRadius: "50%", duration: 3})
-          .to('.b', {borderRadius: "50%", duration: 3}, "<")
-          .to('.c', {borderRadius: "50%", duration: 3}, "<")
-          .to('.d', {borderRadius: "50%", duration: 3}, "<")
+          .to('.a', {borderRadius: "50%", repeat: -1, yoyo: true})
+          .to('.b', {borderRadius: "50%", repeat: -1, yoyo: true}, "<")
+          .to('.c', {borderRadius: "50%", repeat: -1, yoyo: true}, "<")
+          .to('.d', {borderRadius: "50%", repeat: -1, yoyo: true}, "<")
+          .fromTo('.photos', {y: 500}, {y: 0, duration: 1.5}, "<")
     })
 </script>
 
