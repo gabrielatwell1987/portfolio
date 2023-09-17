@@ -80,9 +80,9 @@
     .text {
         margin-left: 1.5rem;
     }
-    .anarchy {
+    /* .anarchy {
         border-radius: 50%;
-    }
+    } */
     @media (max-width: 1250px) {
         nav {
             background-color: transparent;
