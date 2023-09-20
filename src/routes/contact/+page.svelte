@@ -33,7 +33,8 @@
 		/>
 	</svg>
 
-	<h2 class="contact-text">You can email me <a href="mailto:gabriel.atwell@proton.me">here</a></h2>
+	<h2 class="contact-text">You can email me</h2>
+	<a href="mailto:gabriel.atwell@proton.me"> here</a>
 </main>
 
 <p class="contactinfo">You can contact me through email and I'll get back to you.</p>
