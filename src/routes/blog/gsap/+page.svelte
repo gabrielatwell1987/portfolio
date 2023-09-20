@@ -1,5 +1,5 @@
 <script>
-	import Gsap from '$lib/Gsap.svelte';
+	import Gsap from '$lib/gsap.svelte';
 	import { gsap } from 'gsap/dist/gsap';
 	import { onMount } from 'svelte';
 

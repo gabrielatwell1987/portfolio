@@ -1,6 +1,6 @@
 <script>
 	import Svelte from '$lib/Svelte.svelte';
-	import Gsap from '$lib/Gsap.svelte';
+	import Gsap from '$lib/gsap.svelte';
 </script>
 
 <main>
