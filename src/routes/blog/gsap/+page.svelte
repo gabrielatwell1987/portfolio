@@ -12,12 +12,12 @@
 
 <main>
 	<h1>Greensock Animation Platform</h1>
-	<p>
+	<p class="paragraph1">
 		I am really big into animations, and especially animating the websites I have created. Greensock
 		(GSAP) makes it really simple. So I tried adding GSAP to my sveltekit website and it didn't
 		work!
 	</p>
-	<p>
+	<p class="paragraph2">
 		So after looking into it I found out what to do: I have to add my GSAP code in an 'onMount'
 		import into my sveltekit project. Not to get into it, but the onMount tells sveltekit that what
 		is inside the onMount code block runs once when the page is loaded clientside, which is perfect
@@ -41,12 +41,18 @@
 		color: lightskyblue;
 		margin-bottom: 4rem;
 	}
-	p {
+	.paragraph1 {
 		font-size: 1.25rem;
 		/* margin-bottom: 2rem; */
 		width: 50%;
 		margin-left: 25%;
 		margin-bottom: 1.5rem;
+	}
+	.paragraph1 {
+		font-size: 1.25rem;
+		/* margin-bottom: 2rem; */
+		width: 50%;
+		margin-left: 25%;
 	}
 	a {
 		text-decoration: none;
