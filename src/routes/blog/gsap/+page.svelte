@@ -15,11 +15,14 @@
 	<p>
 		I am really big into animations, and especially animating the websites I have created. Greensock
 		(GSAP) makes it really simple. So I tried adding GSAP to my sveltekit website and it didn't
-		work! So after looking into it I found out what to do: I have to add my GSAP code in an
-		'onMount' import into my sveltekit project. Not to get into it, but the onMount tells sveltekit
-		that what is inside the onMount code block runs once when the page is loaded clientside, which
-		is perfect for my animations. I know I haven't explained this very well, so if you want to learn
-		more, click <a href="https://https://greensock.com/docs/">here</a>
+		work!
+	</p>
+	<p>
+		So after looking into it I found out what to do: I have to add my GSAP code in an 'onMount'
+		import into my sveltekit project. Not to get into it, but the onMount tells sveltekit that what
+		is inside the onMount code block runs once when the page is loaded clientside, which is perfect
+		for my animations. I know I haven't explained this very well, so if you want to learn more,
+		click <a href="https://greensock.com/docs/">here</a>
 	</p>
 
 	<div class="gsap">
@@ -43,6 +46,7 @@
 		/* margin-bottom: 2rem; */
 		width: 50%;
 		margin-left: 25%;
+		margin-bottom: 1.5rem;
 	}
 	a {
 		text-decoration: none;
