@@ -48,7 +48,7 @@
 		margin-left: 25%;
 		margin-bottom: 1.5rem;
 	}
-	.paragraph1 {
+	.paragraph2 {
 		font-size: 1.25rem;
 		/* margin-bottom: 2rem; */
 		width: 50%;
