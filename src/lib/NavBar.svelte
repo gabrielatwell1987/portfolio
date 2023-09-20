@@ -17,7 +17,7 @@
 		<h2 class="text">GABEatwell</h2>
 	</div>
 
-	<div class="c">
+	<div class="desktop-view">
 		<a href="/">Home</a>
 		<a href="/about">About</a>
 		<a href="/photos">Photos</a>
@@ -25,7 +25,7 @@
 		<a href="/contact">Contact</a>
 		<a href="/blog">Blog</a>
 	</div>
-	<div class="d">
+	<div class="mobile-view">
 		<a href="/">Home</a>
 		<a href="/about">About</a>
 		<a href="/projects">Projects</a>
@@ -56,11 +56,11 @@
 	a:hover {
 		color: blue;
 	}
-	.c {
+	.desktop-view {
 		/* margin-right: .5rem; */
 		display: block;
 	}
-	.d {
+	.mobile-view {
 		display: none;
 	}
 	nav {
@@ -97,15 +97,15 @@
 		.logoss {
 			display: none;
 		}
-		.d {
+		.mobile-view {
 			margin-right: 12rem;
 		}
-		.c {
+		.desktop-view {
 			display: none;
 		}
 	}
 	@media (max-width: 727px) {
-		.d {
+		.mobile-view {
 			display: flex;
 			justify-content: space-evenly;
 			/* width: 100%; */
