@@ -1,18 +1,20 @@
 <script>
-	import Discord from '$lib/Discord.svelte';
-	import Reddit from '$lib/Reddit.svelte';
-	import Briefcase from '$lib/Briefcase.svelte';
+	import ContactForm from '$lib/ContactForm.svelte';
 	import { gsap } from 'gsap/dist/gsap';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.to('.pic, .bag', {
-			borderRadius: '50%',
-			repeat: -1,
-			duration: 2,
-			yoyo: true,
-			ease: 'sine.in'
-		});
+		gsap.fromTo(
+			'.pic, .bag',
+			{ scale: 0 },
+			{
+				scale: 1,
+				repeat: -1,
+				duration: 2,
+				yoyo: true,
+				ease: 'sine.in'
+			}
+		);
 	});
 </script>
 
@@ -34,18 +36,21 @@
 	</svg>
 
 	<h2 class="contact-text">You can email me</h2>
-	<a href="mailto:gabriel.atwell@proton.me"> here</a>
+	<a class="here" href="mailto:gabriel.atwell@proton.me"> here</a>
 </main>
 
 <p class="contactinfo">You can contact me through email and I'll get back to you.</p>
 <img class="mobilelogo" src="logo.png" alt="logo" width="200px" />
+
+<div class="contactForm">
+	<ContactForm />
+</div>
 
 <style>
 	main {
 		text-align: center;
 	}
 	h2 {
-		text-decoration: underline;
 		font-size: 2.5rem;
 		margin-bottom: 2rem;
 	}
@@ -65,13 +70,27 @@
 		margin-bottom: 4rem;
 		margin-top: 2rem;
 	}
+	.here {
+		font-size: 1.5rem;
+		font-weight: 700;
+	}
+	.contactForm {
+		margin-top: 4rem;
+	}
+	a {
+		text-decoration: none;
+		color: rgb(76, 76, 248);
+	}
+	a:hover {
+		color: white;
+	}
 	@media (max-width: 1250px) {
 		/* .pic {
             display: none;
         } */
-		h2 {
+		/* h2 {
 			font-size: 1.5rem;
-		}
+		} */
 		.contactinfo {
 			display: block;
 			text-align: center;
@@ -83,8 +102,8 @@
 			margin-left: 26%;
 			border-radius: 50%;
 		}
-		.contact-text {
+		/* .contact-text {
 			font-size: 1.5rem;
-		}
+		} */
 	}
 </style>

@@ -1,91 +1,45 @@
 <script>
-    import { TextInput, TextArea, Button, FormGroup, Form, InlineNotification } from "carbon-components-svelte";
-    import { createForm } from "svelte-forms-lib";
-    import { supabase } from "../supabaseClient";
-    import * as yup from "yup";
-
-    const validationSchema = yup.object().shape({
-        name: yup.string().required('Please enter a name'),
-        email: yup.string().email().required('Please enter a valid email'),
-        message: yup.string().required('Please enter a message')
-    });
-
-    let apiResult = null;
-
-    const { form, errors, handleChange, handleSubmit, isSubmitting } = createForm({
-        initialValues: { name: "", email: "", message: "" },
-        validationSchema: validationSchema,
-        onSubmit: async values => {
-
-            try {
-                var result = await supabase.from("contact").insert(values);
-
-                if (result.data != null) {
-                    apiResult = true;
-                } else {
-                    apiResult = false;
-                }
-            } catch (ex) {
-                apiResult = false;
-            }
-
-            handleReset();
-        }
-    });
 </script>
 
-<div class="page">
-    <h2>Contact Me</h2>
-    <p>Enter the details to get in touch with me.</p>
+<form method="POST" action="?/send">
+	<label for="name">Name</label>
+	<input type="text" name="name" required />
 
-    <br><br>
+	<label for="email">Email</label>
+	<input type="email" name="email" required />
 
-    {#if apiResult != null}
-        {#if apiResult == true}
-            <InlineNotification
-                lowContrast
-                kind="success"
-                title="Success:"
-                subtitle="Your message has been received"
-            />
-        {:else}
-            <InlineNotification 
-                lowContrast 
-                kind="error"
-                title="Error:"
-                subtitle="An internal server error occurred."
-            />
+	<label for="message">Message</label>
+	<textarea type="text" name="message" />
 
-        {/if}  
-    {/if}
-
-    <Form on:submit={handleSubmit}>
-
-        <FormGroup>
-            <TextInput labelText="Name" name="name" 
-                on:change={handleChange} bind:value={$form.name}
-                invalid={$errors.name.length > 0} invalidText={$errors.name}/>
-        </FormGroup>
-    
-        <FormGroup>
-            <TextInput labelText="Email" name="email" type="email" 
-                on:change={handleChange} bind:value={$form.email}
-                invalid={$errors.email.length > 0} invalidText={$errors.email}/>
-        </FormGroup>
-    
-        
-        <FormGroup>
-            <TextArea labelText="Message" name="message" type="textarea"
-                on:change={handleChange} bind:value={$form.message}
-                invalid={$errors.message.length > 0} invalidText={$errors.message}/>
-        </FormGroup>
-  
-        <Button type="submit" disabled={$isSubmitting}>Submit</Button>
-    </Form>
-</div>
+	<button type="submit">Send</button>
+</form>
 
 <style>
-    .page {
-        margin: 40px;
-    }
+	form {
+		display: flex;
+		flex-direction: column;
+		width: 50%;
+		margin-left: 25%;
+		margin-bottom: 2rem;
+	}
+	label {
+		font-size: 1rem;
+		margin-bottom: 0.5rem;
+		text-align: center;
+	}
+	input {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	textarea {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	button {
+		font-size: 1rem;
+		font-weight: bold;
+		text-align: center;
+		width: 15%;
+		margin-left: 42.5%;
+	}
 </style>

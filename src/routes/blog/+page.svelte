@@ -1,14 +1,14 @@
 <script>
-	import Svelte from '$lib/Svelte.svelte';
-	import Gsap from '$lib/gsap.svelte';
+	// import Svelte from '$lib/Svelte.svelte';
+	// import Gsap from '$lib/gsap.svelte';
 </script>
 
 <main>
 	<h1>Things I've taught myself</h1>
 
 	<div class="topics">
-		<a href="/blog/sveltekit"><Svelte /></a>
-		<a href="/blog/gsap"><Gsap /></a>
+		<a href="/blog/sveltekit">Svelte</a>
+		<a href="/blog/gsap">GSAP</a>
 	</div>
 </main>
 
