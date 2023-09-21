@@ -24,7 +24,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@supabase/supabase-js": "^2.33.2",
+		"@supabase/supabase-js": "^2.36.0",
 		"gsap": "^3.12.2",
 		"svelte-forms-lib": "^2.0.1",
 		"yup": "^1.2.0"

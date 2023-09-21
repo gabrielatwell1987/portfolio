@@ -2,14 +2,14 @@
 </script>
 
 <form method="POST" action="?/send">
-	<label for="name">Name</label>
+	<label for="name"><span>Name</span></label>
 	<input type="text" name="name" required />
 
-	<label for="email">Email</label>
+	<label for="email"><span>Email</span></label>
 	<input type="email" name="email" required />
 
-	<label for="message">Message</label>
-	<textarea type="text" name="message" />
+	<label for="message"><span>Message</span></label>
+	<textarea type="text" name="message" rows="5" required />
 
 	<button type="submit">Send</button>
 </form>
