@@ -23,7 +23,6 @@
 		<a href="/photos">Photos</a>
 		<a href="/projects">Projects</a>
 		<a href="/contact">Contact</a>
-		<a href="/blog">Blog</a>
 	</div>
 	<div class="mobile-view">
 		<a href="/">Home</a>
