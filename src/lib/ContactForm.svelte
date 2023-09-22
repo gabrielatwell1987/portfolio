@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<form method="POST" action="?/send">
+<form method="POST">
 	<label for="name"><span>Name</span></label>
 	<input type="text" name="name" required />
 

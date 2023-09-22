@@ -3,10 +3,7 @@
 	import NavBar2 from '$lib/NavBar2.svelte';
 	import Discord from '$lib/Discord.svelte';
 	import Reddit from '$lib/Reddit.svelte';
-	import Analytics from '../lib/Analytics.svelte';
 </script>
-
-<Analytics />
 
 <main class="desktop">
 	<NavBar />
