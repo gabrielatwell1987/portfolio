@@ -6,7 +6,11 @@
 	onMount(() => {
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.fromTo('.greensock', { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, ease: 'back.out' });
+		tl.fromTo(
+			'.greensock',
+			{ scale: 0, opacity: 0 },
+			{ scale: 1, opacity: 1, ease: 'back.out' }
+		).fromTo('.gs-main', { y: 1000 }, { y: 0 }, '-=3');
 	});
 </script>
 
@@ -14,7 +18,7 @@
 	<GsapIcon />
 </div>
 
-<main>
+<main class="gs-main">
 	<p>
 		I really enjoy Greensock Animation Platform. I really like animating the websites that I've
 		built! GSAP makes it so easy to accomplish! The syntax is really simple to learn which makes the

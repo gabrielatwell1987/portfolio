@@ -6,11 +6,13 @@
 	onMount(() => {
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.fromTo('.sveltekit', { y: -500 }, { y: 0, ease: 'back.out' }).to('.sveltekit', {
-			scale: 2,
-			x: 473,
-			y: 30
-		});
+		tl.fromTo('.sveltekit', { y: -500 }, { y: 0, ease: 'back.out' })
+			.to('.sveltekit', {
+				scale: 2,
+				x: 473,
+				y: 30
+			})
+			.fromTo('.sk-main', { y: 1000 }, { y: 0 }, '-=4');
 	});
 </script>
 
@@ -18,7 +20,7 @@
 	<Svelte />
 </div>
 
-<main>
+<main class="sk-main">
 	<p>
 		I used sveltekit to create this portfolio website. I decided to go with sveltekit because of the
 		server-side rendering (SRR) and all of the SEO features, as well as the speed of everything. The
