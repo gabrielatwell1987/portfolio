@@ -1,15 +1,18 @@
 <script>
+	let name = '';
+	let email = '';
+	let message = '';
 </script>
 
 <form method="POST">
 	<label for="name"><span>Name</span></label>
-	<input type="text" id="name" name="name" required />
+	<input type="text" id="name" name="name" bind:value={name} required />
 
 	<label for="email"><span>Email</span></label>
-	<input type="email" id="email" name="email" required />
+	<input type="email" id="email" name="email" bind:value={email} required />
 
 	<label for="message"><span>Message</span></label>
-	<textarea type="text" id="message" name="message" rows="5" required />
+	<textarea type="text" id="message" name="message" bind:value={message} rows="5" required />
 
 	<button type="submit">Send</button>
 </form>
