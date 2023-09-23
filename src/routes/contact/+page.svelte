@@ -4,17 +4,17 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.fromTo(
-			'.pic, .bag',
+		let tl = gsap.timeline({ defaults: { duration: 2 } });
+		tl.fromTo(
+			'.bag',
 			{ scale: 0 },
 			{
 				scale: 1,
-				repeat: -1,
-				duration: 2,
+				repeat: 2,
 				yoyo: true,
 				ease: 'sine.in'
 			}
-		);
+		).to('.bag', { scale: 1 }, '-=1');
 	});
 </script>
 
@@ -35,8 +35,9 @@
 		/>
 	</svg>
 
-	<h2 class="contact-text">You can email me</h2>
-	<a class="here" href="mailto:gabriel.atwell@proton.me"> here</a>
+	<h2 class="contact-text">
+		Email me: <a class="here" href="mailto:gabriel.atwell@proton.me">here</a>
+	</h2>
 </main>
 
 <p class="contactinfo">You can contact me through email and I'll get back to you.</p>
@@ -50,9 +51,9 @@
 	main {
 		text-align: center;
 	}
-	h2 {
-		font-size: 2.5rem;
-		margin-bottom: 2rem;
+	.contact-text {
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
 	}
 	.contactinfo {
 		display: none;
