@@ -1,5 +1,5 @@
 export const actions = {
-	send: async ({ request }) => {
+	default: async ({ request }) => {
 		const form = await request.formData();
 		console.log(form);
 	}
