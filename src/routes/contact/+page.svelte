@@ -105,5 +105,8 @@
 		/* .contact-text {
 			font-size: 1.5rem;
 		} */
+		.contactForm {
+			display: none;
+		}
 	}
 </style>
