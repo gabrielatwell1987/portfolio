@@ -24,6 +24,15 @@
 			begun to teach himself the backend of web development on his spare time, but is a complete
 			frontend developer.
 		</p>
+		<p class="p">
+			The path that Gabriel has chosen is the frontend path, one of his main interests with the
+			frontend path is animations. Turning a website from being a static site to a dynamic site is
+			what Gabriel thinks is really cool.
+		</p>
+		<p class="p">
+			Design is what Gabriel is really good at. Hierarchy, whitespace, colors, typography, scaling,
+			and spacing is what he knows best.
+		</p>
 		<!-- <h3>What is Gabriel's future</h3>
         <p class="a">Gabriel sees a lot of future in web development. Mainly in e-commerce or in building/maintaining actual apps for companies.</p> -->
 	</div>
