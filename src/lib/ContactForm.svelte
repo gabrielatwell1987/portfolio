@@ -54,5 +54,6 @@
 		font-size: 2rem;
 		margin: 2rem;
 		padding: 2rem 5rem;
+		border-radius: 8px;
 	}
 </style>
