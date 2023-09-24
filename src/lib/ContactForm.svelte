@@ -5,16 +5,19 @@
 </script>
 
 <form method="POST">
-	<label for="name"><span>Name</span></label>
-	<input type="text" id="name" name="name" bind:value={name} required />
+	<fieldset>
+		<legend> Contact </legend>
+		<label for="name"><span>Name</span></label>
+		<input type="text" id="name" name="name" bind:value={name} required />
 
-	<label for="email"><span>Email</span></label>
-	<input type="email" id="email" name="email" bind:value={email} required />
+		<label for="email"><span>Email</span></label>
+		<input type="email" id="email" name="email" bind:value={email} required />
 
-	<label for="message"><span>Message</span></label>
-	<textarea type="text" id="message" name="message" bind:value={message} rows="5" required />
+		<label for="message"><span>Message</span></label>
+		<textarea type="text" id="message" name="message" bind:value={message} rows="5" required />
 
-	<button type="submit">Send</button>
+		<button type="submit">Send</button>
+	</fieldset>
 </form>
 
 <style>
@@ -44,5 +47,12 @@
 		text-align: center;
 		width: 15%;
 		margin-left: 42.5%;
+	}
+	fieldset {
+		border: 3px solid whitesmoke;
+		font-weight: bolder;
+		font-size: 2rem;
+		margin: 2rem;
+		padding: 2rem 5rem;
 	}
 </style>
