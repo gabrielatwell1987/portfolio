@@ -6,9 +6,7 @@
 <main>
 	<h1>This is the tech stack I use</h1>
 	<a href="blog/greensock"><GsapIcon /></a>
-	<p>Greensock</p>
 	<a href="blog/sveltekit"><Svelte /></a>
-	<p>Sveltekit</p>
 </main>
 
 <style>
@@ -23,8 +21,8 @@
 		display: block;
 		margin-left: 49%;
 	}
-	p {
+	/* p {
 		text-align: center;
 		margin-bottom: 5rem;
-	}
+	} */
 </style>

@@ -19,6 +19,8 @@
 </div>
 
 <main class="gs-main">
+	<h1 class="title">Greensock Animation Platform</h1>
+	<h2 class="subtitle">GSAP</h2>
 	<p>
 		I really enjoy Greensock Animation Platform. I really like animating the websites that I've
 		built! GSAP makes it so easy to accomplish! The syntax is really simple to learn which makes the
@@ -71,5 +73,18 @@
 	}
 	a:hover {
 		color: white;
+	}
+	.title {
+		font-size: 1.75rem;
+		font-weight: 800;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+	.subtitle {
+		font-size: 1rem;
+		font-weight: 600;
+		margin-bottom: 2rem;
+		text-align: center;
 	}
 </style>

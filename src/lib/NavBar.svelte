@@ -22,7 +22,7 @@
 		<a href="/about">About</a>
 		<a href="/photos">Photos</a>
 		<a href="/projects">Projects</a>
-		<a href="/blog">Stack</a>
+		<a href="/blog">Blog</a>
 		<a href="/contact">Contact</a>
 	</div>
 	<div class="mobile-view">
