@@ -51,32 +51,11 @@
 	main {
 		text-align: center;
 	}
-	.contact-text {
-		font-size: 1.5rem;
-		margin-bottom: 0.5rem;
-	}
-	.contactinfo {
-		display: none;
-	}
-	/* .pic {
-        border-radius: 50%;
-        margin-bottom: 2rem;
-    } */
-	.mobilelogo {
-		display: none;
-	}
 	svg {
 		width: 15%;
 		height: 40%;
 		margin-bottom: 4rem;
 		margin-top: 2rem;
-	}
-	.here {
-		font-size: 1.5rem;
-		font-weight: 700;
-	}
-	.contactForm {
-		margin-top: 4rem;
 	}
 	a {
 		text-decoration: none;
@@ -84,6 +63,23 @@
 	}
 	a:hover {
 		color: white;
+	}
+	.contact-text {
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+	.contactinfo {
+		display: none;
+	}
+	.contactForm {
+		margin-top: 4rem;
+	}
+	.mobilelogo {
+		display: none;
+	}
+	.here {
+		font-size: 1.5rem;
+		font-weight: 700;
 	}
 	@media (max-width: 1250px) {
 		/* .pic {

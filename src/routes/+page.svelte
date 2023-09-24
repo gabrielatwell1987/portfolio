@@ -7,7 +7,7 @@
 	});
 </script>
 
-<main class="laptop">
+<main class="atwellLogo">
 	<img src="logo.png" alt="Logo" />
 </main>
 
@@ -18,7 +18,7 @@
 <div class="biomobile">
 	<h1 class="name">Gabriel Atwell</h1>
 	<br />
-	<img class="atwelllogo" src="atwell.png" alt="logo" width="200px" />
+	<img class="mobileatwell" src="atwell.png" alt="logo" width="200px" />
 	<br /><br /><br />
 	<p class="center">This is my portfolio website. Please click on a link to learn more!</p>
 </div>
@@ -28,12 +28,6 @@
 	main {
 		text-align: center;
 	}
-	/* h2 {
-		font-weight: 800;
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		color: lightskyblue;
-		font-size: 2.5rem;
-	} */
 	p {
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	}
@@ -47,7 +41,10 @@
 		display: none;
 	}
 	@media (max-width: 1250px) {
-		.laptop {
+		p {
+			font-size: 1rem;
+		}
+		.atwellLogo {
 			display: none;
 		}
 		.text {
@@ -59,10 +56,7 @@
 			padding: 0.8rem;
 			/* margin-left: 42%; */
 		}
-		p {
-			font-size: 1rem;
-		}
-		.atwelllogo {
+		.mobileatwell {
 			background-color: rgb(88, 88, 88);
 		}
 		.name {

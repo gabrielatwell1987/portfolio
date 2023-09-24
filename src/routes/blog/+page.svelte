@@ -4,25 +4,21 @@
 </script>
 
 <main>
-	<h1>This is the tech stack I use</h1>
+	<h1 class="title">This is the tech stack I use</h1>
 	<a href="blog/greensock"><GsapIcon /></a>
 	<a href="blog/sveltekit"><Svelte /></a>
 </main>
 
 <style>
-	h1 {
+	a {
+		display: block;
+		margin-left: 49%;
+	}
+	.title {
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
 		color: lightskyblue;
 		font-size: 2.5rem;
 		font-weight: 800;
 		text-align: center;
 	}
-	a {
-		display: block;
-		margin-left: 49%;
-	}
-	/* p {
-		text-align: center;
-		margin-bottom: 5rem;
-	} */
 </style>

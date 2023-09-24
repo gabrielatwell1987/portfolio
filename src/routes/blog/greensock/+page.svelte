@@ -42,29 +42,17 @@
 <a href="/blog" class="homelink">Back</a>
 
 <style>
-	.greensock {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-top: 5rem;
-		margin-bottom: 3rem;
-	}
-	p {
-		text-align: center;
-		margin-bottom: 2rem;
-		padding: 0.5em 2em;
-		padding-top: 2.5em;
-	}
 	main {
 		background-color: rgb(49, 49, 49);
 		width: 45%;
 		border: 3px solid white;
 		margin-left: 27%;
 	}
-	.homelink {
-		display: block;
-		margin-left: 48%;
-		margin-top: 3rem;
+	p {
+		text-align: center;
+		margin-bottom: 2rem;
+		padding: 0.5em 2em;
+		padding-top: 2.5em;
 	}
 	a {
 		text-decoration: none;
@@ -73,6 +61,11 @@
 	}
 	a:hover {
 		color: white;
+	}
+	.homelink {
+		display: block;
+		margin-left: 48%;
+		margin-top: 3rem;
 	}
 	.title {
 		font-size: 1.75rem;
@@ -86,5 +79,12 @@
 		font-weight: 600;
 		margin-bottom: 2rem;
 		text-align: center;
+	}
+	.greensock {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 5rem;
+		margin-bottom: 3rem;
 	}
 </style>

@@ -42,15 +42,6 @@
 <a href="/blog" class="homelink">Back</a>
 
 <style>
-	.sveltekit {
-		margin-left: 48%;
-	}
-	p {
-		text-align: center;
-		margin-bottom: 2rem;
-		padding: 0.5em 2em;
-		padding-top: 2.5em;
-	}
 	main {
 		background-color: rgb(49, 49, 49);
 		width: 45%;
@@ -58,15 +49,21 @@
 		margin-left: 27%;
 		margin-top: 6rem;
 	}
-	.homelink {
-		display: block;
-		margin-left: 48%;
-		margin-top: 3rem;
+	p {
+		text-align: center;
+		margin-bottom: 2rem;
+		padding: 0.5em 2em;
+		padding-top: 2.5em;
 	}
 	a {
 		text-decoration: none;
 		font-size: 1.5rem;
 		color: lightskyblue;
+	}
+	.homelink {
+		display: block;
+		margin-left: 48%;
+		margin-top: 3rem;
 	}
 	a:hover {
 		color: white;
@@ -77,5 +74,8 @@
 		margin-top: 2rem;
 		margin-bottom: 2rem;
 		text-align: center;
+	}
+	.sveltekit {
+		margin-left: 48%;
 	}
 </style>
