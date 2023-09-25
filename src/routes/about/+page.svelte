@@ -80,6 +80,7 @@
 		justify-content: center;
 		align-items: center;
 		margin-left: 1em;
+		margin-bottom: 1rem;
 	}
 	.p {
 		padding: 2rem;

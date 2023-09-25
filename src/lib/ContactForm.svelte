@@ -4,7 +4,8 @@
 	let message = '';
 </script>
 
-<form method="POST">
+<form method="POST" action="https://formsubmit.co/gatwell702@gmail.com">
+	<input type="hidden" name="send_to" value="gatwell702@gmail.com" />
 	<fieldset>
 		<legend> Contact </legend>
 		<label for="name"><span>Name</span></label>
@@ -55,5 +56,6 @@
 		margin: 2rem;
 		padding: 2rem 5rem;
 		border-radius: 8px;
+		background-color: rgb(0, 0, 0);
 	}
 </style>

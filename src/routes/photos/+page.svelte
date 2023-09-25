@@ -9,7 +9,8 @@
 			.to('.b', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
 			.to('.c', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
 			.to('.d', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
-			.fromTo('.photos', { y: 500 }, { y: 0, duration: 1.5 }, '<');
+			.fromTo('.photos', { y: 500 }, { y: 0, duration: 1.5 }, '<')
+			.fromTo('.title', { scale: 5 }, { scale: 1, duration: 1.5 }, '<');
 	});
 </script>
 
