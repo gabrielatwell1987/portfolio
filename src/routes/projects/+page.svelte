@@ -5,9 +5,9 @@
 
 	onMount(() => {
 		let tl = gsap.timeline({ defaults: { duration: 2 } });
-		tl.fromTo('.laptop', { scale: 0 }, { scale: 1 })
+		tl.fromTo('.laptopLogo', { scale: 0 }, { scale: 1 })
 			.fromTo('.links', { x: 500 }, { x: 0 }, '<')
-			.fromTo('.texts', { x: -500 }, { x: 0 }, '<');
+			.fromTo('.title', { x: -500 }, { x: 0 }, '<');
 	});
 </script>
 

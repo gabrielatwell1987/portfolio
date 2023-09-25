@@ -19,19 +19,19 @@
 	<div class="pagetext display">
 		<h1>About Gabriel Atwell</h1>
 		<p class="p">
-			Gabriel Atwell is a web developer. He started out with the basics: HTML, CSS, and JavaScript.
-			He then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js, and GSAP. He has
-			begun to teach himself the backend of web development on his spare time, but is a complete
-			frontend developer.
+			Gabriel Atwell is a self-taught web developer. He started out with the basics: HTML, CSS, and
+			JavaScript. He then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js, and
+			GSAP. He has begun to teach himself the backend of web development on his spare time, but is a
+			complete frontend developer.
 		</p>
 		<p class="p">
 			The path that Gabriel has chosen is the frontend path, one of his main interests with the
-			frontend path is animations. Turning a website from being a static site to a dynamic site is
-			what Gabriel thinks is really cool.
+			frontend path is animations, especially animations on the web. Turning a website from being a
+			static site to a dynamic site is what Gabriel thinks is really cool.
 		</p>
 		<p class="p">
 			Design is what Gabriel is really good at. Hierarchy, whitespace, colors, typography, scaling,
-			and spacing is what he knows best.
+			and spacing is what he knows best. He thinks that is the main key for a UI developer.
 		</p>
 		<!-- <h3>What is Gabriel's future</h3>
         <p class="a">Gabriel sees a lot of future in web development. Mainly in e-commerce or in building/maintaining actual apps for companies.</p> -->
@@ -40,8 +40,7 @@
 		<h1 class="about-title">About Me</h1>
 		<img class="skull" src="logo2.png" alt="logo" width="250px" />
 		<p>
-			This is Gabriel Atwell's portfolio. He has created this from Sveltekit and GSAP. This website
-			is meant to showcase his frontend skills.
+			This is Gabriel Atwell's portfolio. This website is meant to showcase his frontend skills.
 		</p>
 	</div>
 </main>
@@ -56,7 +55,7 @@
 	}
 	p {
 		font-family: Arial, Helvetica, sans-serif;
-		font-size: 0.8rem;
+		font-size: 1.2rem;
 	}
 	.nodisplay {
 		display: none;
