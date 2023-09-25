@@ -5,7 +5,7 @@
 
 	onMount(() => {
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
-		tl.fromTo('.logos', { scale: 0 }, { scale: 1, ease: 'power2.out' })
+		tl.fromTo('.logos', { y: -500 }, { y: 0, ease: 'power2.out' })
 			.fromTo('.pagetext', { y: 1000 }, { y: 0, ease: 'expo.out' }, '<')
 			.fromTo('.mobilepagetext', { y: -500 }, { y: 0 }, '<');
 	});
