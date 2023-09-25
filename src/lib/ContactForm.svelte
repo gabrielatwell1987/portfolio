@@ -56,6 +56,11 @@
 		margin: 2rem;
 		padding: 2rem 5rem;
 		border-radius: 8px;
-		background-color: rgb(0, 0, 0);
+	}
+	legend {
+		font-weight: bolder;
+		font-size: 2rem;
+		color: lightskyblue;
+		padding: 0 1rem 0 1rem;
 	}
 </style>

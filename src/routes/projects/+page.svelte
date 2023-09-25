@@ -74,9 +74,9 @@
 		.laptopLogo {
 			display: none;
 		}
-		.linksize {
+		/* .linksize {
 			font-size: 1rem;
-		}
+		} */
 		.title {
 			font-size: 1.5rem;
 			text-align: center;
@@ -87,6 +87,8 @@
 			margin-left: 27%;
 			background-color: transparent;
 			border: none;
+			font-size: 1rem;
+			text-align: center;
 		}
 		.linksize {
 			color: white;

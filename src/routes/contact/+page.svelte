@@ -36,11 +36,17 @@
 	</svg>
 
 	<h2 class="contact-text">
-		Email me: <a class="here" href="mailto:gabriel.atwell@proton.me">here</a>
+		Email me <a class="here" href="mailto:gabriel.atwell@proton.me">here</a>
 	</h2>
 </main>
 
-<p class="contactinfo">You can contact me through email and I'll get back to you.</p>
+<p class="contactinfo">
+	You can contact me <a class="here" href="mailto:gabriel.atwell@proton.me">here</a>
+</p>
+<p class="contactinfo">
+	If you email me, I will respond. Make sure you access this website on desktop to take full
+	advantage of my contact form and all of the animations.
+</p>
 <img class="mobilelogo" src="logo.png" alt="logo" width="200px" />
 
 <div class="contactForm">
@@ -67,12 +73,13 @@
 	.contact-text {
 		font-size: 1.5rem;
 		margin-bottom: 0.5rem;
+		display: none;
 	}
 	.contactinfo {
 		display: none;
 	}
 	.contactForm {
-		margin-top: 4rem;
+		margin-top: 2rem;
 	}
 	.mobilelogo {
 		display: none;
@@ -80,6 +87,7 @@
 	.here {
 		font-size: 1.5rem;
 		font-weight: 700;
+		color: lightskyblue;
 	}
 	@media (max-width: 1250px) {
 		/* .pic {
@@ -95,13 +103,13 @@
 			margin-left: 1.5rem;
 		}
 		.mobilelogo {
-			display: block;
+			display: none;
 			margin-left: 26%;
 			border-radius: 50%;
 		}
-		/* .contact-text {
+		.contact-text {
 			font-size: 1.5rem;
-		} */
+		}
 		.contactForm {
 			display: none;
 		}
