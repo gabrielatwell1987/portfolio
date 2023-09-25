@@ -11,10 +11,6 @@
 	<img src="logo.png" alt="Logo" />
 </main>
 
-<div class="text">
-	<p>A frontend developer</p>
-</div>
-
 <div class="biomobile">
 	<h1 class="name">Gabriel Atwell</h1>
 	<br />
@@ -24,7 +20,6 @@
 </div>
 
 <style>
-	.text,
 	main {
 		text-align: center;
 	}
@@ -34,9 +29,6 @@
 	img {
 		border-radius: 50%;
 	}
-	.text {
-		margin-top: 1rem;
-	}
 	.biomobile {
 		display: none;
 	}
@@ -45,9 +37,6 @@
 			font-size: 1rem;
 		}
 		.atwellLogo {
-			display: none;
-		}
-		.text {
 			display: none;
 		}
 		.biomobile {
