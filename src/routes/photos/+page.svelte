@@ -46,40 +46,4 @@
 		width: 35%;
 		margin-left: 32%;
 	}
-	/* @media (max-width: 480px) {
-		.photos {
-			width: 25%;
-			margin-left: 38%;
-		}
-		.title {
-			font-size: 0.8rem;
-		}
-	}
-	@media (max-width: 767px) {
-		.photos {
-			width: 25%;
-			margin-left: 38%;
-		}
-		.title {
-			font-size: 1rem;
-		}
-	}
-	@media (max-width: 1024px) {
-		.photos {
-			width: 25%;
-			margin-left: 38%;
-		}
-		.title {
-			font-size: 1.5rem;
-		}
-	}
-	@media (max-width: 1250px) {
-		.photos {
-			width: 25%;
-			margin-left: 38%;
-		}
-		.title {
-			font-size: 1.5rem;
-		}
-	} */
 </style>
