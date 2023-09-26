@@ -69,7 +69,7 @@
 	.laptopLogo {
 		margin-left: 32%;
 	}
-	@media (min-width: 1024px), (max-width: 1024px) {
+	/* @media (min-width: 1024px), (max-width: 1024px) {
 		a {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			font-size: 1.5rem;
@@ -98,5 +98,5 @@
 		.laptopLogo {
 			display: none;
 		}
-	}
+	} */
 </style>
