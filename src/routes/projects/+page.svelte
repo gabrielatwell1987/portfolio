@@ -89,16 +89,17 @@
 		}
 		.links {
 			text-align: center;
-			background-color: darkgrey;
-			border: 3px solid white;
-			border-radius: 8px;
+			background-color: transparent;
+			color: black;
+			/* border: 3px solid white;
+			border-radius: 8px; */
 			padding: 1.5rem;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			width: 25%;
-			margin-left: 37%;
+			/* width: 25%;
+			margin-left: 37%; */
 		}
 		.laptopLogo {
 			margin-left: 32%;
