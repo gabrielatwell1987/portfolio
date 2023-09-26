@@ -88,7 +88,9 @@
 		}
 		.links {
 			text-align: center;
+			background-color: transparent;
 			color: black;
+			border: none;
 			padding: 1rem;
 			display: flex;
 			flex-direction: column;
