@@ -54,7 +54,7 @@
 	}
 	@media (max-width: 1250px) {
 		footer {
-			display: block;
+			display: none;
 		}
 	}
 </style>
