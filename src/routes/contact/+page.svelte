@@ -89,18 +89,47 @@
 		font-weight: 700;
 		color: lightskyblue;
 	}
-	@media (max-width: 1250px) {
-		/* .pic {
-            display: none;
-        } */
-		/* h2 {
-			font-size: 1.5rem;
-		} */
+	@media (max-width: 480px) {
 		.contactinfo {
 			display: block;
 			text-align: center;
 			padding: 0.8rem;
 			margin-left: 1.5rem;
+		}
+		.mobilelogo {
+			display: block;
+			margin-left: 26%;
+			border-radius: 50%;
+		}
+		.contact-text {
+			font-size: 0.8rem;
+		}
+		.contactForm {
+			display: none;
+		}
+	}
+	@media (max-width: 767px) {
+		.contactinfo {
+			display: block;
+			text-align: center;
+			padding: 0.8rem;
+			margin-left: 1.5rem;
+		}
+		.mobilelogo {
+			display: block;
+			margin-left: 26%;
+			border-radius: 50%;
+		}
+		.contact-text {
+			font-size: 1rem;
+		}
+		.contactForm {
+			display: none;
+		}
+	}
+	@media (max-width: 1024px) {
+		.contactinfo {
+			display: none;
 		}
 		.mobilelogo {
 			display: none;
@@ -111,7 +140,25 @@
 			font-size: 1.5rem;
 		}
 		.contactForm {
+			display: block;
+			text-align: center;
+		}
+	}
+	@media (max-width: 1280px) {
+		.contactinfo {
 			display: none;
+		}
+		.mobilelogo {
+			display: none;
+			margin-left: 26%;
+			border-radius: 50%;
+		}
+		.contact-text {
+			font-size: 1.5rem;
+		}
+		.contactForm {
+			display: block;
+			text-align: center;
 		}
 	}
 </style>

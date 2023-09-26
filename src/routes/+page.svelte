@@ -23,7 +23,7 @@
 	main {
 		text-align: center;
 	}
-	p {
+	.center {
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	}
 	img {
@@ -32,8 +32,8 @@
 	.biomobile {
 		display: none;
 	}
-	@media (max-width: 1250px) {
-		p {
+	@media (max-width: 480px) {
+		.center {
 			font-size: 1rem;
 		}
 		.atwellLogo {
@@ -50,6 +50,54 @@
 		}
 		.name {
 			margin-left: 1rem;
+		}
+	}
+	@media (max-width: 767px) {
+		.center {
+			font-size: 1rem;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+		.atwellLogo {
+			display: none;
+		}
+		main {
+			text-align: center;
+			font-size: 1.75rem;
+		}
+		img {
+			border-radius: 50%;
+		}
+		.biomobile {
+			display: none;
+		}
+	}
+	@media (max-width: 1024px) {
+		main {
+			text-align: center;
+			font-size: 1.75rem;
+		}
+		.center {
+			font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		}
+		img {
+			border-radius: 50%;
+		}
+		.biomobile {
+			display: none;
+		}
+	}
+	@media (max-width: 1280px) {
+		main {
+			text-align: center;
+		}
+		.center {
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+		img {
+			border-radius: 50%;
+		}
+		.biomobile {
+			display: none;
 		}
 	}
 </style>

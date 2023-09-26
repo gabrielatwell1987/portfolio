@@ -91,7 +91,7 @@
 	.skull {
 		margin-bottom: 1.5rem;
 	}
-	@media (max-width: 1250px) {
+	@media (max-width: 480px) {
 		.logos {
 			display: none;
 		}
@@ -107,6 +107,91 @@
 			border: none;
 			background-color: transparent;
 			color: white;
+		}
+		h1,
+		.p,
+		.about-title {
+			font-size: 0.8rem;
+		}
+	}
+	@media (max-width: 767px) {
+		.logos {
+			display: none;
+		}
+		.pagetext {
+			display: none;
+		}
+		.mobilepagetext {
+			width: 55%;
+			margin-left: 24%;
+			display: block;
+			padding: 0.8rem;
+			text-align: center;
+			border: none;
+			background-color: transparent;
+			color: white;
+		}
+		h1,
+		.p,
+		.about-title {
+			font-size: 1rem;
+		}
+	}
+	@media (max-width: 1024px) {
+		.logos {
+			display: none;
+		}
+		.pagetext {
+			width: 55%;
+			margin-left: 24%;
+			display: block;
+			padding: 0.8rem;
+			text-align: center;
+			border: none;
+			background-color: transparent;
+			color: white;
+		}
+		.mobilepagetext {
+			/* width: 55%;
+			margin-left: 24%;
+			display: block;
+			padding: 0.8rem;
+			text-align: center;
+			border: none;
+			background-color: transparent;
+			color: white; */
+			display: none;
+		}
+		h1,
+		.p,
+		.about-title {
+			font-size: 1.5rem;
+		}
+	}
+	@media (max-width: 1280px) {
+		.logos {
+			display: none;
+		}
+		.pagetext {
+			width: 55%;
+			margin-left: 24%;
+			display: block;
+			padding: 0.8rem;
+			text-align: center;
+			border: none;
+			background-color: transparent;
+			color: white;
+		}
+		.mobilepagetext {
+			/* width: 55%;
+			margin-left: 24%;
+			display: block;
+			padding: 0.8rem;
+			text-align: center;
+			border: none;
+			background-color: transparent;
+			color: white; */
+			display: none;
 		}
 		h1,
 		.p,

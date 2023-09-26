@@ -70,13 +70,10 @@
 	.laptopLogo {
 		margin-left: 32%;
 	}
-	@media (max-width: 1250px) {
+	@media (max-width: 480px) {
 		.laptopLogo {
 			display: none;
 		}
-		/* .linksize {
-			font-size: 1rem;
-		} */
 		.title {
 			font-size: 1.5rem;
 			text-align: center;
@@ -93,8 +90,94 @@
 		.linksize {
 			color: white;
 		}
-		/* .title {
-            margin-left: 3rem;
-        } */
+	}
+	@media (max-width: 767px) {
+		.laptopLogo {
+			display: none;
+		}
+		.title {
+			font-size: 1.5rem;
+			text-align: center;
+			margin-left: 3rem;
+		}
+		.links {
+			width: 50%;
+			margin-left: 27%;
+			background-color: transparent;
+			border: none;
+			font-size: 1rem;
+			text-align: center;
+		}
+		.linksize {
+			color: white;
+		}
+	}
+	@media (max-width: 1024px) {
+		a {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			font-size: 1.5rem;
+			text-decoration: none;
+			font-weight: 700;
+			color: black;
+		}
+		a:hover {
+			color: blue;
+		}
+		.title {
+			text-align: center;
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			font-size: 2rem;
+			color: lightskyblue;
+		}
+		.links {
+			text-align: center;
+			background-color: darkgrey;
+			border: 3px solid white;
+			border-radius: 8px;
+			padding: 1.5rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 25%;
+			margin-left: 37%;
+		}
+		.laptopLogo {
+			margin-left: 32%;
+		}
+	}
+	@media (max-width: 1250px) {
+		a {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			font-size: 1.5rem;
+			text-decoration: none;
+			font-weight: 700;
+			color: black;
+		}
+		a:hover {
+			color: blue;
+		}
+		.title {
+			text-align: center;
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			font-size: 2.5rem;
+			color: lightskyblue;
+		}
+		.links {
+			text-align: center;
+			background-color: darkgrey;
+			border: 3px solid white;
+			border-radius: 8px;
+			padding: 1.5rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 25%;
+			margin-left: 37%;
+		}
+		.laptopLogo {
+			margin-left: 32%;
+		}
 	}
 </style>
