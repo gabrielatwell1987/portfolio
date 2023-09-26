@@ -70,48 +70,6 @@
 	.laptopLogo {
 		margin-left: 32%;
 	}
-	@media (max-width: 480px) {
-		.laptopLogo {
-			display: none;
-		}
-		.title {
-			font-size: 1.5rem;
-			text-align: center;
-			margin-left: 3rem;
-		}
-		.links {
-			/* width: 50%; */
-			margin-left: 27%;
-			background-color: transparent;
-			border: none;
-			font-size: 1rem;
-			text-align: center;
-		}
-		.linksize {
-			color: white;
-		}
-	}
-	@media (max-width: 767px) {
-		.laptopLogo {
-			display: none;
-		}
-		.title {
-			font-size: 1.5rem;
-			text-align: center;
-			margin-left: 3rem;
-		}
-		.links {
-			/* width: 50%; */
-			margin-left: 27%;
-			background-color: transparent;
-			border: none;
-			font-size: 1rem;
-			text-align: center;
-		}
-		.linksize {
-			color: white;
-		}
-	}
 	@media (max-width: 1024px) {
 		a {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -146,7 +104,7 @@
 			margin-left: 32%;
 		}
 	}
-	@media (max-width: 1250px) {
+	/* @media (max-width: 1250px) {
 		a {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			font-size: 1.5rem;
@@ -179,5 +137,5 @@
 		.laptopLogo {
 			margin-left: 32%;
 		}
-	}
+	} */
 </style>

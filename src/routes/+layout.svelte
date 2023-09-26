@@ -37,24 +37,14 @@
 	.mobile {
 		display: none;
 	}
-	@media (max-width: 480px) {
-		footer {
-			display: none;
-		}
-	}
-	@media (max-width: 727px) {
-		footer {
-			display: none;
-		}
-	}
 	@media (max-width: 1024px) {
 		footer {
 			display: none;
 		}
 	}
-	@media (max-width: 1250px) {
+	/* @media (max-width: 1250px) {
 		footer {
 			display: none;
 		}
-	}
+	} */
 </style>

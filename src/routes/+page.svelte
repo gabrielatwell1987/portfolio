@@ -32,47 +32,6 @@
 	.biomobile {
 		display: none;
 	}
-	@media (max-width: 480px) {
-		.center {
-			font-size: 0.8rem;
-		}
-		.atwellLogo {
-			display: none;
-		}
-		.biomobile {
-			display: block;
-			text-align: center;
-			padding: 0.8rem;
-			/* margin-left: 42%; */
-		}
-		.mobileatwell {
-			background-color: rgb(88, 88, 88);
-		}
-		.name {
-			margin-left: 1rem;
-		}
-	}
-	@media (max-width: 767px) {
-		.center {
-			font-size: 1rem;
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		}
-		.atwellLogo {
-			display: none;
-		}
-		main {
-			text-align: center;
-			font-size: 1.75rem;
-		}
-		img {
-			border-radius: 50%;
-		}
-		.biomobile {
-			display: block;
-			text-align: center;
-			padding: 0.8rem;
-		}
-	}
 	@media (max-width: 1024px) {
 		main {
 			text-align: center;
@@ -87,11 +46,8 @@
 		.biomobile {
 			display: none;
 		}
-		.atwellLogo {
-			display: block;
-		}
 	}
-	@media (max-width: 1280px) {
+	/* @media (max-width: 1280px) {
 		main {
 			text-align: center;
 		}
@@ -104,8 +60,5 @@
 		.biomobile {
 			display: none;
 		}
-		.atwellLogo {
-			display: block;
-		}
-	}
+	} */
 </style>
