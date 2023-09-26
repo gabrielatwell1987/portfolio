@@ -46,7 +46,7 @@
 		width: 35%;
 		margin-left: 32%;
 	}
-	@media (max-width: 480px) {
+	/* @media (max-width: 480px) {
 		.photos {
 			width: 25%;
 			margin-left: 38%;
@@ -81,5 +81,5 @@
 		.title {
 			font-size: 1.5rem;
 		}
-	}
+	} */
 </style>

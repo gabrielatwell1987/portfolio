@@ -34,7 +34,7 @@
 	}
 	@media (max-width: 480px) {
 		.center {
-			font-size: 1rem;
+			font-size: 0.8rem;
 		}
 		.atwellLogo {
 			display: none;
@@ -68,7 +68,9 @@
 			border-radius: 50%;
 		}
 		.biomobile {
-			display: none;
+			display: block;
+			text-align: center;
+			padding: 0.8rem;
 		}
 	}
 	@media (max-width: 1024px) {
@@ -85,6 +87,9 @@
 		.biomobile {
 			display: none;
 		}
+		.atwellLogo {
+			display: block;
+		}
 	}
 	@media (max-width: 1280px) {
 		main {
@@ -98,6 +103,9 @@
 		}
 		.biomobile {
 			display: none;
+		}
+		.atwellLogo {
+			display: block;
 		}
 	}
 </style>
