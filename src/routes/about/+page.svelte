@@ -91,22 +91,16 @@
 	.skull {
 		margin-bottom: 1.5rem;
 	}
-	@media (max-width: 480px) {
+	@media (max-width: 300px) {
 		.logos {
 			display: none;
 		}
-		.p {
-			padding: 2rem;
-			text-align: center;
-			/* background-color: black;
-			border: 3px solid white;
-			border-radius: 8px;
-			width: 75%;
-			margin-left: 12.5rem; */
-			font-size: 0.8rem;
+		.pagetext {
+			display: none;
 		}
 		.mobilepagetext {
 			/* width: 55%; */
+			font-size: 0.25rem;
 			margin-left: 24%;
 			display: block;
 			padding: 0.8rem;
@@ -115,13 +109,8 @@
 			background-color: transparent;
 			color: white;
 		}
-		h1,
 		.about-title {
 			font-size: 0.8rem;
-			text-align: center;
-		}
-		.p {
-			font-size: 0.4rem;
 			text-align: center;
 		}
 	}
@@ -129,18 +118,12 @@
 		.logos {
 			display: none;
 		}
-		.p {
-			padding: 2rem;
-			text-align: center;
-			/* background-color: black;
-			border: 3px solid white;
-			border-radius: 8px;
-			width: 75%;
-			margin-left: 12.5rem; */
-			font-size: 0.8rem;
+		.pagetext {
+			display: none;
 		}
 		.mobilepagetext {
 			/* width: 55%; */
+			font-size: 0.25rem;
 			margin-left: 24%;
 			display: block;
 			padding: 0.8rem;
@@ -149,13 +132,8 @@
 			background-color: transparent;
 			color: white;
 		}
-		h1,
 		.about-title {
 			font-size: 0.8rem;
-			text-align: center;
-		}
-		.p {
-			font-size: 0.4rem;
 			text-align: center;
 		}
 	}
