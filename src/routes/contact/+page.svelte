@@ -91,7 +91,8 @@
 	}
 	@media (max-width: 1024px) {
 		.contactinfo {
-			display: none;
+			display: block;
+			text-align: center;
 		}
 		.mobilelogo {
 			display: none;
@@ -102,8 +103,7 @@
 			font-size: 1.5rem;
 		}
 		.contactForm {
-			display: block;
-			text-align: center;
+			display: none;
 		}
 	}
 	/* @media (max-width: 1280px) {
