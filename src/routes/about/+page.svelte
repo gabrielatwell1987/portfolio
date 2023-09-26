@@ -95,7 +95,7 @@
 		.logos {
 			display: none;
 		}
-		.pagetext {
+		.p {
 			padding: 2rem;
 			text-align: center;
 			/* background-color: black;
@@ -129,7 +129,7 @@
 		.logos {
 			display: none;
 		}
-		.pagetext {
+		.p {
 			padding: 2rem;
 			text-align: center;
 			/* background-color: black;
