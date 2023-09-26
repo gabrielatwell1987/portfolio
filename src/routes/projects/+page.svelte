@@ -75,7 +75,7 @@
 			font-size: 1.5rem;
 			text-decoration: none;
 			font-weight: 700;
-			color: black;
+			color: lightblue;
 		}
 		a:hover {
 			color: blue;
@@ -89,7 +89,7 @@
 		.links {
 			text-align: center;
 			background-color: transparent;
-			color: black;
+			color: white;
 			border: none;
 			padding: 1rem;
 			display: flex;
