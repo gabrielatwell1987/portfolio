@@ -1,7 +1,6 @@
 <script>
 	import { gsap } from 'gsap/dist/gsap';
 	import { onMount } from 'svelte';
-	import Misfits from '$lib/Misfits.svelte';
 
 	onMount(() => {
 		let tl = gsap.timeline({ defaults: { duration: 2 } });
@@ -84,59 +83,20 @@
 		.title {
 			text-align: center;
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-			font-size: 2rem;
-			color: lightskyblue;
-		}
-		.links {
-			text-align: center;
-			background-color: transparent;
-			color: black;
-			/* border: 3px solid white;
-			border-radius: 8px; */
-			padding: 1.5rem;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			/* width: 25%;
-			margin-left: 37%; */
-		}
-		.laptopLogo {
-			margin-left: 32%;
-		}
-	}
-	/* @media (max-width: 1250px) {
-		a {
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			font-size: 1.5rem;
-			text-decoration: none;
-			font-weight: 700;
-			color: black;
-		}
-		a:hover {
-			color: blue;
-		}
-		.title {
-			text-align: center;
-			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 			font-size: 2.5rem;
 			color: lightskyblue;
 		}
 		.links {
 			text-align: center;
-			background-color: darkgrey;
-			border: 3px solid white;
-			border-radius: 8px;
-			padding: 1.5rem;
+			color: black;
+			padding: 1rem;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			width: 25%;
-			margin-left: 37%;
 		}
 		.laptopLogo {
-			margin-left: 32%;
+			display: none;
 		}
-	} */
+	}
 </style>
