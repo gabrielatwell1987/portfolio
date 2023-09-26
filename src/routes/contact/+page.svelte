@@ -89,7 +89,7 @@
 		font-weight: 700;
 		color: lightskyblue;
 	}
-	@media (max-width: 480px) {
+	@media (max-width: 300px) {
 		.contactinfo {
 			display: block;
 			text-align: center;
@@ -108,7 +108,7 @@
 			display: none;
 		}
 	}
-	@media (max-width: 767px) {
+	@media (max-width: 450px) {
 		.contactinfo {
 			display: block;
 			text-align: center;

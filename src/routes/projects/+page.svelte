@@ -80,7 +80,7 @@
 			margin-left: 3rem;
 		}
 		.links {
-			width: 50%;
+			/* width: 50%; */
 			margin-left: 27%;
 			background-color: transparent;
 			border: none;
@@ -101,7 +101,7 @@
 			margin-left: 3rem;
 		}
 		.links {
-			width: 50%;
+			/* width: 50%; */
 			margin-left: 27%;
 			background-color: transparent;
 			border: none;

@@ -109,9 +109,13 @@
 			color: white;
 		}
 		h1,
-		.p,
 		.about-title {
 			font-size: 0.8rem;
+			text-align: center;
+		}
+		.p {
+			font-size: 0.4rem;
+			text-align: center;
 		}
 	}
 	@media (max-width: 767px) {
@@ -132,9 +136,13 @@
 			color: white;
 		}
 		h1,
-		.p,
 		.about-title {
-			font-size: 1rem;
+			font-size: 0.8rem;
+			text-align: center;
+		}
+		.p {
+			font-size: 0.4rem;
+			text-align: center;
 		}
 	}
 	@media (max-width: 1024px) {
