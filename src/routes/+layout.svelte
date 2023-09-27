@@ -21,7 +21,7 @@
 	<a href="https://www.reddit.com/u/gatwell702">
 		<Reddit />
 	</a>
-	<a href="https://www.discord.com">
+	<a href="https://discordapp.com/users/1007777351809114112">
 		<Discord />
 	</a>
 </footer>
