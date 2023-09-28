@@ -64,10 +64,10 @@
 		justify-content: center;
 		align-items: center;
 		width: 25%;
-		margin-left: 37%;
+		margin: 0 0 0 37%;
 	}
 	.laptopLogo {
-		margin-left: 32%;
+		margin: 0 0 0 32%;
 	}
 	@media (min-width: 1024px), (max-width: 1024px) {
 		a {

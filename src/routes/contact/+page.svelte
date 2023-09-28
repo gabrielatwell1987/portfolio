@@ -60,8 +60,7 @@
 	svg {
 		width: 15%;
 		height: 40%;
-		margin-bottom: 4rem;
-		margin-top: 2rem;
+		margin: 2rem 0 4rem 0;
 	}
 	a {
 		text-decoration: none;
@@ -72,14 +71,14 @@
 	}
 	.contact-text {
 		font-size: 1.5rem;
-		margin-bottom: 0.5rem;
+		margin: 0 0 0.5rem 0;
 		display: none;
 	}
 	.contactinfo {
 		display: none;
 	}
 	.contactForm {
-		margin-top: 2rem;
+		margin: 2rem 0 0 0;
 	}
 	.mobilelogo {
 		display: none;
@@ -96,7 +95,7 @@
 		}
 		.mobilelogo {
 			display: none;
-			margin-left: 26%;
+			margin: 0 0 0 26%;
 			border-radius: 50%;
 		}
 		.contact-text {

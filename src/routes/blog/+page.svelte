@@ -21,7 +21,7 @@
 <style>
 	a {
 		display: block;
-		margin-left: 49%;
+		margin: 0 0 0 49%;
 	}
 	.title {
 		font-family: Verdana, Geneva, Tahoma, sans-serif;

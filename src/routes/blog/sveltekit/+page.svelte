@@ -46,12 +46,11 @@
 		background-color: rgb(49, 49, 49);
 		width: 45%;
 		border: 3px solid white;
-		margin-left: 27%;
-		margin-top: 6rem;
+		margin: 6rem 0 0 27%;
 	}
 	p {
 		text-align: center;
-		margin-bottom: 2rem;
+		margin: 0 0 2rem 0;
 		padding: 0.5em 2em;
 		padding-top: 2.5em;
 	}
@@ -62,8 +61,7 @@
 	}
 	.homelink {
 		display: block;
-		margin-left: 48%;
-		margin-top: 3rem;
+		margin: 3rem 0 0 48%;
 	}
 	a:hover {
 		color: white;
@@ -71,11 +69,10 @@
 	.title {
 		font-size: 1.75rem;
 		font-weight: 800;
-		margin-top: 2rem;
-		margin-bottom: 2rem;
+		margin: 2rem 0 2rem 0;
 		text-align: center;
 	}
 	.sveltekit {
-		margin-left: 48%;
+		margin: 0 0 0 48%;
 	}
 </style>

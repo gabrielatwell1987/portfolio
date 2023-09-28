@@ -75,14 +75,13 @@
 		border: 3px solid white;
 		border-radius: 8px;
 		width: 75%;
-		margin-left: 12.5rem;
+		margin: 0 0 0 12.5rem;
 	}
 	.logos {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-left: 1em;
-		margin-bottom: 1rem;
+		margin: 0 0 1rem 1em;
 	}
 	.p {
 		padding: 2rem;
@@ -91,7 +90,7 @@
 		border-radius: 40%;
 	}
 	.mobileRoses {
-		margin-bottom: 1.5rem;
+		margin: 0 0 1.5rem 0;
 	}
 	@media (max-width: 1024px) {
 		.logos {
@@ -102,7 +101,7 @@
 		}
 		.mobilepagetext {
 			width: 55%;
-			margin-left: 24%;
+			margin: 0 0 0 24%;
 			display: block;
 			padding: 0.8rem;
 			text-align: center;

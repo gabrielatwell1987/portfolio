@@ -46,11 +46,11 @@
 		background-color: rgb(49, 49, 49);
 		width: 45%;
 		border: 3px solid white;
-		margin-left: 27%;
+		margin: 0 0 0 27%;
 	}
 	p {
 		text-align: center;
-		margin-bottom: 2rem;
+		margin-bottom: 0 0 2rem 0;
 		padding: 0.5em 2em;
 		padding-top: 2.5em;
 	}
@@ -64,27 +64,24 @@
 	}
 	.homelink {
 		display: block;
-		margin-left: 48%;
-		margin-top: 3rem;
+		margin: 3rem 0 0 48%;
 	}
 	.title {
 		font-size: 1.75rem;
 		font-weight: 800;
-		margin-top: 2rem;
-		margin-bottom: 2rem;
+		margin: 2rem 0 2rem 0;
 		text-align: center;
 	}
 	.subtitle {
 		font-size: 1rem;
 		font-weight: 600;
-		margin-bottom: 2rem;
+		margin: 0 0 2rem 0;
 		text-align: center;
 	}
 	.greensock {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-top: 5rem;
-		margin-bottom: 3rem;
+		margin: 5rem 0 3rem 0;
 	}
 </style>

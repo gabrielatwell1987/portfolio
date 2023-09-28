@@ -32,7 +32,7 @@
 	.title {
 		font-size: 2.5rem;
 		color: lightskyblue;
-		margin-bottom: 2rem;
+		margin: 0 0 2rem 0;
 	}
 	.photos {
 		background-color: rgb(49, 45, 45);
@@ -44,6 +44,6 @@
 		justify-content: center;
 		align-items: center;
 		width: 35%;
-		margin-left: 32%;
+		margin: 0 0 0 32%;
 	}
 </style>
