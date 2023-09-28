@@ -40,7 +40,7 @@
 	</div>
 	<div class="mobilepagetext nodisplay">
 		<h1 class="about-title">About Me</h1>
-		<img class="skull" src="logo2.png" alt="logo" width="250px" />
+		<img class="mobileRoses" src="roses.png" alt="logo" width="250px" />
 		<p>
 			This is Gabriel Atwell's portfolio. This website is meant to showcase his frontend skills.
 		</p>
@@ -90,7 +90,7 @@
 	.roses {
 		border-radius: 40%;
 	}
-	.skull {
+	.mobileRoses {
 		margin-bottom: 1.5rem;
 	}
 	@media (max-width: 1024px) {
