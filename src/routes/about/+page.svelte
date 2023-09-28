@@ -13,7 +13,9 @@
 
 <main>
 	<div class="logos">
-		<img class="sombrero" src="atwell.png" width="350" alt="Sombrero Logo" />
+		<!-- <img class="dots" src="dots.png" width="350" alt="Dots Logo" />
+		<img class="sombrero" src="atwell.png" width="350" alt="Sombrero Logo" /> -->
+		<img class="roses" src="roses.png" width="350" alt="Roses Logo" />
 	</div>
 
 	<div class="pagetext display">
@@ -85,7 +87,7 @@
 	.p {
 		padding: 2rem;
 	}
-	.sombrero {
+	.roses {
 		border-radius: 40%;
 	}
 	.skull {
