@@ -13,7 +13,7 @@
 
 <main>
 	<div class="logos">
-		<img class="sombrero" src="atwell.png" width="350" alt="" />
+		<img class="sombrero" src="atwell.png" width="350" alt="Sombrero Logo" />
 	</div>
 
 	<div class="pagetext display">

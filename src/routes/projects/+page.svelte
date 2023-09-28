@@ -13,7 +13,7 @@
 <div class="content">
 	<h1 class="title">Websites that I've built</h1>
 
-	<img class="laptopLogo" src="logo4.png" alt="computer" />
+	<img class="laptopLogo" src="logo4.png" alt="Laptop" />
 
 	<div class="links">
 		<a class="linksize" href="https://gabe1.vercel.app" target="_blank">Web Dev Website</a><br />

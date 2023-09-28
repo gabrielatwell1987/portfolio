@@ -14,7 +14,7 @@
 <div class="biomobile">
 	<h1 class="name">Gabriel Atwell</h1>
 	<br />
-	<img class="mobileatwell" src="atwell.png" alt="logo" width="200px" />
+	<img class="mobileatwell" src="atwell.png" alt="Atwell" width="200px" />
 	<br /><br /><br />
 	<p class="center">This is my portfolio website. Please click on a link to learn more!</p>
 </div>
