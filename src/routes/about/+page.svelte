@@ -32,8 +32,8 @@
 			static site to a dynamic site is what Gabriel thinks is really cool.
 		</p>
 		<p class="p">
-			Design is what Gabriel is really good at. Hierarchy, whitespace, colors, typography, scaling,
-			and spacing is what he knows best. He thinks that is the main key for a UI developer.
+			Design is what Gabriel is really good at. Visual hierarchy, whitespace, colors, typography,
+			scaling, and spacing is what he knows best. He thinks that is the main key for a UI developer.
 		</p>
 		<!-- <h3>What is Gabriel's future</h3>
         <p class="a">Gabriel sees a lot of future in web development. Mainly in e-commerce or in building/maintaining actual apps for companies.</p> -->
