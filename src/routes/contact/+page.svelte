@@ -89,20 +89,40 @@
 		color: lightskyblue;
 	}
 	@media (min-width: 380px) {
-		.contactinfo {
-			display: block;
+		main {
 			text-align: center;
 		}
-		.mobilelogo {
-			display: none;
-			margin: 0 0 0 26%;
-			border-radius: 50%;
+		svg {
+			width: 15%;
+			height: 40%;
+			margin: 2rem 0 4rem 0;
+		}
+		a {
+			text-decoration: none;
+			color: rgb(76, 76, 248);
+		}
+		a:hover {
+			color: white;
 		}
 		.contact-text {
 			font-size: 1.5rem;
+			margin: 0 0 0.5rem 0;
+			display: none;
+		}
+		.contactinfo {
+			display: none;
 		}
 		.contactForm {
+			display: block;
+			margin: 2rem 0 0 -15%;
+		}
+		.mobilelogo {
 			display: none;
+		}
+		.here {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: lightskyblue;
 		}
 	}
 	@media (min-width: 1024px) {
