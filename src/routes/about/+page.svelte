@@ -103,9 +103,11 @@
 			display: none;
 		}
 		h1,
-		.p,
 		.about-title {
-			font-size: 1.5rem;
+			font-size: 1rem;
+		}
+		.p {
+			font-size: 0.8rem;
 		}
 		.logos {
 			display: flex;
