@@ -32,10 +32,40 @@
 	.biomobile {
 		display: none;
 	}
-	@media (max-width: 1024px) {
+	@media (min-width: 380px) {
 		main {
 			text-align: center;
 			font-size: 1.75rem;
+		}
+		.center {
+			font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		}
+		img {
+			border-radius: 50%;
+		}
+		.biomobile {
+			display: none;
+		}
+	}
+	@media (min-width: 740px) {
+		main {
+			text-align: center;
+			font-size: 2rem;
+		}
+		.center {
+			font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		}
+		img {
+			border-radius: 50%;
+		}
+		.biomobile {
+			display: none;
+		}
+	}
+	@media (min-width: 990px) {
+		main {
+			text-align: center;
+			font-size: 2.5rem;
 		}
 		.center {
 			font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
