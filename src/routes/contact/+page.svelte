@@ -114,8 +114,8 @@
 		}
 		.contactForm {
 			display: block;
-			/* margin: 2rem 0 0 -40%; */
-			margin: 0 auto;
+			margin: 2rem 0 0 -40%;
+			/* margin: 0 auto; */
 		}
 		.mobilelogo {
 			display: none;
