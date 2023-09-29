@@ -69,7 +69,47 @@
 	.laptopLogo {
 		margin: 0 0 0 32%;
 	}
-	@media (min-width: 1024px), (max-width: 1024px) {
+	@media (min-width: 380px) {
+		a {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			font-size: 1rem;
+			text-decoration: none;
+			font-weight: 700;
+			color: lightblue;
+		}
+		a:hover {
+			color: blue;
+		}
+		.title {
+			text-align: center;
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			font-size: 1.5rem;
+			color: lightskyblue;
+		}
+		.links {
+			text-align: center;
+			background-color: transparent;
+			color: white;
+			border: none;
+			padding: 1rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		.laptopLogo {
+			display: none;
+		}
+		.content {
+			border: 3px solid white;
+			border-radius: 8px;
+			background-color: black;
+			width: 50%;
+			padding: 1rem;
+			margin: 1rem 0 0 32%;
+		}
+	}
+	@media (min-width: 740px) {
 		a {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			font-size: 1.5rem;
@@ -99,6 +139,14 @@
 		}
 		.laptopLogo {
 			display: none;
+		}
+		.content {
+			border: 3px solid white;
+			border-radius: 8px;
+			background-color: black;
+			width: 35%;
+			padding: 2rem;
+			margin: 2rem 0 0 32%;
 		}
 	}
 </style>

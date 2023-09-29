@@ -88,7 +88,7 @@
 		font-weight: 700;
 		color: lightskyblue;
 	}
-	@media (max-width: 1024px) {
+	@media (min-width: 380px) {
 		.contactinfo {
 			display: block;
 			text-align: center;
@@ -105,21 +105,41 @@
 			display: none;
 		}
 	}
-	/* @media (max-width: 1280px) {
-		.contactinfo {
-			display: none;
+	@media (min-width: 1024px) {
+		main {
+			text-align: center;
 		}
-		.mobilelogo {
-			display: none;
-			margin-left: 26%;
-			border-radius: 50%;
+		svg {
+			width: 15%;
+			height: 40%;
+			margin: 2rem 0 4rem 0;
+		}
+		a {
+			text-decoration: none;
+			color: rgb(76, 76, 248);
+		}
+		a:hover {
+			color: white;
 		}
 		.contact-text {
 			font-size: 1.5rem;
+			margin: 0 0 0.5rem 0;
+			display: none;
+		}
+		.contactinfo {
+			display: none;
 		}
 		.contactForm {
 			display: block;
-			text-align: center;
+			margin: 2rem 0 0 0;
 		}
-	} */
+		.mobilelogo {
+			display: none;
+		}
+		.here {
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: lightskyblue;
+		}
+	}
 </style>

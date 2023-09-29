@@ -92,7 +92,51 @@
 	.mobileRoses {
 		margin: 0 0 1.5rem 0;
 	}
-	@media (max-width: 1024px) {
+	@media (min-width: 390px) {
+		.pagetext {
+			display: block;
+			margin: 0 0 0 12%;
+			padding: 2rem;
+			text-align: center;
+		}
+		.mobilepagetext {
+			display: none;
+		}
+		h1,
+		.p,
+		.about-title {
+			font-size: 1.5rem;
+		}
+		.logos {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 0 1rem 1em;
+		}
+	}
+	@media (min-width: 990px) {
+		.logos {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 0 1rem 1em;
+		}
+		.pagetext {
+			display: block;
+			margin: 0 0 0 12%;
+			padding: 2rem;
+			text-align: center;
+		}
+		.mobilepagetext {
+			display: none;
+		}
+		h1,
+		.p,
+		.about-title {
+			font-size: 1.5rem;
+		}
+	}
+	/* @media (max-width: 1024px) {
 		.logos {
 			display: none;
 		}
@@ -102,29 +146,6 @@
 		.mobilepagetext {
 			width: 55%;
 			margin: 0 0 0 24%;
-			display: block;
-			padding: 0.8rem;
-			text-align: center;
-			border: none;
-			background-color: transparent;
-			color: white;
-		}
-		h1,
-		.p,
-		.about-title {
-			font-size: 1.5rem;
-		}
-	}
-	/* @media (max-width: 1250px) {
-		.logos {
-			display: none;
-		}
-		.pagetext {
-			display: none;
-		}
-		.mobilepagetext {
-			width: 55%;
-			margin-left: 24%;
 			display: block;
 			padding: 0.8rem;
 			text-align: center;
