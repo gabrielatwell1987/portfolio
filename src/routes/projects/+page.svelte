@@ -69,10 +69,10 @@
 	.laptopLogo {
 		margin: 0 0 0 32%;
 	}
-	@media (min-width: 380px) {
+	@media (min-width: 350px) {
 		a {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			font-size: 1rem;
+			font-size: 0.75rem;
 			text-decoration: none;
 			font-weight: 700;
 			color: lightblue;
@@ -83,7 +83,7 @@
 		.title {
 			text-align: center;
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-			font-size: 1.5rem;
+			font-size: 1.25rem;
 			color: lightskyblue;
 		}
 		.links {
@@ -106,7 +106,7 @@
 			background-color: black;
 			width: 50%;
 			padding: 1rem;
-			margin: 1rem 0 0 32%;
+			margin: 1rem 0 0 25%;
 		}
 	}
 	@media (min-width: 740px) {

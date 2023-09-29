@@ -88,7 +88,7 @@
 		font-weight: 700;
 		color: lightskyblue;
 	}
-	@media (min-width: 380px) {
+	@media (min-width: 350px) {
 		main {
 			text-align: center;
 		}
@@ -114,7 +114,7 @@
 		}
 		.contactForm {
 			display: block;
-			margin: 2rem 0 0 -15%;
+			margin: 2rem 0 0 -37%;
 		}
 		.mobilelogo {
 			display: none;
