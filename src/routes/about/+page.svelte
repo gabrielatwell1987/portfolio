@@ -92,7 +92,7 @@
 	.mobileRoses {
 		margin: 0 0 1.5rem 0;
 	}
-	@media (min-width: 350px) {
+	@media (min-width: 200px) {
 		.pagetext {
 			display: block;
 			margin: 0 0 0 12%;

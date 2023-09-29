@@ -69,7 +69,7 @@
 	.laptopLogo {
 		margin: 0 0 0 32%;
 	}
-	@media (min-width: 350px) {
+	@media (min-width: 200px) {
 		a {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			font-size: 0.75rem;

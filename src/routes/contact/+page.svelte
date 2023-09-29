@@ -88,7 +88,7 @@
 		font-weight: 700;
 		color: lightskyblue;
 	}
-	@media (min-width: 350px) {
+	@media (min-width: 200px) {
 		main {
 			text-align: center;
 		}

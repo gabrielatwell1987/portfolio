@@ -32,7 +32,7 @@
 	.biomobile {
 		display: none;
 	}
-	@media (min-width: 380px) {
+	@media (min-width: 200px) {
 		main {
 			text-align: center;
 			font-size: 1.75rem;
