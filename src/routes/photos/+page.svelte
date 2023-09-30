@@ -5,10 +5,10 @@
 	onMount(() => {
 		// gsap.fromTo('.main', {opacity: 0}, {opacity: 1, duration: 3})
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
-		tl.to('.a', { borderRadius: '50%', repeat: -1, yoyo: true })
-			.to('.b', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
-			.to('.c', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
-			.to('.d', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
+		tl.to('.gabe', { borderRadius: '50%', repeat: -1, yoyo: true })
+			.to('.gabe2', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
+			.to('.gabe3', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
+			.to('.gabe4', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
 			.fromTo('.photos', { y: 500 }, { y: 0, duration: 1.5 }, '<')
 			.fromTo('.title', { scale: 5 }, { scale: 1, duration: 1.5 }, '<');
 	});
@@ -18,10 +18,10 @@
 	<h2 class="title">Photos</h2>
 
 	<div class="photos">
-		<img class="a" src="gabe.png" alt="Gabriel Atwell" width="250" height="400" /><br /><br />
-		<img class="b" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" /><br /><br />
-		<img class="c" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" /><br /><br />
-		<img class="d" src="gabe4.jpg" alt="Gabriel Atwell" width="350" />
+		<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="250" height="400" /><br /><br />
+		<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" /><br /><br />
+		<img class="gabe3" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" /><br /><br />
+		<img class="gabe4" src="gabe4.jpg" alt="Gabriel Atwell" width="350" />
 	</div>
 </main>
 
