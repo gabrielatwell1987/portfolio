@@ -153,7 +153,8 @@
 		}
 		.contactForm {
 			display: block;
-			margin: 2rem 0 0 0;
+			margin: 2rem 0 0 -24rem;
+			width: 100%;
 		}
 		.mobilelogo {
 			display: none;
