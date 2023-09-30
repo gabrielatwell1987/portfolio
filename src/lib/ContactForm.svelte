@@ -90,4 +90,46 @@
 			margin: 0 25%;
 		}
 	}
+	@media (min-width: 1024px) {
+		form {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			margin: 0 0 0 25%;
+		}
+		label {
+			font-size: 1rem;
+			margin-bottom: 0.5rem;
+			text-align: center;
+		}
+		input {
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+		}
+		textarea {
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+		}
+		button {
+			font-size: 1rem;
+			font-weight: bold;
+			text-align: center;
+			width: 15%;
+			margin-left: 42.5%;
+		}
+		fieldset {
+			border: 3px solid whitesmoke;
+			font-weight: bolder;
+			font-size: 2rem;
+			margin: 2rem;
+			padding: 2rem 5rem;
+			border-radius: 8px;
+		}
+		legend {
+			font-weight: bolder;
+			font-size: 2rem;
+			color: lightskyblue;
+			padding: 0 1rem 0 1rem;
+		}
+	}
 </style>
