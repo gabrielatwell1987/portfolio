@@ -63,4 +63,9 @@
 		color: lightskyblue;
 		padding: 0 1rem 0 1rem;
 	}
+	@media (min-width: 200px) {
+		form {
+			width: 100%;
+		}
+	}
 </style>
