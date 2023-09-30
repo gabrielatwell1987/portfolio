@@ -66,6 +66,7 @@
 	@media (min-width: 200px) {
 		form {
 			width: 100%;
+			margin: 0 0 0 2rem;
 		}
 	}
 </style>
