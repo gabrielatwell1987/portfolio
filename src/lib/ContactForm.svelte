@@ -47,7 +47,7 @@
 	form {
 		display: flex;
 		flex-direction: column;
-		width: 50%;
+		width: 100%;
 		margin-left: 25%;
 		margin-bottom: 2rem;
 	}
