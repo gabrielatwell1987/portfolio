@@ -67,8 +67,7 @@
 		font-size: 1rem;
 		font-weight: bold;
 		text-align: center;
-		width: 15%;
-		margin-left: 42.5%;
+		width: 100%;
 	}
 	fieldset {
 		border: 3px solid whitesmoke;
@@ -88,6 +87,12 @@
 		form {
 			width: 100%;
 			margin: 0 25%;
+		}
+		input {
+			width: 100%;
+		}
+		textarea {
+			width: 100%;
 		}
 	}
 	@media (min-width: 1024px) {
@@ -114,8 +119,7 @@
 			font-size: 1rem;
 			font-weight: bold;
 			text-align: center;
-			width: 15%;
-			margin-left: 42.5%;
+			width: 100%;
 		}
 		fieldset {
 			border: 3px solid whitesmoke;
