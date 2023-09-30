@@ -9,21 +9,14 @@
 	<fieldset>
 		<legend> Contact </legend>
 		<label for="name"><span>Name</span></label>
-		<input
-			type="text"
-			id="name"
-			name="name"
-			placeholder="Enter your name"
-			bind:value={name}
-			required
-		/>
+		<input type="text" id="name" name="name" placeholder="Your name" bind:value={name} required />
 
 		<label for="email"><span>Email</span></label>
 		<input
 			type="email"
 			id="email"
 			name="email"
-			placeholder="Enter your email"
+			placeholder="Your email"
 			bind:value={email}
 			required
 		/>
@@ -33,7 +26,7 @@
 			type="text"
 			id="message"
 			name="message"
-			placeholder="Enter your message"
+			placeholder="Your message"
 			bind:value={message}
 			rows="5"
 			required
