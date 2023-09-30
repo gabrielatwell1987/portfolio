@@ -48,8 +48,7 @@
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		margin-left: 25%;
-		margin-bottom: 2rem;
+		margin-left: 0 0 0 25%;
 	}
 	label {
 		font-size: 1rem;
@@ -88,7 +87,7 @@
 	@media (min-width: 200px) {
 		form {
 			width: 100%;
-			margin: 0 25%;
+			margin: 0 auto;
 		}
 	}
 </style>
