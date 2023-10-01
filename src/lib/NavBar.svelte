@@ -11,8 +11,7 @@
 </script>
 
 <nav>
-	<div class="logoss">
-		<!-- <img src="A.jpg" class="anarchy" alt="A" width="50"> -->
+	<div class="header-logos">
 		<!-- <Logo /> -->
 
 		<svg width="75" height="75" viewBox="0 0 4096.0 4096.0">
@@ -97,7 +96,7 @@
 		height: 5em;
 		width: 100%;
 	}
-	.logoss {
+	.header-logos {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -120,7 +119,7 @@
 			justify-content: center;
 			height: 2em;
 		}
-		.logoss {
+		.header-logos {
 			display: none;
 		}
 		.mobile-view {
