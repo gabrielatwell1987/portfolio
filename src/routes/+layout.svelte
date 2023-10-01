@@ -4,14 +4,6 @@
 	import Discord from '$lib/Discord.svelte';
 	import Reddit from '$lib/Reddit.svelte';
 
-	window.dataLayer = window.dataLayer || [];
-	function gtag() {
-		dataLayer.push(arguments);
-	}
-	gtag('js', new Date());
-
-	gtag('config', 'G-GC79LRK8YG');
-
 	if (typeof window !== 'undefined' && window) {
 		const googleAnalyticsId = 'G-GC79LRK8YG';
 
