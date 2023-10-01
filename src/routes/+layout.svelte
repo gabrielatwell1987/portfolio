@@ -18,7 +18,7 @@
 </script>
 
 <svelte:head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-GC79LRK8YG"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js"></script>
 </svelte:head>
 
 <main class="desktop">
