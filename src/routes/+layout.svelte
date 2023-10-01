@@ -3,7 +3,23 @@
 	import NavBar2 from '$lib/NavBar2.svelte';
 	import Discord from '$lib/Discord.svelte';
 	import Reddit from '$lib/Reddit.svelte';
+
+	if (typeof window !== 'undefined' && window) {
+		const googleAnalyticsId = 'G-GC79LRK8YG';
+
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			window.dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', googleAnalyticsId);
+	}
 </script>
+
+<svelte:head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-GC79LRK8YG"></script>
+</svelte:head>
 
 <main class="desktop">
 	<NavBar />
