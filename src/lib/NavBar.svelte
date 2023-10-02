@@ -134,6 +134,8 @@
 		.mobile-links {
 			display: flex;
 			justify-content: space-evenly;
+		}
+		.mobile-link {
 			font-size: 0.5rem;
 		}
 		svg,
