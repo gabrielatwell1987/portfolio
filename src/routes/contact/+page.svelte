@@ -93,6 +93,7 @@
 			text-align: center;
 		}
 		svg {
+			display: none;
 			width: 15%;
 			height: 40%;
 			margin: 2rem 0 4rem 0;
