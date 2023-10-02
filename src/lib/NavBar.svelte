@@ -129,7 +129,7 @@
 			display: block;
 			justify-content: space-evenly;
 			/* width: 100%; */
-			margin-left: -120%;
+			margin-left: -150%;
 		}
 		.mobile-links {
 			display: flex;
