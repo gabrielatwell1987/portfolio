@@ -125,6 +125,7 @@
 			align-items: center;
 			margin: 0 0 1rem 0.8em;
 			width: 100%;
+			height: 100%;
 		}
 		.pagetext {
 			display: block;
