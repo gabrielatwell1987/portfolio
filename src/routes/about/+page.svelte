@@ -113,6 +113,8 @@
 			justify-content: center;
 			align-items: center;
 			margin: 0 0 1rem 1em;
+			width: 50%;
+			height: 75%;
 		}
 	}
 	@media (min-width: 990px) {
