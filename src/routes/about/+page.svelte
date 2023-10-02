@@ -19,7 +19,7 @@
 	</div>
 
 	<div class="pagetext display">
-		<h1>About Gabriel Atwell</h1>
+		<h1 class="about-title">About Gabriel Atwell</h1>
 		<p class="p">
 			Gabriel Atwell is a self-taught web developer. He started out with the basics: HTML, CSS, and
 			JavaScript. He then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js, and
@@ -101,7 +101,6 @@
 		.mobilepagetext {
 			display: none;
 		}
-		h1,
 		.about-title {
 			font-size: 1rem;
 		}
