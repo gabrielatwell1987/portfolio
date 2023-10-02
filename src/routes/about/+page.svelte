@@ -47,14 +47,14 @@
 </main>
 
 <style>
-	h1 {
+	.about-title {
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
 		color: lightskyblue;
 		font-size: 2.5rem;
 		font-weight: 800;
 		text-align: center;
 	}
-	p {
+	.p {
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 1.2rem;
 	}
@@ -103,6 +103,7 @@
 		}
 		.about-title {
 			font-size: 1rem;
+			margin: 0 0 -1rem 0;
 		}
 		.p {
 			font-size: 0.8rem;
