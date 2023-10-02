@@ -1,4 +1,4 @@
-<svg width="182" height="185" viewBox="0 0 182 185" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- <svg width="182" height="185" viewBox="0 0 182 185" fill="none" xmlns="http://www.w3.org/2000/svg">
 	<path
 		d="M91 185C141.258 185 182 143.586 182 92.5C182 41.4137 141.258 0 91 0C40.7421 0 0 41.4137 0 92.5C0 143.586 40.7421 185 91 185Z"
 		fill="#3468A3"
@@ -15,4 +15,6 @@
 		width: 12%;
 		border-radius: 50%;
 	}
-</style>
+</style> -->
+
+<img src="logo.png" alt="" width="200" />
