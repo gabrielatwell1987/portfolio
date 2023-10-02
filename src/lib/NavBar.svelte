@@ -141,6 +141,14 @@
 		}
 		nav {
 			border-radius: 8px;
+			background-color: #303030;
+			padding: 5px 0;
+			border: 2px solid gray;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			height: 4em;
+			width: 100%;
 		}
 	}
 	@media (min-width: 740px) {
@@ -159,6 +167,16 @@
 		.text {
 			display: none;
 			margin-left: 2vw;
+		}
+		nav {
+			background-color: #303030;
+			padding: 10px 0;
+			border: 2px solid gray;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			height: 5em;
+			width: 100%;
 		}
 	}
 	@media (min-width: 990px) {
