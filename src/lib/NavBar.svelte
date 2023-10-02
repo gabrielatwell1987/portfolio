@@ -134,6 +134,7 @@
 		.mobile-links {
 			display: flex;
 			justify-content: space-evenly;
+			font-size: 0.8rem;
 		}
 		svg,
 		.text {
@@ -155,6 +156,7 @@
 		.desktop-view {
 			display: block;
 			margin-left: -96%;
+			font-size: 1rem;
 		}
 		.mobile-view {
 			/* display: block;
