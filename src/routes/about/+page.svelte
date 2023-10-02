@@ -112,7 +112,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin: 0 0 1rem 1em;
+			margin: 0 0 1rem 2.5em;
 			width: 50%;
 			height: 75%;
 		}
