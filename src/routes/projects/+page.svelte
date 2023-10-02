@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		let tl = gsap.timeline({ defaults: { duration: 2 } });
+		let tl = gsap.timeline({ defaults: { duration: 1 } });
 		tl.fromTo('.laptopLogo', { scale: 0 }, { scale: 1 })
 			.fromTo('.links', { x: 500 }, { x: 0 }, '<')
 			.fromTo('.title', { x: -500 }, { x: 0 }, '<');
