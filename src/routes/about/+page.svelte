@@ -124,6 +124,7 @@
 			justify-content: center;
 			align-items: center;
 			margin: 0 0 1rem 1em;
+			width: 100%;
 		}
 		.pagetext {
 			display: block;
