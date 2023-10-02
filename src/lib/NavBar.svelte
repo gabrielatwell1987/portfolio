@@ -2,6 +2,10 @@
 	import Laptop from '$lib/Laptop.svelte';
 	import Man from '$lib/Man.svelte';
 	import Logo from '$lib/Logo.svelte';
+	import { Hamburger } from 'svelte-hamburgers';
+
+	let open;
+
 	// import {gsap} from 'gsap/dist/gsap';
 	// import {onMount} from 'svelte';
 
@@ -49,10 +53,17 @@
 		<a href="/contact">Contact</a>
 	</div>
 	<div class="mobile-view">
-		<a href="/">Home</a>
+		<!-- <a href="/">Home</a>
 		<a href="/about">About</a>
 		<a href="/projects">Projects</a>
-		<a href="/contact">Contact</a>
+		<a href="/contact">Contact</a> -->
+
+		<div class="mobile-links">
+			<a class="mobile-link" href="/">Home</a>
+			<a class="mobile-link" href="/about">About</a>
+			<a class="mobile-link" href="/projects">Projects</a>
+			<a class="mobile-link" href="/contact">Contact</a>
+		</div>
 	</div>
 </nav>
 
@@ -110,7 +121,42 @@
 		width: 20%;
 		border-radius: 50%;
 	}
-	@media (max-width: 1250px) {
+	@media (min-width: 200px) {
+		.desktop-view {
+			display: none;
+		}
+		.mobile-view {
+			display: block;
+			justify-content: space-evenly;
+			/* width: 100%; */
+			margin-left: -120%;
+		}
+		.mobile-links {
+			display: flex;
+			justify-content: space-evenly;
+		}
+		svg,
+		.text {
+			display: none;
+		}
+	}
+	@media (min-width: 740px) {
+		.desktop-view {
+			display: block;
+		}
+		.mobile-view {
+			/* display: block;
+			justify-content: space-evenly;
+			/* width: 100%; 
+			margin-left: -2rem; */
+			display: none;
+		}
+		svg,
+		.text {
+			display: block;
+		}
+	}
+	/* @media (max-width: 1250px) {
 		nav {
 			background-color: transparent;
 			border: none;
@@ -133,8 +179,8 @@
 		.mobile-view {
 			display: flex;
 			justify-content: space-evenly;
-			/* width: 100%; */
+			/* width: 100%; 
 			margin-left: -2rem;
 		}
-	}
+	} */
 </style>
