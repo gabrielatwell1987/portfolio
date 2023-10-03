@@ -112,7 +112,7 @@
 	@media (min-width: 740px) {
 		a {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			font-size: 1.5rem;
+			font-size: 1rem;
 			text-decoration: none;
 			font-weight: 700;
 			color: lightblue;
