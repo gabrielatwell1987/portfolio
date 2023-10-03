@@ -138,7 +138,8 @@
 		}
 		h1,
 		.about-title {
-			font-size: 2rem;
+			font-size: 2.5rem;
+			margin: 0 0 1rem 0;
 		}
 		.about-text {
 			font-size: 1rem;
