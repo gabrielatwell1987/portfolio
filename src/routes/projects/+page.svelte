@@ -25,7 +25,8 @@
 		<a class="linksize" href="https://github-vert.vercel.app" target="_blank">Github</a><br />
 		<a class="linksize" href="https://appity.vercel.app" target="_blank">Code Snippet</a><br />
 		<a class="linksize" href="https://pokedex.vercel.app" target="_blank">Pokedex</a><br />
-		<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank">Netflix</a><br />
+		<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank">Svelteflix</a><br
+		/>
 		<a class="linksize" href="https://blog-until-you-die.vercel.app" target="_blank"
 			>Blog Until You Die</a
 		>
