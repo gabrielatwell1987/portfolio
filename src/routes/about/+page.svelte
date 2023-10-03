@@ -137,9 +137,11 @@
 			display: none;
 		}
 		h1,
-		.about-text,
 		.about-title {
-			font-size: 1.5rem;
+			font-size: 2rem;
+		}
+		.about-text {
+			font-size: 1rem;
 		}
 	}
 	/* @media (max-width: 1024px) {
