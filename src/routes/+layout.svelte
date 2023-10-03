@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-	<script async src="https://www.googletagmanager.com/gtag/js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-FY0FSHP0GC"></script>
 </svelte:head>
 
 <main class="desktop">
@@ -60,9 +60,4 @@
 			display: none;
 		}
 	}
-	/* @media (max-width: 1250px) {
-		footer {
-			display: none;
-		}
-	} */
 </style>
