@@ -20,22 +20,24 @@
 
 	<div class="pagetext display">
 		<h1 class="about-title">About Gabriel Atwell</h1>
-		<p class="p">
-			Gabriel Atwell is a self-taught web developer. He started out with the basics: HTML, CSS, and
-			JavaScript. He then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js, and
-			GSAP. He has begun to teach himself the backend of web development on his spare time, but is a
-			complete frontend developer.
-		</p>
-		<p class="p">
-			The path that Gabriel has chosen is the frontend path, one of his main interests with the
-			frontend path is animations, especially animations on the web. Turning a website from being a
-			static site to a dynamic site is what Gabriel thinks is really cool.
-		</p>
-		<p class="p">
-			A clean, crisp design is what Gabriel excels at. Visual hierarchy, whitespace, colors,
-			typography, scaling, and spacing is what he knows best. He thinks that is the main key for a
-			UI developer.
-		</p>
+		<div class="about-text">
+			<p>
+				Gabriel Atwell is a self-taught web developer. He started out with the basics: HTML, CSS,
+				and JavaScript. He then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js,
+				and GSAP. He has begun to teach himself the backend of web development on his spare time,
+				but is a complete frontend developer.
+			</p>
+			<p>
+				The path that Gabriel has chosen is the frontend path, one of his main interests with the
+				frontend path is animations, especially animations on the web. Turning a website from being
+				a static site to a dynamic site is what Gabriel thinks is really cool.
+			</p>
+			<p>
+				A clean, crisp design is what Gabriel excels at. Visual hierarchy, whitespace, colors,
+				typography, scaling, and spacing is what he knows best. He thinks that is the main key for a
+				UI developer.
+			</p>
+		</div>
 	</div>
 	<div class="mobilepagetext nodisplay">
 		<h1 class="about-title">About Me</h1>
@@ -53,10 +55,11 @@
 		font-size: 2.5rem;
 		font-weight: 800;
 		text-align: center;
+		padding: 2rem;
 	}
-	.p {
+	.about-text {
 		font-family: Arial, Helvetica, sans-serif;
-		font-size: 1.2rem;
+		font-size: 1rem;
 	}
 	.nodisplay {
 		display: none;
@@ -82,9 +85,6 @@
 		align-items: center;
 		margin: 0 0 1rem 1em;
 	}
-	.p {
-		padding: 2rem;
-	}
 	.roses {
 		border-radius: 40%;
 	}
@@ -105,7 +105,7 @@
 			font-size: 1rem;
 			margin: 0 0 -1rem 0;
 		}
-		.p {
+		.about-text {
 			font-size: 0.8rem;
 			margin: 0 0 -1rem 0;
 		}
@@ -137,7 +137,7 @@
 			display: none;
 		}
 		h1,
-		.p,
+		.about-text,
 		.about-title {
 			font-size: 1.5rem;
 		}
