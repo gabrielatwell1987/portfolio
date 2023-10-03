@@ -16,20 +16,16 @@
 	<img class="laptopLogo" src="logo4.png" alt="Laptop" />
 
 	<div class="links">
-		<a class="linksize" href="https://gabe1.vercel.app" target="_blank">Web Dev Website</a><br />
-		<a class="linksize" href="https://gabe2.vercel.app" target="_blank">Horizontal Scroller</a><br
-		/>
+		<a class="linksize" href="https://gabe1.vercel.app" target="_blank">Web Dev</a><br />
+		<a class="linksize" href="https://gabe2.vercel.app" target="_blank">Scroller</a><br />
 		<a class="linksize" href="https://gabe3.vercel.app" target="_blank">Random User</a><br />
-		<a class="linksize" href="https://gabe4.vercel.app" target="_blank">Starbucks Clone</a><br />
-		<a class="linksize" href="https://formapp-three.vercel.app" target="_blank">Form Application</a
-		><br />
-		<a class="linksize" href="https://kindler.vercel.app" target="_blank">CRUD-type Application</a
-		><br />
-		<a class="linksize" href="https://github-vert.vercel.app" target="_blank">Github API</a><br />
+		<a class="linksize" href="https://gabe4.vercel.app" target="_blank">Starbucks</a><br />
+		<a class="linksize" href="https://formapp-three.vercel.app" target="_blank">Form</a><br />
+		<a class="linksize" href="https://kindler.vercel.app" target="_blank">CRUD</a><br />
+		<a class="linksize" href="https://github-vert.vercel.app" target="_blank">Github</a><br />
 		<a class="linksize" href="https://appity.vercel.app" target="_blank">Code Snippet</a><br />
 		<a class="linksize" href="https://pokedex.vercel.app" target="_blank">Pokedex</a><br />
-		<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank">Netflix Clone</a
-		><br />
+		<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank">Netflix</a><br />
 		<a class="linksize" href="https://blog-until-you-die.vercel.app" target="_blank"
 			>Blog Until You Die</a
 		>
