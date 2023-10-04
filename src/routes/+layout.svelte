@@ -3,25 +3,10 @@
 	import NavBar2 from '$lib/NavBar2.svelte';
 	import Discord from '$lib/Discord.svelte';
 	import Reddit from '$lib/Reddit.svelte';
-
-	try {
-		if (typeof window !== 'undefined' && window) {
-			const googleAnalyticsId = 'G-FY0FSHP0GC';
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				window.dataLayer.push(arguments);
-			}
-			gtag('js', new Date());
-			gtag('config', googleAnalyticsId);
-		}
-	} catch (error) {
-		console.error('Failed to initialize Analytics');
-	}
+	import Analytics from '$lib/Analytics.svelte';
 </script>
 
-<svelte:head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-FY0FSHP0GC"></script>
-</svelte:head>
+<Analytics />
 
 <main class="desktop">
 	<NavBar />
