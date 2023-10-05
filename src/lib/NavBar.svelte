@@ -45,12 +45,12 @@
 	</div>
 
 	<div class="desktop-view">
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-		<a href="/photos">Photos</a>
-		<a href="/projects">Projects</a>
-		<a href="/blog">Blog</a>
-		<a href="/contact">Contact</a>
+		<a href="/"><i class="fa-solid fa-house-crack" /> Home</a>
+		<a href="/about"><i class="fa-regular fa-address-card" /> About</a>
+		<a href="/photos"><i class="fa-solid fa-image" /> Photos</a>
+		<a href="/projects"><i class="fa-solid fa-list-check" /> Projects</a>
+		<a href="/blog"><i class="fa-solid fa-blog" /> Blog</a>
+		<a href="/contact"><i class="fa-regular fa-address-book" /> Contact</a>
 	</div>
 	<div class="mobile-view">
 		<!-- <a href="/">Home</a>
@@ -120,6 +120,9 @@
 		margin-left: -75%;
 		width: 20%;
 		border-radius: 50%;
+	}
+	i {
+		margin: 0 0.5rem 0 0;
 	}
 	@media (min-width: 200px) {
 		.desktop-view {

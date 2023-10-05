@@ -37,6 +37,7 @@
 				typography, scaling, and spacing is what he knows best. He thinks that is the main key for a
 				UI developer.
 			</p>
+			<i class="fa-regular fa-address-card" />
 		</div>
 	</div>
 	<div class="mobilepagetext nodisplay">
@@ -90,6 +91,12 @@
 	}
 	.mobileRoses {
 		margin: 0 0 1.5rem 0;
+	}
+	i {
+		font-size: 5em;
+		display: flex;
+		justify-content: center;
+		text-align: center;
 	}
 	@media (min-width: 200px) {
 		.pagetext {
