@@ -40,7 +40,7 @@
 	.mobile {
 		display: none;
 	}
-	@media (max-width: 1024px) {
+	@media (max-width: 1650px) {
 		footer {
 			display: none;
 		}
