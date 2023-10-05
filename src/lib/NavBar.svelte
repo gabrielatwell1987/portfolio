@@ -187,7 +187,7 @@
 		h2 {
 			text-align: center;
 			font-family: 'Courier New', Courier, monospace;
-			font-size: 1.5rem;
+			font-size: 2rem;
 			color: lightskyblue;
 			margin-top: 0.5rem;
 			padding-top: 2rem;
@@ -196,7 +196,7 @@
 		a {
 			/* margin: 0 10px; */
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			font-size: 0.9rem;
+			font-size: 1rem;
 			text-decoration: none;
 			font-weight: 900;
 			color: lightskyblue;
