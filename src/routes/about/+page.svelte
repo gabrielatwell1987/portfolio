@@ -52,7 +52,7 @@
 <style>
 	.about-title {
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
-		color: lightskyblue;
+		color: var(--sky);
 		font-size: 2.5rem;
 		font-weight: 800;
 		text-align: center;
@@ -74,8 +74,8 @@
 	.pagetext {
 		padding: 2rem;
 		text-align: center;
-		background-color: black;
-		border: 3px solid white;
+		background-color: var(--black);
+		border: 3px solid var(--white);
 		border-radius: 8px;
 		width: 75%;
 		margin: 0 0 0 12.5rem;

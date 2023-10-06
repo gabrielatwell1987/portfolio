@@ -31,12 +31,12 @@
 	}
 	.title {
 		font-size: 2.5rem;
-		color: lightskyblue;
+		color: var(--sky);
 		margin: 0 0 2rem 0;
 	}
 	.photos {
-		background-color: rgb(49, 45, 45);
-		border: 3px solid white;
+		background-color: var(--lightblack);
+		border: 3px solid var(--white);
 		border-radius: 8px;
 		padding: 1.5rem;
 		display: flex;

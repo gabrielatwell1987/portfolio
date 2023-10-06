@@ -43,9 +43,9 @@
 
 <style>
 	main {
-		background-color: rgb(49, 49, 49);
+		background-color: var(--lightblack);
 		width: 45%;
-		border: 3px solid white;
+		border: 3px solid var(--white);
 		margin: 6rem 0 0 27%;
 	}
 	p {
@@ -57,14 +57,14 @@
 	a {
 		text-decoration: none;
 		font-size: 1.5rem;
-		color: lightskyblue;
+		color: var(--sky);
 	}
 	.homelink {
 		display: block;
 		margin: 3rem 0 0 48%;
 	}
 	a:hover {
-		color: white;
+		color: var(--white);
 	}
 	.title {
 		font-size: 1.75rem;

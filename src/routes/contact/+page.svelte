@@ -64,10 +64,10 @@
 	}
 	a {
 		text-decoration: none;
-		color: rgb(76, 76, 248);
+		color: var(--purple);
 	}
 	a:hover {
-		color: white;
+		color: var(--white);
 	}
 	.contact-text {
 		font-size: 1.5rem;
@@ -86,7 +86,7 @@
 	.here {
 		font-size: 1.5rem;
 		font-weight: 700;
-		color: lightskyblue;
+		color: var(--sky);
 	}
 	@media (min-width: 200px) {
 		main {
@@ -100,10 +100,10 @@
 		}
 		a {
 			text-decoration: none;
-			color: rgb(76, 76, 248);
+			color: var(--purple);
 		}
 		a:hover {
-			color: white;
+			color: var(--white);
 		}
 		.contact-text {
 			font-size: 1.5rem;
@@ -125,7 +125,7 @@
 		.here {
 			font-size: 1.5rem;
 			font-weight: 700;
-			color: lightskyblue;
+			color: var(--sky);
 		}
 	}
 	@media (min-width: 1024px) {
@@ -139,10 +139,10 @@
 		}
 		a {
 			text-decoration: none;
-			color: rgb(76, 76, 248);
+			color: var(--purple);
 		}
 		a:hover {
-			color: white;
+			color: var(--white);
 		}
 		.contact-text {
 			font-size: 1.5rem;
@@ -163,7 +163,7 @@
 		.here {
 			font-size: 1.5rem;
 			font-weight: 700;
-			color: lightskyblue;
+			color: var(--sky);
 		}
 	}
 </style>

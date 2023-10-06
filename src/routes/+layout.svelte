@@ -4,6 +4,7 @@
 	import Discord from '$lib/Discord.svelte';
 	import Reddit from '$lib/Reddit.svelte';
 	import Analytics from '$lib/Analytics.svelte';
+	import '../app.css';
 </script>
 
 <Analytics />
@@ -32,10 +33,10 @@
 <style>
 	a {
 		text-decoration: none;
-		color: lightskyblue;
+		color: var(--sky);
 	}
 	a:hover {
-		color: blue;
+		color: var(--blue);
 	}
 	.mobile {
 		display: none;

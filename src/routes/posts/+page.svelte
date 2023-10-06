@@ -18,7 +18,7 @@
 	}
 	.title {
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
-		color: lightskyblue;
+		color: var(--sky);
 		font-size: 2.5rem;
 		font-weight: 800;
 		text-align: center;

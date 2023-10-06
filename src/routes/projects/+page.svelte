@@ -39,21 +39,21 @@
 		font-size: 1rem;
 		text-decoration: none;
 		font-weight: 700;
-		color: black;
+		color: var(--black);
 	}
 	a:hover {
-		color: blue;
+		color: var(--blue);
 	}
 	.title {
 		text-align: center;
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		font-size: 2.5rem;
-		color: lightskyblue;
+		color: var(--sky);
 	}
 	.links {
 		text-align: center;
-		background-color: darkgrey;
-		border: 3px solid white;
+		background-color: var(--darkgrey);
+		border: 3px solid var(--white);
 		border-radius: 8px;
 		padding: 1.5rem;
 		display: flex;
@@ -72,21 +72,21 @@
 			font-size: 0.75rem;
 			text-decoration: none;
 			font-weight: 700;
-			color: lightblue;
+			color: var(--sky);
 		}
 		a:hover {
-			color: blue;
+			color: var(--blue);
 		}
 		.title {
 			text-align: center;
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 			font-size: 1.25rem;
-			color: lightskyblue;
+			color: var(--sky);
 		}
 		.links {
 			text-align: center;
 			background-color: transparent;
-			color: white;
+			color: var(--white);
 			border: none;
 			padding: 1rem;
 			display: flex;
@@ -98,9 +98,9 @@
 			display: none;
 		}
 		.content {
-			border: 3px solid white;
+			border: 3px solid var(--white);
 			border-radius: 8px;
-			background-color: black;
+			background-color: var(--black);
 			width: 50%;
 			padding: 1rem;
 			margin: 1rem 0 0 25%;
@@ -112,21 +112,21 @@
 			font-size: 1rem;
 			text-decoration: none;
 			font-weight: 700;
-			color: lightblue;
+			color: var(--sky);
 		}
 		a:hover {
-			color: blue;
+			color: var(--blue);
 		}
 		.title {
 			text-align: center;
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 			font-size: 2.5rem;
-			color: lightskyblue;
+			color: var(--sky);
 		}
 		.links {
 			text-align: center;
 			background-color: transparent;
-			color: white;
+			color: var(--white);
 			border: none;
 			padding: 1rem;
 			display: flex;
@@ -138,9 +138,9 @@
 			display: none;
 		}
 		.content {
-			border: 3px solid white;
+			border: 3px solid var(--white);
 			border-radius: 8px;
-			background-color: black;
+			background-color: var(--black);
 			width: 35%;
 			padding: 2rem;
 			margin: 2rem 0 0 32%;
