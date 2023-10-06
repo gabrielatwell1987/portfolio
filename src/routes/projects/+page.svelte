@@ -3,17 +3,13 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		let tl = gsap.timeline({ defaults: { duration: 1 } });
-		tl.fromTo('.laptopLogo', { scale: 0 }, { scale: 1 })
-			.fromTo('.links', { x: 500 }, { x: 0 }, '<')
-			.fromTo('.title', { x: -500 }, { x: 0 }, '<');
+		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
+		tl.fromTo('.content', { scale: 0 }, { scale: 1 });
 	});
 </script>
 
 <div class="content">
 	<h1 class="title">Websites that I've built</h1>
-
-	<img class="laptopLogo" src="logo4.png" alt="Laptop" />
 
 	<div class="links">
 		<a class="linksize" href="https://gabe1.vercel.app" target="_blank">Web Dev</a><br />
@@ -63,9 +59,6 @@
 		width: 25%;
 		margin: 0 0 0 37%;
 	}
-	.laptopLogo {
-		margin: 0 0 0 32%;
-	}
 	@media (min-width: 200px) {
 		a {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -93,9 +86,6 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-		}
-		.laptopLogo {
-			display: none;
 		}
 		.content {
 			border: 3px solid var(--white);
@@ -133,9 +123,6 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-		}
-		.laptopLogo {
-			display: none;
 		}
 		.content {
 			border: 3px solid var(--white);

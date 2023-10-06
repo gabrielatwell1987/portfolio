@@ -1,10 +1,16 @@
 <script>
+	import { gsap } from 'gsap';
+	import { onMount } from 'svelte';
 	let name = '';
 	let email = '';
 	let message = '';
+
+	onMount(() => {
+		gsap.fromTo('.form', { y: 300 }, { y: 0, duration: 1.5 });
+	});
 </script>
 
-<form method="POST" action="https://formsubmit.co/gatwell702@gmail.com">
+<form class="form" method="POST" action="https://formsubmit.co/gatwell702@gmail.com">
 	<input type="hidden" name="send_to" value="gatwell702@gmail.com" />
 	<fieldset>
 		<legend> Contact </legend>

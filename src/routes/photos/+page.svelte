@@ -4,13 +4,13 @@
 
 	onMount(() => {
 		// gsap.fromTo('.main', {opacity: 0}, {opacity: 1, duration: 3})
-		let tl = gsap.timeline({ defaults: { duration: 3 } });
+		let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 		tl.to('.gabe', { borderRadius: '50%', repeat: -1, yoyo: true })
 			.to('.gabe2', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
 			.to('.gabe3', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
 			.to('.gabe4', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
-			.fromTo('.photos', { y: 500 }, { y: 0, duration: 1.5 }, '<')
-			.fromTo('.title', { scale: 5 }, { scale: 1, duration: 1.5 }, '<');
+			.fromTo('.photos', { y: 500 }, { y: 0 }, '<')
+			.fromTo('.title', { x: -1000 }, { x: 0 }, '<-=0.5>');
 	});
 </script>
 

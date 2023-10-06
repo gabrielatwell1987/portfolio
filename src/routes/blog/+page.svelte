@@ -5,20 +5,21 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.fromTo('.title', { opacity: 0, x: 1000 }, { opacity: 1, x: 0, duration: 3 });
-		gsap.fromTo('.stackLinks, .icon', { scale: 3.5 }, { scale: 1, duration: 3 });
+		gsap.fromTo('.title', { x: -1000 }, { x: 0, duration: 2 });
+		// gsap.fromTo('.stackLinks, .icon', { scale: 3.5 }, { scale: 1, duration: 3 });
 	});
 </script>
 
 <main>
-	<h1 class="title">The tech stack I use</h1>
-	<br /><br />
+	<h1 class="title">Tech Stack</h1>
+	<!-- <br /><br />
 	<i class="fa-solid fa-blog icon" />
-	<br />
+	<br /> -->
 	<div class="stackLinks">
 		<a href="blog/greensock"><GsapIcon /></a>
 		<a href="blog/sveltekit"><Svelte /></a>
 	</div>
+	<br /><br />
 </main>
 
 <style>
@@ -31,12 +32,6 @@
 		color: var(--sky);
 		font-size: 2.5rem;
 		font-weight: 800;
-		text-align: center;
-	}
-	i {
-		font-size: 5em;
-		display: flex;
-		justify-content: center;
 		text-align: center;
 	}
 </style>
