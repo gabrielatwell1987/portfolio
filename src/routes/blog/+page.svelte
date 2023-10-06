@@ -5,7 +5,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.fromTo('.title', { x: -1000 }, { x: 0, duration: 2 });
+		gsap.fromTo('.title', { x: 1000 }, { x: 0, duration: 2 });
 		// gsap.fromTo('.stackLinks, .icon', { scale: 3.5 }, { scale: 1, duration: 3 });
 	});
 </script>
