@@ -1,5 +1,4 @@
 <script>
-	import Exclamation from '$lib/Exclamation.svelte';
 	import { gsap } from 'gsap/dist/gsap';
 	import { onMount } from 'svelte';
 
