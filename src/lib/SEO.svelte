@@ -11,12 +11,12 @@
 	<title>{title}</title>
 	<meta name="description" content={description} />
 	<script type="application/ld+json">
-{
-		"@context": "http://schema.org",
-		"@type": "WebSite",
-		  "name": "${title}",
-          "description": "${description}",
-		  "url": "${url}",
+		{
+			"@context": "http://schema.org",
+			"@type": "WebSite",
+		  	"name": "${title}",
+          	"description": "${description}",
+		  	"url": "${url}"
 		}
 	</script>
 </svelte:head>
