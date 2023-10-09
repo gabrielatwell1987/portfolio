@@ -4,14 +4,12 @@
 	import Discord from '$lib/Discord.svelte';
 	import Reddit from '$lib/Reddit.svelte';
 	import Analytics from '$lib/Analytics.svelte';
+	import SEO from '$lib/SEO.svelte';
 	import '../app.css';
 </script>
 
-<svelte:head>
-	<title>©️ Gabriel Atwell</title>
-</svelte:head>
-
 <Analytics />
+<SEO title="©️ Gabriel Atwell" description="Gabriel Atwell's Portfolio" />
 
 <main class="desktop">
 	<NavBar />
