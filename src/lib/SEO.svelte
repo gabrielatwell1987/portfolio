@@ -14,9 +14,9 @@
 {
 		"@context": "http://schema.org",
 		"@type": "WebSite",
-		  "name": "©️ Gabriel Atwell",
-          "description": "Gabriel Atwell's Portfolio",
-		  "url": "https://gabrielatwell.vercel.app",
+		  "name": "${title}",
+          "description": "${description}",
+		  "url": "${url}",
 		}
 	</script>
 </svelte:head>
