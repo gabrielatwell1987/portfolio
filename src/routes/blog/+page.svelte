@@ -6,8 +6,8 @@
 
 	onMount(() => {
 		gsap.set('.title', { x: 1000 });
+
 		gsap.to('.title', { x: 0, duration: 2 });
-		// gsap.fromTo('.title', { x: 1000 }, { x: 0, duration: 2 });
 	});
 </script>
 
