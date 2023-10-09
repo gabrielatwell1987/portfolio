@@ -74,6 +74,7 @@
 		font-weight: 800;
 		margin: 2rem 0 2rem 0;
 		text-align: center;
+		color: var(--sky);
 	}
 	.sveltekit {
 		margin: 0 0 0 48%;

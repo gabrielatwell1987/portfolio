@@ -70,6 +70,7 @@
 		font-weight: 800;
 		margin: 2rem 0 2rem 0;
 		text-align: center;
+		color: var(--sky);
 	}
 	.subtitle {
 		font-size: 1rem;

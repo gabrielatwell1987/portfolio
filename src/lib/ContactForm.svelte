@@ -82,7 +82,7 @@
 	legend {
 		font-weight: bolder;
 		font-size: 2rem;
-		color: lightskyblue;
+		color: var(--crimson);
 		padding: 0 1rem 0 1rem;
 	}
 	@media (min-width: 200px) {
@@ -134,7 +134,7 @@
 		legend {
 			font-weight: bolder;
 			font-size: 2rem;
-			color: lightskyblue;
+			color: var(--crimson);
 			padding: 0 1rem 0 1rem;
 		}
 	}

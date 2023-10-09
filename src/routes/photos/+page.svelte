@@ -33,7 +33,7 @@
 	}
 	.title {
 		font-size: 2.5rem;
-		color: var(--sky);
+		color: var(--white);
 		margin: 0 0 2rem 0;
 	}
 	.photos {

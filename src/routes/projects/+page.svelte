@@ -46,7 +46,7 @@
 		text-align: center;
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		font-size: 2.5rem;
-		color: var(--sky);
+		color: var(--white);
 	}
 	.links {
 		text-align: center;
@@ -76,7 +76,7 @@
 			text-align: center;
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 			font-size: 1.25rem;
-			color: var(--sky);
+			color: var(--white);
 		}
 		.links {
 			text-align: center;
@@ -113,7 +113,7 @@
 			text-align: center;
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 			font-size: 2.5rem;
-			color: var(--sky);
+			color: var(--white);
 		}
 		.links {
 			text-align: center;

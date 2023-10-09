@@ -30,7 +30,7 @@
 	}
 	.title {
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
-		color: var(--sky);
+		color: var(--white);
 		font-size: 2.5rem;
 		font-weight: 800;
 		text-align: center;
