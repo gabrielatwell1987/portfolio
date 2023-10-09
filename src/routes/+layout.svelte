@@ -7,6 +7,10 @@
 	import '../app.css';
 </script>
 
+<svelte:head>
+	<title>©️ Gabriel Atwell</title>
+</svelte:head>
+
 <Analytics />
 
 <main class="desktop">
