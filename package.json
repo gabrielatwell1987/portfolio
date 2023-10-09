@@ -34,7 +34,6 @@
 		"gsap": "^3.12.2",
 		"lucide-svelte": "^0.284.0",
 		"open-props": "^1.6.4",
-		"scrolltrigger": "^1.0.1",
 		"svelte-forms-lib": "^2.0.1",
 		"yup": "^1.2.0"
 	}

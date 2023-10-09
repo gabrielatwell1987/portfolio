@@ -7,7 +7,8 @@
 	let message = '';
 
 	onMount(() => {
-		gsap.fromTo('.form', { y: 300 }, { y: 0, duration: 1.5 });
+		gsap.set('.form', { y: 300 });
+		gsap.to('.form', { y: 0, duration: 1.5 });
 	});
 </script>
 

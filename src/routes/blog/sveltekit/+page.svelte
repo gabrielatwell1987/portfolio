@@ -4,15 +4,18 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		gsap.set('.sveltekit', { y: -500 });
+		gsap.set('.sk-main', { y: 1000 });
+
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.fromTo('.sveltekit', { y: -500 }, { y: 0, ease: 'back.out' })
+		tl.to('.sveltekit', { y: 0, ease: 'back.out' })
 			.to('.sveltekit', {
 				scale: 2,
 				x: 473,
 				y: 30
 			})
-			.fromTo('.sk-main', { y: 1000 }, { y: 0 }, '-=4');
+			.to('.sk-main', { y: 0 }, '-=4');
 	});
 </script>
 

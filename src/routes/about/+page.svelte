@@ -3,17 +3,16 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		gsap.set('.logos', { y: -500 });
+		gsap.set('.pagetext', { y: 1000 });
+
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
-		tl.fromTo('.logos', { y: -500 }, { y: 0, ease: 'power2.out' })
-			.fromTo('.pagetext', { y: 1000 }, { y: 0, ease: 'expo.out' }, '<')
-			.fromTo('.mobilepagetext', { y: -500 }, { y: 0 }, '<');
+		tl.to('.logos', { y: 0, ease: 'power2.out' }).to('.pagetext', { y: 0, ease: 'expo.out' }, '<');
 	});
 </script>
 
 <main>
 	<div class="logos">
-		<!-- <img class="dots" src="dots.png" width="350" alt="Dots Logo" />
-		<img class="sombrero" src="atwell.png" width="350" alt="Sombrero Logo" /> -->
 		<img class="roses" src="roses.png" width="350" alt="Roses Logo" />
 	</div>
 

@@ -3,8 +3,10 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		gsap.set('.content', { scale: 0 });
+
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
-		tl.fromTo('.content', { scale: 0 }, { scale: 1 });
+		tl.to('.content', { scale: 1 });
 	});
 </script>
 
