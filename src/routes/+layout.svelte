@@ -32,7 +32,7 @@
 			<Discord />
 		</a>
 	</div>
-	<h4>©️ 2023 Gabriel Atwell</h4>
+	<h5>©️ 2023 Gabriel Atwell</h5>
 </footer>
 
 <style>
@@ -46,7 +46,7 @@
 	.mobile {
 		display: none;
 	}
-	h4 {
+	h5 {
 		text-align: center;
 		margin: 1rem 0 0 0;
 	}
