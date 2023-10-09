@@ -24,12 +24,15 @@
 </main>
 
 <footer>
-	<a href="https://www.reddit.com/u/gatwell702">
-		<Reddit />
-	</a>
-	<a href="https://discordapp.com/users/1007777351809114112">
-		<Discord />
-	</a>
+	<div class="linkIcons">
+		<a class="reddit" href="https://www.reddit.com/u/gatwell702">
+			<Reddit />
+		</a>
+		<a href="https://discordapp.com/users/1007777351809114112">
+			<Discord />
+		</a>
+	</div>
+	<h4>©️ 2023 Gabriel Atwell</h4>
 </footer>
 
 <style>
@@ -43,8 +46,15 @@
 	.mobile {
 		display: none;
 	}
+	h4 {
+		text-align: center;
+		margin: 1rem 0 0 0;
+	}
+	.reddit {
+		margin: 0 2rem 0 0;
+	}
 	@media (max-width: 1650px) {
-		footer {
+		.linkIcons {
 			display: none;
 		}
 	}
