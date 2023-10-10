@@ -1,13 +1,17 @@
 <script>
 	import { gsap } from 'gsap/dist/gsap';
 	import { onMount } from 'svelte';
+	import Exclamation from '$lib/Exclamation.svelte';
 
 	onMount(() => {
 		gsap.set('.logos', { y: -500 });
 		gsap.set('.pagetext', { y: 1000 });
+		gsap.set('.about-text', { x: 10000 });
 
-		let tl = gsap.timeline({ defaults: { duration: 3 } });
-		tl.to('.logos', { y: 0, ease: 'power2.out' }).to('.pagetext', { y: 0, ease: 'expo.out' }, '<');
+		let tl = gsap.timeline({ defaults: { duration: 2 } });
+		tl.to('.logos', { y: 0, ease: 'power2.out' })
+			.to('.pagetext', { y: 0, ease: 'expo.out' }, '<')
+			.to('.about-text', { x: 0 });
 	});
 </script>
 
@@ -39,6 +43,9 @@
 				<a href="https://www.github.com/gabrielatwell1987/portfolio">Here</a> is the GitHub repo for
 				this site.
 			</p>
+			<div class="exclamation">
+				<Exclamation />
+			</div>
 		</div>
 	</div>
 	<div class="mobilepagetext nodisplay">
@@ -92,6 +99,9 @@
 	}
 	.mobileRoses {
 		margin: 0 0 1.5rem 0;
+	}
+	.exclamation {
+		margin: 0 0 0 -63%;
 	}
 	@media (min-width: 200px) {
 		.pagetext {
