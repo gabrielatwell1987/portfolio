@@ -21,7 +21,7 @@
 	</div>
 
 	<div class="pagetext display">
-		<h1 class="about-title">About Gabriel Atwell</h1>
+		<h1 class="about-title">ABOUT ME</h1>
 		<div class="about-text">
 			<p>
 				Gabriel Atwell is a self-taught web developer. He started out with the basics: HTML, CSS,

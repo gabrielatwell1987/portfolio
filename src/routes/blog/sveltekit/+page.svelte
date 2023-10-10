@@ -24,7 +24,7 @@
 </div>
 
 <main class="sk-main">
-	<h1 class="title">Sveltekit</h1>
+	<h1 class="title">SvelteKit</h1>
 	<p>
 		I used sveltekit to create this portfolio website. I decided to go with sveltekit because of the
 		server-side rendering (SRR) and all of the SEO features, as well as the speed of everything. The

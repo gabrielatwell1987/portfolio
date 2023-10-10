@@ -18,7 +18,7 @@
 </div>
 
 <main class="gs-main">
-	<h1 class="title">Greensock Animation Platform</h1>
+	<h1 class="title">GSAP</h1>
 	<h2 class="subtitle">GSAP</h2>
 	<p>
 		I really enjoy Greensock Animation Platform. I really like animating the websites that I've

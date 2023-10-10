@@ -12,7 +12,7 @@
 </script>
 
 <div class="content">
-	<h1 class="title">Websites that I've built</h1>
+	<h1 class="title">PROJECTS I MADE</h1>
 
 	<div class="links">
 		<a class="linksize" href="https://gabe1.vercel.app" target="_blank">Web Dev</a><br />

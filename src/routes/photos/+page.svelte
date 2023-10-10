@@ -12,12 +12,13 @@
 			.to('.gabe3', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
 			.to('.gabe4', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
 			.to('.photos', { y: 0 }, '<')
-			.to('.title', { x: 0 }, '<-=0.5>');
+			.to('.title', { x: 0 }, '<-=0.5>')
+			.to('.title', { skewX: -20 });
 	});
 </script>
 
 <main class="main">
-	<h2 class="title">Photos</h2>
+	<h2 class="title">PHOTOS</h2>
 
 	<div class="photos">
 		<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="250" height="400" /><br /><br />

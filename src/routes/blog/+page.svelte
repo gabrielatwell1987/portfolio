@@ -7,12 +7,12 @@
 	onMount(() => {
 		gsap.set('.title', { x: 1000 });
 
-		gsap.to('.title', { x: 0, duration: 2 });
+		gsap.to('.title', { x: 0, y: 75, skewY: 10, duration: 2 });
 	});
 </script>
 
 <main>
-	<h1 class="title">Tech Stack</h1>
+	<h1 class="title">TECH STACK</h1>
 	<!-- <br /><br />
 	<i class="fa-solid fa-blog icon" />
 	<br /> -->
