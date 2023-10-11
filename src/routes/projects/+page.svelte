@@ -7,7 +7,9 @@
 		gsap.set('.links', { opacity: 0, y: -1000 });
 
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
-		tl.to('.content', { scale: 1 }).to('.links', { opacity: 1, y: 0, duration: 1 });
+		tl.to('.content', { scale: 1 })
+			.to('.links', { opacity: 1, y: 0, duration: 1 })
+			.to('.title', { rotation: 360, duration: 1.5 }, '+=1');
 	});
 </script>
 

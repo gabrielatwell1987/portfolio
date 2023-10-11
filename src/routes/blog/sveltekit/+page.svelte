@@ -72,7 +72,7 @@
 	.title {
 		font-size: 1.75rem;
 		font-weight: 800;
-		margin: 2rem 0 2rem 0;
+		margin: 2rem 0 -1rem 0;
 		text-align: center;
 		color: var(--sky);
 	}

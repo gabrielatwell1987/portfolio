@@ -19,7 +19,7 @@
 
 <main class="gs-main">
 	<h1 class="title">GSAP</h1>
-	<h2 class="subtitle">GSAP</h2>
+	<h2 class="subtitle">Greensock Animation Platform</h2>
 	<p>
 		I really enjoy Greensock Animation Platform. I really like animating the websites that I've
 		built! GSAP makes it so easy to accomplish! The syntax is really simple to learn which makes the
@@ -75,7 +75,7 @@
 	.subtitle {
 		font-size: 1rem;
 		font-weight: 600;
-		margin: 0 0 2rem 0;
+		margin: -2rem 0 2rem 0;
 		text-align: center;
 	}
 	.greensock {

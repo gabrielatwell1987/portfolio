@@ -5,9 +5,9 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.set('.title', { x: 1000 });
+		gsap.set('.title', { y: 75, scale: 0 });
 
-		gsap.to('.title', { x: 0, y: 75, skewY: 10, duration: 2 });
+		gsap.to('.title', { scale: 1, duration: 2 });
 	});
 </script>
 
