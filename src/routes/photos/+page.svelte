@@ -13,7 +13,7 @@
 			.to('.gabe4', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
 			.to('.photos', { y: 0 }, '<')
 			.to('.title', { x: 0 }, '<-=0.5>')
-			.to('.title', { skewX: -20 });
+			.to('.title', { scaleX: 8 });
 	});
 </script>
 
