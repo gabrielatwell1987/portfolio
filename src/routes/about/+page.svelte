@@ -8,7 +8,7 @@
 		gsap.set('.pagetext', { y: 1000 });
 		gsap.set('.about-text', { x: -10000 });
 		gsap.set('.about-title', { y: -10000 });
-		gsap.set('main', { scale: 1 });
+		gsap.set('.main', { scale: 1 });
 
 		let tl = gsap.timeline({ defaults: { duration: 2 } });
 
@@ -19,7 +19,7 @@
 	});
 </script>
 
-<main>
+<main class="main">
 	<div class="logos">
 		<img class="roses" src="roses.png" width="350" alt="Roses Logo" />
 	</div>

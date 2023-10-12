@@ -5,7 +5,13 @@
 	import Reddit from '$lib/Reddit.svelte';
 	import Analytics from '$lib/Analytics.svelte';
 	import SEO from '$lib/SEO.svelte';
+	import { gsap } from 'gsap';
+	import { onMount } from 'svelte';
 	import '../app.css';
+
+	onMount(() => {
+		gsap.set('.desktop', { scale: 1 });
+	});
 </script>
 
 <Analytics />
