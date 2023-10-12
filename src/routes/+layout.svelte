@@ -54,7 +54,8 @@
 		margin: 0 2rem 0 0;
 	}
 	@media (min-width: 200px) {
-		.desktop {
+		.desktop,
+		.mobile {
 			width: 100%;
 		}
 	}
