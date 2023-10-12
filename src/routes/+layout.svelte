@@ -10,7 +10,7 @@
 	import '../app.css';
 
 	onMount(() => {
-		gsap.set('.desktop', { scale: 1 });
+		gsap.set('.desktop', { scale: 1, width: '100%' });
 	});
 </script>
 
