@@ -5,15 +5,15 @@
 	import Reddit from '$lib/Reddit.svelte';
 	import Analytics from '$lib/Analytics.svelte';
 	import SEO from '$lib/SEO.svelte';
-	import { gsap } from 'gsap';
-	import { onMount } from 'svelte';
+	// import { gsap } from 'gsap';
+	// import { onMount } from 'svelte';
 	import '../app.css';
 
-	onMount(() => {
-		gsap.set('.desktop', { scale: 1, width: '100%' });
+	// onMount(() => {
+	// 	gsap.set('.desktop', { scale: 1, width: '100%' });
 
-		gsap.to('.desktop', { scale: 1, width: '100%' });
-	});
+	// 	gsap.to('.desktop', { scale: 1, width: '100%' });
+	// });
 </script>
 
 <Analytics />
@@ -60,6 +60,9 @@
 	}
 	.reddit {
 		margin: 0 2rem 0 0;
+	}
+	.desktop {
+		width: 100%;
 	}
 	@media (max-width: 1650px) {
 		.linkIcons {
