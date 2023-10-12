@@ -4,16 +4,15 @@
 	import Exclamation from '$lib/Exclamation.svelte';
 
 	onMount(() => {
-		gsap.set('.logos', { y: -500 });
-		gsap.set('.pagetext', { y: 1000 });
-		gsap.set('.about-text', { x: -10000 });
-		gsap.set('.about-title', { y: -10000 });
-
-		let tl = gsap.timeline({ defaults: { duration: 2 } });
-		tl.to('.logos', { y: 0, ease: 'power2.out' })
-			.to('.pagetext', { y: 0, ease: 'expo.out' }, '<')
-			.to('.about-text', { x: 0 }, '<')
-			.to('.about-title', { y: 0 }, 0);
+		// gsap.set('.logos', { y: -500 });
+		// gsap.set('.pagetext', { y: 1000 });
+		// gsap.set('.about-text', { x: -10000 });
+		// gsap.set('.about-title', { y: -10000 });
+		// let tl = gsap.timeline({ defaults: { duration: 2 } });
+		// tl.to('.logos', { y: 0, ease: 'power2.out' })
+		// 	.to('.pagetext', { y: 0, ease: 'expo.out' }, '<')
+		// 	.to('.about-text', { x: 0 }, '<')
+		// 	.to('.about-title', { y: 0 }, 0);
 	});
 </script>
 
