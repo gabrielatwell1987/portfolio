@@ -125,6 +125,7 @@
 			/* margin-right: .5rem; */
 			display: block;
 			text-align: center;
+			margin-left: -96%;
 		}
 		.mobile-view {
 			display: none;
