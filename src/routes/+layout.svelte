@@ -53,6 +53,11 @@
 	.reddit {
 		margin: 0 2rem 0 0;
 	}
+	@media (min-width: 200px) {
+		.desktop {
+			max-width: 100%;
+		}
+	}
 	@media (max-width: 1650px) {
 		.linkIcons {
 			display: none;
