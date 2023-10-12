@@ -37,6 +37,7 @@
 	.desktop-view {
 		/* margin-right: .5rem; */
 		display: block;
+		text-align: center;
 	}
 	.mobile-view {
 		display: none;
@@ -63,6 +64,7 @@
 			justify-content: space-evenly;
 			width: 100%;
 			margin-left: -175%;
+			text-align: center;
 		}
 		.mobile-links {
 			display: flex;
@@ -89,6 +91,7 @@
 			/* width: 100%; */
 			margin-left: -96%;
 			font-size: 1rem;
+			text-align: center;
 		}
 		.mobile-view {
 			display: none;
@@ -121,6 +124,7 @@
 		.desktop-view {
 			/* margin-right: .5rem; */
 			display: block;
+			text-align: center;
 		}
 		.mobile-view {
 			display: none;
