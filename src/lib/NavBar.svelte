@@ -86,7 +86,7 @@
 	@media (min-width: 740px) {
 		.desktop-view {
 			display: block;
-			width: 100%;
+			/* width: 100%; */
 			margin-left: -96%;
 			font-size: 1rem;
 		}
