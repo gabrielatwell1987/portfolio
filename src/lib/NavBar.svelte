@@ -141,7 +141,7 @@
 		.desktop-view {
 			display: block;
 			width: 100%;
-			margin-left: 5%;
+			margin-left: -20%;
 			font-size: 1rem;
 		}
 		.mobile-view {
