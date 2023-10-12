@@ -8,7 +8,7 @@
 		gsap.set('.pagetext', { y: 1000 });
 		gsap.set('.about-text', { x: -10000 });
 		gsap.set('.about-title', { y: -10000 });
-		gsap.set('.main', { scale: 1 });
+		gsap.set('main', { scale: 1 });
 
 		let tl = gsap.timeline({ defaults: { duration: 2 } });
 
@@ -55,7 +55,7 @@
 </main>
 
 <style>
-	/* .about-title {
+	.about-title {
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
 		color: var(--sky);
 		font-size: 2.5rem;
@@ -88,7 +88,7 @@
 	}
 	.exclamation {
 		margin: 0 0 0 -63%;
-	} */
+	}
 	@media (min-width: 200px) {
 		.pagetext {
 			display: block;
@@ -114,7 +114,7 @@
 		}
 	}
 	@media (min-width: 990px) {
-		/* .logos {
+		.logos {
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -135,40 +135,6 @@
 		}
 		.about-text {
 			font-size: 1rem;
-		} */
-		.about-title {
-			font-family: Verdana, Geneva, Tahoma, sans-serif;
-			color: var(--sky);
-			font-size: 2.5rem;
-			font-weight: 800;
-			text-align: center;
-			padding: 2rem;
-		}
-		.about-text {
-			font-family: Arial, Helvetica, sans-serif;
-			font-size: 1rem;
-		}
-		.pagetext {
-			display: block;
-			padding: 2rem;
-			text-align: center;
-			background-color: var(--black);
-			border: 3px solid var(--white);
-			border-radius: 8px;
-			width: 75%;
-			margin: 0 0 0 12.5rem;
-		}
-		.logos {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin: 0 0 1rem 1em;
-		}
-		.roses {
-			border-radius: 40%;
-		}
-		.exclamation {
-			margin: 0 0 0 -63%;
 		}
 	}
 	/* @media (max-width: 1024px) {
