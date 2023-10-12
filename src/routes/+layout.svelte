@@ -55,7 +55,7 @@
 	}
 	@media (min-width: 200px) {
 		.desktop {
-			max-width: 100%;
+			width: 100%;
 		}
 	}
 	@media (max-width: 1650px) {
