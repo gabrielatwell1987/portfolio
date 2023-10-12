@@ -5,12 +5,14 @@
 
 	onMount(() => {
 		gsap.set('.logos', { y: -500 });
-		gsap.set('.pagetext', { y: 1000 });
+		// gsap.set('.pagetext', { y: 1000 });
 		gsap.set('.about-text', { x: -10000 });
 		gsap.set('.about-title', { y: -10000 });
+
 		let tl = gsap.timeline({ defaults: { duration: 2 } });
+
 		tl.to('.logos', { y: 0, ease: 'power2.out' })
-			.to('.pagetext', { y: 0, ease: 'expo.out' }, '<')
+			// .to('.pagetext', { y: 0, ease: 'expo.out' }, '<')
 			.to('.about-text', { x: 0 }, '<')
 			.to('.about-title', { y: 0 }, 0);
 	});
@@ -21,7 +23,7 @@
 		<img class="roses" src="roses.png" width="350" alt="Roses Logo" />
 	</div>
 
-	<div class="pagetext display">
+	<div class="pagetext">
 		<h1 class="about-title">ABOUT ME</h1>
 		<div class="about-text">
 			<p>
@@ -64,10 +66,8 @@
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 1rem;
 	}
-	.display {
-		display: block;
-	}
 	.pagetext {
+		display: block;
 		padding: 2rem;
 		text-align: center;
 		background-color: var(--black);
