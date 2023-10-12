@@ -11,6 +11,8 @@
 
 	onMount(() => {
 		gsap.set('.desktop', { scale: 1, width: '100%' });
+
+		gsap.to('.desktop', { scale: 1, width: '100%' });
 	});
 </script>
 
