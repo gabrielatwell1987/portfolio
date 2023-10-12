@@ -4,15 +4,15 @@
 	import Exclamation from '$lib/Exclamation.svelte';
 
 	onMount(() => {
-		// gsap.set('.logos', { y: -500 });
-		// gsap.set('.pagetext', { y: 1000 });
-		// gsap.set('.about-text', { x: -10000 });
-		// gsap.set('.about-title', { y: -10000 });
-		// let tl = gsap.timeline({ defaults: { duration: 2 } });
-		// tl.to('.logos', { y: 0, ease: 'power2.out' })
-		// 	.to('.pagetext', { y: 0, ease: 'expo.out' }, '<')
-		// 	.to('.about-text', { x: 0 }, '<')
-		// 	.to('.about-title', { y: 0 }, 0);
+		gsap.set('.logos', { y: -500 });
+		gsap.set('.pagetext', { y: 1000 });
+		gsap.set('.about-text', { x: -10000 });
+		gsap.set('.about-title', { y: -10000 });
+		let tl = gsap.timeline({ defaults: { duration: 2 } });
+		tl.to('.logos', { y: 0, ease: 'power2.out' })
+			.to('.pagetext', { y: 0, ease: 'expo.out' }, '<')
+			.to('.about-text', { x: 0 }, '<')
+			.to('.about-title', { y: 0 }, 0);
 	});
 </script>
 
@@ -49,13 +49,6 @@
 			</div>
 		</div>
 	</div>
-	<div class="mobilepagetext nodisplay">
-		<h1 class="about-title">About Me</h1>
-		<img class="mobileRoses" src="roses.png" alt="logo" width="250px" />
-		<p>
-			This is Gabriel Atwell's portfolio. This website is meant to showcase his frontend skills.
-		</p>
-	</div>
 </main>
 
 <style>
@@ -71,14 +64,8 @@
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 1rem;
 	}
-	.nodisplay {
-		display: none;
-	}
 	.display {
 		display: block;
-	}
-	.mobilepagetext {
-		display: none;
 	}
 	.pagetext {
 		padding: 2rem;
@@ -98,9 +85,6 @@
 	.roses {
 		border-radius: 40%;
 	}
-	.mobileRoses {
-		margin: 0 0 1.5rem 0;
-	}
 	.exclamation {
 		margin: 0 0 0 -63%;
 	}
@@ -110,9 +94,6 @@
 			margin: 0 0 0 12%;
 			padding: 1rem;
 			text-align: center;
-		}
-		.mobilepagetext {
-			display: none;
 		}
 		.about-title {
 			font-size: 1rem;
@@ -145,9 +126,6 @@
 			margin: 0 0 0 12%;
 			padding: 2rem;
 			text-align: center;
-		}
-		.mobilepagetext {
-			display: none;
 		}
 		h1,
 		.about-title {

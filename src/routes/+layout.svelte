@@ -53,12 +53,6 @@
 	.reddit {
 		margin: 0 2rem 0 0;
 	}
-	@media (min-width: 200px) {
-		.desktop,
-		.mobile {
-			width: 100%;
-		}
-	}
 	@media (max-width: 1650px) {
 		.linkIcons {
 			display: none;
