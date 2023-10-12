@@ -188,6 +188,9 @@
 		.desktop-view {
 			/* margin-right: .5rem; */
 			display: block;
+			width: 100%;
+			margin-left: -96%;
+			font-size: 1rem;
 		}
 		.mobile-view {
 			display: none;
