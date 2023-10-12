@@ -52,12 +52,8 @@
 		<a href="/blog"><i class="fa-solid fa-blog" /> Blog</a>
 		<a href="/contact"><i class="fa-regular fa-address-book" /> Contact</a>
 	</div>
-	<div class="mobile-view">
-		<!-- <a href="/">Home</a>
-		<a href="/about">About</a>
-		<a href="/projects">Projects</a>
-		<a href="/contact">Contact</a> -->
 
+	<div class="mobile-view">
 		<div class="mobile-links">
 			<a class="mobile-link" href="/">Home</a>
 			<a class="mobile-link" href="/about">About</a>
@@ -131,7 +127,7 @@
 		.mobile-view {
 			display: block;
 			justify-content: space-evenly;
-			/* width: 100%; */
+			width: 100%;
 			margin-left: -175%;
 		}
 		.mobile-links {
@@ -160,14 +156,11 @@
 	@media (min-width: 740px) {
 		.desktop-view {
 			display: block;
+			width: 100%;
 			margin-left: -96%;
 			font-size: 1rem;
 		}
 		.mobile-view {
-			/* display: block;
-			justify-content: space-evenly;
-			/* width: 100%; 
-			margin-left: -2rem; */
 			display: none;
 		}
 		svg,
