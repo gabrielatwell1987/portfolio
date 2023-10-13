@@ -1,7 +1,6 @@
 <script>
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
-	import Exclamation from '$lib/Exclamation.svelte';
 
 	onMount(() => {
 		gsap.set('.logos', { y: -500 });
@@ -47,9 +46,6 @@
 				<a href="https://www.github.com/gabrielatwell1987/portfolio">Here</a> is the GitHub repo for
 				this site.
 			</p>
-			<div class="exclamation">
-				<Exclamation />
-			</div>
 		</div>
 	</div>
 </main>
@@ -85,9 +81,6 @@
 	}
 	.roses {
 		border-radius: 40%;
-	}
-	.exclamation {
-		margin: 0 0 0 -63%;
 	}
 	@media (min-width: 200px) {
 		.pagetext {
