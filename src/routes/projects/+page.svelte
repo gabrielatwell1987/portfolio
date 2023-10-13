@@ -4,11 +4,12 @@
 
 	onMount(() => {
 		gsap.set('.content', { scale: 0 });
-		gsap.set('.links', { opacity: 0, y: -1000 });
+		gsap.set('.linksize', { opacity: 0 });
 
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 		tl.to('.content', { scale: 1 })
-			.to('.links', { opacity: 1, y: 0, duration: 1 })
+			// .to('.links', { opacity: 1 })
+			.to('.linksize', { opacity: 1, stagger: 0.8 })
 			.to('.title', { rotation: 360, duration: 1.5 }, '+=1');
 	});
 </script>
@@ -16,22 +17,20 @@
 <div class="content">
 	<h1 class="title">PROJECTS I MADE</h1>
 
-	<div class="links">
-		<a class="linksize" href="https://gabe1.vercel.app" target="_blank">Web Dev</a><br />
-		<a class="linksize" href="https://gabe2.vercel.app" target="_blank">Scroller</a><br />
-		<a class="linksize" href="https://gabe3.vercel.app" target="_blank">Random User</a><br />
-		<a class="linksize" href="https://gabe4.vercel.app" target="_blank">Starbucks</a><br />
-		<a class="linksize" href="https://formapp-three.vercel.app" target="_blank">Form</a><br />
-		<a class="linksize" href="https://kindler.vercel.app" target="_blank">CRUD</a><br />
-		<a class="linksize" href="https://github-vert.vercel.app" target="_blank">Github</a><br />
-		<a class="linksize" href="https://appity.vercel.app" target="_blank">Code Snippet</a><br />
-		<a class="linksize" href="https://pokedex.vercel.app" target="_blank">Pokedex</a><br />
-		<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank">Svelteflix</a><br
-		/>
-		<a class="linksize" href="https://blog-until-you-die.vercel.app" target="_blank"
-			>Blog Until You Die</a
-		>
-	</div>
+	<a class="linksize" href="https://gabe1.vercel.app" target="_blank">Web Dev</a><br />
+	<a class="linksize" href="https://gabe2.vercel.app" target="_blank">Scroller</a><br />
+	<a class="linksize" href="https://gabe3.vercel.app" target="_blank">Random User</a><br />
+	<a class="linksize" href="https://gabe4.vercel.app" target="_blank">Starbucks</a><br />
+	<a class="linksize" href="https://formapp-three.vercel.app" target="_blank">Form</a><br />
+	<a class="linksize" href="https://kindler.vercel.app" target="_blank">CRUD</a><br />
+	<a class="linksize" href="https://github-vert.vercel.app" target="_blank">Github</a><br />
+	<a class="linksize" href="https://appity.vercel.app" target="_blank">Code Snippet</a><br />
+	<a class="linksize" href="https://pokedex.vercel.app" target="_blank">Pokedex</a><br />
+	<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank">Svelteflix</a><br
+	/>
+	<a class="linksize" href="https://blog-until-you-die.vercel.app" target="_blank"
+		>Blog Until You Die</a
+	>
 </div>
 
 <style>
@@ -51,7 +50,7 @@
 		font-size: 2.5rem;
 		color: var(--white);
 	}
-	.links {
+	.linksize {
 		text-align: center;
 		background-color: var(--darkgrey);
 		border: 3px solid var(--white);
@@ -81,10 +80,10 @@
 			font-size: 1.25rem;
 			color: var(--white);
 		}
-		.links {
+		.linksize {
 			text-align: center;
 			background-color: transparent;
-			color: var(--white);
+			color: var(--sky);
 			border: none;
 			padding: 1rem;
 			display: flex;
@@ -118,10 +117,10 @@
 			font-size: 2.5rem;
 			color: var(--white);
 		}
-		.links {
+		.linksize {
 			text-align: center;
 			background-color: transparent;
-			color: var(--white);
+			color: var(--sky);
 			border: none;
 			padding: 1rem;
 			display: flex;
