@@ -49,6 +49,7 @@
 	h6 {
 		text-align: center;
 		margin: 1rem 0 0 0;
+		font-weight: 200;
 	}
 	.reddit {
 		margin: 0 2rem 0 0;
