@@ -42,6 +42,7 @@
 		<div class="mobile-links">
 			<a class="mobile-link" href="/">Home</a>
 			<a class="mobile-link" href="/about">About</a>
+			<a class="mobile-link" href="/photos">Photos</a>
 			<a class="mobile-link" href="/projects">Projects</a>
 			<a class="mobile-link" href="/contact">Contact</a>
 		</div>
