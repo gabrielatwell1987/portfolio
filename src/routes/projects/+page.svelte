@@ -95,7 +95,7 @@
 			border: 3px solid var(--white);
 			border-radius: 8px;
 			background-color: var(--black);
-			width: 50%;
+			width: 75%;
 			padding: 1rem;
 			margin: 1rem 0 0 25%;
 		}
