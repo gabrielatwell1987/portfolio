@@ -8,7 +8,6 @@
 
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 		tl.to('.content', { scale: 1 })
-			// .to('.links', { opacity: 1 })
 			.to('.linksize', { opacity: 1, stagger: 0.8 })
 			.to('.title', { rotation: 360, duration: 1.5 }, '<');
 	});
