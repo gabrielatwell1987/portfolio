@@ -97,7 +97,7 @@
 			background-color: var(--black);
 			width: 75%;
 			padding: 1rem;
-			margin: 1rem 0 0 0;
+			margin: 1rem 0 0 10%;
 		}
 	}
 	@media (min-width: 740px) {
