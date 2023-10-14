@@ -1,6 +1,6 @@
 <script>
 	import GsapIcon from '$lib/GsapIcon.svelte';
-	import { gsap } from 'gsap/dist/gsap';
+	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
