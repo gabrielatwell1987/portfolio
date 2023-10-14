@@ -28,9 +28,7 @@
 	<a class="linksize" href="https://pokedex.vercel.app" target="_blank">Pokedex</a><br />
 	<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank">Svelteflix</a><br
 	/>
-	<a class="linksize" href="https://blog-until-you-die.vercel.app" target="_blank"
-		>Blog Until You Die</a
-	>
+	<a class="linksize" href="https://blog-until-you-die.vercel.app" target="_blank">Blog</a>
 </div>
 
 <style>
