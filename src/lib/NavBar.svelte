@@ -34,7 +34,7 @@
 		<a href="/about"><i class="fa-regular fa-address-card" /> About</a>
 		<a href="/photos"><i class="fa-solid fa-image" /> Photos</a>
 		<a href="/projects"><i class="fa-solid fa-list-check" /> Projects</a>
-		<a href="/blog"><i class="fa-solid fa-blog" /> Blog</a>
+		<a href="/blog"><i class="fa-solid fa-microchip" /> Stack</a>
 		<a href="/contact"><i class="fa-regular fa-address-book" /> Contact</a>
 	</div>
 

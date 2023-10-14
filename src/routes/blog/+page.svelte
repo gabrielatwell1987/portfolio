@@ -14,9 +14,6 @@
 
 <main>
 	<h1 class="title">TECH STACK</h1>
-	<!-- <br /><br />
-	<i class="fa-solid fa-blog icon" />
-	<br /> -->
 	<div class="stackLinks">
 		<a href="blog/greensock"><GsapIcon /></a>
 		<a href="blog/sveltekit"><Svelte /></a>
