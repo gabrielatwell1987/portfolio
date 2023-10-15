@@ -13,7 +13,7 @@
 			.to('.gabe4', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
 			.to('.photos', { y: 0 }, '<')
 			.to('.title', { x: 0 }, '<-=0.5>')
-			.to('.title', { scaleX: 8 });
+			.to('.title', { scaleX: 5 });
 	});
 </script>
 
@@ -21,6 +21,7 @@
 	<h2 class="title">PHOTOS</h2>
 
 	<div class="photos">
+		<h3>These are photos of me</h3>
 		<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="250" height="400" /><br /><br />
 		<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" /><br /><br />
 		<img class="gabe3" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" /><br /><br />
@@ -33,9 +34,15 @@
 		text-align: center;
 	}
 	.title {
-		font-size: 2.5rem;
+		font-size: 4rem;
 		color: var(--white);
 		margin: 0 0 2rem 0;
+	}
+	h3 {
+		text-align: center;
+		color: cornflowerblue;
+		margin: 0 0 2rem 0;
+		font-size: 2.5rem;
 	}
 	.photos {
 		background-color: var(--lightblack);

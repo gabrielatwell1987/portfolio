@@ -20,6 +20,7 @@
 <main class="gs-main">
 	<h1 class="title">GSAP</h1>
 	<h2 class="subtitle">Greensock Animation Platform</h2>
+	<h3>What is GSAP?</h3>
 	<p>
 		I really enjoy Greensock Animation Platform. I really like animating the websites that I've
 		built! GSAP makes it so easy to accomplish! The syntax is really simple to learn which makes the
@@ -31,6 +32,7 @@
 		think that these animations make the website look a lot better than a static website
 	</p>
 	<p>GSAP is a great tool to use for any web developer. I highly recommend it!</p>
+	<h3 class="learn">Do you want to learn more about GSAP?</h3>
 	<p>
 		If you would like to know more about greensock, please click <a href="https://greensock.com"
 			>here</a
@@ -61,27 +63,34 @@
 	a:hover {
 		color: var(--white);
 	}
+	h3 {
+		text-align: center;
+	}
 	.homelink {
 		display: block;
 		margin: 3rem 0 0 48%;
 	}
 	.title {
-		font-size: 1.75rem;
+		font-size: 4rem;
 		font-weight: 800;
 		margin: 2rem 0 2rem 0;
 		text-align: center;
 		color: var(--sky);
 	}
 	.subtitle {
-		font-size: 1rem;
+		font-size: 2rem;
 		font-weight: 600;
 		margin: -2rem 0 2rem 0;
 		text-align: center;
+		color: cornflowerblue;
 	}
 	.greensock {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin: 5rem 0 3rem 0;
+	}
+	.learn {
+		margin: 0 0 -2rem 0;
 	}
 </style>

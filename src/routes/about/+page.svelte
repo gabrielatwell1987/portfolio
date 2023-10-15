@@ -26,22 +26,26 @@
 	<div class="pagetext">
 		<h1 class="about-title">ABOUT ME</h1>
 		<div class="about-text">
+			<h2>Bio</h2>
 			<p>
 				Gabriel Atwell is a self-taught web developer. He started out with the basics: HTML, CSS,
 				and JavaScript. He then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js,
 				and GSAP. He has begun to teach himself the backend of web development on his spare time,
 				but is a complete frontend developer.
 			</p>
+			<h2>Frontend</h2>
 			<p>
 				The path that Gabriel has chosen is the frontend path, one of his main interests with the
 				frontend path is animations, especially animations on the web. Turning a website from being
 				a static site to a dynamic site is what Gabriel thinks is really cool.
 			</p>
+			<h2>Design Based</h2>
 			<p>
 				A clean, crisp design is what Gabriel excels at. Visual hierarchy, whitespace, colors,
 				typography, scaling, and spacing is what he knows best. He thinks that is the main key for a
 				UI developer.
 			</p>
+			<h2>Github</h2>
 			<p>
 				<a href="https://www.github.com/gabrielatwell1987/portfolio">Here</a> is the GitHub repo for
 				this site.
@@ -54,7 +58,7 @@
 	.about-title {
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
 		color: var(--sky);
-		font-size: 2.5rem;
+		font-size: 4rem;
 		font-weight: 800;
 		text-align: center;
 		padding: 2rem;
@@ -82,6 +86,9 @@
 	.roses {
 		border-radius: 40%;
 	}
+	h2 {
+		color: cornflowerblue;
+	}
 	@media (min-width: 200px) {
 		.pagetext {
 			display: block;
@@ -105,6 +112,9 @@
 			width: 50%;
 			height: 75%;
 		}
+		h2 {
+			color: cornflowerblue;
+		}
 	}
 	@media (min-width: 990px) {
 		.logos {
@@ -123,11 +133,14 @@
 		}
 		h1,
 		.about-title {
-			font-size: 2.5rem;
+			font-size: 4rem;
 			margin: 0 0 1rem 0;
 		}
 		.about-text {
 			font-size: 1rem;
+		}
+		h2 {
+			color: cornflowerblue;
 		}
 	}
 	/* @media (max-width: 1024px) {

@@ -44,7 +44,7 @@
 	.title {
 		text-align: center;
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-		font-size: 2.5rem;
+		font-size: 3rem;
 		color: var(--white);
 	}
 	.linksize {
@@ -111,7 +111,7 @@
 		.title {
 			text-align: center;
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-			font-size: 2.5rem;
+			font-size: 3rem;
 			color: var(--white);
 		}
 		.linksize {

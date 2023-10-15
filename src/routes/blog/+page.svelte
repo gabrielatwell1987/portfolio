@@ -29,7 +29,7 @@
 	.title {
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
 		color: var(--white);
-		font-size: 2.5rem;
+		font-size: 4rem;
 		font-weight: 800;
 		text-align: center;
 	}
