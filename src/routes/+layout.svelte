@@ -28,7 +28,8 @@
 		<a class="reddit" href="https://www.reddit.com/u/gatwell702">
 			<Reddit />
 		</a>
-		<a href="https://discordapp.com/users/1007777351809114112">
+
+		<a class="discord" href="https://discordapp.com/users/1007777351809114112">
 			<Discord />
 		</a>
 	</div>

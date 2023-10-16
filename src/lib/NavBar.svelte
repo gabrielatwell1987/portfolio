@@ -52,12 +52,12 @@
 		font-size: 0.9rem;
 		text-decoration: none;
 		font-weight: 900;
-		color: lightskyblue;
+		color: var(--sky);
 		margin-left: 8rem;
 		margin-right: -7rem;
 	}
 	a:hover {
-		color: blue;
+		color: var(--blue);
 	}
 	.desktop-view {
 		display: block;
