@@ -87,7 +87,7 @@
 		border-radius: 40%;
 	}
 	h2 {
-		color: cornflowerblue;
+		color: var(--cornflower);
 	}
 	@media (min-width: 200px) {
 		.pagetext {

@@ -40,7 +40,7 @@
 	}
 	h3 {
 		text-align: center;
-		color: cornflowerblue;
+		color: var(--cornflower);
 		margin: 0 0 2rem 0;
 		font-size: 2.5rem;
 	}

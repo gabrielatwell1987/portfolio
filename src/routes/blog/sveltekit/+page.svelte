@@ -94,6 +94,6 @@
 		margin: 0 0 0 48%;
 	}
 	.subtitle {
-		color: cornflowerblue;
+		color: var(--cornflower);
 	}
 </style>

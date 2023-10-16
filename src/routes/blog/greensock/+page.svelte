@@ -82,7 +82,7 @@
 		font-weight: 600;
 		margin: -2rem 0 2rem 0;
 		text-align: center;
-		color: cornflowerblue;
+		color: var(--cornflower);
 	}
 	.greensock {
 		display: flex;
