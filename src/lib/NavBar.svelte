@@ -40,17 +40,7 @@
 </nav>
 
 <style>
-	/* h2 {
-		text-align: center;
-		font-family: 'Courier New', Courier, monospace;
-		font-size: 1.5rem;
-		color: lightskyblue;
-		margin-top: 0.5rem;
-		padding-top: 2rem;
-		margin-top: 1rem;
-	} */
 	a {
-		/* margin: 0 10px; */
 		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		font-size: 0.9rem;
 		text-decoration: none;
@@ -63,7 +53,6 @@
 		color: blue;
 	}
 	.desktop-view {
-		/* margin-right: .5rem; */
 		display: block;
 	}
 	.mobile-view {
@@ -85,14 +74,6 @@
 		align-items: center;
 		margin-left: 2rem;
 	}
-	/* .text {
-		margin-left: 1.5rem;
-	} */
-	/* svg {
-		margin-left: -75%;
-		width: 20%;
-		border-radius: 50%;
-	} */
 	i {
 		margin: 0 0.5rem 0 0;
 	}
@@ -116,9 +97,6 @@
 		.header-logos {
 			display: none;
 		}
-		/* svg {
-			display: none;
-		} */
 		nav {
 			border-radius: 8px;
 			background-color: #303030;
@@ -141,10 +119,6 @@
 		.mobile-view {
 			display: none;
 		}
-		/* svg {
-			display: none;
-			margin-left: 2vw;
-		} */
 		nav {
 			background-color: #303030;
 			padding: 10px 0;
@@ -155,17 +129,14 @@
 			height: 5em;
 			width: 100%;
 		}
+		.header-logos {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 2rem;
+		}
 	}
 	@media (min-width: 990px) {
-		/* h2 {
-			text-align: center;
-			font-family: 'Courier New', Courier, monospace;
-			font-size: 2rem;
-			color: lightskyblue;
-			margin-top: 0.5rem;
-			padding-top: 2rem;
-			margin-top: 1rem;
-		} */
 		a {
 			/* margin: 0 10px; */
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -205,8 +176,5 @@
 			align-items: center;
 			margin: 2rem;
 		}
-		/* .text {
-			margin-left: 1.5rem;
-		} */
 	}
 </style>
