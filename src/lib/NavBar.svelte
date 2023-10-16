@@ -101,7 +101,7 @@
 			display: none;
 		}
 		.mobile-view {
-			display: none;
+			display: block;
 			justify-content: space-evenly;
 			width: 100%;
 			margin-left: -165%;
@@ -112,6 +112,9 @@
 		}
 		.mobile-link {
 			font-size: 0.5rem;
+		}
+		.header-logos {
+			display: none;
 		}
 		/* svg {
 			display: none;
