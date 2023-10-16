@@ -101,7 +101,7 @@
 			display: none;
 		}
 		.mobile-view {
-			display: block;
+			display: none;
 			justify-content: space-evenly;
 			width: 100%;
 			margin-left: -165%;
