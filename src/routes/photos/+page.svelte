@@ -21,7 +21,7 @@
 	<h2 class="title">PHOTOS</h2>
 
 	<div class="photos">
-		<h3>These are photos of me</h3>
+		<h3 class="subtitle">My Photos</h3>
 		<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="250" height="400" /><br /><br />
 		<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" /><br /><br />
 		<img class="gabe3" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" /><br /><br />
@@ -38,7 +38,7 @@
 		color: var(--white);
 		margin: 0 0 2rem 0;
 	}
-	h3 {
+	.subtitle {
 		text-align: center;
 		color: var(--cornflower);
 		margin: 0 0 2rem 0;
