@@ -203,7 +203,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin-left: 2rem;
+			margin: 0 0 0 40%;
 		}
 		/* .text {
 			margin-left: 1.5rem;
