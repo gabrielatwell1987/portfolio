@@ -12,12 +12,18 @@
 
 	{#if open}
 		<div class="desktop-view">
-			<a href="/"><i class="fa-solid fa-house-crack" /> Home</a>
-			<a href="/about"><i class="fa-regular fa-address-card" /> About</a>
-			<a href="/photos"><i class="fa-solid fa-image" /> Photos</a>
-			<a href="/projects"><i class="fa-solid fa-list-check" /> Projects</a>
-			<a href="/blog"><i class="fa-solid fa-microchip" /> Stack</a>
-			<a href="/contact"><i class="fa-regular fa-address-book" /> Contact</a>
+			<a href="/">Home</a>
+			<!-- <i class="fa-solid fa-house-crack" /> -->
+			<a href="/about">About</a>
+			<!-- <i class="fa-regular fa-address-card" /> -->
+			<a href="/photos">Photos</a>
+			<!-- <i class="fa-solid fa-image" /> -->
+			<a href="/projects">Projects</a>
+			<!-- <i class="fa-solid fa-list-check" /> -->
+			<a href="/blog">Stack</a>
+			<!-- <i class="fa-solid fa-microchip" /> -->
+			<a href="/contact">Contact</a>
+			<!-- <i class="fa-regular fa-address-book" /> -->
 		</div>
 	{/if}
 
@@ -75,9 +81,9 @@
 		align-items: center;
 		margin-left: 2rem;
 	}
-	i {
+	/* i {
 		margin: 0 0.5rem 0 0;
-	}
+	} */
 	.h1 {
 		display: grid;
 		place-items: center;
