@@ -104,7 +104,7 @@
 			display: block;
 			justify-content: space-evenly;
 			width: 100%;
-			margin-left: -165%;
+			margin: 0 0 0 -150%;
 		}
 		.mobile-links {
 			display: flex;
@@ -203,7 +203,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin: 0 0 0 40%;
+			margin: 2rem;
 		}
 		/* .text {
 			margin-left: 1.5rem;
