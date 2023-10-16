@@ -7,6 +7,7 @@
 <nav>
 	<div class="header-logos">
 		<Hamburger bind:open />
+		<h1 class="h1">GABEatwell</h1>
 	</div>
 
 	{#if open}
@@ -77,6 +78,13 @@
 	i {
 		margin: 0 0.5rem 0 0;
 	}
+	.h1 {
+		display: grid;
+		place-items: center;
+		margin: 0 5rem 0 0;
+		width: 15%;
+		color: var(--sky);
+	}
 	@media (min-width: 200px) {
 		.desktop-view {
 			display: none;
@@ -135,6 +143,13 @@
 			align-items: center;
 			margin: 2rem;
 		}
+		.h1 {
+			display: grid;
+			place-items: center;
+			margin: 0 5rem 0 0;
+			width: 15%;
+			color: var(--sky);
+		}
 	}
 	@media (min-width: 990px) {
 		a {
@@ -175,6 +190,14 @@
 			justify-content: center;
 			align-items: center;
 			margin: 2rem;
+		}
+		.h1 {
+			display: grid;
+			place-items: center;
+			margin: 0 5rem 0 0;
+			width: 15%;
+			color: var(--sky);
+			font-weight: 900;
 		}
 	}
 </style>
