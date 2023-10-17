@@ -25,24 +25,27 @@
 
 <main class="sk-main">
 	<h1 class="title">SvelteKit</h1>
-	<h2 class="top subtitle">What I used to create this site</h2>
-	<p>
-		I used sveltekit to create this portfolio website. I decided to go with sveltekit because of the
-		server-side rendering (SRR) and all of the SEO features, as well as the speed of everything. The
-		fact that this, to me, is less than an actual framework as it relies heavily on vanilla HTML,
-		CSS, and JavaScript is what I'm looking for.
-	</p>
-	<h2 class="subtitle">What I know</h2>
-	<p>
-		I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I have
-		because I'm a very visual person. Sveltekit has made it super simple to put my ideas on the web.
-	</p>
-	<h3 class="learn subtitle">Learn more about Sveltekit</h3>
-	<p>
-		If you would like to know more about svelte and sveltekit, please click <a
-			href="https://svelte.dev">here</a
-		>.
-	</p>
+	<section class="sk-grid">
+		<h2 class="top subtitle">What I used to create this site</h2>
+		<p>
+			I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
+			the server-side rendering (SRR) and all of the SEO features, as well as the speed of
+			everything. The fact that this, to me, is less than an actual framework as it relies heavily
+			on vanilla HTML, CSS, and JavaScript is what I'm looking for.
+		</p>
+		<h2 class="subtitle">What I know</h2>
+		<p>
+			I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I have
+			because I'm a very visual person. Sveltekit has made it super simple to put my ideas on the
+			web.
+		</p>
+		<h3 class="learn subtitle">Learn more about Sveltekit</h3>
+		<p>
+			If you would like to know more about svelte and sveltekit, please click <a
+				href="https://svelte.dev">here</a
+			>.
+		</p>
+	</section>
 </main>
 
 <a href="/blog" class="homelink">Back</a>
