@@ -3,12 +3,10 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.set('.content', { scale: 0 });
-		gsap.set('.linksize', { opacity: 0 });
-
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
-		tl.to('.content', { scale: 1 })
-			.to('.linksize', { opacity: 1, stagger: 0.8 })
+
+		tl.to('.content', { autoAlpha: 1 })
+			.to('.linksize', { autoAlpha: 1, stagger: 0.8 })
 			.to('.title', { rotation: 360, duration: 3 }, '<');
 	});
 </script>

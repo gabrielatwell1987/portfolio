@@ -22,3 +22,9 @@
 	--8px: 8px;
 	--50: 50%;
 }
+.atwellLogo,
+.content,
+.linksize,
+.greensock {
+	visibility: hidden;
+}

@@ -4,12 +4,11 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.set('.greensock', { scale: 0, opacity: 0 });
 		gsap.set('.gs-main', { y: 1000 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.to('.greensock', { scale: 1, opacity: 1, ease: 'back.out' }).to('.gs-main', { y: 0 }, '-=3');
+		tl.to('.greensock', { autoAlpha: 1, ease: 'back.out' }).to('.gs-main', { y: 0 }, '-=3');
 	});
 </script>
 

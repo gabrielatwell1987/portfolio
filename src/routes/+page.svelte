@@ -4,9 +4,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.set('.atwellLogo', { opacity: 0, scale: 0 });
-
-		gsap.to('.atwellLogo', { opacity: 1, scale: 1, duration: 3 });
+		gsap.to('.atwellLogo', { autoAlpha: 1, duration: 3 });
 	});
 </script>
 

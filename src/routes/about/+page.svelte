@@ -13,8 +13,8 @@
 
 		tl.to('.logos', { y: 0, ease: 'power2.out' })
 			.to('.pagetext', { y: 0, ease: 'expo.out' }, '<')
-			.to('.about-text', { x: 0 }, '<')
-			.to('.about-title', { y: 0 }, 0);
+			.to('.about-text', { x: 0, duration: 3 }, '<')
+			.to('.about-title', { y: 0, duration: 3 }, 0);
 	});
 </script>
 
@@ -66,7 +66,6 @@
 	.about-text {
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 1rem;
-		background-color: var(--black);
 	}
 	.pagetext {
 		display: block;
@@ -104,7 +103,7 @@
 		.about-text {
 			font-size: 0.8rem;
 			margin: 0 0 -1rem 0;
-			background-color: var(--black);
+			background-color: transparent;
 		}
 		.logos {
 			display: flex;
@@ -139,7 +138,6 @@
 		}
 		.about-text {
 			font-size: 1rem;
-			background-color: var(--black);
 		}
 		.subtitle {
 			color: cornflowerblue;
