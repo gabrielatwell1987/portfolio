@@ -22,3 +22,9 @@
 	--8px: 8px;
 	--50: 50%;
 }
+button:focus,
+.hamburger:focus,
+.hamburger--spin:focus,
+.header-logos:focus {
+	outline: none;
+}

@@ -6,7 +6,7 @@
 
 <nav>
 	<div class="header-logos">
-		<Hamburger bind:open />
+		<Hamburger type="spin" bind:open />
 		<h1 class="h1">GABEatwell</h1>
 	</div>
 
