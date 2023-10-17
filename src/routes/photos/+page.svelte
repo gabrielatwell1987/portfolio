@@ -13,20 +13,21 @@
 			.to('.gabe4', { borderRadius: '50%', repeat: -1, yoyo: true }, '<')
 			.to('.photos', { y: 0 }, '<')
 			.to('.title', { x: 0 }, '<-=0.5>')
-			.to('.title', { scaleX: 5 });
+			.to('.title', { scaleX: 5 })
+			.to('.title', { scaleX: 1 });
 	});
 </script>
 
 <main class="main">
 	<h2 class="title">PHOTOS</h2>
 
-	<div class="photos">
+	<section class="photos">
 		<h3 class="subtitle">My Photos</h3>
 		<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="250" height="400" /><br /><br />
 		<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" /><br /><br />
 		<img class="gabe3" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" /><br /><br />
 		<img class="gabe4" src="gabe4.jpg" alt="Gabriel Atwell" width="350" />
-	</div>
+	</section>
 </main>
 
 <style>

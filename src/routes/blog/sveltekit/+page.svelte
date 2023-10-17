@@ -65,9 +65,10 @@
 		font-size: 1.5rem;
 		color: var(--sky);
 	}
-	h2 {
+	.subtitle {
 		text-align: center;
 		margin: 0 0 -2rem 0;
+		color: var(--cornflower);
 	}
 	.learn {
 		text-align: center;
@@ -92,8 +93,5 @@
 	}
 	.sveltekit {
 		margin: 0 0 0 48%;
-	}
-	.subtitle {
-		color: var(--cornflower);
 	}
 </style>

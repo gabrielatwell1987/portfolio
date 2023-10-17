@@ -14,10 +14,10 @@
 
 <main>
 	<h1 class="title">TECH STACK</h1>
-	<div class="stackLinks">
+	<section class="stackLinks">
 		<a href="blog/greensock"><GsapIcon /></a>
 		<a href="blog/sveltekit"><Svelte /></a>
-	</div>
+	</section>
 	<br /><br />
 </main>
 

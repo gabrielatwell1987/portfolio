@@ -9,11 +9,11 @@
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 		tl.to('.content', { scale: 1 })
 			.to('.linksize', { opacity: 1, stagger: 0.8 })
-			.to('.title', { rotation: 360, duration: 1.5 }, '<');
+			.to('.title', { rotation: 360, duration: 3 }, '<');
 	});
 </script>
 
-<div class="content">
+<section class="content">
 	<h1 class="title">PROJECTS I MADE</h1>
 
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank">Web Dev</a><br />
@@ -28,7 +28,7 @@
 	<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank">Svelteflix</a><br
 	/>
 	<a class="linksize" href="https://blog-until-you-die.vercel.app" target="_blank">Blog</a>
-</div>
+</section>
 
 <style>
 	a {

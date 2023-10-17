@@ -23,35 +23,35 @@
 		<img class="roses" src="roses.png" width="350" alt="Roses Logo" />
 	</div>
 
-	<div class="pagetext">
+	<section class="pagetext">
 		<h1 class="about-title">ABOUT ME</h1>
-		<div class="about-text">
-			<h2>Bio</h2>
+		<article class="about-text">
+			<h2 class="subtitle">Bio</h2>
 			<p>
 				Gabriel Atwell is a self-taught web developer. He started out with the basics: HTML, CSS,
 				and JavaScript. He then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js,
 				and GSAP. He has begun to teach himself the backend of web development on his spare time,
 				but is a complete frontend developer.
 			</p>
-			<h2>Frontend</h2>
+			<h2 class="subtitle">Frontend</h2>
 			<p>
 				The path that Gabriel has chosen is the frontend path, one of his main interests with the
 				frontend path is animations, especially animations on the web. Turning a website from being
 				a static site to a dynamic site is what Gabriel thinks is really cool.
 			</p>
-			<h2>Design Based</h2>
+			<h2 class="subtitle">Design Based</h2>
 			<p>
 				A clean, crisp design is what Gabriel excels at. Visual hierarchy, whitespace, colors,
 				typography, scaling, and spacing is what he knows best. He thinks that is the main key for a
 				UI developer.
 			</p>
-			<h2>Github</h2>
+			<h2 class="subtitle">Github</h2>
 			<p>
 				<a href="https://www.github.com/gabrielatwell1987/portfolio">Here</a> is the GitHub repo for
 				this site.
 			</p>
-		</div>
-	</div>
+		</article>
+	</section>
 </main>
 
 <style>
@@ -66,6 +66,7 @@
 	.about-text {
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 1rem;
+		background-color: var(--black);
 	}
 	.pagetext {
 		display: block;
@@ -86,7 +87,7 @@
 	.roses {
 		border-radius: 40%;
 	}
-	h2 {
+	.subtitle {
 		color: var(--cornflower);
 	}
 	@media (min-width: 200px) {
@@ -103,6 +104,7 @@
 		.about-text {
 			font-size: 0.8rem;
 			margin: 0 0 -1rem 0;
+			background-color: var(--black);
 		}
 		.logos {
 			display: flex;
@@ -112,7 +114,7 @@
 			width: 50%;
 			height: 75%;
 		}
-		h2 {
+		.subtitle {
 			color: cornflowerblue;
 		}
 	}
@@ -131,39 +133,16 @@
 			padding: 2rem;
 			text-align: center;
 		}
-		h1,
 		.about-title {
 			font-size: 4rem;
 			margin: 0 0 1rem 0;
 		}
 		.about-text {
 			font-size: 1rem;
+			background-color: var(--black);
 		}
-		h2 {
+		.subtitle {
 			color: cornflowerblue;
 		}
 	}
-	/* @media (max-width: 1024px) {
-		.logos {
-			display: none;
-		}
-		.pagetext {
-			display: none;
-		}
-		.mobilepagetext {
-			width: 55%;
-			margin: 0 0 0 24%;
-			display: block;
-			padding: 0.8rem;
-			text-align: center;
-			border: none;
-			background-color: transparent;
-			color: white;
-		}
-		h1,
-		.p,
-		.about-title {
-			font-size: 1.5rem;
-		}
-	} */
 </style>
