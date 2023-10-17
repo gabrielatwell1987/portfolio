@@ -13,28 +13,13 @@
 	{#if open}
 		<div class="desktop-view">
 			<a href="/">Home</a>
-			<!-- <i class="fa-solid fa-house-crack" /> -->
 			<a href="/about">About</a>
-			<!-- <i class="fa-regular fa-address-card" /> -->
 			<a href="/photos">Photos</a>
-			<!-- <i class="fa-solid fa-image" /> -->
 			<a href="/projects">Projects</a>
-			<!-- <i class="fa-solid fa-list-check" /> -->
 			<a href="/blog">Stack</a>
-			<!-- <i class="fa-solid fa-microchip" /> -->
 			<a href="/contact">Contact</a>
-			<!-- <i class="fa-regular fa-address-book" /> -->
 		</div>
 	{/if}
-
-	<!-- <div class="desktop-view">
-		<a href="/"><i class="fa-solid fa-house-crack" /> Home</a>
-		<a href="/about"><i class="fa-regular fa-address-card" /> About</a>
-		<a href="/photos"><i class="fa-solid fa-image" /> Photos</a>
-		<a href="/projects"><i class="fa-solid fa-list-check" /> Projects</a>
-		<a href="/blog"><i class="fa-solid fa-microchip" /> Stack</a>
-		<a href="/contact"><i class="fa-regular fa-address-book" /> Contact</a>
-	</div> -->
 
 	<div class="mobile-view">
 		<div class="mobile-links">
@@ -66,9 +51,6 @@
 		display: none;
 	}
 	nav {
-		background-color: #303030;
-		padding: 10px 0;
-		border: 2px solid gray;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
@@ -81,9 +63,6 @@
 		align-items: center;
 		margin-left: 2rem;
 	}
-	/* i {
-		margin: 0 0.5rem 0 0;
-	} */
 	.h1 {
 		display: grid;
 		place-items: center;
@@ -112,10 +91,6 @@
 			display: none;
 		}
 		nav {
-			border-radius: 8px;
-			background-color: #303030;
-			padding: 5px 0;
-			border: 2px solid gray;
 			display: flex;
 			justify-content: space-around;
 			align-items: center;
@@ -134,9 +109,6 @@
 			display: none;
 		}
 		nav {
-			background-color: #303030;
-			padding: 10px 0;
-			border: 2px solid gray;
 			display: flex;
 			justify-content: space-around;
 			align-items: center;
@@ -148,6 +120,7 @@
 			justify-content: center;
 			align-items: center;
 			margin: 2rem;
+			outline: none;
 		}
 		.h1 {
 			display: grid;
@@ -182,9 +155,6 @@
 			display: none;
 		}
 		nav {
-			background-color: #303030;
-			padding: 10px 0;
-			border: 2px solid gray;
 			display: flex;
 			justify-content: space-around;
 			align-items: center;
