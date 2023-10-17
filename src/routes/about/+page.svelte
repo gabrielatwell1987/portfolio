@@ -5,7 +5,7 @@
 	onMount(() => {
 		gsap.set('.logos', { y: -500 });
 		gsap.set('.pagetext', { y: 1000 });
-		gsap.set('.about-text', { x: -10000 });
+		gsap.set('.about-text', { y: 10000 });
 		gsap.set('.about-title', { y: -10000 });
 		gsap.set('main', { scale: 1 });
 
@@ -13,7 +13,7 @@
 
 		tl.to('.logos', { y: 0, ease: 'power2.out' })
 			.to('.pagetext', { y: 0, ease: 'expo.out' }, '<')
-			.to('.about-text', { x: 0, duration: 3 }, '<')
+			.to('.about-text', { y: 0, duration: 3 }, '<')
 			.to('.about-title', { y: 0, duration: 3 }, 0);
 	});
 </script>
