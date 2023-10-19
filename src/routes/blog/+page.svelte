@@ -8,6 +8,7 @@
 		gsap.set('.title', { y: 75, scale: 0 });
 
 		let tl = gsap.timeline({ defaults: { duration: 1.5 } });
+
 		tl.to('.title', { scale: 3 }).to('.title', { scale: 1, duration: 2 });
 	});
 </script>
