@@ -56,7 +56,7 @@
 				thoughts on how I could improve this site.
 			</p>
 
-			<img src="gold.png" alt="dots" width="15%" height="2%" />
+			<img class="ribbon" src="gold.png" alt="dots" width="15%" height="2%" />
 		</article>
 	</section>
 </main>
@@ -95,6 +95,9 @@
 	}
 	.subtitle {
 		color: var(--cornflower);
+	}
+	.ribbon {
+		margin: 2rem 0 0 0;
 	}
 	@media (min-width: 200px) {
 		.pagetext {
