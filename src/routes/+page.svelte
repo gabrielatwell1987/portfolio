@@ -10,6 +10,8 @@
 
 <main class="atwellLogo">
 	<img src="logo.png" alt="Logo" />
+	<br /><br /><br />
+	<img src="personal.png" alt="Logo" />
 </main>
 
 <style>
