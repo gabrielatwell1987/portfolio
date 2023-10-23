@@ -27,6 +27,9 @@
 		<h1 class="about-title">ABOUT ME</h1>
 		<article class="about-text">
 			<h2 class="subtitle">Bio</h2>
+
+			<img src="folder.png" alt="folder" width="200px" height="270px" />
+
 			<p>
 				Gabriel Atwell is a self-taught web developer. He started out with the basics: HTML, CSS,
 				and JavaScript. He then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js,
@@ -50,6 +53,8 @@
 				<a href="https://www.github.com/gabrielatwell1987/portfolio">Here</a> is the GitHub repo for
 				this site.
 			</p>
+
+			<img src="gold.png" alt="dots" width="15%" height="2%" />
 		</article>
 	</section>
 </main>
