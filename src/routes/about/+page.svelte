@@ -51,7 +51,8 @@
 			<h2 class="subtitle">Github</h2>
 			<p>
 				<a href="https://www.github.com/gabrielatwell1987/portfolio">Here</a> is the GitHub repo for
-				this site.
+				this site, just incase you want to see the code for this site. It is a SvelteKit site, so it
+				is a little different than a regular Svelte site.
 			</p>
 
 			<img src="gold.png" alt="dots" width="15%" height="2%" />
