@@ -12,6 +12,7 @@
 	<img src="logo.png" alt="Logo" />
 	<br /><br /><br />
 	<img src="personal.png" alt="Logo" />
+	<img src="code.svg" alt="Logo" width="500px" height="550px" />
 </main>
 
 <style>
