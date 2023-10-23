@@ -26,9 +26,9 @@
 	<section class="pagetext">
 		<h1 class="about-title">ABOUT ME</h1>
 		<article class="about-text">
-			<h2 class="subtitle">Bio</h2>
-
 			<img src="folder.png" alt="folder" width="200px" height="270px" />
+
+			<h2 class="subtitle">Bio</h2>
 
 			<p>
 				Gabriel Atwell is a self-taught web developer. He started out with the basics: HTML, CSS,
