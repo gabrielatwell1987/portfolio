@@ -1,5 +1,6 @@
 <script>
 	import GsapIcon from '$lib/GsapIcon.svelte';
+	import Exclamation from '$lib/Exclamation.svelte';
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 
@@ -18,7 +19,13 @@
 
 <main class="gs-main">
 	<h1 class="title">GSAP</h1>
+
+	<div class="exclamation">
+		<Exclamation />
+	</div>
+
 	<h2 class="subtitle">Greensock Animation Platform</h2>
+
 	<h3 class="heading">What is GSAP?</h3>
 	<p>
 		I really enjoy Greensock Animation Platform. I really like animating the websites that I've
@@ -92,5 +99,8 @@
 	.learn {
 		margin: 0 0 -2rem 0;
 		text-align: center;
+	}
+	.exclamation {
+		margin: 2rem 0 2rem 48%;
 	}
 </style>

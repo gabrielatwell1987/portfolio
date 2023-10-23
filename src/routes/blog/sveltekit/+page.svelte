@@ -1,5 +1,6 @@
 <script>
 	import Svelte from '$lib/Svelte.svelte';
+	import Exclamation from '$lib/Exclamation.svelte';
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 
@@ -25,6 +26,11 @@
 
 <main class="sk-main">
 	<h1 class="title">SvelteKit</h1>
+
+	<div class="exclamation">
+		<Exclamation />
+	</div>
+
 	<section class="sk-grid">
 		<h2 class="top subtitle">What I used to create this site</h2>
 		<p>
@@ -96,5 +102,8 @@
 	}
 	.sveltekit {
 		margin: 0 0 0 48%;
+	}
+	.exclamation {
+		margin: 5rem 0 0 48%;
 	}
 </style>
