@@ -46,6 +46,7 @@
 	}
 	.desktop-view {
 		display: block;
+		font-weight: bolder;
 	}
 	.mobile-view {
 		display: none;
@@ -69,6 +70,7 @@
 		margin: 0 5rem 0 0;
 		width: 15%;
 		color: var(--sky);
+		font-weight: bolder;
 	}
 	@media (min-width: 200px) {
 		.desktop-view {
@@ -79,6 +81,7 @@
 			justify-content: space-evenly;
 			width: 100%;
 			margin: 0 0 0 -75%;
+			font-weight: bold;
 		}
 		.mobile-links {
 			display: flex;
@@ -102,8 +105,9 @@
 		.desktop-view {
 			display: block;
 			width: 100%;
-			margin-left: -75%;
+			/* margin-left: -100%; */
 			font-size: 1rem;
+			font-weight: bolder;
 		}
 		.mobile-view {
 			display: none;
@@ -128,6 +132,7 @@
 			margin: 0 5rem 0 0;
 			width: 15%;
 			color: var(--sky);
+			font-weight: bolder;
 		}
 	}
 	@media (min-width: 990px) {
@@ -150,6 +155,7 @@
 			width: 100%;
 			margin-left: 16%;
 			font-size: 1rem;
+			font-weight: bolder;
 		}
 		.mobile-view {
 			display: none;
@@ -173,7 +179,7 @@
 			margin: 0 5rem 0 0;
 			width: 15%;
 			color: var(--sky);
-			font-weight: 900;
+			font-weight: bolder;
 		}
 	}
 </style>
