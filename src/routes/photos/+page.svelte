@@ -64,4 +64,10 @@
 		width: 35%;
 		margin: 0 0 0 32%;
 	}
+	@media (min-width: 200px) {
+		.photos {
+			width: 75%;
+			margin: 0 0 0 12%;
+		}
+	}
 </style>
