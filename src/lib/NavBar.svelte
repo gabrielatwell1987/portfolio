@@ -103,14 +103,19 @@
 	}
 	@media (min-width: 740px) {
 		.desktop-view {
+			/* display: block;
+			width: 100%;
+			/* margin-left: -100%; 
+			font-size: 1rem;
+			font-weight: bolder; */
+			display: none;
+		}
+		.mobile-view {
 			display: block;
 			width: 100%;
 			/* margin-left: -100%; */
 			font-size: 1rem;
 			font-weight: bolder;
-		}
-		.mobile-view {
-			display: none;
 		}
 		nav {
 			display: flex;
@@ -120,11 +125,12 @@
 			width: 100%;
 		}
 		.header-logos {
-			display: flex;
+			/* display: flex;
 			justify-content: center;
 			align-items: center;
 			margin: 2rem;
-			outline: none;
+			outline: none; */
+			display: none;
 		}
 		.h1 {
 			display: grid;
