@@ -35,7 +35,7 @@
 		<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" /><br /><br />
 		<img class="gabe3" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" /><br /><br />
 		<img class="gabe4" src="gabe4.jpg" alt="Gabriel Atwell" width="350" />
-		<img class="gabe5" src="retard.png" alt="Gabriel Atwell" width="350" />
+		<img class="gabe5" src="retard.png" alt="Gabriel Atwell" width="400" />
 	</section>
 </main>
 
