@@ -25,6 +25,7 @@
 		<div class="mobile-links">
 			<a class="mobile-link" href="/">Home</a>
 			<a class="mobile-link" href="/about">About</a>
+			<a class="mobile-link" href="/photos">Photos</a>
 			<a class="mobile-link" href="/projects">Projects</a>
 			<a class="mobile-link" href="/contact">Contact</a>
 		</div>
@@ -80,7 +81,7 @@
 			display: block;
 			justify-content: space-evenly;
 			width: 100%;
-			margin: 0 0 0 -75%;
+			margin: 0 0 0 -78%;
 			font-weight: bold;
 		}
 		.mobile-links {
