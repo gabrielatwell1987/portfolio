@@ -17,12 +17,12 @@
 
 		let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 		tl.to('.gabe', { borderRadius: '50%', repeat: 3, yoyo: true })
-			.to('.gabe2', { borderRadius: '50%', repeat: 3, yoyo: true }, '<')
+			.to('.gabe2, .gabe3, .gabe4, .gabe5', { borderRadius: '50%', repeat: 3, yoyo: true }, '<')
 			.to('.gabe3', { borderRadius: '50%', repeat: 3, yoyo: true }, '<')
 			.to('.gabe4', { borderRadius: '50%', repeat: 3, yoyo: true }, '<')
 			.to('.photos', { y: 0 }, '<');
 
-		gsap.set('.gabe, .gabe2, .gabe3, .gabe4', { borderRadius: '25%' });
+		gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5', { borderRadius: '25%' });
 	});
 </script>
 
@@ -35,6 +35,7 @@
 		<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" /><br /><br />
 		<img class="gabe3" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" /><br /><br />
 		<img class="gabe4" src="gabe4.jpg" alt="Gabriel Atwell" width="350" />
+		<img class="gabe5" src="retard.png" alt="Gabriel Atwell" width="350" />
 	</section>
 </main>
 
