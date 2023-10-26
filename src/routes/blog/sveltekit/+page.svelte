@@ -16,7 +16,7 @@
 				x: 473,
 				y: 30
 			})
-			.to('.sk-main', { y: 0 }, '-=4');
+			.to('.sk-main', { y: 0 }, 0);
 	});
 </script>
 
@@ -24,14 +24,14 @@
 	<Svelte />
 </div>
 
-<main>
-	<h1 class="title">SvelteKit</h1>
+<main class="sk-main">
+	<h1>SvelteKit</h1>
 
 	<div class="exclamation">
 		<Exclamation />
 	</div>
 
-	<section class="sk-grid">
+	<section>
 		<h2 class="subtitle">What I used to create this site</h2>
 		<p>
 			I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
@@ -94,7 +94,7 @@
 	a:hover {
 		color: var(--white);
 	}
-	.title {
+	h1 {
 		font-size: 4rem;
 		font-weight: 800;
 		margin: 2rem 0 -1rem 0;

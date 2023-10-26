@@ -18,7 +18,7 @@
 		let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 		tl.to('.gabe', { borderRadius: '50%', repeat: 3, yoyo: true })
 			.to('.gabe2, .gabe3, .gabe4, .gabe5', { borderRadius: '50%', repeat: 3, yoyo: true }, '<')
-			.to('.photos', { y: 0 }, '<');
+			.to('section', { y: 0 }, '<');
 
 		gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5', { borderRadius: '25%' });
 	});
@@ -27,8 +27,9 @@
 <main class="main">
 	<h2 class="title">PHOTOS</h2>
 
-	<section class="photos">
+	<section>
 		<h3 class="subtitle">My Photos</h3>
+
 		<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="350" height="450" /><br /><br />
 		<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" /><br /><br />
 		<img class="gabe3" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" /><br /><br />
@@ -52,7 +53,7 @@
 		margin: 0 0 2rem 0;
 		font-size: 2.5rem;
 	}
-	.photos {
+	section {
 		background-color: var(--lightblack);
 		border: 3px solid var(--white);
 		border-radius: 10px;
@@ -65,7 +66,7 @@
 		margin: 0 0 0 32%;
 	}
 	@media (min-width: 200px) {
-		.photos {
+		section {
 			width: 75%;
 			margin: 0 0 0 12%;
 		}

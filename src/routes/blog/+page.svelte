@@ -18,7 +18,7 @@
 
 <main>
 	<h1 class="title">TECH STACK</h1>
-	<section class="stackLinks">
+	<section>
 		<a href="blog/greensock"><GsapIcon /></a>
 		<a href="blog/sveltekit"><Svelte /></a>
 	</section>

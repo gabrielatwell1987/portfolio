@@ -5,7 +5,7 @@
 	onMount(() => {
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 
-		tl.to('.content', { autoAlpha: 1 })
+		tl.to('section', { autoAlpha: 1 })
 			.to('.linksize', { autoAlpha: 1, stagger: 0.8 })
 			.to('.title', { rotation: 360, duration: 3 }, '<');
 	});
@@ -86,7 +86,7 @@
 			justify-content: center;
 			align-items: center;
 		}
-		.content {
+		section {
 			border: 3px solid var(--white);
 			border-radius: 10px;
 			background-color: var(--black);
@@ -123,7 +123,7 @@
 			justify-content: center;
 			align-items: center;
 		}
-		.content {
+		section {
 			border: 3px solid var(--white);
 			border-radius: 10px;
 			background-color: var(--black);

@@ -4,17 +4,17 @@
 
 	onMount(() => {
 		gsap.set('.logos', { y: -500 });
-		gsap.set('.pagetext', { y: 1000 });
-		gsap.set('.about-text', { y: 10000 });
-		gsap.set('.about-title', { y: -10000 });
+		gsap.set('section', { y: 1000 });
+		gsap.set('article', { y: 10000 });
+		gsap.set('.title', { y: -10000 });
 		gsap.set('main', { scale: 1 });
 
 		let tl = gsap.timeline({ defaults: { duration: 2 } });
 
 		tl.to('.logos', { y: 0, ease: 'power2.out' })
-			.to('.pagetext', { y: 0, ease: 'expo.out' }, '<')
-			.to('.about-text', { y: 0, duration: 3 }, '<')
-			.to('.about-title', { y: 0, duration: 3 }, 0);
+			.to('section', { y: 0, ease: 'expo.out' }, '<')
+			.to('article', { y: 0, duration: 3 }, '<')
+			.to('.title', { y: 0, duration: 3 }, 0);
 	});
 </script>
 
@@ -23,9 +23,9 @@
 		<img class="roses" src="roses.png" width="350" alt="Roses Logo" />
 	</div>
 
-	<section class="pagetext">
-		<h1 class="about-title">ABOUT ME</h1>
-		<article class="about-text">
+	<section>
+		<h1 class="title">ABOUT ME</h1>
+		<article>
 			<img src="folder.png" alt="folder" width="200px" height="270px" />
 
 			<h2 class="subtitle">Bio</h2>
@@ -64,7 +64,7 @@
 	p {
 		line-height: 2.5;
 	}
-	.about-title {
+	.title {
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
 		color: var(--sky);
 		font-size: 4rem;
@@ -72,11 +72,11 @@
 		text-align: center;
 		padding: 2rem;
 	}
-	.about-text {
+	article {
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 1rem;
 	}
-	.pagetext {
+	section {
 		display: block;
 		padding: 2rem;
 		text-align: center;
@@ -105,17 +105,17 @@
 		p {
 			line-height: 1.75;
 		}
-		.pagetext {
+		section {
 			display: block;
 			margin: 0 0 0 12%;
 			padding: 1rem;
 			text-align: center;
 		}
-		.about-title {
+		.title {
 			font-size: 1rem;
 			margin: 0 0 -1rem 0;
 		}
-		.about-text {
+		article {
 			font-size: 0.8rem;
 			margin: 0 0 -1rem 0;
 			background-color: transparent;
@@ -144,17 +144,17 @@
 			width: 100%;
 			height: 100%;
 		}
-		.pagetext {
+		section {
 			display: block;
 			margin: 0 0 0 12%;
 			padding: 2rem;
 			text-align: center;
 		}
-		.about-title {
+		.title {
 			font-size: 4rem;
 			margin: 0 0 1rem 0;
 		}
-		.about-text {
+		article {
 			font-size: 1rem;
 		}
 		.subtitle {

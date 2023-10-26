@@ -6,10 +6,11 @@
 
 	onMount(() => {
 		gsap.set('.gs-main', { y: 1000 });
+		gsap.set('.greensock', { autoAlpha: 0, y: -500 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.to('.greensock', { autoAlpha: 1, ease: 'back.out' }).to('.gs-main', { y: 0 }, '-=3');
+		tl.to('.greensock', { autoAlpha: 1, y: 0, ease: 'back.out' }).to('.gs-main', { y: 0 }, 0);
 	});
 </script>
 
@@ -17,7 +18,7 @@
 	<GsapIcon />
 </div>
 
-<main>
+<main class="gs-main">
 	<h1 class="title">GSAP</h1>
 
 	<div class="exclamation">
