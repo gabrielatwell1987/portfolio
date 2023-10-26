@@ -10,7 +10,7 @@
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.to('.greensock', { autoAlpha: 1, y: 0, ease: 'back.out' }).to('.gs-main', { y: 0 }, 0);
+		tl.to('.greensock', { autoAlpha: 1, y: 0, ease: 'back.out' }, 0).to('.gs-main', { y: 0 }, 0);
 	});
 </script>
 
