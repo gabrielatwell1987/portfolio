@@ -61,6 +61,9 @@
 </main>
 
 <style>
+	p {
+		line-height: 2.5;
+	}
 	.about-title {
 		font-family: Verdana, Geneva, Tahoma, sans-serif;
 		color: var(--sky);
@@ -79,7 +82,7 @@
 		text-align: center;
 		background-color: var(--black);
 		border: 3px solid var(--white);
-		border-radius: 8px;
+		border-radius: 10px;
 		width: 75%;
 		margin: 0 0 0 12.5rem;
 	}
@@ -99,6 +102,9 @@
 		margin: 2rem 0 0 0;
 	}
 	@media (min-width: 200px) {
+		p {
+			line-height: 2.5;
+		}
 		.pagetext {
 			display: block;
 			margin: 0 0 0 12%;
@@ -127,6 +133,9 @@
 		}
 	}
 	@media (min-width: 990px) {
+		p {
+			line-height: 2.5;
+		}
 		.logos {
 			display: flex;
 			justify-content: center;

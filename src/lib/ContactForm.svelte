@@ -73,6 +73,7 @@
 	}
 	fieldset {
 		border: 3px solid whitesmoke;
+		border-radius: 10px;
 		font-weight: bolder;
 		font-size: 2rem;
 		margin: 2rem;

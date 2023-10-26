@@ -17,7 +17,7 @@
 	<GsapIcon />
 </div>
 
-<main class="gs-main">
+<main>
 	<h1 class="title">GSAP</h1>
 
 	<div class="exclamation">
@@ -33,11 +33,13 @@
 		learning curve nearly flat. Other than that, it doesn't take up a lot of space to encorporate
 		these techniques, which makes your web pages 100,000 times faster.
 	</p>
+	<h3 class="heading">How I used GSAP</h3>
 	<p>
 		All of the designs that are animated on this website are all from GSAP and my head. I tend to
-		think that these animations make the website look a lot better than a static website
+		think that these animations make the website look a lot better than a static website. GSAP is a
+		great tool to use for any web developer. I highly recommend it!
 	</p>
-	<p>GSAP is a great tool to use for any web developer. I highly recommend it!</p>
+	<!-- <p>GSAP is a great tool to use for any web developer. I highly recommend it!</p> -->
 	<h3 class="learn">Do you want to learn more about GSAP?</h3>
 	<p>
 		If you would like to know more about greensock, please click <a href="https://greensock.com"
@@ -53,6 +55,7 @@
 		background-color: var(--lightblack);
 		width: 45%;
 		border: 3px solid var(--white);
+		border-radius: 10px;
 		margin: 0 0 0 27%;
 	}
 	p {
@@ -60,6 +63,7 @@
 		margin-bottom: 0 0 2rem 0;
 		padding: 0.5em 2em;
 		padding-top: 2.5em;
+		line-height: 2.5;
 	}
 	a {
 		text-decoration: none;
@@ -71,6 +75,7 @@
 	}
 	.heading {
 		text-align: center;
+		margin: 5rem 0 0 0;
 	}
 	.homelink {
 		display: block;
@@ -97,7 +102,7 @@
 		margin: 5rem 0 3rem 0;
 	}
 	.learn {
-		margin: 0 0 -2rem 0;
+		margin: 5rem 0 -1rem 0;
 		text-align: center;
 	}
 	.exclamation {

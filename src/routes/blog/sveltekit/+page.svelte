@@ -24,7 +24,7 @@
 	<Svelte />
 </div>
 
-<main class="sk-main">
+<main>
 	<h1 class="title">SvelteKit</h1>
 
 	<div class="exclamation">
@@ -32,7 +32,7 @@
 	</div>
 
 	<section class="sk-grid">
-		<h2 class="top subtitle">What I used to create this site</h2>
+		<h2 class="subtitle">What I used to create this site</h2>
 		<p>
 			I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
 			the server-side rendering (SRR) and all of the SEO features, as well as the speed of
@@ -45,7 +45,13 @@
 			because I'm a very visual person. Sveltekit has made it super simple to put my ideas on the
 			web.
 		</p>
-		<h3 class="learn subtitle">Learn more about Sveltekit</h3>
+		<h2 class="subtitle">What is svelte and sveltekit?</h2>
+		<p>
+			Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
+			framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
+			React. In the end, svelte(kit) is a new approach to building rich user interfaces.
+		</p>
+		<h2 class="subtitle">Learn more about Sveltekit</h2>
 		<p>
 			If you would like to know more about svelte and sveltekit, please click <a
 				href="https://svelte.dev">here</a
@@ -61,6 +67,7 @@
 		background-color: var(--lightblack);
 		width: 45%;
 		border: 3px solid var(--white);
+		border-radius: 10px;
 		margin: 6rem 0 0 27%;
 	}
 	p {
@@ -68,6 +75,7 @@
 		margin: 0 0 2rem 0;
 		padding: 0.5em 2em;
 		padding-top: 2.5em;
+		line-height: 2.5;
 	}
 	a {
 		text-decoration: none;
@@ -76,15 +84,8 @@
 	}
 	.subtitle {
 		text-align: center;
-		margin: 0 0 -2rem 0;
+		margin: 2rem 0 -0.5rem 0;
 		color: var(--cornflower);
-	}
-	.learn {
-		text-align: center;
-		margin: 0 0 -2.5rem 0;
-	}
-	.top {
-		margin: 2rem 0 0 0;
 	}
 	.homelink {
 		display: block;

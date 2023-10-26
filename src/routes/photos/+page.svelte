@@ -55,7 +55,7 @@
 	.photos {
 		background-color: var(--lightblack);
 		border: 3px solid var(--white);
-		border-radius: 8px;
+		border-radius: 10px;
 		padding: 1.5rem;
 		display: flex;
 		flex-direction: column;

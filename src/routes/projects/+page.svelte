@@ -88,7 +88,7 @@
 		}
 		.content {
 			border: 3px solid var(--white);
-			border-radius: 8px;
+			border-radius: 10px;
 			background-color: var(--black);
 			width: 75%;
 			padding: 1rem;
@@ -125,7 +125,7 @@
 		}
 		.content {
 			border: 3px solid var(--white);
-			border-radius: 8px;
+			border-radius: 10px;
 			background-color: var(--black);
 			width: 35%;
 			padding: 2rem;
