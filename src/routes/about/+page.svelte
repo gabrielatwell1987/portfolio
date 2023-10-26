@@ -103,7 +103,7 @@
 	}
 	@media (min-width: 200px) {
 		p {
-			line-height: 1.2;
+			line-height: 1.75;
 		}
 		.pagetext {
 			display: block;
