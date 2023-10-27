@@ -29,19 +29,23 @@
 
 	<h3 class="heading">What is GSAP?</h3>
 	<p>
-		I really enjoy Greensock Animation Platform. I really like animating the websites that I've
-		built! GSAP makes it so easy to accomplish! The syntax is really simple to learn which makes the
-		learning curve nearly flat. Other than that, it doesn't take up a lot of space to encorporate
-		these techniques, which makes your web pages 100,000 times faster.
+		Greensock Animation Platform (GSAP) is a JavaScript library that allows you to animate your
+		website. I really like animating the websites that I've built from scratch and GSAP makes it so
+		easy to accomplish! The syntax is really simple which makes no learning curve at all. Other than
+		that, it doesn't take up a lot of space to encorporate these techniques, which makes your web
+		pages 100,000 times faster.
 	</p>
 	<h3 class="heading">How I used GSAP</h3>
 	<p>
-		All of the designs that are animated on this website are all from GSAP and my head. I tend to
-		think that these animations make the website look a lot better than a static website. GSAP is a
-		great tool to use for any web developer. I highly recommend it!
+		In the project, you have to npm install gsap. In sveltekit, you have to put all of your GSAP
+		code in an onMount function that you have to import. This is because onMount is displayed once
+		on initial load. If you were to use a regular script tag, it would not work. All of the designs
+		that are animated on this website are all from GSAP. I tend to think that these animations make
+		the website look a lot better than a static website. GSAP is a great tool to use for any web
+		developer. I highly recommend it!
 	</p>
 	<!-- <p>GSAP is a great tool to use for any web developer. I highly recommend it!</p> -->
-	<h3 class="learn">Do you want to learn more about GSAP?</h3>
+	<h3 class="learn">Learn more about GSAP</h3>
 	<p>
 		If you would like to know more about greensock, please click <a href="https://greensock.com"
 			>here</a
