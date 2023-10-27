@@ -7,6 +7,7 @@
 	onMount(() => {
 		gsap.set('.gs-main', { y: 1000 });
 		gsap.set('.greensock', { autoAlpha: 0, y: -500 });
+		gsap.set('.title', { skewX: 15 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 

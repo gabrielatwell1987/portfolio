@@ -7,6 +7,7 @@
 	onMount(() => {
 		gsap.set('.sveltekit', { y: -500 });
 		gsap.set('.sk-main', { y: 1000 });
+		gsap.set('.title', { skewX: -15 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
@@ -25,7 +26,7 @@
 </div>
 
 <main class="sk-main">
-	<h1>SvelteKit</h1>
+	<h1 class="title">SvelteKit</h1>
 
 	<div class="exclamation">
 		<Exclamation />

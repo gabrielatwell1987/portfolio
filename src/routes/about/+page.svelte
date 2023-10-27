@@ -6,7 +6,7 @@
 		gsap.set('.logos', { y: -500 });
 		gsap.set('section', { y: 1000 });
 		gsap.set('article', { y: 10000 });
-		gsap.set('.title', { y: -10000 });
+		gsap.set('.title', { y: -10000, color: 'lightblue' });
 		gsap.set('main', { scale: 1 });
 
 		let tl = gsap.timeline({ defaults: { duration: 2 } });
