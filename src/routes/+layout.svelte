@@ -24,7 +24,7 @@
 </main>
 
 <footer>
-	<div class="linkIcons">
+	<section class="linkIcons">
 		<a class="reddit" href="https://www.reddit.com/u/gatwell702">
 			<Reddit />
 		</a>
@@ -32,7 +32,7 @@
 		<a class="discord" href="https://discordapp.com/users/1007777351809114112">
 			<Discord />
 		</a>
-	</div>
+	</section>
 	<h6>©️ 2023 Gabriel Atwell</h6>
 </footer>
 
