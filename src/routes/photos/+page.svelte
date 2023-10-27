@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.set('.photos', { y: 500 });
+		gsap.set('section', { y: 500 });
 		gsap.set('.title', { x: -1000 });
 
 		gsap.to('.title', {
