@@ -18,6 +18,7 @@
 <style>
 	main {
 		text-align: center;
+		margin: 5rem 0 0 0;
 	}
 	img {
 		border-radius: 50%;
