@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.set('section', { y: 500 });
+		gsap.set('.photos', { y: 500 });
 		gsap.set('.title', { x: -1000 });
 
 		gsap.to('.title', {
@@ -18,7 +18,7 @@
 		let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 		tl.to('.gabe', { borderRadius: '50%', repeat: 3, yoyo: true })
 			.to('.gabe2, .gabe3, .gabe4, .gabe5', { borderRadius: '50%', repeat: 3, yoyo: true }, '<')
-			.to('section', { y: 0 }, '<');
+			.to('.photos', { y: 0 }, '<');
 
 		gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5', { borderRadius: '25%' });
 	});
@@ -27,7 +27,7 @@
 <main class="main">
 	<h2 class="title">PHOTOS</h2>
 
-	<section>
+	<section class="photos">
 		<h3 class="subtitle">My Photos</h3>
 
 		<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="350" height="450" /><br /><br />
