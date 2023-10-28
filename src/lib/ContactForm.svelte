@@ -15,8 +15,10 @@
 
 <form class="form" method="POST" action="https://formsubmit.co/gatwell702@gmail.com">
 	<input type="hidden" name="send_to" value="gatwell702@gmail.com" />
+
 	<fieldset>
-		<legend> Send me a message </legend>
+		<legend> Message Me </legend>
+
 		<label for="name"><span>Name</span></label>
 		<input type="text" id="name" name="name" placeholder="Your name" bind:value={name} required />
 
