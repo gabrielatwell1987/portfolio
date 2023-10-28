@@ -26,8 +26,8 @@
 
 <footer>
 	<section class="linkIcons">
-		<a class="reddit" href="https://www.reddit.com/u/gatwell702">
-			<Reddit />
+		<a class="linkedin" href="https://www.linkedin.com/in/gabriel-atwell-ab2116231/">
+			<LinkedIn />
 		</a>
 
 		<a class="discord" href="https://discordapp.com/users/1007777351809114112">
@@ -53,8 +53,8 @@
 		margin: 1rem 0 0 0;
 		font-weight: 200;
 	}
-	.reddit {
-		margin: 0 -5.2rem 0 0;
+	.linkedin {
+		margin: 0 2rem 0 0;
 	}
 	.desktop {
 		width: 100%;
