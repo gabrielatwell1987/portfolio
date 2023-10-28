@@ -93,6 +93,7 @@
 		margin: 2rem 0 2rem 0;
 		text-align: center;
 		color: var(--sky);
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	}
 	.subtitle {
 		font-size: 2rem;

@@ -95,12 +95,13 @@
 	a:hover {
 		color: var(--white);
 	}
-	h1 {
+	.title {
 		font-size: 4rem;
 		font-weight: 800;
 		margin: 2rem 0 -1rem 0;
 		text-align: center;
 		color: var(--sky);
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	}
 	.sveltekit {
 		margin: 0 0 0 48%;

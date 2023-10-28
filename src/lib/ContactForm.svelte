@@ -88,6 +88,7 @@
 		font-size: 1.75rem;
 		color: var(--white);
 		padding: 0 1rem 0 1rem;
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	}
 	@media (min-width: 200px) {
 		form {
@@ -141,6 +142,7 @@
 			font-size: 1.75rem;
 			color: var(--white);
 			padding: 0 1rem 0 1rem;
+			font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 		}
 	}
 </style>

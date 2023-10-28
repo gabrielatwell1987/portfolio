@@ -31,7 +31,8 @@
 		margin: 0 0 0 49%;
 	}
 	.title {
-		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		/* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+		font-family: 'Courier New', Courier, monospace;
 		color: var(--white);
 		font-size: 4rem;
 		font-weight: 800;

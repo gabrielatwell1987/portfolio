@@ -67,7 +67,7 @@
 		line-height: 2.5;
 	}
 	.title {
-		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		font-family: 'Courier New', Courier, monospace;
 		color: var(--sky);
 		font-size: 4rem;
 		font-weight: 800;
@@ -122,6 +122,7 @@
 		.title {
 			font-size: 1rem;
 			margin: 0 0 -1rem 0;
+			font-family: 'Courier New', Courier, monospace;
 		}
 		article {
 			font-size: 0.8rem;
@@ -167,6 +168,7 @@
 		.title {
 			font-size: 4rem;
 			margin: 0 0 1rem 0;
+			font-family: 'Courier New', Courier, monospace;
 		}
 		article {
 			font-size: 1rem;

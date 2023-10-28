@@ -72,6 +72,7 @@
 		width: 15%;
 		color: var(--sky);
 		font-weight: bolder;
+		font-family: 'Courier New', Courier, monospace;
 	}
 	@media (min-width: 200px) {
 		.desktop-view {
@@ -140,6 +141,7 @@
 			width: 15%;
 			color: var(--sky);
 			font-weight: bolder;
+			font-family: 'Courier New', Courier, monospace;
 		}
 	}
 	@media (min-width: 990px) {
@@ -188,6 +190,7 @@
 			width: 15%;
 			color: var(--sky);
 			font-weight: bolder;
+			font-family: 'Courier New', Courier, monospace;
 		}
 	}
 </style>
