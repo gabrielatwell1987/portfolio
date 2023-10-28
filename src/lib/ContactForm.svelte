@@ -17,7 +17,7 @@
 	<input type="hidden" name="send_to" value="gatwell702@gmail.com" />
 
 	<fieldset>
-		<legend> Message Me </legend>
+		<legend> CONTACT </legend>
 
 		<label for="name"><span>Name</span></label>
 		<input type="text" id="name" name="name" placeholder="Your name" bind:value={name} required />
@@ -84,7 +84,7 @@
 	}
 	legend {
 		font-weight: bolder;
-		font-size: 1rem;
+		font-size: 1.5rem;
 		color: var(--white);
 		padding: 0 1rem 0 1rem;
 	}
@@ -136,7 +136,7 @@
 		}
 		legend {
 			font-weight: bolder;
-			font-size: 1rem;
+			font-size: 1.5rem;
 			color: var(--white);
 			padding: 0 1rem 0 1rem;
 		}
