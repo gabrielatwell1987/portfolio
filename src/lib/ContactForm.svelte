@@ -84,7 +84,7 @@
 	}
 	legend {
 		font-weight: bolder;
-		font-size: 1.5rem;
+		font-size: 1.75rem;
 		color: var(--white);
 		padding: 0 1rem 0 1rem;
 	}
@@ -136,7 +136,7 @@
 		}
 		legend {
 			font-weight: bolder;
-			font-size: 1.5rem;
+			font-size: 1.75rem;
 			color: var(--white);
 			padding: 0 1rem 0 1rem;
 		}
