@@ -22,7 +22,7 @@
 		width: 3%;
 		height: 3%;
 		margin-left: 40rem;
-		margin-right: 8rem;
+		margin-right: 14rem;
 		margin-top: 3rem;
 		background-color: #303030;
 		border-radius: 40%;

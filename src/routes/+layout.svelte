@@ -6,6 +6,7 @@
 	import Analytics from '$lib/Analytics.svelte';
 	import SEO from '$lib/SEO.svelte';
 	import '../app.css';
+	import LinkedIn from '../lib/LinkedIn.svelte';
 </script>
 
 <Analytics />
@@ -53,7 +54,7 @@
 		font-weight: 200;
 	}
 	.reddit {
-		margin: 0 2rem 0 0;
+		margin: 0 -5.2rem 0 0;
 	}
 	.desktop {
 		width: 100%;
