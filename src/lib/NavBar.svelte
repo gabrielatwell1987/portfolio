@@ -35,7 +35,7 @@
 <style>
 	a {
 		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		font-size: 0.9rem;
+		font-size: 1rem;
 		text-decoration: none;
 		font-weight: 900;
 		color: var(--sky);
@@ -44,7 +44,6 @@
 	}
 	a:hover {
 		color: var(--blue);
-		font-size: 1.2rem;
 	}
 	.desktop-view {
 		display: block;
@@ -156,6 +155,7 @@
 		}
 		a:hover {
 			color: blue;
+			font-size: 1.1rem;
 		}
 		.desktop-view {
 			/* margin-right: .5rem; */
