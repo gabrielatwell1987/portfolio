@@ -60,11 +60,12 @@
 		text-align: center;
 	}
 	input {
-		font-size: 1.5rem;
+		font-size: 1rem;
 		margin-bottom: 1rem;
+		width: 100%;
 	}
 	textarea {
-		font-size: 1.5rem;
+		font-size: 1rem;
 		margin-bottom: 1rem;
 	}
 	button {
@@ -115,6 +116,7 @@
 		input {
 			font-size: 1.5rem;
 			margin-bottom: 1rem;
+			width: 100%;
 		}
 		textarea {
 			font-size: 1.5rem;
