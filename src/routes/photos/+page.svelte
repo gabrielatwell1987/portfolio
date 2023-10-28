@@ -4,7 +4,7 @@
 
 	onMount(() => {
 		gsap.set('.photos', { y: 500 });
-		gsap.set('.title', { x: -1000 });
+		// gsap.set('.title', { x: -1000 });
 
 		gsap.to('.title', {
 			keyframes: {
