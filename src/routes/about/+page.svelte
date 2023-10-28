@@ -103,6 +103,12 @@
 	.ribbon {
 		margin: 2rem 0 0 0;
 	}
+	a {
+		font-size: 0.9rem;
+	}
+	a:hover {
+		font-size: 1.2rem;
+	}
 	@media (min-width: 200px) {
 		p {
 			line-height: 1.75;
@@ -133,6 +139,12 @@
 		.subtitle {
 			color: cornflowerblue;
 		}
+		a {
+			font-size: 0.9rem;
+		}
+		a:hover {
+			font-size: 1.2rem;
+		}
 	}
 	@media (min-width: 990px) {
 		p {
@@ -161,6 +173,12 @@
 		}
 		.subtitle {
 			color: cornflowerblue;
+		}
+		a {
+			font-size: 0.9rem;
+		}
+		a:hover {
+			font-size: 1.2rem;
 		}
 	}
 </style>
