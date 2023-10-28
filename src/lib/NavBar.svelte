@@ -7,7 +7,8 @@
 <nav>
 	<div class="header-logos">
 		<Hamburger type="spin" bind:open />
-		<h1 class="h1">GABEatwell</h1>
+
+		<h1 class="h1">GABE|atwell</h1>
 	</div>
 
 	{#if open}
