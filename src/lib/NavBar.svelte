@@ -44,6 +44,7 @@
 	}
 	a:hover {
 		color: var(--blue);
+		font-size: 1.2rem;
 	}
 	.desktop-view {
 		display: block;
