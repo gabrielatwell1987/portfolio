@@ -26,7 +26,7 @@
 	<section>
 		<h1 class="title">ABOUT ME</h1>
 		<article>
-			<img src="folder.png" alt="folder" width="200px" height="270px" />
+			<img class="horse" src="horse-logo.jpg" alt="folder" width="200px" height="270px" />
 
 			<h2 class="subtitle">Bio</h2>
 
@@ -108,6 +108,9 @@
 	}
 	a:hover {
 		font-size: 1.2rem;
+	}
+	.horse {
+		margin: 0 0 5rem 0;
 	}
 	@media (min-width: 200px) {
 		p {
