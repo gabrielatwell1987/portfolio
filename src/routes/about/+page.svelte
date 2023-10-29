@@ -26,7 +26,6 @@
 					start: 'top 85%',
 					end: 'bottom 15%',
 					scrub: true,
-					markers: true,
 					toggleActions: 'play pause resume pause'
 				}
 			});
