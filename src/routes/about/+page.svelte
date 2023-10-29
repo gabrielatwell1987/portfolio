@@ -111,6 +111,7 @@
 	}
 	.horse {
 		margin: 0 0 5rem 0;
+		border-radius: 10px;
 	}
 	@media (min-width: 200px) {
 		p {
