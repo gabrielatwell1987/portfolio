@@ -21,7 +21,7 @@
 			.to('.horse', {
 				rotation: 360,
 				duration: 5,
-				scale: 1.5,
+				scale: 0.75,
 				scrollTrigger: {
 					trigger: '.horse',
 					start: 'top 85%',
