@@ -1,8 +1,11 @@
 <script>
 	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
 		gsap.set('.logos', { y: -500 });
 		gsap.set('section', { y: 1000 });
 		gsap.set('article', { y: 10000 });
@@ -14,7 +17,19 @@
 		tl.to('.logos', { y: 0, ease: 'power2.out' })
 			.to('section', { y: 0, ease: 'expo.out' }, '<')
 			.to('article', { y: 0, duration: 3 }, '<')
-			.to('.title', { y: 0, duration: 3 }, 0);
+			.to('.title', { y: 0, duration: 3 }, 0)
+			.to('.horse', {
+				rotation: 360,
+				duration: 5,
+				scrollTrigger: {
+					trigger: '.horse',
+					start: 'top 85%',
+					end: 'bottom 15%',
+					scrub: true,
+					markers: true,
+					toggleActions: 'play pause resume pause'
+				}
+			});
 	});
 </script>
 
@@ -26,7 +41,7 @@
 	<section>
 		<h1 class="title">ABOUT ME</h1>
 		<article>
-			<img class="horse" src="horse-logo.jpg" alt="folder" width="200px" height="270px" />
+			<img class="horse" src="horse-logo.jpg" alt="horse" width="200px" height="270px" />
 
 			<h2 class="subtitle">Bio</h2>
 
