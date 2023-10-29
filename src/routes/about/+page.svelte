@@ -99,6 +99,7 @@
 	}
 	.subtitle {
 		color: var(--cornflower);
+		font-size: 2.5rem;
 	}
 	.ribbon {
 		margin: 2rem 0 0 0;
@@ -143,6 +144,7 @@
 		}
 		.subtitle {
 			color: cornflowerblue;
+			font-size: 1rem;
 		}
 		a {
 			font-size: 0.9rem;
@@ -179,6 +181,7 @@
 		}
 		.subtitle {
 			color: cornflowerblue;
+			font-size: 2.5rem;
 		}
 		a {
 			font-size: 0.9rem;
