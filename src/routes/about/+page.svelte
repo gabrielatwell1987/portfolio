@@ -22,6 +22,7 @@
 				rotation: 360,
 				duration: 5,
 				scale: 0.75,
+				opacity: 0.5,
 				scrollTrigger: {
 					trigger: '.horse',
 					start: 'top 85%',
