@@ -18,19 +18,22 @@
 			.to('section', { y: 0, ease: 'expo.out' }, '<')
 			.to('article', { y: 0, duration: 3 }, '<')
 			.to('.title', { y: 0, duration: 3 }, 0)
-			.to('.horse', {
-				rotation: 360,
-				duration: 5,
-				scale: 0.75,
-				opacity: 0.5,
-				scrollTrigger: {
-					trigger: '.horse',
-					start: 'top 85%',
-					end: 'bottom 15%',
-					scrub: true,
-					toggleActions: 'play pause resume pause'
+			.fromTo(
+				'.horse',
+				{ scale: 1.75 },
+				{
+					duration: 5,
+					scale: 0.5,
+					// opacity: 0,
+					scrollTrigger: {
+						trigger: '.horse',
+						start: 'top 85%',
+						end: 'bottom 15%',
+						scrub: true,
+						toggleActions: 'play pause resume pause'
+					}
 				}
-			});
+			);
 	});
 </script>
 
