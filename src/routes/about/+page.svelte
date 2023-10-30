@@ -20,7 +20,7 @@
 			.to('.title', { y: 0, duration: 3 }, 0)
 			.fromTo(
 				'.horse',
-				{ scale: 1.75 },
+				{ scale: 1.15 },
 				{
 					duration: 5,
 					scale: 0.5,
