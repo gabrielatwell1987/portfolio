@@ -7,7 +7,7 @@
 		gsap.registerPlugin(ScrollTrigger);
 
 		gsap.set('.photos', { y: 500 });
-		gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5', { borderRadius: '25%' });
+		gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', { borderRadius: '25%' });
 		// gsap.set('.title', { x: -1000 });
 
 		gsap.to('.title', {
@@ -20,12 +20,12 @@
 		});
 
 		let tl = gsap.timeline({ defaults: { duration: 1.5 } });
-		tl.to('.gabe, .gabe2, .gabe3, .gabe4, .gabe5', {
+		tl.to('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', {
 			borderRadius: '50%',
 			repeat: 3,
 			yoyo: true,
 			scrollTrigger: {
-				trigger: '.gabe, .gabe2, .gabe3, .gabe4, .gabe5',
+				trigger: '.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard',
 				start: 'top 85%',
 				end: 'bottom 15%',
 				x: 200,
