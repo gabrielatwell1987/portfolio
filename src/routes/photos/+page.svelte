@@ -25,7 +25,7 @@
 			repeat: 3,
 			yoyo: true,
 			scrollTrigger: {
-				trigger: '.gabe',
+				trigger: '.photos',
 				start: 'top 85%',
 				end: 'bottom 15%',
 				x: 200,
