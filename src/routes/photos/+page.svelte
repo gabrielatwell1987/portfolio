@@ -32,10 +32,14 @@
 	<section class="photos">
 		<h3 class="subtitle">My Photos</h3>
 
-		<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="350" height="450" /><br /><br />
-		<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" /><br /><br />
-		<img class="gabe3" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" /><br /><br />
-		<img class="gabe4" src="gabe4.jpg" alt="Gabriel Atwell" width="350" />
+		<div class="flex">
+			<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="350" height="450" />
+			<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" />
+		</div>
+		<div class="flex">
+			<img class="gabe3" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" />
+			<img class="gabe4" src="gabe4.jpg" alt="Gabriel Atwell" width="350" />
+		</div>
 		<img class="gabe5" src="retard.png" alt="Gabriel Atwell" width="400" />
 	</section>
 </main>
@@ -68,10 +72,27 @@
 		width: 35%;
 		margin: 0 0 0 32%;
 	}
+	.flex {
+		display: flex;
+		gap: 2rem;
+		margin: 0 0 3rem 0;
+	}
 	@media (min-width: 200px) {
 		section {
 			width: 75%;
 			margin: 0 0 0 12%;
+		}
+		.flex {
+			flex-direction: column;
+			gap: 2rem;
+		}
+	}
+	@media (min-width: 1200px) {
+		.flex {
+			display: flex;
+			flex-direction: row;
+			gap: 2rem;
+			margin: 0 0 3rem 0;
 		}
 	}
 </style>
