@@ -37,8 +37,8 @@
 			<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" />
 		</div>
 		<div class="flex">
-			<img class="gabe3" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" />
-			<img class="gabe4" src="gabe4.jpg" alt="Gabriel Atwell" width="350" />
+			<img class="gabe3" src="gabe3.png" alt="Gabriel Atwell" width="400" height="900" />
+			<img class="gabe4" src="gabe4.png" alt="Gabriel Atwell" width="350" />
 		</div>
 		<div class="flex">
 			<img class="retard" src="retard.png" alt="Gabriel Atwell" width="400" />
