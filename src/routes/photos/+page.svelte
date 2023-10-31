@@ -1,8 +1,11 @@
 <script>
 	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
 		gsap.set('.photos', { y: 500 });
 		// gsap.set('.title', { x: -1000 });
 
@@ -19,7 +22,14 @@
 		tl.to('.gabe, .gabe2, .gabe3, .gabe4, .gabe5', {
 			borderRadius: '50%',
 			repeat: 3,
-			yoyo: true
+			yoyo: true,
+			scrollTrigger: {
+				trigger: '.gabe',
+				start: 'top 85%',
+				end: 'bottom 15%',
+				x: 200,
+				scrub: true
+			}
 		}).to('.photos', { y: 0 }, '<');
 
 		gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5', { borderRadius: '25%' });
