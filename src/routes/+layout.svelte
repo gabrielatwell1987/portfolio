@@ -9,6 +9,14 @@
 	import LinkedIn from '../lib/LinkedIn.svelte';
 </script>
 
+<svelte:head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+	/>
+</svelte:head>
+
 <Analytics />
 <SEO title="©️ Gabriel Atwell" description="Gabriel Atwell's Portfolio" />
 
