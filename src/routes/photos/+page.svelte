@@ -40,7 +40,10 @@
 			<img class="gabe3" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" />
 			<img class="gabe4" src="gabe4.jpg" alt="Gabriel Atwell" width="350" />
 		</div>
-		<img class="gabe5" src="retard.png" alt="Gabriel Atwell" width="400" />
+		<div class="flex">
+			<img class="retard" src="retard.png" alt="Gabriel Atwell" width="400" />
+			<img class="gabe5" src="gabe5.png" alt="Gabriel Atwell" width="475" />
+		</div>
 	</section>
 </main>
 
