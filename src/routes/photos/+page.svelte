@@ -16,13 +16,13 @@
 		});
 
 		let tl = gsap.timeline({ defaults: { duration: 1.5 } });
-		tl.to('.gabe, .gabe2, .gabe3, .gabe4, .gabe5', {
+		tl.to('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', {
 			borderRadius: '50%',
 			repeat: 3,
 			yoyo: true
 		}).to('.photos', { y: 0 }, '<');
 
-		gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5', { borderRadius: '25%' });
+		gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', { borderRadius: '25%' });
 	});
 </script>
 
