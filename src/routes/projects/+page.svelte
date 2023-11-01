@@ -109,7 +109,7 @@
 		.title {
 			text-align: center;
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-			font-size: 3rem;
+			font-size: 3.5rem;
 			color: var(--white);
 		}
 		.linksize {
