@@ -20,10 +20,10 @@
 			.to('.title', { y: 0, duration: 3 }, 0)
 			.fromTo(
 				'.horse',
-				{ scale: 1.15 },
+				{ scale: 0.75 },
 				{
 					duration: 5,
-					scale: 0.5,
+					scale: 1.15,
 					// opacity: 0,
 					scrollTrigger: {
 						trigger: '.horse',

@@ -45,6 +45,15 @@
 		the website look a lot better than a static website. GSAP is a great tool to use for any web
 		developer. I highly recommend it!
 	</p>
+	<iframe
+		width="560"
+		height="315"
+		src="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
+		title="YouTube video player"
+		frameborder="0"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+		allowfullscreen
+	/>
 	<!-- <p>GSAP is a great tool to use for any web developer. I highly recommend it!</p> -->
 	<h3 class="learn">Learn more about GSAP</h3>
 	<p>
@@ -78,6 +87,9 @@
 	}
 	a:hover {
 		color: var(--white);
+	}
+	iframe {
+		margin: 0 0 0 7.5rem;
 	}
 	.heading {
 		text-align: center;

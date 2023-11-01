@@ -58,6 +58,15 @@
 				href="https://svelte.dev">here</a
 			>.
 		</p>
+		<iframe
+			width="560"
+			height="315"
+			src="https://www.youtube.com/embed/MoGkX4RvZ38?si=xV4--8APNCqD7Ihn"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			allowfullscreen
+		/>
 	</section>
 </main>
 
@@ -108,5 +117,8 @@
 	}
 	.exclamation {
 		margin: 5rem 0 0 48%;
+	}
+	iframe {
+		margin: 0 0 3.5rem 7.5rem;
 	}
 </style>
