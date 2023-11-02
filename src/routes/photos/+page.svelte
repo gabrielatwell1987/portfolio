@@ -10,7 +10,6 @@
 
 			gsap.set('.photos', { y: 500 });
 			gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', { borderRadius: '25%' });
-			// gsap.set('.title', { x: -1000 });
 
 			gsap.to('.title', {
 				keyframes: {
