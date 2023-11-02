@@ -35,15 +35,10 @@
 				}
 			}).to('.photos', { y: 0 }, '<');
 
-			// return () => {
-			// 	gsap.set('.photos', { y: 500 });
-			// 	gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', { borderRadius: '25%' });
-			// };
-		});
-
-		mm.add('(max-width: 799px)', () => {
-			gsap.set('.photos', { y: 500 });
-			gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', { borderRadius: '25%' });
+			return () => {
+				gsap.set('.photos', { y: 500 });
+				gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', { borderRadius: '25%' });
+			};
 		});
 	});
 </script>
