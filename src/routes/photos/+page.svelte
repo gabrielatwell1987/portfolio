@@ -4,34 +4,42 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.registerPlugin(ScrollTrigger);
+		let mm = gsap.matchMedia();
+		mm.add('(min-width: 800px', () => {
+			gsap.registerPlugin(ScrollTrigger);
 
-		gsap.set('.photos', { y: 500 });
-		gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', { borderRadius: '25%' });
-		// gsap.set('.title', { x: -1000 });
+			gsap.set('.photos', { y: 500 });
+			gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', { borderRadius: '25%' });
+			// gsap.set('.title', { x: -1000 });
 
-		gsap.to('.title', {
-			keyframes: {
-				'1%': { x: 0 },
-				'50%': { scaleX: 5 },
-				'75': { scaleX: 1 }
-			},
-			duration: 3
+			gsap.to('.title', {
+				keyframes: {
+					'1%': { x: 0 },
+					'50%': { scaleX: 5 },
+					'75': { scaleX: 1 }
+				},
+				duration: 3
+			});
+
+			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
+			tl.to('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', {
+				borderRadius: '50%',
+				repeat: 3,
+				yoyo: true,
+				scrollTrigger: {
+					trigger: '.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard',
+					start: 'top 85%',
+					end: 'bottom 15%',
+					x: 200,
+					scrub: true
+				}
+			}).to('.photos', { y: 0 }, '<');
+
+			return () => {
+				gsap.set('.photos', { y: 500 });
+				gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', { borderRadius: '25%' });
+			};
 		});
-
-		let tl = gsap.timeline({ defaults: { duration: 1.5 } });
-		tl.to('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', {
-			borderRadius: '50%',
-			repeat: 3,
-			yoyo: true,
-			scrollTrigger: {
-				trigger: '.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard',
-				start: 'top 85%',
-				end: 'bottom 15%',
-				x: 200,
-				scrub: true
-			}
-		}).to('.photos', { y: 0 }, '<');
 	});
 </script>
 
