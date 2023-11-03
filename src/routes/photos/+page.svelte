@@ -4,9 +4,6 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.set('.photos', { y: 500 });
-		gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', { borderRadius: '25%' });
-
 		let mm = gsap.matchMedia();
 
 		mm.add('(min-width: 800px', () => {
