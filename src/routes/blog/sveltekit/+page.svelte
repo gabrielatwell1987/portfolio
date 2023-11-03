@@ -11,6 +11,7 @@
 		gsap.set('.sveltekit', { y: -500 });
 		gsap.set('.sk-main', { y: 1000 });
 		gsap.set('.title', { skewX: -15 });
+		gsap.set('.exclamation', { scale: 2, x: 200, y: 30 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
