@@ -1,17 +1,26 @@
 <script>
 	import { gsap } from 'gsap';
+	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		gsap.registerPlugin(Draggable);
+
 		gsap.to('.atwellLogo', { autoAlpha: 1, duration: 3 });
+
+		Draggable.create('.atwell, .personal, .code', {
+			type: 'x, y',
+			bounds: document.querySelector('main'),
+			inertia: true
+		});
 	});
 </script>
 
 <main class="atwellLogo">
-	<img src="logo.png" alt="Logo" />
+	<img class="atwell" src="logo.png" alt="Logo" />
 	<br /><br /><br />
-	<img src="personal.png" alt="Logo" />
-	<img src="code.svg" alt="Logo" width="500px" height="550px" />
+	<img class="personal" src="personal.png" alt="Logo" />
+	<img class="code" src="code.svg" alt="Logo" width="500px" height="550px" />
 </main>
 
 <style>

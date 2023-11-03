@@ -2,9 +2,12 @@
 	import GsapIcon from '$lib/GsapIcon.svelte';
 	import Exclamation from '$lib/Exclamation.svelte';
 	import { gsap } from 'gsap';
+	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		gsap.registerPlugin(Draggable);
+
 		gsap.set('.gs-main', { y: 1000 });
 		gsap.set('.greensock', { autoAlpha: 0, y: -500 });
 		gsap.set('.title', { skewX: 15 });
@@ -12,6 +15,12 @@
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
 		tl.to('.greensock', { autoAlpha: 1, y: 0, ease: 'back.out' }, 0).to('.gs-main', { y: 0 }, 0);
+
+		Draggable.create('.exclamation', {
+			type: 'y',
+			bounds: document.querySelector('.gs-main'),
+			inertia: true
+		});
 	});
 </script>
 
