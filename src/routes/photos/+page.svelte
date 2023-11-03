@@ -97,7 +97,7 @@
 		gap: 2rem;
 		margin: 0 0 3rem 0;
 	}
-	@media (min-width: 200px) {
+	@media screen and (min-width: 200px) {
 		section {
 			width: 75%;
 			margin: 0 0 0 12%;
@@ -107,7 +107,7 @@
 			gap: 2rem;
 		}
 	}
-	@media (min-width: 1200px) {
+	@media screen and (min-width: 1200px) {
 		.flex {
 			display: flex;
 			flex-direction: row;

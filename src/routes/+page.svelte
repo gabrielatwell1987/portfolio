@@ -31,7 +31,7 @@
 	img {
 		border-radius: 50%;
 	}
-	@media (min-width: 200px) {
+	@media screen and (min-width: 200px) {
 		main {
 			text-align: center;
 			font-size: 1.75rem;
@@ -40,7 +40,7 @@
 			border-radius: 50%;
 		}
 	}
-	@media (min-width: 740px) {
+	@media screen and (min-width: 740px) {
 		main {
 			text-align: center;
 			font-size: 2rem;
@@ -49,7 +49,7 @@
 			border-radius: 50%;
 		}
 	}
-	@media (min-width: 990px) {
+	@media screen and (min-width: 990px) {
 		main {
 			text-align: center;
 			font-size: 2.5rem;

@@ -58,7 +58,7 @@
 		width: 25%;
 		margin: 0 0 0 37%;
 	}
-	@media (min-width: 200px) {
+	@media screen and (min-width: 200px) {
 		a {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			font-size: 0.75rem;
@@ -95,7 +95,7 @@
 			margin: 1rem 0 0 12.5%;
 		}
 	}
-	@media (min-width: 740px) {
+	@media screen and (min-width: 740px) {
 		a {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			font-size: 1rem;

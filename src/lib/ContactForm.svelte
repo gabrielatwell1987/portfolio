@@ -90,7 +90,7 @@
 		padding: 0 1rem 0 1rem;
 		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	}
-	@media (min-width: 200px) {
+	@media screen and (min-width: 200px) {
 		form {
 			width: 100%;
 			margin: 0 25%;
@@ -102,7 +102,7 @@
 			width: 100%;
 		}
 	}
-	@media (min-width: 1024px) {
+	@media screen and (min-width: 1024px) {
 		form {
 			display: flex;
 			flex-direction: column;

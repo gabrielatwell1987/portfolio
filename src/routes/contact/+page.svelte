@@ -10,7 +10,7 @@
 	.contactForm {
 		margin: 2rem 0 0 0;
 	}
-	@media (min-width: 200px) {
+	@media screen and (min-width: 200px) {
 		.contactForm {
 			display: block;
 			width: 100%;
@@ -18,7 +18,7 @@
 			/* margin: 0 auto; */
 		}
 	}
-	@media (min-width: 1024px) {
+	@media screen and (min-width: 1024px) {
 		.contactForm {
 			display: block;
 			margin: 2rem 0 0 -24rem;

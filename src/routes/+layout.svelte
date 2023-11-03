@@ -67,7 +67,7 @@
 	.desktop {
 		width: 100%;
 	}
-	@media (max-width: 1650px) {
+	@media screen and (max-width: 1650px) {
 		.linkIcons {
 			display: none;
 		}

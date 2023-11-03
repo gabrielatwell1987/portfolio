@@ -134,7 +134,7 @@
 		margin: 0 0 5rem 0;
 		border-radius: 10px;
 	}
-	@media (min-width: 200px) {
+	@media screen and (min-width: 200px) {
 		p {
 			line-height: 1.75;
 		}
@@ -173,7 +173,7 @@
 			font-size: 1.2rem;
 		}
 	}
-	@media (min-width: 990px) {
+	@media screen and (min-width: 990px) {
 		p {
 			line-height: 2.5;
 		}
