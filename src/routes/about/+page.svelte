@@ -1,10 +1,10 @@
 <script>
 	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.registerPlugin(ScrollTrigger);
+		gsap.registerPlugin(Draggable);
 
 		gsap.set('.logos', { y: -500 });
 		gsap.set('section', { y: 1000 });
@@ -17,23 +17,24 @@
 		tl.to('.logos', { y: 0, ease: 'power2.out' })
 			.to('section', { y: 0, ease: 'expo.out' }, '<')
 			.to('article', { y: 0, duration: 3 }, '<')
-			.to('.title', { y: 0, duration: 3 }, 0)
-			.fromTo(
-				'.horse',
-				{ scale: 0.75 },
-				{
-					duration: 5,
-					scale: 1.15,
-					// opacity: 0,
-					scrollTrigger: {
-						trigger: '.horse',
-						start: 'top 85%',
-						end: 'bottom 15%',
-						scrub: true,
-						toggleActions: 'play pause resume pause'
-					}
-				}
-			);
+			.to('.title', { y: 0, duration: 3 }, 0);
+
+		Draggable.create('.horse', {
+			type: 'x, y',
+			bounds: document.querySelector('article'),
+			inertia: true
+		});
+
+		Draggable.create('.roses', {
+			type: 'x',
+			bounds: document.querySelector('main'),
+			inertia: true
+		});
+
+		Draggable.create('.ribbon', {
+			type: 'rotation',
+			inertia: true
+		});
 	});
 </script>
 
@@ -45,7 +46,7 @@
 	<section>
 		<h1 class="title">ABOUT ME</h1>
 		<article>
-			<img class="horse" src="horse-logo.jpg" alt="horse" width="200px" height="270px" />
+			<img class="horse" src="horse-logo.png" alt="horse" />
 
 			<h2 class="subtitle">Bio</h2>
 
