@@ -89,9 +89,6 @@
 		gap: 2rem;
 		margin: 0 0 3rem 0;
 	}
-	.photos {
-		margin: 5rem 0 0 0;
-	}
 	@media screen and (min-width: 200px) {
 		section {
 			width: 75%;
@@ -108,9 +105,6 @@
 			flex-direction: row;
 			gap: 2rem;
 			margin: 0 0 3rem 0;
-		}
-		.photos {
-			margin: 5rem 0 0 0;
 		}
 	}
 </style>
