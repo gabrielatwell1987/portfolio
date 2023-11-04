@@ -87,7 +87,7 @@
 	.flex {
 		display: flex;
 		gap: 2rem;
-		margin: 0 0 3rem 0;
+		margin: 3rem 0 3rem 0;
 	}
 	@media screen and (min-width: 200px) {
 		section {
@@ -104,7 +104,7 @@
 			display: flex;
 			flex-direction: row;
 			gap: 2rem;
-			margin: 0 0 3rem 0;
+			margin: 3rem 0 3rem 0;
 		}
 	}
 </style>
