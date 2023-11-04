@@ -12,7 +12,7 @@
 </script>
 
 <section class="content">
-	<h1 class="title">PROJECTS I MADE</h1>
+	<h1 class="title">PROJECTS</h1>
 
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank">Web Dev</a><br />
 	<a class="linksize" href="https://gabe2.vercel.app" target="_blank">Scroller</a><br />

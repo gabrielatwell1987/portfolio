@@ -13,12 +13,12 @@
 
 	{#if open}
 		<div class="desktop-view">
-			<a href="/">Home</a>
-			<a href="/about">About</a>
-			<a href="/photos">Photos</a>
-			<a href="/projects">Projects</a>
-			<a href="/blog">Stack</a>
-			<a href="/contact">Contact</a>
+			<a href="/">HOME</a>
+			<a href="/about">ABOUT</a>
+			<a href="/photos">PHOTOS</a>
+			<a href="/projects">PROJECTS</a>
+			<a href="/blog">STACK</a>
+			<a href="/contact">CONTACT</a>
 		</div>
 	{/if}
 
@@ -71,7 +71,7 @@
 		place-items: center;
 		margin: 0 5rem 0 0;
 		width: 15%;
-		color: var(--sky);
+		color: var(--white);
 		font-weight: bolder;
 		font-family: 'Courier New', Courier, monospace;
 	}
@@ -140,7 +140,7 @@
 			place-items: center;
 			margin: 0 5rem 0 0;
 			width: 15%;
-			color: var(--sky);
+			color: var(--white);
 			font-weight: bolder;
 			font-family: 'Courier New', Courier, monospace;
 		}
@@ -189,7 +189,7 @@
 			place-items: center;
 			margin: 0 5rem 0 0;
 			width: 15%;
-			color: var(--sky);
+			color: var(--white);
 			font-weight: bolder;
 			font-family: 'Courier New', Courier, monospace;
 		}
