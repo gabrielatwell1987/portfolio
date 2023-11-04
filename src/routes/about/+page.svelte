@@ -40,13 +40,13 @@
 
 <main class="main">
 	<div class="logos">
-		<img class="roses" src="roses.png" width="350" alt="Roses Logo" />
+		<img class="roses" src="roses.png" width="350" alt="Roses that you can move" />
 	</div>
 
 	<section>
 		<h1 class="title">ABOUT ME</h1>
 		<article>
-			<img class="horse" src="horse-logo.png" alt="horse" />
+			<img class="horse" src="horse-logo.png" alt="Atwell ui design horse logo that you can move" />
 
 			<h2 class="subtitle">Bio</h2>
 
@@ -77,7 +77,13 @@
 				on how I could improve this site. It is greatly appreciated!
 			</p>
 
-			<img class="ribbon" src="gold.png" alt="dots" width="15%" height="2%" />
+			<img
+				class="ribbon"
+				src="gold.png"
+				alt="A gold ribbon that you can rotate"
+				width="15%"
+				height="2%"
+			/>
 		</article>
 	</section>
 </main>

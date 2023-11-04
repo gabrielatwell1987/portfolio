@@ -50,24 +50,28 @@
 			everything. The fact that this, to me, is less than an actual framework as it relies heavily
 			on vanilla HTML, CSS, and JavaScript is what I'm looking for.
 		</p>
+
 		<h2 class="subtitle">What I know</h2>
 		<p>
 			I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I have
 			because I'm a very visual person. Sveltekit has made it super simple to put my ideas on the
 			web.
 		</p>
+
 		<h2 class="subtitle">What is svelte and sveltekit?</h2>
 		<p>
 			Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
 			framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
 			React. In the end, svelte(kit) is a new approach to building rich user interfaces.
 		</p>
+
 		<h2 class="subtitle">Learn more about Sveltekit</h2>
 		<p>
 			If you would like to know more about svelte and sveltekit, please click <a
 				href="https://svelte.dev">here</a
 			>.
 		</p>
+
 		<iframe
 			width="560"
 			height="315"

@@ -55,6 +55,7 @@
 		the website look a lot better than a static website. GSAP is a great tool to use for any web
 		developer. I highly recommend it!
 	</p>
+
 	<iframe
 		width="560"
 		height="315"
@@ -64,7 +65,7 @@
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 		allowfullscreen
 	/>
-	<!-- <p>GSAP is a great tool to use for any web developer. I highly recommend it!</p> -->
+
 	<h3 class="learn">Learn more about GSAP</h3>
 	<p>
 		If you would like to know more about greensock, please click <a href="https://greensock.com"

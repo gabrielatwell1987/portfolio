@@ -17,10 +17,16 @@
 </script>
 
 <main class="atwellLogo">
-	<img class="atwell" src="logo.png" alt="Logo" />
+	<img class="atwell" src="logo.png" alt="Atwell ui design logo that you can move" />
 	<br /><br /><br />
-	<img class="personal" src="personal.png" alt="Logo" />
-	<img class="code" src="code.svg" alt="Logo" width="500px" height="550px" />
+	<img class="personal" src="personal.png" alt="Cell phone logo that you can move" />
+	<img
+		class="code"
+		src="code.svg"
+		alt="HTML tag logo that you can move"
+		width="500px"
+		height="550px"
+	/>
 </main>
 
 <style>
