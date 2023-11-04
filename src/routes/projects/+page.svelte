@@ -41,7 +41,7 @@
 	}
 	.title {
 		text-align: center;
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		font-family: 'Courier New', Courier, monospace;
 		font-size: 3.5rem;
 		color: var(--white);
 	}
@@ -71,7 +71,7 @@
 		}
 		.title {
 			text-align: center;
-			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			font-family: 'Courier New', Courier, monospace;
 			font-size: 1.25rem;
 			color: var(--white);
 		}
@@ -108,7 +108,7 @@
 		}
 		.title {
 			text-align: center;
-			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+			font-family: 'Courier New', Courier, monospace;
 			font-size: 3.5rem;
 			color: var(--white);
 		}
