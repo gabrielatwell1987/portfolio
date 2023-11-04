@@ -2,13 +2,14 @@
 	import { gsap } from 'gsap';
 	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
+	import Skull from '$lib/Skull.svelte';
 
 	onMount(() => {
 		gsap.registerPlugin(Draggable);
 
 		gsap.to('.atwellLogo', { autoAlpha: 1, duration: 3 });
 
-		Draggable.create('.atwell, .personal, .code', {
+		Draggable.create('.atwell', {
 			type: 'x, y',
 			bounds: document.querySelector('main'),
 			inertia: true
@@ -19,14 +20,17 @@
 <main class="atwellLogo">
 	<img class="atwell" src="logo.png" alt="Atwell ui design logo that you can move" />
 	<br /><br /><br />
-	<img class="personal" src="personal.png" alt="Cell phone logo that you can move" />
+	<!-- <img class="personal" src="personal.png" alt="Cell phone logo that you can move" />
 	<img
 		class="code"
 		src="code.svg"
 		alt="HTML tag logo that you can move"
 		width="500px"
 		height="550px"
-	/>
+	/> -->
+	<div class="skull">
+		<Skull />
+	</div>
 </main>
 
 <style>

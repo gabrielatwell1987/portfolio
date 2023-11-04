@@ -8,3 +8,9 @@
 		/>
 	</g>
 </svg>
+
+<style>
+	svg {
+		margin: -20rem 0 -45rem 0;
+	}
+</style>
