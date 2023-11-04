@@ -47,8 +47,6 @@
 	<h2 class="title">PHOTOS</h2>
 
 	<section class="photos">
-		<h3 class="subtitle">My Photos</h3>
-
 		<div class="flex">
 			<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="350" height="450" />
 			<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" />
@@ -73,13 +71,6 @@
 		color: var(--white);
 		margin: 0 0 2rem 0;
 		font-family: 'Courier New', Courier, monospace;
-	}
-	.subtitle {
-		text-align: center;
-		color: var(--cornflower);
-		margin: 0 0 2rem 0;
-		font-size: 2.5rem;
-		font-family: Arial, Helvetica, sans-serif;
 	}
 	section {
 		background-color: var(--lightblack);
