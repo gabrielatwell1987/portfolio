@@ -79,7 +79,7 @@
 		color: var(--cornflower);
 		margin: 0 0 2rem 0;
 		font-size: 2.5rem;
-		font-family: 'Courier New', Courier, monospace;
+		font-family: Arial, Helvetica, sans-serif;
 	}
 	section {
 		background-color: var(--lightblack);
