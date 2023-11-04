@@ -19,8 +19,8 @@
 <main class="atwellLogo">
 	<img class="atwell" src="logo.png" alt="Logo" />
 	<br /><br /><br />
-	<img class="personal" src="personal.png" alt="Logo" />
 	<img class="code" src="code.svg" alt="Logo" width="500px" height="550px" />
+	<img class="personal" src="personal.png" alt="Logo" />
 </main>
 
 <style>
