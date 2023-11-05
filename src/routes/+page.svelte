@@ -2,7 +2,6 @@
 	import { gsap } from 'gsap';
 	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
-	import Skull from '$lib/Skull.svelte';
 
 	onMount(() => {
 		gsap.registerPlugin(Draggable);
