@@ -43,8 +43,9 @@
 		<img class="roses" src="roses.png" width="350" alt="Roses that you can move" />
 	</div>
 
+	<h1 class="title">ABOUT ME</h1>
+
 	<section>
-		<h1 class="title">ABOUT ME</h1>
 		<article>
 			<img class="horse" src="horse-logo.png" alt="Atwell ui design horse logo that you can move" />
 

@@ -86,8 +86,9 @@
 	}
 	.flex {
 		display: flex;
-		gap: 2rem;
-		margin: 3rem 0 3rem 0;
+		justify-content: space-around;
+		gap: 10rem;
+		margin: 5rem 0;
 	}
 	@media screen and (min-width: 200px) {
 		section {
@@ -95,6 +96,7 @@
 			margin: 0;
 		}
 		.flex {
+			display: flex;
 			flex-direction: column;
 			gap: 2rem;
 		}
@@ -102,9 +104,10 @@
 	@media screen and (min-width: 1200px) {
 		.flex {
 			display: flex;
+			justify-content: space-around;
 			flex-direction: row;
-			gap: 2rem;
-			margin: 3rem 0 3rem 0;
+			gap: 10rem;
+			margin: 5rem 0;
 		}
 	}
 </style>

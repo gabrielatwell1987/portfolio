@@ -10,12 +10,14 @@
 
 		gsap.set('.gs-main', { y: 1000 });
 		gsap.set('.greensock', { autoAlpha: 0, y: -500 });
-		gsap.set('.title', { skewX: 15 });
+		gsap.set('.title', { skewX: 15, opacity: 0, y: -20 });
 		gsap.set('.exclamation', { scale: 2, x: 200, y: 30 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.to('.greensock', { autoAlpha: 1, y: 0, ease: 'back.out' }, 0).to('.gs-main', { y: 0 }, 0);
+		tl.to('.greensock', { autoAlpha: 1, y: 0, ease: 'back.out' }, 0)
+			.to('.gs-main', { y: 0 }, 0)
+			.to('.title', { opacity: 1 });
 
 		Draggable.create('.exclamation', {
 			type: 'y',
@@ -29,9 +31,9 @@
 	<GsapIcon />
 </div>
 
-<main class="gs-main">
-	<h1 class="title">GSAP</h1>
+<h1 class="title">GSAP</h1>
 
+<main class="gs-main">
 	<div class="exclamation">
 		<Exclamation />
 	</div>

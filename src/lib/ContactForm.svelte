@@ -52,7 +52,7 @@
 		display: flex;
 		flex-direction: column;
 		width: 100%;
-		margin: 0 0 0 25%;
+		margin: 0 25%;
 	}
 	label {
 		font-size: 1rem;
@@ -88,7 +88,6 @@
 		font-size: 1.75rem;
 		color: var(--white);
 		padding: 0 1rem 0 1rem;
-		/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 		font-family: 'Courier New', Courier, monospace;
 	}
 	@media screen and (min-width: 200px) {
@@ -108,7 +107,7 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			margin: 0 0 0 25%;
+			margin: 0 25%;
 		}
 		label {
 			font-size: 1rem;
@@ -143,7 +142,6 @@
 			font-size: 1.75rem;
 			color: var(--white);
 			padding: 0 1rem 0 1rem;
-			/* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 			font-family: 'Courier New', Courier, monospace;
 		}
 	}

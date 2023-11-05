@@ -10,7 +10,7 @@
 
 		gsap.set('.sveltekit', { y: -500 });
 		gsap.set('.sk-main', { y: 1000 });
-		gsap.set('.title', { skewX: -15 });
+		gsap.set('.title', { skewX: -15, opacity: 0, y: 35 });
 		gsap.set('.exclamation', { scale: 2, x: 200, y: 30 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
@@ -21,7 +21,8 @@
 				x: 473,
 				y: 30
 			})
-			.to('.sk-main', { y: 0 }, 0);
+			.to('.sk-main', { y: 0 }, 0)
+			.to('.title', { opacity: 1 });
 
 		Draggable.create('.exclamation', {
 			type: 'y',
@@ -35,9 +36,9 @@
 	<Svelte />
 </div>
 
-<main class="sk-main">
-	<h1 class="title">SvelteKit</h1>
+<h1 class="title">SvelteKit</h1>
 
+<main class="sk-main">
 	<div class="exclamation">
 		<Exclamation />
 	</div>

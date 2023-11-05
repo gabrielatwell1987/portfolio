@@ -11,9 +11,9 @@
 	});
 </script>
 
-<section class="content">
-	<h1 class="title">PROJECTS</h1>
+<h1 class="title">PROJECTS</h1>
 
+<section class="content">
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank">Web Dev</a><br />
 	<a class="linksize" href="https://gabe2.vercel.app" target="_blank">Scroller</a><br />
 	<a class="linksize" href="https://gabe3.vercel.app" target="_blank">Random User</a><br />
@@ -44,6 +44,7 @@
 		font-family: 'Courier New', Courier, monospace;
 		font-size: 3.5rem;
 		color: var(--white);
+		margin: 2rem 0;
 	}
 	.linksize {
 		text-align: center;
@@ -90,9 +91,9 @@
 			border: 3px solid var(--white);
 			border-radius: 10px;
 			background-color: var(--black);
-			width: 75%;
+			width: 100%;
 			padding: 1rem;
-			margin: 1rem 0 0 12.5%;
+			margin: 0;
 		}
 	}
 	@media screen and (min-width: 740px) {
@@ -111,6 +112,7 @@
 			font-family: 'Courier New', Courier, monospace;
 			font-size: 3.5rem;
 			color: var(--white);
+			margin: 2rem 0;
 		}
 		.linksize {
 			text-align: center;
@@ -127,9 +129,9 @@
 			border: 3px solid var(--white);
 			border-radius: 10px;
 			background-color: var(--black);
-			width: 35%;
+			width: 100%;
 			padding: 2rem;
-			margin: 2rem 0 0 32%;
+			margin: 0;
 		}
 	}
 </style>
