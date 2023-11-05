@@ -83,7 +83,7 @@
 			display: block;
 			justify-content: space-evenly;
 			width: 100%;
-			margin: 0 0 0 -76%;
+			margin: 0 0 0 -75%;
 			font-weight: bold;
 		}
 		.mobile-links {
