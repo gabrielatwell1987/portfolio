@@ -73,7 +73,7 @@
 		.title {
 			text-align: center;
 			font-family: 'Courier New', Courier, monospace;
-			font-size: 4rem;
+			font-size: 3.75rem;
 			color: var(--white);
 		}
 		.linksize {
