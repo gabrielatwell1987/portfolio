@@ -17,7 +17,7 @@
 			<a href="/about">about</a>
 			<a href="/photos">photos</a>
 			<a href="/projects">projects</a>
-			<a href="/blog">STACK</a>
+			<a href="/blog">stack</a>
 			<a href="/contact">contact</a>
 		</div>
 	{/if}
