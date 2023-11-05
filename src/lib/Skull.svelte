@@ -1,4 +1,4 @@
-<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 500 400" width="500" height="400" xmlns="http://www.w3.org/2000/svg">
 	<defs />
 	<g transform="matrix(0.854469, 0, 0, 0.687443, 99.90155, 99.956863)" style="">
 		<defs />
@@ -11,6 +11,6 @@
 
 <style>
 	svg {
-		margin: -20rem 0 -45rem 0;
+		margin: -48.5rem 0 -45rem 0;
 	}
 </style>

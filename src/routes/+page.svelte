@@ -55,9 +55,9 @@
 		img {
 			border-radius: 50%;
 		}
-		.skull {
+		/* .skull {
 			display: block;
-		}
+		} */
 	}
 	@media screen and (min-width: 990px) {
 		main {
