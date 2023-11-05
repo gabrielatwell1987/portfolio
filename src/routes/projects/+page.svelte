@@ -110,7 +110,7 @@
 		.title {
 			text-align: center;
 			font-family: 'Courier New', Courier, monospace;
-			font-size: 3.5rem;
+			font-size: 4rem;
 			color: var(--white);
 			margin: 2rem 0;
 		}

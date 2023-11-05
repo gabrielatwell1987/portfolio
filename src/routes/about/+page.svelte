@@ -153,7 +153,7 @@
 			width: 100%;
 		}
 		.title {
-			font-size: 1rem;
+			font-size: 4rem;
 			margin: 0 0 -1rem 0;
 			font-family: 'Courier New', Courier, monospace;
 		}
