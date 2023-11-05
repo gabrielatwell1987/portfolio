@@ -81,8 +81,8 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		width: 35%;
-		margin: 0 0 0 32%;
+		width: 100%;
+		margin: 0;
 	}
 	.flex {
 		display: flex;
@@ -91,8 +91,8 @@
 	}
 	@media screen and (min-width: 200px) {
 		section {
-			width: 75%;
-			margin: 0 0 0 12%;
+			width: 100%;
+			margin: 0;
 		}
 		.flex {
 			flex-direction: column;

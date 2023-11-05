@@ -111,8 +111,8 @@
 		background-color: var(--black);
 		border: 3px solid var(--white);
 		border-radius: 10px;
-		width: 75%;
-		margin: 0 0 0 12.5rem;
+		width: 100%;
+		margin: 0;
 	}
 	.logos {
 		display: flex;
@@ -146,9 +146,10 @@
 		}
 		section {
 			display: block;
-			margin: 0 0 0 12%;
+			margin: 0;
 			padding: 1rem;
 			text-align: center;
+			width: 100%;
 		}
 		.title {
 			font-size: 1rem;
@@ -193,7 +194,7 @@
 		}
 		section {
 			display: block;
-			margin: 0 0 0 12%;
+			margin: 0;
 			padding: 2rem;
 			text-align: center;
 		}
