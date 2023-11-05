@@ -13,22 +13,22 @@
 
 	{#if open}
 		<div class="desktop-view">
-			<a href="/">HOME</a>
-			<a href="/about">ABOUT</a>
-			<a href="/photos">PHOTOS</a>
-			<a href="/projects">PROJECTS</a>
+			<a href="/">home</a>
+			<a href="/about">about</a>
+			<a href="/photos">photos</a>
+			<a href="/projects">projects</a>
 			<a href="/blog">STACK</a>
-			<a href="/contact">CONTACT</a>
+			<a href="/contact">contact</a>
 		</div>
 	{/if}
 
 	<div class="mobile-view">
 		<div class="mobile-links">
-			<a class="mobile-link" href="/">Home</a>
-			<a class="mobile-link" href="/about">About</a>
-			<a class="mobile-link" href="/photos">Photos</a>
-			<a class="mobile-link" href="/projects">Projects</a>
-			<a class="mobile-link" href="/contact">Contact</a>
+			<a class="mobile-link" href="/">HOME</a>
+			<a class="mobile-link" href="/about">ABOUT</a>
+			<a class="mobile-link" href="/photos">PHOTOS</a>
+			<a class="mobile-link" href="/projects">PROJECTS</a>
+			<a class="mobile-link" href="/contact">CONTACT</a>
 		</div>
 	</div>
 </nav>
