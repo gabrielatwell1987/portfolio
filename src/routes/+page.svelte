@@ -21,10 +21,6 @@
 	<img class="atwell" src="logo.png" alt="Atwell ui design logo that you can move" />
 
 	<br /><br /><br />
-
-	<div class="skull">
-		<Skull />
-	</div>
 </main>
 
 <style>
@@ -43,9 +39,6 @@
 		img {
 			border-radius: 50%;
 		}
-		.skull {
-			display: none;
-		}
 	}
 	@media screen and (min-width: 740px) {
 		main {
@@ -55,9 +48,6 @@
 		img {
 			border-radius: 50%;
 		}
-		/* .skull {
-			display: block;
-		} */
 	}
 	@media screen and (min-width: 990px) {
 		main {
