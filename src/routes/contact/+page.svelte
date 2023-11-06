@@ -1,12 +1,27 @@
 <script>
 	import ContactForm from '$lib/ContactForm.svelte';
+	import { gsap } from 'gsap';
+	import { Draggable } from 'gsap/dist/Draggable';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		gsap.registerPlugin(Draggable);
+
+		Draggable.create('.atwell', {
+			type: 'x, y',
+			bounds: document.querySelector('main'),
+			inertia: true
+		});
+	});
 </script>
 
-<img src="a-flower.png" alt="atwell logo" class="atwell" />
+<main>
+	<img src="a-flower.png" alt="atwell logo" class="atwell" />
 
-<div class="contactForm">
-	<ContactForm />
-</div>
+	<div class="contactForm">
+		<ContactForm />
+	</div>
+</main>
 
 <style>
 	.contactForm {
