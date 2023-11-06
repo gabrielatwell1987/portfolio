@@ -24,8 +24,7 @@
 			/* margin: 0 auto; */
 		}
 		.atwell {
-			margin: 0 0 0 34%;
-			border-radius: 10%;
+			display: none;
 		}
 	}
 	@media screen and (min-width: 1024px) {
@@ -34,9 +33,10 @@
 			margin: 2rem 0 0 -24rem;
 			width: 100%;
 		}
-		/* .atwell {
+		.atwell {
+			display: block;
 			margin: 0 0 0 34%;
 			border-radius: 10%;
-		} */
+		}
 	}
 </style>
