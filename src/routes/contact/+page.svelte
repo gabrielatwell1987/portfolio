@@ -27,6 +27,18 @@
 			display: none;
 		}
 	}
+	@media screen and (min-width: 850px) {
+		.contactForm {
+			display: block;
+			margin: 2rem 0 0 -24rem;
+			width: 100%;
+		}
+		.atwell {
+			display: block;
+			margin: 0 0 0 34%;
+			border-radius: 10%;
+		}
+	}
 	@media screen and (min-width: 1024px) {
 		.contactForm {
 			display: block;
