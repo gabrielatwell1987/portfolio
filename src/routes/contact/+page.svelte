@@ -12,10 +12,6 @@
 	.contactForm {
 		margin: 2rem 0 0 0;
 	}
-	/* .atwell {
-			margin: 0 0 0 34%;
-			border-radius: 10%;
-		} */
 	@media screen and (min-width: 200px) {
 		.contactForm {
 			display: block;
@@ -35,7 +31,7 @@
 		}
 		.atwell {
 			display: block;
-			margin: 0 0 0 34%;
+			margin: 0 0 0 20%;
 			border-radius: 10%;
 		}
 	}
@@ -46,7 +42,6 @@
 			width: 100%;
 		}
 		.atwell {
-			display: block;
 			margin: 0 0 0 34%;
 			border-radius: 10%;
 		}
