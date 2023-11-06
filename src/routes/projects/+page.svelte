@@ -124,6 +124,8 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			font-size: 1.5rem;
+			letter-spacing: 4px;
 		}
 		section {
 			border: 3px solid var(--white);

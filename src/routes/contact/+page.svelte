@@ -2,6 +2,8 @@
 	import ContactForm from '$lib/ContactForm.svelte';
 </script>
 
+<img src="a-flower.png" alt="atwell logo" class="atwell" />
+
 <div class="contactForm">
 	<ContactForm />
 </div>
@@ -10,12 +12,20 @@
 	.contactForm {
 		margin: 2rem 0 0 0;
 	}
+	/* .atwell {
+			margin: 0 0 0 34%;
+			border-radius: 10%;
+		} */
 	@media screen and (min-width: 200px) {
 		.contactForm {
 			display: block;
 			width: 100%;
 			margin: 1rem 0 0 -6.9rem;
 			/* margin: 0 auto; */
+		}
+		.atwell {
+			margin: 0 0 0 34%;
+			border-radius: 10%;
 		}
 	}
 	@media screen and (min-width: 1024px) {
@@ -24,5 +34,9 @@
 			margin: 2rem 0 0 -24rem;
 			width: 100%;
 		}
+		/* .atwell {
+			margin: 0 0 0 34%;
+			border-radius: 10%;
+		} */
 	}
 </style>

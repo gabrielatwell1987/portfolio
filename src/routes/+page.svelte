@@ -17,7 +17,8 @@
 </script>
 
 <main class="atwellLogo">
-	<img class="atwell" src="logo.png" alt="Atwell ui design logo that you can move" />
+	<!-- <img class="atwell" src="logo.png" alt="Atwell ui design logo that you can move" /> -->
+	<img class="atwell" src="skull-logo.png" alt="Atwell ui design logo that you can move" />
 
 	<br /><br /><br />
 </main>
@@ -28,7 +29,7 @@
 		margin: 5rem 0 0 0;
 	}
 	img {
-		border-radius: 50%;
+		border-radius: 5%;
 	}
 	@media screen and (min-width: 200px) {
 		main {
@@ -36,7 +37,7 @@
 			font-size: 1.75rem;
 		}
 		img {
-			border-radius: 50%;
+			border-radius: 5%;
 		}
 	}
 	@media screen and (min-width: 740px) {
@@ -45,7 +46,7 @@
 			font-size: 2rem;
 		}
 		img {
-			border-radius: 50%;
+			border-radius: 5%;
 		}
 	}
 	@media screen and (min-width: 990px) {
@@ -54,7 +55,7 @@
 			font-size: 2.5rem;
 		}
 		img {
-			border-radius: 50%;
+			border-radius: 5%;
 		}
 	}
 </style>
