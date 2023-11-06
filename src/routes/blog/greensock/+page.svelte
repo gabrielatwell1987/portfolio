@@ -51,8 +51,6 @@
 
 	<h3 class="heading">How I used GSAP</h3>
 
-	<img src="portfolio1.png" alt="A snippet of GSAP" />
-
 	<p>
 		In the project, you have to npm install gsap. In sveltekit, you have to put all of your GSAP
 		code in an onMount function that you have to import. This is because onMount is displayed once
