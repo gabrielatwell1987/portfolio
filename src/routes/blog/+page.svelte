@@ -8,15 +8,6 @@
 	onMount(() => {
 		gsap.registerPlugin(TextPlugin);
 
-		// gsap.set('.title', { y: 75, scale: 0 });
-
-		// gsap.to('.title', {
-		// 	keyframes: [
-		// 		{ scale: 3, duration: 1.5 },
-		// 		{ scale: 1, duration: 1.5 }
-		// 	]
-		// });
-
 		gsap.to('.title', {
 			text: 'TECH STACK',
 			duration: 1.5,
