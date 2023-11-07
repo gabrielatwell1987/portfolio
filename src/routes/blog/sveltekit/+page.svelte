@@ -2,12 +2,9 @@
 	import Svelte from '$lib/Svelte.svelte';
 	import Exclamation from '$lib/Exclamation.svelte';
 	import { gsap } from 'gsap';
-	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.registerPlugin(Draggable);
-
 		gsap.set('.sveltekit', { y: -500 });
 		gsap.set('.sk-main', { y: 1000 });
 		gsap.set('.title', { skewX: -15, opacity: 0, y: 35 });
@@ -23,12 +20,6 @@
 			})
 			.to('.sk-main', { y: 0 }, 0)
 			.to('.title', { opacity: 1 });
-
-		Draggable.create('.exclamation', {
-			type: 'y',
-			bounds: document.querySelector('.sk-main'),
-			inertia: true
-		});
 	});
 </script>
 

@@ -6,6 +6,8 @@
 	onMount(() => {
 		gsap.registerPlugin(Draggable);
 
+		const horse = document.querySelector('.horse');
+
 		gsap.set('.logos', { y: -500 });
 		gsap.set('section', { y: 1000 });
 		gsap.set('article', { y: 10000 });
@@ -19,20 +21,9 @@
 			.to('article', { y: 0, duration: 3 }, '<')
 			.to('.title', { y: 0, duration: 3 }, 0);
 
-		Draggable.create('.horse', {
+		Draggable.create(horse, {
 			type: 'x, y',
 			bounds: document.querySelector('article'),
-			inertia: true
-		});
-
-		Draggable.create('.roses', {
-			type: 'x',
-			bounds: document.querySelector('main'),
-			inertia: true
-		});
-
-		Draggable.create('.ribbon', {
-			type: 'rotation',
 			inertia: true
 		});
 	});
