@@ -7,6 +7,8 @@
 		gsap.registerPlugin(Draggable);
 
 		const horse = document.querySelector('.horse');
+		const fullSize = document.querySelector('.full-size');
+		const thumbnail = document.querySelector('.thumbnail');
 
 		gsap.set('.logos', { y: -500 });
 		gsap.set('section', { y: 1000 });
