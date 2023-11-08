@@ -1,27 +1,33 @@
 <script>
 	import { gsap } from 'gsap';
 	import { Draggable } from 'gsap/dist/Draggable';
+	import { Flip } from 'gsap/dist/Flip';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.registerPlugin(Draggable);
+		gsap.registerPlugin(Draggable, Flip);
 
+		const logos = gsap.utils.toArray('.logo');
 		const horse = document.querySelector('.horse');
-		const fullSize = document.querySelector('.full-size');
-		const thumbnail = document.querySelector('.thumbnail');
 
-		gsap.set('.logos', { y: -500 });
-		gsap.set('section', { y: 1000 });
-		gsap.set('article', { y: 10000 });
-		gsap.set('.title', { y: -10000, color: 'lightblue' });
-		gsap.set('main', { scale: 1 });
+		function slideImg() {
+			const state = Flip.getState(logos);
 
-		let tl = gsap.timeline({ defaults: { duration: 2 } });
+			swap(logos);
 
-		tl.to('.logos', { y: 0, ease: 'power2.out' })
-			.to('section', { y: 0, ease: 'expo.out' }, '<')
-			.to('article', { y: 0, duration: 3 }, '<')
-			.to('.title', { y: 0, duration: 3 }, 0);
+			Flip.from(state, { duration: 2, ease: 'power1.inOut' });
+		}
+
+		// Given an Array of two siblings, append the one that's first so it's last (swap)
+		function swap([a, b]) {
+			a.parentNode.children[0] === a ? a.parentNode.appendChild(a) : a.parentNode.appendChild(b);
+		}
+
+		document.addEventListener('click', slideImg);
+
+		gsap.set('main', { opacity: 0 });
+
+		gsap.to('main', { opacity: 1, duration: 5 });
 
 		Draggable.create(horse, {
 			type: 'x, y',
@@ -32,15 +38,16 @@
 </script>
 
 <main class="main">
-	<div class="logos">
-		<img class="roses" src="roses.png" width="350" alt="Roses that you can move" />
-	</div>
-
 	<h1 class="title">ABOUT ME</h1>
 
 	<section>
 		<article>
-			<img class="horse" src="horse-logo.png" alt="Atwell ui design horse logo that you can move" />
+			<img
+				class="logo horse"
+				id="horse"
+				src="horse-logo.png"
+				alt="Atwell ui design horse logo that you can move"
+			/>
 
 			<h2 class="subtitle">Bio</h2>
 
@@ -71,13 +78,15 @@
 				on how I could improve this site. It is greatly appreciated!
 			</p>
 
-			<img
-				class="ribbon"
-				src="gold.png"
-				alt="A gold ribbon that you can rotate"
-				width="15%"
-				height="2%"
-			/>
+			<div class="logos">
+				<img
+					class="logo roses"
+					id="rose"
+					src="roses.png"
+					width="350"
+					alt="Roses that you can move"
+				/>
+			</div>
 		</article>
 	</section>
 </main>
@@ -116,14 +125,15 @@
 	}
 	.roses {
 		border-radius: 40%;
+		margin: 3rem 0 0 0;
 	}
 	.subtitle {
 		color: var(--cornflower);
 		font-size: 2.5rem;
 	}
-	.ribbon {
+	/* .ribbon {
 		margin: 2rem 0 0 0;
-	}
+	} */
 	a {
 		font-size: 0.9rem;
 	}
