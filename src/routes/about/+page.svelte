@@ -5,25 +5,9 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.registerPlugin(Draggable, Flip);
+		gsap.registerPlugin(Draggable);
 
-		const logos = gsap.utils.toArray('.logo');
 		const horse = document.querySelector('.horse');
-
-		function slideImg() {
-			const state = Flip.getState(logos);
-
-			swap(logos);
-
-			Flip.from(state, { duration: 2, ease: 'power1.inOut' });
-		}
-
-		// Given an Array of two siblings, append the one that's first so it's last (swap)
-		function swap([a, b]) {
-			a.parentNode.children[0] === a ? a.parentNode.appendChild(a) : a.parentNode.appendChild(b);
-		}
-
-		document.addEventListener('click', slideImg);
 
 		gsap.set('main', { opacity: 0 });
 
@@ -42,12 +26,7 @@
 
 	<section>
 		<article>
-			<img
-				class="logo horse"
-				id="horse"
-				src="horse-logo.png"
-				alt="Atwell ui design horse logo that you can move"
-			/>
+			<img class="horse" src="horse-logo.png" alt="Atwell ui design horse logo that you can move" />
 
 			<h2 class="subtitle">Bio</h2>
 
@@ -79,13 +58,7 @@
 			</p>
 
 			<div class="logos">
-				<img
-					class="logo roses"
-					id="rose"
-					src="roses.png"
-					width="350"
-					alt="Roses that you can move"
-				/>
+				<img class="roses" src="roses.png" width="350" alt="Roses that you can move" />
 			</div>
 		</article>
 	</section>
