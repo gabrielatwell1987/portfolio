@@ -2,7 +2,6 @@
 	import NavBar from '$lib/NavBar.svelte';
 	import NavBar2 from '$lib/NavBar2.svelte';
 	import Discord from '$lib/Discord.svelte';
-	import Reddit from '$lib/Reddit.svelte';
 	import Analytics from '$lib/Analytics.svelte';
 	import SEO from '$lib/SEO.svelte';
 	import '../app.css';
@@ -15,10 +14,11 @@
 		rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
 	/>
+	<title>GABE 💥</title>
 </svelte:head>
 
 <Analytics />
-<SEO title="©️ Gabriel Atwell" description="Gabriel Atwell's Portfolio" />
+<SEO title="GABE 💥" description="Gabriel Atwell's Portfolio" />
 
 <main class="desktop">
 	<NavBar />
