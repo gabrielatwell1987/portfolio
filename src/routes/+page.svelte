@@ -2,6 +2,7 @@
 	import { gsap } from 'gsap';
 	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
+	import Flipper from '$lib/Flipper.svelte';
 
 	onMount(() => {
 		gsap.registerPlugin(Draggable);
@@ -22,6 +23,10 @@
 	<br /><br /><br />
 </main>
 
+<div class="flipper">
+	<Flipper />
+</div>
+
 <style>
 	main {
 		text-align: center;
@@ -36,11 +41,17 @@
 			border-radius: 1%;
 			width: 90%;
 		}
+		.flipper {
+			display: none;
+		}
 	}
 	@media screen and (min-width: 740px) {
 		main {
 			text-align: center;
 			font-size: 2rem;
+		}
+		.flipper {
+			display: block;
 		}
 	}
 	@media screen and (min-width: 990px) {
