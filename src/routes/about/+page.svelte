@@ -55,6 +55,8 @@
 				to be fixed, you can make a pull request. Please contact me if you have any issues or thoughts
 				on how I could improve this site. It is greatly appreciated!
 			</p>
+
+			<button><a class="test" href="/test">Photo Gallery</a></button>
 		</article>
 	</section>
 </main>
@@ -158,6 +160,29 @@
 		}
 		a:hover {
 			font-size: 1.2rem;
+		}
+
+		button {
+			background-color: cadetblue;
+			padding: 0.5rem 1rem;
+			border: 2px solid white;
+			width: 25%;
+			margin: 3rem auto;
+		}
+		button:hover {
+			background-color: rgba(95, 158, 160, 0.329);
+		}
+		.test {
+			font-size: 2.5rem;
+			font-weight: bolder;
+			text-decoration: none;
+			color: whitesmoke;
+		}
+		.test:hover {
+			font-size: 2.5rem;
+			font-weight: bolder;
+			text-decoration: none;
+			color: whitesmoke;
 		}
 	}
 </style>
