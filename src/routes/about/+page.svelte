@@ -55,8 +55,6 @@
 				to be fixed, you can make a pull request. Please contact me if you have any issues or thoughts
 				on how I could improve this site. It is greatly appreciated!
 			</p>
-
-			<button><a class="click" href="/flipper">GSAP Example</a></button>
 		</article>
 	</section>
 </main>
@@ -160,26 +158,6 @@
 		}
 		a:hover {
 			font-size: 1.2rem;
-		}
-
-		button {
-			font-size: 2rem;
-			font-weight: bolder;
-			padding: 0.75rem 1.5rem;
-			background-color: cadetblue;
-			border: 3px solid white;
-			width: 25%;
-			margin: 2.5rem auto;
-			border-radius: 10px;
-		}
-		button:hover {
-			background-color: rgba(95, 158, 160, 0.37);
-		}
-		.click,
-		.click:hover {
-			color: white;
-			text-decoration: none;
-			font-size: 2rem;
 		}
 	}
 </style>
