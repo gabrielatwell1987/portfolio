@@ -132,6 +132,18 @@
 		a:hover {
 			font-size: 1.2rem;
 		}
+		.test {
+			font-size: 1.5rem;
+			font-weight: bolder;
+			text-decoration: none;
+			color: whitesmoke;
+		}
+		.test:hover {
+			font-size: 1.5rem;
+			font-weight: bolder;
+			text-decoration: none;
+			color: whitesmoke;
+		}
 	}
 	@media screen and (min-width: 990px) {
 		p {
