@@ -55,6 +55,7 @@
 				to be fixed, you can make a pull request. Please contact me if you have any issues or thoughts
 				on how I could improve this site. It is greatly appreciated!
 			</p>
+			<p>chelo</p>
 		</article>
 	</section>
 </main>
