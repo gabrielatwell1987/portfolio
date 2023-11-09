@@ -56,7 +56,7 @@
 				on how I could improve this site. It is greatly appreciated!
 			</p>
 
-			<!-- <button><a class="click" href="/flipper">GSAP Example</a></button> -->
+			<button><a class="click" href="/flipper">GSAP Example</a></button>
 		</article>
 	</section>
 </main>
@@ -162,7 +162,7 @@
 			font-size: 1.2rem;
 		}
 
-		/* button {
+		button {
 			font-size: 2rem;
 			font-weight: bolder;
 			padding: 0.75rem 1.5rem;
@@ -180,6 +180,6 @@
 			color: white;
 			text-decoration: none;
 			font-size: 2rem;
-		} */
+		}
 	}
 </style>

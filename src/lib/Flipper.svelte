@@ -47,14 +47,13 @@
 		justify-content: center;
 		-webkit-box-align: center;
 		align-items: center;
-		box-shadow: 2px 2px 4px 6px rgba(255, 255, 255, 0.25);
 	}
 	#sq1 {
-		background: url('impala.jpeg') center center/cover no-repeat;
+		background: url('instagram.png') center center/cover no-repeat;
 		width: 25%;
 	}
 	#sq2 {
-		background: url('night-driving.jpeg') center center/cover no-repeat;
+		background: url('youtube.png') center center/cover no-repeat;
 		width: 25%;
 	}
 	h1 {
