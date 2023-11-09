@@ -18,8 +18,6 @@
 
 <main class="atwellLogo">
 	<img class="atwell" src="skull-logo.png" alt="Atwell ui design logo that you can move" />
-
-	<br /><br /><br />
 </main>
 
 <style>

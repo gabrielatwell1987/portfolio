@@ -26,6 +26,8 @@
 	document.addEventListener('click', doFlip);
 </script>
 
+<h1>Click to start animation!</h1>
+
 <div class="container">
 	<div class="square" id="sq1">PORT</div>
 	<div class="square" id="sq2">FOLIO</div>
@@ -33,7 +35,6 @@
 
 <style>
 	:global(body) {
-		background-color: #222;
 		font-family: 'Signika Negative', sans-serif, Arial;
 	}
 	.container {
@@ -43,8 +44,8 @@
 		justify-content: space-between;
 	}
 	.square {
-		width: 100px;
-		height: 100px;
+		width: 250px;
+		height: 250px;
 		border-radius: 10px;
 		font-size: 2em;
 		font-weight: bolder;
@@ -55,7 +56,15 @@
 		-webkit-box-align: center;
 		align-items: center;
 		color: #242424;
-		background-color: #ff0;
+		background-color: rgb(88, 149, 151);
 		cursor: pointer;
+	}
+	h1 {
+		text-align: center;
+		font-weight: bold;
+		font-family: Georgia, 'Times New Roman', Times, serif;
+		margin: 5rem auto;
+		width: 100%;
+		letter-spacing: 3px;
 	}
 </style>

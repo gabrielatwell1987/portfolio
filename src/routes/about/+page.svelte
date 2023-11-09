@@ -56,9 +56,7 @@
 				on how I could improve this site. It is greatly appreciated!
 			</p>
 
-			<div class="logos">
-				<img class="roses" src="roses.png" width="350" alt="Roses that you can move" />
-			</div>
+			<button><a class="click" href="/flipper">Click Here</a></button>
 		</article>
 	</section>
 </main>
@@ -89,23 +87,10 @@
 		width: 100%;
 		margin: 0;
 	}
-	.logos {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 0 0 1rem 1em;
-	}
-	.roses {
-		border-radius: 40%;
-		margin: 3rem 0 0 0;
-	}
 	.subtitle {
 		color: var(--cornflower);
 		font-size: 2.5rem;
 	}
-	/* .ribbon {
-		margin: 2rem 0 0 0;
-	} */
 	a {
 		font-size: 0.9rem;
 	}
@@ -137,14 +122,6 @@
 			margin: 0 0 -1rem 0;
 			background-color: transparent;
 		}
-		.logos {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin: 0 0 1rem 25%;
-			width: 50%;
-			height: 75%;
-		}
 		.subtitle {
 			color: cornflowerblue;
 			font-size: 1rem;
@@ -159,14 +136,6 @@
 	@media screen and (min-width: 990px) {
 		p {
 			line-height: 2.5;
-		}
-		.logos {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin: 0 0 1rem 0.8em;
-			width: 100%;
-			height: 100%;
 		}
 		section {
 			display: block;
@@ -191,6 +160,26 @@
 		}
 		a:hover {
 			font-size: 1.2rem;
+		}
+
+		button {
+			font-size: 2rem;
+			font-weight: bolder;
+			padding: 0.75rem 1.5rem;
+			background-color: cadetblue;
+			border: 3px solid white;
+			width: 20%;
+			margin: 2.5rem auto;
+			border-radius: 10px;
+		}
+		button:hover {
+			background-color: rgba(95, 158, 160, 0.37);
+		}
+		.click,
+		.click:hover {
+			color: white;
+			text-decoration: none;
+			font-size: 2rem;
 		}
 	}
 </style>

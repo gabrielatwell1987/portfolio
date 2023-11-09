@@ -26,6 +26,10 @@
 	<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank">Svelteflix</a><br
 	/>
 	<a class="linksize" href="https://blog-until-you-die.vercel.app" target="_blank">Blog</a>
+
+	<div class="logos">
+		<img class="roses" src="roses.png" width="350" alt="Roses that you can move" />
+	</div>
 </section>
 
 <style>
@@ -58,6 +62,16 @@
 		align-items: center;
 		width: 25%;
 		margin: 0 0 0 37%;
+	}
+	.logos {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0 auto;
+	}
+	.roses {
+		border-radius: 40%;
+		margin: 3rem 0 0 0;
 	}
 	@media screen and (min-width: 200px) {
 		a {
@@ -94,6 +108,14 @@
 			width: 100%;
 			padding: 1rem;
 			margin: 0;
+		}
+		.logos {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+			width: 50%;
+			height: 75%;
 		}
 	}
 	@media screen and (min-width: 740px) {
@@ -134,6 +156,14 @@
 			width: 100%;
 			padding: 2rem;
 			margin: 0;
+		}
+		.logos {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+			width: 100%;
+			height: 100%;
 		}
 	}
 </style>
