@@ -57,7 +57,7 @@
 		gap: 1rem;
 		grid-template-columns: repeat(2, 1fr);
 		width: 75%;
-		margin: 0 auto;
+		margin: 5rem auto;
 	}
 
 	@media (min-width: 1024px) {
