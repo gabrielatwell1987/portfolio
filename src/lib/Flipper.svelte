@@ -7,30 +7,25 @@
 	const squares = gsap.utils.toArray('.square');
 
 	function doFlip() {
-		// Get the initial state
 		const state = Flip.getState(squares);
 
-		// Make DOM or styling changes (swap the squares in our case)
 		swap(squares);
 
-		// Animate from the initial state to the end state
 		Flip.from(state, { duration: 2, ease: 'power1.inOut' });
 	}
 
-	// Given an Array of two siblings, append the one that's first so it's last (swap)
 	function swap([a, b]) {
 		a.parentNode.children[0] === a ? a.parentNode.appendChild(a) : a.parentNode.appendChild(b);
 	}
 
-	// click anywhere to flip
 	document.addEventListener('click', doFlip);
 </script>
 
 <h1>Click to start animation!</h1>
 
 <div class="container">
-	<div class="square" id="sq1">PORT</div>
-	<div class="square" id="sq2">FOLIO</div>
+	<div class="square" id="sq1" />
+	<div class="square" id="sq2" />
 </div>
 
 <style>
@@ -46,7 +41,7 @@
 	.square {
 		width: 250px;
 		height: 250px;
-		border-radius: 10px;
+		border-radius: 10%;
 		font-size: 2em;
 		font-weight: bolder;
 		display: -webkit-box;
@@ -55,9 +50,15 @@
 		justify-content: center;
 		-webkit-box-align: center;
 		align-items: center;
-		color: #242424;
-		background-color: rgb(88, 149, 151);
-		cursor: pointer;
+		box-shadow: 2px 2px 4px 6px rgba(255, 255, 255, 0.25);
+	}
+	#sq1 {
+		background: url(impala.jpeg) center center/cover no-repeat;
+		width: 25%;
+	}
+	#sq2 {
+		background: url(night-driving.jpeg) center center/cover no-repeat;
+		width: 25%;
 	}
 	h1 {
 		text-align: center;

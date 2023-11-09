@@ -56,7 +56,7 @@
 				on how I could improve this site. It is greatly appreciated!
 			</p>
 
-			<button><a class="click" href="/flipper">Click Here</a></button>
+			<button><a class="click" href="/flipper">GSAP Example</a></button>
 		</article>
 	</section>
 </main>
@@ -168,7 +168,7 @@
 			padding: 0.75rem 1.5rem;
 			background-color: cadetblue;
 			border: 3px solid white;
-			width: 20%;
+			width: 25%;
 			margin: 2.5rem auto;
 			border-radius: 10px;
 		}
