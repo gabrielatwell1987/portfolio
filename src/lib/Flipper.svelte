@@ -6,16 +6,16 @@
 
 	const squares = gsap.utils.toArray('.square');
 
+	function swap([a, b]) {
+		a.parentNode.children[0] === a ? a.parentNode.appendChild(a) : a.parentNode.appendChild(b);
+	}
+
 	function doFlip() {
 		const state = Flip.getState(squares);
 
 		swap(squares);
 
 		Flip.from(state, { duration: 2, ease: 'power1.inOut' });
-	}
-
-	function swap([a, b]) {
-		a.parentNode.children[0] === a ? a.parentNode.appendChild(a) : a.parentNode.appendChild(b);
 	}
 
 	document.addEventListener('click', doFlip);
@@ -29,9 +29,6 @@
 </div>
 
 <style>
-	:global(body) {
-		font-family: 'Signika Negative', sans-serif, Arial;
-	}
 	.container {
 		display: -webkit-box;
 		display: flex;
