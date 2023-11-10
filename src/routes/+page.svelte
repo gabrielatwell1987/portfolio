@@ -17,7 +17,7 @@
 </script>
 
 <main class="atwellLogo">
-	<img class="atwell" src="skull-logo.png" alt="Atwell ui design logo that you can move" />
+	<img class="atwell" src="welcome.png" alt="Atwell ui design logo that you can move" />
 </main>
 
 <style>
@@ -31,8 +31,7 @@
 			font-size: 1.75rem;
 		}
 		img {
-			border-radius: 1%;
-			width: 90%;
+			width: 100%;
 		}
 	}
 	@media screen and (min-width: 740px) {
