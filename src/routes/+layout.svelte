@@ -54,7 +54,8 @@
 	}
 	@media screen and (max-width: 1650px) {
 		.linkIcons {
-			display: none;
+			display: block;
+			/* display: none; */
 		}
 	}
 </style>
