@@ -177,7 +177,7 @@
 		button {
 			background-color: cadetblue;
 			padding: 0.5rem 1rem;
-			border: 2px solid white;
+			border: 5px solid white;
 			width: 25%;
 			margin: 3rem auto;
 		}
