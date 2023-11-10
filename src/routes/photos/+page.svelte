@@ -10,6 +10,7 @@
 			gsap.registerPlugin(ScrollTrigger);
 
 			gsap.set('.photos', { y: 500 });
+			gsap.set('main', { autoAlpha: 0 });
 			gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', { borderRadius: '25%' });
 
 			gsap.to('.title', {
@@ -33,7 +34,9 @@
 					x: 200,
 					scrub: true
 				}
-			}).to('.photos', { y: 0 }, '<');
+			})
+				.to('main', { autoAlpha: 1 })
+				.to('.photos', { y: 0 }, '<');
 
 			return () => {
 				gsap.set('.photos', { y: 500 });

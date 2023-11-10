@@ -8,9 +8,9 @@
 
 		const horse = document.querySelector('.horse');
 
-		gsap.set('main', { autoAlphha: 0 });
+		gsap.set('main', { autoAlpha: 0 });
 
-		gsap.to('main', { autoAlpha: 1, duration: 5 });
+		gsap.to('main', { autoAlpha: 1, duration: 3.5 });
 
 		Draggable.create(horse, {
 			type: 'x, y',
