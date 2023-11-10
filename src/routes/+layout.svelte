@@ -26,12 +26,6 @@
 	<slot />
 </main>
 
-<main class="mobile">
-	<NavBar2 />
-	<br />
-	<slot />
-</main>
-
 <footer>
 	<section class="linkIcons">
 		<a class="linkedin" href="https://www.linkedin.com/in/gabriel-atwell-ab2116231/">
@@ -42,7 +36,6 @@
 			<Discord />
 		</a>
 	</section>
-	<h6>©️ 2023 Gabriel Atwell</h6>
 </footer>
 
 <style>
@@ -52,14 +45,6 @@
 	}
 	a:hover {
 		color: var(--blue);
-	}
-	.mobile {
-		display: none;
-	}
-	h6 {
-		text-align: center;
-		margin: 1rem 0 0 0;
-		font-weight: 200;
 	}
 	.linkedin {
 		margin: 0 2rem 0 0;
