@@ -53,12 +53,10 @@
 		<div class="flex">
 			<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="350" height="450" />
 			<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" />
-		</div>
-		<div class="flex">
 			<img class="gabe3" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" />
-			<img class="gabe4" src="gabe4.jpg" alt="Gabriel Atwell" width="350" />
 		</div>
 		<div class="flex">
+			<img class="gabe4" src="gabe4.jpg" alt="Gabriel Atwell" width="350" />
 			<img class="retard" src="retard.png" alt="Gabriel Atwell" width="400" />
 			<img class="gabe5" src="gabe5.png" alt="Gabriel Atwell" width="475" />
 		</div>
@@ -90,7 +88,7 @@
 	.flex {
 		display: flex;
 		justify-content: space-around;
-		gap: 10rem;
+		gap: 8rem;
 		margin: 5rem 0;
 	}
 	@media screen and (min-width: 200px) {
@@ -109,7 +107,7 @@
 			display: flex;
 			justify-content: space-around;
 			flex-direction: row;
-			gap: 10rem;
+			gap: 8rem;
 			margin: 5rem 0;
 		}
 	}
