@@ -7,9 +7,19 @@
 	let message = '';
 
 	onMount(() => {
+		const button = document.querySelector('.button');
+
 		gsap.set('.form', { y: 300 });
 
 		gsap.to('.form', { y: 0, duration: 1.5 });
+
+		button.addEventListener('mouseover', () => {
+			gsap.to(button, { opacity: 0.25, duration: 1 });
+		});
+
+		button.addEventListener('mouseleave', () => {
+			gsap.to(button, { opacity: 1, duration: 1 });
+		});
 	});
 </script>
 
@@ -43,7 +53,7 @@
 			required
 		/>
 
-		<button type="submit">Send</button>
+		<button class="button" type="submit">Send</button>
 	</fieldset>
 </form>
 
