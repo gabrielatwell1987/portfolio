@@ -6,13 +6,13 @@
 	onMount(() => {
 		gsap.registerPlugin(Draggable);
 
-		const horse = document.querySelector('.horse');
+		const atwell = document.querySelector('.atwell');
 
 		gsap.set('main', { autoAlpha: 0 });
 
 		gsap.to('main', { autoAlpha: 1, duration: 3.5 });
 
-		Draggable.create(horse, {
+		Draggable.create(atwell, {
 			type: 'x, y',
 			bounds: document.querySelector('article'),
 			inertia: true
@@ -25,7 +25,7 @@
 
 	<section>
 		<article>
-			<img class="horse" src="horse-logo.png" alt="Atwell ui design horse logo that you can move" />
+			<img class="atwell" src="atwell_logo.png" alt="Atwell logo that you can move" />
 
 			<h2 class="subtitle">Bio</h2>
 
@@ -97,10 +97,11 @@
 	a:hover {
 		font-size: 1.2rem;
 	}
-	.horse {
+	.atwell {
 		margin: 0 0 5rem 0;
 		border-radius: 10px;
 	}
+
 	@media screen and (min-width: 200px) {
 		p {
 			line-height: 1.75;
