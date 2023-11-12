@@ -7,6 +7,7 @@
 		gsap.registerPlugin(Draggable);
 
 		const atwell = document.querySelector('.atwell');
+		const button = document.querySelector('.button');
 
 		gsap.set('main', { autoAlpha: 0 });
 
@@ -16,6 +17,14 @@
 			type: 'x, y',
 			bounds: document.querySelector('article'),
 			inertia: true
+		});
+
+		button.addEventListener('mouseover', () => {
+			gsap.to(button, { opacity: 0.5, duration: 1.5 });
+		});
+
+		button.addEventListener('mouseleave', () => {
+			gsap.to(button, { opacity: 1, duration: 1.5 });
 		});
 	});
 </script>
@@ -56,7 +65,7 @@
 				on how I could improve this site. It is greatly appreciated!
 			</p>
 
-			<button><a class="test" href="/gallery">Photo Gallery</a></button>
+			<button class="button"><a class="test" href="/gallery">Photo Gallery</a></button>
 		</article>
 	</section>
 </main>

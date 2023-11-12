@@ -14,7 +14,7 @@
 		gsap.to('.form', { y: 0, duration: 1.5 });
 
 		button.addEventListener('mouseover', () => {
-			gsap.to(button, { opacity: 0.25, duration: 1 });
+			gsap.to(button, { opacity: 0.5, duration: 1 });
 		});
 
 		button.addEventListener('mouseleave', () => {
@@ -138,6 +138,7 @@
 			font-weight: bold;
 			text-align: center;
 			width: 100%;
+			border: 2px solid whitesmoke;
 		}
 		fieldset {
 			border: 3px solid whitesmoke;
