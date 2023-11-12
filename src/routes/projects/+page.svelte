@@ -28,8 +28,7 @@
 	<a class="linksize" href="https://blog-until-you-die.vercel.app" target="_blank">Blog</a>
 
 	<div class="logos">
-		<img class="roses" src="newspaper.jpg" width="350" alt="A newspaper that you can move" />
-		<!-- <img class="roses" src="roses.png" width="350" alt="Roses that you can move" /> -->
+		<img class="newspaper" src="newspaper.jpg" width="350" alt="A newspaper that you can move" />
 	</div>
 </section>
 
@@ -70,7 +69,7 @@
 		align-items: center;
 		margin: 0 auto;
 	}
-	.roses {
+	.newspaper {
 		border-radius: 10%;
 		margin: 3rem 0;
 	}
