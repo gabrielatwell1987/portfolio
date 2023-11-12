@@ -191,9 +191,6 @@
 			width: 25%;
 			margin: 3rem auto;
 		}
-		button:hover {
-			background-color: rgba(95, 158, 160, 0.329);
-		}
 		.test {
 			font-size: 2.5rem;
 			font-weight: bolder;

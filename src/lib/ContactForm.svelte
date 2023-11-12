@@ -139,6 +139,7 @@
 			text-align: center;
 			width: 100%;
 			border: 2px solid whitesmoke;
+			background-color: cadetblue;
 		}
 		fieldset {
 			border: 3px solid whitesmoke;
