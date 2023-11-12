@@ -20,11 +20,11 @@
 		});
 
 		button.addEventListener('mouseover', () => {
-			gsap.to(button, { opacity: 0.5, duration: 1.5 });
+			gsap.to(button, { opacity: 0.5, duration: 1 });
 		});
 
 		button.addEventListener('mouseleave', () => {
-			gsap.to(button, { opacity: 1, duration: 1.5 });
+			gsap.to(button, { opacity: 1, duration: 1 });
 		});
 	});
 </script>
