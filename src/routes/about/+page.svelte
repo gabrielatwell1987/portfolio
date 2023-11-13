@@ -99,6 +99,7 @@
 	h2 {
 		color: var(--cornflower);
 		font-size: 2.5rem;
+		font-family: 'Merriweather', serif;
 	}
 	a {
 		font-size: 0.9rem;
@@ -135,6 +136,7 @@
 		h2 {
 			color: cornflowerblue;
 			font-size: 1rem;
+			font-family: 'Merriweather', serif;
 		}
 		a {
 			font-size: 0.9rem;
@@ -176,6 +178,7 @@
 		h2 {
 			color: cornflowerblue;
 			font-size: 2.5rem;
+			font-family: 'Merriweather', serif;
 		}
 		a {
 			font-size: 0.9rem;
