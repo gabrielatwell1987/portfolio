@@ -9,9 +9,7 @@
 	onMount(() => {
 		const button = document.querySelector('.button');
 
-		gsap.set('.form', { y: 300 });
-
-		gsap.to('.form', { y: 0, duration: 1.5 });
+		gsap.from('.form', { opacity: 0, duration: 3 });
 
 		button.addEventListener('mouseover', () => {
 			gsap.to(button, { opacity: 0.5, duration: 1 });
