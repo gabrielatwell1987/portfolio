@@ -22,18 +22,7 @@
 		</div>
 	{/if}
 
-	{#if open}
-		<div class="mobile-view">
-			<a href="/">home</a>
-			<a href="/about">about</a>
-			<a href="/photos">photos</a>
-			<a href="/projects">projects</a>
-			<a href="/blog">stack</a>
-			<a href="/contact">contact</a>
-		</div>
-	{/if}
-
-	<!-- <div class="mobile-view">
+	<div class="mobile-view">
 		<div class="mobile-links">
 			<a class="mobile-link" href="/">HOME</a>
 			<a class="mobile-link" href="/about">ABOUT</a>
@@ -41,7 +30,7 @@
 			<a class="mobile-link" href="/projects">PROJECTS</a>
 			<a class="mobile-link" href="/contact">CONTACT</a>
 		</div>
-	</div> -->
+	</div>
 </nav>
 
 <style>
@@ -90,30 +79,20 @@
 		.desktop-view {
 			display: none;
 		}
-		/* .mobile-view {
+		.mobile-view {
 			display: block;
 			justify-content: space-evenly;
 			width: 100%;
 			margin: 0 0 0 -75%;
 			font-weight: bold;
-		} */
-		.mobile-view {
-			display: block;
-			justify-content: space-evenly;
-			align-items: center;
-			gap: 1rem;
-			flex-direction: column;
-			width: 100%;
-			margin: 0 auto;
-			font-weight: bold;
 		}
-		/* .mobile-links {
+		.mobile-links {
 			display: flex;
 			justify-content: space-evenly;
 		}
 		.mobile-link {
 			font-size: 0.5rem;
-		} */
+		}
 		.header-logos {
 			display: none;
 		}
