@@ -119,6 +119,7 @@
 		margin: -2rem 0 2rem 0;
 		text-align: center;
 		color: var(--cornflower);
+		font-family: 'Merriweather', serif;
 	}
 	.greensock {
 		display: flex;
