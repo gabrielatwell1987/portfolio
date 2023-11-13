@@ -29,9 +29,11 @@
 		main {
 			text-align: center;
 			font-size: 1.75rem;
+			height: 100vh;
 		}
 		img {
 			width: 100%;
+			height: 75%;
 		}
 	}
 	@media screen and (min-width: 740px) {
