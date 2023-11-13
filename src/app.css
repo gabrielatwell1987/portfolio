@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
+
 :root {
 	/* colors */
 	--sky: lightskyblue;
@@ -41,4 +43,7 @@ body {
 .linksize,
 .greensock {
 	visibility: hidden;
+}
+h2 {
+	font-family: 'Merriweather', serif;
 }
