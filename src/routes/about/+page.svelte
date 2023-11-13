@@ -36,7 +36,7 @@
 		<article>
 			<img class="atwell" src="atwell_logo.png" alt="Atwell logo that you can move" />
 
-			<h2 class="subtitle">Bio</h2>
+			<h2>Bio</h2>
 
 			<p>
 				Gabe is a self-taught web developer. He started out with the basics: HTML, CSS, and
@@ -44,20 +44,20 @@
 				GSAP. He has begun to teach himself the backend of web development on his spare time, but is
 				a complete frontend developer.
 			</p>
-			<h2 class="subtitle">Frontend</h2>
+			<h2>Frontend</h2>
 			<p>
 				The path that Gabe has chosen is the frontend path, one of his main interests with the
 				frontend path is animations, especially animations on the web. Turning a website from being
 				a static site to a dynamic site is what he thinks makes your website look a million times
 				better, if you do it right.
 			</p>
-			<h2 class="subtitle">Design Based</h2>
+			<h2>Design Based</h2>
 			<p>
 				A clean, crisp design is what Gabe tries to excel at. Visual hierarchy, whitespace, colors,
 				typography, scaling, and spacing is what he knows best. He learned that these topics are the
 				main key for a UI developer.
 			</p>
-			<h2 class="subtitle">Github</h2>
+			<h2>Github</h2>
 			<p>
 				<a href="https://www.github.com/gabrielatwell1987/portfolio">Here</a> is the GitHub repo for
 				this site, just in case you want to see the code for this site or if you see something that needs
@@ -96,7 +96,7 @@
 		width: 100%;
 		margin: 0;
 	}
-	.subtitle {
+	h2 {
 		color: var(--cornflower);
 		font-size: 2.5rem;
 	}
@@ -132,7 +132,7 @@
 			margin: 0 0 -1rem 0;
 			background-color: transparent;
 		}
-		.subtitle {
+		h2 {
 			color: cornflowerblue;
 			font-size: 1rem;
 		}
@@ -173,7 +173,7 @@
 		article {
 			font-size: 1rem;
 		}
-		.subtitle {
+		h2 {
 			color: cornflowerblue;
 			font-size: 2.5rem;
 		}
