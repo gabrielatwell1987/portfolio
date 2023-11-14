@@ -1,10 +1,9 @@
 <script>
-	import Circles from '$lib/Circles.svelte';
-	import Grid from '$lib/Grid.svelte';
+	import Gallery from '$lib/Gallery.svelte';
 </script>
 
 <!-- <Circles /> -->
-<Grid />
+<Gallery />
 
 <style>
 </style>
