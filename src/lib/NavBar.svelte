@@ -71,7 +71,7 @@
 		place-items: center;
 		margin: 0 5rem 0 0;
 		width: 15%;
-		color: var(--white);
+		/* color: var(--white); */
 		font-weight: bolder;
 		font-family: 'Courier New', Courier, monospace;
 	}
@@ -96,6 +96,9 @@
 		.header-logos {
 			display: none;
 		}
+		.h1 {
+			color: var(--sky);
+		}
 		nav {
 			display: flex;
 			justify-content: space-around;
@@ -106,17 +109,11 @@
 	}
 	@media (min-width: 740px) {
 		.desktop-view {
-			/* display: block;
-			width: 100%;
-			/* margin-left: -100%; 
-			font-size: 1rem;
-			font-weight: bolder; */
 			display: none;
 		}
 		.mobile-view {
 			display: block;
 			width: 100%;
-			/* margin-left: -100%; */
 			font-size: 1rem;
 			font-weight: bolder;
 		}
@@ -128,11 +125,6 @@
 			width: 100%;
 		}
 		.header-logos {
-			/* display: flex;
-			justify-content: center;
-			align-items: center;
-			margin: 2rem;
-			outline: none; */
 			display: none;
 		}
 		.h1 {
@@ -140,14 +132,13 @@
 			place-items: center;
 			margin: 0 5rem 0 0;
 			width: 15%;
-			color: var(--white);
+			/* color: var(--white); */
 			font-weight: bolder;
 			font-family: 'Courier New', Courier, monospace;
 		}
 	}
 	@media (min-width: 990px) {
 		a {
-			/* margin: 0 10px; */
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			font-size: 1rem;
 			text-decoration: none;
@@ -161,7 +152,6 @@
 			font-size: 1.1rem;
 		}
 		.desktop-view {
-			/* margin-right: .5rem; */
 			display: block;
 			width: 100%;
 			margin-left: 16%;
@@ -189,7 +179,7 @@
 			place-items: center;
 			margin: 0 5rem 0 0;
 			width: 15%;
-			color: var(--white);
+			/* color: var(--white); */
 			font-weight: bolder;
 			font-family: 'Courier New', Courier, monospace;
 		}
