@@ -71,7 +71,6 @@
 		place-items: center;
 		margin: 0 5rem 0 0;
 		width: 15%;
-		/* color: var(--white); */
 		font-weight: bolder;
 		font-family: 'Courier New', Courier, monospace;
 	}
@@ -132,7 +131,6 @@
 			place-items: center;
 			margin: 0 5rem 0 0;
 			width: 15%;
-			/* color: var(--white); */
 			font-weight: bolder;
 			font-family: 'Courier New', Courier, monospace;
 		}
@@ -179,7 +177,6 @@
 			place-items: center;
 			margin: 0 5rem 0 0;
 			width: 15%;
-			/* color: var(--white); */
 			font-weight: bolder;
 			font-family: 'Courier New', Courier, monospace;
 		}
