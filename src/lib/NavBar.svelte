@@ -97,7 +97,7 @@
 			display: none;
 		}
 		.h1 {
-			color: var(--sky);
+			color: var(--cornflower);
 		}
 		nav {
 			display: flex;
