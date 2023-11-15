@@ -1,6 +1,5 @@
 <script>
 	import NavBar from '$lib/NavBar.svelte';
-	import NavBar2 from '$lib/NavBar2.svelte';
 	import Discord from '$lib/Discord.svelte';
 	import Analytics from '$lib/Analytics.svelte';
 	import SEO from '$lib/SEO.svelte';
