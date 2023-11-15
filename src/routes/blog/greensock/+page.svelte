@@ -2,26 +2,41 @@
 	import GsapIcon from '$lib/GsapIcon.svelte';
 	import Exclamation from '$lib/Exclamation.svelte';
 	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 
+	// function trigger() {
+	// 	gsap.to('.greensock', { y: 0, rotation: 360, ease: 'back.out', duration: 5 });
+	// }
+
 	onMount(() => {
-		gsap.set('.gs-main', { y: 1000 });
-		gsap.set('.greensock', { autoAlpha: 0, y: -500 });
+		gsap.registerPlugin(ScrollTrigger);
+
+		gsap.set('.greensock', { autoAlpha: 0, rotation: 0, y: 200 });
 		gsap.set('.title', { skewX: 15, opacity: 0, y: -20 });
 		gsap.set('.exclamation', { scale: 2, x: 200, y: 30 });
 
-		let tl = gsap.timeline({ defaults: { duration: 3 } });
+		let tl = gsap.timeline({
+			defaults: { duration: 3 },
+			scrollTrigger: {
+				trigger: '.gs-main',
+				start: 'top 80%',
+				end: '+=200',
+				scrub: true,
+				pin: true
+			}
+		});
 
-		tl.to('.greensock', { autoAlpha: 1, y: 0, ease: 'back.out' }, 0)
-			.to('.gs-main', { y: 0 }, 0)
-			.to('.title', { opacity: 1 });
+		tl.to('.greensock', { autoAlpha: 1, ease: 'back.out', pin: 1 }, 0).to('.title', {
+			opacity: 1
+		});
 	});
 </script>
 
 <div class="greensock">
 	<GsapIcon />
 </div>
-
+<br /><br /><br /><br /><br /><br /><br />
 <h1 class="title">GSAP</h1>
 
 <main class="gs-main">
