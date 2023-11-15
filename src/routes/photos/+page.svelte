@@ -50,16 +50,16 @@
 	<h2 class="title">PHOTOS</h2>
 
 	<section class="photos">
-		<div class="flex">
+		<aside class="flex">
 			<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="350" height="450" />
 			<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" />
 			<img class="gabe3" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" />
-		</div>
-		<div class="flex">
+		</aside>
+		<aside class="flex">
 			<img class="gabe4" src="gabe4.jpg" alt="Gabriel Atwell" width="350" />
 			<img class="retard" src="retard.png" alt="Gabriel Atwell" width="400" />
 			<img class="gabe5" src="gabe5.png" alt="Gabriel Atwell" width="475" />
-		</div>
+		</aside>
 	</section>
 </main>
 

@@ -27,9 +27,9 @@
 	/>
 	<a class="linksize" href="https://blog-until-you-die.vercel.app" target="_blank">Blog</a>
 
-	<div class="logos">
+	<section class="logos">
 		<img class="newspaper" src="newspaper.jpg" width="350" alt="A newspaper that you can move" />
-	</div>
+	</section>
 </section>
 
 <style>

@@ -36,7 +36,7 @@
 	}
 </script>
 
-<div class="grid">
+<section class="grid">
 	{#each { length: 8 } as _, id}
 		{@const details = selected === id}
 		{@const number = id + 1}
@@ -49,7 +49,7 @@
 			<img src="https://picsum.photos/600/600?random={id}" alt="Placeholder" />
 		</button>
 	{/each}
-</div>
+</section>
 
 <style>
 	.grid {

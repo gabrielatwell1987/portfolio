@@ -30,9 +30,9 @@
 <h1 class="title">SvelteKit</h1>
 
 <main class="sk-main">
-	<div class="exclamation">
+	<aside class="exclamation">
 		<Exclamation />
-	</div>
+	</aside>
 
 	<section>
 		<h2 class="subtitle">What I used to create this site</h2>

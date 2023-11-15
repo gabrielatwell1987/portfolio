@@ -25,9 +25,9 @@
 <h1 class="title">GSAP</h1>
 
 <main class="gs-main">
-	<div class="exclamation">
+	<aside class="exclamation">
 		<Exclamation />
-	</div>
+	</aside>
 
 	<h2 class="subtitle">Greensock Animation Platform</h2>
 

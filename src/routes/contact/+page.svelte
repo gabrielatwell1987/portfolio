@@ -10,9 +10,9 @@
 </script>
 
 <main>
-	<div class="contactForm">
+	<section class="contactForm">
 		<ContactForm />
-	</div>
+	</section>
 </main>
 
 <style>
