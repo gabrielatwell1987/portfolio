@@ -5,10 +5,6 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 
-	// function trigger() {
-	// 	gsap.to('.greensock', { y: 0, rotation: 360, ease: 'back.out', duration: 5 });
-	// }
-
 	onMount(() => {
 		gsap.registerPlugin(ScrollTrigger);
 
@@ -20,7 +16,7 @@
 			defaults: { duration: 3 },
 			scrollTrigger: {
 				trigger: '.gs-main',
-				start: 'top 80%',
+				start: 'top 90%',
 				end: '+=200',
 				scrub: true,
 				pin: true
