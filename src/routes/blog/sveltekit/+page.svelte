@@ -65,6 +65,7 @@
 		</p>
 
 		<iframe
+			class="youtube"
 			width="560"
 			height="315"
 			src="https://www.youtube.com/embed/MoGkX4RvZ38?si=xV4--8APNCqD7Ihn"
