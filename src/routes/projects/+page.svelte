@@ -115,8 +115,8 @@
 			justify-content: center;
 			align-items: center;
 			margin: 0 auto;
-			width: 50%;
-			height: 75%;
+			width: 75%;
+			height: 100%;
 		}
 	}
 	@media screen and (min-width: 740px) {
