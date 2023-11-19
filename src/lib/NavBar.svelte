@@ -12,7 +12,7 @@
 		<!-- <h1 class="h1">GABE|atwell</h1> -->
 
 		<div class="gabe-logo">
-			<a href="/"><GabeLogo /></a>
+			<a class="home" href="/"><GabeLogo /></a>
 		</div>
 	</div>
 
