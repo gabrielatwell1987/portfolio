@@ -18,11 +18,11 @@
 
 	{#if open}
 		<div class="desktop-view">
-			<a href="/about">about</a>
-			<a href="/photos">photos</a>
-			<a href="/projects">projects</a>
-			<a href="/blog">stack</a>
-			<a href="/contact">contact</a>
+			<a class="link" href="/about">about</a>
+			<a class="link" href="/photos">photos</a>
+			<a class="link" href="/projects">projects</a>
+			<a class="link" href="/blog">stack</a>
+			<a class="link" href="/contact">contact</a>
 		</div>
 	{/if}
 
@@ -38,7 +38,7 @@
 </nav>
 
 <style>
-	a {
+	.link {
 		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		font-size: 1rem;
 		text-decoration: none;
@@ -47,7 +47,7 @@
 		margin-left: 8rem;
 		margin-right: -7rem;
 	}
-	a:hover {
+	.link:hover {
 		color: var(--blue);
 	}
 	.desktop-view {
@@ -124,7 +124,7 @@
 		}
 	}
 	@media (min-width: 990px) {
-		a {
+		.link {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			font-size: 1rem;
 			text-decoration: none;
@@ -133,7 +133,7 @@
 			margin-left: 8rem;
 			margin-right: -7rem;
 		}
-		a:hover {
+		.link:hover {
 			color: blue;
 			font-size: 1.1rem;
 		}
