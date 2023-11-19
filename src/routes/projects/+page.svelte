@@ -100,6 +100,7 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			font-size: 1.5rem;
 		}
 		section {
 			border: 3px solid var(--white);
@@ -146,7 +147,7 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			font-size: 1.5rem;
+			font-size: 2rem;
 			letter-spacing: 4px;
 		}
 		section {
