@@ -12,13 +12,12 @@
 		<!-- <h1 class="h1">GABE|atwell</h1> -->
 
 		<div class="gabe-logo">
-			<GabeLogo />
+			<a href="/"><GabeLogo /></a>
 		</div>
 	</div>
 
 	{#if open}
 		<div class="desktop-view">
-			<a href="/">home</a>
 			<a href="/about">about</a>
 			<a href="/photos">photos</a>
 			<a href="/projects">projects</a>
