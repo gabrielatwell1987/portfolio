@@ -135,7 +135,7 @@
 		}
 		h2 {
 			color: cornflowerblue;
-			font-size: 1rem;
+			font-size: 1.5rem;
 			font-family: 'Merriweather', serif;
 		}
 		a {
