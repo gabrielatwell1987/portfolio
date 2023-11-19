@@ -12,6 +12,7 @@
 		title="domino"
 	/>
 
+	<h3>Make sure you click the animation with your mouse first</h3>
 	<h3>W A S D to move, SPACE to jump</h3>
 </main>
 
@@ -28,5 +29,8 @@
 	h1 {
 		color: var(--cornflower);
 		margin: 1% 0 2rem 0;
+	}
+	h3 {
+		margin: 0;
 	}
 </style>
