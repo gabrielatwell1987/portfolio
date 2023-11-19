@@ -72,7 +72,7 @@
 		margin-left: 2rem;
 	}
 	.gabe-logo {
-		margin: 0 0 0 17%;
+		margin: 0 0 0 12%;
 	}
 	@media (min-width: 200px) {
 		.desktop-view {
