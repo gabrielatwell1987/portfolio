@@ -62,7 +62,7 @@
 		</aside>
 	</section>
 
-	<button class="domino"><a href="/domino">Domino Game &rarr;</a></button>
+	<button class="domino"><a href="/photos/domino">Domino Game &rarr;</a></button>
 </main>
 
 <style>
