@@ -1,5 +1,6 @@
 <script>
 	import { Hamburger } from 'svelte-hamburgers';
+	import GabeLogo from '$lib/GabeLogo.svelte';
 
 	let open;
 </script>
@@ -8,7 +9,11 @@
 	<div class="header-logos">
 		<Hamburger type="spin" bind:open />
 
-		<h1 class="h1">GABE|atwell</h1>
+		<!-- <h1 class="h1">GABE|atwell</h1> -->
+
+		<div class="gabe-logo">
+			<GabeLogo />
+		</div>
 	</div>
 
 	{#if open}
@@ -66,13 +71,8 @@
 		align-items: center;
 		margin-left: 2rem;
 	}
-	.h1 {
-		display: grid;
-		place-items: center;
-		margin: 0 5rem 0 0;
-		width: 15%;
-		font-weight: bolder;
-		font-family: 'Courier New', Courier, monospace;
+	.gabe-logo {
+		margin: 0 0 0 10%;
 	}
 	@media (min-width: 200px) {
 		.desktop-view {
@@ -94,9 +94,6 @@
 		}
 		.header-logos {
 			display: none;
-		}
-		.h1 {
-			color: var(--cornflower);
 		}
 		nav {
 			display: flex;
@@ -125,14 +122,6 @@
 		}
 		.header-logos {
 			display: none;
-		}
-		.h1 {
-			display: grid;
-			place-items: center;
-			margin: 0 5rem 0 0;
-			width: 15%;
-			font-weight: bolder;
-			font-family: 'Courier New', Courier, monospace;
 		}
 	}
 	@media (min-width: 990px) {
@@ -171,14 +160,6 @@
 			justify-content: center;
 			align-items: center;
 			margin: 2rem;
-		}
-		.h1 {
-			display: grid;
-			place-items: center;
-			margin: 0 5rem 0 0;
-			width: 15%;
-			font-weight: bolder;
-			font-family: 'Courier New', Courier, monospace;
 		}
 	}
 </style>
