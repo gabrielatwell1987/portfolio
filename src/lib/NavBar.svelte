@@ -90,7 +90,7 @@
 			justify-content: space-evenly;
 		}
 		.mobile-link {
-			font-size: 1rem;
+			font-size: 0.75rem;
 		}
 		.header-logos {
 			display: none;
