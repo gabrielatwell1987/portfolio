@@ -61,6 +61,8 @@
 			<img class="gabe5" src="gabe5.png" alt="Gabriel Atwell" width="475" />
 		</aside>
 	</section>
+
+	<button class="domino"><a href="/domino">Domino Game &rarr;</a></button>
 </main>
 
 <style>
@@ -91,6 +93,20 @@
 		gap: 8rem;
 		margin: 5rem 0;
 	}
+	.domino {
+		width: 25%;
+		margin: 5% auto;
+	}
+	a {
+		text-decoration: none;
+		color: var(--white);
+		font-size: 1.25rem;
+		font-weight: 900;
+		padding: 0.5rem 1.25rem;
+	}
+	a:hover {
+		color: var(--lightblack);
+	}
 	@media screen and (min-width: 200px) {
 		section {
 			width: 100%;
@@ -101,6 +117,26 @@
 			flex-direction: column;
 			gap: 2rem;
 		}
+		.domino {
+			display: none;
+		}
+	}
+	@media (min-width: 850px) {
+		.domino {
+			display: block;
+			width: 25%;
+			margin: 5% auto;
+		}
+		a {
+			text-decoration: none;
+			color: var(--white);
+			font-size: 1.25rem;
+			font-weight: 900;
+			padding: 0.5rem 1.25rem;
+		}
+		a:hover {
+			color: var(--lightblack);
+		}
 	}
 	@media screen and (min-width: 1200px) {
 		.flex {
@@ -109,6 +145,20 @@
 			flex-direction: row;
 			gap: 8rem;
 			margin: 5rem 0;
+		}
+		.domino {
+			width: 25%;
+			margin: 5% auto;
+		}
+		a {
+			text-decoration: none;
+			color: var(--white);
+			font-size: 1.25rem;
+			font-weight: 900;
+			padding: 0.5rem 1.25rem;
+		}
+		a:hover {
+			color: var(--lightblack);
 		}
 	}
 </style>
