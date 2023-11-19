@@ -187,9 +187,8 @@
 			font-size: 1.2rem;
 		}
 
-		button {
+		.button {
 			background-color: cadetblue;
-			padding: 0.5rem 1rem;
 			border: 5px solid white;
 			width: 25%;
 			margin: 3rem auto;
