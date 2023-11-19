@@ -130,7 +130,7 @@
 		a {
 			text-decoration: none;
 			color: var(--white);
-			font-size: 2rem;
+			font-size: 1.25rem;
 			font-weight: 900;
 			padding: 0.5rem 1.25rem;
 		}
