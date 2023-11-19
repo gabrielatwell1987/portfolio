@@ -65,7 +65,7 @@
 				on how I could improve this site. It is greatly appreciated!
 			</p>
 
-			<button class="button"><a class="test" href="/gallery">Photo Gallery</a></button>
+			<button class="button"><a class="test" href="/gallery">Gallery &rarr;</a></button>
 		</article>
 	</section>
 </main>
