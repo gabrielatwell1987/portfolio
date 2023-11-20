@@ -1,8 +1,17 @@
 <script>
 	import { gsap } from 'gsap';
+	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		gsap.registerPlugin(Draggable);
+
+		Draggable.create('.newspaper', {
+			type: 'x, y',
+			bounds: document.querySelector('.content'),
+			inertia: true
+		});
+
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 
 		tl.to('section', { autoAlpha: 1 })

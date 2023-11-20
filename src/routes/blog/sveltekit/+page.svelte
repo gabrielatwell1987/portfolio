@@ -77,8 +77,6 @@
 	</section>
 </main>
 
-<a href="/blog" class="homelink">Back</a>
-
 <style>
 	main {
 		background-color: var(--lightblack);
@@ -104,10 +102,6 @@
 		margin: 2rem 0 -0.5rem 0;
 		color: var(--cornflower);
 		font-family: 'Merriweather', serif;
-	}
-	.homelink {
-		display: block;
-		margin: 3rem 0 0 48%;
 	}
 	a:hover {
 		color: var(--white);

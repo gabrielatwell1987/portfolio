@@ -23,7 +23,7 @@
 			}
 		});
 
-		tl.to('.greensock', { autoAlpha: 1, ease: 'back.out', pin: 1 }, 0).to('.title', {
+		tl.to('.greensock', { autoAlpha: 1, ease: 'back.out' }, 0).to('.title', {
 			opacity: 1
 		});
 	});
@@ -80,8 +80,6 @@
 	</p>
 </main>
 
-<a href="/blog" class="homelink">Back</a>
-
 <style>
 	main {
 		background-color: var(--lightblack);
@@ -111,10 +109,6 @@
 	.heading {
 		text-align: center;
 		margin: 5rem 0 0 0;
-	}
-	.homelink {
-		display: block;
-		margin: 3rem 0 0 48%;
 	}
 	.title {
 		font-size: 4rem;
