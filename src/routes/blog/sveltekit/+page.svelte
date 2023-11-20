@@ -15,7 +15,7 @@
 		tl.to('.sveltekit', { y: 0, ease: 'back.out' })
 			.to('.sveltekit', {
 				scale: 2,
-				x: 473,
+				x: 490,
 				y: 30
 			})
 			.to('.sk-main', { y: 0 }, 0)
