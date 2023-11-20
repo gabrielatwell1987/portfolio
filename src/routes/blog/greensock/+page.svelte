@@ -2,30 +2,21 @@
 	import GsapIcon from '$lib/GsapIcon.svelte';
 	import Exclamation from '$lib/Exclamation.svelte';
 	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.registerPlugin(ScrollTrigger);
-
-		gsap.set('.greensock', { autoAlpha: 0, rotation: 0, y: 200 });
-		gsap.set('.title', { skewX: 15, opacity: 0, y: -20 });
+		gsap.set('.greensock', { autoAlpha: 0, rotation: 0 });
+		gsap.set('.title', { skewX: 15, opacity: 0, y: -200 });
 		gsap.set('.exclamation', { scale: 2, x: 200, y: 30 });
 
-		let tl = gsap.timeline({
-			defaults: { duration: 3 },
-			scrollTrigger: {
-				trigger: '.gs-main',
-				start: 'top 90%',
-				end: '+=200',
-				scrub: true,
-				pin: true
-			}
-		});
+		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.to('.greensock', { autoAlpha: 1, ease: 'back.out' }, 0).to('.title', {
-			opacity: 1
-		});
+		tl.to('.greensock', { autoAlpha: 1, ease: 'back.out' }, 0).to(
+			'.title',
+			{ opacity: 1, duration: 2.5 },
+			'-=.5'
+		);
 	});
 </script>
 
@@ -113,7 +104,7 @@
 	.title {
 		font-size: 4rem;
 		font-weight: 800;
-		margin: 2rem 0 2rem 0;
+		margin: 2rem 0 -5rem 0;
 		text-align: center;
 		color: var(--sky);
 		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
