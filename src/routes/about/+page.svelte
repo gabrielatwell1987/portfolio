@@ -34,7 +34,8 @@
 
 	<section>
 		<article>
-			<img class="atwell" src="atwell_logo.png" alt="Atwell logo that you can move" />
+			<img class="atwell" src="atwell-a.jpeg" alt="Atwell logo that you can move" />
+			<!-- <img class="atwell" src="atwell_logo.png" alt="Atwell logo that you can move" /> -->
 
 			<h2>Bio</h2>
 
@@ -107,11 +108,6 @@
 	a:hover {
 		font-size: 1.2rem;
 	}
-	.atwell {
-		margin: 0 0 5rem 0;
-		border-radius: 10px;
-	}
-
 	@media screen and (min-width: 200px) {
 		p {
 			line-height: 1.75;
@@ -155,6 +151,10 @@
 			font-weight: bolder;
 			text-decoration: none;
 			color: whitesmoke;
+		}
+		.atwell {
+			margin: 3.5% 0;
+			border-radius: 40%;
 		}
 	}
 	@media screen and (min-width: 990px) {

@@ -6,16 +6,16 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.set('.greensock', { autoAlpha: 0, rotation: 0 });
+		gsap.set('.greensock', { autoAlpha: 0 });
 		gsap.set('.title', { skewX: 15, opacity: 0, y: -200 });
 		gsap.set('.exclamation', { scale: 2, x: 200, y: 30 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.to('.greensock', { autoAlpha: 1, ease: 'back.out' }, 0).to(
+		tl.to('.greensock', { autoAlpha: 1, duration: 10, ease: 'back.out' }, 0).to(
 			'.title',
-			{ opacity: 1, duration: 2.5 },
-			'-=.5'
+			{ opacity: 1, duration: 10, ease: 'back.out' },
+			0
 		);
 	});
 </script>
