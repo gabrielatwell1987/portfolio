@@ -16,7 +16,7 @@
 
 		tl.to('section', { autoAlpha: 1 })
 			.to('.linksize', { autoAlpha: 1, stagger: 0.8 })
-			.to('.title', { rotation: 360, duration: 3 }, '<');
+			.from('.title', { scale: 0, duration: 3 }, '<');
 	});
 </script>
 
