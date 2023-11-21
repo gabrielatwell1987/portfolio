@@ -192,6 +192,7 @@
 			border: 5px solid white;
 			width: 25%;
 			margin: 3rem auto;
+			border-radius: 8px;
 		}
 		.test {
 			font-size: 2.5rem;

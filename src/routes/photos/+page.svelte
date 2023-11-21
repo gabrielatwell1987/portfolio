@@ -118,6 +118,7 @@
 			margin: 5% auto;
 			background-color: cadetblue;
 			border: 5px solid white;
+			border-radius: 8px;
 		}
 		.test {
 			font-size: 2.5rem;
