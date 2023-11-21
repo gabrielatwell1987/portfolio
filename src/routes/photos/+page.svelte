@@ -62,7 +62,7 @@
 		</aside>
 	</section>
 
-	<button class="domino"><a class="test" href="/photos/domino">Domino Game &rarr;</a></button>
+	<button class="domino"><a class="test" href="/photos/domino">Domino Game</a></button>
 </main>
 
 <style>
@@ -107,8 +107,28 @@
 			flex-direction: column;
 			gap: 2rem;
 		}
-		.domino {
+		/* .domino {
 			display: none;
+		} */
+		.domino {
+			display: block;
+			width: 40%;
+			margin: 5% auto;
+			background-color: cadetblue;
+			border: 5px solid white;
+			border-radius: 8px;
+		}
+		.test {
+			font-size: 1rem;
+			font-weight: bold;
+			text-decoration: none;
+			color: whitesmoke;
+		}
+		.test:hover {
+			font-size: 1rem;
+			font-weight: bold;
+			text-decoration: none;
+			color: whitesmoke;
 		}
 	}
 	@media (min-width: 850px) {
@@ -141,9 +161,5 @@
 			gap: 8rem;
 			margin: 5rem 0;
 		}
-		/* .domino {
-			width: 25%;
-			margin: 5% auto;
-		} */
 	}
 </style>
