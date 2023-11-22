@@ -93,10 +93,6 @@
 		gap: 8rem;
 		margin: 5rem 0;
 	}
-	/* .domino {
-		width: 25%;
-		margin: 5% auto;
-	} */
 	@media screen and (min-width: 200px) {
 		section {
 			width: 100%;
@@ -107,28 +103,8 @@
 			flex-direction: column;
 			gap: 2rem;
 		}
-		/* .domino {
-			display: none;
-		} */
 		.domino {
-			display: block;
-			width: 40%;
-			margin: 5% auto;
-			background-color: cadetblue;
-			border: 5px solid white;
-			border-radius: 8px;
-		}
-		.test {
-			font-size: 1rem;
-			font-weight: bold;
-			text-decoration: none;
-			color: whitesmoke;
-		}
-		.test:hover {
-			font-size: 1rem;
-			font-weight: bold;
-			text-decoration: none;
-			color: whitesmoke;
+			display: none;
 		}
 	}
 	@media (min-width: 850px) {
