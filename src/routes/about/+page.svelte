@@ -92,7 +92,7 @@
 		padding: 2rem;
 		text-align: center;
 		background-color: var(--black);
-		border: 3px solid var(--white);
+		border: 0.5px solid var(--white);
 		border-radius: 10px;
 		width: 100%;
 		margin: 0;

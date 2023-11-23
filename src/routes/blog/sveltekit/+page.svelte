@@ -81,7 +81,7 @@
 	main {
 		background-color: var(--lightblack);
 		width: 45%;
-		border: 3px solid var(--white);
+		border: 0.5px solid var(--white);
 		border-radius: 10px;
 		margin: 6rem 0 0 27%;
 	}

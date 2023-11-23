@@ -63,7 +63,7 @@
 	.linksize {
 		text-align: center;
 		background-color: var(--darkgrey);
-		border: 3px solid var(--white);
+		border: 0.5px solid var(--white);
 		border-radius: 8px;
 		padding: 1.5rem;
 		display: flex;
@@ -161,7 +161,7 @@
 			letter-spacing: 4px;
 		}
 		section {
-			border: 3px solid var(--white);
+			border: 0.5px solid var(--white);
 			border-radius: 10px;
 			background-color: var(--black);
 			width: 100%;
