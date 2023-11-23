@@ -115,6 +115,10 @@
 			background-color: cadetblue;
 			border: 5px solid white;
 			border-radius: 8px;
+			cursor: pointer;
+		}
+		.domino:hover {
+			opacity: 0.9;
 		}
 		.test {
 			font-size: 2.5rem;

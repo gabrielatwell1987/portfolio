@@ -10,14 +10,6 @@
 		const button = document.querySelector('.button');
 
 		gsap.from('.form', { opacity: 0, duration: 3 });
-
-		button.addEventListener('mouseover', () => {
-			gsap.to(button, { opacity: 0.5, duration: 1 });
-		});
-
-		button.addEventListener('mouseleave', () => {
-			gsap.to(button, { opacity: 1, duration: 1 });
-		});
 	});
 </script>
 
@@ -82,8 +74,11 @@
 		text-align: center;
 		width: 100%;
 	}
+	button:hover {
+		opacity: 0.9;
+	}
 	fieldset {
-		border: 3px solid whitesmoke;
+		border: 0.5px solid var(--white);
 		border-radius: 10px;
 		font-weight: bolder;
 		font-size: 2rem;
@@ -136,11 +131,14 @@
 			font-weight: bold;
 			text-align: center;
 			width: 100%;
-			border: 2px solid whitesmoke;
-			background-color: cadetblue;
+			border: 2px solid var(--white);
+			background-color: var(--cadet);
+		}
+		button:hover {
+			opacity: 0.9;
 		}
 		fieldset {
-			border: 3px solid whitesmoke;
+			border: 0.5px solid var(--white);
 			font-weight: bolder;
 			font-size: 2rem;
 			margin: 2rem;

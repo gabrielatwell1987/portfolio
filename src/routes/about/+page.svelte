@@ -18,14 +18,6 @@
 			bounds: document.querySelector('article'),
 			inertia: true
 		});
-
-		button.addEventListener('mouseover', () => {
-			gsap.to(button, { opacity: 0.5, duration: 1 });
-		});
-
-		button.addEventListener('mouseleave', () => {
-			gsap.to(button, { opacity: 1, duration: 1 });
-		});
 	});
 </script>
 
@@ -193,6 +185,10 @@
 			width: 25%;
 			margin: 3rem auto;
 			border-radius: 8px;
+			cursor: pointer;
+		}
+		.button:hover {
+			opacity: 0.9;
 		}
 		.test {
 			font-size: 2.5rem;
