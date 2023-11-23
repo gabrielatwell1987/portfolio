@@ -62,7 +62,7 @@
 		</aside>
 	</section>
 
-	<button class="domino"><a class="test" href="/photos/domino">Domino Game</a></button>
+	<button class="button"><a class="test" href="/photos/domino">Domino Game</a></button>
 </main>
 
 <style>
@@ -103,12 +103,12 @@
 			flex-direction: column;
 			gap: 2rem;
 		}
-		.domino {
+		.button {
 			display: none;
 		}
 	}
 	@media (min-width: 850px) {
-		.domino {
+		.button {
 			display: block;
 			width: 25%;
 			margin: 5% auto;
@@ -117,7 +117,7 @@
 			border-radius: 8px;
 			cursor: pointer;
 		}
-		.domino:hover {
+		.button:hover {
 			opacity: 0.9;
 		}
 		.test {
