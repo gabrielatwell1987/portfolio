@@ -93,7 +93,7 @@
 	h2 {
 		color: var(--cornflower);
 		font-size: 2.5rem;
-		font-family: 'Merriweather', serif;
+		/* font-family: 'Merriweather', serif; */
 	}
 	a {
 		font-size: 0.9rem;
@@ -125,7 +125,7 @@
 		h2 {
 			color: cornflowerblue;
 			font-size: 1.5rem;
-			font-family: 'Merriweather', serif;
+			/* font-family: 'Merriweather', serif; */
 		}
 		a {
 			font-size: 0.9rem;
@@ -163,7 +163,7 @@
 		.title {
 			font-size: 4rem;
 			margin: 0 0 1rem 0;
-			font-family: 'Courier New', Courier, monospace;
+			font-family: var(--courier);
 		}
 		article {
 			font-size: 1rem;
@@ -171,7 +171,7 @@
 		h2 {
 			color: cornflowerblue;
 			font-size: 2.5rem;
-			font-family: 'Merriweather', serif;
+			/* font-family: 'Merriweather', serif; */
 		}
 		a {
 			font-size: 0.9rem;

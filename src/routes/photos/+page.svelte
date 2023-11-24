@@ -74,7 +74,7 @@
 		font-size: 4rem;
 		color: var(--white);
 		margin: 0 0 2rem 0;
-		font-family: 'Courier New', Courier, monospace;
+		font-family: var(--courier);
 	}
 	section {
 		background-color: var(--black);

@@ -107,7 +107,7 @@
 		margin: 2rem 0 -5rem 0;
 		text-align: center;
 		color: var(--sky);
-		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		font-family: var(--nunito);
 	}
 	.subtitle {
 		font-size: 2rem;
@@ -115,7 +115,7 @@
 		margin: -2rem 0 2rem 0;
 		text-align: center;
 		color: var(--cornflower);
-		font-family: 'Merriweather', serif;
+		font-family: var(--merriweather);
 	}
 	.greensock {
 		display: flex;

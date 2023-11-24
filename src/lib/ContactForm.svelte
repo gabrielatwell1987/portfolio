@@ -68,13 +68,13 @@
 		font-size: 1rem;
 		margin-bottom: 1rem;
 	}
-	button {
+	.button {
 		font-size: 1rem;
 		font-weight: bold;
 		text-align: center;
 		width: 100%;
 	}
-	button:hover {
+	.button:hover {
 		opacity: 0.9;
 	}
 	fieldset {
@@ -91,7 +91,7 @@
 		font-size: 1.75rem;
 		color: var(--white);
 		padding: 0 1rem 0 1rem;
-		font-family: 'Courier New', Courier, monospace;
+		font-family: var(--courier);
 	}
 	@media screen and (min-width: 200px) {
 		form {
@@ -126,15 +126,15 @@
 			font-size: 1.5rem;
 			margin-bottom: 1rem;
 		}
-		button {
+		.button {
 			font-size: 1rem;
 			font-weight: bold;
 			text-align: center;
 			width: 100%;
-			border: 2px solid var(--white);
+			border: 1px solid var(--white);
 			background-color: var(--cadet);
 		}
-		button:hover {
+		.button:hover {
 			opacity: 0.9;
 		}
 		fieldset {
@@ -150,7 +150,7 @@
 			font-size: 1.75rem;
 			color: var(--white);
 			padding: 0 1rem 0 1rem;
-			font-family: 'Courier New', Courier, monospace;
+			font-family: var(--courier);
 		}
 	}
 </style>

@@ -44,7 +44,7 @@
 
 <style>
 	a {
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-family: var(--nunito);
 		font-size: 1rem;
 		text-decoration: none;
 		font-weight: 700;
@@ -55,7 +55,7 @@
 	}
 	.title {
 		text-align: center;
-		font-family: 'Courier New', Courier, monospace;
+		font-family: var(--courier);
 		font-size: 4rem;
 		color: var(--white);
 		margin: 2rem 0;
@@ -85,7 +85,7 @@
 	}
 	@media screen and (min-width: 200px) {
 		a {
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			font-family: var(--nunito);
 			font-size: 0.75rem;
 			text-decoration: none;
 			font-weight: 700;
@@ -96,7 +96,7 @@
 		}
 		.title {
 			text-align: center;
-			font-family: 'Courier New', Courier, monospace;
+			font-family: var(--courier);
 			font-size: 3.75rem;
 			color: var(--white);
 		}
@@ -131,7 +131,7 @@
 	}
 	@media screen and (min-width: 740px) {
 		a {
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			font-family: var(--nunito);
 			font-size: 1rem;
 			text-decoration: none;
 			font-weight: 700;
@@ -142,7 +142,7 @@
 		}
 		.title {
 			text-align: center;
-			font-family: 'Courier New', Courier, monospace;
+			font-family: var(--courier);
 			font-size: 4rem;
 			color: var(--white);
 			margin: 2rem 0;

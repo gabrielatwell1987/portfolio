@@ -15,6 +15,11 @@
 	--cornflower: cornflowerblue;
 	--cadet: cadetblue;
 
+	/* fonts */
+	--nunito: 'Nunito Sans', sans-serif;
+	--merriweather: 'Merriweather', serif;
+	--courier: 'Courier New', Courier, monospace;
+
 	/* sizes */
 	--1-rem: 1.75rem;
 	--2rem: 2rem;
@@ -32,7 +37,7 @@
 	padding: 0;
 }
 body {
-	font-family: 'Nunito Sans', sans-serif;
+	font-family: var(--nunito);
 	font-size: 16px;
 	line-height: 1.5;
 	overflow-x: hidden;
@@ -47,5 +52,5 @@ body {
 	visibility: hidden;
 }
 h2 {
-	font-family: 'Merriweather', serif;
+	font-family: var(--merriweather);
 }

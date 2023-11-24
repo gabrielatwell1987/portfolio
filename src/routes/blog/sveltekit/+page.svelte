@@ -101,7 +101,7 @@
 		text-align: center;
 		margin: 2rem 0 -0.5rem 0;
 		color: var(--cornflower);
-		font-family: 'Merriweather', serif;
+		font-family: var(--merriweather);
 	}
 	a:hover {
 		color: var(--white);
@@ -112,7 +112,7 @@
 		margin: 2rem 0 -1rem 0;
 		text-align: center;
 		color: var(--sky);
-		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		font-family: var(--nunito);
 	}
 	.sveltekit {
 		margin: 0 0 0 48%;
