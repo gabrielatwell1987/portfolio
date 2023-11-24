@@ -58,7 +58,8 @@
 				on how I could improve this site. It is greatly appreciated!
 			</p>
 
-			<button class="button"><a class="test" href="/about/gallery">Gallery</a></button>
+			<a class="test" href="/about/gallery"><button class="button">Gallery</button></a>
+			<!-- <button class="button"><a class="test" href="/about/gallery">Gallery</a></button> -->
 		</article>
 	</section>
 </main>
@@ -180,23 +181,19 @@
 		}
 
 		.button {
-			background-color: cadetblue;
-			border: 5px solid white;
+			background-color: var(--cadet);
+			border: 1px solid var(--white);
 			width: 25%;
 			margin: 3rem auto;
 			border-radius: 8px;
 			cursor: pointer;
+			font-size: 2rem;
+			font-weight: bold;
 		}
 		.button:hover {
 			opacity: 0.9;
 		}
 		.test {
-			font-size: 2.5rem;
-			font-weight: bolder;
-			text-decoration: none;
-			color: whitesmoke;
-		}
-		.test:hover {
 			font-size: 2.5rem;
 			font-weight: bolder;
 			text-decoration: none;

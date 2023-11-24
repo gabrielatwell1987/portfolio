@@ -62,7 +62,8 @@
 		</aside>
 	</section>
 
-	<button class="button"><a class="test" href="/photos/domino">Domino Game</a></button>
+	<a class="test" href="/photos/domino"><button class="button">Domino Game</button></a>
+	<!-- <button class="button"><a class="test" href="/photos/domino">Domino Game</a></button> -->
 </main>
 
 <style>
@@ -112,10 +113,12 @@
 			display: block;
 			width: 25%;
 			margin: 5% auto;
-			background-color: cadetblue;
-			border: 5px solid white;
+			background-color: var(--cadet);
+			border: 1px solid var(--white);
 			border-radius: 8px;
 			cursor: pointer;
+			font-size: 2rem;
+			font-weight: bold;
 		}
 		.button:hover {
 			opacity: 0.9;
