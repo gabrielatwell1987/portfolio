@@ -155,6 +155,8 @@
 			justify-content: center;
 			align-items: center;
 			font-size: 1.5rem;
+			width: 75%;
+			margin: 0 auto;
 		}
 		section {
 			border: 3px solid var(--white);
