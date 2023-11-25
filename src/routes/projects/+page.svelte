@@ -174,9 +174,10 @@
 		}
 		img {
 			border-radius: 8px;
+			width: 2.5rem;
 		}
 		h3 {
-			font-size: 1.2rem;
+			font-size: 0.9rem;
 		}
 		hr {
 			border: 0.5px solid var(--white);
