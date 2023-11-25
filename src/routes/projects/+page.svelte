@@ -174,6 +174,8 @@
 		}
 		img {
 			border-radius: 8px;
+			width: 75%;
+			height: 75%;
 		}
 		hr {
 			border: 0.5px solid var(--white);
