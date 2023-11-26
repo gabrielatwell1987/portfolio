@@ -22,12 +22,9 @@
 </script>
 
 <main class="main">
-	<h1 class="title">ABOUT ME</h1>
-
 	<section>
 		<article>
 			<img class="atwell" src="atwell-a.jpeg" alt="Atwell logo that you can move" />
-			<!-- <img class="atwell" src="atwell_logo.png" alt="Atwell logo that you can move" /> -->
 
 			<h2>Bio</h2>
 
@@ -59,7 +56,6 @@
 			</p>
 
 			<a class="test" href="/about/gallery"><button class="button">Gallery</button></a>
-			<!-- <button class="button"><a class="test" href="/about/gallery">Gallery</a></button> -->
 		</article>
 	</section>
 </main>
@@ -67,14 +63,6 @@
 <style>
 	p {
 		line-height: 2.5;
-	}
-	.title {
-		font-family: 'Courier New', Courier, monospace;
-		color: var(--sky);
-		font-size: 4rem;
-		font-weight: 800;
-		text-align: center;
-		padding: 2rem;
 	}
 	article {
 		font-family: Arial, Helvetica, sans-serif;
@@ -88,12 +76,11 @@
 		border: 0.5px solid var(--white);
 		border-radius: 10px;
 		width: 100%;
-		margin: 0;
+		margin: 5rem 0 2rem 0;
 	}
 	h2 {
 		color: var(--cornflower);
 		font-size: 2.5rem;
-		/* font-family: 'Merriweather', serif; */
 	}
 	a {
 		font-size: 0.9rem;
@@ -107,15 +94,10 @@
 		}
 		section {
 			display: block;
-			margin: 0;
+			margin: 2.5rem 1rem 0;
 			padding: 1rem;
 			text-align: center;
 			width: 100%;
-		}
-		.title {
-			font-size: 3.75rem;
-			margin: 0 0 -1rem 0;
-			font-family: 'Courier New', Courier, monospace;
 		}
 		article {
 			font-size: 0.8rem;
@@ -156,14 +138,9 @@
 		}
 		section {
 			display: block;
-			margin: 0;
+			margin: 5rem 0 2rem 0;
 			padding: 2rem;
 			text-align: center;
-		}
-		.title {
-			font-size: 4rem;
-			margin: 0 0 1rem 0;
-			font-family: var(--courier);
 		}
 		article {
 			font-size: 1rem;
@@ -191,7 +168,7 @@
 			font-weight: bold;
 		}
 		.button:hover {
-			opacity: 0.9;
+			opacity: 0.8;
 		}
 		.test {
 			font-size: 2.5rem;

@@ -121,7 +121,7 @@
 			font-weight: bold;
 		}
 		.button:hover {
-			opacity: 0.9;
+			opacity: 0.8;
 		}
 		.test {
 			font-size: 2.5rem;
