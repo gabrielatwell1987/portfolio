@@ -63,7 +63,6 @@
 	</section>
 
 	<a class="test" href="/photos/domino"><button class="button">Domino Game</button></a>
-	<!-- <button class="button"><a class="test" href="/photos/domino">Domino Game</a></button> -->
 </main>
 
 <style>
@@ -127,13 +126,13 @@
 			font-size: 2.5rem;
 			font-weight: bolder;
 			text-decoration: none;
-			color: whitesmoke;
+			color: var(--smoke);
 		}
 		.test:hover {
 			font-size: 2.5rem;
 			font-weight: bolder;
 			text-decoration: none;
-			color: whitesmoke;
+			color: var(--smoke);
 		}
 	}
 	@media screen and (min-width: 1200px) {

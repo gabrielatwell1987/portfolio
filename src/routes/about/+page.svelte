@@ -65,7 +65,7 @@
 		line-height: 2.5;
 	}
 	article {
-		font-family: Arial, Helvetica, sans-serif;
+		font-family: var(--arial);
 		font-size: 1rem;
 	}
 	section {
@@ -105,9 +105,8 @@
 			background-color: transparent;
 		}
 		h2 {
-			color: cornflowerblue;
+			color: var(--cornflower);
 			font-size: 1.5rem;
-			/* font-family: 'Merriweather', serif; */
 		}
 		a {
 			font-size: 0.9rem;
@@ -119,13 +118,13 @@
 			font-size: 1.5rem;
 			font-weight: bolder;
 			text-decoration: none;
-			color: whitesmoke;
+			color: var(--smoke);
 		}
 		.test:hover {
 			font-size: 1.5rem;
 			font-weight: bolder;
 			text-decoration: none;
-			color: whitesmoke;
+			color: var(--smoke);
 		}
 		.atwell {
 			margin: 3.5% 0;
@@ -146,9 +145,8 @@
 			font-size: 1rem;
 		}
 		h2 {
-			color: cornflowerblue;
+			color: var(--cornflower);
 			font-size: 2.5rem;
-			/* font-family: 'Merriweather', serif; */
 		}
 		a {
 			font-size: 0.9rem;
@@ -174,7 +172,7 @@
 			font-size: 2.5rem;
 			font-weight: bolder;
 			text-decoration: none;
-			color: whitesmoke;
+			color: var(--smoke);
 		}
 	}
 </style>

@@ -7,6 +7,7 @@
 	--blue: blue;
 	--black: black;
 	--white: white;
+	--smoke: whitesmoke;
 	--lightblack: rgb(49, 49, 49);
 	--purple: rgb(76, 76, 248);
 	--darkgrey: darkgray;
@@ -19,17 +20,7 @@
 	--nunito: 'Nunito Sans', sans-serif;
 	--merriweather: 'Merriweather', serif;
 	--courier: 'Courier New', Courier, monospace;
-
-	/* sizes */
-	--1-rem: 1.75rem;
-	--2rem: 2rem;
-	--2-rem: 2.5rem;
-	--4rem: 4rem;
-	--1rem: 1rem;
-
-	/* border-radius */
-	--8px: 8px;
-	--50: 50%;
+	--arial: Arial, Helvetica, sans-serif;
 }
 * {
 	box-sizing: border-box;
@@ -57,4 +48,5 @@ h2 {
 }
 h3 {
 	text-align: center;
+	font-family: var(--nunito);
 }
