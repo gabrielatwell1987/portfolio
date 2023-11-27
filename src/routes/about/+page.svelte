@@ -75,9 +75,9 @@
 		width: 100%;
 		margin: 5rem 0 2rem 0;
 	}
-	h2 {
+	/* h2 {
 		font-size: 2.5rem;
-	}
+	} */
 	a {
 		font-size: 0.9rem;
 	}

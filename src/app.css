@@ -52,7 +52,7 @@ body {
 	visibility: hidden;
 }
 h2 {
-	font-family: var(--merriweather);
+	font-family: var(--nunito);
 	text-align: center;
 	color: var(--cornflower);
 }
