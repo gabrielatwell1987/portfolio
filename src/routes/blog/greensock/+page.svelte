@@ -73,7 +73,7 @@
 
 <style>
 	main {
-		background-color: var(--lightblack);
+		background-color: var(--black);
 		width: 45%;
 		border: 0.5px solid var(--white);
 		border-radius: 10px;
@@ -115,7 +115,7 @@
 		font-weight: 600;
 		margin: -2rem 0 2rem 0;
 		text-align: center;
-		color: var(--cornflower);
+		color: var(--blue);
 		font-family: var(--nunito);
 	}
 	.greensock {

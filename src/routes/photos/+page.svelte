@@ -112,8 +112,9 @@
 			display: block;
 			width: 25%;
 			margin: 5% auto;
-			background-color: var(--cadet);
-			border: 1px solid var(--white);
+			background-color: var(--sky);
+			color: var(--black);
+			border: 1px solid var(--black);
 			border-radius: 8px;
 			cursor: pointer;
 			font-size: 2rem;
@@ -121,6 +122,8 @@
 		}
 		.button:hover {
 			opacity: 0.8;
+			background-color: var(--blue);
+			color: var(--white);
 		}
 		.test {
 			font-size: 2.5rem;

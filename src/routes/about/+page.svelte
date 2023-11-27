@@ -100,7 +100,7 @@
 		h2 {
 			font-size: 1.5rem;
 			mix-blend-mode: difference;
-			color: var(--cadet);
+			color: var(--sky);
 		}
 		a {
 			font-size: 0.9rem;
@@ -149,8 +149,9 @@
 		}
 
 		.button {
-			background-color: var(--cadet);
-			border: 1px solid var(--white);
+			background-color: var(--sky);
+			color: var(--black);
+			border: 1px solid var(--black);
 			width: 25%;
 			margin: 3rem auto;
 			border-radius: 8px;
@@ -160,6 +161,8 @@
 		}
 		.button:hover {
 			opacity: 0.8;
+			background-color: var(--blue);
+			color: var(--white);
 		}
 		.test {
 			font-size: 2.5rem;

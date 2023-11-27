@@ -91,10 +91,6 @@
 		font-size: 1rem;
 		text-decoration: none;
 		font-weight: 700;
-		color: var(--black);
-	}
-	a:hover {
-		color: var(--blue);
 	}
 	.title {
 		text-align: center;
@@ -104,7 +100,6 @@
 	}
 	.linksize {
 		text-align: center;
-		background-color: var(--darkgrey);
 		border: 0.5px solid var(--white);
 		border-radius: 8px;
 		padding: 1.5rem;
@@ -136,8 +131,8 @@
 		a:hover {
 			color: var(--blue);
 		}
-		section {
-			border: 3px solid var(--white);
+		.content {
+			border: 0.5px solid var(--white);
 			border-radius: 10px;
 			background-color: var(--black);
 			width: 100%;

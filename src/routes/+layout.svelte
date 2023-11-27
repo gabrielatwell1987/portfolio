@@ -53,6 +53,12 @@
 	.desktop {
 		width: 100%;
 	}
+	.linkIcons {
+		color: var(--sky);
+	}
+	.linkIcons:hover {
+		color: var(--blue);
+	}
 	@media screen and (max-width: 1650px) {
 		.linkIcons {
 			display: none;

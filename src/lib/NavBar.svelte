@@ -38,18 +38,6 @@
 </nav>
 
 <style>
-	.link {
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-		font-size: 1rem;
-		text-decoration: none;
-		font-weight: 900;
-		color: var(--sky);
-		margin-left: 8rem;
-		margin-right: -7rem;
-	}
-	.link:hover {
-		color: var(--blue);
-	}
 	.desktop-view {
 		display: block;
 		font-weight: bolder;
@@ -82,7 +70,6 @@
 			justify-content: space-evenly;
 			width: 100%;
 			margin: 0 auto;
-			/* margin: 0 0 0 -50%; */
 			font-weight: bold;
 		}
 		.mobile-links {
@@ -126,17 +113,18 @@
 	}
 	@media (min-width: 990px) {
 		.link {
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			font-size: 1rem;
+			font-family: var(--nunito);
+			font-size: 1.2rem;
 			text-decoration: none;
 			font-weight: 900;
-			color: lightskyblue;
+			color: var(--sky);
 			margin-left: 8rem;
 			margin-right: -7rem;
 		}
 		.link:hover {
-			color: blue;
-			font-size: 1.1rem;
+			color: var(--blue);
+			font-weight: 900;
+			font-size: 1.5rem;
 		}
 		.desktop-view {
 			display: block;

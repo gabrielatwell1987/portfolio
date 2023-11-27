@@ -3,18 +3,12 @@
 
 :root {
 	/* colors */
-	--sky: lightskyblue;
-	--blue: blue;
-	--black: black;
-	--white: white;
-	--smoke: whitesmoke;
+	--sky: #8edce6;
+	--blue: #007cbe;
+	--black: #1e2019;
+	--white: #eee5e9;
+	--smoke: #7d7c84;
 	--lightblack: rgb(49, 49, 49);
-	--purple: rgb(76, 76, 248);
-	--darkgrey: darkgray;
-	--crimson: crimson;
-	--darkblue: darkblue;
-	--cornflower: cornflowerblue;
-	--cadet: cadetblue;
 
 	/* fonts */
 	--nunito: 'Nunito Sans', sans-serif;

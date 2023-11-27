@@ -68,7 +68,7 @@
 		font-size: 1rem;
 		margin-bottom: 1rem;
 	}
-	.button {
+	/* .button {
 		font-size: 1rem;
 		font-weight: bold;
 		text-align: center;
@@ -76,7 +76,7 @@
 	}
 	.button:hover {
 		opacity: 0.9;
-	}
+	} */
 	fieldset {
 		border: 0.5px solid var(--white);
 		border-radius: 10px;
@@ -131,11 +131,14 @@
 			font-weight: bold;
 			text-align: center;
 			width: 100%;
-			border: 1px solid var(--white);
-			background-color: var(--cadet);
+			border: 1px solid var(--black);
+			background-color: var(--sky);
+			color: var(--black);
 		}
 		.button:hover {
 			opacity: 0.9;
+			background-color: var(--blue);
+			color: var(--white);
 		}
 		fieldset {
 			border: 0.5px solid var(--white);
