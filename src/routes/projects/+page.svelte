@@ -98,7 +98,6 @@
 	}
 	.title {
 		text-align: center;
-		font-family: var(--courier);
 		font-size: 4rem;
 		color: var(--white);
 		margin: 2rem 0;
@@ -137,9 +136,33 @@
 		a:hover {
 			color: var(--blue);
 		}
+		section {
+			border: 3px solid var(--white);
+			border-radius: 10px;
+			background-color: var(--black);
+			width: 100%;
+			padding: 1rem;
+			margin: 0;
+		}
+		img {
+			border-radius: 8px;
+		}
+		hr {
+			border: 0.5px solid var(--white);
+			width: 50%;
+			margin: 5rem auto;
+		}
+		.logos {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0 auto;
+			width: 75%;
+			height: 100%;
+		}
 		.title {
 			text-align: center;
-			font-family: var(--courier);
+			font-family: var(--nunito);
 			font-size: 3.75rem;
 			color: var(--white);
 		}
@@ -157,30 +180,6 @@
 			width: 75%;
 			margin: 0 auto;
 		}
-		section {
-			border: 3px solid var(--white);
-			border-radius: 10px;
-			background-color: var(--black);
-			width: 100%;
-			padding: 1rem;
-			margin: 0;
-		}
-		.logos {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin: 0 auto;
-			width: 75%;
-			height: 100%;
-		}
-		img {
-			border-radius: 8px;
-		}
-		hr {
-			border: 0.5px solid var(--white);
-			width: 50%;
-			margin: 5rem auto;
-		}
 	}
 	@media screen and (min-width: 740px) {
 		a {
@@ -193,9 +192,16 @@
 		a:hover {
 			color: var(--blue);
 		}
+		section {
+			border: 0.5px solid var(--white);
+			border-radius: 10px;
+			background-color: var(--black);
+			width: 100%;
+			padding: 2rem;
+			margin: 0;
+		}
 		.title {
 			text-align: center;
-			font-family: var(--courier);
 			font-size: 4rem;
 			color: var(--white);
 			margin: 2rem 0;
@@ -212,14 +218,6 @@
 			align-items: center;
 			font-size: 2rem;
 			letter-spacing: 4px;
-		}
-		section {
-			border: 0.5px solid var(--white);
-			border-radius: 10px;
-			background-color: var(--black);
-			width: 100%;
-			padding: 2rem;
-			margin: 0;
 		}
 		.logos {
 			display: flex;

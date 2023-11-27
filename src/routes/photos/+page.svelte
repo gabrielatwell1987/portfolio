@@ -69,12 +69,6 @@
 	main {
 		text-align: center;
 	}
-	.title {
-		font-size: 4rem;
-		color: var(--white);
-		margin: 0 0 2rem 0;
-		font-family: var(--courier);
-	}
 	section {
 		background-color: var(--black);
 		border: 0.5px solid var(--white);
@@ -86,6 +80,12 @@
 		align-items: center;
 		width: 100%;
 		margin: 0;
+	}
+	.title {
+		font-size: 4rem;
+		color: var(--white);
+		margin: 0 0 2rem 0;
+		font-family: var(--nunito);
 	}
 	.flex {
 		display: flex;

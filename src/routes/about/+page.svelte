@@ -61,9 +61,6 @@
 </main>
 
 <style>
-	p {
-		line-height: 2.5;
-	}
 	article {
 		font-family: var(--arial);
 		font-size: 1rem;
@@ -79,7 +76,6 @@
 		margin: 5rem 0 2rem 0;
 	}
 	h2 {
-		color: var(--cornflower);
 		font-size: 2.5rem;
 	}
 	a {
@@ -105,7 +101,6 @@
 			background-color: transparent;
 		}
 		h2 {
-			color: var(--cornflower);
 			font-size: 1.5rem;
 			mix-blend-mode: difference;
 		}
@@ -146,7 +141,6 @@
 			font-size: 1rem;
 		}
 		h2 {
-			color: var(--cornflower);
 			font-size: 2.5rem;
 		}
 		a {

@@ -85,6 +85,7 @@
 		padding: 0.5em 2em;
 		padding-top: 2.5em;
 		line-height: 2.5;
+		font-family: var(--arial);
 	}
 	a {
 		text-decoration: none;
@@ -115,7 +116,7 @@
 		margin: -2rem 0 2rem 0;
 		text-align: center;
 		color: var(--cornflower);
-		font-family: var(--merriweather);
+		font-family: var(--nunito);
 	}
 	.greensock {
 		display: flex;

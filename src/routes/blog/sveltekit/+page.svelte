@@ -35,7 +35,7 @@
 	</aside>
 
 	<section>
-		<h2 class="subtitle">What I used to create this site</h2>
+		<h3 class="subtitle">What I used to create this site</h3>
 		<p>
 			I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
 			the server-side rendering (SRR) and all of the SEO features, as well as the speed of
@@ -43,21 +43,21 @@
 			on vanilla HTML, CSS, and JavaScript is what I'm looking for.
 		</p>
 
-		<h2 class="subtitle">What I know</h2>
+		<h3 class="subtitle">What I know</h3>
 		<p>
 			I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I have
 			because I'm a very visual person. Sveltekit has made it super simple to put my ideas on the
 			web.
 		</p>
 
-		<h2 class="subtitle">What is svelte and sveltekit?</h2>
+		<h3 class="subtitle">What is svelte and sveltekit?</h3>
 		<p>
 			Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
 			framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
 			React. In the end, svelte(kit) is a new approach to building rich user interfaces.
 		</p>
 
-		<h2 class="subtitle">Learn more about Sveltekit</h2>
+		<h3 class="subtitle">Learn more about Sveltekit</h3>
 		<p>
 			If you would like to know more about svelte and sveltekit, please click <a
 				href="https://svelte.dev">here</a
@@ -91,21 +91,27 @@
 		padding: 0.5em 2em;
 		padding-top: 2.5em;
 		line-height: 2.5;
+		letter-spacing: 1px;
+		font-family: var(--arial);
 	}
 	a {
 		text-decoration: none;
 		font-size: 1.5rem;
 		color: var(--sky);
 	}
+	a:hover {
+		color: var(--white);
+	}
+	iframe {
+		margin: 0 0 3.5rem 7.5rem;
+	}
 	.subtitle {
 		text-align: center;
 		margin: 2rem 0 -0.5rem 0;
 		color: var(--cornflower);
-		font-family: var(--merriweather);
+		font-family: var(--nunito);
 	}
-	a:hover {
-		color: var(--white);
-	}
+
 	.title {
 		font-size: 4rem;
 		font-weight: 800;
@@ -119,8 +125,5 @@
 	}
 	.exclamation {
 		margin: 5rem 0 0 48%;
-	}
-	iframe {
-		margin: 0 0 3.5rem 7.5rem;
 	}
 </style>
