@@ -21,15 +21,6 @@
 	--merriweather: 'Merriweather', serif;
 	--courier: 'Courier New', Courier, monospace;
 	--arial: Arial, Helvetica, sans-serif;
-
-	/* themes */
-	--light: #fdffc4;
-	--dark: #242424;
-	--primary: var(--smoke);
-	--secondary: var(--cadet);
-	--accent: var(--lightblack);
-	--background: var(--dark);
-	--foreground: var(--light);
 }
 * {
 	box-sizing: border-box;
