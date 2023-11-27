@@ -75,9 +75,6 @@
 		width: 100%;
 		margin: 5rem 0 2rem 0;
 	}
-	/* h2 {
-		font-size: 2.5rem;
-	} */
 	a {
 		font-size: 0.9rem;
 	}
@@ -103,6 +100,7 @@
 		h2 {
 			font-size: 1.5rem;
 			mix-blend-mode: difference;
+			color: var(--cadet);
 		}
 		a {
 			font-size: 0.9rem;
