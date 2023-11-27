@@ -107,6 +107,7 @@
 		h2 {
 			color: var(--cornflower);
 			font-size: 1.5rem;
+			mix-blend-mode: difference;
 		}
 		a {
 			font-size: 0.9rem;
