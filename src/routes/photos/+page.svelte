@@ -9,7 +9,6 @@
 		mm.add('(min-width: 800px', () => {
 			gsap.registerPlugin(ScrollTrigger);
 
-			gsap.set('.photos', { y: 500 });
 			gsap.set('main', { autoAlpha: 0 });
 			gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', { borderRadius: '25%' });
 
@@ -46,10 +45,10 @@
 	});
 </script>
 
-<main class="main">
+<main>
 	<h2 class="title">PHOTOS</h2>
 
-	<section class="photos">
+	<section>
 		<aside class="flex">
 			<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="350" height="450" />
 			<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" />
@@ -62,7 +61,7 @@
 		</aside>
 	</section>
 
-	<a class="test" href="/photos/domino"><button class="button">Domino Game</button></a>
+	<a class="btn-link" href="/photos/domino"><button>Domino Game</button></a>
 </main>
 
 <style>
@@ -103,12 +102,12 @@
 			flex-direction: column;
 			gap: 2rem;
 		}
-		.button {
+		button {
 			display: none;
 		}
 	}
 	@media (min-width: 850px) {
-		.button {
+		button {
 			display: block;
 			width: 25%;
 			margin: 5% auto;
@@ -117,21 +116,21 @@
 			border: 1px solid var(--black);
 			border-radius: 8px;
 			cursor: pointer;
-			font-size: 2rem;
-			font-weight: bold;
+			font-size: 1.5rem;
+			font-weight: 900;
 		}
-		.button:hover {
+		button:hover {
 			opacity: 0.8;
 			background-color: var(--lightblack);
 			color: var(--sky);
 		}
-		.test {
+		.btn-link {
 			font-size: 2.5rem;
 			font-weight: bolder;
 			text-decoration: none;
 			color: var(--smoke);
 		}
-		.test:hover {
+		.btn-link:hover {
 			font-size: 2.5rem;
 			font-weight: bolder;
 			text-decoration: none;

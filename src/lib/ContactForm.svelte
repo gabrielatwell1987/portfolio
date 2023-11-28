@@ -127,8 +127,8 @@
 			margin-bottom: 1rem;
 		}
 		.button {
-			font-size: 1rem;
-			font-weight: bold;
+			font-size: 1.5rem;
+			font-weight: 900;
 			text-align: center;
 			width: 100%;
 			border: 1px solid var(--black);

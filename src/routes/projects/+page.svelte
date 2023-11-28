@@ -81,7 +81,7 @@
 	<hr />
 
 	<div class="logos">
-		<img class="newspaper" src="atwell_logo.png" alt="Atwell logo that you can move" />
+		<img class="newspaper" src="designs.png" alt="Atwell logo that you can move" />
 	</div>
 </section>
 
@@ -131,6 +131,7 @@
 		a:hover {
 			color: var(--blue);
 		}
+
 		.content {
 			border: 0.5px solid var(--white);
 			border-radius: 10px;

@@ -21,7 +21,7 @@
 	});
 </script>
 
-<main class="main">
+<main>
 	<section>
 		<article>
 			<img class="atwell" src="atwell-a.jpeg" alt="Atwell logo that you can move" />
@@ -55,7 +55,7 @@
 				on how I could improve this site. It is greatly appreciated!
 			</p>
 
-			<a class="test" href="/about/gallery"><button class="button">Gallery</button></a>
+			<a class="test" href="/about/gallery"><button>Gallery</button></a>
 		</article>
 	</section>
 </main>
@@ -148,7 +148,7 @@
 			font-size: 1.2rem;
 		}
 
-		.button {
+		button {
 			background-color: var(--sky);
 			color: var(--black);
 			border: 1px solid var(--black);
@@ -156,10 +156,10 @@
 			margin: 3rem auto;
 			border-radius: 8px;
 			cursor: pointer;
-			font-size: 2rem;
-			font-weight: bold;
+			font-size: 1.5rem;
+			font-weight: 900;
 		}
-		.button:hover {
+		button:hover {
 			opacity: 0.8;
 			background-color: var(--lightblack);
 			color: var(--sky);
