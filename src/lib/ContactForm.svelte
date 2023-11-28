@@ -136,9 +136,9 @@
 			color: var(--black);
 		}
 		.button:hover {
-			opacity: 0.9;
-			background-color: var(--blue);
-			color: var(--white);
+			opacity: 0.8;
+			background-color: var(--lightblack);
+			color: var(--sky);
 		}
 		fieldset {
 			border: 0.5px solid var(--white);

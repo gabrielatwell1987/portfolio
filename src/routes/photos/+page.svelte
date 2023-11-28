@@ -122,8 +122,8 @@
 		}
 		.button:hover {
 			opacity: 0.8;
-			background-color: var(--blue);
-			color: var(--white);
+			background-color: var(--lightblack);
+			color: var(--sky);
 		}
 		.test {
 			font-size: 2.5rem;
