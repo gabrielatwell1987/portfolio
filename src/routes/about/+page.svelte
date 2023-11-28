@@ -7,7 +7,6 @@
 		gsap.registerPlugin(Draggable);
 
 		const atwell = document.querySelector('.atwell');
-		const button = document.querySelector('.button');
 
 		gsap.set('main', { autoAlpha: 0 });
 
@@ -55,7 +54,7 @@
 				on how I could improve this site. It is greatly appreciated!
 			</p>
 
-			<a class="test" href="/about/gallery"><button>Gallery</button></a>
+			<a class="btn-link" href="/about/gallery"><button>Gallery</button></a>
 		</article>
 	</section>
 </main>
@@ -108,13 +107,13 @@
 		a:hover {
 			font-size: 1.2rem;
 		}
-		.test {
+		.btn-link {
 			font-size: 1.5rem;
 			font-weight: bolder;
 			text-decoration: none;
 			color: var(--smoke);
 		}
-		.test:hover {
+		.btn-link:hover {
 			font-size: 1.5rem;
 			font-weight: bolder;
 			text-decoration: none;
@@ -164,7 +163,7 @@
 			background-color: var(--lightblack);
 			color: var(--sky);
 		}
-		.test {
+		.btn-link {
 			font-size: 2.5rem;
 			font-weight: bolder;
 			text-decoration: none;
