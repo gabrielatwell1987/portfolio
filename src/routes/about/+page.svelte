@@ -33,20 +33,26 @@
 				GSAP. He has begun to teach himself the backend of web development on his spare time, but is
 				a complete frontend developer.
 			</p>
+
 			<h2>Frontend</h2>
+
 			<p>
 				The path that Gabe has chosen is the frontend path, one of his main interests with the
 				frontend path is animations, especially animations on the web. Turning a website from being
 				a static site to a dynamic site is what he thinks makes your website look a million times
 				better, if you do it right.
 			</p>
+
 			<h2>Design Based</h2>
+
 			<p>
 				A clean, crisp design is what Gabe tries to excel at. Visual hierarchy, whitespace, colors,
 				typography, scaling, and spacing is what he knows best. He learned that these topics are the
 				main key for a UI developer.
 			</p>
+
 			<h2>Github</h2>
+
 			<p>
 				<a href="https://www.github.com/gabrielatwell1987/portfolio">Here</a> is the GitHub repo for
 				this site, just in case you want to see the code for this site or if you see something that needs
@@ -82,6 +88,7 @@
 	@media screen and (min-width: 200px) {
 		p {
 			line-height: 1.75;
+			font-family: var(--montserrat);
 		}
 		section {
 			display: block;
@@ -91,7 +98,6 @@
 			width: 100%;
 		}
 		article {
-			font-family: var(--montserrat);
 			font-size: 0.8rem;
 			margin: 0 0 -1rem 0;
 			background-color: transparent;
@@ -100,6 +106,7 @@
 			font-size: 1.5rem;
 			mix-blend-mode: difference;
 			color: var(--sky);
+			font-family: var(--nova);
 		}
 		a {
 			font-size: 0.9rem;
