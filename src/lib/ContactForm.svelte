@@ -68,15 +68,6 @@
 		font-size: 1rem;
 		margin-bottom: 1rem;
 	}
-	/* .button {
-		font-size: 1rem;
-		font-weight: bold;
-		text-align: center;
-		width: 100%;
-	}
-	.button:hover {
-		opacity: 0.9;
-	} */
 	fieldset {
 		border: 0.5px solid var(--white);
 		border-radius: 10px;
@@ -91,7 +82,6 @@
 		font-size: 1.75rem;
 		color: var(--white);
 		padding: 0 1rem 0 1rem;
-		font-family: var(--courier);
 	}
 	@media screen and (min-width: 200px) {
 		form {
@@ -153,7 +143,7 @@
 			font-size: 1.75rem;
 			color: var(--white);
 			padding: 0 1rem 0 1rem;
-			font-family: var(--courier);
+			font-family: var(--nova);
 		}
 	}
 </style>

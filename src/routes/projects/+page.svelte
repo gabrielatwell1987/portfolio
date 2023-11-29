@@ -158,7 +158,7 @@
 		}
 		.title {
 			text-align: center;
-			font-family: var(--nunito);
+			font-family: var(--nova);
 			font-size: 3.75rem;
 			color: var(--white);
 		}

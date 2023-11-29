@@ -34,7 +34,7 @@
 		margin: 0 0 2rem 49%;
 	}
 	.title {
-		font-family: var(--nunito);
+		font-family: var(--nova);
 		color: var(--white);
 		font-size: 4rem;
 		font-weight: 800;

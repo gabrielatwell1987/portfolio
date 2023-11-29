@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
 
 :root {
@@ -12,7 +12,7 @@
 
 	/* fonts */
 	--nunito: 'Nunito Sans', sans-serif;
-	--merriweather: 'Merriweather', serif;
+	--nova: 'Nova Square', sans-serif;
 	--courier: 'Courier New', Courier, monospace;
 	--arial: Arial, Helvetica, sans-serif;
 }
@@ -37,7 +37,7 @@ body {
 	visibility: hidden;
 }
 h2 {
-	font-family: var(--nunito);
+	font-family: var(--nova);
 	text-align: center;
 	color: var(--cornflower);
 }

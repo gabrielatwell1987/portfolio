@@ -109,7 +109,7 @@
 		text-align: center;
 		margin: 2rem 0 -0.5rem 0;
 		color: var(--blue);
-		font-family: var(--nunito);
+		font-family: var(--nova);
 	}
 
 	.title {

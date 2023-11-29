@@ -116,7 +116,7 @@
 		margin: -2rem 0 2rem 0;
 		text-align: center;
 		color: var(--blue);
-		font-family: var(--nunito);
+		font-family: var(--nova);
 	}
 	.greensock {
 		display: flex;
