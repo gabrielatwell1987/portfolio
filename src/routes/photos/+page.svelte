@@ -129,6 +129,7 @@
 			font-weight: bolder;
 			text-decoration: none;
 			color: var(--smoke);
+			font-family: var(--montserrat);
 		}
 		.btn-link:hover {
 			font-size: 2.5rem;

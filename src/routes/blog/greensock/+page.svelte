@@ -85,7 +85,7 @@
 		padding: 0.5em 2em;
 		padding-top: 2.5em;
 		line-height: 2.5;
-		font-family: var(--arial);
+		font-family: var(--montserrat);
 	}
 	a {
 		text-decoration: none;
@@ -101,6 +101,7 @@
 	.heading {
 		text-align: center;
 		margin: 5rem 0 0 0;
+		font-family: var(--nova);
 	}
 	.title {
 		font-size: 4rem;
@@ -116,7 +117,7 @@
 		margin: -2rem 0 2rem 0;
 		text-align: center;
 		color: var(--blue);
-		font-family: var(--nova);
+		font-family: var(--nunito);
 	}
 	.greensock {
 		display: flex;

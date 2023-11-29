@@ -61,7 +61,6 @@
 
 <style>
 	article {
-		font-family: var(--arial);
 		font-size: 1rem;
 	}
 	section {
@@ -92,6 +91,7 @@
 			width: 100%;
 		}
 		article {
+			font-family: var(--montserrat);
 			font-size: 0.8rem;
 			margin: 0 0 -1rem 0;
 			background-color: transparent;
@@ -112,18 +112,7 @@
 			font-weight: bolder;
 			text-decoration: none;
 			color: var(--smoke);
-		}
-		.btn-link:hover {
-			font-size: 1.5rem;
-			font-weight: bolder;
-			text-decoration: none;
-			color: var(--smoke);
-		}
-		.btn-link {
-			font-size: 1.5rem;
-			font-weight: bolder;
-			text-decoration: none;
-			color: var(--smoke);
+			font-family: var(--montserrat);
 		}
 		.btn-link:hover {
 			font-size: 1.5rem;
@@ -142,7 +131,6 @@
 		}
 		section {
 			display: block;
-			/* margin: 5rem 0 2rem 0; */
 			padding: 2rem;
 			text-align: center;
 		}

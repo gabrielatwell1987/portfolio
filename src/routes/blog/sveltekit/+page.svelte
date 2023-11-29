@@ -92,7 +92,7 @@
 		padding-top: 2.5em;
 		line-height: 2.5;
 		letter-spacing: 1px;
-		font-family: var(--arial);
+		font-family: var(--montserrat);
 	}
 	a {
 		text-decoration: none;

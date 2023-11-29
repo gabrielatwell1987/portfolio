@@ -87,7 +87,6 @@
 
 <style>
 	a {
-		font-family: var(--nunito);
 		font-size: 1rem;
 		text-decoration: none;
 		font-weight: 700;
@@ -122,7 +121,7 @@
 	}
 	@media screen and (min-width: 200px) {
 		a {
-			font-family: var(--nunito);
+			font-family: var(--montserrat);
 			font-size: 0.75rem;
 			text-decoration: none;
 			font-weight: 700;
@@ -179,7 +178,6 @@
 	}
 	@media screen and (min-width: 740px) {
 		a {
-			font-family: var(--nunito);
 			font-size: 1rem;
 			text-decoration: none;
 			font-weight: 700;
