@@ -87,13 +87,11 @@
 		section {
 			display: block;
 			margin: 0 auto;
-			/* margin: 2.5rem 1rem 0; */
 			padding: 1rem;
 			text-align: center;
 			width: 100%;
 		}
 		article {
-			/* width: 100%; */
 			font-size: 0.8rem;
 			margin: 0 0 -1rem 0;
 			background-color: transparent;
@@ -108,6 +106,18 @@
 		}
 		a:hover {
 			font-size: 1.2rem;
+		}
+		.btn-link {
+			font-size: 1.5rem;
+			font-weight: bolder;
+			text-decoration: none;
+			color: var(--smoke);
+		}
+		.btn-link:hover {
+			font-size: 1.5rem;
+			font-weight: bolder;
+			text-decoration: none;
+			color: var(--smoke);
 		}
 		.btn-link {
 			font-size: 1.5rem;
