@@ -94,6 +94,9 @@
 		textarea {
 			width: 100%;
 		}
+		legend {
+			font-family: var(--nova);
+		}
 	}
 	@media screen and (min-width: 1024px) {
 		form {
@@ -143,7 +146,6 @@
 			font-size: 1.75rem;
 			color: var(--white);
 			padding: 0 1rem 0 1rem;
-			font-family: var(--nova);
 		}
 	}
 </style>
