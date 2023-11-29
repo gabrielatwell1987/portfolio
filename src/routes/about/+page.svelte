@@ -86,12 +86,14 @@
 		}
 		section {
 			display: block;
-			margin: 2.5rem 1rem 0;
+			margin: 0 auto;
+			/* margin: 2.5rem 1rem 0; */
 			padding: 1rem;
 			text-align: center;
 			width: 100%;
 		}
 		article {
+			/* width: 100%; */
 			font-size: 0.8rem;
 			margin: 0 0 -1rem 0;
 			background-color: transparent;
@@ -130,12 +132,13 @@
 		}
 		section {
 			display: block;
-			margin: 5rem 0 2rem 0;
+			/* margin: 5rem 0 2rem 0; */
 			padding: 2rem;
 			text-align: center;
 		}
 		article {
 			font-size: 1rem;
+			width: 100%;
 		}
 		h2 {
 			font-size: 2.5rem;
