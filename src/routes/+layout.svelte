@@ -18,7 +18,7 @@
 </svelte:head>
 
 <Analytics />
-<SEO title="GABE 💥" description="Gabriel Atwell's Portfolio" />
+<SEO title="GABE 👻" description="Gabriel Atwell's Portfolio" />
 
 <main class="desktop">
 	<NavBar />
