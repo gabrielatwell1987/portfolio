@@ -54,10 +54,10 @@
 			<h2>Github</h2>
 
 			<p>
-				<a href="https://www.github.com/gabrielatwell1987/portfolio">Here</a> is the GitHub repo for
-				this site, just in case you want to see the code for this site or if you see something that needs
-				to be fixed, you can make a pull request. Please contact me if you have any issues or thoughts
-				on how I could improve this site. It is greatly appreciated!
+				<a class="github-link" href="https://www.github.com/gabrielatwell1987/portfolio">Here</a> is
+				a link to the GitHub repo for this site, just in case you want to see the code for this site
+				or if you see something that needs to be fixed, you can make a pull request. Please contact me
+				if you have any issues or thoughts on how I could improve this site. It is greatly appreciated!
 			</p>
 
 			<a class="btn-link" href="/about/gallery"><button>Gallery</button></a>
@@ -130,6 +130,14 @@
 		.atwell {
 			margin: 3.5% 0;
 			border-radius: 40%;
+		}
+		.github-link {
+			font-size: 1.24rem;
+			font-weight: 700;
+		}
+		.github-link:hover {
+			font-size: 1.25rem;
+			text-decoration: none;
 		}
 	}
 	@media screen and (min-width: 990px) {

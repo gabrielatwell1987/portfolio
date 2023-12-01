@@ -33,9 +33,7 @@
 					x: 200,
 					scrub: true
 				}
-			})
-				.to('main', { autoAlpha: 1 })
-				.to('.photos', { y: 0 }, '<');
+			}).to('main', { autoAlpha: 1 });
 
 			return () => {
 				gsap.set('.photos', { y: 500 });
