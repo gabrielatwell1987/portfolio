@@ -31,9 +31,10 @@
 			font-size: 1.75rem;
 			height: 100vh;
 		}
-		img {
+		.atwell {
 			width: 100%;
 			height: 75%;
+			opacity: 0.75;
 		}
 	}
 	@media screen and (min-width: 740px) {

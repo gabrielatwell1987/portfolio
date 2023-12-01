@@ -141,6 +141,7 @@
 		}
 		img {
 			border-radius: 8px;
+			opacity: 0.75;
 		}
 		hr {
 			border: 0.5px solid var(--white);
