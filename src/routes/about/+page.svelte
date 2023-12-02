@@ -66,25 +66,6 @@
 </main>
 
 <style>
-	article {
-		font-size: 1rem;
-	}
-	section {
-		display: block;
-		padding: 2rem;
-		text-align: center;
-		background-color: var(--black);
-		border: 0.5px solid var(--white);
-		border-radius: 10px;
-		width: 100%;
-		margin: 5rem 0 2rem 0;
-	}
-	a {
-		font-size: 0.9rem;
-	}
-	a:hover {
-		font-size: 1.2rem;
-	}
 	@media screen and (min-width: 200px) {
 		p {
 			line-height: 1.75;
@@ -147,7 +128,11 @@
 		section {
 			display: block;
 			padding: 2rem;
-			text-align: center;
+			background-color: var(--black);
+			border: 0.5px solid var(--white);
+			border-radius: 10px;
+			width: 100%;
+			margin: 5rem 0 2rem 0;
 		}
 		article {
 			font-size: 1rem;
