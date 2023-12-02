@@ -108,7 +108,7 @@
 	.title {
 		font-size: 4rem;
 		font-weight: 800;
-		margin: 2rem 0 4rem 0;
+		margin: 2rem 0 6rem 0;
 		text-align: center;
 		color: var(--sky);
 		font-family: var(--nunito);
