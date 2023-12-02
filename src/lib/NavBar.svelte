@@ -59,7 +59,7 @@
 		margin-left: 2rem;
 	}
 	.gabe-logo {
-		margin: 0 0 0 12%;
+		margin: 0 0 0 25%;
 	}
 	@media (min-width: 200px) {
 		.desktop-view {
@@ -130,7 +130,7 @@
 		.desktop-view {
 			display: block;
 			width: 100%;
-			margin-left: 16%;
+			margin-left: 35%;
 			font-size: 1rem;
 			font-weight: bolder;
 		}
