@@ -8,7 +8,6 @@
 		gsap.set('.sveltekit', { y: -500 });
 		gsap.set('.sk-main', { y: 1000 });
 		gsap.set('.title', { skewX: -15, opacity: 0, y: 35 });
-		gsap.set('.exclamation', { scale: 2, x: 200, y: 30 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
@@ -30,10 +29,6 @@
 <h1 class="title">SvelteKit</h1>
 
 <main class="sk-main">
-	<aside class="exclamation">
-		<Exclamation />
-	</aside>
-
 	<section>
 		<h3 class="subtitle">What I used to create this site</h3>
 		<p>
@@ -79,11 +74,11 @@
 
 <style>
 	main {
-		background-color: var(--black);
-		width: 45%;
-		border: 0.5px solid var(--white);
+		/* background-color: var(--black); */
+		width: 75%;
+		/* border: 0.5px solid var(--white); */
 		border-radius: 10px;
-		margin: 6rem 0 0 27%;
+		margin: 0 auto;
 	}
 	p {
 		text-align: center;
@@ -93,6 +88,7 @@
 		line-height: 2.5;
 		letter-spacing: 1px;
 		font-family: var(--montserrat);
+		width: 100%;
 	}
 	a {
 		text-decoration: none;
@@ -103,7 +99,7 @@
 		color: var(--white);
 	}
 	iframe {
-		margin: 0 0 3.5rem 7.5rem;
+		margin: 0 0 0 30%;
 	}
 	.subtitle {
 		text-align: center;
@@ -122,8 +118,5 @@
 	}
 	.sveltekit {
 		margin: 0 0 0 48%;
-	}
-	.exclamation {
-		margin: 5rem 0 0 48%;
 	}
 </style>

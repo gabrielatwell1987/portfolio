@@ -8,7 +8,6 @@
 	onMount(() => {
 		gsap.set('.greensock', { autoAlpha: 0 });
 		gsap.set('.title', { skewX: 15, opacity: 0, y: -200 });
-		gsap.set('.exclamation', { scale: 2, x: 200, y: 30 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
@@ -27,10 +26,6 @@
 <h1 class="title">GSAP</h1>
 
 <main class="gs-main">
-	<aside class="exclamation">
-		<Exclamation />
-	</aside>
-
 	<h2 class="subtitle">Greensock Animation Platform</h2>
 
 	<h3 class="heading">What is GSAP?</h3>
@@ -73,11 +68,11 @@
 
 <style>
 	main {
-		background-color: var(--black);
-		width: 45%;
-		border: 0.5px solid var(--white);
+		/* background-color: var(--black); */
+		width: 75%;
+		/* border: 0.5px solid var(--white); */
 		border-radius: 10px;
-		margin: 0 0 0 27%;
+		margin: 0 auto;
 	}
 	p {
 		text-align: center;
@@ -86,6 +81,7 @@
 		padding-top: 2.5em;
 		line-height: 2.5;
 		font-family: var(--montserrat);
+		width: 100%;
 	}
 	a {
 		text-decoration: none;
@@ -96,7 +92,7 @@
 		color: var(--white);
 	}
 	iframe {
-		margin: 0 0 0 7.5rem;
+		margin: 0 0 0 30%;
 	}
 	.heading {
 		text-align: center;
@@ -131,8 +127,5 @@
 		text-align: center;
 		font-family: var(--nova);
 		color: var(--blue);
-	}
-	.exclamation {
-		margin: 2rem 0 2rem 48%;
 	}
 </style>

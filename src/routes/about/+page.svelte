@@ -128,9 +128,6 @@
 		section {
 			display: block;
 			padding: 2rem;
-			background-color: var(--black);
-			border: 0.5px solid var(--white);
-			border-radius: 10px;
 			width: 100%;
 			margin: 5rem 0 2rem 0;
 		}

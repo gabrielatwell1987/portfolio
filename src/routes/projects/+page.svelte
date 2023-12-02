@@ -132,9 +132,9 @@
 		}
 
 		.content {
-			border: 0.5px solid var(--white);
+			/* border: 0.5px solid var(--white); */
 			border-radius: 10px;
-			background-color: var(--black);
+			/* background-color: var(--black); */
 			width: 100%;
 			padding: 1rem;
 			margin: 0;
@@ -187,10 +187,8 @@
 		a:hover {
 			color: var(--blue);
 		}
-		section {
-			border: 0.5px solid var(--white);
+		.content {
 			border-radius: 10px;
-			background-color: var(--black);
 			width: 100%;
 			padding: 2rem;
 			margin: 0;
