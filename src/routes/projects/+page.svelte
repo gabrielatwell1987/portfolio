@@ -132,9 +132,7 @@
 		}
 
 		.content {
-			/* border: 0.5px solid var(--white); */
 			border-radius: 10px;
-			/* background-color: var(--black); */
 			width: 100%;
 			padding: 1rem;
 			margin: 0;

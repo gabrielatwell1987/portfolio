@@ -67,9 +67,6 @@
 		text-align: center;
 	}
 	section {
-		/* background-color: var(--black); */
-		/* border: 0.5px solid var(--white); */
-		border-radius: 10px;
 		padding: 1.5rem;
 		display: flex;
 		flex-direction: column;

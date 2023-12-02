@@ -68,9 +68,7 @@
 
 <style>
 	main {
-		/* background-color: var(--black); */
 		width: 75%;
-		/* border: 0.5px solid var(--white); */
 		border-radius: 10px;
 		margin: 0 auto;
 	}
