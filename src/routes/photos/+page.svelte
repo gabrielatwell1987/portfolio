@@ -2,6 +2,7 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { onMount } from 'svelte';
+	import { contenteditable_truthy_values } from 'svelte/internal';
 
 	onMount(() => {
 		let mm = gsap.matchMedia();
@@ -18,7 +19,8 @@
 					'50%': { scaleX: 5 },
 					'75': { scaleX: 1 }
 				},
-				duration: 3
+				duration: 5,
+				ease: 'sine.in'
 			});
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });

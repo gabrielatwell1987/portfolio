@@ -7,9 +7,9 @@
 	let message = '';
 
 	onMount(() => {
-		const button = document.querySelector('.button');
+		gsap.set('.form', { autoAlpha: 0, scale: 0 });
 
-		gsap.from('.form', { opacity: 0, duration: 3 });
+		gsap.to('.form', { autoAlpha: 1, scale: 1, duration: 3.5 });
 	});
 </script>
 

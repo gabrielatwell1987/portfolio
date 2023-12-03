@@ -8,9 +8,13 @@
 
 		const atwell = document.querySelector('.atwell');
 
-		gsap.set('main', { autoAlpha: 0 });
+		gsap.set('article', { autoAlpha: 0 });
 
-		gsap.to('main', { autoAlpha: 1, duration: 3.5 });
+		gsap.to('article', {
+			autoAlpha: 1,
+			duration: 3.5,
+			ease: 'none'
+		});
 
 		Draggable.create(atwell, {
 			type: 'x, y',

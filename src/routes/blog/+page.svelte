@@ -10,8 +10,8 @@
 
 		gsap.to('.title', {
 			text: 'TECH STACK',
-			duration: 1.5,
-			ease: 'none',
+			duration: 2.5,
+			ease: 'expoScale(0.5,7,power1.in)',
 			delay: 0.5
 		});
 	});
