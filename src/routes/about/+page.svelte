@@ -75,17 +75,23 @@
 			line-height: 1.75;
 			font-family: var(--montserrat);
 		}
+		main {
+			width: 100%;
+			margin: 0 auto;
+		}
 		section {
 			display: block;
 			margin: 0 auto;
-			padding: 1rem;
+			/* padding: 1rem; */
 			text-align: center;
 			width: 100%;
 		}
 		article {
 			font-size: 0.8rem;
-			margin: 0 0 -1rem 0;
+			width: 100%;
+			margin: 0 auto;
 			border: 1px solid var(--white);
+			border-radius: 10px;
 			background-color: transparent;
 		}
 		h2 {
@@ -132,13 +138,17 @@
 		}
 		section {
 			display: block;
-			padding: 2rem;
+			/* padding: 2rem; */
 			width: 100%;
-			margin: 5rem 0 2rem 0;
+			margin: 5rem auto;
 		}
 		article {
 			font-size: 1rem;
 			width: 100%;
+			margin: 0 auto;
+			border: 1px solid var(--white);
+			border-radius: 10px;
+			background-color: transparent;
 		}
 		h2 {
 			font-size: 2.5rem;
