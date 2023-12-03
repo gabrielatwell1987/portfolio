@@ -114,6 +114,6 @@
 		font-family: var(--nunito);
 	}
 	.sveltekit {
-		margin: 0 0 0 48%;
+		margin: 5% 0 5% 48%;
 	}
 </style>
