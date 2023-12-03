@@ -133,7 +133,9 @@
 		a:hover {
 			color: var(--blue);
 		}
-
+		img:hover {
+			outline: 2px solid var(--sky);
+		}
 		.content {
 			border-radius: 10px;
 			width: 100%;

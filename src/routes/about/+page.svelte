@@ -123,6 +123,9 @@
 			margin: 3.5% 0;
 			border-radius: 40%;
 		}
+		.atwell:hover {
+			outline: 2px solid var(--sky);
+		}
 		.github-link {
 			font-size: 1.24rem;
 			font-weight: 700;
