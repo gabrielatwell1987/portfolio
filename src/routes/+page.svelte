@@ -6,7 +6,7 @@
 	onMount(() => {
 		gsap.registerPlugin(Draggable);
 
-		gsap.to('.atwellLogo', { autoAlpha: 1, duration: 3 });
+		gsap.to('.atwellLogo', { autoAlpha: 1, duration: 2.5, ease: 'sine.in' });
 
 		Draggable.create('.atwell', {
 			type: 'x, y',
