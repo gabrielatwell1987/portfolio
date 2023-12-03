@@ -75,7 +75,10 @@
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		margin: 0;
+		margin: 0 auto;
+		border: 1px solid var(--white);
+		border-radius: 10px;
+		background-color: transparent;
 	}
 	.title {
 		font-size: 4rem;

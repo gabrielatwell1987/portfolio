@@ -85,6 +85,7 @@
 		article {
 			font-size: 0.8rem;
 			margin: 0 0 -1rem 0;
+			border: 1px solid var(--white);
 			background-color: transparent;
 		}
 		h2 {
