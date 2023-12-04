@@ -78,6 +78,13 @@
 			font-size: 1rem;
 			font-weight: bolder;
 		}
+		h3 {
+			margin: 2rem auto;
+			color: var(--sky);
+		}
+		h4 {
+			color: var(--white);
+		}
 	}
 	@media screen and (min-width: 990px) {
 		main {
