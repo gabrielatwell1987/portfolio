@@ -134,7 +134,7 @@
 			color: var(--blue);
 		}
 		img:hover {
-			outline: 2px solid var(--sky);
+			outline: 2px solid var(--white);
 		}
 		.content {
 			border-radius: 10px;
