@@ -81,9 +81,11 @@
 		h3 {
 			margin: 2rem auto;
 			color: var(--sky);
+			font-size: 1.5rem;
 		}
 		h4 {
 			color: var(--white);
+			font-size: 1.25rem;
 		}
 	}
 	@media screen and (min-width: 990px) {
