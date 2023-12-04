@@ -18,23 +18,43 @@
 
 <main class="atwellLogo">
 	<img class="atwell" src="welcome.png" alt="Atwell ui design logo that you can move" />
+
+	<h3>Welcome to my portfolio!</h3>
+	<h4 class="summary">
+		Here you can find past work that I've created and you can contact me for work as well.
+	</h4>
+	<a class="btn" href="/projects"><button>Projects</button></a>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		margin: 5rem 0;
-	}
 	@media screen and (min-width: 200px) {
 		main {
 			text-align: center;
 			font-size: 1.75rem;
 			height: 100vh;
 		}
+		button {
+			display: none;
+		}
+		h3 {
+			margin: 2rem auto;
+			color: var(--white);
+		}
+		h4 {
+			color: var(--white);
+		}
 		.atwell {
 			width: 100%;
 			height: 75%;
 			opacity: 0.75;
+		}
+		.btn {
+			text-decoration: none;
+			/* margin-bottom: 5%; */
+			margin: 0 auto;
+		}
+		.summary {
+			margin: 0 auto;
 		}
 	}
 	@media screen and (min-width: 740px) {
@@ -42,11 +62,29 @@
 			text-align: center;
 			font-size: 2rem;
 		}
+		button {
+			display: block;
+			background-color: var(--black);
+			color: var(--sky);
+			font-family: var(--montserrat);
+			width: 15%;
+			outline: none;
+			border: 1px solid var(--sky);
+			margin: 5% auto;
+			border-radius: 10px;
+			font-size: 1rem;
+			font-weight: bolder;
+		}
 	}
 	@media screen and (min-width: 990px) {
 		main {
 			text-align: center;
 			font-size: 2.5rem;
+			margin: 5rem 0;
+		}
+		button {
+			width: 12.5%;
+			font-size: 1.25rem;
 		}
 	}
 </style>
