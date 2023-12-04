@@ -106,7 +106,7 @@
 			display: none;
 		}
 		img:hover {
-			outline: 2px solid var(--sky);
+			outline: 2px solid var(--white);
 		}
 	}
 	@media (min-width: 850px) {

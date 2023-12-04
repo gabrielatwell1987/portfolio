@@ -82,7 +82,6 @@
 		section {
 			display: block;
 			margin: 0 auto;
-			/* padding: 1rem; */
 			text-align: center;
 			width: 100%;
 		}
@@ -124,7 +123,7 @@
 			border-radius: 40%;
 		}
 		.atwell:hover {
-			outline: 2px solid var(--sky);
+			outline: 2px solid var(--white);
 		}
 		.github-link {
 			font-size: 1.24rem;
@@ -141,7 +140,6 @@
 		}
 		section {
 			display: block;
-			/* padding: 2rem; */
 			width: 100%;
 			margin: 5rem auto;
 		}
