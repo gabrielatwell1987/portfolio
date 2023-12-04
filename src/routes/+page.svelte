@@ -38,10 +38,13 @@
 		}
 		h3 {
 			margin: 2rem auto;
-			color: var(--white);
+			color: var(--sky);
+			font-size: 0.9rem;
 		}
 		h4 {
 			color: var(--white);
+			font-size: 0.75rem;
+			letter-spacing: 0.5px;
 		}
 		.atwell {
 			width: 100%;
