@@ -45,8 +45,8 @@
 		}
 		button {
 			display: block;
-			background-color: var(--black);
-			color: var(--sky);
+			background-color: var(--sky);
+			color: var(--black);
 			font-family: var(--montserrat);
 			width: 30%;
 			outline: none;
