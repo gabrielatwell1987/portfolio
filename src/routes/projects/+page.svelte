@@ -19,7 +19,7 @@
 
 		tl.to('.content', { autoAlpha: 1 })
 			.to('.linksize', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 2, ease: 'expo.out' }, 0)
-			.from('.title', { scale: 2, transformOrigin: '50% 50%', duration: 3 }, 0);
+			.from('.title', { scale: 0.25, duration: 3 }, 0);
 	});
 </script>
 
