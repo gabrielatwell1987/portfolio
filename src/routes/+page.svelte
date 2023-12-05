@@ -53,7 +53,7 @@
 			border: 1px solid var(--sky);
 			margin: 5% auto;
 			border-radius: 10px;
-			font-size: 0.75rem;
+			font-size: 0.5rem;
 			font-weight: bolder;
 		}
 		.atwell {
