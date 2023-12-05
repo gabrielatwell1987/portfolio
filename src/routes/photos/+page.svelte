@@ -112,7 +112,7 @@
 	@media (min-width: 850px) {
 		button {
 			display: block;
-			width: 25%;
+			width: 15%;
 			margin: 5% auto;
 			background-color: var(--sky);
 			color: var(--black);

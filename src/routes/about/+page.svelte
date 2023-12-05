@@ -165,7 +165,7 @@
 			background-color: var(--sky);
 			color: var(--black);
 			border: 1px solid var(--black);
-			width: 25%;
+			width: 10%;
 			margin: 3rem auto;
 			border-radius: 8px;
 			cursor: pointer;
