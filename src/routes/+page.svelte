@@ -33,9 +33,6 @@
 			font-size: 1.75rem;
 			height: 100vh;
 		}
-		button {
-			display: none;
-		}
 		h3 {
 			margin: 2rem auto;
 			color: var(--sky);
@@ -46,6 +43,19 @@
 			font-size: 0.75rem;
 			letter-spacing: 0.5px;
 		}
+		button {
+			display: block;
+			background-color: var(--black);
+			color: var(--sky);
+			font-family: var(--montserrat);
+			width: 15%;
+			outline: none;
+			border: 1px solid var(--sky);
+			margin: 5% auto;
+			border-radius: 10px;
+			font-size: 0.75rem;
+			font-weight: bolder;
+		}
 		.atwell {
 			width: 100%;
 			height: 75%;
@@ -53,7 +63,6 @@
 		}
 		.btn {
 			text-decoration: none;
-			/* margin-bottom: 5%; */
 			margin: 0 auto;
 		}
 		.summary {
@@ -66,17 +75,7 @@
 			font-size: 2rem;
 		}
 		button {
-			display: block;
-			background-color: var(--black);
-			color: var(--sky);
-			font-family: var(--montserrat);
-			width: 15%;
-			outline: none;
-			border: 1px solid var(--sky);
-			margin: 5% auto;
-			border-radius: 10px;
 			font-size: 1rem;
-			font-weight: bolder;
 		}
 		h3 {
 			margin: 2rem auto;
