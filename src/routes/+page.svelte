@@ -48,7 +48,7 @@
 			background-color: var(--black);
 			color: var(--sky);
 			font-family: var(--montserrat);
-			width: 25%;
+			width: 30%;
 			outline: none;
 			border: 1px solid var(--sky);
 			margin: 5% auto;
