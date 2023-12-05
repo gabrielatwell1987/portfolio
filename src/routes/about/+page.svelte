@@ -109,12 +109,12 @@
 			background-color: var(--sky);
 			color: var(--black);
 			border: 1px solid var(--black);
-			/* width: 10%;
+			width: 30%;
 			margin: 3rem auto;
 			border-radius: 8px;
 			cursor: pointer;
-			font-size: .8rem;
-			font-weight: 900; */
+			font-size: 0.8rem;
+			font-weight: 900;
 		}
 		button:hover {
 			opacity: 0.8;
