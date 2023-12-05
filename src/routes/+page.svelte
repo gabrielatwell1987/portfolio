@@ -36,7 +36,7 @@
 		h3 {
 			margin: 2rem auto;
 			color: var(--sky);
-			font-size: 0.9rem;
+			font-size: 1.25rem;
 		}
 		h4 {
 			color: var(--white);
