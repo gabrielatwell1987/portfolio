@@ -63,9 +63,6 @@
 			opacity: 0.75;
 			transition: opacity 750ms ease-in-out;
 		}
-		.atwell:hover {
-			opacity: 1;
-		}
 		.btn {
 			text-decoration: none;
 			margin: 0 auto;
