@@ -62,6 +62,9 @@
 			height: 75%;
 			opacity: 0.75;
 		}
+		.atwell:hover {
+			opacity: 1;
+		}
 		.btn {
 			text-decoration: none;
 			margin: 0 auto;
