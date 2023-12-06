@@ -17,7 +17,7 @@
 </script>
 
 <main class="atwellLogo">
-	<img class="atwell" src="welcome.png" alt="Atwell ui design logo that you can move" />
+	<img class="atwell" src="hero_img.png" alt="Atwell ui design logo that you can move" />
 
 	<h3>Welcome to my portfolio!</h3>
 	<h4 class="summary">

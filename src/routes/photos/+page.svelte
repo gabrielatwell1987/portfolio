@@ -65,33 +65,6 @@
 </main>
 
 <style>
-	main {
-		text-align: center;
-	}
-	section {
-		padding: 1.5rem;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 100%;
-		margin: 0 auto;
-		border: 1px solid var(--white);
-		border-radius: 10px;
-		background-color: transparent;
-	}
-	.title {
-		font-size: 4rem;
-		color: var(--white);
-		margin: 0 0 2rem 0;
-		font-family: var(--nova);
-	}
-	.flex {
-		display: flex;
-		justify-content: space-around;
-		gap: 8rem;
-		margin: 5rem 0;
-	}
 	@media screen and (min-width: 200px) {
 		section {
 			width: 100%;
@@ -106,10 +79,10 @@
 			display: none;
 		}
 		img {
-			opacity: 0.5;
+			opacity: 0.75;
 		}
 		img:hover {
-			outline: 2px solid var(--white);
+			/* outline: 2px solid var(--white); */
 			opacity: 1;
 			transition: opacity 0.6s ease-in-out;
 		}
@@ -147,12 +120,33 @@
 		}
 	}
 	@media screen and (min-width: 1200px) {
+		main {
+			text-align: center;
+		}
+		section {
+			padding: 1.5rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			margin: 0 auto;
+			border: 1px solid var(--white);
+			border-radius: 10px;
+			background-color: transparent;
+		}
+		.title {
+			font-size: 4rem;
+			color: var(--white);
+			margin: 0 0 2rem 0;
+			font-family: var(--nova);
+		}
 		.flex {
 			display: flex;
 			justify-content: space-around;
 			flex-direction: row;
 			gap: 8rem;
-			margin: 5rem 0;
+			margin: 5rem auto;
 		}
 	}
 </style>
