@@ -74,7 +74,7 @@
 			display: flex;
 			flex-direction: column;
 			gap: 2rem;
-			margin-bottom: 3%;
+			margin-bottom: 1%;
 		}
 		button {
 			display: none;
