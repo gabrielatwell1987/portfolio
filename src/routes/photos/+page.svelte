@@ -79,10 +79,20 @@
 		button {
 			display: none;
 		}
-		img {
+		.gabe,
+		.gabe2,
+		.gabe3,
+		.gabe4,
+		.gabe5,
+		.retard {
 			opacity: 0.75;
 		}
-		img:hover {
+		.gabe:hover,
+		.gabe2:hover,
+		.gabe3:hover,
+		.gabe4:hover,
+		.gabe5:hover,
+		.retard:hover {
 			opacity: 1;
 			transition: opacity 750ms ease-in-out;
 		}

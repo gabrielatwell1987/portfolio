@@ -28,57 +28,81 @@
 <section class="content">
 	<h3 class="linksize">Web Dev</h3>
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank"
-		><img src="/projects/web_dev.png" alt="web dev" width="200px" height="275px" /></a
+		><img class="img" src="/projects/web_dev.png" alt="web dev" width="200px" height="275px" /></a
 	><br />
 
 	<h3 class="linksize">Scroller</h3>
 	<a class="linksize" href="https://gabe2.vercel.app" target="_blank"
-		><img src="/projects/scroller.png" alt="scroller" width="450px" height="280px" /></a
+		><img class="img" src="/projects/scroller.png" alt="scroller" width="450px" height="280px" /></a
 	><br />
 
 	<h3 class="linksize">Random User</h3>
 	<a class="linksize" href="https://gabe3.vercel.app" target="_blank"
-		><img src="/projects/ran_user.png" alt="random user" width="200px" height="400px" /></a
+		><img
+			class="img"
+			src="/projects/ran_user.png"
+			alt="random user"
+			width="200px"
+			height="400px"
+		/></a
 	><br />
 
 	<h3 class="linksize">Starbucks</h3>
 	<a class="linksize" href="https://gabe4.vercel.app" target="_blank"
-		><img src="/projects/starbucks.png" alt="starbucks" width="500px" height="400px" /></a
+		><img
+			class="img"
+			src="/projects/starbucks.png"
+			alt="starbucks"
+			width="500px"
+			height="400px"
+		/></a
 	><br />
 
 	<h3 class="linksize">Form</h3>
 	<a class="linksize" href="https://formapp-three.vercel.app" target="_blank"
-		><img src="/projects/form.png" alt="form" width="375px" height="225px" /></a
+		><img class="img" src="/projects/form.png" alt="form" width="375px" height="225px" /></a
 	><br />
 
 	<h3 class="linksize">CRUD</h3>
 	<a class="linksize" href="https://kindler.vercel.app" target="_blank"
-		><img src="/projects/crud.png" alt="crud" width="200px" height="400px" /></a
+		><img class="img" src="/projects/crud.png" alt="crud" width="200px" height="400px" /></a
 	><br />
 
 	<h3 class="linksize">Github</h3>
 	<a class="linksize" href="https://github-vert.vercel.app" target="_blank"
-		><img src="/projects/github.png" alt="github" width="400px" height="250px" /></a
+		><img class="img" src="/projects/github.png" alt="github" width="400px" height="250px" /></a
 	><br />
 
 	<h3 class="linksize">Code Snippet</h3>
 	<a class="linksize" href="https://appity.vercel.app" target="_blank"
-		><img src="/projects/snippet.png" alt="code snippet" width="350px" height="600px" /></a
+		><img
+			class="img"
+			src="/projects/snippet.png"
+			alt="code snippet"
+			width="350px"
+			height="600px"
+		/></a
 	><br />
 
 	<h3 class="linksize">Pokedex</h3>
 	<a class="linksize" href="https://pokedex.vercel.app" target="_blank"
-		><img src="/projects/pokedex.png" alt="pokedex" width="400px" height="185px" /></a
+		><img class="img" src="/projects/pokedex.png" alt="pokedex" width="400px" height="185px" /></a
 	><br />
 
 	<h3 class="linksize">Svelteflix</h3>
 	<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank"
-		><img src="/projects/svelteflix.png" alt="svelteflix" width="475px" height="300px" /></a
+		><img
+			class="img"
+			src="/projects/svelteflix.png"
+			alt="svelteflix"
+			width="475px"
+			height="300px"
+		/></a
 	><br />
 
 	<h3 class="linksize">Blog Until You Die</h3>
 	<a class="linksize" href="https://blog-until-you-die.vercel.app" target="_blank"
-		><img src="/projects/blog.png" alt="blog" width="500px" height="350px" /></a
+		><img class="img" src="/projects/blog.png" alt="blog" width="500px" height="350px" /></a
 	><br />
 
 	<hr />
@@ -133,16 +157,13 @@
 		a:hover {
 			color: var(--blue);
 		}
-		img:hover {
-			outline: 2px solid var(--white);
-		}
 		.content {
 			border-radius: 10px;
 			width: 100%;
 			padding: 1rem;
 			margin: 0;
 		}
-		img {
+		.img {
 			border-radius: 8px;
 			opacity: 0.75;
 		}
