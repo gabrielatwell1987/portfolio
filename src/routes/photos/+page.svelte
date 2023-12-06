@@ -82,9 +82,8 @@
 			opacity: 0.75;
 		}
 		img:hover {
-			/* outline: 2px solid var(--white); */
 			opacity: 1;
-			transition: opacity 0.6s ease-in-out;
+			transition: opacity 750ms ease-in-out;
 		}
 	}
 	@media (min-width: 850px) {
