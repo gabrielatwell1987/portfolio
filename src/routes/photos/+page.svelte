@@ -73,8 +73,8 @@
 		.flex {
 			display: flex;
 			flex-direction: column;
-			gap: 1%;
-			margin-bottom: 1%;
+			gap: 3%;
+			margin-bottom: 3%;
 		}
 		button {
 			display: none;
@@ -145,8 +145,8 @@
 			display: flex;
 			justify-content: space-around;
 			flex-direction: row;
-			gap: 4%;
-			margin: 3% auto;
+			gap: 10%;
+			margin: 7% auto;
 		}
 	}
 </style>
