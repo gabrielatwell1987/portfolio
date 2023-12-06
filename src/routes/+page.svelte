@@ -61,7 +61,7 @@
 			width: 100%;
 			height: 75%;
 			opacity: 0.75;
-			transition: opacity 1s ease-in-out;
+			transition: opacity 750ms ease-in-out;
 		}
 		.atwell:hover {
 			opacity: 1;
