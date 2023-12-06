@@ -60,8 +60,6 @@
 		.atwell {
 			width: 100%;
 			height: 75%;
-			opacity: 0.75;
-			transition: opacity 750ms ease-in-out;
 		}
 		.btn {
 			text-decoration: none;
