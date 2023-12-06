@@ -105,8 +105,13 @@
 		button {
 			display: none;
 		}
+		img {
+			opacity: 0.5;
+		}
 		img:hover {
 			outline: 2px solid var(--white);
+			opacity: 1;
+			transition: opacity 0.6s ease-in-out;
 		}
 	}
 	@media (min-width: 850px) {
