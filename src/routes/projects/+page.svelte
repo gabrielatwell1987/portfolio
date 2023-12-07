@@ -58,7 +58,7 @@
 		/></a
 	><br />
 
-	<h3 class="linksize">Form</h3>
+	<!-- <h3 class="linksize">Form</h3>
 	<a class="linksize" href="https://formapp-three.vercel.app" target="_blank"
 		><img class="img" src="/projects/form.png" alt="form" width="375px" height="225px" /></a
 	><br />
@@ -66,12 +66,12 @@
 	<h3 class="linksize">CRUD</h3>
 	<a class="linksize" href="https://kindler.vercel.app" target="_blank"
 		><img class="img" src="/projects/crud.png" alt="crud" width="200px" height="400px" /></a
-	><br />
+	><br /> -->
 
-	<h3 class="linksize">Github</h3>
+	<!-- <h3 class="linksize">Github</h3>
 	<a class="linksize" href="https://github-vert.vercel.app" target="_blank"
 		><img class="img" src="/projects/github.png" alt="github" width="400px" height="250px" /></a
-	><br />
+	><br /> -->
 
 	<h3 class="linksize">Code Snippet</h3>
 	<a class="linksize" href="https://appity.vercel.app" target="_blank"
@@ -84,10 +84,10 @@
 		/></a
 	><br />
 
-	<h3 class="linksize">Pokedex</h3>
+	<!-- <h3 class="linksize">Pokedex</h3>
 	<a class="linksize" href="https://pokedex.vercel.app" target="_blank"
 		><img class="img" src="/projects/pokedex.png" alt="pokedex" width="400px" height="185px" /></a
-	><br />
+	><br /> -->
 
 	<h3 class="linksize">Svelteflix</h3>
 	<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank"
@@ -100,10 +100,10 @@
 		/></a
 	><br />
 
-	<h3 class="linksize">Blog Until You Die</h3>
+	<!-- <h3 class="linksize">Blog Until You Die</h3>
 	<a class="linksize" href="https://blog-until-you-die.vercel.app" target="_blank"
 		><img class="img" src="/projects/blog.png" alt="blog" width="500px" height="350px" /></a
-	><br />
+	><br /> -->
 
 	<hr />
 
