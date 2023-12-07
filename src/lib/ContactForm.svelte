@@ -48,27 +48,26 @@
 </form>
 
 <style>
-	form {
+	/* form {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
 		margin: 0 25%;
-	}
-	label {
+	} */
+	/* label {
 		font-size: 1rem;
 		margin-bottom: 0.5rem;
 		text-align: center;
-	}
-	input {
+	} */
+	/* input {
 		font-size: 1rem;
 		margin-bottom: 1rem;
 		width: 100%;
-	}
-	textarea {
+	} */
+	/* textarea {
 		font-size: 1rem;
-		margin-bottom: 1rem;
-	}
-	fieldset {
+	} */
+	/* fieldset {
 		border: 0.5px solid var(--white);
 		border-radius: 10px;
 		font-weight: bolder;
@@ -76,13 +75,13 @@
 		margin: 2rem;
 		padding: 2rem 5rem;
 		border-radius: 8px;
-	}
-	legend {
+	} */
+	/* legend {
 		font-weight: bolder;
 		font-size: 1.75rem;
 		color: var(--white);
 		padding: 0 1rem 0 1rem;
-	}
+	} */
 	@media screen and (min-width: 200px) {
 		form {
 			width: 100%;
@@ -96,6 +95,27 @@
 		}
 		legend {
 			font-family: var(--nova);
+		}
+		.button {
+			width: 15%;
+			margin: 0 auto;
+			border: 1px solid var(--black);
+			background-color: var(--sky);
+			color: var(--black);
+			font-size: 0.8rem;
+			font-weight: 900;
+			text-align: center;
+		}
+		.button:hover {
+			opacity: 0.8;
+			background-color: var(--lightblack);
+			color: var(--sky);
+		}
+	}
+	@media screen and (min-width: 750px) {
+		.button {
+			width: 20%;
+			font-size: 1rem;
 		}
 	}
 	@media screen and (min-width: 1024px) {
@@ -113,25 +133,14 @@
 		input {
 			font-size: 1.5rem;
 			margin-bottom: 1rem;
-			width: 100%;
 		}
 		textarea {
-			font-size: 1.5rem;
+			font-size: 1rem;
 			margin-bottom: 1rem;
 		}
 		.button {
+			width: 15%;
 			font-size: 1.5rem;
-			font-weight: 900;
-			text-align: center;
-			width: 100%;
-			border: 1px solid var(--black);
-			background-color: var(--sky);
-			color: var(--black);
-		}
-		.button:hover {
-			opacity: 0.8;
-			background-color: var(--lightblack);
-			color: var(--sky);
 		}
 		fieldset {
 			border: 0.5px solid var(--white);
@@ -139,7 +148,7 @@
 			font-size: 2rem;
 			margin: 2rem;
 			padding: 2rem 5rem;
-			border-radius: 8px;
+			border-radius: 10px;
 		}
 		legend {
 			font-weight: bolder;
