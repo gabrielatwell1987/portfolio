@@ -55,8 +55,6 @@
 				main key for a UI developer.
 			</p>
 
-			<h2>Github</h2>
-
 			<p>
 				<a class="github-link" href="https://www.github.com/gabrielatwell1987/portfolio">Here</a> is
 				a link to the GitHub repo for this site.
