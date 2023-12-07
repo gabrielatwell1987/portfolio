@@ -95,6 +95,7 @@
 		}
 		legend {
 			font-family: var(--nova);
+			text-align: center;
 		}
 		.button {
 			width: 25%;
