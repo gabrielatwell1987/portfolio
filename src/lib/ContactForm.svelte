@@ -123,7 +123,7 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			/* margin: 0 25%; */
+			margin: 0 25%;
 		}
 		label {
 			font-size: 1rem;
