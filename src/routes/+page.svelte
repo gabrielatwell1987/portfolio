@@ -52,7 +52,7 @@
 			width: 30%;
 			outline: none;
 			border: 1px solid var(--sky);
-			margin: 5% auto;
+			margin: 0 auto;
 			border-radius: 10px;
 			font-size: 0.75rem;
 			font-weight: bolder;
