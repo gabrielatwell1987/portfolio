@@ -98,6 +98,9 @@
 			text-align: center;
 			margin-bottom: 0.5rem;
 		}
+		label {
+			margin-left: 0.25rem;
+		}
 		.button {
 			width: 25%;
 			margin: 0 auto;
