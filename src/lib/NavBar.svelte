@@ -7,9 +7,7 @@
 
 <nav>
 	<div class="header-logos">
-		<Hamburger type="spin" bind:open />
-
-		<!-- <h1 class="h1">GABE|atwell</h1> -->
+		<Hamburger --color="white" type="spin" bind:open />
 
 		<div class="gabe-logo">
 			<a class="home" href="/"><GabeLogo /></a>
