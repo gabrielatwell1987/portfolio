@@ -18,10 +18,10 @@
 
 	{#if open}
 		<div class="desktop-view">
-			<a class="link" href="/about">about</a>
-			<a class="link" href="/photos">photos</a>
 			<a class="link" href="/projects">projects</a>
 			<a class="link" href="/blog">stack</a>
+			<a class="link" href="/about">about</a>
+			<a class="link" href="/photos">photos</a>
 			<a class="link" href="/contact">contact</a>
 		</div>
 	{/if}
