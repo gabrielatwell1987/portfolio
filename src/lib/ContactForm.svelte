@@ -85,7 +85,7 @@
 	@media screen and (min-width: 200px) {
 		form {
 			width: 100%;
-			margin: 0 25%;
+			margin: 0 40%;
 		}
 		input {
 			width: 100%;
