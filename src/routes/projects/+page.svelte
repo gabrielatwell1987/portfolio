@@ -36,7 +36,7 @@
 		><img class="img" src="/projects/scroller.png" alt="scroller" width="450px" height="280px" /></a
 	><br />
 
-	<h3 class="linksize">Random User</h3>
+	<!-- <h3 class="linksize">Random User</h3>
 	<a class="linksize" href="https://gabe3.vercel.app" target="_blank"
 		><img
 			class="img"
@@ -45,7 +45,7 @@
 			width="200px"
 			height="400px"
 		/></a
-	><br />
+	><br /> -->
 
 	<h3 class="linksize">Starbucks</h3>
 	<a class="linksize" href="https://gabe4.vercel.app" target="_blank"
