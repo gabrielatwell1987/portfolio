@@ -85,7 +85,7 @@
 	@media screen and (min-width: 200px) {
 		form {
 			width: 100%;
-			margin: 0 40%;
+			margin: 0 37%;
 		}
 		input {
 			width: 100%;
@@ -97,7 +97,7 @@
 			font-family: var(--nova);
 		}
 		.button {
-			width: 15%;
+			width: 20%;
 			margin: 0 auto;
 			border: 1px solid var(--black);
 			background-color: var(--sky);
