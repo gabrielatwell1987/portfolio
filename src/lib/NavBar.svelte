@@ -29,9 +29,9 @@
 	<div class="mobile-view">
 		<div class="mobile-links">
 			<a class="mobile-link" href="/">HOME</a>
+			<a class="mobile-link" href="/projects">PROJECTS</a>
 			<a class="mobile-link" href="/about">ABOUT</a>
 			<a class="mobile-link" href="/photos">PHOTOS</a>
-			<a class="mobile-link" href="/projects">PROJECTS</a>
 			<a class="mobile-link" href="/contact">CONTACT</a>
 		</div>
 	</div>
