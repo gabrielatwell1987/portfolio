@@ -85,7 +85,7 @@
 	@media screen and (min-width: 200px) {
 		form {
 			width: 100%;
-			margin: 0 25%;
+			margin: 0 auto;
 		}
 		input {
 			width: 100%;
@@ -123,7 +123,7 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			margin: 0 25%;
+			/* margin: 0 25%; */
 		}
 		label {
 			font-size: 1rem;
