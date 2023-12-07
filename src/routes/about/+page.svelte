@@ -59,9 +59,7 @@
 
 			<p>
 				<a class="github-link" href="https://www.github.com/gabrielatwell1987/portfolio">Here</a> is
-				a link to the GitHub repo for this site, just in case you want to see the code for this site
-				or if you see something that needs to be fixed, you can make a pull request. Please contact me
-				if you have any issues or thoughts on how I could improve this site. It is greatly appreciated!
+				a link to the GitHub repo for this site.
 			</p>
 
 			<a class="btn-link" href="/about/gallery"><button>Gallery</button></a>
