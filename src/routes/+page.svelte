@@ -52,7 +52,7 @@
 			width: 30%;
 			outline: none;
 			border: 1px solid var(--sky);
-			margin: 0 auto;
+			margin: 1rem auto;
 			border-radius: 10px;
 			font-size: 0.75rem;
 			font-weight: bolder;
@@ -78,7 +78,6 @@
 		button {
 			font-size: 1rem;
 			width: 15%;
-			margin: 1rem auto;
 		}
 		h3 {
 			margin: 2rem auto;
@@ -99,12 +98,12 @@
 		button {
 			width: 17.5%;
 			font-size: 1.25rem;
+			margin: 3rem auto;
 		}
 	}
 	@media screen and (min-width: 1100px) {
 		button {
 			width: 12%;
-			margin: 3rem auto;
 		}
 	}
 </style>
