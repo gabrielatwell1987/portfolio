@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 :root {
 	/* colors */
@@ -15,6 +16,7 @@
 	--nunito: 'Nunito Sans', sans-serif;
 	--nova: 'Nova Square', sans-serif;
 	--montserrat: 'Montserrat', sans-serif;
+	--righteous: 'Righteous', sans-serif;
 }
 * {
 	box-sizing: border-box;
@@ -29,7 +31,6 @@ body {
 	overflow-y: scroll;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	/* background-color: #16161c; */
 }
 .atwellLogo,
 .content,
@@ -38,7 +39,8 @@ body {
 	visibility: hidden;
 }
 h2 {
-	font-family: var(--nova);
+	font-family: var(--righteous);
+	/* font-family: var(--nova); */
 	text-align: center;
 	color: var(--cornflower);
 }

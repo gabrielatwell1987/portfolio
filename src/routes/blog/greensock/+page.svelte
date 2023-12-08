@@ -95,7 +95,7 @@
 	.heading {
 		text-align: center;
 		margin: 5rem 0 0 0;
-		font-family: var(--nova);
+		font-family: var(--righteous);
 		color: var(--blue);
 	}
 	.title {
@@ -123,7 +123,7 @@
 	.learn {
 		margin: 5rem 0 -1rem 0;
 		text-align: center;
-		font-family: var(--nova);
+		font-family: var(--righteous);
 		color: var(--blue);
 	}
 </style>

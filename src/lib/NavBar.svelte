@@ -76,7 +76,7 @@
 		}
 		.mobile-link {
 			font-size: 0.75rem;
-			font-family: var(--nova);
+			font-family: var(--righteous);
 		}
 		.header-logos {
 			display: none;
@@ -112,7 +112,7 @@
 	}
 	@media (min-width: 990px) {
 		.link {
-			font-family: var(--nova);
+			font-family: var(--righteous);
 			font-size: 1.2rem;
 			text-decoration: none;
 			font-weight: 900;

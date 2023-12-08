@@ -48,40 +48,6 @@
 </form>
 
 <style>
-	/* form {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		margin: 0 25%;
-	} */
-	/* label {
-		font-size: 1rem;
-		margin-bottom: 0.5rem;
-		text-align: center;
-	} */
-	/* input {
-		font-size: 1rem;
-		margin-bottom: 1rem;
-		width: 100%;
-	} */
-	/* textarea {
-		font-size: 1rem;
-	} */
-	/* fieldset {
-		border: 0.5px solid var(--white);
-		border-radius: 10px;
-		font-weight: bolder;
-		font-size: 2rem;
-		margin: 2rem;
-		padding: 2rem 5rem;
-		border-radius: 8px;
-	} */
-	/* legend {
-		font-weight: bolder;
-		font-size: 1.75rem;
-		color: var(--white);
-		padding: 0 1rem 0 1rem;
-	} */
 	@media screen and (min-width: 200px) {
 		form {
 			width: 100%;
@@ -94,7 +60,7 @@
 			width: 100%;
 		}
 		legend {
-			font-family: var(--nova);
+			font-family: var(--righteous);
 			text-align: center;
 			margin-bottom: 0.5rem;
 		}

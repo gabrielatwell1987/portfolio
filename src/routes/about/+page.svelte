@@ -93,7 +93,7 @@
 			font-size: 1.5rem;
 			mix-blend-mode: difference;
 			color: var(--sky);
-			font-family: var(--nova);
+			font-family: var(--righteous);
 		}
 		a {
 			font-size: 0.9rem;
