@@ -78,6 +78,7 @@
 		button {
 			font-size: 1rem;
 			width: 15%;
+			margin: 1rem auto;
 		}
 		h3 {
 			margin: 2rem auto;
@@ -103,6 +104,7 @@
 	@media screen and (min-width: 1100px) {
 		button {
 			width: 12%;
+			margin: 3rem auto;
 		}
 	}
 </style>
