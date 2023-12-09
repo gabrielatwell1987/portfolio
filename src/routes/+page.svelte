@@ -19,9 +19,10 @@
 <main class="atwellLogo">
 	<img class="atwell" src="hero-no-bg.png" alt="Atwell ui design logo that you can move" />
 
-	<h3>Welcome to my portfolio!</h3>
+	<h3>Professionally Crafted Web Experiences</h3>
 	<h4 class="summary">
-		Here you can find past work that I've created and you can contact me for work as well.
+		If you need an online presence built, I am the man for the job. Here is a link to some projects
+		I have created.
 	</h4>
 	<a class="btn" href="/projects"><button>Projects</button></a>
 </main>
@@ -37,6 +38,8 @@
 			margin: 2rem auto;
 			color: var(--sky);
 			font-size: 1.25rem;
+			font-weight: 800;
+			font-family: var(--righteous);
 		}
 		h4 {
 			color: var(--white);
@@ -67,6 +70,7 @@
 		}
 		.summary {
 			margin: 0 auto;
+			font-weight: 500;
 		}
 	}
 	@media screen and (min-width: 740px) {
@@ -79,9 +83,7 @@
 			width: 15%;
 		}
 		h3 {
-			margin: 2rem auto;
-			color: var(--sky);
-			font-size: 1.5rem;
+			font-size: 2rem;
 		}
 		h4 {
 			color: var(--white);
