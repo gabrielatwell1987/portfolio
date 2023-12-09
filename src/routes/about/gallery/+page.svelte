@@ -1,5 +1,5 @@
 <script>
-	import Gallery from '$lib/Gallery.svelte';
+	import Gallery from '$lib/components/Gallery.svelte';
 </script>
 
 <!-- <Circles /> -->

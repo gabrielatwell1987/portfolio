@@ -1,6 +1,5 @@
 <script>
-	import GsapIcon from '$lib/GsapIcon.svelte';
-	import Exclamation from '$lib/Exclamation.svelte';
+	import GsapIcon from '$lib/components/GsapIcon.svelte';
 	import { gsap } from 'gsap';
 
 	import { onMount } from 'svelte';
@@ -90,7 +89,7 @@
 		color: var(--white);
 	}
 	iframe {
-		margin: 0 0 0 30%;
+		margin: 2rem 0 0 30%;
 	}
 	.heading {
 		text-align: center;

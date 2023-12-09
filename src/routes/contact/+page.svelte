@@ -1,5 +1,5 @@
 <script>
-	import ContactForm from '$lib/ContactForm.svelte';
+	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { gsap } from 'gsap';
 	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';

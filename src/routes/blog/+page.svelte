@@ -1,6 +1,6 @@
 <script>
-	import GsapIcon from '$lib/GsapIcon.svelte';
-	import Svelte from '$lib/Svelte.svelte';
+	import GsapIcon from '$lib/components/GsapIcon.svelte';
+	import Svelte from '$lib/components/Svelte.svelte';
 	import { gsap } from 'gsap';
 	import { TextPlugin } from 'gsap/dist/TextPlugin';
 	import { onMount } from 'svelte';

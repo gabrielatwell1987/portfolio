@@ -1,6 +1,6 @@
 <script>
 	import { Hamburger } from 'svelte-hamburgers';
-	import GabeLogo from '$lib/GabeLogo.svelte';
+	import GabeLogo from '$lib/components/GabeLogo.svelte';
 
 	let open;
 </script>

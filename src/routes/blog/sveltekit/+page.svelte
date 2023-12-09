@@ -1,6 +1,5 @@
 <script>
-	import Svelte from '$lib/Svelte.svelte';
-	import Exclamation from '$lib/Exclamation.svelte';
+	import Svelte from '$lib/components/Svelte.svelte';
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 
@@ -98,7 +97,7 @@
 		color: var(--white);
 	}
 	iframe {
-		margin: 0 0 0 30%;
+		margin: 2rem 0 0 30%;
 	}
 	.subtitle {
 		text-align: center;

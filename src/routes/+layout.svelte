@@ -1,10 +1,10 @@
 <script>
-	import NavBar from '$lib/NavBar.svelte';
-	import Discord from '$lib/Discord.svelte';
-	import Analytics from '$lib/Analytics.svelte';
-	import SEO from '$lib/SEO.svelte';
+	import NavBar from '$lib/components/NavBar.svelte';
+	import Discord from '$lib/components/Discord.svelte';
+	import Analytics from '$lib/data/Analytics.svelte';
+	import SEO from '$lib/data/SEO.svelte';
 	import '../app.css';
-	import LinkedIn from '../lib/LinkedIn.svelte';
+	import LinkedIn from '$lib/components/LinkedIn.svelte';
 </script>
 
 <svelte:head>
