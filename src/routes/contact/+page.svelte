@@ -24,7 +24,6 @@
 			display: block;
 			width: 100%;
 			margin: 1rem 0 0 -6.9rem;
-			/* margin: 0 auto; */
 		}
 	}
 	@media screen and (min-width: 850px) {

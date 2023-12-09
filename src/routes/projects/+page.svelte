@@ -77,39 +77,6 @@
 </section>
 
 <style>
-	a {
-		font-size: 1rem;
-		text-decoration: none;
-		font-weight: 700;
-	}
-	.title {
-		text-align: center;
-		font-size: 4rem;
-		color: var(--white);
-		margin: 2rem 0;
-	}
-	.linksize {
-		text-align: center;
-		border: 0.5px solid var(--white);
-		border-radius: 8px;
-		padding: 1.5rem;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		width: 25%;
-		margin: 0 0 0 37%;
-	}
-	.logos {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 0 auto;
-	}
-	.newspaper {
-		border-radius: 10%;
-		margin: 3rem 0;
-	}
 	@media screen and (min-width: 200px) {
 		a {
 			font-family: var(--montserrat);
@@ -182,12 +149,14 @@
 			padding: 2rem;
 			margin: 0;
 		}
+
 		.title {
 			text-align: center;
 			font-size: 4rem;
 			color: var(--white);
 			margin: 2rem 0;
 		}
+
 		.linksize {
 			text-align: center;
 			background-color: transparent;
@@ -201,6 +170,7 @@
 			font-size: 2rem;
 			letter-spacing: 4px;
 		}
+
 		.logos {
 			display: flex;
 			justify-content: center;
@@ -208,6 +178,18 @@
 			margin: 0 auto;
 			width: 100%;
 			height: 100%;
+		}
+		.newspaper {
+			border-radius: 10%;
+			margin: 3rem 0;
+		}
+	}
+	@media screen and (min-width: 990px) {
+		.linksize {
+			border: none;
+			padding: 1.5rem;
+			width: 25%;
+			margin: 0 0 0 37%;
 		}
 	}
 </style>
