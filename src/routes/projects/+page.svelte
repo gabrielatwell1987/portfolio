@@ -26,17 +26,17 @@
 <h1 class="title">PROJECTS</h1>
 
 <section class="content">
-	<h3 class="linksize name">Web Dev Website</h3>
+	<h3 class="linksize name">WEB DEV WEBSITE</h3>
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank"
 		><img class="img" src="/projects/web_dev.png" alt="web dev" width="200px" height="275px" /></a
 	><br />
 
-	<h3 class="linksize name">Horizontal Scroller</h3>
+	<h3 class="linksize name">HORIZONTAL SCROLLER</h3>
 	<a class="linksize" href="https://gabe2.vercel.app" target="_blank"
 		><img class="img" src="/projects/scroller.png" alt="scroller" width="450px" height="280px" /></a
 	><br />
 
-	<h3 class="linksize name">Starbucks Clone</h3>
+	<h3 class="linksize name">STARBUCKS CLONE</h3>
 	<a class="linksize" href="https://gabe4.vercel.app" target="_blank"
 		><img
 			class="img"
@@ -47,7 +47,7 @@
 		/></a
 	><br />
 
-	<h3 class="linksize name">Code Snippet</h3>
+	<h3 class="linksize name">CODE SNIPPET</h3>
 	<a class="linksize" href="https://appity.vercel.app" target="_blank"
 		><img
 			class="img"
@@ -58,7 +58,7 @@
 		/></a
 	><br />
 
-	<h3 class="linksize name">Svelteflix</h3>
+	<h3 class="linksize name">NETFLIX CLONE</h3>
 	<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank"
 		><img
 			class="img"
