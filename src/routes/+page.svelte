@@ -21,11 +21,12 @@
 
 	<h3>Professionally Crafted Web Experiences</h3>
 	<h4 class="summary">
-		I look forward to hearing from you so we can discuss your goals for your online needs! Here is a
-		link to some projects I have created.
+		I look forward to hearing from you so we can discuss your goals for your online needs!
 	</h4>
 	<a class="btn" href="/projects"><button>Projects</button></a>
+	<h4 class="summary">Here is a link to some projects I have created.</h4>
 </main>
+<br /><br />
 
 <style>
 	@media screen and (min-width: 200px) {
