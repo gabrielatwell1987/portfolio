@@ -71,6 +71,7 @@
 		}
 		.summary {
 			margin: 0 auto;
+			font-size: 1rem;
 			font-weight: 500;
 		}
 	}
