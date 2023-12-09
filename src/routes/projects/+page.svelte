@@ -26,17 +26,17 @@
 <h1 class="title">PROJECTS</h1>
 
 <section class="content">
-	<h3 class="linksize">Web Dev</h3>
+	<h3 class="linksize name">Web Dev Website</h3>
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank"
 		><img class="img" src="/projects/web_dev.png" alt="web dev" width="200px" height="275px" /></a
 	><br />
 
-	<h3 class="linksize">Scroller</h3>
+	<h3 class="linksize name">Horizontal Scroller</h3>
 	<a class="linksize" href="https://gabe2.vercel.app" target="_blank"
 		><img class="img" src="/projects/scroller.png" alt="scroller" width="450px" height="280px" /></a
 	><br />
 
-	<h3 class="linksize">Starbucks</h3>
+	<h3 class="linksize name">Starbucks Clone</h3>
 	<a class="linksize" href="https://gabe4.vercel.app" target="_blank"
 		><img
 			class="img"
@@ -47,7 +47,7 @@
 		/></a
 	><br />
 
-	<h3 class="linksize">Code Snippet</h3>
+	<h3 class="linksize name">Code Snippet</h3>
 	<a class="linksize" href="https://appity.vercel.app" target="_blank"
 		><img
 			class="img"
@@ -58,7 +58,7 @@
 		/></a
 	><br />
 
-	<h3 class="linksize">Svelteflix</h3>
+	<h3 class="linksize name">Svelteflix</h3>
 	<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank"
 		><img
 			class="img"
@@ -85,24 +85,18 @@
 			font-weight: 700;
 			color: var(--sky);
 		}
-		a:hover {
-			color: var(--blue);
-		}
-		.content {
-			border-radius: 10px;
-			width: 100%;
-			padding: 1rem;
-			margin: 0;
-		}
-		.img {
-			border-radius: 8px;
-			opacity: 0.75;
-		}
+
 		hr {
 			border: 0.5px solid var(--white);
 			width: 50%;
 			margin: 5rem auto;
 		}
+
+		.img {
+			border-radius: 8px;
+			opacity: 0.75;
+		}
+
 		.logos {
 			display: flex;
 			justify-content: center;
@@ -127,57 +121,34 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			font-size: 1.5rem;
+			font-size: 1rem;
 			width: 75%;
 			margin: 0 auto;
 			font-family: var(--montserrat);
+			letter-spacing: 2px;
 		}
 	}
 	@media screen and (min-width: 740px) {
 		a {
 			font-size: 1rem;
-			text-decoration: none;
-			font-weight: 700;
-			color: var(--sky);
 		}
-		a:hover {
-			color: var(--blue);
-		}
+
 		.content {
-			border-radius: 10px;
-			width: 100%;
 			padding: 2rem;
-			margin: 0;
 		}
 
 		.title {
-			text-align: center;
 			font-size: 4rem;
-			color: var(--white);
+
 			margin: 2rem 0;
 		}
 
 		.linksize {
-			text-align: center;
-			background-color: transparent;
-			color: var(--sky);
-			border: none;
-			padding: 1rem;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			font-size: 2rem;
 			letter-spacing: 4px;
 		}
 
 		.logos {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin: 0 auto;
 			width: 100%;
-			height: 100%;
 		}
 		.newspaper {
 			border-radius: 10%;
@@ -186,7 +157,6 @@
 	}
 	@media screen and (min-width: 990px) {
 		.linksize {
-			border: none;
 			padding: 1.5rem;
 			width: 25%;
 			margin: 0 0 0 37%;
