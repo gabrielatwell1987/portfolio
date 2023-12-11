@@ -32,10 +32,17 @@
 			<h2>Bio</h2>
 
 			<p>
-				Gabe is a self-taught web developer. He started out with the basics: HTML, CSS, and
-				JavaScript. He then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js, and
-				GSAP. He has begun to teach himself the backend of web development on his spare time, but is
+				Gabe is a self-taught web developer. I started out with the basics: HTML, CSS, and
+				JavaScript. I then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js, and
+				GSAP. I have begun to teach myself the backend of web development on my spare time, but I am
 				a complete frontend developer.
+			</p>
+			<p>
+				I have a passion for creating websites that are clean, crisp, and completely functional. I
+				enjoy seeing a physical change when I edit or create code. I also enjoy creating animations
+				for the web! I mainly enjoy animating the web because I believe that it makes the website
+				look more professional and more appealing to the eye. Also, I believe that animations draw
+				people to your website.
 			</p>
 
 			<section class="grid">
