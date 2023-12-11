@@ -38,22 +38,28 @@
 				a complete frontend developer.
 			</p>
 
-			<h2>Frontend</h2>
+			<section class="grid">
+				<div class="inline">
+					<h2>Frontend</h2>
 
-			<p>
-				The path that Gabe has chosen is the frontend path, one of his main interests with the
-				frontend path is animations, especially animations on the web. Turning a website from being
-				a static site to a dynamic site is what he thinks makes your website look a million times
-				better, if you do it right.
-			</p>
+					<p>
+						The path that Gabe has chosen is the frontend path, one of his main interests with the
+						frontend path is animations, especially animations on the web. Turning a website from
+						being a static site to a dynamic site is what he thinks makes your website look a
+						million times better, if you do it right.
+					</p>
+				</div>
 
-			<h2>Design Based</h2>
+				<div class="inline">
+					<h2>Design Based</h2>
 
-			<p>
-				A clean, crisp design is what Gabe tries to excel at. Visual hierarchy, whitespace, colors,
-				typography, scaling, and spacing is what he knows best. He learned that these topics are the
-				main key for a UI developer.
-			</p>
+					<p>
+						A clean, crisp design is what Gabe tries to excel at. Visual hierarchy, whitespace,
+						colors, typography, scaling, and spacing is what he knows best. He learned that these
+						topics are the main key for a UI developer.
+					</p>
+				</div>
+			</section>
 
 			<p>
 				<a class="github-link" href="https://www.github.com/gabrielatwell1987/portfolio">Here</a> is
@@ -194,6 +200,18 @@
 			font-weight: bolder;
 			text-decoration: none;
 			color: var(--smoke);
+		}
+		.grid {
+			display: grid;
+			grid-template-rows: repeat(2, 1fr);
+			margin: 7% 0 -20% 0;
+		}
+		.inline {
+			display: inline-block;
+			margin: 0 auto;
+		}
+		.inline:first-child {
+			margin-right: 5%;
 		}
 	}
 </style>
