@@ -41,8 +41,9 @@
 				I have a passion for creating websites that are clean, crisp, and completely functional. I
 				enjoy seeing a physical change when I edit or create code. I also enjoy creating animations
 				for the web! I mainly enjoy animating the web because I believe that it makes the website
-				look more professional and more appealing to the eye. Also, I believe that animations draw
-				people to your website.
+				look more professional and more appealing to the eye. In the world of web development,
+				creating engaging and visually appealing animations is essential to grab the attention of
+				users.
 			</p>
 
 			<section class="grid">
