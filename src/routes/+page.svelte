@@ -41,6 +41,7 @@
 			font-size: 1.25rem;
 			font-weight: 800;
 			font-family: var(--righteous);
+			letter-spacing: 7px;
 		}
 		h4 {
 			color: var(--white);
