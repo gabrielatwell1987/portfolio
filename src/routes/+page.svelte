@@ -26,7 +26,7 @@
 	<a class="btn" href="/projects"><button>Projects</button></a>
 	<h4 class="summary">Here is a link to some projects I have created.</h4>
 </main>
-<br /><br />
+<br /><br /><br />
 
 <style>
 	@media screen and (min-width: 200px) {
@@ -94,7 +94,7 @@
 			font-size: 1.25rem;
 		}
 		.atwell {
-			height: 100%;
+			height: 75%;
 		}
 	}
 	@media screen and (min-width: 990px) {
