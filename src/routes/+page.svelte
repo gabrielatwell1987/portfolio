@@ -41,7 +41,7 @@
 			font-size: 1.25rem;
 			font-weight: 800;
 			font-family: var(--righteous);
-			letter-spacing: 7px;
+			letter-spacing: 2px;
 		}
 		h4 {
 			color: var(--white);
@@ -87,6 +87,7 @@
 		}
 		h3 {
 			font-size: 2rem;
+			letter-spacing: 7px;
 		}
 		h4 {
 			color: var(--white);
