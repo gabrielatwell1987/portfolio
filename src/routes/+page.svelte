@@ -63,7 +63,7 @@
 		}
 		.atwell {
 			width: 100%;
-			height: 75%;
+			height: 50%;
 			opacity: 0.75;
 		}
 		.btn {
@@ -91,6 +91,9 @@
 		h4 {
 			color: var(--white);
 			font-size: 1.25rem;
+		}
+		.atwell {
+			height: 100%;
 		}
 	}
 	@media screen and (min-width: 990px) {
