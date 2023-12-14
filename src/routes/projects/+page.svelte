@@ -132,7 +132,9 @@
 		a {
 			font-size: 1rem;
 		}
-
+		hr {
+			border: 1px solid var(--white);
+		}
 		.content {
 			padding: 2rem;
 		}
