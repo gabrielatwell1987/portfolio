@@ -108,7 +108,7 @@
 		.title {
 			text-align: center;
 			font-family: var(--righteous);
-			font-size: 3.75rem;
+			font-size: 2.75rem;
 			color: var(--white);
 			letter-spacing: 5px;
 		}
