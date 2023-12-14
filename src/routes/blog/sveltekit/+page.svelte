@@ -4,22 +4,34 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.set('.sveltekit', { y: -500 });
-		gsap.set('.sk-main', { y: 1000 });
-		gsap.set('.title', { skewX: -15, autoAlpha: 0, y: 35, scale: 0 });
+		const sveltekit = document.querySelector('.sveltekit');
+		const title = document.querySelector('.title');
+		const sk = document.querySelector('.sk-main');
+
+		gsap.set(sveltekit, { y: -500 });
+		gsap.set(sk, { y: 1000 });
+		gsap.set(title, { skewX: -15, autoAlpha: 0, y: 35, scale: 0 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.to('.sveltekit', { y: 0, ease: 'back.out' })
-			.to('.sveltekit', {
+		tl.to(sveltekit, { y: 0, ease: 'back.out' })
+			.to(sveltekit, {
 				scale: 2,
 				x: 490,
 				y: 30,
 				ease: 'back.out(4)',
 				duration: 2
 			})
-			.to('.sk-main', { y: 0 }, 0)
-			.to('.title', { autoAlpha: 1, scale: 1, delay: 3, duration: 2.25 }, 0);
+			.to(sk, { y: 0 }, 0)
+			.to(title, { autoAlpha: 1, scale: 1, delay: 3, duration: 2.25 }, 0);
+
+		title.addEventListener('mouseover', () => {
+			gsap.to(title, { skewX: 15, duration: 0.5, ease: 'none' });
+		});
+
+		title.addEventListener('mouseleave', () => {
+			gsap.to(title, { skewX: -15, duration: 0.5, ease: 'none' });
+		});
 	});
 </script>
 

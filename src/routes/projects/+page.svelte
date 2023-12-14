@@ -110,6 +110,7 @@
 			font-family: var(--righteous);
 			font-size: 3.75rem;
 			color: var(--white);
+			letter-spacing: 10px;
 		}
 		.linksize {
 			text-align: center;
@@ -141,7 +142,7 @@
 
 		.title {
 			font-size: 4rem;
-
+			letter-spacing: 20px;
 			margin: 2rem 0;
 		}
 
