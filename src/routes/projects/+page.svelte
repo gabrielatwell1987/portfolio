@@ -121,7 +121,7 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			font-size: 1rem;
+			font-size: 0.8rem;
 			width: 75%;
 			margin: 0 auto;
 			font-family: var(--montserrat);
@@ -145,6 +145,7 @@
 
 		.linksize {
 			letter-spacing: 4px;
+			font-size: 1rem;
 		}
 
 		.logos {
