@@ -110,7 +110,7 @@
 			font-family: var(--righteous);
 			font-size: 3.75rem;
 			color: var(--white);
-			letter-spacing: 10px;
+			letter-spacing: 5px;
 		}
 		.linksize {
 			text-align: center;
