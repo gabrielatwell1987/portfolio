@@ -178,7 +178,8 @@
 			background-color: transparent;
 		}
 		h2 {
-			font-size: 2.5rem;
+			font-size: 3rem;
+			letter-spacing: 5px;
 		}
 		a {
 			font-size: 0.9rem;
