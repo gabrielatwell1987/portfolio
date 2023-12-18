@@ -244,6 +244,8 @@
 		}
 		.dev-links {
 			margin-top: 5rem;
+			display: flex;
+			justify-content: space-evenly;
 		}
 	}
 </style>
