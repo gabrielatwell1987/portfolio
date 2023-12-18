@@ -37,7 +37,7 @@
 		}
 		h3 {
 			margin: 2rem auto;
-			color: var(--sky);
+			color: var(--blue);
 			font-size: 1.25rem;
 			font-weight: 800;
 			font-family: var(--righteous);
