@@ -168,7 +168,7 @@
 		}
 		.fa-codepen,
 		.fa-github {
-			font-size: 1.5rem;
+			font-size: 3rem;
 			color: var(--sky);
 		}
 		.dev-links {
@@ -239,7 +239,7 @@
 		}
 		.fa-codepen,
 		.fa-github {
-			font-size: 2.5rem;
+			font-size: 6rem;
 			color: var(--sky);
 		}
 		.dev-links {
