@@ -74,6 +74,10 @@
 				a link to the GitHub repo for this site.
 			</p>
 
+			<p>
+				<a href="https://codepen.io/gabrielatwell"><i class="fa-brands fa-codepen" /></a>
+			</p>
+
 			<a class="btn-link" href="/about/gallery"><button>Gallery</button></a>
 		</article>
 	</section>
@@ -159,6 +163,10 @@
 			font-size: 1.25rem;
 			text-decoration: none;
 		}
+		.fa-codepen {
+			font-size: 1.5rem;
+			color: var(--sky);
+		}
 	}
 	@media screen and (min-width: 990px) {
 		p {
@@ -221,6 +229,10 @@
 		}
 		.inline:first-child {
 			margin-right: 5%;
+		}
+		.fa-codepen {
+			font-size: 2.5rem;
+			color: var(--sky);
 		}
 	}
 </style>
