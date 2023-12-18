@@ -69,14 +69,17 @@
 				</div>
 			</section>
 
-			<p>
-				<a class="github-link" href="https://www.github.com/gabrielatwell1987/portfolio">Here</a> is
-				a link to the GitHub repo for this site.
-			</p>
+			<div class="dev-links">
+				<p>
+					<a class="github-link" href="https://www.github.com/gabrielatwell1987/portfolio"
+						><i class="fa-brands fa-github" /></a
+					>
+				</p>
 
-			<p>
-				<a href="https://codepen.io/gabrielatwell"><i class="fa-brands fa-codepen" /></a>
-			</p>
+				<p>
+					<a href="https://codepen.io/gabrielatwell"><i class="fa-brands fa-codepen" /></a>
+				</p>
+			</div>
 
 			<a class="btn-link" href="/about/gallery"><button>Gallery</button></a>
 		</article>
@@ -163,9 +166,13 @@
 			font-size: 1.25rem;
 			text-decoration: none;
 		}
-		.fa-codepen {
+		.fa-codepen,
+		.fa-github {
 			font-size: 1.5rem;
 			color: var(--sky);
+		}
+		.dev-links {
+			margin-top: 2.5rem;
 		}
 	}
 	@media screen and (min-width: 990px) {
@@ -230,9 +237,13 @@
 		.inline:first-child {
 			margin-right: 5%;
 		}
-		.fa-codepen {
+		.fa-codepen,
+		.fa-github {
 			font-size: 2.5rem;
 			color: var(--sky);
+		}
+		.dev-links {
+			margin-top: 5rem;
 		}
 	}
 </style>
