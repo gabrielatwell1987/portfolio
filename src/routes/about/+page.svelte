@@ -169,7 +169,7 @@
 		.fa-codepen,
 		.fa-github {
 			font-size: 3rem;
-			color: var(--sky);
+			color: var(--blue);
 		}
 		.dev-links {
 			margin-top: 2.5rem;
@@ -240,7 +240,7 @@
 		.fa-codepen,
 		.fa-github {
 			font-size: 5rem;
-			color: var(--sky);
+			color: var(--blue);
 		}
 		.dev-links {
 			margin-top: 5rem;
