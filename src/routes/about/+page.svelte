@@ -239,7 +239,7 @@
 		}
 		.fa-codepen,
 		.fa-github {
-			font-size: 6rem;
+			font-size: 5rem;
 			color: var(--sky);
 		}
 		.dev-links {
