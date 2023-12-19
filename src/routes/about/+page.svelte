@@ -133,7 +133,7 @@
 			font-size: 0.8rem;
 			font-weight: 900;
 			letter-spacing: 1px;
-			width: 15%;
+			width: 40%;
 		}
 		button:hover {
 			opacity: 0.8;
