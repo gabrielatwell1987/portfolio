@@ -60,7 +60,12 @@
 		</aside>
 	</section>
 
-	<a class="btn-link" href="/photos/domino"><button>Domino Game</button></a>
+	<div class="domino">
+		<p class="domino-text">Dominoes:</p>
+		<a class="btn-link" href="/photos/domino"
+			><img class="domino-image" src="dominoes.png" alt="" /></a
+		>
+	</div>
 </main>
 
 <style>
@@ -75,7 +80,7 @@
 			gap: 1rem;
 			margin-bottom: 1rem;
 		}
-		button {
+		.domino {
 			display: none;
 		}
 		.gabe,
@@ -97,23 +102,6 @@
 		}
 	}
 	@media (min-width: 850px) {
-		button {
-			display: block;
-			width: 15%;
-			margin: 5% auto;
-			background-color: var(--sky);
-			color: var(--black);
-			border: 1px solid var(--black);
-			border-radius: 8px;
-			cursor: pointer;
-			font-size: 1.5rem;
-			font-weight: 700;
-		}
-		button:hover {
-			opacity: 0.8;
-			background-color: var(--lightblack);
-			color: var(--sky);
-		}
 		.btn-link {
 			font-size: 2.5rem;
 			font-weight: bolder;
@@ -126,6 +114,26 @@
 			font-weight: bolder;
 			text-decoration: none;
 			color: var(--smoke);
+		}
+		.domino {
+			display: block;
+			margin-top: 2rem;
+		}
+		.domino-image {
+			display: block;
+			width: 20%;
+			height: 25%;
+			margin: -1rem auto;
+			border-radius: 10px;
+		}
+		.domino-image:hover {
+			opacity: 0.8;
+		}
+		.domino-text {
+			font-family: var(--righteous);
+			font-size: 1.75rem;
+			font-weight: 300;
+			color: var(--blue);
 		}
 	}
 	@media screen and (min-width: 1200px) {
@@ -143,9 +151,6 @@
 			border: 1px solid var(--white);
 			border-radius: 10px;
 			background-color: transparent;
-		}
-		button {
-			font-weight: 900;
 		}
 		.title {
 			font-size: 4rem;
