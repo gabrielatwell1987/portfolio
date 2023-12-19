@@ -132,6 +132,7 @@
 			cursor: pointer;
 			font-size: 0.8rem;
 			font-weight: 900;
+			letter-spacing: 1px;
 		}
 		button:hover {
 			opacity: 0.8;
@@ -211,8 +212,11 @@
 			margin: 3rem auto;
 			border-radius: 8px;
 			cursor: pointer;
+			font-family: var(--righteous);
 			font-size: 1.5rem;
 			font-weight: 900;
+			letter-spacing: 2px;
+			width: 20%;
 		}
 		button:hover {
 			opacity: 0.8;
