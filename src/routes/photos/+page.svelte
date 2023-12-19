@@ -2,7 +2,6 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { onMount } from 'svelte';
-	import { contenteditable_truthy_values } from 'svelte/internal';
 
 	onMount(() => {
 		let mm = gsap.matchMedia();
@@ -108,7 +107,7 @@
 			border-radius: 8px;
 			cursor: pointer;
 			font-size: 1.5rem;
-			font-weight: 900;
+			font-weight: 700;
 		}
 		button:hover {
 			opacity: 0.8;
@@ -144,6 +143,9 @@
 			border: 1px solid var(--white);
 			border-radius: 10px;
 			background-color: transparent;
+		}
+		button {
+			font-weight: 900;
 		}
 		.title {
 			font-size: 4rem;
