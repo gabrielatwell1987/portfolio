@@ -46,7 +46,7 @@
 		<h3 class="subtitle">What I used to create this site</h3>
 		<p>
 			I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
-			the server-side rendering (SRR) and all of the SEO features, as well as the speed of
+			the server-side rendering (SSR) and all of the SEO features, as well as the speed of
 			everything. The fact that this, to me, is less than an actual framework as it relies heavily
 			on vanilla HTML, CSS, and JavaScript is what I'm looking for.
 		</p>
@@ -62,7 +62,7 @@
 		<p>
 			Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
 			framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
-			React. In the end, svelte(kit) is a new approach to building rich user interfaces.
+			React. In the end, sveltekit is a new approach to building rich user interfaces.
 		</p>
 
 		<h3 class="subtitle">Learn more about Sveltekit</h3>
