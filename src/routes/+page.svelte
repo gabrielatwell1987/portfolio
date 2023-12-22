@@ -50,12 +50,12 @@
 		}
 		button {
 			display: block;
-			background-color: var(--sky);
-			color: var(--black);
+			background-color: transparent;
+			color: var(--smoke);
 			font-family: var(--montserrat);
 			width: 30%;
 			outline: none;
-			border: 1px solid var(--sky);
+			border: 1px solid var(--smoke);
 			margin: 1rem auto;
 			border-radius: 10px;
 			font-size: 0.75rem;
@@ -89,6 +89,12 @@
 			font-size: 1rem;
 			width: 15%;
 		}
+		button:hover {
+			animation: wiggle 0.5s ease-in-out infinite;
+			border: 1px solid black;
+			background-color: var(--smoke);
+			color: black;
+		}
 		h3 {
 			font-size: 2rem;
 			letter-spacing: 7px;
@@ -99,6 +105,20 @@
 		}
 		.atwell {
 			height: 75%;
+		}
+		@keyframes wiggle {
+			0% {
+				rotate: 0deg;
+				translate: 0 0;
+			}
+			25% {
+				rotate: -2deg;
+				translate: -5px 0;
+			}
+			80% {
+				rotate: 2deg;
+				translate: 5px 0;
+			}
 		}
 	}
 	@media screen and (min-width: 990px) {
