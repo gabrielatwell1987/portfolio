@@ -206,9 +206,9 @@
 		}
 
 		button {
-			background-color: var(--sky);
-			color: var(--black);
-			border: 1px solid var(--black);
+			background-color: transparent;
+			color: var(--smoke);
+			border: 1px solid var(--smoke);
 			width: 10%;
 			margin: 3rem auto;
 			border-radius: 8px;
@@ -221,8 +221,9 @@
 		}
 		button:hover {
 			opacity: 0.8;
-			background-color: var(--lightblack);
-			color: var(--sky);
+			background-color: var(--smoke);
+			color: black;
+			animation: wiggle 0.5s ease-in-out infinite;
 		}
 		.btn-link {
 			font-size: 2.5rem;
@@ -251,6 +252,20 @@
 			margin-top: 5rem;
 			display: flex;
 			justify-content: space-evenly;
+		}
+		@keyframes wiggle {
+			0% {
+				rotate: 0deg;
+				translate: 0 0;
+			}
+			25% {
+				rotate: -2deg;
+				translate: -5px 0;
+			}
+			80% {
+				rotate: 2deg;
+				translate: 5px 0;
+			}
 		}
 	}
 </style>

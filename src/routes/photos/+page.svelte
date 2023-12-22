@@ -128,12 +128,27 @@
 		}
 		.domino-image:hover {
 			opacity: 0.8;
+			animation: wiggle 0.5s ease-in-out infinite;
 		}
 		.domino-text {
 			font-family: var(--righteous);
 			font-size: 1.75rem;
 			font-weight: 300;
 			color: var(--blue);
+		}
+		@keyframes wiggle {
+			0% {
+				rotate: 0deg;
+				translate: 0 0;
+			}
+			25% {
+				rotate: -2deg;
+				translate: -5px 0;
+			}
+			80% {
+				rotate: 2deg;
+				translate: 5px 0;
+			}
 		}
 	}
 	@media screen and (min-width: 1200px) {

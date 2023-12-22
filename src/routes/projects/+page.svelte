@@ -87,7 +87,7 @@
 		}
 
 		hr {
-			border: 0.5px solid var(--white);
+			border: 0.5px solid var(--smoke);
 			width: 50%;
 			margin: 5rem auto;
 		}
@@ -127,6 +127,7 @@
 			margin: 0 auto;
 			font-family: var(--montserrat);
 			letter-spacing: 2px;
+			font-style: italic;
 		}
 	}
 	@media screen and (min-width: 740px) {
@@ -134,7 +135,7 @@
 			font-size: 1rem;
 		}
 		hr {
-			border: 1px solid var(--white);
+			border: 1px solid var(--smoke);
 		}
 		.content {
 			padding: 2rem;
