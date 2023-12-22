@@ -24,7 +24,7 @@
 		I look forward to hearing from you so we can discuss your goals for your online needs!
 	</h4>
 	<a class="btn" href="/projects"><button>Projects</button></a>
-	<h4 class="summary">Here is a link to some projects I have created.</h4>
+	<h4 class="summary italic">Here is a link to some projects I have created.</h4>
 </main>
 <br /><br /><br />
 
@@ -74,6 +74,10 @@
 			margin: 0 auto;
 			font-size: 1rem;
 			font-weight: 500;
+		}
+		.italic {
+			font-style: italic;
+			font-size: 0.75rem;
 		}
 	}
 	@media screen and (min-width: 740px) {
