@@ -52,14 +52,14 @@
 			display: block;
 			background-color: transparent;
 			color: var(--smoke);
-			font-family: var(--montserrat);
+			font-family: var(--righteous);
 			width: 30%;
 			outline: none;
 			border: 1px solid var(--smoke);
 			margin: 1rem auto;
 			border-radius: 10px;
 			font-size: 0.75rem;
-			font-weight: bolder;
+			font-weight: 900;
 		}
 		.atwell {
 			width: 100%;
@@ -88,6 +88,8 @@
 		button {
 			font-size: 1rem;
 			width: 15%;
+			font-size: 2rem;
+			letter-spacing: 2px;
 		}
 		button:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
