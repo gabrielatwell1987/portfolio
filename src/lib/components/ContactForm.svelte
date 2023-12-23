@@ -70,23 +70,41 @@
 		.button {
 			width: 25%;
 			margin: 0 auto;
-			border: 1px solid var(--black);
-			background-color: var(--sky);
-			color: var(--black);
+			border: 1px solid var(--smoke);
+			border-radius: 8px;
+			background-color: transparent;
+			color: var(--smoke);
 			font-size: 0.8rem;
 			font-weight: 900;
 			text-align: center;
 		}
 		.button:hover {
 			opacity: 0.8;
-			background-color: var(--lightblack);
-			color: var(--sky);
+			background-color: var(--smoke);
+			color: black;
 		}
 	}
 	@media screen and (min-width: 750px) {
 		.button {
 			width: 20%;
 			font-size: 1rem;
+		}
+		.button:hover {
+			animation: wiggle 0.5s ease-in-out infinite;
+		}
+		@keyframes wiggle {
+			0% {
+				rotate: 0deg;
+				translate: 0 0;
+			}
+			25% {
+				rotate: -2deg;
+				translate: -5px 0;
+			}
+			80% {
+				rotate: 2deg;
+				translate: 5px 0;
+			}
 		}
 	}
 	@media screen and (min-width: 1024px) {

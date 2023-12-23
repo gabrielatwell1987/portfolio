@@ -123,9 +123,9 @@
 			font-size: 1.2rem;
 		}
 		button {
-			background-color: var(--sky);
-			color: var(--black);
-			border: 1px solid var(--black);
+			background-color: transparent;
+			color: var(--smoke);
+			border: 1px solid var(--smoke);
 			width: 30%;
 			margin: 3rem auto;
 			border-radius: 8px;
@@ -137,8 +137,8 @@
 		}
 		button:hover {
 			opacity: 0.8;
-			background-color: var(--lightblack);
-			color: var(--sky);
+			background-color: var(--smoke);
+			color: black;
 		}
 		.btn-link {
 			font-size: 1.5rem;
@@ -206,30 +206,17 @@
 		}
 
 		button {
-			background-color: transparent;
-			color: var(--smoke);
-			border: 1px solid var(--smoke);
 			width: 10%;
-			margin: 3rem auto;
-			border-radius: 8px;
-			cursor: pointer;
 			font-family: var(--righteous);
 			font-size: 1.5rem;
-			font-weight: 900;
 			letter-spacing: 2px;
 			width: 20%;
 		}
 		button:hover {
-			opacity: 0.8;
-			background-color: var(--smoke);
-			color: black;
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 		.btn-link {
 			font-size: 2.5rem;
-			font-weight: bolder;
-			text-decoration: none;
-			color: var(--smoke);
 		}
 		.grid {
 			display: grid;
