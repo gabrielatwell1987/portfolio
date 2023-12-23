@@ -61,6 +61,11 @@
 			font-size: 0.75rem;
 			font-weight: 900;
 		}
+		button:hover {
+			border: 1px solid black;
+			background-color: var(--smoke);
+			color: black;
+		}
 		.atwell {
 			width: 100%;
 			height: 50%;
@@ -93,9 +98,9 @@
 		}
 		button:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
-			border: 1px solid black;
+			/* border: 1px solid black;
 			background-color: var(--smoke);
-			color: black;
+			color: black; */
 		}
 		h3 {
 			font-size: 2rem;
