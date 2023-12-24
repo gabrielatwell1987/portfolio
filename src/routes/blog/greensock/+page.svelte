@@ -59,6 +59,7 @@
 		developer. I highly recommend it!
 	</p>
 
+	<!-- video -->
 	<iframe
 		width="560"
 		height="315"

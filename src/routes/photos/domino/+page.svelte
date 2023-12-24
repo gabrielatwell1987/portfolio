@@ -4,6 +4,7 @@
 <main>
 	<h1>A Domino Game</h1>
 
+	<!-- spline interactive animation -->
 	<iframe
 		src="https://my.spline.design/dominoeffectphysicscopy-c3ca25fe0cef82be951f86d64575ab3a/"
 		frameborder="0"

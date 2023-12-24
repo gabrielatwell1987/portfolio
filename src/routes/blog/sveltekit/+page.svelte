@@ -72,6 +72,7 @@
 			>.
 		</p>
 
+		<!-- video -->
 		<iframe
 			class="youtube"
 			width="560"

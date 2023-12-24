@@ -25,6 +25,7 @@
 
 <h1 class="title">PROJECTS</h1>
 
+<!-- links to my projects -->
 <section class="content">
 	<h3 class="linksize name">WEB DEV WEBSITE</h3>
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank"
@@ -71,6 +72,7 @@
 
 	<hr />
 
+	<!-- logo -->
 	<div class="logos">
 		<img class="newspaper" src="designs.png" alt="Atwell logo that you can move" />
 	</div>

@@ -46,6 +46,7 @@
 				users.
 			</p>
 
+			<!-- set up side by side text -->
 			<section class="grid">
 				<div class="inline">
 					<h2>Frontend</h2>
@@ -69,6 +70,7 @@
 				</div>
 			</section>
 
+			<!-- github and codepen links -->
 			<div class="dev-links">
 				<p>
 					<a class="github-link" href="https://www.github.com/gabrielatwell1987/portfolio"
@@ -81,6 +83,7 @@
 				</p>
 			</div>
 
+			<!-- image gallery -->
 			<a class="btn-link" href="/about/gallery"><button>Gallery</button></a>
 		</article>
 	</section>

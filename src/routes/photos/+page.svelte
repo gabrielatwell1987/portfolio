@@ -48,6 +48,7 @@
 	<h2 class="title">PHOTOS</h2>
 
 	<section>
+		<!-- images of me 3x3 -->
 		<aside class="flex">
 			<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="350" height="450" />
 			<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" />
@@ -60,6 +61,7 @@
 		</aside>
 	</section>
 
+	<!-- domino image and link -->
 	<div class="domino">
 		<p class="domino-text">Dominoes:</p>
 		<a class="btn-link" href="/photos/domino"

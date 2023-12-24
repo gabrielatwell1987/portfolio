@@ -6,6 +6,7 @@
 </script>
 
 <nav>
+	<!-- hamburger icon -->
 	<div class="header-logos">
 		<Hamburger --color="white" type="spin" bind:open />
 
@@ -14,6 +15,7 @@
 		</div>
 	</div>
 
+	<!-- desktop view -->
 	{#if open}
 		<div class="desktop-view">
 			<a class="link" href="/projects">projects</a>
@@ -24,6 +26,7 @@
 		</div>
 	{/if}
 
+	<!-- mobile view -->
 	<div class="mobile-view">
 		<div class="mobile-links">
 			<a class="mobile-link" href="/">HOME</a>
