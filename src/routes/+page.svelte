@@ -98,9 +98,6 @@
 		}
 		button:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
-			/* border: 1px solid black;
-			background-color: var(--smoke);
-			color: black; */
 		}
 		h3 {
 			font-size: 2rem;

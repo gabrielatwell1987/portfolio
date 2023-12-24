@@ -21,8 +21,8 @@
 	<h1 class="title">.... .....</h1>
 
 	<section>
-		<a href="blog/greensock"><GsapIcon /></a>
-		<a href="blog/sveltekit"><Svelte /></a>
+		<a class="gs" href="blog/greensock"><GsapIcon /></a>
+		<a class="sk" href="blog/sveltekit"><Svelte /></a>
 	</section>
 
 	<br /><br />
@@ -39,5 +39,9 @@
 		font-size: 4rem;
 		font-weight: 800;
 		text-align: center;
+	}
+	.gs:hover,
+	.sk:hover {
+		filter: grayscale(100%);
 	}
 </style>
