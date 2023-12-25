@@ -109,7 +109,7 @@
 			font-size: 0.8rem;
 			width: 100%;
 			margin: 0 auto;
-			border: 1px solid var(--white);
+			border: 0.5px solid var(--white);
 			border-radius: 10px;
 			background-color: transparent;
 		}
@@ -195,8 +195,6 @@
 			font-size: 1rem;
 			width: 100%;
 			margin: 0 auto;
-			border: 1px solid var(--white);
-			border-radius: 10px;
 			background-color: transparent;
 		}
 		h2 {

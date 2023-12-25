@@ -166,7 +166,7 @@
 			align-items: center;
 			width: 100%;
 			margin: 0 auto;
-			border: 1px solid var(--white);
+			border: 0.25px solid var(--white);
 			border-radius: 10px;
 			background-color: transparent;
 		}

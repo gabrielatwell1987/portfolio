@@ -85,6 +85,7 @@
 		.italic {
 			font-style: italic;
 			font-size: 0.75rem;
+			color: gray;
 		}
 	}
 	@media screen and (min-width: 740px) {
