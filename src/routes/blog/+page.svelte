@@ -26,7 +26,7 @@
 	</section>
 
 	<div class="links">
-		<a href="/posts"><button>Animations</button></a>
+		<a href="/posts"><img src="animation.png" alt="web animation logo" class="image" /></a>
 	</div>
 
 	<br /><br />
@@ -49,7 +49,8 @@
 		filter: grayscale(100%);
 	}
 	@media (min-width: 200px) {
-		button {
+		.image {
+			/* display: block; */
 			background-color: transparent;
 			color: var(--smoke);
 			border: 1px solid var(--smoke);
@@ -61,7 +62,7 @@
 			font-weight: 900;
 			letter-spacing: 1px;
 		}
-		button:hover {
+		.image:hover {
 			opacity: 0.8;
 			background-color: var(--smoke);
 			color: black;
@@ -82,9 +83,9 @@
 			}
 		}
 		@media (min-width: 990px) {
-			button {
-				width: 20%;
-				margin: 0 -8%;
+			.image {
+				width: 40%;
+				margin: 0 -18%;
 			}
 		}
 	}
