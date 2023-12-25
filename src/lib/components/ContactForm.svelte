@@ -78,6 +78,8 @@
 			font-size: 0.8rem;
 			font-weight: 900;
 			text-align: center;
+			font-family: var(--righteous);
+			border-radius: 5rem;
 		}
 		.button:hover {
 			opacity: 0.8;

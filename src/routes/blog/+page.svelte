@@ -48,45 +48,36 @@
 	.sk:hover {
 		filter: grayscale(100%);
 	}
-	@media (min-width: 200px) {
-		.image {
-			/* display: block; */
-			background-color: transparent;
-			color: var(--smoke);
-			border: 1px solid var(--smoke);
-			width: 60%;
-			margin: 5rem -25%;
-			border-radius: 8px;
-			cursor: pointer;
-			font-size: 1.25rem;
-			font-weight: 900;
-			letter-spacing: 1px;
+	.image {
+		background-color: transparent;
+		color: var(--smoke);
+		border: 1px solid var(--smoke);
+		width: 40%;
+		margin: 0 -18%;
+		border-radius: 8px;
+		cursor: pointer;
+		font-size: 1.25rem;
+		font-weight: 900;
+		letter-spacing: 1px;
+	}
+	.image:hover {
+		opacity: 0.8;
+		background-color: var(--smoke);
+		color: black;
+		animation: wiggle 0.5s ease-in-out infinite;
+	}
+	@keyframes wiggle {
+		0% {
+			rotate: 0deg;
+			translate: 0 0;
 		}
-		.image:hover {
-			opacity: 0.8;
-			background-color: var(--smoke);
-			color: black;
-			animation: wiggle 0.5s ease-in-out infinite;
+		25% {
+			rotate: -2deg;
+			translate: -5px 0;
 		}
-		@keyframes wiggle {
-			0% {
-				rotate: 0deg;
-				translate: 0 0;
-			}
-			25% {
-				rotate: -2deg;
-				translate: -5px 0;
-			}
-			80% {
-				rotate: 2deg;
-				translate: 5px 0;
-			}
-		}
-		@media (min-width: 990px) {
-			.image {
-				width: 40%;
-				margin: 0 -18%;
-			}
+		80% {
+			rotate: 2deg;
+			translate: 5px 0;
 		}
 	}
 </style>

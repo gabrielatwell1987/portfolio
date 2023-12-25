@@ -61,6 +61,7 @@
 			border-radius: 10px;
 			font-size: 0.75rem;
 			font-weight: 900;
+			border-radius: 5rem;
 		}
 		button:hover {
 			border: 1px solid black;

@@ -137,6 +137,8 @@
 			font-weight: 900;
 			letter-spacing: 1px;
 			width: 40%;
+			font-family: var(--righteous);
+			border-radius: 5rem;
 		}
 		button:hover {
 			opacity: 0.8;
@@ -209,7 +211,6 @@
 		}
 
 		button {
-			width: 10%;
 			font-family: var(--righteous);
 			font-size: 1.5rem;
 			letter-spacing: 2px;
