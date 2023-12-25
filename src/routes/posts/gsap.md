@@ -11,3 +11,5 @@ onMount(() => {
 	gsap.fromTo('.example', { x: -500 }, { x: 0 });
 });
 ```
+
+---
