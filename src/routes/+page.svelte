@@ -71,7 +71,7 @@
 	<a class="btn" href="/projects"><button>Projects</button></a>
 	<h4 class="summary italic">A link to some projects I have created.</h4>
 </main>
-<br /><br /><br />
+<br /><br /><br /><br /><br /><br />
 
 <style>
 	@media screen and (min-width: 200px) {
