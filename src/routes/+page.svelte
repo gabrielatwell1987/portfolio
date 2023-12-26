@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		// Make the image draggable
+		// Make the hero image draggable
 		gsap.registerPlugin(Draggable);
 
 		gsap.to('.atwellLogo', { autoAlpha: 1, duration: 2.5, ease: 'sine.in' });
@@ -15,7 +15,7 @@
 			inertia: true
 		});
 
-		// hero image
+		// hero image animations
 		const text = document.querySelector('.atwell-text');
 		const blueA = document.querySelector('.blue-a');
 
@@ -32,6 +32,7 @@
 </script>
 
 <main class="atwellLogo">
+	<!-- hero image svg -->
 	<svg class="hero" width="1200" height="722" viewBox="0 0 1200 722" fill="none">
 		<path
 			class="blue-a"
@@ -62,6 +63,7 @@
 		</defs>
 	</svg>
 
+	<!-- hero section text and links -->
 	<h3>Professionally Crafted Web Experiences</h3>
 	<h4 class="summary">
 		I look forward to hearing from you so we can discuss your goals for your online needs!

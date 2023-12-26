@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		// responsive animations
 		let mm = gsap.matchMedia();
 
 		mm.add('(min-width: 800px', () => {

@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		// animations
 		gsap.registerPlugin(Draggable);
 
 		const atwell = document.querySelector('.atwell');
@@ -25,6 +26,7 @@
 </script>
 
 <main>
+	<!-- content -->
 	<section>
 		<article>
 			<img class="atwell" src="atwell-a.jpeg" alt="Atwell logo that you can move" />

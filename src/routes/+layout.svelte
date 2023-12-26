@@ -8,8 +8,10 @@
 </script>
 
 <svelte:head>
+	<!-- theme cdn -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
 
+	<!-- font awesome cdn -->
 	<link
 		rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -18,9 +20,11 @@
 	<title>GABE 👻</title>
 </svelte:head>
 
+<!-- data from SEO and analytics -->
 <Analytics />
 <SEO title="GABE 👻" description="Gabriel Atwell's Portfolio" />
 
+<!-- layout -->
 <main class="desktop">
 	<NavBar />
 	<br />
@@ -28,6 +32,7 @@
 </main>
 
 <footer>
+	<!-- footer links -->
 	<section class="linkIcons">
 		<a class="linkedin" href="https://www.linkedin.com/in/gabriel-atwell-ab2116231/">
 			<LinkedIn />

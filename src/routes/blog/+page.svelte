@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		// text animation
 		gsap.registerPlugin(TextPlugin);
 
 		gsap.to('.title', {
@@ -18,8 +19,10 @@
 </script>
 
 <main>
+	<!-- text animation -->
 	<h1 class="title">.... .....</h1>
 
+	<!-- links to tech stack pages -->
 	<section>
 		<a class="gs" href="blog/greensock"><GsapIcon /></a>
 		<a class="sk" href="blog/sveltekit"><Svelte /></a>

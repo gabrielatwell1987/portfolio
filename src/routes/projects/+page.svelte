@@ -4,9 +4,10 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		// animations
 		gsap.registerPlugin(Draggable);
 
-		Draggable.create('.newspaper', {
+		Draggable.create('.designs', {
 			type: 'x, y',
 			bounds: document.querySelector('.content'),
 			inertia: true
@@ -74,7 +75,7 @@
 
 	<!-- logo -->
 	<div class="logos">
-		<img class="newspaper" src="designs.png" alt="Atwell logo that you can move" />
+		<img class="designs" src="designs.png" alt="Atwell logo that you can move" />
 	</div>
 </section>
 
@@ -87,18 +88,15 @@
 			font-weight: 700;
 			color: var(--sky);
 		}
-
 		hr {
 			border: 0.5px solid var(--smoke);
 			width: 50%;
 			margin: 5rem auto;
 		}
-
 		.img {
 			border-radius: 8px;
 			opacity: 0.75;
 		}
-
 		.logos {
 			display: flex;
 			justify-content: center;
@@ -157,7 +155,7 @@
 		.logos {
 			width: 100%;
 		}
-		.newspaper {
+		.designs {
 			border-radius: 10%;
 			margin: 3rem 0;
 		}

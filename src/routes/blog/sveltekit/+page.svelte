@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		// animations
 		const sveltekit = document.querySelector('.sveltekit');
 		const title = document.querySelector('.title');
 		const sk = document.querySelector('.sk-main');
@@ -42,6 +43,7 @@
 <h1 class="title">SvelteKit</h1>
 
 <main class="sk-main">
+	<!-- content -->
 	<section>
 		<h3 class="subtitle">What I used to create this site</h3>
 		<p>

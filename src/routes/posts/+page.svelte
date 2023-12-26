@@ -4,6 +4,7 @@
 </script>
 
 <h1 class="title">ANIMATIONS</h1>
+<!-- link to my markdown files -->
 <CSS />
 <GSAP />
 

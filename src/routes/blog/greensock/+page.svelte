@@ -5,6 +5,7 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		// animations
 		const greensock = document.querySelector('.greensock');
 		const title = document.querySelector('.title');
 
@@ -36,6 +37,7 @@
 <h1 class="title">GSAP</h1>
 
 <main class="gs-main">
+	<!-- content -->
 	<h2 class="subtitle">Greensock Animation Platform</h2>
 
 	<h3 class="heading">What is GSAP?</h3>
