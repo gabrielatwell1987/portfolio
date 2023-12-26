@@ -167,6 +167,7 @@
 			padding: 1.5rem;
 			width: 25%;
 			margin: 0 0 0 37%;
+			letter-spacing: 10px;
 		}
 	}
 </style>
