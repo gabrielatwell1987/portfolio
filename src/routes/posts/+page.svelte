@@ -3,9 +3,10 @@
 	import GSAP from './gsap.md';
 </script>
 
-<h1 class="title">ANIMATIONS</h1>
+<h1 class="title">CSS</h1>
 <!-- link to my markdown files -->
 <CSS />
+<h1 class="title">GSAP</h1>
 <GSAP />
 
 <style>
