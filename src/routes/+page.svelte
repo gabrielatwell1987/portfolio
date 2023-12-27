@@ -69,7 +69,7 @@
 		I look forward to hearing from you so we can discuss your goals for your online needs!
 	</h4>
 	<a class="btn" href="/projects"><button>Projects</button></a>
-	<h4 class="summary italic">A link to some projects I have created.</h4>
+	<h4 class="summary italic">Some projects I have created.</h4>
 </main>
 <br /><br /><br /><br /><br /><br />
 
