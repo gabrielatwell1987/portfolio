@@ -64,6 +64,7 @@
 			font-family: var(--righteous);
 			text-align: center;
 			margin-bottom: 0.5rem;
+			color: var(--smoke);
 		}
 		label {
 			margin-left: 0.25rem;
@@ -145,7 +146,6 @@
 		legend {
 			font-weight: bolder;
 			font-size: 1.75rem;
-			color: var(--white);
 			padding: 0 1rem 0 1rem;
 		}
 	}

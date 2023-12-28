@@ -14,7 +14,8 @@
 	/>
 
 	<h3>Make sure you click the animation with your mouse first</h3>
-	<h3>W A S D to move, SPACE to jump</h3>
+	<h3>You can also use your mouse to change the view</h3>
+	<h3>move: W A S D | jump: SPACE</h3>
 </main>
 
 <style>
@@ -26,6 +27,8 @@
 	h1,
 	h3 {
 		text-align: center;
+		margin-top: 0.25rem;
+		color: var(--smoke);
 	}
 	h1 {
 		color: var(--cornflower);
