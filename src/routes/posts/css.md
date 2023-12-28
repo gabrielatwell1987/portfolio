@@ -16,7 +16,11 @@
 	}
 }
 
-@keyframes example {
+.example2 {
+	animation: example2 0.5s ease-in-out infinite;
+}
+
+@keyframes example2 {
 	0% {
 		background-color: red;
 	}
