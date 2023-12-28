@@ -24,12 +24,12 @@
 
 		const tl = gsap.timeline({ defaults: { ease: 'power3.inOut', duration: 1.5 } });
 
-		tl.fromTo(blueA, { scale: 0.25 }, { scale: 1, duration: 3.5 });
-		tl.to(text, { x: 0, duration: 3 }, '-=1.5');
-		tl.to(text, { x: 2000, duration: 3 });
-		tl.to(text, { x: 0, duration: 3 }, '-=1');
-		tl.to(blueA, { fill: '#222', duration: 2 }, '-=2');
-		tl.to(text, { fill: '#222', duration: 2 }, '-=2');
+		tl.fromTo(blueA, { scale: 0.25 }, { scale: 1, duration: 3.5 })
+			.to(text, { x: 0, duration: 3 }, '-=1.5')
+			.to(text, { x: 2000, duration: 3 })
+			.to(text, { x: 0, duration: 3 }, '-=1')
+			.to(blueA, { fill: '#222', duration: 2 }, '-=2')
+			.to(text, { fill: '#222', duration: 2 }, '-=2');
 	});
 </script>
 
@@ -73,6 +73,7 @@
 	<a class="btn" href="/projects"><button>Projects</button></a>
 	<h4 class="summary italic">Some projects I have created.</h4>
 </main>
+<!-- footer spacing -->
 <br /><br /><br /><br /><br /><br />
 
 <style>
