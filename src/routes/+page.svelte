@@ -28,7 +28,8 @@
 		tl.to(text, { x: 0, duration: 3 }, '-=1.5');
 		tl.to(text, { x: 2000, duration: 3 });
 		tl.to(text, { x: 0, duration: 3 }, '-=1');
-		tl.to(blueA, { fill: '#333', duration: 2 }, '-=2');
+		tl.to(blueA, { fill: '#222', duration: 2 }, '-=2');
+		tl.to(text, { fill: '#222', duration: 2 }, '-=2');
 	});
 </script>
 
