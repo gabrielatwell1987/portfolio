@@ -15,6 +15,18 @@
 		background-color: yellow;
 	}
 }
+
+@keyframes example {
+	0% {
+		background-color: red;
+	}
+	50% {
+		background-color: blue;
+	}
+	100% {
+		background-color: yellow;
+	}
+}
 ```
 
 ## Transitions
@@ -30,6 +42,11 @@ div {
 
 .example {
 	transform: translateX(100px);
+	transition: transform 0.5s ease-in-out;
+}
+
+.example {
+	transform: translate3d(0, 2rem, 0);
 	transition: transform 0.5s ease-in-out;
 }
 ```

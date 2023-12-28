@@ -5,7 +5,9 @@
 ```js
 gsap.to('.example', { skewX: 20, duration: 2.5, ease: 'sine.in' });
 
-gsap.fromTo('.example2', { x: -500 }, { x: 0 });
+gsap.fromTo('.example', { x: -500, duration: 1, ease: 'expo' }, { x: 0 });
+
+gsap.from('.example', { rotate: -360, duration: 5, ease: 'power3.inOut' };
 ```
 
 ## Percentage keyframes
@@ -15,7 +17,7 @@ gsap.fromTo('.example2', { x: -500 }, { x: 0 });
 ```js
 gsap.to(".example", {
  keyframes: {
-  "0%":   { x: 100, y: 100},
+  "0%":  { x: 100, y: 100},
   "75%":  { x: 0, y: 0, ease: 'sine.out'}, // finetune with individual eases
   "100%": { x: 50, y: 50 },
    easeEach: 'expo.inOut' // ease between keyframes
