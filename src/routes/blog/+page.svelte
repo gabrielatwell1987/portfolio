@@ -49,7 +49,7 @@
 	}
 	.gs:hover,
 	.sk:hover {
-		filter: grayscale(100%);
+		filter: hue-rotate(47.5deg);
 	}
 	.image {
 		background-color: transparent;

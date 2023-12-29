@@ -27,9 +27,9 @@
 		tl.fromTo(blueA, { scale: 0.25 }, { scale: 1, duration: 3.5 })
 			.to(text, { x: 0, duration: 3 }, '-=1.5')
 			.to(text, { x: 2000, duration: 3 })
-			.to(text, { x: 0, duration: 3 }, '-=1')
 			.to(blueA, { fill: '#222', duration: 2 }, '-=2')
-			.to(text, { fill: '#222', duration: 2 }, '-=2');
+			.to(text, { fill: '#222', duration: 2 }, '-=2')
+			.to(text, { x: 0, duration: 3 }, '-=1');
 	});
 </script>
 
