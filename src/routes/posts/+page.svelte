@@ -12,10 +12,10 @@
 <style>
 	.title {
 		text-align: center;
-		font-size: 2rem;
+		font-size: 3.5rem;
 		font-weight: 900;
 		color: var(--blue);
-		font-family: var(--righteous);
+		font-family: var(--nunito);
 		letter-spacing: 2px;
 		margin-top: 5rem;
 	}
