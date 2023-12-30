@@ -2,6 +2,7 @@
 	import { gsap } from 'gsap';
 	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
+	import Lenis from '@studio-freight/lenis';
 
 	onMount(() => {
 		// Make the hero image draggable
@@ -31,6 +32,20 @@
 			.to(text, { fill: '#222', duration: 2 }, '-=2')
 			.to(text, { x: 0, duration: 3 }, '-=1');
 	});
+
+	// lenis
+	const lenis = new Lenis();
+
+	lenis.on('scroll', (e) => {
+		console.log(e);
+	});
+
+	function raf(time) {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
+	}
+
+	requestAnimationFrame(raf);
 </script>
 
 <main class="atwellLogo">

@@ -2,6 +2,7 @@
 	import { gsap } from 'gsap';
 	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
+	import Lenis from '@studio-freight/lenis';
 
 	onMount(() => {
 		// animations
@@ -22,6 +23,20 @@
 			.to('.linksize', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 2, ease: 'expo.out' }, 0)
 			.from('.title', { scale: 0.25, duration: 3 }, 0);
 	});
+
+	// lenis
+	const lenis = new Lenis();
+
+	lenis.on('scroll', (e) => {
+		console.log(e);
+	});
+
+	function raf(time) {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
+	}
+
+	requestAnimationFrame(raf);
 </script>
 
 <h1 class="title">PROJECTS</h1>

@@ -4,6 +4,7 @@
 	import { gsap } from 'gsap';
 	import { TextPlugin } from 'gsap/dist/TextPlugin';
 	import { onMount } from 'svelte';
+	import Lenis from '@studio-freight/lenis';
 
 	onMount(() => {
 		// text animation
@@ -16,6 +17,20 @@
 			delay: 0.5
 		});
 	});
+
+	// lenis
+	const lenis = new Lenis();
+
+	lenis.on('scroll', (e) => {
+		console.log(e);
+	});
+
+	function raf(time) {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
+	}
+
+	requestAnimationFrame(raf);
 </script>
 
 <main>

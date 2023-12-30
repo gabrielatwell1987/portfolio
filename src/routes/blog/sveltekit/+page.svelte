@@ -2,6 +2,7 @@
 	import Svelte from '$lib/components/Svelte.svelte';
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
+	import Lenis from '@studio-freight/lenis';
 
 	onMount(() => {
 		// animations
@@ -34,6 +35,20 @@
 			gsap.to(title, { skewX: -15, duration: 0.5, ease: 'none' });
 		});
 	});
+
+	// lenis
+	const lenis = new Lenis();
+
+	lenis.on('scroll', (e) => {
+		console.log(e);
+	});
+
+	function raf(time) {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
+	}
+
+	requestAnimationFrame(raf);
 </script>
 
 <div class="sveltekit">

@@ -1,6 +1,21 @@
 <script>
 	import CSS from './css.md';
 	import GSAP from './gsap.md';
+	import Lenis from '@studio-freight/lenis';
+
+	// lenis
+	const lenis = new Lenis();
+
+	lenis.on('scroll', (e) => {
+		console.log(e);
+	});
+
+	function raf(time) {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
+	}
+
+	requestAnimationFrame(raf);
 </script>
 
 <h1 class="title">CSS</h1>
