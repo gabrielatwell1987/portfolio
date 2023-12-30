@@ -64,7 +64,8 @@
 	}
 	.gs:hover,
 	.sk:hover {
-		filter: hue-rotate(47.5deg);
+		filter: opacity(0.5);
+		transition: filter 0.75s ease-in-out;
 	}
 	.image {
 		background-color: transparent;
@@ -79,9 +80,10 @@
 		letter-spacing: 1px;
 	}
 	.image:hover {
-		opacity: 0.8;
+		opacity: 0.5;
 		background-color: var(--smoke);
 		color: black;
+		transition: opacity 0.75s ease-in-out;
 		animation: wiggle 0.5s ease-in-out infinite;
 	}
 	@keyframes wiggle {

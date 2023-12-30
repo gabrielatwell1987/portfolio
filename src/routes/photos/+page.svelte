@@ -104,7 +104,7 @@
 		.gabe4,
 		.gabe5,
 		.gabe6 {
-			opacity: 0.75;
+			opacity: 0.5;
 		}
 		.gabe:hover,
 		.gabe2:hover,
@@ -142,7 +142,8 @@
 			border-radius: 10px;
 		}
 		.domino-image:hover {
-			opacity: 0.8;
+			opacity: 0.5;
+			transition: opacity 0.75s ease-in-out;
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 		.domino-text {
