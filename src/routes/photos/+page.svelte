@@ -23,7 +23,7 @@
 			gsap.registerPlugin(ScrollTrigger);
 
 			gsap.set('main', { autoAlpha: 0 });
-			gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', { borderRadius: '25%' });
+			gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .gabe6', { borderRadius: '25%' });
 
 			gsap.to('.title', {
 				keyframes: {
@@ -36,12 +36,12 @@
 			});
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
-			tl.to('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', {
+			tl.to('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .gabe6', {
 				borderRadius: '50%',
 				repeat: 3,
 				yoyo: true,
 				scrollTrigger: {
-					trigger: '.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard',
+					trigger: '.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .gabe6',
 					start: 'top 85%',
 					end: 'bottom 15%',
 					x: 200,
@@ -51,7 +51,7 @@
 
 			return () => {
 				gsap.set('.photos', { y: 500 });
-				gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .retard', { borderRadius: '25%' });
+				gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .gabe6', { borderRadius: '25%' });
 			};
 		});
 	});
@@ -69,8 +69,8 @@
 		</aside>
 		<aside class="flex">
 			<img class="gabe4" src="gabe4.jpg" alt="Gabriel Atwell" width="350" />
-			<img class="retard" src="retard.png" alt="Gabriel Atwell" width="400" />
 			<img class="gabe5" src="gabe5.png" alt="Gabriel Atwell" width="475" />
+			<img class="gabe6" src="gabe6.png" alt="Gabriel Atwell" width="400" />
 		</aside>
 	</section>
 
@@ -103,7 +103,7 @@
 		.gabe3,
 		.gabe4,
 		.gabe5,
-		.retard {
+		.gabe6 {
 			opacity: 0.75;
 		}
 		.gabe:hover,
@@ -111,7 +111,7 @@
 		.gabe3:hover,
 		.gabe4:hover,
 		.gabe5:hover,
-		.retard:hover {
+		.gabe6:hover {
 			opacity: 1;
 			transition: opacity 750ms ease-in-out;
 		}
