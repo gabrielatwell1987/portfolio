@@ -109,6 +109,7 @@
 			font-size: 0.75rem;
 			font-weight: 900;
 			border-radius: 5rem;
+			filter: drop-shadow(0 0 0.75rem var(--smoke));
 		}
 		button:hover {
 			border: 1px solid black;

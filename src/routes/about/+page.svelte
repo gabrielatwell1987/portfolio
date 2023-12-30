@@ -156,6 +156,7 @@
 			width: 40%;
 			font-family: var(--righteous);
 			border-radius: 5rem;
+			filter: drop-shadow(0 0 0.75rem var(--smoke));
 		}
 		button:hover {
 			opacity: 0.8;
