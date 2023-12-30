@@ -5,6 +5,21 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import '../app.css';
 	import LinkedIn from '$lib/components/LinkedIn.svelte';
+	import Lenis from '@studio-freight/lenis';
+
+	// lenis
+	const lenis = new Lenis();
+
+	lenis.on('scroll', (e) => {
+		console.log(e);
+	});
+
+	function raf(time) {
+		lenis.raf(time);
+		requestAnimationFrame(raf);
+	}
+
+	requestAnimationFrame(raf);
 </script>
 
 <svelte:head>
