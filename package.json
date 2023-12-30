@@ -27,6 +27,7 @@
 	"type": "module",
 	"dependencies": {
 		"@analytics/google-analytics": "^1.0.7",
+		"@studio-freight/lenis": "^1.0.33",
 		"@supabase/supabase-js": "^2.36.0",
 		"body-parser": "^1.20.2",
 		"dotenv": "^16.3.1",
