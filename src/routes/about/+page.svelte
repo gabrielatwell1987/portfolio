@@ -211,7 +211,7 @@
 		}
 		.dev-links {
 			margin-top: 2.5rem;
-			margin-left: 45%;
+			margin-left: 43%;
 		}
 	}
 	@media screen and (min-width: 990px) {
