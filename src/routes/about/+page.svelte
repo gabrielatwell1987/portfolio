@@ -65,8 +65,8 @@
 
 			<!-- set up side by side text -->
 			<section class="grid">
-				<div class="inline">
-					<h2>Frontend</h2>
+				<div class="inline right">
+					<h2 class="right">Frontend</h2>
 
 					<p>
 						The path that Gabe has chosen is the frontend path, one of his main interests with the
@@ -76,8 +76,8 @@
 					</p>
 				</div>
 
-				<div class="inline">
-					<h2>Design Based</h2>
+				<div class="inline left">
+					<h2 class="left">Design Based</h2>
 
 					<p>
 						A clean, crisp design is what Gabe tries to excel at. Visual hierarchy, whitespace,
@@ -242,13 +242,17 @@
 			display: grid;
 			grid-template-rows: repeat(2, 1fr);
 			margin: 7% 0 -20% 0;
+			gap: 8rem;
 		}
 		.inline {
 			display: inline-block;
 			margin: 0 auto;
 		}
-		.inline:first-child {
-			margin-right: 5%;
+		.right {
+			text-align: right;
+		}
+		.left {
+			text-align: left;
 		}
 		.fa-codepen,
 		.fa-github {
