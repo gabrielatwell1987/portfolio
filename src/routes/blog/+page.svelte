@@ -6,18 +6,6 @@
 	import { onMount } from 'svelte';
 	import Lenis from '@studio-freight/lenis';
 
-	onMount(() => {
-		// text animation
-		gsap.registerPlugin(TextPlugin);
-
-		gsap.to('.title', {
-			text: 'TECH STACK',
-			duration: 2.5,
-			ease: 'expoScale(0.5,7,power1.in)',
-			delay: 0.5
-		});
-	});
-
 	// lenis
 	const lenis = new Lenis();
 
@@ -31,6 +19,19 @@
 	}
 
 	requestAnimationFrame(raf);
+
+	// animations
+	onMount(() => {
+		// text animation
+		gsap.registerPlugin(TextPlugin);
+
+		gsap.to('.title', {
+			text: 'TECH STACK',
+			duration: 2.5,
+			ease: 'expoScale(0.5,7,power1.in)',
+			delay: 0.5
+		});
+	});
 </script>
 
 <main>
