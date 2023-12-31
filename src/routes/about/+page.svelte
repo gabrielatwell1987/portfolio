@@ -205,6 +205,10 @@
 			font-size: 3rem;
 			color: var(--blue);
 		}
+		.fa-codepen:hover,
+		.fa-github:hover {
+			color: var(--sky);
+		}
 		.dev-links {
 			margin-top: 2.5rem;
 		}
