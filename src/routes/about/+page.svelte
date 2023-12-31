@@ -211,6 +211,7 @@
 		}
 		.dev-links {
 			margin-top: 2.5rem;
+			margin-left: 45%;
 		}
 	}
 	@media screen and (min-width: 990px) {
@@ -274,6 +275,7 @@
 		}
 		.dev-links {
 			margin-top: -20rem;
+			margin-left: 0%;
 			display: flex;
 			justify-content: space-evenly;
 		}
