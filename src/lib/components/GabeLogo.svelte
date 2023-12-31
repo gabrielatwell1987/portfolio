@@ -4,9 +4,9 @@
 
 	onMount(() => {
 		const tl = gsap.timeline({
-			defaults: { ease: 'sine.in', duration: 1.75, repeat: -1, yoyo: true }
+			defaults: { ease: 'sine.in', duration: 2.25, repeat: -1, yoyo: true }
 		});
-		tl.to('.color', { fill: '#7d7c84' }, '+=.25');
+		tl.to('.color', { fill: 'rgb(49, 49, 49)' }, '+=.75');
 	});
 </script>
 
