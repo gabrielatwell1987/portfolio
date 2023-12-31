@@ -18,9 +18,10 @@
 	requestAnimationFrame(raf);
 </script>
 
+<!-- links to my markdown files -->
 <h1 class="title">CSS</h1>
-<!-- link to my markdown files -->
 <CSS />
+
 <h1 class="title">GSAP</h1>
 <GSAP />
 

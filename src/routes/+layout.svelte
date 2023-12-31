@@ -11,13 +11,7 @@
 	<!-- theme cdn -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
 
-	<!-- font awesome cdn -->
-	<link
-		rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-	/>
-
-	<title>GABE 🙃</title>
+	<title>GABE</title>
 </svelte:head>
 
 <!-- data from SEO and analytics -->
@@ -57,12 +51,6 @@
 	}
 	.desktop {
 		width: 100%;
-	}
-	.linkIcons {
-		color: var(--sky);
-	}
-	.linkIcons:hover {
-		color: var(--blue);
 	}
 	@media screen and (max-width: 1650px) {
 		.linkIcons {

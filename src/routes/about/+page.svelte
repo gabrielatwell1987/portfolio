@@ -40,6 +40,14 @@
 	});
 </script>
 
+<svelte:head>
+	<!-- font awesome cdn -->
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+	/>
+</svelte:head>
+
 <main>
 	<!-- content -->
 	<section>
@@ -111,6 +119,7 @@
 		p {
 			line-height: 1.75;
 			font-family: var(--montserrat);
+			text-align: left;
 		}
 		main {
 			width: 100%;
@@ -260,7 +269,7 @@
 			color: var(--blue);
 		}
 		.dev-links {
-			margin-top: 5rem;
+			margin-top: -20rem;
 			display: flex;
 			justify-content: space-evenly;
 		}
