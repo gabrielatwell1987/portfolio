@@ -16,7 +16,7 @@
 
 <!-- data from SEO and analytics -->
 <Analytics />
-<SEO title="GABE 👻" description="Gabriel Atwell's Portfolio" />
+<SEO title="Atwell UI Design" description="Gabriel Atwell's Portfolio" />
 
 <!-- layout -->
 <main class="desktop">
