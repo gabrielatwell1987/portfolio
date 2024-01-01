@@ -30,7 +30,7 @@
 			.to(text, { x: 2000, duration: 3 })
 			.to(blueA, { fill: '#222', duration: 2 }, '-=2')
 			.to(text, { fill: '#222', duration: 2 }, '-=2')
-			.to(text, { x: 0, duration: 3 }, '-=1');
+			.to(text, { x: 25, duration: 3 }, '-=1');
 	});
 </script>
 
