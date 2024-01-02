@@ -116,17 +116,15 @@
 	@media (min-width: 990px) {
 		.link {
 			font-family: var(--righteous);
-			font-size: 1.2rem;
+			font-size: 1.5rem;
 			text-decoration: none;
 			font-weight: 900;
-			color: var(--sky);
+			color: var(--white);
 			margin-left: 8rem;
 			margin-right: -7rem;
 		}
 		.link:hover {
-			color: var(--blue);
-			font-weight: 900;
-			font-size: 1.5rem;
+			color: var(--dark-gray);
 		}
 		.desktop-view {
 			display: block;
