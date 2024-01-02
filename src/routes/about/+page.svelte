@@ -54,29 +54,31 @@
 		<article>
 			<img class="atwell" src="atwell-a.jpeg" alt="Atwell logo that you can move" />
 
-			<h2>Bio</h2>
+			<div class="border">
+				<h2>Bio</h2>
 
-			<p>
-				Gabe is a self-taught web developer. I started out with the basics: HTML, CSS, and
-				JavaScript. I then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js, and
-				GSAP. I have begun to teach myself the backend of web development on my spare time, but I am
-				a complete frontend developer.
-			</p>
-			<p>
-				I have a passion for creating websites that are clean, crisp, and completely functional. I
-				enjoy seeing a physical change when I edit or create code. I also enjoy creating animations
-				for the web! I mainly enjoy animating the web because I believe that it makes the website
-				look more professional and more appealing to the eye. In the world of web development,
-				creating engaging and visually appealing animations is essential to grab the attention of
-				users.
-			</p>
+				<p>
+					Gabe is a self-taught web developer. I started out with the basics: HTML, CSS, and
+					JavaScript. I then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js,
+					and GSAP. I have begun to teach myself the backend of web development on my spare time,
+					but I am a complete frontend developer.
+				</p>
+				<p>
+					I have a passion for creating websites that are clean, crisp, and completely functional. I
+					enjoy seeing a physical change when I edit or create code. I also enjoy creating
+					animations for the web! I mainly enjoy animating the web because I believe that it makes
+					the website look more professional and more appealing to the eye. In the world of web
+					development, creating engaging and visually appealing animations is essential to grab the
+					attention of users.
+				</p>
+			</div>
 
 			<!-- set up side by side text -->
 			<section class="grid">
 				<div class="inline right">
 					<h2 class="right">Frontend</h2>
 
-					<p>
+					<p class="right">
 						The path that Gabe has chosen is the frontend path, one of his main interests with the
 						frontend path is animations, especially animations on the web. Turning a website from
 						being a static site to a dynamic site is what he thinks makes your website look a
@@ -87,7 +89,7 @@
 				<div class="inline left">
 					<h2 class="left">Design Based</h2>
 
-					<p>
+					<p class="left">
 						A clean, crisp design is what Gabe tries to excel at. Visual hierarchy, whitespace,
 						colors, typography, scaling, and spacing is what he knows best. He learned that these
 						topics are the main key for a UI developer.
@@ -261,6 +263,9 @@
 		.inline {
 			display: inline-block;
 			margin: 0 auto;
+			border: 1px solid var(--smoke);
+			border-radius: 15px;
+			padding: 1rem 2rem;
 		}
 		.right {
 			text-align: right;
