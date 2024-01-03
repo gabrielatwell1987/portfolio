@@ -91,7 +91,7 @@ gsap.to(".example", {
 })
 ```
 
-## Avoidig Flash Of Unstyled Content (FOUC)
+## Flash Of Unstyled Content (FOUC)
 
 <div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;">Have you ever noticed an annoying "flash of unstyled content" (FOUC) when a web page first loads? That happens because browsers render things as quickly as possible, often BEFORE your JavaScript executes the first time. So what if some of your initial styles are set via JavaScript...like with GSAP?</div>
 
