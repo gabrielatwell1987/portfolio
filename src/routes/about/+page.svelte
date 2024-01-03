@@ -79,10 +79,10 @@
 					<h2 class="right title">Frontend</h2>
 
 					<p class="right text">
-						The path that Gabe has chosen is the frontend path, one of his main interests with the
-						frontend path is animations, especially animations on the web. Turning a website from
-						being a static site to a dynamic site is what he thinks makes your website look a
-						million times better, if you do it right.
+						The path that Gabe has chosen is the frontend path. One of his main interests is
+						animations, especially animations on the web. Turning a website from being a static site
+						to a dynamic site is what he thinks makes your website look a million times better, if
+						you do it right.
 					</p>
 				</div>
 
