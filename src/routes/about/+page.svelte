@@ -55,7 +55,7 @@
 			<img class="atwell" src="atwell-a.jpeg" alt="Atwell logo that you can move" />
 
 			<div class="border">
-				<h2>Bio</h2>
+				<h2 class="main-title">Bio</h2>
 
 				<p>
 					Gabe is a self-taught web developer. I started out with the basics: HTML, CSS, and
@@ -76,9 +76,9 @@
 			<!-- set up side by side text -->
 			<section class="grid">
 				<div class="inline right">
-					<h2 class="right">Frontend</h2>
+					<h2 class="right title">Frontend</h2>
 
-					<p class="right">
+					<p class="right text">
 						The path that Gabe has chosen is the frontend path, one of his main interests with the
 						frontend path is animations, especially animations on the web. Turning a website from
 						being a static site to a dynamic site is what he thinks makes your website look a
@@ -87,12 +87,12 @@
 				</div>
 
 				<div class="inline left">
-					<h2 class="left">Design Based</h2>
+					<h2 class="left title">Design Based</h2>
 
-					<p class="left">
+					<p class="left text">
 						A clean, crisp design is what Gabe tries to excel at. Visual hierarchy, whitespace,
-						colors, typography, scaling, and spacing is what he knows best. He learned that these
-						topics are the main key for a UI developer.
+						colors, typography, scaling, and contrast is what he knows best. These topics are the
+						main key to make your website designs look professional and appealing to the eye.
 					</p>
 				</div>
 			</section>
@@ -263,15 +263,26 @@
 		.inline {
 			display: inline-block;
 			margin: 0 auto;
-			border: 1px solid var(--smoke);
+			border: 3px solid var(--white);
 			border-radius: 15px;
 			padding: 1rem 2rem;
+			background-color: var(--black);
 		}
 		.right {
 			text-align: right;
 		}
 		.left {
 			text-align: left;
+		}
+		.main-title {
+			color: var(--sky);
+		}
+		.title {
+			/* color: var(--black); */
+			color: var(--sky);
+		}
+		.text {
+			color: var(--white);
 		}
 		.fa-codepen,
 		.fa-github {

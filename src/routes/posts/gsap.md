@@ -10,23 +10,6 @@ gsap.fromTo('.example', { x: -500, duration: 1, ease: 'expo' }, { x: 0 });
 gsap.from('.example', { rotate: -360, duration: 5, ease: 'power3.inOut' };
 ```
 
-## Percentage keyframes
-
-<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;">This familiar syntax makes porting animations over from CSS a breeze! Instead of using delays and duration in the keyframe object, you specify an overall duration on the tween itself, then define the position of each keyframe using percentages. To be consistent with CSS behaviour, the default per-keyframe ease is power1.inOut which generally looks quite nice but you can override this in individual keyframes or on all keyframes using easeEach.</div>
-
-```js
-gsap.to(".example", {
- keyframes: {
-  "0%":  { x: 100, y: 100},
-  "75%":  { x: 0, y: 0, ease: 'sine.out'}, // finetune with individual eases
-  "100%": { x: 50, y: 50 },
-   easeEach: 'expo.inOut' // ease between keyframes
- },
- ease: 'none' // ease the entire keyframe block
- duration: 2,
-})
-```
-
 ## Staggers
 
 <div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;">A value of stagger: 0.1 would cause there to be 0.1 second between the start times of each tween. You can even stagger items that are laid out in a grid just by telling GSAP how many columns and rows your grid has. A negative value would do the same but backwards so that the last element begins first. All tweens recognize a stagger property which can be a number, an object, or a function. To get more control, wrap things in a configuration object which can have any of the following properties (in addition to most of the special properties that tweens have.</div>
@@ -89,6 +72,23 @@ tl.to('.green', { x: 600, duration: 2 }, 1); // start at exactly 1 second into t
 tl.to('.purple', { x: 600, duration: 1 }, '<'); // insert at the start of the previous animation
 
 tl.to('.orange', { x: 600, duration: 1 }, '+=1'); // insert 1 second after the end of the timeline (a gap)
+```
+
+## Percentage keyframes
+
+<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;">This familiar syntax makes porting animations over from CSS a breeze! Instead of using delays and duration in the keyframe object, you specify an overall duration on the tween itself, then define the position of each keyframe using percentages. To be consistent with CSS behaviour, the default per-keyframe ease is power1.inOut which generally looks quite nice but you can override this in individual keyframes or on all keyframes using easeEach.</div>
+
+```js
+gsap.to(".example", {
+ keyframes: {
+  "0%":  { x: 100, y: 100},
+  "75%":  { x: 0, y: 0, ease: 'sine.out'}, // finetune with individual eases
+  "100%": { x: 50, y: 50 },
+   easeEach: 'expo.inOut' // ease between keyframes
+ },
+ ease: 'none' // ease the entire keyframe block
+ duration: 2,
+})
 ```
 
 ## Avoidig Flash Of Unstyled Content (FOUC)

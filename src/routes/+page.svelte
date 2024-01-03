@@ -71,8 +71,8 @@
 	<h4 class="summary">
 		I look forward to hearing from you so we can discuss your goals for your online needs!
 	</h4>
-	<a class="btn" href="/projects"><button>Projects</button></a>
-	<h4 class="summary italic">Some projects I have created.</h4>
+	<a class="btn" href="/contact"><button>Contact</button></a>
+	<!-- <h4 class="summary italic">Some projects I have created.</h4> -->
 </main>
 <!-- footer spacing -->
 <br /><br /><br /><br /><br /><br />
@@ -132,11 +132,11 @@
 			font-size: 1rem;
 			font-weight: 500;
 		}
-		.italic {
+		/* .italic {
 			font-style: italic;
 			font-size: 0.75rem;
 			color: gray;
-		}
+		} */
 	}
 	@media screen and (min-width: 740px) {
 		main {
