@@ -1,11 +1,15 @@
-# Gabriel's Portfolio
+<img style="margin-left: 38%; border-radius: 10px;" width="200" height="200" src="https://gabrielatwell.vercel.app/gabe.png">
 
-This is Gabriel Atwell's portfolio
+---
+
+## Gabriel's Portfolio
+
+<div style="margin-left: 3rem; margin-right: 3rem; color: rgba(50, 50, 50, 0.75)">
+This is a portfolio website that I built to showcase my projects and skills. It is built with sveltekit and GSAP. I coded this from scratch, it's completely custom.
+</div>
 
 ## What is disclosed?
 
-My projects, my skills and a contact form
-
-## How did you build it?
-
-I built this portfolio with sveltekit. For the animations, I used GSAP
+<div style="margin-left: 3rem; margin-right: 3rem; color: rgba(50, 50, 50, 0.75)">
+Some projects that I've built and a way to contact me!
+</div>
