@@ -133,11 +133,6 @@
 			font-size: 1rem;
 			font-weight: 500;
 		}
-		/* .italic {
-			font-style: italic;
-			font-size: 0.75rem;
-			color: gray;
-		} */
 	}
 	@media screen and (min-width: 740px) {
 		main {
@@ -146,8 +141,8 @@
 		}
 		button {
 			font-size: 1rem;
-			width: 15%;
-			font-size: 2rem;
+			width: 20%;
+			font-size: 1rem;
 			letter-spacing: 2px;
 		}
 		button:hover {
@@ -186,14 +181,14 @@
 			margin: 5rem 0;
 		}
 		button {
-			width: 17.5%;
+			width: 25%;
 			font-size: 1.25rem;
 			margin: 3rem auto;
 		}
 	}
 	@media screen and (min-width: 1100px) {
 		button {
-			width: 12%;
+			width: 15%;
 		}
 	}
 </style>
