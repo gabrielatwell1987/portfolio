@@ -1,3 +1,5 @@
+<img style="margin-left: 43%; margin-bottom: 3rem; border-radius: 10px;" width="200" height="200" src="https://imgs.search.brave.com/2jb510V_F4__479aofBfmoTNmwXXhORzIjH1KQnhkd4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMuY2RubG9nby5j/b20vbG9nb3MvZy8z/MS9nc2FwLWdyZWVu/c29jay5zdmc.svg">
+
 ## Tweens
 
 <div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;">GSAP is a JavaScript library for creating high-performance animations that work in every major browser. No other library delivers such advanced sequencing, API efficiency, and tight control while solving real-world problems on over 4 million sites. GSAP can animate any numeric property of any JS object, not just CSS properties. The following example was created with sveltekit in mind and moves the object on the x axis from -500px to 0px:</div>
