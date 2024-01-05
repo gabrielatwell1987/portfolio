@@ -61,27 +61,33 @@
 <main class="sk-main">
 	<!-- content -->
 	<section>
-		<h3 class="subtitle">What I used to create this site</h3>
-		<p>
-			I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
-			the server-side rendering (SSR) and all of the SEO features, as well as the speed of
-			everything. The fact that this, to me, is less than an actual framework as it relies heavily
-			on vanilla HTML, CSS, and JavaScript is what I'm looking for.
-		</p>
+		<details>
+			<summary><h3 class="subtitle">What I used to create this site</h3></summary>
+			<p>
+				I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
+				the server-side rendering (SSR) and all of the SEO features, as well as the speed of
+				everything. The fact that this, to me, is less than an actual framework as it relies heavily
+				on vanilla HTML, CSS, and JavaScript is what I'm looking for.
+			</p>
+		</details>
 
-		<h3 class="subtitle">What I know</h3>
-		<p>
-			I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I have
-			because I'm a very visual person. Sveltekit has made it super simple to put my ideas on the
-			web.
-		</p>
+		<details>
+			<summary><h3 class="subtitle">What I know</h3></summary>
+			<p>
+				I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I
+				have because I'm a very visual person. Sveltekit has made it super simple to put my ideas on
+				the web.
+			</p>
+		</details>
 
-		<h3 class="subtitle">What is svelte and sveltekit?</h3>
-		<p>
-			Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
-			framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
-			React. In the end, sveltekit is a new approach to building rich user interfaces.
-		</p>
+		<details>
+			<summary><h3 class="subtitle">What is svelte and sveltekit?</h3></summary>
+			<p>
+				Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
+				framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
+				React. In the end, sveltekit is a new approach to building rich user interfaces.
+			</p>
+		</details>
 
 		<h3 class="subtitle">Learn more about Sveltekit</h3>
 		<p>
@@ -130,6 +136,11 @@
 	}
 	iframe {
 		margin: 2rem 0 0 30%;
+	}
+	details {
+		width: 50%;
+		margin-left: 24.5%;
+		margin-bottom: 5rem;
 	}
 	.subtitle {
 		text-align: center;
