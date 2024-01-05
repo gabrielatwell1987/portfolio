@@ -132,6 +132,7 @@
 			color: var(--dark-gray);
 			border-bottom: 5px solid var(--dark-gray);
 			height: 3rem;
+			transition: border-bottom 0.35s ease-in-out;
 		}
 		.desktop-view {
 			display: block;
