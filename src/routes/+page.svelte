@@ -79,6 +79,7 @@
 <br /><br /><br /><br /><br /><br />
 
 <style>
+	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
 		main {
 			text-align: center;
@@ -134,6 +135,7 @@
 			font-weight: 500;
 		}
 	}
+	/* bigger than tablet */
 	@media screen and (min-width: 740px) {
 		main {
 			text-align: center;
@@ -174,6 +176,7 @@
 			}
 		}
 	}
+	/* bigger than desktop */
 	@media screen and (min-width: 990px) {
 		main {
 			text-align: center;
@@ -186,6 +189,7 @@
 			margin: 3rem auto;
 		}
 	}
+	/* way bigger than desktop */
 	@media screen and (min-width: 1100px) {
 		button {
 			width: 15%;

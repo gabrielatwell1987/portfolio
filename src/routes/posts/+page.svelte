@@ -26,6 +26,7 @@
 <GSAP />
 
 <style>
+	/* desktop */
 	.title {
 		text-align: center;
 		font-size: 3.5rem;

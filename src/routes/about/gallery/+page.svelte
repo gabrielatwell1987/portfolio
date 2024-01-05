@@ -17,7 +17,7 @@
 	requestAnimationFrame(raf);
 </script>
 
-<!-- <Circles /> -->
+<!-- Photo gallery -->
 <Gallery />
 
 <style>

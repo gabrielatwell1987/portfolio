@@ -44,9 +44,12 @@
 	});
 </script>
 
+<!-- greensock icon logo -->
 <div class="greensock">
 	<GsapIcon />
 </div>
+
+<!-- title -->
 <br /><br /><br /><br /><br /><br /><br />
 <h1 class="title">GSAP</h1>
 
@@ -120,7 +123,7 @@
 	iframe {
 		margin: 2rem 0 0 30%;
 	}
-	.heading {
+	h3 {
 		text-align: center;
 		margin: 5rem 0 0 0;
 		font-family: var(--righteous);

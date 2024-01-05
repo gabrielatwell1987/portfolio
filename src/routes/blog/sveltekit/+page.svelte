@@ -51,6 +51,7 @@
 	});
 </script>
 
+<!-- sveltekit icon logo -->
 <div class="sveltekit">
 	<Svelte />
 </div>
@@ -104,6 +105,7 @@
 </main>
 
 <style>
+	/* desktop and bigger */
 	main {
 		width: 75%;
 		margin: 0 auto;

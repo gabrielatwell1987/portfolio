@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<!-- theme cdn -->
+	<!-- website theme cdn -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
 
 	<title>GABE</title>
@@ -39,6 +39,7 @@
 </footer>
 
 <style>
+	/* desktop */
 	a {
 		text-decoration: none;
 		color: var(--sky);
@@ -52,6 +53,7 @@
 	.desktop {
 		width: 100%;
 	}
+	/* less than desktop */
 	@media screen and (max-width: 1650px) {
 		.linkIcons {
 			display: none;

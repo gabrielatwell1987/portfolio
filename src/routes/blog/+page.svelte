@@ -44,6 +44,7 @@
 		<a class="sk" href="blog/sveltekit"><Svelte /></a>
 	</section>
 
+	<!-- animation logo -->
 	<div class="links">
 		<a href="/posts"><img src="animation.png" alt="web animation logo" class="image" /></a>
 	</div>
@@ -52,6 +53,7 @@
 </main>
 
 <style>
+	/* desktop and bigger */
 	a {
 		display: block;
 		margin: 0 0 2rem 49%;

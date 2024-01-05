@@ -117,6 +117,7 @@
 </main>
 
 <style>
+	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
 		p {
 			line-height: 1.75;
@@ -216,6 +217,7 @@
 			margin-left: 43%;
 		}
 	}
+	/* bigger than desktop */
 	@media screen and (min-width: 990px) {
 		p {
 			line-height: 2.5;

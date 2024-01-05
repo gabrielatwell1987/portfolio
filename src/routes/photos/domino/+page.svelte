@@ -19,6 +19,7 @@
 </main>
 
 <style>
+	/* desktop */
 	iframe {
 		width: 50%;
 		height: 25rem;

@@ -49,6 +49,7 @@
 </form>
 
 <style>
+	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
 		form {
 			width: 100%;
@@ -89,6 +90,7 @@
 			color: black;
 		}
 	}
+	/* bigger than tablet */
 	@media screen and (min-width: 750px) {
 		.button {
 			width: 20%;
@@ -112,6 +114,7 @@
 			}
 		}
 	}
+	/* bigger than desktop */
 	@media screen and (min-width: 1024px) {
 		form {
 			display: flex;

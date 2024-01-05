@@ -95,6 +95,7 @@
 </section>
 
 <style>
+	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
 		a {
 			font-family: var(--montserrat);
@@ -145,6 +146,7 @@
 			font-style: italic;
 		}
 	}
+	/* bigger than tablet */
 	@media screen and (min-width: 740px) {
 		a {
 			font-size: 1rem;
@@ -175,6 +177,7 @@
 			margin: 3rem 0;
 		}
 	}
+	/* bigger than desktop */
 	@media screen and (min-width: 990px) {
 		.linksize {
 			padding: 1.5rem;

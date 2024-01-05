@@ -84,6 +84,7 @@
 </main>
 
 <style>
+	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
 		section {
 			width: 100%;
@@ -116,6 +117,7 @@
 			transition: opacity 750ms ease-in-out;
 		}
 	}
+	/* bigger than tablet */
 	@media (min-width: 850px) {
 		.btn-link {
 			font-size: 2.5rem;
@@ -168,6 +170,7 @@
 			}
 		}
 	}
+	/* bigger than desktop */
 	@media screen and (min-width: 1200px) {
 		main {
 			text-align: center;

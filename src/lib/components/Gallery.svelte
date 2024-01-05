@@ -1,4 +1,5 @@
 <script>
+	// animations
 	import { tick } from 'svelte';
 	import { gsap } from 'gsap';
 	import { Flip } from 'gsap/dist/Flip';
@@ -36,6 +37,7 @@
 	}
 </script>
 
+<!-- picture grid -->
 <section class="grid">
 	{#each { length: 8 } as _, id}
 		{@const details = selected === id}
@@ -52,6 +54,7 @@
 </section>
 
 <style>
+	/* desktop */
 	.grid {
 		display: grid;
 		gap: 1rem;
@@ -59,7 +62,7 @@
 		width: 75%;
 		margin: 5rem auto;
 	}
-
+	/* bigger than desktop */
 	@media (min-width: 1024px) {
 		.grid {
 			grid-template-columns: repeat(3, 1fr);

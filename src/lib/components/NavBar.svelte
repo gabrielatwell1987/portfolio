@@ -18,11 +18,11 @@
 	<!-- desktop view -->
 	{#if open}
 		<div class="desktop-view">
-			<a class="link" href="/projects">projects</a>
-			<a class="link" href="/blog">blog</a>
-			<a class="link" href="/about">about</a>
-			<a class="link" href="/photos">photos</a>
-			<a class="link" href="/contact">contact</a>
+			<a class="nav-link underline" href="/projects">projects</a>
+			<a class="nav-link underline" href="/blog">blog</a>
+			<a class="nav-link underline" href="/about">about</a>
+			<a class="nav-link underline" href="/photos">photos</a>
+			<a class="nav-link underline" href="/contact">contact</a>
 		</div>
 	{/if}
 
@@ -39,6 +39,7 @@
 </nav>
 
 <style>
+	/* bigger than desktop */
 	.desktop-view {
 		display: block;
 		font-weight: bolder;
@@ -62,6 +63,7 @@
 	.gabe-logo {
 		margin: 0 0 0 25%;
 	}
+	/* mobile and bigger */
 	@media (min-width: 200px) {
 		.desktop-view {
 			display: none;
@@ -93,6 +95,7 @@
 			width: 100%;
 		}
 	}
+	/* tablet and bigger */
 	@media (min-width: 740px) {
 		.desktop-view {
 			display: none;
@@ -114,44 +117,21 @@
 			display: none;
 		}
 	}
+	/* desktop and bigger */
 	@media (min-width: 990px) {
-		.link {
+		.nav-link {
 			font-family: var(--righteous);
 			font-size: 1.5rem;
 			text-decoration: none;
-			font-weight: 900;
+			font-weight: 600;
 			color: var(--white);
 			margin-left: 8rem;
 			margin-right: -7rem;
 		}
-		.link:hover {
+		.nav-link:hover {
 			color: var(--dark-gray);
-			position: relative;
-			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-		}
-		.link:before,
-		.link:after {
-			content: '';
-			position: absolute;
-			border-bottom: 3px solid var(--dark-gray);
-			border-radius: 1em;
-			bottom: 0.25em;
-			transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-		}
-		.link:before {
-			width: 0.5em;
-			transform-origin: left;
-		}
-		.link:after {
-			width: 78%;
-			left: 0.75em;
-			transform: translateX(110%);
-		}
-		.link:hover:before {
-			transform: scaleX(1);
-		}
-		.link:hover:after {
-			transform: translateX(0);
+			border-bottom: 5px solid var(--dark-gray);
+			height: 3rem;
 		}
 		.desktop-view {
 			display: block;
