@@ -80,6 +80,7 @@
 		.mobile-link {
 			font-size: 0.75rem;
 			font-family: var(--righteous);
+			color: var(--white);
 		}
 		.header-logos {
 			display: none;
@@ -125,6 +126,32 @@
 		}
 		.link:hover {
 			color: var(--dark-gray);
+			position: relative;
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		}
+		.link:before,
+		.link:after {
+			content: '';
+			position: absolute;
+			border-bottom: 3px solid var(--dark-gray);
+			border-radius: 1em;
+			bottom: 0.25em;
+			transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+		}
+		.link:before {
+			width: 0.5em;
+			transform-origin: left;
+		}
+		.link:after {
+			width: 78%;
+			left: 0.75em;
+			transform: translateX(110%);
+		}
+		.link:hover:before {
+			transform: scaleX(1);
+		}
+		.link:hover:after {
+			transform: translateX(0);
 		}
 		.desktop-view {
 			display: block;
