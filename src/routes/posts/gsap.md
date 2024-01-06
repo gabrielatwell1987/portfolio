@@ -93,6 +93,28 @@ gsap.to(".example", {
 })
 ```
 
+## Position Parameter
+
+<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;">The secret to building gorgeous sequences with precise timing is understanding the position parameter which is used in many methods throughout GSAP. This one super-flexible parameter controls the placement of your tweens, labels, callbacks, pauses, and even nested timelines, so you'll be able to literally place anything anywhere in any sequence.</div>
+
+<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;">Notice that the position parameter comes after the vars parameter:</div>
+
+```js
+gsap.to( target, vars, **position** );
+
+// absolute - insert exactly 3 seconds from the start of the timeline
+gsap.to(".class", {x: 100}, 3);
+
+// insert at the "someLabel" label. If the label doesn't exist, it'll be added to the end of the timeline.
+gsap.to(".class", {x: 100}, "someLabel");
+
+// insert at the START of the  previous animation
+gsap.to(".class", {x: 100}, "<");
+
+// insert at the END of the previous animation
+gsap.to(".class", {x: 100}, ">");
+```
+
 ## Flash Of Unstyled Content (FOUC)
 
 <div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;">Have you ever noticed an annoying "flash of unstyled content" (FOUC) when a web page first loads? That happens because browsers render things as quickly as possible, often BEFORE your JavaScript executes the first time. So what if some of your initial styles are set via JavaScript...like with GSAP?</div>
