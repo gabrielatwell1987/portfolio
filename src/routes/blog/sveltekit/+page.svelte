@@ -90,7 +90,7 @@
 		</details>
 
 		<h3 class="subtitle">Learn more about Sveltekit</h3>
-		<p>
+		<p class="center">
 			If you would like to know more about svelte and sveltekit, please click <a
 				href="https://svelte.dev">here</a
 			>.
@@ -117,7 +117,7 @@
 		margin: 0 auto;
 	}
 	p {
-		text-align: center;
+		text-align: left;
 		margin: 0 0 2rem 0;
 		padding: 0.5em 2em;
 		padding-top: 2.5em;
@@ -159,5 +159,8 @@
 	}
 	.sveltekit {
 		margin: 5% 0 5% 48%;
+	}
+	.center {
+		text-align: center;
 	}
 </style>

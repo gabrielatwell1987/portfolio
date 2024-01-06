@@ -93,7 +93,7 @@
 	/>
 
 	<h3 class="learn">Learn more about GSAP</h3>
-	<p>
+	<p class="center">
 		If you would like to know more about greensock, please click <a href="https://greensock.com"
 			>here</a
 		>.
@@ -112,7 +112,7 @@
 		margin-bottom: 5rem;
 	}
 	p {
-		text-align: center;
+		text-align: left;
 		margin-bottom: 0 0 2rem 0;
 		padding: 0.5em 2em;
 		padding-top: 2.5em;
@@ -164,5 +164,8 @@
 		text-align: center;
 		font-family: var(--righteous);
 		color: var(--blue);
+	}
+	.center {
+		text-align: center;
 	}
 </style>
