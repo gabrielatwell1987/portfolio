@@ -111,7 +111,11 @@
 		}
 		.img {
 			border-radius: 8px;
-			opacity: 0.75;
+			opacity: 0.5;
+		}
+		.img:hover {
+			opacity: 1;
+			transition: opacity 0.5s ease-in-out;
 		}
 		.logos {
 			display: flex;
