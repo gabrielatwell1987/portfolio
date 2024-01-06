@@ -28,8 +28,6 @@
 		tl.fromTo(blueA, { scale: 0.25 }, { scale: 1, duration: 3.5 })
 			.to(text, { x: 0 }, '-=1.5')
 			.to(text, { x: 2000 })
-			// .to(blueA, { fill: '#000', duration: 2 }, '-=2')
-			// .to(text, { fill: '#222', duration: 2 }, '-=2')
 			.to(text, { x: 0 }, '-=1')
 			.to(text, { scaleX: 1.75, duration: 3.5 }, '-=1');
 	});
