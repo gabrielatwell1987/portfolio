@@ -136,6 +136,9 @@
 		.italic {
 			font-style: italic;
 			margin-top: 0.5rem;
+			font-weight: 200;
+			font-size: 0.8rem;
+			color: var(--smoke);
 		}
 	}
 	/* bigger than tablet */
