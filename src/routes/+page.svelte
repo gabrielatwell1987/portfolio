@@ -70,8 +70,8 @@
 	<h4 class="summary">
 		I look forward to hearing from you so we can discuss your goals for your online needs!
 	</h4>
-	<a class="btn" href="/contact"><button>Contact</button></a>
-	<!-- <h4 class="summary italic">Some projects I have created.</h4> -->
+	<a class="btn" href="/projects"><button>Projects</button></a>
+	<h4 class="summary italic">Some projects I have created.</h4>
 </main>
 <!-- footer spacing -->
 <br /><br /><br /><br /><br /><br />
@@ -111,6 +111,7 @@
 			font-weight: 900;
 			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
+			letter-spacing: 1px;
 		}
 		button:hover {
 			border: 1px solid black;
@@ -131,6 +132,10 @@
 			margin: 0 auto;
 			font-size: 1rem;
 			font-weight: 500;
+		}
+		.italic {
+			font-style: italic;
+			margin-top: 0.5rem;
 		}
 	}
 	/* bigger than tablet */
@@ -159,6 +164,7 @@
 		svg {
 			height: 75%;
 		}
+
 		@keyframes wiggle {
 			0% {
 				rotate: 0deg;
@@ -185,6 +191,9 @@
 			width: 25%;
 			font-size: 1.25rem;
 			margin: 3rem auto;
+		}
+		.italic {
+			margin-top: -1rem;
 		}
 	}
 	/* way bigger than desktop */
