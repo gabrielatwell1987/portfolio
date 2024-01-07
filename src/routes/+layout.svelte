@@ -11,12 +11,12 @@
 	<!-- website theme cdn -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
 
-	<title>GABE</title>
+	<!-- <title>Gabriel Atwell</title> -->
 </svelte:head>
 
 <!-- data from SEO and analytics -->
 <Analytics />
-<SEO title="Atwell UI Design" description="Gabriel Atwell's Portfolio" />
+<SEO title="gabe ATWELL" description="Gabriel Atwell's Portfolio" />
 
 <!-- layout -->
 <main class="desktop">
