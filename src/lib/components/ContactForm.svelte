@@ -57,9 +57,13 @@
 		}
 		input {
 			width: 100%;
+			background-color: transparent;
+			border: 2px solid var(--dark-gray);
 		}
 		textarea {
 			width: 100%;
+			background-color: transparent;
+			border: 2px solid var(--dark-gray);
 		}
 		legend {
 			font-family: var(--righteous);
@@ -69,6 +73,7 @@
 		}
 		label {
 			margin-left: 0.25rem;
+			font-weight: 600;
 		}
 		.button {
 			width: 25%;

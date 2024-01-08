@@ -63,14 +63,14 @@
 	<section>
 		<!-- images of me 3x3 -->
 		<aside class="flex">
-			<img class="gabe" src="gabe.png" alt="Gabriel Atwell" width="350" height="450" />
-			<img class="gabe2" src="gabe2.png" alt="Gabriel Atwell" width="300" height="350" />
-			<img class="gabe3" src="gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" />
+			<img class="gabe" src="photos/gabe.png" alt="Gabriel Atwell" width="350" height="450" />
+			<img class="gabe2" src="photos/gabe2.png" alt="Gabriel Atwell" width="300" height="350" />
+			<img class="gabe3" src="photos/gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" />
 		</aside>
 		<aside class="flex">
-			<img class="gabe4" src="gabe4.jpg" alt="Gabriel Atwell" width="350" />
-			<img class="gabe5" src="gabe5.png" alt="Gabriel Atwell" width="475" />
-			<img class="gabe6" src="gabe6.png" alt="Gabriel Atwell" width="400" />
+			<img class="gabe4" src="photos/gabe4.jpg" alt="Gabriel Atwell" width="350" />
+			<img class="gabe5" src="photos/gabe5.png" alt="Gabriel Atwell" width="475" />
+			<img class="gabe6" src="photos/gabe6.png" alt="Gabriel Atwell" width="400" />
 		</aside>
 	</section>
 

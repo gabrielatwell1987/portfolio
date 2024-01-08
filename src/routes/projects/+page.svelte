@@ -90,7 +90,7 @@
 
 	<!-- logo -->
 	<div class="logos">
-		<img class="designs" src="designs.png" alt="Atwell logo that you can move" />
+		<img class="designs" src="logos/designs.png" alt="Atwell logo that you can move" />
 	</div>
 </section>
 

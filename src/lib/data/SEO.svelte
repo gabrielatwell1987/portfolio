@@ -1,8 +1,8 @@
 <script>
 	import { page } from '$app/stores';
 
-	export let title = 'Atwell UI Design';
-	export let description = "Gabriel Atwell's Portfolio";
+	export let title = '';
+	export let description = '';
 
 	$: url = $page.url.href;
 </script>
