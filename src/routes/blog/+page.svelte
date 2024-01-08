@@ -46,7 +46,7 @@
 
 	<!-- animation logo -->
 	<div class="links">
-		<a href="/posts"><img src="animation.png" alt="web animation logo" class="image" /></a>
+		<a href="/posts"><img src="logos/animation.png" alt="web animation logo" class="image" /></a>
 	</div>
 
 	<br /><br />

@@ -78,7 +78,7 @@
 	<div class="domino">
 		<p class="domino-text">Dominoes:</p>
 		<a class="btn-link" href="/photos/domino"
-			><img class="domino-image" src="dominoes.png" alt="" /></a
+			><img class="domino-image" src="logos/dominoes.png" alt="" /></a
 		>
 	</div>
 </main>

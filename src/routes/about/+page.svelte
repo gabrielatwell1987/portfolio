@@ -52,7 +52,7 @@
 	<!-- content -->
 	<section>
 		<article>
-			<img class="atwell" src="atwell-a.jpeg" alt="Atwell logo that you can move" />
+			<img class="atwell" src="logos/atwell-a.jpeg" alt="Atwell logo that you can move" />
 
 			<div class="border">
 				<h2 class="main-title">Bio</h2>
