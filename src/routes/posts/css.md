@@ -16,9 +16,9 @@ div {
 	transition: transform 0.5s ease-in-out;
 }
 
-.example {
-	transform: translate3d(0, 2rem, 0);
-	transition: transform 0.5s ease-in-out;
+.example2 {
+	transform: rotate(-5px);
+	transition: rotate 0.5s ease-in-out;
 }
 ```
 
