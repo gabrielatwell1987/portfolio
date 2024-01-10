@@ -58,6 +58,7 @@
 		display: block;
 		margin: 0 0 2rem 49%;
 	}
+
 	.title {
 		font-family: var(--nova);
 		color: var(--white);
@@ -65,11 +66,13 @@
 		font-weight: 800;
 		text-align: center;
 	}
+
 	.gs:hover,
 	.sk:hover {
 		filter: opacity(0.5);
 		transition: filter 0.75s ease-in-out;
 	}
+
 	.image {
 		background-color: transparent;
 		color: var(--smoke);
@@ -82,6 +85,7 @@
 		font-weight: 900;
 		letter-spacing: 1px;
 	}
+
 	.image:hover {
 		opacity: 0.5;
 		background-color: var(--smoke);
@@ -89,6 +93,7 @@
 		transition: opacity 0.75s ease-in-out;
 		animation: wiggle 0.5s ease-in-out infinite;
 	}
+
 	@keyframes wiggle {
 		0% {
 			rotate: 0deg;

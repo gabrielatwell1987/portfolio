@@ -25,16 +25,19 @@
 		height: 25rem;
 		margin: 0 0 0 24.5%;
 	}
+
 	h1,
 	h3 {
 		text-align: center;
 		margin-top: 0.25rem;
 		color: var(--smoke);
 	}
+
 	h1 {
 		color: var(--cornflower);
 		margin: 1% 0 2rem 0;
 	}
+
 	h3 {
 		margin: 0;
 	}

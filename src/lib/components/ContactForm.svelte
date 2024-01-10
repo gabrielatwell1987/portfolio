@@ -55,26 +55,31 @@
 			width: 100%;
 			margin: 0 34.5%;
 		}
+
 		input {
 			width: 100%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
 		}
+
 		textarea {
 			width: 100%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
 		}
+
 		legend {
 			font-family: var(--righteous);
 			text-align: center;
 			margin-bottom: 0.5rem;
 			color: var(--smoke);
 		}
+
 		label {
 			margin-left: 0.25rem;
 			font-weight: 600;
 		}
+
 		.button {
 			width: 25%;
 			margin: 0 auto;
@@ -89,6 +94,7 @@
 			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 		}
+
 		.button:hover {
 			opacity: 0.8;
 			background-color: var(--smoke);
@@ -101,9 +107,11 @@
 			width: 20%;
 			font-size: 1rem;
 		}
+
 		.button:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
+
 		@keyframes wiggle {
 			0% {
 				rotate: 0deg;
@@ -119,6 +127,7 @@
 			}
 		}
 	}
+
 	/* bigger than desktop */
 	@media screen and (min-width: 1024px) {
 		form {
@@ -127,23 +136,28 @@
 			width: 100%;
 			margin: 0 25%;
 		}
+
 		label {
 			font-size: 1rem;
 			margin-bottom: 0.5rem;
 			text-align: center;
 		}
+
 		input {
 			font-size: 1.5rem;
 			margin-bottom: 1rem;
 		}
+
 		textarea {
 			font-size: 1rem;
 			margin-bottom: 1rem;
 		}
+
 		.button {
 			width: 15%;
 			font-size: 1.5rem;
 		}
+
 		fieldset {
 			border: 0.5px solid var(--white);
 			font-weight: bolder;
@@ -152,6 +166,7 @@
 			padding: 2rem 5rem;
 			border-radius: 10px;
 		}
+
 		legend {
 			font-weight: bolder;
 			font-size: 1.75rem;

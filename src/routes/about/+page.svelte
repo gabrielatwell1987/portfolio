@@ -124,16 +124,19 @@
 			font-family: var(--montserrat);
 			text-align: left;
 		}
+
 		main {
 			width: 100%;
 			margin: 0 auto;
 		}
+
 		section {
 			display: block;
 			margin: 0 auto;
 			text-align: center;
 			width: 100%;
 		}
+
 		article {
 			font-size: 0.8rem;
 			width: 100%;
@@ -142,18 +145,22 @@
 			border-radius: 10px;
 			background-color: transparent;
 		}
+
 		h2 {
 			font-size: 1.5rem;
 			mix-blend-mode: difference;
 			color: var(--sky);
 			font-family: var(--righteous);
 		}
+
 		a {
 			font-size: 0.9rem;
 		}
+
 		a:hover {
 			font-size: 1.2rem;
 		}
+
 		button {
 			background-color: transparent;
 			color: var(--smoke);
@@ -170,11 +177,13 @@
 			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 		}
+
 		button:hover {
 			opacity: 0.8;
 			background-color: var(--smoke);
 			color: black;
 		}
+
 		.btn-link {
 			font-size: 1.5rem;
 			font-weight: bolder;
@@ -182,36 +191,44 @@
 			color: var(--smoke);
 			font-family: var(--montserrat);
 		}
+
 		.btn-link:hover {
 			font-size: 1.5rem;
 			font-weight: bolder;
 			text-decoration: none;
 			color: var(--smoke);
 		}
+
 		.atwell {
 			margin: 3.5% 0;
 			border-radius: 40%;
 		}
+
 		.atwell:hover {
 			outline: 2px solid var(--white);
 		}
+
 		.github-link {
 			font-size: 1.24rem;
 			font-weight: 700;
 		}
+
 		.github-link:hover {
 			font-size: 1.25rem;
 			text-decoration: none;
 		}
+
 		.fa-codepen,
 		.fa-github {
 			font-size: 3rem;
 			color: var(--blue);
 		}
+
 		.fa-codepen:hover,
 		.fa-github:hover {
 			color: var(--sky);
 		}
+
 		.dev-links {
 			margin-top: 2.5rem;
 			margin-left: 43%;
@@ -222,24 +239,29 @@
 		p {
 			line-height: 2.5;
 		}
+
 		section {
 			display: block;
 			width: 100%;
 			margin: 5rem auto;
 		}
+
 		article {
 			font-size: 1rem;
 			width: 100%;
 			margin: 0 auto;
 			background-color: transparent;
 		}
+
 		h2 {
 			font-size: 3rem;
 			letter-spacing: 5px;
 		}
+
 		a {
 			font-size: 0.9rem;
 		}
+
 		a:hover {
 			font-size: 1.2rem;
 		}
@@ -250,18 +272,22 @@
 			letter-spacing: 2px;
 			width: 20%;
 		}
+
 		button:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
+
 		.btn-link {
 			font-size: 2.5rem;
 		}
+
 		.grid {
 			display: grid;
 			grid-template-rows: repeat(2, 1fr);
 			margin: 7% 0 -20% 0;
 			gap: 8rem;
 		}
+
 		.inline {
 			display: inline-block;
 			margin: 0 auto;
@@ -270,33 +296,41 @@
 			padding: 1rem 2rem;
 			background-color: var(--black);
 		}
+
 		.right {
 			text-align: right;
 		}
+
 		.left {
 			text-align: left;
 		}
+
 		.main-title {
 			color: var(--sky);
 		}
+
 		.title {
 			/* color: var(--black); */
 			color: var(--sky);
 		}
+
 		.text {
 			color: var(--white);
 		}
+
 		.fa-codepen,
 		.fa-github {
 			font-size: 5rem;
 			color: var(--blue);
 		}
+
 		.dev-links {
 			margin-top: -20rem;
 			margin-left: 0%;
 			display: flex;
 			justify-content: space-evenly;
 		}
+
 		@keyframes wiggle {
 			0% {
 				rotate: 0deg;

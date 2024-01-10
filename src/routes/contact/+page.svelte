@@ -27,6 +27,7 @@
 	.contactForm {
 		margin: 2rem 0 0 0;
 	}
+
 	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
 		.contactForm {
@@ -35,6 +36,7 @@
 			margin: 1rem 0 0 -6.9rem;
 		}
 	}
+
 	/* bigger than tablet */
 	@media screen and (min-width: 850px) {
 		.contactForm {
@@ -43,6 +45,7 @@
 			width: 100%;
 		}
 	}
+
 	/* bigger than desktop */
 	@media screen and (min-width: 1024px) {
 		.contactForm {

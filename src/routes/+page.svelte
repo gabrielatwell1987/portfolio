@@ -84,6 +84,7 @@
 			font-size: 1.75rem;
 			height: 100vh;
 		}
+
 		h3 {
 			margin: 2rem auto;
 			color: var(--blue);
@@ -92,11 +93,13 @@
 			font-family: var(--righteous);
 			letter-spacing: 2px;
 		}
+
 		h4 {
 			color: var(--white);
 			font-size: 0.75rem;
 			letter-spacing: 0.5px;
 		}
+
 		button {
 			display: block;
 			background-color: transparent;
@@ -113,26 +116,31 @@
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			letter-spacing: 1px;
 		}
+
 		button:hover {
 			border: 1px solid black;
 			background-color: var(--smoke);
 			color: black;
 		}
+
 		svg {
 			width: 100%;
 			height: 50%;
 			opacity: 0.75;
 			margin-bottom: 5%;
 		}
+
 		.btn {
 			text-decoration: none;
 			margin: 0 auto;
 		}
+
 		.summary {
 			margin: 0 auto;
 			font-size: 1rem;
 			font-weight: 500;
 		}
+
 		.italic {
 			font-style: italic;
 			margin-top: 0.5rem;
@@ -141,29 +149,35 @@
 			color: var(--smoke);
 		}
 	}
+
 	/* bigger than tablet */
 	@media screen and (min-width: 740px) {
 		main {
 			text-align: center;
 			font-size: 2rem;
 		}
+
 		button {
 			font-size: 1rem;
 			width: 20%;
 			font-size: 1rem;
 			letter-spacing: 2px;
 		}
+
 		button:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
+
 		h3 {
 			font-size: 2rem;
 			letter-spacing: 7px;
 		}
+
 		h4 {
 			color: var(--white);
 			font-size: 1.25rem;
 		}
+
 		svg {
 			height: 75%;
 		}
@@ -183,6 +197,7 @@
 			}
 		}
 	}
+
 	/* bigger than desktop */
 	@media screen and (min-width: 990px) {
 		main {
@@ -190,15 +205,18 @@
 			font-size: 2.5rem;
 			margin: 5rem 0;
 		}
+
 		button {
 			width: 25%;
 			font-size: 1.25rem;
 			margin: 3rem auto;
 		}
+
 		.italic {
 			margin-top: -1rem;
 		}
 	}
+
 	/* way bigger than desktop */
 	@media screen and (min-width: 1100px) {
 		button {

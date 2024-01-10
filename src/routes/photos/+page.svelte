@@ -90,15 +90,18 @@
 			width: 100%;
 			margin: 0;
 		}
+
 		.flex {
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;
 			margin-bottom: 1rem;
 		}
+
 		.domino {
 			display: none;
 		}
+
 		.gabe,
 		.gabe2,
 		.gabe3,
@@ -107,6 +110,7 @@
 		.gabe6 {
 			opacity: 0.5;
 		}
+
 		.gabe:hover,
 		.gabe2:hover,
 		.gabe3:hover,
@@ -117,6 +121,7 @@
 			transition: opacity 750ms ease-in-out;
 		}
 	}
+
 	/* bigger than tablet */
 	@media (min-width: 850px) {
 		.btn-link {
@@ -126,16 +131,19 @@
 			color: var(--smoke);
 			font-family: var(--montserrat);
 		}
+
 		.btn-link:hover {
 			font-size: 2.5rem;
 			font-weight: bolder;
 			text-decoration: none;
 			color: var(--smoke);
 		}
+
 		.domino {
 			display: block;
 			margin-top: 2rem;
 		}
+
 		.domino-image {
 			display: block;
 			width: 20%;
@@ -143,11 +151,13 @@
 			margin: -1rem auto;
 			border-radius: 10px;
 		}
+
 		.domino-image:hover {
 			opacity: 0.5;
 			transition: opacity 0.75s ease-in-out;
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
+
 		.domino-text {
 			font-family: var(--righteous);
 			font-size: 1.75rem;
@@ -155,6 +165,7 @@
 			color: var(--blue);
 			letter-spacing: 2px;
 		}
+
 		@keyframes wiggle {
 			0% {
 				rotate: 0deg;
@@ -170,11 +181,13 @@
 			}
 		}
 	}
+
 	/* bigger than desktop */
 	@media screen and (min-width: 1200px) {
 		main {
 			text-align: center;
 		}
+
 		section {
 			padding: 1.5rem;
 			display: flex;
@@ -187,12 +200,14 @@
 			border-radius: 10px;
 			background-color: transparent;
 		}
+
 		.title {
 			font-size: 4rem;
 			color: var(--white);
 			margin: 0 0 2rem 0;
 			font-family: var(--righteous);
 		}
+
 		.flex {
 			display: flex;
 			justify-content: space-around;

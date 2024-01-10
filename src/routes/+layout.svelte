@@ -42,20 +42,25 @@
 	:global(html, body) {
 		background-color: #0f0f0f;
 	}
+
 	/* desktop */
 	a {
 		text-decoration: none;
 		color: var(--sky);
 	}
+
 	a:hover {
 		color: var(--blue);
 	}
+
 	.linkedin {
 		margin: 0 2rem 0 0;
 	}
+
 	.desktop {
 		width: 100%;
 	}
+
 	/* less than desktop */
 	@media screen and (max-width: 1650px) {
 		.linkIcons {

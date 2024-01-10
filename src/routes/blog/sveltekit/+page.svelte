@@ -116,6 +116,7 @@
 		width: 75%;
 		margin: 0 auto;
 	}
+
 	p {
 		text-align: left;
 		margin: 0 0 2rem 0;
@@ -126,22 +127,26 @@
 		font-family: var(--montserrat);
 		width: 100%;
 	}
+
 	a {
 		text-decoration: none;
 		font-size: 1.5rem;
 		color: var(--sky);
 	}
+
 	a:hover {
 		color: var(--white);
 	}
 	iframe {
 		margin: 2rem 0 0 30%;
 	}
+
 	details {
 		width: 50%;
 		margin-left: 24.5%;
 		margin-bottom: 5rem;
 	}
+
 	.subtitle {
 		text-align: center;
 		margin: 2rem 0 -0.5rem 0;
@@ -157,9 +162,11 @@
 		color: var(--sky);
 		font-family: var(--nunito);
 	}
+
 	.sveltekit {
 		margin: 5% 0 5% 48%;
 	}
+
 	.center {
 		text-align: center;
 	}

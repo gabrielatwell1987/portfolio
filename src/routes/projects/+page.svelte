@@ -104,19 +104,23 @@
 			font-weight: 700;
 			color: var(--sky);
 		}
+
 		hr {
 			border: 0.5px solid var(--smoke);
 			width: 50%;
 			margin: 5rem auto;
 		}
+
 		.img {
 			border-radius: 8px;
 			opacity: 0.5;
 		}
+
 		.img:hover {
 			opacity: 1;
 			transition: opacity 0.5s ease-in-out;
 		}
+
 		.logos {
 			display: flex;
 			justify-content: center;
@@ -125,6 +129,7 @@
 			width: 75%;
 			height: 100%;
 		}
+
 		.title {
 			text-align: center;
 			font-family: var(--righteous);
@@ -132,6 +137,7 @@
 			color: var(--white);
 			letter-spacing: 5px;
 		}
+
 		.linksize {
 			text-align: center;
 			background-color: transparent;
@@ -150,14 +156,17 @@
 			font-style: italic;
 		}
 	}
+
 	/* bigger than tablet */
 	@media screen and (min-width: 740px) {
 		a {
 			font-size: 1rem;
 		}
+
 		hr {
 			border: 1px solid var(--smoke);
 		}
+
 		.content {
 			padding: 2rem;
 		}
@@ -176,11 +185,13 @@
 		.logos {
 			width: 100%;
 		}
+
 		.designs {
 			border-radius: 10%;
 			margin: 3rem 0;
 		}
 	}
+
 	/* bigger than desktop */
 	@media screen and (min-width: 990px) {
 		.linksize {

@@ -106,11 +106,13 @@
 		border-radius: 10px;
 		margin: 0 auto;
 	}
+
 	details {
 		width: 50%;
 		margin-left: 24.5%;
 		margin-bottom: 5rem;
 	}
+
 	p {
 		text-align: left;
 		margin-bottom: 0 0 2rem 0;
@@ -120,23 +122,28 @@
 		font-family: var(--montserrat);
 		width: 100%;
 	}
+
 	a {
 		text-decoration: none;
 		font-size: 1.5rem;
 		color: var(--sky);
 	}
+
 	a:hover {
 		color: var(--white);
 	}
+
 	iframe {
 		margin: 2rem 0 0 30%;
 	}
+
 	h3 {
 		text-align: center;
 		margin: 5rem 0 0 0;
 		font-family: var(--righteous);
 		color: var(--blue);
 	}
+
 	.title {
 		font-size: 4rem;
 		font-weight: 800;
@@ -145,6 +152,7 @@
 		color: var(--sky);
 		font-family: var(--nunito);
 	}
+
 	.subtitle {
 		font-size: 2rem;
 		font-weight: 600;
@@ -153,18 +161,21 @@
 		color: var(--white);
 		font-family: var(--nunito);
 	}
+
 	.greensock {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin: 5rem 0 3rem 0;
 	}
+
 	.learn {
 		margin: 5rem 0 -1rem 0;
 		text-align: center;
 		font-family: var(--righteous);
 		color: var(--blue);
 	}
+
 	.center {
 		text-align: center;
 	}
