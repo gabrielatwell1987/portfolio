@@ -17,11 +17,13 @@
 	--montserrat: 'Montserrat', sans-serif;
 	--righteous: 'Righteous', sans-serif;
 }
+
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
+
 body {
 	font-family: var(--nunito);
 	font-size: 16px;
@@ -31,17 +33,20 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
 .atwellLogo,
 .content,
 .linksize,
 .greensock {
 	visibility: hidden;
 }
+
 h2 {
 	font-family: var(--righteous);
 	text-align: center;
 	color: var(--cornflower);
 }
+
 h3,
 h4 {
 	text-align: center;
@@ -68,4 +73,14 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
 	pointer-events: none;
+}
+
+.light {
+	background-color: var(--white);
+	color: #0f0f0f;
+}
+
+.dark {
+	background-color: #0f0f0f;
+	color: var(--white);
 }
