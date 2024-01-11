@@ -105,7 +105,7 @@
 			background-color: transparent;
 			color: var(--smoke);
 			font-family: var(--righteous);
-			width: 33%;
+			width: 35%;
 			height: 10%;
 			outline: none;
 			border: 1px solid var(--smoke);
