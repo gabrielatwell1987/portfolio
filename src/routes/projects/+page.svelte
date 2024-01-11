@@ -109,6 +109,10 @@
 			border: 0.5px solid var(--smoke);
 			width: 50%;
 			margin: 5rem auto;
+
+			--size: 2px;
+			height: var(--size);
+			box-shadow: 0 4px 0 var(--sky), 0 8px 0 var(--blue), 0 12px 0 var(--white);
 		}
 
 		.img {
@@ -136,6 +140,7 @@
 			font-size: 2.75rem;
 			color: var(--white);
 			letter-spacing: 5px;
+			text-shadow: 0.5px 0.5px 15px var(--blue);
 		}
 
 		.linksize {

@@ -206,6 +206,7 @@
 			color: var(--white);
 			margin: 0 0 2rem 0;
 			font-family: var(--righteous);
+			text-shadow: 0.25px 0.25px 15px var(--blue);
 		}
 
 		.flex {

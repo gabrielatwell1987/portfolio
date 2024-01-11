@@ -161,6 +161,7 @@
 		text-align: center;
 		color: var(--sky);
 		font-family: var(--nunito);
+		text-shadow: 1px 1px 10px var(--white);
 	}
 
 	.sveltekit {
