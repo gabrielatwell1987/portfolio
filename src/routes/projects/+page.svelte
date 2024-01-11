@@ -143,12 +143,6 @@
 			color: var(--white);
 			letter-spacing: 5px;
 			text-shadow: 0.5px 0.5px 15px var(--blue);
-
-			color: transparent;
-			background-image: url('logos/fire.jpg');
-			background-size: cover;
-			background-clip: text;
-			-webkit-background-clip: text;
 		}
 
 		.linksize {
