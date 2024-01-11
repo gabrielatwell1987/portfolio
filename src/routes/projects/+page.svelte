@@ -107,12 +107,14 @@
 
 		hr {
 			border: 0.5px solid var(--smoke);
+			border-radius: 100vw;
 			width: 50%;
 			margin: 5rem auto;
 
-			--size: 2px;
+			--size: 3px;
 			height: var(--size);
-			box-shadow: 0 4px 0 var(--sky), 0 8px 0 var(--blue), 0 12px 0 var(--white);
+			box-shadow: 0 calc(var(--size) * 2) 0 var(--smoke), 0 calc(var(--size) * 4) 0 var(--blue),
+				0 calc(var(--size) * 6) 0 var(--lightblack);
 		}
 
 		.img {
@@ -141,6 +143,12 @@
 			color: var(--white);
 			letter-spacing: 5px;
 			text-shadow: 0.5px 0.5px 15px var(--blue);
+
+			/* color: transparent; */
+			/* background-image: url('logos/fire.jpg'); */
+			/* background-size: cover; */
+			/* background-clip: text; */
+			/* -webkit-background-clip: text; */
 		}
 
 		.linksize {

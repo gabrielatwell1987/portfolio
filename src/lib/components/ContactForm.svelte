@@ -93,12 +93,17 @@
 			font-family: var(--righteous);
 			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
+			transition: 750ms;
+			outline: 3px solid currentColor;
+			outline-offset: -7px;
 		}
 
-		.button:hover {
+		.button:hover,
+		.button:focus {
 			opacity: 0.8;
 			background-color: var(--smoke);
 			color: black;
+			outline-offset: 0px;
 		}
 	}
 	/* bigger than tablet */

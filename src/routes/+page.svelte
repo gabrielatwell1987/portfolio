@@ -116,12 +116,17 @@
 			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			letter-spacing: 1px;
+			transition: 750ms;
+			outline: 3px solid currentColor;
+			outline-offset: -7px;
 		}
 
-		button:hover {
-			border: 1px solid black;
+		button:hover,
+		button:focus {
+			border: 1px solid var(--black);
 			background-color: var(--smoke);
-			color: black;
+			color: var(--black);
+			outline-offset: 0px;
 		}
 
 		svg {
