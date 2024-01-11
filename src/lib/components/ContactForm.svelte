@@ -87,7 +87,7 @@
 			border-radius: 8px;
 			background-color: transparent;
 			color: var(--smoke);
-			font-size: 0.8rem;
+			font-size: 1.2rem;
 			font-weight: 900;
 			text-align: center;
 			font-family: var(--righteous);

@@ -106,11 +106,12 @@
 			color: var(--smoke);
 			font-family: var(--righteous);
 			width: 33%;
+			height: 10%;
 			outline: none;
 			border: 1px solid var(--smoke);
 			margin: 1rem auto;
 			border-radius: 10px;
-			font-size: 0.75rem;
+			font-size: 1rem;
 			font-weight: 900;
 			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));

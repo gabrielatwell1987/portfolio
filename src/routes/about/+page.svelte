@@ -154,7 +154,7 @@
 		}
 
 		a {
-			font-size: 0.9rem;
+			font-size: 1rem;
 		}
 
 		a:hover {
@@ -165,11 +165,10 @@
 			background-color: transparent;
 			color: var(--smoke);
 			border: 1px solid var(--smoke);
-			width: 30%;
 			margin: 3rem auto;
 			border-radius: 8px;
 			cursor: pointer;
-			font-size: 0.8rem;
+			font-size: 1.2rem;
 			font-weight: 900;
 			letter-spacing: 1px;
 			width: 40%;
