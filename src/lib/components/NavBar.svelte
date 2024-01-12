@@ -89,7 +89,7 @@
 		}
 
 		.mobile-link {
-			font-size: 1rem;
+			font-size: 0.8rem;
 			font-family: var(--righteous);
 			color: var(--white);
 		}
