@@ -142,7 +142,7 @@
 			font-size: 2.75rem;
 			color: var(--white);
 			letter-spacing: 5px;
-			text-shadow: 0.5px 0.5px 15px var(--blue);
+			text-shadow: 0px 0px 50px var(--smoke);
 		}
 
 		.linksize {
