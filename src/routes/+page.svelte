@@ -19,6 +19,7 @@
 		// hero image animations
 		const text = document.querySelector('.atwell-text');
 		const blueA = document.querySelector('.blue-a');
+		const button = document.querySelector('button');
 
 		gsap.set(blueA, { transformOrigin: 'center' });
 		gsap.set(text, { x: -2000, transformOrigin: 'center' });
