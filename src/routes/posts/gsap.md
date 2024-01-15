@@ -16,7 +16,7 @@ gsap.from('.example', { rotate: -360, duration: 5, ease: 'power3.inOut' };
 
 <div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;">A value of stagger: 0.1 would cause there to be 0.1 second between the start times of each tween. You can even stagger items that are laid out in a grid just by telling GSAP how many columns and rows your grid has. A negative value would do the same but backwards so that the last element begins first. All tweens recognize a stagger property which can be a number, an object, or a function. To get more control, wrap things in a configuration object which can have any of the following properties (in addition to most of the special properties that tweens have.</div>
 
-<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;"><b>Functions</b>: <br>Only use this if you need to run custom logic for distributing the staggers. The function gets called once for each target/element in the Array and should return the total delay from the starting position (not the amount of delay from the previous tween's start time). The function receives the following parameters: index [Integer] - The index value from the list, target [Object] - The target in the list at that index value, list [Array | NodeList] - The targets array (or NodeList).</div>
+<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;"><b>Functions</b>: <br><br>Only use this if you need to run custom logic for distributing the staggers. The function gets called once for each target/element in the Array and should return the total delay from the starting position (not the amount of delay from the previous tween's start time). The function receives the following parameters: index [Integer] - The index value from the list, target [Object] - The target in the list at that index value, list [Array | NodeList] - The targets array (or NodeList).</div>
 
 ```js
 gsap.to('.example', {
@@ -49,7 +49,7 @@ gsap.to('.example', {
 
 <div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;">Just like we've just seen with staggers, It's common to animate more than one thing. But what if we need more control over the order and timing of those animations? A lot of people reach for delays, and they're not wrong, delays do give us rudimentary control. But this method of sequencing animations is a little fragile. What happens if we lengthen the duration of the first tween? The second and third tweens have no awareness of this change, so now there's an overlap - we'd have to increase all of the delays to keep them synchronized. If you've animated with CSS you will have run into this problem before. But what if we want to add a gap or delay in between some of the tweens? One option would be to add a delay to a tween to offset it 's start time. But this isn't hugely flexible. What if we want tweens to overlap or start at the same time?</div>
 
-<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;"><b>Position Parameter</b>:<br>This handy little parameter is the secret to building gorgeous sequences with precise timing. There are a variety of position parameters that we can use to position tweens pretty much anywhere!</div>
+<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;"><b>Position Parameter</b>:<br><br>This handy little parameter is the secret to building gorgeous sequences with precise timing. There are a variety of position parameters that we can use to position tweens pretty much anywhere!</div>
 
 ```js
 // create a timeline
@@ -119,7 +119,7 @@ gsap.to(".class", {x: 100}, ">");
 
 <div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;">Have you ever noticed an annoying "flash of unstyled content" (FOUC) when a web page first loads? That happens because browsers render things as quickly as possible, often BEFORE your JavaScript executes the first time. So what if some of your initial styles are set via JavaScript...like with GSAP?</div>
 
-<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;"><b>Solution</b>: <br>apply visibility: hidden; to your elements in CSS and then use GSAP's autoAlpha property to show it (or animate it in) when the page loads. autoAlpha affects opacity and visibility, changing it to visible when the opacity is greater than 0.</div>
+<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;"><b>Solution</b>: <br><br>apply visibility: hidden; to your elements in CSS and then use GSAP's autoAlpha property to show it (or animate it in) when the page loads. autoAlpha affects opacity and visibility, changing it to visible when the opacity is greater than 0.</div>
 
 ```css
 /* first you need to hide the element in css */
