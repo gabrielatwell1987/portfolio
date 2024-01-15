@@ -81,6 +81,13 @@
 		</p>
 	</details>
 
+	<h3 class="learn">Learn more about GSAP</h3>
+	<p class="center">
+		If you would like to know more about greensock, please click <a href="https://greensock.com"
+			>here</a
+		>.
+	</p>
+
 	<!-- video -->
 	<iframe
 		width="560"
@@ -91,13 +98,6 @@
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 		allowfullscreen
 	/>
-
-	<h3 class="learn">Learn more about GSAP</h3>
-	<p class="center">
-		If you would like to know more about greensock, please click <a href="https://greensock.com"
-			>here</a
-		>.
-	</p>
 </main>
 
 <style>
