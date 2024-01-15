@@ -62,7 +62,7 @@
 	<!-- content -->
 	<section>
 		<details>
-			<summary><h3 class="subtitle">What I used to create this site</h3></summary>
+			<summary><h3 class="subtitle">The framework I used</h3></summary>
 			<p>
 				I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
 				the server-side rendering (SSR) and all of the SEO features, as well as the speed of

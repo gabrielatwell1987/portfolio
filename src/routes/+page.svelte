@@ -18,14 +18,14 @@
 
 		// hero image animations
 		const text = document.querySelector('.atwell-text');
-		const blueA = document.querySelector('.blue-a');
+		const gradientA = document.querySelector('.gradient-a');
 
-		gsap.set(blueA, { transformOrigin: 'center' });
+		gsap.set(gradientA, { transformOrigin: 'center' });
 		gsap.set(text, { x: -2000, transformOrigin: 'center' });
 
 		const tl = gsap.timeline({ defaults: { ease: 'power3.inOut', duration: 3 } });
 
-		tl.fromTo(blueA, { scale: 0.25 }, { scale: 1, duration: 3.5 })
+		tl.fromTo(gradientA, { scale: 0.25 }, { scale: 1, duration: 3.5 })
 			.to(text, { x: 0 }, '-=1.5')
 			.to(text, { x: 2000 })
 			.to(text, { x: 0 }, '-=1')
@@ -37,7 +37,7 @@
 	<!-- hero image svg -->
 	<svg class="hero" width="1200" height="722" viewBox="0 0 1200 722" fill="none">
 		<path
-			class="blue-a"
+			class="gradient-a"
 			d="M1183.44 500H1011.44C1003.54 500 996.43 497.618 992.742 493.748L900.293 398.482H599.767V316.166H820.223L615.043 104.794C608.458 97.947 591.075 97.947 584.49 104.794L539.977 150.195H331.374L453.059 29.4744C471.233 11.1655 505.737 -0.147402 542.875 0.0014511L643.489 0.299158C692.216 0.448011 736.992 15.4822 760.697 39.5965L1197.92 486.306C1203.98 492.409 1196.08 500 1183.44 500ZM216.273 493.302L482.559 212.713H268.687L1.87427 487.199C-3.65689 493.004 3.71799 500 15.3071 500H196.518C204.684 500 212.322 497.469 216.273 493.302Z"
 			fill="url(#paint0_linear_1_5)"
 			stroke="#7d7c84"
