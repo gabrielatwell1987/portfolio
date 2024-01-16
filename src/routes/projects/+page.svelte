@@ -43,17 +43,17 @@
 
 <!-- links to my projects -->
 <section class="content">
-	<h3 class="linksize name">WEB DEV WEBSITE</h3>
+	<h3 class="linksize name">random website</h3>
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank"
 		><img class="img" src="/projects/web_dev.png" alt="web dev" width="200px" height="275px" /></a
 	><br />
 
-	<h3 class="linksize name">HORIZONTAL SCROLLER</h3>
+	<h3 class="linksize name">horizontal scroller</h3>
 	<a class="linksize" href="https://gabe2.vercel.app" target="_blank"
 		><img class="img" src="/projects/scroller.png" alt="scroller" width="450px" height="280px" /></a
 	><br />
 
-	<h3 class="linksize name">STARBUCKS CLONE</h3>
+	<h3 class="linksize name">starbucks clone</h3>
 	<a class="linksize" href="https://gabe4.vercel.app" target="_blank"
 		><img
 			class="img"
@@ -64,7 +64,7 @@
 		/></a
 	><br />
 
-	<h3 class="linksize name">CODE SNIPPET</h3>
+	<h3 class="linksize name">code snippet</h3>
 	<a class="linksize" href="https://appity.vercel.app" target="_blank"
 		><img
 			class="img"
@@ -75,7 +75,7 @@
 		/></a
 	><br />
 
-	<h3 class="linksize name">NETFLIX CLONE</h3>
+	<h3 class="linksize name">netflix clone</h3>
 	<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank"
 		><img
 			class="img"
@@ -148,7 +148,7 @@
 		.linksize {
 			text-align: center;
 			background-color: transparent;
-			color: var(--sky);
+			color: var(--blue);
 			border: none;
 			padding: 1rem;
 			display: flex;
@@ -161,6 +161,7 @@
 			font-family: var(--montserrat);
 			letter-spacing: 2px;
 			font-style: italic;
+			text-transform: uppercase;
 		}
 	}
 
