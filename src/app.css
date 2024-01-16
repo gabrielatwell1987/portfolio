@@ -4,13 +4,13 @@
 
 :root {
 	/* colors */
-	--sky: #8edce6;
-	--blue: #007cbe;
-	--black: #1e2019;
-	--white: #eee5e9;
-	--smoke: #7d7c84;
-	--lightblack: rgb(49, 49, 49);
-	--dark-gray: #444;
+	--black: hsl(77 12% 11%);
+	--lightblack: hsl(240, 0%, 19%);
+	--dark-gray: hsl(0, 0%, 27%);
+	--smoke: hsl(247, 3%, 50%);
+	--white: hsl(333, 21%, 92%);
+	--sky: hsl(187 64% 73%);
+	--blue: hsl(201 100% 37%);
 
 	/* fonts */
 	--nunito: 'Nunito Sans', sans-serif;
