@@ -19,6 +19,8 @@
 		// hero image animations
 		const text = document.querySelector('.atwell-text');
 		const gradientA = document.querySelector('.gradient-a');
+		const h3 = document.querySelector('h3');
+		const h4 = document.querySelector('h4');
 
 		gsap.set(gradientA, { transformOrigin: 'center' });
 		gsap.set(text, { x: -2000, transformOrigin: 'center' });
@@ -30,6 +32,23 @@
 			.to(text, { x: 2000 })
 			.to(text, { x: 0 }, '-=1')
 			.to(text, { scaleX: 1.75, duration: 3.5 }, '-=1');
+
+		// hero text animations
+		h3.addEventListener('mouseenter', () => {
+			gsap.to(h3, { scaleX: 1.5, duration: 0.75 });
+		});
+
+		h3.addEventListener('mouseleave', () => {
+			gsap.to(h3, { scaleX: 1, duration: 0.75 });
+		});
+
+		h4.addEventListener('mouseenter', () => {
+			gsap.to(h4, { scaleY: 2, letterSpacing: '2px', duration: 0.05 });
+		});
+
+		h4.addEventListener('mouseleave', () => {
+			gsap.to(h4, { scaleY: 1, letterSpacing: '0px', duration: 0.05 });
+		});
 	});
 </script>
 

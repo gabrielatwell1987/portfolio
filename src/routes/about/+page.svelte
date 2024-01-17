@@ -3,6 +3,7 @@
 	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
 	import Lenis from '@studio-freight/lenis';
+	import { resize_observer_border_box } from 'svelte/internal';
 
 	// lenis
 	const lenis = new Lenis();
@@ -23,6 +24,7 @@
 		gsap.registerPlugin(Draggable);
 
 		const atwell = document.querySelector('.atwell');
+		const border = document.querySelector('.border');
 
 		gsap.set('article', { autoAlpha: 0 });
 
@@ -36,6 +38,15 @@
 			type: 'x, y',
 			bounds: document.querySelector('article'),
 			inertia: true
+		});
+
+		// bio text animations
+		border.addEventListener('mouseenter', () => {
+			gsap.to('.text', { color: '#7d7c84', duration: 0.5 });
+		});
+
+		border.addEventListener('mouseleave', () => {
+			gsap.to('.text', { color: '#eee5e9', duration: 0.5 });
 		});
 	});
 </script>
@@ -57,13 +68,13 @@
 			<div class="border">
 				<h2 class="main-title">Bio</h2>
 
-				<p>
+				<p class="text">
 					Gabe is a self-taught web developer. I started out with the basics: HTML, CSS, and
 					JavaScript. I then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js,
 					and GSAP. I have begun to teach myself the backend of web development on my spare time,
 					but I am a complete frontend developer.
 				</p>
-				<p>
+				<p class="text">
 					I have a passion for creating websites that are clean, crisp, and completely functional. I
 					enjoy seeing a physical change when I edit or create code. I also enjoy creating
 					animations for the web! I mainly enjoy animating the web because I believe that it makes
