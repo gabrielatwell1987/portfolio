@@ -42,11 +42,11 @@
 			.to(title, { autoAlpha: 1, scale: 1, delay: 3, duration: 2.25 }, 0);
 
 		title.addEventListener('mouseover', () => {
-			gsap.to(title, { skewX: 15, duration: 0.5, ease: 'none' });
+			gsap.to(title, { skewX: -15, duration: 0.5, ease: 'none' });
 		});
 
 		title.addEventListener('mouseleave', () => {
-			gsap.to(title, { skewX: -15, duration: 0.5, ease: 'none' });
+			gsap.to(title, { skewX: 15, duration: 0.5, ease: 'none' });
 		});
 	});
 </script>
@@ -160,7 +160,7 @@
 		margin: 2rem 0 6rem 0;
 		text-align: center;
 		color: var(--sky);
-		font-family: var(--nunito);
+		font-family: var(--pacifico);
 		text-shadow: 0px 0px 25px var(--white);
 	}
 

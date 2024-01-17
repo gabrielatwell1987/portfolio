@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 :root {
 	/* colors */
@@ -16,6 +17,7 @@
 	--nunito: 'Nunito Sans', sans-serif;
 	--montserrat: 'Montserrat', sans-serif;
 	--righteous: 'Righteous', sans-serif;
+	--pacifico: 'Pacifico', cursive;
 }
 
 * {

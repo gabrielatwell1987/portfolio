@@ -150,7 +150,7 @@
 		margin: 2rem 0 -5rem 0;
 		text-align: center;
 		color: var(--sky);
-		font-family: var(--nunito);
+		font-family: var(--pacifico);
 		text-shadow: 0px 0px 25px var(--white);
 	}
 
