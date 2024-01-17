@@ -124,7 +124,7 @@
 
 		.img:hover {
 			opacity: 1;
-			transition: opacity 0.5s ease-in-out;
+			transition: opacity 0.25s ease-in-out;
 		}
 
 		.logos {
@@ -173,6 +173,11 @@
 
 		hr {
 			border: 1px solid var(--smoke);
+		}
+
+		img:hover {
+			transform: scale(1.1);
+			transition: transform 0.75s ease;
 		}
 
 		.content {

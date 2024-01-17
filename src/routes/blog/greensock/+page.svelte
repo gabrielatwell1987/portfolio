@@ -35,11 +35,11 @@
 		);
 
 		title.addEventListener('mouseover', () => {
-			gsap.to(title, { skewX: -15, duration: 0.5, ease: 'none' });
+			gsap.to(title, { skewX: -15, duration: 0.25, ease: 'none' });
 		});
 
 		title.addEventListener('mouseleave', () => {
-			gsap.to(title, { skewX: 15, duration: 0.5, ease: 'none' });
+			gsap.to(title, { skewX: 15, duration: 0.25, ease: 'none' });
 		});
 	});
 </script>
