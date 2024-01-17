@@ -32,7 +32,7 @@
 		font-size: 3.5rem;
 		font-weight: 900;
 		color: var(--blue);
-		font-family: var(--nunito);
+		font-family: var(--pacifico);
 		letter-spacing: 2px;
 		margin-top: 5rem;
 	}
