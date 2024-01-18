@@ -26,7 +26,7 @@
 
 		gsap.set(sveltekit, { y: -500 });
 		gsap.set(sk, { y: 1000 });
-		gsap.set(title, { skewX: -15, autoAlpha: 0, y: 35, scale: 0 });
+		gsap.set(title, { skewX: 15, autoAlpha: 0, y: 35, scale: 0 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
