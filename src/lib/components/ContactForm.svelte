@@ -10,8 +10,34 @@
 		gsap.set('.form', { autoAlpha: 0 });
 
 		gsap.to('.form', { autoAlpha: 1, duration: 3.5 });
+
+		// modal
+		const modal = document.querySelector('.modal');
+		const openModal = document.querySelector('.open-button');
+		const closeModal = document.querySelector('.close-button');
+
+		openModal.addEventListener('click', () => {
+			modal.showModal();
+		});
+
+		closeModal.addEventListener('click', () => {
+			modal.close();
+		});
 	});
 </script>
+
+<button class="open-button"><i class="fa-regular fa-envelope-open" /></button>
+
+<dialog class="modal" id="modal">
+	<h2>Please contact me for any frontend work!</h2>
+
+	<p>
+		If you need a logo designed, help with web presence, or animations for your website, you can
+		count on me.
+	</p>
+
+	<button class="close-button"><i class="fa-solid fa-xmark" /></button>
+</dialog>
 
 <!-- contact me form -->
 <form class="form" method="POST" action="https://formsubmit.co/gatwell702@gmail.com">
@@ -105,6 +131,10 @@
 			color: black;
 			outline-offset: 0px;
 		}
+		.open-button,
+		.close-button {
+			display: none;
+		}
 	}
 	/* bigger than tablet */
 	@media screen and (min-width: 750px) {
@@ -115,6 +145,41 @@
 
 		.button:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
+		}
+
+		.open-button {
+			display: block;
+			font-size: 1.2rem;
+			font-weight: 800;
+			background-color: transparent;
+			color: var(--blue);
+			width: 6%;
+			height: 2%;
+			margin-left: 100%;
+			outline: none;
+			border: 2px solid var(--blue);
+			border-radius: 5px;
+		}
+
+		.close-button {
+			display: block;
+			font-size: 1.2rem;
+			font-weight: 800;
+			background-color: transparent;
+			color: var(--white);
+			width: 7%;
+			margin-left: 35%;
+			margin-right: 2rem;
+			outline: none;
+			border: 2px solid var(--white);
+			border-radius: 5px;
+		}
+
+		.modal h2 {
+			font-size: 2.5rem;
+			font-family: var(--bree);
+			color: var(--smoke);
+			margin-right: 15rem;
 		}
 
 		@keyframes wiggle {
