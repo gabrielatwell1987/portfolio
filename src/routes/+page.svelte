@@ -24,6 +24,7 @@
 
 		gsap.set(gradientA, { transformOrigin: 'center' });
 		gsap.set(text, { x: -2000, transformOrigin: 'center' });
+		gsap.set(h3, { scale: 1.25 });
 
 		const tl = gsap.timeline({ defaults: { ease: 'power3.inOut', duration: 3 } });
 
