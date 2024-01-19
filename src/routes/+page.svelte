@@ -79,7 +79,7 @@
 	<h4 class="summary italic">Some projects I have created.</h4>
 </main>
 <!-- footer spacing -->
-<br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br />
 
 <style>
 	/* bigger than mobile */
