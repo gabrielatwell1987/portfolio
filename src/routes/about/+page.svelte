@@ -218,6 +218,7 @@
 			margin: 3.5% 0;
 			border-radius: 3rem;
 			clip-path: ellipse(40% 47% at 50% 50%);
+			transition: clip-path 0.75s ease-in-out;
 		}
 
 		.atwell:hover {
