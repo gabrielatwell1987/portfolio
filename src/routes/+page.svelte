@@ -180,7 +180,7 @@
 		}
 
 		h3 {
-			font-size: 5rem;
+			font-size: 3.25rem;
 			letter-spacing: 7px;
 		}
 
