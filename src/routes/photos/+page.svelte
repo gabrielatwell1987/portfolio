@@ -23,7 +23,7 @@
 			gsap.registerPlugin(ScrollTrigger);
 
 			gsap.set('main', { autoAlpha: 0 });
-			gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .gabe6', { borderRadius: '25%' });
+			gsap.set('.gabe', { borderRadius: '5px' });
 
 			gsap.to('.title', {
 				keyframes: {
@@ -36,22 +36,23 @@
 			});
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
-			tl.to('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .gabe6', {
-				borderRadius: '50%',
-				repeat: 3,
+			tl.to('.gabe', {
+				borderRadius: '5rem',
+				repeat: 1,
 				yoyo: true,
 				scrollTrigger: {
-					trigger: '.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .gabe6',
-					start: 'top 85%',
-					end: 'bottom 15%',
+					trigger: '.gabe',
+					start: 'top 75%',
+					end: 'bottom 25%',
+					marker: true,
 					x: 200,
-					scrub: true
+					scrub: 1
 				}
 			}).to('main', { autoAlpha: 1 });
 
 			return () => {
 				gsap.set('.photos', { y: 500 });
-				gsap.set('.gabe, .gabe2, .gabe3, .gabe4, .gabe5, .gabe6', { borderRadius: '25%' });
+				gsap.set('.gabe', { borderRadius: '15px' });
 			};
 		});
 	});
@@ -64,13 +65,13 @@
 		<!-- images of me 3x3 -->
 		<aside class="flex">
 			<img class="gabe" src="photos/gabe.png" alt="Gabriel Atwell" width="350" height="450" />
-			<img class="gabe2" src="photos/gabe2.png" alt="Gabriel Atwell" width="300" height="350" />
-			<img class="gabe3" src="photos/gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" />
+			<img class="gabe" src="photos/gabe2.png" alt="Gabriel Atwell" width="300" height="350" />
+			<img class="gabe" src="photos/gabe3.jpg" alt="Gabriel Atwell" width="400" height="900" />
 		</aside>
 		<aside class="flex">
-			<img class="gabe4" src="photos/gabe4.jpg" alt="Gabriel Atwell" width="350" />
-			<img class="gabe5" src="photos/gabe5.png" alt="Gabriel Atwell" width="475" />
-			<img class="gabe6" src="photos/gabe6.png" alt="Gabriel Atwell" width="400" />
+			<img class="gabe" src="photos/gabe4.jpg" alt="Gabriel Atwell" width="350" />
+			<img class="gabe" src="photos/gabe5.png" alt="Gabriel Atwell" width="475" />
+			<img class="gabe" src="photos/gabe6.png" alt="Gabriel Atwell" width="400" />
 		</aside>
 	</section>
 
@@ -102,21 +103,11 @@
 			display: none;
 		}
 
-		.gabe,
-		.gabe2,
-		.gabe3,
-		.gabe4,
-		.gabe5,
-		.gabe6 {
+		.gabe {
 			opacity: 0.5;
 		}
 
-		.gabe:hover,
-		.gabe2:hover,
-		.gabe3:hover,
-		.gabe4:hover,
-		.gabe5:hover,
-		.gabe6:hover {
+		.gabe:hover {
 			opacity: 1;
 			transition: opacity 750ms ease-in-out;
 		}
@@ -205,7 +196,7 @@
 			font-size: 4rem;
 			color: var(--white);
 			margin: 0 0 2rem 0;
-			font-family: var(--righteous);
+			font-family: var(--bree);
 			text-shadow: 0px 0px 50px var(--smoke);
 		}
 

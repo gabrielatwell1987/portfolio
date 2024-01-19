@@ -161,7 +161,7 @@
 			font-size: 1.5rem;
 			mix-blend-mode: difference;
 			color: var(--sky);
-			font-family: var(--righteous);
+			font-family: var(--bree);
 		}
 
 		a {
@@ -216,11 +216,13 @@
 
 		.atwell {
 			margin: 3.5% 0;
-			border-radius: 40%;
+			border-radius: 3rem;
+			clip-path: ellipse(40% 47% at 50% 50%);
 		}
 
 		.atwell:hover {
-			outline: 2px solid var(--white);
+			filter: contrast(1.5);
+			transition: filter 0.5s ease-in-out;
 		}
 
 		.github-link {

@@ -25,8 +25,15 @@
 		// text animation
 		gsap.registerPlugin(TextPlugin);
 
+		gsap.set('.title', {
+			color: 'var(--smoke)',
+			fontWeight: 900,
+			fontSize: '7.5rem',
+			fontFamily: 'var(--bree)'
+		});
+
 		gsap.to('.title', {
-			text: 'TECH STACK',
+			text: 'B L O G',
 			duration: 2.5,
 			ease: 'expoScale(0.5,7,power1.in)',
 			delay: 0.5
@@ -36,7 +43,7 @@
 
 <main>
 	<!-- text animation -->
-	<h1 class="title">.... .....</h1>
+	<h1 class="title">. . . .</h1>
 
 	<!-- links to tech stack pages -->
 	<section>
