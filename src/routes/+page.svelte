@@ -41,14 +41,6 @@
 		h3.addEventListener('mouseleave', () => {
 			gsap.to(h3, { scaleX: 1, duration: 0.75 });
 		});
-
-		h4.addEventListener('mouseenter', () => {
-			gsap.to(h4, { scaleY: 2, letterSpacing: '2px', duration: 0.05 });
-		});
-
-		h4.addEventListener('mouseleave', () => {
-			gsap.to(h4, { scaleY: 1, letterSpacing: '0px', duration: 0.05 });
-		});
 	});
 </script>
 
@@ -109,7 +101,7 @@
 			color: var(--blue);
 			font-size: 1.25rem;
 			font-weight: 800;
-			font-family: var(--righteous);
+			font-family: var(--bree);
 			letter-spacing: 2px;
 		}
 

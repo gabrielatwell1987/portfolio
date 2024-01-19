@@ -138,7 +138,7 @@
 
 		.title {
 			text-align: center;
-			font-family: var(--righteous);
+			font-family: var(--bree);
 			font-size: 2.75rem;
 			color: var(--white);
 			letter-spacing: 5px;
@@ -177,6 +177,20 @@
 
 		img:hover {
 			transform: scale(1.1);
+			clip-path: polygon(
+				0% 15%,
+				15% 15%,
+				15% 0%,
+				85% 0%,
+				85% 15%,
+				100% 15%,
+				100% 85%,
+				85% 85%,
+				85% 100%,
+				15% 100%,
+				15% 85%,
+				0% 85%
+			);
 			transition: transform 0.75s ease;
 		}
 
