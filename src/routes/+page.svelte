@@ -32,15 +32,6 @@
 			.to(text, { x: 2000 })
 			.to(text, { x: 0 }, '-=1')
 			.to(text, { scaleX: 1.75, duration: 3.5 }, '-=1');
-
-		// hero text animations
-		h3.addEventListener('mouseenter', () => {
-			gsap.to(h3, { scaleX: 1.5, duration: 0.75 });
-		});
-
-		h3.addEventListener('mouseleave', () => {
-			gsap.to(h3, { scaleX: 1, duration: 0.75 });
-		});
 	});
 </script>
 
@@ -78,10 +69,13 @@
 
 	<!-- hero section text and links -->
 	<h3>Professionally Crafted Web Experiences</h3>
+
 	<h4 class="summary">
 		I look forward to hearing from you so we can discuss your goals for your online needs!
 	</h4>
+
 	<a class="btn" href="/projects"><button>Projects</button></a>
+
 	<h4 class="summary italic">Some projects I have created.</h4>
 </main>
 <!-- footer spacing -->
@@ -186,7 +180,7 @@
 		}
 
 		h3 {
-			font-size: 2rem;
+			font-size: 3rem;
 			letter-spacing: 7px;
 		}
 
