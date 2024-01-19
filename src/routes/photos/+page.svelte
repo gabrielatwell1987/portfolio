@@ -111,6 +111,9 @@
 			opacity: 1;
 			transition: opacity 750ms ease-in-out;
 		}
+		.title {
+			font-family: var(--bree);
+		}
 	}
 
 	/* bigger than tablet */
@@ -196,7 +199,6 @@
 			font-size: 4rem;
 			color: var(--white);
 			margin: 0 0 2rem 0;
-			font-family: var(--bree);
 			text-shadow: 0px 0px 50px var(--smoke);
 		}
 
