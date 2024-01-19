@@ -1,6 +1,6 @@
 <img style="margin-left: 45%; margin-bottom: 3rem; border-radius: 10px;" width="200" height="200" src="https://imgs.search.brave.com/N1hgWKHudLbcpp0RBaetQ76JGZu8Djm_02jt8OagdHo/rs:fit:860:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy82/LzYyL0NTUzNfbG9n/by5zdmc.svg">
 
-## Transitions
+## TRANSITIONS
 
 <div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;">CSS transitions provide a way to control animation speed when changing CSS properties. Instead of having property changes take effect immediately, you can cause the changes in a property to take place over a period of time. For example, if you change the color of an element from white to black, usually the change is instantaneous. With CSS transitions enabled, changes occur at time intervals that follow an acceleration curve, all of which can be customized. Animations that involve transitioning between two states are often called implicit transitions as the states in between the start and final states are implicitly defined by the browser.</div>
 
@@ -22,7 +22,7 @@ div {
 }
 ```
 
-## Animations
+## ANIMATIONS
 
 <div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem;">In order to create the animations we need to use the `@keyframes` rule. This rule specifies the animation code. The animation is created by gradually changing from one set of CSS styles to another. During the animation, you can change the set of CSS styles many times. Specify when the style change will happen in percent, or with the keywords "from" and "to", which is the same as 0% and 100%. 0% is the beginning of the animation, 100% is when the animation is complete. The following example will change the background-color of the div element from red to yellow:</div>
 
