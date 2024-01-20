@@ -183,10 +183,13 @@
 
 		.modal {
 			padding: 2rem;
+			width: 93%;
+			height: 83%;
+			margin: 0 auto;
 		}
 
-		.modal::backdrop {
-			background-color: rgba(255, 255, 255, 0.4);
+		::backdrop {
+			background-color: rgba(0, 0, 0, 0.5);
 		}
 
 		.modal h4 {
