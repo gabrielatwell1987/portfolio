@@ -29,12 +29,16 @@
 <button class="open-button"><i class="fa-regular fa-envelope-open" /></button>
 
 <dialog class="modal" id="modal">
-	<h2>Please contact me for any frontend work!</h2>
+	<div class="column border">
+		<img src="logos/newspaper.jpg" alt="frontend newspaper clipping" />
 
-	<p>
-		If you need a logo designed, help with web presence, or animations for your website, you can
-		count on me.
-	</p>
+		<h4>Please contact me for any frontend work!</h4>
+
+		<p>
+			If you need a logo designed, help with web presence, or animations for your website, you can
+			count on me.
+		</p>
+	</div>
 
 	<button class="close-button"><i class="fa-solid fa-xmark" /></button>
 </dialog>
@@ -147,13 +151,15 @@
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
+		/* modal */
+
 		.open-button {
 			display: block;
 			font-size: 1.2rem;
 			font-weight: 800;
 			background-color: transparent;
 			color: var(--blue);
-			width: 6%;
+			width: 4%;
 			height: 2%;
 			margin-left: 100%;
 			outline: none;
@@ -167,7 +173,7 @@
 			font-weight: 800;
 			background-color: transparent;
 			color: var(--white);
-			width: 7%;
+			width: 4%;
 			margin-left: 35%;
 			margin-right: 2rem;
 			outline: none;
@@ -175,11 +181,24 @@
 			border-radius: 5px;
 		}
 
-		.modal h2 {
-			font-size: 2.5rem;
+		.modal {
+			padding: 2rem;
+		}
+
+		.modal::backdrop {
+			background-color: rgba(255, 255, 255, 0.4);
+		}
+
+		.modal h4 {
+			font-size: 1.5rem;
+			font-weight: 900;
 			font-family: var(--bree);
-			color: var(--smoke);
-			margin-right: 15rem;
+			color: var(--blue);
+			margin-top: 2rem;
+		}
+
+		.modal img {
+			border-radius: 10px;
 		}
 
 		@keyframes wiggle {
