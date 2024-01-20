@@ -26,7 +26,7 @@
 	});
 </script>
 
-<button class="open-button"><i class="fa-regular fa-envelope-open" /></button>
+<button class="open-button"><i class="fa-regular fa-folder-open" /></button>
 
 <dialog class="modal" id="modal">
 	<div class="column border">
