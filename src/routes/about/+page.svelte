@@ -3,7 +3,6 @@
 	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
 	import Lenis from '@studio-freight/lenis';
-	import { resize_observer_border_box } from 'svelte/internal';
 
 	// lenis
 	const lenis = new Lenis();
@@ -24,7 +23,7 @@
 		gsap.registerPlugin(Draggable);
 
 		const atwell = document.querySelector('.atwell');
-		const border = document.querySelector('.border');
+		const bio = document.querySelector('.bio');
 
 		gsap.set('article', { autoAlpha: 0 });
 
@@ -41,12 +40,12 @@
 		});
 
 		// bio text animations
-		border.addEventListener('mouseenter', () => {
-			gsap.to('.text', { color: '#7d7c84', duration: 0.5 });
+		bio.addEventListener('mouseenter', () => {
+			gsap.to('.text', { color: '#7d7c84', scaleX: 1.025, duration: 0.5 });
 		});
 
-		border.addEventListener('mouseleave', () => {
-			gsap.to('.text', { color: '#eee5e9', duration: 0.5 });
+		bio.addEventListener('mouseleave', () => {
+			gsap.to('.text', { color: '#eee5e9', scaleX: 1, duration: 0.5 });
 		});
 	});
 </script>
@@ -65,7 +64,7 @@
 		<article>
 			<img class="atwell" src="logos/atwell-a.jpeg" alt="Atwell logo that you can move" />
 
-			<div class="border">
+			<div class="bio">
 				<h2 class="main-title">Bio</h2>
 
 				<p class="text">
