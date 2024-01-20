@@ -35,7 +35,7 @@
 		<h4>Please contact me for any frontend work!</h4>
 
 		<p>
-			If you need a logo designed, help with web presence, or animations for your website, you can
+			If you need a logo designed, help with web presence, or animations for your website... you can
 			count on me.
 		</p>
 	</div>
