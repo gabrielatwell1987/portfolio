@@ -159,7 +159,7 @@
 			font-weight: 900;
 			letter-spacing: 1px;
 			width: 40%;
-			font-family: var(--righteous);
+			font-family: var(--bree);
 			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			transition: 750ms;
@@ -261,9 +261,9 @@
 		}
 
 		button {
-			font-family: var(--righteous);
 			font-size: 1.5rem;
-			letter-spacing: 2px;
+			font-weight: 800;
+			letter-spacing: 5px;
 			width: 20%;
 		}
 

@@ -122,10 +122,10 @@
 		margin: 2rem 0 0 30%;
 	}
 
-	h3 {
+	.heading {
 		text-align: center;
 		margin: 5rem 0 0 0;
-		font-family: var(--righteous);
+		font-family: var(--bree);
 		color: var(--blue);
 	}
 
@@ -145,7 +145,7 @@
 		margin: -2rem 0 2rem 0;
 		text-align: center;
 		color: var(--white);
-		font-family: var(--nunito);
+		font-family: var(--montserrat);
 	}
 
 	.greensock {

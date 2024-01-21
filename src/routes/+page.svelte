@@ -78,6 +78,7 @@
 
 	<h4 class="summary italic">Some projects I have created.</h4>
 </main>
+
 <!-- footer spacing -->
 <br /><br /><br /><br /><br /><br /><br /><br />
 
@@ -102,7 +103,9 @@
 		h4 {
 			color: var(--white);
 			font-size: 0.75rem;
+			font-weight: 600;
 			letter-spacing: 0.5px;
+			font-family: var(--major);
 		}
 
 		button {
@@ -155,6 +158,7 @@
 		.italic {
 			font-style: italic;
 			margin-top: 0.5rem;
+			font-family: var(--montserrat);
 			font-weight: 200;
 			font-size: 0.8rem;
 			color: var(--smoke);
