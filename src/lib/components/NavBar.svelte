@@ -90,7 +90,7 @@
 
 		.mobile-link {
 			font-size: 0.8rem;
-			font-family: var(--righteous);
+			font-family: var(--montserrat);
 			color: var(--white);
 		}
 
@@ -136,7 +136,7 @@
 	/* desktop and bigger */
 	@media (min-width: 990px) {
 		.nav-link {
-			font-family: var(--righteous);
+			font-family: var(--montserrat);
 			font-size: 1.5rem;
 			text-decoration: none;
 			font-weight: 600;
