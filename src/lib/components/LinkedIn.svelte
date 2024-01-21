@@ -9,7 +9,7 @@
 	svg {
 		width: 3%;
 		height: 3%;
-		margin-left: 40rem;
+		margin-left: 33rem;
 		margin-right: 8rem;
 		margin-top: 3rem;
 		background-color: #303030;
