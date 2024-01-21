@@ -5,6 +5,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import '../app.css';
 	import LinkedIn from '$lib/components/LinkedIn.svelte';
+	import Reddit from '$lib/components/Reddit.svelte';
 </script>
 
 <svelte:head>
@@ -38,6 +39,10 @@
 
 		<a class="discord" href="https://discordapp.com/users/1007777351809114112">
 			<Discord />
+		</a>
+
+		<a class="discord" href="https://www.reddit.com/user/gatwell702">
+			<Reddit />
 		</a>
 	</section>
 </footer>
