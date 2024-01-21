@@ -143,9 +143,9 @@
 			font-size: 0.8rem;
 			width: 75%;
 			margin: 0 auto;
-			font-family: var(--montserrat);
+			font-family: var(--bree);
 			letter-spacing: 2px;
-			font-style: italic;
+			/* font-style: italic; */
 			text-transform: uppercase;
 		}
 	}

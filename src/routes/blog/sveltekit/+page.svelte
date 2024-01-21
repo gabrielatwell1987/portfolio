@@ -47,7 +47,7 @@
 	<!-- content -->
 	<section>
 		<details>
-			<summary><h3 class="subtitle">The framework I used</h3></summary>
+			<summary><h3 class="heading">The framework I used</h3></summary>
 			<p>
 				I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
 				the server-side rendering (SSR) and all of the SEO features, as well as the speed of
@@ -57,7 +57,7 @@
 		</details>
 
 		<details>
-			<summary><h3 class="subtitle">What I know</h3></summary>
+			<summary><h3 class="heading">What I know</h3></summary>
 			<p>
 				I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I
 				have because I'm a very visual person. Sveltekit has made it super simple to put my ideas on
@@ -66,7 +66,7 @@
 		</details>
 
 		<details>
-			<summary><h3 class="subtitle">What is svelte and sveltekit?</h3></summary>
+			<summary><h3 class="heading">What is svelte and sveltekit?</h3></summary>
 			<p>
 				Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
 				framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
@@ -74,7 +74,7 @@
 			</p>
 		</details>
 
-		<h3 class="subtitle">Learn more about Sveltekit</h3>
+		<h3 class="heading">Learn more about Sveltekit</h3>
 		<p class="center">
 			If you would like to know more about svelte and sveltekit, please click <a
 				href="https://svelte.dev">here</a
@@ -132,11 +132,11 @@
 		margin-bottom: 5rem;
 	}
 
-	.subtitle {
+	.heading {
 		text-align: center;
 		margin: 2rem 0 -0.5rem 0;
 		color: var(--blue);
-		font-family: var(--righteous);
+		font-family: var(--bree);
 	}
 
 	.title {

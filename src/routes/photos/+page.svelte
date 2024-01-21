@@ -141,11 +141,11 @@
 		}
 
 		.domino-text {
-			font-family: var(--righteous);
+			font-family: var(--bree);
 			font-size: 1.75rem;
 			font-weight: 700;
 			color: var(--blue);
-			letter-spacing: 2px;
+			letter-spacing: 5px;
 		}
 
 		@keyframes wiggle {
