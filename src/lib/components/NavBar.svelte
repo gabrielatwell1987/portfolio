@@ -89,7 +89,7 @@
 		}
 
 		.mobile-link {
-			font-size: 0.8rem;
+			font-size: 0.75rem;
 			font-family: var(--montserrat);
 			color: var(--white);
 		}
