@@ -120,7 +120,7 @@
 			font-size: 1.2rem;
 			font-weight: 900;
 			text-align: center;
-			font-family: var(--righteous);
+			font-family: var(--bree);
 			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			transition: 750ms;
@@ -145,6 +145,7 @@
 		.button {
 			width: 20%;
 			font-size: 1rem;
+			letter-spacing: 2px;
 		}
 
 		.button:hover {
@@ -248,6 +249,7 @@
 		.button {
 			width: 15%;
 			font-size: 1.5rem;
+			letter-spacing: 5px;
 		}
 
 		fieldset {
