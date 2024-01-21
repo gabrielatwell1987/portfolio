@@ -248,6 +248,7 @@
 		.button {
 			width: 15%;
 			font-size: 1.5rem;
+			letter-spacing: 5px;
 		}
 
 		fieldset {
