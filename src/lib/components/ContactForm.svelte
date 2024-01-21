@@ -145,7 +145,6 @@
 		.button {
 			width: 20%;
 			font-size: 1rem;
-			letter-spacing: 2px;
 		}
 
 		.button:hover {
@@ -249,7 +248,6 @@
 		.button {
 			width: 15%;
 			font-size: 1.5rem;
-			letter-spacing: 5px;
 		}
 
 		fieldset {
