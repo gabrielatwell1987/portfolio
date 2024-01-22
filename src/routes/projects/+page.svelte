@@ -123,7 +123,7 @@
 
 		.title {
 			text-align: center;
-			font-family: var(--bree);
+			font-family: var(--major);
 			font-size: 2.75rem;
 			color: var(--white);
 			letter-spacing: 5px;

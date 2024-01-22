@@ -19,11 +19,12 @@
 		font-size: 3.5rem;
 		font-weight: 900;
 		color: var(--dark-gray);
-		font-family: var(--pacifico);
+		font-family: var(--major);
 		letter-spacing: 2px;
 		margin-top: 5rem;
 	}
 	section {
-		background: url('logos/hero-no-bg.png') no-repeat center center/cover fixed;
+		background: url('logos/established.png') no-repeat center center/cover fixed;
+		/* background: url('logos/hero-no-bg.png') no-repeat center center/cover fixed; */
 	}
 </style>
