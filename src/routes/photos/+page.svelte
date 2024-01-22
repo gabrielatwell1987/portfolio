@@ -100,7 +100,7 @@
 			transition: opacity 750ms ease-in-out;
 		}
 		.title {
-			font-family: var(--bree);
+			font-family: var(--major);
 		}
 	}
 

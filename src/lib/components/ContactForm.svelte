@@ -99,7 +99,7 @@
 		}
 
 		legend {
-			font-family: var(--pacifico);
+			font-family: var(--major);
 			text-align: center;
 			margin-bottom: 0.5rem;
 			color: var(--smoke);
