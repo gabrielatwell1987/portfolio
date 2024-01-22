@@ -105,7 +105,7 @@
 			font-size: 0.75rem;
 			font-weight: 600;
 			letter-spacing: 0.5px;
-			font-family: var(--major);
+			font-family: var(--montserrat);
 		}
 
 		button {
