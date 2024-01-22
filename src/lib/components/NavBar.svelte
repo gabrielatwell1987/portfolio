@@ -156,7 +156,7 @@
 		.desktop-view {
 			display: block;
 			width: 100%;
-			margin-left: 35%;
+			margin-left: 30%;
 			font-size: 1rem;
 			font-weight: bolder;
 		}
@@ -177,7 +177,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin: 2rem;
+			margin: 3rem;
 		}
 	}
 </style>

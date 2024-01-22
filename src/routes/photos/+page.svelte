@@ -71,6 +71,8 @@
 		>
 	</div>
 </main>
+<!-- footer spacing -->
+<br />
 
 <style>
 	/* bigger than mobile */
