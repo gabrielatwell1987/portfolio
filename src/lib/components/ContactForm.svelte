@@ -251,7 +251,8 @@
 		}
 
 		fieldset {
-			border: 0.5px solid var(--white);
+			border: 5px solid var(--white);
+			border-image: linear-gradient(to left, var(--black), var(--lightblack)) 1;
 			font-weight: bolder;
 			font-size: 2rem;
 			margin: 2rem;

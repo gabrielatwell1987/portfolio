@@ -128,8 +128,8 @@
 			font-size: 0.8rem;
 			width: 100%;
 			margin: 0 auto;
-			border: 0.5px solid var(--white);
-			border-radius: 10px;
+			border: 5px solid var(--white);
+			border-image: linear-gradient(to left, var(--black), var(--lightblack)) 1;
 			background-color: transparent;
 		}
 
