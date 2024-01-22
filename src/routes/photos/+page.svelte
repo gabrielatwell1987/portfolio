@@ -180,8 +180,8 @@
 			align-items: center;
 			width: 100%;
 			margin: 0 auto;
-			border: 0.25px solid var(--white);
-			border-radius: 10px;
+			border: 5px solid var(--white);
+			border-image: linear-gradient(to right, var(--black), var(--lightblack)) 1;
 			background-color: transparent;
 		}
 
