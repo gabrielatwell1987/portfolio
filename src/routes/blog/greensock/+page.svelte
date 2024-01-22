@@ -84,6 +84,8 @@
 		allowfullscreen
 	/>
 </main>
+<!-- footer spacing -->
+<br />
 
 <style>
 	main {
