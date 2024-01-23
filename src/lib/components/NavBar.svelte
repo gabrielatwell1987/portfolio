@@ -187,4 +187,10 @@
 			margin-left: 10%;
 		}
 	}
+
+	@media (min-width: 1440px) {
+		.desktop-view {
+			margin-left: 15%;
+		}
+	}
 </style>
