@@ -41,6 +41,8 @@
 			return () => {
 				gsap.set('.photos', { y: 500 });
 				gsap.set('.gabe', { borderRadius: '15px' });
+
+				gsap.set('.title', { scaleX: 1.25 });
 			};
 		});
 	});
