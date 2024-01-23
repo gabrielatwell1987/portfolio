@@ -158,7 +158,7 @@
 			font-size: 1.2rem;
 			font-weight: 900;
 			letter-spacing: 1px;
-			width: 45%;
+			width: 50%;
 			font-family: var(--bree);
 			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
