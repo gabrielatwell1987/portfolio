@@ -4,8 +4,6 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
-		gsap.set('.title', { scale: 2 });
-
 		// responsive animations
 		let mm = gsap.matchMedia();
 
@@ -105,6 +103,7 @@
 		}
 		.title {
 			font-family: var(--major);
+			font-size: 2rem;
 		}
 	}
 
