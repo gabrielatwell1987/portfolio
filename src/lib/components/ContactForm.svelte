@@ -168,6 +168,11 @@
 			border-radius: 5px;
 		}
 
+		.open-button:hover {
+			color: var(--white);
+			transition: color 0.5s ease-in-out;
+		}
+
 		.close-button {
 			display: block;
 			font-size: 1.2rem;
@@ -180,6 +185,11 @@
 			outline: none;
 			border: 2px solid var(--white);
 			border-radius: 5px;
+		}
+
+		.close-button:hover {
+			color: var(--blue);
+			transition: color 0.5s ease-in-out;
 		}
 
 		.modal {
