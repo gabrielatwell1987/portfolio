@@ -7,10 +7,6 @@
 		<ContactForm />
 	</section>
 </main>
-<!-- footer spacing -->
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
-/><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
-/><br /><br /><br /><br />
 
 <style>
 	.contactForm {
