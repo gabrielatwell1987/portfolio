@@ -7,6 +7,10 @@
 		<ContactForm />
 	</section>
 </main>
+<!-- footer spacing -->
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
+/><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
+/><br /><br /><br /><br />
 
 <style>
 	.contactForm {
@@ -35,7 +39,11 @@
 	@media screen and (min-width: 1024px) {
 		.contactForm {
 			display: block;
-			margin: 2rem 0 0 -24rem;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			/* margin: 2rem 0 0 -24rem; */
 			width: 100%;
 		}
 	}

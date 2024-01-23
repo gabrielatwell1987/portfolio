@@ -163,6 +163,7 @@
 			width: 4%;
 			height: 2%;
 			margin-left: 100%;
+			margin-top: 10rem;
 			outline: none;
 			border: 2px solid var(--blue);
 			border-radius: 5px;
@@ -257,7 +258,7 @@
 		}
 
 		.button {
-			width: 15%;
+			width: 25%;
 			font-size: 1.5rem;
 		}
 
