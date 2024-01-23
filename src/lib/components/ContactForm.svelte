@@ -163,7 +163,6 @@
 			width: 4%;
 			height: 2%;
 			margin-left: 100%;
-			margin-top: 10rem;
 			outline: none;
 			border: 2px solid var(--blue);
 			border-radius: 5px;
