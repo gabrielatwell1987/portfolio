@@ -25,6 +25,5 @@
 	}
 	section {
 		background: url('logos/established.png') no-repeat center center/cover fixed;
-		/* background: url('logos/hero-no-bg.png') no-repeat center center/cover fixed; */
 	}
 </style>
