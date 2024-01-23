@@ -4,6 +4,8 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		gsap.set('.title', { scale: 2 });
+
 		// responsive animations
 		let mm = gsap.matchMedia();
 
@@ -41,8 +43,6 @@
 			return () => {
 				gsap.set('.photos', { y: 500 });
 				gsap.set('.gabe', { borderRadius: '15px' });
-
-				gsap.set('.title', { scale: 2 });
 			};
 		});
 	});
