@@ -156,7 +156,7 @@
 		.desktop-view {
 			display: block;
 			width: 100%;
-			margin-left: 30%;
+			margin-left: -9%;
 			font-size: 1rem;
 			font-weight: bolder;
 		}
@@ -178,6 +178,13 @@
 			justify-content: center;
 			align-items: center;
 			margin: 3rem;
+		}
+	}
+
+	/* desktop and bigger 2 */
+	@media (min-width: 1300px) {
+		.desktop-view {
+			margin-left: 10%;
 		}
 	}
 </style>
