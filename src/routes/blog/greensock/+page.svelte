@@ -160,7 +160,7 @@
 	.learn {
 		margin: 5rem 0 -1rem 0;
 		text-align: center;
-		font-family: var(--righteous);
+		font-family: var(--bree);
 		color: var(--blue);
 	}
 
