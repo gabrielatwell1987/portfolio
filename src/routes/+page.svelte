@@ -96,7 +96,7 @@
 			color: var(--blue);
 			font-size: 1.25rem;
 			font-weight: 800;
-			font-family: var(--bree);
+			font-family: var(--montserrat);
 			letter-spacing: 2px;
 		}
 
