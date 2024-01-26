@@ -208,8 +208,8 @@
 	@media screen and (min-width: 990px) {
 		.linksize {
 			padding: 1.5rem;
-			width: 25%;
-			margin: 0 0 0 37%;
+			width: 100%;
+			margin: 0 auto;
 			letter-spacing: 10px;
 		}
 	}
