@@ -52,7 +52,7 @@
 	}
 
 	.title {
-		font-family: var(--nova);
+		font-family: var(--montserrat);
 		color: var(--white);
 		font-size: 4rem;
 		font-weight: 800;
