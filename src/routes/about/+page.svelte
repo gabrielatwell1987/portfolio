@@ -137,7 +137,7 @@
 			font-size: 1.5rem;
 			mix-blend-mode: difference;
 			color: var(--sky);
-			font-family: var(--bree);
+			font-family: var(--montserrat);
 		}
 
 		a {
@@ -159,7 +159,7 @@
 			font-weight: 900;
 			letter-spacing: 1px;
 			width: 50%;
-			font-family: var(--bree);
+			font-family: var(--montserrat);
 			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			transition: 750ms;

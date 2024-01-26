@@ -68,7 +68,7 @@
 	</svg>
 
 	<!-- hero section text and links -->
-	<h3>Professionally Crafted Web Experiences</h3>
+	<h3>Frontend Crafted Web Experiences</h3>
 
 	<h4 class="summary">
 		I look forward to hearing from you so we can discuss your goals for your online needs!

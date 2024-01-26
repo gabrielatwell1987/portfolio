@@ -28,7 +28,7 @@
 
 <!-- links to my projects -->
 <section class="content">
-	<h3 class="linksize name">random website</h3>
+	<h3 class="linksize name">web dev website</h3>
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank"
 		><img class="img" src="/projects/web_dev.png" alt="web dev" width="200px" height="275px" /></a
 	><br />
@@ -140,12 +140,12 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			font-family: var(--montserrat);
 			font-size: 0.8rem;
+			font-weight: 900;
 			width: 75%;
 			margin: 0 auto;
-			font-family: var(--bree);
 			letter-spacing: 2px;
-			/* font-style: italic; */
 			text-transform: uppercase;
 		}
 	}

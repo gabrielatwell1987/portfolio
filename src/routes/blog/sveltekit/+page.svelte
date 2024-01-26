@@ -136,7 +136,7 @@
 		text-align: center;
 		margin: 2rem 0 -0.5rem 0;
 		color: var(--blue);
-		font-family: var(--bree);
+		font-family: var(--montserrat);
 	}
 
 	.title {
@@ -145,7 +145,7 @@
 		margin: 2rem 0 6rem 0;
 		text-align: center;
 		color: var(--sky);
-		font-family: var(--pacifico);
+		font-family: var(--major);
 		text-shadow: 0px 0px 25px var(--white);
 	}
 

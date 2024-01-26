@@ -12,16 +12,7 @@
 
 			gsap.set('main', { autoAlpha: 0 });
 			gsap.set('.gabe', { borderRadius: '5px' });
-
-			gsap.to('.title', {
-				keyframes: {
-					'1%': { x: 0 },
-					'50%': { scaleX: 5 },
-					'75': { scaleX: 1 }
-				},
-				duration: 5,
-				ease: 'sine.in'
-			});
+			gsap.set('.title', { scale: 1 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 			tl.to('.gabe', {
@@ -144,7 +135,7 @@
 		}
 
 		.domino-text {
-			font-family: var(--bree);
+			font-family: var(--montserrat);
 			font-size: 1.75rem;
 			font-weight: 700;
 			color: var(--blue);

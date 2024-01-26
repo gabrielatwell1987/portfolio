@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 
 :root {
@@ -14,9 +12,7 @@
 	--blue: hsl(201 100% 37%);
 
 	/* fonts */
-	--bree: 'Bree Serif', serif;
 	--montserrat: 'Montserrat', sans-serif;
-	--pacifico: 'Pacifico', cursive;
 	--major: 'Major Mono Display', monospace;
 }
 

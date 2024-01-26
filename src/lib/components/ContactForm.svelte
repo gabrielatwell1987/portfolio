@@ -121,7 +121,7 @@
 			font-size: 1.2rem;
 			font-weight: 900;
 			text-align: center;
-			font-family: var(--bree);
+			font-family: var(--montserrat);
 			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			transition: 750ms;
@@ -206,7 +206,7 @@
 		.modal h4 {
 			font-size: 1.5rem;
 			font-weight: 900;
-			font-family: var(--bree);
+			font-family: var(--montserrat);
 			color: var(--blue);
 			margin-top: 2rem;
 		}
