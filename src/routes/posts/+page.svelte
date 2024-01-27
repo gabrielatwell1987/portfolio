@@ -23,7 +23,4 @@
 		letter-spacing: 2px;
 		margin-top: 5rem;
 	}
-	section {
-		background: url('logos/established.png') no-repeat center center/cover fixed;
-	}
 </style>
