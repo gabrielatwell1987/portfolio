@@ -71,7 +71,9 @@
 	<h3>Frontend Crafted Web Experiences</h3>
 
 	<h4 class="summary">
-		I look forward to hearing from you so we can discuss your goals for your online needs!
+		I am a frontend developer who loves to create beautiful and functional websites. Here is a
+		website that I built from scratch to showcase some projects that I created. I look forward to
+		hearing from you so we can discuss your goals for your online needs!
 	</h4>
 
 	<a class="btn" href="/projects"><button>Projects</button></a>
@@ -153,6 +155,7 @@
 			margin: 0 auto;
 			font-size: 1rem;
 			font-weight: 500;
+			width: 50%;
 		}
 
 		.italic {
