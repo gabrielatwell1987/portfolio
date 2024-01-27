@@ -45,10 +45,10 @@
 				<h2 class="main-title">Bio</h2>
 
 				<p class="text">
-					Gabe is a self-taught web developer. I started out with the basics: HTML, CSS, and
-					JavaScript. I then moved on to more advanced topics such as: Svelte/Sveltekit, Node.js,
-					and GSAP. I have begun to teach myself the backend of web development on my spare time,
-					but I am a complete frontend developer.
+					My name is Gabriel Atwell and I am a self-taught frontend developer. I started out with
+					the basics: HTML, CSS, and JavaScript. I then moved on to more advanced topics such as:
+					Svelte/Sveltekit, Node.js, and GSAP but I have begun to teach myself the backend of web
+					development on my spare time, to become more of a fullstack developer.
 				</p>
 				<p class="text">
 					I have a passion for creating websites that are clean, crisp, and completely functional. I
@@ -81,6 +81,13 @@
 						colors, typography, scaling, and contrast is what he knows best. These topics are the
 						main key to make your website designs look professional and appealing to the eye.
 					</p>
+
+					<!-- <p class="left text">
+						I chose the design for this website because it is sleek and minimalistic. I used the
+						fonts Montserrat and Major Mono Display. I also chose the animations that I use on my
+						projects and photos pages to help me stand out! On the projects page, I use clip-path on
+						hover for the project images. On the photos page, I use scroll trigger and opacity.
+					</p> -->
 				</div>
 			</section>
 
