@@ -130,6 +130,7 @@
 			margin: 0 auto;
 			text-align: center;
 			width: 100%;
+			background: url('/logos/bg3.jpg') no-repeat center center/cover fixed;
 		}
 
 		article {
