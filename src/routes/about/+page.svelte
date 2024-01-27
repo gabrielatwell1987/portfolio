@@ -48,7 +48,8 @@
 					My name is Gabriel Atwell and I am a self-taught frontend developer. I started out with
 					the basics: HTML, CSS, and JavaScript. I then moved on to more advanced topics such as:
 					Svelte/Sveltekit, Node.js, and GSAP but I have begun to teach myself the backend of web
-					development on my spare time, to become more of a fullstack developer.
+					development on my spare time with backend languages like Python and Go to become more of a
+					fullstack developer.
 				</p>
 				<p class="text">
 					I have a passion for creating websites that are clean, crisp, and completely functional. I
