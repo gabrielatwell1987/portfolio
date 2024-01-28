@@ -237,7 +237,8 @@
 			margin-left: 43%;
 		}
 
-		.text {
+		.text,
+		.text:hover {
 			mix-blend-mode: difference;
 		}
 	}
