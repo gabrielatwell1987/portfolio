@@ -159,7 +159,7 @@
 			margin: 0 auto;
 			font-size: 1rem;
 			font-weight: 500;
-			width: 50%;
+			width: 100%;
 		}
 
 		.italic {
@@ -204,6 +204,11 @@
 			height: 75%;
 		}
 
+		.summary {
+			width: 75%;
+			margin: 0 auto;
+		}
+
 		@keyframes wiggle {
 			0% {
 				rotate: 0deg;
@@ -236,6 +241,11 @@
 
 		.italic {
 			margin-top: -1rem;
+		}
+
+		.summary {
+			width: 50%;
+			margin: 0 auto;
 		}
 	}
 
