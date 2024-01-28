@@ -84,12 +84,8 @@
 			display: none;
 		}
 
-		.gabe {
-			opacity: 0.5;
-		}
-
 		.gabe:hover {
-			opacity: 1;
+			opacity: 0.8;
 			transition: opacity 750ms ease-in-out;
 		}
 		.title {
