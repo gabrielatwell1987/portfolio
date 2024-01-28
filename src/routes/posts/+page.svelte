@@ -18,9 +18,13 @@
 		text-align: center;
 		font-size: 3.5rem;
 		font-weight: 900;
-		color: var(--dark-gray);
+		color: var(--white);
 		font-family: var(--major);
 		letter-spacing: 2px;
 		margin-top: 5rem;
+		mix-blend-mode: difference;
+	}
+	section {
+		background: url('/logos/bg3.jpg') no-repeat center center/cover fixed;
 	}
 </style>
