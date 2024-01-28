@@ -206,7 +206,6 @@
 
 		.summary {
 			width: 75%;
-			margin: 0 auto;
 		}
 
 		@keyframes wiggle {
@@ -245,7 +244,6 @@
 
 		.summary {
 			width: 50%;
-			margin: 0 auto;
 		}
 	}
 
