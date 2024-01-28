@@ -236,6 +236,10 @@
 			margin-top: 2.5rem;
 			margin-left: 43%;
 		}
+
+		.text {
+			mix-blend-mode: difference;
+		}
 	}
 	/* bigger than desktop */
 	@media screen and (min-width: 990px) {
