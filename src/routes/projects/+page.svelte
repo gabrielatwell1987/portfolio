@@ -102,10 +102,10 @@
 				0 calc(var(--size) * 4) 0 var(--lightblack);
 		}
 
-		section {
-			/* background: url('logos/hero-bg-img.jpg') no-repeat center center/cover fixed; */
+		/* section {
+			background: url('logos/hero-bg-img.jpg') no-repeat center center/cover fixed;
 			background: url('logos/fire.png') no-repeat center center/cover fixed;
-		}
+		} */
 
 		.img {
 			border-radius: 8px;
