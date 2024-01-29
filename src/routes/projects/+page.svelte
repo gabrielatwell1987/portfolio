@@ -98,8 +98,13 @@
 
 			--size: 3px;
 			height: var(--size);
-			box-shadow: 0 calc(var(--size) * 2) 0 var(--smoke), 0 calc(var(--size) * 4) 0 var(--blue),
-				0 calc(var(--size) * 6) 0 var(--lightblack);
+			box-shadow: 0 calc(var(--size) * 2) 0 var(--smoke),
+				0 calc(var(--size) * 4) 0 var(--lightblack);
+		}
+
+		section {
+			/* background: url('logos/hero-bg-img.jpg') no-repeat center center/cover fixed; */
+			background: url('logos/fire.png') no-repeat center center/cover fixed;
 		}
 
 		.img {
@@ -133,7 +138,7 @@
 		.linksize {
 			text-align: center;
 			background-color: transparent;
-			color: var(--blue);
+			color: var(--smoke);
 			border: none;
 			padding: 1rem;
 			display: flex;
@@ -147,6 +152,10 @@
 			margin: 0 auto;
 			letter-spacing: 2px;
 			text-transform: uppercase;
+		}
+
+		.name {
+			font-weight: 900;
 		}
 	}
 
