@@ -26,11 +26,11 @@
 
 		// bio text animations
 		bio.addEventListener('mouseenter', () => {
-			gsap.to('.text', { color: '#7d7c84', scaleX: 1.025, duration: 0.5 });
+			gsap.to('.text', { scaleX: 1.025, duration: 0.5 });
 		});
 
 		bio.addEventListener('mouseleave', () => {
-			gsap.to('.text', { color: '#eee5e9', scaleX: 1, duration: 0.5 });
+			gsap.to('.text', { scaleX: 1, duration: 0.5 });
 		});
 	});
 </script>
