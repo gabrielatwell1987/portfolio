@@ -79,7 +79,7 @@
 
 <!-- footer spacing -->
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
-/><br />
+/><br /><br />
 
 <style>
 	/* bigger than mobile */
