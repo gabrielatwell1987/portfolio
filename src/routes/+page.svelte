@@ -88,7 +88,7 @@
 			font-size: 1.75rem;
 			height: 100vh;
 			position: relative;
-			background: url('logos/fire.png') no-repeat center center/cover fixed;
+			/* background: url('logos/fire.png') no-repeat center center/cover fixed; */
 		}
 
 		h3 {
