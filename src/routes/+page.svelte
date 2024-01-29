@@ -20,7 +20,7 @@
 
 <main class="atwellLogo">
 	<!-- hero background -->
-	<div class="hero" />
+	<div class="hero-bg" />
 
 	<!-- hero image svg -->
 	<svg
@@ -83,9 +83,9 @@
 		to hearing from you so we can discuss your goals for your online needs!
 	</h4>
 
-	<a class="btn btn-mobile" href="/projects"><button>Projects</button></a>
+	<a class="btn" href="/projects"><button>Projects</button></a>
 
-	<h4 class="summary italic hero-mobile2">Some projects I have created.</h4>
+	<h4 class="summary italic">Some projects I have created.</h4>
 </main>
 
 <!-- footer spacing -->
@@ -151,7 +151,7 @@
 		svg {
 			width: 100%;
 			height: 50%;
-			opacity: 0.75;
+			opacity: 1;
 			margin-bottom: 15%;
 
 			/* svg positioning  */
@@ -182,7 +182,7 @@
 		}
 
 		/* hero background image */
-		.hero {
+		.hero-bg {
 			width: 100%;
 			height: 130%;
 			background: url('logos/bg4.jpg') no-repeat center center/cover fixed;
@@ -231,19 +231,6 @@
 			width: 75%;
 		}
 
-		/* hero background image */
-		.hero {
-			width: 100%;
-			height: 130%;
-			background: url('logos/bg4.jpg') no-repeat center center/cover fixed;
-			opacity: 0.2;
-			border-radius: 15px;
-		}
-
-		.hero-title {
-			margin-top: 5%;
-		}
-
 		@keyframes wiggle {
 			0% {
 				rotate: 0deg;
@@ -280,19 +267,6 @@
 
 		.summary {
 			width: 50%;
-		}
-
-		/* hero background image */
-		.hero {
-			width: 100%;
-			height: 130%;
-			background: url('logos/bg4.jpg') no-repeat center center/cover fixed;
-			opacity: 0.2;
-			border-radius: 15px;
-		}
-
-		.hero-title {
-			margin-top: 5%;
 		}
 	}
 
