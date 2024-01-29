@@ -231,6 +231,19 @@
 			width: 75%;
 		}
 
+		/* hero background image */
+		.hero {
+			width: 100%;
+			height: 130%;
+			background: url('logos/bg4.jpg') no-repeat center center/cover fixed;
+			opacity: 0.2;
+			border-radius: 15px;
+		}
+
+		.hero-title {
+			margin-top: 5%;
+		}
+
 		@keyframes wiggle {
 			0% {
 				rotate: 0deg;
@@ -267,6 +280,19 @@
 
 		.summary {
 			width: 50%;
+		}
+
+		/* hero background image */
+		.hero {
+			width: 100%;
+			height: 130%;
+			background: url('logos/bg4.jpg') no-repeat center center/cover fixed;
+			opacity: 0.2;
+			border-radius: 15px;
+		}
+
+		.hero-title {
+			margin-top: 5%;
 		}
 	}
 
