@@ -159,16 +159,17 @@
 			font-size: 1.2rem;
 			font-weight: 800;
 			background-color: transparent;
-			color: var(--blue);
+			color: var(--smoke);
 			width: 4%;
 			height: 2%;
 			margin-left: 100%;
 			outline: none;
-			border: 2px solid var(--blue);
+			border: 2px solid var(--smoke);
 			border-radius: 5px;
 		}
 
 		.open-button:hover {
+			border: 2px solid var(--white);
 			color: var(--white);
 			transition: color 0.5s ease-in-out;
 		}
@@ -188,7 +189,8 @@
 		}
 
 		.close-button:hover {
-			color: var(--blue);
+			color: var(--smoke);
+			border: 2px solid var(--smoke);
 			transition: color 0.5s ease-in-out;
 		}
 
