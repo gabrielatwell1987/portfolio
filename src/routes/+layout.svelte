@@ -50,7 +50,6 @@
 <style>
 	:global(html, body) {
 		background-color: #0f1417;
-		/* background-color: #0f0f0f; */
 	}
 
 	/* desktop */
