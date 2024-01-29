@@ -186,7 +186,7 @@
 			width: 100%;
 			height: 130%;
 			background: url('logos/bg4.jpg') no-repeat center center/cover fixed;
-			opacity: 0.1;
+			opacity: 0.2;
 			border-radius: 15px;
 		}
 
