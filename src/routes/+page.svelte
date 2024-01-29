@@ -19,9 +19,6 @@
 </script>
 
 <main class="atwellLogo">
-	<!-- hero background -->
-	<div class="hero-bg" />
-
 	<!-- hero image svg -->
 	<svg
 		width="1200"
@@ -75,7 +72,7 @@
 	</svg>
 
 	<!-- hero section text and links -->
-	<h3 class="hero-title">Frontend Crafted Web Experiences</h3>
+	<h3>Frontend Crafted Web Experiences</h3>
 
 	<h4 class="summary hero-mobile">
 		I am a frontend developer who loves to create beautiful and functional websites. This portfolio
@@ -90,7 +87,7 @@
 
 <!-- footer spacing -->
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
-/><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+/><br />
 
 <style>
 	/* bigger than mobile */
@@ -100,10 +97,12 @@
 			font-size: 1.75rem;
 			height: 100vh;
 			position: relative;
+			background: url('logos/bg4.jpg') no-repeat center center/cover fixed;
 		}
 
 		h3 {
 			margin: 2rem auto;
+			margin-top: 10%;
 			color: var(--blue);
 			font-size: 1.25rem;
 			font-weight: 800;
@@ -152,12 +151,8 @@
 			width: 100%;
 			height: 50%;
 			opacity: 1;
-			margin-bottom: 15%;
-
-			/* svg positioning  */
-			position: absolute;
-			top: 300px;
-			left: 0;
+			margin-top: 5%;
+			margin-bottom: 5%;
 		}
 
 		.btn {
@@ -179,19 +174,6 @@
 			font-weight: 200;
 			font-size: 0.8rem;
 			color: var(--smoke);
-		}
-
-		/* hero background image */
-		.hero-bg {
-			width: 100%;
-			height: 130%;
-			background: url('logos/bg4.jpg') no-repeat center center/cover fixed;
-			opacity: 0.2;
-			border-radius: 15px;
-		}
-
-		.hero-title {
-			margin-top: 5%;
 		}
 	}
 
