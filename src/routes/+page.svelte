@@ -5,9 +5,7 @@
 
 	// animations
 	onMount(() => {
-		// Make the hero image draggable
-		gsap.registerPlugin(Draggable);
-
+		// fade the logo in
 		gsap.to('.atwellLogo', { autoAlpha: 1, duration: 2.5, ease: 'sine.in' });
 	});
 </script>
