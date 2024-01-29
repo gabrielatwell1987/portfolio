@@ -9,12 +9,6 @@
 		gsap.registerPlugin(Draggable);
 
 		gsap.to('.atwellLogo', { autoAlpha: 1, duration: 2.5, ease: 'sine.in' });
-
-		Draggable.create('.hero', {
-			type: 'y',
-			bounds: document.querySelector('main'),
-			inertia: true
-		});
 	});
 </script>
 
