@@ -268,6 +268,7 @@
 			color: var(--white);
 			border: 2px solid var(--smoke);
 			border-radius: 12px;
+			text-align: center;
 		}
 
 		h3 {
