@@ -275,6 +275,7 @@
 			color: var(--blue);
 			font-size: 2.2rem;
 			font-weight: 900;
+			text-align: center;
 		}
 	}
 </style>
