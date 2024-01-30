@@ -171,7 +171,6 @@
 		.open-button:hover {
 			border: 2px solid var(--white);
 			color: var(--white);
-			transition: color 0.5s ease-in-out;
 		}
 
 		.close-button {
@@ -191,7 +190,6 @@
 		.close-button:hover {
 			color: var(--smoke);
 			border: 2px solid var(--smoke);
-			transition: color 0.5s ease-in-out;
 		}
 
 		.modal {
