@@ -5,11 +5,11 @@
 	// animations
 	onMount(() => {
 		// fade the logo in
-		gsap.to('.atwellLogo', { autoAlpha: 1, duration: 2.5, ease: 'sine.in' });
+		gsap.to('main', { autoAlpha: 1, duration: 2.5, ease: 'sine.in' });
 	});
 </script>
 
-<main class="atwellLogo">
+<main>
 	<!-- hero image svg -->
 	<svg
 		width="1200"
