@@ -73,6 +73,22 @@
 
 	<hr />
 
+	<!-- skills section -->
+	<section class="border">
+		<h3>Skills</h3>
+		<ul class="skills">
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>JavaScript</li>
+			<li>Greensock</li>
+			<li>Git/GitHub</li>
+			<li>Node.js</li>
+			<li>Tailwind CSS</li>
+			<li>SCSS</li>
+			<li>Sveltekit</li>
+		</ul>
+	</section>
+
 	<!-- logo -->
 	<div class="logos">
 		<img class="designs" src="logos/designs.png" alt="Atwell logo that you can move" />
@@ -102,10 +118,11 @@
 				0 calc(var(--size) * 4) 0 var(--lightblack);
 		}
 
-		/* section {
-			background: url('logos/hero-bg-img.jpg') no-repeat center center/cover fixed;
-			background: url('logos/fire.png') no-repeat center center/cover fixed;
-		} */
+		.border {
+			width: 15%;
+			margin: 0 auto;
+			display: none;
+		}
 
 		.img {
 			border-radius: 8px;
@@ -220,6 +237,38 @@
 			width: 100%;
 			margin: 0 auto;
 			letter-spacing: 10px;
+		}
+
+		.content {
+			margin-bottom: -5%;
+		}
+
+		/* skills section */
+
+		.border {
+			display: block;
+			width: 15rem;
+		}
+
+		.skills {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		.skills li {
+			list-style: none;
+			margin: 0 auto;
+			padding: 0.5rem 0.75rem;
+			width: 100%;
+			font-size: 1rem;
+			font-weight: 900;
+			font-family: var(--montserrat);
+			letter-spacing: 1px;
+			background-color: var(--lightblack);
+			color: var(--white);
+			border: 2px solid var(--smoke);
+			border-radius: 12px;
 		}
 	}
 </style>
