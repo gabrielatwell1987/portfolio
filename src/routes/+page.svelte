@@ -88,7 +88,6 @@
 			font-size: 1.75rem;
 			height: 100vh;
 			position: relative;
-			/* background: url('/static/logos/hero-bg-img.jpg') no-repeat center center/cover fixed; */
 		}
 
 		h3 {
