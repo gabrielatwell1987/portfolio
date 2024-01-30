@@ -269,5 +269,11 @@
 			border: 2px solid var(--smoke);
 			border-radius: 12px;
 		}
+
+		h3 {
+			color: var(--blue);
+			font-size: 2.2rem;
+			font-weight: 900;
+		}
 	}
 </style>
