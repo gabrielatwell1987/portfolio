@@ -49,7 +49,7 @@
 
 <style>
 	:global(html, body) {
-		background-color: #000000;
+		background-color: #0f0f0f;
 	}
 
 	/* desktop */
