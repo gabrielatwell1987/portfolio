@@ -89,7 +89,7 @@
 			height: 100vh;
 			position: relative;
 			/* background: url('logos/fire.png') no-repeat center center/cover fixed; */
-			background: url('logos/hero-bg-img.jpg') no-repeat center center/cover fixed;
+			background: url('logos/bg3.jpg') no-repeat center center/cover fixed;
 		}
 
 		h3 {
