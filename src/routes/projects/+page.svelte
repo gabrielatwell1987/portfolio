@@ -126,7 +126,6 @@
 
 		.img {
 			border-radius: 8px;
-			/* opacity: 0.5; */
 		}
 
 		.img:hover {
