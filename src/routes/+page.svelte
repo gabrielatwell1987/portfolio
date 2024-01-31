@@ -111,12 +111,12 @@
 		button {
 			display: block;
 			background-color: transparent;
-			color: var(--smoke);
-			font-family: var(--righteous);
+			color: var(--white);
+			font-family: var(--montserrat);
 			width: 35%;
 			height: 10%;
 			outline: none;
-			border: 1px solid var(--smoke);
+			border: 1px solid var(--white);
 			margin: 1rem auto;
 			border-radius: 10px;
 			font-size: 1rem;
