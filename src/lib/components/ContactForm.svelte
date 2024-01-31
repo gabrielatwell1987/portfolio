@@ -114,10 +114,10 @@
 		.button {
 			width: 35%;
 			margin: 0 auto;
-			border: 1px solid var(--smoke);
+			border: 1px solid var(--white);
 			border-radius: 8px;
 			background-color: transparent;
-			color: var(--smoke);
+			color: var(--white);
 			font-size: 1.2rem;
 			font-weight: 900;
 			text-align: center;
