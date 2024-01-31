@@ -130,7 +130,8 @@
 			margin: 0 auto;
 			text-align: center;
 			width: 100%;
-			background: url('/logos/bg2.jpg') no-repeat center center/cover fixed;
+			background: url('/logos/heart-skull.png') no-repeat center center/contain fixed;
+			/* background: url('/logos/bg2.jpg') no-repeat center center/cover fixed; */
 		}
 
 		article {
@@ -159,8 +160,8 @@
 
 		button {
 			background-color: transparent;
-			color: var(--smoke);
-			border: 1px solid var(--smoke);
+			color: var(--white);
+			border: 1px solid var(--white);
 			margin: 3rem auto;
 			border-radius: 8px;
 			cursor: pointer;
