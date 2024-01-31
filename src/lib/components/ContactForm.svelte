@@ -112,7 +112,7 @@
 		}
 
 		.button {
-			width: 30%;
+			width: 35%;
 			margin: 0 auto;
 			border: 1px solid var(--smoke);
 			border-radius: 8px;
