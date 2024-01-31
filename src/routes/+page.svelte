@@ -113,7 +113,7 @@
 			background-color: transparent;
 			color: var(--white);
 			font-family: var(--montserrat);
-			width: 35%;
+			width: 40%;
 			height: 10%;
 			outline: none;
 			border: 1px solid var(--white);
