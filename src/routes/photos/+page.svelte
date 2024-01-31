@@ -134,7 +134,7 @@
 			font-family: var(--montserrat);
 			font-size: 1.75rem;
 			font-weight: 700;
-			color: var(--smoke);
+			color: var(--blue);
 			letter-spacing: 5px;
 		}
 

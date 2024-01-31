@@ -145,7 +145,7 @@
 		h2 {
 			font-size: 1.5rem;
 			mix-blend-mode: difference;
-			color: var(--sky);
+			color: var(--blue);
 			font-family: var(--montserrat);
 		}
 
@@ -174,6 +174,7 @@
 			transition: 750ms;
 			outline: 3px solid currentColor;
 			outline-offset: -7px;
+			mix-blend-mode: difference;
 		}
 
 		button:hover,
@@ -314,12 +315,12 @@
 		}
 
 		.main-title {
-			color: var(--sky);
+			color: var(--blue);
 		}
 
 		.title {
 			/* color: var(--black); */
-			color: var(--sky);
+			color: var(--blue);
 		}
 
 		.text {
