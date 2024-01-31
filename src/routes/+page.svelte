@@ -132,7 +132,7 @@
 		button:hover,
 		button:focus {
 			border: 1px solid var(--black);
-			background-color: var(--smoke);
+			background-color: var(--white);
 			color: var(--black);
 			outline-offset: 0px;
 		}
