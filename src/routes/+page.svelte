@@ -13,8 +13,8 @@
 	<!-- hero image svg -->
 	<svg
 		width="1200"
-		height="639"
-		viewBox="0 0 1200 639"
+		height="730"
+		viewBox="0 0 1200 730"
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg"
 	>
@@ -96,8 +96,7 @@
 </main>
 
 <!-- footer spacing -->
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
-/><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 <style>
 	/* bigger than mobile */
