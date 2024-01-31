@@ -127,6 +127,8 @@
 			transition: 750ms;
 			outline: 3px solid currentColor;
 			outline-offset: -7px;
+			margin-top: 2rem;
+			margin-bottom: 2rem;
 		}
 
 		button:hover,
