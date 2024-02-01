@@ -135,7 +135,7 @@
 	.heading {
 		text-align: center;
 		margin: 2rem 0 -0.5rem 0;
-		color: var(--blue);
+		color: var(--purple);
 		font-family: var(--montserrat);
 	}
 
