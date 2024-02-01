@@ -154,7 +154,7 @@
 		.linksize {
 			text-align: center;
 			background-color: transparent;
-			color: var(--smoke);
+			color: var(--purple);
 			border: none;
 			padding: 1rem;
 			display: flex;

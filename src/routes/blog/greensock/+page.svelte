@@ -128,7 +128,7 @@
 		text-align: center;
 		margin: 5rem 0 0 0;
 		font-family: var(--montserrat);
-		color: var(--blue);
+		color: var(--purple);
 	}
 
 	.title {
@@ -161,7 +161,7 @@
 		margin: 5rem 0 -1rem 0;
 		text-align: center;
 		font-family: var(--montserrat);
-		color: var(--blue);
+		color: var(--purple);
 	}
 
 	.center {
