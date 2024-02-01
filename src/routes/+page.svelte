@@ -84,7 +84,7 @@
 	</svg>
 
 	<!-- hero section text and links -->
-	<h3>Frontend Crafted Web Experiences</h3>
+	<h3><span class="frontend">Frontend</span> Crafted Web Experiences</h3>
 
 	<h4 class="summary hero-mobile">
 		I am a frontend developer who loves to create beautiful and functional websites. This portfolio
