@@ -200,7 +200,7 @@
 		}
 
 		::backdrop {
-			background-color: rgba(0, 0, 0, 0.5);
+			background: url('/logos/smoky.png') no-repeat center center/cover;
 		}
 
 		.modal h4 {
