@@ -146,7 +146,7 @@
 		h2 {
 			font-size: 1.5rem;
 			mix-blend-mode: difference;
-			color: var(--blue);
+			color: var(--purple);
 			font-family: var(--montserrat);
 		}
 
@@ -316,12 +316,11 @@
 		}
 
 		.main-title {
-			color: var(--blue);
+			color: var(--purple);
 		}
 
 		.title {
-			/* color: var(--black); */
-			color: var(--blue);
+			color: var(--purple);
 		}
 
 		.text {

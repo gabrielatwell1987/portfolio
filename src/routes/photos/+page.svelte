@@ -135,7 +135,7 @@
 			font-family: var(--montserrat);
 			font-size: 1.75rem;
 			font-weight: 700;
-			color: var(--blue);
+			color: var(--purple);
 			letter-spacing: 5px;
 		}
 
