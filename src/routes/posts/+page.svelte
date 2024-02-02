@@ -25,6 +25,6 @@
 		mix-blend-mode: difference;
 	}
 	section {
-		background: url('/logos/bg3.jpg') no-repeat center center/cover fixed;
+		background: url('/logos/bg2.jpg') no-repeat center center/cover fixed;
 	}
 </style>
