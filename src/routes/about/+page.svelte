@@ -39,7 +39,11 @@
 	<!-- content -->
 	<section>
 		<article>
-			<img class="atwell" src="logos/atwell-a.jpeg" alt="Atwell logo that you can move" />
+			<img
+				class="atwell"
+				src="logos/atwell-a.jpeg"
+				alt="An logo that says Atwell that you can move"
+			/>
 
 			<div class="bio">
 				<h2 class="main-title">Bio</h2>
