@@ -51,14 +51,14 @@
 		<legend> CONTACT </legend>
 
 		<label for="name"><span>Name</span></label>
-		<input type="text" id="name" name="name" placeholder="Your name" bind:value={name} required />
+		<input type="text" id="name" name="name" placeholder="John Doe" bind:value={name} required />
 
 		<label for="email"><span>Email</span></label>
 		<input
 			type="email"
 			id="email"
 			name="email"
-			placeholder="Your email"
+			placeholder="john.doe@example.com"
 			bind:value={email}
 			required
 		/>
@@ -74,7 +74,7 @@
 			required
 		/>
 
-		<button class="button" type="submit">Send</button>
+		<button class="button" type="submit" aria-label="send">Send</button>
 	</fieldset>
 </form>
 
@@ -111,6 +111,18 @@
 			font-weight: 600;
 		}
 
+		span {
+			font-size: 0.95rem;
+			font-weight: 800;
+		}
+
+		#name::-webkit-input-placeholder,
+		#email::-webkit-input-placeholder,
+		#message::-webkit-input-placeholder {
+			color: var(--white);
+			font-weight: 100;
+		}
+
 		.button {
 			width: 35%;
 			margin: 0 auto;
@@ -127,6 +139,7 @@
 			transition: 750ms;
 			outline: 3px solid currentColor;
 			outline-offset: -7px;
+			padding: 1rem 1.75rem;
 		}
 
 		.button:hover,
@@ -143,6 +156,11 @@
 	}
 	/* bigger than tablet */
 	@media screen and (min-width: 750px) {
+		span {
+			font-size: 1.25rem;
+			font-weight: 800;
+		}
+
 		.button {
 			width: 20%;
 			font-size: 1rem;

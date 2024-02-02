@@ -92,7 +92,7 @@
 		to hearing from you so we can discuss your goals for your online needs!
 	</h4>
 
-	<a class="btn" href="/projects"><button>Projects</button></a>
+	<a class="btn" href="/projects"><button aria-label="projects">Projects</button></a>
 
 	<h4 class="summary italic">Some projects I have created.</h4>
 </main>
@@ -149,6 +149,7 @@
 			outline-offset: -7px;
 			margin-top: 2rem;
 			margin-bottom: 0.25rem;
+			padding: 1rem 1.75rem;
 		}
 
 		button:hover,

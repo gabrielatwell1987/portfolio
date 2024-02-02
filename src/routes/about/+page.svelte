@@ -42,7 +42,7 @@
 			<img
 				class="atwell"
 				src="logos/atwell-a.jpeg"
-				alt="An logo that says Atwell that you can move"
+				alt="An logo that says Atwell that you can move."
 			/>
 
 			<div class="bio">
@@ -110,7 +110,7 @@
 			</div>
 
 			<!-- image gallery -->
-			<a class="btn-link" href="/about/gallery"><button>Gallery</button></a>
+			<a class="btn-link" href="/about/gallery"><button aria-label="gallery">Gallery</button></a>
 		</article>
 	</section>
 </main>
@@ -179,6 +179,7 @@
 			outline: 3px solid currentColor;
 			outline-offset: -7px;
 			mix-blend-mode: difference;
+			padding: 1rem 1.75rem;
 		}
 
 		button:hover,
@@ -234,7 +235,7 @@
 
 		.fa-codepen:hover,
 		.fa-github:hover {
-			color: var(--sky);
+			color: var(--purple);
 		}
 
 		.dev-links {

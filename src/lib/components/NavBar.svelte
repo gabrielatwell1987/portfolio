@@ -18,22 +18,22 @@
 	<!-- desktop view -->
 	{#if open}
 		<div class="desktop-view">
-			<a class="nav-link underline" href="/projects">projects</a>
-			<a class="nav-link underline" href="/blog">blog</a>
-			<a class="nav-link underline" href="/about">about</a>
-			<a class="nav-link underline" href="/photos">photos</a>
-			<a class="nav-link underline" href="/contact">contact</a>
+			<a class="nav-link underline" href="/projects" aria-label="projects">projects</a>
+			<a class="nav-link underline" href="/blog" aria-label="blog">blog</a>
+			<a class="nav-link underline" href="/about" aria-label="about">about</a>
+			<a class="nav-link underline" href="/photos" aria-label="photos">photos</a>
+			<a class="nav-link underline" href="/contact" aria-label="contact">contact</a>
 		</div>
 	{/if}
 
 	<!-- mobile view -->
 	<div class="mobile-view">
 		<div class="mobile-links">
-			<a class="mobile-link" href="/">HOME</a>
-			<a class="mobile-link" href="/projects">PROJECTS</a>
-			<a class="mobile-link" href="/about">ABOUT</a>
-			<a class="mobile-link" href="/photos">PHOTOS</a>
-			<a class="mobile-link" href="/contact">CONTACT</a>
+			<a class="mobile-link" href="/" aria-label="home">HOME</a>
+			<a class="mobile-link" href="/projects" aria-label="projects">PROJECTS</a>
+			<a class="mobile-link" href="/about" aria-label="about">ABOUT</a>
+			<a class="mobile-link" href="/photos" aria-label="photos">PHOTOS</a>
+			<a class="mobile-link" href="/contact" aria-label="contact">CONTACT</a>
 		</div>
 	</div>
 </nav>
