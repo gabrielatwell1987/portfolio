@@ -30,12 +30,24 @@
 <section class="content">
 	<h3 class="linksize name">web dev website</h3>
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank"
-		><img class="img" src="/projects/web_dev.png" alt="web dev" width="200px" height="275px" /></a
+		><img
+			class="img"
+			src="/projects/web_dev.png"
+			alt="The first project: Web dev"
+			width="200px"
+			height="275px"
+		/></a
 	><br />
 
 	<h3 class="linksize name">horizontal scroller</h3>
 	<a class="linksize" href="https://gabe2.vercel.app" target="_blank"
-		><img class="img" src="/projects/scroller.png" alt="scroller" width="450px" height="280px" /></a
+		><img
+			class="img"
+			src="/projects/scroller.png"
+			alt="The second project: Scroller"
+			width="450px"
+			height="280px"
+		/></a
 	><br />
 
 	<h3 class="linksize name">starbucks clone</h3>
@@ -43,7 +55,7 @@
 		><img
 			class="img"
 			src="/projects/starbucks.png"
-			alt="starbucks"
+			alt="The third project: Starbucks Clone"
 			width="500px"
 			height="400px"
 		/></a
@@ -54,7 +66,7 @@
 		><img
 			class="img"
 			src="/projects/snippet.png"
-			alt="code snippet"
+			alt="The fourth project: Code Snippet"
 			width="350px"
 			height="600px"
 		/></a
@@ -65,7 +77,7 @@
 		><img
 			class="img"
 			src="/projects/svelteflix.png"
-			alt="svelteflix"
+			alt="The fifth project: Svelteflix"
 			width="475px"
 			height="300px"
 		/></a
@@ -91,7 +103,11 @@
 
 	<!-- logo -->
 	<div class="logos">
-		<img class="designs" src="logos/designs.png" alt="Atwell logo that you can move" />
+		<img
+			class="designs"
+			src="logos/designs.png"
+			alt="A logo that says Atwell Designs that you can move"
+		/>
 	</div>
 </section>
 
