@@ -136,9 +136,9 @@
 		font-weight: 800;
 		margin: 2rem 0 -5rem 0;
 		text-align: center;
-		color: var(--sky);
+		color: var(--smoke);
 		font-family: var(--major);
-		text-shadow: 0px 0px 25px var(--white);
+		text-shadow: 0px 0px 25px var(--blue);
 	}
 
 	.subtitle {
