@@ -131,7 +131,6 @@
 			text-align: center;
 			width: 100%;
 			background: url('/logos/heart-skull.png') no-repeat center center/contain fixed;
-			/* background: url('/logos/bg2.jpg') no-repeat center center/cover fixed; */
 		}
 
 		article {
