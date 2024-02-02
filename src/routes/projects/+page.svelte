@@ -33,7 +33,7 @@
 		><img
 			class="img"
 			src="/projects/web_dev.png"
-			alt="The first project: Web dev"
+			alt="The first project: Web dev."
 			width="200px"
 			height="275px"
 		/></a
@@ -44,7 +44,7 @@
 		><img
 			class="img"
 			src="/projects/scroller.png"
-			alt="The second project: Scroller"
+			alt="The second project: Scroller."
 			width="450px"
 			height="280px"
 		/></a
@@ -55,7 +55,7 @@
 		><img
 			class="img"
 			src="/projects/starbucks.png"
-			alt="The third project: Starbucks Clone"
+			alt="The third project: Starbucks Clone."
 			width="500px"
 			height="400px"
 		/></a
@@ -66,7 +66,7 @@
 		><img
 			class="img"
 			src="/projects/snippet.png"
-			alt="The fourth project: Code Snippet"
+			alt="The fourth project: Code Snippet."
 			width="350px"
 			height="600px"
 		/></a
@@ -77,7 +77,7 @@
 		><img
 			class="img"
 			src="/projects/svelteflix.png"
-			alt="The fifth project: Svelteflix"
+			alt="The fifth project: Svelteflix."
 			width="475px"
 			height="300px"
 		/></a

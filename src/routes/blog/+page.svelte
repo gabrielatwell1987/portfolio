@@ -41,7 +41,7 @@
 		<a href="/posts"
 			><img
 				src="logos/animation.png"
-				alt="A logo that says web animation techniques"
+				alt="A logo that says web animation techniques."
 				class="image"
 			/></a
 		>
