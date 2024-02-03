@@ -177,12 +177,12 @@
 			font-size: 1.2rem;
 			font-weight: 800;
 			background-color: transparent;
-			color: var(--black);
+			color: var(--lightblack);
 			width: 4%;
 			height: 2%;
 			margin-left: 100%;
 			outline: none;
-			border: 2px solid var(--black);
+			border: 2px solid var(--lightblack);
 			border-radius: 5px;
 			padding: 1rem;
 		}
@@ -197,12 +197,12 @@
 			font-size: 1.2rem;
 			font-weight: 800;
 			background-color: transparent;
-			color: var(--black);
+			color: var(--lightblack);
 			width: 4%;
 			margin-left: 35%;
 			margin-right: 2rem;
 			outline: none;
-			border: 2px solid var(--black);
+			border: 2px solid var(--lightblack);
 			border-radius: 5px;
 			padding: 1rem;
 		}
