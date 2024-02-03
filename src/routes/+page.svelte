@@ -269,4 +269,10 @@
 			width: 20%;
 		}
 	}
+
+	@media screen and (min-width: 1920px) {
+		button {
+			width: 10%;
+		}
+	}
 </style>
