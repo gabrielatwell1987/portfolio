@@ -133,7 +133,7 @@
 			background-color: transparent;
 			color: var(--white);
 			font-family: var(--montserrat);
-			width: 40%;
+			width: 45%;
 			height: 10%;
 			outline: none;
 			border: 1px solid var(--white);
@@ -197,7 +197,7 @@
 
 		button {
 			font-size: 1rem;
-			width: 20%;
+			width: 25%;
 			font-size: 1rem;
 			letter-spacing: 2px;
 		}
@@ -249,7 +249,7 @@
 		}
 
 		button {
-			width: 25%;
+			/* width: 30%; */
 			font-size: 1.25rem;
 			margin: 3rem auto;
 		}
@@ -266,7 +266,7 @@
 	/* way bigger than desktop */
 	@media screen and (min-width: 1100px) {
 		button {
-			width: 15%;
+			width: 20%;
 		}
 	}
 </style>
