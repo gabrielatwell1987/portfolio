@@ -74,7 +74,7 @@
 			required
 		/>
 
-		<button class="button" type="submit" aria-label="send">Send</button>
+		<button type="submit" aria-label="send">Send</button>
 	</fieldset>
 </form>
 
@@ -123,7 +123,7 @@
 			font-weight: 100;
 		}
 
-		.button {
+		button {
 			width: 35%;
 			margin: 0 auto;
 			border: 1px solid var(--white);
@@ -142,8 +142,8 @@
 			padding: 1rem 1.75rem;
 		}
 
-		.button:hover,
-		.button:focus {
+		button:hover,
+		button:focus {
 			opacity: 0.8;
 			background-color: var(--smoke);
 			color: black;
@@ -161,12 +161,12 @@
 			font-weight: 800;
 		}
 
-		.button {
+		button {
 			width: 20%;
 			font-size: 1rem;
 		}
 
-		.button:hover {
+		button:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
@@ -274,7 +274,7 @@
 			margin-bottom: 1rem;
 		}
 
-		.button {
+		button {
 			width: 25%;
 			font-size: 1.5rem;
 		}
