@@ -359,4 +359,11 @@
 			}
 		}
 	}
+
+	/* way bigger than desktop */
+	@media screen and (min-width: 1920px) {
+		button {
+			width: 13%;
+		}
+	}
 </style>
