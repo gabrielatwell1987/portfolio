@@ -177,13 +177,14 @@
 			font-size: 1.2rem;
 			font-weight: 800;
 			background-color: transparent;
-			color: var(--smoke);
+			color: var(--black);
 			width: 4%;
 			height: 2%;
 			margin-left: 100%;
 			outline: none;
-			border: 2px solid var(--smoke);
+			border: 2px solid var(--black);
 			border-radius: 5px;
+			padding: 1rem;
 		}
 
 		.open-button:hover {
@@ -196,18 +197,19 @@
 			font-size: 1.2rem;
 			font-weight: 800;
 			background-color: transparent;
-			color: var(--white);
+			color: var(--black);
 			width: 4%;
 			margin-left: 35%;
 			margin-right: 2rem;
 			outline: none;
-			border: 2px solid var(--white);
+			border: 2px solid var(--black);
 			border-radius: 5px;
+			padding: 1rem;
 		}
 
 		.close-button:hover {
-			color: var(--smoke);
-			border: 2px solid var(--smoke);
+			color: var(--white);
+			border: 2px solid var(--white);
 		}
 
 		.modal {
@@ -225,7 +227,7 @@
 			font-size: 1.5rem;
 			font-weight: 900;
 			font-family: var(--montserrat);
-			color: var(--blue);
+			color: var(--purple);
 			margin-top: 2rem;
 		}
 
