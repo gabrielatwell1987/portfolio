@@ -249,7 +249,7 @@
 		}
 
 		button {
-			/* width: 30%; */
+			width: 30%;
 			font-size: 1.25rem;
 			margin: 3rem auto;
 		}
