@@ -14,7 +14,7 @@
 
 		gsap.to('article', {
 			autoAlpha: 1,
-			duration: 3.5,
+			duration: 1,
 			ease: 'none'
 		});
 
@@ -209,12 +209,12 @@
 			margin: 3.5% 0;
 			border-radius: 3rem;
 			clip-path: ellipse(40% 47% at 50% 50%);
-			transition: clip-path 0.75s ease-in-out;
+			transition: clip-path 0.25s ease-in-out;
 		}
 
 		.atwell:hover {
 			filter: contrast(1.5);
-			transition: filter 0.5s ease-in-out;
+			transition: filter 0.25s ease-in-out;
 		}
 
 		.github-link {
