@@ -133,7 +133,7 @@
 			background-color: transparent;
 			color: var(--white);
 			font-family: var(--montserrat);
-			width: 47%;
+			width: 50%;
 			height: 10%;
 			outline: none;
 			border: 1px solid var(--white);
