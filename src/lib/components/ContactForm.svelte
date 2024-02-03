@@ -185,11 +185,16 @@
 			border: 2px solid var(--lightblack);
 			border-radius: 5px;
 			padding: 1rem;
+			outline: none;
 		}
 
 		.open-button:hover {
 			border: 2px solid var(--white);
 			color: var(--white);
+		}
+
+		.open-button:focus {
+			outline: none;
 		}
 
 		.close-button {
@@ -205,11 +210,16 @@
 			border: 2px solid var(--lightblack);
 			border-radius: 5px;
 			padding: 1rem;
+			outline: none;
 		}
 
 		.close-button:hover {
 			color: var(--white);
 			border: 2px solid var(--white);
+		}
+
+		.close-button:focus {
+			outline: none;
 		}
 
 		.modal {
