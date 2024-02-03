@@ -296,4 +296,11 @@
 			text-shadow: -5px 5px 4px var(--dark-gray);
 		}
 	}
+
+	/* way bigger than desktop */
+	@media screen and (min-width: 1920px) {
+		button {
+			width: 10%;
+		}
+	}
 </style>
