@@ -87,7 +87,6 @@
 		class="hero-image"
 		src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 		alt="Code"
-		width="57%"
 	/>
 
 	<!-- hero section text and links -->
@@ -105,7 +104,8 @@
 </main>
 
 <!-- footer spacing -->
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
+/><br /><br /><br /><br /><br />
 
 <style>
 	/* bigger than mobile */
@@ -171,6 +171,7 @@
 			border-radius: 15px;
 			opacity: 0.5;
 			transition: opacity 0.75s ease-in-out;
+			width: 75%;
 		}
 
 		.hero-image:hover {
