@@ -105,7 +105,7 @@
 
 <!-- footer spacing -->
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
-/><br /><br /><br /><br /><br />
+/><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 <style>
 	/* bigger than mobile */
@@ -171,7 +171,7 @@
 			border-radius: 15px;
 			opacity: 0.5;
 			transition: opacity 0.75s ease-in-out;
-			width: 75%;
+			width: 90%;
 		}
 
 		.hero-image:hover {
