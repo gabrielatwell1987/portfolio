@@ -85,7 +85,7 @@
 
 	<header>
 		<video autoplay loop muted>
-			<source src="videos/typing.mp4" type="video/mp4" />
+			<source src="/videos/typing.mp4" type="video/mp4" />
 		</video>
 	</header>
 
