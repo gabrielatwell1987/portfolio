@@ -75,7 +75,7 @@
 		section {
 			width: 100%;
 			margin: 0;
-			background: url('/logos/bg4.png') no-repeat center center/cover fixed;
+			background: url('/logos/dead-tree.png') no-repeat center center/cover fixed;
 		}
 
 		.flex {
