@@ -85,7 +85,8 @@
 
 	<header>
 		<video autoplay loop muted>
-			<source src="/videos/typing.mp4" type="video/mp4" />
+			<source src="https://player.vimeo.com/video/423126565?h=cfe36ac7c9" type="video/mp4" />
+			Your browser does not support the video tag.
 		</video>
 	</header>
 
