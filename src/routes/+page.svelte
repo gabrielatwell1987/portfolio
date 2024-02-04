@@ -11,7 +11,7 @@
 
 <main>
 	<!-- hero image svg -->
-	<svg
+	<!-- <svg
 		width="1200"
 		height="639"
 		viewBox="0 0 1200 639"
@@ -81,7 +81,13 @@
 				<stop offset="1" stop-color="#7A859C" />
 			</linearGradient>
 		</defs>
-	</svg>
+	</svg> -->
+
+	<header>
+		<video autoplay loop muted>
+			<source src="videos/typing.mp4" type="video/mp4" />
+		</video>
+	</header>
 
 	<!-- hero section text and links -->
 	<h3><span class="frontend">Frontend</span> Crafted Web Experiences</h3>
@@ -98,7 +104,8 @@
 </main>
 
 <!-- footer spacing -->
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
+/><br /><br /><br />
 
 <style>
 	/* bigger than mobile */
@@ -160,12 +167,16 @@
 			outline-offset: 0px;
 		}
 
-		svg {
+		header {
+			display: none;
+		}
+
+		/* svg {
 			width: 100%;
 			height: 50%;
 			opacity: 1;
 			margin-top: 5%;
-		}
+		} */
 
 		.btn {
 			text-decoration: none;
@@ -216,9 +227,19 @@
 			font-size: 1.25rem;
 		}
 
-		svg {
-			height: 75%;
+		header {
+			display: block;
 		}
+
+		video {
+			width: 85%;
+			height: 50%;
+			border-radius: 15px;
+		}
+
+		/* svg {
+			height: 75%;
+		} */
 
 		.summary {
 			width: 75%;
