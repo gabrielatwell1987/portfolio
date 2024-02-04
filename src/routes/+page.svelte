@@ -83,12 +83,12 @@
 		</defs>
 	</svg> -->
 
-	<header>
-		<video autoplay loop muted>
-			<source src="https://player.vimeo.com/video/423126565?h=cfe36ac7c9" type="video/mp4" />
-			Your browser does not support the video tag.
-		</video>
-	</header>
+	<img
+		class="hero-image"
+		src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+		alt="Code"
+		width="57%"
+	/>
 
 	<!-- hero section text and links -->
 	<h3><span class="frontend">Frontend</span> Crafted Web Experiences</h3>
@@ -105,8 +105,7 @@
 </main>
 
 <!-- footer spacing -->
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
-/><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 <style>
 	/* bigger than mobile */
@@ -168,8 +167,15 @@
 			outline-offset: 0px;
 		}
 
-		header {
-			display: none;
+		.hero-image {
+			border-radius: 15px;
+			opacity: 0.5;
+			transition: opacity 0.75s ease-in-out;
+		}
+
+		.hero-image:hover {
+			opacity: 1;
+			transition: opacity 0.75s ease-in-out;
 		}
 
 		/* svg {
@@ -226,16 +232,6 @@
 		h4 {
 			color: var(--white);
 			font-size: 1.25rem;
-		}
-
-		header {
-			display: block;
-		}
-
-		video {
-			width: 85%;
-			height: 50%;
-			border-radius: 15px;
 		}
 
 		/* svg {
