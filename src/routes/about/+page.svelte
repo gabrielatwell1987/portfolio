@@ -70,7 +70,7 @@
 				<div class="inline right">
 					<h2 class="right title">Frontend</h2>
 
-					<p class="right text">
+					<p class="right">
 						The path that Gabe has chosen is the frontend path. One of his main interests is
 						animations, especially animations on the web. Turning a website from being a static site
 						to a dynamic site is what he thinks makes your website look a million times better, if
@@ -81,7 +81,7 @@
 				<div class="inline left">
 					<h2 class="left title">Design Based</h2>
 
-					<p class="left text">
+					<p class="left">
 						A clean, crisp design is what Gabe tries to excel at. Visual hierarchy, whitespace,
 						colors, typography, scaling, and contrast is what he knows best. These topics are the
 						main key to make your website designs look professional and appealing to the eye.
