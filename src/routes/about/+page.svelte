@@ -361,6 +361,12 @@
 			color: var(--blue);
 		}
 
+		.fa-codepen:hover,
+		.fa-github:hover {
+			font-size: 5rem;
+			color: var(--purple);
+		}
+
 		.dev-links {
 			margin-top: -20rem;
 			margin-left: 0%;
