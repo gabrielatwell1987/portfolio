@@ -1,8 +1,9 @@
 <script>
 	import { page } from '$app/stores';
 
-	export let title;
-	export let description;
+	export let title = "Gabriel Atwell's Portfolio";
+	export let description =
+		'The portfolio of Gabriel Atwell, a web developer and designer based in Las Vegas, NV.';
 
 	$: url = $page.url.href;
 </script>
@@ -16,9 +17,9 @@
 		{
 			"@context": "http://schema.org",
 			"@type": "WebSite",
-		  	"name": "${title}",
-          	"description": "${description}",
-		  	"url": "${url}"
+		  	"name": "Gabriel Atwell",
+          	"description": "The portfolio of Gabriel Atwell, a web developer and designer based in Las Vegas, NV.",
+		  	"url": "https://gabrielatwell.vercel.app",
 		}
 	</script>
 </svelte:head>

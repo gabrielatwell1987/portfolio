@@ -85,22 +85,24 @@
 
 	<img
 		class="hero-image"
-		src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+		src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 		alt="Code"
 	/>
 
-	<!-- hero section text and links -->
-	<h3><span class="frontend">Frontend</span> Crafted Web Experiences</h3>
+	<section class="hero-text">
+		<!-- hero section text and links -->
+		<h3>Frontend Crafted Web Experiences</h3>
 
-	<h4 class="summary hero-mobile">
-		I am a frontend developer who loves to create beautiful and functional websites. This portfolio
-		is a website that I built from scratch to showcase some projects that I created. I look forward
-		to hearing from you so we can discuss your goals for your online needs!
-	</h4>
+		<h4 class="summary hero-mobile">
+			I am a frontend developer who loves to create beautiful and functional websites. This
+			portfolio is a website that I built from scratch to showcase some projects that I created. I
+			look forward to hearing from you so we can discuss your goals for your online needs!
+		</h4>
 
-	<a class="btn" href="/projects"><button aria-label="projects">Projects</button></a>
+		<a class="btn" href="/projects"><button aria-label="projects">Projects</button></a>
 
-	<h4 class="summary italic">Some projects I have created.</h4>
+		<h4 class="summary italic">Some projects I have created.</h4>
+	</section>
 
 	<!-- spacing -->
 	<br />
@@ -119,15 +121,16 @@
 		h3 {
 			margin: 2rem auto;
 			margin-top: 10%;
-			color: var(--purple);
+			/* color: var(--purple); */
+			color: var(--sky);
 			font-size: 1.25rem;
-			font-weight: 800;
+			font-weight: 900;
 			font-family: var(--montserrat);
 			letter-spacing: 2px;
 		}
 
 		h4 {
-			color: var(--white);
+			color: var(--dark-gray);
 			font-size: 0.75rem;
 			font-weight: 600;
 			letter-spacing: 0.5px;
@@ -173,9 +176,12 @@
 			width: 90%;
 		}
 
-		.hero-image:hover {
-			opacity: 1;
-			transition: opacity 0.75s ease-in-out;
+		.hero-text {
+			position: absolute;
+			top: 75%;
+			left: 50%;
+			transform: translate(-50%, -75%);
+			width: 100%;
 		}
 
 		/* svg {
