@@ -205,6 +205,7 @@
 
 		.hero-image {
 			width: 90%;
+			height: 100%;
 		}
 	}
 
