@@ -1,6 +1,6 @@
 <script>
 	import { Hamburger } from 'svelte-hamburgers';
-	import GabeLogo from '$lib/components/GabeLogo.svelte';
+	import MainLogo from '$lib/components/MainLogo.svelte';
 
 	let open;
 </script>
@@ -11,7 +11,7 @@
 		<Hamburger --color="white" type="spin" bind:open />
 
 		<div class="gabe-logo">
-			<a class="home" href="/"><GabeLogo /></a>
+			<a class="home" href="/"><MainLogo /></a>
 		</div>
 	</div>
 
