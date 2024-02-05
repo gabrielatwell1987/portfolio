@@ -241,12 +241,13 @@
 
 		.fa-codepen,
 		.fa-github {
-			font-size: 3rem;
+			font-size: 2rem;
 			color: var(--blue);
 		}
 
 		.fa-codepen:hover,
 		.fa-github:hover {
+			font-size: 2rem;
 			color: var(--purple);
 		}
 
