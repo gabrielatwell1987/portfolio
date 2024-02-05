@@ -100,7 +100,7 @@
 			border-radius: 15px;
 			opacity: 0.25;
 			transition: opacity 0.75s ease-in-out;
-			width: 90%;
+			width: 100%;
 			height: 100%;
 		}
 
@@ -204,16 +204,9 @@
 		}
 
 		.hero-image {
+			width: 90%;
 			height: 80%;
 		}
-
-		/* .hero-text {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 100%;
-		} */
 	}
 
 	/* way bigger than desktop */
