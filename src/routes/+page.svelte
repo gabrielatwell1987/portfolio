@@ -57,7 +57,7 @@
 		}
 
 		h4 {
-			color: var(--dark-gray);
+			color: var(--white);
 			font-size: 0.75rem;
 			font-weight: 600;
 			letter-spacing: 0.5px;
@@ -101,13 +101,14 @@
 			opacity: 0.25;
 			transition: opacity 0.75s ease-in-out;
 			width: 90%;
+			height: 100%;
 		}
 
 		.hero-text {
 			position: absolute;
-			top: 75%;
+			top: 50%;
 			left: 50%;
-			transform: translate(-50%, -75%);
+			transform: translate(-50%, -50%);
 			width: 100%;
 		}
 
@@ -201,6 +202,18 @@
 		.summary {
 			width: 50%;
 		}
+
+		.hero-image {
+			height: 80%;
+		}
+
+		/* .hero-text {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+		} */
 	}
 
 	/* way bigger than desktop */
