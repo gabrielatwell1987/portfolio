@@ -201,13 +201,13 @@
 		}
 
 		.size {
-			font-size: 4.25rem;
+			font-size: 2rem;
 			font-weight: 900;
 			color: var(--blue);
 		}
 
 		.size:hover {
-			font-size: 4.25rem;
+			font-size: 2rem;
 			font-weight: 900;
 			color: var(--purple);
 		}
@@ -303,6 +303,14 @@
 
 		button:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
+		}
+
+		.size {
+			font-size: 4.24rem;
+		}
+
+		.size:hover {
+			font-size: 4.24rem;
 		}
 
 		.btn-link {
