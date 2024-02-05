@@ -65,9 +65,10 @@
 			/></a
 		>
 	</div>
+
+	<!-- spacing -->
+	<br /><br /><br />
 </main>
-<!-- footer spacing -->
-<br />
 
 <style>
 	/* bigger than mobile */

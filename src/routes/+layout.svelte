@@ -30,50 +30,14 @@
 	<slot />
 </main>
 
-<footer>
-	<!-- footer links -->
-	<section class="linkIcons">
-		<a class="linkedin" href="https://www.linkedin.com/in/gabriel-atwell-ab2116231/">
-			<LinkedIn />
-		</a>
-
-		<a class="discord" href="https://discordapp.com/users/1007777351809114112">
-			<Discord />
-		</a>
-
-		<a class="discord" href="https://www.reddit.com/user/gatwell702">
-			<Reddit />
-		</a>
-	</section>
-</footer>
+<footer />
 
 <style>
 	:global(html, body) {
 		background-color: #0f0f0f;
 	}
 
-	/* desktop */
-	a {
-		text-decoration: none;
-		color: var(--sky);
-	}
-
-	a:hover {
-		color: var(--blue);
-	}
-
-	.linkedin {
-		margin: 0 2rem 0 0;
-	}
-
 	.desktop {
 		width: 100%;
-	}
-
-	/* less than desktop */
-	@media screen and (max-width: 1650px) {
-		.linkIcons {
-			display: none;
-		}
 	}
 </style>

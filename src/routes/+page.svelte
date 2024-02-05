@@ -101,11 +101,10 @@
 	<a class="btn" href="/projects"><button aria-label="projects">Projects</button></a>
 
 	<h4 class="summary italic">Some projects I have created.</h4>
-</main>
 
-<!-- footer spacing -->
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br
-/><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	<!-- spacing -->
+	<br />
+</main>
 
 <style>
 	/* bigger than mobile */

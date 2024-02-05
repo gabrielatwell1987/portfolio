@@ -107,6 +107,18 @@
 				<p>
 					<a href="https://codepen.io/gabrielatwell"><i class="fa-brands fa-codepen" /></a>
 				</p>
+
+				<a class="size" href="https://www.linkedin.com/in/gabriel-atwell-ab2116231/">
+					<i class="fa-brands fa-linkedin" />
+				</a>
+
+				<a class="size" href="https://discordapp.com/users/1007777351809114112">
+					<i class="fa-brands fa-discord" />
+				</a>
+
+				<a class="size" href="https://www.reddit.com/user/gatwell702">
+					<i class="fa-brands fa-square-reddit" />
+				</a>
 			</div>
 
 			<!-- image gallery -->
@@ -188,6 +200,18 @@
 			background-color: var(--smoke);
 			color: black;
 			outline-offset: 0px;
+		}
+
+		.size {
+			font-size: 4.25rem;
+			font-weight: 900;
+			color: var(--blue);
+		}
+
+		.size:hover {
+			font-size: 4.25rem;
+			font-weight: 900;
+			color: var(--purple);
 		}
 
 		.btn-link {
