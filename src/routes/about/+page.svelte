@@ -98,15 +98,13 @@
 
 			<!-- github and codepen links -->
 			<div class="dev-links">
-				<p>
-					<a class="github-link" href="https://www.github.com/gabrielatwell1987/portfolio"
-						><i class="fa-brands fa-github" /></a
-					>
-				</p>
+				<a class="size" href="https://www.github.com/gabrielatwell1987/portfolio"
+					><i class="fa-brands fa-github" /></a
+				>
 
-				<p>
-					<a href="https://codepen.io/gabrielatwell"><i class="fa-brands fa-codepen" /></a>
-				</p>
+				<a class="size" href="https://codepen.io/gabrielatwell"
+					><i class="fa-brands fa-codepen" /></a
+				>
 
 				<a class="size" href="https://www.linkedin.com/in/gabriel-atwell-ab2116231/">
 					<i class="fa-brands fa-linkedin" />
@@ -241,16 +239,6 @@
 			transition: filter 0.25s ease-in-out;
 		}
 
-		.github-link {
-			font-size: 1.24rem;
-			font-weight: 700;
-		}
-
-		.github-link:hover {
-			font-size: 1.25rem;
-			text-decoration: none;
-		}
-
 		.fa-codepen,
 		.fa-github {
 			font-size: 3rem;
@@ -263,8 +251,10 @@
 		}
 
 		.dev-links {
-			margin-top: 2.5rem;
-			margin-left: 43%;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			gap: 1.5rem;
 		}
 
 		.text,
