@@ -96,6 +96,7 @@
 			outline-offset: 0px;
 		}
 
+		/* hero section */
 		.hero-image {
 			border-radius: 15px;
 			opacity: 0.25;
@@ -189,6 +190,7 @@
 			margin: 5rem 0;
 		}
 
+		/* hero section */
 		button {
 			width: 30%;
 			font-size: 1.25rem;
