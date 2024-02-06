@@ -34,7 +34,10 @@
 
 <style>
 	:global(html, body) {
-		background-color: #0f0f0f;
+		/* background-color: #0f0f0f; */
+		background-image: radial-gradient(circle at center, #000 0%, #1f1f1f 100%);
+		/* background-image: radial-gradient(circle at center, var(--blacker) 0%, var(--black) 100%); */
+		/* background-image: linear-gradient(to left, var(--blacker), var(--black)); */
 	}
 
 	.desktop {
