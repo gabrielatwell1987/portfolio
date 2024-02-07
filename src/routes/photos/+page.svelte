@@ -45,12 +45,16 @@
 		<aside class="flex">
 			<img class="gabe" src="photos/gabe.png" alt="Gabriel Atwell." width="350" height="450" />
 			<img class="gabe" src="photos/gabe2.png" alt="Gabriel Atwell." width="300" height="350" />
-			<img class="gabe" src="photos/gabe3.jpg" alt="Gabriel Atwell." width="400" height="900" />
+			<img class="gabe" src="photos/gabe7.png" alt="Gabriel Atwell" width="375" />
 		</aside>
 		<aside class="flex">
 			<img class="gabe" src="photos/gabe4.jpg" alt="Gabriel Atwell." width="350" />
-			<img class="gabe" src="photos/gabe5.png" alt="Gabriel Atwell." width="475" />
+			<img class="gabe" src="photos/gabe8.png" alt="Gabriel Atwell" width="400" />
 			<img class="gabe" src="photos/gabe6.png" alt="Gabriel Atwell." width="400" />
+		</aside>
+		<aside class="flex">
+			<img class="gabe" src="photos/gabe3.jpg" alt="Gabriel Atwell." width="400" height="900" />
+			<img class="gabe" src="photos/gabe5.png" alt="Gabriel Atwell." width="475" />
 		</aside>
 	</section>
 

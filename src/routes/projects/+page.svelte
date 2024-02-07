@@ -28,6 +28,9 @@
 
 <!-- links to my projects -->
 <section class="content bevel">
+	<!-- spacing -->
+	<br /><br />
+
 	<h3 class="linksize name">web dev website</h3>
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank"
 		><img
