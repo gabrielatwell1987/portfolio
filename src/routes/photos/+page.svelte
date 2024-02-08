@@ -24,8 +24,8 @@
 				yoyo: true,
 				scrollTrigger: {
 					trigger: '.pictures',
-					start: 'top 95%',
-					end: 'bottom -=5%',
+					start: 'top 99%',
+					end: 'bottom -=1%',
 					x: 200,
 					scrub: true
 				}
