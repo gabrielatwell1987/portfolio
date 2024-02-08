@@ -11,27 +11,29 @@
 			gsap.registerPlugin(ScrollTrigger);
 
 			gsap.set('main', { autoAlpha: 0 });
-			gsap.set('.gabe', { borderRadius: '5px' });
+			gsap.set('.gabe', { borderRadius: '5px', scale: 1 });
 			gsap.set('.title', { scale: 1 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
+
 			tl.to('.gabe', {
-				borderRadius: '5rem',
+				borderRadius: '1.75rem',
+				stagger: 0.5,
+				scale: 0.75,
 				repeat: 1,
 				yoyo: true,
 				scrollTrigger: {
-					trigger: '.gabe',
-					start: 'top 75%',
-					end: 'bottom 25%',
-					marker: true,
+					trigger: '.pictures',
+					start: 'top 95%',
+					end: 'bottom -=5%',
 					x: 200,
-					scrub: 1
+					scrub: true
 				}
 			}).to('main', { autoAlpha: 1 });
 
 			return () => {
-				gsap.set('.photos', { y: 500 });
-				gsap.set('.gabe', { borderRadius: '15px' });
+				// gsap.set('.photos', { y: 500 });
+				gsap.set('.gabe', { borderRadius: '5px', scale: 1 });
 			};
 		});
 	});
@@ -41,21 +43,33 @@
 	<h2 class="title">PHOTOS</h2>
 
 	<section>
+		<div class="spacing" />
+
 		<!-- images of me 3x3 -->
-		<aside class="flex">
-			<img class="gabe" src="photos/gabe.png" alt="Gabriel Atwell." width="350" height="450" />
-			<img class="gabe" src="photos/gabe2.png" alt="Gabriel Atwell." width="300" height="350" />
-			<img class="gabe" src="photos/gabe7.png" alt="Gabriel Atwell" width="375" />
-		</aside>
-		<aside class="flex">
-			<img class="gabe" src="photos/gabe4.jpg" alt="Gabriel Atwell." width="350" />
-			<img class="gabe" src="photos/gabe8.png" alt="Gabriel Atwell" width="400" />
-			<img class="gabe" src="photos/gabe6.png" alt="Gabriel Atwell." width="400" />
-		</aside>
-		<aside class="flex">
-			<img class="gabe" src="photos/gabe3.jpg" alt="Gabriel Atwell." width="400" height="900" />
-			<img class="gabe" src="photos/gabe5.png" alt="Gabriel Atwell." width="475" />
-		</aside>
+		<div class="pictures">
+			<aside class="flex">
+				<img class="gabe" src="photos/gabe.png" alt="Gabriel Atwell." width="350" height="450" />
+				<img class="gabe" src="photos/gabe2.png" alt="Gabriel Atwell." width="300" height="350" />
+				<img class="gabe" src="photos/gabe7.png" alt="Gabriel Atwell" width="375" />
+			</aside>
+		</div>
+
+		<div class="pictures">
+			<aside class="flex">
+				<img class="gabe" src="photos/gabe4.jpg" alt="Gabriel Atwell." width="350" />
+				<img class="gabe" src="photos/gabe8.png" alt="Gabriel Atwell" width="400" />
+				<img class="gabe" src="photos/gabe6.png" alt="Gabriel Atwell." width="400" />
+			</aside>
+		</div>
+
+		<div class="pictures">
+			<aside class="flex">
+				<img class="gabe" src="photos/gabe5.png" alt="Gabriel Atwell." width="475" />
+				<img class="gabe" src="photos/gabe3.jpg" alt="Gabriel Atwell." width="400" height="900" />
+			</aside>
+		</div>
+
+		<div class="spacing" />
 	</section>
 
 	<!-- domino image and link -->
@@ -101,6 +115,10 @@
 		.title {
 			font-family: var(--major);
 			font-size: 3rem;
+		}
+
+		.spacing {
+			height: 10vh;
 		}
 	}
 
