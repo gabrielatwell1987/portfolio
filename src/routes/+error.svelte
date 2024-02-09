@@ -9,6 +9,11 @@
 </main>
 
 <style>
+	main {
+		display: grid;
+		place-content: center;
+	}
+
 	h1 {
 		font-size: 5rem;
 		margin: 5rem auto;
@@ -16,6 +21,7 @@
 		color: var(--sky);
 		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 		letter-spacing: 5px;
+		margin-bottom: 15%;
 	}
 
 	p {
