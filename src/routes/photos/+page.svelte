@@ -27,6 +27,7 @@
 					start: 'top 99%',
 					end: 'bottom -=1%',
 					x: 200,
+					stagger: 0.5,
 					scrub: true
 				}
 			}).to('main', { autoAlpha: 1 });
