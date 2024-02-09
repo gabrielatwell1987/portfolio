@@ -10,30 +10,29 @@
 		mm.add('(min-width: 800px', () => {
 			gsap.registerPlugin(ScrollTrigger);
 
+			// gsap.set('.gabe', { borderRadius: '5px', scale: 1 });
 			gsap.set('main', { autoAlpha: 0 });
-			gsap.set('.gabe', { borderRadius: '5px', scale: 1 });
 			gsap.set('.title', { scale: 1 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
 			tl.to('.gabe', {
 				borderRadius: '1.75rem',
-				stagger: 0.5,
+				stagger: 0.75,
 				scale: 0.75,
 				repeat: 1,
 				yoyo: true,
 				scrollTrigger: {
 					trigger: '.pictures',
-					start: 'top 99%',
-					end: 'bottom -=1%',
+					start: 'top bottom-=75%',
+					end: 'bottom top+=5%',
 					x: 200,
 					stagger: 0.5,
-					scrub: true
+					scrub: 3
 				}
 			}).to('main', { autoAlpha: 1 });
 
 			return () => {
-				// gsap.set('.photos', { y: 500 });
 				gsap.set('.gabe', { borderRadius: '5px', scale: 1 });
 			};
 		});
