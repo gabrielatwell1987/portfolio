@@ -56,7 +56,7 @@
 
 		<div class="pictures">
 			<aside class="flex">
-				<img class="gabe" src="photos/gabe4.jpg" alt="Gabriel Atwell." width="350" />
+				<img class="gabe" src="photos/gabe4.png" alt="Gabriel Atwell." width="350" />
 				<img class="gabe" src="photos/gabe8.png" alt="Gabriel Atwell" width="400" />
 				<img class="gabe" src="photos/gabe6.png" alt="Gabriel Atwell." width="400" />
 			</aside>
@@ -65,7 +65,7 @@
 		<div class="pictures">
 			<aside class="flex">
 				<img class="gabe" src="photos/gabe5.png" alt="Gabriel Atwell." width="475" />
-				<img class="gabe" src="photos/gabe3.jpg" alt="Gabriel Atwell." width="400" height="900" />
+				<img class="gabe" src="photos/gabe3.png" alt="Gabriel Atwell." width="400" height="900" />
 			</aside>
 		</div>
 
