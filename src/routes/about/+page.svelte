@@ -144,7 +144,7 @@
 			margin: 0 auto;
 			text-align: center;
 			width: 100%;
-			background: url('/logos/heart-skull.png') no-repeat center center/contain fixed;
+			background: url('/logos/white-flower.png') no-repeat center center/contain fixed;
 		}
 
 		article {
