@@ -1,0 +1,94 @@
+<script>
+	import Carousel from 'svelte-carousel';
+	import { browser } from '$app/environment';
+
+	let carousel;
+
+	const handleNextClick = () => {
+		carousel.goToNext();
+	};
+</script>
+
+{#if browser}
+	<Carousel
+		arrows
+		infinite
+		duration="1000"
+		dots
+		swiping
+		autoplay
+		autoplayDuration={5000}
+		bind:this={carousel}
+		let:showPrevPage
+		let:showNextPage
+	>
+		<div class="prev" slot="prev" on:click={showPrevPage} on:keydown={() => {}}>
+			<i class="fa-solid fa-arrow-left" />
+		</div>
+
+		<div class="gabe">
+			<img src="photos/gabe.png" alt="Gabriel Atwell" />
+		</div>
+
+		<div class="gabe">
+			<img src="photos/gabe2.png" alt="Gabriel Atwell" />
+		</div>
+
+		<div class="gabe">
+			<img src="photos/gabe3.png" alt="Gabriel Atwell" />
+		</div>
+
+		<div class="gabe">
+			<img src="photos/gabe4.png" alt="Gabriel Atwell" />
+		</div>
+
+		<div class="gabe">
+			<img src="photos/gabe5.png" alt="Gabriel Atwell" />
+		</div>
+
+		<div class="gabe">
+			<img src="photos/gabe6.png" alt="Gabriel Atwell" />
+		</div>
+
+		<div class="gabe">
+			<img src="photos/gabe7.png" alt="Gabriel Atwell" />
+		</div>
+
+		<div class="gabe">
+			<img src="photos/gabe8.png" alt="Gabriel Atwell" />
+		</div>
+
+		<div class="next" slot="next" on:click={showNextPage} on:keydown={() => {}}>
+			<i class="fa-solid fa-arrow-right" />
+		</div>
+	</Carousel>
+{/if}
+
+<style>
+	.gabe {
+		width: 100%;
+		height: 100%;
+	}
+
+	.prev,
+	.next {
+		width: 50px;
+		height: 50px;
+		background-color: var(--smoke);
+		color: var(--white);
+		border-radius: 50%;
+		font-size: 1.5rem;
+		font-weight: 600;
+		display: grid;
+		place-content: center;
+		margin-top: 13rem;
+		margin-left: 2rem;
+		margin-right: 2rem;
+		cursor: pointer;
+	}
+
+	img {
+		border-radius: 20px;
+		/* margin-top: -8rem; */
+	}
+</style>
