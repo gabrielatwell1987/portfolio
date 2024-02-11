@@ -57,10 +57,12 @@
 
 	h1 {
 		font-size: 3rem;
-		font-weight: 700;
-		color: var(--purple);
+		font-weight: 900;
+		color: var(--sky);
 		font-family: var(--major);
 		letter-spacing: 5px;
+		text-transform: uppercase;
+		margin-bottom: 2rem;
 	}
 
 	@keyframes wiggle {
