@@ -25,6 +25,7 @@
 		font-size: 2.5rem;
 		margin: 5rem 0;
 		background: url('/logos/dead-tree.png') no-repeat center center/cover fixed;
+		padding-top: 2rem;
 	}
 
 	.domino {
