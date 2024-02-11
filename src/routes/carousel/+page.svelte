@@ -55,7 +55,7 @@
 	}
 
 	h1 {
-		font-size: clamp(2rem, 5vw, 5rem);
+		font-size: 4rem;
 		font-weight: 900;
 		color: var(--sky);
 		font-family: var(--major);
