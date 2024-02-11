@@ -33,8 +33,8 @@
 			<a class="mobile-link" href="/" aria-label="home">HOME</a>
 			<a class="mobile-link" href="/projects" aria-label="projects">PROJECTS</a>
 			<a class="mobile-link" href="/about" aria-label="about">ABOUT</a>
-			<a class="mobile-link" href="/carousel" aria-label="photos">PHOTOS</a>
-			<!-- <a class="mobile-link" href="/photos" aria-label="photos">PHOTOS</a> -->
+			<!-- <a class="mobile-link" href="/carousel" aria-label="photos">PHOTOS</a> -->
+			<a class="mobile-link" href="/photos" aria-label="photos">PHOTOS</a>
 			<a class="mobile-link" href="/contact" aria-label="contact">CONTACT</a>
 		</div>
 	</div>
