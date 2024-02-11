@@ -19,7 +19,7 @@
 		margin: 5rem auto;
 		text-align: center;
 		color: var(--sky);
-		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		font-family: var(--major);
 		letter-spacing: 5px;
 		margin-bottom: 15%;
 	}
@@ -28,10 +28,10 @@
 		font-size: 2rem;
 		letter-spacing: 3px;
 		text-align: left;
-		border: 3px solid var(--smoke);
+		border: 3px solid var(--white);
 		border-radius: 12px;
-		padding: 1rem 2.5rem;
+		padding: 1rem 3rem;
 		color: var(--white);
-		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-family: var(--montserrat);
 	}
 </style>
