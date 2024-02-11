@@ -55,7 +55,7 @@
 	}
 
 	h1 {
-		font-size: 4rem;
+		font-size: 3.5rem;
 		font-weight: 900;
 		color: var(--sky);
 		font-family: var(--major);
