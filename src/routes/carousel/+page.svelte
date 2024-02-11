@@ -3,6 +3,8 @@
 </script>
 
 <main>
+	<h1>photos</h1>
+
 	<ImageCarousel />
 
 	<!-- domino image and link -->
@@ -49,6 +51,14 @@
 		font-size: 1.75rem;
 		font-weight: 700;
 		color: var(--purple);
+		letter-spacing: 5px;
+	}
+
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		color: var(--purple);
+		font-family: var(--major);
 		letter-spacing: 5px;
 	}
 
