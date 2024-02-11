@@ -62,6 +62,7 @@
 		letter-spacing: 5px;
 		text-transform: uppercase;
 		margin-bottom: 2rem;
+		text-align: center;
 	}
 
 	@keyframes wiggle {
