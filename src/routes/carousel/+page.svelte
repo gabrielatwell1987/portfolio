@@ -2,9 +2,8 @@
 	import ImageCarousel from '$lib/components/Carousel.svelte';
 </script>
 
+<h1>photos</h1>
 <main>
-	<h1>photos</h1>
-
 	<ImageCarousel />
 
 	<!-- domino image and link -->
@@ -56,7 +55,7 @@
 	}
 
 	h1 {
-		font-size: 3rem;
+		font-size: clamp(2rem, 5vw, 5rem);
 		font-weight: 900;
 		color: var(--sky);
 		font-family: var(--major);
