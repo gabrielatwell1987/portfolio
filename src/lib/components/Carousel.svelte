@@ -31,11 +31,19 @@
 		</div>
 
 		<div class="gabe">
+			<img src="photos/gabe7.png" alt="Gabriel Atwell" />
+		</div>
+
+		<div class="gabe">
 			<img src="photos/gabe2.png" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="gabe">
 			<img src="photos/gabe3.png" alt="Gabriel Atwell" />
+		</div>
+
+		<div class="gabe">
+			<img src="photos/gabe8.png" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="gabe">
@@ -48,14 +56,6 @@
 
 		<div class="gabe">
 			<img src="photos/gabe6.png" alt="Gabriel Atwell" />
-		</div>
-
-		<div class="gabe">
-			<img src="photos/gabe7.png" alt="Gabriel Atwell" />
-		</div>
-
-		<div class="gabe">
-			<img src="photos/gabe8.png" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="next" slot="next" on:click={showNextPage} on:keydown={() => {}}>
