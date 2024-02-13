@@ -12,10 +12,13 @@
 	main {
 		display: grid;
 		place-content: center;
+		border: 5px solid var(--white);
+		border-radius: 8px;
+		padding: 0.75rem 1.5rem;
 	}
 
 	h1 {
-		font-size: 5rem;
+		font-size: 8rem;
 		margin: 5rem auto;
 		text-align: center;
 		color: var(--sky);
