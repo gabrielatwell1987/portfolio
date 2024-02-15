@@ -13,12 +13,10 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
-		"carbon-components-svelte": "^0.80.0",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.26.0",
 		"mdsvex": "^0.11.0",
-		"nodemailer": "^6.9.5",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
 		"svelte": "^3.54.0",
@@ -30,17 +28,10 @@
 	"type": "module",
 	"dependencies": {
 		"@analytics/google-analytics": "^1.0.7",
-		"@studio-freight/lenis": "^1.0.34",
-		"body-parser": "^1.20.2",
 		"dat.gui": "^0.7.9",
-		"dotenv": "^16.3.1",
-		"express": "^4.18.2",
 		"gsap": "^3.12.2",
 		"lucide-svelte": "^0.284.0",
-		"open-props": "^1.6.4",
 		"split-type": "^0.3.4",
-		"svelte-forms-lib": "^2.0.1",
-		"three": "^0.161.0",
-		"yup": "^1.2.0"
+		"three": "^0.161.0"
 	}
 }
