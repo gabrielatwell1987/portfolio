@@ -64,7 +64,7 @@
 					attention of users.
 				</p>
 
-				<p class="text">
+				<p class="text hero">
 					<a href="/hero">Here</a> is a hero section image that I created with three.js... I haven't
 					included it because I really like the current hero section. Please contact me and let me know
 					if you would like to see it!
@@ -269,6 +269,10 @@
 		.text:hover {
 			mix-blend-mode: difference;
 		}
+
+		.hero {
+			display: none;
+		}
 	}
 	/* bigger than desktop */
 	@media screen and (min-width: 990px) {
@@ -379,6 +383,10 @@
 			margin-left: 0%;
 			display: flex;
 			justify-content: space-evenly;
+		}
+
+		.hero {
+			display: block;
 		}
 
 		@keyframes wiggle {
