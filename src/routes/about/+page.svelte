@@ -24,14 +24,14 @@
 			inertia: true
 		});
 
-		// bio text animations
-		bio.addEventListener('mouseenter', () => {
-			gsap.to('.text', { scaleX: 1.025, duration: 0.5 });
-		});
+		// // bio text animations
+		// bio.addEventListener('mouseenter', () => {
+		// 	gsap.to('.text', { scaleX: 1.025, duration: 0.5 });
+		// });
 
-		bio.addEventListener('mouseleave', () => {
-			gsap.to('.text', { scaleX: 1, duration: 0.5 });
-		});
+		// bio.addEventListener('mouseleave', () => {
+		// 	gsap.to('.text', { scaleX: 1, duration: 0.5 });
+		// });
 	});
 </script>
 
@@ -63,13 +63,13 @@
 					development, creating engaging and visually appealing animations is essential to grab the
 					attention of users.
 				</p>
-			</div>
 
-			<p class="text">
-				<a href="/hero">Here</a> is a hero section image that I created with three.js... I haven't included
-				it because I really like the current hero section. Please contact me and let me know if you would
-				like to see it!
-			</p>
+				<p class="text">
+					<a href="/hero">Here</a> is a hero section image that I created with three.js... I haven't
+					included it because I really like the current hero section. Please contact me and let me know
+					if you would like to see it!
+				</p>
+			</div>
 
 			<!-- set up side by side text -->
 			<section class="grid">
