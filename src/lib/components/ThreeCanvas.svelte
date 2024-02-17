@@ -183,7 +183,11 @@
 		letter-spacing: 3px;
 		font-kerning: none;
 	}
-	span:hover {
+
+	span {
 		color: var(--purple);
+	}
+	span:hover {
+		color: var(--blue);
 	}
 </style>
