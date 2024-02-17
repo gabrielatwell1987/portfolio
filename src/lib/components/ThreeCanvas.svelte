@@ -1,9 +1,18 @@
 <script>
 	import { onMount } from 'svelte';
 	import * as THREE from 'three';
+	import SplitType from 'split-type';
+	import gsap from 'gsap';
 	// import * as dat from "dat.gui";
 
 	onMount(() => {
+		// SplitType
+		const h1 = document.querySelector('h1');
+
+		const text = new SplitType(h1, {
+			types: 'chars'
+		});
+
 		// Texture Loader
 		const textureLoader = new THREE.TextureLoader();
 		const cross = textureLoader.load('/gltf/cross.png');
@@ -56,6 +65,14 @@
 		pointLight.position.y = 3;
 		pointLight.position.z = 4;
 		scene.add(pointLight);
+
+		// GSAP
+		gsap.from(text.chars, {
+			duration: 1,
+			y: -50,
+			opacity: 0,
+			stagger: 0.25
+		});
 
 		/**
 		 * Sizes
@@ -149,7 +166,7 @@
 
 <canvas class="webgl" />
 
-<h1>Atwell Design</h1>
+<h1><span>A</span>twell Design</h1>
 
 <style>
 	h1 {
@@ -164,5 +181,9 @@
 		text-align: center;
 		line-height: 1.2;
 		letter-spacing: 3px;
+		font-kerning: none;
+	}
+	span:hover {
+		color: var(--purple);
 	}
 </style>
