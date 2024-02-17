@@ -63,12 +63,13 @@
 					development, creating engaging and visually appealing animations is essential to grab the
 					attention of users.
 				</p>
-				<p class="text">
-					<a href="/hero">Here</a> is a hero section image that I created with three.js... I haven't
-					included it because I really like the current hero section. Please contact me and let me know
-					if you would like to see it!
-				</p>
 			</div>
+
+			<p class="text">
+				<a href="/hero">Here</a> is a hero section image that I created with three.js... I haven't included
+				it because I really like the current hero section. Please contact me and let me know if you would
+				like to see it!
+			</p>
 
 			<!-- set up side by side text -->
 			<section class="grid">
