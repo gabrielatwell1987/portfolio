@@ -64,11 +64,17 @@
 					attention of users.
 				</p>
 
-				<p class="text hero">
-					<a href="/hero">Here</a> is a hero section image that I created with three.js... I haven't
-					included it because I really like the current hero section. Please contact me and let me know
-					if you would like to see it!
-				</p>
+				<article class="text-w hero">
+					<p class="text margin-b">
+						Here is a hero section image that I created with three.js... I haven't included it
+						because I really like the current hero section. Please contact me and let me know if you
+						would like to see it!
+					</p>
+
+					<a href="/hero" class="btn-link"
+						><button aria-label="hero" class="hero-btn">Hero</button></a
+					>
+				</article>
 			</div>
 
 			<!-- set up side by side text -->
@@ -387,6 +393,19 @@
 
 		.hero {
 			display: block;
+		}
+
+		.margin-b {
+			margin-bottom: -2rem;
+		}
+
+		.text-w {
+			width: 75%;
+			margin: 0 auto;
+		}
+
+		.hero-btn {
+			width: 25%;
 		}
 
 		@keyframes wiggle {

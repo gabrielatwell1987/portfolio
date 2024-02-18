@@ -27,7 +27,7 @@
 		const scene = new THREE.Scene();
 
 		// Objects
-		const geometry = new THREE.CircleGeometry(1, 50);
+		const geometry = new THREE.CapsuleGeometry(2, 0, 9, 20);
 
 		const particlesGeometry = new THREE.BufferGeometry();
 		const particlesCount = 5000;
