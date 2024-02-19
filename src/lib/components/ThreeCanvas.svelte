@@ -15,7 +15,7 @@
 
 		// Texture Loader
 		const textureLoader = new THREE.TextureLoader();
-		const cross = textureLoader.load('/gltf/cross.png');
+		const cross = textureLoader.load('/textures/cross.png');
 
 		// // Debug
 		// const gui = new dat.GUI();
