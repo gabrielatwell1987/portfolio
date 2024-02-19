@@ -1,9 +1,13 @@
 <script>
 	import CSS from './css.md';
 	import GSAP from './gsap.md';
+	import { blur } from 'svelte/transition';
 </script>
 
-<section>
+<section
+	in:blur={{ amount: 20, delay: 800, duration: 2000 }}
+	out:blur={{ amount: 20, duration: 2000 }}
+>
 	<!-- links to my markdown files -->
 	<h1 class="title">CSS</h1>
 	<CSS />
