@@ -71,7 +71,7 @@
 						would like to see it!
 					</p>
 
-					<a href="/hero" class="btn-link"
+					<a href="/about/hero" class="btn-link"
 						><button aria-label="hero" class="hero-btn">Hero</button></a
 					>
 				</article>
