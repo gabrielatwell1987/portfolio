@@ -18,13 +18,13 @@
 	}
 
 	h1 {
-		font-size: 8rem;
+		font-size: 6rem;
 		margin: 5rem auto;
 		text-align: center;
 		color: var(--sky);
 		font-family: var(--major);
-		letter-spacing: 5px;
-		margin-bottom: 15%;
+		letter-spacing: 7px;
+		margin-bottom: 20%;
 	}
 
 	p {
@@ -33,8 +33,8 @@
 		text-align: left;
 		border: 3px solid var(--white);
 		border-radius: 12px;
-		padding: 1rem 3rem;
-		color: var(--white);
+		padding: 2rem 4rem;
+		color: var(--smoke);
 		font-family: var(--montserrat);
 	}
 </style>
