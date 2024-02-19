@@ -38,7 +38,7 @@
 
 	<!-- animation logo -->
 	<div class="links">
-		<a href="/posts"
+		<a href="/blog/posts"
 			><img
 				src="logos/animation.png"
 				alt="A logo that says web animation techniques."
