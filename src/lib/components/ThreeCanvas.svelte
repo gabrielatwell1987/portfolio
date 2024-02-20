@@ -166,7 +166,7 @@
 
 <canvas class="webgl" />
 
-<h1><span>A</span>twell UI Design</h1>
+<h1><span>A</span>twell <span>U</span>I <span>D</span>esign</h1>
 
 <style>
 	h1 {
