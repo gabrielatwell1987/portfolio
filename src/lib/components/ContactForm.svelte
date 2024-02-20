@@ -234,7 +234,7 @@
 		}
 
 		.modal h4 {
-			font-size: 1.5rem;
+			font-size: 3rem;
 			font-weight: 900;
 			font-family: var(--montserrat);
 			color: var(--purple);
@@ -303,7 +303,7 @@
 
 		legend {
 			font-weight: bolder;
-			font-size: 2.75rem;
+			font-size: 5rem;
 			padding: 0 1rem 0 1rem;
 			text-shadow: -5px 5px 4px var(--dark-gray);
 		}

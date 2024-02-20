@@ -230,7 +230,7 @@
 		.title {
 			font-size: 4rem;
 			letter-spacing: 20px;
-			margin: 2rem 0;
+			margin: 2rem auto;
 		}
 
 		.linksize {
@@ -295,6 +295,12 @@
 			font-size: 2.2rem;
 			font-weight: 900;
 			text-align: center;
+		}
+
+		.title {
+			font-size: 7rem;
+			font-weight: 800;
+			text-shadow: -5px 5px 4px var(--dark-gray);
 		}
 	}
 </style>
