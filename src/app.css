@@ -42,9 +42,9 @@ body {
 }
 
 h2 {
-	font-family: var(--righteous);
+	font-family: var(--major);
 	text-align: center;
-	color: var(--cornflower);
+	color: var(--purple);
 }
 
 h3,
