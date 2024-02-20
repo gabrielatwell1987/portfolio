@@ -69,6 +69,7 @@
 	.sk:hover {
 		filter: opacity(0.5);
 		transition: filter 0.75s ease-in-out;
+		animation: wiggle 0.5s ease-in-out;
 	}
 
 	.image {
@@ -90,6 +91,10 @@
 		color: black;
 		transition: opacity 0.75s ease-in-out;
 		animation: wiggle 0.5s ease-in-out infinite;
+	}
+
+	section {
+		margin-top: 10rem;
 	}
 
 	@keyframes wiggle {

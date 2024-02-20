@@ -362,6 +362,9 @@
 
 		.main-title {
 			color: var(--purple);
+			font-size: 7rem;
+			font-weight: 900;
+			font-family: var(--major);
 		}
 
 		.title {

@@ -18,7 +18,8 @@
 
 <style>
 	svg {
-		width: 5%;
-		height: 5%;
+		width: 10%;
+		height: 10%;
+		margin-left: -3%;
 	}
 </style>
