@@ -2,7 +2,8 @@
 	import ImageCarousel from '$lib/components/Carousel.svelte';
 </script>
 
-<h1>photos</h1>
+<h1 class="title">photos</h1>
+
 <main>
 	<ImageCarousel />
 
@@ -55,15 +56,16 @@
 		letter-spacing: 5px;
 	}
 
-	h1 {
-		font-size: 3.5rem;
+	.title {
+		font-size: 8rem;
 		font-weight: 900;
-		color: var(--sky);
+		color: var(--purple);
 		font-family: var(--major);
 		letter-spacing: 5px;
 		text-transform: uppercase;
-		margin-bottom: 2rem;
+		margin: 2rem auto;
 		text-align: center;
+		text-shadow: 5px 5px 4px var(--dark-gray);
 	}
 
 	@keyframes wiggle {

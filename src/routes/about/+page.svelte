@@ -365,6 +365,7 @@
 			font-size: 7rem;
 			font-weight: 900;
 			font-family: var(--major);
+			text-shadow: 5px 5px 4px var(--dark-gray);
 		}
 
 		.title {

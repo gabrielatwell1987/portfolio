@@ -18,7 +18,7 @@
 	/* desktop */
 	.title {
 		text-align: center;
-		font-size: 3.5rem;
+		font-size: 6rem;
 		font-weight: 900;
 		color: var(--white);
 		font-family: var(--major);
