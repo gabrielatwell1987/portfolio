@@ -2,12 +2,10 @@
 	import CSS from './css.md';
 	import GSAP from './gsap.md';
 	import { blur } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 </script>
 
-<section
-	in:blur={{ amount: 20, delay: 800, duration: 2000 }}
-	out:blur={{ amount: 20, duration: 2000 }}
->
+<section transition:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<!-- links to my markdown files -->
 	<h1 class="title">CSS</h1>
 	<CSS />
