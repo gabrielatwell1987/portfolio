@@ -3,7 +3,6 @@
 	import * as THREE from 'three';
 	import SplitType from 'split-type';
 	import gsap from 'gsap';
-	// import * as dat from "dat.gui";
 
 	onMount(() => {
 		// SplitType
@@ -16,9 +15,6 @@
 		// Texture Loader
 		const textureLoader = new THREE.TextureLoader();
 		const cross = textureLoader.load('/textures/cross.png');
-
-		// // Debug
-		// const gui = new dat.GUI();
 
 		// Canvas
 		const canvas = document.querySelector('canvas.webgl');
