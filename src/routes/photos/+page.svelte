@@ -115,6 +115,7 @@
 		.title {
 			font-family: var(--major);
 			font-size: 3rem;
+			letter-spacing: 5px;
 		}
 
 		.spacing {
@@ -204,10 +205,11 @@
 		}
 
 		.title {
-			font-size: 4rem;
+			font-size: 8rem;
 			color: var(--white);
-			margin: 0 0 2rem 0;
-			text-shadow: 0px 0px 50px var(--smoke);
+			margin: 2rem auto;
+			/* text-shadow: 0px 0px 50px var(--smoke); */
+			text-shadow: -5px 5px 4px var(--dark-gray);
 		}
 
 		.flex {

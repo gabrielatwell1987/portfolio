@@ -163,7 +163,9 @@
 
 <style>
 	svg {
-		margin-left: -5%;
-		width: 10%;
+		width: 15%;
+		height: 15%;
+		margin-left: -8%;
+		margin-bottom: 3rem;
 	}
 </style>
