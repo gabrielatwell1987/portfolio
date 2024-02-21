@@ -2,6 +2,8 @@
 	import { gsap } from 'gsap';
 	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
+	import { blur } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 
 	// animations
 	onMount(() => {
@@ -35,7 +37,7 @@
 	});
 </script>
 
-<main>
+<main transition:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<!-- content -->
 	<section>
 		<article>
