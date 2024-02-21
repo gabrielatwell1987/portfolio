@@ -411,7 +411,7 @@
 		}
 
 		.hero-btn {
-			width: 25%;
+			width: 30%;
 		}
 
 		@keyframes wiggle {
