@@ -132,7 +132,7 @@
 	}
 
 	.title {
-		font-size: 4rem;
+		font-size: 7rem;
 		font-weight: 800;
 		margin: 2rem 0 -5rem 0;
 		text-align: center;
