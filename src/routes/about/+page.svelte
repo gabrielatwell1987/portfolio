@@ -139,13 +139,13 @@
 				<ul class="skills">
 					<li>HTML</li>
 					<li>CSS</li>
+					<li>SCSS</li>
+					<li>Tailwind CSS</li>
 					<li>JavaScript</li>
+					<li>Sveltekit</li>
 					<li>Greensock</li>
 					<li>Git/GitHub</li>
 					<li>Node.js</li>
-					<li>Tailwind CSS</li>
-					<li>SCSS</li>
-					<li>Sveltekit</li>
 				</ul>
 			</section>
 
