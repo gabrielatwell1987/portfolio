@@ -278,10 +278,17 @@
 			mix-blend-mode: difference;
 		}
 
-		.hero {
-			display: none;
+		.hero-btn {
+			width: 75%;
 		}
 	}
+
+	@media screen and (min-width: 500px) {
+		.hero-btn {
+			width: 30%;
+		}
+	}
+
 	/* bigger than desktop */
 	@media screen and (min-width: 990px) {
 		p {
@@ -395,10 +402,6 @@
 			margin-left: 0%;
 			display: flex;
 			justify-content: space-evenly;
-		}
-
-		.hero {
-			display: block;
 		}
 
 		.margin-b {
