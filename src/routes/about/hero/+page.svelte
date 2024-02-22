@@ -110,4 +110,16 @@
 			translate: 5px 0;
 		}
 	}
+
+	@media (min-width: 200px) {
+		.hero-text {
+			display: none;
+		}
+	}
+
+	@media (min-width: 990px) {
+		.hero-text {
+			display: block;
+		}
+	}
 </style>

@@ -186,4 +186,36 @@
 	span:hover {
 		color: var(--blue);
 	}
+
+	@media (min-width: 200px) {
+		h1 {
+			font-size: 2rem;
+			font-kerning: none;
+			font-family: var(--major);
+		}
+	}
+
+	@media (min-width: 990px) {
+		h1 {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: whitesmoke;
+			font-size: 3.5rem;
+			font-weight: 900;
+			font-family: var(--major);
+			text-align: center;
+			line-height: 1.2;
+			letter-spacing: 3px;
+			font-kerning: none;
+		}
+
+		span {
+			color: var(--purple);
+		}
+		span:hover {
+			color: var(--blue);
+		}
+	}
 </style>
