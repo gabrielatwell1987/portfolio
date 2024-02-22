@@ -88,22 +88,6 @@
 
 	<hr />
 
-	<!-- skills section -->
-	<section class="border">
-		<h3>Skills</h3>
-		<ul class="skills">
-			<li>HTML</li>
-			<li>CSS</li>
-			<li>JavaScript</li>
-			<li>Greensock</li>
-			<li>Git/GitHub</li>
-			<li>Node.js</li>
-			<li>Tailwind CSS</li>
-			<li>SCSS</li>
-			<li>Sveltekit</li>
-		</ul>
-	</section>
-
 	<!-- logo -->
 	<div class="logos">
 		<img
@@ -135,12 +119,6 @@
 			height: var(--size);
 			box-shadow: 0 calc(var(--size) * 2) 0 var(--smoke),
 				0 calc(var(--size) * 4) 0 var(--lightblack);
-		}
-
-		.border {
-			width: 15%;
-			margin: 0 auto;
-			display: none;
 		}
 
 		.img {
@@ -259,42 +237,6 @@
 
 		.content {
 			margin-bottom: -5%;
-		}
-
-		/* skills section */
-
-		.border {
-			display: block;
-			width: 15rem;
-		}
-
-		.skills {
-			display: flex;
-			flex-direction: column;
-			gap: 1rem;
-		}
-
-		.skills li {
-			list-style: none;
-			margin: 0 auto;
-			padding: 0.5rem 0.75rem;
-			width: 100%;
-			font-size: 1rem;
-			font-weight: 900;
-			font-family: var(--montserrat);
-			letter-spacing: 1px;
-			background-color: var(--lightblack);
-			color: var(--white);
-			border: 2px solid var(--smoke);
-			border-radius: 12px;
-			text-align: center;
-		}
-
-		h3 {
-			color: var(--blue);
-			font-size: 2.2rem;
-			font-weight: 900;
-			text-align: center;
 		}
 
 		.title {

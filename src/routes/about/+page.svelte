@@ -133,6 +133,22 @@
 				</a>
 			</div>
 
+			<!-- skills section -->
+			<section class="border">
+				<h3 class="skills-title">Skills</h3>
+				<ul class="skills">
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>JavaScript</li>
+					<li>Greensock</li>
+					<li>Git/GitHub</li>
+					<li>Node.js</li>
+					<li>Tailwind CSS</li>
+					<li>SCSS</li>
+					<li>Sveltekit</li>
+				</ul>
+			</section>
+
 			<!-- image gallery -->
 			<a class="btn-link" href="/about/gallery"><button aria-label="gallery">Gallery</button></a>
 		</article>
@@ -281,6 +297,13 @@
 		.hero-btn {
 			width: 75%;
 		}
+
+		/* skills section */
+		.border {
+			width: 15%;
+			margin: 10% auto;
+			display: none;
+		}
 	}
 
 	@media screen and (min-width: 500px) {
@@ -415,6 +438,42 @@
 
 		.hero-btn {
 			width: 30%;
+		}
+
+		/* skills section */
+
+		.border {
+			display: block;
+			width: 15rem;
+		}
+
+		.skills {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
+
+		.skills li {
+			list-style: none;
+			margin: 0 auto;
+			padding: 0.5rem 0.75rem;
+			width: 100%;
+			font-size: 1rem;
+			font-weight: 900;
+			font-family: var(--montserrat);
+			letter-spacing: 1px;
+			background-color: var(--lightblack);
+			color: var(--white);
+			border: 2px solid var(--smoke);
+			border-radius: 12px;
+			text-align: center;
+		}
+
+		.skills-title {
+			color: var(--blue);
+			font-size: 2.2rem;
+			font-weight: 900;
+			text-align: center;
 		}
 
 		@keyframes wiggle {
