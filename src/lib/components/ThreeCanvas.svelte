@@ -189,7 +189,7 @@
 
 	@media (min-width: 200px) {
 		h1 {
-			font-size: 1.25rem;
+			font-size: 1rem;
 			font-kerning: none;
 			font-family: var(--major);
 		}
