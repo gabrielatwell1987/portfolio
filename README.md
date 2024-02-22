@@ -1,4 +1,4 @@
-<div style="text-align: center; margin-bottom: 2rem; font-size: 3rem; font-weight: 900; letter-spacing: 5px; color: rgba(0, 0, 0, .75);">
+<div style="text-align: center; margin-bottom: 2rem; font-size: 6rem; font-weight: 900; letter-spacing: 5px; color: rgba(0, 25, 50, .75);">
 Gabriel Atwell's Portfolio
 </div>
 
@@ -6,7 +6,7 @@ Gabriel Atwell's Portfolio
 This is a portfolio website that I built to showcase my projects and skills. It is built with sveltekit and GSAP. I coded this from scratch, it's completely custom. I also added markdown for my blog posts, and I try to update the site regularly.
 </div>
 
-<div style="text-align: center; margin-top: 2rem; margin-bottom: 2rem; font-size: 3rem; font-weight: 900; letter-spacing: 5px; color: rgba(0, 0, 0, .75);">
+<div style="text-align: center; margin-top: 2rem; margin-bottom: 2rem; font-size: 3rem; font-weight: 900; letter-spacing: 5px; color: rgba(0, 25, 50, .75);">
 What is disclosed?
 </div>
 
@@ -14,6 +14,6 @@ What is disclosed?
 Some projects that I've built, some photos of me, an about me section, and a way to contact me!
 </div>
 
-<div style="text-align: center; margin-top: 2rem; margin-bottom: 2rem; font-size: 1.75rem; font-weight: 700; letter-spacing: 1px; color: rgba(145, 145, 145, .95);">
+<div style="text-align: center; margin-top: 2rem; margin-bottom: 2rem; font-size: 1.75rem; font-weight: 700; letter-spacing: 1px; color: rgba(85, 85, 85, .95);">
 Please contact me if you have any questions!
 </div>
