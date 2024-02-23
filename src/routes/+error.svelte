@@ -25,6 +25,7 @@
 		font-family: var(--major);
 		letter-spacing: 7px;
 		margin-bottom: 20%;
+		text-shadow: 0 0 0.75rem var(--smoke);
 	}
 
 	p {
