@@ -436,6 +436,8 @@
 			margin: 0 auto;
 		}
 
+		/* Hero Button */
+
 		.hero-btn {
 			width: 30%;
 		}
@@ -496,6 +498,10 @@
 	@media screen and (min-width: 1920px) {
 		button {
 			width: 13%;
+		}
+
+		.hero-btn {
+			width: 15%;
 		}
 	}
 </style>
