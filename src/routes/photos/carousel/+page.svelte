@@ -1,5 +1,20 @@
 <script>
 	import ImageCarousel from '$lib/components/Carousel.svelte';
+	import SplitType from 'split-type';
+	import { onMount } from 'svelte';
+	import gsap from 'gsap';
+
+	onMount(() => {
+		const titleText = new SplitType('.title', { types: 'chars' });
+
+		gsap.from(titleText.chars, {
+			duration: 1.5,
+			y: 50,
+			opacity: 0.5,
+			stagger: 0.15,
+			ease: 'back.out(1.7)'
+		});
+	});
 </script>
 
 <h1 class="title">photos</h1>
