@@ -11,7 +11,7 @@
 		<Hamburger --color="white" type="spin" bind:open />
 
 		<div class="gabe-logo">
-			<a class="home" href="/"><MainLogo /></a>
+			<a class="home" href="/about/hero"><MainLogo /></a>
 		</div>
 	</div>
 
@@ -29,7 +29,7 @@
 	<!-- mobile view -->
 	<div class="mobile-view">
 		<div class="mobile-links">
-			<a class="mobile-link" href="/" aria-label="home">HOME</a>
+			<a class="mobile-link" href="/about/hero" aria-label="home">HOME</a>
 			<a class="mobile-link" href="/projects" aria-label="projects">PROJECTS</a>
 			<a class="mobile-link" href="/about" aria-label="about">ABOUT</a>
 			<a class="mobile-link" href="/photos" aria-label="photos">PHOTOS</a>
