@@ -43,12 +43,23 @@
 	<!-- spacing -->
 	<br /><br />
 
+	<h3 class="linksize name">alphamaps</h3>
+	<a class="linksize" href="https://alphamaps69.vercel.app" target="_blank"
+		><img
+			class="img"
+			src="/projects/alphamaps.png"
+			alt="The first project: Alphamaps, Made with Three.js."
+			width="300px"
+			height="375px"
+		/></a
+	><br />
+
 	<h3 class="linksize name">web dev website</h3>
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank"
 		><img
 			class="img"
 			src="/projects/web_dev.png"
-			alt="The first project: Web dev."
+			alt="The second project: Web dev."
 			width="200px"
 			height="275px"
 		/></a
@@ -59,7 +70,7 @@
 		><img
 			class="img"
 			src="/projects/scroller.png"
-			alt="The second project: Scroller."
+			alt="The third project: horizontal scroller."
 			width="450px"
 			height="280px"
 		/></a
@@ -70,7 +81,7 @@
 		><img
 			class="img"
 			src="/projects/starbucks.png"
-			alt="The third project: Starbucks Clone."
+			alt="The fourth project: Starbucks Clone."
 			width="500px"
 			height="400px"
 		/></a
@@ -81,7 +92,7 @@
 		><img
 			class="img"
 			src="/projects/snippet.png"
-			alt="The fourth project: Code Snippet."
+			alt="The fifth project: Code Snippet."
 			width="350px"
 			height="600px"
 		/></a
@@ -92,7 +103,7 @@
 		><img
 			class="img"
 			src="/projects/svelteflix.png"
-			alt="The fifth project: Svelteflix."
+			alt="The six project: Svelteflix."
 			width="475px"
 			height="300px"
 		/></a
