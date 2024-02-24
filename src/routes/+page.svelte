@@ -97,7 +97,7 @@
 		}
 
 		/* hero section */
-		.hero-image {
+		img {
 			border-radius: 15px;
 			opacity: 0.25;
 			transition: opacity 0.75s ease-in-out;
@@ -105,7 +105,7 @@
 			height: 100%;
 		}
 
-		.hero-text {
+		section {
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -205,7 +205,7 @@
 			width: 50%;
 		}
 
-		.hero-image {
+		img {
 			width: 90%;
 			height: 100%;
 		}

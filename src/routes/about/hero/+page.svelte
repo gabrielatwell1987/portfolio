@@ -4,7 +4,7 @@
 
 <ThreeCanvas />
 
-<section class="hero-text">
+<section>
 	<!-- hero section text and links -->
 	<h3>Frontend Crafted Web Experiences</h3>
 
@@ -20,12 +20,13 @@
 </section>
 
 <style>
-	.hero-text {
+	section {
 		position: absolute;
-		top: 120%;
+		top: 99%;
 		left: 50%;
-		transform: translate(-50%, -120%);
+		transform: translate(-50%, -99%);
 		width: 100%;
+		margin-top: 5rem;
 	}
 
 	h3 {
@@ -44,7 +45,7 @@
 		font-weight: 400;
 		letter-spacing: 0.5px;
 		font-family: var(--montserrat);
-		width: 50%;
+		width: 99%;
 		margin: 0 auto;
 	}
 
@@ -112,14 +113,159 @@
 	}
 
 	@media (min-width: 200px) {
-		.hero-text {
-			display: none;
+		/* section {
+			position: absolute;
+			top: 75%;
+			left: 50%;
+			transform: translate(-50%, -75%);
+		} */
+
+		h3 {
+			margin: 2rem auto;
+			margin-top: 10%;
+			color: var(--sky);
+			font-size: 1.25rem;
+			font-weight: 900;
+			font-family: var(--montserrat);
+			letter-spacing: 2px;
+		}
+
+		h4 {
+			color: var(--white);
+			font-size: 0.75rem;
+			font-weight: 600;
+			letter-spacing: 0.5px;
+			font-family: var(--montserrat);
+		}
+
+		button {
+			display: block;
+			background-color: transparent;
+			color: var(--white);
+			font-family: var(--montserrat);
+			width: 50%;
+			height: 10%;
+			outline: none;
+			border: 1px solid var(--white);
+			margin: 1rem auto;
+			border-radius: 10px;
+			font-size: 1.2rem;
+			font-weight: 900;
+			border-radius: 5rem;
+			filter: drop-shadow(0 0 0.75rem var(--smoke));
+			letter-spacing: 1px;
+			transition: 750ms;
+			outline: 3px solid currentColor;
+			outline-offset: -7px;
+			margin-top: 2rem;
+			margin-bottom: 0.25rem;
+			padding: 1rem 1.75rem;
+		}
+
+		button:hover,
+		button:focus {
+			border: 1px solid var(--black);
+			background-color: var(--white);
+			color: var(--black);
+			outline-offset: 0px;
+		}
+
+		section {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+		}
+
+		.btn {
+			text-decoration: none;
+			margin: 0 auto;
+		}
+
+		.summary {
+			margin: 0 auto;
+			font-size: 1rem;
+			font-weight: 500;
+			width: 100%;
+		}
+
+		.italic {
+			font-style: italic;
+			font-family: var(--montserrat);
+			font-weight: 200;
+			font-size: 0.8rem;
+			color: var(--white);
+		}
+	}
+
+	@media (min-width: 740px) {
+		button {
+			font-size: 1rem;
+			width: 25%;
+			font-size: 1rem;
+			letter-spacing: 2px;
+		}
+
+		button:hover {
+			animation: wiggle 0.5s ease-in-out infinite;
+		}
+
+		h3 {
+			font-size: 2.25rem;
+			letter-spacing: 7px;
+		}
+
+		h4 {
+			color: var(--white);
+			font-size: 1.25rem;
+		}
+
+		.summary {
+			width: 75%;
+		}
+
+		@keyframes wiggle {
+			0% {
+				rotate: 0deg;
+				translate: 0 0;
+			}
+			25% {
+				rotate: -2deg;
+				translate: -5px 0;
+			}
+			80% {
+				rotate: 2deg;
+				translate: 5px 0;
+			}
 		}
 	}
 
 	@media (min-width: 990px) {
-		.hero-text {
-			display: block;
+		button {
+			width: 30%;
+			font-size: 1.25rem;
+			margin: 3rem auto;
+		}
+
+		.italic {
+			margin-top: -1rem;
+		}
+
+		.summary {
+			width: 50%;
+		}
+	}
+
+	@media screen and (min-width: 1100px) {
+		button {
+			width: 20%;
+		}
+	}
+
+	@media screen and (min-width: 1920px) {
+		button {
+			width: 10%;
 		}
 	}
 </style>

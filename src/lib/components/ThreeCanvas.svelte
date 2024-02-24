@@ -167,9 +167,9 @@
 <style>
 	h1 {
 		position: absolute;
-		top: 50%;
+		top: 25%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, -25%);
 		color: whitesmoke;
 		font-size: 3.5rem;
 		font-weight: 900;
