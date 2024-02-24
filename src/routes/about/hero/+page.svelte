@@ -26,7 +26,7 @@
 		left: 50%;
 		transform: translate(-50%, -99%);
 		width: 100%;
-		margin-top: 5rem;
+		margin-top: 15%;
 	}
 
 	h3 {
