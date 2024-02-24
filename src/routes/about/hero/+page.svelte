@@ -22,9 +22,9 @@
 <style>
 	section {
 		position: absolute;
-		top: 99%;
+		top: 75%;
 		left: 50%;
-		transform: translate(-50%, -99%);
+		transform: translate(-50%, -75%);
 		width: 100%;
 		margin-top: 35%;
 	}
@@ -113,12 +113,12 @@
 	}
 
 	@media (min-width: 200px) {
-		/* section {
+		section {
 			position: absolute;
-			top: 75%;
+			top: 99%;
 			left: 50%;
-			transform: translate(-50%, -75%);
-		} */
+			transform: translate(-50%, -99%);
+		}
 
 		h3 {
 			margin: 2rem auto;
@@ -200,6 +200,14 @@
 	}
 
 	@media (min-width: 740px) {
+		section {
+			position: absolute;
+			top: -18%;
+			left: 50%;
+			transform: translate(-50%, -18%);
+			width: 100%;
+		}
+
 		button {
 			font-size: 1rem;
 			width: 25%;
@@ -242,6 +250,14 @@
 	}
 
 	@media (min-width: 990px) {
+		section {
+			position: absolute;
+			top: -18%;
+			left: 50%;
+			transform: translate(-50%, -18%);
+			width: 100%;
+		}
+
 		button {
 			width: 30%;
 			font-size: 1.25rem;
