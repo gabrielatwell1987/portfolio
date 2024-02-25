@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 
+	// Animations
 	onMount(() => {
 		const titleText = new SplitType('.title', { types: 'chars' });
 

@@ -6,6 +6,7 @@
 	let email = '';
 	let message = '';
 
+	// Animations
 	onMount(() => {
 		gsap.set('.form', { autoAlpha: 0 });
 
@@ -26,6 +27,7 @@
 	});
 </script>
 
+<!-- Modal -->
 <button class="open-button"><i class="fa-regular fa-folder-open" /></button>
 
 <dialog class="modal" id="modal">
@@ -43,7 +45,7 @@
 	<button class="close-button"><i class="fa-solid fa-xmark" /></button>
 </dialog>
 
-<!-- contact me form -->
+<!-- contact form -->
 <form class="form" method="POST" action="https://formsubmit.co/gatwell702@gmail.com">
 	<input type="hidden" name="send_to" value="gatwell702@gmail.com" />
 
