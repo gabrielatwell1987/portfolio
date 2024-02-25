@@ -112,6 +112,7 @@
 		}
 	}
 
+	/* mobile */
 	@media (min-width: 200px) {
 		section {
 			position: absolute;
@@ -199,6 +200,7 @@
 		}
 	}
 
+	/* tablet */
 	@media (min-width: 740px) {
 		section {
 			position: absolute;
@@ -249,6 +251,7 @@
 		}
 	}
 
+	/* desktop */
 	@media (min-width: 990px) {
 		section {
 			position: absolute;
@@ -273,12 +276,14 @@
 		}
 	}
 
+	/* bigger than desktop */
 	@media screen and (min-width: 1100px) {
 		button {
 			width: 20%;
 		}
 	}
 
+	/* way bigger than desktop */
 	@media screen and (min-width: 1920px) {
 		button {
 			width: 10%;

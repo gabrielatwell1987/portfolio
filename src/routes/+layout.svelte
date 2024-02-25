@@ -30,6 +30,7 @@
 <footer />
 
 <style>
+	/* global bg color */
 	:global(html, body) {
 		background-image: radial-gradient(circle at center, #2f2f2f 0%, #000 60%);
 	}

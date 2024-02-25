@@ -141,7 +141,6 @@
 		}
 
 		/* domino link */
-
 		.domino {
 			display: block;
 			margin-top: 2rem;

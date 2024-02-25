@@ -17,6 +17,7 @@
 		// SplitType
 		const titleText = new SplitType('#title', { types: 'chars' });
 
+		// GSAP
 		gsap.set('.linksize', { autoAlpha: 0, scale: 0 });
 		gsap.set('.content', { autoAlpha: 0 });
 
@@ -76,12 +77,12 @@
 		/></a
 	><br />
 
-	<h3 class="linksize name">starbucks clone</h3>
-	<a class="linksize" href="https://gabe4.vercel.app" target="_blank"
+	<h3 class="linksize name">github api</h3>
+	<a class="linksize" href="https://adiapp.vercel.app/" target="_blank"
 		><img
 			class="img"
-			src="/projects/starbucks.png"
-			alt="The fourth project: Starbucks Clone."
+			src="/projects/github.png"
+			alt="The fourth project: Github API."
 			width="500px"
 			height="400px"
 		/></a
