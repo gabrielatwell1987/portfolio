@@ -15,7 +15,7 @@
 
 	<h3>Make sure you click the animation with your mouse first</h3>
 	<h3>You can also use your mouse to change the view</h3>
-	<h3>move: W A S D | jump: SPACE</h3>
+	<h3>move: W A S D & jump: SPACE</h3>
 </main>
 
 <style>
@@ -24,6 +24,8 @@
 		width: 50%;
 		height: 25rem;
 		margin: 0 0 0 24.5%;
+		border-radius: 12px;
+		margin-bottom: 2rem;
 	}
 
 	h1,
@@ -40,5 +42,6 @@
 
 	h3 {
 		margin: 0;
+		margin-top: 0.25rem;
 	}
 </style>
