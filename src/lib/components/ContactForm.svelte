@@ -326,6 +326,16 @@
 			padding: 0 1rem 0 1rem;
 			text-shadow: -5px 5px 4px var(--dark-gray);
 		}
+
+		h4 {
+			line-height: 0.95;
+		}
+
+		p {
+			line-height: 2.25;
+			width: 75%;
+			margin: 0 auto;
+		}
 	}
 
 	/* way bigger than desktop */
