@@ -112,23 +112,27 @@
 
 			<!-- github and codepen links -->
 			<div class="dev-links">
-				<a class="size" href="https://www.github.com/gabrielatwell1987/portfolio"
+				<a class="size" href="https://www.github.com/gabrielatwell1987/portfolio" target="_blank"
 					><i class="fa-brands fa-github" /></a
 				>
 
-				<a class="size" href="https://codepen.io/gabrielatwell"
+				<a class="size" href="https://codepen.io/gabrielatwell" target="_blank"
 					><i class="fa-brands fa-codepen" /></a
 				>
 
-				<a class="size" href="https://www.linkedin.com/in/gabriel-atwell-ab2116231/">
+				<a
+					class="size"
+					href="https://www.linkedin.com/in/gabriel-atwell-ab2116231/"
+					target="_blank"
+				>
 					<i class="fa-brands fa-linkedin" />
 				</a>
 
-				<a class="size" href="https://discordapp.com/users/1007777351809114112">
+				<a class="size" href="https://discordapp.com/users/1007777351809114112" target="_blank">
 					<i class="fa-brands fa-discord" />
 				</a>
 
-				<a class="size" href="https://www.reddit.com/user/gatwell702">
+				<a class="size" href="https://www.reddit.com/user/gatwell702" target="_blank">
 					<i class="fa-brands fa-square-reddit" />
 				</a>
 			</div>
