@@ -150,12 +150,29 @@
 			background-color: var(--smoke);
 			color: black;
 			outline-offset: 0px;
+			animation: wiggle 0.5s ease-in-out infinite;
 		}
 		.open-button,
 		.close-button {
 			display: none;
 		}
+
+		@keyframes wiggle {
+			0% {
+				rotate: 0deg;
+				translate: 0 0;
+			}
+			25% {
+				rotate: -2deg;
+				translate: -5px 0;
+			}
+			80% {
+				rotate: 2deg;
+				translate: 5px 0;
+			}
+		}
 	}
+
 	/* bigger than tablet */
 	@media screen and (min-width: 750px) {
 		span {

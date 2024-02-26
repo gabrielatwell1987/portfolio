@@ -94,6 +94,7 @@
 			background-color: var(--white);
 			color: var(--black);
 			outline-offset: 0px;
+			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
 		/* hero section */
@@ -131,6 +132,21 @@
 			font-weight: 200;
 			font-size: 0.8rem;
 			color: var(--white);
+		}
+
+		@keyframes wiggle {
+			0% {
+				rotate: 0deg;
+				translate: 0 0;
+			}
+			25% {
+				rotate: -2deg;
+				translate: -5px 0;
+			}
+			80% {
+				rotate: 2deg;
+				translate: 5px 0;
+			}
 		}
 	}
 

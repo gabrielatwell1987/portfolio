@@ -226,6 +226,7 @@
 			background-color: var(--smoke);
 			color: black;
 			outline-offset: 0px;
+			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
 		.size {
@@ -296,11 +297,30 @@
 			width: 75%;
 		}
 
+		.hero-btn:hover {
+			animation: wiggle 0.5s ease-in-out infinite;
+		}
+
 		/* skills section */
 		.border {
 			width: 15%;
 			margin: 10% auto;
 			display: none;
+		}
+
+		@keyframes wiggle {
+			0% {
+				rotate: 0deg;
+				translate: 0 0;
+			}
+			25% {
+				rotate: -2deg;
+				translate: -5px 0;
+			}
+			80% {
+				rotate: 2deg;
+				translate: 5px 0;
+			}
 		}
 	}
 
@@ -308,6 +328,25 @@
 	@media screen and (min-width: 500px) {
 		.hero-btn {
 			width: 30%;
+		}
+
+		.hero-btn:hover {
+			animation: wiggle 0.5s ease-in-out infinite;
+		}
+
+		@keyframes wiggle {
+			0% {
+				rotate: 0deg;
+				translate: 0 0;
+			}
+			25% {
+				rotate: -2deg;
+				translate: -5px 0;
+			}
+			80% {
+				rotate: 2deg;
+				translate: 5px 0;
+			}
 		}
 	}
 
