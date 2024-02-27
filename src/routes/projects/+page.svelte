@@ -12,7 +12,7 @@
 			type: 'x, y',
 			edgeResistance: 0.65,
 			bounds: document.querySelector('.content'),
-			ease: 'none'
+			throwProps: true
 		});
 
 		// SplitType

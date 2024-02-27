@@ -24,7 +24,7 @@
 			type: 'x, y',
 			edgeResistance: 0.65,
 			bounds: document.querySelector('article'),
-			inertia: true
+			throwProps: true
 		});
 
 		// // bio text animations
