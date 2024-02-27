@@ -76,7 +76,7 @@
 			required
 		/>
 
-		<button type="submit" aria-label="send">Send</button>
+		<button class="send" type="submit" aria-label="send">Send</button>
 	</fieldset>
 </form>
 
@@ -180,12 +180,12 @@
 			font-weight: 800;
 		}
 
-		button {
+		.send {
 			width: 20%;
 			font-size: 1rem;
 		}
 
-		button:hover {
+		.send:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
@@ -205,15 +205,12 @@
 			border-radius: 5px;
 			padding: 1rem;
 			outline: none;
+			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
 		.open-button:hover {
 			border: 2px solid var(--white);
 			color: var(--white);
-		}
-
-		.open-button:focus {
-			outline: none;
 		}
 
 		.close-button {
@@ -230,15 +227,12 @@
 			border-radius: 5px;
 			padding: 1rem;
 			outline: none;
+			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
 		.close-button:hover {
 			color: var(--white);
 			border: 2px solid var(--white);
-		}
-
-		.close-button:focus {
-			outline: none;
 		}
 
 		.modal {
