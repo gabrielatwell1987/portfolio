@@ -10,8 +10,9 @@
 
 		Draggable.create('.designs', {
 			type: 'x, y',
+			edgeResistance: 0.65,
 			bounds: document.querySelector('.content'),
-			inertia: true
+			ease: 'none'
 		});
 
 		// SplitType
