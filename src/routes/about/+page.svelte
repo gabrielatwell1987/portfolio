@@ -22,6 +22,7 @@
 
 		Draggable.create(atwell, {
 			type: 'x, y',
+			edgeResistance: 0.65,
 			bounds: document.querySelector('article'),
 			inertia: true
 		});
