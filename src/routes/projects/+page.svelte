@@ -100,12 +100,12 @@
 		/></a
 	><br />
 
-	<h3 class="linksize name">netflix clone</h3>
-	<a class="linksize" href="https://svelteflix-delta.vercel.app" target="_blank"
+	<h3 class="linksize name">starbucks clone</h3>
+	<a class="linksize" href="https://gabe4.vercel.app" target="_blank"
 		><img
 			class="img"
-			src="/projects/svelteflix.png"
-			alt="The six project: Svelteflix."
+			src="/projects/starbucks.png"
+			alt="The six project: A starbucks clone."
 			width="475px"
 			height="300px"
 		/></a

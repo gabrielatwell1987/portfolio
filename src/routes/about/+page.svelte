@@ -52,6 +52,7 @@
 				class="atwell"
 				src="logos/atweezy.png"
 				alt="An logo that says Gabriel Atwell that you can move."
+				width="500"
 			/>
 
 			<div class="bio">
@@ -243,13 +244,13 @@
 		.size {
 			font-size: 2rem;
 			font-weight: 900;
-			color: var(--blue);
+			color: var(--purple);
 		}
 
 		.size:hover {
 			font-size: 2rem;
 			font-weight: 900;
-			color: var(--purple);
+			color: var(--sky);
 		}
 
 		.btn-link {
@@ -407,10 +408,12 @@
 
 		.size {
 			font-size: 4.24rem;
+			color: var(--purple);
 		}
 
 		.size:hover {
 			font-size: 4.24rem;
+			color: var(--sky);
 		}
 
 		.btn-link {
