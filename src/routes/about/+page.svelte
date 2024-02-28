@@ -42,10 +42,16 @@
 	<!-- content -->
 	<section>
 		<article>
-			<img
+			<!-- <img
 				class="atwell"
 				src="logos/atwell-a.jpeg"
 				alt="An logo that says Atwell that you can move."
+			/> -->
+
+			<img
+				class="atwell"
+				src="logos/atweezy.png"
+				alt="An logo that says Gabriel Atwell that you can move."
 			/>
 
 			<div class="bio">
