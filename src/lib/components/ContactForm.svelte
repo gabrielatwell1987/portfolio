@@ -100,6 +100,10 @@
 			border: 2px solid var(--dark-gray);
 		}
 
+		textarea:hover {
+			transform: scale(1.05);
+		}
+
 		legend {
 			font-family: var(--major);
 			font-size: 2rem;
@@ -256,6 +260,15 @@
 
 		.modal img {
 			border-radius: 10px;
+		}
+
+		input:hover {
+			transform: scale(1.05);
+		}
+
+		label:hover {
+			color: var(--purple);
+			transform: scale(1.5);
 		}
 
 		@keyframes wiggle {
