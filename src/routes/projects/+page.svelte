@@ -51,8 +51,8 @@
 			class="img"
 			src="/projects/alphamaps.png"
 			alt="The first project: Alphamaps, Made with Three.js."
-			width="300px"
-			height="375px"
+			width="400px"
+			height="475px"
 		/></a
 	><br />
 
@@ -62,8 +62,8 @@
 			class="img"
 			src="/projects/web_dev.png"
 			alt="The second project: Web dev."
-			width="200px"
-			height="275px"
+			width="400px"
+			height="475px"
 		/></a
 	><br />
 
