@@ -126,9 +126,9 @@ gsap.to('.example', { autoAlpha: 1, duration: 1 });
 
 <div align="center" style="font-size: 3rem; font-weight: 600; letter-spacing: 5px;">SCROLL TRIGGER</div>
 
-<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem; color: var(--white); font-weight: 500; letter-spacing: 2px;">ScrollTrigger enables anyone to create jaw-dropping scroll-based animations with minimal code. Infinitely flexible. Scrub, pin, snap, or just trigger anything scroll-related, even if it has nothing to do with animation.</div>
+<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem; color: var(--white); font-weight: 500; letter-spacing: 2px;">ScrollTrigger is a plugin provided by GSAP. It enables anyone to create scroll-based animations with a few lines of code. Most websites that are on places like awwwards.com use scroll-based designs, and also use SVG at the same time!</div>
 
-<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem; color: var(--white); font-weight: 500; letter-spacing: 2px;">You don't need to put ScrollTriggers directly into animations (though that's probably the most common use case). Use the callbacks for anything...</div>
+<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem; color: var(--white); font-weight: 500; letter-spacing: 2px;">You don't need to put ScrollTriggers directly into animations (though that's probably the most common use case). You can use the callbacks for anything...</div>
 
 ```js
 let tl = gsap.timeline({
