@@ -22,7 +22,13 @@
 		let:showPrevPage
 		let:showNextPage
 	>
-		<div class="prev" slot="prev" on:click={showPrevPage} on:keydown={() => {}}>
+		<div
+			class="prev"
+			slot="prev"
+			on:click={showPrevPage}
+			on:keydown={() => {}}
+			aria-label="previous"
+		>
 			<i class="fa-solid fa-arrow-left" />
 		</div>
 
@@ -58,7 +64,7 @@
 			<img src="/photos/gabe6.png" alt="Gabriel Atwell" />
 		</div>
 
-		<div class="next" slot="next" on:click={showNextPage} on:keydown={() => {}}>
+		<div class="next" slot="next" on:click={showNextPage} on:keydown={() => {}} aria-label="next">
 			<i class="fa-solid fa-arrow-right" />
 		</div>
 	</Carousel>

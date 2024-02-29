@@ -68,8 +68,9 @@
 
 	<h3 class="learn">Learn more about GSAP</h3>
 	<p class="center">
-		If you would like to know more about greensock, please click <a href="https://greensock.com"
-			>here</a
+		If you would like to know more about greensock, please click <a
+			href="https://greensock.com"
+			aria-label="greensock">here</a
 		>.
 	</p>
 

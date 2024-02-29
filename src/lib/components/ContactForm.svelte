@@ -28,7 +28,7 @@
 </script>
 
 <!-- Modal -->
-<button class="open-button"><i class="fa-regular fa-folder-open" /></button>
+<button class="open-button" aria-label="open"><i class="fa-regular fa-folder-open" /></button>
 
 <dialog class="modal" id="modal">
 	<div class="column border">
@@ -42,7 +42,7 @@
 		</p>
 	</div>
 
-	<button class="close-button"><i class="fa-solid fa-xmark" /></button>
+	<button class="close-button" aria-label="close"><i class="fa-solid fa-xmark" /></button>
 </dialog>
 
 <!-- contact form -->
