@@ -56,12 +56,12 @@
 		/></a
 	><br />
 
-	<h3 class="linksize name">web dev website</h3>
+	<h3 class="linksize name">self-taught</h3>
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank"
 		><img
 			class="img"
 			src="/projects/web_dev.png"
-			alt="The second project: Web dev."
+			alt="The second project: Self-Taught."
 			width="400px"
 			height="475px"
 		/></a
@@ -89,12 +89,12 @@
 		/></a
 	><br />
 
-	<h3 class="linksize name">code snippet</h3>
+	<h3 class="linksize name">snippet creator</h3>
 	<a class="linksize" href="https://appity.vercel.app" target="_blank"
 		><img
 			class="img"
 			src="/projects/snippet.png"
-			alt="The fifth project: Code Snippet."
+			alt="The fifth project: Snippet Creator."
 			width="350px"
 			height="600px"
 		/></a
