@@ -292,6 +292,7 @@
 			margin-bottom: 1rem;
 			text-align: center;
 			transform: scale(1.5);
+			letter-spacing: 5px;
 		}
 
 		input {
