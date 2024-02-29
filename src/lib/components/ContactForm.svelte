@@ -100,10 +100,6 @@
 			border: 2px solid var(--dark-gray);
 		}
 
-		textarea:hover {
-			transform: scale(1.05);
-		}
-
 		legend {
 			font-family: var(--major);
 			font-size: 2rem;
@@ -262,13 +258,8 @@
 			border-radius: 10px;
 		}
 
-		input:hover {
-			transform: scale(1.05);
-		}
-
 		label:hover {
-			color: var(--purple);
-			transform: scale(1.5);
+			color: var(--blue);
 		}
 
 		@keyframes wiggle {
@@ -298,13 +289,15 @@
 
 		label {
 			font-size: 1rem;
-			margin-bottom: 0.5rem;
+			margin-bottom: 1rem;
 			text-align: center;
+			transform: scale(1.5);
 		}
 
 		input {
 			font-size: 1.5rem;
 			margin-bottom: 1rem;
+			transform: scale(1.05);
 		}
 
 		textarea {
