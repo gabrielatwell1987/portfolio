@@ -77,7 +77,8 @@
 		<h3 class="heading">Learn more about Sveltekit</h3>
 		<p class="center">
 			If you would like to know more about svelte and sveltekit, please click <a
-				href="https://svelte.dev">here</a
+				href="https://svelte.dev"
+				aria-label="sveltekit">here</a
 			>.
 		</p>
 
