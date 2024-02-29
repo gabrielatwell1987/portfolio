@@ -244,13 +244,13 @@
 		.size {
 			font-size: 2rem;
 			font-weight: 900;
-			color: var(--purple);
+			color: var(--blue);
 		}
 
 		.size:hover {
 			font-size: 2rem;
 			font-weight: 900;
-			color: var(--sky);
+			color: var(--purple);
 		}
 
 		.btn-link {
@@ -408,12 +408,10 @@
 
 		.size {
 			font-size: 4.24rem;
-			color: var(--purple);
 		}
 
 		.size:hover {
 			font-size: 4.24rem;
-			color: var(--sky);
 		}
 
 		.btn-link {
