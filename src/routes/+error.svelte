@@ -13,8 +13,8 @@
 		display: grid;
 		place-content: center;
 		border: 5px solid var(--white);
-		border-radius: 8px;
-		padding: 0.75rem 1.5rem;
+		border-radius: 5px;
+		padding: 1rem 1.5rem;
 	}
 
 	h1 {
@@ -25,17 +25,16 @@
 		font-family: var(--major);
 		letter-spacing: 7px;
 		margin-bottom: 20%;
-		text-shadow: 0 0 0.75rem var(--smoke);
+		text-shadow: 5px 7.5px 5px var(--smoke);
 	}
 
 	p {
 		font-size: 2rem;
 		letter-spacing: 3px;
+		line-height: 1.25;
 		text-align: left;
-		border: 3px solid var(--white);
-		border-radius: 12px;
 		padding: 2rem 4rem;
-		color: var(--smoke);
+		color: var(--white);
 		font-family: var(--montserrat);
 	}
 </style>
