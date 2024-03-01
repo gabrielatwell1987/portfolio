@@ -132,7 +132,7 @@ gsap.to('.example', { autoAlpha: 1, duration: 1 });
 
 ```js
 let tl = gsap.timeline({
-	// yes, we can add it to an entire timeline!
+	// Add scrollTrigger to the timeline
 	scrollTrigger: {
 		trigger: '.container',
 		pin: true, // pin the trigger element while active
@@ -148,7 +148,7 @@ let tl = gsap.timeline({
 	}
 });
 
-// add animations and labels to the timeline
+// Add animations and labels to the timeline
 tl.addLabel('start')
 	.from('.box p', { scale: 0.3, rotation: 45, autoAlpha: 0 })
 	.addLabel('color')
@@ -159,7 +159,7 @@ tl.addLabel('start')
 
 ---
 
-// Standalone ScrollTrigger
+// Standalone scrolltrigger
 ScrollTrigger.create({
 	trigger: '#id',
 	start: 'top top',
