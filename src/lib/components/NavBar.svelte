@@ -18,11 +18,11 @@
 	<!-- desktop view -->
 	{#if open}
 		<div class="desktop-view">
-			<a class="nav-link underline" href="/projects" aria-label="projects">projects</a>
-			<a class="nav-link underline" href="/blog" aria-label="blog">blog</a>
-			<a class="nav-link underline" href="/about" aria-label="about">about</a>
-			<a class="nav-link underline" href="/photos/carousel" aria-label="photos">photos</a>
-			<a class="nav-link underline" href="/contact" aria-label="contact">contact</a>
+			<a class="nav-link underline" href="/projects" aria-label="projects">Projects</a>
+			<a class="nav-link underline" href="/blog" aria-label="blog">Blog</a>
+			<a class="nav-link underline" href="/about" aria-label="about">About</a>
+			<a class="nav-link underline" href="/photos/carousel" aria-label="photos">Photos</a>
+			<a class="nav-link underline" href="/contact" aria-label="contact">Contact</a>
 		</div>
 	{/if}
 
