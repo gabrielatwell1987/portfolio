@@ -68,8 +68,8 @@
 	.gs:hover,
 	.sk:hover {
 		filter: opacity(0.5);
-		transition: filter 0.75s ease-in-out;
-		animation: wiggle 0.5s ease-in-out;
+		transition: filter 0.75s ease-in-out, animation 1s ease-in-out;
+		animation: left2right 1.5s ease-in-out infinite;
 	}
 
 	.image {
@@ -109,6 +109,34 @@
 		80% {
 			rotate: 2deg;
 			translate: 5px 0;
+		}
+	}
+
+	@keyframes left2right {
+		0%,
+		51% {
+			transform: translateX(0);
+			transition: transform 1s ease-in-out;
+		}
+		20%,
+		70% {
+			transform: translateX(5px);
+			transition: transform 1s ease-in-out;
+		}
+		30%,
+		80% {
+			transform: translateX(7.5px);
+			transition: transform 1s ease-in-out;
+		}
+		40%,
+		90% {
+			transform: translateX(5px);
+			transition: transform 1s ease-in-out;
+		}
+		50%,
+		100% {
+			transform: translateX(0);
+			transition: transform 1s ease-in-out;
 		}
 	}
 </style>
