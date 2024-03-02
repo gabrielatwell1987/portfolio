@@ -132,8 +132,7 @@
 			border-radius: 8px;
 			background-color: transparent;
 			color: var(--white);
-			font-size: 1.2rem;
-			font-weight: 900;
+			font-size: 1.25rem;
 			text-align: center;
 			font-family: var(--montserrat);
 			border-radius: 5rem;
@@ -182,7 +181,7 @@
 
 		.send {
 			width: 20%;
-			font-size: 1rem;
+			font-size: 2rem;
 		}
 
 		.send:hover {
@@ -308,7 +307,7 @@
 
 		button {
 			width: 25%;
-			font-size: 1.5rem;
+			font-size: 2rem;
 		}
 
 		fieldset {

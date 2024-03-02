@@ -219,7 +219,6 @@
 			border-radius: 8px;
 			cursor: pointer;
 			font-size: 1.2rem;
-			font-weight: 900;
 			letter-spacing: 1px;
 			width: 50%;
 			font-family: var(--montserrat);
@@ -397,7 +396,6 @@
 
 		button {
 			font-size: 1.5rem;
-			font-weight: 800;
 			letter-spacing: 5px;
 			width: 20%;
 		}

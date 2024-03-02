@@ -61,7 +61,6 @@
 		margin: 1rem auto;
 		border-radius: 10px;
 		font-size: 1.2rem;
-		font-weight: 900;
 		border-radius: 5rem;
 		filter: drop-shadow(0 0 0.75rem var(--smoke));
 		letter-spacing: 1px;
@@ -151,7 +150,6 @@
 			margin: 1rem auto;
 			border-radius: 10px;
 			font-size: 1.2rem;
-			font-weight: 900;
 			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			letter-spacing: 1px;
@@ -213,7 +211,6 @@
 		button {
 			font-size: 1rem;
 			width: 25%;
-			font-size: 1rem;
 			letter-spacing: 2px;
 		}
 
