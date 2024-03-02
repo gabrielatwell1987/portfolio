@@ -33,8 +33,8 @@
 		margin: 2rem auto;
 		margin-top: 10%;
 		color: var(--sky);
-		font-size: 2rem;
-		font-weight: 900;
+		font-size: 1.75rem;
+		font-weight: 600;
 		font-family: var(--montserrat);
 		letter-spacing: 2px;
 	}
