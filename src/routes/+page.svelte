@@ -51,7 +51,7 @@
 			margin-top: 10%;
 			color: var(--sky);
 			font-size: 1.25rem;
-			font-weight: 900;
+			font-weight: 600;
 			font-family: var(--montserrat);
 			letter-spacing: 2px;
 		}
@@ -59,7 +59,7 @@
 		h4 {
 			color: var(--white);
 			font-size: 0.75rem;
-			font-weight: 600;
+			font-weight: 400;
 			letter-spacing: 0.5px;
 			font-family: var(--montserrat);
 		}
@@ -76,7 +76,6 @@
 			margin: 1rem auto;
 			border-radius: 10px;
 			font-size: 1.2rem;
-			font-weight: 900;
 			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			letter-spacing: 1px;
