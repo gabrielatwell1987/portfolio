@@ -80,7 +80,7 @@
 			justify-content: space-evenly;
 			width: 100%;
 			margin: 0 auto;
-			font-weight: bold;
+			font-weight: 800;
 		}
 
 		.mobile-links {
