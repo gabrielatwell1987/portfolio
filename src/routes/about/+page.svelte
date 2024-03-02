@@ -305,7 +305,7 @@
 		}
 
 		.hero-btn {
-			width: 75%;
+			width: 50%;
 		}
 
 		.hero-btn:hover {
