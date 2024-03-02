@@ -69,7 +69,7 @@
 	.sk:hover {
 		filter: opacity(0.5);
 		transition: filter 0.75s ease-in-out, animation 1s ease-in-out;
-		animation: left2right 1.5s ease-in-out infinite;
+		animation: upDown 1.5s ease-in-out infinite;
 	}
 
 	.image {
@@ -112,30 +112,30 @@
 		}
 	}
 
-	@keyframes left2right {
+	@keyframes upDown {
 		0%,
 		51% {
-			transform: translateX(0);
+			transform: translateY(0);
 			transition: transform 1s ease-in-out;
 		}
 		20%,
 		70% {
-			transform: translateX(5px);
+			transform: translateY(10px);
 			transition: transform 1s ease-in-out;
 		}
 		30%,
 		80% {
-			transform: translateX(7.5px);
+			transform: translateY(15px);
 			transition: transform 1s ease-in-out;
 		}
 		40%,
 		90% {
-			transform: translateX(5px);
+			transform: translateY(10px);
 			transition: transform 1s ease-in-out;
 		}
 		50%,
 		100% {
-			transform: translateX(0);
+			transform: translateY(0);
 			transition: transform 1s ease-in-out;
 		}
 	}
