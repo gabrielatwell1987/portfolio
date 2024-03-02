@@ -247,7 +247,7 @@
 
 		.modal h4 {
 			font-size: 3rem;
-			font-weight: 900;
+			font-weight: 600;
 			font-family: var(--montserrat);
 			color: var(--purple);
 			margin-top: 2rem;
