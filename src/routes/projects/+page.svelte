@@ -56,12 +56,12 @@
 		/></a
 	><br />
 
-	<h3 class="linksize name">self-taught</h3>
+	<h3 class="linksize name">frontend</h3>
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank"
 		><img
 			class="img"
 			src="/projects/web_dev.png"
-			alt="The second project: Self-Taught."
+			alt="The second project: frontend."
 			width="400px"
 			height="475px"
 		/></a
