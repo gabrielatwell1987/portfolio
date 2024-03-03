@@ -108,6 +108,10 @@
 			display: none;
 		}
 
+		.gabe {
+			margin: 1.5rem auto;
+		}
+
 		.gabe:hover {
 			opacity: 0.8;
 			transition: opacity 750ms ease-in-out;
