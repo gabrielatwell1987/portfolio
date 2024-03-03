@@ -10,7 +10,8 @@
 
 <style>
 	.contactForm {
-		margin: 2rem 0 0 0;
+		margin: 2rem auto;
+		/* margin: 2rem 0 0 0; */
 	}
 
 	/* bigger than mobile */
