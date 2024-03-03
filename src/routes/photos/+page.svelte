@@ -109,7 +109,7 @@
 		}
 
 		.gabe {
-			margin: 1.5rem auto;
+			margin: 0.5rem auto;
 		}
 
 		.gabe:hover {
