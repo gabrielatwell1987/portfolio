@@ -65,7 +65,7 @@
 	}
 
 	.domino-text {
-		font-family: var(--montserrat);
+		font-family: var(--anta);
 		font-size: 1.75rem;
 		font-weight: 700;
 		color: var(--purple);
@@ -76,7 +76,7 @@
 		font-size: 8rem;
 		font-weight: 900;
 		color: var(--purple);
-		font-family: var(--major);
+		font-family: var(--anta);
 		letter-spacing: 5px;
 		text-transform: uppercase;
 		margin: 2rem auto;

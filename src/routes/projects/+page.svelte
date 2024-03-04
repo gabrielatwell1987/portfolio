@@ -166,7 +166,7 @@
 
 		.title {
 			text-align: center;
-			font-family: var(--major);
+			font-family: var(--anta);
 			font-size: 2.75rem;
 			color: var(--white);
 			letter-spacing: 5px;

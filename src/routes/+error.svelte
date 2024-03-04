@@ -22,7 +22,7 @@
 		margin: 5rem auto;
 		text-align: center;
 		color: var(--sky);
-		font-family: var(--major);
+		font-family: var(--anta);
 		letter-spacing: 7px;
 		margin-bottom: 20%;
 		text-shadow: 5px 7.5px 5px var(--smoke);

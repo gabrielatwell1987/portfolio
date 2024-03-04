@@ -172,8 +172,7 @@
 		transform: translate(-50%, -25%);
 		color: whitesmoke;
 		font-size: 3.5rem;
-		font-weight: 900;
-		font-family: var(--major);
+		font-family: var(--anta);
 		text-align: center;
 		line-height: 1.2;
 		letter-spacing: 3px;
@@ -191,7 +190,6 @@
 		h1 {
 			font-size: 1rem;
 			font-kerning: none;
-			font-family: var(--major);
 		}
 	}
 
@@ -204,7 +202,7 @@
 			color: whitesmoke;
 			font-size: 3.5rem;
 			font-weight: 900;
-			font-family: var(--major);
+
 			text-align: center;
 			line-height: 1.2;
 			letter-spacing: 3px;

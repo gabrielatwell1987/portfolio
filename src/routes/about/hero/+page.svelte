@@ -125,8 +125,6 @@
 			margin-top: 10%;
 			color: var(--sky);
 			font-size: 1.25rem;
-			font-weight: 900;
-			font-family: var(--montserrat);
 			letter-spacing: 2px;
 		}
 
