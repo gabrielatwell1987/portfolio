@@ -12,8 +12,8 @@
 			duration: 1.5,
 			y: 50,
 			opacity: 0.5,
-			stagger: 0.15,
-			ease: 'back.out(1.7)'
+			stagger: 0.25,
+			ease: 'elastic.out(1.75, 0.5)'
 		});
 	});
 </script>

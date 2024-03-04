@@ -33,7 +33,7 @@
 			y: 50,
 			opacity: 0.5,
 			stagger: 0.15,
-			ease: 'back.out(1.7)'
+			ease: 'elastic.out(0.5, 0.2)'
 		});
 	});
 </script>
