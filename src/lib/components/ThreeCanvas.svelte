@@ -173,7 +173,8 @@
 		left: 50%;
 		transform: translate(-50%, -25%);
 		color: whitesmoke;
-		font-size: 3.5rem;
+		font-size: 5rem;
+		/* font-size: 3.5rem; */
 		font-family: var(--anta);
 		text-align: center;
 		line-height: 1.2;
