@@ -101,7 +101,7 @@
 		}
 
 		legend {
-			font-family: var(--major);
+			font-family: var(--anta);
 			font-size: 2rem;
 			text-align: center;
 			margin-bottom: 0.5rem;
@@ -248,7 +248,7 @@
 		.modal h4 {
 			font-size: 3rem;
 			font-weight: 600;
-			font-family: var(--montserrat);
+			font-family: var(--anta);
 			color: var(--purple);
 			margin-top: 2rem;
 		}

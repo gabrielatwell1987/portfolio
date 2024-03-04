@@ -128,7 +128,7 @@
 	.heading {
 		text-align: center;
 		margin: 5rem 0 0 0;
-		font-family: var(--montserrat);
+		font-family: var(--anta);
 		color: var(--purple);
 	}
 
@@ -138,7 +138,7 @@
 		margin: 2rem 0 -5rem 0;
 		text-align: center;
 		color: var(--smoke);
-		font-family: var(--major);
+		font-family: var(--anta);
 		text-shadow: 0px 0px 25px var(--blue);
 	}
 
@@ -161,7 +161,7 @@
 	.learn {
 		margin: 5rem 0 -1rem 0;
 		text-align: center;
-		font-family: var(--montserrat);
+		font-family: var(--anta);
 		color: var(--purple);
 	}
 

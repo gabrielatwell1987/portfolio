@@ -444,12 +444,13 @@
 			color: var(--purple);
 			font-size: 7rem;
 			font-weight: 900;
-			font-family: var(--major);
+			font-family: var(--anta);
 			text-shadow: 5px 5px 4px var(--dark-gray);
 		}
 
 		.title {
 			color: var(--purple);
+			font-family: var(--anta);
 		}
 
 		.text {
@@ -524,6 +525,7 @@
 			font-size: 2.2rem;
 			font-weight: 900;
 			text-align: center;
+			font-family: var(--anta);
 		}
 
 		@keyframes wiggle {

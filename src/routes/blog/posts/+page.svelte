@@ -21,7 +21,7 @@
 		font-size: 6rem;
 		font-weight: 900;
 		color: var(--white);
-		font-family: var(--major);
+		font-family: var(--anta);
 		letter-spacing: 2px;
 		margin-top: 5rem;
 		mix-blend-mode: difference;

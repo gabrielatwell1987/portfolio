@@ -117,7 +117,7 @@
 			transition: opacity 750ms ease-in-out;
 		}
 		.title {
-			font-family: var(--major);
+			font-family: var(--anta);
 			font-size: 3rem;
 			letter-spacing: 5px;
 		}
@@ -165,7 +165,7 @@
 		}
 
 		.domino-text {
-			font-family: var(--montserrat);
+			font-family: var(--anta);
 			font-size: 1.75rem;
 			font-weight: 700;
 			color: var(--purple);

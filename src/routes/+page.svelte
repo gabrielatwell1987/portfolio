@@ -52,7 +52,7 @@
 			color: var(--sky);
 			font-size: 1.25rem;
 			font-weight: 600;
-			font-family: var(--montserrat);
+			font-family: var(--anta);
 			letter-spacing: 2px;
 		}
 

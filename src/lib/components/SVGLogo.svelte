@@ -61,7 +61,11 @@
 		animation: dash 5s linear;
 	}
 
-	#a {
+	#w {
+		animation-delay: -2.1s;
+	}
+
+	/* #a {
 		animation-delay: 0s;
 	}
 
@@ -83,7 +87,7 @@
 
 	#ll {
 		animation-delay: 1.25s;
-	}
+	} */
 
 	@keyframes dash {
 		from {
