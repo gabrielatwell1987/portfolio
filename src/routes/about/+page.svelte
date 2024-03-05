@@ -59,11 +59,11 @@
 				<h2 class="main-title">Bio</h2>
 
 				<p class="text">
-					My name is Gabriel Atwell and I am a self-taught frontend developer. I started out with
-					the basics: HTML, CSS, and JavaScript. I then moved on to more advanced topics such as:
-					Svelte/Sveltekit, Node.js, and GSAP but I have begun to teach myself the backend of web
-					development on my spare time with backend languages like Python and Go to become more of a
-					fullstack developer.
+					My name is Gabriel Atwell and I am a frontend web developer. I started out with the
+					basics: HTML, CSS, and JavaScript. I then moved on to more advanced topics such as:
+					Svelte/Sveltekit, Node.js, GSAP, and a little bit of three.js but I have begun to teach
+					myself the backend of web development on my spare time with backend languages like Python
+					to become more of a fullstack developer.
 				</p>
 				<p class="text">
 					I have a passion for creating websites that are clean, crisp, and completely functional. I
@@ -76,9 +76,9 @@
 
 				<article class="text-w hero">
 					<p class="text margin-b">
-						Here is a hero section image that I created with three.js... I haven't included it
-						because I really like the current hero section. Please contact me and let me know if you
-						would like to see it!
+						Here is a hero section image that I created with three.js... I currently like the hero
+						section that shows when you first come to the website, but I linked this new hero
+						section as the home page.
 					</p>
 
 					<a href="/about/hero" class="btn-link"
@@ -108,13 +108,6 @@
 						colors, typography, scaling, and contrast is what he knows best. These topics are the
 						main key to make your website designs look professional and appealing to the eye.
 					</p>
-
-					<!-- <p class="left text">
-						I chose the design for this website because it is sleek and minimalistic. I used the
-						fonts Montserrat and Major Mono Display. I also chose the animations that I use on my
-						projects and photos pages to help me stand out! On the projects page, I use clip-path on
-						hover for the project images. On the photos page, I use scroll trigger and opacity.
-					</p> -->
 				</div>
 			</section>
 
@@ -151,13 +144,13 @@
 				<ul class="skills">
 					<li>HTML</li>
 					<li>CSS</li>
-					<li>SCSS</li>
-					<li>Tailwind CSS</li>
 					<li>JavaScript</li>
 					<li>Sveltekit</li>
 					<li>Greensock</li>
-					<li>Git/GitHub</li>
 					<li>Node.js</li>
+					<li>Git/GitHub</li>
+					<li>SCSS</li>
+					<li>Tailwind CSS</li>
 				</ul>
 			</section>
 
