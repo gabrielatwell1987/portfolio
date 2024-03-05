@@ -29,11 +29,11 @@
 			.from('.title', { scale: 0.25, duration: 3 }, 0);
 
 		gsap.from(titleText.chars, {
-			duration: 1.5,
+			duration: 5,
 			y: 50,
 			scale: 0.1,
 			opacity: 0.5,
-			stagger: 0.15,
+			stagger: 0.2,
 			ease: 'elastic.out(0.5, 0.2)'
 		});
 	});
