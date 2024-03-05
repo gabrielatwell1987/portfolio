@@ -190,7 +190,7 @@
 	/* mobile */
 	@media (min-width: 200px) {
 		h1 {
-			font-size: 2.5rem;
+			font-size: 2rem;
 			font-kerning: none;
 		}
 	}
