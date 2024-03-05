@@ -187,6 +187,7 @@
 		color: var(--blue);
 	}
 
+	/* mobile */
 	@media (min-width: 200px) {
 		h1 {
 			font-size: 2.5rem;
@@ -194,6 +195,14 @@
 		}
 	}
 
+	/* tablet */
+	@media (min-width: 720px) {
+		h1 {
+			font-size: 3rem;
+		}
+	}
+
+	/* desktop */
 	@media (min-width: 990px) {
 		h1 {
 			position: absolute;
