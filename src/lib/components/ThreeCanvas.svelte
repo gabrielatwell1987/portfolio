@@ -189,7 +189,7 @@
 
 	@media (min-width: 200px) {
 		h1 {
-			font-size: 1rem;
+			font-size: 3rem;
 			font-kerning: none;
 		}
 	}
@@ -201,7 +201,7 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			color: whitesmoke;
-			font-size: 3.5rem;
+			font-size: 5rem;
 			font-weight: 900;
 
 			text-align: center;
