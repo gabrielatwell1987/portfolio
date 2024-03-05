@@ -189,7 +189,7 @@
 
 	@media (min-width: 200px) {
 		h1 {
-			font-size: 3rem;
+			font-size: 2.5rem;
 			font-kerning: none;
 		}
 	}
