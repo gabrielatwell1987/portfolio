@@ -98,6 +98,7 @@
 
 <style>
 	/* desktop and bigger */
+	/* content */
 	main {
 		width: 75%;
 		margin: 0 auto;
@@ -123,10 +124,14 @@
 	a:hover {
 		color: var(--white);
 	}
+
+	/* video */
 	iframe {
 		margin: 2rem 0 0 30%;
+		border-radius: 5px;
 	}
 
+	/* content */
 	details {
 		width: 50%;
 		margin-left: 24.5%;

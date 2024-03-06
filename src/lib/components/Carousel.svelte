@@ -9,6 +9,7 @@
 	};
 </script>
 
+<!-- content -->
 {#if browser}
 	<Carousel
 		arrows
@@ -71,6 +72,7 @@
 {/if}
 
 <style>
+	/* content */
 	.gabe {
 		width: 100%;
 		height: 100%;

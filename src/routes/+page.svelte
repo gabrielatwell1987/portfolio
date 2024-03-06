@@ -177,6 +177,8 @@
 			font-size: 1.25rem;
 		}
 
+		/* hero section */
+
 		.summary {
 			width: 75%;
 		}

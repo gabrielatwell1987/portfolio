@@ -127,6 +127,7 @@
 <style>
 	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
+		/* content */
 		a {
 			font-family: var(--montserrat);
 			font-size: 0.75rem;
@@ -174,6 +175,7 @@
 			text-shadow: 0px 0px 50px var(--smoke);
 		}
 
+		/* links */
 		.linksize {
 			text-align: center;
 			background-color: transparent;
@@ -193,6 +195,7 @@
 			text-transform: uppercase;
 		}
 
+		/* content */
 		.name {
 			font-weight: 600;
 		}
@@ -204,6 +207,7 @@
 
 	/* bigger than tablet */
 	@media screen and (min-width: 740px) {
+		/* content */
 		a {
 			font-size: 1rem;
 		}
@@ -241,11 +245,13 @@
 			margin: 2rem auto;
 		}
 
+		/* links */
 		.linksize {
 			letter-spacing: 4px;
 			font-size: 1rem;
 		}
 
+		/* content */
 		.logos {
 			width: 100%;
 		}
@@ -258,6 +264,7 @@
 
 	/* bigger than desktop */
 	@media screen and (min-width: 990px) {
+		/* links */
 		.linksize {
 			padding: 1.5rem;
 			width: 100%;
@@ -265,6 +272,7 @@
 			letter-spacing: 10px;
 		}
 
+		/* content */
 		.content {
 			margin-bottom: -5%;
 		}

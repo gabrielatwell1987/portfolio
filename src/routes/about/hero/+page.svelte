@@ -20,6 +20,7 @@
 </section>
 
 <style>
+	/* hero */
 	section {
 		position: absolute;
 		top: 75%;
@@ -113,6 +114,7 @@
 
 	/* mobile */
 	@media (min-width: 200px) {
+		/* hero */
 		section {
 			position: absolute;
 			top: 99%;
@@ -198,6 +200,7 @@
 
 	/* tablet */
 	@media (min-width: 740px) {
+		/* hero */
 		section {
 			position: absolute;
 			top: -18%;
@@ -248,6 +251,7 @@
 
 	/* desktop */
 	@media (min-width: 990px) {
+		/* hero */
 		section {
 			position: absolute;
 			top: -18%;

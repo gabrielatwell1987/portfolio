@@ -55,6 +55,7 @@
 </svg>
 
 <style>
+	/* content */
 	path {
 		stroke-dasharray: 300;
 		stroke-dashoffset: 0;
@@ -64,30 +65,6 @@
 	#w {
 		animation-delay: -2.1s;
 	}
-
-	/* #a {
-		animation-delay: 0s;
-	}
-
-	#t {
-		animation-delay: 0.2s;
-	}
-
-	#w {
-		animation-delay: 0.5s;
-	}
-
-	#e {
-		animation-delay: 0.75s;
-	}
-
-	#l {
-		animation-delay: 1s;
-	}
-
-	#ll {
-		animation-delay: 1.25s;
-	} */
 
 	@keyframes dash {
 		from {

@@ -42,6 +42,7 @@
 
 <style>
 	/* bigger than desktop */
+	/* content */
 	.desktop-view {
 		display: block;
 		font-weight: bolder;
@@ -73,6 +74,7 @@
 
 	/* mobile and bigger */
 	@media (min-width: 200px) {
+		/* content */
 		.desktop-view {
 			display: none;
 		}
@@ -111,6 +113,7 @@
 
 	/* tablet and bigger */
 	@media (min-width: 740px) {
+		/* content */
 		.desktop-view {
 			display: none;
 		}
@@ -137,6 +140,7 @@
 
 	/* desktop and bigger */
 	@media (min-width: 990px) {
+		/* content */
 		.nav-link {
 			font-family: var(--montserrat);
 			font-size: 1.5rem;
@@ -185,12 +189,14 @@
 
 	/* desktop and bigger 2 */
 	@media (min-width: 1300px) {
+		/* content */
 		.desktop-view {
 			margin-left: 10%;
 		}
 	}
 
 	@media (min-width: 1440px) {
+		/* content */
 		.desktop-view {
 			margin-left: 25%;
 		}

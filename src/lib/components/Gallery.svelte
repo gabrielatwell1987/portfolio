@@ -55,6 +55,7 @@
 
 <style>
 	/* desktop */
+	/* content */
 	.grid {
 		display: grid;
 		gap: 1rem;
@@ -69,6 +70,7 @@
 		}
 	}
 
+	/* content */
 	.grid-item {
 		position: relative;
 		padding: 0;

@@ -39,6 +39,7 @@
 	});
 </script>
 
+<!-- content -->
 <main>
 	<h2 class="title">PHOTOS</h2>
 
@@ -91,6 +92,7 @@
 <style>
 	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
+		/* content */
 		section {
 			width: 100%;
 			margin: 0;
@@ -129,6 +131,7 @@
 
 	/* bigger than tablet */
 	@media (min-width: 850px) {
+		/* content */
 		.btn-link {
 			font-size: 2.5rem;
 			font-weight: bolder;
@@ -190,6 +193,7 @@
 
 	/* bigger than desktop */
 	@media screen and (min-width: 1200px) {
+		/* content */
 		main {
 			text-align: center;
 		}
