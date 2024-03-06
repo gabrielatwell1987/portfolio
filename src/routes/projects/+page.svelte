@@ -186,7 +186,7 @@
 			align-items: center;
 			font-family: var(--montserrat);
 			font-size: 0.8rem;
-			font-weight: 900;
+			font-weight: 600;
 			width: 75%;
 			margin: 0 auto;
 			letter-spacing: 2px;
@@ -194,7 +194,7 @@
 		}
 
 		.name {
-			font-weight: 900;
+			font-weight: 600;
 		}
 
 		#title {
