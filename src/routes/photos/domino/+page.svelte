@@ -20,6 +20,7 @@
 
 <style>
 	/* desktop */
+	/* dominoes */
 	iframe {
 		width: 50%;
 		height: 25rem;
@@ -28,6 +29,7 @@
 		margin-bottom: 2rem;
 	}
 
+	/* content */
 	h1,
 	h3 {
 		text-align: center;

@@ -272,6 +272,7 @@
 			transition: filter 0.25s ease-in-out;
 		}
 
+		/* codepen */
 		.fa-codepen,
 		.fa-github {
 			font-size: 2rem;
@@ -284,6 +285,7 @@
 			color: var(--purple);
 		}
 
+		/* random */
 		.dev-links {
 			display: flex;
 			justify-content: space-evenly;
@@ -297,6 +299,7 @@
 			mix-blend-mode: difference;
 		}
 
+		/* hero button */
 		.hero-btn {
 			width: 50%;
 		}
@@ -450,6 +453,7 @@
 			color: var(--white);
 		}
 
+		/* codepen */
 		.fa-codepen,
 		.fa-github {
 			font-size: 5rem;
@@ -462,6 +466,7 @@
 			color: var(--purple);
 		}
 
+		/* random */
 		.dev-links {
 			margin-top: -20rem;
 			margin-left: 0%;
@@ -479,13 +484,11 @@
 		}
 
 		/* Hero Button */
-
 		.hero-btn {
 			width: 30%;
 		}
 
 		/* skills section */
-
 		.border {
 			display: block;
 			width: 15rem;

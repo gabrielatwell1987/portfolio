@@ -4,6 +4,3 @@
 
 <!-- Photo gallery -->
 <Gallery />
-
-<style>
-</style>

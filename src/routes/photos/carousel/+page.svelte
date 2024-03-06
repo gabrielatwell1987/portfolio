@@ -37,6 +37,7 @@
 </main>
 
 <style>
+	/* content */
 	main {
 		text-align: center;
 		font-size: 2.5rem;

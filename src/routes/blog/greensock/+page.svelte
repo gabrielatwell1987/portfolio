@@ -89,6 +89,7 @@
 <br />
 
 <style>
+	/* content */
 	main {
 		width: 75%;
 		border-radius: 10px;
@@ -121,10 +122,13 @@
 		color: var(--white);
 	}
 
+	/* video */
 	iframe {
 		margin: 2rem 0 0 30%;
+		border-radius: 5px;
 	}
 
+	/* content */
 	.heading {
 		text-align: center;
 		margin: 5rem 0 0 0;

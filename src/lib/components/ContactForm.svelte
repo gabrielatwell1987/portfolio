@@ -83,6 +83,7 @@
 <style>
 	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
+		/* content */
 		form {
 			width: 100%;
 			margin: 0 34.5%;
@@ -174,6 +175,7 @@
 
 	/* bigger than tablet */
 	@media screen and (min-width: 750px) {
+		/* content */
 		span {
 			font-size: 1.25rem;
 			font-weight: 800;
@@ -189,7 +191,6 @@
 		}
 
 		/* modal */
-
 		.open-button {
 			display: block;
 			font-size: 1.2rem;
@@ -257,6 +258,7 @@
 			border-radius: 10px;
 		}
 
+		/* content */
 		label:hover {
 			color: var(--blue);
 			font-family: var(--montserrat);
@@ -280,6 +282,7 @@
 
 	/* bigger than desktop */
 	@media screen and (min-width: 1024px) {
+		/* content */
 		form {
 			display: flex;
 			flex-direction: column;
@@ -341,6 +344,7 @@
 
 	/* way bigger than desktop */
 	@media screen and (min-width: 1920px) {
+		/* content */
 		button {
 			width: 10%;
 		}

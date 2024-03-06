@@ -52,6 +52,7 @@
 
 <style>
 	/* desktop and bigger */
+	/* content */
 	a {
 		display: block;
 		margin: 0 0 2rem 49%;
