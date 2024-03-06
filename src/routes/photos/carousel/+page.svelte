@@ -9,7 +9,7 @@
 		const titleText = new SplitType('.title', { types: 'chars' });
 
 		gsap.from(titleText.chars, {
-			duration: 1.5,
+			duration: 4,
 			y: 50,
 			opacity: 0.5,
 			stagger: 0.25,
