@@ -393,7 +393,7 @@
 		button {
 			font-size: 1.5rem;
 			letter-spacing: 5px;
-			width: 20%;
+			width: 25%;
 		}
 
 		button:hover {
