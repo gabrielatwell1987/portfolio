@@ -30,7 +30,7 @@
 <!-- Modal -->
 <button class="open-button" aria-label="open"><i class="fa-regular fa-folder-open" /></button>
 
-<dialog class="modal" id="modal" open>
+<dialog class="modal" id="modal">
 	<article>
 		<header>
 			<button aria-label="Close" rel="prev" class="close-button"
