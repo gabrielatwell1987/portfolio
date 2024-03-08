@@ -30,21 +30,6 @@
 <!-- Modal -->
 <button class="open-button" aria-label="open"><i class="fa-regular fa-folder-open" /></button>
 
-<!-- <dialog class="modal" id="modal">
-	<div class="column border">
-		<img src="logos/newspaper.jpg" alt="frontend newspaper clipping" />
-
-		<h4>Please contact me for any frontend work!</h4>
-
-		<p>
-			If you need help with a website, or if you have any questions, please feel free to contact me.
-			I am always happy to help!
-		</p>
-	</div>
-
-	<button class="close-button" aria-label="close"><i class="fa-solid fa-xmark" /></button>
-</dialog> -->
-
 <dialog class="modal" id="modal" open>
 	<article>
 		<header>
@@ -62,8 +47,6 @@
 			I am always happy to help!
 		</p>
 	</article>
-
-	<!-- <button class="close-button" aria-label="close"><i class="fa-solid fa-xmark" /></button> -->
 </dialog>
 
 <!-- contact form -->
