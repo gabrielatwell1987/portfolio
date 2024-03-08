@@ -112,7 +112,7 @@
 		/></a
 	><br />
 
-	<hr />
+	<progress />
 
 	<!-- logo -->
 	<div class="logos">
@@ -136,16 +136,9 @@
 			color: var(--sky);
 		}
 
-		hr {
-			border: 0.5px solid var(--smoke);
-			border-radius: 100vw;
-			width: 50%;
-			margin: 5rem auto;
-
-			--size: 3px;
-			height: var(--size);
-			box-shadow: 0 calc(var(--size) * 2) 0 var(--smoke),
-				0 calc(var(--size) * 4) 0 var(--lightblack);
+		progress {
+			width: 40%;
+			margin: 8% 0 2rem 30%;
 		}
 
 		.img {
@@ -210,10 +203,6 @@
 		/* content */
 		a {
 			font-size: 1rem;
-		}
-
-		hr {
-			border: 1px solid var(--smoke);
 		}
 
 		img:hover {

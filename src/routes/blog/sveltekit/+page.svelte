@@ -47,7 +47,8 @@
 	<!-- content -->
 	<section>
 		<details>
-			<summary><h3 class="heading">The framework I used</h3></summary>
+			<!-- svelte-ignore a11y-no-redundant-roles -->
+			<summary role="button" class="outline contrast">The framework I used</summary>
 			<p>
 				I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
 				the server-side rendering (SSR) and all of the SEO features, as well as the speed of
@@ -57,7 +58,8 @@
 		</details>
 
 		<details>
-			<summary><h3 class="heading">What I know</h3></summary>
+			<!-- svelte-ignore a11y-no-redundant-roles -->
+			<summary role="button" class="outline contrast">What I know</summary>
 			<p>
 				I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I
 				have because I'm a very visual person. Sveltekit has made it super simple to put my ideas on
@@ -66,7 +68,8 @@
 		</details>
 
 		<details>
-			<summary><h3 class="heading">What is svelte and sveltekit?</h3></summary>
+			<!-- svelte-ignore a11y-no-redundant-roles -->
+			<summary role="button" class="outline contrast">What is svelte and sveltekit?</summary>
 			<p>
 				Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
 				framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
@@ -123,6 +126,7 @@
 
 	a:hover {
 		color: var(--white);
+		text-decoration: underline;
 	}
 
 	/* video */
@@ -135,7 +139,7 @@
 	details {
 		width: 50%;
 		margin-left: 24.5%;
-		margin-bottom: 5rem;
+		margin-bottom: 2rem;
 	}
 
 	.heading {

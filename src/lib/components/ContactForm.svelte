@@ -128,7 +128,7 @@
 
 		.send {
 			width: 35%;
-			margin: 0 auto;
+			margin: 3rem auto;
 			border: 1px solid var(--white);
 			border-radius: 0.75rem;
 			background-color: transparent;

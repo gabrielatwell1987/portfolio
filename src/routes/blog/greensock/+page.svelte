@@ -43,7 +43,8 @@
 	<h2 class="subtitle">Greensock Animation Platform</h2>
 
 	<details>
-		<summary><h3 class="heading">What is GSAP?</h3></summary>
+		<!-- svelte-ignore a11y-no-redundant-roles -->
+		<summary role="button" class="outline contrast">What is GSAP?</summary>
 		<p>
 			Greensock Animation Platform (GSAP) is a JavaScript library that allows you to animate your
 			website. I really like animating the websites that I've built from scratch and GSAP makes it
@@ -54,7 +55,8 @@
 	</details>
 
 	<details>
-		<summary><h3 class="heading">How I used GSAP</h3></summary>
+		<!-- svelte-ignore a11y-no-redundant-roles -->
+		<summary role="button" class="outline contrast">How I used GSAP</summary>
 		<p>
 			In the project, you have to npm install gsap (if you have Node.js installed) or you can use
 			the CDN (content delivery network). In sveltekit, you have to put all of your GSAP code in an
@@ -99,7 +101,7 @@
 	details {
 		width: 50%;
 		margin-left: 24.5%;
-		margin-bottom: 5rem;
+		margin-bottom: 2rem;
 	}
 
 	p {
@@ -120,6 +122,7 @@
 
 	a:hover {
 		color: var(--white);
+		text-decoration: underline;
 	}
 
 	/* video */
@@ -129,13 +132,6 @@
 	}
 
 	/* content */
-	.heading {
-		text-align: center;
-		margin: 5rem 0 0 0;
-		font-family: var(--anta);
-		color: var(--purple);
-	}
-
 	.title {
 		font-size: 7rem;
 		font-weight: 800;
