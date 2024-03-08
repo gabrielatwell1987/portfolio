@@ -112,6 +112,7 @@
 		/></a
 	><br />
 
+	<!-- divider -->
 	<progress />
 
 	<!-- logo -->
@@ -136,11 +137,13 @@
 			color: var(--sky);
 		}
 
+		/* divider */
 		progress {
 			width: 40%;
 			margin: 8% 0 2rem 30%;
 		}
 
+		/* content */
 		.img {
 			border-radius: 8px;
 		}
