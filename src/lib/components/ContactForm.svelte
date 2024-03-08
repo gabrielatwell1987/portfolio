@@ -30,7 +30,7 @@
 <!-- Modal -->
 <button class="open-button" aria-label="open"><i class="fa-regular fa-folder-open" /></button>
 
-<dialog class="modal" id="modal">
+<!-- <dialog class="modal" id="modal">
 	<div class="column border">
 		<img src="logos/newspaper.jpg" alt="frontend newspaper clipping" />
 
@@ -43,6 +43,27 @@
 	</div>
 
 	<button class="close-button" aria-label="close"><i class="fa-solid fa-xmark" /></button>
+</dialog> -->
+
+<dialog class="modal" id="modal" open>
+	<article>
+		<header>
+			<button aria-label="Close" rel="prev" class="close-button"
+				><i class="fa-solid fa-xmark" /></button
+			>
+
+			<h4>Please contact me for any frontend work!</h4>
+		</header>
+
+		<img src="logos/newspaper.jpg" alt="frontend newspaper clipping" />
+
+		<p class="modal-p">
+			If you need help with a website, or if you have any questions, please feel free to contact me.
+			I am always happy to help!
+		</p>
+	</article>
+
+	<!-- <button class="close-button" aria-label="close"><i class="fa-solid fa-xmark" /></button> -->
 </dialog>
 
 <!-- contact form -->
@@ -202,12 +223,12 @@
 			font-size: 1.2rem;
 			font-weight: 800;
 			background-color: transparent;
-			color: var(--lightblack);
+			color: var(--white);
 			width: 4%;
 			height: 2%;
 			margin-left: 100%;
 			outline: none;
-			border: 2px solid var(--lightblack);
+			border: 2px solid var(--white);
 			border-radius: 5px;
 			padding: 1rem;
 			outline: none;
@@ -220,25 +241,21 @@
 		}
 
 		.close-button {
-			display: block;
+			display: flex;
+			justify-content: center;
 			font-size: 1.2rem;
 			font-weight: 800;
 			background-color: transparent;
-			color: var(--lightblack);
+			color: var(--white);
 			width: 4%;
-			margin-left: 35%;
+			margin-left: 43%;
 			margin-right: 2rem;
 			outline: none;
-			border: 2px solid var(--lightblack);
-			border-radius: 5px;
-			padding: 1rem;
+			border: 2px solid var(--white);
+			border-radius: 15px;
+			padding: 0.75rem 2.5rem;
 			outline: none;
 			animation: wiggle 0.5s ease-in-out infinite;
-		}
-
-		.close-button:hover {
-			color: var(--white);
-			border: 2px solid var(--white);
 		}
 
 		.modal {
@@ -253,7 +270,7 @@
 		}
 
 		.modal h4 {
-			font-size: 3rem;
+			font-size: 1.5rem;
 			font-weight: 600;
 			font-family: var(--anta);
 			color: var(--purple);
@@ -262,6 +279,14 @@
 
 		.modal img {
 			border-radius: 10px;
+			width: 50%;
+			height: 25%;
+			margin-left: 23%;
+		}
+
+		.modal-p {
+			width: 60%;
+			margin: 1.5rem auto;
 		}
 
 		/* content */
