@@ -302,6 +302,7 @@
 		/* hero button */
 		.hero-btn {
 			width: 50%;
+			margin-top: 5rem;
 		}
 
 		.hero-btn:hover {
