@@ -126,7 +126,7 @@
 			font-weight: 100;
 		}
 
-		button {
+		.send {
 			width: 35%;
 			margin: 0 auto;
 			border: 1px solid var(--white);
@@ -144,8 +144,8 @@
 			padding: 1rem 1.75rem;
 		}
 
-		button:hover,
-		button:focus {
+		.send:hover,
+		.send:focus {
 			opacity: 0.8;
 			background-color: var(--smoke);
 			color: black;
@@ -173,8 +173,15 @@
 		}
 	}
 
+	@media screen and (min-width: 500px) {
+		/* content */
+		.send {
+			width: 30%;
+		}
+	}
+
 	/* bigger than tablet */
-	@media screen and (min-width: 750px) {
+	@media screen and (min-width: 720px) {
 		/* content */
 		span {
 			font-size: 1.25rem;
@@ -280,6 +287,13 @@
 		}
 	}
 
+	@media screen and (min-width: 775px) {
+		/* content */
+		.send {
+			width: 25%;
+		}
+	}
+
 	/* bigger than desktop */
 	@media screen and (min-width: 1024px) {
 		/* content */
@@ -309,8 +323,8 @@
 			margin-bottom: 1rem;
 		}
 
-		button {
-			width: 25%;
+		.send {
+			width: 30%;
 			font-size: 2rem;
 		}
 
@@ -345,8 +359,8 @@
 	/* way bigger than desktop */
 	@media screen and (min-width: 1920px) {
 		/* content */
-		button {
-			width: 10%;
+		.send {
+			width: 15%;
 		}
 	}
 </style>

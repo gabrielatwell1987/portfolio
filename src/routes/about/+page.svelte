@@ -341,6 +341,10 @@
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
+		button {
+			width: 30%;
+		}
+
 		@keyframes wiggle {
 			0% {
 				rotate: 0deg;
@@ -354,6 +358,13 @@
 				rotate: 2deg;
 				translate: 5px 0;
 			}
+		}
+	}
+
+	/* bigger than tablet */
+	@media screen and (min-width: 720px) {
+		button {
+			width: 25%;
 		}
 	}
 
@@ -541,6 +552,16 @@
 	}
 
 	/* way bigger than desktop */
+	@media screen and (min-width: 1500px) {
+		button {
+			width: 20%;
+		}
+
+		.hero-btn {
+			width: 25%;
+		}
+	}
+
 	@media screen and (min-width: 1920px) {
 		button {
 			width: 13%;
