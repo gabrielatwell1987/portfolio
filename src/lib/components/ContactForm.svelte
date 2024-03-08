@@ -130,13 +130,12 @@
 			width: 35%;
 			margin: 0 auto;
 			border: 1px solid var(--white);
-			border-radius: 8px;
+			border-radius: 0.75rem;
 			background-color: transparent;
 			color: var(--white);
 			font-size: 1.25rem;
 			text-align: center;
 			font-family: var(--montserrat);
-			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			transition: 750ms;
 			outline: 3px solid currentColor;

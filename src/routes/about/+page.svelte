@@ -215,7 +215,7 @@
 			letter-spacing: 1px;
 			width: 50%;
 			font-family: var(--montserrat);
-			border-radius: 5rem;
+			border-radius: 0.75rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			transition: 750ms;
 			outline: 3px solid currentColor;
