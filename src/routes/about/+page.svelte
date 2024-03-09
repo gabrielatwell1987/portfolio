@@ -303,6 +303,7 @@
 		.hero-btn {
 			width: 50%;
 			margin-top: 5rem;
+			mix-blend-mode: difference;
 		}
 
 		.hero-btn:hover {
@@ -518,7 +519,7 @@
 			padding: 0.5rem 0.75rem;
 			width: 100%;
 			font-size: 1rem;
-			font-weight: 900;
+			font-weight: 400;
 			font-family: var(--montserrat);
 			letter-spacing: 1px;
 			background-color: var(--lightblack);
@@ -526,6 +527,7 @@
 			border: 2px solid var(--smoke);
 			border-radius: 12px;
 			text-align: center;
+			mix-blend-mode: difference;
 		}
 
 		.skills-title {

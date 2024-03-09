@@ -56,7 +56,7 @@
 
 	<details>
 		<!-- svelte-ignore a11y-no-redundant-roles -->
-		<summary role="button" class="outline contrast">How I used GSAP</summary>
+		<summary role="button" class="outline contrast">Install GSAP</summary>
 		<p>
 			In the project, you have to npm install gsap (if you have Node.js installed) or you can use
 			the CDN (content delivery network). In sveltekit, you have to put all of your GSAP code in an

@@ -48,7 +48,7 @@
 	<section>
 		<details>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
-			<summary role="button" class="outline contrast">The framework I used</summary>
+			<summary role="button" class="outline contrast">Framework...</summary>
 			<p>
 				I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
 				the server-side rendering (SSR) and all of the SEO features, as well as the speed of
@@ -59,7 +59,7 @@
 
 		<details>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
-			<summary role="button" class="outline contrast">What I know</summary>
+			<summary role="button" class="outline contrast">Fundamentals</summary>
 			<p>
 				I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I
 				have because I'm a very visual person. Sveltekit has made it super simple to put my ideas on
