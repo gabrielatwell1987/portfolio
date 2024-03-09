@@ -212,15 +212,10 @@
 			margin-left: 100%;
 			outline: none;
 			border: 2px solid var(--white);
-			border-radius: 5px;
+			border-radius: 15px;
 			padding: 1rem;
 			outline: none;
 			animation: wiggle 0.5s ease-in-out infinite;
-		}
-
-		.open-button:hover {
-			border: 2px solid var(--white);
-			color: var(--white);
 		}
 
 		.close-button {
@@ -231,12 +226,12 @@
 			background-color: transparent;
 			color: var(--white);
 			width: 4%;
-			margin-left: 43%;
+			margin-left: 44%;
 			margin-right: 2rem;
 			outline: none;
 			border: 2px solid var(--white);
 			border-radius: 15px;
-			padding: 0.75rem 2.5rem;
+			padding: 0.75rem 1.25rem;
 			outline: none;
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
