@@ -249,7 +249,7 @@
 		}
 
 		::backdrop {
-			background: url('/logos/smoky.png') no-repeat center center/cover;
+			background: url('/logos/atweezy.png') no-repeat center center/cover;
 		}
 
 		.modal h4 {
