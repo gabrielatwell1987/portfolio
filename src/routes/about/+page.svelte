@@ -208,7 +208,7 @@
 			background-color: transparent;
 			color: var(--white);
 			border: 1px solid var(--white);
-			margin: 3rem auto;
+			margin: 0 auto;
 			border-radius: 8px;
 			cursor: pointer;
 			font-size: 1.2rem;
@@ -222,6 +222,7 @@
 			outline-offset: -7px;
 			mix-blend-mode: difference;
 			padding: 1rem 1.75rem;
+			margin-bottom: -5%;
 		}
 
 		button:hover,
