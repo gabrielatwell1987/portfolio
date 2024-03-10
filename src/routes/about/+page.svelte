@@ -10,7 +10,6 @@
 		gsap.registerPlugin(Draggable);
 
 		const atwell = document.querySelector('.atwell');
-		const bio = document.querySelector('.bio');
 
 		gsap.set('article', { autoAlpha: 0 });
 
@@ -26,15 +25,6 @@
 			bounds: document.querySelector('article'),
 			throwProps: true
 		});
-
-		// // bio text animations
-		// bio.addEventListener('mouseenter', () => {
-		// 	gsap.to('.text', { scaleX: 1.025, duration: 0.5 });
-		// });
-
-		// bio.addEventListener('mouseleave', () => {
-		// 	gsap.to('.text', { scaleX: 1, duration: 0.5 });
-		// });
 	});
 </script>
 
@@ -42,12 +32,6 @@
 	<!-- content -->
 	<section>
 		<article>
-			<!-- <img
-				class="atwell"
-				src="logos/atwell-a.jpeg"
-				alt="An logo that says Atwell that you can move."
-			/> -->
-
 			<img
 				class="atwell"
 				src="logos/atweezy.png"
