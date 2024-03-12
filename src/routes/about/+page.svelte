@@ -206,6 +206,7 @@
 			outline-offset: -7px;
 			mix-blend-mode: difference;
 			padding: 1rem 1.75rem;
+			margin-top: 10%;
 			margin-bottom: -5%;
 		}
 
@@ -289,6 +290,7 @@
 			width: 50%;
 			margin-top: 5rem;
 			mix-blend-mode: difference;
+			margin-bottom: 3rem;
 		}
 
 		.hero-btn:hover {
