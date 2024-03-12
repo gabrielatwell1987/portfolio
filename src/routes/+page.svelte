@@ -17,7 +17,7 @@
 		alt="Wireframing and design of a website"
 	/>
 
-	<section class="hero-text">
+	<section>
 		<!-- hero section text and links -->
 		<h3>Frontend Crafted Web Experiences</h3>
 
@@ -225,6 +225,12 @@
 		img {
 			width: 90%;
 			height: 100%;
+		}
+
+		section {
+			top: 30%;
+			left: 50%;
+			transform: translate(-50%, -30%);
 		}
 	}
 

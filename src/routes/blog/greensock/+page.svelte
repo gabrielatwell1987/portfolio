@@ -26,6 +26,10 @@
 		title.addEventListener('mouseleave', () => {
 			gsap.to(title, { skewX: 15, duration: 0.25, ease: 'none' });
 		});
+
+		// greensock.addEventListener('mouseover', () => {
+		// 	gsap.to(greensock, { rotation: 360, duration: 1.5, ease: 'none' });
+		// });
 	});
 </script>
 

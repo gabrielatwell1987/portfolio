@@ -12,7 +12,7 @@
 			duration: 4,
 			y: 50,
 			opacity: 0.5,
-			stagger: 0.25,
+			stagger: 0.15,
 			ease: 'elastic.out(1.75, 0.5)'
 		});
 	});
