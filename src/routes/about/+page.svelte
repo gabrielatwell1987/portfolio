@@ -453,6 +453,10 @@
 			color: var(--white);
 		}
 
+		.bio {
+			margin-bottom: -5rem;
+		}
+
 		/* codepen */
 		.fa-codepen,
 		.fa-github {

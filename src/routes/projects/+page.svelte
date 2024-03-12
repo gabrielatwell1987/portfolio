@@ -261,7 +261,7 @@
 			padding: 1.5rem;
 			width: 100%;
 			margin: 0 auto;
-			letter-spacing: 10px;
+			letter-spacing: 5px;
 		}
 
 		/* content */
