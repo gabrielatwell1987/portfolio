@@ -97,6 +97,10 @@
 			color: var(--sky);
 		}
 
+		.mobile-link:hover {
+			text-decoration: underline;
+		}
+
 		.header-logos {
 			display: none;
 		}
