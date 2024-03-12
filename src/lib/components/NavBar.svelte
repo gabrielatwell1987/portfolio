@@ -92,8 +92,9 @@
 		}
 
 		.mobile-link {
-			font-size: 0.75rem;
+			font-size: 0.8rem;
 			font-family: var(--montserrat);
+			font-weight: 700;
 			color: var(--sky);
 		}
 
