@@ -18,11 +18,11 @@
 	<!-- desktop view -->
 	{#if open}
 		<div class="desktop-view">
-			<a class="nav-link underline" href="/projects" aria-label="projects">Projects</a>
-			<a class="nav-link underline" href="/blog" aria-label="blog">Blog</a>
-			<a class="nav-link underline" href="/about" aria-label="about">About</a>
-			<a class="nav-link underline" href="/photos/carousel" aria-label="photos">Photos</a>
-			<a class="nav-link underline" href="/contact" aria-label="contact">Contact</a>
+			<a class="nav-link" href="/projects" aria-label="projects">Projects</a>
+			<a class="nav-link" href="/blog" aria-label="blog">Blog</a>
+			<a class="nav-link" href="/about" aria-label="about">About</a>
+			<a class="nav-link" href="/photos/carousel" aria-label="photos">Photos</a>
+			<a class="nav-link" href="/contact" aria-label="contact">Contact</a>
 		</div>
 	{/if}
 </nav>
@@ -71,8 +71,6 @@
 
 		.header-logos {
 			display: block;
-			/* width: 15%; */
-			/* margin-top: 5%; */
 		}
 
 		.gabe-logo {
@@ -86,13 +84,16 @@
 			height: 4em;
 			width: 100%;
 		}
+
+		.nav-link {
+			font-weight: 800;
+		}
 	}
 
 	/* tablet and bigger */
 	@media (min-width: 740px) {
 		/* content */
 		.desktop-view {
-			/* display: none; */
 			display: flex;
 			margin-top: 0;
 			gap: 2.5rem;
@@ -108,7 +109,6 @@
 		}
 
 		.header-logos {
-			/* display: none; */
 			display: block;
 		}
 
