@@ -211,6 +211,10 @@
 			align-items: center;
 			margin: 3rem;
 		}
+
+		.gabe-logo {
+			display: block;
+		}
 	}
 
 	/* desktop and bigger 2 */
