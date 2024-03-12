@@ -25,17 +25,6 @@
 			<a class="nav-link underline" href="/contact" aria-label="contact">Contact</a>
 		</div>
 	{/if}
-
-	<!-- mobile view -->
-	<!-- <div class="mobile-view">
-		<div class="mobile-links">
-			<a class="mobile-link" href="/about/hero" aria-label="home">HOME</a>
-			<a class="mobile-link" href="/projects" aria-label="projects">PROJECTS</a>
-			<a class="mobile-link" href="/about" aria-label="about">ABOUT</a>
-			<a class="mobile-link" href="/photos" aria-label="photos">PHOTOS</a>
-			<a class="mobile-link" href="/contact" aria-label="contact">CONTACT</a>
-		</div>
-	</div> -->
 </nav>
 
 <style>
@@ -45,10 +34,6 @@
 		display: block;
 		font-weight: bolder;
 	}
-
-	/* .mobile-view {
-		display: none;
-	} */
 
 	nav {
 		display: flex;
@@ -84,33 +69,7 @@
 			margin-top: 10rem;
 		}
 
-		/* .mobile-view {
-			display: block;
-			justify-content: space-evenly;
-			width: 100%;
-			margin: 0 auto;
-			font-weight: 800;
-		}
-
-		.mobile-links {
-			display: flex;
-			justify-content: space-evenly;
-			gap: 0.25rem;
-		}
-
-		.mobile-link {
-			font-size: 0.8rem;
-			font-family: var(--montserrat);
-			font-weight: 700;
-			color: var(--sky);
-		}
-
-		.mobile-link:hover {
-			text-decoration: underline;
-		} */
-
 		.header-logos {
-			/* display: none; */
 			display: block;
 			/* width: 15%; */
 			/* margin-top: 5%; */
@@ -139,16 +98,6 @@
 			gap: 2.5rem;
 			flex-direction: row;
 		}
-
-		/* .mobile-view {
-			display: block;
-			width: 100%;
-			font-weight: bolder;
-		}
-
-		.mobile-link {
-			font-size: 1.25rem;
-		} */
 
 		nav {
 			display: flex;
@@ -192,10 +141,6 @@
 			font-size: 1rem;
 			font-weight: bolder;
 		}
-
-		/* .mobile-view {
-			display: none;
-		} */
 
 		nav {
 			display: flex;
