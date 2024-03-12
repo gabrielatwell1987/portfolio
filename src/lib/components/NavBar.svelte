@@ -111,6 +111,10 @@
 			/* display: none; */
 			display: block;
 		}
+
+		.gabe-logo {
+			display: none;
+		}
 	}
 
 	/* desktop and bigger */
