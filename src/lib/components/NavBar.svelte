@@ -1,6 +1,5 @@
 <script>
 	import { Hamburger } from 'svelte-hamburgers';
-	import MainLogo from '$lib/components/MainLogo.svelte';
 	import SVGLogo from '$lib/components/SVGLogo.svelte';
 
 	let open;
@@ -12,7 +11,6 @@
 		<Hamburger --color="white" type="spin" bind:open />
 
 		<div class="gabe-logo">
-			<!-- <a class="home" href="/about/hero"><MainLogo /></a> -->
 			<a class="home" href="/about/hero"><SVGLogo /></a>
 		</div>
 	</div>
@@ -90,12 +88,13 @@
 		.mobile-links {
 			display: flex;
 			justify-content: space-evenly;
+			gap: 0.25rem;
 		}
 
 		.mobile-link {
 			font-size: 0.75rem;
 			font-family: var(--montserrat);
-			color: var(--white);
+			color: var(--sky);
 		}
 
 		.header-logos {
@@ -121,8 +120,11 @@
 		.mobile-view {
 			display: block;
 			width: 100%;
-			font-size: 1rem;
 			font-weight: bolder;
+		}
+
+		.mobile-link {
+			font-size: 1.25rem;
 		}
 
 		nav {
