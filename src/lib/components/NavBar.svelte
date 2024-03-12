@@ -27,7 +27,7 @@
 	{/if}
 
 	<!-- mobile view -->
-	<div class="mobile-view">
+	<!-- <div class="mobile-view">
 		<div class="mobile-links">
 			<a class="mobile-link" href="/about/hero" aria-label="home">HOME</a>
 			<a class="mobile-link" href="/projects" aria-label="projects">PROJECTS</a>
@@ -35,7 +35,7 @@
 			<a class="mobile-link" href="/photos" aria-label="photos">PHOTOS</a>
 			<a class="mobile-link" href="/contact" aria-label="contact">CONTACT</a>
 		</div>
-	</div>
+	</div> -->
 </nav>
 
 <style>
@@ -46,9 +46,9 @@
 		font-weight: bolder;
 	}
 
-	.mobile-view {
+	/* .mobile-view {
 		display: none;
-	}
+	} */
 
 	nav {
 		display: flex;
@@ -74,10 +74,17 @@
 	@media (min-width: 200px) {
 		/* content */
 		.desktop-view {
-			display: none;
+			/* display: none; */
+			/* display: block; */
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			gap: 1rem;
+			margin-top: 10rem;
 		}
 
-		.mobile-view {
+		/* .mobile-view {
 			display: block;
 			justify-content: space-evenly;
 			width: 100%;
@@ -100,9 +107,16 @@
 
 		.mobile-link:hover {
 			text-decoration: underline;
-		}
+		} */
 
 		.header-logos {
+			/* display: none; */
+			display: block;
+			/* width: 15%; */
+			/* margin-top: 5%; */
+		}
+
+		.gabe-logo {
 			display: none;
 		}
 
@@ -119,10 +133,14 @@
 	@media (min-width: 740px) {
 		/* content */
 		.desktop-view {
-			display: none;
+			/* display: none; */
+			display: flex;
+			margin-top: 0;
+			gap: 2.5rem;
+			flex-direction: row;
 		}
 
-		.mobile-view {
+		/* .mobile-view {
 			display: block;
 			width: 100%;
 			font-weight: bolder;
@@ -130,7 +148,7 @@
 
 		.mobile-link {
 			font-size: 1.25rem;
-		}
+		} */
 
 		nav {
 			display: flex;
@@ -141,7 +159,8 @@
 		}
 
 		.header-logos {
-			display: none;
+			/* display: none; */
+			display: block;
 		}
 	}
 
@@ -174,9 +193,9 @@
 			font-weight: bolder;
 		}
 
-		.mobile-view {
+		/* .mobile-view {
 			display: none;
-		}
+		} */
 
 		nav {
 			display: flex;
