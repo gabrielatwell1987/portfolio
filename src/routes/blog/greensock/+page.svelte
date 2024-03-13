@@ -178,7 +178,7 @@
 
 		.detail {
 			min-width: 15rem;
-			margin-left: -30%;
+			margin-left: -50%;
 		}
 	}
 
