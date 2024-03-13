@@ -12,6 +12,7 @@
 <!-- content -->
 {#if browser}
 	<Carousel
+		dots={false}
 		arrows
 		infinite
 		duration="1000"
