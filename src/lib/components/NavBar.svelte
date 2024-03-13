@@ -48,7 +48,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-left: 2rem;
+		/* margin-left: 1.9rem; */
 	}
 
 	.gabe-logo {
