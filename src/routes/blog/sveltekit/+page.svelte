@@ -34,7 +34,7 @@
 	<section>
 		<details>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
-			<summary role="button" class="outline contrast">Framework...</summary>
+			<summary role="button" class="outline contrast">Framework</summary>
 			<p class="detail">
 				I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
 				the server-side rendering (SSR) and all of the SEO features, as well as making the website
@@ -66,7 +66,7 @@
 
 		<details>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
-			<summary role="button" class="outline contrast">Definitions...</summary>
+			<summary role="button" class="outline contrast">Definitions</summary>
 			<p class="detail">
 				Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
 				framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
