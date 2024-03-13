@@ -168,4 +168,12 @@
 		margin-left: -8%;
 		margin-bottom: 3rem;
 	}
+
+	@media (min-width: 200px) {
+		/* mobile */
+		svg {
+			width: 75%;
+			margin: 0 -40%;
+		}
+	}
 </style>

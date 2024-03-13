@@ -22,4 +22,12 @@
 		height: 10%;
 		margin-left: -3%;
 	}
+
+	@media (min-width: 200px) {
+		/* mobile */
+		svg {
+			width: 65%;
+			margin: 0 -30%;
+		}
+	}
 </style>

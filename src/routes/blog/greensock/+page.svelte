@@ -29,11 +29,6 @@
 	});
 </script>
 
-<!-- greensock icon logo -->
-<div class="greensock">
-	<GsapIcon />
-</div>
-
 <!-- title -->
 <br /><br /><br /><br /><br /><br /><br />
 <h1 class="title">GSAP</h1>
@@ -163,13 +158,6 @@
 		font-family: var(--montserrat);
 	}
 
-	.greensock {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin: 5rem 0 3rem 0;
-	}
-
 	.learn {
 		margin: 5rem 0 -1rem 0;
 		text-align: center;
@@ -179,5 +167,32 @@
 
 	.center {
 		text-align: center;
+	}
+
+	@media (min-width: 200px) {
+		iframe {
+			display: none;
+		}
+
+		.title {
+			font-size: 2.5rem;
+		}
+	}
+
+	@media (min-width: 720px) {
+		iframe {
+			display: block;
+			margin: 0 auto;
+		}
+
+		.title {
+			font-size: 4rem;
+		}
+	}
+
+	@media (min-width: 990px) {
+		.title {
+			font-size: 6rem;
+		}
 	}
 </style>
