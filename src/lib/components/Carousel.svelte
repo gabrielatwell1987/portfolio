@@ -97,6 +97,34 @@
 
 	img {
 		border-radius: 20px;
-		/* margin-top: -8rem; */
+	}
+
+	@media (min-width: 200px) {
+		/* content */
+		.gabe {
+			width: 100%;
+			height: 100%;
+		}
+
+		.prev,
+		.next {
+			width: 50px;
+			height: 50px;
+			background-color: var(--smoke);
+			color: var(--white);
+			border-radius: 50%;
+			font-size: 1.5rem;
+			font-weight: 600;
+			display: grid;
+			place-content: center;
+			margin-top: 13rem;
+			margin-left: 2rem;
+			margin-right: 2rem;
+			cursor: pointer;
+		}
+
+		img {
+			border-radius: 20px;
+		}
 	}
 </style>

@@ -102,7 +102,11 @@
 
 	@media (min-width: 200px) {
 		.title {
-			font-size: 2rem;
+			font-size: 2.5rem;
+		}
+
+		.domino {
+			display: none;
 		}
 	}
 </style>
