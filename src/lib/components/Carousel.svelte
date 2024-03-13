@@ -15,7 +15,6 @@
 		arrows
 		infinite
 		duration="1000"
-		dots
 		swiping
 		autoplay
 		autoplayDuration={5000}
@@ -34,15 +33,15 @@
 		</div>
 
 		<div class="gabe">
-			<img src="/photos/gabe.png" alt="Gabriel Atwell" />
-		</div>
-
-		<div class="gabe">
 			<img src="/photos/gabe7.png" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="gabe">
 			<img src="/photos/gabe2.png" alt="Gabriel Atwell" />
+		</div>
+
+		<div class="gabe">
+			<img src="/photos/gabe.png" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="gabe">
@@ -104,6 +103,10 @@
 		.gabe {
 			width: 100%;
 			height: 100%;
+		}
+
+		img {
+			min-width: 5rem;
 		}
 
 		.prev,

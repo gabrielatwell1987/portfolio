@@ -109,4 +109,24 @@
 			display: none;
 		}
 	}
+
+	@media (min-width: 720px) {
+		.title {
+			font-size: 4rem;
+		}
+
+		.domino {
+			display: block;
+		}
+	}
+
+	@media (min-width: 990px) {
+		.title {
+			font-size: 6rem;
+		}
+
+		.domino {
+			display: block;
+		}
+	}
 </style>
