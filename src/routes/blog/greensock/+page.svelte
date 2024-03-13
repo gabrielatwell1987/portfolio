@@ -26,10 +26,6 @@
 		title.addEventListener('mouseleave', () => {
 			gsap.to(title, { skewX: 15, duration: 0.25, ease: 'none' });
 		});
-
-		// greensock.addEventListener('mouseover', () => {
-		// 	gsap.to(greensock, { rotation: 360, duration: 1.5, ease: 'none' });
-		// });
 	});
 </script>
 
@@ -56,6 +52,12 @@
 			than that, it doesn't take up a lot of space to encorporate these techniques, which makes your
 			web pages 100,000 times faster.
 		</p>
+
+		<p>
+			Usually, websites use a mixture of GSAP and three js. GSAP makes animating in three js simple,
+			so you can actually edit 3D stuff. What's great is that three js is built for the web, so it
+			makes animating with GSAP really simple!
+		</p>
 	</details>
 
 	<details>
@@ -69,6 +71,12 @@
 			animated on this website are all from GSAP. I tend to think that these animations make the
 			website look a lot better than a static website. GSAP is a great tool to use for any web
 			developer. I highly recommend it!
+		</p>
+
+		<p>
+			You can install GSAP on any javascript framework you want to use! It works on Vue, React,
+			Svelte, and Angular. GSAP uses integer values to edit the DOM, for the most part.. It's also
+			good for vanilla JavaScript.
 		</p>
 	</details>
 
