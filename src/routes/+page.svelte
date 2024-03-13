@@ -36,8 +36,6 @@
 	<br />
 </main>
 
-<!--  -->
-
 <style>
 	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
