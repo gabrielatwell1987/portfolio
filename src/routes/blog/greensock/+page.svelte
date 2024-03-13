@@ -34,7 +34,7 @@
 	<details>
 		<!-- svelte-ignore a11y-no-redundant-roles -->
 		<summary role="button" class="outline contrast">What is GSAP?</summary>
-		<p>
+		<p class="detail">
 			Greensock Animation Platform (GSAP) is a JavaScript library that allows you to animate your
 			website. I really like animating the websites that I've built from scratch and GSAP makes it
 			so easy to accomplish! The syntax is really simple which makes no learning curve at all. Other
@@ -42,7 +42,7 @@
 			web pages 100,000 times faster.
 		</p>
 
-		<p>
+		<p class="detail">
 			Usually, websites use a mixture of GSAP and three js. GSAP makes animating in three js simple,
 			so you can actually edit 3D stuff. What's great is that three js is built for the web, so it
 			makes animating with GSAP really simple!
@@ -52,7 +52,7 @@
 	<details>
 		<!-- svelte-ignore a11y-no-redundant-roles -->
 		<summary role="button" class="outline contrast">Install GSAP</summary>
-		<p>
+		<p class="detail">
 			In the project, you have to npm install gsap (if you have Node.js installed) or you can use
 			the CDN (content delivery network). In sveltekit, you have to put all of your GSAP code in an
 			onMount function that you have to import. This is because onMount is displayed once on initial
@@ -62,7 +62,7 @@
 			developer. I highly recommend it!
 		</p>
 
-		<p>
+		<p class="detail">
 			You can install GSAP on any javascript framework you want to use! It works on Vue, React,
 			Svelte, and Angular. GSAP uses integer values to edit the DOM, for the most part.. It's also
 			good for vanilla JavaScript.
@@ -171,6 +171,15 @@
 		.title {
 			font-size: 2.5rem;
 		}
+
+		details {
+			min-width: 5rem;
+		}
+
+		.detail {
+			min-width: 15rem;
+			margin-left: -25%;
+		}
 	}
 
 	@media (min-width: 720px) {
@@ -181,6 +190,10 @@
 
 		.title {
 			font-size: 4rem;
+		}
+
+		.detail {
+			margin-left: 0;
 		}
 	}
 
