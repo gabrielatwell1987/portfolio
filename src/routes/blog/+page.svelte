@@ -140,4 +140,22 @@
 			transition: transform 1s ease-in-out;
 		}
 	}
+
+	@media (min-width: 200px) {
+		/* mobile */
+		.title {
+			font-size: 2rem;
+			display: none;
+		}
+
+		.image {
+			width: 80%;
+			margin: 0 -39%;
+		}
+
+		.gs,
+		.sk {
+			width: 10rem;
+		}
+	}
 </style>

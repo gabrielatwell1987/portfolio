@@ -1,5 +1,4 @@
 <script>
-	import Svelte from '$lib/components/Svelte.svelte';
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 
@@ -36,10 +35,6 @@
 	});
 </script>
 
-<!-- sveltekit icon logo -->
-<div class="sveltekit">
-	<Svelte />
-</div>
 
 <h1 class="title">SvelteKit</h1>
 
@@ -170,11 +165,35 @@
 		text-shadow: 0px 0px 25px var(--blue);
 	}
 
-	.sveltekit {
-		margin: 5% 0 5% 48%;
-	}
-
 	.center {
 		text-align: center;
+	}
+
+	@media (min-width: 200px) {
+		iframe {
+			display: none;
+		}
+
+		.title {
+			font-size: 2.5rem;
+		}
+	}
+
+	@media (min-width: 720px) {
+		iframe {
+			display: block;
+			margin: 0 auto;
+		}
+
+		.title {
+			font-size: 4rem;
+		}
+	}
+
+	@media (min-width: 990px) {
+		.title {
+			font-size: 6rem;
+		}
+
 	}
 </style>
