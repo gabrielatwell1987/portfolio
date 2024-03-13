@@ -51,7 +51,7 @@
 
 		<details>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
-			<summary role="button" class="outline contrast">Fundamentals</summary>
+			<summary role="button" class="outline contrast">Basics</summary>
 			<p class="detail">
 				I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I
 				have because I'm a very visual person. Sveltekit has made it super simple to put my ideas on
