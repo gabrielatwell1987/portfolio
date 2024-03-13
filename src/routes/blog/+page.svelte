@@ -158,4 +158,11 @@
 			width: 10rem;
 		}
 	}
+
+	@media (min-width: 720px) {
+		.image {
+			width: 40%;
+			margin: 0 -20%;
+		}
+	}
 </style>
