@@ -99,4 +99,10 @@
 			translate: 5px 0;
 		}
 	}
+
+	@media (min-width: 200px) {
+		.title {
+			font-size: 2rem;
+		}
+	}
 </style>
