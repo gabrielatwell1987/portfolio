@@ -35,14 +35,14 @@
 		<details>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast">Framework...</summary>
-			<p>
+			<p class="detail">
 				I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
 				the server-side rendering (SSR) and all of the SEO features, as well as making the website
 				really fast. The fact that this, to me, is less than an actual framework as it relies
 				heavily on vanilla HTML, CSS, and JavaScript is what I'm looking for.
 			</p>
 
-			<p>
+			<p class="detail">
 				In comparing all of the frameworks for the best one to use, my list is 1.) Sveltekit 2.)
 				Astro 3.) React. I like Astro because it is really easy to use, and you can use any other
 				framework's components you want. I can use svelte with astro, react with atro, etc.
@@ -52,13 +52,13 @@
 		<details>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast">Fundamentals</summary>
-			<p>
+			<p class="detail">
 				I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I
 				have because I'm a very visual person. Sveltekit has made it super simple to put my ideas on
 				the web.
 			</p>
 
-			<p>
+			<p class="detail">
 				The framework is based off of html. Javascript is used in a <script /> tag, css is used in a <style /> 
 				tag. Everything is scoped, so it makes it really easy to build things.
 			</p>
@@ -67,7 +67,7 @@
 		<details>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast">Definitions...</summary>
-			<p>
+			<p class="detail">
 				Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
 				framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
 				React. In the end, sveltekit is a new approach to building rich user interfaces.
@@ -168,6 +168,15 @@
 		.title {
 			font-size: 2.5rem;
 		}
+
+		details {
+			min-width: 5rem;
+		}
+
+		.detail {
+			min-width: 15rem;
+			margin-left: -25%;
+		}
 	}
 
 	@media (min-width: 720px) {
@@ -178,6 +187,10 @@
 
 		.title {
 			font-size: 4rem;
+		}
+
+		.detail {
+			margin-left: 0;
 		}
 	}
 
