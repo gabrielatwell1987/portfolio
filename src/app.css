@@ -4,6 +4,7 @@
 :root {
 	/* colors */
 	--blacker: hsla(205, 4%, 7%, 1);
+	--blackest: hsl(0, 15%, 5%);
 	--black: hsla(205, 4%, 15%, 1);
 	--lightblack: hsl(240, 0%, 19%);
 	--dark-gray: hsl(0, 0%, 27%);
