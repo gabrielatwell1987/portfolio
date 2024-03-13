@@ -5,19 +5,13 @@
 
 	// animations
 	onMount(() => {
-		const greensock = document.querySelector('.greensock');
 		const title = document.querySelector('.title');
 
-		gsap.set(greensock, { autoAlpha: 0, scale: 0 });
 		gsap.set(title, { skewX: 15, autoAlpha: 0, y: -200, scale: 0 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.to(greensock, { autoAlpha: 1, scale: 1, duration: 2, ease: 'back.out(4)' }, 0).to(
-			title,
-			{ autoAlpha: 1, scale: 1, duration: 2, ease: 'back.out(4)' },
-			0
-		);
+		tl.to(title, { autoAlpha: 1, scale: 1, duration: 2, ease: 'back.out(4)' }, 0);
 
 		title.addEventListener('mouseover', () => {
 			gsap.to(title, { skewX: -15, duration: 0.25, ease: 'none' });
