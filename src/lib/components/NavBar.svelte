@@ -48,7 +48,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		/* margin-left: 1.9rem; */
+		margin-left: 2rem;
 	}
 
 	.gabe-logo {
@@ -59,8 +59,6 @@
 	@media (min-width: 200px) {
 		/* content */
 		.desktop-view {
-			/* display: none; */
-			/* display: block; */
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
@@ -71,6 +69,7 @@
 
 		.header-logos {
 			display: block;
+			margin-left: -2%;
 		}
 
 		.gabe-logo {
