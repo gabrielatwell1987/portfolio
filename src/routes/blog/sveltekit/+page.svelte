@@ -175,7 +175,7 @@
 
 		.detail {
 			min-width: 15rem;
-			margin-left: -25%;
+			margin-left: -30%;
 		}
 	}
 
