@@ -65,6 +65,11 @@
 			align-items: center;
 			gap: 1rem;
 			margin-top: 10rem;
+			z-index: 10;
+			border: 1px solid var(--white);
+			border-radius: 5px;
+			padding: 0.5rem 1rem;
+			background-color: var(--dark-gray);
 		}
 
 		.header-logos {
@@ -97,6 +102,8 @@
 			margin-top: 0;
 			gap: 2.5rem;
 			flex-direction: row;
+			border: none;
+			background-color: transparent;
 		}
 
 		nav {
