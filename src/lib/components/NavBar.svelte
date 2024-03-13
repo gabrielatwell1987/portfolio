@@ -69,7 +69,7 @@
 			border: 1px solid var(--white);
 			border-radius: 5px;
 			padding: 0.5rem 1rem;
-			background-color: var(--dark-gray);
+			background-color: var(--blackest);
 		}
 
 		.header-logos {
