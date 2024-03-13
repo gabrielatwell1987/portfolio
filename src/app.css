@@ -12,7 +12,7 @@
 	--white: hsla(333, 21%, 92%, 0.75);
 	--sky: hsla(187, 64%, 73%, 0.75);
 	--blue: hsla(201, 100%, 37%, 0.5);
-	--purple: rgba(96, 131, 253, 0.6);
+	--purple: hsla(227, 98%, 68%, 0.6);
 
 	/* fonts */
 	--montserrat: 'Montserrat', sans-serif;
