@@ -182,6 +182,12 @@
 		}
 	}
 
+	@media (min-width: 500px) {
+		.detail {
+			margin-left: 0;
+		}
+	}
+
 	@media (min-width: 720px) {
 		iframe {
 			display: block;
@@ -190,10 +196,6 @@
 
 		.title {
 			font-size: 4rem;
-		}
-
-		.detail {
-			margin-left: 0;
 		}
 	}
 
