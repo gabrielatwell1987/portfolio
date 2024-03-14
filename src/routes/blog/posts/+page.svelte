@@ -7,7 +7,7 @@
 
 <section
 	transition:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}
-	aria-label="markdown blog"
+	alt="a flower"
 >
 	<!-- links to my markdown files -->
 	<h1 class="title">CSS</h1>
