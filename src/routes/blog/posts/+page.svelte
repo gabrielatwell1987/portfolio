@@ -7,7 +7,7 @@
 
 <section
 	transition:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}
-	alt="a flower"
+	title="a flower background"
 >
 	<!-- links to my markdown files -->
 	<h1 class="title">CSS</h1>
