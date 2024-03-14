@@ -68,9 +68,8 @@
 
 	.gs:hover,
 	.sk:hover {
-		filter: opacity(0.5);
-		transition: filter 0.75s ease-in-out, animation 1s ease-in-out;
-		animation: upDown 1.5s ease-in-out infinite;
+		filter: opacity(0.25);
+		transition: filter 1s ease-in-out;
 	}
 
 	.image {
@@ -87,7 +86,7 @@
 	}
 
 	.image:hover {
-		opacity: 0.5;
+		opacity: 0.25;
 		background-color: var(--smoke);
 		color: black;
 		transition: opacity 0.75s ease-in-out;
@@ -110,34 +109,6 @@
 		80% {
 			rotate: 2deg;
 			translate: 5px 0;
-		}
-	}
-
-	@keyframes upDown {
-		0%,
-		51% {
-			transform: translateY(0);
-			transition: transform 1s ease-in-out;
-		}
-		20%,
-		70% {
-			transform: translateY(10px);
-			transition: transform 1s ease-in-out;
-		}
-		30%,
-		80% {
-			transform: translateY(15px);
-			transition: transform 1s ease-in-out;
-		}
-		40%,
-		90% {
-			transform: translateY(10px);
-			transition: transform 1s ease-in-out;
-		}
-		50%,
-		100% {
-			transform: translateY(0);
-			transition: transform 1s ease-in-out;
 		}
 	}
 
