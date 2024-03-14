@@ -37,7 +37,7 @@
 	</section>
 
 	<!-- animation logo -->
-	<div class="links" aria-label="animation">
+	<div class="animation-link" aria-label="animation">
 		<a href="/blog/posts"
 			><img
 				src="logos/animation.png"
@@ -128,9 +128,17 @@
 		.sk {
 			width: 10rem;
 		}
+
+		.animation-link {
+			display: none;
+		}
 	}
 
 	@media (min-width: 720px) {
+		.animation-link {
+			display: block;
+		}
+
 		.image {
 			width: 40%;
 			margin: 0 -20%;
