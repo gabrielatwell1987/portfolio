@@ -3,7 +3,7 @@
 </script>
 
 <main>
-	<section class="contactForm">
+	<section class="contactForm" aria-label="contact">
 		<ContactForm />
 	</section>
 </main>

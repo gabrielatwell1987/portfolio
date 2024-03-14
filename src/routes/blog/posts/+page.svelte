@@ -5,7 +5,10 @@
 	import { quintOut } from 'svelte/easing';
 </script>
 
-<section transition:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
+<section
+	transition:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}
+	aria-label="markdown blog"
+>
 	<!-- links to my markdown files -->
 	<h1 class="title">CSS</h1>
 	<CSS />

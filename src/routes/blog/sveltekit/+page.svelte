@@ -32,7 +32,7 @@
 <main class="sk-main">
 	<!-- content -->
 	<section>
-		<details>
+		<details aria-label="accordian">
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast">Framework</summary>
 			<p class="detail">
@@ -49,7 +49,7 @@
 			</p>
 		</details>
 
-		<details>
+		<details aria-label="accordian">
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast">Basics</summary>
 			<p class="detail">
@@ -64,7 +64,7 @@
 			</p>
 		</details>
 
-		<details>
+		<details aria-label="accordian">
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast">Definitions</summary>
 			<p class="detail">

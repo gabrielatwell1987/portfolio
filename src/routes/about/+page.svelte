@@ -28,7 +28,10 @@
 	});
 </script>
 
-<main transition:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
+<main
+	transition:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}
+	aria-label="bio"
+>
 	<!-- content -->
 	<section>
 		<article>
@@ -39,7 +42,7 @@
 				width="500"
 			/>
 
-			<div class="bio">
+			<div class="bio" aria-label="bio">
 				<h2 class="main-title">Bio</h2>
 
 				<p class="text">
@@ -58,7 +61,7 @@
 					attention of users.
 				</p>
 
-				<article class="text-w hero">
+				<article class="text-w hero" aria-label="bio">
 					<p class="text margin-b">
 						Here is a hero section image that I created with three.js... I currently like the hero
 						section that shows when you first come to the website, but I linked this new hero
@@ -72,7 +75,7 @@
 			</div>
 
 			<!-- set up side by side text -->
-			<section class="grid">
+			<section class="grid" aria-label="bio">
 				<div class="inline right">
 					<h2 class="right title">Frontend</h2>
 
@@ -96,7 +99,7 @@
 			</section>
 
 			<!-- github and codepen links -->
-			<div class="dev-links">
+			<div class="dev-links" aria-label="links">
 				<a class="size" href="https://www.github.com/gabrielatwell1987/portfolio" target="_blank"
 					><i class="fa-brands fa-github" /></a
 				>
@@ -123,7 +126,7 @@
 			</div>
 
 			<!-- skills section -->
-			<section class="border">
+			<section class="border" aria-label="skills">
 				<h3 class="skills-title">Skills</h3>
 				<ul class="skills">
 					<li>HTML</li>

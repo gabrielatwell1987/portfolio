@@ -24,7 +24,7 @@
 	<ImageCarousel />
 
 	<!-- domino image and link -->
-	<div class="domino">
+	<div class="domino" aria-label="domino">
 		<p class="domino-text">Dominoes:</p>
 		<a class="btn-link" href="/photos/domino"
 			><img
