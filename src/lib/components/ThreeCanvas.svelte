@@ -160,9 +160,9 @@
 	});
 </script>
 
-<canvas class="webgl" />
+<canvas class="webgl" aria-label="hero" />
 
-<h1><span>A</span>twell <span>U</span>I</h1>
+<h1 aria-label="hero"><span>A</span>twell <span>U</span>I</h1>
 
 <style>
 	h1 {

@@ -31,13 +31,13 @@
 	<h1 class="title">. . . .</h1>
 
 	<!-- links to tech stack pages -->
-	<section>
+	<section aria-label="icons">
 		<a class="gs" href="blog/greensock"><GsapIcon /></a>
 		<a class="sk" href="blog/sveltekit"><Svelte /></a>
 	</section>
 
 	<!-- animation logo -->
-	<div class="links">
+	<div class="links" aria-label="animation">
 		<a href="/blog/posts"
 			><img
 				src="logos/animation.png"

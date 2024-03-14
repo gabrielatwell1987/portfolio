@@ -38,7 +38,7 @@
 </script>
 
 <!-- picture grid -->
-<section class="grid">
+<section class="grid" aria-label="gallery">
 	{#each { length: 8 } as _, id}
 		{@const details = selected === id}
 		{@const number = id + 1}

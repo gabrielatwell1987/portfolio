@@ -31,7 +31,7 @@
 	<!-- content -->
 	<h2 class="subtitle">Greensock Animation Platform</h2>
 
-	<details>
+	<details aria-label="accordian">
 		<!-- svelte-ignore a11y-no-redundant-roles -->
 		<summary role="button" class="outline contrast">What is GSAP?</summary>
 		<p class="detail">
@@ -49,7 +49,7 @@
 		</p>
 	</details>
 
-	<details>
+	<details aria-label="accordian">
 		<!-- svelte-ignore a11y-no-redundant-roles -->
 		<summary role="button" class="outline contrast">Install GSAP</summary>
 		<p class="detail">

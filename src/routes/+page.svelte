@@ -9,7 +9,7 @@
 	});
 </script>
 
-<main>
+<main aria-label="hero">
 	<!-- hero section -->
 	<img
 		class="hero-image"

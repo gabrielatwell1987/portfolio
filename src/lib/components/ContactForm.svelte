@@ -30,7 +30,7 @@
 <!-- Modal -->
 <button class="open-button" aria-label="open"><i class="fa-regular fa-folder-open" /></button>
 
-<dialog class="modal" id="modal">
+<dialog class="modal" id="modal" aria-label="modal">
 	<article>
 		<header>
 			<button aria-label="Close" rel="prev" class="close-button"
@@ -53,7 +53,7 @@
 <form class="form" method="POST" action="https://formsubmit.co/gatwell702@gmail.com">
 	<input type="hidden" name="send_to" value="gatwell702@gmail.com" />
 
-	<fieldset>
+	<fieldset aria-label="contact">
 		<legend> CONTACT </legend>
 
 		<label for="name"><span>Name</span></label>

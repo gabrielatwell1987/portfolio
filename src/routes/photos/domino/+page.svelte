@@ -11,6 +11,7 @@
 		width="100%"
 		height="100%"
 		title="domino"
+		aria-label="domino"
 	/>
 
 	<h3>Make sure you click the animation with your mouse first</h3>

@@ -4,7 +4,7 @@
 
 <ThreeCanvas />
 
-<section>
+<section aria-label="hero">
 	<!-- hero section text and links -->
 	<h3>Frontend Crafted Web Experiences</h3>
 
