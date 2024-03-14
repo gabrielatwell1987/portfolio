@@ -33,7 +33,7 @@
 	aria-label="bio"
 >
 	<!-- content -->
-	<section alt="a white flower">
+	<section title="a white flower background">
 		<article>
 			<img
 				class="atwell"
