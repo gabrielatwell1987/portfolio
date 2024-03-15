@@ -40,7 +40,8 @@
 		</div>
 
 		<div class="gabe">
-			<img src="/photos/gabe3.png" alt="Gabriel Atwell" />
+			<img src="/photos/gabe11.png" alt="Gabriel Atwell" />
+			<!-- <img src="/photos/gabe3.png" alt="Gabriel Atwell" /> -->
 		</div>
 
 		<div class="gabe">
@@ -48,7 +49,8 @@
 		</div>
 
 		<div class="gabe">
-			<img src="/photos/gabe4.png" alt="Gabriel Atwell" />
+			<img src="/photos/gabe10.png" alt="Gabriel Atwell" />
+			<!-- <img src="/photos/gabe4.png" alt="Gabriel Atwell" /> -->
 		</div>
 
 		<div class="gabe">
