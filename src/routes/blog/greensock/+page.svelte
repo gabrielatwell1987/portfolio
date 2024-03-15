@@ -27,7 +27,7 @@
 <br /><br /><br /><br /><br /><br /><br />
 <h1 class="title">GSAP</h1>
 
-<main class="gs-main">
+<main>
 	<!-- content -->
 	<h2 class="subtitle">Greensock Animation Platform</h2>
 

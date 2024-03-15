@@ -28,12 +28,12 @@
 </script>
 
 <!-- Modal -->
-<button class="open-button" aria-label="open"><i class="fa-regular fa-folder-open" /></button>
+<button class="open__button" aria-label="open"><i class="fa-regular fa-folder-open" /></button>
 
 <dialog class="modal" id="modal" aria-label="modal">
 	<article>
 		<header>
-			<button aria-label="Close" rel="prev" class="close-button"
+			<button aria-label="Close" rel="prev" class="close__button"
 				><i class="fa-solid fa-xmark" /></button
 			>
 
@@ -42,7 +42,7 @@
 
 		<img src="logos/newspaper.jpg" alt="frontend newspaper clipping" />
 
-		<p class="modal-p">
+		<p class="modal__p">
 			If you need help with a website, or if you have any questions, please feel free to contact me.
 			I am always happy to help!
 		</p>
@@ -156,8 +156,8 @@
 			outline-offset: 0px;
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
-		.open-button,
-		.close-button {
+		.open__button,
+		.close__button {
 			display: none;
 		}
 
@@ -202,7 +202,7 @@
 		}
 
 		/* modal */
-		.open-button {
+		.open__button {
 			display: block;
 			font-size: 1.2rem;
 			font-weight: 800;
@@ -219,7 +219,7 @@
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
-		.close-button {
+		.close__button {
 			display: flex;
 			justify-content: center;
 			font-size: 1.2rem;
@@ -263,7 +263,7 @@
 			margin-left: 23%;
 		}
 
-		.modal-p {
+		.modal__p {
 			width: 60%;
 			margin: 1.5rem auto;
 		}
