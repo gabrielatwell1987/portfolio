@@ -3,9 +3,9 @@
 
 :root {
 	/* colors */
-	--blacker: hsla(205, 4%, 7%, 1);
 	--blackest: hsl(0, 15%, 5%);
-	--black: hsla(205, 4%, 15%, 1);
+	--blacker: hsla(205, 4%, 7%, 1);
+	--black: hsla(205, 4%, 14%, 1);
 	--lightblack: hsl(240, 0%, 19%);
 	--dark-gray: hsl(0, 0%, 27%);
 	--smoke: hsla(247, 3%, 50%, 0.75);
@@ -13,6 +13,7 @@
 	--sky: hsla(187, 64%, 73%, 0.75);
 	--blue: hsla(201, 100%, 37%, 0.5);
 	--purple: hsla(227, 98%, 68%, 0.6);
+	--yellow: hsla(46, 93%, 42%, 0.7);
 
 	/* fonts */
 	--montserrat: 'Montserrat', sans-serif;
