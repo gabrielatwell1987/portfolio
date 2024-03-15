@@ -75,10 +75,10 @@
 
 	<!-- domino image and link -->
 	<div class="domino" aria-label="domino">
-		<p class="domino-text">Dominoes:</p>
-		<a class="btn-link" href="/photos/domino"
+		<p class="domino__text">Dominoes:</p>
+		<a class="btn__link" href="/photos/domino"
 			><img
-				class="domino-image"
+				class="domino__image"
 				src="logos/dominoes.png"
 				alt="A game of dominoes made in Spline."
 			/></a
@@ -132,7 +132,7 @@
 	/* bigger than tablet */
 	@media (min-width: 850px) {
 		/* content */
-		.btn-link {
+		.btn__link {
 			font-size: 2.5rem;
 			font-weight: bolder;
 			text-decoration: none;
@@ -140,7 +140,7 @@
 			font-family: var(--montserrat);
 		}
 
-		.btn-link:hover {
+		.btn__link:hover {
 			font-size: 2.5rem;
 			font-weight: bolder;
 			text-decoration: none;
@@ -153,7 +153,7 @@
 			margin-top: 2rem;
 		}
 
-		.domino-image {
+		.domino__image {
 			display: block;
 			width: 20%;
 			height: 25%;
@@ -161,13 +161,13 @@
 			border-radius: 10px;
 		}
 
-		.domino-image:hover {
+		.domino__image:hover {
 			opacity: 0.5;
 			transition: opacity 0.75s ease-in-out;
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
-		.domino-text {
+		.domino__text {
 			font-family: var(--anta);
 			font-size: 1.75rem;
 			font-weight: 700;

@@ -43,7 +43,7 @@
 			/>
 
 			<div class="bio" aria-label="bio">
-				<h2 class="main-title">Bio</h2>
+				<h2 class="main__title">Bio</h2>
 
 				<p class="text">
 					My name is Gabriel Atwell and I am a frontend web developer. I started out with the
@@ -61,15 +61,15 @@
 					attention of users.
 				</p>
 
-				<article class="text-w hero" aria-label="bio">
-					<p class="text margin-b">
+				<article class="text__w hero" aria-label="bio">
+					<p class="text margin__b">
 						Here is a hero section image that I created with three.js... I currently like the hero
 						section that shows when you first come to the website, but I linked this new hero
 						section as the home page.
 					</p>
 
-					<a href="/about/hero" class="btn-link"
-						><button aria-label="hero" class="hero-btn">Hero</button></a
+					<a href="/about/hero" class="btn__link"
+						><button aria-label="hero" class="hero__btn">Hero</button></a
 					>
 				</article>
 			</div>
@@ -99,7 +99,7 @@
 			</section>
 
 			<!-- github and codepen links -->
-			<div class="dev-links" aria-label="links">
+			<div class="dev__links" aria-label="links">
 				<a class="size" href="https://www.github.com/gabrielatwell1987/portfolio" target="_blank"
 					><i class="fa-brands fa-github" /></a
 				>
@@ -127,7 +127,7 @@
 
 			<!-- skills section -->
 			<section class="border" aria-label="skills">
-				<h3 class="skills-title">Skills</h3>
+				<h3 class="skills__title">Skills</h3>
 				<ul class="skills">
 					<li>HTML</li>
 					<li>CSS</li>
@@ -142,7 +142,7 @@
 			</section>
 
 			<!-- image gallery -->
-			<a class="btn-link" href="/about/gallery"><button aria-label="gallery">Gallery</button></a>
+			<a class="btn__link" href="/about/gallery"><button aria-label="gallery">Gallery</button></a>
 		</article>
 	</section>
 </main>
@@ -234,7 +234,7 @@
 			color: var(--purple);
 		}
 
-		.btn-link {
+		.btn__link {
 			font-size: 1.5rem;
 			font-weight: bolder;
 			text-decoration: none;
@@ -242,7 +242,7 @@
 			font-family: var(--montserrat);
 		}
 
-		.btn-link:hover {
+		.btn__link:hover {
 			font-size: 1.5rem;
 			font-weight: bolder;
 			text-decoration: none;
@@ -275,7 +275,7 @@
 		}
 
 		/* random */
-		.dev-links {
+		.dev__links {
 			display: flex;
 			justify-content: space-evenly;
 			align-items: center;
@@ -289,14 +289,14 @@
 		}
 
 		/* hero button */
-		.hero-btn {
+		.hero__btn {
 			width: 50%;
 			margin-top: 5rem;
 			mix-blend-mode: difference;
 			margin-bottom: 3rem;
 		}
 
-		.hero-btn:hover {
+		.hero__btn:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
@@ -325,11 +325,11 @@
 
 	/* bigger than mobile */
 	@media screen and (min-width: 500px) {
-		.hero-btn {
+		.hero__btn {
 			width: 30%;
 		}
 
-		.hero-btn:hover {
+		.hero__btn:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
@@ -411,7 +411,7 @@
 			font-size: 4.24rem;
 		}
 
-		.btn-link {
+		.btn__link {
 			font-size: 2.5rem;
 		}
 
@@ -439,7 +439,7 @@
 			text-align: left;
 		}
 
-		.main-title {
+		.main__title {
 			color: var(--purple);
 			font-size: 7rem;
 			font-weight: 900;
@@ -474,24 +474,24 @@
 		}
 
 		/* random */
-		.dev-links {
+		.dev__links {
 			margin-top: -20rem;
 			margin-left: 0%;
 			display: flex;
 			justify-content: space-evenly;
 		}
 
-		.margin-b {
+		.margin__b {
 			margin-bottom: -2rem;
 		}
 
-		.text-w {
+		.text__w {
 			width: 75%;
 			margin: 0 auto;
 		}
 
 		/* Hero Button */
-		.hero-btn {
+		.hero__btn {
 			width: 30%;
 		}
 
@@ -524,7 +524,7 @@
 			mix-blend-mode: difference;
 		}
 
-		.skills-title {
+		.skills__title {
 			color: var(--blue);
 			font-size: 2.2rem;
 			font-weight: 900;
@@ -554,7 +554,7 @@
 			width: 20%;
 		}
 
-		.hero-btn {
+		.hero__btn {
 			width: 25%;
 		}
 	}
@@ -564,7 +564,7 @@
 			width: 13%;
 		}
 
-		.hero-btn {
+		.hero__btn {
 			width: 15%;
 		}
 	}

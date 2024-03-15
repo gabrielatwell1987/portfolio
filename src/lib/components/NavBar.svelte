@@ -7,22 +7,22 @@
 
 <nav>
 	<!-- hamburger icon -->
-	<div class="header-logos">
+	<div class="header__logos">
 		<Hamburger --color="white" type="spin" bind:open />
 
-		<div class="gabe-logo">
+		<div class="gabe__logo">
 			<a class="home" href="/about/hero"><SVGLogo /></a>
 		</div>
 	</div>
 
 	<!-- desktop view -->
 	{#if open}
-		<div class="desktop-view">
-			<a class="nav-link" href="/projects" aria-label="projects">Projects</a>
-			<a class="nav-link" href="/blog" aria-label="blog">Blog</a>
-			<a class="nav-link" href="/about" aria-label="about">About</a>
-			<a class="nav-link" href="/photos/carousel" aria-label="photos">Photos</a>
-			<a class="nav-link" href="/contact" aria-label="contact">Contact</a>
+		<div class="desktop__view">
+			<a class="nav__link" href="/projects" aria-label="projects">Projects</a>
+			<a class="nav__link" href="/blog" aria-label="blog">Blog</a>
+			<a class="nav__link" href="/about" aria-label="about">About</a>
+			<a class="nav__link" href="/photos/carousel" aria-label="photos">Photos</a>
+			<a class="nav__link" href="/contact" aria-label="contact">Contact</a>
 		</div>
 	{/if}
 </nav>
@@ -30,7 +30,7 @@
 <style>
 	/* bigger than desktop */
 	/* content */
-	.desktop-view {
+	.desktop__view {
 		display: block;
 		font-weight: bolder;
 	}
@@ -44,21 +44,21 @@
 		position: relative;
 	}
 
-	.header-logos {
+	.header__logos {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin-left: 2rem;
 	}
 
-	.gabe-logo {
+	.gabe__logo {
 		margin: 0 0 0 25%;
 	}
 
 	/* mobile and bigger */
 	@media (min-width: 200px) {
 		/* content */
-		.desktop-view {
+		.desktop__view {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
@@ -72,12 +72,12 @@
 			background-color: var(--blackest);
 		}
 
-		.header-logos {
+		.header__logos {
 			display: block;
 			margin-left: -2%;
 		}
 
-		.gabe-logo {
+		.gabe__logo {
 			display: none;
 		}
 
@@ -89,7 +89,7 @@
 			width: 100%;
 		}
 
-		.nav-link {
+		.nav__link {
 			font-weight: 800;
 		}
 	}
@@ -97,7 +97,7 @@
 	/* tablet and bigger */
 	@media (min-width: 740px) {
 		/* content */
-		.desktop-view {
+		.desktop__view {
 			display: flex;
 			margin-top: 0;
 			gap: 2.5rem;
@@ -114,11 +114,11 @@
 			width: 100%;
 		}
 
-		.header-logos {
+		.header__logos {
 			display: block;
 		}
 
-		.gabe-logo {
+		.gabe__logo {
 			display: none;
 		}
 	}
@@ -126,7 +126,7 @@
 	/* desktop and bigger */
 	@media (min-width: 990px) {
 		/* content */
-		.nav-link {
+		.nav__link {
 			font-family: var(--montserrat);
 			font-size: 1.5rem;
 			text-decoration: none;
@@ -136,7 +136,7 @@
 			margin-right: -7rem;
 		}
 
-		.nav-link:hover {
+		.nav__link:hover {
 			color: var(--dark-gray);
 			border-bottom: 5px solid var(--dark-gray);
 			height: 3rem;
@@ -144,7 +144,7 @@
 			transition: border-bottom 0.35s ease-in-out, text-shadow 0.35s ease-in-out;
 		}
 
-		.desktop-view {
+		.desktop__view {
 			display: block;
 			width: 100%;
 			margin-left: -9%;
@@ -160,14 +160,14 @@
 			width: 100%;
 		}
 
-		.header-logos {
+		.header__logos {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			margin: 3rem;
 		}
 
-		.gabe-logo {
+		.gabe__logo {
 			display: block;
 		}
 	}
@@ -175,14 +175,14 @@
 	/* desktop and bigger 2 */
 	@media (min-width: 1300px) {
 		/* content */
-		.desktop-view {
+		.desktop__view {
 			margin-left: 10%;
 		}
 	}
 
 	@media (min-width: 1440px) {
 		/* content */
-		.desktop-view {
+		.desktop__view {
 			margin-left: 25%;
 		}
 	}
