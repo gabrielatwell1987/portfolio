@@ -108,8 +108,8 @@
 
 		.prev,
 		.next {
-			width: 50px;
-			height: 50px;
+			width: 30px;
+			height: 30px;
 			background-color: var(--smoke);
 			color: var(--white);
 			border-radius: 50%;
@@ -123,8 +123,24 @@
 			cursor: pointer;
 		}
 
+		i {
+			font-size: 1rem;
+		}
+
 		img {
 			border-radius: 20px;
+		}
+	}
+
+	@media (min-width: 720px) {
+		.prev,
+		.next {
+			width: 50px;
+			height: 50px;
+		}
+
+		i {
+			font-size: 1.5rem;
 		}
 	}
 </style>

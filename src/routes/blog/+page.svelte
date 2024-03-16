@@ -124,6 +124,10 @@
 			margin: 0 -39%;
 		}
 
+		.gs {
+			margin-bottom: 5%;
+		}
+
 		.gs,
 		.sk {
 			width: 10rem;
