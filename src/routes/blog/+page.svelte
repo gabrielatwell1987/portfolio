@@ -158,4 +158,10 @@
 			margin-bottom: 10%;
 		}
 	}
+
+	@media (min-width: 9900px) {
+		.gs {
+			margin-bottom: 10%;
+		}
+	}
 </style>
