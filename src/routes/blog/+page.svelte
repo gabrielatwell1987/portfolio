@@ -159,7 +159,7 @@
 		}
 	}
 
-	@media (min-width: 9900px) {
+	@media (min-width: 990px) {
 		.gs {
 			margin-bottom: 5%;
 		}
