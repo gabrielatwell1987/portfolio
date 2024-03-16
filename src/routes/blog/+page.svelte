@@ -1,6 +1,6 @@
 <script>
 	import GsapIcon from '$lib/components/GsapIcon.svelte';
-	import Svelte from '$lib/components/Svelte.svelte';
+	import SvelteIcon from '$lib/components/SvelteIcon.svelte';
 	import { gsap } from 'gsap';
 	import { TextPlugin } from 'gsap/dist/TextPlugin';
 	import { onMount } from 'svelte';
@@ -33,7 +33,7 @@
 	<!-- links to tech stack pages -->
 	<section aria-label="icons">
 		<a class="gs" href="blog/greensock"><GsapIcon /></a>
-		<a class="sk" href="blog/sveltekit"><Svelte /></a>
+		<a class="sk" href="blog/sveltekit"><SvelteIcon /></a>
 	</section>
 
 	<!-- animation logo -->

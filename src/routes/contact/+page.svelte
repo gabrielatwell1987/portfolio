@@ -3,7 +3,7 @@
 </script>
 
 <main>
-	<section class="contactForm" aria-label="contact">
+	<section class="contactForm">
 		<ContactForm />
 	</section>
 </main>
@@ -11,7 +11,6 @@
 <style>
 	.contactForm {
 		margin: 2rem auto;
-		/* margin: 2rem 0 0 0; */
 	}
 
 	/* bigger than mobile */

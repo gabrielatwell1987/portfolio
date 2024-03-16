@@ -1,5 +1,5 @@
-<svg viewbox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="5">
-	<path d="m 30,33 h 40 c " />
-	<path d="m 30,50 h 40" />
-	<path d="m 30,67 h 40" />
+<svg width="36" height="25" viewBox="0 0 36 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<rect width="23" height="5" rx="2.5" fill="currentColor" />
+	<rect y="10" width="36" height="5" rx="2.5" fill="currentColor" />
+	<rect x="13" y="20" width="23" height="5" rx="2.5" fill="currentColor" />
 </svg>
