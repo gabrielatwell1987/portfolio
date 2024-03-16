@@ -14,8 +14,8 @@
 
 		// modal
 		const modal = document.querySelector('.modal');
-		const openModal = document.querySelector('.open-button');
-		const closeModal = document.querySelector('.close-button');
+		const openModal = document.querySelector('.open__button');
+		const closeModal = document.querySelector('.close__button');
 
 		openModal.addEventListener('click', () => {
 			modal.showModal();
@@ -28,14 +28,12 @@
 </script>
 
 <!-- Modal -->
-<button class="open__button" aria-label="open"><i class="fa-regular fa-folder-open" /></button>
+<button class="open__button"><i class="fa-regular fa-folder-open" /></button>
 
-<dialog class="modal" id="modal" aria-label="modal">
+<dialog class="modal" id="modal">
 	<article>
 		<header>
-			<button aria-label="Close" rel="prev" class="close__button"
-				><i class="fa-solid fa-xmark" /></button
-			>
+			<button rel="prev" class="close__button"><i class="fa-solid fa-xmark" /></button>
 
 			<h4>Please contact me for any frontend work!</h4>
 		</header>
@@ -53,7 +51,7 @@
 <form class="form" method="POST" action="https://formsubmit.co/gatwell702@gmail.com">
 	<input type="hidden" name="send_to" value="gatwell702@gmail.com" />
 
-	<fieldset aria-label="contact">
+	<fieldset>
 		<legend> CONTACT </legend>
 
 		<label for="name"><span>Name</span></label>
@@ -80,7 +78,7 @@
 			required
 		/>
 
-		<button class="send" type="submit" aria-label="send">Send</button>
+		<button class="send" type="submit">Send</button>
 	</fieldset>
 </form>
 
