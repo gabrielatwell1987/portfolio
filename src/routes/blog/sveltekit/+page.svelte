@@ -34,7 +34,7 @@
 	<section>
 		<details aria-label="accordian">
 			<!-- svelte-ignore a11y-no-redundant-roles -->
-			<summary role="button" class="outline contrast">Framework</summary>
+			<summary role="button" class="outline contrast center">Framework</summary>
 			<p class="detail">
 				I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
 				the server-side rendering (SSR) and all of the SEO features, as well as making the website
@@ -51,7 +51,7 @@
 
 		<details aria-label="accordian">
 			<!-- svelte-ignore a11y-no-redundant-roles -->
-			<summary role="button" class="outline contrast">Basics</summary>
+			<summary role="button" class="outline contrast center">Basics</summary>
 			<p class="detail">
 				I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I
 				have because I'm a very visual person. Sveltekit has made it super simple to put my ideas on
@@ -66,7 +66,7 @@
 
 		<details aria-label="accordian">
 			<!-- svelte-ignore a11y-no-redundant-roles -->
-			<summary role="button" class="outline contrast">Definitions</summary>
+			<summary role="button" class="outline contrast center">Definitions</summary>
 			<p class="detail">
 				Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
 				framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
@@ -177,6 +177,8 @@
 			min-width: 15rem;
 			margin-left: -50%;
 		}
+
+		
 	}
 
 	@media (min-width: 500px) {
@@ -203,5 +205,9 @@
 			font-size: 6rem;
 		}
 
+		.center {
+			text-align: center;
+			letter-spacing: 2px;
+		}
 	}
 </style>
