@@ -183,7 +183,8 @@
 			justify-content: center;
 			align-items: center;
 			font-family: var(--montserrat);
-			font-size: 0.8rem;
+			font-size: 1.25rem;
+			/* font-size: 0.8rem; */
 			font-weight: 600;
 			width: 75%;
 			margin: 0 auto;
@@ -240,7 +241,7 @@
 		/* links */
 		.linksize {
 			letter-spacing: 4px;
-			font-size: 1rem;
+			font-size: 1.5rem;
 		}
 
 		/* content */
@@ -258,10 +259,11 @@
 	@media screen and (min-width: 990px) {
 		/* links */
 		.linksize {
-			padding: 1.5rem;
+			padding: 2rem;
 			width: 100%;
 			margin: 0 auto;
 			letter-spacing: 5px;
+			font-size: 2rem;
 		}
 
 		/* content */
