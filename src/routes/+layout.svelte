@@ -25,6 +25,7 @@
 	<NavBar />
 	<br />
 	<br />
+	<br />
 	<slot />
 </main>
 
