@@ -24,6 +24,7 @@
 <main class="desktop">
 	<NavBar />
 	<br />
+	<br />
 	<slot />
 </main>
 
