@@ -87,6 +87,10 @@
 			align-items: center;
 			height: 4em;
 			width: 100%;
+			position: fixed;
+			top: 0;
+			right: 7px;
+			z-index: 10;
 		}
 
 		.nav__link {
