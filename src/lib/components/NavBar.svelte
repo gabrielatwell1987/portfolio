@@ -63,8 +63,8 @@
 			flex-direction: column;
 			justify-content: space-around;
 			align-items: center;
-			gap: 1rem;
-			margin-top: 10rem;
+			gap: 1.5rem;
+			margin-top: 12rem;
 			z-index: 10;
 			border: 1px solid var(--white);
 			border-radius: 5px;
@@ -99,7 +99,7 @@
 	}
 
 	/* tablet and bigger */
-	@media (min-width: 740px) {
+	@media (min-width: 700px) {
 		/* content */
 		.desktop__view {
 			display: flex;
