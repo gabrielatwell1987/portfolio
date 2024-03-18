@@ -55,7 +55,7 @@
 			width="400px"
 			height="475px"
 		/></a
-	><br />
+	>
 
 	<h3 class="linksize name">frontend</h3>
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank"
@@ -66,7 +66,7 @@
 			width="400px"
 			height="475px"
 		/></a
-	><br />
+	>
 
 	<h3 class="linksize name">horizontal scroller</h3>
 	<a class="linksize" href="https://gabe2.vercel.app" target="_blank"
@@ -77,7 +77,7 @@
 			width="450px"
 			height="280px"
 		/></a
-	><br />
+	>
 
 	<h3 class="linksize name">github api</h3>
 	<a class="linksize" href="https://adiapp.vercel.app/" target="_blank"
@@ -88,7 +88,7 @@
 			width="500px"
 			height="400px"
 		/></a
-	><br />
+	>
 
 	<h3 class="linksize name">snippet creator</h3>
 	<a class="linksize" href="https://appity.vercel.app" target="_blank"
@@ -99,7 +99,7 @@
 			width="350px"
 			height="600px"
 		/></a
-	><br />
+	>
 
 	<h3 class="linksize name">starbucks clone</h3>
 	<a class="linksize" href="https://gabe4.vercel.app" target="_blank"
@@ -110,7 +110,7 @@
 			width="475px"
 			height="300px"
 		/></a
-	><br />
+	>
 
 	<!-- divider -->
 	<progress />
@@ -184,7 +184,6 @@
 			align-items: center;
 			font-family: var(--montserrat);
 			font-size: 1.25rem;
-			/* font-size: 0.8rem; */
 			font-weight: 600;
 			width: 75%;
 			margin: 0 auto;
@@ -195,6 +194,7 @@
 		/* content */
 		.name {
 			font-weight: 600;
+			margin-bottom: -1.5rem;
 		}
 
 		#title {
@@ -275,6 +275,10 @@
 			font-size: 7rem;
 			font-weight: 800;
 			text-shadow: -5px 5px 4px var(--dark-gray);
+		}
+
+		.name {
+			margin-bottom: -3.5rem;
 		}
 	}
 </style>
