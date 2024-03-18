@@ -140,7 +140,7 @@
 		/* divider */
 		progress {
 			width: 40%;
-			margin: 8% 0 2rem 30%;
+			margin: 15% 0 2rem 30%;
 		}
 
 		/* content */
