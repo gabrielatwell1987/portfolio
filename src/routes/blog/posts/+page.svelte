@@ -6,7 +6,7 @@
 </script>
 
 <section
-	transition:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}
+	in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}
 	title="a flower background"
 >
 	<!-- links to my markdown files -->
