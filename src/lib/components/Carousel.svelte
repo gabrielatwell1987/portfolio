@@ -117,7 +117,7 @@
 			font-weight: 600;
 			display: grid;
 			place-content: center;
-			margin-top: 13rem;
+			margin-top: 5rem;
 			margin-left: 2rem;
 			margin-right: 2rem;
 			cursor: pointer;
@@ -129,6 +129,32 @@
 
 		img {
 			border-radius: 20px;
+		}
+	}
+
+	@media (min-width: 400px) {
+		.prev,
+		.next {
+			width: 40px;
+			height: 40px;
+			margin-top: 7rem;
+		}
+
+		i {
+			font-size: 1.25rem;
+		}
+	}
+
+	@media (min-width: 500px) {
+		.prev,
+		.next {
+			width: 40px;
+			height: 40px;
+			margin-top: 10rem;
+		}
+
+		i {
+			font-size: 1.25rem;
 		}
 	}
 
