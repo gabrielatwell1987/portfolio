@@ -169,11 +169,16 @@
 
 		details {
 			min-width: 5rem;
+			width: 10rem;
+		}
+
+		summary {
+			margin-left: -1rem;
 		}
 
 		.detail {
 			min-width: 15rem;
-			margin-left: -50%;
+			margin-left: -30%;
 		}
 
 		.center {
