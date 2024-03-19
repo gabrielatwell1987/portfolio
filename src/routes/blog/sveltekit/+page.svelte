@@ -170,6 +170,7 @@
 		details {
 			min-width: 5rem;
 			width: 10rem;
+			margin: 0 auto;
 		}
 
 		summary {
@@ -188,7 +189,9 @@
 	}
 
 	@media (min-width: 500px) {
-		
+		details {
+			width: 15rem;
+		}
 
 		.detail {
 			margin-left: 0;
