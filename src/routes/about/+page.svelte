@@ -28,10 +28,7 @@
 	});
 </script>
 
-<main
-	transition:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}
-	aria-label="bio"
->
+<main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} aria-label="bio">
 	<!-- content -->
 	<section title="a white flower background">
 		<article>
