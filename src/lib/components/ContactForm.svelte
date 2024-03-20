@@ -268,7 +268,6 @@
 
 		/* content */
 		label:hover {
-			color: var(--blue);
 			font-family: var(--montserrat);
 		}
 

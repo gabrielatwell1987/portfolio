@@ -218,5 +218,9 @@
 			
 			letter-spacing: 2px;
 		}
+
+		details {
+			width: 100%;
+		}
 	}
 </style>
