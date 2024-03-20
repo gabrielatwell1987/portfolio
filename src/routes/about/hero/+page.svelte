@@ -45,7 +45,7 @@
 		font-size: 1rem;
 		font-weight: 400;
 		letter-spacing: 0.5px;
-		font-family: var(--montserrat);
+		font-family: var(--lexend);
 		width: 99%;
 		margin: 0 auto;
 	}
@@ -54,7 +54,7 @@
 		display: block;
 		background-color: transparent;
 		color: var(--white);
-		font-family: var(--montserrat);
+		font-family: var(--lexend);
 		width: 10%;
 		height: 10%;
 		outline: none;

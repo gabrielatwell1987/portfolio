@@ -35,7 +35,7 @@
 		<!-- svelte-ignore a11y-no-redundant-roles -->
 		<summary role="button" class="outline contrast spacing"><b>What is GSAP?</b></summary>
 		<p class="detail">
-			Greensock Animation Platform (GSAP) is a JavaScript library that allows you to animate your
+			Greensock Animation Platform (GSAP) is a javascript library that allows you to animate your
 			website. I really like animating the websites that I've built from scratch and GSAP makes it
 			so easy to accomplish! The syntax is really simple which makes no learning curve at all. Other
 			than that, it doesn't take up a lot of space to encorporate these techniques, which makes your
@@ -182,6 +182,7 @@
 		.detail {
 			min-width: 15rem;
 			margin-left: -30%;
+			font-family: var(--lexend);
 		}
 
 		.center {

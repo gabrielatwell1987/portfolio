@@ -180,6 +180,7 @@
 		.detail {
 			min-width: 15rem;
 			margin-left: -30%;
+			font-family: var(--lexend);
 		}
 
 		.center {

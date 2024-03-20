@@ -60,14 +60,14 @@
 			font-size: 0.75rem;
 			font-weight: 400;
 			letter-spacing: 0.5px;
-			font-family: var(--montserrat);
+			font-family: var(--lexend);
 		}
 
 		button {
 			display: block;
 			background-color: transparent;
 			color: var(--white);
-			font-family: var(--montserrat);
+			font-family: var(--lexend);
 			width: 50%;
 			height: 10%;
 			outline: none;

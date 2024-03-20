@@ -65,7 +65,6 @@
 	}
 
 	.domino__text {
-		font-family: var(--anta);
 		font-size: 1.75rem;
 		font-weight: 700;
 		color: var(--purple);
@@ -106,6 +105,10 @@
 
 		.domino {
 			display: none;
+		}
+
+		.domino__text {
+			font-family: var(--lexend);
 		}
 	}
 

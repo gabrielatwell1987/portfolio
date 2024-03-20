@@ -159,6 +159,10 @@
 			display: none;
 		}
 
+		.modal__p {
+			font-family: var(--lexend);
+		}
+
 		@keyframes wiggle {
 			0% {
 				rotate: 0deg;
