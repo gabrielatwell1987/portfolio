@@ -36,6 +36,6 @@
 		text-align: left;
 		padding: 2rem 4rem;
 		color: var(--white);
-		font-family: var(--montserrat);
+		font-family: var(--lexend);
 	}
 </style>

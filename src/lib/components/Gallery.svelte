@@ -84,6 +84,7 @@
 		color: hsl(0 0% 98%);
 		font-size: 2rem;
 		text-transform: capitalize;
+		font-family: var(--lexend);
 	}
 
 	img {

@@ -198,7 +198,7 @@
 			font-size: 1.2rem;
 			letter-spacing: 1px;
 			width: 50%;
-			font-family: var(--montserrat);
+			font-family: var(--lexend);
 			border-radius: 0.75rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			transition: 750ms;

@@ -182,7 +182,7 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			font-family: var(--montserrat);
+			font-family: var(--lexend);
 			font-size: 1.25rem;
 			font-weight: 600;
 			width: 75%;
