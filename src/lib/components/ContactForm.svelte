@@ -116,11 +116,6 @@
 			font-weight: 600;
 		}
 
-		img {
-			box-shadow: 0 0 2px 2px var(--dark-gray);
-			/* box-shadow: 0 0 2px 2px var(--dark-gray); */
-		}
-
 		span {
 			font-size: 0.95rem;
 			font-weight: 800;
