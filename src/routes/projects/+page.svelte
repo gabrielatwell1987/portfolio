@@ -280,9 +280,5 @@
 		.name {
 			margin-bottom: -3.5rem;
 		}
-
-		.img {
-			box-shadow: 0 0 2px 2px var(--dark-gray);
-		}
 	}
 </style>
