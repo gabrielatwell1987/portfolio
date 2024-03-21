@@ -24,7 +24,7 @@
 				gsap.to('.title', {
 					opacity: 0,
 					y: '100%',
-					duration: 0.3
+					duration: 1.5
 				});
 			}
 		});
@@ -32,7 +32,7 @@
 		tl.to('.details .title', {
 			opacity: 1,
 			y: 0,
-			duration: 0.3
+			duration: 1.5
 		});
 	}
 </script>
@@ -81,7 +81,7 @@
 	}
 
 	h1 {
-		color: hsl(0 0% 98%);
+		color: hsl(0 0% 100%);
 		font-size: 2rem;
 		text-transform: capitalize;
 		font-family: var(--lexend);
