@@ -12,9 +12,7 @@
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl
-			.to(sk, { y: 0 }, 0)
-			.to(title, { autoAlpha: 1, scale: 1, delay: 3, duration: 2.25 }, 0);
+		tl.to(sk, { y: 0 }, 0).to(title, { autoAlpha: 1, scale: 1, delay: 3, duration: 2.25 }, 0);
 
 		title.addEventListener('mouseover', () => {
 			gsap.to(title, { skewX: -15, duration: 0.25, ease: 'none' });
@@ -25,7 +23,6 @@
 		});
 	});
 </script>
-
 
 <h1 class="title">SvelteKit</h1>
 
@@ -59,8 +56,9 @@
 			</p>
 
 			<p class="detail">
-				The framework is based off of html. Javascript is used in a <script /> tag, css is used in a <style /> 
-				tag. Everything is scoped, so it makes it really easy to build things.
+				The framework is based off of html. Javascript is used in a script tag, css is used in a
+				style tag, just like you do it inline in html. Everything is scoped, so it makes it really
+				easy to build things.
 			</p>
 		</details>
 
@@ -156,8 +154,6 @@
 		text-shadow: 0px 0px 25px var(--blue);
 	}
 
-	
-
 	@media (min-width: 200px) {
 		iframe {
 			display: none;
@@ -186,7 +182,6 @@
 		.center {
 			text-align: center;
 		}
-		
 	}
 
 	@media (min-width: 500px) {
@@ -216,7 +211,6 @@
 		}
 
 		.spacing {
-			
 			letter-spacing: 2px;
 		}
 
