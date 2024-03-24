@@ -161,6 +161,7 @@
 
 		.modal__p {
 			font-family: var(--lexend);
+			font-weight: 200;
 		}
 
 		@keyframes wiggle {
