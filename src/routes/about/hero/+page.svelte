@@ -142,7 +142,7 @@
 			display: block;
 			background-color: transparent;
 			color: var(--white);
-			font-family: var(--montserrat);
+			font-family: var(--lexend);
 			width: 50%;
 			height: 10%;
 			outline: none;

@@ -137,7 +137,7 @@
 			color: var(--white);
 			font-size: 1.25rem;
 			text-align: center;
-			font-family: var(--montserrat);
+			font-family: var(--lexend);
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			transition: 750ms;
 			outline: 3px solid currentColor;
