@@ -23,8 +23,10 @@
 	});
 </script>
 
-<!-- title -->
+<!-- spacing -->
 <br /><br /><br /><br /><br /><br /><br />
+
+<!-- title -->
 <h1 class="title">GSAP</h1>
 
 <main>
