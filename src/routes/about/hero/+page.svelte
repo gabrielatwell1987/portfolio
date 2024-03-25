@@ -160,6 +160,7 @@
 			margin-bottom: 0.25rem;
 			padding: 1rem 1.75rem;
 			mix-blend-mode: difference;
+			user-select: none;
 		}
 
 		button:hover,

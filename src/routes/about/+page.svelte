@@ -208,6 +208,7 @@
 			padding: 1rem 1.75rem;
 			margin-top: 10%;
 			margin-bottom: -5%;
+			user-select: none;
 		}
 
 		button:hover,
@@ -291,6 +292,7 @@
 			margin-top: 5rem;
 			mix-blend-mode: difference;
 			margin-bottom: 3rem;
+			user-select: none;
 		}
 
 		.hero__btn:hover {
