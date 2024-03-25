@@ -144,6 +144,7 @@
 			outline-offset: -7px;
 			padding: 1rem 1.75rem;
 			mix-blend-mode: difference;
+			user-select: none;
 		}
 
 		.send:hover,

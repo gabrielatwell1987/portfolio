@@ -84,6 +84,7 @@
 			margin-top: 2rem;
 			margin-bottom: 0.25rem;
 			padding: 1rem 1.75rem;
+			user-select: none;
 		}
 
 		button:hover,
