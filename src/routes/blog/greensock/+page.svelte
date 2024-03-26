@@ -7,11 +7,11 @@
 	onMount(() => {
 		const title = document.querySelector('.title');
 
-		gsap.set(title, { skewX: 15, autoAlpha: 0, y: -200, scale: 0 });
+		gsap.set(title, { skewX: 15, autoAlpha: 0, y: -200 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.to(title, { autoAlpha: 1, scale: 1, duration: 2, ease: 'back.out(4)' }, 0);
+		tl.to(title, { autoAlpha: 1, duration: 2, ease: 'back.out(4)' }, 0);
 
 		title.addEventListener('mouseover', () => {
 			gsap.to(title, { skewX: -15, duration: 0.25, ease: 'none' });
