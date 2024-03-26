@@ -5,14 +5,12 @@
 	// animations
 	onMount(() => {
 		const title = document.querySelector('.title');
-		const sk = document.querySelector('.sk-main');
 
-		gsap.set(sk, { y: 1000 });
-		gsap.set(title, { skewX: 15, autoAlpha: 0, y: 35, scale: 0 });
+		gsap.set(title, { skewX: 15, autoAlpha: 0, y: 35 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.to(sk, { y: 0 }, 0).to(title, { autoAlpha: 1, scale: 1, delay: 3, duration: 2.25 }, 0);
+		tl.to(title, { autoAlpha: 1, duration: 2 }, 0);
 
 		title.addEventListener('mouseover', () => {
 			gsap.to(title, { skewX: -15, duration: 0.25, ease: 'none' });
@@ -28,7 +26,7 @@
 	<!-- title -->
 	<h1 class="title">SvelteKit</h1>
 
-	<main class="sk-main">
+	<main>
 		<!-- content -->
 		<section>
 			<details aria-label="accordian">
