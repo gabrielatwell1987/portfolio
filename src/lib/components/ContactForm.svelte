@@ -28,12 +28,14 @@
 </script>
 
 <!-- Modal -->
-<button class="open__button"><i class="fa-regular fa-folder-open" /></button>
+<button class="open__button" aria-label="open"><i class="fa-regular fa-folder-open" /></button>
 
 <dialog class="modal" id="modal">
 	<article>
 		<header>
-			<button rel="prev" class="close__button"><i class="fa-solid fa-xmark" /></button>
+			<button rel="prev" class="close__button" aria-label="close"
+				><i class="fa-solid fa-xmark" /></button
+			>
 
 			<h4>Please contact me for any frontend work!</h4>
 		</header>
