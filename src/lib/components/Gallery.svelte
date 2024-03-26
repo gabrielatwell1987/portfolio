@@ -28,12 +28,6 @@
 				});
 			}
 		});
-
-		tl.to('.details .title', {
-			opacity: 1,
-			y: 0,
-			duration: 1.5
-		});
 	}
 </script>
 

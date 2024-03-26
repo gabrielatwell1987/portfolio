@@ -24,75 +24,78 @@
 	});
 </script>
 
-<h1 class="title">SvelteKit</h1>
+<section class="main">
+	<!-- title -->
+	<h1 class="title">SvelteKit</h1>
 
-<main class="sk-main">
-	<!-- content -->
-	<section>
-		<details aria-label="accordian">
-			<!-- svelte-ignore a11y-no-redundant-roles -->
-			<summary role="button" class="outline contrast spacing"><b>Framework</b></summary>
-			<p class="detail">
-				I used sveltekit to create this portfolio website. I decided to go with sveltekit because of
-				the server-side rendering (SSR) and all of the SEO features, as well as making the website
-				really fast. The fact that this, to me, is less than an actual framework as it relies
-				heavily on vanilla HTML, CSS, and JavaScript is what I'm looking for.
+	<main class="sk-main">
+		<!-- content -->
+		<section>
+			<details aria-label="accordian">
+				<!-- svelte-ignore a11y-no-redundant-roles -->
+				<summary role="button" class="outline contrast spacing"><b>Framework</b></summary>
+				<p class="detail">
+					I used sveltekit to create this portfolio website. I decided to go with sveltekit because
+					of the server-side rendering (SSR) and all of the SEO features, as well as making the
+					website really fast. The fact that this, to me, is less than an actual framework as it
+					relies heavily on vanilla HTML, CSS, and JavaScript is what I'm looking for.
+				</p>
+
+				<p class="detail">
+					In comparing all of the frameworks for the best one to use, my list is 1.) Sveltekit 2.)
+					Astro 3.) React. I like Astro because it is really easy to use, and you can use any other
+					framework's components you want. I can use svelte with astro, react with atro, etc.
+				</p>
+			</details>
+
+			<details aria-label="accordian">
+				<!-- svelte-ignore a11y-no-redundant-roles -->
+				<summary role="button" class="outline contrast spacing"><b>Basics</b></summary>
+				<p class="detail">
+					I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I
+					have because I'm a very visual person. Sveltekit has made it super simple to put my ideas
+					on the web.
+				</p>
+
+				<p class="detail">
+					The framework is based off of html. Javascript is used in a script tag, css is used in a
+					style tag, just like you do it inline in html. Everything is scoped, so it makes it really
+					easy to build things.
+				</p>
+			</details>
+
+			<details aria-label="accordian">
+				<!-- svelte-ignore a11y-no-redundant-roles -->
+				<summary role="button" class="outline contrast spacing"><b>Definitions</b></summary>
+				<p class="detail">
+					Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
+					framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
+					React. In the end, sveltekit is a new approach to building rich user interfaces.
+				</p>
+			</details>
+
+			<h3 class="heading">Learn more about Sveltekit</h3>
+			<p class="center">
+				If you would like to know more about svelte and sveltekit, please click <a
+					href="https://svelte.dev"
+					aria-label="sveltekit">here</a
+				>.
 			</p>
 
-			<p class="detail">
-				In comparing all of the frameworks for the best one to use, my list is 1.) Sveltekit 2.)
-				Astro 3.) React. I like Astro because it is really easy to use, and you can use any other
-				framework's components you want. I can use svelte with astro, react with atro, etc.
-			</p>
-		</details>
-
-		<details aria-label="accordian">
-			<!-- svelte-ignore a11y-no-redundant-roles -->
-			<summary role="button" class="outline contrast spacing"><b>Basics</b></summary>
-			<p class="detail">
-				I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I
-				have because I'm a very visual person. Sveltekit has made it super simple to put my ideas on
-				the web.
-			</p>
-
-			<p class="detail">
-				The framework is based off of html. Javascript is used in a script tag, css is used in a
-				style tag, just like you do it inline in html. Everything is scoped, so it makes it really
-				easy to build things.
-			</p>
-		</details>
-
-		<details aria-label="accordian">
-			<!-- svelte-ignore a11y-no-redundant-roles -->
-			<summary role="button" class="outline contrast spacing"><b>Definitions</b></summary>
-			<p class="detail">
-				Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
-				framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
-				React. In the end, sveltekit is a new approach to building rich user interfaces.
-			</p>
-		</details>
-
-		<h3 class="heading">Learn more about Sveltekit</h3>
-		<p class="center">
-			If you would like to know more about svelte and sveltekit, please click <a
-				href="https://svelte.dev"
-				aria-label="sveltekit">here</a
-			>.
-		</p>
-
-		<!-- video -->
-		<iframe
-			class="youtube"
-			width="560"
-			height="315"
-			src="https://www.youtube.com/embed/MoGkX4RvZ38?si=xV4--8APNCqD7Ihn"
-			title="YouTube video player"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-			allowfullscreen
-		/>
-	</section>
-</main>
+			<!-- video -->
+			<iframe
+				class="youtube"
+				width="560"
+				height="315"
+				src="https://www.youtube.com/embed/MoGkX4RvZ38?si=xV4--8APNCqD7Ihn"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen
+			/>
+		</section>
+	</main>
+</section>
 
 <style>
 	/* desktop and bigger */
@@ -155,6 +158,10 @@
 	}
 
 	@media (min-width: 200px) {
+		.main {
+			margin: 0 auto;
+		}
+
 		iframe {
 			display: none;
 		}

@@ -57,7 +57,7 @@
 		/></a
 	>
 
-	<h3 class="linksize name">developer</h3>
+	<h3 class="linksize name">random</h3>
 	<a class="linksize" href="https://gabe1.vercel.app" target="_blank"
 		><img
 			class="img"

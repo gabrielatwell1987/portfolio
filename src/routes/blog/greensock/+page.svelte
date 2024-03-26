@@ -26,70 +26,72 @@
 <!-- spacing -->
 <br /><br /><br /><br /><br /><br /><br />
 
-<!-- title -->
-<h1 class="title">GSAP</h1>
+<section class="main">
+	<!-- title -->
+	<h1 class="title">GSAP</h1>
 
-<main>
-	<!-- content -->
-	<h2 class="subtitle">Greensock Animation Platform</h2>
+	<main>
+		<!-- content -->
+		<h2 class="subtitle">Greensock Animation Platform</h2>
 
-	<details aria-label="accordian">
-		<!-- svelte-ignore a11y-no-redundant-roles -->
-		<summary role="button" class="outline contrast spacing"><b>Greensock?</b></summary>
-		<p class="detail">
-			Greensock Animation Platform (GSAP) is a javascript library that allows you to animate your
-			website. I really like animating the websites that I've built from scratch and GSAP makes it
-			so easy to accomplish! The syntax is really simple which makes no learning curve at all. Other
-			than that, it doesn't take up a lot of space to encorporate these techniques, which makes your
-			web pages 100,000 times faster.
+		<details aria-label="accordian">
+			<!-- svelte-ignore a11y-no-redundant-roles -->
+			<summary role="button" class="outline contrast spacing"><b>Greensock?</b></summary>
+			<p class="detail">
+				Greensock Animation Platform (GSAP) is a javascript library that allows you to animate your
+				website. I really like animating the websites that I've built from scratch and GSAP makes it
+				so easy to accomplish! The syntax is really simple which makes no learning curve at all.
+				Other than that, it doesn't take up a lot of space to encorporate these techniques, which
+				makes your web pages 100,000 times faster.
+			</p>
+
+			<p class="detail">
+				Usually, websites use a mixture of GSAP and three js. GSAP makes animating in three js
+				simple, so you can actually edit 3D stuff. What's great is that three js is built for the
+				web, so it makes animating with GSAP really simple!
+			</p>
+		</details>
+
+		<details aria-label="accordian">
+			<!-- svelte-ignore a11y-no-redundant-roles -->
+			<summary role="button" class="outline contrast spacing"><b>Install GSAP</b></summary>
+			<p class="detail">
+				In the project, you have to npm install gsap (if you have Node.js installed) or you can use
+				the CDN (content delivery network). In sveltekit, you have to put all of your GSAP code in
+				an onMount function that you have to import. This is because onMount is displayed once on
+				initial load. If you were to use a regular script tag, it would not work. All of the designs
+				that are animated on this website are all from GSAP. I tend to think that these animations
+				make the website look a lot better than a static website. GSAP is a great tool to use for
+				any web developer. I highly recommend it!
+			</p>
+
+			<p class="detail">
+				You can install GSAP on any javascript framework you want to use! It works on Vue, React,
+				Svelte, and Angular. GSAP uses integer values to edit the DOM, for the most part.. It's also
+				good for vanilla JavaScript.
+			</p>
+		</details>
+
+		<h3 class="learn">Learn more about GSAP</h3>
+		<p class="center">
+			If you would like to know more about greensock, please click <a
+				href="https://greensock.com"
+				aria-label="greensock">here</a
+			>.
 		</p>
 
-		<p class="detail">
-			Usually, websites use a mixture of GSAP and three js. GSAP makes animating in three js simple,
-			so you can actually edit 3D stuff. What's great is that three js is built for the web, so it
-			makes animating with GSAP really simple!
-		</p>
-	</details>
-
-	<details aria-label="accordian">
-		<!-- svelte-ignore a11y-no-redundant-roles -->
-		<summary role="button" class="outline contrast spacing"><b>Install GSAP</b></summary>
-		<p class="detail">
-			In the project, you have to npm install gsap (if you have Node.js installed) or you can use
-			the CDN (content delivery network). In sveltekit, you have to put all of your GSAP code in an
-			onMount function that you have to import. This is because onMount is displayed once on initial
-			load. If you were to use a regular script tag, it would not work. All of the designs that are
-			animated on this website are all from GSAP. I tend to think that these animations make the
-			website look a lot better than a static website. GSAP is a great tool to use for any web
-			developer. I highly recommend it!
-		</p>
-
-		<p class="detail">
-			You can install GSAP on any javascript framework you want to use! It works on Vue, React,
-			Svelte, and Angular. GSAP uses integer values to edit the DOM, for the most part.. It's also
-			good for vanilla JavaScript.
-		</p>
-	</details>
-
-	<h3 class="learn">Learn more about GSAP</h3>
-	<p class="center">
-		If you would like to know more about greensock, please click <a
-			href="https://greensock.com"
-			aria-label="greensock">here</a
-		>.
-	</p>
-
-	<!-- video -->
-	<iframe
-		width="560"
-		height="315"
-		src="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
-		title="YouTube video player"
-		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		allowfullscreen
-	/>
-</main>
+		<!-- video -->
+		<iframe
+			width="560"
+			height="315"
+			src="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			allowfullscreen
+		/>
+	</main>
+</section>
 <!-- footer spacing -->
 <br />
 
@@ -162,6 +164,10 @@
 	}
 
 	@media (min-width: 200px) {
+		.main {
+			margin: 0 auto;
+		}
+
 		iframe {
 			display: none;
 		}
