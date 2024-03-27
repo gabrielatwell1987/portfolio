@@ -221,8 +221,14 @@
 		span {
 			color: var(--purple);
 		}
+
 		span:hover {
 			color: var(--blue);
+		}
+
+		.webgl {
+			height: 100vh;
+			width: 70vw;
 		}
 	}
 </style>
