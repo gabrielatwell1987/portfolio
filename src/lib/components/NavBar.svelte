@@ -151,7 +151,7 @@
 		.desktop__view {
 			display: block;
 			width: 100%;
-			margin-left: -9%;
+			margin-left: -8%;
 			font-size: 1rem;
 			font-weight: bolder;
 		}
@@ -180,14 +180,21 @@
 	@media (min-width: 1300px) {
 		/* content */
 		.desktop__view {
-			margin-left: 10%;
+			margin-left: -3%;
 		}
 	}
 
-	@media (min-width: 1440px) {
+	@media (min-width: 1400px) {
 		/* content */
 		.desktop__view {
-			margin-left: 25%;
+			margin-left: 6%;
+		}
+	}
+
+	@media (min-width: 1600px) {
+		/* content */
+		.desktop__view {
+			margin-left: 15%;
 		}
 	}
 </style>
