@@ -402,7 +402,11 @@
 	@media screen and (min-width: 1350px) {
 		/* content */
 		form {
-			margin: 0 34%;
+			margin: 0 35%;
+		}
+
+		.open__button {
+			padding: 1rem;
 		}
 	}
 
@@ -410,6 +414,10 @@
 		/* content */
 		.send {
 			width: 15%;
+		}
+
+		form {
+			margin: 0 25%;
 		}
 	}
 </style>
