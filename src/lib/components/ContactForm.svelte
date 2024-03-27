@@ -51,7 +51,7 @@
 
 <!-- contact form -->
 <form class="form" method="POST" action="https://formsubmit.co/gatwell702@gmail.com">
-	<input type="hidden" name="send_to" value="gatwell702@gmail.com" />
+	<input type="hidden" name="send_to" value="gabrielatwell@proton.me" />
 
 	<fieldset>
 		<legend> CONTACT </legend>
