@@ -228,9 +228,12 @@
 			outline: none;
 			border: 2px solid var(--white);
 			border-radius: 15px;
-			padding: 1rem;
+			padding: 1rem 1.5rem;
 			outline: none;
 			animation: wiggle 0.5s ease-in-out infinite;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 
 		.close__button {
