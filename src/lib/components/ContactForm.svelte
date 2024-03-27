@@ -188,6 +188,10 @@
 		.send {
 			width: 30%;
 		}
+
+		form {
+			margin: 0 20%;
+		}
 	}
 
 	/* bigger than tablet */
@@ -196,6 +200,10 @@
 		span {
 			font-size: 1.25rem;
 			font-weight: 800;
+		}
+
+		form {
+			margin: 0 16%;
 		}
 
 		.send {
@@ -299,6 +307,18 @@
 		/* content */
 		.send {
 			width: 25%;
+		}
+
+		form {
+			margin: 0 16%;
+		}
+	}
+
+	@media screen and (min-width: 850px) {
+		/* content */
+
+		form {
+			margin: 0 51%;
 		}
 	}
 
