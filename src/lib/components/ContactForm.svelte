@@ -329,7 +329,7 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			margin: 0 25%;
+			margin: 0 44.5%;
 		}
 
 		label {
@@ -385,6 +385,27 @@
 	}
 
 	/* way bigger than desktop */
+	@media screen and (min-width: 1100px) {
+		/* content */
+		form {
+			margin: 0 41.5%;
+		}
+	}
+
+	@media screen and (min-width: 1200px) {
+		/* content */
+		form {
+			margin: 0 40%;
+		}
+	}
+
+	@media screen and (min-width: 1350px) {
+		/* content */
+		form {
+			margin: 0 34%;
+		}
+	}
+
 	@media screen and (min-width: 1920px) {
 		/* content */
 		.send {
