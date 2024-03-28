@@ -113,7 +113,6 @@
 			margin-bottom: 0.5rem;
 			color: var(--purple);
 			text-transform: uppercase;
-			text-shadow: 5px 5px 4px var(--dark-gray);
 		}
 
 		label {
