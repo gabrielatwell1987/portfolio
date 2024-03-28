@@ -187,8 +187,9 @@
 		}
 
 		.detail {
-			min-width: 15rem;
-			margin-left: -30%;
+			min-width: 20rem;
+			/* margin-left: -30%; */
+			margin: 0 -4.75rem;
 			font-family: var(--lexend);
 		}
 
@@ -199,7 +200,7 @@
 
 	@media (min-width: 500px) {
 		.detail {
-			margin-left: 0;
+			margin-left: -2.5rem;
 		}
 
 		details {
