@@ -39,7 +39,7 @@
 	});
 </script>
 
-<h1 class="title" id="title">PROJECTS</h1>
+<h1 class="title" id="title">designs</h1>
 
 <!-- links to my projects -->
 <section class="content bevel">
@@ -169,6 +169,7 @@
 			color: var(--white);
 			letter-spacing: 5px;
 			text-shadow: 0px 0px 50px var(--smoke);
+			text-transform: uppercase;
 		}
 
 		/* links */

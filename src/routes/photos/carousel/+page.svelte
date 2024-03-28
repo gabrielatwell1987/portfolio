@@ -18,7 +18,7 @@
 	});
 </script>
 
-<h1 class="title">photos</h1>
+<h1 class="title">images</h1>
 
 <main>
 	<ImageCarousel />
