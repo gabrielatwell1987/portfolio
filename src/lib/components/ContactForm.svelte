@@ -55,7 +55,7 @@
 	<!-- <input type="hidden" name="send_to" value="gabrielatwell@proton.me" /> -->
 
 	<fieldset>
-		<legend> CONTACT </legend>
+		<legend> message me </legend>
 
 		<label for="name"><span>Name</span></label>
 		<input type="text" id="name" name="name" placeholder="John Doe" bind:value={name} required />
@@ -112,6 +112,7 @@
 			text-align: center;
 			margin-bottom: 0.5rem;
 			color: var(--purple);
+			text-transform: uppercase;
 		}
 
 		label {
@@ -192,6 +193,11 @@
 
 		form {
 			margin: 0 20%;
+		}
+
+		legend {
+			font-size: 2.5rem;
+			text-shadow: -5px 5px 4px var(--dark-gray);
 		}
 	}
 
@@ -291,6 +297,10 @@
 			font-family: var(--montserrat);
 		}
 
+		legend {
+			font-size: 3rem;
+		}
+
 		@keyframes wiggle {
 			0% {
 				rotate: 0deg;
@@ -323,6 +333,10 @@
 
 		form {
 			margin: 0 51%;
+		}
+
+		legend {
+			font-size: 4rem;
 		}
 	}
 
@@ -374,7 +388,7 @@
 			font-weight: bolder;
 			font-size: 5rem;
 			padding: 0 1rem 0 1rem;
-			text-shadow: -5px 5px 4px var(--dark-gray);
+			/* text-shadow: -5px 5px 4px var(--dark-gray); */
 		}
 
 		h4 {
