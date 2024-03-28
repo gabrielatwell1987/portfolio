@@ -211,7 +211,7 @@
 		}
 
 		form {
-			margin: 0 16%;
+			margin: 0 16.5%;
 		}
 
 		.send {
