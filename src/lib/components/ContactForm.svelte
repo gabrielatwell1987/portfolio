@@ -396,10 +396,11 @@
 			line-height: 0.95;
 		}
 
-		p {
-			line-height: 2.25;
+		.modal__p {
+			line-height: 1.75;
 			width: 75%;
 			margin: 0 auto;
+			padding: 0.5rem;
 		}
 	}
 
