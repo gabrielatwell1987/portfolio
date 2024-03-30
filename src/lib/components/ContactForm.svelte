@@ -105,7 +105,7 @@
 		}
 
 		input:focus-visible {
-			outline: 2px solid var(--white);
+			outline: 1px solid var(--white);
 		}
 
 		textarea {
