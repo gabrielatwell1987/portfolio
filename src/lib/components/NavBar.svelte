@@ -8,7 +8,13 @@
 <nav>
 	<!-- hamburger icon -->
 	<div class="header__logos">
-		<Hamburger --color="white" type="spin" bind:open ariaLabel="menu" --active-color="var(--sky)" />
+		<Hamburger
+			--color="white"
+			type="spin"
+			bind:open
+			ariaLabel="menu"
+			--active-color="var(--smoke)"
+		/>
 
 		<div class="gabe__logo">
 			<a class="home" href="/about/hero"><SVGLogo /></a>
