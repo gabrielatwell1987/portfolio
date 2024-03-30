@@ -100,10 +100,26 @@
 			border: 2px solid var(--dark-gray);
 		}
 
+		input:focus {
+			outline: none;
+		}
+
+		input:focus-visible {
+			outline: 2px solid var(--white);
+		}
+
 		textarea {
 			width: 100%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
+		}
+
+		textarea:focus {
+			outline: none;
+		}
+
+		textarea:focus-visible {
+			outline: 2px solid var(--white);
 		}
 
 		legend {
