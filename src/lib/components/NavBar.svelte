@@ -14,7 +14,7 @@
 			bind:open
 			ariaLabel="menu"
 			--active-color="var(--blue)"
-			--hover-opacity="0.75"
+			--hover-opacity="0.95"
 		/>
 
 		<div class="gabe__logo">
