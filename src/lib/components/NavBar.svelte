@@ -9,7 +9,7 @@
 	<!-- hamburger icon -->
 	<div class="header__logos">
 		<Hamburger
-			--color="white"
+			--color="var(--white)"
 			type="spin"
 			bind:open
 			ariaLabel="menu"
