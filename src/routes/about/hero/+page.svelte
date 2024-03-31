@@ -8,7 +8,7 @@
 	<!-- hero section text and links -->
 	<h3>Frontend Crafted Web Experiences</h3>
 
-	<h4 class="summary">
+	<h4 class="summary left">
 		I am a frontend developer who loves to create beautiful and functional websites. This portfolio
 		is a website that I built from scratch to showcase some projects that I created. I look forward
 		to hearing from you so we can discuss your goals for your online needs!
@@ -189,6 +189,11 @@
 			font-size: 1rem;
 			font-weight: 500;
 			width: 100%;
+			padding: 0 1.25rem;
+		}
+
+		.left {
+			text-align: left;
 		}
 
 		.italic {
