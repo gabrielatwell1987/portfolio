@@ -123,6 +123,7 @@
 			font-size: 1rem;
 			font-weight: 500;
 			width: 100%;
+			padding: 0 1.75rem;
 		}
 
 		.italic {
