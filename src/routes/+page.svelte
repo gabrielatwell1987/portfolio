@@ -215,11 +215,12 @@
 		}
 
 		.italic {
-			margin-top: -1rem;
+			margin-top: -2rem;
 		}
 
 		.summary {
 			width: 50%;
+			font-size: 1.1rem;
 		}
 
 		img {
@@ -231,6 +232,11 @@
 			top: 30%;
 			left: 50%;
 			transform: translate(-50%, -30%);
+		}
+
+		h3 {
+			font-size: 3rem;
+			letter-spacing: 10px;
 		}
 	}
 
