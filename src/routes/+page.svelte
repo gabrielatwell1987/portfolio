@@ -242,10 +242,6 @@
 			font-size: 3rem;
 			letter-spacing: 10px;
 		}
-
-		/* .left {
-			text-align: left;
-		} */
 	}
 
 	/* way bigger than desktop */
