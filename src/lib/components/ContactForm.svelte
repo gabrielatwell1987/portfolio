@@ -58,14 +58,14 @@
 		<legend> message me </legend>
 
 		<label for="name"><span>Name</span></label>
-		<input type="text" id="name" name="name" placeholder="John Doe" bind:value={name} required />
+		<input type="text" id="name" name="name" placeholder="Your name" bind:value={name} required />
 
 		<label for="email"><span>Email</span></label>
 		<input
 			type="email"
 			id="email"
 			name="email"
-			placeholder="john.doe@example.com"
+			placeholder="Your email address"
 			bind:value={email}
 			required
 		/>
