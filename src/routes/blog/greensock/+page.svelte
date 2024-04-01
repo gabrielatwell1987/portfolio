@@ -159,7 +159,7 @@
 		margin: 5rem 0 -1rem 0;
 		text-align: center;
 		font-family: var(--anta);
-		color: var(--purple);
+		color: var(--yellow);
 	}
 
 	@media (min-width: 200px) {

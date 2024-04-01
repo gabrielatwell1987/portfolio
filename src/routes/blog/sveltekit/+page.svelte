@@ -72,7 +72,7 @@
 				</p>
 			</details>
 
-			<h3 class="heading">Learn more about Sveltekit</h3>
+			<h3 class="learn">Learn more about Sveltekit</h3>
 			<p class="center">
 				If you would like to know more about <a href="https://svelte.dev" aria-label="sveltekit"
 					>svelte</a
@@ -137,10 +137,10 @@
 		margin-bottom: 2rem;
 	}
 
-	.heading {
+	.learn {
 		text-align: center;
-		margin: 2rem 0 -0.5rem 0;
-		color: var(--purple);
+		margin: 5rem 0 -0.5rem 0;
+		color: var(--yellow);
 		font-family: var(--anta);
 	}
 
