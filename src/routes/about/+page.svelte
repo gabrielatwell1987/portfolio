@@ -97,8 +97,10 @@
 
 			<!-- github and codepen links -->
 			<div class="dev__links" aria-label="links">
-				<a class="size" href="https://www.github.com/gabrielatwell1987/portfolio" target="_blank"
-					><i class="fa-brands fa-github" /></a
+				<a
+					class="size yellow"
+					href="https://www.github.com/gabrielatwell1987/portfolio"
+					target="_blank"><i class="fa-brands fa-github" /></a
 				>
 
 				<a class="size" href="https://codepen.io/gabrielatwell" target="_blank"
@@ -304,6 +306,10 @@
 			width: 15%;
 			margin: 10% auto;
 			display: none;
+		}
+
+		.skills__title {
+			color: var(--yellow);
 		}
 
 		@keyframes wiggle {
@@ -524,7 +530,7 @@
 		}
 
 		.skills__title {
-			color: var(--blue);
+			/* color: var(--blue); */
 			font-size: 2.2rem;
 			font-weight: 900;
 			text-align: center;
