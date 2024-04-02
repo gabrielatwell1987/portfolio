@@ -231,7 +231,8 @@
 		.size:hover {
 			font-size: 2rem;
 			font-weight: 900;
-			color: var(--purple);
+			color: var(--yellow);
+			/* color: var(--purple); */
 		}
 
 		.btn__link {
@@ -271,7 +272,8 @@
 		.fa-codepen:hover,
 		.fa-github:hover {
 			font-size: 2rem;
-			color: var(--purple);
+			color: var(--yellow);
+			/* color: var(--purple); */
 		}
 
 		/* random */
@@ -475,7 +477,8 @@
 		.fa-codepen:hover,
 		.fa-github:hover {
 			font-size: 5rem;
-			color: var(--purple);
+			color: var(--yellow);
+			/* color: var(--purple); */
 		}
 
 		/* random */
