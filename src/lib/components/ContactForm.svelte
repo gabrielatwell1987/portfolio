@@ -293,7 +293,7 @@
 			font-size: 1.5rem;
 			font-weight: 600;
 			font-family: var(--anta);
-			color: var(--purple);
+			color: var(--yellow);
 			margin-top: 2rem;
 		}
 
@@ -405,7 +405,6 @@
 			font-weight: bolder;
 			font-size: 5rem;
 			padding: 0 1rem 0 1rem;
-			/* text-shadow: -5px 5px 4px var(--dark-gray); */
 		}
 
 		h4 {
