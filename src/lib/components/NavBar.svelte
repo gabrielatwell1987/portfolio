@@ -148,10 +148,10 @@
 		}
 
 		.nav__link:hover {
-			color: var(--dark-gray);
-			border-bottom: 5px solid var(--dark-gray);
+			color: var(--sky);
+			border-bottom: 5px solid var(--sky);
 			height: 3rem;
-			text-shadow: 2px 2px 1px var(--lightblack);
+			text-shadow: 2px 2px 1px var(--black);
 			transition: border-bottom 0.35s ease-in-out, text-shadow 0.35s ease-in-out;
 		}
 

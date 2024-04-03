@@ -310,8 +310,8 @@
 		}
 
 		/* content */
-		label:hover {
-			font-family: var(--montserrat);
+		label {
+			font-family: var(--lexend);
 		}
 
 		legend {
