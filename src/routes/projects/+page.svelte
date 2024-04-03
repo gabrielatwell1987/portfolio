@@ -192,11 +192,6 @@
 			text-transform: uppercase;
 		}
 
-		.linksize:hover {
-			color: var(--yellow);
-			font-size: 1.25rem;
-		}
-
 		/* content */
 		.name {
 			font-weight: 600;
@@ -250,11 +245,6 @@
 			font-size: 1.5rem;
 		}
 
-		.linksize:hover {
-			color: var(--yellow);
-			font-size: 1.5rem;
-		}
-
 		/* content */
 		.logos {
 			width: 100%;
@@ -274,11 +264,6 @@
 			width: 100%;
 			margin: 0 auto;
 			letter-spacing: 5px;
-			font-size: 2rem;
-		}
-
-		.linksize:hover {
-			color: var(--yellow);
 			font-size: 2rem;
 		}
 

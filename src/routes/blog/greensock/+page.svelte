@@ -121,11 +121,10 @@
 	a {
 		text-decoration: none;
 		font-size: 1.5rem;
-		color: var(--sky);
+		color: var(--yellow);
 	}
 
 	a:hover {
-		color: var(--white);
 		text-decoration: underline;
 	}
 
@@ -159,7 +158,7 @@
 		margin: 5rem 0 -1rem 0;
 		text-align: center;
 		font-family: var(--anta);
-		color: var(--yellow);
+		color: var(--sky);
 	}
 
 	@media (min-width: 200px) {
