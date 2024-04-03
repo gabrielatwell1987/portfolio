@@ -116,11 +116,10 @@
 	a {
 		text-decoration: none;
 		font-size: 1.5rem;
-		color: var(--sky);
+		color: var(--yellow);
 	}
 
 	a:hover {
-		color: var(--white);
 		text-decoration: underline;
 	}
 
@@ -140,7 +139,7 @@
 	.learn {
 		text-align: center;
 		margin: 5rem 0 -0.5rem 0;
-		color: var(--yellow);
+		color: var(--sky);
 		font-family: var(--anta);
 	}
 
