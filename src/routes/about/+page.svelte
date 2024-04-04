@@ -533,11 +533,11 @@
 		}
 
 		.skills__title {
-			/* color: var(--blue); */
 			font-size: 2.2rem;
 			font-weight: 900;
 			text-align: center;
 			font-family: var(--anta);
+			mix-blend-mode: hard-light;
 		}
 
 		@keyframes wiggle {
