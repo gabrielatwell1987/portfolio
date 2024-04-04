@@ -285,6 +285,11 @@
 			margin-top: 1rem;
 		}
 
+		.text {
+			max-width: 75%;
+			margin: 0 auto;
+		}
+
 		.text,
 		.text:hover {
 			mix-blend-mode: difference;
