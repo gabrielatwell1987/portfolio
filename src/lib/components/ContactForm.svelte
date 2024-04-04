@@ -295,6 +295,7 @@
 			font-family: var(--anta);
 			color: var(--yellow);
 			margin-top: 2rem;
+			mix-blend-mode: hard-light;
 		}
 
 		.modal img {
