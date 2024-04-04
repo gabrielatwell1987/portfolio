@@ -286,7 +286,7 @@
 		}
 
 		.text {
-			max-width: 75%;
+			max-width: 90%;
 			margin: 0 auto;
 		}
 
@@ -466,6 +466,7 @@
 
 		.text {
 			color: var(--white);
+			max-width: 75%;
 		}
 
 		.bio {
