@@ -232,7 +232,7 @@
 			font-size: 2rem;
 			font-weight: 900;
 			color: var(--yellow);
-			/* color: var(--purple); */
+			mix-blend-mode: hard-light;
 		}
 
 		.btn__link {
@@ -273,7 +273,7 @@
 		.fa-github:hover {
 			font-size: 2rem;
 			color: var(--yellow);
-			/* color: var(--purple); */
+			mix-blend-mode: hard-light;
 		}
 
 		/* random */
@@ -478,7 +478,7 @@
 		.fa-github:hover {
 			font-size: 5rem;
 			color: var(--yellow);
-			/* color: var(--purple); */
+			mix-blend-mode: hard-light;
 		}
 
 		/* random */

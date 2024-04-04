@@ -122,6 +122,7 @@
 		text-decoration: none;
 		font-size: 1.5rem;
 		color: var(--yellow);
+		mix-blend-mode: hard-light;
 	}
 
 	a:hover {
