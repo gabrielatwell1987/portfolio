@@ -286,4 +286,10 @@
 			width: 20%;
 		}
 	}
+
+	@media (min-width: 1200px) {
+		.blog-btn {
+			width: 15%;
+		}
+	}
 </style>
