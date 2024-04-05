@@ -39,7 +39,7 @@
 	});
 </script>
 
-<h1 class="title" id="title">designs</h1>
+<h1 class="title" id="title">projects</h1>
 
 <!-- links to my projects -->
 <section class="content bevel">
