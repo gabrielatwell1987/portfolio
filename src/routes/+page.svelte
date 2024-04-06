@@ -103,6 +103,7 @@
 			transition: opacity 0.75s ease-in-out;
 			width: 100%;
 			height: 100%;
+			object-fit: cover;
 		}
 
 		section {
