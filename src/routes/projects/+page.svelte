@@ -261,7 +261,6 @@
 		/* links */
 		.linksize {
 			padding: 2rem;
-			/* width: 100%; */
 			flex-basis: 100%;
 			letter-spacing: 5px;
 			font-size: 2rem;
