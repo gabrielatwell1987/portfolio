@@ -181,12 +181,12 @@
 			padding: 1rem;
 			display: flex;
 			flex-direction: column;
+			flex-basis: 50%;
 			justify-content: center;
 			align-items: center;
 			font-family: var(--lexend);
 			font-size: 1.25rem;
 			font-weight: 600;
-			flex-basis: 75%;
 			margin: 0 auto;
 			letter-spacing: 2px;
 			text-transform: uppercase;
@@ -261,8 +261,8 @@
 		/* links */
 		.linksize {
 			padding: 2rem;
-			width: 100%;
-			margin: 0 auto;
+			/* width: 100%; */
+			flex-basis: 100%;
 			letter-spacing: 5px;
 			font-size: 2rem;
 		}
