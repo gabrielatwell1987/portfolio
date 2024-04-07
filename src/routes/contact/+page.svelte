@@ -25,18 +25,14 @@
 	/* bigger than tablet */
 	@media screen and (min-width: 850px) {
 		.contactForm {
-			display: block;
 			margin: 2rem 0 0 -24rem;
-			width: 100%;
 		}
 	}
 
 	/* bigger than desktop */
 	@media screen and (min-width: 1024px) {
 		.contactForm {
-			display: block;
 			margin: 2rem 0 0 -24rem;
-			width: 100%;
 		}
 	}
 </style>

@@ -158,7 +158,7 @@
 			justify-content: center;
 			align-items: center;
 			margin: 0 auto;
-			width: 75%;
+			flex-basis: 75%;
 			height: 100%;
 		}
 
@@ -186,7 +186,7 @@
 			font-family: var(--lexend);
 			font-size: 1.25rem;
 			font-weight: 600;
-			width: 75%;
+			flex-basis: 75%;
 			margin: 0 auto;
 			letter-spacing: 2px;
 			text-transform: uppercase;
