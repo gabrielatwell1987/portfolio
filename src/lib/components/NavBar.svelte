@@ -80,7 +80,7 @@
 
 		.header__logos {
 			display: block;
-			margin-left: 6.5%;
+			margin-left: 6%;
 		}
 
 		.gabe__logo {
