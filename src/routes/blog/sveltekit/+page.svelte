@@ -42,7 +42,9 @@
 				<p class="detail">
 					In comparing all of the frameworks for the best one to use, my list is 1.) Sveltekit 2.)
 					Astro 3.) React. I like Astro because it is really easy to use, and you can use any other
-					framework's components you want. I can use svelte with astro, react with atro, etc.
+					framework's components you want. I can use svelte with astro, react with astro, etc. I put
+					react as #3 because it is really verbose.. but it does the same thing that sveltekit and
+					astro do.
 				</p>
 			</details>
 
