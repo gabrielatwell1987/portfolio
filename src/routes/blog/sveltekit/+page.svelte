@@ -1,6 +1,7 @@
 <script>
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
+	import BackBtn from '$lib/components/BackBtn.svelte';
 
 	// animations
 	onMount(() => {
@@ -94,9 +95,7 @@
 			/>
 
 			<!-- back button -->
-			<a class="blog-btn-link" href="/blog"
-				><button class="blog-btn" aria-label="blog">Back</button></a
-			>
+			<a href="/blog" class="blog-btn-link"><BackBtn title="Back" /></a>
 		</section>
 	</main>
 </section>
@@ -194,52 +193,6 @@
 		.center {
 			text-align: center;
 		}
-
-		/* back button */
-		.blog-btn {
-			background-color: transparent;
-			color: var(--white);
-			border: 1px solid var(--white);
-			margin: 0 auto;
-			border-radius: 8px;
-			cursor: pointer;
-			font-size: 1.2rem;
-			letter-spacing: 1px;
-			width: 50%;
-			font-family: var(--lexend);
-			border-radius: 0.75rem;
-			filter: drop-shadow(0 0 0.75rem var(--smoke));
-			transition: 750ms;
-			outline: 3px solid currentColor;
-			outline-offset: -7px;
-			mix-blend-mode: difference;
-			padding: 1rem 1.75rem;
-			margin-top: 10%;
-			margin-bottom: 2%;
-			user-select: none;
-		}
-
-		.blog-btn:hover,
-		.blog-btn:focus {
-			opacity: 0.8;
-			outline-offset: 0px;
-			animation: wiggle 0.5s ease-in-out infinite;
-		}
-
-		@keyframes wiggle {
-			0% {
-				rotate: 0deg;
-				translate: 0 0;
-			}
-			25% {
-				rotate: -2deg;
-				translate: -5px 0;
-			}
-			80% {
-				rotate: 2deg;
-				translate: 5px 0;
-			}
-		}
 	}
 
 	@media (min-width: 500px) {
@@ -249,10 +202,6 @@
 
 		.detail {
 			margin-left: -2.5rem;
-		}
-
-		.blog-btn {
-			width: 35%;
 		}
 	}
 
@@ -264,10 +213,6 @@
 
 		.title {
 			font-size: 4rem;
-		}
-
-		.blog-btn {
-			width: 30%;
 		}
 	}
 
@@ -282,16 +227,6 @@
 
 		details {
 			width: 100%;
-		}
-
-		.blog-btn {
-			width: 20%;
-		}
-	}
-
-	@media (min-width: 1200px) {
-		.blog-btn {
-			width: 15%;
 		}
 	}
 </style>
