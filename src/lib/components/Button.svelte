@@ -56,7 +56,7 @@
 
 	@media (min-width: 990px) {
 		button {
-			width: 20%;
+			width: 25%;
 			font-size: 1.25rem;
 			margin: 3rem auto;
 		}
@@ -64,7 +64,7 @@
 
 	@media screen and (min-width: 1200px) {
 		button {
-			width: 16%;
+			width: 20%;
 		}
 	}
 

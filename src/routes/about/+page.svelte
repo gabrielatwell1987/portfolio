@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import Button from '$lib/components/Button.svelte';
 
 	// animations
 	onMount(() => {
@@ -65,9 +66,7 @@
 						section as the home page.
 					</p>
 
-					<a href="/about/hero" class="btn__link"
-						><button aria-label="hero" class="hero__btn">Hero</button></a
-					>
+					<a href="/about/hero"><Button title="Hero" /></a>
 				</article>
 			</div>
 
@@ -141,7 +140,7 @@
 			</section>
 
 			<!-- image gallery -->
-			<a class="btn__link" href="/about/gallery"><button aria-label="gallery">Gallery</button></a>
+			<a href="/about/gallery"><Button title="Gallery" /></a>
 		</article>
 	</section>
 </main>
@@ -190,38 +189,6 @@
 			font-size: 1.1rem;
 		}
 
-		button {
-			background-color: transparent;
-			color: var(--white);
-			border: 1px solid var(--white);
-			margin: 0 auto;
-			border-radius: 8px;
-			cursor: pointer;
-			font-size: 1.2rem;
-			letter-spacing: 1px;
-			width: 50%;
-			font-family: var(--lexend);
-			border-radius: 0.75rem;
-			filter: drop-shadow(0 0 0.75rem var(--smoke));
-			transition: 750ms;
-			outline: 3px solid currentColor;
-			outline-offset: -7px;
-			mix-blend-mode: difference;
-			padding: 1rem 1.75rem;
-			margin-top: 10%;
-			margin-bottom: -5%;
-			user-select: none;
-		}
-
-		button:hover,
-		button:focus {
-			opacity: 0.8;
-			background-color: var(--smoke);
-			color: black;
-			outline-offset: 0px;
-			animation: wiggle 0.5s ease-in-out infinite;
-		}
-
 		.size {
 			font-size: 2rem;
 			font-weight: 900;
@@ -233,21 +200,6 @@
 			font-weight: 900;
 			color: var(--yellow);
 			mix-blend-mode: hard-light;
-		}
-
-		.btn__link {
-			font-size: 1.5rem;
-			font-weight: bolder;
-			text-decoration: none;
-			color: var(--smoke);
-			font-family: var(--montserrat);
-		}
-
-		.btn__link:hover {
-			font-size: 1.5rem;
-			font-weight: bolder;
-			text-decoration: none;
-			color: var(--smoke);
 		}
 
 		.atwell {
@@ -262,21 +214,6 @@
 			transition: filter 0.25s ease-in-out;
 		}
 
-		/* codepen */
-		.fa-codepen,
-		.fa-github {
-			font-size: 2rem;
-			color: var(--blue);
-		}
-
-		.fa-codepen:hover,
-		.fa-github:hover {
-			font-size: 2rem;
-			color: var(--yellow);
-			mix-blend-mode: hard-light;
-		}
-
-		/* random */
 		.dev__links {
 			display: flex;
 			justify-content: space-evenly;
@@ -295,19 +232,6 @@
 			mix-blend-mode: difference;
 		}
 
-		/* hero button */
-		.hero__btn {
-			width: 50%;
-			margin-top: 5rem;
-			mix-blend-mode: difference;
-			margin-bottom: 3rem;
-			user-select: none;
-		}
-
-		.hero__btn:hover {
-			animation: wiggle 0.5s ease-in-out infinite;
-		}
-
 		/* skills section */
 		.border {
 			width: 15%;
@@ -317,58 +241,6 @@
 
 		.skills__title {
 			color: var(--yellow);
-		}
-
-		@keyframes wiggle {
-			0% {
-				rotate: 0deg;
-				translate: 0 0;
-			}
-			25% {
-				rotate: -2deg;
-				translate: -5px 0;
-			}
-			80% {
-				rotate: 2deg;
-				translate: 5px 0;
-			}
-		}
-	}
-
-	/* bigger than mobile */
-	@media screen and (min-width: 500px) {
-		.hero__btn {
-			width: 30%;
-		}
-
-		.hero__btn:hover {
-			animation: wiggle 0.5s ease-in-out infinite;
-		}
-
-		button {
-			width: 30%;
-		}
-
-		@keyframes wiggle {
-			0% {
-				rotate: 0deg;
-				translate: 0 0;
-			}
-			25% {
-				rotate: -2deg;
-				translate: -5px 0;
-			}
-			80% {
-				rotate: 2deg;
-				translate: 5px 0;
-			}
-		}
-	}
-
-	/* bigger than tablet */
-	@media screen and (min-width: 720px) {
-		button {
-			width: 25%;
 		}
 	}
 
@@ -405,26 +277,12 @@
 			font-size: 1.3rem;
 		}
 
-		button {
-			font-size: 1.5rem;
-			letter-spacing: 5px;
-			width: 25%;
-		}
-
-		button:hover {
-			animation: wiggle 0.5s ease-in-out infinite;
-		}
-
 		.size {
 			font-size: 4.24rem;
 		}
 
 		.size:hover {
 			font-size: 4.24rem;
-		}
-
-		.btn__link {
-			font-size: 2.5rem;
 		}
 
 		.grid {
@@ -473,21 +331,6 @@
 			margin-bottom: -5rem;
 		}
 
-		/* codepen */
-		.fa-codepen,
-		.fa-github {
-			font-size: 5rem;
-			color: var(--blue);
-		}
-
-		.fa-codepen:hover,
-		.fa-github:hover {
-			font-size: 5rem;
-			color: var(--yellow);
-			mix-blend-mode: hard-light;
-		}
-
-		/* random */
 		.dev__links {
 			margin-top: -20rem;
 			margin-left: 0%;
@@ -502,11 +345,6 @@
 		.text__w {
 			width: 75%;
 			margin: 0 auto;
-		}
-
-		/* Hero Button */
-		.hero__btn {
-			width: 30%;
 		}
 
 		/* skills section */
@@ -544,42 +382,6 @@
 			text-align: center;
 			font-family: var(--anta);
 			mix-blend-mode: hard-light;
-		}
-
-		@keyframes wiggle {
-			0% {
-				rotate: 0deg;
-				translate: 0 0;
-			}
-			25% {
-				rotate: -2deg;
-				translate: -5px 0;
-			}
-			80% {
-				rotate: 2deg;
-				translate: 5px 0;
-			}
-		}
-	}
-
-	/* way bigger than desktop */
-	@media screen and (min-width: 1500px) {
-		button {
-			width: 20%;
-		}
-
-		.hero__btn {
-			width: 25%;
-		}
-	}
-
-	@media screen and (min-width: 1920px) {
-		button {
-			width: 13%;
-		}
-
-		.hero__btn {
-			width: 15%;
 		}
 	}
 </style>
