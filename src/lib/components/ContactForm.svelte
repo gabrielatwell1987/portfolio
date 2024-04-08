@@ -51,9 +51,6 @@
 
 <!-- contact form -->
 <form class="form" method="POST" action="https://form.taxi/s/xeyymb58">
-	<!-- https://formsubmit.co/gatwell702@gmail.com -->
-	<!-- <input type="hidden" name="send_to" value="gabrielatwell@proton.me" /> -->
-
 	<fieldset>
 		<legend> message me </legend>
 
