@@ -1,7 +1,7 @@
 <script>
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
-	import BackBtn from '$lib/components/BackBtn.svelte';
+	import Button from '$lib/components/Button.svelte';
 
 	// animations
 	onMount(() => {
@@ -91,7 +91,7 @@
 		/>
 
 		<!-- back button -->
-		<a class="blog-btn-link" href="/blog"><BackBtn title="Back" /></a>
+		<a class="blog-btn-link" href="/blog"><Button title="Back" /></a>
 	</main>
 </section>
 <!-- footer spacing -->
