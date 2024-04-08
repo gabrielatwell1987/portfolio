@@ -31,9 +31,6 @@
 
 		button:hover,
 		button:focus {
-			border: 1px solid var(--black);
-			background-color: var(--white);
-			color: var(--black);
 			outline-offset: 0px;
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
