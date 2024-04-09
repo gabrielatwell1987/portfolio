@@ -193,6 +193,10 @@
 		.center {
 			text-align: center;
 		}
+
+		.learn {
+			font-size: 1.25rem;
+		}
 	}
 
 	@media (min-width: 500px) {
@@ -213,6 +217,10 @@
 
 		.title {
 			font-size: 4rem;
+		}
+
+		.learn {
+			font-size: 1.75rem;
 		}
 	}
 
