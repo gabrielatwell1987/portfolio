@@ -192,6 +192,7 @@
 
 		.center {
 			text-align: center;
+			font-size: 1rem;
 		}
 
 		.learn {
@@ -221,6 +222,10 @@
 
 		.learn {
 			font-size: 1.75rem;
+		}
+
+		.center {
+			font-size: 1.25rem;
 		}
 	}
 
