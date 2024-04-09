@@ -3,10 +3,6 @@
 	import { browser } from '$app/environment';
 
 	let carousel;
-
-	const handleNextClick = () => {
-		carousel.goToNext();
-	};
 </script>
 
 <!-- content -->
