@@ -75,6 +75,12 @@
 		url="https://gabe4.vercel.app"
 	/>
 
+	<ProjectLink
+		title="todo app"
+		img="/projects/react.png"
+		url="https://react-todo-navy-five.vercel.app/"
+	/>
+
 	<!-- divider -->
 	<progress />
 
