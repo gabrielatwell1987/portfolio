@@ -8,19 +8,19 @@
 	@media (min-width: 200px) {
 		button {
 			background-color: transparent;
-			color: var(--white);
+			color: var(--yellow);
+			font-family: var(--lexend);
+			font-size: 1.2rem;
+			font-weight: 600;
 			border: 1px solid var(--white);
 			margin: 0 auto;
-			border-radius: 8px;
 			cursor: pointer;
-			font-size: 1.2rem;
 			letter-spacing: 1px;
 			width: 50%;
-			font-family: var(--lexend);
 			border-radius: 0.75rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			transition: 750ms;
-			outline: 3px solid currentColor;
+			outline: 3px solid var(--white);
 			outline-offset: -7px;
 			mix-blend-mode: difference;
 			padding: 1rem 1.75rem;
@@ -33,6 +33,7 @@
 		button:focus {
 			outline-offset: 0px;
 			animation: wiggle 0.5s ease-in-out infinite;
+			mix-blend-mode: hard-light;
 		}
 	}
 
