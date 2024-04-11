@@ -28,12 +28,12 @@
 </script>
 
 <!-- Modal -->
-<button class="open__button" aria-label="open"><i class="fa-regular fa-folder-open" /></button>
+<button class="open-button" aria-label="open"><i class="fa-regular fa-folder-open" /></button>
 
 <dialog class="modal" id="modal">
 	<article>
 		<header>
-			<button rel="prev" class="close__button" aria-label="close"
+			<button rel="prev" class="close-button" aria-label="close"
 				><i class="fa-solid fa-xmark" /></button
 			>
 
@@ -173,8 +173,8 @@
 			outline-offset: 0px;
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
-		.open__button,
-		.close__button {
+		.open-button,
+		.close-button {
 			display: none;
 		}
 
@@ -237,7 +237,7 @@
 		}
 
 		/* modal */
-		.open__button {
+		.open-button {
 			display: block;
 			font-size: 1.2rem;
 			font-weight: 800;
@@ -257,7 +257,7 @@
 			align-items: center;
 		}
 
-		.close__button {
+		.close-button {
 			display: flex;
 			justify-content: center;
 			font-size: 1.2rem;
@@ -438,7 +438,7 @@
 			margin: 0 35%;
 		}
 
-		.open__button {
+		.open-button {
 			padding: 1rem;
 		}
 	}
