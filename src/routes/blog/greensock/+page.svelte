@@ -187,6 +187,7 @@
 
 		summary {
 			margin-left: -1rem;
+			color: var(--yellow);
 		}
 
 		.detail {
