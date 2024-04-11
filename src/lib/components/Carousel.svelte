@@ -100,6 +100,15 @@
 
 		img {
 			min-width: 5rem;
+			border-radius: 2.5%;
+		}
+
+		.gabe:hover img {
+			opacity: 1;
+		}
+
+		.gabe img:hover {
+			opacity: 0.75;
 		}
 
 		.prev,
@@ -121,10 +130,6 @@
 
 		i {
 			font-size: 1rem;
-		}
-
-		img {
-			border-radius: 20px;
 		}
 	}
 
