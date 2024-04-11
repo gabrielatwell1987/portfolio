@@ -6,13 +6,7 @@
 
 <h3 class="linksize name">{title}</h3>
 <a class="linksize" href={url} target="_blank"
-	><img
-		class="img"
-		src={img}
-		alt="The first project: Alphamaps, Made with Three.js."
-		width="400px"
-		height="475px"
-	/></a
+	><img class="img" src={img} alt={title} width="400px" height="475px" /></a
 >
 
 <style>
