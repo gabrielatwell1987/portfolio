@@ -77,8 +77,10 @@
 
 			<h3 class="learn">Learn more about Sveltekit</h3>
 			<p class="center">
-				If you would like to know more about <a href="https://svelte.dev" aria-label="sveltekit"
-					>svelte</a
+				If you would like to know more about <a
+					class="link"
+					href="https://svelte.dev"
+					aria-label="sveltekit">svelte</a
 				>, click the link!
 			</p>
 
@@ -95,7 +97,7 @@
 			/>
 
 			<!-- back button -->
-			<a href="/blog" class="blog-btn-link"><Button title="Back" /></a>
+			<a href="/blog"><Button title="Back" /></a>
 		</section>
 	</main>
 </section>
@@ -119,14 +121,14 @@
 		width: 100%;
 	}
 
-	a {
+	.link {
 		text-decoration: none;
 		font-size: 1.5rem;
 		color: var(--yellow);
 		mix-blend-mode: hard-light;
 	}
 
-	a:hover {
+	.link:hover {
 		text-decoration: underline;
 	}
 

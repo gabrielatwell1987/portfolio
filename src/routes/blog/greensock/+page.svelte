@@ -74,8 +74,10 @@
 
 		<h3 class="learn">Learn more about GSAP</h3>
 		<p class="center">
-			If you would like to know more about <a href="https://greensock.com" aria-label="greensock"
-				>greensock</a
+			If you would like to know more about <a
+				class="link"
+				href="https://greensock.com"
+				aria-label="greensock">greensock</a
 			>, click the link!
 		</p>
 
@@ -91,7 +93,7 @@
 		/>
 
 		<!-- back button -->
-		<a class="blog-btn-link" href="/blog"><Button title="Back" /></a>
+		<a href="/blog"><Button title="Back" /></a>
 	</main>
 </section>
 <!-- footer spacing -->
@@ -121,24 +123,22 @@
 		width: 100%;
 	}
 
-	a {
+	.link {
 		text-decoration: none;
 		font-size: 1.5rem;
 		color: var(--yellow);
 		mix-blend-mode: hard-light;
 	}
 
-	a:hover {
+	.link:hover {
 		text-decoration: underline;
 	}
 
-	/* video */
 	iframe {
 		margin: 2rem 0 0 30%;
 		border-radius: 5px;
 	}
 
-	/* content */
 	.title {
 		font-size: 7rem;
 		font-weight: 800;
@@ -192,7 +192,6 @@
 
 		.detail {
 			min-width: 20rem;
-			/* margin-left: -30%; */
 			margin: 0 -4.75rem;
 			font-family: var(--lexend);
 		}
