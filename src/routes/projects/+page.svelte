@@ -1,21 +1,11 @@
 <script>
 	import { gsap } from 'gsap';
-	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
 	import SplitType from 'split-type';
 	import ProjectLink from '$lib/components/ProjectLinks.svelte';
 
 	// animations
 	onMount(() => {
-		gsap.registerPlugin(Draggable);
-
-		Draggable.create('.designs', {
-			type: 'x, y',
-			edgeResistance: 0.65,
-			bounds: document.querySelector('.content'),
-			throwProps: true
-		});
-
 		// SplitType
 		const titleText = new SplitType('#title', { types: 'chars' });
 
@@ -47,12 +37,6 @@
 	<!-- spacing -->
 	<br /><br />
 
-	<ProjectLink
-		title="alphamaps"
-		img="/projects/alphamaps.png"
-		url="https://alphamaps69.vercel.app"
-	/>
-
 	<ProjectLink title="S.P.A." img="/projects/web_dev.png" url="https://gabe1.vercel.app" />
 
 	<ProjectLink
@@ -81,16 +65,18 @@
 		url="https://react-todo-navy-five.vercel.app/"
 	/>
 
+	<ProjectLink
+		title="alphamaps"
+		img="/projects/alphamaps.png"
+		url="https://alphamaps69.vercel.app"
+	/>
+
 	<!-- divider -->
 	<progress />
 
 	<!-- logo -->
 	<div class="logos">
-		<img
-			class="designs"
-			src="logos/designs.png"
-			alt="A logo that says Atwell Designs that you can move"
-		/>
+		<img class="designs" src="logos/designs.png" alt="A logo that says Atwell Designs" />
 	</div>
 </section>
 
