@@ -76,7 +76,7 @@
 	/>
 
 	<ProjectLink
-		title="todo app"
+		title="to-do app"
 		img="/projects/react.png"
 		url="https://react-todo-navy-five.vercel.app/"
 	/>
