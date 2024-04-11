@@ -55,6 +55,10 @@
 			<img src="/photos/gabe6.png" alt="Gabriel Atwell" />
 		</div>
 
+		<!-- <div class="gabe">
+			<img src="/photos/wtf2.png" alt="Gabriel Atwell" />
+		</div> -->
+
 		<div class="next" slot="next" on:click={showNextPage} on:keydown={() => {}} alt="next">
 			<i class="fa-solid fa-arrow-right" />
 		</div>
