@@ -41,7 +41,7 @@
 			/>
 
 			<div class="bio" aria-label="bio">
-				<h2 class="main__title">Bio</h2>
+				<h2 class="main-title">Bio</h2>
 
 				<p class="text">
 					My name is Gabriel Atwell and I am a frontend web developer. I started out with the
@@ -95,7 +95,7 @@
 			</section>
 
 			<!-- github and codepen links -->
-			<div class="dev__links" aria-label="links">
+			<div class="dev-links" aria-label="links">
 				<a
 					class="size yellow"
 					href="https://www.github.com/gabrielatwell1987/portfolio"
@@ -125,7 +125,7 @@
 
 			<!-- skills section -->
 			<section class="border" aria-label="skills">
-				<h3 class="skills__title">Skills</h3>
+				<h3 class="skills-title">Skills</h3>
 				<ul class="skills">
 					<li>HTML</li>
 					<li>CSS</li>
@@ -214,7 +214,7 @@
 			transition: filter 0.25s ease-in-out;
 		}
 
-		.dev__links {
+		.dev-links {
 			display: flex;
 			justify-content: space-evenly;
 			align-items: center;
@@ -239,7 +239,7 @@
 			display: none;
 		}
 
-		.skills__title {
+		.skills-title {
 			color: var(--yellow);
 		}
 	}
@@ -309,7 +309,7 @@
 			text-align: left;
 		}
 
-		.main__title {
+		.main-title {
 			color: var(--purple);
 			font-size: 7rem;
 			font-weight: 900;
@@ -331,7 +331,7 @@
 			margin-bottom: -5rem;
 		}
 
-		.dev__links {
+		.dev-links {
 			margin-top: -20rem;
 			margin-left: 0%;
 			display: flex;
@@ -376,7 +376,7 @@
 			mix-blend-mode: difference;
 		}
 
-		.skills__title {
+		.skills-title {
 			font-size: 2.2rem;
 			font-weight: 900;
 			text-align: center;

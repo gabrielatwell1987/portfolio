@@ -37,7 +37,7 @@
 		{@const details = selected === id}
 		{@const number = id + 1}
 
-		<button class="grid__item" class:details on:click={() => flip(id)}>
+		<button class="grid-item" class:details on:click={() => flip(id)}>
 			<div class="title">
 				<h1>{number}</h1>
 			</div>
@@ -65,7 +65,7 @@
 	}
 
 	/* content */
-	.grid__item {
+	.grid-item {
 		position: relative;
 		padding: 0;
 		background: none;

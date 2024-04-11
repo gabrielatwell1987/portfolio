@@ -25,10 +25,10 @@
 
 	<!-- domino image and link -->
 	<div class="domino" aria-label="domino">
-		<p class="domino__text">Dominoes:</p>
+		<p class="domino-text">Dominoes:</p>
 		<a class="btn__link" href="/photos/domino"
 			><img
-				class="domino__image"
+				class="domino-image"
 				src="/logos/dominoes.png"
 				alt="A game of dominoes made in Spline."
 			/></a
@@ -50,7 +50,7 @@
 		margin-top: 2rem;
 	}
 
-	.domino__image {
+	.domino-image {
 		display: block;
 		width: 20%;
 		height: 25%;
@@ -58,13 +58,13 @@
 		border-radius: 10px;
 	}
 
-	.domino__image:hover {
+	.domino-image:hover {
 		opacity: 0.5;
 		transition: opacity 0.75s ease-in-out;
 		animation: wiggle 0.5s ease-in-out infinite;
 	}
 
-	.domino__text {
+	.domino-text {
 		font-size: 1.75rem;
 		font-weight: 700;
 		color: var(--purple);
@@ -107,7 +107,7 @@
 			display: none;
 		}
 
-		.domino__text {
+		.domino-text {
 			font-family: var(--lexend);
 		}
 	}
