@@ -5,6 +5,9 @@
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import Button from '$lib/components/Button.svelte';
+	import LinkList from '$lib/components/LinkList.svelte';
+	import Grid from '$lib/components/Grid.svelte';
+	import Skills from '$lib/components/Skills.svelte';
 
 	// animations
 	onMount(() => {
@@ -71,73 +74,13 @@
 			</div>
 
 			<!-- set up side by side text -->
-			<section class="grid" aria-label="bio">
-				<div class="inline right">
-					<h2 class="right title">Frontend</h2>
-
-					<p class="right">
-						The path that Gabe has chosen is the frontend path. One of his main interests is
-						animations, especially animations on the web. Turning a website from being a static site
-						to a dynamic site is what he thinks makes your website look a million times better, if
-						you do it right.
-					</p>
-				</div>
-
-				<div class="inline left">
-					<h2 class="left title">Design Based</h2>
-
-					<p class="left">
-						A clean, crisp design is what Gabe tries to excel at. Visual hierarchy, whitespace,
-						colors, typography, scaling, and contrast is what he knows best. These topics are the
-						main key to make your website designs look professional and appealing to the eye.
-					</p>
-				</div>
-			</section>
+			<Grid />
 
 			<!-- github and codepen links -->
-			<div class="dev-links" aria-label="links">
-				<a
-					class="size yellow"
-					href="https://www.github.com/gabrielatwell1987/portfolio"
-					target="_blank"><i class="fa-brands fa-github" /></a
-				>
-
-				<a class="size" href="https://codepen.io/gabrielatwell" target="_blank"
-					><i class="fa-brands fa-codepen" /></a
-				>
-
-				<a
-					class="size"
-					href="https://www.linkedin.com/in/gabriel-atwell-ab2116231/"
-					target="_blank"
-				>
-					<i class="fa-brands fa-linkedin" />
-				</a>
-
-				<a class="size" href="https://discordapp.com/users/1007777351809114112" target="_blank">
-					<i class="fa-brands fa-discord" />
-				</a>
-
-				<a class="size" href="https://www.reddit.com/user/gatwell702" target="_blank">
-					<i class="fa-brands fa-square-reddit" />
-				</a>
-			</div>
+			<LinkList />
 
 			<!-- skills section -->
-			<section class="border" aria-label="skills">
-				<h3 class="skills-title">Skills</h3>
-				<ul class="skills">
-					<li>HTML</li>
-					<li>CSS</li>
-					<li>JavaScript</li>
-					<li>Sveltekit</li>
-					<li>Greensock</li>
-					<li>Node.js</li>
-					<li>Git/GitHub</li>
-					<li>SCSS</li>
-					<li>Tailwind CSS</li>
-				</ul>
-			</section>
+			<Skills />
 
 			<!-- image gallery -->
 			<a href="/about/gallery"><Button title="Gallery" /></a>
@@ -189,19 +132,6 @@
 			font-size: 1.1rem;
 		}
 
-		.size {
-			font-size: 2rem;
-			font-weight: 900;
-			color: var(--blue);
-		}
-
-		.size:hover {
-			font-size: 2rem;
-			font-weight: 900;
-			color: var(--yellow);
-			mix-blend-mode: hard-light;
-		}
-
 		.atwell {
 			margin: 3.5% 0;
 			border-radius: 3rem;
@@ -214,14 +144,6 @@
 			transition: filter 0.25s ease-in-out;
 		}
 
-		.dev-links {
-			display: flex;
-			justify-content: space-evenly;
-			align-items: center;
-			gap: 1.5rem;
-			margin-top: 1rem;
-		}
-
 		.text {
 			max-width: 90%;
 			margin: 0 auto;
@@ -230,17 +152,6 @@
 		.text,
 		.text:hover {
 			mix-blend-mode: difference;
-		}
-
-		/* skills section */
-		.border {
-			width: 15%;
-			margin: 10% auto;
-			display: none;
-		}
-
-		.skills-title {
-			color: var(--yellow);
 		}
 	}
 
@@ -277,49 +188,12 @@
 			font-size: 1.3rem;
 		}
 
-		.size {
-			font-size: 4.24rem;
-		}
-
-		.size:hover {
-			font-size: 4.24rem;
-		}
-
-		.grid {
-			display: grid;
-			grid-template-rows: repeat(2, 1fr);
-			margin: 7% 0 -20% 0;
-			gap: 8rem;
-		}
-
-		.inline {
-			display: inline-block;
-			margin: 0 auto;
-			border: 3px solid var(--white);
-			border-radius: 15px;
-			padding: 1rem 2rem;
-			background-color: var(--black);
-		}
-
-		.right {
-			text-align: right;
-		}
-
-		.left {
-			text-align: left;
-		}
-
 		.main-title {
 			color: var(--purple);
 			font-size: 7rem;
 			font-weight: 900;
 			font-family: var(--anta);
 			text-shadow: 5px 5px 4px var(--dark-gray);
-		}
-
-		.title {
-			color: var(--purple);
-			font-family: var(--anta);
 		}
 
 		.text {
@@ -331,13 +205,6 @@
 			margin-bottom: -5rem;
 		}
 
-		.dev-links {
-			margin-top: -20rem;
-			margin-left: 0%;
-			display: flex;
-			justify-content: space-evenly;
-		}
-
 		.margin__b {
 			margin-bottom: -2rem;
 		}
@@ -345,43 +212,6 @@
 		.text__w {
 			width: 75%;
 			margin: 0 auto;
-		}
-
-		/* skills section */
-		.border {
-			display: block;
-			width: 15rem;
-		}
-
-		.skills {
-			display: flex;
-			flex-direction: column;
-			gap: 1rem;
-		}
-
-		.skills li {
-			list-style: none;
-			margin: 0 auto;
-			padding: 0.5rem 0.75rem;
-			width: 100%;
-			font-size: 1rem;
-			font-weight: 400;
-			font-family: var(--montserrat);
-			letter-spacing: 1px;
-			background-color: var(--lightblack);
-			color: var(--white);
-			border: 2px solid var(--smoke);
-			border-radius: 12px;
-			text-align: center;
-			mix-blend-mode: difference;
-		}
-
-		.skills-title {
-			font-size: 2.2rem;
-			font-weight: 900;
-			text-align: center;
-			font-family: var(--anta);
-			mix-blend-mode: hard-light;
 		}
 	}
 </style>
