@@ -3,7 +3,7 @@
 <!-- tweens -->
 <div align="center" style="font-size: 3rem; font-weight: 600; letter-spacing: 5px; color: var(--sky); font-family: var(--montserrat); margin-bottom: 3rem;">TWEENS</div>
 
-<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem; color: var(--white); font-size: 1.2rem; font-weight: 200; letter-spacing: 2px;" aria-label="tweens">In web animation, a tween stands for "in-betweening". Basically, it is the foundation for the whole GSAP process. There are 3 types of tweens: .to() = animating one state TO another state, .from() = animating one state FROM another state, .fromTo() = specifically choosing the STARTING and ENDING state.</div>
+<div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem; color: var(--white); font-size: 1.2rem; font-weight: 200; letter-spacing: 2px;" aria-label="tweens">In web animation, a tween stands for "in-betweening". Basically, it is the foundation for the whole GSAP process. There are 3 types of tweens: <code>.to() =</code> animating one state TO another state, <code>.from() =</code> animating one state FROM another state, <code>.fromTo() =</code> specifically choosing the STARTING and ENDING state.</div>
 
 ```js
 gsap.to('.example', { skewX: 20, duration: 2.5, ease: 'sine.in' });
