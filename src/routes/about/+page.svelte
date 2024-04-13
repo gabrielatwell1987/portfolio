@@ -44,7 +44,7 @@
 			/>
 
 			<div class="bio" aria-label="bio">
-				<h2 class="main-title">Bio</h2>
+				<h2 class="main-title">About me</h2>
 
 				<p class="text">
 					My name is Gabriel Atwell and I am a frontend web developer. I started out with the
