@@ -27,6 +27,7 @@
 			margin-top: 10%;
 			margin-bottom: 2%;
 			user-select: none;
+			cursor: pointer;
 		}
 
 		button:hover,
