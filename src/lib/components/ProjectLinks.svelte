@@ -2,11 +2,14 @@
 	export let title;
 	export let img;
 	export let url;
+	export let description;
 </script>
 
 <h3 class="linksize name">{title}</h3>
 <a class="linksize" href={url} target="_blank"
-	><img class="img" src={img} alt={title} width="400px" height="475px" /></a
+	><img class="img" src={img} alt={title} width="400px" height="475px" /><span class="hover-text"
+		>{description}</span
+	></a
 >
 
 <style>
@@ -37,6 +40,29 @@
 			margin: 0 auto;
 			letter-spacing: 2px;
 			text-transform: uppercase;
+		}
+
+		.hover-text {
+			visibility: hidden;
+			width: 25%;
+			background-color: black;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 5px 0;
+			font-size: 1rem;
+			position: absolute;
+			z-index: 1;
+			bottom: -10%;
+			left: 41%;
+			margin-left: -60px;
+			opacity: 0;
+			transition: opacity 1s;
+		}
+
+		.linksize:hover .hover-text {
+			visibility: visible;
+			opacity: 1;
 		}
 
 		.name {
