@@ -80,6 +80,13 @@
 	/>
 
 	<ProjectLink
+		title="password generator"
+		img="/projects/pw-generator.png"
+		url="https://pw-generator-ebon.vercel.app/"
+		description="A password generator that can save a text file."
+	/>
+
+	<ProjectLink
 		title="alphamaps"
 		img="/projects/alphamaps.png"
 		url="https://alphamaps69.vercel.app"
