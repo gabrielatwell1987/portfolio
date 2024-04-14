@@ -205,6 +205,10 @@
 		.learn {
 			font-size: 1.25rem;
 		}
+
+		code {
+			font-family: var(--mono);
+		}
 	}
 
 	@media (min-width: 500px) {
