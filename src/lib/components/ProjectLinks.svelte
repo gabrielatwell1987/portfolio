@@ -44,7 +44,7 @@
 
 		.hover-text {
 			visibility: hidden;
-			width: 25%;
+			width: 100%;
 			background-color: black;
 			color: #fff;
 			text-align: center;
@@ -55,7 +55,7 @@
 			z-index: 1;
 			bottom: -10%;
 			left: 41%;
-			margin-left: -60px;
+			margin-left: -40%;
 			opacity: 0;
 			transition: opacity 1s;
 		}
@@ -107,6 +107,11 @@
 		a {
 			font-size: 1rem;
 		}
+
+		.hover-text {
+			width: 75%;
+			margin-left: -25%;
+		}
 	}
 
 	@media (min-width: 990px) {
@@ -119,6 +124,11 @@
 
 		.name {
 			margin-bottom: -3.5rem;
+		}
+
+		.hover-text {
+			width: 25%;
+			margin-left: -3%;
 		}
 	}
 </style>
