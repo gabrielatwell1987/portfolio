@@ -16,7 +16,11 @@
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 
 		tl.to('.content', { autoAlpha: 1 })
-			.to('.linksize', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 2, ease: 'expo.out' }, 0)
+			.to(
+				'.linksize, .desc',
+				{ autoAlpha: 1, stagger: 0.8, scale: 1, duration: 2, ease: 'expo.out' },
+				0
+			)
 			.from('.title', { scale: 0.25, duration: 3 }, 0);
 
 		gsap.from(titleText.chars, {
@@ -37,38 +41,53 @@
 	<!-- spacing -->
 	<br /><br />
 
-	<ProjectLink title="S.P.A." img="/projects/web_dev.png" url="https://gabe1.vercel.app" />
+	<ProjectLink
+		title="S.P.A."
+		img="/projects/web_dev.png"
+		url="https://gabe1.vercel.app"
+		description="A single page application"
+	/>
 
 	<ProjectLink
 		title="horizontal scroller"
 		img="/projects/scroller.png"
 		url="https://gabe2.vercel.app"
+		description="A horizontal scroller that displays text."
 	/>
 
-	<ProjectLink title="github api" img="/projects/github.png" url="https://adiapp.vercel.app" />
+	<ProjectLink
+		title="github api"
+		img="/projects/github.png"
+		url="https://adiapp.vercel.app"
+		description="An API for github that searches users"
+	/>
 
 	<ProjectLink
 		title="snippet creator"
 		img="/projects/snippet.png"
 		url="https://appity.vercel.app"
+		description="Create your own snippets"
 	/>
 
 	<ProjectLink
 		title="starbucks clone"
 		img="/projects/starbucks.png"
 		url="https://gabe4.vercel.app"
+		description="A clone of the starbucks website"
 	/>
 
 	<ProjectLink
 		title="to-do app"
 		img="/projects/react.png"
 		url="https://react-todo-navy-five.vercel.app/"
+		description="A to-do app made with react"
 	/>
 
 	<ProjectLink
 		title="alphamaps"
 		img="/projects/alphamaps.png"
 		url="https://alphamaps69.vercel.app"
+		description="A three.js project that displays a map of the world"
 	/>
 
 	<!-- divider -->
