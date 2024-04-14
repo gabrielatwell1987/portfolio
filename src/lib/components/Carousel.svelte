@@ -93,7 +93,6 @@
 
 	img {
 		border-radius: 20px;
-		max-width: 100%;
 	}
 
 	@media (min-width: 200px) {
