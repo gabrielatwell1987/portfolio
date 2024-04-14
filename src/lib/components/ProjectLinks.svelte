@@ -55,7 +55,7 @@
 			z-index: 1;
 			bottom: -10%;
 			left: 41%;
-			margin-left: -40%;
+			margin-left: -39%;
 			opacity: 0;
 			transition: opacity 1s;
 		}
