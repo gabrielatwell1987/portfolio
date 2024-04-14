@@ -2,14 +2,12 @@
 	export let title;
 	export let img;
 	export let url;
-	export let description;
 </script>
 
 <h3 class="linksize name">{title}</h3>
 <a class="linksize" href={url} target="_blank"
 	><img class="img" src={img} alt={title} width="400px" height="475px" /></a
 >
-<p class="desc">{description}</p>
 
 <style>
 	@media (min-width: 200px) {
@@ -52,15 +50,6 @@
 			text-decoration: none;
 			font-weight: 700;
 			color: var(--sky);
-		}
-
-		.desc {
-			color: var(--white);
-			text-align: center;
-			letter-spacing: 1px;
-			margin-top: -2rem;
-			font-size: 0.75rem;
-			font-weight: 100;
 		}
 	}
 

@@ -16,11 +16,7 @@
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 
 		tl.to('.content', { autoAlpha: 1 })
-			.to(
-				'.linksize, .desc',
-				{ autoAlpha: 1, stagger: 0.8, scale: 1, duration: 2, ease: 'expo.out' },
-				0
-			)
+			.to('.linksize', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 2, ease: 'expo.out' }, 0)
 			.from('.title', { scale: 0.25, duration: 3 }, 0);
 
 		gsap.from(titleText.chars, {
