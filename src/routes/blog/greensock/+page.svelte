@@ -56,8 +56,8 @@
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast spacing"><b>Install GSAP</b></summary>
 			<p class="detail">
-				In the project, you have to <code>npm install gsap;</code> (if you have Node.js installed)
-				or you can use the CDN (content delivery network). In sveltekit, you have to put all of your
+				In the project, you have to <code>npm install gsap</code> (if you have Node.js installed) or
+				you can use the CDN (content delivery network). In sveltekit, you have to put all of your
 				GSAP code in an <code>onMount</code> function that you have to import. This is because onMount
 				is displayed once on initial load. If you were to use a regular script tag, it would not work.
 				All of the designs that are animated on this website are all from GSAP. I tend to think that
