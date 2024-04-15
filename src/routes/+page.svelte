@@ -3,6 +3,3 @@
 </script>
 
 <Hero />
-
-<style>
-</style>
