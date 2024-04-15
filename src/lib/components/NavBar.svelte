@@ -170,6 +170,7 @@
 			align-items: center;
 			height: 5em;
 			width: 100%;
+			margin-top: 1rem;
 		}
 
 		.header-logos {
@@ -201,8 +202,9 @@
 
 	@media (min-width: 1600px) {
 		/* content */
+
 		.desktop-view {
-			margin-left: 15%;
+			margin-left: 25%;
 		}
 	}
 </style>
