@@ -67,6 +67,18 @@
 		}
 	}
 
+	@media screen and (min-width: 1400px) {
+		button {
+			width: 18%;
+		}
+	}
+
+	@media screen and (min-width: 1500px) {
+		button {
+			width: 20%;
+		}
+	}
+
 	@keyframes wiggle {
 		0% {
 			rotate: 0deg;
