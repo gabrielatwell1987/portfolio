@@ -48,14 +48,14 @@
 		title="horizontal scroller"
 		img="/projects/scroller.png"
 		url="https://gabe2.vercel.app"
-		description="A horizontal scroller that displays text."
+		description="A horizontal scroller"
 	/>
 
 	<ProjectLinks
 		title="github api"
 		img="/projects/github.png"
 		url="https://adiapp.vercel.app"
-		description="An API for github that searches users"
+		description="Search github users"
 	/>
 
 	<ProjectLinks
@@ -83,14 +83,14 @@
 		title="password generator"
 		img="/projects/pw-generator.png"
 		url="https://pw-generator-ebon.vercel.app/"
-		description="A password generator that can save a text file."
+		description="A password generator"
 	/>
 
 	<ProjectLinks
 		title="alphamaps"
 		img="/projects/alphamaps.png"
 		url="https://alphamaps69.vercel.app"
-		description="A three.js project that displays a map of the world"
+		description="A three.js project"
 	/>
 
 	<!-- divider -->
