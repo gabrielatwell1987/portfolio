@@ -2,7 +2,7 @@
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import SplitType from 'split-type';
-	import ProjectLink from '$lib/components/ProjectLinks.svelte';
+	import ProjectLinks from '$lib/components/ProjectLinks.svelte';
 
 	// animations
 	onMount(() => {
@@ -37,56 +37,56 @@
 	<!-- spacing -->
 	<br /><br />
 
-	<ProjectLink
+	<ProjectLinks
 		title="S.P.A."
 		img="/projects/web_dev.png"
 		url="https://gabe1.vercel.app"
 		description="A single page application"
 	/>
 
-	<ProjectLink
+	<ProjectLinks
 		title="horizontal scroller"
 		img="/projects/scroller.png"
 		url="https://gabe2.vercel.app"
 		description="A horizontal scroller that displays text."
 	/>
 
-	<ProjectLink
+	<ProjectLinks
 		title="github api"
 		img="/projects/github.png"
 		url="https://adiapp.vercel.app"
 		description="An API for github that searches users"
 	/>
 
-	<ProjectLink
+	<ProjectLinks
 		title="snippet creator"
 		img="/projects/snippet.png"
 		url="https://appity.vercel.app"
 		description="Create your own snippets"
 	/>
 
-	<ProjectLink
+	<ProjectLinks
 		title="starbucks clone"
 		img="/projects/starbucks.png"
 		url="https://gabe4.vercel.app"
 		description="A clone of the starbucks website"
 	/>
 
-	<ProjectLink
+	<ProjectLinks
 		title="to-do app"
 		img="/projects/react.png"
 		url="https://react-todo-navy-five.vercel.app/"
 		description="A to-do app made with react"
 	/>
 
-	<ProjectLink
+	<ProjectLinks
 		title="password generator"
 		img="/projects/pw-generator.png"
 		url="https://pw-generator-ebon.vercel.app/"
 		description="A password generator that can save a text file."
 	/>
 
-	<ProjectLink
+	<ProjectLinks
 		title="alphamaps"
 		img="/projects/alphamaps.png"
 		url="https://alphamaps69.vercel.app"
