@@ -86,12 +86,12 @@
 		description="A password generator"
 	/>
 
-	<ProjectLinks
+	<!-- <ProjectLinks
 		title="alphamaps"
 		img="/projects/alphamaps.png"
 		url="https://alphamaps69.vercel.app"
 		description="A three.js project"
-	/>
+	/> -->
 
 	<!-- divider -->
 	<progress />
