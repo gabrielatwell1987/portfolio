@@ -261,9 +261,9 @@
 		/* hero */
 		section {
 			position: absolute;
-			top: -18%;
+			top: -20%;
 			left: 50%;
-			transform: translate(-50%, -18%);
+			transform: translate(-50%, -20%);
 			width: 100%;
 		}
 
