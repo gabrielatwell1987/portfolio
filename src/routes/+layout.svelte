@@ -3,7 +3,10 @@
 	import Analytics from '$lib/data/Analytics.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import '../app.css';
+	import { Debug } from 'svelte-debug-console';
 </script>
+
+<Debug discard={false} />
 
 <svelte:head>
 	<!-- website theme cdn -->
