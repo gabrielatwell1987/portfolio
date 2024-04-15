@@ -18,15 +18,14 @@
 		const tl = Flip.from(state, {
 			duration: 0.6,
 			stagger: 0.04,
-			absolute: true,
-			onStart: () => {
-				// fade out
-				gsap.to('.title', {
-					opacity: 0,
-					y: '100%',
-					duration: 1.5
-				});
-			}
+			absolute: true
+			// onStart: () => {
+			// 	gsap.to('.title', {
+			// 		opacity: 0,
+			// 		y: '100%',
+			// 		duration: 1.5
+			// 	});
+			// }
 		});
 	}
 </script>
