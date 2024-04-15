@@ -65,6 +65,34 @@
 		description="Create your own snippets"
 	/>
 
+	<ProjectLinks
+		title="password generator"
+		img="/projects/pw-generator.png"
+		url="https://pw-generator-ebon.vercel.app/"
+		description="A password generator"
+	/>
+
+	<!-- <ProjectLinks
+		title="svelteflix"
+		img="/projects/svelteflix.png"
+		url="https://svelteflix-delta.vercel.app/"
+		description="A netflix clone"
+	/> -->
+
+	<!-- <ProjectLinks
+		title="random user generator"
+		img="/projects/ran_user.png"
+		url="https://gabe3.vercel.app/"
+		description="Create random users"
+	/> -->
+
+	<!-- <ProjectLinks
+		title="pokedex"
+		img="/projects/pokedex.png"
+		url="https://pokedex-sample.vercel.app/"
+		description="A pokemon database"
+	/> -->
+
 	<!-- <ProjectLinks
 		title="starbucks clone"
 		img="/projects/starbucks.png"
@@ -78,13 +106,6 @@
 		url="https://react-todo-navy-five.vercel.app/"
 		description="A to-do app made with react"
 	/> -->
-
-	<ProjectLinks
-		title="password generator"
-		img="/projects/pw-generator.png"
-		url="https://pw-generator-ebon.vercel.app/"
-		description="A password generator"
-	/>
 
 	<!-- <ProjectLinks
 		title="alphamaps"
