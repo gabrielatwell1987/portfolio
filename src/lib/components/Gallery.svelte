@@ -9,6 +9,8 @@
 	let selected = 0;
 
 	async function flip(id) {
+		gsap.set('.title', { x: 25, y: 25 });
+
 		const state = Flip.getState('.grid-item');
 
 		selected = id;
@@ -18,22 +20,7 @@
 		const tl = Flip.from(state, {
 			duration: 0.6,
 			stagger: 0.04,
-			absolute: true,
-			onStart: () => {
-				gsap.to('.title', {
-					x: 25,
-					duration: 2
-				});
-
-				gsap.to(
-					'.title',
-					{
-						y: 25,
-						duration: 2
-					},
-					'+=.8'
-				);
-			}
+			absolute: true
 		});
 	}
 </script>
