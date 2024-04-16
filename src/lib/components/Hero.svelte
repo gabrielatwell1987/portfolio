@@ -96,7 +96,6 @@
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
-		/* hero section */
 		img {
 			border-radius: 15px;
 			opacity: 0.25;
@@ -155,7 +154,6 @@
 		}
 	}
 
-	/* bigger than tablet */
 	@media screen and (min-width: 740px) {
 		main {
 			text-align: center;
@@ -183,8 +181,6 @@
 			font-size: 1.25rem;
 		}
 
-		/* hero section */
-
 		.summary {
 			width: 75%;
 		}
@@ -205,7 +201,6 @@
 		}
 	}
 
-	/* bigger than desktop */
 	@media screen and (min-width: 990px) {
 		main {
 			text-align: center;
@@ -213,7 +208,6 @@
 			margin: 5rem 0;
 		}
 
-		/* hero section */
 		button {
 			width: 30%;
 			font-size: 1.25rem;
@@ -246,16 +240,25 @@
 		}
 	}
 
-	/* way bigger than desktop */
 	@media screen and (min-width: 1100px) {
 		button {
 			width: 20%;
 		}
 	}
 
+	@media screen and (min-width: 1200px) {
+		h3 {
+			font-size: 2rem;
+		}
+	}
+
 	@media screen and (min-width: 1920px) {
 		button {
 			width: 10%;
+		}
+
+		h3 {
+			font-size: 3rem;
 		}
 	}
 </style>
