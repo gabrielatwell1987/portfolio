@@ -17,6 +17,8 @@
 	<a class="btn" href="/projects"><button aria-label="projects">Projects</button></a>
 
 	<h4 class="summary italic">Sample of projects I have created.</h4>
+
+	<br />
 </section>
 
 <style>
@@ -114,9 +116,9 @@
 	@media (min-width: 200px) {
 		section {
 			position: absolute;
-			top: 85%;
+			top: 99%;
 			left: 50%;
-			transform: translate(-50%, -85%);
+			transform: translate(-50%, -99%);
 		}
 
 		h3 {
