@@ -72,6 +72,13 @@
 		description="A password generator"
 	/>
 
+	<ProjectLinks
+		title="to-do app"
+		img="/projects/react.png"
+		url="https://react-todo-navy-five.vercel.app/"
+		description="A to-do app made with react"
+	/>
+
 	<!-- <ProjectLinks
 		title="svelteflix"
 		img="/projects/svelteflix.png"
@@ -98,13 +105,6 @@
 		img="/projects/starbucks.png"
 		url="https://gabe4.vercel.app"
 		description="A clone of the starbucks website"
-	/> -->
-
-	<!-- <ProjectLinks
-		title="to-do app"
-		img="/projects/react.png"
-		url="https://react-todo-navy-five.vercel.app/"
-		description="A to-do app made with react"
 	/> -->
 
 	<!-- <ProjectLinks
