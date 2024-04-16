@@ -114,9 +114,9 @@
 	@media (min-width: 200px) {
 		section {
 			position: absolute;
-			top: 96%;
+			top: 85%;
 			left: 50%;
-			transform: translate(-50%, -96%);
+			transform: translate(-50%, -85%);
 		}
 
 		h3 {
