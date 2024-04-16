@@ -76,7 +76,7 @@
 		title="to-do app"
 		img="/projects/react.png"
 		url="https://react-todo-navy-five.vercel.app/"
-		description="A to-do app made with react"
+		description="A React to-do app"
 	/>
 
 	<!-- <ProjectLinks
