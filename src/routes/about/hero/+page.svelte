@@ -20,7 +20,6 @@
 </section>
 
 <style>
-	/* hero */
 	section {
 		position: absolute;
 		top: 75%;
@@ -112,14 +111,12 @@
 		}
 	}
 
-	/* mobile */
 	@media (min-width: 200px) {
-		/* hero */
 		section {
 			position: absolute;
-			top: 99%;
+			top: 96%;
 			left: 50%;
-			transform: translate(-50%, -99%);
+			transform: translate(-50%, -96%);
 		}
 
 		h3 {
