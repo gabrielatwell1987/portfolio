@@ -42,23 +42,15 @@
 </section>
 
 <style>
-	/* desktop */
-	/* content */
 	.grid {
 		display: grid;
 		gap: 1rem;
 		grid-template-columns: repeat(2, 1fr);
 		width: 75%;
 		margin: 5rem auto;
-	}
-	/* bigger than desktop */
-	@media (min-width: 1024px) {
-		.grid {
-			grid-template-columns: repeat(3, 1fr);
-		}
+		background-color: transparent;
 	}
 
-	/* content */
 	.grid-item {
 		position: relative;
 		padding: 0;
@@ -100,5 +92,11 @@
 	.details .title {
 		opacity: 1;
 		translate: 0%;
+	}
+
+	@media (min-width: 1024px) {
+		.grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
 	}
 </style>
