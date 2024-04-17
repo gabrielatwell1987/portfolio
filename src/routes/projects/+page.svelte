@@ -2,7 +2,7 @@
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import SplitType from 'split-type';
-	import ProjectLinks from '$lib/components/ProjectLinks.svelte';
+	import Project from '$lib/components/ProjectLinks.svelte';
 
 	// animations
 	onMount(() => {
@@ -37,77 +37,77 @@
 	<!-- spacing -->
 	<br /><br />
 
-	<ProjectLinks
+	<Project
 		title="S.P.A."
 		img="/projects/web_dev.png"
 		url="https://gabe1.vercel.app"
 		description="A single page application"
 	/>
 
-	<ProjectLinks
+	<Project
 		title="horizontal scroller"
 		img="/projects/scroller.png"
 		url="https://gabe2.vercel.app"
 		description="A horizontal scroller"
 	/>
 
-	<ProjectLinks
+	<Project
 		title="github api"
 		img="/projects/github.png"
 		url="https://adiapp.vercel.app"
 		description="Search github users"
 	/>
 
-	<ProjectLinks
+	<Project
 		title="snippet creator"
 		img="/projects/snippet.png"
 		url="https://appity.vercel.app"
 		description="Create your own snippets"
 	/>
 
-	<ProjectLinks
+	<Project
 		title="password generator"
 		img="/projects/pw-generator.png"
 		url="https://pw-generator-ebon.vercel.app/"
 		description="A password generator"
 	/>
 
-	<ProjectLinks
+	<Project
 		title="to-do app"
 		img="/projects/react.png"
 		url="https://react-todo-navy-five.vercel.app/"
 		description="A React to-do app"
 	/>
 
-	<!-- <ProjectLinks
+	<!-- <Project
 		title="svelteflix"
 		img="/projects/svelteflix.png"
 		url="https://svelteflix-delta.vercel.app/"
 		description="A netflix clone"
 	/> -->
 
-	<!-- <ProjectLinks
+	<!-- <Project
 		title="random user generator"
 		img="/projects/ran_user.png"
 		url="https://gabe3.vercel.app/"
 		description="Create random users"
 	/> -->
 
-	<!-- <ProjectLinks
+	<!-- <Project
 		title="pokedex"
 		img="/projects/pokedex.png"
 		url="https://pokedex-sample.vercel.app/"
 		description="A pokemon database"
 	/> -->
 
-	<!-- <ProjectLinks
+	<!-- <Project
 		title="starbucks clone"
 		img="/projects/starbucks.png"
 		url="https://gabe4.vercel.app"
 		description="A clone of the starbucks website"
 	/> -->
 
-	<!-- <ProjectLinks
+	<!-- <Project
 		title="alphamaps"
 		img="/projects/alphamaps.png"
 		url="https://alphamaps69.vercel.app"
