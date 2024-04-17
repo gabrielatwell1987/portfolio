@@ -244,9 +244,7 @@
 		button {
 			width: 20%;
 		}
-	}
 
-	@media screen and (min-width: 1200px) {
 		h3 {
 			font-size: 2rem;
 		}
