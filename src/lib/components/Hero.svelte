@@ -250,7 +250,7 @@
 		}
 	}
 
-	@media screen and (min-width: 1920px) {
+	@media screen and (min-width: 1800px) {
 		button {
 			width: 10%;
 		}
