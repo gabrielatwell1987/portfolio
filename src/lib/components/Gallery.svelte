@@ -9,7 +9,7 @@
 	let selected = 0;
 
 	async function flip(id) {
-		gsap.set('.title', { x: 25, y: 25 });
+		gsap.set('.title', { x: 10, y: 10 });
 
 		const state = Flip.getState('.grid-item');
 
