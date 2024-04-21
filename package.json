@@ -35,7 +35,6 @@
 		"highlight.js": "^11.9.0",
 		"lucide-svelte": "^0.284.0",
 		"split-type": "^0.3.4",
-		"svelte-loading-spinners": "^0.3.6",
 		"three": "^0.161.0"
 	}
 }
