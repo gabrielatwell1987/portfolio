@@ -23,7 +23,7 @@
 		</div>
 	</div>
 
-	<div class="links">
+	<div class="desktop">
 		<a class="nav-link" href="/projects" aria-label="projects">Projects</a>
 		<a class="nav-link" href="/blog" aria-label="blog">Blog</a>
 		<a class="nav-link" href="/about" aria-label="about">About</a>
@@ -44,7 +44,7 @@
 </nav>
 
 <style>
-	.links {
+	.desktop {
 		display: block;
 		font-weight: bolder;
 	}
@@ -84,7 +84,7 @@
 			background-color: var(--blackest);
 		}
 
-		.links {
+		.desktop {
 			display: none;
 		}
 
@@ -116,7 +116,7 @@
 	}
 
 	@media (min-width: 700px) {
-		.links {
+		.desktop {
 			display: flex;
 			margin-top: 0;
 			gap: 1.5rem;
@@ -174,7 +174,7 @@
 			margin-right: -7rem;
 		}
 
-		.links {
+		.desktop {
 			display: block;
 			width: 100%;
 			margin-left: -8%;
@@ -204,25 +204,25 @@
 	}
 
 	@media (min-width: 1100px) {
-		.links {
+		.desktop {
 			margin-left: -3%;
 		}
 	}
 
 	@media (min-width: 1300px) {
-		.links {
+		.desktop {
 			margin-left: -3%;
 		}
 	}
 
 	@media (min-width: 1400px) {
-		.links {
+		.desktop {
 			margin-left: 6%;
 		}
 	}
 
 	@media (min-width: 1600px) {
-		.links {
+		.desktop {
 			margin-left: 25%;
 		}
 
