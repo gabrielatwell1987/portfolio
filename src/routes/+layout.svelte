@@ -3,10 +3,7 @@
 	import Analytics from '$lib/data/Analytics.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import '../app.css';
-	// import { Debug } from 'svelte-debug-console';
 </script>
-
-<!-- <Debug discard={true} /> -->
 
 <svelte:head>
 	<!-- website theme cdn -->
@@ -24,7 +21,7 @@
 <SEO title="gabe ATWELL" description="Gabriel Atwell's Portfolio" />
 
 <!-- layout -->
-<main class="desktop">
+<main>
 	<NavBar />
 	<br />
 	<br />
@@ -40,7 +37,7 @@
 		background-image: radial-gradient(circle at center, #2f2f2f 0%, #000 60%);
 	}
 
-	.desktop {
+	main {
 		width: 100%;
 	}
 </style>
