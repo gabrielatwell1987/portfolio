@@ -215,7 +215,7 @@
 
 	@media (min-width: 1600px) {
 		.links {
-			margin-left: 20%;
+			margin-left: 12.5%;
 		}
 
 		.gabe-logo {
