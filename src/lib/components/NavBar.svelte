@@ -33,7 +33,7 @@
 
 	<!-- desktop view -->
 	{#if open}
-		<div class="links">
+		<div class="mobile">
 			<a class="nav-link" href="/projects" aria-label="projects">Projects</a>
 			<a class="nav-link" href="/blog" aria-label="blog">Blog</a>
 			<a class="nav-link" href="/about" aria-label="about">About</a>
@@ -70,7 +70,7 @@
 	}
 
 	@media (min-width: 200px) {
-		.links {
+		.mobile {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
@@ -82,6 +82,10 @@
 			border-radius: 5px;
 			padding: 0.5rem 1rem;
 			background-color: var(--blackest);
+		}
+
+		.links {
+			display: none;
 		}
 
 		.header-logos {
@@ -119,6 +123,10 @@
 			flex-direction: row;
 			border: none;
 			background-color: transparent;
+		}
+
+		.mobile {
+			display: none;
 		}
 
 		nav {
