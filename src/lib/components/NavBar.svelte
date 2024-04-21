@@ -8,22 +8,32 @@
 <nav>
 	<!-- hamburger icon -->
 	<div class="header-logos">
-		<Hamburger
-			--color="var(--white)"
-			type="spin"
-			bind:open
-			ariaLabel="menu"
-			--active-color="var(--smoke)"
-		/>
+		<div class="hamburger">
+			<Hamburger
+				--color="var(--white)"
+				type="spin"
+				bind:open
+				ariaLabel="menu"
+				--active-color="var(--smoke)"
+			/>
+		</div>
 
 		<div class="gabe-logo">
 			<a class="home" href="/about/hero"><MainLogo /></a>
 		</div>
 	</div>
 
+	<div class="links">
+		<a class="nav-link" href="/projects" aria-label="projects">Projects</a>
+		<a class="nav-link" href="/blog" aria-label="blog">Blog</a>
+		<a class="nav-link" href="/about" aria-label="about">About</a>
+		<a class="nav-link" href="/photos/carousel" aria-label="photos">Photos</a>
+		<a class="nav-link" href="/contact" aria-label="contact">Contact</a>
+	</div>
+
 	<!-- desktop view -->
 	{#if open}
-		<div class="desktop-view">
+		<div class="links">
 			<a class="nav-link" href="/projects" aria-label="projects">Projects</a>
 			<a class="nav-link" href="/blog" aria-label="blog">Blog</a>
 			<a class="nav-link" href="/about" aria-label="about">About</a>
@@ -34,9 +44,7 @@
 </nav>
 
 <style>
-	/* bigger than desktop */
-	/* content */
-	.desktop-view {
+	.links {
 		display: block;
 		font-weight: bolder;
 	}
@@ -61,10 +69,8 @@
 		margin: 0 0 0 25%;
 	}
 
-	/* mobile and bigger */
 	@media (min-width: 200px) {
-		/* content */
-		.desktop-view {
+		.links {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
@@ -105,13 +111,11 @@
 		}
 	}
 
-	/* tablet and bigger */
 	@media (min-width: 700px) {
-		/* content */
-		.desktop-view {
+		.links {
 			display: flex;
 			margin-top: 0;
-			gap: 2.5rem;
+			gap: 1.5rem;
 			flex-direction: row;
 			border: none;
 			background-color: transparent;
@@ -131,21 +135,19 @@
 		}
 
 		.gabe-logo {
+			display: block;
+		}
+
+		.hamburger {
 			display: none;
 		}
-	}
 
-	/* desktop and bigger */
-	@media (min-width: 990px) {
-		/* content */
 		.nav-link {
 			font-family: var(--montserrat);
-			font-size: 1.5rem;
+			font-size: 1.1rem;
 			text-decoration: none;
 			font-weight: 600;
 			color: var(--white);
-			margin-left: 8rem;
-			margin-right: -7rem;
 		}
 
 		.nav-link:hover {
@@ -155,8 +157,16 @@
 			text-shadow: 2px 2px 1px var(--black);
 			transition: border-bottom 0.35s ease-in-out, text-shadow 0.35s ease-in-out;
 		}
+	}
 
-		.desktop-view {
+	@media (min-width: 990px) {
+		.nav-link {
+			font-size: 1.5rem;
+			margin-left: 8rem;
+			margin-right: -7rem;
+		}
+
+		.links {
 			display: block;
 			width: 100%;
 			margin-left: -8%;
@@ -185,26 +195,31 @@
 		}
 	}
 
-	/* desktop and bigger 2 */
+	@media (min-width: 1100px) {
+		.links {
+			margin-left: -3%;
+		}
+	}
+
 	@media (min-width: 1300px) {
-		/* content */
-		.desktop-view {
+		.links {
 			margin-left: -3%;
 		}
 	}
 
 	@media (min-width: 1400px) {
-		/* content */
-		.desktop-view {
+		.links {
 			margin-left: 6%;
 		}
 	}
 
 	@media (min-width: 1600px) {
-		/* content */
+		.links {
+			margin-left: 12.5%;
+		}
 
-		.desktop-view {
-			margin-left: 25%;
+		.gabe-logo {
+			margin-left: 150%;
 		}
 	}
 </style>
