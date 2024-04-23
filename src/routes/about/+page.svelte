@@ -8,7 +8,7 @@
 	import LinkList from '$lib/components/LinkList.svelte';
 	import Grid from '$lib/components/Grid.svelte';
 	import Skills from '$lib/components/Skills.svelte';
-	import Image from '$lib/components/Image.svelte';
+	// import Image from '$lib/components/Image.svelte';
 
 	// animations
 	onMount(() => {
@@ -37,11 +37,11 @@
 	<section title="a white flower background">
 		<article>
 			<div class="atwell">
-				<!-- <img src="/logos/atweezy.png" alt="An logo that says Gabriel Atwell that you can move." /> -->
-				<Image
+				<img src="/logos/atweezy.png" alt="An logo that says Gabriel Atwell that you can move." />
+				<!-- <Image
 					picture="/logos/atweezy.png"
 					desc="An logo that says Gabriel Atwell that you can move."
-				/>
+				/> -->
 			</div>
 
 			<div class="bio" aria-label="bio">
