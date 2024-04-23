@@ -41,9 +41,9 @@
 			<h4>Please contact me for any frontend work!</h4>
 		</header>
 
-		<!-- <img src="logos/newspaper.jpg" alt="frontend newspaper clipping" /> -->
+		<!-- <img src="/logos/newspaper.jpg" alt="frontend newspaper clipping" /> -->
 		<div class="modal-img">
-			<Image picture="logos/newspaper.jpg" desc="frontend newspaper clipping" />
+			<Image picture="/logos/newspaper.jpg" desc="frontend newspaper clipping" />
 		</div>
 
 		<p class="modal__p">
