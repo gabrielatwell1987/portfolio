@@ -4,6 +4,7 @@
 	import { gsap } from 'gsap';
 	import { TextPlugin } from 'gsap/dist/TextPlugin';
 	import { onMount } from 'svelte';
+	import Image from '$lib/components/Image.svelte';
 
 	// animations
 	onMount(() => {
@@ -38,13 +39,11 @@
 
 	<!-- animation logo -->
 	<div class="animation-link" aria-label="animation">
-		<a href="/blog/posts"
-			><img
-				src="logos/animation.png"
-				alt="A logo that says web animation techniques."
-				class="image"
-			/></a
-		>
+		<a href="/blog/posts">
+			<div class="image">
+				<Image picture="logos/animation.png" desc="A logo that says web animation techniques." />
+			</div>
+		</a>
 	</div>
 
 	<!-- spacing -->
@@ -52,8 +51,6 @@
 </main>
 
 <style>
-	/* desktop and bigger */
-	/* content */
 	a {
 		display: block;
 		margin: 0 0 2rem 49%;
@@ -114,7 +111,6 @@
 	}
 
 	@media (min-width: 200px) {
-		/* mobile */
 		.title {
 			font-size: 2rem;
 			display: none;

@@ -8,6 +8,7 @@
 	import LinkList from '$lib/components/LinkList.svelte';
 	import Grid from '$lib/components/Grid.svelte';
 	import Skills from '$lib/components/Skills.svelte';
+	import Image from '$lib/components/Image.svelte';
 
 	// animations
 	onMount(() => {
@@ -33,15 +34,14 @@
 </script>
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} aria-label="bio">
-	<!-- content -->
 	<section title="a white flower background">
 		<article>
-			<img
-				class="atwell"
-				src="logos/atweezy.png"
-				alt="An logo that says Gabriel Atwell that you can move."
-				width="500"
-			/>
+			<div class="atwell">
+				<Image
+					picture="/logos/atweezy.png"
+					desc="An logo that says Gabriel Atwell that you can move."
+				/>
+			</div>
 
 			<div class="bio" aria-label="bio">
 				<h2 class="main-title">About me</h2>
@@ -89,7 +89,6 @@
 </main>
 
 <style>
-	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
 		p {
 			line-height: 1.75;
@@ -155,7 +154,6 @@
 		}
 	}
 
-	/* bigger than desktop */
 	@media screen and (min-width: 990px) {
 		p {
 			line-height: 2.5;

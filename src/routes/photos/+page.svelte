@@ -76,13 +76,9 @@
 	<!-- domino image and link -->
 	<div class="domino" aria-label="domino">
 		<p class="domino-text">Dominoes:</p>
-		<a class="btn-link" href="/photos/domino"
-			><img
-				class="domino-image"
-				src="logos/dominoes.png"
-				alt="A game of dominoes made in Spline."
-			/></a
-		>
+		<a class="btn-link" href="/photos/domino">
+			<img class="domino-image" src="logos/dominoes.png" alt="A game of dominoes made in Spline." />
+		</a>
 	</div>
 
 	<!-- spacing -->
@@ -90,9 +86,7 @@
 </main>
 
 <style>
-	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
-		/* content */
 		section {
 			width: 100%;
 			margin: 0;
@@ -129,9 +123,7 @@
 		}
 	}
 
-	/* bigger than tablet */
 	@media (min-width: 850px) {
-		/* content */
 		.btn-link {
 			font-size: 2.5rem;
 			font-weight: bolder;
@@ -191,9 +183,7 @@
 		}
 	}
 
-	/* bigger than desktop */
 	@media screen and (min-width: 1200px) {
-		/* content */
 		main {
 			text-align: center;
 		}
