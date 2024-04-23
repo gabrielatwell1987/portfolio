@@ -37,6 +37,7 @@
 	<section title="a white flower background">
 		<article>
 			<div class="atwell">
+				<!-- <img src="/logos/atweezy.png" alt="An logo that says Gabriel Atwell that you can move." /> -->
 				<Image
 					picture="/logos/atweezy.png"
 					desc="An logo that says Gabriel Atwell that you can move."
