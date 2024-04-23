@@ -1,6 +1,7 @@
 <script>
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
+	import Image from './Image.svelte';
 
 	let name = '';
 	let email = '';
@@ -40,7 +41,10 @@
 			<h4>Please contact me for any frontend work!</h4>
 		</header>
 
-		<img src="logos/newspaper.jpg" alt="frontend newspaper clipping" />
+		<!-- <img src="logos/newspaper.jpg" alt="frontend newspaper clipping" /> -->
+		<div class="modal-img">
+			<Image picture="logos/newspaper.jpg" desc="frontend newspaper clipping" />
+		</div>
 
 		<p class="modal__p">
 			If you need help with a website, or if you have any questions, please feel free to contact me.
@@ -83,9 +87,7 @@
 </form>
 
 <style>
-	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
-		/* content */
 		form {
 			width: 100%;
 			margin: 0 34.5%;
@@ -200,7 +202,6 @@
 	}
 
 	@media screen and (min-width: 500px) {
-		/* content */
 		.send {
 			width: 30%;
 		}
@@ -215,9 +216,7 @@
 		}
 	}
 
-	/* bigger than tablet */
 	@media screen and (min-width: 720px) {
-		/* content */
 		span {
 			font-size: 1.25rem;
 			font-weight: 800;
@@ -295,11 +294,12 @@
 			mix-blend-mode: hard-light;
 		}
 
-		.modal img {
+		.modal-img {
 			border-radius: 10px;
 			width: 50%;
 			height: 25%;
 			margin-left: 23%;
+			margin-bottom: 1rem;
 		}
 
 		.modal__p {
@@ -333,7 +333,6 @@
 	}
 
 	@media screen and (min-width: 775px) {
-		/* content */
 		.send {
 			width: 25%;
 		}
@@ -344,8 +343,6 @@
 	}
 
 	@media screen and (min-width: 850px) {
-		/* content */
-
 		form {
 			margin: 0 51%;
 		}
@@ -355,9 +352,7 @@
 		}
 	}
 
-	/* bigger than desktop */
 	@media screen and (min-width: 1024px) {
-		/* content */
 		form {
 			display: flex;
 			flex-direction: column;
@@ -417,23 +412,19 @@
 		}
 	}
 
-	/* way bigger than desktop */
 	@media screen and (min-width: 1100px) {
-		/* content */
 		form {
 			margin: 0 41.5%;
 		}
 	}
 
 	@media screen and (min-width: 1200px) {
-		/* content */
 		form {
 			margin: 0 40%;
 		}
 	}
 
 	@media screen and (min-width: 1350px) {
-		/* content */
 		form {
 			margin: 0 35%;
 		}
@@ -444,7 +435,6 @@
 	}
 
 	@media screen and (min-width: 1920px) {
-		/* content */
 		.send {
 			width: 15%;
 		}
