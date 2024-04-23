@@ -8,7 +8,6 @@
 	import LinkList from '$lib/components/LinkList.svelte';
 	import Grid from '$lib/components/Grid.svelte';
 	import Skills from '$lib/components/Skills.svelte';
-	import Image from '$lib/components/Image.svelte';
 
 	// animations
 	onMount(() => {
