@@ -37,7 +37,7 @@
 		<article>
 			<img
 				class="atwell"
-				src="logos/atweezy.png"
+				src="/logos/atweezy.png"
 				alt="An logo that says Gabriel Atwell that you can move."
 				width="500"
 			/>
