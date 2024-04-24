@@ -89,7 +89,6 @@
 	@media screen and (min-width: 200px) {
 		form {
 			width: 100%;
-			/* margin: 0 34.75%; */
 			margin-left: 92.75%;
 		}
 
@@ -207,7 +206,6 @@
 		}
 
 		form {
-			/* margin: 0 22%; */
 			margin-left: 57%;
 		}
 
@@ -224,7 +222,6 @@
 		}
 
 		form {
-			/* margin: 0 16.35%; */
 			margin-left: 40.5%;
 		}
 
@@ -338,14 +335,12 @@
 		}
 
 		form {
-			/* margin: 0 16%; */
 			margin-left: 38.5%;
 		}
 	}
 
 	@media screen and (min-width: 850px) {
 		form {
-			/* margin: 0 50.75%; */
 			margin-left: 71.25%;
 		}
 
@@ -359,7 +354,6 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			/* margin: 0 44.5%; */
 			margin-left: 61.5%;
 		}
 
@@ -417,21 +411,18 @@
 
 	@media screen and (min-width: 1100px) {
 		form {
-			/* margin: 0 41.5%; */
 			margin-left: 57.5%;
 		}
 	}
 
 	@media screen and (min-width: 1200px) {
 		form {
-			/* margin: 0 40%; */
 			margin-left: 54.75%;
 		}
 	}
 
 	@media screen and (min-width: 1350px) {
 		form {
-			/* margin: 0 35%; */
 			margin-left: 48.5%;
 		}
 
@@ -442,7 +433,6 @@
 
 	@media screen and (min-width: 1500px) {
 		form {
-			/* margin: 0 35%; */
 			width: 100%;
 			margin-left: 43.5%;
 		}
@@ -450,7 +440,6 @@
 
 	@media screen and (min-width: 1600px) {
 		form {
-			/* margin: 0 35%; */
 			width: 100%;
 			margin-left: 35.25%;
 		}
