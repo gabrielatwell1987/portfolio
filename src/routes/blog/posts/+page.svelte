@@ -18,11 +18,10 @@
 	<GSAP />
 
 	<!-- back button -->
-	<a class="blog-btn-link" href="/blog"><Button title="Back" /></a>
+	<a href="/blog"><Button title="Back" /></a>
 </section>
 
 <style>
-	/* desktop */
 	.title {
 		text-align: center;
 		font-size: 6rem;
