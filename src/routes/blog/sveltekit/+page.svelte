@@ -2,6 +2,7 @@
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import Button from '$lib/components/Button.svelte';
+	import Iframe from '$lib/components/Iframe.svelte';
 
 	// animations
 	onMount(() => {
@@ -85,15 +86,9 @@
 			</p>
 
 			<!-- video -->
-			<iframe
-				class="youtube"
-				width="560"
-				height="315"
-				src="https://www.youtube.com/embed/MoGkX4RvZ38?si=xV4--8APNCqD7Ihn"
-				title="YouTube video player"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				allowfullscreen
+			<Iframe
+				url="https://www.youtube.com/embed/MoGkX4RvZ38?si=xV4--8APNCqD7Ihn"
+				name="YouTube video player"
 			/>
 
 			<!-- back button -->
@@ -103,8 +98,6 @@
 </section>
 
 <style>
-	/* desktop and bigger */
-	/* content */
 	main {
 		width: 75%;
 		margin: 0 auto;
@@ -132,13 +125,6 @@
 		text-decoration: underline;
 	}
 
-	/* video */
-	iframe {
-		margin: 2rem 0 0 30%;
-		border-radius: 5px;
-	}
-
-	/* content */
 	details {
 		width: 50%;
 		margin-left: 24.5%;
@@ -165,10 +151,6 @@
 	@media (min-width: 200px) {
 		.main {
 			margin: 0 auto;
-		}
-
-		iframe {
-			display: none;
 		}
 
 		.title {
@@ -215,11 +197,6 @@
 	}
 
 	@media (min-width: 720px) {
-		iframe {
-			display: block;
-			margin: 0 auto;
-		}
-
 		.title {
 			font-size: 4rem;
 		}

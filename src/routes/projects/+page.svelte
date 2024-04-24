@@ -2,7 +2,7 @@
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import SplitType from 'split-type';
-	import Project from '$lib/components/ProjectLinks.svelte';
+	import Project from '$lib/components/Project.svelte';
 
 	// animations
 	onMount(() => {
@@ -124,15 +124,11 @@
 </section>
 
 <style>
-	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
-		/* divider */
 		progress {
 			width: 40%;
 			margin: 15% 0 2rem 30%;
 		}
-
-		/* content */
 
 		.logos {
 			display: flex;
@@ -158,10 +154,7 @@
 		}
 	}
 
-	/* bigger than tablet */
 	@media screen and (min-width: 740px) {
-		/* content */
-
 		.content {
 			padding: 2rem;
 		}
@@ -183,7 +176,6 @@
 		}
 	}
 
-	/* bigger than desktop */
 	@media screen and (min-width: 990px) {
 		.content {
 			margin-bottom: -5%;

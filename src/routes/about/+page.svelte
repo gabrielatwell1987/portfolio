@@ -5,7 +5,7 @@
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import Button from '$lib/components/Button.svelte';
-	import LinkList from '$lib/components/LinkList.svelte';
+	import Social from '$lib/components/SocialLinks.svelte';
 	import Grid from '$lib/components/Grid.svelte';
 	import Skills from '$lib/components/Skills.svelte';
 	import Image from '$lib/components/Image.svelte';
@@ -77,7 +77,7 @@
 			<Grid />
 
 			<!-- github and codepen links -->
-			<LinkList />
+			<Social />
 
 			<!-- skills section -->
 			<Skills />
