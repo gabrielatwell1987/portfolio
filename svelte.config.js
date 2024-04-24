@@ -9,6 +9,7 @@ const config = {
 	vitePlugin: {
 		inspector: true
 	},
+	https: true,
 	extensions: ['.svelte', '.md', '.svx'],
 	preprocess: [
 		mdsvex({
