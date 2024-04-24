@@ -81,22 +81,9 @@
 
 	@media (min-width: 740px) {
 		img:hover {
-			transform: scale(1.1);
-			clip-path: polygon(
-				0% 15%,
-				15% 15%,
-				15% 0%,
-				85% 0%,
-				85% 15%,
-				100% 15%,
-				100% 85%,
-				85% 85%,
-				85% 100%,
-				15% 100%,
-				15% 85%,
-				0% 85%
-			);
+			transform: scale(1.05);
 			transition: transform 0.75s ease;
+			clip-path: inset(5% 5% 5% 5%);
 		}
 
 		.linksize {

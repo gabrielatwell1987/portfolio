@@ -176,8 +176,7 @@
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 		.open-button,
-		.close-button,
-		.modal {
+		.close-button {
 			display: none;
 		}
 

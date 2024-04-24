@@ -56,13 +56,13 @@
 			<Image picture="/photos/gabe6.png" desc="Gabriel Atwell" />
 		</div>
 
-		<!-- <div class="gabe">
+		<div class="gabe bigger">
 			<Image picture="/photos/wtf2.png" desc="Gabriel Atwell" />
 		</div>
 
-		<div class="gabe">
+		<div class="gabe bigger">
 			<Image picture="/photos/wtf.jpg" desc="Gabriel Atwell" />
-		</div> -->
+		</div>
 
 		<div class="next" slot="next" on:click={showNextPage} on:keydown={() => {}} alt="next">
 			<i class="fa-solid fa-arrow-right" />
@@ -124,6 +124,10 @@
 
 		i {
 			font-size: 1rem;
+		}
+
+		.bigger {
+			width: 300%;
 		}
 	}
 
