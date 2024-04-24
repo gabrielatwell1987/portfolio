@@ -9,9 +9,9 @@
 
 	// Animations
 	onMount(() => {
-		gsap.set('.form', { autoAlpha: 0 });
+		gsap.set('form', { autoAlpha: 0, x: -175 });
 
-		gsap.to('.form', { autoAlpha: 1, duration: 3.5 });
+		gsap.to('form', { autoAlpha: 1, duration: 3.5 });
 
 		// modal
 		const modal = document.querySelector('.modal');
@@ -41,7 +41,6 @@
 			<h4>Please contact me for any frontend work!</h4>
 		</header>
 
-		<!-- <img src="/logos/newspaper.jpg" alt="frontend newspaper clipping" /> -->
 		<div class="modal-img">
 			<Image picture="/logos/newspaper.jpg" desc="frontend newspaper clipping" />
 		</div>
@@ -54,7 +53,7 @@
 </dialog>
 
 <!-- contact form -->
-<form class="form" method="POST" action="https://form.taxi/s/xeyymb58">
+<form method="POST" action="https://form.taxi/s/xeyymb58">
 	<fieldset>
 		<legend> message me </legend>
 
@@ -90,7 +89,8 @@
 	@media screen and (min-width: 200px) {
 		form {
 			width: 100%;
-			margin: 0 34.5%;
+			/* margin: 0 34.75%; */
+			margin-left: 92.75%;
 		}
 
 		input {
@@ -176,7 +176,8 @@
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 		.open-button,
-		.close-button {
+		.close-button,
+		.modal {
 			display: none;
 		}
 
@@ -207,7 +208,8 @@
 		}
 
 		form {
-			margin: 0 20%;
+			/* margin: 0 22%; */
+			margin-left: 57%;
 		}
 
 		legend {
@@ -223,7 +225,8 @@
 		}
 
 		form {
-			margin: 0 16.35%;
+			/* margin: 0 16.35%; */
+			margin-left: 40.5%;
 		}
 
 		.send {
@@ -235,7 +238,6 @@
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
-		/* modal */
 		.open-button {
 			display: block;
 			font-size: 1.2rem;
@@ -307,7 +309,6 @@
 			margin: 1.5rem auto;
 		}
 
-		/* content */
 		label {
 			font-family: var(--lexend);
 		}
@@ -338,13 +339,15 @@
 		}
 
 		form {
-			margin: 0 16%;
+			/* margin: 0 16%; */
+			margin-left: 38.5%;
 		}
 	}
 
 	@media screen and (min-width: 850px) {
 		form {
-			margin: 0 51%;
+			/* margin: 0 50.75%; */
+			margin-left: 71.25%;
 		}
 
 		legend {
@@ -357,7 +360,8 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			margin: 0 44.5%;
+			/* margin: 0 44.5%; */
+			margin-left: 61.5%;
 		}
 
 		label {
@@ -414,23 +418,42 @@
 
 	@media screen and (min-width: 1100px) {
 		form {
-			margin: 0 41.5%;
+			/* margin: 0 41.5%; */
+			margin-left: 57.5%;
 		}
 	}
 
 	@media screen and (min-width: 1200px) {
 		form {
-			margin: 0 40%;
+			/* margin: 0 40%; */
+			margin-left: 54.75%;
 		}
 	}
 
 	@media screen and (min-width: 1350px) {
 		form {
-			margin: 0 35%;
+			/* margin: 0 35%; */
+			margin-left: 48.5%;
 		}
 
 		.open-button {
 			padding: 1rem;
+		}
+	}
+
+	@media screen and (min-width: 1500px) {
+		form {
+			/* margin: 0 35%; */
+			width: 100%;
+			margin-left: 43.5%;
+		}
+	}
+
+	@media screen and (min-width: 1600px) {
+		form {
+			/* margin: 0 35%; */
+			width: 100%;
+			margin-left: 35.25%;
 		}
 	}
 
@@ -440,7 +463,8 @@
 		}
 
 		form {
-			margin: 0 25%;
+			margin: 0 20%;
+			margin-left: 34%;
 		}
 	}
 </style>
