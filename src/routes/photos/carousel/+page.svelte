@@ -23,21 +23,16 @@
 <main>
 	<ImageCarousel />
 
-	<!-- domino image and link -->
-	<div class="domino" aria-label="domino">
-		<p class="domino-text">Dominoes:</p>
-		<a class="btn__link" href="/photos/domino"
-			><img
-				class="domino-image"
-				src="/logos/dominoes.png"
-				alt="A game of dominoes made in Spline."
-			/></a
+	<!-- robot link -->
+	<div class="robot" aria-label="robot">
+		<p class="robot-text">Robot:</p>
+		<a class="btn__link" href="/photos/robot"
+			><img class="robot-image" src="/logos/robot.png" alt="A robot made in Spline." /></a
 		>
 	</div>
 </main>
 
 <style>
-	/* content */
 	main {
 		text-align: center;
 		font-size: 2.5rem;
@@ -45,12 +40,12 @@
 		padding-top: 2rem;
 	}
 
-	.domino {
+	.robot {
 		display: block;
 		margin-top: 2rem;
 	}
 
-	.domino-image {
+	.robot-image {
 		display: block;
 		width: 20%;
 		height: 25%;
@@ -58,13 +53,13 @@
 		border-radius: 10px;
 	}
 
-	.domino-image:hover {
+	.robot-image:hover {
 		opacity: 0.5;
 		transition: opacity 0.75s ease-in-out;
 		animation: wiggle 0.5s ease-in-out infinite;
 	}
 
-	.domino-text {
+	.robot-text {
 		font-size: 1.75rem;
 		font-weight: 700;
 		color: var(--purple);
@@ -103,11 +98,11 @@
 			font-size: 2.5rem;
 		}
 
-		.domino {
+		.robot {
 			display: none;
 		}
 
-		.domino-text {
+		.robot-text {
 			font-family: var(--lexend);
 		}
 	}
@@ -117,7 +112,7 @@
 			font-size: 4rem;
 		}
 
-		.domino {
+		.robot {
 			display: block;
 		}
 	}
@@ -127,7 +122,7 @@
 			font-size: 6rem;
 		}
 
-		.domino {
+		.robot {
 			display: block;
 		}
 	}
