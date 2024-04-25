@@ -243,6 +243,7 @@
 			width: 4%;
 			height: 2%;
 			margin-left: 100%;
+			margin-top: 5%;
 			outline: none;
 			border: 2px solid var(--white);
 			border-radius: 15px;
