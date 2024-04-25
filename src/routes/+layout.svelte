@@ -1,8 +1,9 @@
 <script>
+	import '../app.css';
 	import NavBar from '$lib/components/NavBar.svelte';
 	import Analytics from '$lib/data/Analytics.svelte';
 	import SEO from '$lib/data/SEO.svelte';
-	import '../app.css';
+	import { inject } from '@vercel/analytics';
 </script>
 
 <svelte:head>
