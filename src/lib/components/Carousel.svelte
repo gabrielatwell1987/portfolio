@@ -32,6 +32,10 @@
 			<Image picture="/photos/gabe2.png" desc="Gabriel Atwell" />
 		</div>
 
+		<div class="gabe bigger">
+			<Image picture="/photos/wtf.jpg" desc="Gabriel Atwell" />
+		</div>
+
 		<div class="gabe">
 			<Image picture="/photos/gabe.png" desc="Gabriel Atwell" />
 		</div>
@@ -44,6 +48,10 @@
 			<Image picture="/photos/gabe8.png" desc="Gabriel Atwell" />
 		</div>
 
+		<div class="gabe bigger">
+			<Image picture="/photos/wtf2.png" desc="Gabriel Atwell" />
+		</div>
+
 		<div class="gabe">
 			<Image picture="/photos/gabe10.png" desc="Gabriel Atwell" />
 		</div>
@@ -54,14 +62,6 @@
 
 		<div class="gabe">
 			<Image picture="/photos/gabe6.png" desc="Gabriel Atwell" />
-		</div>
-
-		<div class="gabe bigger">
-			<Image picture="/photos/wtf2.png" desc="Gabriel Atwell" />
-		</div>
-
-		<div class="gabe bigger">
-			<Image picture="/photos/wtf.jpg" desc="Gabriel Atwell" />
 		</div>
 
 		<div class="next" slot="next" on:click={showNextPage} on:keydown={() => {}} alt="next">
