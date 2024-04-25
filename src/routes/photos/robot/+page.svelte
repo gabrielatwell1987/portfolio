@@ -2,4 +2,4 @@
 	import Robot from '$lib/components/Robot.svelte';
 </script>
 
-<Robot />
+<Robot title="Mouse Position" />

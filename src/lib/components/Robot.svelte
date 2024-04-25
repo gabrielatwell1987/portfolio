@@ -1,5 +1,9 @@
+<script>
+	export let title;
+</script>
+
 <main>
-	<h1>Robot</h1>
+	<h1>{title}</h1>
 
 	<!-- spline interactive animation -->
 
