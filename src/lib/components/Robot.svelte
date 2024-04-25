@@ -1,12 +1,10 @@
-<script>
-</script>
-
 <main>
-	<h1>A Domino Game</h1>
+	<h1>Robot</h1>
 
 	<!-- spline interactive animation -->
+
 	<iframe
-		src="https://my.spline.design/dominoeffectphysicscopy-c3ca25fe0cef82be951f86d64575ab3a/"
+		src="https://my.spline.design/robotfollowcursorforlandingpage-887310bccea6e24d681820089ada9b65/"
 		frameborder="0"
 		width="100%"
 		height="100%"
@@ -14,14 +12,10 @@
 		aria-label="domino"
 	/>
 
-	<h3>Make sure you click the animation with your mouse first</h3>
-	<h3>You can also use your mouse to change the view</h3>
-	<h3>move: W A S D & jump: SPACE</h3>
+	<h3>The robot will follow your mouse movements.</h3>
 </main>
 
 <style>
-	/* desktop */
-	/* dominoes */
 	iframe {
 		width: 50%;
 		height: 25rem;
@@ -30,21 +24,21 @@
 		margin-bottom: 2rem;
 	}
 
-	/* content */
 	h1,
 	h3 {
 		text-align: center;
-		margin-top: 0.25rem;
+		margin-top: 0.5rem;
 	}
 
 	h1 {
 		color: var(--purple);
-		margin: 1% 0 2rem 0;
+		margin: 5% 0 2rem 0;
 	}
 
 	h3 {
 		color: var(--smoke);
 		margin: 0;
 		margin-top: 0.25rem;
+		margin-bottom: 8%;
 	}
 </style>
