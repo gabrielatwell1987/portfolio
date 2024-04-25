@@ -25,7 +25,7 @@
 
 	<!-- robot link -->
 	<div class="robot" aria-label="robot">
-		<p class="robot-text">Robot:</p>
+		<p class="robot-text">Mouse Position Robot:</p>
 		<a class="btn__link" href="/photos/robot"
 			><img class="robot-image" src="/logos/robot.png" alt="A robot made in Spline." /></a
 		>
