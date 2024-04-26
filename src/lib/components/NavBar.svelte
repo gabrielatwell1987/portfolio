@@ -123,6 +123,7 @@
 			flex-direction: row;
 			border: none;
 			background-color: transparent;
+			margin-left: 5%;
 		}
 
 		.mobile {
