@@ -18,7 +18,7 @@
 	iframe {
 		margin: 2rem 0 0 30%;
 		border: 2px solid var(--dark-gray);
-		padding: 0.25rem;
+		padding: 0.5rem;
 		border-radius: 5px;
 	}
 
