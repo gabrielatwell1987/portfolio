@@ -42,7 +42,7 @@
 	}
 
 	button {
-		width: 15%;
+		width: 13%;
 		margin-inline: auto;
 		margin-bottom: 25%;
 		padding: 0.5rem 1rem;
