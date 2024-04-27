@@ -1,5 +1,5 @@
-// import adapter from '@sveltejs/adapter-auto';
-import adapter from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-auto';
+// import adapter from '@sveltejs/adapter-vercel';
 
 import { mdsvex } from 'mdsvex';
 
