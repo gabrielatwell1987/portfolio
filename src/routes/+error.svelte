@@ -16,6 +16,7 @@
 		border: 5px solid var(--white);
 		border-radius: 5px;
 		padding: 1rem 1.5rem;
+		margin-top: 10%;
 	}
 
 	h1 {
