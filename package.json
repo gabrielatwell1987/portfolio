@@ -13,6 +13,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
+		"dotenv": "^16.4.5",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.26.0",
@@ -29,6 +30,8 @@
 	"type": "module",
 	"dependencies": {
 		"@analytics/google-analytics": "^1.0.7",
+		"@auth/core": "^0.30.0",
+		"@auth/sveltekit": "^1.0.1",
 		"dat.gui": "^0.7.9",
 		"from": "^0.1.7",
 		"gsap": "^3.12.2",

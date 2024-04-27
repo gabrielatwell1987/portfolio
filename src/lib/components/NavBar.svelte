@@ -29,6 +29,7 @@
 		<a class="nav-link" href="/about" aria-label="about">About</a>
 		<a class="nav-link" href="/photos/carousel" aria-label="photos">Photos</a>
 		<a class="nav-link" href="/contact" aria-label="contact">Contact</a>
+		<a class="nav-link" href="/login" aria-label="login">Login</a>
 	</div>
 
 	<!-- desktop view -->
@@ -39,6 +40,7 @@
 			<a class="nav-link" href="/about" aria-label="about">About</a>
 			<a class="nav-link" href="/photos/carousel" aria-label="photos">Photos</a>
 			<a class="nav-link" href="/contact" aria-label="contact">Contact</a>
+			<a class="nav-link" href="/login" aria-label="login">Login</a>
 		</div>
 	{/if}
 </nav>
@@ -76,7 +78,7 @@
 			justify-content: space-around;
 			align-items: center;
 			gap: 1.5rem;
-			margin-top: 12rem;
+			margin-top: 15.75rem;
 			z-index: 10;
 			border: 1px solid var(--white);
 			border-radius: 5px;
@@ -119,7 +121,7 @@
 		.desktop {
 			display: flex;
 			margin-top: 0;
-			gap: 1.5rem;
+			gap: 1rem;
 			flex-direction: row;
 			border: none;
 			background-color: transparent;
@@ -171,16 +173,16 @@
 	@media (min-width: 990px) {
 		.nav-link {
 			font-size: 1.5rem;
-			margin-left: 8rem;
+			margin-left: 7rem;
 			margin-right: -7rem;
 		}
 
 		.desktop {
 			display: block;
 			width: 100%;
-			margin-left: -8%;
+			margin-left: -15%;
 			font-size: 1rem;
-			font-weight: bolder;
+			font-weight: 600;
 		}
 
 		nav {
