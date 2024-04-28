@@ -31,8 +31,6 @@
 	"type": "module",
 	"dependencies": {
 		"@analytics/google-analytics": "^1.0.7",
-		"@auth/core": "^0.30.0",
-		"@auth/sveltekit": "^1.0.1",
 		"dat.gui": "^0.7.9",
 		"from": "^0.1.7",
 		"gsap": "^3.12.2",
