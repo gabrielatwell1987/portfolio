@@ -38,10 +38,5 @@
 		"lucide-svelte": "^0.284.0",
 		"split-type": "^0.3.4",
 		"three": "^0.161.0"
-	},
-	"exports": {
-		".": {
-			"svelte": "./dist/index.js"
-		}
 	}
 }
