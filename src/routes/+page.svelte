@@ -3,4 +3,3 @@
 </script>
 
 <Hero />
-<h1>test</h1>
