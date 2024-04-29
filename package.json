@@ -36,6 +36,7 @@
 		"highlight.js": "^11.9.0",
 		"lucide-svelte": "^0.284.0",
 		"split-type": "^0.3.4",
-		"three": "^0.161.0"
+		"three": "^0.161.0",
+		"vite-plugin-svelte": "^3.0.1"
 	}
 }
