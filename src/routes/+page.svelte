@@ -3,3 +3,4 @@
 </script>
 
 <Hero />
+<h1>Random Test</h1>
