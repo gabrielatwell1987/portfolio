@@ -2,6 +2,7 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { onMount } from 'svelte';
+	import SplitType from 'split-type';
 
 	onMount(() => {
 		// responsive animations
@@ -19,7 +20,7 @@
 			tl.to('.gabe', {
 				borderRadius: '1.75rem',
 				stagger: 0.75,
-				scale: 0.75,
+				scale: 0.8,
 				repeat: 1,
 				yoyo: true,
 				scrollTrigger: {
@@ -36,19 +37,30 @@
 				gsap.set('.gabe', { borderRadius: '5px', scale: 1 });
 			};
 		});
+
+		// title animations
+		const titleText = new SplitType('.title', { types: 'chars' });
+
+		gsap.from(titleText.chars, {
+			duration: 4,
+			y: 50,
+			opacity: 0.5,
+			stagger: -0.2,
+			ease: 'elastic.out(1.75, 0.5)'
+		});
 	});
 </script>
 
 <!-- content -->
 <main>
-	<h2 class="title">PHOTOS</h2>
+	<h2 class="title">IMAGES</h2>
 
 	<section>
 		<div class="spacing" />
 
 		<!-- images of me 3x3 -->
 		<div class="pictures">
-			<aside class="flex">
+			<aside class="flex gabe">
 				<img class="gabe" src="photos/gabe.png" alt="Gabriel Atwell." width="350" height="450" />
 				<img class="gabe" src="photos/gabe2.png" alt="Gabriel Atwell." width="300" height="350" />
 				<img class="gabe" src="photos/gabe7.png" alt="Gabriel Atwell" width="375" />
@@ -65,24 +77,25 @@
 
 		<div class="pictures">
 			<aside class="flex">
-				<img class="gabe" src="photos/gabe5.png" alt="Gabriel Atwell." width="475" />
-				<img class="gabe" src="photos/gabe3.png" alt="Gabriel Atwell." width="400" height="900" />
+				<img src="/photos/gabe5.png" alt="Gabriel Atwell" class="gabe" width="400" />
+				<img src="/photos/gabe3.png" alt="Gabriel Atwell" class="gabe" width="350" />
+				<img src="/photos/gabe10.png" alt="Gabriel Atwell" class="gabe" width="375" />
 			</aside>
 		</div>
 
 		<div class="spacing" />
 	</section>
 
-	<!-- domino image and link -->
-	<div class="domino" aria-label="domino">
-		<p class="domino-text">Dominoes:</p>
-		<a class="btn-link" href="/photos/domino">
-			<img class="domino-image" src="logos/dominoes.png" alt="A game of dominoes made in Spline." />
-		</a>
+	<!-- robot link -->
+	<div class="robot" aria-label="robot">
+		<p class="robot-text">Mouse Position Robot:</p>
+		<a class="btn__link" href="/photos/robot"
+			><img class="robot-image" src="/logos/robot.png" alt="A robot made in Spline." /></a
+		>
 	</div>
 
 	<!-- spacing -->
-	<br /><br /><br />
+	<!-- <br /><br /><br /> -->
 </main>
 
 <style>
@@ -100,12 +113,13 @@
 			margin-bottom: 1rem;
 		}
 
-		.domino {
+		.robot {
 			display: none;
 		}
 
 		.gabe {
 			margin: 0.5rem auto;
+			max-width: 100%;
 		}
 
 		.gabe:hover {
@@ -124,7 +138,7 @@
 	}
 
 	@media (min-width: 850px) {
-		.btn-link {
+		.btn__link {
 			font-size: 2.5rem;
 			font-weight: bolder;
 			text-decoration: none;
@@ -132,20 +146,19 @@
 			font-family: var(--montserrat);
 		}
 
-		.btn-link:hover {
+		.btn__link:hover {
 			font-size: 2.5rem;
 			font-weight: bolder;
 			text-decoration: none;
 			color: var(--smoke);
 		}
 
-		/* domino link */
-		.domino {
+		.robot {
 			display: block;
 			margin-top: 2rem;
 		}
 
-		.domino-image {
+		.robot-image {
 			display: block;
 			width: 20%;
 			height: 25%;
@@ -153,18 +166,19 @@
 			border-radius: 10px;
 		}
 
-		.domino-image:hover {
+		.robot-image:hover {
 			opacity: 0.5;
 			transition: opacity 0.75s ease-in-out;
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
-		.domino-text {
+		.robot-text {
 			font-family: var(--anta);
 			font-size: 1.75rem;
 			font-weight: 700;
 			color: var(--purple);
 			letter-spacing: 5px;
+			text-align: center;
 		}
 
 		@keyframes wiggle {
@@ -196,8 +210,6 @@
 			align-items: center;
 			width: 100%;
 			margin: 0 auto;
-			/* border: 5px solid var(--white); */
-			/* border-image: linear-gradient(to right, var(--black), var(--lightblack)) 1; */
 			background-color: transparent;
 		}
 
@@ -205,7 +217,6 @@
 			font-size: 8rem;
 			color: var(--white);
 			margin: 2rem auto;
-			/* text-shadow: 0px 0px 50px var(--smoke); */
 			text-shadow: -5px 5px 4px var(--dark-gray);
 		}
 
@@ -215,6 +226,14 @@
 			flex-direction: row;
 			gap: 10%;
 			margin: 7% auto;
+		}
+
+		.pictures {
+			margin-left: -12%;
+		}
+
+		.robot {
+			margin-bottom: 5%;
 		}
 	}
 </style>
