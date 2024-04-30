@@ -104,7 +104,7 @@
 			width: 100%;
 			margin: 0;
 			background: url('/logos/dead-tree.png') no-repeat center center/cover fixed;
-			margin-bottom: 5%;
+			margin-bottom: 10%;
 		}
 
 		.flex {
