@@ -29,6 +29,7 @@
 		<a class="nav-link" href="/about" aria-label="about">About</a>
 		<a class="nav-link" href="/photos/carousel" aria-label="photos">Photos</a>
 		<a class="nav-link" href="/contact" aria-label="contact">Contact</a>
+		<a class="nav-link" href="/login" aria-label="login">Login</a>
 	</div>
 
 	<!-- desktop view -->
@@ -39,6 +40,7 @@
 			<a class="nav-link" href="/about" aria-label="about">About</a>
 			<a class="nav-link" href="/photos/carousel" aria-label="photos">Photos</a>
 			<a class="nav-link" href="/contact" aria-label="contact">Contact</a>
+			<a class="nav-link" href="/login" aria-label="login">Login</a>
 		</div>
 	{/if}
 </nav>
@@ -224,7 +226,7 @@
 
 	@media (min-width: 1600px) {
 		.desktop {
-			margin-left: 30%;
+			margin-left: 25%;
 		}
 
 		.gabe-logo {
