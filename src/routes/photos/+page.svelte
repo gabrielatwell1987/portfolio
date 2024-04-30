@@ -93,9 +93,6 @@
 			><img class="robot-image" src="/logos/robot.png" alt="A robot made in Spline." /></a
 		>
 	</div>
-
-	<!-- spacing -->
-	<br /><br /><br /><br /><br />
 </main>
 
 <style>
@@ -104,6 +101,7 @@
 			width: 100%;
 			margin: 0;
 			background: url('/logos/dead-tree.png') no-repeat center center/cover fixed;
+			margin-bottom: 10%;
 		}
 
 		.flex {
