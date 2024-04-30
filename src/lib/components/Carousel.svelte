@@ -2,27 +2,35 @@
 	import Carousel from 'svelte-carousel';
 	import { browser } from '$app/environment';
 	import Image from './Image.svelte';
+	import { goToPrev } from 'svelte-carousel/src/components/Carousel/Carousel.svelte';
 
 	let carousel;
 </script>
 
-<!-- content -->
 {#if browser}
 	<Carousel
 		dots={false}
 		arrows
 		infinite
 		duration="1000"
-		swiping
+		swiping={true}
 		autoplay
 		autoplayDuration={5000}
 		bind:this={carousel}
 		let:showPrevPage
 		let:showNextPage
 	>
-		<div class="prev" slot="prev" on:click={showPrevPage} on:keydown={() => {}} alt="previous">
+		<!-- <div
+			class="prev"
+			slot="prev"
+			role="button"
+			tabindex="0"
+			on:click={carousel.showPrevPage}
+			on:keydown={() => {}}
+			alt="previous"
+		>
 			<i class="fa-solid fa-arrow-left" />
-		</div>
+		</div> -->
 
 		<div class="gabe">
 			<Image picture="/photos/gabe7.png" desc="Gabriel Atwell" />
@@ -64,9 +72,17 @@
 			<Image picture="/photos/gabe6.png" desc="Gabriel Atwell" />
 		</div>
 
-		<div class="next" slot="next" on:click={showNextPage} on:keydown={() => {}} alt="next">
+		<!-- <div
+			class="next"
+			slot="next"
+			role="button"
+			tabindex="0"
+			on:click={carousel.showNextPage}
+			on:keydown={() => {}}
+			alt="next"
+		>
 			<i class="fa-solid fa-arrow-right" />
-		</div>
+		</div> -->
 	</Carousel>
 {/if}
 
@@ -78,7 +94,7 @@
 		place-content: center;
 	}
 
-	.prev,
+	/* .prev,
 	.next {
 		width: 50px;
 		height: 50px;
@@ -93,7 +109,7 @@
 		margin-left: 2rem;
 		margin-right: 2rem;
 		cursor: pointer;
-	}
+	} */
 
 	@media (min-width: 200px) {
 		.gabe {
@@ -105,7 +121,7 @@
 			opacity: 0.75;
 		}
 
-		.prev,
+		/* .prev,
 		.next {
 			width: 30px;
 			height: 30px;
@@ -124,14 +140,14 @@
 
 		i {
 			font-size: 1rem;
-		}
+		} */
 
 		.bigger {
 			width: 300%;
 		}
 	}
 
-	@media (min-width: 400px) {
+	/* @media (min-width: 400px) {
 		.prev,
 		.next {
 			width: 40px;
@@ -167,5 +183,5 @@
 		i {
 			font-size: 1.5rem;
 		}
-	}
+	} */
 </style>
