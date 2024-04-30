@@ -20,11 +20,11 @@
 			tl.to('.gabe', {
 				borderRadius: '1.75rem',
 				stagger: 0.75,
-				scale: 0.8,
+				scale: 0.9,
 				repeat: 1,
 				yoyo: true,
 				scrollTrigger: {
-					trigger: '.pictures',
+					trigger: 'main',
 					start: 'top bottom-=75%',
 					end: 'bottom top+=5%',
 					x: 200,
@@ -81,6 +81,14 @@
 				<img src="/photos/gabe3.png" alt="Gabriel Atwell" class="gabe" width="350" />
 				<img src="/photos/gabe10.png" alt="Gabriel Atwell" class="gabe" width="375" />
 			</aside>
+		</div>
+
+		<div class="pictures left">
+			<div class="flex">
+				<img src="/photos/wtf3.png" alt="Gabriel Atwell" class="gabe" width="450" />
+				<img src="/photos/wtf.jpg" alt="Gabriel Atwell" class="gabe" width="500" />
+				<img src="/photos/wtf2.png" alt="Gabriel Atwell" class="gabe" width="550" />
+			</div>
 		</div>
 
 		<div class="spacing" />
@@ -222,16 +230,21 @@
 			display: flex;
 			justify-content: space-around;
 			flex-direction: row;
-			gap: 10%;
+			gap: 8%;
 			margin: 7% auto;
 		}
 
 		.pictures {
 			margin-left: -12%;
+			/* margin-top: -5rem; */
 		}
 
 		.robot {
 			margin-bottom: 5%;
+		}
+
+		.left {
+			margin-left: 1%;
 		}
 	}
 </style>
