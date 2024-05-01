@@ -71,6 +71,10 @@
 			<Image picture="/photos/gabe6.png" desc="Gabriel Atwell" />
 		</div>
 
+		<div class="gabe">
+			<Image picture="/photos/wtf3.png" desc="Gabriel Atwell" />
+		</div>
+
 		<!-- <div
 			class="next"
 			slot="next"
