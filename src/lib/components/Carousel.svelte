@@ -2,7 +2,6 @@
 	import Carousel from 'svelte-carousel';
 	import { browser } from '$app/environment';
 	import Image from './Image.svelte';
-	import { goToPrev } from 'svelte-carousel/src/components/Carousel/Carousel.svelte';
 
 	let carousel;
 </script>
