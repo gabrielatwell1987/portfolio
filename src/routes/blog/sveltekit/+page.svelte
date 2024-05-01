@@ -52,7 +52,7 @@
 
 			<details aria-label="accordian">
 				<!-- svelte-ignore a11y-no-redundant-roles -->
-				<summary role="button" class="outline contrast spacing"><b>Basics</b></summary>
+				<summary role="button" class="outline contrast spacing"><b>Based off of basics</b></summary>
 				<p class="detail">
 					I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I
 					have because I'm a very visual person. Sveltekit has made it super simple to put my ideas
@@ -68,7 +68,7 @@
 
 			<details aria-label="accordian">
 				<!-- svelte-ignore a11y-no-redundant-roles -->
-				<summary role="button" class="outline contrast spacing"><b>Definitions</b></summary>
+				<summary role="button" class="outline contrast spacing"><b>What is it?</b></summary>
 				<p class="detail">
 					Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
 					framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
