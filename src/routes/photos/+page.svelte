@@ -135,7 +135,13 @@
 		.title {
 			font-family: var(--anta);
 			font-size: 3rem;
+			font-weight: 900;
 			letter-spacing: 5px;
+			color: var(--purple);
+			text-transform: uppercase;
+			text-align: center;
+			text-shadow: 5px 5px 4px var(--dark-gray);
+			margin: 2rem auto;
 		}
 
 		.spacing {
@@ -221,9 +227,6 @@
 
 		.title {
 			font-size: 8rem;
-			color: var(--white);
-			margin: 2rem auto;
-			text-shadow: -5px 5px 4px var(--dark-gray);
 		}
 
 		.flex {
@@ -236,7 +239,6 @@
 
 		.pictures {
 			margin-left: -12%;
-			/* margin-top: -5rem; */
 		}
 
 		.robot {
