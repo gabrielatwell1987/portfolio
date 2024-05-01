@@ -95,7 +95,7 @@
 
 	@media (min-width: 200px) {
 		.title {
-			font-size: 5rem;
+			font-size: 3.5rem;
 		}
 
 		.robot {
