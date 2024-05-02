@@ -209,7 +209,7 @@
 		}
 
 		button {
-			width: 30%;
+			width: 35%;
 			font-size: 1.25rem;
 			margin: 3rem auto;
 		}
@@ -242,7 +242,7 @@
 
 	@media screen and (min-width: 1100px) {
 		button {
-			width: 20%;
+			width: 25%;
 		}
 
 		h3 {
@@ -252,7 +252,7 @@
 
 	@media screen and (min-width: 1800px) {
 		button {
-			width: 10%;
+			width: 15%;
 		}
 
 		h3 {
