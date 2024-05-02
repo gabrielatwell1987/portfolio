@@ -32,47 +32,47 @@
 		</div> -->
 
 		<div class="gabe">
-			<Image picture="/photos/gabe7.png" desc="Gabriel Atwell" />
+			<Image src="/photos/gabe7.png" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="gabe">
-			<Image picture="/photos/gabe2.png" desc="Gabriel Atwell" />
+			<Image src="/photos/gabe2.png" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="gabe bigger">
-			<Image picture="/photos/wtf.jpg" desc="Gabriel Atwell" />
+			<Image src="/photos/wtf.jpg" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="gabe">
-			<Image picture="/photos/gabe.png" desc="Gabriel Atwell" />
+			<Image src="/photos/gabe.png" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="gabe">
-			<Image picture="/photos/gabe3.png" desc="Gabriel Atwell" />
+			<Image src="/photos/gabe3.png" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="gabe">
-			<Image picture="/photos/gabe8.png" desc="Gabriel Atwell" />
+			<Image src="/photos/gabe8.png" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="gabe bigger">
-			<Image picture="/photos/wtf2.png" desc="Gabriel Atwell" />
+			<Image src="/photos/wtf2.png" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="gabe">
-			<Image picture="/photos/gabe10.png" desc="Gabriel Atwell" />
+			<Image src="/photos/gabe10.png" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="gabe">
-			<Image picture="/photos/gabe5.png" desc="Gabriel Atwell" />
+			<Image src="/photos/gabe5.png" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="gabe">
-			<Image picture="/photos/gabe6.png" desc="Gabriel Atwell" />
+			<Image src="/photos/gabe6.png" alt="Gabriel Atwell" />
 		</div>
 
 		<div class="gabe">
-			<Image picture="/photos/wtf3.png" desc="Gabriel Atwell" />
+			<Image src="/photos/wtf3.png" alt="Gabriel Atwell" />
 		</div>
 
 		<!-- <div

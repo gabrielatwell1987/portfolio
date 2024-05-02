@@ -74,13 +74,13 @@
 			</div>
 
 			<!-- set up side by side text -->
-			<Grid />
+			<Grid leftTitle="Frontend" rightTitle="Design based" />
 
 			<!-- github and codepen links -->
 			<Social />
 
 			<!-- skills section -->
-			<Skills />
+			<Skills title="Skills I know" />
 
 			<!-- image gallery -->
 			<a href="/about/gallery"><Button title="Gallery" /></a>
