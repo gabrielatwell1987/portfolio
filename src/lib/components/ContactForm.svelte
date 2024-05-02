@@ -96,6 +96,7 @@
 			width: 100%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
+			caret-color: var(--purple);
 		}
 
 		input:focus {
