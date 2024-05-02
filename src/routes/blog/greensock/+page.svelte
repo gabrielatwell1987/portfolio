@@ -86,8 +86,8 @@
 
 		<!-- video -->
 		<Iframe
-			url="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
-			name="YouTube video player"
+			src="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
+			title="YouTube video player"
 		/>
 
 		<!-- back button -->

@@ -1,9 +1,9 @@
 <script>
-	export let picture;
-	export let desc;
+	export let src;
+	export let alt;
 </script>
 
-<img src={picture} alt={desc} />
+<img {src} {alt} />
 
 <style>
 	img {

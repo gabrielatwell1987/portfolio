@@ -1,8 +1,11 @@
-<script></script>
+<script>
+	export let leftTitle;
+	export let rightTitle;
+</script>
 
 <section class="grid" aria-label="bio">
 	<div class="inline right">
-		<h2 class="right title">Frontend</h2>
+		<h2 class="right title">{leftTitle}</h2>
 
 		<p class="right">
 			The path that Gabe has chosen is the frontend path. One of his main interests is animations,
@@ -12,7 +15,7 @@
 	</div>
 
 	<div class="inline left">
-		<h2 class="left title">Design Based</h2>
+		<h2 class="left title">{rightTitle}</h2>
 
 		<p class="left">
 			A clean, crisp design is what Gabe tries to excel at. Visual hierarchy, whitespace, colors,

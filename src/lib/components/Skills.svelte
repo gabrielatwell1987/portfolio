@@ -1,7 +1,9 @@
-<script></script>
+<script>
+	export let title;
+</script>
 
 <section class="border" aria-label="skills">
-	<h3 class="skills-title">Skills I have learned</h3>
+	<h3 class="skills-title">{title}</h3>
 	<ul class="skills">
 		<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML"><li>HTML</li></a>
 		<a href="https://developer.mozilla.org/en-US/docs/Learn/CSS"><li>CSS</li></a>

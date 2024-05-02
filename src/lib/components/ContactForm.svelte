@@ -42,7 +42,7 @@
 		</header>
 
 		<div class="modal-img">
-			<Image picture="/logos/newspaper.jpg" desc="frontend newspaper clipping" />
+			<Image src="/logos/newspaper.jpg" alt="frontend newspaper clipping" />
 		</div>
 
 		<p class="modal__p">

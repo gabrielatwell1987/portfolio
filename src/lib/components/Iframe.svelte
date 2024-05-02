@@ -1,17 +1,17 @@
 <script>
-	export let url;
-	export let name;
+	export let src;
+	export let title;
 </script>
 
 <iframe
 	width="560"
 	height="315"
-	src={url}
-	title={name}
+	{src}
+	{title}
 	frameborder="0"
 	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 	allowfullscreen
-	aria-label={name}
+	aria-label={title}
 />
 
 <style>
