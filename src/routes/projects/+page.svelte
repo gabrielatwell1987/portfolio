@@ -21,10 +21,10 @@
 
 		gsap.from(titleText.chars, {
 			duration: 5,
-			y: 50,
+			y: -100,
 			scale: 0.1,
 			opacity: 0.5,
-			stagger: 0.2,
+			stagger: -0.2,
 			ease: 'elastic.out(0.5, 0.2)'
 		});
 	});
