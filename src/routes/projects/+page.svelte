@@ -79,18 +79,18 @@
 		description="A React to-do app"
 	/>
 
+	<Project
+		title="random user generator"
+		img="/projects/ran_user.png"
+		url="https://gabe3.vercel.app/"
+		description="Create random users"
+	/>
+
 	<!-- <Project
 		title="svelteflix"
 		img="/projects/svelteflix.png"
 		url="https://svelteflix-delta.vercel.app/"
 		description="A netflix clone"
-	/> -->
-
-	<!-- <Project
-		title="random user generator"
-		img="/projects/ran_user.png"
-		url="https://gabe3.vercel.app/"
-		description="Create random users"
 	/> -->
 
 	<!-- <Project
