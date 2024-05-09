@@ -10,7 +10,7 @@
 
 		gsap.from(titleText.chars, {
 			duration: 4,
-			y: 50,
+			y: -50,
 			opacity: 0.5,
 			stagger: -0.2,
 			ease: 'elastic.out(1.75, 0.5)'
