@@ -37,10 +37,7 @@
 	<section title="a white flower background">
 		<article>
 			<div class="atwell">
-				<Image
-					picture="/logos/atweezy.png"
-					desc="An logo that says Gabriel Atwell that you can move"
-				/>
+				<Image src="/logos/atweezy.png" alt="An logo that says Gabriel Atwell that you can move" />
 			</div>
 
 			<div class="bio" aria-label="bio">
