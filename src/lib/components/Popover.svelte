@@ -21,7 +21,7 @@
 	});
 </script>
 
-<h2>Hover over <button popovertarget="popover-gabe">me</button></h2>
+<h2><button popovertarget="popover-gabe">Hover over me</button></h2>
 
 <div id="popover-gabe" popover role="tooltip">
 	<img
