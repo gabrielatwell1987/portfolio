@@ -34,7 +34,7 @@
 </script>
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} aria-label="bio">
-	<section title="a white flower background">
+	<section>
 		<article>
 			<div class="atwell">
 				<Image src="/logos/atweezy.png" alt="An logo that says Gabriel Atwell that you can move" />
@@ -77,7 +77,7 @@
 			<Social />
 
 			<!-- skills section -->
-			<Skills title="Skills I know" />
+			<Skills title="Skills" />
 
 			<!-- image gallery -->
 			<a href="/about/gallery"><Button title="Gallery" /></a>
