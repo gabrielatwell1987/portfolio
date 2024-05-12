@@ -130,7 +130,6 @@
 			font-family: var(--anta);
 			mix-blend-mode: hard-light;
 			letter-spacing: 7px;
-			margin-right: 1rem;
 		}
 
 		.icons {
