@@ -8,13 +8,13 @@
 	<h3 class="skills-title">{title}</h3>
 
 	<ul class="skills">
-		<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML">
+		<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML" target="_blank">
 			<li>
 				<div class="icons"><Image src="skills/html.svg" alt="html" /></div>
 			</li>
 		</a>
 
-		<a href="https://developer.mozilla.org/en-US/docs/Learn/CSS">
+		<a href="https://developer.mozilla.org/en-US/docs/Learn/CSS" target="_blank">
 			<li>
 				<div class="icons">
 					<Image src="skills/css.svg" alt="css" />
@@ -22,7 +22,7 @@
 			</li>
 		</a>
 
-		<a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript">
+		<a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript" target="_blank">
 			<li>
 				<div class="icons">
 					<Image src="skills/js.svg" alt="javascript" />
@@ -30,7 +30,7 @@
 			</li>
 		</a>
 
-		<a href="https://kit.svelte.dev/">
+		<a href="https://kit.svelte.dev/" target="_blank">
 			<li>
 				<div class="icons">
 					<Image src="skills/svelte.svg" alt="sveltekit" />
@@ -38,7 +38,7 @@
 			</li>
 		</a>
 
-		<a href="https://gsap.com">
+		<a href="https://gsap.com" target="_blank">
 			<li>
 				<div class="icons">
 					<Image src="skills/greensock.svg" alt="greensock" />
@@ -46,7 +46,7 @@
 			</li>
 		</a>
 
-		<a href="https://nodejs.org">
+		<a href="https://nodejs.org" target="_blank">
 			<li>
 				<div class="icons">
 					<Image src="skills/node.svg" alt="node.js" />
@@ -54,7 +54,7 @@
 			</li>
 		</a>
 
-		<a href="https://github.com">
+		<a href="https://github.com" target="_blank">
 			<li>
 				<div class="icons">
 					<Image src="skills/github.svg" alt="github" />
@@ -62,7 +62,7 @@
 			</li>
 		</a>
 
-		<a href="https://sass-lang.com">
+		<a href="https://sass-lang.com" target="_blank">
 			<li>
 				<div class="icons">
 					<Image src="skills/scss.svg" alt="scss" />
@@ -70,7 +70,7 @@
 			</li>
 		</a>
 
-		<a href="https://tailwindcss.com">
+		<a href="https://tailwindcss.com" target="_blank">
 			<li>
 				<div class="icons">
 					<Image src="skills/tailwind.svg" alt="tailwind css" />
