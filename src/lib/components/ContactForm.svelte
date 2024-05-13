@@ -89,7 +89,7 @@
 	@media screen and (min-width: 200px) {
 		form {
 			width: 100%;
-			margin-left: 90.25%;
+			margin-left: 89.5%;
 		}
 
 		input {
