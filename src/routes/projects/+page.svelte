@@ -87,7 +87,7 @@
 	/>
 
 	<Project
-		title="tailwind landing page"
+		title="landing page"
 		img="/projects/landing.png"
 		url="https://landing-page-tailwind-rust.vercel.app/"
 		description="Made with tailwindcss"
