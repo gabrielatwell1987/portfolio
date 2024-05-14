@@ -86,6 +86,13 @@
 		description="Create random users"
 	/>
 
+	<Project
+		title="tailwind landing page"
+		img="/projects/landing.png"
+		url="https://landing-page-tailwind-rust.vercel.app/"
+		description="Made with tailwindcss"
+	/>
+
 	<!-- <Project
 		title="svelteflix"
 		img="/projects/svelteflix.png"
