@@ -52,10 +52,10 @@
 		.inline {
 			display: inline-block;
 			margin: 0 auto;
-			/* border: 3px solid var(--white); */
 			border-radius: 15px;
 			padding: 1rem 2rem;
-			background-color: var(--black);
+			background-color: var(--blacker);
+			backdrop-filter: blur(5px);
 		}
 
 		.right {
