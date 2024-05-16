@@ -39,6 +39,15 @@
 			font-family: var(--montserrat);
 			text-align: left;
 		}
+
+		.inline {
+			display: inline-block;
+			margin: 0 auto;
+			border-radius: 15px;
+			padding: 0.5rem 1.25rem;
+			background-color: var(--blacker);
+			backdrop-filter: blur(5px);
+		}
 	}
 
 	@media (min-width: 990px) {
