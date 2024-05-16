@@ -42,7 +42,7 @@
 
 		.inline {
 			display: inline-block;
-			margin: 0 auto;
+			margin: 0.5rem auto;
 			border-radius: 15px;
 			padding: 0.5rem 1.25rem;
 			background-color: var(--blacker);
