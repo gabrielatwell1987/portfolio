@@ -51,6 +51,15 @@
 	}
 
 	@media (min-width: 990px) {
+		p {
+			line-height: 2.5;
+		}
+
+		h2 {
+			font-size: 3rem;
+			letter-spacing: 5px;
+		}
+
 		.grid {
 			display: grid;
 			grid-template-rows: repeat(2, 1fr);
@@ -59,12 +68,8 @@
 		}
 
 		.inline {
-			display: inline-block;
 			margin: 0 auto;
-			border-radius: 15px;
 			padding: 1rem 2rem;
-			background-color: var(--blacker);
-			backdrop-filter: blur(5px);
 		}
 
 		.right {
@@ -78,15 +83,6 @@
 		.title {
 			color: var(--purple);
 			font-family: var(--anta);
-		}
-
-		p {
-			line-height: 2.5;
-		}
-
-		h2 {
-			font-size: 3rem;
-			letter-spacing: 5px;
 		}
 	}
 </style>
