@@ -44,7 +44,7 @@
 			display: inline-block;
 			margin: 0.5rem auto;
 			border-radius: 15px;
-			padding: 0.5rem 1.25rem;
+			padding: 0.5rem;
 			background-color: var(--blacker);
 			backdrop-filter: blur(5px);
 		}
