@@ -112,6 +112,10 @@
 			margin-bottom: 10%;
 		}
 
+		img {
+			max-width: 100%;
+		}
+
 		.flex {
 			display: flex;
 			flex-direction: column;
