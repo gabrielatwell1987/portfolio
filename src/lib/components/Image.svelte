@@ -8,5 +8,6 @@
 <style>
 	img {
 		border-radius: 2.5%;
+		max-width: 100%;
 	}
 </style>
