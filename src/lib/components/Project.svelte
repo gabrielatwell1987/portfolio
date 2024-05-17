@@ -16,6 +16,7 @@
 	@media (min-width: 200px) {
 		.img {
 			border-radius: 8px;
+			max-width: 100%;
 		}
 
 		.img:hover {
