@@ -59,6 +59,13 @@
 	/>
 
 	<Project
+		title="pie chart"
+		img="/projects/piechart.png"
+		url="https://piechart-brown.vercel.app"
+		description="Made with d3.js"
+	/>
+
+	<Project
 		title="snippet creator"
 		img="/projects/snippet.png"
 		url="https://appity.vercel.app"
