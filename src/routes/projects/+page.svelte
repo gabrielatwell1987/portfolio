@@ -59,10 +59,10 @@
 	/>
 
 	<Project
-		title="pie chart"
-		img="/projects/piechart.png"
+		title="scatterplot chart"
+		img="/projects/chart.png"
 		url="https://piechart-brown.vercel.app"
-		description="Made with d3.js"
+		description="Made with d3 and svelte"
 	/>
 
 	<Project
