@@ -28,7 +28,6 @@
 		<a class="nav-link" href="/blog" aria-label="blog">Blog</a>
 		<a class="nav-link" href="/about" aria-label="about">About</a>
 		<a class="nav-link" href="/photos" aria-label="photos">Photos</a>
-		<!-- <a class="nav-link" href="/photos/carousel" aria-label="photos">Photos</a> -->
 		<a class="nav-link" href="/contact" aria-label="contact">Contact</a>
 	</div>
 
