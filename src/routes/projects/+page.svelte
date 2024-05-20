@@ -24,7 +24,7 @@
 			y: 75,
 			scale: 0.2,
 			opacity: 0.5,
-			stagger: -0.2,
+			stagger: 0.2,
 			ease: 'elastic.out(0.5, 0.2)'
 		});
 	});
