@@ -90,7 +90,7 @@
 		title="random user generator"
 		img="/projects/ran_user.png"
 		url="https://gabe3.vercel.app/"
-		description="Create random users"
+		description="Made with Vue"
 	/>
 
 	<Project
