@@ -60,12 +60,13 @@
 			>
 			<p class="detail">
 				In the project, you have to <code>npm install gsap</code> (if you have Node.js installed) or
-				you can use the CDN (content delivery network). In sveltekit, you have to put all of your
-				GSAP code in an <code>onMount</code> function that you have to import. This is because onMount
-				is displayed once on initial load. If you were to use a regular script tag, it would not work.
-				All of the designs that are animated on this website are all from GSAP. I tend to think that
-				these animations make the website look a lot better than a static website. GSAP is a great tool
-				to use for any web developer. I highly recommend it!
+				you can use the CDN (content delivery network):
+				<code>https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js</code>. In sveltekit,
+				you have to put all of your GSAP code in an <code>onMount</code> function that you have to import.
+				This is because onMount is displayed once on initial load. If you were to use a regular script
+				tag, it would not work. All of the designs that are animated on this website are all from GSAP.
+				I tend to think that these animations make the website look a lot better than a static website.
+				GSAP is a great tool to use for any web developer. I highly recommend it!
 			</p>
 
 			<p class="detail">
