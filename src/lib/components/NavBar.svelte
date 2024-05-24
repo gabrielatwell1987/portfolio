@@ -127,6 +127,14 @@
 			margin-left: 5%;
 		}
 
+		a {
+			transition: transform 1.75s ease-in-out;
+		}
+
+		a:hover {
+			transform: scale(1.1);
+		}
+
 		.mobile {
 			display: none;
 		}
