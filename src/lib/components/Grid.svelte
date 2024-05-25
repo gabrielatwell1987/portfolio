@@ -45,7 +45,7 @@
 			margin: 0.5rem auto;
 			border-radius: 15px;
 			padding: 0.5rem;
-			background-color: var(--blacker);
+			background-color: hsla(205, 4%, 7%, 0.25);
 			backdrop-filter: blur(10px);
 		}
 	}
