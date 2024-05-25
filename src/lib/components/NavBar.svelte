@@ -128,7 +128,7 @@
 		}
 
 		a {
-			transition: transform 1.75s ease-in-out;
+			transition: transform 0.5s ease-in-out;
 		}
 
 		a:hover {
