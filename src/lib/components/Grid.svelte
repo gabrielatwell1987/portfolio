@@ -46,7 +46,7 @@
 			border-radius: 15px;
 			padding: 0.5rem;
 			background-color: var(--blacker);
-			backdrop-filter: blur(5px);
+			backdrop-filter: blur(10px);
 		}
 	}
 
