@@ -12,8 +12,8 @@
 		frameborder="0"
 		width="100%"
 		height="100%"
-		title="domino"
-		aria-label="domino"
+		title="robot"
+		aria-label="robot"
 	/>
 
 	<h3>The robot will follow your mouse movements.</h3>
