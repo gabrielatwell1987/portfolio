@@ -90,7 +90,6 @@
 
 		.skills-title {
 			color: var(--yellow);
-			margin-right: 10%;
 		}
 	}
 
