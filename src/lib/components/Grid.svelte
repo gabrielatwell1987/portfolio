@@ -28,7 +28,7 @@
 <style>
 	@media (min-width: 200px) {
 		h2 {
-			font-size: 2.5rem;
+			font-size: 2rem;
 			mix-blend-mode: difference;
 			color: var(--purple);
 			font-family: var(--montserrat);
