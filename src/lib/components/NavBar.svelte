@@ -129,10 +129,12 @@
 
 		a {
 			transition: transform 0.5s ease-in-out;
+			font-weight: 400;
 		}
 
 		a:hover {
 			transform: scale(1.1);
+			font-weight: 600;
 		}
 
 		.mobile {

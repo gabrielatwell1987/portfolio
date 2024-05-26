@@ -16,7 +16,7 @@
 
 	<a class="btn" href="/projects"><button aria-label="projects">Projects</button></a>
 
-	<h4 class="summary italic">Sample of projects I have created.</h4>
+	<h4 class="summary italic">Some projects I created.</h4>
 	<br />
 </section>
 
