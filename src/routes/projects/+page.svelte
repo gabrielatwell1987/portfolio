@@ -79,12 +79,12 @@
 		description="A password generator"
 	/>
 
-	<Project
+	<!-- <Project
 		title="to-do app"
 		img="/projects/react.png"
 		url="https://react-todo-navy-five.vercel.app/"
 		description="A React to-do app"
-	/>
+	/> -->
 
 	<Project
 		title="random user generator"
@@ -93,12 +93,12 @@
 		description="Made with Vue"
 	/>
 
-	<Project
+	<!-- <Project
 		title="landing page"
 		img="/projects/landing.png"
 		url="https://landing-page-tailwind-rust.vercel.app/"
 		description="Made with tailwindcss"
-	/>
+	/> -->
 
 	<!-- <Project
 		title="svelteflix"
