@@ -58,10 +58,17 @@
 		description="Search github users"
 	/>
 
-	<Project
+	<!-- <Project
 		title="scatterplot chart"
 		img="/projects/chart.png"
 		url="https://piechart-brown.vercel.app"
+		description="Made with d3 and svelte"
+	/> -->
+
+	<Project
+		title="data visualizations"
+		img="/projects/data-v.png"
+		url="https://data-viz-svelte.vercel.app"
 		description="Made with d3 and svelte"
 	/>
 
