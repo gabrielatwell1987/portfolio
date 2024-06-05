@@ -26,6 +26,8 @@
 
 <svelte:head>
 	<title>Greensock Animation Platform</title>
+	<meta name="description" content="Greensock" />
+	<meta name="keywords" content="GSAP" />
 </svelte:head>
 
 <!-- spacing -->

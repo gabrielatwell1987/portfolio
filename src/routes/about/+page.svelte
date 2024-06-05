@@ -35,6 +35,8 @@
 
 <svelte:head>
 	<title>About Me</title>
+	<meta name="description" content="About Gabriel Atwell" />
+	<meta name="keywords" content="About Me" />
 </svelte:head>
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} aria-label="bio">

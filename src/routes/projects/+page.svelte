@@ -32,6 +32,8 @@
 
 <svelte:head>
 	<title>Projects I've Built</title>
+	<meta name="description" content="Gabriel Atwell's Projects" />
+	<meta name="keywords" content="Projects, Work" />
 </svelte:head>
 
 <h1 class="title" id="title">projects</h1>

@@ -4,6 +4,8 @@
 
 <svelte:head>
 	<title>Robot</title>
+	<meta name="description" content="Mouse Position Robot" />
+	<meta name="keywords" content="Robot" />
 </svelte:head>
 
 <Robot title="Mouse Position" />

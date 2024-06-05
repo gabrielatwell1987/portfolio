@@ -54,6 +54,8 @@
 
 <svelte:head>
 	<title>Photos of Me</title>
+	<meta name="description" content="Gabriel Atwell's Photos" />
+	<meta name="keywords" content="Photos of Me" />
 </svelte:head>
 
 <!-- content -->

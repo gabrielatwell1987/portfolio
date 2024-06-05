@@ -21,6 +21,8 @@
 
 <svelte:head>
 	<title>Image Carousel</title>
+	<meta name="description" content="Gabriel Atwell's Images" />
+	<meta name="keywords" content="Carousel, Photos of Me" />
 </svelte:head>
 
 <h1 class="title">images</h1>

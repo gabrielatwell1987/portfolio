@@ -4,6 +4,8 @@
 
 <svelte:head>
 	<title>Error!</title>
+	<meta name="description" content="Error Page" />
+	<meta name="keywords" content="Gabriel Atwell's Portfolio, Error" />
 </svelte:head>
 
 <main aria-label="error">

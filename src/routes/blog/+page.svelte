@@ -29,6 +29,8 @@
 
 <svelte:head>
 	<title>Blog Topics</title>
+	<meta name="description" content="Blogs" />
+	<meta name="keywords" content="Blog, Sveltekit, GSAP" />
 </svelte:head>
 
 <main>
