@@ -4,6 +4,8 @@
 
 <svelte:head>
 	<title>Gabriel Atwell</title>
+	<meta name="description" content="Gabriel Atwell's Hero Section" />
+	<meta name="keywords" content="Hero" />
 </svelte:head>
 
 <ThreeCanvas />

@@ -4,6 +4,8 @@
 
 <svelte:head>
 	<title>Success!</title>
+	<meta name="description" content="Successfully Sent" />
+	<meta name="keywords" content="Success" />
 </svelte:head>
 
 <section>

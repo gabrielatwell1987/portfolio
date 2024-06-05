@@ -8,6 +8,8 @@
 
 <svelte:head>
 	<title>CSS & GSAP</title>
+	<meta name="description" content="CSS & GSAP" />
+	<meta name="keywords" content="CSS, GSAP" />
 </svelte:head>
 
 <section

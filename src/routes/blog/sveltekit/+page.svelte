@@ -26,6 +26,8 @@
 
 <svelte:head>
 	<title>Sveltekit</title>
+	<meta name="description" content="Sveltekit" />
+	<meta name="keywords" content="Sveltekit" />
 </svelte:head>
 
 <section class="main">

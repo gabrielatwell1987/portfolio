@@ -4,6 +4,8 @@
 
 <svelte:head>
 	<title>Contact Me</title>
+	<meta name="description" content="Contact Gabriel Atwell" />
+	<meta name="keywords" content="Contact Me" />
 </svelte:head>
 
 <main>
