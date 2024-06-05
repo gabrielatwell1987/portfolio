@@ -27,6 +27,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Blog Topics</title>
+</svelte:head>
+
 <main>
 	<!-- text animation -->
 	<h1 class="title">. . . .</h1>

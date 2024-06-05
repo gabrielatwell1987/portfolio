@@ -24,6 +24,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Greensock Animation Platform</title>
+</svelte:head>
+
 <!-- spacing -->
 <br /><br /><br /><br /><br /><br /><br />
 

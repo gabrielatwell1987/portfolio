@@ -19,6 +19,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Image Carousel</title>
+</svelte:head>
+
 <h1 class="title">images</h1>
 
 <main>

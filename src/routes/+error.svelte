@@ -2,6 +2,10 @@
 	import { page } from '$app/stores';
 </script>
 
+<svelte:head>
+	<title>Error!</title>
+</svelte:head>
+
 <main aria-label="error">
 	<!-- error page -->
 	<h1>{$page.status}</h1>
