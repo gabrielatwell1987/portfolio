@@ -52,6 +52,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Photos of Me</title>
+</svelte:head>
+
 <!-- content -->
 <main>
 	<h2 class="title">IMAGES</h2>

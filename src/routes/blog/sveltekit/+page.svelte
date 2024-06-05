@@ -24,6 +24,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Sveltekit</title>
+</svelte:head>
+
 <section class="main">
 	<!-- title -->
 	<h1 class="title">SvelteKit</h1>

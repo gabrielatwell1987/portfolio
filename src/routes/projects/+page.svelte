@@ -30,6 +30,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Projects I've Built</title>
+</svelte:head>
+
 <h1 class="title" id="title">projects</h1>
 
 <!-- links to my projects -->

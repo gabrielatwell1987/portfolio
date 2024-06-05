@@ -6,6 +6,10 @@
 	import Button from '$lib/components/Button.svelte';
 </script>
 
+<svelte:head>
+	<title>CSS & GSAP</title>
+</svelte:head>
+
 <section
 	in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}
 	title="a flower background"

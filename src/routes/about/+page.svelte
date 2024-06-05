@@ -33,6 +33,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>About Me</title>
+</svelte:head>
+
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} aria-label="bio">
 	<section>
 		<article>

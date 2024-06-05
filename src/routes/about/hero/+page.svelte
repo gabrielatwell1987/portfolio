@@ -2,6 +2,10 @@
 	import ThreeCanvas from '$lib/components/ThreeCanvas.svelte';
 </script>
 
+<svelte:head>
+	<title>Gabriel Atwell</title>
+</svelte:head>
+
 <ThreeCanvas />
 
 <section aria-label="hero">

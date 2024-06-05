@@ -2,6 +2,10 @@
 	import Image from '$lib/components/Image.svelte';
 </script>
 
+<svelte:head>
+	<title>Success!</title>
+</svelte:head>
+
 <section>
 	<Image src="/logos/success.png" alt="Atwell" />
 
