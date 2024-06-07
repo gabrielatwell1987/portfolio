@@ -148,6 +148,7 @@
 			margin-bottom: 0.25rem;
 			margin-right: 1rem;
 			letter-spacing: 2px;
+			color: var(--blue);
 		}
 	}
 
