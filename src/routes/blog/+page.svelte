@@ -39,7 +39,10 @@
 
 	<!-- links to tech stack pages -->
 	<section aria-label="icons">
+		<h2>Greensock</h2>
 		<a class="gs" href="blog/greensock"><GsapIcon /></a>
+
+		<h2>SvelteKit</h2>
 		<a class="sk" href="blog/sveltekit"><SvelteIcon /></a>
 	</section>
 
@@ -138,6 +141,13 @@
 
 		.animation-link {
 			display: none;
+		}
+
+		h2 {
+			text-align: center;
+			margin-bottom: 0.25rem;
+			margin-right: 1rem;
+			letter-spacing: 2px;
 		}
 	}
 

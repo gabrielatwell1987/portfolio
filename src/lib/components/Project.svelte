@@ -17,11 +17,11 @@
 		.img {
 			border-radius: 8px;
 			max-width: 100%;
+			transition: scale 0.25s ease-in-out;
 		}
 
 		.img:hover {
-			opacity: 0.8;
-			transition: opacity 0.25s ease-in-out;
+			scale: 1.05;
 		}
 
 		.linksize {
@@ -82,9 +82,7 @@
 
 	@media (min-width: 740px) {
 		img:hover {
-			transform: scale(1.05);
-			transition: transform 0.75s ease;
-			clip-path: inset(5% 5% 5% 5%);
+			transition: scale 0.75s ease;
 		}
 
 		.linksize {

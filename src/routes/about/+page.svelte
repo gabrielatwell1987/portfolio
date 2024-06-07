@@ -190,11 +190,12 @@
 		}
 
 		.main-title {
-			color: var(--purple);
+			color: var(--blue);
 			font-size: 7rem;
 			font-weight: 900;
 			font-family: var(--anta);
-			text-shadow: 5px 5px 4px var(--dark-gray);
+			text-shadow: 5px 5px 4px var(--off-white);
+			/* text-shadow: 5px 5px 4px var(--dark-gray); */
 		}
 
 		.text {
