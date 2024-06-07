@@ -18,6 +18,7 @@
 		flex-direction: column;
 		align-items: center;
 		position: relative;
+		margin-bottom: 1rem;
 	}
 
 	img {
