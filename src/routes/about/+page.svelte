@@ -119,11 +119,12 @@
 			background-color: transparent;
 		}
 
-		h2 {
+		.main-title {
 			font-size: 2.5rem;
 			mix-blend-mode: difference;
 			color: var(--purple);
 			font-family: var(--montserrat);
+			text-shadow: 1px 3px 4px var(--off-white);
 		}
 
 		a {
@@ -195,7 +196,6 @@
 			font-weight: 900;
 			font-family: var(--anta);
 			text-shadow: 5px 5px 4px var(--off-white);
-			/* text-shadow: 5px 5px 4px var(--dark-gray); */
 		}
 
 		.text {
