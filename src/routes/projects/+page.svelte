@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import SplitType from 'split-type';
 	import Project from '$lib/components/Project.svelte';
+	import Figure from '$lib/components/Figure.svelte';
 
 	// animations
 	onMount(() => {
@@ -145,8 +146,13 @@
 	<progress />
 
 	<!-- logo -->
-	<div class="logos">
-		<img class="designs" src="logos/designs.png" alt="A logo that says Atwell Designs" />
+	<div class="logos designs">
+		<!-- <img class="designs" src="logos/designs.png" alt="A logo that says Atwell Designs" /> -->
+		<Figure
+			src="logos/designs.png"
+			alt="A logo that says Atwell Designs"
+			text="Random logo I made"
+		/>
 	</div>
 </section>
 
@@ -194,12 +200,13 @@
 
 		.logos {
 			width: 100%;
+			margin-inline: auto;
 		}
 
 		.designs {
 			border-radius: 10%;
 			margin: 3rem 0;
-			width: 50%;
+			/* width: 50%; */
 		}
 	}
 
