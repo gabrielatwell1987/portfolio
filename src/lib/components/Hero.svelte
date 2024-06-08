@@ -50,7 +50,7 @@
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
-			font-size: 2rem;
+			font-size: 1.5rem;
 			font-weight: 600;
 			font-family: var(--anta);
 			letter-spacing: 2px;
