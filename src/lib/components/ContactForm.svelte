@@ -286,7 +286,7 @@
 		}
 
 		.modal h4 {
-			font-size: 1.5rem;
+			font-size: 3rem;
 			font-weight: 600;
 			font-family: var(--anta);
 			color: var(--yellow);
@@ -305,6 +305,7 @@
 		.modal__p {
 			width: 60%;
 			margin: 1.5rem auto;
+			font-size: 1.5rem;
 		}
 
 		label {
@@ -429,7 +430,29 @@
 		}
 
 		.open-button {
-			padding: 1rem;
+			padding: 2rem 3rem;
+		}
+
+		.close-button {
+			padding: 2rem 3rem;
+		}
+
+		i {
+			font-size: 2rem;
+		}
+
+		input {
+			font-size: 2rem;
+			padding: 2rem;
+		}
+
+		textarea {
+			font-size: 2rem;
+			padding: 2rem;
+		}
+
+		label {
+			font-size: 3rem;
 		}
 	}
 

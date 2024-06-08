@@ -149,6 +149,7 @@
 			margin-right: 1rem;
 			letter-spacing: 2px;
 			color: var(--blue);
+			font-size: 1.2rem;
 		}
 	}
 
@@ -176,6 +177,14 @@
 	@media (min-width: 990px) {
 		.gs {
 			margin-bottom: 5%;
+		}
+
+		h2 {
+			font-size: 2.5rem;
+		}
+
+		main {
+			margin-bottom: 10%;
 		}
 	}
 </style>

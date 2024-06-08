@@ -48,11 +48,11 @@
 
 	@media (min-width: 990px) {
 		.size {
-			font-size: 4.24rem;
+			font-size: 7rem;
 		}
 
 		.size:hover {
-			font-size: 4.24rem;
+			font-size: 7rem;
 		}
 
 		.dev-links {

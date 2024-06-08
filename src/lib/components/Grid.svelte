@@ -75,15 +75,22 @@
 
 		.right {
 			text-align: right;
+			font-size: 2rem;
+			letter-spacing: 2px;
+			line-height: 1.5;
 		}
 
 		.left {
 			text-align: left;
+			font-size: 2rem;
+			letter-spacing: 2px;
+			line-height: 1.5;
 		}
 
 		.title {
 			color: var(--purple);
 			font-family: var(--anta);
+			font-size: 5rem;
 		}
 	}
 </style>

@@ -192,6 +192,10 @@
 			font-size: 1.75rem;
 			font-kerning: none;
 		}
+
+		canvas {
+			margin-bottom: 15%;
+		}
 	}
 
 	/* tablet */
@@ -209,7 +213,7 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			color: whitesmoke;
-			font-size: 5rem;
+			font-size: 6rem;
 			font-weight: 900;
 
 			text-align: center;

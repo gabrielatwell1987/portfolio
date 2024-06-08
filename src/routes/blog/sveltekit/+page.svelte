@@ -208,7 +208,7 @@
 		}
 
 		.learn {
-			font-size: 1.75rem;
+			font-size: 2.5rem;
 		}
 
 		.center {
@@ -228,6 +228,14 @@
 
 		details {
 			width: 100%;
+		}
+
+		summary {
+			font-size: 2rem;
+		}
+
+		.detail {
+			font-size: 1.5rem;
 		}
 	}
 </style>

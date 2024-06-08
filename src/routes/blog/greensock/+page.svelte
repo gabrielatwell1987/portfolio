@@ -221,12 +221,16 @@
 		}
 
 		.learn {
-			font-size: 1.75rem;
+			font-size: 2.5rem;
 		}
 
 		.center {
 			font-size: 1.25rem;
 			margin-top: -3rem;
+		}
+
+		.subtitle {
+			font-size: 3rem;
 		}
 	}
 
@@ -239,8 +243,16 @@
 			letter-spacing: 2px;
 		}
 
+		summary {
+			font-size: 2rem;
+		}
+
 		details {
 			width: 100%;
+		}
+
+		.detail {
+			font-size: 1.5rem;
 		}
 	}
 </style>

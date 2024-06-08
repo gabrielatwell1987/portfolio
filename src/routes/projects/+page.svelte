@@ -148,11 +148,7 @@
 	<!-- logo -->
 	<div class="logos designs">
 		<!-- <img class="designs" src="logos/designs.png" alt="A logo that says Atwell Designs" /> -->
-		<Figure
-			src="logos/designs.png"
-			alt="A logo that says Atwell Designs"
-			text="Random logo I made"
-		/>
+		<Figure src="logos/designs.png" alt="A logo that says Atwell Designs" text="est. 2023" />
 	</div>
 </section>
 

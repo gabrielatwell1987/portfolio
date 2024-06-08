@@ -49,7 +49,7 @@
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
-			font-size: 1.25rem;
+			font-size: 2.5rem;
 			font-weight: 600;
 			font-family: var(--anta);
 			letter-spacing: 2px;
@@ -57,7 +57,6 @@
 
 		h4 {
 			color: var(--white);
-			font-size: 0.75rem;
 			font-weight: 400;
 			letter-spacing: 0.5px;
 			font-family: var(--lexend);
@@ -120,7 +119,7 @@
 
 		.summary {
 			margin: 0 auto;
-			font-size: 1rem;
+			font-size: 1.5rem;
 			font-weight: 500;
 			width: 100%;
 			padding: 0 1.25rem;
@@ -161,7 +160,7 @@
 		}
 
 		button {
-			font-size: 1rem;
+			font-size: 1.25rem;
 			width: 25%;
 			font-size: 1rem;
 			letter-spacing: 2px;
@@ -172,13 +171,13 @@
 		}
 
 		h3 {
-			font-size: 2.25rem;
+			font-size: 2.5rem;
 			letter-spacing: 7px;
 		}
 
 		h4 {
 			color: var(--white);
-			font-size: 1.25rem;
+			font-size: 1.5rem;
 		}
 
 		.summary {
@@ -210,7 +209,7 @@
 
 		button {
 			width: 35%;
-			font-size: 1.25rem;
+			font-size: 1.5rem;
 			margin: 3rem auto;
 		}
 
@@ -220,7 +219,8 @@
 
 		.summary {
 			width: 50%;
-			font-size: 1.1rem;
+			font-size: 2rem;
+			letter-spacing: 3px;
 		}
 
 		img {
@@ -244,19 +244,16 @@
 		button {
 			width: 25%;
 		}
-
-		h3 {
-			font-size: 2rem;
-		}
 	}
 
 	@media screen and (min-width: 1800px) {
 		button {
 			width: 15%;
+			font-size: 2.5rem;
 		}
 
 		h3 {
-			font-size: 3rem;
+			font-size: 5rem;
 		}
 	}
 </style>

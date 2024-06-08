@@ -22,7 +22,7 @@
 <style>
 	iframe {
 		width: 50%;
-		height: 25rem;
+		height: 50rem;
 		margin: 0 0 0 24.5%;
 		border-radius: 12px;
 		margin-bottom: 2rem;
@@ -37,6 +37,7 @@
 	h1 {
 		color: var(--purple);
 		margin: 5% 0 2rem 0;
+		font-size: 3rem;
 	}
 
 	h3 {

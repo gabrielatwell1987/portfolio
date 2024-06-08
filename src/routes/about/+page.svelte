@@ -149,7 +149,7 @@
 
 		.text {
 			max-width: 90%;
-			margin: 0 auto;
+			margin-inline: auto;
 		}
 
 		.text,
@@ -159,10 +159,6 @@
 	}
 
 	@media screen and (min-width: 990px) {
-		p {
-			line-height: 2.5;
-		}
-
 		section {
 			display: block;
 			width: 100%;
@@ -201,6 +197,8 @@
 		.text {
 			color: var(--white);
 			max-width: 75%;
+			font-size: 2rem;
+			line-height: 1.5;
 		}
 
 		.bio {
