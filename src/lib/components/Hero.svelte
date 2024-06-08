@@ -43,6 +43,7 @@
 			font-size: 1.75rem;
 			height: 100vh;
 			position: relative;
+			margin-bottom: 2%;
 		}
 
 		h3 {
