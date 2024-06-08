@@ -125,6 +125,7 @@
 			border: none;
 			background-color: transparent;
 			margin-left: 5%;
+			scale: 1.5;
 		}
 
 		a {
@@ -181,7 +182,7 @@
 
 	@media (min-width: 990px) {
 		.nav-link {
-			font-size: 1.5rem;
+			font-size: 1.75rem;
 			margin-left: 7rem;
 			margin-right: -7rem;
 		}
@@ -235,7 +236,7 @@
 
 	@media (min-width: 1600px) {
 		.desktop {
-			margin-left: 29%;
+			margin-left: 45%;
 		}
 
 		.gabe-logo {

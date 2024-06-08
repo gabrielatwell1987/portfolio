@@ -13,7 +13,7 @@
 			font-size: 1.2rem;
 			font-weight: 600;
 			border: 1px solid var(--white);
-			margin: 0 auto;
+			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
 			width: 50%;
@@ -46,7 +46,7 @@
 
 	@media (min-width: 740px) {
 		button {
-			font-size: 1rem;
+			font-size: 1.5rem;
 			width: 30%;
 			font-size: 1rem;
 			letter-spacing: 2px;
@@ -56,7 +56,7 @@
 	@media (min-width: 990px) {
 		button {
 			width: 25%;
-			font-size: 1.25rem;
+			font-size: 1.75rem;
 			margin: 3rem auto;
 		}
 	}
@@ -76,6 +76,7 @@
 	@media screen and (min-width: 1500px) {
 		button {
 			width: 20%;
+			font-size: 2.5rem;
 		}
 	}
 

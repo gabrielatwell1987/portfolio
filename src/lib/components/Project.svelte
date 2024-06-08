@@ -97,6 +97,7 @@
 		.hover-text {
 			width: 75%;
 			margin-left: -25%;
+			font-size: 1.5rem;
 		}
 	}
 
@@ -115,6 +116,7 @@
 		.hover-text {
 			width: 25%;
 			margin-left: -3%;
+			font-size: 1.75rem;
 		}
 	}
 </style>

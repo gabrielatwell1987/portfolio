@@ -27,119 +27,30 @@
 </section>
 
 <style>
-	section {
-		position: absolute;
-		top: 75%;
-		left: 50%;
-		transform: translate(-50%, -75%);
-		width: 100%;
-		margin-top: 35%;
-	}
-
-	h3 {
-		margin: 2rem auto;
-		margin-top: 10%;
-		color: var(--sky);
-		font-size: 1.75rem;
-		font-weight: 600;
-		font-family: var(--montserrat);
-		letter-spacing: 2px;
-	}
-
-	h4 {
-		color: var(--white);
-		font-size: 1rem;
-		font-weight: 400;
-		letter-spacing: 0.5px;
-		font-family: var(--lexend);
-		width: 99%;
-		margin: 0 auto;
-	}
-
-	button {
-		display: block;
-		background-color: transparent;
-		color: var(--white);
-		font-family: var(--lexend);
-		width: 10%;
-		height: 10%;
-		outline: none;
-		border: 1px solid var(--white);
-		margin: 1rem auto;
-		border-radius: 10px;
-		font-size: 1.2rem;
-		border-radius: 5rem;
-		filter: drop-shadow(0 0 0.75rem var(--smoke));
-		letter-spacing: 1px;
-		transition: 750ms;
-		outline: 3px solid currentColor;
-		outline-offset: -7px;
-		margin-top: 2rem;
-		margin-bottom: 0.25rem;
-		padding: 1rem 1.75rem;
-	}
-
-	button:hover,
-	button:focus {
-		border: 1px solid var(--black);
-		background-color: var(--white);
-		color: var(--black);
-		outline-offset: 0px;
-		animation: wiggle 0.5s ease-in-out infinite;
-	}
-
-	.summary {
-		margin: 0 auto;
-		font-size: 1rem;
-		font-weight: 500;
-		width: 75%;
-	}
-
-	.italic {
-		font-style: italic;
-		font-family: var(--montserrat);
-		font-weight: 200;
-		font-size: 0.8rem;
-		color: var(--white);
-	}
-
-	@keyframes wiggle {
-		0% {
-			rotate: 0deg;
-			translate: 0 0;
-		}
-		25% {
-			rotate: -2deg;
-			translate: -5px 0;
-		}
-		80% {
-			rotate: 2deg;
-			translate: 5px 0;
-		}
-	}
-
-	@media (min-width: 200px) {
+	/* bigger than mobile */
+	@media screen and (min-width: 200px) {
 		section {
-			position: absolute;
-			top: 99%;
-			left: 50%;
-			transform: translate(-50%, -99%);
+			text-align: center;
+			font-size: 1.75rem;
+			height: 100vh;
+			position: relative;
 		}
 
 		h3 {
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
-			font-size: 1.25rem;
+			font-size: 2.5rem;
+			font-weight: 600;
+			font-family: var(--anta);
 			letter-spacing: 2px;
 		}
 
 		h4 {
 			color: var(--white);
-			font-size: 0.75rem;
-			font-weight: 600;
+			font-weight: 400;
 			letter-spacing: 0.5px;
-			font-family: var(--montserrat);
+			font-family: var(--lexend);
 		}
 
 		button {
@@ -163,7 +74,6 @@
 			margin-top: 2rem;
 			margin-bottom: 0.25rem;
 			padding: 1rem 1.75rem;
-			mix-blend-mode: difference;
 			user-select: none;
 		}
 
@@ -173,6 +83,7 @@
 			background-color: var(--white);
 			color: var(--black);
 			outline-offset: 0px;
+			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
 		section {
@@ -190,14 +101,10 @@
 
 		.summary {
 			margin: 0 auto;
-			font-size: 1rem;
+			font-size: 1.5rem;
 			font-weight: 500;
 			width: 100%;
 			padding: 0 1.25rem;
-		}
-
-		.left {
-			text-align: left;
 		}
 
 		.italic {
@@ -207,22 +114,37 @@
 			font-size: 0.8rem;
 			color: var(--white);
 		}
+
+		.left {
+			text-align: left;
+		}
+
+		@keyframes wiggle {
+			0% {
+				rotate: 0deg;
+				translate: 0 0;
+			}
+			25% {
+				rotate: -2deg;
+				translate: -5px 0;
+			}
+			80% {
+				rotate: 2deg;
+				translate: 5px 0;
+			}
+		}
 	}
 
-	/* tablet */
-	@media (min-width: 740px) {
-		/* hero */
+	@media screen and (min-width: 740px) {
 		section {
-			position: absolute;
-			top: -18%;
-			left: 50%;
-			transform: translate(-50%, -18%);
-			width: 100%;
+			text-align: center;
+			font-size: 2rem;
 		}
 
 		button {
-			font-size: 1rem;
+			font-size: 1.25rem;
 			width: 25%;
+			font-size: 1rem;
 			letter-spacing: 2px;
 		}
 
@@ -231,13 +153,13 @@
 		}
 
 		h3 {
-			font-size: 2.25rem;
+			font-size: 2.5rem;
 			letter-spacing: 7px;
 		}
 
 		h4 {
 			color: var(--white);
-			font-size: 1.25rem;
+			font-size: 1.5rem;
 		}
 
 		.summary {
@@ -260,43 +182,56 @@
 		}
 	}
 
-	/* desktop */
-	@media (min-width: 990px) {
-		/* hero */
+	@media screen and (min-width: 990px) {
 		section {
-			position: absolute;
-			top: -20%;
-			left: 50%;
-			transform: translate(-50%, -20%);
-			width: 100%;
+			text-align: center;
+			font-size: 2.5rem;
+			margin: 5rem 0;
 		}
 
 		button {
-			width: 30%;
-			font-size: 1.25rem;
+			width: 35%;
+			font-size: 1.5rem;
 			margin: 3rem auto;
 		}
 
 		.italic {
-			margin-top: -1rem;
+			margin-top: -2rem;
 		}
 
 		.summary {
 			width: 50%;
+			font-size: 2rem;
+			letter-spacing: 3px;
+		}
+
+		section {
+			top: 30%;
+			left: 50%;
+			transform: translate(-50%, -30%);
+			margin-top: 18%;
+		}
+
+		h3 {
+			font-size: 3rem;
+			letter-spacing: 10px;
 		}
 	}
 
-	/* bigger than desktop */
 	@media screen and (min-width: 1100px) {
 		button {
-			width: 20%;
+			width: 25%;
 		}
 	}
 
-	/* way bigger than desktop */
-	@media screen and (min-width: 1920px) {
+	@media screen and (min-width: 1800px) {
 		button {
-			width: 10%;
+			width: 15%;
+			font-size: 2.5rem;
+		}
+
+		h3 {
+			font-size: 5rem;
 		}
 	}
 </style>

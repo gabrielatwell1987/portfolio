@@ -115,7 +115,7 @@
 			margin: 0 -92.5%;
 			padding: 0.5rem 0.75rem;
 			width: 100%;
-			font-size: 1rem;
+			font-size: 5rem;
 			border-radius: 12px;
 			text-align: center;
 			mix-blend-mode: difference;
@@ -125,7 +125,7 @@
 		}
 
 		.skills-title {
-			font-size: 1.75rem;
+			font-size: 2.75rem;
 			font-weight: 900;
 			text-align: center;
 			font-family: var(--anta);
