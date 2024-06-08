@@ -26,7 +26,7 @@
 		.contactForm {
 			display: block;
 			width: 100%;
-			margin: 1rem 0 0 -8.9rem;
+			margin: 1rem 0 0 -7.3rem;
 		}
 	}
 
