@@ -182,7 +182,7 @@
 
 	@media (min-width: 990px) {
 		.nav-link {
-			font-size: 1.75rem;
+			font-size: 1.5rem;
 			margin-left: 7rem;
 			margin-right: -7rem;
 		}
