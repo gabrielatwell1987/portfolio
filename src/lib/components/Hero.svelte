@@ -49,7 +49,7 @@
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
-			font-size: 2.5rem;
+			font-size: 2rem;
 			font-weight: 600;
 			font-family: var(--anta);
 			letter-spacing: 2px;
@@ -60,6 +60,7 @@
 			font-weight: 400;
 			letter-spacing: 0.5px;
 			font-family: var(--lexend);
+			font-size: 1rem;
 		}
 
 		button {
@@ -119,7 +120,7 @@
 
 		.summary {
 			margin: 0 auto;
-			font-size: 1.5rem;
+			font-size: 1rem;
 			font-weight: 500;
 			width: 100%;
 			padding: 0 1.25rem;
