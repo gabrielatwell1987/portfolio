@@ -23,7 +23,7 @@
 			outline: 3px solid var(--white);
 			outline-offset: -7px;
 			mix-blend-mode: difference;
-			padding: 1rem 1.75rem;
+			padding: 2rem 2.5rem;
 			margin-top: 10%;
 			margin-bottom: 2%;
 			user-select: none;

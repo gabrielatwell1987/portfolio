@@ -1,12 +1,12 @@
 <script></script>
 
 <div class="dev-links" aria-label="links">
-	<a class="size yellow" href="https://www.github.com/gabrielatwell1987/portfolio" target="_blank"
-		><i class="fa-brands fa-github" /></a
+	<a class="size yellow" href="https://www.github.com/gabrielatwell1987/portfolio" target="_blank">
+		<i class="fa-brands fa-github" /></a
 	>
 
-	<a class="size" href="https://codepen.io/gabrielatwell" target="_blank"
-		><i class="fa-brands fa-codepen" /></a
+	<a class="size" href="https://codepen.io/gabrielatwell" target="_blank">
+		<i class="fa-brands fa-codepen" /></a
 	>
 
 	<a class="size" href="https://www.linkedin.com/in/gabriel-atwell-ab2116231/" target="_blank">
@@ -42,7 +42,7 @@
 			justify-content: space-evenly;
 			align-items: center;
 			gap: 1.5rem;
-			margin-top: 1rem;
+			margin-top: 5rem;
 		}
 	}
 
@@ -56,7 +56,7 @@
 		}
 
 		.dev-links {
-			margin-top: -20rem;
+			/* margin-top: -20rem; */
 			margin-left: 0%;
 			display: flex;
 			justify-content: space-evenly;
