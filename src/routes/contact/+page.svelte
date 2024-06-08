@@ -16,7 +16,6 @@
 
 <style>
 	.contactForm {
-		/* margin: 2rem auto; */
 		margin-block: 2rem;
 		margin-inline: auto;
 	}
@@ -40,7 +39,7 @@
 	/* bigger than desktop */
 	@media screen and (min-width: 1024px) {
 		.contactForm {
-			margin: 2rem 0 0 -39rem;
+			margin: 2rem 0 0 -40rem;
 		}
 	}
 </style>
