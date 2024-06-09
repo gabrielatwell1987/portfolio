@@ -163,7 +163,7 @@
 		}
 
 		.monkey {
-			width: 50%;
+			width: 75%;
 			margin-inline: auto;
 		}
 	}
