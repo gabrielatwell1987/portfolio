@@ -149,29 +149,34 @@
 		}
 
 		.send {
-			width: 35%;
-			margin: 3rem auto;
-			border: 1px solid var(--white);
-			border-radius: 0.75rem;
 			background-color: transparent;
-			color: var(--white);
-			font-size: 1.25rem;
-			text-align: center;
+			color: var(--yellow);
 			font-family: var(--lexend);
+			font-size: 1.2rem;
+			font-weight: 600;
+			border: 1px solid var(--white);
+			margin-inline: auto;
+			cursor: pointer;
+			letter-spacing: 1px;
+			width: 60%;
+			border-radius: 0.75rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			transition: 750ms;
-			outline: 3px solid currentColor;
+			outline: 3px solid var(--white);
 			outline-offset: -7px;
-			padding: 1rem 1.75rem;
 			mix-blend-mode: difference;
+			padding: 2rem 2.5rem;
+			margin-top: 10%;
+			margin-bottom: 2%;
 			user-select: none;
+			cursor: pointer;
 		}
 
 		.send:hover,
 		.send:focus {
 			opacity: 0.8;
-			background-color: var(--smoke);
-			color: black;
+			color: var(--yellow);
+			mix-blend-mode: difference;
 			outline-offset: 0px;
 			animation: wiggle 0.5s ease-in-out infinite;
 		}

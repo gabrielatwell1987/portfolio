@@ -32,9 +32,11 @@
 
 		button:hover,
 		button:focus {
+			opacity: 0.8;
+			color: var(--yellow);
+			mix-blend-mode: difference;
 			outline-offset: 0px;
 			animation: wiggle 0.5s ease-in-out infinite;
-			mix-blend-mode: hard-light;
 		}
 	}
 
