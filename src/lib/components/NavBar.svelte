@@ -204,7 +204,6 @@
 			height: 5em;
 			width: 100%;
 			margin-top: 1rem;
-			position: relative;
 		}
 
 		.header-logos {
