@@ -158,6 +158,7 @@
 
 		.gabe-logo {
 			display: block;
+			margin-left: -5rem;
 		}
 
 		.hamburger {
@@ -184,14 +185,14 @@
 	@media (min-width: 990px) {
 		.nav-link {
 			font-size: 1.5rem;
-			margin-left: 6.5rem;
+			margin-left: 5rem;
 			margin-right: -5rem;
 		}
 
 		.desktop {
 			display: block;
 			width: 100%;
-			margin-left: -15%;
+			margin-left: 18%;
 			font-size: 1rem;
 			font-weight: 600;
 		}
@@ -203,6 +204,7 @@
 			height: 5em;
 			width: 100%;
 			margin-top: 1rem;
+			position: relative;
 		}
 
 		.header-logos {
@@ -214,24 +216,40 @@
 
 		.gabe-logo {
 			display: block;
+			margin-left: 5%;
 		}
 	}
 
 	@media (min-width: 1100px) {
 		.desktop {
-			margin-left: -3%;
+			margin-left: 20%;
+		}
+
+		.gabe-logo {
+			display: block;
+			margin-left: 75%;
 		}
 	}
 
 	@media (min-width: 1300px) {
 		.desktop {
-			margin-left: -3%;
+			margin-left: 32%;
+		}
+
+		.gabe-logo {
+			display: block;
+			margin-left: 75%;
 		}
 	}
 
 	@media (min-width: 1400px) {
 		.desktop {
-			margin-left: 6%;
+			margin-left: 32%;
+		}
+
+		.gabe-logo {
+			display: block;
+			margin-left: 175%;
 		}
 	}
 
