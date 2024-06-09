@@ -191,7 +191,7 @@
 		.desktop {
 			display: block;
 			width: 100%;
-			margin-left: -15%;
+			margin-left: 42.5%;
 			font-size: 1rem;
 			font-weight: 600;
 		}
@@ -214,33 +214,6 @@
 
 		.gabe-logo {
 			display: block;
-		}
-	}
-
-	@media (min-width: 1100px) {
-		.desktop {
-			margin-left: -3%;
-		}
-	}
-
-	@media (min-width: 1300px) {
-		.desktop {
-			margin-left: -3%;
-		}
-	}
-
-	@media (min-width: 1400px) {
-		.desktop {
-			margin-left: 6%;
-		}
-	}
-
-	@media (min-width: 1600px) {
-		.desktop {
-			margin-left: 42.5%;
-		}
-
-		.gabe-logo {
 			margin-left: 150%;
 		}
 	}
