@@ -381,7 +381,7 @@
 
 		.send {
 			width: 30%;
-			font-size: 2rem;
+			font-size: 3rem;
 		}
 
 		fieldset {
@@ -454,6 +454,10 @@
 		label {
 			font-size: 3rem;
 		}
+
+		.send {
+			width: 10%;
+		}
 	}
 
 	@media screen and (min-width: 1500px) {
@@ -471,10 +475,6 @@
 	}
 
 	@media screen and (min-width: 1920px) {
-		.send {
-			width: 15%;
-		}
-
 		form {
 			margin: 0 20%;
 			margin-left: 34%;

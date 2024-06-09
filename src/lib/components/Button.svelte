@@ -63,19 +63,19 @@
 
 	@media screen and (min-width: 1200px) {
 		button {
-			width: 20%;
+			width: 15%;
 		}
 	}
 
 	@media screen and (min-width: 1400px) {
 		button {
-			width: 18%;
+			width: 15%;
 		}
 	}
 
 	@media screen and (min-width: 1500px) {
 		button {
-			width: 20%;
+			width: 15%;
 			font-size: 2.5rem;
 		}
 	}
