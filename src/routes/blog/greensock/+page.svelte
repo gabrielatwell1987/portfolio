@@ -97,7 +97,9 @@
 		/>
 
 		<!-- back button -->
-		<a href="/blog"><Button title="Back" /></a>
+		<div class="back">
+			<a href="/blog"><Button title="Back" /></a>
+		</div>
 	</main>
 </section>
 <!-- footer spacing -->
@@ -202,6 +204,10 @@
 
 		code {
 			font-family: var(--mono);
+		}
+
+		.back {
+			margin-top: 5%;
 		}
 	}
 

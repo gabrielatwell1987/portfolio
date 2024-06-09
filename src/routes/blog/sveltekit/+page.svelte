@@ -98,7 +98,9 @@
 			/>
 
 			<!-- back button -->
-			<a href="/blog"><Button title="Back" /></a>
+			<div class="back">
+				<a href="/blog"><Button title="Back" /></a>
+			</div>
 		</section>
 	</main>
 </section>
@@ -189,6 +191,10 @@
 
 		.learn {
 			font-size: 1.25rem;
+		}
+
+		.back {
+			margin-top: 5%;
 		}
 	}
 
