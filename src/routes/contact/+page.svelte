@@ -29,6 +29,12 @@
 		}
 	}
 
+	@media screen and (min-width: 500px) {
+		.contactForm {
+			margin: 1rem 0 0 -9.8rem;
+		}
+	}
+
 	/* bigger than tablet */
 	@media screen and (min-width: 850px) {
 		.contactForm {
@@ -37,6 +43,12 @@
 	}
 
 	/* bigger than desktop */
+	@media screen and (min-width: 990px) {
+		.contactForm {
+			margin: 2rem 0 0 -44.25rem;
+		}
+	}
+
 	@media screen and (min-width: 1024px) {
 		.contactForm {
 			margin: 2rem 0 0 -40rem;
