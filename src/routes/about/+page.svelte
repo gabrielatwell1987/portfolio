@@ -87,6 +87,11 @@
 
 			<!-- image gallery -->
 			<a href="/about/gallery"><Button title="Gallery" /></a>
+
+			<!-- monkey logo -->
+			<div class="monkey">
+				<Image src="/logos/monkey-coding.png" alt="A coding monkey" />
+			</div>
 		</article>
 	</section>
 </main>
@@ -156,6 +161,11 @@
 		.text:hover {
 			mix-blend-mode: difference;
 		}
+
+		.monkey {
+			width: 50%;
+			margin-inline: auto;
+		}
 	}
 
 	@media screen and (min-width: 990px) {
@@ -212,6 +222,10 @@
 		.text__w {
 			width: 75%;
 			margin: 0 auto;
+		}
+
+		.monkey {
+			width: 25%;
 		}
 	}
 </style>
