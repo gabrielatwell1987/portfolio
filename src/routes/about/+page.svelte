@@ -134,6 +134,7 @@
 
 		a {
 			font-size: 1rem;
+			text-decoration: none;
 		}
 
 		a:hover {
