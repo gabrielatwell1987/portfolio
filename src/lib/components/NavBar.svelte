@@ -23,6 +23,7 @@
 		</div>
 	</div>
 
+	<!-- desktop view -->
 	<div class="desktop">
 		<a class="nav-link" href="/projects" aria-label="projects">Projects</a>
 		<a class="nav-link" href="/blog" aria-label="blog">Blog</a>
@@ -31,7 +32,7 @@
 		<a class="nav-link" href="/contact" aria-label="contact">Contact</a>
 	</div>
 
-	<!-- desktop view -->
+	<!-- mobile view -->
 	{#if open}
 		<div class="mobile">
 			<a class="nav-link" href="/projects" aria-label="projects">Projects</a>
@@ -183,8 +184,8 @@
 	@media (min-width: 990px) {
 		.nav-link {
 			font-size: 1.5rem;
-			margin-left: 7rem;
-			margin-right: -7rem;
+			margin-left: 6.5rem;
+			margin-right: -5rem;
 		}
 
 		.desktop {
@@ -197,7 +198,7 @@
 
 		nav {
 			display: flex;
-			justify-content: space-around;
+			justify-content: space-evenly;
 			align-items: center;
 			height: 5em;
 			width: 100%;
@@ -236,7 +237,7 @@
 
 	@media (min-width: 1600px) {
 		.desktop {
-			margin-left: 45%;
+			margin-left: 42.5%;
 		}
 
 		.gabe-logo {
