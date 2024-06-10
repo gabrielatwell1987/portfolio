@@ -162,74 +162,14 @@
 
 <canvas class="webgl" aria-label="hero" />
 
-<h1 aria-label="hero"><span>A</span>twell <span>U</span>I</h1>
-
 <style>
-	h1 {
-		position: absolute;
-		top: 25%;
-		left: 50%;
-		transform: translate(-50%, -25%);
-		color: whitesmoke;
-		font-size: 5rem;
-		font-family: var(--anta);
-		text-align: center;
-		line-height: 1.2;
-		letter-spacing: 3px;
-		font-kerning: none;
-	}
-
-	span {
-		color: var(--purple);
-	}
-	span:hover {
-		color: var(--blue);
-	}
-
-	/* mobile */
 	@media (min-width: 200px) {
-		h1 {
-			font-size: 1.75rem;
-			font-kerning: none;
-		}
-
 		canvas {
 			margin-bottom: 15%;
 		}
 	}
 
-	/* tablet */
-	@media (min-width: 720px) {
-		h1 {
-			font-size: 3rem;
-		}
-	}
-
-	/* desktop */
 	@media (min-width: 990px) {
-		h1 {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			color: whitesmoke;
-			font-size: 6rem;
-			font-weight: 900;
-
-			text-align: center;
-			line-height: 1.2;
-			letter-spacing: 3px;
-			font-kerning: none;
-		}
-
-		span {
-			color: var(--purple);
-		}
-
-		span:hover {
-			color: var(--blue);
-		}
-
 		.webgl {
 			height: 100vh;
 			width: 70vw;
