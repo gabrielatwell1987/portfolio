@@ -27,13 +27,12 @@
 </section>
 
 <style>
-	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
 		section {
 			text-align: center;
 			font-size: 1.75rem;
 			height: 100vh;
-			position: relative;
+			margin-top: 30%;
 		}
 
 		h3 {
@@ -138,7 +137,6 @@
 
 	@media screen and (min-width: 740px) {
 		section {
-			text-align: center;
 			font-size: 2rem;
 		}
 
@@ -185,7 +183,6 @@
 
 	@media screen and (min-width: 990px) {
 		section {
-			text-align: center;
 			font-size: 2.5rem;
 			margin: 5rem 0;
 		}
@@ -210,7 +207,7 @@
 			top: 30%;
 			left: 50%;
 			transform: translate(-50%, -30%);
-			margin-top: 18%;
+			margin-top: 10%;
 		}
 
 		h3 {
