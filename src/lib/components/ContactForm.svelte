@@ -158,14 +158,14 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 60%;
+			width: 35%;
 			border-radius: 0.75rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			transition: 750ms;
 			outline: 3px solid var(--white);
 			outline-offset: -7px;
 			mix-blend-mode: difference;
-			padding: 2rem 2.5rem;
+			padding: 1.5rem 2.5rem;
 			margin-top: 10%;
 			margin-bottom: 2%;
 			user-select: none;
