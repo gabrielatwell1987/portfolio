@@ -178,7 +178,6 @@
 
 		.detail {
 			min-width: 20rem;
-			/* margin-left: -30%; */
 			margin: 0 -4.75rem;
 			font-family: var(--lexend);
 		}
@@ -195,6 +194,10 @@
 
 		.back {
 			margin-top: 5%;
+		}
+
+		a {
+			text-decoration: none;
 		}
 	}
 
