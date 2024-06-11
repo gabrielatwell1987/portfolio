@@ -16,7 +16,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 45%;
+			width: 55%;
 			border-radius: 0.75rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			transition: 750ms;
@@ -49,7 +49,7 @@
 	@media (min-width: 740px) {
 		button {
 			font-size: 1.5rem;
-			width: 30%;
+			width: 20%;
 			font-size: 1rem;
 			letter-spacing: 2px;
 		}
