@@ -100,12 +100,12 @@
 		description="A React to-do app"
 	/> -->
 
-	<Project
+	<!-- <Project
 		title="random user generator"
 		img="/projects/ran_user.png"
 		url="https://gabe3.vercel.app/"
 		description="Made with Vue"
-	/>
+	/> -->
 
 	<!-- <Project
 		title="landing page"
