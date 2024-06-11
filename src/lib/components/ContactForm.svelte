@@ -158,7 +158,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 35%;
+			width: 40%;
 			border-radius: 0.75rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			transition: 750ms;
