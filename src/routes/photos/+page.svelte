@@ -3,6 +3,22 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { onMount } from 'svelte';
 	import SplitType from 'split-type';
+	import Lenis from 'lenis';
+
+	// lenis
+	const lenis = new Lenis();
+
+	lenis.on('scroll', (e) => {
+		console.log(e);
+	});
+
+	lenis.on('scroll', ScrollTrigger.update);
+
+	gsap.ticker.add((time) => {
+		lenis.raf(time * 750);
+	});
+
+	gsap.ticker.lagSmoothing(0);
 
 	onMount(() => {
 		// responsive animations
