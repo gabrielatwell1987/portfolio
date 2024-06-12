@@ -261,4 +261,18 @@
 			margin-left: 150%;
 		}
 	}
+
+	@media (min-width: 1800px) {
+		.desktop {
+			margin-left: 30%;
+		}
+
+		.nav-link {
+			font-size: 1.75rem;
+		}
+
+		.gabe-logo {
+			margin-left: 150%;
+		}
+	}
 </style>

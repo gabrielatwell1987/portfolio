@@ -255,7 +255,11 @@
 		}
 
 		h3 {
-			font-size: 5rem;
+			font-size: 4rem;
+		}
+
+		h4 {
+			font-size: 2rem;
 		}
 	}
 </style>

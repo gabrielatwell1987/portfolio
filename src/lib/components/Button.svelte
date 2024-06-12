@@ -82,6 +82,13 @@
 		}
 	}
 
+	@media screen and (min-width: 1800px) {
+		button {
+			width: 20%;
+			font-size: 2.5rem;
+		}
+	}
+
 	@keyframes wiggle {
 		0% {
 			rotate: 0deg;
