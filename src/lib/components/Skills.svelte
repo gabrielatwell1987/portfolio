@@ -162,4 +162,23 @@
 			margin-top: -30%;
 		}
 	}
+
+	@media (min-width: 1400px) {
+		.border {
+			margin-top: -5%;
+		}
+	}
+
+	@media (min-width: 1700px) {
+		.border {
+			margin-top: 5%;
+		}
+	}
+
+	@media (min-width: 1900px) {
+		.border {
+			/* margin-top: -10%; */
+			margin-top: 10%;
+		}
+	}
 </style>
