@@ -27,7 +27,6 @@
 	}
 
 	figcaption {
-		font-size: 1.25rem;
 		color: var(--gray);
 		position: absolute;
 		bottom: 0;
@@ -43,6 +42,19 @@
 		margin: 0;
 		padding: 0;
 		text-align: center;
+		font-size: 1.75rem;
 		font-weight: 500;
+	}
+
+	@media (min-width: 200px) {
+		p {
+			font-size: 1.5rem;
+		}
+	}
+
+	@media (min-width: 768px) {
+		p {
+			font-size: 2rem;
+		}
 	}
 </style>
