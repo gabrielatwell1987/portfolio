@@ -3,6 +3,7 @@
 	import NavBar from '$lib/components/NavBar.svelte';
 	import Analytics from '$lib/data/Analytics.svelte';
 	import SEO from '$lib/data/SEO.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <svelte:head>
@@ -26,6 +27,10 @@
 	<br />
 	<br />
 	<slot />
+
+	<div class="footer">
+		<Footer />
+	</div>
 </main>
 
 <footer />
@@ -38,5 +43,8 @@
 
 	main {
 		width: 100%;
+	}
+	.footer {
+		margin-top: 7%;
 	}
 </style>

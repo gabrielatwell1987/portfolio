@@ -84,7 +84,7 @@
 	@media (min-width: 200px) {
 		.border {
 			width: 15%;
-			margin: 10% auto;
+			margin: 10% auto 5% auto;
 			display: none;
 		}
 
@@ -99,6 +99,7 @@
 			display: block;
 			width: 15rem;
 			border: none;
+			margin-top: -60%;
 		}
 
 		.skills {
@@ -135,6 +136,30 @@
 
 		.icons {
 			width: 5rem;
+		}
+	}
+
+	@media (min-width: 1020px) {
+		.border {
+			margin-top: -50%;
+		}
+	}
+
+	@media (min-width: 1100px) {
+		.border {
+			margin-top: -50%;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.border {
+			margin-top: -40%;
+		}
+	}
+
+	@media (min-width: 1300px) {
+		.border {
+			margin-top: -30%;
 		}
 	}
 </style>

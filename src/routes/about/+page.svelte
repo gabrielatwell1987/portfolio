@@ -5,7 +5,7 @@
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import Button from '$lib/components/Button.svelte';
-	import Social from '$lib/components/SocialLinks.svelte';
+	// import Social from '$lib/components/SocialLinks.svelte';
 	import Grid from '$lib/components/Grid.svelte';
 	import Skills from '$lib/components/Skills.svelte';
 	import Image from '$lib/components/Image.svelte';
@@ -80,9 +80,10 @@
 			<Grid leftTitle="Frontend" rightTitle="Design based" />
 
 			<!-- github and codepen links -->
-			<Social />
+			<!-- <Social /> -->
 
 			<!-- skills section -->
+
 			<Skills title="Skills" />
 
 			<!-- image gallery -->
@@ -226,7 +227,7 @@
 		}
 
 		.monkey {
-			width: 25%;
+			width: 50%;
 		}
 	}
 </style>
