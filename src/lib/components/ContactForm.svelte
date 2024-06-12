@@ -479,6 +479,13 @@
 		}
 	}
 
+	@media screen and (min-width: 1800px) {
+		form {
+			width: 100%;
+			margin-left: 35.5%;
+		}
+	}
+
 	@media screen and (min-width: 1920px) {
 		form {
 			margin: 0 20%;
