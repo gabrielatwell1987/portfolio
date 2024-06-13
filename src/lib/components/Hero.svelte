@@ -213,6 +213,7 @@
 			width: 35%;
 			font-size: 1.5rem;
 			margin: 3rem auto;
+			padding: 1.5rem 2.5rem;
 		}
 
 		.italic {

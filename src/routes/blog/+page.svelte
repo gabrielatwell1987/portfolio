@@ -177,6 +177,12 @@
 	@media (min-width: 990px) {
 		.gs {
 			margin-bottom: 5%;
+			width: 15%;
+		}
+
+		.sk {
+			width: 15%;
+			margin-bottom: 8%;
 		}
 
 		h2 {
