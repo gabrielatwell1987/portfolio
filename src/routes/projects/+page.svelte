@@ -194,13 +194,13 @@
 			font-kerning: none;
 		}
 
-		/* .progress-container {
+		.progress-container {
 			position: fixed;
-			top: 0;
+			top: -190px;
 			left: 0;
 			width: 100%;
-			z-index: 9999;
-		} */
+			z-index: 9;
+		}
 	}
 
 	@media screen and (min-width: 740px) {
