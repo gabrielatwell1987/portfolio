@@ -194,9 +194,17 @@
 			font-kerning: none;
 		}
 
-		.progress-container {
+		/* .progress-container {
 			position: fixed;
 			top: -190px;
+			left: 0;
+			width: 100%;
+			z-index: 9;
+		} */
+
+		.progress-container {
+			position: fixed;
+			bottom: 13.5%;
 			left: 0;
 			width: 100%;
 			z-index: 9;
