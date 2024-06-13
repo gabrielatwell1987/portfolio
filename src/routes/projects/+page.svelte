@@ -28,16 +28,6 @@
 			stagger: 0.2,
 			ease: 'elastic.out(0.5, 0.2)'
 		});
-
-		// progress
-		document.addEventListener('scroll', function () {
-			const progressBar = document.getElementById('scrollProgress');
-			const totalHeight = document.body.scrollHeight - window.innerHeight;
-			const scrollPosition = window.scrollY;
-			const scrollPercentage = (scrollPosition / totalHeight) * 100;
-
-			progressBar.value = scrollPercentage;
-		});
 	});
 </script>
 
@@ -152,11 +142,6 @@
 		description="A three.js project"
 	/> -->
 
-	<!-- progress -->
-	<div class="progress-container">
-		<progress id="scrollProgress" value="0" max="100" />
-	</div>
-
 	<!-- logo -->
 	<div class="logos designs">
 		<!-- <img class="designs" src="logos/designs.png" alt="A logo that says Atwell Designs" /> -->
@@ -166,11 +151,6 @@
 
 <style>
 	@media screen and (min-width: 200px) {
-		progress {
-			width: 40%;
-			margin: 15% 0 2rem 30%;
-		}
-
 		.logos {
 			display: flex;
 			justify-content: center;
@@ -192,22 +172,6 @@
 
 		#title {
 			font-kerning: none;
-		}
-
-		/* .progress-container {
-			position: fixed;
-			top: -190px;
-			left: 0;
-			width: 100%;
-			z-index: 9;
-		} */
-
-		.progress-container {
-			position: fixed;
-			bottom: 13.5%;
-			left: 0;
-			width: 100%;
-			z-index: 9;
 		}
 	}
 

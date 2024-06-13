@@ -21,6 +21,16 @@
 	gsap.ticker.lagSmoothing(0);
 
 	onMount(() => {
+		// progress
+		document.addEventListener('scroll', function () {
+			const progressBar = document.getElementById('scrollProgress');
+			const totalHeight = document.body.scrollHeight - window.innerHeight;
+			const scrollPosition = window.scrollY;
+			const scrollPercentage = (scrollPosition / totalHeight) * 100;
+
+			progressBar.value = scrollPercentage;
+		});
+
 		gsap.set('.gabe', { borderRadius: '5%' });
 
 		// responsive animations
@@ -117,6 +127,11 @@
 		<div class="spacing" />
 	</section>
 
+	<!-- progress -->
+	<div class="progress-container">
+		<progress id="scrollProgress" value="0" max="100" />
+	</div>
+
 	<!-- robot link -->
 	<div class="robot" aria-label="robot">
 		<p class="robot-text">Mouse Position Robot:</p>
@@ -137,6 +152,11 @@
 
 		img {
 			max-width: 100%;
+		}
+
+		progress {
+			width: 40%;
+			margin: 15% 0 2rem 30%;
 		}
 
 		.flex {
@@ -173,6 +193,14 @@
 
 		.spacing {
 			height: 10vh;
+		}
+
+		.progress-container {
+			position: fixed;
+			top: -190px;
+			right: 15%;
+			width: 100%;
+			z-index: 9;
 		}
 	}
 
