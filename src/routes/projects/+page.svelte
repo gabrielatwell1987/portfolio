@@ -28,6 +28,16 @@
 			stagger: 0.2,
 			ease: 'elastic.out(0.5, 0.2)'
 		});
+
+		// progress
+		document.addEventListener('scroll', function () {
+			const progressBar = document.getElementById('scrollProgress');
+			const totalHeight = document.body.scrollHeight - window.innerHeight;
+			const scrollPosition = window.scrollY;
+			const scrollPercentage = (scrollPosition / totalHeight) * 100;
+
+			progressBar.value = scrollPercentage;
+		});
 	});
 </script>
 
@@ -142,8 +152,10 @@
 		description="A three.js project"
 	/> -->
 
-	<!-- divider -->
-	<progress />
+	<!-- progress -->
+	<div class="progress-container">
+		<progress id="scrollProgress" value="0" max="100" />
+	</div>
 
 	<!-- logo -->
 	<div class="logos designs">
@@ -181,6 +193,14 @@
 		#title {
 			font-kerning: none;
 		}
+
+		/* .progress-container {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 9999;
+		} */
 	}
 
 	@media screen and (min-width: 740px) {
