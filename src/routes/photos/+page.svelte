@@ -21,22 +21,22 @@
 	gsap.ticker.lagSmoothing(0);
 
 	onMount(() => {
+		gsap.set('.gabe', { borderRadius: '5%' });
+
 		// responsive animations
 		let mm = gsap.matchMedia();
 
 		mm.add('(min-width: 800px', () => {
 			gsap.registerPlugin(ScrollTrigger);
 
-			// gsap.set('.gabe', { borderRadius: '5px', scale: 1 });
 			gsap.set('main', { autoAlpha: 0 });
 			gsap.set('.title', { scale: 1 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
 			tl.to('.gabe', {
-				borderRadius: '1.75rem',
-				stagger: 0.75,
-				scale: 0.9,
+				stagger: 0.5,
+				scale: 0.84,
 				repeat: 1,
 				yoyo: true,
 				scrollTrigger: {
@@ -45,7 +45,7 @@
 					end: 'bottom top+=5%',
 					x: 200,
 					stagger: 0.5,
-					scrub: 3
+					scrub: 1
 				}
 			}).to('main', { autoAlpha: 1 });
 
