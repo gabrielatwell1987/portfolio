@@ -171,7 +171,7 @@
 
 	@media (min-width: 1700px) {
 		.border {
-			margin-top: 5%;
+			margin-top: 10%;
 		}
 	}
 
