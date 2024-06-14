@@ -167,6 +167,10 @@
 			width: 75%;
 			margin-inline: auto;
 		}
+
+		a {
+			text-decoration: none;
+		}
 	}
 
 	@media screen and (min-width: 990px) {
