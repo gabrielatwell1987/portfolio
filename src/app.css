@@ -41,6 +41,10 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+a {
+	text-decoration: none;
+}
+
 .atwellLogo,
 .content,
 .linksize,
@@ -62,7 +66,7 @@ h4 {
 }
 
 /* lenis */
-html.lenis {
+/* html.lenis {
 	height: auto;
 }
 
@@ -80,7 +84,7 @@ html.lenis {
 
 .lenis.lenis-scrolling iframe {
 	pointer-events: none;
-}
+} */
 
 .column {
 	display: flex;
