@@ -12,10 +12,7 @@
 	<meta name="keywords" content="CSS, GSAP" />
 </svelte:head>
 
-<section
-	in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}
-	title="a flower background"
->
+<section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<!-- links to my markdown files -->
 	<h1 class="title">CSS</h1>
 	<CSS />
@@ -40,5 +37,9 @@
 	}
 	section {
 		background: url('/logos/circle-scatter-bg.svg') no-repeat center center/cover fixed;
+	}
+
+	a {
+		text-decoration: none;
 	}
 </style>
