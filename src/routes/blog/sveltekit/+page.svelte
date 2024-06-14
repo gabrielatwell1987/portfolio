@@ -195,6 +195,10 @@
 		.back {
 			margin-top: 5%;
 		}
+
+		a {
+			text-decoration: none;
+		}
 	}
 
 	@media (min-width: 500px) {
