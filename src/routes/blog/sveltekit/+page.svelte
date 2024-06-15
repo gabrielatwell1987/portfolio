@@ -162,7 +162,7 @@
 		}
 
 		.title {
-			font-size: 4rem;
+			font-size: 3.75rem;
 		}
 
 		details {
