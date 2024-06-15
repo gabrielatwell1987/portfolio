@@ -55,7 +55,7 @@
 		title="horizontal scroller"
 		img="/projects/scroller.png"
 		url="https://gabe2.vercel.app"
-		description="A horizontal scroller"
+		description="Just scroll down"
 	/>
 
 	<Project
