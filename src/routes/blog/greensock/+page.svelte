@@ -39,7 +39,6 @@
 
 	<main>
 		<!-- content -->
-		<h2 class="subtitle">Greensock Animation Platform</h2>
 
 		<details aria-label="accordian">
 			<!-- svelte-ignore a11y-no-redundant-roles -->
@@ -140,22 +139,13 @@
 	}
 
 	.title {
-		font-size: 7rem;
+		/* font-size: 7rem; */
 		font-weight: 800;
 		margin: 2rem 0 -5rem 0;
 		text-align: center;
 		color: var(--smoke);
 		font-family: var(--anta);
 		text-shadow: 0px 0px 25px var(--blue);
-	}
-
-	.subtitle {
-		font-size: 2rem;
-		font-weight: 600;
-		margin: -2rem 0 2rem 0;
-		text-align: center;
-		color: var(--white);
-		font-family: var(--montserrat);
 	}
 
 	.learn {
@@ -171,7 +161,7 @@
 		}
 
 		.title {
-			font-size: 2.5rem;
+			font-size: 5rem;
 			margin-top: 5rem;
 		}
 
@@ -227,7 +217,7 @@
 
 	@media (min-width: 720px) {
 		.title {
-			font-size: 4rem;
+			font-size: 6.5rem;
 		}
 
 		.learn {
@@ -238,15 +228,12 @@
 			font-size: 1.25rem;
 			margin-top: -3rem;
 		}
-
-		.subtitle {
-			font-size: 3rem;
-		}
 	}
 
 	@media (min-width: 990px) {
 		.title {
-			font-size: 6rem;
+			font-size: 12rem;
+			margin-bottom: -8%;
 		}
 
 		.spacing {
