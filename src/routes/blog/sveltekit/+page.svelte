@@ -147,7 +147,7 @@
 	}
 
 	.title {
-		font-size: 7rem;
+		/* font-size: 7rem; */
 		font-weight: 800;
 		margin: 2rem 0 6rem 0;
 		text-align: center;
@@ -162,7 +162,7 @@
 		}
 
 		.title {
-			font-size: 2.5rem;
+			font-size: 5rem;
 		}
 
 		details {
@@ -213,7 +213,7 @@
 
 	@media (min-width: 720px) {
 		.title {
-			font-size: 4rem;
+			font-size: 6.5rem;
 		}
 
 		.learn {
@@ -228,7 +228,7 @@
 
 	@media (min-width: 990px) {
 		.title {
-			font-size: 6rem;
+			font-size: 12rem;
 		}
 
 		.spacing {
