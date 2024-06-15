@@ -15,7 +15,7 @@
 	lenis.on('scroll', ScrollTrigger.update);
 
 	gsap.ticker.add((time) => {
-		lenis.raf(time * 750);
+		lenis.raf(time * 375);
 	});
 
 	gsap.ticker.lagSmoothing(0);
