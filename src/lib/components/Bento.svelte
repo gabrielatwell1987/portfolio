@@ -2,19 +2,19 @@
 
 <div id="bento-div" class="bt-div">
 	<div class="bento-item bento-item-1">
-		<img src="/logos/ui.png" alt="" />
+		<h2>Space One</h2>
 	</div>
 	<div class="bento-item bento-item-2">
-		<img src="/logos/designs.png" alt="" />
+		<h2>Space Two</h2>
 	</div>
 	<div class="bento-item bento-item-3">
-		<img src="/logos/gorilla.png" alt="" />
+		<h2>Space Three</h2>
 	</div>
 	<div class="bento-item bento-item-4">
-		<img src="/logos/triangle.png" alt="" />
+		<h2>Space Four</h2>
 	</div>
 	<div class="bento-item bento-item-5">
-		<img src="/logos/heart-skull.png" alt="" />
+		<h2>Space Five</h2>
 	</div>
 </div>
 
@@ -29,13 +29,6 @@
 		--transition-fast: 0.5s ease-in-out;
 	}
 
-	/* .bt-section {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  margin-top: 4rem;
-} */
-
 	#bento-div {
 		width: 100%;
 		display: grid;
@@ -48,6 +41,7 @@
 	.bento-item {
 		overflow: hidden;
 		border-radius: var(--border-radius);
+		border: 2px solid var(--white);
 	}
 	.bento-item-1,
 	.bento-item-2,
@@ -64,11 +58,7 @@
 		grid-column: span 4;
 	}
 
-	/* .bento-item-6 {
-  grid-column: span 4;
-} */
-
-	.bento-item img {
+	/* .bento-item img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
@@ -77,6 +67,14 @@
 
 	.bento-item:hover img {
 		transform: scale(1.1);
+	} */
+
+	h2 {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
 	}
 
 	@media (min-width: 768px) {
