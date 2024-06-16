@@ -167,6 +167,11 @@
 		height: 15%;
 		margin-left: -8%;
 		margin-bottom: 3rem;
+		transition: scale 500ms ease-in-out;
+	}
+
+	svg:hover {
+		scale: 1.05;
 	}
 
 	@media (min-width: 200px) {
