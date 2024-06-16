@@ -1,12 +1,16 @@
 <script>
+	import GSAP from './GsapIcon.svelte';
+	import SK from './SvelteIcon.svelte';
 </script>
 
 <div id="bento-div" class="bt-div">
 	<div class="bento-item bento-item-1">
-		<h2>This page contains everything you need to know about me</h2>
+		<a href="/contact"><h2>Contact me if you have a question!</h2></a>
 	</div>
 	<div class="bento-item bento-item-2">
-		<h3>Contact me if you have any questions!</h3>
+		<a href="/blog/sveltekit"><SK /></a>
+
+		<a href="/blog/greensock"><GSAP /></a>
 	</div>
 
 	<div class="bento-item bento-item-3">
@@ -30,22 +34,18 @@
 
 	h2 {
 		font-size: 3rem;
-		font-weight: 800;
-		color: var(--purple);
+		font-weight: 700;
+		letter-spacing: 5px;
+		color: var(--off-white);
 		text-align: center;
 		margin-bottom: 2rem;
 		padding: 2rem;
-		font-family: var(--anta);
+		font-family: var(--lexend);
+		text-transform: uppercase;
 	}
 
-	h3 {
-		font-size: 5rem;
-		font-weight: 600;
-		color: var(--smoke);
-		text-align: center;
-		margin-bottom: 2rem;
-		padding: 2rem;
-		font-family: var(--mono);
+	h2:hover {
+		text-decoration: underline;
 	}
 
 	a {
@@ -66,6 +66,7 @@
 		overflow: hidden;
 		border-radius: var(--border-radius);
 		border: 3px solid var(--sky);
+		position: relative;
 	}
 	.bento-item-1 {
 		grid-column: span 4;
@@ -84,7 +85,6 @@
 	}
 	.bento-item-4 {
 		grid-column: span 4;
-		/* background: var(--black); */
 	}
 
 	.bento-item-4 img {
@@ -124,22 +124,23 @@
 
 		h2 {
 			font-size: 2rem;
-			font-weight: 800;
-			color: var(--purple);
-			text-align: center;
-			margin-bottom: 2rem;
-			padding: 2rem;
-			font-family: var(--anta);
-		}
-
-		h3 {
-			font-size: 1.75rem;
-			font-weight: 600;
+			font-weight: 700;
+			letter-spacing: 5px;
 			color: var(--off-white);
 			text-align: center;
 			margin-bottom: 2rem;
 			padding: 2rem;
-			font-family: var(--mono);
+			font-family: var(--lexend);
+			text-transform: uppercase;
+		}
+
+		h2:hover {
+			text-decoration: underline;
+		}
+
+		a {
+			text-decoration: none;
+			cursor: pointer;
 		}
 	}
 </style>
