@@ -123,7 +123,7 @@
 		}
 
 		h2 {
-			font-size: 2.5rem;
+			font-size: 2rem;
 			font-weight: 800;
 			color: var(--purple);
 			text-align: center;
@@ -133,7 +133,7 @@
 		}
 
 		h3 {
-			font-size: 3rem;
+			font-size: 1.75rem;
 			font-weight: 600;
 			color: var(--off-white);
 			text-align: center;
