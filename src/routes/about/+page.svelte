@@ -86,7 +86,9 @@
 			<Bento />
 
 			<!-- image gallery -->
-			<a href="/about/gallery"><Button title="Gallery" /></a>
+			<div class="gallery">
+				<a href="/about/gallery"><Button title="Gallery" /></a>
+			</div>
 
 			<!-- monkey logo -->
 			<div class="monkey">
@@ -138,6 +140,10 @@
 
 		a:hover {
 			font-size: 1.1rem;
+		}
+
+		.gallery {
+			margin-top: 1.5rem;
 		}
 
 		.atwell {
@@ -230,6 +236,10 @@
 
 		.monkey {
 			width: 50%;
+		}
+
+		.gallery {
+			margin-top: 5%;
 		}
 	}
 </style>
