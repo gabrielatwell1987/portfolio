@@ -1,6 +1,6 @@
 <script>
 	import Hero from '$lib/components/Hero.svelte';
-	// import ACII from '$lib/components/ACII.svelte';
+	import SVG from '$lib/components/SVG.svelte';
 </script>
 
 <svelte:head>
@@ -10,4 +10,4 @@
 </svelte:head>
 
 <Hero />
-<!-- <ACII /> -->
+<SVG />
