@@ -2,10 +2,13 @@
 	import Image from './Image.svelte';
 </script>
 
-<div class="svgs">
-	<Image src="/logos/color_palette.svg" alt="" />
-	<Image src="/logos/static_website.svg" alt="" />
-</div>
+<section class="svgs">
+	<div class="flex">
+		<Image src="/logos/color_palette.svg" alt="" />
+
+		<Image src="/logos/static_website.svg" alt="" />
+	</div>
+</section>
 
 <style>
 	@media (min-width: 300px) {
@@ -14,6 +17,12 @@
 			display: block;
 			padding: 1rem;
 			margin-left: 13%;
+		}
+
+		.flex {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
 		}
 	}
 
@@ -24,6 +33,12 @@
 			justify-content: space-between;
 			gap: 5%;
 			margin-left: -0.25%;
+		}
+
+		.flex {
+			display: flex;
+			flex-direction: row;
+			gap: 10%;
 		}
 	}
 
