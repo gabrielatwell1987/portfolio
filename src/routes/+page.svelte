@@ -1,6 +1,5 @@
 <script>
 	import Hero from '$lib/components/Hero.svelte';
-	import ACII from '$lib/components/ACII.svelte';
 </script>
 
 <svelte:head>
@@ -10,4 +9,3 @@
 </svelte:head>
 
 <Hero />
-<ACII />
