@@ -1,6 +1,7 @@
 <script>
 	import GSAP from './GsapIcon.svelte';
 	import SK from './SvelteIcon.svelte';
+	import Image from './Image.svelte';
 </script>
 
 <div id="bento-div" class="bt-div">
@@ -11,13 +12,20 @@
 		<a href="/blog/sveltekit"><SK /></a>
 
 		<a href="/blog/greensock"><GSAP /></a>
+
+		<div class="image">
+			<a href="/blog/posts"
+				><Image src="logos/animation.png" alt="A logo that says web animation techniques." /></a
+			>
+		</div>
 	</div>
 
 	<div class="bento-item bento-item-3">
 		<a href="/"><img src="/icons/portfolio_logo.svg" alt="" /></a>
 	</div>
 	<div class="bento-item bento-item-4">
-		<a href="/projects"><img src="/icons/money-icon.svg" alt="" /></a>
+		<a href="/projects"><img src="/logos/cursive-atwell.jpg" alt="" /></a>
+		<!-- <a href="/projects"><img src="/icons/money-icon.svg" alt="" /></a> -->
 	</div>
 </div>
 
@@ -62,6 +70,16 @@
 		padding: var(--space-sm);
 	}
 
+	.image {
+		width: 25%;
+		margin-left: 5%;
+		transition: scale 500ms ease-in-out;
+	}
+
+	.image:hover {
+		scale: 1.05;
+	}
+
 	.bento-item {
 		overflow: hidden;
 		border-radius: var(--border-radius);
@@ -88,7 +106,9 @@
 	}
 
 	.bento-item-4 img {
-		scale: 0.65;
+		/* scale: 0.65; */
+		object-fit: cover;
+		width: 100%;
 	}
 
 	.bento-item img {
@@ -120,6 +140,10 @@
 		}
 		.bento-item-3 img {
 			object-fit: contain;
+		}
+
+		.image {
+			width: 150%;
 		}
 
 		h2 {
