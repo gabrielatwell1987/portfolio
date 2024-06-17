@@ -25,7 +25,6 @@
 	</div>
 	<div class="bento-item bento-item-4">
 		<a href="/projects"><img src="/logos/cursive-atwell.jpg" alt="" /></a>
-		<!-- <a href="/projects"><img src="/icons/money-icon.svg" alt="" /></a> -->
 	</div>
 </div>
 
@@ -165,6 +164,10 @@
 		a {
 			text-decoration: none;
 			cursor: pointer;
+		}
+
+		.bento-item-4 img {
+			object-fit: contain;
 		}
 	}
 </style>
