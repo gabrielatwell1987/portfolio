@@ -49,6 +49,7 @@
 	@media (min-width: 200px) {
 		p {
 			font-size: 1.5rem;
+			font-family: var(--mono);
 		}
 	}
 
