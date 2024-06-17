@@ -79,7 +79,7 @@
 
 	@media (min-width: 1500px) {
 		pre {
-			margin-left: 34%;
+			margin-left: 33.5%;
 		}
 	}
 </style>
