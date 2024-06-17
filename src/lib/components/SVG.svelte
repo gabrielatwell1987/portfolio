@@ -10,10 +10,10 @@
 <style>
 	@media (min-width: 300px) {
 		.svgs {
-			width: 50%;
+			width: 75%;
 			display: block;
 			padding: 1rem;
-			margin-left: 25%;
+			margin-left: 13%;
 		}
 	}
 
@@ -30,6 +30,7 @@
 	@media (min-width: 1050px) {
 		.svgs {
 			gap: 10%;
+			margin-left: -1%;
 		}
 	}
 
