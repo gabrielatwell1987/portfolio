@@ -52,7 +52,7 @@
 	@media (min-width: 1500px) {
 		.svgs {
 			gap: 15%;
-			margin-left: 12%;
+			margin-left: 14%;
 		}
 	}
 </style>
