@@ -13,9 +13,9 @@
          :BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBE     
           gBBBBBB@D9ABBBBBBBBBBBBBWB@BBBBBBB|     
           mBBD    `   ``$BBBBBBW     !| TBBB}     
-          BBW            ]BBBE        &quot;  [BB%     
-          \BB            IBB0Q           [BB/     
-           ]B_          sB   [g         _BBB!     
+          BBW              ]BBBE          &quot;  [BB%     
+          \BB               IBB0Q              [BB/     
+           ]B_            sB   [g           _BBB!     
           ;BBBA_      _B&quot;     $Bg_    _ABBBB!     
             BBBBBBBBBBBP      `BBBBBBBBBBBBg      
             `BBBB@BBBBBB       BBBBBB@BBBW        
@@ -43,7 +43,7 @@
 		font-family: 'Cascadia Code', sans-serif;
 		font-size: 12pt;
 		line-height: 1.2;
-		margin: 10px auto;
+		margin: 1rem auto;
 		background: transparent;
 		text-align: center;
 	}
