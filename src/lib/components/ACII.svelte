@@ -42,67 +42,21 @@
 		font-family: 'Cascadia Code', sans-serif;
 		font-size: 12pt;
 		line-height: 1.2;
-		margin: 10px 0;
+		margin: 10px auto;
 		background: transparent;
 		width: 30%;
-		margin-inline: auto;
 		overflow: hidden;
 	}
 
 	@media (min-width: 300px) {
-		* {
-			font-variant-ligatures: none;
-			font-feature-settings: 'liga' 0, 'clig' 0;
-		}
-
 		pre {
-			font-size: 10pt;
-			width: 100%;
-			margin-left: -15%;
-			/* overflow: hidden; */
-		}
-	}
-
-	@media (min-width: 500px) {
-		pre {
-			margin-left: 4%;
-		}
-	}
-
-	@media (min-width: 720px) {
-		pre {
-			margin-left: 19%;
+			display: none;
 		}
 	}
 
 	@media (min-width: 990px) {
 		pre {
-			margin-left: 22%;
-			font-size: 12pt;
-		}
-	}
-
-	@media (min-width: 1500px) {
-		pre {
-			margin-left: 33.5%;
-		}
-	}
-
-	/* @media (min-width: 990px) {
-		pre {
-			font-family: 'Cascadia Code', sans-serif;
-			font-size: 12pt;
-			line-height: 1.2;
-			margin: 10px 0;
-			background: transparent;
-			margin-left: 25%;
 			display: block;
 		}
-	} */
-
-	/* @media (min-width: 1500px) {
-		pre {
-			margin-left: 33.5%;
-		}
-	} */
+	}
 </style>
