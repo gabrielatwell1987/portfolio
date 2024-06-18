@@ -4,7 +4,8 @@
 
 <section class="svgs">
 	<div class="flex">
-		<Image src="/logos/color_palette.svg" alt="" />
+		<Image src="/logos/code_review.svg" alt="" />
+		<!-- <Image src="/logos/color_palette.svg" alt="" /> -->
 
 		<Image src="/logos/static_website.svg" alt="" />
 	</div>
@@ -52,7 +53,7 @@
 	@media (min-width: 1500px) {
 		.svgs {
 			gap: 15%;
-			margin-left: 14%;
+			/* margin-left: 2%; */
 		}
 	}
 </style>

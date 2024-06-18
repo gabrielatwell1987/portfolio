@@ -1,5 +1,6 @@
 <script>
 	import ContactForm from '$lib/components/ContactForm.svelte';
+	import Figure from '$lib/components/Figure.svelte';
 </script>
 
 <svelte:head>
@@ -20,7 +21,6 @@
 		margin-inline: auto;
 	}
 
-	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
 		.contactForm {
 			display: block;
@@ -35,14 +35,12 @@
 		}
 	}
 
-	/* bigger than tablet */
 	@media screen and (min-width: 850px) {
 		.contactForm {
 			margin: 2rem 0 0 -36rem;
 		}
 	}
 
-	/* bigger than desktop */
 	@media screen and (min-width: 990px) {
 		.contactForm {
 			margin: 2rem 0 0 -44.25rem;
