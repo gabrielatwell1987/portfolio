@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import Button from '$lib/components/Button.svelte';
 	import Iframe from '$lib/components/Iframe.svelte';
+	import Image from '$lib/components/Image.svelte';
 
 	// animations
 	onMount(() => {
@@ -39,6 +40,9 @@
 
 	<main>
 		<!-- content -->
+		<article class="glass">
+			<Image src="/logos/skull-glass.png" alt="a skull inside a glass" />
+		</article>
 
 		<details aria-label="accordian">
 			<!-- svelte-ignore a11y-no-redundant-roles -->
@@ -202,6 +206,10 @@
 		a {
 			text-decoration: none;
 		}
+
+		.glass {
+			background: transparent;
+		}
 	}
 
 	@media (min-width: 500px) {
@@ -227,6 +235,10 @@
 			font-size: 1.25rem;
 			margin-top: -3rem;
 		}
+
+		.glass {
+			margin-left: 3%;
+		}
 	}
 
 	@media (min-width: 990px) {
@@ -249,6 +261,10 @@
 
 		.detail {
 			font-size: 1.5rem;
+		}
+
+		.glass {
+			margin-left: 30%;
 		}
 	}
 </style>

@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import Button from '$lib/components/Button.svelte';
 	import Iframe from '$lib/components/Iframe.svelte';
+	import Image from '$lib/components/Image.svelte';
 
 	// animations
 	onMount(() => {
@@ -35,6 +36,10 @@
 	<h1 class="title">SvelteKit</h1>
 
 	<main>
+		<article class="lightening">
+			<Image src="/logos/lightening-bolt.png" alt="a cartoon lightening bolt with a female in it" />
+		</article>
+
 		<!-- content -->
 		<section>
 			<details aria-label="accordian">
@@ -147,7 +152,6 @@
 	}
 
 	.title {
-		/* font-size: 7rem; */
 		font-weight: 800;
 		margin: 2rem 0 6rem 0;
 		text-align: center;
@@ -199,6 +203,10 @@
 		a {
 			text-decoration: none;
 		}
+
+		.lightening {
+			background: transparent;
+		}
 	}
 
 	@media (min-width: 500px) {
@@ -224,6 +232,10 @@
 			font-size: 1.25rem;
 			margin-top: -3rem;
 		}
+
+		.lightening {
+			margin-left: 15%;
+		}
 	}
 
 	@media (min-width: 990px) {
@@ -245,6 +257,10 @@
 
 		.detail {
 			font-size: 1.5rem;
+		}
+
+		.lightening {
+			margin-left: 35%;
 		}
 	}
 </style>
