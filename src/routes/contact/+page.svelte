@@ -33,7 +33,7 @@
 		}
 
 		.career {
-			width: 75%;
+			width: 90%;
 			margin-top: 5%;
 			margin-inline: auto;
 		}
