@@ -63,7 +63,7 @@
 		}
 
 		.career {
-			margin-left: 23%;
+			margin-left: 25%;
 		}
 	}
 </style>
