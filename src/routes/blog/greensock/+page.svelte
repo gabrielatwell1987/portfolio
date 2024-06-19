@@ -161,6 +161,7 @@
 	@media (min-width: 200px) {
 		.main {
 			margin: 0 auto;
+			margin-right: 1rem;
 		}
 
 		.title {
