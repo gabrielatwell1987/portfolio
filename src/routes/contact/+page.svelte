@@ -1,6 +1,6 @@
 <script>
 	import ContactForm from '$lib/components/ContactForm.svelte';
-	import Figure from '$lib/components/Figure.svelte';
+	import Image from '$lib/components/Image.svelte';
 </script>
 
 <svelte:head>
@@ -15,6 +15,10 @@
 	</section>
 </main>
 
+<div class="career">
+	<Image src="/logos/career-death.jpeg" alt="a cartoon about career death" />
+</div>
+
 <style>
 	.contactForm {
 		margin-block: 2rem;
@@ -26,6 +30,12 @@
 			display: block;
 			width: 100%;
 			margin: 1rem 0 0 -6.9rem;
+		}
+
+		.career {
+			width: 75%;
+			margin-top: 5%;
+			margin-inline: auto;
 		}
 	}
 
@@ -50,6 +60,10 @@
 	@media screen and (min-width: 1024px) {
 		.contactForm {
 			margin: 2rem 0 0 -40rem;
+		}
+
+		.career {
+			margin-left: 23%;
 		}
 	}
 </style>
