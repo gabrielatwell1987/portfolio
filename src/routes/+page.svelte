@@ -1,5 +1,6 @@
 <script>
 	import Hero from '$lib/components/Hero.svelte';
+	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 </script>
 
 <svelte:head>
@@ -9,3 +10,4 @@
 </svelte:head>
 
 <Hero />
+<ThemeToggle />
