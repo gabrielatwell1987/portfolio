@@ -1,5 +1,5 @@
 <script>
-	let darkMode = false;
+	let darkMode = true;
 
 	function toggle() {
 		darkMode = !darkMode;
@@ -9,9 +9,11 @@
 
 <button on:click={toggle}>
 	{#if darkMode}
-		<h3>on</h3>
+		<!-- <i class="fa-regular fa-moon" /> -->
+		<i class="fa-regular fa-sun" />
 	{:else}
-		<h3>off</h3>
+		<!-- <i class="fa-regular fa-sun" /> -->
+		<i class="fa-regular fa-moon" />
 	{/if}
 </button>
 
@@ -27,6 +29,7 @@
 		width: 5%;
 		margin-left: 5%;
 		margin-top: 5%;
+		z-index: 10;
 	}
 
 	button:active {
