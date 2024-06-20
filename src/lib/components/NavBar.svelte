@@ -123,7 +123,7 @@
 		.toggle {
 			position: absolute;
 			top: 0;
-			right: -5%;
+			left: 3%;
 		}
 	}
 
@@ -192,8 +192,8 @@
 		}
 
 		.toggle {
-			top: -20%;
-			left: 30%;
+			top: 5%;
+			left: 32%;
 		}
 	}
 
@@ -234,7 +234,7 @@
 		}
 
 		.toggle {
-			top: -30%;
+			top: 10%;
 			/* left: -30%; */
 		}
 	}
@@ -250,7 +250,7 @@
 		}
 
 		.toggle {
-			left: 29%;
+			left: 33%;
 		}
 	}
 
@@ -265,8 +265,8 @@
 		}
 
 		.toggle {
-			top: -35%;
-			left: 32%;
+			top: 10%;
+			left: 35%;
 		}
 	}
 
@@ -281,8 +281,7 @@
 		}
 
 		.toggle {
-			top: -40%;
-			left: 33%;
+			left: 37%;
 		}
 	}
 
@@ -296,8 +295,7 @@
 		}
 
 		.toggle {
-			top: -65%;
-			left: 30%;
+			left: 36%;
 		}
 	}
 </style>
