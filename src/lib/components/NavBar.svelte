@@ -122,7 +122,7 @@
 
 		.toggle {
 			position: absolute;
-			top: 10%;
+			top: 0;
 			right: -5%;
 		}
 	}
@@ -234,7 +234,7 @@
 		}
 
 		.toggle {
-			top: -25%;
+			top: -30%;
 			/* left: -30%; */
 		}
 	}
@@ -248,6 +248,10 @@
 			display: block;
 			margin-left: 75%;
 		}
+
+		.toggle {
+			left: 29%;
+		}
 	}
 
 	@media (min-width: 1300px) {
@@ -259,6 +263,11 @@
 			display: block;
 			margin-left: 75%;
 		}
+
+		.toggle {
+			top: -35%;
+			left: 32%;
+		}
 	}
 
 	@media (min-width: 1400px) {
@@ -269,6 +278,11 @@
 		.gabe-logo {
 			display: block;
 			margin-left: 175%;
+		}
+
+		.toggle {
+			top: -40%;
+			left: 33%;
 		}
 	}
 
@@ -282,7 +296,7 @@
 		}
 
 		.toggle {
-			top: -75%;
+			top: -65%;
 			left: 30%;
 		}
 	}
