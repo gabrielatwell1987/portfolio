@@ -46,6 +46,7 @@
 
 	button:active {
 		background: inherit;
+		color: var(--text-color);
 	}
 
 	button:focus {
