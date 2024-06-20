@@ -3,7 +3,7 @@
 
 	function toggle() {
 		darkMode = !darkMode;
-		window.document.body.classList.toggle('dark');
+		window.document.body.classList.toggle('light');
 	}
 </script>
 
@@ -22,15 +22,11 @@
 	}
 
 	:global(body) {
-		/* background: var(--bg-color); */
 		background-image: radial-gradient(circle at center, #2f2f2f 0%, #000 60%);
-		/* color: var(--text-color); */
 	}
 
-	:global(body.dark) {
-		/* --bg-color: var(--lightblack); */
+	:global(body.light) {
 		background-image: radial-gradient(circle at center, #000 0%, #2f2f2f 60%);
-		/* --text-color: var(--blackest); */
 	}
 
 	button {
@@ -41,7 +37,7 @@
 		padding: 10px 15px;
 		font-size: 2rem;
 		letter-spacing: 3px;
-		width: 5%;
+		width: 100%;
 		margin-left: 5%;
 		margin-top: 5%;
 		z-index: 10;
