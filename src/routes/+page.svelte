@@ -1,6 +1,5 @@
 <script>
 	import Hero from '$lib/components/Hero.svelte';
-	// import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 </script>
 
 <svelte:head>
@@ -9,5 +8,4 @@
 	<meta name="keywords" content="Gabriel, Atwell, Portfolio, Gabriel Atwell" />
 </svelte:head>
 
-<!-- <ThemeToggle /> -->
 <Hero />
