@@ -18,24 +18,6 @@
 </button>
 
 <style>
-	button {
-		background: transparent;
-		border: none;
-		border-radius: 5px;
-		color: var(--text-color);
-		padding: 10px 15px;
-		font-size: 2rem;
-		letter-spacing: 3px;
-		width: 5%;
-		margin-left: 5%;
-		margin-top: 5%;
-		z-index: 10;
-	}
-
-	button:active {
-		background: inherit;
-	}
-
 	:root {
 		--bg-color: var(--blackest);
 		--text-color: var(--white);
@@ -48,7 +30,33 @@
 
 	:global(body.dark) {
 		--bg-color: var(--lightblack);
-		/* --bg-color: var(--dark-gray); */
 		--text-color: var(--blackest);
+	}
+
+	button {
+		background: transparent;
+		border: none;
+		border-radius: 5px;
+		color: var(--text-color);
+		padding: 10px 15px;
+		font-size: 2rem;
+		letter-spacing: 3px;
+		width: 5%;
+		margin-left: 5%;
+		margin-top: 5%;
+		z-index: 10;
+		outline: none;
+	}
+
+	button:active {
+		background: inherit;
+	}
+
+	button:focus {
+		outline: none;
+	}
+
+	button:focus-visible {
+		outline: none;
 	}
 </style>
