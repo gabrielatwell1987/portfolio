@@ -37,8 +37,8 @@
 	}
 
 	:root {
-		--bg-color: var(--white);
-		--text-color: var(--blackest);
+		--bg-color: var(--blackest);
+		--text-color: var(--white);
 	}
 
 	:global(body) {
@@ -47,7 +47,8 @@
 	}
 
 	:global(body.dark) {
-		--bg-color: #000000;
-		--text-color: #ffffff;
+		--bg-color: var(--lightblack);
+		/* --bg-color: var(--dark-gray); */
+		--text-color: var(--blackest);
 	}
 </style>
