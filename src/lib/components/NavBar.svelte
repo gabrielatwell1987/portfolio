@@ -15,7 +15,7 @@
 				type="spin"
 				bind:open
 				ariaLabel="menu"
-				--active-color="var(--smoke)"
+				--active-color="var(--white)"
 			/>
 		</div>
 
