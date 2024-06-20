@@ -9,10 +9,8 @@
 
 <button on:click={toggle}>
 	{#if darkMode}
-		<!-- <i class="fa-regular fa-moon" /> -->
 		<i class="fa-regular fa-sun" />
 	{:else}
-		<!-- <i class="fa-regular fa-sun" /> -->
 		<i class="fa-regular fa-moon" />
 	{/if}
 </button>
