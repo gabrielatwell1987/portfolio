@@ -1,6 +1,7 @@
 <script>
 	import { Hamburger } from 'svelte-hamburgers';
 	import MainLogo from '$lib/components/MainLogo.svelte';
+	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
 	let open;
 </script>
@@ -21,6 +22,10 @@
 		<div class="gabe-logo">
 			<a class="home" href="/about/hero"><MainLogo /></a>
 		</div>
+	</div>
+
+	<div class="toggle">
+		<ThemeToggle />
 	</div>
 
 	<!-- desktop view -->
@@ -114,6 +119,12 @@
 		.nav-link {
 			font-weight: 800;
 		}
+
+		.toggle {
+			position: absolute;
+			top: 10%;
+			right: -5%;
+		}
 	}
 
 	@media (min-width: 700px) {
@@ -179,6 +190,11 @@
 			text-shadow: 2px 2px 1px var(--black);
 			transition: border-bottom 0.35s ease-in-out, text-shadow 0.35s ease-in-out;
 		}
+
+		.toggle {
+			top: -20%;
+			left: 30%;
+		}
 	}
 
 	@media (min-width: 990px) {
@@ -215,6 +231,11 @@
 		.gabe-logo {
 			display: block;
 			margin-left: 5%;
+		}
+
+		.toggle {
+			top: -25%;
+			/* left: -30%; */
 		}
 	}
 
@@ -258,6 +279,11 @@
 
 		.gabe-logo {
 			margin-left: 150%;
+		}
+
+		.toggle {
+			top: -75%;
+			left: 30%;
 		}
 	}
 </style>
