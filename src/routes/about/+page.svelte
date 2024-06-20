@@ -62,7 +62,9 @@
 					animations for the web! I mainly enjoy animating the web because I believe that it makes
 					the website look more professional and more appealing to the eye. In the world of web
 					development, creating engaging and visually appealing animations is essential to grab the
-					attention of users.
+					attention of users. I'm a natural problem-solver who thrives on turning complex problems
+					into simple, beautiful solutions. I believe in the power of collaboration and continuous
+					learning.
 				</p>
 
 				<article class="text__w hero" aria-label="bio">
