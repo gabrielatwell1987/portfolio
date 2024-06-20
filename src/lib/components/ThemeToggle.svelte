@@ -22,13 +22,15 @@
 	}
 
 	:global(body) {
-		background: var(--bg-color);
-		color: var(--text-color);
+		/* background: var(--bg-color); */
+		background-image: radial-gradient(circle at center, #2f2f2f 0%, #000 60%);
+		/* color: var(--text-color); */
 	}
 
 	:global(body.dark) {
-		--bg-color: var(--lightblack);
-		--text-color: var(--blackest);
+		/* --bg-color: var(--lightblack); */
+		background-image: radial-gradient(circle at center, #000 0%, #2f2f2f 60%);
+		/* --text-color: var(--blackest); */
 	}
 
 	button {
