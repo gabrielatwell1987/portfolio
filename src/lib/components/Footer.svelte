@@ -14,7 +14,7 @@
 	@media (min-width: 200px) {
 		footer {
 			margin-top: -10%;
-			margin-bottom: 2rem;
+			margin-bottom: 5%;
 		}
 	}
 
