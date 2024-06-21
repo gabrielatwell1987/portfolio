@@ -8,6 +8,7 @@
 	<div class="bento-item bento-item-1">
 		<a href="/contact"><h2>Contact me if you have a question!</h2></a>
 	</div>
+
 	<div class="bento-item bento-item-2">
 		<a href="/blog/sveltekit"><SK /></a>
 
@@ -23,6 +24,7 @@
 	<div class="bento-item bento-item-3">
 		<a href="/"><img src="/icons/portfolio_logo.svg" alt="" /></a>
 	</div>
+
 	<div class="bento-item bento-item-4">
 		<a href="/projects"><img src="/logos/cursive-atwell.jpg" alt="" /></a>
 	</div>
