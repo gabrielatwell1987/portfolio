@@ -32,8 +32,9 @@
 }
 
 body {
-	font-family: var(--nunito);
+	font-family: var(--lexend);
 	font-size: 16px;
+	font-weight: 500;
 	line-height: 1.5;
 	overflow-x: hidden;
 	overflow-y: scroll;
