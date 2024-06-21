@@ -4,15 +4,19 @@
 	<div class="bento-item bento-item-1">
 		<h2>Space One</h2>
 	</div>
+
 	<div class="bento-item bento-item-2">
 		<h2>Space Two</h2>
 	</div>
+
 	<div class="bento-item bento-item-3">
 		<h2>Space Three</h2>
 	</div>
+
 	<div class="bento-item bento-item-4">
 		<h2>Space Four</h2>
 	</div>
+
 	<div class="bento-item bento-item-5">
 		<h2>Space Five</h2>
 	</div>
