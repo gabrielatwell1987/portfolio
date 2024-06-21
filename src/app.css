@@ -25,6 +25,22 @@
 	--mono: 'Space Mono', monospace;
 }
 
+:root ::-webkit-scrollbar {
+	width: 12.5px;
+	height: 10px;
+	background-color: var(--lightblack);
+	border-radius: 5px;
+	box-shadow: 0 0 10px var(--blackest);
+}
+:root ::-webkit-scrollbar-thumb {
+	background-color: var(--purple);
+	border-radius: 5px;
+	box-shadow: 0 0 10px var(--blackest);
+}
+:root ::-webkit-scrollbar-thumb:hover {
+	background-color: var(--blue);
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
