@@ -150,7 +150,7 @@
 
 		.send {
 			background-color: transparent;
-			color: var(--yellow);
+			color: var(--white);
 			font-family: var(--lexend);
 			font-size: 1.2rem;
 			font-weight: 600;
@@ -164,10 +164,10 @@
 			transition: 750ms;
 			outline: 3px solid var(--white);
 			outline-offset: -7px;
-			mix-blend-mode: difference;
+			/* mix-blend-mode: difference; */
 			padding: 1.5rem 2.5rem;
 			margin-top: 10%;
-			margin-bottom: 2%;
+			margin-bottom: 5%;
 			user-select: none;
 			cursor: pointer;
 		}
@@ -175,7 +175,7 @@
 		.send:hover,
 		.send:focus {
 			opacity: 0.8;
-			color: var(--yellow);
+			color: var(--white);
 			mix-blend-mode: difference;
 			outline-offset: 0px;
 			animation: wiggle 0.5s ease-in-out infinite;
