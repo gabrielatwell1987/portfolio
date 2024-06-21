@@ -295,7 +295,8 @@
 		}
 
 		.toggle {
-			left: 36%;
+			left: 35%;
+			top: 22%;
 		}
 	}
 </style>
