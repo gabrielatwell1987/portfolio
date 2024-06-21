@@ -122,7 +122,7 @@
 
 		.toggle {
 			position: absolute;
-			top: 0;
+			top: -1%;
 			left: 3%;
 		}
 	}
