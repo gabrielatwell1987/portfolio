@@ -150,24 +150,24 @@
 
 		.send {
 			background-color: transparent;
-			color: var(--white);
 			font-family: var(--lexend);
+			color: var(--yellow);
+			border: 1px solid var(--yellow);
+			outline: 3px solid var(--yellow);
+			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			font-size: 1.2rem;
 			font-weight: 600;
-			border: 1px solid var(--white);
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 45%;
+			width: 60%;
 			border-radius: 0.75rem;
-			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			transition: 750ms;
-			outline: 3px solid var(--white);
 			outline-offset: -7px;
-			/* mix-blend-mode: difference; */
+			mix-blend-mode: difference;
 			padding: 1.5rem 2.5rem;
 			margin-top: 10%;
-			margin-bottom: 5%;
+			margin-bottom: 2%;
 			user-select: none;
 			cursor: pointer;
 		}
@@ -175,8 +175,8 @@
 		.send:hover,
 		.send:focus {
 			opacity: 0.8;
-			color: var(--white);
-			mix-blend-mode: difference;
+			color: var(--yellow);
+			mix-blend-mode: hard-light;
 			outline-offset: 0px;
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
