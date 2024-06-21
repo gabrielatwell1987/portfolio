@@ -4,12 +4,12 @@
 	import Image from './Image.svelte';
 </script>
 
-<div id="bento-div" class="bt-div">
-	<div class="bento-item bento-item-1">
+<main id="bento-div" class="bt-div">
+	<section class="bento-item bento-item-1">
 		<a href="/contact"><h2>Contact me if you have a question!</h2></a>
-	</div>
+	</section>
 
-	<div class="bento-item bento-item-2">
+	<section class="bento-item bento-item-2">
 		<a href="/blog/sveltekit"><SK /></a>
 
 		<a href="/blog/greensock"><GSAP /></a>
@@ -19,16 +19,16 @@
 				><Image src="logos/animation.png" alt="A logo that says web animation techniques." /></a
 			>
 		</div>
-	</div>
+	</section>
 
-	<div class="bento-item bento-item-3">
+	<section class="bento-item bento-item-3">
 		<a href="/"><img src="/icons/portfolio_logo.svg" alt="" /></a>
-	</div>
+	</section>
 
-	<div class="bento-item bento-item-4">
+	<section class="bento-item bento-item-4">
 		<a href="/projects"><img src="/logos/cursive-atwell.jpg" alt="" /></a>
-	</div>
-</div>
+	</section>
+</main>
 
 <style>
 	:root {
