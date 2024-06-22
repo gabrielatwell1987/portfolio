@@ -251,6 +251,10 @@
 		.toggle {
 			left: 27.5%;
 		}
+
+		.gabe-logo {
+			margin-left: 0;
+		}
 	}
 
 	@media (min-width: 1100px) {
