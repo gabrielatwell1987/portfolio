@@ -207,7 +207,6 @@
 			text-align: center;
 			font-size: 2.5rem;
 			margin: 5rem 0;
-			height: 100vh;
 		}
 
 		button {
@@ -239,26 +238,26 @@
 		}
 
 		h3 {
-			font-size: 2.5rem;
+			font-size: 2.2rem;
 			letter-spacing: 10px;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		h3 {
-			font-size: 2.75rem;
+			font-size: 2.25rem;
 			width: 90%;
 			margin-inline: auto;
 		}
 
 		.summary {
-			font-size: 1.5rem;
+			font-size: 1.25rem;
 			width: 80%;
 			margin-inline: auto;
 		}
 
 		section {
-			top: 50%;
+			top: 5%;
 		}
 	}
 
