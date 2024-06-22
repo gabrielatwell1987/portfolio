@@ -65,7 +65,7 @@
 
 	@media (min-width: 1024px) {
 		button {
-			width: 25%;
+			width: 30%;
 			font-size: 1.5rem;
 			margin: 3rem auto;
 		}
