@@ -255,6 +255,7 @@
 
 		nav {
 			scale: 0.75;
+			margin-right: 5%;
 		}
 	}
 
