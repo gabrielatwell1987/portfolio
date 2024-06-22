@@ -53,11 +53,12 @@
 
 	@media (min-width: 990px) {
 		p {
-			line-height: 2.5;
+			line-height: 1.5;
+			font-size: 1.1rem;
 		}
 
 		h2 {
-			font-size: 3rem;
+			font-size: 1.5rem;
 			letter-spacing: 5px;
 		}
 
@@ -97,6 +98,28 @@
 	@media (min-width: 1024px) {
 		.grid {
 			margin-bottom: -10%;
+		}
+
+		h2 {
+			font-size: 2rem;
+		}
+
+		p {
+			font-size: 1.5rem;
+		}
+	}
+
+	@media (min-width: 1400px) {
+		.grid {
+			margin-bottom: -10%;
+		}
+
+		h2 {
+			font-size: 3rem;
+		}
+
+		p {
+			font-size: 1.75rem;
 		}
 	}
 </style>
