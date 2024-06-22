@@ -84,7 +84,9 @@
 			<Grid leftTitle="Frontend" rightTitle="Design based" />
 
 			<!-- skills section -->
-			<Skills title="Skills" />
+			<div class="skills">
+				<Skills title="Skills" />
+			</div>
 
 			<!-- bento grid -->
 			<Bento />
@@ -252,17 +254,33 @@
 		.gallery {
 			margin-top: 5%;
 		}
+
+		.skills {
+			margin-top: -25%;
+		}
 	}
 
 	@media (min-width: 1024px) {
 		.hero {
 			width: 125%;
-			margin-left: -10%;
+			margin-left: -12%;
 		}
 
 		.gallery {
 			width: 125%;
 			margin-left: -12%;
+		}
+	}
+
+	@media (min-width: 1400px) {
+		.hero {
+			width: 75%;
+			margin-left: 12%;
+		}
+
+		.gallery {
+			width: 75%;
+			margin-left: 12%;
 		}
 	}
 </style>
