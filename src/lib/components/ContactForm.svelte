@@ -386,7 +386,7 @@
 
 		.send {
 			font-size: 1.5rem;
-			width: 55%;
+			width: 125%;
 			margin-inline: auto;
 		}
 
