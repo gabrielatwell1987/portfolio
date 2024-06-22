@@ -233,7 +233,7 @@
 
 		.send {
 			width: 15%;
-			font-size: 1.25rem;
+			font-size: 1.2rem;
 		}
 
 		.send:hover {
@@ -357,7 +357,6 @@
 		}
 
 		.send {
-			/* letter-spacing: -2px; */
 			width: 15%;
 		}
 	}
@@ -391,7 +390,7 @@
 
 		.send {
 			width: 15%;
-			font-size: 1.25rem;
+			font-size: 1.2rem;
 		}
 
 		fieldset {
