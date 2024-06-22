@@ -210,7 +210,7 @@
 
 		.main-title {
 			color: var(--blue);
-			font-size: 7rem;
+			font-size: 5rem;
 			font-weight: 900;
 			font-family: var(--anta);
 			text-shadow: 5px 5px 4px var(--off-white);
@@ -219,7 +219,7 @@
 		.text {
 			color: var(--white);
 			max-width: 75%;
-			font-size: 2rem;
+			font-size: 1.5rem;
 			line-height: 1.5;
 		}
 

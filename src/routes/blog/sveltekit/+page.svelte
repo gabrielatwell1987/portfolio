@@ -241,7 +241,7 @@
 
 	@media (min-width: 990px) {
 		.title {
-			font-size: 12rem;
+			font-size: 6.5rem;
 		}
 
 		.spacing {
@@ -253,7 +253,7 @@
 		}
 
 		summary {
-			font-size: 2rem;
+			font-size: 1.5rem;
 		}
 
 		.detail {
@@ -262,6 +262,16 @@
 
 		.lightening {
 			margin-left: 35%;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.title {
+			font-size: 7rem;
+		}
+
+		summary {
+			font-size: 1.75rem;
 		}
 	}
 </style>

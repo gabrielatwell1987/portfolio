@@ -222,7 +222,7 @@
 
 		.summary {
 			width: 50%;
-			font-size: 2rem;
+			font-size: 1.25rem;
 			letter-spacing: 3px;
 		}
 
@@ -238,8 +238,18 @@
 		}
 
 		h3 {
-			font-size: 3rem;
+			font-size: 2.5rem;
 			letter-spacing: 10px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		h3 {
+			font-size: 2.75rem;
+		}
+
+		.summary {
+			font-size: 1.5rem;
 		}
 	}
 
