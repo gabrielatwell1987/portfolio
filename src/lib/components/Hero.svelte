@@ -267,6 +267,12 @@
 		}
 	}
 
+	@media screen and (min-width: 1400px) {
+		section {
+			top: 30%;
+		}
+	}
+
 	@media screen and (min-width: 1800px) {
 		button {
 			width: 15%;

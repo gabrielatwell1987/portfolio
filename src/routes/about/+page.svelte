@@ -282,5 +282,9 @@
 			width: 75%;
 			margin-left: 12%;
 		}
+
+		.text {
+			font-size: 2rem;
+		}
 	}
 </style>
