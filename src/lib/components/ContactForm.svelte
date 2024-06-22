@@ -232,8 +232,8 @@
 		}
 
 		.send {
-			width: 20%;
-			font-size: 2rem;
+			width: 25%;
+			font-size: 1.25rem;
 		}
 
 		.send:hover {
