@@ -97,7 +97,7 @@
 
 	@media (min-width: 1024px) {
 		.grid {
-			margin-bottom: -10%;
+			margin-bottom: -50%;
 		}
 
 		h2 {
