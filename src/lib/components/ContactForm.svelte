@@ -362,7 +362,8 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			margin-left: 63.5%;
+			margin-left: 80%;
+			/* margin-left: 63.5%; */
 		}
 
 		label {
@@ -385,9 +386,8 @@
 		}
 
 		.send {
+			width: 30%;
 			font-size: 1.5rem;
-			width: 125%;
-			margin-inline: auto;
 		}
 
 		fieldset {
