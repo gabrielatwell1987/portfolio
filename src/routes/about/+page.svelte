@@ -74,7 +74,9 @@
 						section as the home page.
 					</p>
 
-					<a href="/about/hero"><Button title="Hero" /></a>
+					<div class="hero">
+						<a href="/about/hero"><Button title="Hero" /></a>
+					</div>
 				</article>
 			</div>
 
@@ -146,6 +148,13 @@
 
 		.gallery {
 			margin-top: 1.5rem;
+			width: 100%;
+			margin-inline: auto;
+		}
+
+		.hero {
+			width: 100%;
+			margin-inline: auto;
 		}
 
 		.atwell {
