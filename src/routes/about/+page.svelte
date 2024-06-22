@@ -253,4 +253,14 @@
 			margin-top: 5%;
 		}
 	}
+
+	@media (min-width: 1024px) {
+		.hero {
+			width: 75%;
+		}
+
+		.gallery {
+			width: 75%;
+		}
+	}
 </style>
