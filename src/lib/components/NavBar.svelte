@@ -199,7 +199,7 @@
 
 	@media (min-width: 990px) {
 		.nav-link {
-			font-size: 1.2rem;
+			font-size: 1.1rem;
 			margin-left: 5rem;
 			margin-right: -5.25rem;
 		}
@@ -233,13 +233,12 @@
 
 		.toggle {
 			top: 10%;
-			/* left: -30%; */
 		}
 	}
 
 	@media (min-width: 1024px) {
 		.nav-link {
-			font-size: 1.25rem;
+			font-size: 1.15rem;
 			margin-left: 5rem;
 			margin-right: -5rem;
 		}
@@ -256,6 +255,10 @@
 	@media (min-width: 1100px) {
 		.desktop {
 			margin-left: 25%;
+		}
+
+		.nav-link {
+			font-size: 1.2rem;
 		}
 
 		.gabe-logo {
