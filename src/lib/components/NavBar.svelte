@@ -252,6 +252,10 @@
 		.toggle {
 			left: 27.5%;
 		}
+
+		nav {
+			scale: 0.75;
+		}
 	}
 
 	@media (min-width: 1100px) {
