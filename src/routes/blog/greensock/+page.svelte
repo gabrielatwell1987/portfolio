@@ -267,6 +267,11 @@
 		.glass {
 			margin-left: 30%;
 		}
+
+		.back {
+			width: 100%;
+			margin-inline: auto;
+		}
 	}
 
 	@media (min-width: 1024px) {
@@ -276,6 +281,10 @@
 
 		summary {
 			font-size: 1.75rem;
+		}
+
+		.detail {
+			line-height: 1.65;
 		}
 	}
 </style>

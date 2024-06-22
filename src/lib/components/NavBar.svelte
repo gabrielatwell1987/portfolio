@@ -255,7 +255,7 @@
 
 		nav {
 			scale: 0.75;
-			margin-right: 5%;
+			margin-right: 8%;
 		}
 	}
 
@@ -306,6 +306,11 @@
 
 		.toggle {
 			left: 37%;
+		}
+
+		nav {
+			scale: 1;
+			margin-right: 0;
 		}
 	}
 
