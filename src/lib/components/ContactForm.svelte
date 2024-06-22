@@ -385,7 +385,7 @@
 		}
 
 		.send {
-			width: 30%;
+			width: 32%;
 			font-size: 1.25rem;
 			letter-spacing: -1px;
 		}
@@ -463,8 +463,9 @@
 
 		.send {
 			font-size: 1.5rem;
-			width: 15%;
+			width: 10%;
 			margin-inline: auto;
+			letter-spacing: 0;
 		}
 	}
 
