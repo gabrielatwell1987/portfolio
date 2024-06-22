@@ -386,8 +386,8 @@
 
 		.send {
 			width: 30%;
-			font-size: 1.25rem;
-			letter-spacing: -0.05rem;
+			font-size: 1.2rem;
+			letter-spacing: -2px;
 		}
 
 		fieldset {
