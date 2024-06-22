@@ -256,8 +256,8 @@
 
 	@media (min-width: 1024px) {
 		.hero {
-			width: 75%;
-			/* margin-left: -10%; */
+			width: 125%;
+			margin-left: -10%;
 		}
 
 		.gallery {
