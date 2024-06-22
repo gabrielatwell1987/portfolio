@@ -48,7 +48,7 @@
 
 	@media (min-width: 990px) {
 		.size {
-			font-size: 7rem;
+			font-size: 2.5rem;
 		}
 
 		.size:hover {
@@ -60,6 +60,18 @@
 			margin-left: 0%;
 			display: flex;
 			justify-content: space-evenly;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.size {
+			font-size: 3.5rem;
+		}
+	}
+
+	@media (min-width: 1400px) {
+		.size {
+			font-size: 5rem;
 		}
 	}
 </style>

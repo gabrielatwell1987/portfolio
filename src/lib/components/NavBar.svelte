@@ -199,17 +199,21 @@
 
 	@media (min-width: 990px) {
 		.nav-link {
-			font-size: 1.5rem;
+			/* font-size: 1.5rem;
 			margin-left: 6.5rem;
+			margin-right: -5rem; */
+			font-size: 1.25rem;
+			margin-left: 5rem;
 			margin-right: -5rem;
 		}
 
 		.desktop {
 			display: block;
 			width: 100%;
-			margin-left: 18%;
-			font-size: 1rem;
-			font-weight: 600;
+			/* margin-left: 18%; */
+			margin-left: 23%;
+			/* font-size: 1rem; */
+			/* font-weight: 600; */
 		}
 
 		nav {
@@ -239,9 +243,21 @@
 		}
 	}
 
+	@media (min-width: 1024px) {
+		.nav-link {
+			font-size: 1.25rem;
+			margin-left: 5rem;
+			margin-right: -5rem;
+		}
+
+		.desktop {
+			margin-left: 25%;
+		}
+	}
+
 	@media (min-width: 1100px) {
 		.desktop {
-			margin-left: 20%;
+			margin-left: 25%;
 		}
 
 		.gabe-logo {
@@ -297,6 +313,12 @@
 		.toggle {
 			left: 35%;
 			top: 22%;
+		}
+
+		.nav-link {
+			font-size: 1.5rem;
+			margin-left: 5.75rem;
+			margin-right: -5rem;
 		}
 	}
 </style>

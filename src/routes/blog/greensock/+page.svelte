@@ -165,8 +165,8 @@
 		}
 
 		.title {
-			font-size: 5rem;
-			margin-top: 5rem;
+			font-size: 3.75rem;
+			margin-top: 5%;
 		}
 
 		details {
@@ -244,7 +244,7 @@
 
 	@media (min-width: 990px) {
 		.title {
-			font-size: 12rem;
+			font-size: 6.5rem;
 			margin-bottom: -8%;
 		}
 
@@ -253,7 +253,7 @@
 		}
 
 		summary {
-			font-size: 2rem;
+			font-size: 1.5rem;
 		}
 
 		details {
@@ -266,6 +266,16 @@
 
 		.glass {
 			margin-left: 30%;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.title {
+			font-size: 7rem;
+		}
+
+		summary {
+			font-size: 1.75rem;
 		}
 	}
 </style>

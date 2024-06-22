@@ -93,4 +93,10 @@
 			font-size: 5rem;
 		}
 	}
+
+	@media (min-width: 1024px) {
+		.grid {
+			margin-bottom: -10%;
+		}
+	}
 </style>
