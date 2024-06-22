@@ -362,7 +362,7 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			margin-left: 80%;
+			margin-left: 100%;
 			/* margin-left: 63.5%; */
 		}
 
