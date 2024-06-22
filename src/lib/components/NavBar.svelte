@@ -245,6 +245,7 @@
 
 		.desktop {
 			margin-left: 22%;
+			text-wrap: wrap;
 		}
 
 		.toggle {
