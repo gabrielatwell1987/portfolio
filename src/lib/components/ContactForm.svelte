@@ -463,7 +463,10 @@
 		}
 
 		.send {
+			font-size: 1.5rem;
 			width: 10%;
+			margin-inline: auto;
+			/* margin-left: 12%; */
 		}
 	}
 
