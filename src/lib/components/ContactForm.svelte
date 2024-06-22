@@ -160,7 +160,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 60%;
+			width: 35%;
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
@@ -208,7 +208,7 @@
 
 	@media screen and (min-width: 500px) {
 		.send {
-			width: 30%;
+			width: 22%;
 		}
 
 		form {
@@ -232,7 +232,7 @@
 		}
 
 		.send {
-			width: 25%;
+			width: 15%;
 			font-size: 1.25rem;
 		}
 
@@ -339,7 +339,7 @@
 
 	@media screen and (min-width: 775px) {
 		.send {
-			width: 25%;
+			width: 15%;
 		}
 
 		form {
@@ -354,6 +354,11 @@
 
 		legend {
 			font-size: 4rem;
+		}
+
+		.send {
+			/* letter-spacing: -2px; */
+			width: 15%;
 		}
 	}
 
@@ -385,9 +390,8 @@
 		}
 
 		.send {
-			width: 35%;
-			font-size: 1.2rem;
-			letter-spacing: -0.5rem;
+			width: 15%;
+			font-size: 1.25rem;
 		}
 
 		fieldset {
