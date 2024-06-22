@@ -59,11 +59,11 @@
 
 	@media screen and (min-width: 1024px) {
 		.contactForm {
-			margin: 2rem 0 0 -24.5rem;
+			margin: 2rem 0 0 -24rem;
 		}
 
 		.career {
-			margin-left: 20%;
+			margin-left: 15%;
 		}
 	}
 
