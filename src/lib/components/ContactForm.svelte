@@ -362,7 +362,7 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			margin-left: 61.5%;
+			margin-left: 63.5%;
 		}
 
 		label {
@@ -386,7 +386,7 @@
 
 		.send {
 			width: 30%;
-			font-size: 3rem;
+			font-size: 1.5rem;
 		}
 
 		fieldset {

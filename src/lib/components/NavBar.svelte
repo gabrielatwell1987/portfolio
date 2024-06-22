@@ -199,21 +199,15 @@
 
 	@media (min-width: 990px) {
 		.nav-link {
-			/* font-size: 1.5rem;
-			margin-left: 6.5rem;
-			margin-right: -5rem; */
-			font-size: 1.25rem;
+			font-size: 1.2rem;
 			margin-left: 5rem;
-			margin-right: -5rem;
+			margin-right: -5.25rem;
 		}
 
 		.desktop {
 			display: block;
 			width: 100%;
-			/* margin-left: 18%; */
 			margin-left: 23%;
-			/* font-size: 1rem; */
-			/* font-weight: 600; */
 		}
 
 		nav {
@@ -251,7 +245,11 @@
 		}
 
 		.desktop {
-			margin-left: 25%;
+			margin-left: 22%;
+		}
+
+		.toggle {
+			left: 27.5%;
 		}
 	}
 
