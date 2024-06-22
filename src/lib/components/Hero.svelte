@@ -251,6 +251,10 @@
 		.summary {
 			font-size: 1.5rem;
 		}
+
+		section {
+			top: 50%;
+		}
 	}
 
 	@media screen and (min-width: 1100px) {
