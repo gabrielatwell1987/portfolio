@@ -207,6 +207,7 @@
 			text-align: center;
 			font-size: 2.5rem;
 			margin: 5rem 0;
+			height: 100vh;
 		}
 
 		button {
@@ -246,10 +247,14 @@
 	@media (min-width: 1024px) {
 		h3 {
 			font-size: 2.75rem;
+			width: 90%;
+			margin-inline: auto;
 		}
 
 		.summary {
 			font-size: 1.5rem;
+			width: 80%;
+			margin-inline: auto;
 		}
 
 		section {
