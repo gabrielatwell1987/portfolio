@@ -385,8 +385,10 @@
 		}
 
 		.send {
-			width: 30%;
+			/* width: 30%; */
 			font-size: 1.5rem;
+			width: 125%;
+			margin-left: -12%;
 		}
 
 		fieldset {

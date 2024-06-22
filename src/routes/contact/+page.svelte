@@ -63,7 +63,7 @@
 		}
 
 		.career {
-			margin-left: 15%;
+			margin-left: 15.5%;
 		}
 	}
 
