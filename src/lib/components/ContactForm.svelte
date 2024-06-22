@@ -385,10 +385,8 @@
 		}
 
 		.send {
-			/* width: 30%; */
-			font-size: 1.5rem;
-			width: 125%;
-			margin-left: -12%;
+			width: 30%;
+			font-size: 1.25rem;
 		}
 
 		fieldset {
@@ -466,7 +464,6 @@
 			font-size: 1.5rem;
 			width: 10%;
 			margin-inline: auto;
-			/* margin-left: 12%; */
 		}
 	}
 
