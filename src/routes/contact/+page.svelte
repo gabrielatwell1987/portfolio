@@ -59,11 +59,18 @@
 
 	@media screen and (min-width: 1024px) {
 		.contactForm {
-			margin: 2rem 0 0 -40rem;
+			margin: 2rem 0 0 -25rem;
+			/* margin: 2rem 0 0 -40rem; */
 		}
 
 		.career {
 			margin-left: 25%;
+		}
+	}
+
+	@media screen and (min-width: 1400px) {
+		.contactForm {
+			margin: 2rem 0 0 -40rem;
 		}
 	}
 </style>
