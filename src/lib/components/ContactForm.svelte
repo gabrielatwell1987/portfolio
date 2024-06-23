@@ -160,7 +160,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 35%;
+			width: 40%;
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
