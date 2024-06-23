@@ -36,8 +36,9 @@
 	<h1 class="title">SvelteKit</h1>
 
 	<main>
-		<article class="lightening">
-			<Image src="/logos/lightening-bolt.png" alt="a cartoon lightening bolt with a female in it" />
+		<article class="A">
+			<Image src="/logos/A-nobg.png" alt="A for Atwell" />
+			<!-- <Image src="/logos/lightening-bolt.png" alt="a cartoon lightening bolt with a female in it" /> -->
 		</article>
 
 		<!-- content -->
@@ -205,7 +206,7 @@
 			text-decoration: none;
 		}
 
-		.lightening {
+		.A {
 			background: transparent;
 		}
 	}
@@ -234,7 +235,7 @@
 			margin-top: -3rem;
 		}
 
-		.lightening {
+		.A {
 			margin-left: 15%;
 		}
 	}
@@ -260,7 +261,7 @@
 			font-size: 1.5rem;
 		}
 
-		.lightening {
+		.A {
 			margin-left: 35%;
 		}
 
@@ -281,6 +282,10 @@
 
 		.detail {
 			line-height: 1.65;
+		}
+
+		.A {
+			margin-left: 37%;
 		}
 	}
 </style>

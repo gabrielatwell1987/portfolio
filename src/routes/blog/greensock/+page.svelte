@@ -286,5 +286,9 @@
 		.detail {
 			line-height: 1.65;
 		}
+
+		.glass {
+			margin-left: 32%;
+		}
 	}
 </style>
