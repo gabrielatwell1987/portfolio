@@ -34,7 +34,8 @@
 			text-align: center;
 			font-size: 1.75rem;
 			height: 100vh;
-			margin-top: 30%;
+			position: relative;
+			margin-bottom: 2%;
 		}
 
 		h3 {
@@ -139,6 +140,7 @@
 
 	@media screen and (min-width: 740px) {
 		section {
+			text-align: center;
 			font-size: 2rem;
 		}
 
@@ -185,6 +187,7 @@
 
 	@media screen and (min-width: 990px) {
 		section {
+			text-align: center;
 			font-size: 2.5rem;
 			margin: 5rem 0;
 		}
@@ -202,7 +205,7 @@
 
 		.summary {
 			width: 50%;
-			font-size: 2rem;
+			font-size: 1.25rem;
 			letter-spacing: 3px;
 		}
 
@@ -210,18 +213,45 @@
 			top: 30%;
 			left: 50%;
 			transform: translate(-50%, -30%);
-			margin-top: 10%;
 		}
 
 		h3 {
-			font-size: 3rem;
+			font-size: 2.2rem;
 			letter-spacing: 10px;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		h3 {
+			font-size: 2.25rem;
+			width: 90%;
+			margin-inline: auto;
+		}
+
+		.summary {
+			font-size: 1.25rem;
+			width: 80%;
+			margin-inline: auto;
+		}
+
+		section {
+			top: 35%;
 		}
 	}
 
 	@media screen and (min-width: 1100px) {
 		button {
 			width: 25%;
+		}
+
+		section {
+			top: 30%;
+		}
+	}
+
+	@media screen and (min-width: 1400px) {
+		section {
+			top: 50%;
 		}
 	}
 
@@ -233,6 +263,10 @@
 
 		h3 {
 			font-size: 5rem;
+		}
+
+		.summary {
+			font-size: 1.75rem;
 		}
 	}
 </style>

@@ -36,7 +36,6 @@
 </main>
 
 <style>
-	/* bigger than mobile */
 	@media screen and (min-width: 200px) {
 		main {
 			text-align: center;
@@ -281,6 +280,10 @@
 
 		h3 {
 			font-size: 5rem;
+		}
+
+		.summary {
+			font-size: 1.75rem;
 		}
 	}
 </style>
