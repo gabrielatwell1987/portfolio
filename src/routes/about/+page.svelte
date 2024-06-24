@@ -67,7 +67,7 @@
 					learning.
 				</p>
 
-				<article class="text__w hero" aria-label="bio">
+				<article class="hero text-hero text__w" aria-label="bio">
 					<p class="text margin__b">
 						Here is a hero section image that I created with three.js... I currently like the hero
 						section that shows when you first come to the website, but I linked this new hero
@@ -159,6 +159,10 @@
 			margin-inline: auto;
 		}
 
+		.text-hero {
+			font-size: 1.5rem;
+		}
+
 		.atwell {
 			margin: 3.5% 0;
 			border-radius: 3rem;
@@ -174,6 +178,7 @@
 		.text {
 			max-width: 90%;
 			margin-inline: auto;
+			font-size: 1.5rem;
 		}
 
 		.text,
@@ -230,7 +235,7 @@
 		.text {
 			color: var(--white);
 			max-width: 75%;
-			font-size: 1.5rem;
+			font-size: 1.75rem;
 			line-height: 1.5;
 		}
 

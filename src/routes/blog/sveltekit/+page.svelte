@@ -186,6 +186,7 @@
 			min-width: 20rem;
 			margin: 0 -4.75rem;
 			font-family: var(--lexend);
+			font-size: 1.5rem;
 		}
 
 		.center {
@@ -238,6 +239,10 @@
 		.A {
 			margin-left: 15%;
 		}
+
+		.detail {
+			font-size: 1.5rem;
+		}
 	}
 
 	@media (min-width: 990px) {
@@ -251,6 +256,10 @@
 
 		details {
 			width: 100%;
+		}
+
+		.detail {
+			font-size: 1.75rem;
 		}
 
 		summary {
