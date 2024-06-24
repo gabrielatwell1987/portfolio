@@ -28,7 +28,7 @@
 <style>
 	@media (min-width: 200px) {
 		h2 {
-			font-size: 2rem;
+			font-size: 2.25rem;
 			mix-blend-mode: difference;
 			color: var(--purple);
 			font-family: var(--montserrat);
@@ -38,6 +38,7 @@
 			line-height: 1.75;
 			font-family: var(--montserrat);
 			text-align: left;
+			font-size: 1.25rem;
 		}
 
 		.inline {

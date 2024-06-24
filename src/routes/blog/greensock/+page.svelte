@@ -184,6 +184,7 @@
 			min-width: 20rem;
 			margin: 0 -4.75rem;
 			font-family: var(--lexend);
+			font-size: 1.5rem;
 		}
 
 		.center {
@@ -240,6 +241,10 @@
 		.glass {
 			margin-left: 3%;
 		}
+
+		.detail {
+			font-size: 1.5rem;
+		}
 	}
 
 	@media (min-width: 990px) {
@@ -261,7 +266,7 @@
 		}
 
 		.detail {
-			font-size: 1.5rem;
+			font-size: 1.75rem;
 		}
 
 		.glass {
