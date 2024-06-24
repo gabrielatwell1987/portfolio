@@ -96,8 +96,6 @@
 
 		.header-logos {
 			display: block;
-			/* margin-left: 5%; */
-			/* margin-left: 15%; */
 			margin-left: 25%;
 		}
 
@@ -120,6 +118,7 @@
 
 		.nav-link {
 			font-size: 1.5rem;
+			letter-spacing: 2px;
 			font-weight: 800;
 		}
 
