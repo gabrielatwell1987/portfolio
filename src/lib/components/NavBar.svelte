@@ -127,6 +127,7 @@
 			position: absolute;
 			top: -2%;
 			left: 3%;
+			margin-left: 10%;
 		}
 	}
 
