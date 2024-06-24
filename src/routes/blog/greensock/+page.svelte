@@ -181,7 +181,7 @@
 		}
 
 		.detail {
-			min-width: 23rem;
+			min-width: 20rem;
 			margin: 0 -4.75rem;
 			font-family: var(--lexend);
 			font-size: 1.5rem;
