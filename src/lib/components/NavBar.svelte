@@ -96,7 +96,9 @@
 
 		.header-logos {
 			display: block;
-			margin-left: 5%;
+			/* margin-left: 5%; */
+			/* margin-left: 15%; */
+			margin-left: 25%;
 		}
 
 		.gabe-logo {
@@ -125,7 +127,6 @@
 			position: absolute;
 			top: -2%;
 			left: 3%;
-			margin-right: 2%;
 		}
 	}
 
