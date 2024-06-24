@@ -166,7 +166,8 @@
 
 		.title {
 			font-size: 3.75rem;
-			margin-top: 5%;
+			margin-top: 30%;
+			margin-bottom: -55%;
 		}
 
 		details {
