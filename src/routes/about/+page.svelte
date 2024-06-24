@@ -161,6 +161,7 @@
 
 		.text-hero {
 			font-size: 1.5rem;
+			line-height: 1.5;
 		}
 
 		.atwell {
@@ -179,6 +180,7 @@
 			max-width: 90%;
 			margin-inline: auto;
 			font-size: 1.5rem;
+			line-height: 1.5;
 		}
 
 		.text,
