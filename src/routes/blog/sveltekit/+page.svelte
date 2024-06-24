@@ -187,6 +187,7 @@
 			margin: 0 -4.75rem;
 			font-family: var(--lexend);
 			font-size: 1.5rem;
+			line-height: 1.5;
 		}
 
 		.center {
