@@ -267,6 +267,7 @@
 	@media (min-width: 1100px) {
 		.desktop {
 			margin-left: 25%;
+			line-height: 1.25;
 		}
 
 		.nav-link {
