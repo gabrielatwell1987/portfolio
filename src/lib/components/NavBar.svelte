@@ -250,7 +250,8 @@
 			margin-left: 22%;
 			/* text-wrap: wrap; */
 			font-size: 1.1rem;
-			scale: 0.99;
+			/* scale: 0.99; */
+			width: 100%;
 		}
 
 		.toggle {
