@@ -259,7 +259,7 @@
 
 		nav {
 			scale: 0.85;
-			margin-right: 8%;
+			margin-right: 7.5%;
 		}
 	}
 
