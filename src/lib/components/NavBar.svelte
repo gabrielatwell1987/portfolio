@@ -248,9 +248,9 @@
 
 		.desktop {
 			margin-left: 22%;
-			text-wrap: wrap;
+			/* text-wrap: wrap; */
 			font-size: 1.1rem;
-			scale: 0.95;
+			scale: 0.99;
 		}
 
 		.toggle {
