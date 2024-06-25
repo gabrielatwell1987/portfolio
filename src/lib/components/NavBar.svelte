@@ -241,8 +241,7 @@
 
 	@media (min-width: 1024px) {
 		.nav-link {
-			font-size: 1rem;
-			/* font-size: 1.15rem; */
+			font-size: 1.15rem;
 			margin-left: 5rem;
 			margin-right: -5rem;
 		}
@@ -251,6 +250,7 @@
 			margin-left: 22%;
 			text-wrap: wrap;
 			font-size: 1.1rem;
+			scale: 0.95;
 		}
 
 		.toggle {
