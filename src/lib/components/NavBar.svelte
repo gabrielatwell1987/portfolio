@@ -328,7 +328,7 @@
 		}
 
 		.toggle {
-			left: 35%;
+			left: 25%;
 			top: 22%;
 		}
 
