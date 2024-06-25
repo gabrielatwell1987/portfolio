@@ -255,6 +255,7 @@
 
 		.toggle {
 			left: 21.5%;
+			z-index: 10;
 		}
 
 		nav {
