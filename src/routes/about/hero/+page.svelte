@@ -244,7 +244,6 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			/* padding: 1.5rem 1.75rem; */
 		}
 	}
 
