@@ -295,7 +295,13 @@
 		}
 
 		.A {
-			margin-left: 37%;
+			margin-left: 27%;
+		}
+	}
+
+	@media (min-width: 1400px) {
+		.A {
+			margin-left: 35%;
 		}
 	}
 </style>

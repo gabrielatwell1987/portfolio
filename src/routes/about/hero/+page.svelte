@@ -237,6 +237,10 @@
 		section {
 			top: 35%;
 		}
+
+		button {
+			padding: 1rem 1.75rem;
+		}
 	}
 
 	@media screen and (min-width: 1100px) {
