@@ -4,6 +4,37 @@
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import Button from '$lib/components/Button.svelte';
+	import copy from 'copy-to-clipboard';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		const codeBlocks = document.querySelectorAll('pre');
+
+		codeBlocks.forEach((block) => {
+			const copyPrompt = document.createElement('div');
+			copyPrompt.className = 'copy-prompt';
+
+			const copyPromptText = document.createElement('p');
+			copyPromptText.innerHTML = 'Copy';
+
+			const copyIcon = document.createElement('img');
+			copyIcon.src = '/icons/ic_copy.svg';
+
+			copyPrompt.appendChild(copyIcon);
+			copyPrompt.appendChild(copyPromptText);
+
+			block.appendChild(copyPrompt);
+			block.querySelector('.copy-prompt > img').addEventListener('click', (evt) => {
+				copy(block.querySelector('code').textContent);
+
+				block.querySelector('.copy-prompt > p').innerHTML = 'Copied!';
+
+				setTimeout(() => {
+					block.querySelector('.copy-prompt > p').innerHTML = 'Copy';
+				}, 1000);
+			});
+		});
+	});
 </script>
 
 <svelte:head>
@@ -41,5 +72,9 @@
 
 	a {
 		text-decoration: none;
+	}
+
+	div {
+		margin-top: 75%;
 	}
 </style>

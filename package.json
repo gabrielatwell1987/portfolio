@@ -27,6 +27,7 @@
 	"type": "module",
 	"dependencies": {
 		"@analytics/google-analytics": "^1.0.7",
+		"copy-to-clipboard": "^3.3.3",
 		"dat.gui": "^0.7.9",
 		"from": "^0.1.7",
 		"gsap": "^3.12.5",
