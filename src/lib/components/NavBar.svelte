@@ -241,7 +241,8 @@
 
 	@media (min-width: 1024px) {
 		.nav-link {
-			font-size: 1.1rem;
+			font-size: 1rem;
+			/* font-size: 1.15rem; */
 			margin-left: 5rem;
 			margin-right: -5rem;
 		}
