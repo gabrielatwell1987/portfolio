@@ -258,8 +258,10 @@
 		}
 
 		nav {
-			scale: 0.75;
-			margin-right: 8%;
+			/* scale: 0.75;
+			margin-right: 8%; */
+			scale: 0.85;
+			/* margin-right: 8%; */
 		}
 	}
 
