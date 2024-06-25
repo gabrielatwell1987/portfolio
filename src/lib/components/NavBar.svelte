@@ -250,6 +250,7 @@
 			margin-left: 22%;
 			font-size: 1.1rem;
 			width: 100%;
+			line-height: 1.75;
 		}
 
 		.toggle {
@@ -259,7 +260,6 @@
 		nav {
 			scale: 0.75;
 			margin-right: 8%;
-			margin-left: -3%;
 		}
 	}
 
