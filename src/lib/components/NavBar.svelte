@@ -254,7 +254,7 @@
 		}
 
 		.toggle {
-			left: 27.5%;
+			left: 21.5%;
 		}
 
 		nav {
