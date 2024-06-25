@@ -240,6 +240,9 @@
 
 		button {
 			padding: 1.75rem;
+			text-align: center;
+			display: flex;
+			align-items: center;
 			/* padding: 1.5rem 1.75rem; */
 		}
 	}
