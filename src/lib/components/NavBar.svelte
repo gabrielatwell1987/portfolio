@@ -248,9 +248,7 @@
 
 		.desktop {
 			margin-left: 22%;
-			/* text-wrap: wrap; */
 			font-size: 1.1rem;
-			/* scale: 0.99; */
 			width: 100%;
 		}
 
@@ -261,6 +259,7 @@
 		nav {
 			scale: 0.75;
 			margin-right: 8%;
+			margin-left: -3%;
 		}
 	}
 
