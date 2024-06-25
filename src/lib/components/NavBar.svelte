@@ -250,7 +250,7 @@
 			margin-left: 22%;
 			font-size: 1.1rem;
 			width: 100%;
-			line-height: 1.75;
+			line-height: 2;
 		}
 
 		.toggle {
