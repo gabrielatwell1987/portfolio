@@ -295,7 +295,7 @@
 		}
 
 		.A {
-			margin-left: 27%;
+			margin-left: 28%;
 		}
 	}
 
