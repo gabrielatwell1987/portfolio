@@ -166,7 +166,7 @@
 
 		.title {
 			font-size: 3.75rem;
-			margin-top: 30%;
+			/* margin-top: 30%; */
 			margin-bottom: -55%;
 		}
 
@@ -295,7 +295,13 @@
 		}
 
 		.glass {
-			margin-left: 32%;
+			margin-left: 18%;
+		}
+	}
+
+	@media (min-width: 1400px) {
+		.glass {
+			margin-left: 30%;
 		}
 	}
 </style>
