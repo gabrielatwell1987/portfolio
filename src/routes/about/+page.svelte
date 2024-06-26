@@ -177,7 +177,7 @@
 		}
 
 		.text {
-			max-width: 90%;
+			max-width: 95%;
 			margin-inline: auto;
 			font-size: 1.35rem;
 			line-height: 1.5;
