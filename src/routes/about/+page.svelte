@@ -160,7 +160,7 @@
 		}
 
 		.text-hero {
-			font-size: 1.5rem;
+			font-size: 1.35rem;
 			line-height: 1.5;
 		}
 
@@ -179,7 +179,7 @@
 		.text {
 			max-width: 90%;
 			margin-inline: auto;
-			font-size: 1.5rem;
+			font-size: 1.35rem;
 			line-height: 1.5;
 		}
 
