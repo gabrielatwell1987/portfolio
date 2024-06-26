@@ -138,8 +138,8 @@ gsap.to('.example', { autoAlpha: 1, duration: 1 });
 <div align="left" style="margin-bottom: 2rem; margin-left: 3rem; margin-right: 3rem; color: var(--white); font-size: 1.75rem; font-weight: 200; letter-spacing: 2px; font-family: var(--lexend);" aria-label="scroll trigger">You don't need to put ScrollTriggers directly into animations (though that's probably the most common use case). You can use the callbacks for anything...</div>
 
 ```js
+// Add scrollTrigger to the timeline
 let tl = gsap.timeline({
-	// Add scrollTrigger to the timeline
 	scrollTrigger: {
 		trigger: '.container',
 		pin: true, // pin the trigger element while active
