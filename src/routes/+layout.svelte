@@ -4,6 +4,13 @@
 	import Analytics from '$lib/data/Analytics.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+
+	import { onMount } from 'svelte';
+
+	onMount(async () => {
+		const eruda = (await import('eruda')).default;
+		eruda.init();
+	});
 </script>
 
 <svelte:head>
