@@ -1,6 +1,10 @@
 <script>
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import Image from '$lib/components/Image.svelte';
+
+	const main = document.querySelector('main');
+
+	$: console.log(main);
 </script>
 
 <svelte:head>
