@@ -1,5 +1,7 @@
 <script>
 	import Gallery from '$lib/components/Gallery.svelte';
+
+	$: console.log('Random Photos');
 </script>
 
 <svelte:head>

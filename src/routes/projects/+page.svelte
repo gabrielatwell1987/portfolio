@@ -10,6 +10,8 @@
 		// SplitType
 		const titleText = new SplitType('#title', { types: 'chars' });
 
+		const section = document.querySelector('section');
+
 		// GSAP
 		gsap.set('.linksize', { autoAlpha: 0, scale: 0 });
 		gsap.set('.content', { autoAlpha: 0 });
@@ -28,6 +30,8 @@
 			stagger: 0.2,
 			ease: 'elastic.out(0.5, 0.2)'
 		});
+
+		console.log(section);
 	});
 </script>
 

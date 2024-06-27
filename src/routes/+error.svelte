@@ -1,5 +1,7 @@
 <script>
 	import { page } from '$app/stores';
+
+	$: console.log(`There is a ${$page.status} error!`);
 </script>
 
 <svelte:head>

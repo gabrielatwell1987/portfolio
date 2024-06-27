@@ -1,5 +1,7 @@
 <script>
 	import Hero from '$lib/components/Hero.svelte';
+
+	$: console.log('Main hero page');
 </script>
 
 <svelte:head>

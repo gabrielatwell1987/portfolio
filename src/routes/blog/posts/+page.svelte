@@ -9,6 +9,7 @@
 
 	onMount(() => {
 		const codeBlocks = document.querySelectorAll('pre');
+		const section = document.querySelector('section');
 
 		codeBlocks.forEach((block) => {
 			const copyPrompt = document.createElement('div');
@@ -34,6 +35,8 @@
 				}, 1000);
 			});
 		});
+
+		console.log(section);
 	});
 </script>
 
@@ -72,9 +75,5 @@
 
 	a {
 		text-decoration: none;
-	}
-
-	div {
-		margin-top: 75%;
 	}
 </style>

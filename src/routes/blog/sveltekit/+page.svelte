@@ -8,6 +8,7 @@
 	// animations
 	onMount(() => {
 		const title = document.querySelector('.title');
+		const section = document.querySelector('.main');
 
 		gsap.set(title, { skewX: 15, autoAlpha: 0, y: 35 });
 
@@ -22,6 +23,8 @@
 		title.addEventListener('mouseleave', () => {
 			gsap.to(title, { skewX: 15, duration: 0.25, ease: 'none' });
 		});
+
+		console.log(section);
 	});
 </script>
 

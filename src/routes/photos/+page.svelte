@@ -21,6 +21,8 @@
 	gsap.ticker.lagSmoothing(0);
 
 	onMount(() => {
+		const main = document.querySelector('main');
+
 		// progress
 		document.addEventListener('scroll', function () {
 			const progressBar = document.getElementById('scrollProgress');
@@ -75,6 +77,8 @@
 			stagger: -0.2,
 			ease: 'elastic.out(1.75, 0.5)'
 		});
+
+		console.log(main);
 	});
 </script>
 
