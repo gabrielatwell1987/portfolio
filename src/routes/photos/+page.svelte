@@ -2,7 +2,6 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { onMount } from 'svelte';
-	import SplitType from 'split-type';
 	import Lenis from 'lenis';
 	import Title from '$lib/components/Title.svelte';
 
@@ -22,8 +21,6 @@
 	gsap.ticker.lagSmoothing(0);
 
 	onMount(() => {
-		const main = document.querySelector('main');
-
 		// progress
 		document.addEventListener('scroll', function () {
 			const progressBar = document.getElementById('scrollProgress');
@@ -43,7 +40,6 @@
 			gsap.registerPlugin(ScrollTrigger);
 
 			gsap.set('main', { autoAlpha: 0 });
-			gsap.set('.title', { scale: 1 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
@@ -66,20 +62,6 @@
 				gsap.set('.gabe', { borderRadius: '5px', scale: 1 });
 			};
 		});
-
-		// title animations
-		// const titleText = new SplitType('.title', { types: 'chars' });
-
-		gsap.from(titleText.chars, {
-			duration: 5,
-			y: 75,
-			scale: 0.2,
-			opacity: 0.5,
-			stagger: -0.2,
-			ease: 'elastic.out(1.75, 0.5)'
-		});
-
-		console.log(main);
 	});
 </script>
 
