@@ -6,6 +6,9 @@
 	onMount(() => {
 		// fade the logo in
 		gsap.to('main', { autoAlpha: 1, duration: 2.5, ease: 'sine.in' });
+
+		const main = document.querySelector('main');
+		console.log(main);
 	});
 </script>
 
