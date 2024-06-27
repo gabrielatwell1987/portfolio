@@ -1,15 +1,12 @@
 <script>
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
-	import SplitType from 'split-type';
 	import Project from '$lib/components/Project.svelte';
 	import Figure from '$lib/components/Figure.svelte';
+	import Title from '$lib/components/Title.svelte';
 
 	// animations
 	onMount(() => {
-		// SplitType
-		const titleText = new SplitType('#title', { types: 'chars' });
-
 		const section = document.querySelector('section');
 
 		// GSAP
@@ -22,15 +19,6 @@
 			.to('.linksize', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 2, ease: 'expo.out' }, 0)
 			.from('.title', { scale: 0.25, duration: 3 }, 0);
 
-		gsap.from(titleText.chars, {
-			duration: 5,
-			y: 75,
-			scale: 0.2,
-			opacity: 0.5,
-			stagger: 0.2,
-			ease: 'elastic.out(0.5, 0.2)'
-		});
-
 		console.log(section);
 	});
 </script>
@@ -41,7 +29,7 @@
 	<meta name="keywords" content="Projects, Work" />
 </svelte:head>
 
-<h1 class="title" id="title">projects</h1>
+<Title title="projects" />
 
 <!-- links to my projects -->
 <section class="content bevel">
@@ -163,31 +151,11 @@
 			flex-basis: 75%;
 			height: 100%;
 		}
-
-		.title {
-			text-align: center;
-			font-family: var(--anta);
-			font-size: 2.75rem;
-			color: var(--white);
-			letter-spacing: 5px;
-			text-shadow: 0px 0px 50px var(--smoke);
-			text-transform: uppercase;
-		}
-
-		#title {
-			font-kerning: none;
-		}
 	}
 
 	@media screen and (min-width: 740px) {
 		.content {
 			padding: 2rem;
-		}
-
-		.title {
-			font-size: 4rem;
-			letter-spacing: 20px;
-			margin: 2rem auto;
 		}
 
 		.logos {
@@ -205,12 +173,6 @@
 	@media screen and (min-width: 990px) {
 		.content {
 			margin-bottom: -5%;
-		}
-
-		.title {
-			font-size: 7rem;
-			font-weight: 800;
-			text-shadow: -5px 5px 4px var(--dark-gray);
 		}
 	}
 </style>

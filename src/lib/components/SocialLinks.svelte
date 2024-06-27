@@ -52,7 +52,7 @@
 		}
 
 		.size:hover {
-			font-size: 7rem;
+			font-size: 2.5rem;
 		}
 
 		.dev-links {
@@ -67,10 +67,18 @@
 		.size {
 			font-size: 3.5rem;
 		}
+
+		.size:hover {
+			font-size: 3.5rem;
+		}
 	}
 
 	@media (min-width: 1400px) {
 		.size {
+			font-size: 5rem;
+		}
+
+		.size:hover {
 			font-size: 5rem;
 		}
 	}

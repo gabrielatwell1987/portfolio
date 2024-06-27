@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import SplitType from 'split-type';
 	import Lenis from 'lenis';
+	import Title from '$lib/components/Title.svelte';
 
 	// lenis
 	const lenis = new Lenis();
@@ -67,7 +68,7 @@
 		});
 
 		// title animations
-		const titleText = new SplitType('.title', { types: 'chars' });
+		// const titleText = new SplitType('.title', { types: 'chars' });
 
 		gsap.from(titleText.chars, {
 			duration: 5,
@@ -88,9 +89,8 @@
 	<meta name="keywords" content="Photos of Me" />
 </svelte:head>
 
-<!-- content -->
 <main>
-	<h2 class="title">IMAGES</h2>
+	<Title title="images" />
 
 	<section>
 		<div class="spacing" />
@@ -183,17 +183,6 @@
 			opacity: 0.8;
 			transition: opacity 750ms ease-in-out;
 		}
-		.title {
-			font-family: var(--anta);
-			font-size: 3rem;
-			font-weight: 900;
-			letter-spacing: 5px;
-			color: var(--purple);
-			text-transform: uppercase;
-			text-align: center;
-			text-shadow: 5px 5px 4px var(--dark-gray);
-			margin: 2rem auto;
-		}
 
 		.spacing {
 			height: 10vh;
@@ -282,10 +271,6 @@
 			width: 100%;
 			margin: 0 auto;
 			background-color: transparent;
-		}
-
-		.title {
-			font-size: 8rem;
 		}
 
 		.flex {

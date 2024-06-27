@@ -1,5 +1,6 @@
 <script>
 	import Hero from '$lib/components/Hero.svelte';
+	import Title from '$lib/components/Title.svelte';
 
 	$: console.log('Main hero page');
 </script>
@@ -11,3 +12,4 @@
 </svelte:head>
 
 <Hero />
+<Title title="Gabriel" />

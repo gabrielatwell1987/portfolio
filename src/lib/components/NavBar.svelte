@@ -192,6 +192,7 @@
 			height: 3rem;
 			text-shadow: 2px 2px 1px var(--black);
 			transition: border-bottom 0.35s ease-in-out, text-shadow 0.35s ease-in-out;
+			font-size: 1.1rem;
 		}
 
 		.toggle {
@@ -246,6 +247,10 @@
 			margin-right: -5rem;
 		}
 
+		.nav-link:hover {
+			font-size: 1.15rem;
+		}
+
 		.desktop {
 			margin-left: 22%;
 			font-size: 1.1rem;
@@ -271,6 +276,10 @@
 		}
 
 		.nav-link {
+			font-size: 1.2rem;
+		}
+
+		.nav-link:hover {
 			font-size: 1.2rem;
 		}
 
@@ -338,6 +347,10 @@
 			font-size: 1.5rem;
 			margin-left: 5.75rem;
 			margin-right: -5rem;
+		}
+
+		.nav-link:hover {
+			font-size: 1.5rem;
 		}
 	}
 </style>
