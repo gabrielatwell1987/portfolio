@@ -15,6 +15,7 @@
 		gsap.registerPlugin(Draggable);
 
 		const atwell = document.querySelector('.atwell');
+		const main = document.querySelector('main');
 
 		gsap.set('article', { autoAlpha: 0 });
 
@@ -30,6 +31,8 @@
 			bounds: document.querySelector('article'),
 			throwProps: true
 		});
+
+		console.log(main);
 	});
 </script>
 

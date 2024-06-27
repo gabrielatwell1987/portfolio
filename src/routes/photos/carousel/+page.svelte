@@ -7,6 +7,7 @@
 	// Animations
 	onMount(() => {
 		const titleText = new SplitType('.title', { types: 'chars' });
+		const main = document.querySelector('main');
 
 		gsap.from(titleText.chars, {
 			duration: 5,
@@ -16,6 +17,8 @@
 			stagger: -0.2,
 			ease: 'elastic.out(1.75, 0.5)'
 		});
+
+		console.log(main);
 	});
 </script>
 

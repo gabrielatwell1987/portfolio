@@ -1,5 +1,9 @@
 <script>
 	export let title;
+
+	const iFrame = document.querySelector('iframe');
+
+	$: console.log(iFrame);
 </script>
 
 <main>

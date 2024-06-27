@@ -1,5 +1,7 @@
 <script>
 	import ThreeCanvas from '$lib/components/ThreeCanvas.svelte';
+
+	$: console.log(ThreeCanvas);
 </script>
 
 <svelte:head>

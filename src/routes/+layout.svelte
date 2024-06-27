@@ -10,8 +10,6 @@
 	onMount(async () => {
 		const eruda = (await import('eruda')).default;
 		eruda.init();
-
-		console.log("you're might be using eruda.. the only way to bring dev tools to mobile!");
 	});
 </script>
 
