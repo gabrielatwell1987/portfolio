@@ -23,7 +23,7 @@
 
 <style>
 	.title {
-		font-size: 8rem;
+		font-size: 6rem;
 		font-weight: 900;
 		color: var(--purple);
 		font-family: var(--anta);
@@ -36,7 +36,7 @@
 
 	@media (max-width: 200px) {
 		.title {
-			font-size: 3.5rem;
+			font-size: 2.5rem;
 		}
 	}
 
