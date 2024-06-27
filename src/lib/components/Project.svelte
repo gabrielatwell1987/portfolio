@@ -5,8 +5,8 @@
 	export let description;
 </script>
 
-<h3 class="linksize name">{title}</h3>
-<a class="linksize" href={url} target="_blank"
+<h3 class="links name">{title}</h3>
+<a class="links" href={url} target="_blank"
 	><img class="img" src={img} alt={title} width="400px" height="475px" /><span class="hover-text"
 		>{description}</span
 	></a
@@ -24,7 +24,7 @@
 			scale: 1.05;
 		}
 
-		.linksize {
+		.links {
 			text-align: center;
 			background-color: transparent;
 			color: var(--purple);
@@ -61,7 +61,7 @@
 			transition: opacity 1s;
 		}
 
-		.linksize:hover .hover-text {
+		.links:hover .hover-text {
 			visibility: visible;
 			opacity: 1;
 		}
@@ -85,7 +85,7 @@
 			transition: scale 0.75s ease;
 		}
 
-		.linksize {
+		.links {
 			letter-spacing: 4px;
 			font-size: 2rem;
 		}
@@ -102,7 +102,7 @@
 	}
 
 	@media (min-width: 990px) {
-		.linksize {
+		.links {
 			padding: 2rem;
 			flex-basis: 100%;
 			letter-spacing: 5px;

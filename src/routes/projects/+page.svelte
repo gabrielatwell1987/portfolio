@@ -166,7 +166,6 @@
 		.designs {
 			border-radius: 10%;
 			margin: 3rem 0;
-			/* width: 50%; */
 		}
 	}
 
