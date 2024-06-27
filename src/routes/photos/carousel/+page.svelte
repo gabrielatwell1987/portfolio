@@ -1,11 +1,22 @@
 <script>
 	import ImageCarousel from '$lib/components/Carousel.svelte';
+	import SplitType from 'split-type';
 	import { onMount } from 'svelte';
-	import CarouselTitle from '$lib/components/CarouselTitle.svelte';
+	import gsap from 'gsap';
 
+	// Animations
 	onMount(() => {
 		const titleText = new SplitType('.title', { types: 'chars' });
 		const main = document.querySelector('main');
+
+		gsap.from(titleText.chars, {
+			duration: 5,
+			y: 75,
+			scale: 0.2,
+			opacity: 0.5,
+			stagger: -0.2,
+			ease: 'elastic.out(1.75, 0.5)'
+		});
 
 		console.log(main);
 	});
@@ -17,7 +28,7 @@
 	<meta name="keywords" content="Image Carousel" />
 </svelte:head>
 
-<CarouselTitle title="images" />
+<h1 class="title">images</h1>
 
 <main>
 	<ImageCarousel />
@@ -65,6 +76,18 @@
 		letter-spacing: 5px;
 	}
 
+	.title {
+		font-size: 8rem;
+		font-weight: 900;
+		color: var(--purple);
+		font-family: var(--anta);
+		letter-spacing: 5px;
+		text-transform: uppercase;
+		margin: 2rem auto;
+		text-align: center;
+		text-shadow: 5px 5px 4px var(--dark-gray);
+	}
+
 	@keyframes wiggle {
 		0% {
 			rotate: 0deg;
@@ -81,6 +104,10 @@
 	}
 
 	@media (min-width: 200px) {
+		.title {
+			font-size: 3.5rem;
+		}
+
 		.robot {
 			display: none;
 		}
@@ -91,12 +118,20 @@
 	}
 
 	@media (min-width: 720px) {
+		.title {
+			font-size: 4rem;
+		}
+
 		.robot {
 			display: block;
 		}
 	}
 
 	@media (min-width: 990px) {
+		.title {
+			font-size: 6rem;
+		}
+
 		.robot {
 			display: block;
 		}
