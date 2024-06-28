@@ -88,6 +88,8 @@
 					Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
 					framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
 					React. In the end, sveltekit is a new approach to building rich user interfaces.
+					Originally, svelte was created as a tool to build components for data visualization. It
+					makes creating data visualizations super easy!
 				</p>
 			</details>
 

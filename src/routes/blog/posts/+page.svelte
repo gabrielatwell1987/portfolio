@@ -14,6 +14,8 @@
 		codeBlocks.forEach((block) => {
 			const copyPrompt = document.createElement('div');
 			copyPrompt.className = 'copy-prompt';
+			copyPrompt.style.cursor = 'pointer';
+			copyPrompt.style.marginLeft = '95%';
 
 			const copyPromptText = document.createElement('p');
 			copyPromptText.innerHTML = 'Copy';
