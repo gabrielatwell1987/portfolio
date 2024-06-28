@@ -31,12 +31,12 @@
 
 	@media (max-width: 300px) {
 		main {
-			margin-top: 7rem;
+			margin-top: 17rem;
 			margin-bottom: 10%;
 		}
 	}
 
-	@media (max-width: 720px) {
+	/* @media (max-width: 720px) {
 		main {
 			margin-top: 15%;
 			margin-bottom: 10%;
@@ -45,7 +45,7 @@
 		.hero-logo {
 			width: 100%;
 		}
-	}
+	} */
 
 	/* @media (max-width: 990px) {
 		main {
