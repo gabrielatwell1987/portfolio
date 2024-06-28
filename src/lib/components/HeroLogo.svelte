@@ -17,6 +17,7 @@
 </script>
 
 <main>
+	<br /><br /><br /><br />
 	<div class="hero-logo">
 		<Image src="/logos/mono-atwell.png" alt="Gabriel Atwell's Logo" />
 	</div>
@@ -29,12 +30,12 @@
 		margin-top: 15%;
 	}
 
-	@media (max-width: 300px) {
+	/* @media (max-width: 300px) {
 		main {
 			margin-top: 17rem;
 			margin-bottom: 10%;
 		}
-	}
+	} */
 
 	/* @media (max-width: 720px) {
 		main {
