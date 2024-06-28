@@ -42,7 +42,7 @@
 	}
 
 	h1 {
-		font-size: clamp(1.55rem, 10vw, 10rem);
+		font-size: clamp(1.5rem, 10vw, 15rem);
 		letter-spacing: 5px;
 		font-family: var(--montserrat);
 		color: var(--dark-gray);
