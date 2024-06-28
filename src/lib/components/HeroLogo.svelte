@@ -45,7 +45,7 @@
 		font-size: clamp(3rem, 10vw, 15rem);
 		letter-spacing: 5px;
 		font-family: var(--montserrat);
-		color: var(--dark-gray);
+		color: var(--off-white);
 		text-transform: uppercase;
 		text-align: center;
 		margin-bottom: 22%;
