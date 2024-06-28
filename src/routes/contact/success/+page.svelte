@@ -1,9 +1,5 @@
 <script>
 	import Image from '$lib/components/Image.svelte';
-
-	const section = document.querySelector('section');
-
-	$: console.log(section);
 </script>
 
 <svelte:head>
