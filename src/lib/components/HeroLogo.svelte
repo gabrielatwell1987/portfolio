@@ -27,18 +27,18 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 30vh;
+		height: 50vh;
 		margin-top: 15%;
 	}
 
-	/* @media (max-width: 300px) {
+	@media (max-width: 300px) {
 		main {
 			margin-top: 17rem;
 			margin-bottom: 10%;
 		}
-	} */
+	}
 
-	/* @media (max-width: 720px) {
+	@media (max-width: 720px) {
 		main {
 			margin-top: 15%;
 			margin-bottom: 10%;
@@ -47,16 +47,12 @@
 		.hero-logo {
 			width: 100%;
 		}
-	} */
+	}
 
 	/* @media (max-width: 990px) {
-		main {
-			margin-top: 10%;
-			margin-bottom: 10%;
-		}
-
 		.hero-logo {
-			width: 70px;
+			padding-top: -25%;
+			margin-bottom: -5%;
 		}
 	} */
 </style>
