@@ -56,7 +56,6 @@
 		}
 
 		.dev-links {
-			/* margin-top: -20rem; */
 			margin-left: 0%;
 			display: flex;
 			justify-content: space-evenly;
