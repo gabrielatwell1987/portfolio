@@ -6,11 +6,12 @@
 	export let title;
 
 	onMount(() => {
-		gsap.set('.hero-logo', { autoAlpha: 0, y: -100 });
+		gsap.set('.hero-logo', { autoAlpha: 0, y: -100, scale: 0 });
 
 		gsap.to('.hero-logo', {
 			duration: 3,
 			autoAlpha: 1,
+			scale: 1,
 			y: 0,
 			ease: 'back.out(4)',
 			delay: 0.75,
