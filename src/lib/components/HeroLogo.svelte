@@ -29,9 +29,9 @@
 		margin-top: 15%;
 	}
 
-	/* @media (max-width: 300px) {
+	@media (max-width: 300px) {
 		main {
-			margin-top: 50%;
+			margin-top: 20%;
 			margin-bottom: 10%;
 		}
 
@@ -49,7 +49,7 @@
 		.hero-logo {
 			width: 100%;
 		}
-	} */
+	}
 
 	/* @media (max-width: 990px) {
 		main {
