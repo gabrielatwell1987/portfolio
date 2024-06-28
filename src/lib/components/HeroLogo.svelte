@@ -31,8 +31,9 @@
 
 	@media (max-width: 300px) {
 		main {
-			margin-top: 20%;
+			margin-top: 70%;
 			margin-bottom: 10%;
+			width: 70%;
 		}
 
 		.hero-logo {
