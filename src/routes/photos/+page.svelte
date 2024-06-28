@@ -55,7 +55,7 @@
 					start: 'top bottom-=75%',
 					end: 'bottom top+=5%',
 					x: 200,
-					stagger: 0.5,
+					stagger: -0.5,
 					scrub: 1
 				}
 			}).to('main', { autoAlpha: 1 });
