@@ -13,7 +13,7 @@
 			autoAlpha: 1,
 			scale: 1,
 			y: 0,
-			ease: 'back.out(4)',
+			ease: 'sine.out',
 			delay: 0.75,
 			letterSpacing: '15px'
 		});
