@@ -17,7 +17,6 @@
 </script>
 
 <main>
-	<br /><br /><br /><br />
 	<div class="hero-logo">
 		<Image src="/logos/mono-atwell.png" alt="Gabriel Atwell's Logo" />
 	</div>
@@ -27,6 +26,8 @@
 	main {
 		display: flex;
 		justify-content: center;
+		align-items: center;
+		height: 10vh;
 		margin-top: 15%;
 	}
 
