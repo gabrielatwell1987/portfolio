@@ -77,7 +77,7 @@
 
 	@media (max-width: 300px) {
 		main {
-			height: 10vh;
+			height: 7vh;
 		}
 	}
 
