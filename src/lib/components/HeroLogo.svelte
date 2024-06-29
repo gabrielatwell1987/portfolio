@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
-	import Image from '$lib/components/Image.svelte';
 
 	onMount(() => {
 		gsap.set('.hero-logo', { autoAlpha: 0, scale: 0 });
