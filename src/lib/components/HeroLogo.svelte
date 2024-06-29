@@ -7,7 +7,7 @@
 		gsap.set('.hero-logo', { autoAlpha: 0, scale: 0 });
 
 		gsap.to('.hero-logo', {
-			duration: 3,
+			duration: 5,
 			autoAlpha: 1,
 			scale: 1,
 			ease: 'sine.out',
