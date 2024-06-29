@@ -9,7 +9,7 @@
 			duration: 5,
 			autoAlpha: 1,
 			scale: 1,
-			ease: 'sine.out',
+			ease: 'back.out',
 			delay: 0.75,
 			letterSpacing: '15px'
 		});
