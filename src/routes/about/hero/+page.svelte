@@ -38,6 +38,7 @@
 			height: 100vh;
 			position: relative;
 			margin-bottom: 2%;
+			margin-top: 50%;
 		}
 
 		h3 {
