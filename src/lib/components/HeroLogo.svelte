@@ -50,7 +50,7 @@
 		justify-content: center;
 		align-items: center;
 		height: 30vh;
-		margin-top: 10%;
+		margin-top: 2.5%;
 	}
 
 	.hero-logo {
