@@ -199,6 +199,7 @@
 			text-align: center;
 			font-size: 1rem;
 			margin-top: -2rem;
+			line-height: 1.5;
 		}
 
 		.learn {
@@ -301,6 +302,10 @@
 
 		.A {
 			margin-left: 28%;
+		}
+
+		.center {
+			margin-bottom: 5%;
 		}
 	}
 

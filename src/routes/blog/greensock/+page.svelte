@@ -196,6 +196,7 @@
 			text-align: center;
 			font-size: 1rem;
 			margin-top: -2rem;
+			line-height: 1.5;
 		}
 
 		.learn {
@@ -299,6 +300,10 @@
 
 		.glass {
 			margin-left: 18%;
+		}
+
+		.center {
+			margin-bottom: 5%;
 		}
 	}
 
