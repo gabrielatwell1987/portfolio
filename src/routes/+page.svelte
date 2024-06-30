@@ -11,5 +11,5 @@
 	<meta name="keywords" content="Gabriel, Atwell, Portfolio, Gabriel Atwell" />
 </svelte:head>
 
-<HeroLogo title="atwell ui" />
+<HeroLogo />
 <Hero />
