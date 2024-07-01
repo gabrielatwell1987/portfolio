@@ -136,7 +136,7 @@
 		}
 
 		.main-title {
-			font-size: 2.5rem;
+			font-size: clamp(2.5rem, 5vw, 10rem);
 			mix-blend-mode: difference;
 			color: var(--purple);
 			font-family: var(--montserrat);
@@ -231,7 +231,6 @@
 
 		.main-title {
 			color: var(--blue);
-			font-size: 5rem;
 			font-weight: 900;
 			font-family: var(--anta);
 			text-shadow: 5px 5px 4px var(--off-white);

@@ -146,8 +146,9 @@
 	}
 
 	.title {
+		font-size: clamp(3.75rem, 5vw, 7rem);
 		font-weight: 800;
-		margin: 2rem 0 -5rem 0;
+		margin: 3rem 0 -5rem 0;
 		text-align: center;
 		color: var(--smoke);
 		font-family: var(--anta);
@@ -168,8 +169,6 @@
 		}
 
 		.title {
-			font-size: 3.75rem;
-			/* margin-top: 30%; */
 			margin-bottom: -55%;
 		}
 
@@ -231,10 +230,6 @@
 	}
 
 	@media (min-width: 720px) {
-		.title {
-			font-size: 6.5rem;
-		}
-
 		.learn {
 			font-size: 2.5rem;
 		}
@@ -255,7 +250,7 @@
 
 	@media (min-width: 990px) {
 		.title {
-			font-size: 6.5rem;
+			margin-top: 5%;
 			margin-bottom: -8%;
 		}
 
@@ -286,10 +281,6 @@
 	}
 
 	@media (min-width: 1024px) {
-		.title {
-			font-size: 7rem;
-		}
-
 		summary {
 			font-size: 1.75rem;
 		}

@@ -16,8 +16,8 @@
 		gsap.set('.title', {
 			color: 'var(--smoke)',
 			fontWeight: 900,
-			fontSize: '7.5rem',
-			fontFamily: 'var(--anta)'
+			fontFamily: 'var(--anta)',
+			scale: 1.5
 		});
 
 		gsap.to('.title', {
@@ -72,9 +72,10 @@
 	.title {
 		font-family: var(--montserrat);
 		color: var(--white);
-		font-size: 4rem;
+		font-size: clamp(2.5rem, 5vw, 10rem);
 		font-weight: 800;
 		text-align: center;
+		margin-top: 5%;
 	}
 
 	.gs:hover,
@@ -124,11 +125,6 @@
 	}
 
 	@media (min-width: 200px) {
-		.title {
-			font-size: 2rem;
-			display: none;
-		}
-
 		.image {
 			width: 80%;
 			margin: 0 -39%;

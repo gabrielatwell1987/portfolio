@@ -52,8 +52,8 @@
 				yoyo: true,
 				scrollTrigger: {
 					trigger: 'main',
-					start: 'top bottom-=75%',
-					end: 'bottom top+=5%',
+					start: 'top bottom-=95%',
+					// end: 'bottom top+=5%',
 					x: 200,
 					stagger: -0.5,
 					scrub: 1

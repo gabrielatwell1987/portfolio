@@ -123,7 +123,7 @@
 
 		legend {
 			font-family: var(--anta);
-			font-size: 2rem;
+			font-size: clamp(2rem, 5vw, 5rem);
 			text-align: center;
 			margin-bottom: 0.5rem;
 			color: var(--purple);
@@ -216,7 +216,6 @@
 		}
 
 		legend {
-			font-size: 2.5rem;
 			text-shadow: -5px 5px 4px var(--dark-gray);
 		}
 	}
@@ -317,10 +316,6 @@
 			font-family: var(--lexend);
 		}
 
-		legend {
-			font-size: 3rem;
-		}
-
 		@keyframes wiggle {
 			0% {
 				rotate: 0deg;
@@ -350,10 +345,6 @@
 	@media screen and (min-width: 850px) {
 		form {
 			margin-left: 71.25%;
-		}
-
-		legend {
-			font-size: 4rem;
 		}
 
 		.send {
@@ -390,7 +381,6 @@
 
 		.send {
 			width: 15%;
-			/* font-size: 1.2rem; */
 		}
 
 		fieldset {
@@ -405,7 +395,6 @@
 
 		legend {
 			font-weight: bolder;
-			font-size: 5rem;
 			padding: 0 1rem 0 1rem;
 		}
 

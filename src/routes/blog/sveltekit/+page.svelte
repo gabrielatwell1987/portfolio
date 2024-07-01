@@ -158,6 +158,7 @@
 	}
 
 	.title {
+		font-size: clamp(3.75rem, 5vw, 7rem);
 		font-weight: 800;
 		margin: 2rem 0 6rem 0;
 		text-align: center;
@@ -170,10 +171,6 @@
 		.main {
 			margin: 0 auto;
 			margin-right: 1rem;
-		}
-
-		.title {
-			font-size: 3.75rem;
 		}
 
 		details {
@@ -234,10 +231,6 @@
 			font-size: 6.5rem;
 		}
 
-		.learn {
-			font-size: 2.5rem;
-		}
-
 		.center {
 			font-size: 1.25rem;
 			margin-top: -3rem;
@@ -253,10 +246,6 @@
 	}
 
 	@media (min-width: 990px) {
-		.title {
-			font-size: 6.5rem;
-		}
-
 		.spacing {
 			letter-spacing: 2px;
 		}
@@ -288,10 +277,6 @@
 	}
 
 	@media (min-width: 1024px) {
-		.title {
-			font-size: 7rem;
-		}
-
 		summary {
 			font-size: 1.75rem;
 		}
