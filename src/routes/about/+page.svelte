@@ -183,7 +183,7 @@
 			max-width: 95%;
 			margin-inline: auto;
 			font-size: clamp(1.35rem, 1.75vw, 2rem);
-			line-height: 1.5;
+			line-height: 1.35;
 		}
 
 		.text,
