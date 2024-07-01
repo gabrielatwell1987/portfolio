@@ -16,9 +16,13 @@
 			copyPrompt.className = 'copy-prompt';
 			copyPrompt.style.cursor = 'pointer';
 			copyPrompt.style.marginLeft = '95%';
+			copyPrompt.style.opacity = '0.25';
 
 			const copyPromptText = document.createElement('p');
 			copyPromptText.innerHTML = 'Copy';
+			copyPromptText.style.fontWeight = '700';
+			copyPromptText.style.marginTop = '.5rem';
+			copyPromptText.style.marginLeft = '-.1rem';
 
 			const copyIcon = document.createElement('img');
 			copyIcon.src = '/icons/ic_copy.svg';
