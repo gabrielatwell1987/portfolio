@@ -158,7 +158,7 @@
 	}
 
 	.title {
-		font-size: clamp(3.75rem, 5vw, 7rem);
+		font-size: clamp(3.75rem, 8vw, 10rem);
 		font-weight: 800;
 		margin: 2rem 0 6rem 0;
 		text-align: center;
@@ -227,10 +227,6 @@
 	}
 
 	@media (min-width: 720px) {
-		.title {
-			font-size: 6.5rem;
-		}
-
 		.center {
 			font-size: 1.25rem;
 			margin-top: -3rem;

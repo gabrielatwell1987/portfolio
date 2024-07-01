@@ -146,7 +146,7 @@
 	}
 
 	.title {
-		font-size: clamp(3.75rem, 5vw, 7rem);
+		font-size: clamp(3.75rem, 8vw, 10rem);
 		font-weight: 800;
 		margin: 3rem 0 -5rem 0;
 		text-align: center;

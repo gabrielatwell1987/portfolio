@@ -35,7 +35,7 @@
 		border-radius: 5px;
 		color: var(--text-color);
 		padding: 10px 15px;
-		font-size: 2rem;
+		font-size: clamp(1.5rem, 2vw, 2.25rem);
 		letter-spacing: 3px;
 		width: 100%;
 		margin-left: 5%;
