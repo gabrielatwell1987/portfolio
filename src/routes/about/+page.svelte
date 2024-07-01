@@ -182,7 +182,7 @@
 		.text {
 			max-width: 95%;
 			margin-inline: auto;
-			font-size: 1.35rem;
+			font-size: clamp(1.35rem, 1.75vw, 2rem);
 			line-height: 1.5;
 		}
 
@@ -239,7 +239,6 @@
 		.text {
 			color: var(--white);
 			max-width: 75%;
-			font-size: 1.75rem;
 			line-height: 1.5;
 		}
 
@@ -290,10 +289,6 @@
 		.gallery {
 			width: 75%;
 			margin-left: 12%;
-		}
-
-		.text {
-			font-size: 2rem;
 		}
 	}
 </style>

@@ -123,7 +123,7 @@
 
 		.summary {
 			margin: 0 auto;
-			font-size: 1rem;
+			font-size: clamp(1rem, 1.5vw, 1.75rem);
 			font-weight: 500;
 			width: 100%;
 			padding: 0 1.25rem;
@@ -224,7 +224,6 @@
 
 		.summary {
 			width: 50%;
-			font-size: 1.25rem;
 			letter-spacing: 3px;
 		}
 
@@ -253,7 +252,6 @@
 		}
 
 		.summary {
-			font-size: 1.25rem;
 			width: 80%;
 			margin-inline: auto;
 		}
@@ -283,10 +281,6 @@
 
 		h3 {
 			font-size: 5rem;
-		}
-
-		.summary {
-			font-size: 1.75rem;
 		}
 	}
 </style>
