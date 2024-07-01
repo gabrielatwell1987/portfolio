@@ -17,7 +17,7 @@
 			color: 'var(--smoke)',
 			fontWeight: 900,
 			fontFamily: 'var(--anta)',
-			scale: 1.5
+			scale: 1.1
 		});
 
 		gsap.to('.title', {
