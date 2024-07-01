@@ -33,7 +33,7 @@
 		.title {
 			text-align: center;
 			font-family: var(--anta);
-			font-size: 2.75rem;
+			font-size: clamp(2.75rem, 5vw, 7rem);
 			color: var(--white);
 			letter-spacing: 5px;
 			text-shadow: 0px 0px 50px var(--smoke);
@@ -47,7 +47,6 @@
 
 	@media (min-width: 740px) {
 		.title {
-			font-size: 4rem;
 			letter-spacing: 20px;
 			margin: 2rem auto;
 		}
@@ -55,7 +54,6 @@
 
 	@media (min-width: 990px) {
 		.title {
-			font-size: 7rem;
 			font-weight: 800;
 			text-shadow: -5px 5px 4px var(--dark-gray);
 		}
