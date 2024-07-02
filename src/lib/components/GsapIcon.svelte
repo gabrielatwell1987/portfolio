@@ -171,7 +171,7 @@
 	}
 
 	svg:hover {
-		scale: 1.05;
+		scale: 1.1;
 	}
 
 	@media (min-width: 200px) {
