@@ -8,19 +8,16 @@
 	// animations
 	onMount(() => {
 		const section = document.querySelector('section');
-		const content = document.querySelector('.content');
-		const link = document.querySelector('.link');
-		const title = document.querySelector('.title');
 
 		// GSAP
-		gsap.set(link, { autoAlpha: 0, scale: 0 });
-		gsap.set(content, { autoAlpha: 0 });
+		gsap.set('.link', { autoAlpha: 0, scale: 0 });
+		gsap.set('.content', { autoAlpha: 0 });
 
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 
-		tl.to(content, { autoAlpha: 1 })
-			.to(link, { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 2, ease: 'expo.out' }, 0)
-			.from(title, { scale: 0.25, duration: 3 }, 0);
+		tl.to('.content', { autoAlpha: 1 })
+			.to('.link', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 2, ease: 'expo.out' }, 0)
+			.from('.title', { scale: 0.25, duration: 3 }, 0);
 
 		console.log(section);
 	});
