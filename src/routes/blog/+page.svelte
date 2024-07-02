@@ -144,7 +144,7 @@
 
 		h2 {
 			text-align: center;
-			margin-bottom: 0.25rem;
+			margin-bottom: 2rem;
 			margin-right: 1rem;
 			letter-spacing: 2px;
 			color: var(--blue);
