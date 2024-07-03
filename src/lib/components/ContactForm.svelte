@@ -155,7 +155,7 @@
 			border: 1px solid var(--yellow);
 			outline: 3px solid var(--yellow);
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
-			font-size: 1.2rem;
+			font-size: clamp(1.2rem, 4vw, 2rem);
 			font-weight: 600;
 			margin-inline: auto;
 			cursor: pointer;
@@ -222,7 +222,6 @@
 
 	@media screen and (min-width: 720px) {
 		span {
-			font-size: 1.25rem;
 			font-weight: 800;
 		}
 
@@ -232,7 +231,6 @@
 
 		.send {
 			width: 15%;
-			font-size: 1.1rem;
 		}
 
 		.send:hover {
@@ -454,7 +452,6 @@
 		}
 
 		.send {
-			font-size: 1.5rem;
 			width: 10%;
 			margin-inline: auto;
 			letter-spacing: 0;

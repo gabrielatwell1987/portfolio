@@ -77,7 +77,7 @@
 	}
 
 	.title {
-		font-size: 8rem;
+		font-size: clamp(3.5rem, 8vw, 8rem);
 		font-weight: 900;
 		color: var(--purple);
 		font-family: var(--anta);
@@ -104,10 +104,6 @@
 	}
 
 	@media (min-width: 200px) {
-		.title {
-			font-size: 3.5rem;
-		}
-
 		.robot {
 			display: none;
 		}
@@ -118,20 +114,12 @@
 	}
 
 	@media (min-width: 720px) {
-		.title {
-			font-size: 4rem;
-		}
-
 		.robot {
 			display: block;
 		}
 	}
 
 	@media (min-width: 990px) {
-		.title {
-			font-size: 6rem;
-		}
-
 		.robot {
 			display: block;
 		}
