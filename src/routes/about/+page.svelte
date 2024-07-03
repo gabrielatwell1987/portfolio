@@ -168,10 +168,9 @@
 		}
 
 		.atwell {
-			/* border-radius: 3rem; */
-			/* clip-path: ellipse(40% 47% at 50% 50%); */
-			/* transition: clip-path 0.25s ease-in-out; */
-			width: clamp(90%, 25vw, 100%);
+			border-radius: 3rem;
+			clip-path: ellipse(40% 47% at 50% 50%);
+			transition: clip-path 0.25s ease-in-out;
 			margin: 3.5% 0;
 		}
 
