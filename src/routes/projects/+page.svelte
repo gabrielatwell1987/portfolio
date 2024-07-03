@@ -175,7 +175,7 @@
 			margin-bottom: 3%;
 			width: clamp(50%, 75%, 100%);
 			margin-left: 10%;
-			/* margin-right: 2%; */
+			z-index: 5;
 		}
 	}
 
