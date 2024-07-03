@@ -16,11 +16,11 @@
 		gsap.set('.title', {
 			color: 'var(--smoke)',
 			fontWeight: 900,
-			fontFamily: 'var(--anta)'
+			fontFamily: 'var(--mono)'
 		});
 
 		gsap.to('.title', {
-			text: 'B L O G',
+			text: 'T O P I C S',
 			duration: 2.5,
 			ease: 'expoScale(0.5,7,power1.in)',
 			delay: 0.5
@@ -38,7 +38,7 @@
 
 <main>
 	<!-- text animation -->
-	<h1 class="title">. . . .</h1>
+	<h1 class="title">. . . . . .</h1>
 
 	<!-- links to tech stack pages -->
 	<section aria-label="icons">

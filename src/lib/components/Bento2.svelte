@@ -107,7 +107,6 @@
 	}
 
 	.bento-item-4 img {
-		/* scale: 0.65; */
 		object-fit: cover;
 		width: 100%;
 	}
@@ -159,13 +158,13 @@
 			text-transform: uppercase;
 		}
 
-		h2:hover {
-			text-decoration: underline;
-		}
-
 		a {
 			text-decoration: none;
 			cursor: pointer;
+		}
+
+		.bento-item {
+			height: 75%;
 		}
 
 		.bento-item-4 img {
