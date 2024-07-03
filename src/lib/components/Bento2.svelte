@@ -1,7 +1,6 @@
 <script>
 	import GSAP from './GsapIcon.svelte';
 	import SK from './SvelteIcon.svelte';
-	import Image from './Image.svelte';
 </script>
 
 <main id="bento-div" class="bt-div">
@@ -13,12 +12,6 @@
 		<a href="/blog/sveltekit"><SK /></a>
 
 		<a href="/blog/greensock"><GSAP /></a>
-
-		<div class="image">
-			<a href="/blog/posts"
-				><Image src="logos/animation.png" alt="A logo that says web animation techniques." /></a
-			>
-		</div>
 	</section>
 
 	<section class="bento-item bento-item-3">
@@ -69,16 +62,6 @@
 		grid-auto-rows: 35rem; /* 560px */
 		gap: var(--space-sm);
 		padding: var(--space-sm);
-	}
-
-	.image {
-		width: 25%;
-		margin-left: 5%;
-		transition: scale 500ms ease-in-out;
-	}
-
-	.image:hover {
-		scale: 1.05;
 	}
 
 	.bento-item {
@@ -143,10 +126,6 @@
 		}
 		.bento-item-3 img {
 			object-fit: contain;
-		}
-
-		.image {
-			width: 150%;
 		}
 
 		h2 {
