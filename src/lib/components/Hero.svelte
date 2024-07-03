@@ -63,7 +63,7 @@
 			font-weight: 400;
 			letter-spacing: 0.5px;
 			font-family: var(--lexend);
-			font-size: 1rem;
+			font-size: clamp(1rem, 1.5vw, 1.75rem);
 		}
 
 		button {
@@ -133,7 +133,6 @@
 			font-style: italic;
 			font-family: var(--montserrat);
 			font-weight: 200;
-			font-size: 0.8rem;
 			color: var(--white);
 		}
 
@@ -181,7 +180,6 @@
 
 		h4 {
 			color: var(--white);
-			font-size: 1.5rem;
 		}
 
 		.summary {
