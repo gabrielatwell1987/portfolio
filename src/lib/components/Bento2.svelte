@@ -170,6 +170,11 @@
 			height: 50%;
 		}
 
+		.bento-item-2,
+		.bento-item-3 {
+			padding: 2rem;
+		}
+
 		.bento-item-4 img {
 			object-fit: contain;
 		}
