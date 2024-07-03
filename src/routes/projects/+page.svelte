@@ -17,7 +17,7 @@
 		Draggable.create(ascii, {
 			type: 'x, y',
 			edgeResistance: 0.25,
-			bounds: document.querySelector('body'),
+			bounds: section,
 			throwProps: true
 		});
 
@@ -175,7 +175,6 @@
 			margin-bottom: 3%;
 			width: clamp(50%, 75%, 100%);
 			margin-left: 10%;
-			z-index: 5;
 		}
 	}
 
