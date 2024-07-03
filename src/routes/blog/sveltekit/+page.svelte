@@ -155,6 +155,7 @@
 		margin: 5rem 0 -0.5rem 0;
 		color: var(--sky);
 		font-family: var(--anta);
+		font-size: clamp(1.25rem, 3vw, 2.5rem);
 	}
 
 	.title {
@@ -197,10 +198,6 @@
 			font-size: 1rem;
 			margin-top: -2rem;
 			line-height: 1.5;
-		}
-
-		.learn {
-			font-size: 1.25rem;
 		}
 
 		.back {
