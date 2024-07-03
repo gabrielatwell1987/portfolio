@@ -1,13 +1,25 @@
 <script>
 	import { gsap } from 'gsap';
+	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
 	import Project from '$lib/components/Project.svelte';
 	import Figure from '$lib/components/Figure.svelte';
 	import Title from '$lib/components/Title.svelte';
+	import Image from '$lib/components/Image.svelte';
 
 	// animations
 	onMount(() => {
+		gsap.registerPlugin(Draggable);
+
 		const section = document.querySelector('section');
+		const ascii = document.querySelector('.ascii');
+
+		Draggable.create(ascii, {
+			type: 'x, y',
+			edgeResistance: 0.25,
+			bounds: document.querySelector('body'),
+			throwProps: true
+		});
 
 		// GSAP
 		gsap.set('.link', { autoAlpha: 0, scale: 0 });
@@ -35,6 +47,11 @@
 <section class="content bevel">
 	<!-- spacing -->
 	<br /><br />
+
+	<!-- logo -->
+	<div class="ascii">
+		<Image src="logos/ascii.png" alt="ASCII art" />
+	</div>
 
 	<Project
 		title="S.P.A."
@@ -151,6 +168,15 @@
 			flex-basis: 75%;
 			height: 100%;
 		}
+
+		.ascii {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 3%;
+			width: clamp(50%, 75%, 100%);
+			margin-left: 10%;
+			/* margin-right: 2%; */
+		}
 	}
 
 	@media screen and (min-width: 740px) {
@@ -167,11 +193,19 @@
 			border-radius: 10%;
 			margin: 3rem 0;
 		}
+
+		.ascii {
+			margin-left: 12.5%;
+		}
 	}
 
 	@media screen and (min-width: 990px) {
 		.content {
 			margin-bottom: -5%;
+		}
+
+		.ascii {
+			margin-left: 12%;
 		}
 	}
 </style>
