@@ -46,10 +46,6 @@
 		text-transform: uppercase;
 	}
 
-	h2:hover {
-		text-decoration: underline;
-	}
-
 	a {
 		text-decoration: none;
 		cursor: pointer;

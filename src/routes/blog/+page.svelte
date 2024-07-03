@@ -14,7 +14,7 @@
 		gsap.registerPlugin(TextPlugin);
 
 		gsap.set('.title', {
-			color: 'var(--smoke)',
+			color: 'var(--off-white)',
 			fontWeight: 900,
 			fontFamily: 'var(--mono)'
 		});
