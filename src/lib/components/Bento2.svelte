@@ -125,6 +125,9 @@
 	@media (max-width: 768px) {
 		#bento-div {
 			margin-top: 15%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 		}
 
 		.bt-div,
@@ -164,7 +167,7 @@
 		}
 
 		.bento-item {
-			height: 75%;
+			height: 50%;
 		}
 
 		.bento-item-4 img {
