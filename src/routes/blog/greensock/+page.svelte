@@ -160,6 +160,7 @@
 		text-align: center;
 		font-family: var(--anta);
 		color: var(--sky);
+		font-size: clamp(1.25rem, 3vw, 2.5rem);
 	}
 
 	@media (min-width: 200px) {
@@ -198,10 +199,6 @@
 			line-height: 1.5;
 		}
 
-		.learn {
-			font-size: 1.25rem;
-		}
-
 		code {
 			font-family: var(--mono);
 		}
@@ -230,10 +227,6 @@
 	}
 
 	@media (min-width: 720px) {
-		.learn {
-			font-size: 2.5rem;
-		}
-
 		.center {
 			font-size: 1.25rem;
 			margin-top: -3rem;
