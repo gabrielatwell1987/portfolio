@@ -199,12 +199,5 @@
 		.gsap {
 			margin-top: 4.5rem;
 		}
-
-		.animation,
-		.sk,
-		.gsap {
-			width: 100%;
-			scale: 1.15;
-		}
 	}
 </style>
