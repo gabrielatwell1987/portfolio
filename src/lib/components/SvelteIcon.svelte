@@ -18,8 +18,7 @@
 
 <style>
 	svg {
-		/* width: 10%; */
-		width: clamp(25%, 50%, 100%);
+		width: clamp(75%, 3vw, 100%);
 		height: 10%;
 		margin-left: -3%;
 		transition: scale 500ms ease-in-out;

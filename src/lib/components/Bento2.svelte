@@ -76,9 +76,9 @@
 	}
 
 	.animation {
-		width: clamp(25%, 50%, 100%);
+		width: clamp(75%, 3vw, 100%);
 		transition: scale var(--transition-fast);
-		margin-left: 5%;
+		margin-left: 12.5%;
 	}
 
 	.animation:hover {
@@ -93,6 +93,7 @@
 
 	.gsap {
 		margin-top: 5rem;
+		margin-left: 40%;
 	}
 
 	.bento-item {
@@ -112,7 +113,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding-left: 20%;
+		padding-left: 10%;
 	}
 	.bento-item-3 {
 		grid-column: span 6;
@@ -187,7 +188,7 @@
 		}
 
 		.bento-item-2 {
-			padding-left: 30%;
+			padding-left: 20%;
 			width: 100%;
 			align-items: center;
 			gap: 1rem;
