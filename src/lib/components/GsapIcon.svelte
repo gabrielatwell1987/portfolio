@@ -163,7 +163,8 @@
 
 <style>
 	svg {
-		width: 15%;
+		/* width: 15%; */
+		width: clamp(25%, 50%, 100%);
 		height: 15%;
 		margin-left: -8%;
 		margin-bottom: 3rem;
@@ -174,11 +175,10 @@
 		scale: 1.1;
 	}
 
-	@media (min-width: 200px) {
-		/* mobile */
+	/* @media (min-width: 200px) {
 		svg {
 			width: 75%;
 			margin: 0 -40%;
 		}
-	}
+	} */
 </style>

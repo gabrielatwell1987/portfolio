@@ -18,7 +18,8 @@
 
 <style>
 	svg {
-		width: 10%;
+		/* width: 10%; */
+		width: clamp(25%, 50%, 100%);
 		height: 10%;
 		margin-left: -3%;
 		transition: scale 500ms ease-in-out;
@@ -28,11 +29,11 @@
 		scale: 1.1;
 	}
 
-	@media (min-width: 200px) {
-		/* mobile */
+	/* @media (min-width: 200px) {
+		
 		svg {
 			width: 65%;
 			margin: 0 -30%;
 		}
-	}
+	} */
 </style>

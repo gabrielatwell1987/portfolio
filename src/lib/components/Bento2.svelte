@@ -1,6 +1,7 @@
 <script>
 	import GSAP from './GsapIcon.svelte';
 	import SK from './SvelteIcon.svelte';
+	import Image from '$lib/components/Image.svelte';
 </script>
 
 <main id="bento-div" class="bt-div">
@@ -9,9 +10,23 @@
 	</section>
 
 	<section class="bento-item bento-item-2">
-		<a href="/blog/sveltekit"><SK /></a>
+		<a href="/blog/sveltekit">
+			<div class="sk">
+				<SK />
+			</div>
+		</a>
 
-		<a href="/blog/greensock"><GSAP /></a>
+		<a href="/blog/greensock">
+			<div class="gsap">
+				<GSAP />
+			</div>
+		</a>
+
+		<a href="/blog/posts">
+			<div class="animation">
+				<Image src="/logos/animation.png" alt="" />
+			</div>
+		</a>
 	</section>
 
 	<section class="bento-item bento-item-3">
@@ -55,9 +70,29 @@
 		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(10, minmax(0, 1fr));
-		grid-auto-rows: 35rem; /* 560px */
+		grid-auto-rows: 35rem;
 		gap: var(--space-sm);
 		padding: var(--space-sm);
+	}
+
+	.animation {
+		width: clamp(25%, 50%, 100%);
+		transition: scale var(--transition-fast);
+		margin-left: 5%;
+	}
+
+	.animation:hover {
+		scale: 1.05;
+	}
+
+	.sk,
+	.gsap {
+		width: 100%;
+		scale: 1.5;
+	}
+
+	.gsap {
+		margin-top: 5rem;
 	}
 
 	.bento-item {
@@ -77,6 +112,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		padding-left: 20%;
 	}
 	.bento-item-3 {
 		grid-column: span 6;
@@ -143,6 +179,7 @@
 
 		.bento-item {
 			height: 50%;
+			scale: 1.1;
 		}
 
 		.bento-item-2,
@@ -150,8 +187,18 @@
 			padding: 2rem;
 		}
 
+		.bento-item-2 {
+			padding-left: 30%;
+			width: 100%;
+			align-items: center;
+		}
+
 		.bento-item-4 img {
 			object-fit: contain;
+		}
+
+		.gsap {
+			margin-top: 4.5rem;
 		}
 	}
 </style>
