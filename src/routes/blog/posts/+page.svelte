@@ -54,11 +54,15 @@
 
 <section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<!-- links to my markdown files -->
-	<h1 class="title">CSS</h1>
-	<CSS />
+	<div class="css">
+		<h1 class="title">CSS</h1>
+		<CSS />
+	</div>
 
-	<h1 class="title">GSAP</h1>
-	<GSAP />
+	<div class="gsap">
+		<h1 class="title">GSAP</h1>
+		<GSAP />
+	</div>
 
 	<!-- back button -->
 	<a href="/blog"><Button title="Back" /></a>
@@ -71,7 +75,7 @@
 		font-weight: 900;
 		color: var(--white);
 		font-family: var(--anta);
-		letter-spacing: 2px;
+		letter-spacing: 10px;
 		margin-top: 5rem;
 		mix-blend-mode: difference;
 	}
@@ -81,5 +85,9 @@
 
 	a {
 		text-decoration: none;
+	}
+
+	.css {
+		margin-bottom: 15%;
 	}
 </style>
