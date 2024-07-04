@@ -133,11 +133,12 @@
 
 		label {
 			margin-left: 0.25rem;
+			font-family: var(--lexend);
 			font-weight: 600;
 		}
 
 		span {
-			font-size: 0.95rem;
+			font-size: clamp(1rem, 2vw, 2rem);
 			font-weight: 800;
 		}
 
@@ -221,10 +222,6 @@
 	}
 
 	@media screen and (min-width: 720px) {
-		span {
-			font-weight: 800;
-		}
-
 		form {
 			margin-left: 40.5%;
 		}
@@ -310,10 +307,6 @@
 			font-size: 1.5rem;
 		}
 
-		label {
-			font-family: var(--lexend);
-		}
-
 		@keyframes wiggle {
 			0% {
 				rotate: 0deg;
@@ -359,7 +352,6 @@
 		}
 
 		label {
-			font-size: 1rem;
 			margin-bottom: 1rem;
 			text-align: center;
 			transform: scale(1.5);
@@ -445,10 +437,6 @@
 		textarea {
 			font-size: 2rem;
 			padding: 2rem;
-		}
-
-		label {
-			font-size: 3rem;
 		}
 
 		.send {
