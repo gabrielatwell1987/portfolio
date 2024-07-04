@@ -190,6 +190,7 @@
 			padding-left: 30%;
 			width: 100%;
 			align-items: center;
+			gap: 1rem;
 		}
 
 		.bento-item-4 img {
