@@ -43,10 +43,14 @@
 	<!-- links to tech stack pages -->
 	<section aria-label="icons">
 		<h2>Greensock</h2>
-		<a class="gs" href="blog/greensock"><GsapIcon /></a>
+		<div class="icon">
+			<a class="gs" href="blog/greensock"><GsapIcon /></a>
+		</div>
 
 		<h2>SvelteKit</h2>
-		<a class="sk" href="blog/sveltekit"><SvelteIcon /></a>
+		<div class="icon">
+			<a class="sk" href="blog/sveltekit"><SvelteIcon /></a>
+		</div>
 	</section>
 
 	<!-- animation logo -->
@@ -75,6 +79,10 @@
 		font-weight: 800;
 		text-align: center;
 		margin-top: 5%;
+	}
+
+	.icon {
+		margin-right: 9%;
 	}
 
 	.gs:hover,
@@ -150,6 +158,10 @@
 			color: var(--blue);
 			font-size: 1.2rem;
 		}
+
+		.icon {
+			margin-right: 25%;
+		}
 	}
 
 	@media (min-width: 500px) {
@@ -170,6 +182,10 @@
 
 		.gs {
 			margin-bottom: 10%;
+		}
+
+		.icon {
+			margin-right: 9%;
 		}
 	}
 
