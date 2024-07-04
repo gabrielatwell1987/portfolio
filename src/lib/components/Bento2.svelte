@@ -179,7 +179,6 @@
 
 		.bento-item {
 			height: 50%;
-			scale: 1.1;
 		}
 
 		.bento-item-2,
@@ -199,6 +198,13 @@
 
 		.gsap {
 			margin-top: 4.5rem;
+		}
+
+		.animation,
+		.sk,
+		.gsap {
+			width: 100%;
+			scale: 5;
 		}
 	}
 </style>
