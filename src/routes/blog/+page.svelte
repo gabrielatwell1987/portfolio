@@ -106,6 +106,10 @@
 		margin-top: 10rem;
 	}
 
+	.animation-link {
+		margin-top: clamp(15%, 3vw, 5%);
+	}
+
 	@keyframes wiggle {
 		0% {
 			rotate: 0deg;
@@ -137,7 +141,7 @@
 		}
 
 		.animation-link {
-			display: none;
+			display: block;
 		}
 	}
 
@@ -148,10 +152,6 @@
 	}
 
 	@media (min-width: 720px) {
-		.animation-link {
-			display: block;
-		}
-
 		.image {
 			width: 40%;
 			margin: 0 -20%;
@@ -175,6 +175,10 @@
 
 		main {
 			margin-bottom: 10%;
+		}
+
+		.animation-link {
+			margin-top: -1%;
 		}
 	}
 </style>
