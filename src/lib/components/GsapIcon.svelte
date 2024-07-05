@@ -165,7 +165,7 @@
 	svg {
 		width: clamp(80%, 3vw, 100%);
 		height: 15%;
-		margin-left: -8%;
+		margin-left: -50%;
 		margin-bottom: 3rem;
 		transition: scale 500ms ease-in-out;
 	}
@@ -173,11 +173,4 @@
 	svg:hover {
 		scale: 1.1;
 	}
-
-	/* @media (min-width: 200px) {
-		svg {
-			width: 75%;
-			margin: 0 -40%;
-		}
-	} */
 </style>

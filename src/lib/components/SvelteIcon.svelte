@@ -20,19 +20,11 @@
 	svg {
 		width: clamp(75%, 3vw, 100%);
 		height: 10%;
-		margin-left: -3%;
+		margin-left: -40%;
 		transition: scale 500ms ease-in-out;
 	}
 
 	svg:hover {
 		scale: 1.1;
 	}
-
-	/* @media (min-width: 200px) {
-		
-		svg {
-			width: 65%;
-			margin: 0 -30%;
-		}
-	} */
 </style>
