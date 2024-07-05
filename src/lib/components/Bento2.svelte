@@ -107,6 +107,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		font-size: clamp(1.2rem, 3vw, 4rem);
 	}
 	.bento-item-2 {
 		grid-column: span 6;
