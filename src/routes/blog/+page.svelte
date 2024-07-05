@@ -142,12 +142,18 @@
 
 		.animation-link {
 			display: block;
+			margin-top: 30%;
 		}
 	}
 
 	@media (min-width: 500px) {
 		.gs {
 			margin-bottom: 10%;
+		}
+
+		.image {
+			width: 60%;
+			margin: 0 -30%;
 		}
 	}
 
@@ -159,6 +165,10 @@
 
 		.gs {
 			margin-bottom: 10%;
+		}
+
+		.animation-link {
+			margin-top: 15%;
 		}
 	}
 
