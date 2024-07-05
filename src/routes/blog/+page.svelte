@@ -127,8 +127,8 @@
 
 	@media (min-width: 200px) {
 		.image {
-			width: 80%;
-			margin: 0 -39%;
+			width: 100%;
+			margin: 0 -53%;
 		}
 
 		.gs {
