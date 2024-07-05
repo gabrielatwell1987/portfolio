@@ -71,7 +71,7 @@
 <style>
 	.title {
 		text-align: center;
-		font-size: clamp(3.5rem, 5vw, 10rem);
+		font-size: clamp(4rem, 7.5vw, 15rem);
 		font-weight: 900;
 		color: var(--white);
 		font-family: var(--anta);
