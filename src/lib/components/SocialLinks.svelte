@@ -1,6 +1,6 @@
 <script></script>
 
-<div class="dev-links" aria-label="links">
+<main class="dev-links" aria-label="links">
 	<a class="size yellow" href="https://www.github.com/gabrielatwell1987/portfolio" target="_blank">
 		<i class="fa-brands fa-github" /></a
 	>
@@ -20,7 +20,7 @@
 	<a class="size" href="https://www.reddit.com/user/gatwell702" target="_blank">
 		<i class="fa-brands fa-square-reddit" />
 	</a>
-</div>
+</main>
 
 <style>
 	@media (min-width: 200px) {

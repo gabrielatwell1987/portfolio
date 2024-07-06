@@ -4,7 +4,7 @@
 </script>
 
 <section class="grid" aria-label="bio">
-	<div class="inline right">
+	<article class="inline right">
 		<h2 class="right title">{leftTitle}</h2>
 
 		<p class="right">
@@ -12,9 +12,9 @@
 			especially animations on the web. Turning a website from being a static site to a dynamic site
 			is what he thinks makes your website look a million times better, if you do it right.
 		</p>
-	</div>
+	</article>
 
-	<div class="inline left">
+	<article class="inline left">
 		<h2 class="left title">{rightTitle}</h2>
 
 		<p class="left">
@@ -22,7 +22,7 @@
 			typography, scaling, and contrast is what he knows best. These topics are the main key to make
 			your website designs look professional and appealing to the eye.
 		</p>
-	</div>
+	</article>
 </section>
 
 <style>
