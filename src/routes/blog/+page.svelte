@@ -190,5 +190,9 @@
 		.animation-link {
 			margin-top: -1%;
 		}
+
+		section {
+			margin-left: 2.5%;
+		}
 	}
 </style>
