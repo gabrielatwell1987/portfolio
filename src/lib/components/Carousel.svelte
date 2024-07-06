@@ -19,49 +19,49 @@
 		let:showPrevPage
 		let:showNextPage
 	>
-		<div class="gabe">
+		<section class="gabe">
 			<Image src="/photos/gabe7.png" alt="Gabriel Atwell" />
-		</div>
+		</section>
 
-		<div class="gabe">
+		<section class="gabe">
 			<Image src="/photos/gabe2.png" alt="Gabriel Atwell" />
-		</div>
+		</section>
 
-		<div class="gabe bigger">
+		<section class="gabe bigger">
 			<Image src="/photos/wtf.jpg" alt="Gabriel Atwell" />
-		</div>
+		</section>
 
-		<div class="gabe">
+		<section class="gabe">
 			<Image src="/photos/gabe.png" alt="Gabriel Atwell" />
-		</div>
+		</section>
 
-		<div class="gabe">
+		<section class="gabe">
 			<Image src="/photos/gabe3.png" alt="Gabriel Atwell" />
-		</div>
+		</section>
 
-		<div class="gabe">
+		<section class="gabe">
 			<Image src="/photos/gabe8.png" alt="Gabriel Atwell" />
-		</div>
+		</section>
 
-		<div class="gabe bigger">
+		<section class="gabe bigger">
 			<Image src="/photos/wtf2.png" alt="Gabriel Atwell" />
-		</div>
+		</section>
 
-		<div class="gabe">
+		<section class="gabe">
 			<Image src="/photos/gabe10.png" alt="Gabriel Atwell" />
-		</div>
+		</section>
 
-		<div class="gabe">
+		<section class="gabe">
 			<Image src="/photos/gabe5.png" alt="Gabriel Atwell" />
-		</div>
+		</section>
 
-		<div class="gabe">
+		<section class="gabe">
 			<Image src="/photos/gabe6.png" alt="Gabriel Atwell" />
-		</div>
+		</section>
 
-		<div class="gabe">
+		<section class="gabe">
 			<Image src="/photos/wtf3.png" alt="Gabriel Atwell" />
-		</div>
+		</section>
 	</Carousel>
 {/if}
 

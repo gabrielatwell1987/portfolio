@@ -3,10 +3,10 @@
 	export let hover;
 </script>
 
-<div class="tooltip-container">
+<main class="tooltip-container">
 	<span class="tooltip-trigger">{title}</span>
 	<div class="tooltip tooltip-top">{hover}</div>
-</div>
+</main>
 
 <style>
 	.tooltip-container {

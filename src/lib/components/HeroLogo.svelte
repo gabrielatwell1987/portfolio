@@ -33,9 +33,9 @@
 </script>
 
 <main>
-	<div class="hero-logo">
+	<section class="hero-logo">
 		<Image src="/logos/mono-atwell.png" alt="atwell ui" />
-	</div>
+	</section>
 </main>
 
 <style>
