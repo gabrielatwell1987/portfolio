@@ -99,6 +99,10 @@
 			caret-color: var(--purple);
 		}
 
+		input:placeholder-shown {
+			letter-spacing: 3px;
+		}
+
 		input:focus {
 			outline: none;
 		}
@@ -111,6 +115,10 @@
 			width: 100%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
+		}
+
+		textarea:placeholder-shown {
+			letter-spacing: 3px;
 		}
 
 		textarea:focus {
