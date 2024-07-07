@@ -32,7 +32,7 @@
 
 <svelte:head>
 	<title>Blog Topics</title>
-	<meta name="description" content="Blogs" />
+	<meta name="description" content="Web Animations" />
 	<meta name="keywords" content="Blog, Sveltekit, GSAP" />
 </svelte:head>
 

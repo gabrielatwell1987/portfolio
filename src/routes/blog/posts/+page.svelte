@@ -48,7 +48,7 @@
 
 <svelte:head>
 	<title>CSS & GSAP</title>
-	<meta name="description" content="CSS & GSAP" />
+	<meta name="description" content="Web Animations" />
 	<meta name="keywords" content="CSS, GSAP" />
 </svelte:head>
 
