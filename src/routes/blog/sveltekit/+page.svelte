@@ -30,7 +30,7 @@
 
 <svelte:head>
 	<title>Sveltekit</title>
-	<meta name="description" content="Sveltekit" />
+	<meta name="description" content="Svelte, Sveltekit" />
 	<meta name="keywords" content="Sveltekit" />
 </svelte:head>
 

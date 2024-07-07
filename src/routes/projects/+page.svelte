@@ -12,14 +12,6 @@
 		gsap.registerPlugin(Draggable);
 
 		const section = document.querySelector('section');
-		const ascii = document.querySelector('.ascii');
-
-		Draggable.create(ascii, {
-			type: 'x, y',
-			edgeResistance: 0.25,
-			bounds: section,
-			throwProps: true
-		});
 
 		// GSAP
 		gsap.set('.link', { autoAlpha: 0, scale: 0 });
