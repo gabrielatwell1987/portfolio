@@ -36,7 +36,7 @@
 			justify-content: center;
 			align-items: center;
 			font-family: var(--lexend);
-			font-size: 1.25rem;
+			font-size: clamp(1.25rem, 2.5vw, 2.5rem);
 			font-weight: 600;
 			margin: 0 auto;
 			letter-spacing: 2px;
@@ -51,7 +51,7 @@
 			text-align: center;
 			border-radius: 6px;
 			padding: 5px 0;
-			font-size: 1rem;
+			font-size: clamp(1rem, 1.5vw, 1.75rem);
 			position: absolute;
 			z-index: 1;
 			bottom: -10%;
@@ -73,7 +73,7 @@
 
 		a {
 			font-family: var(--montserrat);
-			font-size: 0.75rem;
+			/* font-size: clamp(0.75rem, 1.5vw, 2rem); */
 			text-decoration: none;
 			font-weight: 700;
 			color: var(--sky);
@@ -87,17 +87,11 @@
 
 		.link {
 			letter-spacing: 4px;
-			font-size: 2rem;
-		}
-
-		a {
-			font-size: 1rem;
 		}
 
 		.hover-text {
 			width: 75%;
 			margin-left: -25%;
-			font-size: 1.5rem;
 		}
 	}
 
@@ -106,7 +100,6 @@
 			padding: 2rem;
 			flex-basis: 100%;
 			letter-spacing: 5px;
-			font-size: 2.5rem;
 		}
 
 		.name {
@@ -116,7 +109,6 @@
 		.hover-text {
 			width: 25%;
 			margin-left: -3%;
-			font-size: 1.75rem;
 		}
 	}
 </style>
