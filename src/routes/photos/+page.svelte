@@ -227,6 +227,11 @@
 			text-align: center;
 		}
 
+		.pictures {
+			display: flex;
+			justify-content: space-around;
+		}
+
 		@keyframes wiggle {
 			0% {
 				rotate: 0deg;
@@ -276,7 +281,7 @@
 		}
 
 		.left {
-			margin-left: 1%;
+			margin-left: 0.25%;
 		}
 	}
 </style>
