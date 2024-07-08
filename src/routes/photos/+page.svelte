@@ -281,7 +281,7 @@
 		}
 
 		.left {
-			margin-left: 0.25%;
+			margin-left: -2%;
 		}
 	}
 </style>
