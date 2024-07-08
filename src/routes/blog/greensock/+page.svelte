@@ -160,7 +160,11 @@
 		text-align: center;
 		font-family: var(--anta);
 		color: var(--sky);
-		font-size: clamp(1.25rem, 3vw, 2.5rem);
+		font-size: clamp(1.5rem, 3vw, 2.5rem);
+	}
+
+	.detail {
+		font-size: clamp(1.35rem, 2vw, 1.75rem);
 	}
 
 	@media (min-width: 200px) {
@@ -188,13 +192,12 @@
 			min-width: 20rem;
 			margin: 0 -4.75rem;
 			font-family: var(--lexend);
-			font-size: 1.35rem;
 			line-height: 1.5;
 		}
 
 		.center {
 			text-align: center;
-			font-size: 1rem;
+			font-size: clamp(1rem, 2vw, 1.35rem);
 			margin-top: -2rem;
 			line-height: 1.5;
 		}
@@ -228,16 +231,11 @@
 
 	@media (min-width: 720px) {
 		.center {
-			font-size: 1.25rem;
 			margin-top: -3rem;
 		}
 
 		.glass {
 			margin-left: 3%;
-		}
-
-		.detail {
-			font-size: 1.5rem;
 		}
 	}
 
@@ -259,10 +257,6 @@
 			width: 100%;
 		}
 
-		.detail {
-			font-size: 1.75rem;
-		}
-
 		.glass {
 			margin-left: 30%;
 		}
@@ -276,10 +270,6 @@
 	@media (min-width: 1024px) {
 		summary {
 			font-size: 1.75rem;
-		}
-
-		.detail {
-			line-height: 1.65;
 		}
 
 		.glass {
