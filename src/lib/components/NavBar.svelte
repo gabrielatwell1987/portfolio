@@ -295,7 +295,13 @@
 		}
 
 		.toggle {
-			left: 15%;
+			left: 20%;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.toggle {
+			left: 20%;
 		}
 	}
 
@@ -357,7 +363,7 @@
 
 	@media (min-width: 1600px) {
 		.desktop {
-			margin-left: 35%;
+			margin-left: 40%;
 		}
 
 		.gabe-logo {
