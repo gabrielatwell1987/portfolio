@@ -265,11 +265,10 @@
 		}
 
 		.desktop {
-			margin-left: 18%;
-			/* font-size: 1.1rem; */
+			margin-left: 10%;
 			width: 100%;
 			line-height: 2;
-			scale: 1.05;
+			scale: 1;
 		}
 
 		.toggle {
