@@ -269,7 +269,7 @@
 			font-size: 1.1rem;
 			width: 100%;
 			line-height: 2;
-			scale: 1.25;
+			scale: 1.15;
 		}
 
 		.toggle {
@@ -285,7 +285,7 @@
 	@media (min-width: 1100px) {
 		.desktop {
 			margin-left: 30%;
-			line-height: 1.15;
+			line-height: 1.5;
 		}
 
 		.gabe-logo {
