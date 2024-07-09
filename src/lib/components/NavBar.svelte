@@ -254,7 +254,7 @@
 
 		.toggle {
 			top: 10%;
-			left: 20%;
+			left: 16%;
 		}
 	}
 
@@ -265,15 +265,15 @@
 		}
 
 		.desktop {
-			margin-left: 10%;
+			margin-left: 20%;
 			width: 100%;
 			line-height: 2;
-			scale: 1;
+			scale: 1.25;
 			text-wrap: nowrap;
 		}
 
 		.toggle {
-			left: 21.5%;
+			left: 15%;
 			z-index: 10;
 		}
 
@@ -284,8 +284,9 @@
 
 	@media (min-width: 1100px) {
 		.desktop {
-			margin-left: 30%;
+			margin-left: 35%;
 			line-height: 1.5;
+			scale: 1.5;
 		}
 
 		.gabe-logo {
@@ -294,7 +295,7 @@
 		}
 
 		.toggle {
-			left: 30%;
+			left: 15%;
 		}
 	}
 
@@ -310,7 +311,7 @@
 
 		.toggle {
 			top: 10%;
-			left: 25%;
+			left: 15%;
 		}
 	}
 
@@ -325,7 +326,7 @@
 		}
 
 		.toggle {
-			left: 25%;
+			left: 22%;
 		}
 
 		nav {
@@ -344,7 +345,7 @@
 		}
 
 		.toggle {
-			left: 25%;
+			left: 20%;
 			top: 15%;
 		}
 
@@ -364,7 +365,7 @@
 		}
 
 		.toggle {
-			left: 22%;
+			left: 15%;
 			top: 15%;
 		}
 
