@@ -294,7 +294,7 @@
 		}
 
 		.toggle {
-			left: 28%;
+			left: 30%;
 		}
 	}
 
@@ -344,7 +344,7 @@
 		}
 
 		.toggle {
-			left: 22%;
+			left: 25%;
 			top: 15%;
 		}
 
