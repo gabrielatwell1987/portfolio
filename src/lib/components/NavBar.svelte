@@ -117,9 +117,13 @@
 		}
 
 		.nav-link {
-			font-size: 1.5rem;
+			font-size: clamp(1.1rem, 2vw, 1.5rem);
 			letter-spacing: 2px;
 			font-weight: 800;
+		}
+
+		.nav-link:hover {
+			font-size: clamp(1.1rem, 2vw, 1.5rem);
 		}
 
 		.toggle {
@@ -132,13 +136,15 @@
 
 	@media (min-width: 700px) {
 		.desktop {
+			width: 100%;
 			display: flex;
+			align-items: center;
 			margin-top: 0;
 			gap: 1rem;
 			flex-direction: row;
 			border: none;
 			background-color: transparent;
-			margin-left: 5%;
+			margin-left: 25%;
 			scale: 1.5;
 		}
 
@@ -162,6 +168,7 @@
 			align-items: center;
 			height: 5em;
 			width: 100%;
+			scale: 0.75;
 		}
 
 		.header-logos {
@@ -180,7 +187,6 @@
 
 		.nav-link {
 			font-family: var(--montserrat);
-			font-size: 1.1rem;
 			text-decoration: none;
 			font-weight: 600;
 			color: var(--white);
@@ -192,18 +198,29 @@
 			height: 3rem;
 			text-shadow: 2px 2px 1px var(--black);
 			transition: border-bottom 0.35s ease-in-out, text-shadow 0.35s ease-in-out;
-			font-size: 1.1rem;
 		}
 
 		.toggle {
-			top: 5%;
-			left: 32%;
+			top: 15%;
+			left: 15%;
+		}
+	}
+
+	@media (min-width: 800px) {
+		.toggle {
+			top: 15%;
+			left: 12%;
+		}
+	}
+
+	@media (min-width: 900px) {
+		.desktop {
+			margin-left: 30%;
 		}
 	}
 
 	@media (min-width: 990px) {
 		.nav-link {
-			font-size: 1.1rem;
 			margin-left: 5rem;
 			margin-right: -5.25rem;
 		}
@@ -211,7 +228,7 @@
 		.desktop {
 			display: block;
 			width: 100%;
-			margin-left: 23%;
+			margin-left: 15%;
 		}
 
 		nav {
@@ -237,18 +254,14 @@
 
 		.toggle {
 			top: 10%;
+			left: 20%;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		.nav-link {
-			font-size: 1.15rem;
 			margin-left: 5rem;
 			margin-right: -5rem;
-		}
-
-		.nav-link:hover {
-			font-size: 1.15rem;
 		}
 
 		.desktop {
@@ -264,23 +277,14 @@
 		}
 
 		nav {
-			scale: 0.85;
 			margin-right: 7.5%;
 		}
 	}
 
 	@media (min-width: 1100px) {
 		.desktop {
-			margin-left: 25%;
+			margin-left: 30%;
 			line-height: 1.25;
-		}
-
-		.nav-link {
-			font-size: 1.2rem;
-		}
-
-		.nav-link:hover {
-			font-size: 1.2rem;
 		}
 
 		.gabe-logo {
@@ -289,13 +293,13 @@
 		}
 
 		.toggle {
-			left: 33%;
+			left: 28%;
 		}
 	}
 
 	@media (min-width: 1300px) {
 		.desktop {
-			margin-left: 32%;
+			margin-left: 35%;
 		}
 
 		.gabe-logo {
@@ -305,13 +309,13 @@
 
 		.toggle {
 			top: 10%;
-			left: 35%;
+			left: 25%;
 		}
 	}
 
 	@media (min-width: 1400px) {
 		.desktop {
-			margin-left: 32%;
+			margin-left: 30%;
 		}
 
 		.gabe-logo {
@@ -320,7 +324,7 @@
 		}
 
 		.toggle {
-			left: 37%;
+			left: 25%;
 		}
 
 		nav {
@@ -329,9 +333,9 @@
 		}
 	}
 
-	@media (min-width: 1600px) {
+	@media (min-width: 1500px) {
 		.desktop {
-			margin-left: 42.5%;
+			margin-left: 30%;
 		}
 
 		.gabe-logo {
@@ -339,18 +343,33 @@
 		}
 
 		.toggle {
-			left: 25%;
-			top: 22%;
+			left: 22%;
+			top: 15%;
 		}
 
 		.nav-link {
-			font-size: 1.5rem;
 			margin-left: 5.75rem;
 			margin-right: -5rem;
 		}
+	}
 
-		.nav-link:hover {
-			font-size: 1.5rem;
+	@media (min-width: 1600px) {
+		.desktop {
+			margin-left: 35%;
+		}
+
+		.gabe-logo {
+			margin-left: 150%;
+		}
+
+		.toggle {
+			left: 22%;
+			top: 15%;
+		}
+
+		.nav-link {
+			margin-left: 5.75rem;
+			margin-right: -5rem;
 		}
 	}
 </style>
