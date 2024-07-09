@@ -285,7 +285,7 @@
 	@media (min-width: 1100px) {
 		.desktop {
 			margin-left: 30%;
-			line-height: 1.25;
+			line-height: 1.15;
 		}
 
 		.gabe-logo {
