@@ -269,6 +269,7 @@
 			font-size: 1.1rem;
 			width: 100%;
 			line-height: 2;
+			scale: 1.25;
 		}
 
 		.toggle {
