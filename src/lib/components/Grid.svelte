@@ -27,7 +27,7 @@
 
 <style>
 	@media (min-width: 200px) {
-		h2 {
+		.title {
 			font-size: 2.25rem;
 			mix-blend-mode: difference;
 			color: var(--purple);
@@ -58,7 +58,7 @@
 			font-size: 1.1rem;
 		}
 
-		h2 {
+		.title {
 			font-size: 1.5rem;
 			letter-spacing: 5px;
 		}
@@ -92,7 +92,7 @@
 		.title {
 			color: var(--purple);
 			font-family: var(--anta);
-			font-size: 5rem;
+			/* font-size: 5rem; */
 		}
 	}
 
@@ -101,7 +101,7 @@
 			margin-bottom: -10%;
 		}
 
-		h2 {
+		.title {
 			font-size: 2rem;
 		}
 
@@ -110,8 +110,18 @@
 		}
 	}
 
+	@media (min-width: 1300px) {
+		.title {
+			font-size: 2.5rem;
+		}
+
+		p {
+			font-size: 1.25rem;
+		}
+	}
+
 	@media (min-width: 1400px) {
-		h2 {
+		.title {
 			font-size: 3rem;
 		}
 
