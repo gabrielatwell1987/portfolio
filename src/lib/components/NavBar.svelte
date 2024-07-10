@@ -266,7 +266,7 @@
 		}
 
 		.desktop {
-			margin-left: 20%;
+			margin-left: 15%;
 			width: 100%;
 			line-height: 2;
 			scale: 1.25;
