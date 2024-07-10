@@ -146,7 +146,7 @@
 			background-color: transparent;
 			margin-left: 25%;
 			scale: 1.5;
-			/* text-wrap: nowrap; */
+			text-wrap: nowrap;
 		}
 
 		a {
@@ -266,7 +266,6 @@
 		}
 
 		.desktop {
-			/* margin-right: 5%; */
 			margin-left: 20%;
 			width: 100%;
 			line-height: 2;
