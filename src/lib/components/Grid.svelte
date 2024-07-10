@@ -112,10 +112,9 @@
 
 	@media (min-width: 1300px) {
 		.title {
-			font-size: 2.5rem;
+			font-size: 3.5rem;
 		}
 
-		p,
 		.left,
 		.right {
 			font-size: 1.1rem;
