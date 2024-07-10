@@ -293,7 +293,7 @@
 		}
 
 		.modal h4 {
-			font-size: clamp(1.2rem, 4vw, 4rem);
+			font-size: clamp(1.2rem, 3vw, 4rem);
 			font-weight: 600;
 			font-family: var(--anta);
 			color: var(--yellow);
