@@ -5,7 +5,7 @@
 
 <section class="grid" aria-label="bio">
 	<article class="inline right">
-		<h2 class="right title">{leftTitle}</h2>
+		<h2 class="title titleLeft">{leftTitle}</h2>
 
 		<p class="right">
 			The path that Gabe has chosen is the frontend path. One of his main interests is animations,
@@ -15,7 +15,7 @@
 	</article>
 
 	<article class="inline left">
-		<h2 class="left title">{rightTitle}</h2>
+		<h2 class="title titleRight">{rightTitle}</h2>
 
 		<p class="left">
 			A clean, crisp design is what Gabe tries to excel at. Visual hierarchy, whitespace, colors,
@@ -55,12 +55,20 @@
 	@media (min-width: 990px) {
 		p {
 			line-height: 1.5;
-			font-size: 1.1rem;
+			font-size: clamp(1.1rem, 3vw, 1.5rem);
 		}
 
 		.title {
-			font-size: 1.5rem;
+			font-size: clamp(1.5rem, 5vw, 5rem);
 			letter-spacing: 5px;
+		}
+
+		.titleLeft {
+			text-align: right;
+		}
+
+		.titleRight {
+			text-align: left;
 		}
 
 		.grid {
@@ -92,7 +100,6 @@
 		.title {
 			color: var(--purple);
 			font-family: var(--anta);
-			/* font-size: 5rem; */
 		}
 	}
 
@@ -100,21 +107,9 @@
 		.grid {
 			margin-bottom: -10%;
 		}
-
-		.title {
-			font-size: 2rem;
-		}
-
-		p {
-			font-size: 1.5rem;
-		}
 	}
 
 	@media (min-width: 1300px) {
-		.title {
-			font-size: 3.5rem;
-		}
-
 		.left,
 		.right {
 			font-size: 1.1rem;
@@ -122,11 +117,8 @@
 	}
 
 	@media (min-width: 1400px) {
-		.title {
-			font-size: 3rem;
-		}
-
-		p {
+		.left,
+		.right {
 			font-size: 1.75rem;
 		}
 	}
