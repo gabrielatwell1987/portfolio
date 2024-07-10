@@ -115,7 +115,9 @@
 			font-size: 2.5rem;
 		}
 
-		p {
+		p,
+		.left,
+		.right {
 			font-size: 1.1rem;
 		}
 	}
