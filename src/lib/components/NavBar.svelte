@@ -146,6 +146,7 @@
 			background-color: transparent;
 			margin-left: 25%;
 			scale: 1.5;
+			text-wrap: nowrap;
 		}
 
 		a {
@@ -269,7 +270,7 @@
 			width: 100%;
 			line-height: 2;
 			scale: 1.25;
-			text-wrap: nowrap;
+			/* text-wrap: nowrap; */
 		}
 
 		.toggle {
