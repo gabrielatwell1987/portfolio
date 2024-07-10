@@ -266,7 +266,8 @@
 		}
 
 		.desktop {
-			margin-left: 15%;
+			/* margin-right: 5%; */
+			margin-left: 20%;
 			width: 100%;
 			line-height: 2;
 			scale: 1.25;
@@ -309,6 +310,7 @@
 	@media (min-width: 1300px) {
 		.desktop {
 			margin-left: 35%;
+			scale: 1.1;
 		}
 
 		.gabe-logo {
