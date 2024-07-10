@@ -327,6 +327,7 @@
 	@media (min-width: 1400px) {
 		.desktop {
 			margin-left: 30%;
+			scale: 1.5;
 		}
 
 		.gabe-logo {
