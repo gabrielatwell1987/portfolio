@@ -116,7 +116,7 @@
 		}
 
 		p {
-			font-size: 1.25rem;
+			font-size: 1.1rem;
 		}
 	}
 
