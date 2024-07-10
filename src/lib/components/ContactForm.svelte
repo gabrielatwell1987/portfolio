@@ -425,12 +425,18 @@
 			margin-left: 48.5%;
 		}
 
+		h4 {
+			font-size: 1.2rem;
+		}
+
 		.open-button {
 			padding: 2rem 3rem;
+			scale: 0.75;
 		}
 
 		.close-button {
 			padding: 2rem 3rem;
+			scale: 0.75;
 		}
 
 		i {
@@ -451,6 +457,10 @@
 			width: 10%;
 			margin-inline: auto;
 			letter-spacing: 0;
+		}
+
+		.modal__p {
+			font-size: 1.1rem;
 		}
 	}
 
