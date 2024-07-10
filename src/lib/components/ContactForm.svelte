@@ -431,12 +431,12 @@
 
 		.open-button {
 			padding: 2rem 3rem;
-			scale: 0.75;
+			scale: 0.5;
 		}
 
 		.close-button {
 			padding: 2rem 3rem;
-			scale: 0.75;
+			scale: 0.5;
 		}
 
 		i {
@@ -468,6 +468,14 @@
 		form {
 			width: 100%;
 			margin-left: 43.5%;
+		}
+
+		.open-button {
+			scale: 0.85;
+		}
+
+		.close-button {
+			scale: 0.85;
 		}
 	}
 
