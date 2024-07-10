@@ -293,7 +293,7 @@
 		}
 
 		.modal h4 {
-			font-size: clamp(2rem, 4vw, 4rem);
+			font-size: clamp(1.2rem, 4vw, 4rem);
 			font-weight: 600;
 			font-family: var(--anta);
 			color: var(--yellow);
@@ -425,9 +425,9 @@
 			margin-left: 48.5%;
 		}
 
-		h4 {
+		/* h4 {
 			font-size: 1.2rem;
-		}
+		} */
 
 		.open-button {
 			padding: 2rem 3rem;
