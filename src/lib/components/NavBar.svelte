@@ -320,7 +320,7 @@
 
 		.toggle {
 			top: 10%;
-			left: 15%;
+			left: 18%;
 		}
 	}
 
