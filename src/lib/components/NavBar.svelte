@@ -285,7 +285,7 @@
 
 	@media (min-width: 1100px) {
 		.desktop {
-			margin-left: 35%;
+			margin-left: 33%;
 			line-height: 1.5;
 			scale: 1.5;
 		}
