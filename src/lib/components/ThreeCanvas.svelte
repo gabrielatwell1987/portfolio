@@ -63,12 +63,12 @@
 		scene.add(pointLight);
 
 		// GSAP
-		gsap.from(text.chars, {
-			duration: 1,
-			y: -50,
-			opacity: 0,
-			stagger: 0.25
-		});
+		// gsap.from(text.chars, {
+		// 	duration: 1,
+		// 	y: -50,
+		// 	opacity: 0,
+		// 	stagger: 0.25
+		// });
 
 		/**
 		 * Sizes
