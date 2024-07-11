@@ -77,6 +77,12 @@
 		}
 	}
 
+	@media screen and (min-width: 1300px) {
+		button {
+			width: 20%;
+		}
+	}
+
 	@media screen and (min-width: 1400px) {
 		button {
 			width: 15%;
