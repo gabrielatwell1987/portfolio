@@ -179,7 +179,7 @@
 
 		.gabe-logo {
 			display: block;
-			margin-left: -2rem;
+			margin-left: -7rem;
 		}
 
 		.hamburger {
@@ -203,7 +203,7 @@
 
 		.toggle {
 			top: 15%;
-			left: 10%;
+			left: 7%;
 		}
 	}
 
