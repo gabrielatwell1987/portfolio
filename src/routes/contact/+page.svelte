@@ -45,6 +45,12 @@
 		}
 	}
 
+	@media screen and (min-width: 700px) {
+		.contactForm {
+			margin: 1rem 0 0 -9.8rem;
+		}
+	}
+
 	@media screen and (min-width: 850px) {
 		.contactForm {
 			margin: 2rem 0 0 -36rem;
