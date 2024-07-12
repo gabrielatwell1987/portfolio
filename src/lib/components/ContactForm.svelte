@@ -235,7 +235,7 @@
 		}
 
 		.send {
-			width: 15%;
+			width: 30%;
 		}
 
 		.send:hover {
