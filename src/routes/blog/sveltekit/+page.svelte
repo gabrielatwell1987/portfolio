@@ -234,6 +234,10 @@
 		.A {
 			margin-left: 15%;
 		}
+
+		.detail {
+			color: var(--off-white);
+		}
 	}
 
 	@media (min-width: 990px) {

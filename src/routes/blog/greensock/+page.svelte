@@ -237,6 +237,10 @@
 		.glass {
 			margin-left: 3%;
 		}
+
+		.detail {
+			color: var(--off-white);
+		}
 	}
 
 	@media (min-width: 990px) {
