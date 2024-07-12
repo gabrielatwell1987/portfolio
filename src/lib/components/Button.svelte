@@ -49,7 +49,7 @@
 	@media (min-width: 700px) {
 		button {
 			font-size: 1.5rem;
-			width: 20%;
+			width: 30%;
 			font-size: 1rem;
 			letter-spacing: 2px;
 		}
