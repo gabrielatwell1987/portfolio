@@ -144,7 +144,7 @@
 			flex-direction: row;
 			border: none;
 			background-color: transparent;
-			margin-left: 25%;
+			margin-left: 30%;
 			scale: 1.5;
 			text-wrap: nowrap;
 		}
@@ -179,7 +179,7 @@
 
 		.gabe-logo {
 			display: block;
-			margin-left: -5rem;
+			margin-left: -2rem;
 		}
 
 		.hamburger {
@@ -203,7 +203,7 @@
 
 		.toggle {
 			top: 15%;
-			left: 15%;
+			left: 10%;
 		}
 	}
 
