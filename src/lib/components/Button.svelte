@@ -46,7 +46,7 @@
 		}
 	}
 
-	@media (min-width: 740px) {
+	@media (min-width: 700px) {
 		button {
 			font-size: 1.5rem;
 			width: 20%;
