@@ -47,7 +47,7 @@
 
 	@media screen and (min-width: 700px) {
 		.contactForm {
-			margin: 1rem 0 0 -7.4rem;
+			margin: 1rem 0 0 -7.5rem;
 		}
 	}
 
