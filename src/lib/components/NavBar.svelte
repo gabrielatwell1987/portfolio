@@ -134,7 +134,7 @@
 		}
 	}
 
-	@media (min-width: 700px) {
+	@media (min-width: 750px) {
 		.desktop {
 			width: 100%;
 			display: flex;
@@ -169,7 +169,7 @@
 			align-items: center;
 			height: 5em;
 			width: 100%;
-			scale: 0.75;
+			scale: 0.5;
 		}
 
 		.header-logos {
@@ -211,6 +211,10 @@
 		.toggle {
 			top: 15%;
 			left: 12%;
+		}
+
+		nav {
+			scale: 0.75;
 		}
 	}
 
