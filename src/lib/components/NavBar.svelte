@@ -203,7 +203,7 @@
 
 		.toggle {
 			top: 15%;
-			left: 7%;
+			left: 5%;
 		}
 	}
 
