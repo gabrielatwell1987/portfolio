@@ -169,7 +169,7 @@
 			align-items: center;
 			height: 5em;
 			width: 100%;
-			scale: 0.5;
+			scale: 0.65;
 		}
 
 		.header-logos {
