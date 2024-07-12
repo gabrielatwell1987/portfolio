@@ -241,6 +241,10 @@
 		.detail {
 			color: var(--off-white);
 		}
+
+		.back {
+			width: 100%;
+		}
 	}
 
 	@media (min-width: 990px) {
