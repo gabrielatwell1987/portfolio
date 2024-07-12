@@ -48,6 +48,7 @@
 			tl.to('.gabe', {
 				stagger: 0.5,
 				scale: 0.84,
+				duration: 5,
 				repeat: 1,
 				yoyo: true,
 				scrollTrigger: {
