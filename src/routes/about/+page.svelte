@@ -183,6 +183,7 @@
 			margin-inline: auto;
 			font-size: clamp(1.35rem, 1.75vw, 2rem);
 			line-height: 1.35;
+			color: var(--off-white);
 		}
 
 		.text,
