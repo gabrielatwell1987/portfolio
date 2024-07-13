@@ -400,10 +400,6 @@
 			line-height: 0.95;
 		}
 
-		.modal {
-			background: var(--black);
-		}
-
 		.modal__p {
 			line-height: 1.75;
 			width: 75%;
