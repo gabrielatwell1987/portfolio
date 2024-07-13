@@ -333,7 +333,7 @@
 
 	@media screen and (min-width: 775px) {
 		.send {
-			width: 15%;
+			width: 30%;
 		}
 
 		form {
@@ -347,7 +347,7 @@
 		}
 
 		.send {
-			width: 15%;
+			width: 30%;
 		}
 	}
 
@@ -356,7 +356,8 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			margin-left: 63.5%;
+			margin-left: 55%;
+			/* margin-left: 63.5%; */
 		}
 
 		label {
@@ -378,7 +379,7 @@
 		}
 
 		.send {
-			width: 15%;
+			width: 30%;
 		}
 
 		fieldset {
