@@ -398,7 +398,6 @@
 
 		h4 {
 			line-height: 0.95;
-			color: var(--black);
 		}
 
 		.modal__p {
@@ -406,6 +405,11 @@
 			width: 75%;
 			margin: 0 auto;
 			padding: 0.5rem;
+		}
+
+		dialog {
+			background: var(--black);
+			color: var(--white);
 		}
 	}
 
@@ -425,10 +429,6 @@
 		form {
 			margin-left: 48.5%;
 		}
-
-		/* h4 {
-			font-size: 1.2rem;
-		} */
 
 		.open-button {
 			padding: 2rem 3rem;
