@@ -268,13 +268,15 @@
 
 	@media (min-width: 1024px) {
 		.hero {
-			width: 125%;
-			margin-left: -12%;
+			width: 70%;
+			/* width: 125%; */
+			margin-left: 14%;
 		}
 
 		.gallery {
-			width: 125%;
-			margin-left: -12%;
+			width: 70%;
+			/* width: 125%; */
+			margin-left: 15%;
 		}
 	}
 
