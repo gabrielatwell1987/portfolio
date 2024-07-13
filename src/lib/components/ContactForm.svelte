@@ -407,18 +407,26 @@
 			padding: 0.5rem;
 		}
 
-		dialog h4 {
+		.modal h4 {
 			color: var(--black);
 		}
 
-		dialog .modal__p {
-			color: var(--white);
+		.modal .modal__p {
+			color: var(--black);
 		}
 	}
 
 	@media screen and (min-width: 1100px) {
 		form {
 			margin-left: 57.5%;
+		}
+
+		.modal h4 {
+			color: var(--yellow);
+		}
+
+		.modal .modal__p {
+			color: var(--off-white);
 		}
 	}
 
