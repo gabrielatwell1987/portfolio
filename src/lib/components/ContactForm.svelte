@@ -28,64 +28,62 @@
 	});
 </script>
 
-<main>
-	<!-- Modal -->
-	<button class="open-button" aria-label="open"><i class="fa-regular fa-folder-open" /></button>
+<!-- Modal -->
+<button class="open-button" aria-label="open"><i class="fa-regular fa-folder-open" /></button>
 
-	<dialog class="modal" id="modal" title="modal">
-		<article>
-			<header>
-				<button rel="prev" class="close-button" aria-label="close"
-					><i class="fa-solid fa-xmark" /></button
-				>
+<dialog class="modal" id="modal" title="modal">
+	<article>
+		<header>
+			<button rel="prev" class="close-button" aria-label="close"
+				><i class="fa-solid fa-xmark" /></button
+			>
 
-				<h4>Please contact me for any frontend work!</h4>
-			</header>
+			<h4>Please contact me for any frontend work!</h4>
+		</header>
 
-			<div class="modal-img">
-				<Image src="/logos/newspaper.jpg" alt="frontend newspaper clipping" />
-			</div>
+		<div class="modal-img">
+			<Image src="/logos/newspaper.jpg" alt="frontend newspaper clipping" />
+		</div>
 
-			<p class="modal__p">
-				If you need help with a website, or if you have any questions, please feel free to contact
-				me. I am always happy to help!
-			</p>
-		</article>
-	</dialog>
+		<p class="modal__p">
+			If you need help with a website, or if you have any questions, please feel free to contact me.
+			I am always happy to help!
+		</p>
+	</article>
+</dialog>
 
-	<!-- contact form -->
-	<form method="POST" action="https://form.taxi/s/xeyymb58">
-		<fieldset>
-			<legend> message me </legend>
+<!-- contact form -->
+<form method="POST" action="https://form.taxi/s/xeyymb58">
+	<fieldset>
+		<legend> message me </legend>
 
-			<label for="name"><span>Name</span></label>
-			<input type="text" id="name" name="name" placeholder="Your name" bind:value={name} required />
+		<label for="name"><span>Name</span></label>
+		<input type="text" id="name" name="name" placeholder="Your name" bind:value={name} required />
 
-			<label for="email"><span>Email</span></label>
-			<input
-				type="email"
-				id="email"
-				name="email"
-				placeholder="Your email address"
-				bind:value={email}
-				required
-			/>
+		<label for="email"><span>Email</span></label>
+		<input
+			type="email"
+			id="email"
+			name="email"
+			placeholder="Your email address"
+			bind:value={email}
+			required
+		/>
 
-			<label for="message"><span>Message</span></label>
-			<textarea
-				type="text"
-				id="message"
-				name="message"
-				placeholder="Your message"
-				bind:value={message}
-				rows="5"
-				required
-			/>
+		<label for="message"><span>Message</span></label>
+		<textarea
+			type="text"
+			id="message"
+			name="message"
+			placeholder="Your message"
+			bind:value={message}
+			rows="5"
+			required
+		/>
 
-			<button class="send" type="submit">Send</button>
-		</fieldset>
-	</form>
-</main>
+		<button class="send" type="submit">Send</button>
+	</fieldset>
+</form>
 
 <style>
 	@media screen and (min-width: 200px) {
@@ -400,6 +398,10 @@
 
 		h4 {
 			line-height: 0.95;
+		}
+
+		.modal {
+			background: var(--black);
 		}
 
 		.modal__p {
