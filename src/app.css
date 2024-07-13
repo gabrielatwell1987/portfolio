@@ -75,7 +75,7 @@ a {
 }
 
 h2 {
-	font-family: var(--anta);
+	font-family: var(--major);
 	text-align: center;
 	color: var(--purple);
 }
