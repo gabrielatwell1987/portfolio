@@ -398,10 +398,7 @@
 
 		h4 {
 			line-height: 0.95;
-		}
-
-		dialog {
-			background: var(--black);
+			color: var(--black);
 		}
 
 		.modal__p {
@@ -409,7 +406,6 @@
 			width: 75%;
 			margin: 0 auto;
 			padding: 0.5rem;
-			color: var(--off-white);
 		}
 	}
 
