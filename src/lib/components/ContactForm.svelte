@@ -407,8 +407,11 @@
 			padding: 0.5rem;
 		}
 
-		dialog {
-			background: var(--black);
+		dialog h4 {
+			color: var(--black);
+		}
+
+		dialog .modal__p {
 			color: var(--white);
 		}
 	}
