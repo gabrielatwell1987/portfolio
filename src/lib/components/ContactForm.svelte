@@ -400,7 +400,7 @@
 			line-height: 0.95;
 		}
 
-		.modal {
+		dialog {
 			background: var(--black);
 		}
 
