@@ -414,6 +414,12 @@
 		.modal .modal__p {
 			color: var(--black);
 		}
+
+		.close-button {
+			color: var(--black);
+			border: 2px solid var(--black);
+			/* animation: wiggle 0.5s ease-in-out infinite; */
+		}
 	}
 
 	@media screen and (min-width: 1100px) {
@@ -427,6 +433,12 @@
 
 		.modal .modal__p {
 			color: var(--off-white);
+		}
+
+		.close-button {
+			color: var(--white);
+			border: 2px solid var(--white);
+			/* animation: wiggle 0.5s ease-in-out infinite; */
 		}
 	}
 
