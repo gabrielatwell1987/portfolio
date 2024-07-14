@@ -197,6 +197,7 @@
 		.modal__p {
 			font-family: var(--lexend);
 			font-weight: 200;
+			font-size: clamp(1.2rem, 3vw, 2rem);
 		}
 
 		@keyframes wiggle {
@@ -312,7 +313,6 @@
 		.modal__p {
 			width: 60%;
 			margin: 1.5rem auto;
-			font-size: 1.5rem;
 		}
 
 		@keyframes wiggle {
@@ -418,7 +418,6 @@
 		.close-button {
 			color: var(--black);
 			border: 2px solid var(--black);
-			/* animation: wiggle 0.5s ease-in-out infinite; */
 		}
 	}
 
@@ -438,7 +437,6 @@
 		.close-button {
 			color: var(--white);
 			border: 2px solid var(--white);
-			/* animation: wiggle 0.5s ease-in-out infinite; */
 		}
 	}
 
@@ -481,10 +479,6 @@
 			width: 10%;
 			margin-inline: auto;
 			letter-spacing: 0;
-		}
-
-		.modal__p {
-			font-size: 1.1rem;
 		}
 	}
 
