@@ -94,25 +94,32 @@
 		<div class="pictures">
 			<aside class="flex">
 				<img class="gabe" src="photos/gabe4.png" alt="Gabriel Atwell." width="350" />
-				<img class="gabe" src="photos/gabe8.png" alt="Gabriel Atwell" width="400" />
+				<img src="/photos/autumn.png" alt="Gabriel Atwell" class="gabe" width="350" />
 				<img class="gabe" src="photos/gabe6.png" alt="Gabriel Atwell." width="400" />
 			</aside>
 		</div>
 
 		<div class="pictures">
 			<aside class="flex">
+				<img class="gabe" src="photos/gabe8.png" alt="Gabriel Atwell" width="400" />
 				<img src="/photos/gabe5.png" alt="Gabriel Atwell" class="gabe" width="400" />
 				<img src="/photos/gabe3.png" alt="Gabriel Atwell" class="gabe" width="350" />
-				<img src="/photos/gabe10.png" alt="Gabriel Atwell" class="gabe" width="375" />
 			</aside>
 		</div>
 
 		<div class="pictures left">
 			<div class="flex">
-				<img src="/photos/wtf3.png" alt="Gabriel Atwell" class="gabe" width="450" />
 				<img src="/photos/wtf.jpg" alt="Gabriel Atwell" class="gabe" width="500" />
 				<img src="/photos/wtf2.png" alt="Gabriel Atwell" class="gabe" width="550" />
+				<img src="/photos/ornate1.png" alt="Gabriel Atwell" class="gabe" width="400" />
 			</div>
+		</div>
+
+		<div class="pictures">
+			<aside class="flex">
+				<img src="/photos/wtf3.png" alt="Gabriel Atwell" class="gabe" width="450" />
+				<img src="/photos/gabe10.png" alt="Gabriel Atwell" class="gabe" width="375" />
+			</aside>
 		</div>
 
 		<div class="spacing" />

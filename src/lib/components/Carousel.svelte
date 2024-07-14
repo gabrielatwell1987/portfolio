@@ -43,6 +43,10 @@
 			<Image src="/photos/gabe8.png" alt="Gabriel Atwell" />
 		</section>
 
+		<section class="gabe">
+			<Image src="/photos/ornate1.png" alt="Gabriel Atwell" />
+		</section>
+
 		<section class="gabe bigger">
 			<Image src="/photos/wtf2.png" alt="Gabriel Atwell" />
 		</section>
@@ -53,6 +57,10 @@
 
 		<section class="gabe">
 			<Image src="/photos/gabe5.png" alt="Gabriel Atwell" />
+		</section>
+
+		<section class="gabe">
+			<Image src="/photos/autumn.png" alt="Gabriel Atwell" />
 		</section>
 
 		<section class="gabe">
