@@ -33,9 +33,7 @@
 
 <!-- layout -->
 {#if !isPageLoaded}
-	<section class="loading">
-		<Loading />
-	</section>
+	<Loading />
 {/if}
 
 <main>
