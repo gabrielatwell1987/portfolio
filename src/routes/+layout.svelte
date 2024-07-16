@@ -4,12 +4,16 @@
 	import Analytics from '$lib/data/Analytics.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-
 	import { onMount } from 'svelte';
+	import Loading from '$lib/components/Loading.svelte';
+
+	let isPageLoaded = false;
 
 	onMount(async () => {
 		const eruda = (await import('eruda')).default;
 		eruda.init();
+
+		isPageLoaded = true;
 	});
 </script>
 
@@ -28,6 +32,12 @@
 <SEO title="gabe ATWELL" description="Gabriel Atwell's Portfolio" />
 
 <!-- layout -->
+{#if !isPageLoaded}
+	<section class="loading">
+		<Loading />
+	</section>
+{/if}
+
 <main>
 	<NavBar />
 	<br />
