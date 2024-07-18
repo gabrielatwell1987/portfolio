@@ -33,7 +33,7 @@
 		.title {
 			text-align: center;
 			font-family: var(--anta);
-			font-size: clamp(2.75rem, 5vw, 7rem);
+			font-size: clamp(2.75rem, 8vw, 10rem);
 			color: var(--white);
 			letter-spacing: 5px;
 			text-shadow: 0px 0px 50px var(--smoke);
