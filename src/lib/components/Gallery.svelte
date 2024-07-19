@@ -72,6 +72,11 @@
 		display: block;
 		object-fit: cover;
 		border-radius: 4%;
+		opacity: 0.75;
+	}
+
+	img:hover {
+		opacity: 1;
 	}
 
 	.details {

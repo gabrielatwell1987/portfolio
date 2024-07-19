@@ -9,7 +9,9 @@
 </svelte:head>
 
 <section>
-	<Image src="/logos/success.png" alt="Atwell" />
+	<div class="image">
+		<Image src="/logos/success.png" alt="Atwell" />
+	</div>
 
 	<h1>Success!</h1>
 
@@ -32,13 +34,20 @@
 		}
 
 		h1 {
-			font-size: 1.2rem;
+			font-size: clamp(1.2rem, 2vw, 2.5rem);
 			margin: 0.5em 0;
+			color: var(--white);
 		}
 
 		p {
-			font-size: 0.8rem;
+			font-size: clamp(0.8rem, 1.5vw, 1.5rem);
 			margin: 0.5em 0;
+			color: var(--white);
+		}
+
+		.image {
+			width: clamp(50%, 20vw, 75%);
+			margin-inline: auto;
 		}
 	}
 
@@ -47,14 +56,6 @@
 			padding: 2rem;
 			width: 50%;
 			margin-bottom: 10%;
-		}
-
-		h1 {
-			font-size: 2.5rem;
-		}
-
-		p {
-			font-size: 1.5rem;
 		}
 	}
 </style>
