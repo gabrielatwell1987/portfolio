@@ -194,6 +194,7 @@
 			margin: 0 -4.75rem;
 			font-family: var(--lexend);
 			line-height: 1.5;
+			color: var(--white);
 		}
 
 		.center {
@@ -233,10 +234,6 @@
 
 		.A {
 			margin-left: 15%;
-		}
-
-		.detail {
-			color: var(--off-white);
 		}
 	}
 
