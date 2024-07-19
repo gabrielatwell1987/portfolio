@@ -39,7 +39,7 @@
 			font-family: var(--montserrat);
 			text-align: left;
 			font-size: 1.25rem;
-			color: var(--off-white);
+			color: var(--white);
 		}
 
 		.inline {

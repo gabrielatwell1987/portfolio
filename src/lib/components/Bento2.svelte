@@ -53,7 +53,7 @@
 		font-size: 3rem;
 		font-weight: 700;
 		letter-spacing: 5px;
-		color: var(--off-white);
+		color: var(--white);
 		text-align: center;
 		margin-bottom: 2rem;
 		padding: 2rem;
