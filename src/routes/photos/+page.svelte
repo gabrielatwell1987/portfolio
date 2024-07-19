@@ -54,7 +54,6 @@
 				scrollTrigger: {
 					trigger: 'main',
 					start: 'top bottom-=95%',
-					// end: 'bottom top+=5%',
 					x: 200,
 					stagger: -0.5,
 					scrub: 1
@@ -144,7 +143,6 @@
 		section {
 			width: 100%;
 			margin: 0;
-			/* background: url('/logos/dead-tree.png') no-repeat center center/cover fixed; */
 			margin-bottom: 10%;
 		}
 

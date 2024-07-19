@@ -27,7 +27,7 @@
 	}
 
 	figcaption {
-		color: var(--gray);
+		color: var(--white);
 		position: absolute;
 		bottom: 0;
 		left: 49%;

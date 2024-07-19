@@ -92,6 +92,10 @@
 			margin-left: 89.25%;
 		}
 
+		/* fieldset {
+			color: var(--white);
+		} */
+
 		input {
 			width: 100%;
 			background-color: transparent;
@@ -200,6 +204,7 @@
 			font-family: var(--lexend);
 			font-weight: 200;
 			font-size: clamp(1.2rem, 3vw, 2rem);
+			color: var(--white);
 		}
 
 		@keyframes wiggle {
@@ -385,7 +390,7 @@
 
 		fieldset {
 			border: 5px solid var(--white);
-			border-image: linear-gradient(to left, var(--black), var(--lightblack)) 1;
+			border-image: linear-gradient(to left, var(--smoke), var(--smoke)) 1;
 			font-weight: bolder;
 			font-size: 2rem;
 			margin: 2rem;
@@ -433,7 +438,7 @@
 		}
 
 		.modal .modal__p {
-			color: var(--off-white);
+			color: var(--white);
 		}
 
 		.close-button {
