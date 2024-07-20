@@ -61,7 +61,7 @@
 		/* --marquee-elements: 12; */ /* defined with JavaScript */
 		--marquee-elements-displayed: 5;
 		--marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
-		--marquee-animation-duration: calc(var(--marquee-elements) * 4s);
+		--marquee-animation-duration: calc(var(--marquee-elements) * 10s);
 	}
 
 	.marquee {
@@ -138,7 +138,7 @@
 		mix-blend-mode: hard-light;
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 990px) {
 		.marquee-content li a {
 			font-size: 12px;
 		}
