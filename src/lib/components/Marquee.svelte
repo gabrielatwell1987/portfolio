@@ -16,7 +16,7 @@
 	});
 </script>
 
-<div class="marquee">
+<main class="marquee">
 	<ul class="marquee-content">
 		<li>
 			<a
@@ -52,7 +52,7 @@
 			</a>
 		</li>
 	</ul>
-</div>
+</main>
 
 <style>
 	:root {
