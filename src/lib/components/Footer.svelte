@@ -1,9 +1,11 @@
 <script>
-	import Social from '$lib/components/SocialLinks.svelte';
+	// import Social from '$lib/components/SocialLinks.svelte';
+	import Marquee from '$lib/components/Marquee.svelte';
 </script>
 
 <footer>
-	<Social />
+	<!-- <Social /> -->
+	<Marquee />
 </footer>
 
 <style>
