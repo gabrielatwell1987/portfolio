@@ -57,6 +57,6 @@
 
 	.footer {
 		margin-top: 7%;
-		margin-bottom: -3%;
+		margin-bottom: -6%;
 	}
 </style>
