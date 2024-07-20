@@ -131,6 +131,7 @@
 		/* height: 100%; */
 		color: var(--blue);
 		font-size: 5rem;
+		cursor: pointer;
 	}
 
 	.marquee-content li i:hover {
