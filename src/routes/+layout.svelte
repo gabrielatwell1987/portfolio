@@ -59,4 +59,9 @@
 		margin-top: 7%;
 		margin-bottom: -6%;
 	}
+
+	:global(body) {
+		width: 100%;
+		height: 100%;
+	}
 </style>
