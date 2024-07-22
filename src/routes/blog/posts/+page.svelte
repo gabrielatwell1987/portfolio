@@ -15,7 +15,8 @@
 			const copyPrompt = document.createElement('div');
 			copyPrompt.className = 'copy-prompt';
 			copyPrompt.style.cursor = 'pointer';
-			copyPrompt.style.marginLeft = '95%';
+			copyPrompt.style.marginTop = '1%';
+			copyPrompt.style.marginLeft = '.75%';
 			copyPrompt.style.opacity = '0.25';
 
 			const copyPromptText = document.createElement('p');
