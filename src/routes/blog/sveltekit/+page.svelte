@@ -40,8 +40,7 @@
 
 	<main>
 		<article class="A">
-			<Image src="/logos/A-nobg.png" alt="A for Atwell" />
-			<!-- <Image src="/logos/lightening-bolt.png" alt="a cartoon lightening bolt with a female in it" /> -->
+			<Image src="/logos/A.png" alt="A for Atwell" />
 		</article>
 
 		<!-- content -->
@@ -169,7 +168,7 @@
 	}
 
 	.detail {
-		font-size: clamp(1.25rem, 2vw, 1.75rem);
+		font-size: clamp(1.25rem, 2vw, 1.5rem);
 	}
 
 	@media (min-width: 200px) {
