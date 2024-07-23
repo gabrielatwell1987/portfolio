@@ -9,21 +9,30 @@
 
 	// Animations
 	onMount(() => {
-		gsap.set('form', { autoAlpha: 0, x: -175 });
+		const form = document.querySelector('form');
 
-		gsap.to('form', { autoAlpha: 1, duration: 3.5 });
+		gsap.set(form, { autoAlpha: 0, x: -175 });
+
+		gsap.to(form, { autoAlpha: 1, duration: 3.5 });
 
 		// modal
-		const modal = document.querySelector('.modal');
+		const modal = document.querySelector('#modal');
 		const openModal = document.querySelector('.open-button');
 		const closeModal = document.querySelector('.close-button');
 
 		openModal.addEventListener('click', () => {
+			gsap.to(modal, { autoAlpha: 1, duration: 2, ease: 'power2.out' });
+
 			modal.showModal();
 		});
 
 		closeModal.addEventListener('click', () => {
-			modal.close();
+			gsap.to(modal, {
+				autoAlpha: 0,
+				duration: 1,
+				ease: 'power2.out',
+				onComplete: () => modal.close()
+			});
 		});
 	});
 </script>
@@ -52,7 +61,7 @@
 	</article>
 </dialog>
 
-<!-- contact form -->
+<!-- Contact Form -->
 <form method="POST" action="https://form.taxi/s/xeyymb58">
 	<fieldset>
 		<legend> message me </legend>
@@ -91,10 +100,6 @@
 			width: 100%;
 			margin-left: 89.25%;
 		}
-
-		/* fieldset {
-			color: var(--white);
-		} */
 
 		input {
 			width: 100%;
@@ -296,8 +301,17 @@
 			margin: 0 auto;
 		}
 
+		#modal {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		article {
+			border-radius: 1rem;
+		}
+
 		::backdrop {
-			background: url('/logos/atweezy.png') no-repeat center center/cover;
+			background: transparent;
 		}
 
 		.modal h4 {
