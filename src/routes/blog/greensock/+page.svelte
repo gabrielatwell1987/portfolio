@@ -91,18 +91,24 @@
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast spacing"><b>The syntax</b></summary>
 			<p class="detail">
-				It is quite simple to use GSAP. You can use <code>gsap.to("element")</code> to animate TO a
-				state. You can use <code>gsap.from("element")</code> to animate FROM any element. You can
-				use <code>gsap.fromTo("element")</code> to animate FROM any a state TO another state.
+				It is quite simple to use GSAP. You can use <code
+					>gsap.to("element", &lbrace; variables &rbrace;)</code
+				>
+				to animate TO a state. You can use
+				<code>gsap.from("element", &lbrace; variables &rbrace;)</code>
+				to animate FROM any element. You can use
+				<code>gsap.fromTo("element", &lbrace; variables &rbrace;)</code> to animate FROM any a state
+				TO another state.
 			</p>
 
 			<p class="detail">
-				The complete syntax is as follows: <code>gsap.to("element", variables)</code>. The variables
-				are the <u>object</u> variables for the statement, and is usually wrapped in curly braces. You
-				can use the following variables: duration, delay, ease, stagger, and onComplete. The duration
-				is how long the animation will last. The delay is how long the animation will wait before starting.
-				The ease is the easing function that you want to use. The stagger is how long the animation will
-				wait before starting. The onComplete is the function that will run after the animation is complete.
+				The complete syntax is as follows: <code
+					>gsap.to("element", &lbrace; variables &rbrace;)</code
+				>. You can use the following variables: duration, delay, ease, stagger, and onComplete. The
+				duration is how long the animation will last. The delay is how long the animation will wait
+				before starting. The ease is the easing function that you want to use. The stagger is how
+				long the animation will wait before starting. The onComplete is the function that will run
+				after the animation is complete.
 			</p>
 		</details>
 
