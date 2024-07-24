@@ -198,7 +198,8 @@
 			border-bottom: 5px solid var(--sky);
 			height: 3rem;
 			text-shadow: 2px 2px 1px var(--black);
-			transition: border-bottom 0.35s ease-in-out, text-shadow 0.35s ease-in-out;
+			transition: border-bottom 0.35s ease-in-out, text-shadow 0.35s ease-in-out,
+				all 0.35s ease-in-out;
 		}
 
 		.toggle {

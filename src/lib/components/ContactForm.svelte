@@ -2,6 +2,7 @@
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import Image from './Image.svelte';
+	import SendButton from '$lib/components/SendButton.svelte';
 
 	let name = '';
 	let email = '';
@@ -90,7 +91,7 @@
 			required
 		/>
 
-		<button class="send" type="submit">Send</button>
+		<SendButton />
 	</fieldset>
 </form>
 
@@ -168,38 +169,6 @@
 			font-weight: 100;
 		}
 
-		.send {
-			background-color: transparent;
-			font-family: var(--lexend);
-			color: var(--yellow);
-			border: 1px solid var(--yellow);
-			outline: 3px solid var(--yellow);
-			filter: drop-shadow(0 0 0.75rem var(--smoke));
-			font-size: clamp(1.2rem, 4vw, 2rem);
-			font-weight: 600;
-			margin-inline: auto;
-			cursor: pointer;
-			letter-spacing: 1px;
-			width: 45%;
-			border-radius: 0.75rem;
-			transition: 750ms;
-			outline-offset: -7px;
-			mix-blend-mode: difference;
-			padding: 1.5rem 2.5rem;
-			margin-top: 10%;
-			margin-bottom: 2%;
-			user-select: none;
-			cursor: pointer;
-		}
-
-		.send:hover,
-		.send:focus {
-			opacity: 0.8;
-			color: var(--yellow);
-			mix-blend-mode: hard-light;
-			outline-offset: 0px;
-			animation: wiggle 0.5s ease-in-out infinite;
-		}
 		.open-button,
 		.close-button {
 			display: none;
@@ -229,10 +198,6 @@
 	}
 
 	@media screen and (min-width: 500px) {
-		.send {
-			width: 22%;
-		}
-
 		form {
 			margin-left: 57%;
 		}
@@ -245,14 +210,6 @@
 	@media screen and (min-width: 720px) {
 		form {
 			margin-left: 40.5%;
-		}
-
-		.send {
-			width: 30%;
-		}
-
-		.send:hover {
-			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
 		.open-button {
@@ -353,10 +310,6 @@
 	}
 
 	@media screen and (min-width: 775px) {
-		.send {
-			width: 30%;
-		}
-
 		form {
 			margin-left: 38.5%;
 		}
@@ -365,10 +318,6 @@
 	@media screen and (min-width: 850px) {
 		form {
 			margin-left: 71.25%;
-		}
-
-		.send {
-			width: 30%;
 		}
 	}
 
@@ -384,7 +333,7 @@
 			margin-bottom: 1rem;
 			text-align: center;
 			transform: scale(1.5);
-			letter-spacing: 5px;
+			letter-spacing: -1px;
 		}
 
 		input {
@@ -396,10 +345,6 @@
 		textarea {
 			font-size: 1rem;
 			margin-bottom: 1rem;
-		}
-
-		.send {
-			width: 30%;
 		}
 
 		fieldset {
@@ -494,12 +439,6 @@
 		textarea {
 			font-size: 2rem;
 			padding: 2rem;
-		}
-
-		.send {
-			width: 10%;
-			margin-inline: auto;
-			letter-spacing: 0;
 		}
 	}
 
