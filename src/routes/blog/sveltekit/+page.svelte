@@ -90,6 +90,12 @@
 					Originally, svelte was created as a tool to build components for data visualization. It
 					makes creating data visualizations super easy!
 				</p>
+
+				<p class="detail">
+					Svelte is usually used for SPA's (single page applications), but with sveltekit, you can
+					use it's routing features to create a MPA's (multi-page applications). This is what I did
+					with this website.
+				</p>
 			</details>
 
 			<h3 class="learn">Learn more about Sveltekit</h3>
