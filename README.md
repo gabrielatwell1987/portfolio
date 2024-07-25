@@ -1,4 +1,4 @@
-<p align="center">
+<p style="text-align: center">
 <img src="/logos/heart-skull.png" alt="heart skull">
 </p>
 
