@@ -1,8 +1,6 @@
-<!-- <p align="center">
+<p align="center">
 <img src="/logos/heart-skull.png" alt="heart skull">
-</p> -->
-
-![heart skull](https://github.com/gabrielatwell1987/portfolio/blob/262310ec2a67da72981f741e685e63fad854f7cc/static/logos/heart-skull.png){ width="450" height="350" style="display: block; margin: 0 auto" }
+</p>
 
 <h1 style="text-align: center; margin-bottom: 1rem; font-size: 4rem; font-weight: 900; letter-spacing: 5px; line-height: .90; color: rgba(200, 25, 50, 1);">
 Gabriel Atwell's Portfolio
