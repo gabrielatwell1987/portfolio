@@ -96,13 +96,13 @@
 </style> -->
 
 <!-- loading dots -->
-<div class="container">
-	<div class="loading">
+<main class="container">
+	<section class="loading">
 		<div />
 		<div />
 		<div />
-	</div>
-</div>
+	</section>
+</main>
 
 <style>
 	.container {
