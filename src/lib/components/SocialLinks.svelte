@@ -9,7 +9,7 @@
 		<i class="fa-brands fa-codepen" /></a
 	>
 
-	<a class="size" href="https://www.linkedin.com/in/gabriel-atwell-ab2116231/" target="_blank">
+	<a class="size" href="https://www.linkedin.com/in/gabrielatwell/" target="_blank">
 		<i class="fa-brands fa-linkedin" />
 	</a>
 
