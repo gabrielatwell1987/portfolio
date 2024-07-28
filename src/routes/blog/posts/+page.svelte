@@ -98,7 +98,7 @@
 	}
 
 	.container {
-		margin-left: 25%;
+		/* margin-left: 3%; */
 		width: fit-content;
 		background: transparent;
 		margin-bottom: -15%;
