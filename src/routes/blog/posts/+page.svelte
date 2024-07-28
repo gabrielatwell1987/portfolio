@@ -99,7 +99,7 @@
 
 	.container {
 		/* margin-left: 3%; */
-		width: fit-content;
+		/* width: fit-content; */
 		background: transparent;
 		margin-bottom: -15%;
 	}
