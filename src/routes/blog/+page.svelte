@@ -69,7 +69,6 @@
 	.title {
 		font-family: var(--montserrat);
 		color: var(--white);
-		/* font-size: clamp(2.5rem, 5vw, 10rem); */
 		font-size: clamp(2.75rem, 8vw, 10rem);
 		font-weight: 800;
 		text-align: center;

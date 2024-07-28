@@ -148,7 +148,6 @@
 			margin-bottom: 0.5rem;
 			color: var(--purple);
 			text-transform: uppercase;
-			text-shadow: 5px 5px 4px var(--dark-gray);
 		}
 
 		label {
@@ -200,10 +199,6 @@
 	@media screen and (min-width: 500px) {
 		form {
 			margin-left: 57%;
-		}
-
-		legend {
-			text-shadow: -5px 5px 4px var(--dark-gray);
 		}
 	}
 

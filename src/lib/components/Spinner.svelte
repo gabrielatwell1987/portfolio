@@ -31,12 +31,12 @@
 	.spinner {
 		display: inline-block;
 		position: relative;
-		width: 50px;
-		height: 50px;
+		width: clamp(2rem, 5vw, 3.5rem);
+		height: clamp(2rem, 5vw, 3.5rem);
 	}
 
 	.spinner div {
-		animation: roller 1s ease infinite;
+		animation: roller 1s ease forwards infinite;
 		transform-origin: 25px 25px;
 	}
 
@@ -44,8 +44,8 @@
 		content: ' ';
 		display: block;
 		position: absolute;
-		width: 5px;
-		height: 5px;
+		width: clamp(1rem, 3vw, 1.75rem);
+		height: clamp(1rem, 3vw, 1.75rem);
 		border-radius: 50%;
 		background: #6395b6;
 		margin: -2.5px 0 0 -2.5px;

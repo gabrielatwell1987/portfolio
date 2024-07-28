@@ -59,7 +59,7 @@
 	}
 
 	h1 {
-		color: hsl(0 0% 100%);
+		color: #ffffff;
 		font-size: 2rem;
 		text-transform: capitalize;
 		font-family: var(--lexend);
@@ -71,7 +71,7 @@
 		aspect-ratio: 16/9;
 		display: block;
 		object-fit: cover;
-		border-radius: 4%;
+		border-radius: 1%;
 		opacity: 0.75;
 	}
 
@@ -86,8 +86,8 @@
 
 	.title {
 		position: absolute;
-		left: 20px;
-		bottom: 0px;
+		left: 5%;
+		top: 5%;
 		opacity: 0;
 		translate: 0% 100%;
 	}
