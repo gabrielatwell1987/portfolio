@@ -31,8 +31,8 @@
 	.spinner {
 		display: inline-block;
 		position: relative;
-		width: clamp(1rem, 3vw, 1.75rem);
-		height: clamp(1rem, 3vw, 1.75rem);
+		width: clamp(1rem, 2vw, 1.75rem);
+		height: clamp(1rem, 2vw, 1.75rem);
 	}
 
 	.spinner div {
@@ -44,8 +44,8 @@
 		content: ' ';
 		display: block;
 		position: absolute;
-		width: clamp(1rem, 3vw, 1.75rem);
-		height: clamp(1rem, 3vw, 1.75rem);
+		width: clamp(1rem, 2vw, 1.75rem);
+		height: clamp(1rem, 2vw, 1.75rem);
 		border-radius: 50%;
 		background: #6395b6;
 		margin: -2.5px 0 0 -2.5px;
