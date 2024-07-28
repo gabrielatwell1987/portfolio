@@ -124,7 +124,7 @@
 		<div class="spacing" />
 	</section>
 
-	<!-- progress -->
+	<!-- progress bar -->
 	<div class="progress-container">
 		<progress id="scrollProgress" value="0" max="100" />
 	</div>

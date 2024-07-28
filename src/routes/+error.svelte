@@ -11,8 +11,7 @@
 </svelte:head>
 
 <main aria-label="error">
-	<!-- error page -->
-	<h1>{$page.status}</h1>
+	<h1>Status: {$page.status}</h1>
 
 	<p>{$page.error.message}</p>
 </main>

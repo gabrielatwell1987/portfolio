@@ -9,8 +9,6 @@
 <main>
 	<h1>{title}</h1>
 
-	<!-- spline interactive animation -->
-
 	<iframe
 		src="https://my.spline.design/robotfollowcursorforlandingpage-887310bccea6e24d681820089ada9b65/"
 		frameborder="0"
@@ -41,7 +39,7 @@
 	h1 {
 		color: var(--purple);
 		margin: 5% 0 2rem 0;
-		font-size: 3rem;
+		font-size: clamp(1.25rem, 2vw, 3rem);
 	}
 
 	h3 {
@@ -49,5 +47,6 @@
 		margin: 0;
 		margin-top: 0.25rem;
 		margin-bottom: 8%;
+		font-size: clamp(1rem, 2vw, 1.5rem);
 	}
 </style>

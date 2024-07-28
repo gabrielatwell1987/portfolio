@@ -9,6 +9,7 @@
 	import Skills from '$lib/components/Skills.svelte';
 	import Image from '$lib/components/Image.svelte';
 	import Bento from '$lib/components/Bento2.svelte';
+	import Figure from '$lib/components/Figure.svelte';
 
 	// animations
 	onMount(() => {
