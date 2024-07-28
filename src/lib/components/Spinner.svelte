@@ -18,7 +18,8 @@
 	main {
 		width: 100%;
 		margin-inline: auto;
-		scale: 2;
+		scale: 1.75;
+		/* scale: 2; */
 	}
 
 	.spinner-container {
