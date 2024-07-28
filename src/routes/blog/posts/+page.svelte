@@ -98,9 +98,19 @@
 	}
 
 	.container {
-		/* margin-left: 3%; */
-		/* width: fit-content; */
 		background: transparent;
 		margin-bottom: -15%;
+	}
+
+	@media (max-width: 750px) {
+		.container {
+			margin-bottom: -50%;
+		}
+	}
+
+	@media (max-width: 500px) {
+		.container {
+			margin-bottom: -75%;
+		}
 	}
 </style>
