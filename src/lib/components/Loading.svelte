@@ -1,9 +1,9 @@
 <script>
-	import Spinner from '$lib/components/Spinner.svelte';
+	import LoadingDots from '$lib/components/LoadingDots.svelte';
 </script>
 
 <main class="container">
-	<Spinner />
+	<LoadingDots />
 </main>
 
 <style>

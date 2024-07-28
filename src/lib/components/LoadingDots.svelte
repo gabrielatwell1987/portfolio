@@ -48,15 +48,15 @@
 		to {
 			opacity: 0.3;
 			-webkit-transform: translate3d(0, -1rem, 0);
-			transform: translate3d(0, -1rem, 0);
+			transform: translate3d(0, -2rem, 0);
 		}
 	}
 
 	@keyframes bounce {
 		to {
 			opacity: 0.3;
-			-webkit-transform: translate3d(0, -1rem, 0);
-			transform: translate3d(0, -1rem, 0);
+			-webkit-transform: translate3d(0, -2rem, 0);
+			transform: translate3d(0, -2rem, 0);
 		}
 	}
 
