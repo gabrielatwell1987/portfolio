@@ -4,6 +4,7 @@
 	import Button from '$lib/components/Button.svelte';
 	import Iframe from '$lib/components/Iframe.svelte';
 	import Image from '$lib/components/Image.svelte';
+	import Popover from '$lib/components/Popover.svelte';
 
 	// animations
 	onMount(() => {
@@ -45,6 +46,11 @@
 		<!-- content -->
 		<article class="glass">
 			<Image src="/logos/skull-glass.png" alt="a skull inside a glass" />
+		</article>
+
+		<!-- popover -->
+		<article class="popover">
+			<Popover text="Animation Basics" />
 		</article>
 
 		<details aria-label="accordian">
@@ -192,6 +198,11 @@
 		font-size: clamp(1.25rem, 2vw, 1.5rem);
 	}
 
+	.popover {
+		background: transparent;
+		margin-bottom: -15%;
+	}
+
 	@media (min-width: 200px) {
 		.main {
 			margin: 0 auto;
@@ -242,6 +253,10 @@
 
 		.glass {
 			background: transparent;
+		}
+
+		.popover {
+			display: none;
 		}
 	}
 
@@ -309,11 +324,20 @@
 		.center {
 			margin-bottom: 5%;
 		}
+
+		.popover {
+			display: block;
+			margin-bottom: -25%;
+		}
 	}
 
 	@media (min-width: 1400px) {
 		.glass {
 			margin-left: 30%;
+		}
+
+		.popover {
+			margin-bottom: -20%;
 		}
 	}
 </style>

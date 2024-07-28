@@ -6,7 +6,6 @@
 	import Button from '$lib/components/Button.svelte';
 	import copy from 'copy-to-clipboard';
 	import { onMount } from 'svelte';
-	import Popover from '$lib/components/Popover.svelte';
 
 	onMount(() => {
 		const codeBlocks = document.querySelectorAll('pre');
@@ -54,10 +53,6 @@
 	<meta name="keywords" content="CSS, GSAP" />
 </svelte:head>
 
-<article class="container">
-	<Popover text="Animation Basics" />
-</article>
-
 <section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<!-- links to my markdown files -->
 	<div class="css">
@@ -95,22 +90,5 @@
 
 	.css {
 		margin-bottom: 15%;
-	}
-
-	.container {
-		background: transparent;
-		margin-bottom: -15%;
-	}
-
-	@media (max-width: 750px) {
-		.container {
-			margin-bottom: -50%;
-		}
-	}
-
-	@media (max-width: 500px) {
-		.container {
-			margin-bottom: -75%;
-		}
 	}
 </style>
