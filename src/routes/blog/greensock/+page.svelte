@@ -50,7 +50,7 @@
 
 		<!-- popover -->
 		<article class="popover">
-			<Popover text="Animation Basics" />
+			<Popover text="GSAP is simple" />
 		</article>
 
 		<details aria-label="accordian">
