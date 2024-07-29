@@ -209,7 +209,7 @@
 	}
 
 	.small {
-		font-size: clamp(0.75rem, 1vw, 1.2rem);
+		font-size: clamp(0.85rem, 1vw, 1.2rem);
 	}
 
 	@media (min-width: 200px) {
