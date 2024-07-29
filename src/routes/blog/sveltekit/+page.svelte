@@ -98,6 +98,32 @@
 				</p>
 			</details>
 
+			<details aria-label="accordian">
+				<!-- svelte-ignore a11y-no-redundant-roles -->
+				<summary role="button" class="outline contrast spacing"><b>How to install</b></summary>
+				<p class="detail">
+					You need <a href="https://nodejs.org/">Node.js</a> installed. Once you have it installed,
+					you will use npm in your terminal. In your terminal, you will type
+					<code>npm create svelte@latest nameOfProject</code>. This will create a new sveltekit
+					project. Once you have the project created, you will cd into the project and run
+					<code>npm install</code>. This will install all of the dependencies that you need to run
+					the project. Once you have the project installed, you will run <code>npm run dev</code> to
+					start a development server and start the project. This will start the project on localhost:5173.
+				</p>
+
+				<p class="detail">
+					Once you have the development server running, you can start building your project. You can
+					use the <code>src/routes</code> folder to create new pages. You can use the
+					<code>src/lib</code>
+					folder to store and create new components. You can use the <code>src/routes/blog</code>
+					folder to create new blog posts. You can use the <code>src/routes/api</code> folder to
+					create new api routes. You can use the <code>src/routes/+layout.svelte</code> file to
+					create a layout for your project. You can use the <code>src/routes/+error.svelte</code>
+					file to create an error page for your project. And <code>src/routes/+page.svelte</code> will
+					be your home page.
+				</p>
+			</details>
+
 			<h3 class="learn">Learn more about Sveltekit</h3>
 			<p class="center">
 				If you would like to know more about <a
