@@ -121,7 +121,7 @@
 				<p class="detail">
 					You can use the <code>+layout.svelte</code> file to create a layout for your project. You
 					can use the <code>+error.svelte</code>
-					file to create an error page.
+					file to create an error page. And <code>+page.svelte</code> creates a new page.
 				</p>
 			</details>
 
