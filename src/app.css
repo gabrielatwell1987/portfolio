@@ -133,3 +133,8 @@ h4 {
 		5px calc(80px + 2.07px)
 	);
 }
+
+code {
+	background: var(--black);
+	color: var(--white);
+}
