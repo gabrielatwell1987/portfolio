@@ -16,6 +16,7 @@
 		gsap.registerPlugin(Draggable);
 
 		const atwell = document.querySelector('.atwell');
+		const monkey = document.querySelector('.monkey');
 		const main = document.querySelector('main');
 
 		gsap.set('article', { autoAlpha: 0 });
@@ -27,6 +28,13 @@
 		});
 
 		Draggable.create(atwell, {
+			type: 'x, y',
+			edgeResistance: 0.65,
+			bounds: document.querySelector('article'),
+			throwProps: true
+		});
+
+		Draggable.create(monkey, {
 			type: 'x, y',
 			edgeResistance: 0.65,
 			bounds: document.querySelector('article'),
@@ -102,7 +110,7 @@
 
 			<!-- monkey logo -->
 			<div class="monkey">
-				<Image src="/logos/monkey-coding.png" alt="A coding monkey" />
+				<Image src="/logos/monkey-coding.png" alt="A coding monkey you can move" />
 			</div>
 		</article>
 	</section>
