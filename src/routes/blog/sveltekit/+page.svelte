@@ -123,6 +123,10 @@
 					can use the <code>+error.svelte</code>
 					file to create an error page. And <code>+page.svelte</code> creates a new page.
 				</p>
+
+				<div class="structure">
+					<Image src="/logos/structure.png" alt="Sveltekit structure" />
+				</div>
 			</details>
 
 			<h3 class="learn">Learn more about Sveltekit</h3>
@@ -252,6 +256,11 @@
 		.A {
 			background: transparent;
 		}
+
+		.structure {
+			margin: 0;
+			border-radius: 12px;
+		}
 	}
 
 	@media (min-width: 500px) {
@@ -298,6 +307,11 @@
 		.back {
 			width: 100%;
 			margin-inline: auto;
+		}
+
+		.structure {
+			width: 100%;
+			margin: 0 43%;
 		}
 	}
 
