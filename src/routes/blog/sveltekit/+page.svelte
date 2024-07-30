@@ -246,6 +246,7 @@
 
 		.back {
 			margin-top: 5%;
+			width: 100%;
 		}
 
 		a {
