@@ -212,7 +212,7 @@
 		font-size: clamp(0.85rem, 1vw, 1.2rem);
 	}
 
-	@media (min-width: 200px) {
+	@media (min-width: 300px) {
 		.main {
 			margin: 0 auto;
 			margin-right: 1rem;
@@ -275,6 +275,10 @@
 
 		.A {
 			margin-left: 15%;
+		}
+
+		.main {
+			width: 100%;
 		}
 	}
 
