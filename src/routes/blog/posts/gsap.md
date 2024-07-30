@@ -1,7 +1,7 @@
 <!-- tweens -->
 <div align="center" style="font-family: var(--montserrat); font-size: clamp(1.5rem, 3vw, 5rem); font-weight: 700; letter-spacing: 5px; color: var(--sky); font-family: var(--montserrat); margin-bottom: 3rem;">TWEENS</div>
 
-<div align="left" style="margin-bottom: 2rem; margin-left: clamp(.5rem, 1.5vw, 2rem); margin-right: clamp(.5rem, 1.5vw, 2rem); color: var(--white); font-size: clamp(1.25rem, 2vw, 1.75rem); font-weight: 200; letter-spacing: 2px; code: var(--mono);" aria-label="tweens">In web animation, a tween stands for "in-betweening". Basically, it is the foundation for the whole GSAP process. There are 3 types of tweens: <code>.to()</code> animating one state TO another state, <code>.from()</code> animating one state FROM another state, <code>.fromTo()</code> specifically choosing the STARTING and ENDING state.</div>
+<div align="left" style="margin-bottom: 2rem; margin-left: clamp(.5rem, 1.5vw, 2rem); margin-right: clamp(.5rem, 1.5vw, 2rem); color: var(--white); font-size: clamp(1.25rem, 2vw, 1.75rem); font-weight: 200; letter-spacing: 2px; code: var(--mono);" aria-label="tweens">In web animation, a tween stands for "in-betweening". Basically, it is the foundation for the whole GSAP process. There are 3 types of tweens: <code>gsap.to("element", &lbrace; variables &rbrace;)</code> animating one state TO another state, <code>gsap.from("element", &lbrace; variables &rbrace;)</code> animating one state FROM another state, <code>gsap.fromTo("element", &lbrace; variables &rbrace;, &lbrace; variables &rbrace;)</code> specifically choosing the STARTING and ENDING state.</div>
 
 ```js
 gsap.to('.example', { skewX: 20, duration: 2.5, ease: 'sine.in' });
