@@ -203,7 +203,7 @@
 		margin-bottom: -15%;
 	}
 
-	@media (min-width: 200px) {
+	@media (min-width: 300px) {
 		.main {
 			margin: 0 auto;
 			margin-right: 1rem;
