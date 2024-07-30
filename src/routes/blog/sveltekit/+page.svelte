@@ -150,7 +150,7 @@
 
 <style>
 	.main {
-		width: 100%;
+		width: 90%;
 	}
 
 	main {
