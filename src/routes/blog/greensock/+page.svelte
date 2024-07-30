@@ -103,8 +103,8 @@
 				to animate TO a state. You can use
 				<code>gsap.from("element", &lbrace; variables &rbrace;)</code>
 				to animate FROM a state. You can use
-				<code>gsap.fromTo("element", &lbrace; variables &rbrace;)</code> to animate FROM a state TO another
-				state.
+				<code>gsap.fromTo("element", &lbrace; variables &rbrace;, &lbrace; variables &rbrace;)</code
+				> to animate FROM a state TO another state.
 			</p>
 
 			<p class="detail">
