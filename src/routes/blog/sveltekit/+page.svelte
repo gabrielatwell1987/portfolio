@@ -104,8 +104,8 @@
 				<p class="detail">
 					You need <a href="https://nodejs.org/">Node.js</a> installed. Once you have it installed,
 					you will use npm in your terminal. In your terminal, you will type
-					<code class="small">npm create svelte@latest</code>. This will create a new sveltekit
-					project. Once you have the project created, you will cd into the project and run
+					<code>npm create svelte@latest</code>. This will create a new sveltekit project. Once you
+					have the project created, you will cd into the project and run
 					<code>npm install</code>. This will install all of the dependencies that you need to run
 					the project. Once you have the project installed, you will run <code>npm run dev</code> to
 					start a development server and start the project. This will start the project on localhost:5173.
@@ -206,10 +206,6 @@
 
 	.detail {
 		font-size: clamp(1.25rem, 2vw, 1.5rem);
-	}
-
-	.small {
-		font-size: clamp(0.85rem, 1vw, 1.2rem);
 	}
 
 	@media (min-width: 300px) {
