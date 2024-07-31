@@ -26,6 +26,7 @@
 		padding: 0;
 		letter-spacing: 2px;
 		color: var(--purple);
+		font-size: clamp(1rem, 2vw, 1.5rem);
 	}
 
 	article {
