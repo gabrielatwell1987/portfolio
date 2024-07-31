@@ -6,6 +6,7 @@
 	import Figure from '$lib/components/Figure.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import Image from '$lib/components/Image.svelte';
+	import Avatar from '$lib/components/Avatar.svelte';
 
 	// animations
 	onMount(() => {
@@ -145,9 +146,10 @@
 
 	<!-- logo -->
 	<div class="logos designs">
-		<!-- <img class="designs" src="logos/designs.png" alt="A logo that says Atwell Designs" /> -->
 		<Figure src="logos/designs.png" alt="A logo that says Atwell Designs" text="EST. 1987" />
 	</div>
+
+	<Avatar src="photos/ornate1.png" alt="A picture of Gabriel Atwell" name="Gabriel Atwell" />
 </section>
 
 <style>
