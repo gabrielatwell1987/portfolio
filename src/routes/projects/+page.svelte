@@ -148,8 +148,6 @@
 	<div class="logos designs">
 		<Figure src="logos/designs.png" alt="A logo that says Atwell Designs" text="EST. 1987" />
 	</div>
-
-	<Avatar src="photos/ornate1.png" alt="A picture of Gabriel Atwell" name="Gabriel Atwell" />
 </section>
 
 <style>
