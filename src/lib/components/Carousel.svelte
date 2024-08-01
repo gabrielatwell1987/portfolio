@@ -19,55 +19,55 @@
 		let:showPrevPage
 		let:showNextPage
 	>
-		<section class="gabe">
+		<section class="gabe" aria-label="gabe">
 			<Image src="/photos/gabe7.png" alt="Gabriel Atwell" />
 		</section>
 
-		<section class="gabe">
+		<section class="gabe" aria-label="gabe">
 			<Image src="/photos/gabe2.png" alt="Gabriel Atwell" />
 		</section>
 
-		<section class="gabe bigger">
+		<section class="gabe bigger" aria-label="gabe">
 			<Image src="/photos/wtf.jpg" alt="Gabriel Atwell" />
 		</section>
 
-		<section class="gabe">
+		<section class="gabe" aria-label="gabe">
 			<Image src="/photos/gabe.png" alt="Gabriel Atwell" />
 		</section>
 
-		<section class="gabe">
+		<section class="gabe" aria-label="gabe">
 			<Image src="/photos/gabe3.png" alt="Gabriel Atwell" />
 		</section>
 
-		<section class="gabe">
+		<section class="gabe" aria-label="gabe">
 			<Image src="/photos/gabe8.png" alt="Gabriel Atwell" />
 		</section>
 
-		<section class="gabe">
+		<section class="gabe" aria-label="gabe">
 			<Image src="/photos/ornate1.png" alt="Gabriel Atwell" />
 		</section>
 
-		<section class="gabe bigger">
+		<section class="gabe bigger" aria-label="gabe">
 			<Image src="/photos/wtf2.png" alt="Gabriel Atwell" />
 		</section>
 
-		<section class="gabe">
+		<section class="gabe" aria-label="gabe">
 			<Image src="/photos/gabe10.png" alt="Gabriel Atwell" />
 		</section>
 
-		<section class="gabe">
+		<section class="gabe" aria-label="gabe">
 			<Image src="/photos/gabe5.png" alt="Gabriel Atwell" />
 		</section>
 
-		<section class="gabe">
+		<section class="gabe" aria-label="gabe">
 			<Image src="/photos/autumn.png" alt="Gabriel Atwell" />
 		</section>
 
-		<section class="gabe">
+		<section class="gabe" aria-label="gabe">
 			<Image src="/photos/gabe6.png" alt="Gabriel Atwell" />
 		</section>
 
-		<section class="gabe">
+		<section class="gabe" aria-label="gabe">
 			<Image src="/photos/wtf3.png" alt="Gabriel Atwell" />
 		</section>
 	</Carousel>

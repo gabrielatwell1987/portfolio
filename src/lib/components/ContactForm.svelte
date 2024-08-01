@@ -63,7 +63,7 @@
 </dialog>
 
 <!-- Contact Form -->
-<form method="POST" action="https://form.taxi/s/xeyymb58">
+<form method="POST" action="https://form.taxi/s/xeyymb58" aria-hidden="true">
 	<fieldset>
 		<legend> message me </legend>
 

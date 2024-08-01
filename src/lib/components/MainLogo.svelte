@@ -1,21 +1,28 @@
 <script>
-	import gsap from 'gsap';
-	import { onMount } from 'svelte';
+	// import gsap from 'gsap';
+	// import { onMount } from 'svelte';
 
-	onMount(() => {
-		// const tl = gsap.timeline({
-		// 	defaults: { yoyo: true }
-		// });
-		// tl.from('#a', { opacity: 0.25, delay: 0.05, duration: 1.2, ease: 'sine.in' })
-		// 	.from('#t', { opacity: 0.25, delay: 0.05, duration: 1.2, ease: 'sine.in' })
-		// 	.from('#w', { opacity: 0.25, delay: 0.05, duration: 1.2, ease: 'sine.in' })
-		// 	.from('#e', { opacity: 0.25, delay: 0.05, duration: 1.2, ease: 'sine.in' })
-		// 	.from('#l', { opacity: 0.25, delay: 0.05, duration: 1.2, ease: 'sine.in' })
-		// 	.from('#ll', { opacity: 0.25, delay: 0.05, duration: 1.2, ease: 'sine.in' });
-	});
+	// onMount(() => {
+	// 	const tl = gsap.timeline({
+	// 		defaults: { yoyo: true }
+	// 	});
+	// 	tl.from('#a', { opacity: 0.5, duration: 1, ease: 'sine.in' }, '+=0.5')
+	// 		.from('#t', { opacity: 0.5, duration: 1, ease: 'sine.in' }, '+=0.5')
+	// 		.from('#w', { opacity: 0.5, duration: 1, ease: 'sine.in' }, '+=0.5')
+	// 		.from('#e', { opacity: 0.5, duration: 1, ease: 'sine.in' }, '+=0.5')
+	// 		.from('#l', { opacity: 0.5, duration: 1, ease: 'sine.in' }, '+=0.5')
+	// 		.from('#ll', { opacity: 0.5, duration: 1, ease: 'sine.in' }, '+=0.5');
+	// });
 </script>
 
-<svg width="202" height="54" viewBox="0 0 202 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg
+	width="202"
+	height="54"
+	viewBox="0 0 202 54"
+	fill="none"
+	xmlns="http://www.w3.org/2000/svg"
+	aria-label="main logo"
+>
 	<path
 		id="ll"
 		d="M191.751 4.97094L191.751 4.97231L184.189 48.8525C184.137 49.124 184.115 49.475 184.115 49.8895C184.115 50.993 184.464 51.9097 185.214 52.5651C185.958 53.215 187.002 53.5 188.263 53.5C189.686 53.5 190.926 53.111 191.953 52.313C192.989 51.5084 193.623 50.4018 193.864 49.0291L193.864 49.0277L201.425 5.14756C201.478 4.87896 201.5 4.55231 201.5 4.17816C201.5 3.0664 201.122 2.14905 200.329 1.49784C199.55 0.81389 198.516 0.5 197.285 0.5C195.823 0.5 194.577 0.886498 193.586 1.69443C192.597 2.50106 191.99 3.60588 191.751 4.97094Z"

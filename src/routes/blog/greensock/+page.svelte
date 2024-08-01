@@ -53,7 +53,7 @@
 			<Popover text="GSAP is simple" />
 		</article>
 
-		<details aria-label="accordian">
+		<details>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast spacing"><b>What is GSAP?</b></summary>
 			<p class="detail">
@@ -71,7 +71,7 @@
 			</p>
 		</details>
 
-		<details aria-label="accordian">
+		<details>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast spacing"
 				><b>How do you install GSAP?</b></summary
@@ -93,7 +93,7 @@
 			</p>
 		</details>
 
-		<details aria-label="accordian">
+		<details>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast spacing"><b>The syntax</b></summary>
 			<p class="detail">

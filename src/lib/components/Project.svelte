@@ -6,9 +6,9 @@
 </script>
 
 <h3 class="link name">{title}</h3>
-<a class="link" href={url} target="_blank"
-	><img class="img" src={img} alt={title} width="400px" height="475px" /><span class="hover-text"
-		>{description}</span
+<a class="link" href={url} target="_blank" aria-label={title}
+	><img class="img" src={img} alt={title} width="400px" height="475px" aria-hidden="true" /><span
+		class="hover-text">{description}</span
 	></a
 >
 

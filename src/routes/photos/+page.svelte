@@ -82,7 +82,7 @@
 		<div class="spacing" />
 
 		<!-- images of me 3x3 -->
-		<div class="pictures">
+		<div class="pictures" aria-label="pictures">
 			<aside class="flex gabe">
 				<img class="gabe" src="photos/gabe.png" alt="Gabriel Atwell." width="350" height="450" />
 				<img class="gabe" src="photos/gabe2.png" alt="Gabriel Atwell." width="300" height="350" />
@@ -90,7 +90,7 @@
 			</aside>
 		</div>
 
-		<div class="pictures">
+		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
 				<img class="gabe" src="photos/gabe4.png" alt="Gabriel Atwell." width="350" />
 				<img src="/photos/autumn.png" alt="Gabriel Atwell" class="gabe" width="350" />
@@ -98,7 +98,7 @@
 			</aside>
 		</div>
 
-		<div class="pictures">
+		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
 				<img class="gabe" src="photos/gabe8.png" alt="Gabriel Atwell" width="400" />
 				<img src="/photos/gabe5.png" alt="Gabriel Atwell" class="gabe" width="400" />
@@ -106,7 +106,7 @@
 			</aside>
 		</div>
 
-		<div class="pictures left">
+		<div class="pictures left" aria-label="pictures">
 			<div class="flex">
 				<img src="/photos/wtf.jpg" alt="Gabriel Atwell" class="gabe" width="500" />
 				<img src="/photos/wtf2.png" alt="Gabriel Atwell" class="gabe" width="550" />
@@ -114,7 +114,7 @@
 			</div>
 		</div>
 
-		<div class="pictures">
+		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
 				<img src="/photos/wtf3.png" alt="Gabriel Atwell" class="gabe" width="450" />
 				<img src="/photos/gabe10.png" alt="Gabriel Atwell" class="gabe" width="375" />

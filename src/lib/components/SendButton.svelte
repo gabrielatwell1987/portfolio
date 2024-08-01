@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<button class="send" type="submit">Send</button>
+<button class="send" type="submit" aria-label="send">Send</button>
 
 <style>
 	@media (min-width: 300px) {

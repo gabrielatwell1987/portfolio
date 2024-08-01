@@ -57,12 +57,12 @@
 	<!-- links to my markdown files -->
 	<div class="css">
 		<h1 class="title">CSS</h1>
-		<CSS />
+		<CSS aria-label="css" />
 	</div>
 
 	<div class="gsap">
 		<h1 class="title">GSAP</h1>
-		<GSAP />
+		<GSAP aria-label="greensock" />
 	</div>
 
 	<!-- back button -->
