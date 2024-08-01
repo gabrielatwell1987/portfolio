@@ -48,7 +48,7 @@
 			border-radius: 15px;
 			padding: 0.5rem;
 			background-color: hsla(210, 2%, 22%, 0.25);
-			backdrop-filter: blur(10px);
+			backdrop-filter: blur(5px);
 			box-shadow: 0px 0px 20px var(--white);
 		}
 	}
