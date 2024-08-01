@@ -171,8 +171,8 @@
 			max-width: 100%;
 		}
 
-		.gabe:hover {
-			opacity: 0.8;
+		.gabe:not(:hover) {
+			opacity: 0.65;
 			transition: opacity 750ms ease-in-out;
 		}
 
