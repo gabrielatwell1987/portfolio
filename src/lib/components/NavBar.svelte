@@ -29,7 +29,7 @@
 	</div>
 
 	<!-- desktop view -->
-	<div class="desktop">
+	<div class="desktop" aria-hidden="true">
 		<a class="nav-link" href="/projects" aria-label="projects">Projects</a>
 		<a class="nav-link" href="/blog" aria-label="blog">Blog</a>
 		<a class="nav-link" href="/about" aria-label="about">About</a>
@@ -39,7 +39,7 @@
 
 	<!-- mobile view -->
 	{#if open}
-		<div class="mobile">
+		<div class="mobile" aria-hidden="true">
 			<a class="nav-link" href="/projects" aria-label="projects">Projects</a>
 			<a class="nav-link" href="/blog" aria-label="blog">Blog</a>
 			<a class="nav-link" href="/about" aria-label="about">About</a>

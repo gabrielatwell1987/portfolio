@@ -2,7 +2,7 @@
 	export let title;
 </script>
 
-<button>{title}</button>
+<button aria-hidden={title}>{title}</button>
 
 <style>
 	@media (min-width: 200px) {

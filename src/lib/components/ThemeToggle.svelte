@@ -7,7 +7,7 @@
 	}
 </script>
 
-<button on:click={toggle}>
+<button on:click={toggle} aria-label="togglw">
 	{#if darkMode}
 		<i class="fa-regular fa-sun" />
 	{:else}

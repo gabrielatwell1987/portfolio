@@ -45,7 +45,7 @@
 
 		<!-- content -->
 		<section>
-			<details aria-label="accordian">
+			<details>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
 				<summary role="button" class="outline contrast spacing"><b>Framework</b></summary>
 				<p class="detail">
@@ -64,7 +64,7 @@
 				</p>
 			</details>
 
-			<details aria-label="accordian">
+			<details>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
 				<summary role="button" class="outline contrast spacing"><b>Based off of basics</b></summary>
 				<p class="detail">
@@ -80,7 +80,7 @@
 				</p>
 			</details>
 
-			<details aria-label="accordian">
+			<details>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
 				<summary role="button" class="outline contrast spacing"><b>What is it?</b></summary>
 				<p class="detail">
@@ -98,7 +98,7 @@
 				</p>
 			</details>
 
-			<details aria-label="accordian">
+			<details>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
 				<summary role="button" class="outline contrast spacing"><b>Install</b></summary>
 				<p class="detail">

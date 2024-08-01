@@ -23,32 +23,48 @@
 				class="size yellow"
 				href="https://www.github.com/gabrielatwell1987/portfolio"
 				target="_blank"
+				aria-label="GitHub"
 			>
-				<i class="fa-brands fa-github" /></a
-			>
-		</li>
-
-		<li>
-			<a class="size" href="https://codepen.io/gabrielatwell" target="_blank">
-				<i class="fa-brands fa-codepen" /></a
+				<i class="fa-brands fa-github" aria-hidden="true" /></a
 			>
 		</li>
 
 		<li>
-			<a class="size" href="https://www.linkedin.com/in/gabrielatwell/" target="_blank">
-				<i class="fa-brands fa-linkedin" />
+			<a class="size" href="https://codepen.io/gabrielatwell" target="_blank" aria-label="Codepen">
+				<i class="fa-brands fa-codepen" aria-hidden="true" /></a
+			>
+		</li>
+
+		<li>
+			<a
+				class="size"
+				href="https://www.linkedin.com/in/gabrielatwell/"
+				target="_blank"
+				aria-label="LinkedIn"
+			>
+				<i class="fa-brands fa-linkedin" aria-hidden="true" />
 			</a>
 		</li>
 
 		<li>
-			<a class="size" href="https://discordapp.com/users/1007777351809114112" target="_blank">
-				<i class="fa-brands fa-discord" />
+			<a
+				class="size"
+				href="https://discordapp.com/users/1007777351809114112"
+				target="_blank"
+				aria-label="Discord"
+			>
+				<i class="fa-brands fa-discord" aria-hidden="true" />
 			</a>
 		</li>
 
 		<li>
-			<a class="size" href="https://www.reddit.com/user/gatwell702" target="_blank">
-				<i class="fa-brands fa-square-reddit" />
+			<a
+				class="size"
+				href="https://www.reddit.com/user/gatwell702"
+				target="_blank"
+				aria-label="Reddit"
+			>
+				<i class="fa-brands fa-square-reddit" aria-hidden="true" />
 			</a>
 		</li>
 	</ul>
