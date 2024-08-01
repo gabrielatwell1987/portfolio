@@ -34,7 +34,7 @@
 			text-align: center;
 			font-family: var(--anta);
 			font-size: clamp(2.75rem, 8vw, 10rem);
-			color: var(--white);
+			color: var(--off-white);
 			letter-spacing: 5px;
 			text-shadow: 0px 0px 50px var(--smoke);
 			text-transform: uppercase;
