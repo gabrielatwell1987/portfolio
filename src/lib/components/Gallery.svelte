@@ -24,14 +24,14 @@
 </script>
 
 <!-- picture grid -->
-<section class="grid" aria-label="gallery">
+<section class="grid" aria-hidden="true">
 	{#each { length: 8 } as _, id}
 		{@const details = selected === id}
 		{@const number = id + 1}
 
 		<button class="grid-item" class:details on:click={() => flip(id)}>
 			<div class="title">
-				<h1>{number}</h1>
+				<h1 aria-label={number}>{number}</h1>
 			</div>
 
 			<img src="https://picsum.photos/600/600?random={id}" alt="Random" />
