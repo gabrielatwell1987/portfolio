@@ -20,8 +20,8 @@
 	});
 </script>
 
-<main>
-	<h1 class="title" id="title">{title}</h1>
+<main aria-hidden="true">
+	<h1 class="title" id="title" aria-label={title}>{title}</h1>
 </main>
 
 <style>
