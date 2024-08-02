@@ -12,14 +12,14 @@
 	});
 </script>
 
-<main aria-label="hero">
+<main aria-hidden="true">
 	<!-- hero section -->
 	<img
 		src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 		alt="Wireframing and design of a website"
 	/>
 
-	<section>
+	<section aria-label="hero">
 		<!-- hero section text and links -->
 		<h3>Frontend Crafted Web Experiences</h3>
 

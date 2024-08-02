@@ -52,7 +52,11 @@
 		</header>
 
 		<div class="modal-img">
-			<Image src="/logos/newspaper.jpg" alt="frontend newspaper clipping" />
+			<Image
+				src="/logos/newspaper.jpg"
+				alt="frontend newspaper clipping"
+				aria-label="newspaper clipping"
+			/>
 		</div>
 
 		<p class="modal__p">
