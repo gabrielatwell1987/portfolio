@@ -4,12 +4,12 @@
 	import Image from '$lib/components/Image.svelte';
 </script>
 
-<main id="bento-div" class="bt-div">
-	<section class="bento-item bento-item-1">
+<main id="bento-div" class="bt-div" aria-hidden="true">
+	<section class="bento-item bento-item-1" aria-label="contact me">
 		<a href="/contact"><h2>Contact me if you have a question!</h2></a>
 	</section>
 
-	<section class="bento-item bento-item-2">
+	<section class="bento-item bento-item-2" aria-label="blog topics">
 		<a href="/blog/sveltekit">
 			<div class="sk">
 				<SK />
@@ -29,11 +29,11 @@
 		</a>
 	</section>
 
-	<section class="bento-item bento-item-3">
+	<section class="bento-item bento-item-3" aria-label="home page">
 		<a href="/"><img src="/icons/portfolio_logo.svg" alt="" /></a>
 	</section>
 
-	<section class="bento-item bento-item-4">
+	<section class="bento-item bento-item-4" aria-label="projects">
 		<a href="/projects"><img src="/logos/cursive-atwell.jpg" alt="" /></a>
 	</section>
 </main>

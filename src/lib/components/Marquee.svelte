@@ -16,7 +16,7 @@
 	});
 </script>
 
-<main class="marquee">
+<main class="marquee" aria-hidden="true">
 	<ul class="marquee-content">
 		<li>
 			<a
