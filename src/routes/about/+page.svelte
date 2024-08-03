@@ -7,16 +7,12 @@
 	import Button from '$lib/components/Button.svelte';
 	import Grid from '$lib/components/Grid.svelte';
 	import Skills from '$lib/components/Skills.svelte';
-	import Image from '$lib/components/Image.svelte';
 	import Bento from '$lib/components/Bento2.svelte';
 	import LetterDrop from '$lib/components/LetterDrop.svelte';
+	import AtwellCursive from '$lib/components/AtwellCursive.svelte';
 
 	// animations
 	onMount(() => {
-		gsap.registerPlugin(Draggable);
-
-		const atwell = document.querySelector('.atwell');
-		const monkey = document.querySelector('.monkey');
 		const main = document.querySelector('main');
 
 		gsap.set('article', { autoAlpha: 0 });
@@ -25,20 +21,6 @@
 			autoAlpha: 1,
 			duration: 1,
 			ease: 'none'
-		});
-
-		Draggable.create(atwell, {
-			type: 'x, y',
-			edgeResistance: 0.65,
-			bounds: document.querySelector('article'),
-			throwProps: true
-		});
-
-		Draggable.create(monkey, {
-			type: 'x, y',
-			edgeResistance: 0.65,
-			bounds: document.querySelector('article'),
-			throwProps: true
 		});
 
 		console.log(main);
@@ -56,10 +38,6 @@
 		<article>
 			<div class="drop">
 				<LetterDrop />
-			</div>
-
-			<div class="atwell">
-				<Image src="/logos/atweezy.png" alt="An logo that says Gabriel Atwell that you can move" />
 			</div>
 
 			<div class="bio" aria-label="bio">
@@ -112,10 +90,7 @@
 				<a href="/about/gallery"><Button title="Gallery" /></a>
 			</div>
 
-			<!-- monkey logo -->
-			<div class="monkey">
-				<Image src="/logos/monkey-coding.png" alt="A coding monkey you can move" />
-			</div>
+			<AtwellCursive />
 		</article>
 	</section>
 </main>
@@ -149,10 +124,11 @@
 		}
 
 		.main-title {
+			font-family: var(--lexend);
 			font-size: clamp(2.5rem, 5vw, 10rem);
+			letter-spacing: 1px;
 			mix-blend-mode: difference;
 			color: var(--purple);
-			font-family: var(--montserrat);
 		}
 
 		a {
@@ -179,18 +155,6 @@
 			line-height: 1.5;
 		}
 
-		.atwell {
-			border-radius: 3rem;
-			clip-path: ellipse(40% 47% at 50% 50%);
-			transition: clip-path 0.25s ease-in-out;
-			margin: 3.5% 0;
-		}
-
-		.atwell:hover {
-			filter: contrast(1.5);
-			transition: filter 0.25s ease-in-out;
-		}
-
 		.text {
 			max-width: 95%;
 			margin-inline: auto;
@@ -203,11 +167,6 @@
 		.text,
 		.text:hover {
 			mix-blend-mode: difference;
-		}
-
-		.monkey {
-			width: 75%;
-			margin-inline: auto;
 		}
 
 		.drop {
@@ -249,7 +208,6 @@
 
 		.main-title {
 			font-weight: 900;
-			font-family: var(--anta);
 		}
 
 		.text {
@@ -269,10 +227,6 @@
 		.text__w {
 			width: 75%;
 			margin: 0 auto;
-		}
-
-		.monkey {
-			width: 50%;
 		}
 
 		.gallery {
