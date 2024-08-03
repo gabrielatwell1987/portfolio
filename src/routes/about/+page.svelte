@@ -9,7 +9,7 @@
 	import Skills from '$lib/components/Skills.svelte';
 	import Image from '$lib/components/Image.svelte';
 	import Bento from '$lib/components/Bento2.svelte';
-	import Figure from '$lib/components/Figure.svelte';
+	import LetterDrop from '$lib/components/LetterDrop.svelte';
 
 	// animations
 	onMount(() => {
@@ -54,6 +54,10 @@
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} aria-label="bio">
 	<section>
 		<article>
+			<div class="drop">
+				<LetterDrop />
+			</div>
+
 			<div class="atwell">
 				<Image src="/logos/atweezy.png" alt="An logo that says Gabriel Atwell that you can move" />
 			</div>
@@ -206,6 +210,10 @@
 			margin-inline: auto;
 		}
 
+		.drop {
+			margin-bottom: 5%;
+		}
+
 		a {
 			text-decoration: none;
 		}
@@ -279,13 +287,11 @@
 	@media (min-width: 1024px) {
 		.hero {
 			width: 70%;
-			/* width: 125%; */
 			margin-left: 14%;
 		}
 
 		.gallery {
 			width: 70%;
-			/* width: 125%; */
 			margin-left: 15%;
 		}
 	}

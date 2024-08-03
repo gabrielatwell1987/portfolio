@@ -1,25 +1,49 @@
 <script>
+	import gsap from 'gsap';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		const letters = gsap.utils.toArray('.animated-letter');
+
+		gsap.set(letters, {
+			y: '-100%',
+			opacity: 0
+		});
+
+		gsap.to(letters, {
+			y: 0,
+			opacity: 1,
+			duration: 2,
+			delay: 0.5,
+			ease: 'sine.inOut',
+			stagger: 0.5
+		});
+	});
 </script>
 
 <main class="animated-text">
-	<span class="animated-letter" style="animation-delay: 0s;"> a </span>
-	<span class="animated-letter" style="animation-delay: 0.1s;"> t </span>
-	<span class="animated-letter" style="animation-delay: 0.2s;"> w </span>
-	<span class="animated-letter" style="animation-delay: 0.30000000000000004s;"> e </span>
-	<span class="animated-letter" style="animation-delay: 0.4s;"> l </span>
-	<span class="animated-letter" style="animation-delay: 0.5s;"> l </span>
+	<span class="animated-letter"> a </span>
+	<span class="animated-letter"> t </span>
+	<span class="animated-letter"> w </span>
+	<span class="animated-letter"> e </span>
+	<span class="animated-letter"> l </span>
+	<span class="animated-letter"> l </span>
 </main>
 
 <style>
 	.animated-text {
-		font-size: 100px;
-		color: #91a4ca;
+		font-family: var(--mono);
+		font-size: clamp(3rem, 9vw, 20rem);
+		font-weight: 700;
+		color: var(--sky);
+		/* color: #91a4ca; */
 		text-align: center;
+		margin: 0;
+		padding: 0;
 	}
 
 	.animated-letter {
 		display: inline-block;
-		animation: drop 3s 0s forwards;
 	}
 
 	@keyframes drop {
@@ -27,6 +51,7 @@
 			transform: translateY(-100%);
 			opacity: 0;
 		}
+
 		100% {
 			transform: translateY(0);
 			opacity: 1;

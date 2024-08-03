@@ -265,7 +265,7 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			width: 100%;
+			flex-basis: 100%;
 			margin: 0 auto;
 			background-color: transparent;
 		}
