@@ -36,6 +36,7 @@
 		font-size: clamp(2.5rem, 9vw, 20rem);
 		font-weight: 700;
 		color: var(--sky);
+		mix-blend-mode: lighten;
 		text-align: center;
 		margin: 0;
 		padding: 0;
