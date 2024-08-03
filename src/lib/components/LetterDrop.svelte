@@ -33,10 +33,9 @@
 <style>
 	.animated-text {
 		font-family: var(--mono);
-		font-size: clamp(3rem, 9vw, 20rem);
+		font-size: clamp(2.5rem, 9vw, 20rem);
 		font-weight: 700;
 		color: var(--sky);
-		/* color: #91a4ca; */
 		text-align: center;
 		margin: 0;
 		padding: 0;
