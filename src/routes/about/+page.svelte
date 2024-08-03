@@ -41,8 +41,6 @@
 			</div>
 
 			<div class="bio" aria-label="bio">
-				<h2 class="main-title">About me</h2>
-
 				<p class="text">
 					My name is Gabriel Atwell and I am a frontend web developer. I started out with the
 					basics: HTML, CSS, and JavaScript. I then moved on to more advanced topics such as:
@@ -123,14 +121,6 @@
 			background-color: transparent;
 		}
 
-		.main-title {
-			font-family: var(--lexend);
-			font-size: clamp(2rem, 5vw, 10rem);
-			letter-spacing: 1px;
-			mix-blend-mode: difference;
-			color: var(--purple);
-		}
-
 		a {
 			font-size: 1rem;
 		}
@@ -170,7 +160,7 @@
 		}
 
 		.drop {
-			margin-bottom: 5%;
+			margin-bottom: 10%;
 		}
 
 		a {
@@ -192,11 +182,6 @@
 			background-color: transparent;
 		}
 
-		h2 {
-			font-size: 3rem;
-			letter-spacing: 5px;
-		}
-
 		a {
 			font-size: 1.2rem;
 			font-weight: 700;
@@ -204,10 +189,6 @@
 
 		a:hover {
 			font-size: 1.3rem;
-		}
-
-		.main-title {
-			font-weight: 900;
 		}
 
 		.text {
