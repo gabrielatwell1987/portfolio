@@ -160,7 +160,7 @@
 		}
 
 		.drop {
-			margin-bottom: 10%;
+			margin-bottom: 15%;
 		}
 
 		a {
