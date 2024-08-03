@@ -74,7 +74,6 @@
 	:root {
 		--marquee-width: 80vw;
 		--marquee-height: 20vh;
-		/* --marquee-elements: 12; */ /* defined with JavaScript */
 		--marquee-elements-displayed: 5;
 		--marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
 		--marquee-animation-duration: calc(var(--marquee-elements) * 10s);
@@ -136,7 +135,8 @@
 		align-items: center;
 		text-align: center;
 		flex-shrink: 0;
-		width: var(--marquee-element-width);
+		flex-basis: var(--marquee-element-width);
+		/* width: var(--marquee-element-width); */
 		max-height: 100%;
 		font-size: calc(var(--marquee-height) * 3 / 4); /* 5rem; */
 		white-space: nowrap;
@@ -144,7 +144,6 @@
 
 	.marquee-content li i {
 		width: 100%;
-		/* height: 100%; */
 		color: var(--blue);
 		font-size: 5rem;
 		cursor: pointer;

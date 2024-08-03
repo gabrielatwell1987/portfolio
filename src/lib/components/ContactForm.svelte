@@ -110,8 +110,10 @@
 			width: 100%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
+			border-radius: 10px;
 			caret-color: var(--purple);
 			color: var(--white);
+			font-size: 1.5rem;
 		}
 
 		input:placeholder-shown {
@@ -123,14 +125,17 @@
 		}
 
 		input:focus-visible {
-			outline: 1px solid var(--white);
+			outline: 2px solid var(--off-white);
+			border: none;
 		}
 
 		textarea {
 			width: 100%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
+			border-radius: 10px;
 			color: var(--white);
+			font-size: 1.5rem;
 		}
 
 		textarea:placeholder-shown {
@@ -142,7 +147,8 @@
 		}
 
 		textarea:focus-visible {
-			outline: 1px solid var(--white);
+			outline: 2px solid var(--off-white);
+			border: none;
 		}
 
 		legend {
@@ -163,6 +169,7 @@
 		span {
 			font-size: clamp(1rem, 2vw, 2rem);
 			font-weight: 800;
+			letter-spacing: 3px;
 		}
 
 		#name::-webkit-input-placeholder,
@@ -332,7 +339,6 @@
 			margin-bottom: 1rem;
 			text-align: center;
 			transform: scale(1.5);
-			letter-spacing: -1px;
 		}
 
 		input {
