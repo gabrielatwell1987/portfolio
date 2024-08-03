@@ -125,7 +125,7 @@
 
 		.main-title {
 			font-family: var(--lexend);
-			font-size: clamp(2.5rem, 5vw, 10rem);
+			font-size: clamp(2rem, 5vw, 10rem);
 			letter-spacing: 1px;
 			mix-blend-mode: difference;
 			color: var(--purple);
