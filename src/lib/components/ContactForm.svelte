@@ -101,11 +101,6 @@
 
 <style>
 	@media screen and (min-width: 200px) {
-		/* form {
-			width: 100%;
-			margin-left: 89.25%;
-		} */
-
 		input {
 			width: 100%;
 			background-color: transparent;
@@ -207,17 +202,7 @@
 		}
 	}
 
-	/* @media screen and (min-width: 500px) {
-		form {
-			margin-left: 57%;
-		}
-	} */
-
 	@media screen and (min-width: 720px) {
-		/* form {
-			margin-left: 40.5%;
-		} */
-
 		.open-button {
 			display: block;
 			font-size: 1.2rem;
@@ -315,18 +300,6 @@
 		}
 	}
 
-	/* @media screen and (min-width: 775px) {
-		form {
-			margin-left: 38.5%;
-		}
-	} */
-
-	/* @media screen and (min-width: 850px) {
-		form {
-			margin-left: 71.25%;
-		}
-	} */
-
 	@media screen and (min-width: 1024px) {
 		form {
 			display: flex;
@@ -393,10 +366,6 @@
 	}
 
 	@media screen and (min-width: 1100px) {
-		/* form {
-			margin-left: 57.5%;
-		} */
-
 		.modal h4 {
 			color: var(--yellow);
 		}
@@ -411,17 +380,7 @@
 		}
 	}
 
-	/* @media screen and (min-width: 1200px) {
-		form {
-			margin-left: 54.75%;
-		}
-	} */
-
 	@media screen and (min-width: 1350px) {
-		/* form {
-			margin-left: 48.5%;
-		} */
-
 		.open-button {
 			padding: 2rem 3rem;
 			scale: 0.5;
@@ -448,11 +407,6 @@
 	}
 
 	@media screen and (min-width: 1500px) {
-		/* form {
-			width: 100%;
-			margin-left: 43.5%;
-		} */
-
 		.open-button {
 			scale: 0.85;
 		}
@@ -461,18 +415,4 @@
 			scale: 0.85;
 		}
 	}
-
-	/* @media screen and (min-width: 1600px) {
-		form {
-			width: 100%;
-			margin-left: 35.25%;
-		}
-	} */
-
-	/* @media screen and (min-width: 1920px) {
-		form {
-			margin: 0 20%;
-			margin-left: 34%;
-		}
-	} */
 </style>

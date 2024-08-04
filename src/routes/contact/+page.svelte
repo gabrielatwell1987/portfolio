@@ -53,7 +53,7 @@
 
 	@media screen and (min-width: 850px) {
 		.contactForm {
-			margin: 2rem 0 0 7.5rem;
+			margin: 2rem 0 0 8rem;
 		}
 	}
 
@@ -75,11 +75,14 @@
 
 	@media screen and (min-width: 1400px) {
 		.contactForm {
-			margin: 2rem 0 0 8.5rem;
+			/* margin: 2rem 0 0 14.5rem; */
+			margin: 1rem 6%;
+			scale: 0.8;
 		}
 
 		.career {
-			margin-left: 25%;
+			margin: 0 16%;
+			scale: 0.8;
 		}
 	}
 </style>
