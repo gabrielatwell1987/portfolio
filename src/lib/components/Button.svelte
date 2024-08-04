@@ -57,7 +57,7 @@
 
 	@media (min-width: 990px) {
 		button {
-			width: 25%;
+			width: 30%;
 			font-size: 1.25rem;
 			margin: 3rem auto;
 		}
@@ -73,25 +73,25 @@
 
 	@media screen and (min-width: 1200px) {
 		button {
-			width: 15%;
+			width: 40%;
 		}
 	}
 
 	@media screen and (min-width: 1300px) {
 		button {
-			width: 20%;
+			width: 40%;
 		}
 	}
 
 	@media screen and (min-width: 1400px) {
 		button {
-			width: 15%;
+			width: 40%;
 		}
 	}
 
 	@media screen and (min-width: 1500px) {
 		button {
-			width: 15%;
+			width: 40%;
 			font-size: 1.75rem;
 		}
 	}

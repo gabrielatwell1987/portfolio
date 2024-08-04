@@ -289,9 +289,9 @@
 
 	@media (min-width: 1100px) {
 		.desktop {
-			margin-left: 35%;
+			margin-left: 25%;
 			line-height: 1.5;
-			scale: 1.5;
+			scale: 1.25;
 		}
 
 		.gabe-logo {
@@ -329,8 +329,8 @@
 
 	@media (min-width: 1400px) {
 		.desktop {
-			margin-left: 30%;
-			scale: 1.5;
+			margin-left: 20%;
+			scale: 1.25;
 		}
 
 		.gabe-logo {
@@ -350,7 +350,7 @@
 
 	@media (min-width: 1500px) {
 		.desktop {
-			margin-left: 30%;
+			margin-left: 25%;
 		}
 
 		.gabe-logo {
@@ -370,7 +370,8 @@
 
 	@media (min-width: 1600px) {
 		.desktop {
-			margin-left: 40%;
+			margin-left: 25%;
+			scale: 1.15;
 		}
 
 		.gabe-logo {
