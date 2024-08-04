@@ -15,9 +15,9 @@
 	</section>
 </main>
 
-<div class="career">
+<!-- <div class="career">
 	<Image src="/logos/career-death.jpeg" alt="a cartoon about career death" />
-</div>
+</div> -->
 
 <style>
 	.contactForm {
@@ -32,11 +32,11 @@
 			margin: 1rem 0 0 10rem;
 		}
 
-		.career {
+		/* .career {
 			width: 90%;
 			margin-top: 5%;
 			margin-inline: auto;
-		}
+		} */
 	}
 
 	@media screen and (min-width: 500px) {
@@ -68,9 +68,9 @@
 			margin: 2rem 0 0 8rem;
 		}
 
-		.career {
+		/* .career {
 			margin-left: 15.5%;
-		}
+		} */
 	}
 
 	@media screen and (min-width: 1400px) {
@@ -80,9 +80,9 @@
 			scale: 0.8;
 		}
 
-		.career {
-			margin: 0 16%;
+		/* .career {
+			margin: 0 20%;
 			scale: 0.8;
-		}
+		} */
 	}
 </style>
