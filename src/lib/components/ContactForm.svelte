@@ -101,10 +101,10 @@
 
 <style>
 	@media screen and (min-width: 200px) {
-		form {
+		/* form {
 			width: 100%;
 			margin-left: 89.25%;
-		}
+		} */
 
 		input {
 			width: 100%;
@@ -207,16 +207,16 @@
 		}
 	}
 
-	@media screen and (min-width: 500px) {
+	/* @media screen and (min-width: 500px) {
 		form {
 			margin-left: 57%;
 		}
-	}
+	} */
 
 	@media screen and (min-width: 720px) {
-		form {
+		/* form {
 			margin-left: 40.5%;
-		}
+		} */
 
 		.open-button {
 			display: block;
@@ -226,7 +226,7 @@
 			color: var(--white);
 			width: 4%;
 			height: 2%;
-			margin-left: 100%;
+			margin-left: 10%;
 			margin-top: 5%;
 			outline: none;
 			border: 2px solid var(--white);
@@ -315,24 +315,24 @@
 		}
 	}
 
-	@media screen and (min-width: 775px) {
+	/* @media screen and (min-width: 775px) {
 		form {
 			margin-left: 38.5%;
 		}
-	}
+	} */
 
-	@media screen and (min-width: 850px) {
+	/* @media screen and (min-width: 850px) {
 		form {
 			margin-left: 71.25%;
 		}
-	}
+	} */
 
 	@media screen and (min-width: 1024px) {
 		form {
 			display: flex;
 			flex-direction: column;
-			width: 100%;
-			margin-left: 63.5%;
+			/* width: 100%; */
+			/* margin-left: 63.5%; */
 		}
 
 		label {
@@ -393,9 +393,9 @@
 	}
 
 	@media screen and (min-width: 1100px) {
-		form {
+		/* form {
 			margin-left: 57.5%;
-		}
+		} */
 
 		.modal h4 {
 			color: var(--yellow);
@@ -411,16 +411,16 @@
 		}
 	}
 
-	@media screen and (min-width: 1200px) {
+	/* @media screen and (min-width: 1200px) {
 		form {
 			margin-left: 54.75%;
 		}
-	}
+	} */
 
 	@media screen and (min-width: 1350px) {
-		form {
+		/* form {
 			margin-left: 48.5%;
-		}
+		} */
 
 		.open-button {
 			padding: 2rem 3rem;
@@ -448,10 +448,10 @@
 	}
 
 	@media screen and (min-width: 1500px) {
-		form {
+		/* form {
 			width: 100%;
 			margin-left: 43.5%;
-		}
+		} */
 
 		.open-button {
 			scale: 0.85;
@@ -462,17 +462,17 @@
 		}
 	}
 
-	@media screen and (min-width: 1600px) {
+	/* @media screen and (min-width: 1600px) {
 		form {
 			width: 100%;
 			margin-left: 35.25%;
 		}
-	}
+	} */
 
-	@media screen and (min-width: 1920px) {
+	/* @media screen and (min-width: 1920px) {
 		form {
 			margin: 0 20%;
 			margin-left: 34%;
 		}
-	}
+	} */
 </style>

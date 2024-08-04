@@ -21,15 +21,15 @@
 
 <style>
 	.contactForm {
-		margin-block: 2rem;
-		margin-inline: auto;
+		margin: 2rem auto;
 	}
 
 	@media screen and (min-width: 200px) {
 		.contactForm {
 			display: block;
 			width: 100%;
-			margin: 1rem 0 0 -6.9rem;
+			/* margin: 1rem auto 0 auto; */
+			margin: 1rem 0 0 10rem;
 		}
 
 		.career {
@@ -41,31 +41,31 @@
 
 	@media screen and (min-width: 500px) {
 		.contactForm {
-			margin: 1rem 0 0 -9.8rem;
+			margin: 1rem 0 0 9.8rem;
 		}
 	}
 
 	@media screen and (min-width: 700px) {
 		.contactForm {
-			margin: 1rem 0 0 -7.5rem;
+			margin: 1rem 0 0 7.5rem;
 		}
 	}
 
 	@media screen and (min-width: 850px) {
 		.contactForm {
-			margin: 2rem 0 0 -36rem;
+			margin: 2rem 0 0 7.5rem;
 		}
 	}
 
 	@media screen and (min-width: 990px) {
 		.contactForm {
-			margin: 2rem 0 0 -44.25rem;
+			margin: 2rem 0 0 8rem;
 		}
 	}
 
 	@media screen and (min-width: 1024px) {
 		.contactForm {
-			margin: 2rem 0 0 -24rem;
+			margin: 2rem 0 0 8rem;
 		}
 
 		.career {
@@ -75,7 +75,7 @@
 
 	@media screen and (min-width: 1400px) {
 		.contactForm {
-			margin: 2rem 0 0 -40rem;
+			margin: 2rem 0 0 8.5rem;
 		}
 
 		.career {
