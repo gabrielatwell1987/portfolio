@@ -274,11 +274,11 @@
 	@media screen and (min-width: 1800px) {
 		button {
 			width: 15%;
-			font-size: 2.5rem;
+			font-size: 1.5rem;
 		}
 
 		h3 {
-			font-size: 5rem;
+			font-size: 4rem;
 		}
 	}
 </style>
