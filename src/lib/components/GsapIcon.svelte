@@ -178,6 +178,6 @@
 	}
 
 	svg:hover {
-		scale: 1.1;
+		scale: 1.05;
 	}
 </style>

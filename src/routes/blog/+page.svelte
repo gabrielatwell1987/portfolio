@@ -75,9 +75,9 @@
 		margin-top: 5%;
 	}
 
-	.gs:hover,
-	.sk:hover {
-		filter: opacity(0.25);
+	.gs:not(:hover),
+	.sk:not(:hover) {
+		filter: opacity(0.5);
 		transition: filter 1s ease-in-out;
 	}
 
@@ -95,11 +95,14 @@
 	}
 
 	.image:hover {
-		opacity: 0.25;
+		animation: wiggle 0.5s ease-in-out infinite;
+	}
+
+	.image:not(:hover) {
+		opacity: 0.5;
 		background-color: var(--smoke);
 		color: black;
 		transition: opacity 0.75s ease-in-out;
-		animation: wiggle 0.5s ease-in-out infinite;
 	}
 
 	section {

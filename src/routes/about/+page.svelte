@@ -148,7 +148,7 @@
 		.text {
 			max-width: 95%;
 			margin-inline: auto;
-			font-size: clamp(1.35rem, 1.75vw, 2rem);
+			font-size: clamp(1.1rem, 1.75vw, 2rem);
 			line-height: 1.35;
 			color: var(--white);
 			font-weight: 500;

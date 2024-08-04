@@ -135,6 +135,6 @@ h4 {
 }
 
 code {
-	background: var(--black);
+	background: var(--lightblack);
 	color: var(--white);
 }
