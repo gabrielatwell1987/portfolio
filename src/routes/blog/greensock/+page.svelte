@@ -50,7 +50,7 @@
 
 		<!-- popover -->
 		<article class="popover">
-			<Popover text="GSAP is simple" />
+			<Popover text="the syntax is simple" />
 		</article>
 
 		<details>
