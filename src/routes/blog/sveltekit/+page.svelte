@@ -104,27 +104,29 @@
 				<p class="detail">
 					You need <a href="https://nodejs.org/"><b>Node.js</b></a> installed. Once you have it
 					installed, you will use npm in your terminal. In your terminal, type
-					<code>cd folder</code> to change the directory to whatever folder you want to create your
-					project in. If you're at where you want to be at, type
-					<code>npm create svelte@latest</code>. This will create a new sveltekit project. Once you
-					have the project created, you will cd into the project and run
-					<code>npm install</code>. This will install all of the dependencies that you need to run
-					the project. Once you have the project installed, you will run <code>npm run dev</code> to
-					start a development server and start the project. Now when you make changes to your code
-					and press save, it will update on your development server without having to hit refresh!
-					Also, this starts the project on <code>http://localhost:5173</code>.
+					<code class="code">cd folder</code> to change the directory to whatever folder you want to
+					create your project in. If you're at where you want to be at, type
+					<code class="code">npm create svelte@latest</code>. This will create a new sveltekit
+					project. Once you have the project created, you will cd into the project and run
+					<code class="code">npm install</code>. This will install all of the dependencies that you
+					need to run the project. Once you have the project installed, you will run
+					<code class="code">npm run dev</code>
+					to start a development server and start the project. Now when you make changes to your code
+					and press save, it will update on your development server without having to hit refresh! Also,
+					this starts the project on <code class="code">http://localhost:5173</code>.
 				</p>
 
 				<p class="detail">
 					Once you have the development server running, you can start building your project. You can
-					use the <code>src/routes</code> folder to create new pages. You can use the
-					<code>src/lib</code> folder to store and create new components or data for your project.
+					use the <code class="code">src/routes</code> folder to create new pages. You can use the
+					<code class="code">src/lib</code> folder to store and create new components or data for your
+					project.
 				</p>
 
 				<p class="detail">
-					You can use the <code>+layout.svelte</code> file to create a layout for your project. You
-					can use the <code>+error.svelte</code>
-					file to create an error page. And <code>+page.svelte</code> creates a new page.
+					You can use the <code class="code">+layout.svelte</code> file to create a layout for your
+					project. You can use the <code class="code">+error.svelte</code>
+					file to create an error page. And <code class="code">+page.svelte</code> creates a new page.
 				</p>
 
 				<div class="structure">

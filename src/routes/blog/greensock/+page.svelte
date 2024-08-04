@@ -77,13 +77,13 @@
 				><b>How do you install GSAP?</b></summary
 			>
 			<p class="detail">
-				In the project, you have to <code>npm install gsap</code> (if you have Node.js installed) or
-				you can use the CDN (content delivery network). In sveltekit, you have to put all of your
-				GSAP code in an <code>onMount</code> function that you have to import. This is because onMount
-				is displayed once on initial load. If you were to use a regular script tag, it would not work.
-				All of the designs that are animated on this website are all from GSAP. I tend to think that
-				these animations make the website look a lot better than a static website. GSAP is a great tool
-				to use for any web developer. I highly recommend it!
+				In the project, you have to <code class="code">npm install gsap</code> (if you have Node.js
+				installed) or you can use the CDN (content delivery network). In sveltekit, you have to put
+				all of your GSAP code in an <code class="code">onMount</code> function that you have to import.
+				This is because onMount is displayed once on initial load. If you were to use a regular script
+				tag, it would not work. All of the designs that are animated on this website are all from GSAP.
+				I tend to think that these animations make the website look a lot better than a static website.
+				GSAP is a great tool to use for any web developer. I highly recommend it!
 			</p>
 
 			<p class="detail">
@@ -97,18 +97,19 @@
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast spacing"><b>The syntax</b></summary>
 			<p class="detail">
-				It is quite simple to use GSAP. You can use <code
+				It is quite simple to use GSAP. You can use <code class="code"
 					>gsap.to("element", &lbrace; variables &rbrace;)</code
 				>
 				to animate TO a state. You can use
-				<code>gsap.from("element", &lbrace; variables &rbrace;)</code>
+				<code class="code">gsap.from("element", &lbrace; variables &rbrace;)</code>
 				to animate FROM a state. You can use
-				<code>gsap.fromTo("element", &lbrace; variables &rbrace;, &lbrace; variables &rbrace;)</code
+				<code class="code"
+					>gsap.fromTo("element", &lbrace; variables &rbrace;, &lbrace; variables &rbrace;)</code
 				> to animate FROM a state TO another state.
 			</p>
 
 			<p class="detail">
-				The complete syntax is as follows: <code
+				The complete syntax is as follows: <code class="code"
 					>gsap.to("element", &lbrace; variables &rbrace;)</code
 				>. You can use the following variables: duration, delay, ease, stagger, and onComplete. The
 				duration is how long the animation will last. The delay is how long the animation will wait
