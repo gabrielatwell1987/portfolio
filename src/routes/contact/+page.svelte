@@ -15,10 +15,6 @@
 	</section>
 </main>
 
-<!-- <div class="career">
-	<Image src="/logos/career-death.jpeg" alt="a cartoon about career death" />
-</div> -->
-
 <style>
 	.contactForm {
 		margin: 2rem auto;
@@ -27,62 +23,46 @@
 	@media screen and (min-width: 200px) {
 		.contactForm {
 			display: block;
-			width: 100%;
 			/* margin: 1rem auto 0 auto; */
-			margin: 1rem 0 0 10rem;
+			margin: 1rem 0 0 23rem;
 		}
-
-		/* .career {
-			width: 90%;
-			margin-top: 5%;
-			margin-inline: auto;
-		} */
 	}
 
 	@media screen and (min-width: 500px) {
 		.contactForm {
-			margin: 1rem 0 0 9.8rem;
+			margin: 1rem 0 0 28rem;
 		}
 	}
 
 	@media screen and (min-width: 700px) {
 		.contactForm {
-			margin: 1rem 0 0 7.5rem;
+			margin: 1rem 0 0 40%;
 		}
 	}
 
 	@media screen and (min-width: 850px) {
 		.contactForm {
-			margin: 2rem 0 0 8rem;
+			margin: 1rem 0 0 35%;
 		}
 	}
 
 	@media screen and (min-width: 990px) {
 		.contactForm {
-			margin: 2rem 0 0 8rem;
+			margin: 1rem 0 0 30%;
 		}
 	}
 
 	@media screen and (min-width: 1024px) {
 		.contactForm {
-			margin: 2rem 0 0 8rem;
+			margin: 1rem 0 0 25%;
 		}
-
-		/* .career {
-			margin-left: 15.5%;
-		} */
 	}
 
 	@media screen and (min-width: 1400px) {
 		.contactForm {
 			/* margin: 2rem 0 0 14.5rem; */
-			margin: 1rem 6%;
+			margin: 1rem 0 0 10%;
 			scale: 0.8;
 		}
-
-		/* .career {
-			margin: 0 20%;
-			scale: 0.8;
-		} */
 	}
 </style>

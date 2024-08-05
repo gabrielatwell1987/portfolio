@@ -108,7 +108,7 @@
 			border-radius: 10px;
 			caret-color: var(--purple);
 			color: var(--white);
-			font-size: 1.5rem;
+			font-size: 1.05rem;
 		}
 
 		input:placeholder-shown {
@@ -130,7 +130,7 @@
 			border: 2px solid var(--dark-gray);
 			border-radius: 10px;
 			color: var(--white);
-			font-size: 1.5rem;
+			font-size: 1.05rem;
 		}
 
 		textarea:placeholder-shown {

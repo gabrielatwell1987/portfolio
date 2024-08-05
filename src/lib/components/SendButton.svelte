@@ -17,7 +17,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 45%;
+			width: 100%;
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
@@ -41,7 +41,7 @@
 
 	@media (min-width: 500px) {
 		.send {
-			width: 22%;
+			width: 60%;
 			font-size: 1.25rem;
 		}
 	}
