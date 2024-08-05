@@ -19,7 +19,10 @@
 			duration: 2,
 			delay: 0.5,
 			ease: 'sine.inOut',
-			stagger: 0.5
+			stagger: {
+				each: 0.25,
+				from: 'edges'
+			}
 		});
 	});
 </script>
