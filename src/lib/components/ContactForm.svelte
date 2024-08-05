@@ -72,28 +72,13 @@
 		<legend> message me </legend>
 
 		<label for="name"><span>Name</span></label>
-		<input type="text" id="name" name="name" placeholder="Your name" bind:value={name} required />
+		<input type="text" id="name" name="name" bind:value={name} required />
 
 		<label for="email"><span>Email</span></label>
-		<input
-			type="email"
-			id="email"
-			name="email"
-			placeholder="Your email address"
-			bind:value={email}
-			required
-		/>
+		<input type="email" id="email" name="email" bind:value={email} required />
 
 		<label for="message"><span>Message</span></label>
-		<textarea
-			type="text"
-			id="message"
-			name="message"
-			placeholder="Your message"
-			bind:value={message}
-			rows="5"
-			required
-		/>
+		<textarea type="text" id="message" name="message" bind:value={message} rows="5" required />
 
 		<SendButton />
 	</fieldset>
