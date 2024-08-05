@@ -91,7 +91,7 @@
 
 	@media screen and (min-width: 1500px) {
 		button {
-			width: 20%;
+			width: 26%;
 			font-size: 1.75rem;
 		}
 	}
