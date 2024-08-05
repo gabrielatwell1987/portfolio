@@ -24,13 +24,13 @@
 		.contactForm {
 			display: block;
 			/* margin: 1rem auto 0 auto; */
-			margin: 1rem 0 0 23rem;
+			margin: 1rem 0 0 75%;
 		}
 	}
 
 	@media screen and (min-width: 500px) {
 		.contactForm {
-			margin: 1rem 0 0 28rem;
+			margin: 1rem 0 0 65%;
 		}
 	}
 
