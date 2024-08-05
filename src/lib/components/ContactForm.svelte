@@ -80,14 +80,24 @@
 		<label for="message"><span>Message</span></label>
 		<textarea type="text" id="message" name="message" bind:value={message} rows="5" required />
 
-		<SendButton />
+		<div class="send">
+			<SendButton />
+		</div>
 	</fieldset>
 </form>
 
 <style>
 	@media screen and (min-width: 200px) {
-		input {
+		form {
+			/* display: flex; */
+			/* flex-direction: column; */
 			width: 100%;
+			margin-inline: auto;
+			/* margin-left: 50%; */
+		}
+
+		input {
+			width: 200%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
 			border-radius: 10px;
@@ -110,7 +120,7 @@
 		}
 
 		textarea {
-			width: 100%;
+			width: 200%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
 			border-radius: 10px;
@@ -133,7 +143,7 @@
 
 		legend {
 			font-family: var(--anta);
-			font-size: clamp(2rem, 5vw, 5rem);
+			font-size: clamp(1.75rem, 5vw, 5rem);
 			text-align: center;
 			margin-bottom: 0.5rem;
 			color: var(--purple);
@@ -157,6 +167,11 @@
 		#message::-webkit-input-placeholder {
 			color: var(--white);
 			font-weight: 100;
+		}
+
+		.send {
+			width: 100%;
+			margin-inline: auto;
 		}
 
 		.open-button,
@@ -187,7 +202,19 @@
 		}
 	}
 
+	@media screen and (min-width: 500px) {
+		input,
+		textarea {
+			width: 150%;
+		}
+	}
+
 	@media screen and (min-width: 720px) {
+		input,
+		textarea {
+			width: 100%;
+		}
+
 		.open-button {
 			display: block;
 			font-size: 1.2rem;
