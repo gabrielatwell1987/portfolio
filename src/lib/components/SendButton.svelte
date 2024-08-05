@@ -76,7 +76,7 @@
 
 	@media (min-width: 1350px) {
 		.send {
-			width: 20%;
+			width: 15%;
 			margin-inline: auto;
 			letter-spacing: 0;
 			font-size: 1.75rem;

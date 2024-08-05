@@ -69,8 +69,6 @@
 <!-- Contact Form -->
 <form method="POST" action="https://form.taxi/s/xeyymb58" aria-hidden="true">
 	<fieldset>
-		<legend> message me </legend>
-
 		<label for="name"><span>Name</span></label>
 		<input type="text" id="name" name="name" bind:value={name} required />
 
@@ -89,11 +87,8 @@
 <style>
 	@media screen and (min-width: 300px) {
 		form {
-			/* display: flex; */
-			/* flex-direction: column; */
 			width: 100%;
 			margin-inline: auto;
-			/* margin-left: 50%; */
 		}
 
 		input {
@@ -139,16 +134,6 @@
 		textarea:focus-visible {
 			outline: 2px solid var(--off-white);
 			border: none;
-		}
-
-		legend {
-			font-family: var(--anta);
-			font-size: clamp(1.75rem, 4vw, 5rem);
-			text-align: center;
-			margin-bottom: 0.5rem;
-			color: var(--purple);
-			text-transform: uppercase;
-			text-align: center;
 		}
 
 		label {
@@ -317,8 +302,6 @@
 		form {
 			display: flex;
 			flex-direction: column;
-			/* width: 100%; */
-			/* margin-left: 63.5%; */
 		}
 
 		label {
@@ -346,11 +329,6 @@
 			margin: 2rem;
 			padding: 2rem 5rem;
 			border-radius: 10px;
-		}
-
-		legend {
-			font-weight: bolder;
-			padding: 0 1rem 0 1rem;
 		}
 
 		h4 {

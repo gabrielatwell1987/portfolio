@@ -10,6 +10,8 @@
 </svelte:head>
 
 <main>
+	<h2 class="legend">Message Me</h2>
+
 	<section class="contactForm">
 		<ContactForm />
 	</section>
@@ -17,7 +19,6 @@
 
 <style>
 	.contactForm {
-		/* margin: 2rem auto; */
 		margin: 0 auto;
 	}
 
@@ -26,12 +27,19 @@
 			display: block;
 			margin: 1rem 0 0 55%;
 		}
+
+		.legend {
+			margin: 10% 0 0 0;
+			font-family: var(--anta);
+			font-size: clamp(1.75rem, 4vw, 5rem);
+			letter-spacing: 3%;
+			padding: 0;
+		}
 	}
 
 	@media screen and (min-width: 500px) {
 		.contactForm {
 			margin: 1rem 0 0 39%;
-			/* margin-inline: auto; */
 		}
 	}
 
