@@ -18,7 +18,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 45%;
+			width: 60%;
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
@@ -42,14 +42,14 @@
 
 	@media (min-width: 500px) {
 		button {
-			width: 35%;
+			width: 37%;
 		}
 	}
 
 	@media (min-width: 700px) {
 		button {
 			font-size: 1.5rem;
-			width: 20%;
+			width: 27%;
 			font-size: 1rem;
 			letter-spacing: 2px;
 		}
@@ -65,7 +65,7 @@
 
 	@media (min-width: 1024px) {
 		button {
-			width: 30%;
+			width: 40%;
 			font-size: 1.5rem;
 			margin: 3rem auto;
 		}
@@ -73,19 +73,19 @@
 
 	@media screen and (min-width: 1200px) {
 		button {
-			width: 20%;
+			width: 40%;
 		}
 	}
 
 	@media screen and (min-width: 1300px) {
 		button {
-			width: 20%;
+			width: 40%;
 		}
 	}
 
 	@media screen and (min-width: 1400px) {
 		button {
-			width: 20%;
+			width: 40%;
 		}
 	}
 
