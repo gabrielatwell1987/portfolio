@@ -26,7 +26,6 @@
 			margin-top: 10%;
 			margin-bottom: 2%;
 			user-select: none;
-			cursor: pointer;
 		}
 
 		.send:hover,
@@ -41,7 +40,7 @@
 
 	@media (min-width: 500px) {
 		.send {
-			width: 60%;
+			width: 70%;
 			font-size: 1.25rem;
 		}
 	}

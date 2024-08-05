@@ -17,20 +17,21 @@
 
 <style>
 	.contactForm {
-		margin: 2rem auto;
+		/* margin: 2rem auto; */
+		margin: 0 auto;
 	}
 
 	@media screen and (min-width: 200px) {
 		.contactForm {
 			display: block;
-			/* margin: 1rem auto 0 auto; */
-			margin: 1rem 0 0 75%;
+			margin: 1rem 0 0 55%;
 		}
 	}
 
 	@media screen and (min-width: 500px) {
 		.contactForm {
-			margin: 1rem 0 0 65%;
+			margin: 1rem 0 0 39%;
+			/* margin-inline: auto; */
 		}
 	}
 
@@ -48,21 +49,26 @@
 
 	@media screen and (min-width: 990px) {
 		.contactForm {
-			margin: 1rem 0 0 30%;
+			margin: 1rem 0 0 33%;
 		}
 	}
 
 	@media screen and (min-width: 1024px) {
 		.contactForm {
-			margin: 1rem 0 0 25%;
+			margin: 1rem 0 0 32%;
 		}
 	}
 
 	@media screen and (min-width: 1400px) {
 		.contactForm {
-			/* margin: 2rem 0 0 14.5rem; */
-			margin: 1rem 0 0 10%;
+			margin: 1rem 0 0 20%;
 			scale: 0.8;
+		}
+	}
+
+	@media screen and (min-width: 1600px) {
+		.contactForm {
+			margin: 1rem 0 0 14%;
 		}
 	}
 </style>
