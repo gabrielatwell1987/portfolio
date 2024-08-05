@@ -262,7 +262,7 @@
 
 	@media screen and (min-width: 1400px) {
 		section {
-			top: 50%;
+			top: 30%;
 		}
 	}
 
