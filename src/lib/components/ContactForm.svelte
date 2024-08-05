@@ -92,7 +92,7 @@
 		}
 
 		input {
-			width: 200%;
+			width: 217%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
 			border-radius: 10px;
@@ -115,7 +115,7 @@
 		}
 
 		textarea {
-			width: 200%;
+			width: 217%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
 			border-radius: 10px;
