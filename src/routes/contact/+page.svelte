@@ -34,6 +34,7 @@
 			font-size: clamp(1.75rem, 4vw, 5rem);
 			letter-spacing: 3%;
 			padding: 0;
+			color: var(--purple);
 		}
 	}
 
