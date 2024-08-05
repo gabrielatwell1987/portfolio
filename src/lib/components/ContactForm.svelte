@@ -87,7 +87,7 @@
 </form>
 
 <style>
-	@media screen and (min-width: 200px) {
+	@media screen and (min-width: 300px) {
 		form {
 			/* display: flex; */
 			/* flex-direction: column; */
@@ -143,11 +143,12 @@
 
 		legend {
 			font-family: var(--anta);
-			font-size: clamp(1.75rem, 5vw, 5rem);
+			font-size: clamp(1.75rem, 4vw, 5rem);
 			text-align: center;
 			margin-bottom: 0.5rem;
 			color: var(--purple);
 			text-transform: uppercase;
+			text-align: center;
 		}
 
 		label {
