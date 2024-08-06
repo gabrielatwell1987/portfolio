@@ -6,16 +6,14 @@
 		const letters = gsap.utils.toArray('.animated-letter');
 
 		gsap.set(letters, {
-			// y: '-100%',
 			scale: 0,
-			opacity: 0
+			autoAlpha: 0
 		});
 
 		gsap.to(letters, {
-			// y: 0,
 			scale: 1,
 			transformOrigin: '50% 50%',
-			opacity: 1,
+			autoAlpha: 1,
 			duration: 2,
 			delay: 0.5,
 			ease: 'sine.inOut',
