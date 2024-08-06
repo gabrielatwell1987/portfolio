@@ -257,12 +257,14 @@
 
 		section {
 			top: 30%;
+			scale: 0.75;
 		}
 	}
 
 	@media screen and (min-width: 1400px) {
 		section {
-			top: 50%;
+			top: 20%;
+			left: 36%;
 		}
 	}
 
