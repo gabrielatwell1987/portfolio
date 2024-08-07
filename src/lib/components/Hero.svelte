@@ -261,24 +261,22 @@
 
 	@media screen and (min-width: 1100px) {
 		button {
-			width: 25%;
+			width: 15%;
+			font-size: 2.5rem;
+		}
+
+		h3 {
+			font-size: 4.5rem;
 		}
 	}
 
 	@media screen and (min-width: 1400px) {
 		section {
-			top: 30%;
-		}
-	}
-
-	@media screen and (min-width: 1800px) {
-		button {
-			width: 15%;
-			font-size: 1.5rem;
+			top: 32.5%;
 		}
 
 		h3 {
-			font-size: 4rem;
+			font-size: 5rem;
 		}
 	}
 </style>
