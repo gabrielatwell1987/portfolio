@@ -47,7 +47,7 @@
 
 	@media (min-width: 720px) {
 		.send {
-			width: 30%;
+			width: 75%;
 			font-size: 1.5rem;
 		}
 
@@ -58,25 +58,25 @@
 
 	@media (min-width: 775px) {
 		.send {
-			width: 30%;
+			width: 65%;
 		}
 	}
 
 	@media (min-width: 850px) {
 		.send {
-			width: 30%;
+			width: 65%;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		.send {
-			width: 30%;
+			width: 25%;
 		}
 	}
 
 	@media (min-width: 1350px) {
 		.send {
-			width: 15%;
+			width: 25%;
 			margin-inline: auto;
 			letter-spacing: 0;
 			font-size: 1.75rem;
