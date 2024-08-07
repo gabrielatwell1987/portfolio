@@ -88,11 +88,14 @@
 	@media screen and (min-width: 300px) {
 		form {
 			width: 100%;
-			margin-inline: auto;
+			margin-left: 54.5%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 
 		input {
-			width: 217%;
+			width: 100%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
 			border-radius: 10px;
@@ -115,7 +118,7 @@
 		}
 
 		textarea {
-			width: 217%;
+			width: 100%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
 			border-radius: 10px;
@@ -157,7 +160,10 @@
 
 		.send {
 			width: 100%;
-			margin-inline: auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 1rem;
 		}
 
 		.open-button,
@@ -193,12 +199,29 @@
 		textarea {
 			width: 150%;
 		}
+
+		form {
+			margin-left: 26%;
+		}
+
+		.send {
+			margin-left: 20%;
+		}
 	}
 
 	@media screen and (min-width: 720px) {
 		input,
 		textarea {
+			width: 175%;
+		}
+
+		form {
+			margin-left: 15%;
+		}
+
+		.send {
 			width: 100%;
+			margin-left: 37%;
 		}
 
 		.open-button {
@@ -314,11 +337,13 @@
 			font-size: 1.5rem;
 			margin-bottom: 1rem;
 			transform: scale(1.05);
+			width: 100%;
 		}
 
 		textarea {
 			font-size: 1rem;
 			margin-bottom: 1rem;
+			width: 100%;
 		}
 
 		fieldset {
@@ -329,6 +354,7 @@
 			margin: 2rem;
 			padding: 2rem 5rem;
 			border-radius: 10px;
+			width: 60%;
 		}
 
 		h4 {
@@ -354,9 +380,17 @@
 			color: var(--black);
 			border: 2px solid var(--black);
 		}
+
+		.send {
+			margin-left: 0;
+		}
 	}
 
 	@media screen and (min-width: 1100px) {
+		fieldset {
+			width: 65%;
+		}
+
 		.modal h4 {
 			color: var(--yellow);
 		}
@@ -384,6 +418,14 @@
 
 		i {
 			font-size: 2rem;
+		}
+
+		form {
+			margin-left: 10%;
+		}
+
+		fieldset {
+			width: 75%;
 		}
 
 		input {
