@@ -1,9 +1,11 @@
 <script>
 	import LoadingDots from '$lib/components/LoadingDots.svelte';
+	// import SpinPulse from './SpinPulse.svelte';
 </script>
 
 <main class="container">
 	<LoadingDots />
+	<!-- <SpinPulse /> -->
 </main>
 
 <style>

@@ -25,8 +25,8 @@
 	}
 
 	.loading div {
-		width: 3.5rem;
-		height: 3.5rem;
+		width: 5rem;
+		height: 5rem;
 		margin: 2rem 0.5rem;
 		background: var(--purple);
 		border-radius: 50%;

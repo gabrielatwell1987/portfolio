@@ -29,22 +29,22 @@
 	</div>
 
 	<!-- desktop view -->
-	<div class="desktop" aria-hidden="true">
-		<a class="nav-link" href="/projects" aria-label="projects">Projects</a>
-		<a class="nav-link" href="/blog" aria-label="blog">Blog</a>
-		<a class="nav-link" href="/about" aria-label="about">About</a>
-		<a class="nav-link" href="/photos" aria-label="photos">Photos</a>
-		<a class="nav-link" href="/contact" aria-label="contact">Contact</a>
+	<div class="desktop">
+		<a class="nav-link" href="/projects">Projects</a>
+		<a class="nav-link" href="/blog">Blog</a>
+		<a class="nav-link" href="/about">About</a>
+		<a class="nav-link" href="/photos">Photos</a>
+		<a class="nav-link" href="/contact">Contact</a>
 	</div>
 
 	<!-- mobile view -->
 	{#if open}
-		<div class="mobile" aria-hidden="true">
-			<a class="nav-link" href="/projects" aria-label="projects">Projects</a>
-			<a class="nav-link" href="/blog" aria-label="blog">Blog</a>
-			<a class="nav-link" href="/about" aria-label="about">About</a>
-			<a class="nav-link" href="/photos/carousel" aria-label="photos">Photos</a>
-			<a class="nav-link" href="/contact" aria-label="contact">Contact</a>
+		<div class="mobile">
+			<a class="nav-link" href="/projects">Projects</a>
+			<a class="nav-link" href="/blog">Blog</a>
+			<a class="nav-link" href="/about">About</a>
+			<a class="nav-link" href="/photos/carousel">Photos</a>
+			<a class="nav-link" href="/contact">Contact</a>
 		</div>
 	{/if}
 </nav>
