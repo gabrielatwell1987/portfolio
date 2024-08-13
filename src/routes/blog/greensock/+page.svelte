@@ -156,6 +156,10 @@
 		margin-bottom: 2rem;
 	}
 
+	details[open] summary ~ * {
+		animation: open 0.5s ease-in-out;
+	}
+
 	p {
 		text-align: left;
 		margin-bottom: 0 0 2rem 0;
@@ -340,6 +344,17 @@
 
 		.popover {
 			margin-bottom: -20%;
+		}
+	}
+
+	@keyframes open {
+		0% {
+			opacity: 0;
+			margin-top: -10px;
+		}
+		100% {
+			opacity: 1;
+			margin-top: 0px;
 		}
 	}
 </style>
