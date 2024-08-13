@@ -348,11 +348,11 @@
 	}
 
 	@keyframes open {
-		0% {
+		from {
 			opacity: 0;
 			margin-top: -10px;
 		}
-		100% {
+		to {
 			opacity: 1;
 			margin-top: 0px;
 		}
