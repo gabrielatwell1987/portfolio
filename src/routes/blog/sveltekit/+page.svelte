@@ -26,6 +26,24 @@
 
 		console.log(section);
 	});
+
+	// details animation
+	function resetAnimation(event) {
+		const detail = event.currentTarget;
+		if (detail.open) {
+			const summary = detail.querySelector('summary');
+			const content = summary.nextElementSibling;
+
+			content.style.display = 'none';
+			content.offsetHeight; // Force reflow
+			content.style.display = '';
+
+			// Optionally reset animation with class
+			content.classList.remove('animate');
+			void content.offsetWidth; // Force reflow again
+			content.classList.add('animate');
+		}
+	}
 </script>
 
 <svelte:head>
@@ -45,7 +63,7 @@
 
 		<!-- content -->
 		<section>
-			<details>
+			<details on:toggle={resetAnimation}>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
 				<summary role="button" class="outline contrast spacing"><b>Framework</b></summary>
 				<p class="detail">
@@ -64,7 +82,7 @@
 				</p>
 			</details>
 
-			<details>
+			<details on:toggle={resetAnimation}>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
 				<summary role="button" class="outline contrast spacing"><b>Based off of basics</b></summary>
 				<p class="detail">
@@ -80,7 +98,7 @@
 				</p>
 			</details>
 
-			<details>
+			<details on:toggle={resetAnimation}>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
 				<summary role="button" class="outline contrast spacing"><b>What is it?</b></summary>
 				<p class="detail">
@@ -98,7 +116,7 @@
 				</p>
 			</details>
 
-			<details>
+			<details on:toggle={resetAnimation}>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
 				<summary role="button" class="outline contrast spacing"><b>Install</b></summary>
 				<p class="detail">
