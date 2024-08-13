@@ -27,6 +27,24 @@
 
 		console.log(section);
 	});
+
+	// details animation
+	function resetAnimation(event) {
+		const detail = event.currentTarget;
+		if (detail.open) {
+			const summary = detail.querySelector('summary');
+			const content = summary.nextElementSibling;
+
+			content.style.display = 'none';
+			content.offsetHeight; // Force reflow
+			content.style.display = '';
+
+			// Optionally reset animation with class
+			content.classList.remove('animate');
+			void content.offsetWidth; // Force reflow again
+			content.classList.add('animate');
+		}
+	}
 </script>
 
 <svelte:head>
@@ -53,7 +71,7 @@
 			<Popover text="the syntax is simple" />
 		</article>
 
-		<details>
+		<details on:toggle={resetAnimation}>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast spacing"><b>What is GSAP?</b></summary>
 			<p class="detail">
@@ -71,7 +89,7 @@
 			</p>
 		</details>
 
-		<details>
+		<details on:toggle={resetAnimation}>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast spacing"
 				><b>How do you install GSAP?</b></summary
@@ -93,7 +111,7 @@
 			</p>
 		</details>
 
-		<details>
+		<details on:toggle={resetAnimation}>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast spacing"><b>The syntax</b></summary>
 			<p class="detail">
@@ -159,6 +177,10 @@
 	details[open] summary ~ * {
 		animation: open 0.5s ease-in-out;
 	}
+
+	/* .animate {
+		animation: open 0.5s ease-in-out;
+	} */
 
 	p {
 		text-align: left;
