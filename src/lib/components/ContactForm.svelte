@@ -232,7 +232,7 @@
 			color: var(--white);
 			width: 4%;
 			height: 2%;
-			margin-left: 10%;
+			margin-left: 30%;
 			margin-top: 5%;
 			outline: none;
 			border: 2px solid var(--white);
@@ -374,6 +374,10 @@
 
 		.modal .modal__p {
 			color: var(--black);
+		}
+
+		.open-button {
+			margin-left: 20%;
 		}
 
 		.close-button {
