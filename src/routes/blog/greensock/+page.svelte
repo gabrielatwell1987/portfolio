@@ -80,12 +80,10 @@
 				so easy to accomplish! The syntax is really simple which makes no learning curve at all.
 				Other than that, it doesn't take up a lot of space to encorporate these techniques, which
 				makes your web pages 100,000 times faster.
-			</p>
-
-			<p class="detail">
-				Usually, websites use a mixture of GSAP and three js. GSAP makes animating in three js
-				simple, so you can actually edit 3D stuff. What's great is that three js is essentially an
-				easier webGL, so it makes animating with GSAP really simple!
+				<br /><br />
+				Usually, websites use a mixture of GSAP and three js. GSAP makes animating in three js simple,
+				so you can actually edit 3D stuff. What's great is that three js is essentially an easier webGL,
+				so it makes animating with GSAP really simple!
 			</p>
 		</details>
 
@@ -97,17 +95,16 @@
 			<p class="detail">
 				In the project, you have to <code class="code">npm install gsap</code> (if you have Node.js
 				installed) or you can use the CDN (content delivery network). In sveltekit, you have to put
-				all of your GSAP code in an <code class="code">onMount</code> function that you have to import.
-				This is because onMount is displayed once on initial load. If you were to use a regular script
-				tag, it would not work. All of the designs that are animated on this website are all from GSAP.
-				I tend to think that these animations make the website look a lot better than a static website.
-				GSAP is a great tool to use for any web developer. I highly recommend it!
-			</p>
-
-			<p class="detail">
-				You can install GSAP on any javascript framework you want to use! It works on Vue, React,
-				Svelte, and Angular. GSAP uses integer values to edit the DOM, for the most part.. It's also
-				good for vanilla JavaScript.
+				all of your GSAP code in an <code class="code">onMount</code> function that you have to
+				import. This is because onMount is displayed once on initial load. If you were to use a
+				regular script tag, it would not work. All of the designs that are animated on this website
+				are all from GSAP. I tend to think that these animations make the website look a lot better
+				than a static website. GSAP is a great tool to use for any web developer. I highly recommend
+				it!
+				<br /><br />
+				You can install GSAP on any javascript framework you want to use! It works on Vue, React, Svelte,
+				and Angular. GSAP uses integer values to edit the DOM, for the most part.. It's also good for
+				vanilla JavaScript.
 			</p>
 		</details>
 
@@ -123,17 +120,16 @@
 				to animate FROM a state. You can use
 				<code class="code"
 					>gsap.fromTo("element", &lbrace; variables &rbrace;, &lbrace; variables &rbrace;)</code
-				> to animate FROM a state TO another state.
-			</p>
-
-			<p class="detail">
-				The complete syntax is as follows: <code class="code"
-					>gsap.to("element", &lbrace; variables &rbrace;)</code
-				>. You can use the following variables: duration, delay, ease, stagger, and onComplete. The
-				duration is how long the animation will last. The delay is how long the animation will wait
-				before starting. The ease is the easing function that you want to use. The stagger is how
-				long the animation will wait before starting. The onComplete is the function that will run
-				after the animation is complete.
+				>
+				to animate FROM a state TO another state.
+				<br /><br />
+				The complete syntax is as follows:
+				<code class="code">gsap.to("element", &lbrace; variables &rbrace;)</code>. You can use the
+				following variables: duration, delay, ease, stagger, and onComplete. The duration is how
+				long the animation will last. The delay is how long the animation will wait before starting.
+				The ease is the easing function that you want to use. The stagger is how long the animation
+				will wait before starting. The onComplete is the function that will run after the animation
+				is complete.
 			</p>
 		</details>
 
