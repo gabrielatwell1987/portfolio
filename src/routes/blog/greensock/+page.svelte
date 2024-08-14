@@ -174,10 +174,6 @@
 		animation: open 0.5s ease-in-out;
 	}
 
-	/* .animate {
-		animation: open 0.5s ease-in-out;
-	} */
-
 	p {
 		text-align: left;
 		margin-bottom: 0 0 2rem 0;
@@ -218,7 +214,7 @@
 	}
 
 	.detail {
-		font-size: clamp(1.25rem, 2vw, 1.5rem);
+		font-size: clamp(1.05rem, 2vw, 1.5rem);
 	}
 
 	.popover {
