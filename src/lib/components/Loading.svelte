@@ -1,11 +1,11 @@
 <script>
-	import LoadingDots from '$lib/components/LoadingDots.svelte';
-	// import SpinPulse from './SpinPulse.svelte';
+	import LoadingDots from './LoadingDots.svelte';
+	// import LoadingSquares from './LoadingSquares.svelte';
 </script>
 
 <main class="container">
 	<LoadingDots />
-	<!-- <SpinPulse /> -->
+	<!-- <LoadingSquares /> -->
 </main>
 
 <style>
