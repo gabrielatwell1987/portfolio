@@ -117,6 +117,16 @@
 			border: none;
 		}
 
+		input:user-valid,
+		textarea:user-valid {
+			outline: 2px solid var(--green);
+		}
+
+		input:user-invalid,
+		textarea:user-invalid {
+			outline: 2px solid var(--red);
+		}
+
 		textarea {
 			width: 100%;
 			background-color: transparent;

@@ -18,6 +18,8 @@
 	--dark-blue: hsla(202, 94%, 19%, 0.75);
 	--purple: hsla(227, 98%, 68%, 0.6);
 	--yellow: hsla(46, 93%, 42%, 0.75);
+	--green: hsla(120, 95%, 26%, 0.75);
+	--red: hsla(0, 96%, 31%, 0.75);
 
 	/* fonts */
 	--montserrat: 'Montserrat', sans-serif;

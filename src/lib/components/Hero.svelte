@@ -1,13 +1,18 @@
 <script>
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
+	import SplitType from 'split-type';
 
 	// animations
 	onMount(() => {
-		// fade the logo in
+		const main = document.querySelector('main');
+		const heroTitle = document.querySelector('.hero-title');
+
 		gsap.to('main', { autoAlpha: 1, duration: 2.5, ease: 'sine.in' });
 
-		const main = document.querySelector('main');
+		const tl = gsap.timeline({ defaults: { duration: 3 } });
+		tl.from(heroTitle, { y: -100, opacity: 0, ease: 'power3' });
+
 		console.log(main);
 	});
 </script>
@@ -21,7 +26,7 @@
 
 	<section aria-label="hero">
 		<!-- hero section text and links -->
-		<h3>Frontend Crafted Web Experiences</h3>
+		<h3 class="hero-title">Frontend Crafted Web Experiences</h3>
 
 		<h4 class="summary left">
 			I am a frontend developer who loves to create beautiful and functional websites. This
@@ -230,12 +235,6 @@
 			height: 100%;
 		}
 
-		section {
-			top: 30%;
-			left: 50%;
-			transform: translate(-50%, -30%);
-		}
-
 		h3 {
 			font-size: 2.2rem;
 			letter-spacing: 10px;
@@ -253,15 +252,11 @@
 			width: 80%;
 			margin-inline: auto;
 		}
-
-		section {
-			top: 20%;
-		}
 	}
 
 	@media screen and (min-width: 1100px) {
 		button {
-			width: 15%;
+			width: 20%;
 			font-size: 2.5rem;
 		}
 
@@ -271,12 +266,12 @@
 	}
 
 	@media screen and (min-width: 1400px) {
-		section {
-			top: 32.5%;
-		}
-
 		h3 {
 			font-size: 5rem;
+		}
+
+		button {
+			width: 15%;
 		}
 	}
 </style>
