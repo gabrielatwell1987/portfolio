@@ -1,11 +1,11 @@
 <script>
-	import LoadingDots from './LoadingDots.svelte';
-	// import LoadingSquares from './LoadingSquares.svelte';
+	// import LoadingDots from './LoadingDots.svelte';
+	import Pulsing from './Pulsing.svelte';
 </script>
 
 <main class="container">
-	<LoadingDots />
-	<!-- <LoadingSquares /> -->
+	<!-- <LoadingDots /> -->
+	<Pulsing />
 </main>
 
 <style>
