@@ -28,7 +28,8 @@
 		width: 5rem;
 		height: 5rem;
 		margin: 2rem 0.5rem;
-		background: var(--purple);
+		background: transparent;
+		border: 5px solid var(--purple);
 		border-radius: 50%;
 		-webkit-animation: 0.9s bounce infinite alternate;
 		animation: 0.9s bounce infinite alternate;
