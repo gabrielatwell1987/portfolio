@@ -6,18 +6,18 @@
 
 	// Animations
 	onMount(() => {
-		const titleText = new SplitType('.title', { types: 'chars' });
+		const titleText = new SplitType('.title', { types: 'words' });
 		const main = document.querySelector('main');
 
-		gsap.from(titleText.chars, {
-			duration: 7,
+		gsap.from(titleText.words, {
+			duration: 5,
 			scale: 0,
 			opacity: 0.5,
 			stagger: {
 				each: 0.2,
 				from: 'edges'
 			},
-			ease: 'elastic.out(1.75, 0.5)'
+			ease: 'back'
 		});
 
 		console.log(main);
@@ -49,7 +49,7 @@
 		font-weight: 900;
 		color: var(--purple);
 		font-family: var(--anta);
-		letter-spacing: 5px;
+		letter-spacing: 10px;
 		text-transform: uppercase;
 		margin: 2rem auto;
 		text-align: center;
