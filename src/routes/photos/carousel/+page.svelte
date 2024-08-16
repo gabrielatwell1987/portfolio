@@ -10,11 +10,13 @@
 		const main = document.querySelector('main');
 
 		gsap.from(titleText.chars, {
-			duration: 5,
-			y: 75,
-			scale: 0.2,
+			duration: 7,
+			scale: 0,
 			opacity: 0.5,
-			stagger: -0.2,
+			stagger: {
+				each: 0.2,
+				from: 'edges'
+			},
 			ease: 'elastic.out(1.75, 0.5)'
 		});
 
