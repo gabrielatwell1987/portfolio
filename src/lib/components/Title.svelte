@@ -10,11 +10,15 @@
 		const titleText = new SplitType('#title', { types: 'chars' });
 
 		gsap.from(titleText.chars, {
-			duration: 5,
+			duration: 7.5,
 			y: 75,
-			scale: 0.2,
+			scale: 0,
 			opacity: 0.5,
-			stagger: 0.2,
+			stagger: {
+				amount: 0.5,
+				grid: 'auto',
+				from: 'center'
+			},
 			ease: 'elastic.out(0.5, 0.2)'
 		});
 	});
