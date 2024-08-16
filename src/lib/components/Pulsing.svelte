@@ -8,7 +8,8 @@
 		width: 5rem;
 		aspect-ratio: 1;
 		border-radius: 50%;
-		background: #fff;
+		background: transparent;
+		border: 2px solid #fff;
 		box-shadow: 0 0 0 0 #fff4;
 		animation: l2 1.5s infinite linear;
 		position: relative;
