@@ -1,5 +1,19 @@
 <script>
 	import ThreeCanvas from '$lib/components/ThreeCanvas.svelte';
+	import { onMount } from 'svelte';
+	import gsap from 'gsap';
+
+	onMount(() => {
+		const heroTitle = document.querySelector('.hero-title');
+		const up = document.querySelector('.up');
+
+		gsap.to('main', { autoAlpha: 1, duration: 2.5, ease: 'sine.in' });
+
+		const textTl = gsap.timeline({ defaults: { ease: 'power1.inOut' } }, { paused: true });
+		textTl.to(heroTitle, { yPercent: -20 }).from(up, { y: 10 }, 0);
+		up.addEventListener('mouseenter', () => textTl.play());
+		up.addEventListener('mouseleave', () => textTl.reverse());
+	});
 
 	$: console.log(ThreeCanvas);
 </script>
@@ -16,9 +30,9 @@
 
 <section aria-label="hero">
 	<!-- hero section text and links -->
-	<h3>Frontend Crafted Web Experiences</h3>
+	<h3 class="hero-title">Frontend Crafted Web Experiences</h3>
 
-	<h4 class="summary left">
+	<h4 class="summary left up">
 		I am a frontend developer who loves to create beautiful and functional websites. This portfolio
 		is a website that I built from scratch to showcase some projects that I created. I look forward
 		to hearing from you so we can discuss your goals for your online needs!
