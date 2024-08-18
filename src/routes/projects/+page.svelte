@@ -81,12 +81,12 @@
 		description="Made with d3 and svelte"
 	/>
 
-	<Project
+	<!-- <Project
 		title="snippet creator"
 		img="/projects/snippet.png"
 		url="https://appity.vercel.app"
 		description="Create your own snippets"
-	/>
+	/> -->
 
 	<Project
 		title="password generator"
@@ -95,12 +95,12 @@
 		description="A password generator"
 	/>
 
-	<!-- <Project
-		title="to-do app"
-		img="/projects/react.png"
+	<Project
+		title="grocery list app"
+		img="/projects/groceries.png"
 		url="https://react-todo-navy-five.vercel.app/"
-		description="A React to-do app"
-	/> -->
+		description="A groceries app"
+	/>
 
 	<!-- <Project
 		title="random user generator"
