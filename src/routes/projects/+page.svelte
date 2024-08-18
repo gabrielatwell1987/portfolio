@@ -89,17 +89,17 @@
 	/> -->
 
 	<Project
-		title="password generator"
-		img="/projects/pw-generator.png"
-		url="https://pw-generator-ebon.vercel.app/"
-		description="A password generator"
-	/>
-
-	<Project
 		title="grocery list app"
 		img="/projects/groceries.png"
 		url="https://react-todo-navy-five.vercel.app/"
 		description="A groceries app"
+	/>
+
+	<Project
+		title="password generator"
+		img="/projects/pw-generator.png"
+		url="https://pw-generator-ebon.vercel.app/"
+		description="A password generator"
 	/>
 
 	<!-- <Project
