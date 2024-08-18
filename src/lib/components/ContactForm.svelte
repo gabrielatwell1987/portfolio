@@ -119,12 +119,12 @@
 
 		input:user-valid,
 		textarea:user-valid {
-			outline: 2px solid var(--green);
+			outline: 2px solid var(--success);
 		}
 
 		input:user-invalid,
 		textarea:user-invalid {
-			outline: 2px solid var(--red);
+			outline: 2px solid var(--fail);
 		}
 
 		textarea {
