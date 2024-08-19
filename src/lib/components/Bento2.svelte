@@ -2,6 +2,25 @@
 	import GSAP from './GsapIcon.svelte';
 	import SK from './SvelteIcon.svelte';
 	import Image from '$lib/components/Image.svelte';
+	import { onMount } from 'svelte';
+	import gsap from 'gsap';
+
+	onMount(() => {
+		const bentoItem = document.querySelectorAll('.bento-item');
+
+		gsap.set(bentoItem, { autoAlpha: 0 });
+
+		gsap.to(bentoItem, {
+			autoAlpha: 1,
+			delay: 2.25,
+			duration: 1.5,
+			ease: 'none',
+			stagger: {
+				each: 0.5,
+				from: 'random'
+			}
+		});
+	});
 </script>
 
 <main id="bento-div" class="bt-div" aria-hidden="true">
