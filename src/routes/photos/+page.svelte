@@ -152,7 +152,7 @@
 
 		progress {
 			width: 40%;
-			margin: 15% 0 2rem 30%;
+			margin: 17% 0 2rem 30%;
 		}
 
 		.flex {

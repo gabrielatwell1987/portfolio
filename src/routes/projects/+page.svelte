@@ -61,34 +61,6 @@
 	/>
 
 	<Project
-		title="github api"
-		img="/projects/github.png"
-		url="https://adiapp.vercel.app"
-		description="Search github users"
-	/>
-
-	<!-- <Project
-		title="scatterplot chart"
-		img="/projects/chart.png"
-		url="https://piechart-brown.vercel.app"
-		description="Made with d3 and svelte"
-	/> -->
-
-	<Project
-		title="data visualizations"
-		img="/projects/data-v.png"
-		url="https://data-viz-svelte.vercel.app"
-		description="Made with d3 and svelte"
-	/>
-
-	<!-- <Project
-		title="snippet creator"
-		img="/projects/snippet.png"
-		url="https://appity.vercel.app"
-		description="Create your own snippets"
-	/> -->
-
-	<Project
 		title="grocery list app"
 		img="/projects/groceries.png"
 		url="https://react-todo-navy-five.vercel.app/"
@@ -102,11 +74,39 @@
 		description="A password generator"
 	/>
 
+	<Project
+		title="github api"
+		img="/projects/github.png"
+		url="https://adiapp.vercel.app"
+		description="Search github users"
+	/>
+
+	<Project
+		title="data visualizations"
+		img="/projects/data-v.png"
+		url="https://data-viz-svelte.vercel.app"
+		description="Made with d3 and svelte"
+	/>
+
 	<!-- <Project
-		title="random user generator"
-		img="/projects/ran_user.png"
-		url="https://gabe3.vercel.app/"
-		description="Made with Vue"
+		title="scatterplot chart"
+		img="/projects/chart.png"
+		url="https://piechart-brown.vercel.app"
+		description="Made with d3 and svelte"
+	/> -->
+
+	<!-- <Project
+	title="random user generator"
+	img="/projects/ran_user.png"
+	url="https://gabe3.vercel.app/"
+	description="Made with Vue"
+	/> -->
+
+	<!-- <Project
+		title="snippet creator"
+		img="/projects/snippet.png"
+		url="https://appity.vercel.app"
+		description="Create your own snippets"
 	/> -->
 
 	<!-- <Project
