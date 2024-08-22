@@ -130,6 +130,8 @@
 				The ease is the easing function that you want to use. The stagger is how long the animation
 				will wait before starting. The onComplete is the function that will run after the animation
 				is complete.
+				<br /><br />
+				For a list of the variables, go to the <a href="/blog/posts">Web Animation Techniques</a> page.
 			</p>
 		</details>
 
