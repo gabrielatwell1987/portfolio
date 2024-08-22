@@ -103,22 +103,17 @@
 			display: block;
 			width: 15rem;
 			border: none;
-			margin-top: -60%;
+			margin: -60% 0 0 38%;
 		}
 
 		.skills {
-			/* display: flex; */
-			/* flex-direction: column; */
-			/* justify-content: center; */
-			/* align-items: center; */
 			gap: 1rem;
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 		}
 
-		.skills li {
+		.skill li {
 			list-style: none;
-			margin: 0 -92.5%;
 			padding: 0.5rem 0.75rem;
 			width: 100%;
 			font-size: 5rem;
@@ -131,17 +126,19 @@
 		}
 
 		.skills-title {
-			font-size: 2.75rem;
+			font-size: 2.5rem;
 			font-weight: 900;
 			text-align: center;
 			font-family: var(--anta);
 			mix-blend-mode: hard-light;
-			letter-spacing: 7px;
+			margin-left: 71%;
+			text-wrap: nowrap;
 		}
 
 		.skill {
-			display: inline-block;
+			display: block;
 			text-align: center;
+			padding: 0;
 		}
 
 		.skill:is(:hover, :focus) {
@@ -163,25 +160,25 @@
 
 	@media (min-width: 1100px) {
 		.border {
-			margin-top: -50%;
+			margin-top: -40%;
 		}
 	}
 
 	@media (min-width: 1200px) {
 		.border {
-			margin-top: -40%;
+			margin-top: -35%;
 		}
 	}
 
 	@media (min-width: 1300px) {
 		.border {
-			margin-top: -30%;
+			margin-top: 5%;
 		}
 	}
 
 	@media (min-width: 1400px) {
 		.border {
-			margin-top: 15%;
+			margin-top: 7%;
 		}
 	}
 </style>
