@@ -17,7 +17,7 @@
 	}
 </script>
 
-<div class="dropdown-container" style="--animation: {$animation}">
+<main class="dropdown-container" style="--animation: {$animation}">
 	<button class="button" on:click={toggleDropdown}>
 		<svg
 			width="284"
@@ -47,16 +47,18 @@
 			/>
 		</svg>
 	</button>
-	<div class="menu">
+
+	<section class="menu">
 		<div class="menu-content">
 			{text}
 		</div>
-	</div>
-	<div class="goo-container">
+	</section>
+
+	<section class="goo-container">
 		<div class="button" />
 		<div class="menu" />
-	</div>
-</div>
+	</section>
+</main>
 
 <svg id="filter" xmlns="http://www.w3.org/2000/svg" version="1.1">
 	<defs>

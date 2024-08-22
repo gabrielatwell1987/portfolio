@@ -1,19 +1,4 @@
-<script>
-	// import gsap from 'gsap';
-	// import { onMount } from 'svelte';
-
-	// onMount(() => {
-	// 	const tl = gsap.timeline({
-	// 		defaults: { yoyo: true }
-	// 	});
-	// 	tl.from('#a', { opacity: 0.5, duration: 1, ease: 'sine.in' }, '+=0.5')
-	// 		.from('#t', { opacity: 0.5, duration: 1, ease: 'sine.in' }, '+=0.5')
-	// 		.from('#w', { opacity: 0.5, duration: 1, ease: 'sine.in' }, '+=0.5')
-	// 		.from('#e', { opacity: 0.5, duration: 1, ease: 'sine.in' }, '+=0.5')
-	// 		.from('#l', { opacity: 0.5, duration: 1, ease: 'sine.in' }, '+=0.5')
-	// 		.from('#ll', { opacity: 0.5, duration: 1, ease: 'sine.in' }, '+=0.5');
-	// });
-</script>
+<script></script>
 
 <svg
 	width="202"
