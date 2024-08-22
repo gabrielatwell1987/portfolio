@@ -74,7 +74,7 @@
 		<details on:toggle={resetAnimation}>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast spacing"><b>What is GSAP?</b></summary>
-			<p class="detail">
+			<p class="text">
 				Greensock Animation Platform (GSAP) is a javascript library that allows you to animate your
 				website. I really like animating the websites that I've built from scratch and GSAP makes it
 				so easy to accomplish! The syntax is really simple which makes no learning curve at all.
@@ -92,7 +92,7 @@
 			<summary role="button" class="outline contrast spacing"
 				><b>How do you install GSAP?</b></summary
 			>
-			<p class="detail">
+			<p class="text">
 				In the project, you have to <code class="code">npm install gsap</code> (if you have Node.js
 				installed) or you can use the CDN (content delivery network). In sveltekit, you have to put
 				all of your GSAP code in an <code class="code">onMount</code> function that you have to
@@ -111,7 +111,7 @@
 		<details on:toggle={resetAnimation}>
 			<!-- svelte-ignore a11y-no-redundant-roles -->
 			<summary role="button" class="outline contrast spacing"><b>The syntax</b></summary>
-			<p class="detail">
+			<p class="text">
 				It is quite simple to use GSAP. You can use <code class="code"
 					>gsap.to("element", &lbrace; variables &rbrace;)</code
 				>
@@ -215,7 +215,7 @@
 		font-size: clamp(1.5rem, 3vw, 2.5rem);
 	}
 
-	.detail {
+	.text {
 		font-size: clamp(1.05rem, 2vw, 1.5rem);
 	}
 
@@ -245,7 +245,7 @@
 			color: var(--yellow);
 		}
 
-		.detail {
+		.text {
 			min-width: 20rem;
 			margin: 0 -4.75rem;
 			font-family: var(--lexend);
@@ -283,7 +283,7 @@
 	}
 
 	@media (min-width: 500px) {
-		.detail {
+		.text {
 			margin-left: -2.5rem;
 		}
 

@@ -168,16 +168,4 @@
 			margin-top: 15%;
 		}
 	}
-
-	/* @media (min-width: 1700px) {
-		.border {
-			margin-top: 10%;
-		}
-	}
-
-	@media (min-width: 1900px) {
-		.border {
-			margin-top: 10%;
-		}
-	} */
 </style>

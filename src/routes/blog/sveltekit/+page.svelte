@@ -66,7 +66,7 @@
 			<details on:toggle={resetAnimation}>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
 				<summary role="button" class="outline contrast spacing"><b>Framework</b></summary>
-				<p class="detail">
+				<p class="text">
 					I used sveltekit to create this portfolio website. I decided to go with sveltekit because
 					of the server-side rendering (SSR) and all of the SEO features, as well as making the
 					website really fast. The fact that this, to me, is less than an actual framework as it
@@ -82,7 +82,7 @@
 			<details on:toggle={resetAnimation}>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
 				<summary role="button" class="outline contrast spacing"><b>Based off of basics</b></summary>
-				<p class="detail">
+				<p class="text">
 					I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I
 					have because I'm a very visual person. Sveltekit has made it super simple to put my ideas
 					on the web.
@@ -96,7 +96,7 @@
 			<details on:toggle={resetAnimation}>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
 				<summary role="button" class="outline contrast spacing"><b>What is it?</b></summary>
-				<p class="detail">
+				<p class="text">
 					Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
 					framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
 					React. In the end, sveltekit is a new approach to building rich user interfaces.
@@ -112,7 +112,7 @@
 			<details on:toggle={resetAnimation}>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
 				<summary role="button" class="outline contrast spacing"><b>Install</b></summary>
-				<p class="detail">
+				<p class="text">
 					You need <a href="https://nodejs.org/"><b>Node.js</b></a> installed. Once you have it
 					installed, you will use npm in your terminal. In your terminal, type
 					<code class="code">cd folder</code> to change the directory to whatever folder you want to
@@ -224,7 +224,7 @@
 		text-shadow: 0px 0px 25px var(--blue);
 	}
 
-	.detail {
+	.text {
 		font-size: clamp(1.05rem, 2vw, 1.5rem);
 	}
 
@@ -245,7 +245,7 @@
 			color: var(--yellow);
 		}
 
-		.detail {
+		.text {
 			min-width: 20rem;
 			margin: 0 -4.75rem;
 			font-family: var(--lexend);
@@ -284,7 +284,7 @@
 			width: 15rem;
 		}
 
-		.detail {
+		.text {
 			margin-left: -2.5rem;
 		}
 	}
@@ -336,7 +336,7 @@
 			font-size: 1.75rem;
 		}
 
-		.detail {
+		.text {
 			line-height: 1.65;
 		}
 
