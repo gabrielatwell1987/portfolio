@@ -142,8 +142,14 @@
 		}
 
 		.skill:is(:hover, :focus) {
-			transform: scale(1.1);
-			transition: transform 0.5s ease-in-out;
+			transform: scale(1.25);
+			transition: transform 0.75s ease-in-out;
+			transform-origin: center;
+		}
+
+		.skill:not(:hover, :focus) {
+			transform: scale(1);
+			transition: transform 0.75s ease-in-out;
 			transform-origin: center;
 		}
 
