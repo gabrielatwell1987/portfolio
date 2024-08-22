@@ -103,7 +103,7 @@
 			display: block;
 			width: 15rem;
 			border: none;
-			margin: -60% 0 0 38%;
+			margin: -60% 0 0 39.5%;
 		}
 
 		.skills {
