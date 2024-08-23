@@ -58,7 +58,7 @@
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
-			font-size: 1.5rem;
+			font-size: clamp(1.5rem, 3vw, 4rem);
 			font-weight: 600;
 			font-family: var(--anta);
 			letter-spacing: 2px;
@@ -172,7 +172,6 @@
 		}
 
 		h3 {
-			font-size: 2.5rem;
 			letter-spacing: 7px;
 		}
 
@@ -230,15 +229,12 @@
 		}
 
 		h3 {
-			font-size: 2.2rem;
 			letter-spacing: 10px;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		h3 {
-			font-size: 2.25rem;
-			width: 90%;
 			margin-inline: auto;
 		}
 
@@ -257,19 +253,11 @@
 			width: 15%;
 			font-size: 2.5rem;
 		}
-
-		h3 {
-			font-size: 4.5rem;
-		}
 	}
 
 	@media screen and (min-width: 1400px) {
 		section {
 			top: 45%;
-		}
-
-		h3 {
-			font-size: 5rem;
 		}
 	}
 </style>
