@@ -94,6 +94,10 @@
 			margin-bottom: 0.25rem;
 			padding: 1rem 1.75rem;
 			user-select: none;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 
 		button:hover,
