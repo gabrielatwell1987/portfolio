@@ -184,7 +184,7 @@
 		.modal__p {
 			font-family: var(--lexend);
 			font-weight: 200;
-			font-size: clamp(1.2rem, 3vw, 2rem);
+			font-size: clamp(1.1rem, 2vw, 1.75rem);
 			color: var(--white);
 		}
 
@@ -294,7 +294,7 @@
 		}
 
 		.modal h4 {
-			font-size: clamp(1.2rem, 3vw, 4rem);
+			font-size: clamp(1.2rem, 3vw, 3rem);
 			font-weight: 600;
 			font-family: var(--anta);
 			color: var(--yellow);
