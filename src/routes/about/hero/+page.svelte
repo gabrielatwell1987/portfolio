@@ -256,6 +256,7 @@
 		button {
 			width: 15%;
 			font-size: 2rem;
+			padding-bottom: 1rem;
 		}
 
 		h3 {
@@ -269,7 +270,7 @@
 		}
 
 		h3 {
-			font-size: 4rem;
+			font-size: 4.5rem;
 		}
 	}
 </style>
