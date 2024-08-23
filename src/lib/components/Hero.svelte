@@ -263,7 +263,7 @@
 		}
 
 		h3 {
-			font-size: 4.5rem;
+			font-size: 4rem;
 		}
 	}
 

@@ -256,11 +256,11 @@
 		button {
 			width: 15%;
 			font-size: 2rem;
-			padding-bottom: 1rem;
+			align-content: center;
 		}
 
 		h3 {
-			font-size: 4.5rem;
+			font-size: 4rem;
 		}
 	}
 
@@ -270,7 +270,7 @@
 		}
 
 		h3 {
-			font-size: 4.5rem;
+			font-size: 4rem;
 		}
 	}
 </style>
