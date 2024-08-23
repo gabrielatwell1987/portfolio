@@ -4,6 +4,7 @@
 	import Button from '$lib/components/Button.svelte';
 	import Iframe from '$lib/components/Iframe.svelte';
 	import Image from '$lib/components/Image.svelte';
+	import Popover from '$lib/components/Popover.svelte';
 
 	// animations
 	onMount(() => {
@@ -59,6 +60,11 @@
 	<main>
 		<article class="A">
 			<Image src="/logos/A.png" alt="A for Atwell" />
+		</article>
+
+		<!-- popover -->
+		<article class="popover">
+			<Popover text="closest to HTML" />
 		</article>
 
 		<!-- content -->
@@ -228,6 +234,11 @@
 		font-size: clamp(1.05rem, 2vw, 1.5rem);
 	}
 
+	.popover {
+		background: transparent;
+		margin-bottom: -15%;
+	}
+
 	@media (min-width: 300px) {
 		.main {
 			margin: 0 auto;
@@ -276,6 +287,10 @@
 		.structure {
 			margin: 0;
 			border-radius: 12px;
+		}
+
+		.popover {
+			display: none;
 		}
 	}
 
@@ -347,11 +362,20 @@
 		.center {
 			margin-bottom: 5%;
 		}
+
+		.popover {
+			display: block;
+			margin-bottom: -25%;
+		}
 	}
 
 	@media (min-width: 1400px) {
 		.A {
 			margin-left: 35%;
+		}
+
+		.popover {
+			margin-bottom: -20%;
 		}
 	}
 
