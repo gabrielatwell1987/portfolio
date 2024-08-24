@@ -4,7 +4,7 @@
 
 <div align="center" style="font-family: var(--montserrat); font-size: clamp(1.5rem, 3vw, 5rem); font-weight: 700; letter-spacing: 5px; color: var(--sky); font-family: var(--montserrat); margin-bottom: 3rem;">VARIABLES</div>
 
-<div align="left" style="margin-bottom: 2rem; margin-left: clamp(.5rem, 1.5vw, 2rem); margin-right: clamp(.5rem, 1.5vw, 2rem); color: var(--white); font-size: clamp(1.25rem, 2vw, 1.75rem); font-weight: 200; letter-spacing: 2px; code: var(--mono); text-align: center;" aria-label="tweens">
+<div align="left" style="margin-bottom: 2rem; margin-left: clamp(.5rem, 1.5vw, 2rem); margin-right: clamp(.5rem, 1.5vw, 2rem); color: var(--white); font-size: clamp(1.25rem, 2vw, 1.75rem); font-weight: 200; letter-spacing: 2px; code: var(--mono);" aria-label="tweens">
     <Heading title="x, y, z" />: Control the position of an element along the x, y, and z axes.<br>
     <Heading title="rotation" />: Rotates an element in degrees.<br>
     <Heading title="scale" />: Scales an element uniformly on all axes.<br>
