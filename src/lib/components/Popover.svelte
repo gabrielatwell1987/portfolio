@@ -134,6 +134,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		font-size: 0.8rem;
 	}
 
 	.goo-container .menu {

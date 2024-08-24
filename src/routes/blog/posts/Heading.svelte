@@ -8,6 +8,8 @@
 	span {
 		font-weight: bold;
 		font-size: clamp(1.5rem, 2vw, 2.25rem);
-		color: var(--smoke);
+		color: var(--off-white);
+		text-decoration: underline;
+		text-underline-offset: 0.5rem;
 	}
 </style>
