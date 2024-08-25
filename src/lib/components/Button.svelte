@@ -18,7 +18,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 65%;
+			width: 42%;
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
@@ -42,14 +42,14 @@
 
 	@media (min-width: 500px) {
 		button {
-			width: 37%;
+			width: 27%;
 		}
 	}
 
 	@media (min-width: 700px) {
 		button {
 			font-size: 1.5rem;
-			width: 27%;
+			width: 22%;
 			font-size: 1rem;
 			letter-spacing: 2px;
 		}
@@ -57,7 +57,7 @@
 
 	@media (min-width: 990px) {
 		button {
-			width: 30%;
+			width: 20%;
 			font-size: 1.25rem;
 			margin: 3rem auto;
 		}
@@ -65,7 +65,7 @@
 
 	@media (min-width: 1024px) {
 		button {
-			width: 40%;
+			width: 27%;
 			font-size: 1.5rem;
 			margin: 3rem auto;
 		}
@@ -73,25 +73,25 @@
 
 	@media screen and (min-width: 1200px) {
 		button {
-			width: 40%;
+			width: 25%;
 		}
 	}
 
 	@media screen and (min-width: 1300px) {
 		button {
-			width: 40%;
+			width: 20%;
 		}
 	}
 
 	@media screen and (min-width: 1400px) {
 		button {
-			width: 40%;
+			width: 20%;
 		}
 	}
 
 	@media screen and (min-width: 1500px) {
 		button {
-			width: 26%;
+			width: 17%;
 			font-size: 1.75rem;
 		}
 	}
