@@ -5,7 +5,7 @@
 <button aria-hidden={title}>{title}</button>
 
 <style>
-	@media (min-width: 200px) {
+	@media (min-width: 300px) {
 		button {
 			background-color: transparent;
 			font-family: var(--lexend);
@@ -18,7 +18,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 42%;
+			width: 65%;
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
@@ -42,7 +42,7 @@
 
 	@media (min-width: 500px) {
 		button {
-			width: 27%;
+			width: 30%;
 		}
 	}
 
