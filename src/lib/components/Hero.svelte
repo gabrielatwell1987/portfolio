@@ -36,7 +36,7 @@
 			look forward to hearing from you so we can discuss your goals for your online needs!
 		</h4>
 
-		<a class="btn" href="/projects"><button aria-label="projects">Projects</button></a>
+		<a class="btn" href="/projects">Projects</a>
 
 		<h4 class="summary italic">projects I created..</h4>
 	</section>
@@ -46,7 +46,7 @@
 </main>
 
 <style>
-	@media screen and (min-width: 200px) {
+	@media screen and (min-width: 300px) {
 		main {
 			text-align: center;
 			font-size: 1.75rem;
@@ -73,7 +73,7 @@
 			font-size: clamp(1rem, 1.5vw, 1.75rem);
 		}
 
-		button {
+		a {
 			display: block;
 			background-color: transparent;
 			color: var(--white);
@@ -97,8 +97,8 @@
 			user-select: none;
 		}
 
-		button:hover,
-		button:focus {
+		a:hover,
+		a:focus {
 			border: 1px solid var(--black);
 			background-color: var(--white);
 			color: var(--black);
@@ -125,7 +125,7 @@
 
 		.btn {
 			text-decoration: none;
-			margin: 0 auto;
+			margin: 1rem auto;
 		}
 
 		.summary {
@@ -163,20 +163,26 @@
 		}
 	}
 
+	@media screen and (min-width: 500px) {
+		a {
+			width: 30%;
+		}
+	}
+
 	@media screen and (min-width: 740px) {
 		main {
 			text-align: center;
 			font-size: 2rem;
 		}
 
-		button {
+		a {
 			font-size: 1.25rem;
 			width: 25%;
 			font-size: 1rem;
 			letter-spacing: 2px;
 		}
 
-		button:hover {
+		a:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
@@ -216,7 +222,7 @@
 			margin: 5rem 0;
 		}
 
-		button {
+		a {
 			width: 35%;
 			font-size: 1.5rem;
 			margin: 3rem auto;
@@ -230,6 +236,7 @@
 		.summary {
 			width: 50%;
 			letter-spacing: 3px;
+			margin-top: 1rem;
 		}
 
 		img {
@@ -257,7 +264,7 @@
 	}
 
 	@media screen and (min-width: 1100px) {
-		button {
+		a {
 			width: 20%;
 			font-size: 2rem;
 		}
@@ -272,7 +279,7 @@
 			font-size: 4rem;
 		}
 
-		button {
+		a {
 			width: 15%;
 		}
 	}

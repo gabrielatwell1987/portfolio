@@ -27,10 +27,22 @@
 	}
 
 	onMount(async () => {
+		function setErudaPosition() {
+			eruda.position({ x: window.innerWidth - 60, y: window.innerHeight - 50 });
+		}
+
 		const eruda = (await import('eruda')).default;
 		eruda.init();
 
+		setErudaPosition();
+
+		addEventListener('resize', setErudaPosition);
+
+		// ---
+
 		isPageLoaded = true;
+
+		// ---
 
 		detectSWUpdate();
 	});
