@@ -5,6 +5,8 @@
 	import Iframe from '$lib/components/Iframe.svelte';
 	import Image from '$lib/components/Image.svelte';
 	import Popover from '$lib/components/Popover.svelte';
+	import { blur } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 
 	// animations
 	onMount(() => {
@@ -56,7 +58,7 @@
 <!-- spacing -->
 <br /><br /><br /><br /><br /><br /><br />
 
-<section class="main">
+<section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} class="main">
 	<!-- title -->
 	<h1 class="title">GSAP</h1>
 
