@@ -1,6 +1,7 @@
 <script>
 	import ContactForm from '$lib/components/ContactForm.svelte';
-	import Image from '$lib/components/Image.svelte';
+	import { blur } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 </script>
 
 <svelte:head>
@@ -9,7 +10,7 @@
 	<meta name="keywords" content="Contact Me" />
 </svelte:head>
 
-<main>
+<main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<h2 class="legend">Message Me</h2>
 
 	<section class="contactForm">

@@ -4,6 +4,8 @@
 	import { onMount } from 'svelte';
 	import Lenis from 'lenis';
 	import Title from '$lib/components/Title.svelte';
+	import { blur } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 
 	// lenis
 	const lenis = new Lenis();
@@ -75,7 +77,7 @@
 	<meta name="keywords" content="Photos of Me" />
 </svelte:head>
 
-<main>
+<main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<Title title="images" />
 
 	<section>
