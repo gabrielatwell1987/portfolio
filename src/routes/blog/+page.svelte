@@ -5,6 +5,8 @@
 	import { TextPlugin } from 'gsap/dist/TextPlugin';
 	import { onMount } from 'svelte';
 	import Image from '$lib/components/Image.svelte';
+	import { blur } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 
 	// animations
 	onMount(() => {
@@ -36,7 +38,7 @@
 	<meta name="keywords" content="Blog, Sveltekit, GSAP" />
 </svelte:head>
 
-<main>
+<main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<!-- text animation -->
 	<h1 class="title">. . . . . .</h1>
 

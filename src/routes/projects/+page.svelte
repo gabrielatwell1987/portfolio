@@ -6,7 +6,8 @@
 	import Figure from '$lib/components/Figure.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import Image from '$lib/components/Image.svelte';
-	import Avatar from '$lib/components/Avatar.svelte';
+	import { blur } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 
 	// animations
 	onMount(() => {
@@ -37,7 +38,10 @@
 <Title title="projects" />
 
 <!-- links to my projects -->
-<section class="content bevel">
+<section
+	class="content bevel"
+	in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}
+>
 	<!-- spacing -->
 	<br /><br />
 
