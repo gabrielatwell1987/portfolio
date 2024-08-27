@@ -6,7 +6,7 @@
 	let open;
 </script>
 
-<nav aria-hidden="true">
+<nav>
 	<!-- hamburger icon -->
 	<div class="header-logos">
 		<div class="hamburger">

@@ -24,7 +24,7 @@
 	});
 </script>
 
-<main aria-hidden="true">
+<main>
 	<h1 class="title" id="title" aria-label={title}>{title}</h1>
 </main>
 

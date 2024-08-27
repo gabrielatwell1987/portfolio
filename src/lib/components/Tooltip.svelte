@@ -58,49 +58,6 @@
 		visibility: visible;
 	}
 
-	/* .tooltip-bottom {
-		top: calc(100% + 5px);
-		left: 50%;
-		transform: translateX(-50%);
-	}
-
-	.tooltip-bottom::after {
-		bottom: 100%;
-		left: 50%;
-		margin-left: -5px;
-		border-color: transparent transparent #333333 transparent;
-	}
-
-	.tooltip-left {
-		right: calc(100% + 5px);
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.tooltip-left::after {
-		left: 100%;
-		top: 50%;
-		margin-top: -5px;
-		border-color: transparent transparent transparent #333333;
-	}
-
-	.tooltip-right {
-		left: calc(100% + 5px);
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	.tooltip-right::after {
-		right: 100%;
-		top: 50%;
-		margin-top: -5px;
-		border-color: transparent #333333 transparent transparent;
-	}
-
-    .tooltip-container:hover .tooltip-left,
-    .tooltip-container:hover .tooltip-right {
-    } */
-
 	@keyframes fadeIn {
 		from {
 			opacity: 0;
