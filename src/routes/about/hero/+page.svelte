@@ -124,7 +124,7 @@
 
 		.summary {
 			margin: 0 auto;
-			margin-bottom: 1.5rem;
+			margin-bottom: 3%;
 			font-size: clamp(1rem, 1.5vw, 1.75rem);
 			font-weight: 500;
 			width: 100%;
@@ -162,10 +162,6 @@
 		a {
 			width: 30%;
 		}
-
-		.summary {
-			margin-bottom: 2.5rem;
-		}
 	}
 
 	@media screen and (min-width: 740px) {
@@ -198,7 +194,6 @@
 		.summary {
 			width: 75%;
 			margin-top: 1rem;
-			margin-bottom: 3rem;
 		}
 
 		@keyframes wiggle {
@@ -239,7 +234,6 @@
 			width: 50%;
 			letter-spacing: 3px;
 			margin-top: 1rem;
-			margin-bottom: 2rem;
 		}
 
 		section {
@@ -264,7 +258,6 @@
 		.summary {
 			width: 80%;
 			margin-inline: auto;
-			margin-bottom: 2.5rem;
 		}
 
 		section {
@@ -282,10 +275,6 @@
 		h3 {
 			font-size: 4rem;
 		}
-
-		.summary {
-			margin-bottom: 2rem;
-		}
 	}
 
 	@media screen and (min-width: 1400px) {
@@ -299,10 +288,6 @@
 
 		a {
 			width: 15%;
-		}
-
-		.summary {
-			margin-bottom: 2.5rem;
 		}
 	}
 </style>
