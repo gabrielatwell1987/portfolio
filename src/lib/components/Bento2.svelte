@@ -12,11 +12,11 @@
 
 		gsap.to(bentoItem, {
 			autoAlpha: 1,
-			delay: 2.25,
-			duration: 1.5,
+			delay: 2.5,
+			duration: 2.5,
 			ease: 'none',
 			stagger: {
-				each: 0.5,
+				each: 1,
 				from: 'random'
 			}
 		});
