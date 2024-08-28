@@ -11,6 +11,6 @@
 		color: var(--off-white);
 		text-decoration: underline;
 		text-underline-offset: 0.5rem;
-		text-decoration-color: var(--purple);
+		text-decoration-color: var(--sky);
 	}
 </style>

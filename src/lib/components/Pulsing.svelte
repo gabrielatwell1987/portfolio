@@ -9,8 +9,8 @@
 		aspect-ratio: 1;
 		border-radius: 50%;
 		background: transparent;
-		border: 2px solid #fff;
-		box-shadow: 0 0 0 0 #fff4;
+		border: 5px solid var(--purple);
+		box-shadow: 0 0 0 0 var(--blue);
 		animation: l2 1.5s infinite linear;
 		position: relative;
 	}
@@ -20,7 +20,7 @@
 		position: absolute;
 		inset: 0;
 		border-radius: inherit;
-		box-shadow: 0 0 0 0 #fff4;
+		box-shadow: 0 0 0 0 var(--dark-blue);
 		animation: inherit;
 		animation-delay: -0.5s;
 	}
@@ -29,7 +29,7 @@
 	}
 	@keyframes l2 {
 		100% {
-			box-shadow: 0 0 0 40px #fff6;
+			box-shadow: 0 0 0 40px var(--sky);
 		}
 	}
 </style>
