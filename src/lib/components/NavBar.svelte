@@ -203,7 +203,7 @@
 
 		.toggle {
 			top: 15%;
-			left: 2.5%;
+			left: 12%;
 		}
 	}
 
@@ -259,7 +259,7 @@
 
 		.toggle {
 			top: 10%;
-			left: 16%;
+			left: 18%;
 		}
 	}
 
@@ -278,7 +278,7 @@
 		}
 
 		.toggle {
-			left: 15%;
+			left: 22%;
 			z-index: 10;
 		}
 
@@ -300,13 +300,13 @@
 		}
 
 		.toggle {
-			left: 20%;
+			left: 26%;
 		}
 	}
 
 	@media (min-width: 1200px) {
 		.toggle {
-			left: 20%;
+			left: 24%;
 		}
 	}
 
@@ -323,7 +323,7 @@
 
 		.toggle {
 			top: 10%;
-			left: 18%;
+			left: 26%;
 		}
 	}
 
@@ -339,7 +339,7 @@
 		}
 
 		.toggle {
-			left: 22%;
+			left: 21%;
 		}
 
 		nav {
@@ -358,7 +358,7 @@
 		}
 
 		.toggle {
-			left: 20%;
+			left: 22%;
 			top: 15%;
 		}
 
@@ -370,7 +370,7 @@
 
 	@media (min-width: 1600px) {
 		.desktop {
-			margin-left: 25%;
+			margin: 0.85% 0 0 25%;
 			scale: 1.15;
 		}
 
@@ -379,7 +379,7 @@
 		}
 
 		.toggle {
-			left: 15%;
+			left: 20%;
 			top: 15%;
 		}
 
