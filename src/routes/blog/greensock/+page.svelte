@@ -300,6 +300,10 @@
 		details {
 			width: 15rem;
 		}
+
+		.iframe {
+			margin-left: 0;
+		}
 	}
 
 	@media (min-width: 720px) {
@@ -315,9 +319,9 @@
 			width: 100%;
 		}
 
-		.iframe {
+		/* .iframe {
 			margin-left: 0;
-		}
+		} */
 	}
 
 	@media (min-width: 990px) {
