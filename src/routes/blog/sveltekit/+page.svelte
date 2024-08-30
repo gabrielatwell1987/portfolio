@@ -312,6 +312,10 @@
 		.text {
 			margin-left: -2.5rem;
 		}
+
+		.iframe {
+			margin-left: 0;
+		}
 	}
 
 	@media (min-width: 720px) {
@@ -325,10 +329,6 @@
 
 		.main {
 			width: 100%;
-		}
-
-		.iframe {
-			margin-left: 0;
 		}
 	}
 
