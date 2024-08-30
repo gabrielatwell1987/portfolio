@@ -150,10 +150,12 @@
 			</details>
 
 			<!-- video -->
-			<Iframe
-				src="https://www.youtube.com/embed/MoGkX4RvZ38?si=xV4--8APNCqD7Ihn"
-				title="YouTube video player"
-			/>
+			<div class="iframe">
+				<Iframe
+					src="https://www.youtube.com/embed/MoGkX4RvZ38?si=xV4--8APNCqD7Ihn"
+					title="YouTube video player"
+				/>
+			</div>
 
 			<!-- learn section -->
 			<h3 class="learn">Learn more about Sveltekit</h3>
@@ -295,6 +297,11 @@
 		.popover {
 			display: none;
 		}
+
+		.iframe {
+			margin: 0 auto;
+			margin-left: -23%;
+		}
 	}
 
 	@media (min-width: 500px) {
@@ -318,6 +325,10 @@
 
 		.main {
 			width: 100%;
+		}
+
+		.iframe {
+			margin-left: 0;
 		}
 	}
 

@@ -26,8 +26,8 @@
 		iframe {
 			display: block;
 			margin: 15% auto;
-			/* margin: 25% auto 0 auto; */
-			width: 100%;
+			width: 119%;
+			margin-right: 5%;
 		}
 	}
 
