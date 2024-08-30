@@ -138,10 +138,12 @@
 		</details>
 
 		<!-- video -->
-		<Iframe
-			src="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
-			title="YouTube video player"
-		/>
+		<div class="iframe">
+			<Iframe
+				src="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
+				title="YouTube video player"
+			/>
+		</div>
 
 		<!-- learn section -->
 		<h3 class="learn">Learn more about GSAP</h3>
@@ -283,6 +285,11 @@
 		.popover {
 			display: none;
 		}
+
+		.iframe {
+			margin: 0 auto;
+			margin-left: -15%;
+		}
 	}
 
 	@media (min-width: 500px) {
@@ -306,6 +313,10 @@
 
 		.back {
 			width: 100%;
+		}
+
+		.iframe {
+			margin-left: 0;
 		}
 	}
 
