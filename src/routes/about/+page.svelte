@@ -8,7 +8,8 @@
 	import Skills from '$lib/components/Skills.svelte';
 	import Bento from '$lib/components/Bento2.svelte';
 	import LetterDrop from '$lib/components/LetterDrop.svelte';
-	import AtwellCursive from '$lib/components/AtwellCursive.svelte';
+	// import AtwellCursive from '$lib/components/AtwellCursive.svelte';
+	import AtwellShield from '$lib/components/AtwellShield.svelte';
 
 	// animations
 	onMount(() => {
@@ -87,7 +88,8 @@
 				<a href="/about/gallery"><Button title="Gallery" /></a>
 			</div>
 
-			<AtwellCursive />
+			<!-- <AtwellCursive /> -->
+			<AtwellShield />
 		</article>
 	</section>
 </main>
