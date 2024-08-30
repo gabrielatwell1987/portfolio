@@ -252,7 +252,7 @@
 
 		details {
 			min-width: 5rem;
-			width: 10rem;
+			width: 15.5rem;
 			margin: 0 auto;
 		}
 
@@ -264,6 +264,7 @@
 		.text {
 			min-width: 20rem;
 			margin: 0 -4.75rem;
+			margin-left: -3.25rem;
 			font-family: var(--lexend);
 			line-height: 1.5;
 			color: var(--white);
