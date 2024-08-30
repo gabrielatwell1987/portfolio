@@ -24,14 +24,18 @@
 
 	@media (min-width: 200px) {
 		iframe {
-			display: none;
+			display: block;
+			margin: 15% auto;
+			/* margin: 25% auto 0 auto; */
+			width: 100%;
 		}
 	}
 
-	@media (min-width: 720px) {
+	@media (min-width: 500px) {
 		iframe {
 			display: block;
-			margin: 0 auto;
+			margin: 10% auto;
+			width: 50%;
 		}
 	}
 </style>

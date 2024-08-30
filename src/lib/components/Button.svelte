@@ -18,7 +18,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 67%;
+			width: 65%;
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
@@ -42,7 +42,7 @@
 
 	@media (min-width: 500px) {
 		button {
-			width: 30%;
+			width: 35%;
 		}
 	}
 

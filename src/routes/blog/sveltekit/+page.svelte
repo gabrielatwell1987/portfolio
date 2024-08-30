@@ -149,6 +149,13 @@
 				</div>
 			</details>
 
+			<!-- video -->
+			<Iframe
+				src="https://www.youtube.com/embed/MoGkX4RvZ38?si=xV4--8APNCqD7Ihn"
+				title="YouTube video player"
+			/>
+
+			<!-- learn section -->
 			<h3 class="learn">Learn more about Sveltekit</h3>
 			<p class="center">
 				If you would like to know more about <a
@@ -157,12 +164,6 @@
 					aria-label="sveltekit">svelte</a
 				>, click the link!
 			</p>
-
-			<!-- video -->
-			<Iframe
-				src="https://www.youtube.com/embed/MoGkX4RvZ38?si=xV4--8APNCqD7Ihn"
-				title="YouTube video player"
-			/>
 
 			<!-- back button -->
 			<div class="back">
