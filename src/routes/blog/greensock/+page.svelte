@@ -137,6 +137,13 @@
 			</p>
 		</details>
 
+		<!-- video -->
+		<Iframe
+			src="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
+			title="YouTube video player"
+		/>
+
+		<!-- learn section -->
 		<h3 class="learn">Learn more about GSAP</h3>
 		<p class="center">
 			If you would like to know more about <a
@@ -145,12 +152,6 @@
 				aria-label="greensock">greensock</a
 			>, click the link!
 		</p>
-
-		<!-- video -->
-		<Iframe
-			src="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
-			title="YouTube video player"
-		/>
 
 		<!-- back button -->
 		<div class="back">
