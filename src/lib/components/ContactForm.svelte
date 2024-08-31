@@ -95,13 +95,14 @@
 		}
 
 		input {
-			width: 100%;
+			width: 131%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
 			border-radius: 10px;
 			caret-color: var(--purple);
 			color: var(--white);
 			font-size: 1.05rem;
+			margin-left: -15%;
 		}
 
 		input:placeholder-shown {
@@ -128,12 +129,13 @@
 		}
 
 		textarea {
-			width: 100%;
+			width: 131%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
 			border-radius: 10px;
 			color: var(--white);
 			font-size: 1.05rem;
+			margin-left: -15%;
 		}
 
 		textarea:placeholder-shown {
@@ -150,7 +152,7 @@
 		}
 
 		label {
-			margin-left: 0.25rem;
+			margin-left: -1rem;
 			font-family: var(--lexend);
 			font-weight: 600;
 		}
@@ -208,6 +210,7 @@
 		input,
 		textarea {
 			width: 150%;
+			margin-left: 0.25%;
 		}
 
 		form {
@@ -216,6 +219,10 @@
 
 		.send {
 			margin-left: 20%;
+		}
+
+		label {
+			margin-left: 5%;
 		}
 	}
 
