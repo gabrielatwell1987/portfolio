@@ -214,11 +214,11 @@
 		}
 
 		form {
-			margin-left: 26%;
+			margin-left: 19%;
 		}
 
 		.send {
-			margin-left: 20%;
+			margin-left: 21%;
 		}
 
 		label {
