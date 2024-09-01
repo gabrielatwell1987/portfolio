@@ -14,7 +14,7 @@
 
 		// Texture Loader
 		const textureLoader = new THREE.TextureLoader();
-		const cross = textureLoader.load('/textures/cross.png');
+		const cross = textureLoader.load('/textures/crosshair.png');
 
 		// Canvas
 		const canvas = document.querySelector('canvas.webgl');
@@ -42,9 +42,10 @@
 		});
 
 		const particlesMaterial = new THREE.PointsMaterial({
-			size: 0.005,
-			map: cross,
+			size: 0.03,
 			transparent: true,
+			alphaMap: cross,
+			alphaTest: 0.001,
 			color: 'hsla(187, 64%, 73%, 0.75)',
 			blending: THREE.AdditiveBlending
 		});
@@ -61,14 +62,6 @@
 		pointLight.position.y = 3;
 		pointLight.position.z = 4;
 		scene.add(pointLight);
-
-		// GSAP
-		// gsap.from(text.chars, {
-		// 	duration: 1,
-		// 	y: -50,
-		// 	opacity: 0,
-		// 	stagger: 0.25
-		// });
 
 		/**
 		 * Sizes
@@ -139,11 +132,11 @@
 
 			// Update objects
 			sphere.rotation.y = 0.5 * elapsedTime;
-			particlesMesh.rotation.y = -0.1 * elapsedTime;
+			particlesMesh.rotation.y = -0.01 * elapsedTime;
 
 			if (mouseX > 0) {
-				particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.00008);
-				particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.00008);
+				particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.0000008);
+				particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.0000008);
 			}
 
 			// Update Orbital Controls
