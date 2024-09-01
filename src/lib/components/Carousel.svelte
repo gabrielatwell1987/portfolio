@@ -91,6 +91,10 @@
 			opacity: 0.75;
 		}
 
+		.gabe:not(:hover) {
+			opacity: 1;
+		}
+
 		.bigger {
 			width: 300%;
 		}
