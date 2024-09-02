@@ -8,10 +8,6 @@
 	// lenis
 	const lenis = new Lenis();
 
-	// lenis.on('scroll', (e) => {
-	// 	console.log(e);
-	// });
-
 	lenis.on('scroll', ScrollTrigger.update);
 
 	gsap.ticker.add((time) => {
@@ -153,6 +149,15 @@
 		progress {
 			width: 40%;
 			margin: 17% 0 2rem 30%;
+			background: var(--dark-blue);
+		}
+
+		progress::-webkit-progress-value {
+			background-color: var(--smoke);
+		}
+
+		progress::-moz-progress-bar {
+			background-color: var(--smoke);
 		}
 
 		.flex {
@@ -169,13 +174,12 @@
 		.gabe {
 			margin: 0.5rem auto;
 			max-width: 100%;
-			/* opacity: 0.75; */
 		}
 
 		.gabe:hover {
 			opacity: 1;
 			transition: opacity 750ms ease-in-out;
-			filter: drop-shadow(0 0 0.75rem var(--off-white));
+			filter: drop-shadow(0 0 0.25rem var(--off-white));
 		}
 
 		.gabe:not(:hover) {
