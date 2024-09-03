@@ -2,13 +2,10 @@
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import SEO from '$lib/data/SEO.svelte';
 </script>
 
-<svelte:head>
-	<title>Message Me</title>
-	<meta name="description" content="Contact Gabriel Atwell" />
-	<meta name="keywords" content="Contact Me" />
-</svelte:head>
+<SEO title="Message Me" description="Contact Gabriel Atwell" keywords="contact me, contact gabe" />
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<h2 class="legend">Message Me</h2>

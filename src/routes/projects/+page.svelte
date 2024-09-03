@@ -8,6 +8,7 @@
 	import Image from '$lib/components/Image.svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import SEO from '$lib/data/SEO.svelte';
 
 	// animations
 	onMount(() => {
@@ -29,11 +30,11 @@
 	});
 </script>
 
-<svelte:head>
-	<title>Projects I've Built</title>
-	<meta name="description" content="Gabriel Atwell's Projects" />
-	<meta name="keywords" content="Projects, Work" />
-</svelte:head>
+<SEO
+	title="Projects I've Built"
+	description="Gabriel Atwell's Projects"
+	keywords="projects, work"
+/>
 
 <Title title="projects" />
 

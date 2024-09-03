@@ -7,6 +7,7 @@
 	import Image from '$lib/components/Image.svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import SEO from '$lib/data/SEO.svelte';
 
 	// animations
 	onMount(() => {
@@ -32,11 +33,7 @@
 	});
 </script>
 
-<svelte:head>
-	<title>Blog Topics</title>
-	<meta name="description" content="Web Animations" />
-	<meta name="keywords" content="Blog, Sveltekit, GSAP" />
-</svelte:head>
+<SEO title="Blog Topics" description="a blog about web techniques" keywords="blog topics" />
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<!-- text animation -->

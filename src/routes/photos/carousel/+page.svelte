@@ -3,6 +3,7 @@
 	import SplitType from 'split-type';
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
+	import SEO from '$lib/data/SEO.svelte';
 
 	// Animations
 	onMount(() => {
@@ -24,11 +25,7 @@
 	});
 </script>
 
-<svelte:head>
-	<title>Image Carousel</title>
-	<meta name="description" content="Gabriel Atwell's Images" />
-	<meta name="keywords" content="Image Carousel" />
-</svelte:head>
+<SEO title="Image Carousel" description="Gabriel Atwell's Images" keywords="image carousel" />
 
 <h1 class="title">images</h1>
 

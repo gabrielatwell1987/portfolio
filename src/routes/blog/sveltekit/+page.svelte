@@ -7,6 +7,7 @@
 	import Popover from '$lib/components/Popover.svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import SEO from '$lib/data/SEO.svelte';
 
 	// animations
 	onMount(() => {
@@ -49,11 +50,7 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Sveltekit</title>
-	<meta name="description" content="Svelte, Sveltekit" />
-	<meta name="keywords" content="Sveltekit" />
-</svelte:head>
+<SEO title="Sveltekit" description="Svelte, Sveltekit" keywords="sveltekit, ssr" />
 
 <section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} class="main">
 	<!-- title -->

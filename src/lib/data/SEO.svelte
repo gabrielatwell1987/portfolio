@@ -1,9 +1,9 @@
 <script>
 	import { page } from '$app/stores';
 
-	export let title = "Gabriel Atwell's Portfolio";
-	export let description =
-		'The portfolio of Gabriel Atwell, a web developer and designer based in Las Vegas, NV.';
+	export let title;
+	export let description;
+	export let keywords;
 
 	$: url = $page.url.href;
 </script>
@@ -12,6 +12,7 @@
 	<title>{title}</title>
 
 	<meta name="description" content={description} />
+	<meta name="keywords" content={keywords} />
 
 	<script type="application/ld+json">
 		{

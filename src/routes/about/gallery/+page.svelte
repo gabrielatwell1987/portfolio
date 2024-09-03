@@ -1,14 +1,11 @@
 <script>
 	import Gallery from '$lib/components/Gallery.svelte';
+	import SEO from '$lib/data/SEO.svelte';
 
 	$: console.log('Random Photos');
 </script>
 
-<svelte:head>
-	<title>Random Photos</title>
-	<meta name="description" content="Random Photo Gallery" />
-	<meta name="keywords" content="Random Photos" />
-</svelte:head>
+<SEO title="Random Photos" description="Random Photo Gallery" keywords="Random Photos" />
 
 <!-- Photo gallery -->
 <Gallery />

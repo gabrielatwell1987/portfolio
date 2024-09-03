@@ -1,12 +1,9 @@
 <script>
 	import Image from '$lib/components/Image.svelte';
+	import SEO from '$lib/data/SEO.svelte';
 </script>
 
-<svelte:head>
-	<title>Success!</title>
-	<meta name="description" content="Successfully Sent" />
-	<meta name="keywords" content="Success" />
-</svelte:head>
+<SEO title="Success!" description="Successfully Sent" keywords="success, contact success" />
 
 <section>
 	<div class="image">
