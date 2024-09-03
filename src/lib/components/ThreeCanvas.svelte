@@ -14,7 +14,7 @@
 
 		// Texture Loader
 		const textureLoader = new THREE.TextureLoader();
-		const cross = textureLoader.load('/textures/star.png');
+		const star = textureLoader.load('/textures/star.png');
 
 		// Canvas
 		const canvas = document.querySelector('canvas.webgl');
@@ -26,7 +26,7 @@
 		const geometry = new THREE.CapsuleGeometry(2, 0, 9, 20);
 
 		const particlesGeometry = new THREE.BufferGeometry();
-		const particlesCount = 5000;
+		const particlesCount = 1000;
 		const positionArray = new Float32Array(particlesCount * 3);
 
 		for (let i = 0; i < particlesCount * 3; i++) {
@@ -42,11 +42,11 @@
 		});
 
 		const particlesMaterial = new THREE.PointsMaterial({
-			size: 0.03,
+			size: 0.04,
 			transparent: true,
-			alphaMap: cross,
+			alphaMap: star,
 			alphaTest: 0.001,
-			color: 'hsla(187, 64%, 73%, 0.75)',
+			color: 'hsla(60, 64%, 33%, 0.75)',
 			blending: THREE.AdditiveBlending
 		});
 
@@ -58,9 +58,7 @@
 		// Lights
 
 		const pointLight = new THREE.PointLight(0xffffff, 0.1);
-		pointLight.position.x = 2;
-		pointLight.position.y = 3;
-		pointLight.position.z = 4;
+		pointLight.position.set(2, 3, 4);
 		scene.add(pointLight);
 
 		/**
@@ -95,10 +93,6 @@
 		camera.position.z = 2;
 		scene.add(camera);
 
-		// Controls
-		// const controls = new OrbitControls(camera, canvas)
-		// controls.enableDamping = true
-
 		/**
 		 * Renderer
 		 */
@@ -131,7 +125,7 @@
 			const elapsedTime = clock.getElapsedTime();
 
 			// Update objects
-			sphere.rotation.y = 0.5 * elapsedTime;
+			sphere.rotation.y = -0.2 * elapsedTime;
 			particlesMesh.rotation.y = -0.01 * elapsedTime;
 
 			if (mouseX > 0) {
