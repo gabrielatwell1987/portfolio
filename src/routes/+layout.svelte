@@ -60,7 +60,7 @@
 
 <!-- data from SEO and analytics -->
 <Analytics />
-<SEO title="gabe ATWELL" description="Gabriel Atwell's Portfolio" />
+<!-- <SEO title="gabe ATWELL" description="Gabriel Atwell's Portfolio" /> -->
 
 <!-- layout -->
 {#if !isPageLoaded}

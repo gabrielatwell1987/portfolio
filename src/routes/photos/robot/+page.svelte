@@ -1,11 +1,8 @@
 <script>
 	import Robot from '$lib/components/Robot.svelte';
+	import SEO from '$lib/data/SEO.svelte';
 </script>
 
-<svelte:head>
-	<title>Robot</title>
-	<meta name="description" content="Mouse Position Robot" />
-	<meta name="keywords" content="Robot" />
-</svelte:head>
+<SEO title="Robot" description="Mouse Position Robot" keywords="gabe's robot" />
 
 <Robot title="Mouse Position" />

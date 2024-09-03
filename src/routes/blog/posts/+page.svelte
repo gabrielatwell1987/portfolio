@@ -7,6 +7,7 @@
 	import Button from '$lib/components/Button.svelte';
 	import copy from 'copy-to-clipboard';
 	import { onMount } from 'svelte';
+	import SEO from '$lib/data/SEO.svelte';
 
 	onMount(() => {
 		const codeBlocks = document.querySelectorAll('pre');
@@ -48,11 +49,7 @@
 	});
 </script>
 
-<svelte:head>
-	<title>CSS & GSAP</title>
-	<meta name="description" content="Web Animations" />
-	<meta name="keywords" content="CSS, GSAP" />
-</svelte:head>
+<SEO title="CSS & GSAP" description="Web techniques" keywords="animation techniques" />
 
 <section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<!-- links to my markdown files -->

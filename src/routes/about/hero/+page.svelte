@@ -2,6 +2,7 @@
 	import ThreeCanvas from '$lib/components/ThreeCanvas.svelte';
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
+	import SEO from '$lib/data/SEO.svelte';
 
 	onMount(() => {
 		const heroTitle = document.querySelector('.hero-title');
@@ -18,11 +19,7 @@
 	$: console.log(ThreeCanvas);
 </script>
 
-<svelte:head>
-	<title>Welcome</title>
-	<meta name="description" content="Gabriel Atwell's Hero Section" />
-	<meta name="keywords" content="Hero" />
-</svelte:head>
+<SEO title="Welcome" description="Gabriel Atwell's Hero Section" keywords="hero" />
 
 <br /><br />
 

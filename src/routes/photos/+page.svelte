@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
 	import Lenis from 'lenis';
 	import Title from '$lib/components/Title.svelte';
+	import SEO from '$lib/data/SEO.svelte';
 
 	// lenis
 	const lenis = new Lenis();
@@ -65,11 +66,7 @@
 	});
 </script>
 
-<svelte:head>
-	<title>Photos of Me</title>
-	<meta name="description" content="Gabriel Atwell's Photos" />
-	<meta name="keywords" content="Photos of Me" />
-</svelte:head>
+<SEO title="Photos of Me" description="Gabriel Atwell's Photos" keywords="photos of gabe" />
 
 <main>
 	<Title title="images" />

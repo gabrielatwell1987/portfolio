@@ -1,14 +1,11 @@
 <script>
 	import { page } from '$app/stores';
+	import SEO from '$lib/data/SEO.svelte';
 
 	$: console.log(`There is a ${$page.status} error!`);
 </script>
 
-<svelte:head>
-	<title>Error!</title>
-	<meta name="description" content="Error Page" />
-	<meta name="keywords" content="Gabriel Atwell, Portfolio, Error" />
-</svelte:head>
+<SEO title="Error!" description="Error Page" keywords="error, gabe's error page" />
 
 <main aria-label="error">
 	<h1>Status: {$page.status}</h1>

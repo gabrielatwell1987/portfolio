@@ -8,7 +8,7 @@
 	import Skills from '$lib/components/Skills.svelte';
 	import Bento from '$lib/components/Bento2.svelte';
 	import LetterDrop from '$lib/components/LetterDrop.svelte';
-	// import AtwellCursive from '$lib/components/AtwellCursive.svelte';
+	import SEO from '$lib/data/SEO.svelte';
 	import AtwellShield from '$lib/components/AtwellShield.svelte';
 
 	// animations
@@ -27,11 +27,7 @@
 	});
 </script>
 
-<svelte:head>
-	<title>About Me</title>
-	<meta name="description" content="About Gabriel Atwell" />
-	<meta name="keywords" content="About Me" />
-</svelte:head>
+<SEO title="About Me" description="About Gabriel Atwell" keywords="about me, about gabe" />
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} aria-label="bio">
 	<section>

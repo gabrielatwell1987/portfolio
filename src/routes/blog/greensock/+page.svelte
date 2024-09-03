@@ -7,6 +7,7 @@
 	import Popover from '$lib/components/Popover.svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import SEO from '$lib/data/SEO.svelte';
 
 	// animations
 	onMount(() => {
@@ -49,11 +50,7 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Greensock Animation Platform</title>
-	<meta name="description" content="Greensock" />
-	<meta name="keywords" content="GSAP" />
-</svelte:head>
+<SEO title="Greensock Animation Platform" description="web animations" keywords="GSAP, animation" />
 
 <!-- spacing -->
 <br /><br /><br /><br /><br /><br /><br />
