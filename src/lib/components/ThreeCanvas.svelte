@@ -14,7 +14,7 @@
 
 		// Texture Loader
 		const textureLoader = new THREE.TextureLoader();
-		const cross = textureLoader.load('/textures/crosshair.png');
+		const cross = textureLoader.load('/textures/star.png');
 
 		// Canvas
 		const canvas = document.querySelector('canvas.webgl');
