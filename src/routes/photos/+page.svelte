@@ -1,23 +1,27 @@
 <script>
 	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 	import Lenis from 'lenis';
 	import Title from '$lib/components/Title.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 
-	// lenis
-	const lenis = new Lenis();
-
-	lenis.on('scroll', ScrollTrigger.update);
-
-	gsap.ticker.add((time) => {
-		lenis.raf(time * 375);
-	});
-
-	gsap.ticker.lagSmoothing(0);
+	let lenis;
 
 	onMount(() => {
+		if (typeof window !== 'undefined') {
+			// lenis
+			lenis = new Lenis();
+
+			lenis.on('scroll', ScrollTrigger.update);
+
+			gsap.ticker.add((time) => {
+				lenis.raf(time * 375);
+			});
+
+			gsap.ticker.lagSmoothing(0);
+		}
+
 		const main = document.querySelector('main');
 
 		// progress
@@ -38,7 +42,7 @@
 		mm.add('(min-width: 800px', () => {
 			gsap.registerPlugin(ScrollTrigger);
 
-			gsap.set('main', { autoAlpha: 0 });
+			gsap.set(main, { autoAlpha: 0 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
@@ -74,7 +78,6 @@
 	<section>
 		<div class="spacing" />
 
-		<!-- images of me 3x3 -->
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex gabe">
 				<img class="gabe" src="photos/gabe.png" alt="Gabriel Atwell" width="350" height="450" />
@@ -117,12 +120,10 @@
 		<div class="spacing" />
 	</section>
 
-	<!-- progress bar -->
 	<div class="progress-container">
 		<progress id="scrollProgress" value="0" max="100" />
 	</div>
 
-	<!-- robot link -->
 	<div class="robot" aria-label="robot">
 		<p class="robot-text">Mouse Position Robot:</p>
 		<a class="btn__link" href="/photos/robot"
