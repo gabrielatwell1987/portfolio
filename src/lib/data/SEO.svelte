@@ -20,7 +20,7 @@
 			"@type": "WebSite",
 		  	"name": "Gabriel Atwell",
           	"description": "The portfolio of Gabriel Atwell, a web developer and designer based in Las Vegas, NV.",
-		  	"url": "https://gabrielatwell.vercel.app",
+		  	"url": "https://gabrielatwell.com",
 		}
 	</script>
 </svelte:head>
