@@ -16,7 +16,10 @@ const config = {
 		mdsvex({
 			extensions: ['.md', '.svx']
 		})
-	]
+	],
+	prerender: {
+		entries: ['/photos']
+	}
 };
 
 export default config;
