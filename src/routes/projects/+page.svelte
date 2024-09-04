@@ -156,7 +156,7 @@
 </section>
 
 <style>
-	@media screen and (min-width: 200px) {
+	@media screen and (min-width: 300px) {
 		.logos {
 			display: flex;
 			justify-content: center;

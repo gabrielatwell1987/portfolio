@@ -127,7 +127,7 @@
 		}
 	}
 
-	@media (min-width: 200px) {
+	@media (min-width: 300px) {
 		.image {
 			width: 100%;
 			margin: 0 -53%;

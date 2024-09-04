@@ -81,7 +81,7 @@
 		place-content: center;
 	}
 
-	@media (min-width: 200px) {
+	@media (min-width: 300px) {
 		.gabe {
 			width: 100%;
 			height: 100%;

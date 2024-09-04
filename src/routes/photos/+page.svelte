@@ -133,7 +133,7 @@
 </main>
 
 <style>
-	@media screen and (min-width: 200px) {
+	@media screen and (min-width: 300px) {
 		section {
 			width: 100%;
 			margin: 0;

@@ -16,7 +16,7 @@
 </main>
 
 <style>
-	@media screen and (min-width: 200px) {
+	@media screen and (min-width: 300px) {
 		.legend {
 			margin: 10% 0 5% 0;
 			font-family: var(--anta);

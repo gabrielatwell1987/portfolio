@@ -17,7 +17,7 @@
 </section>
 
 <style>
-	@media (min-width: 200px) {
+	@media (min-width: 300px) {
 		section {
 			width: 100%;
 			border: none;
