@@ -16,15 +16,16 @@
 		await tick();
 
 		const tl = Flip.from(state, {
-			duration: 0.6,
+			duration: 1,
 			stagger: 0.04,
-			absolute: true
+			absolute: true,
+			ease: 'power2.inOut'
 		});
 	}
 </script>
 
 <!-- picture grid -->
-<section class="grid" aria-hidden="true">
+<section class="grid">
 	{#each { length: 8 } as _, id}
 		{@const details = selected === id}
 		{@const number = id + 1}
@@ -47,6 +48,7 @@
 		width: 75%;
 		margin: 5rem auto;
 		background-color: transparent;
+		min-height: 100vh;
 	}
 
 	.grid-item {
@@ -100,6 +102,11 @@
 	@media (min-width: 1024px) {
 		.grid {
 			grid-template-columns: repeat(3, 1fr);
+			min-height: 120vh;
+		}
+
+		h1 {
+			font-size: 2.5rem;
 		}
 	}
 </style>

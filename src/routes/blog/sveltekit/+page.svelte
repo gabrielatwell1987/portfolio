@@ -57,10 +57,6 @@
 	<h1 class="title">SvelteKit</h1>
 
 	<main>
-		<article class="A">
-			<Image src="/logos/A.png" alt="A for Atwell" />
-		</article>
-
 		<!-- popover -->
 		<article class="popover">
 			<Popover text="closest to HTML" />
@@ -283,10 +279,6 @@
 			text-decoration: none;
 		}
 
-		.A {
-			background: transparent;
-		}
-
 		.structure {
 			margin: 0;
 			border-radius: 12px;
@@ -321,10 +313,6 @@
 			margin-top: -3rem;
 		}
 
-		.A {
-			margin-left: 15%;
-		}
-
 		.main {
 			width: 100%;
 		}
@@ -341,10 +329,6 @@
 
 		summary {
 			font-size: 1.5rem;
-		}
-
-		.A {
-			margin-left: 35%;
 		}
 
 		.back {
@@ -367,10 +351,6 @@
 			line-height: 1.65;
 		}
 
-		.A {
-			margin-left: 28%;
-		}
-
 		.center {
 			margin-bottom: 5%;
 		}
@@ -382,10 +362,6 @@
 	}
 
 	@media (min-width: 1400px) {
-		.A {
-			margin-left: 35%;
-		}
-
 		.popover {
 			margin-bottom: -20%;
 		}

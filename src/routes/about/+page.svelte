@@ -9,7 +9,7 @@
 	import Bento from '$lib/components/Bento2.svelte';
 	import LetterDrop from '$lib/components/LetterDrop.svelte';
 	import SEO from '$lib/data/SEO.svelte';
-	import AtwellShield from '$lib/components/AtwellShield.svelte';
+	import AtwellSparrow from '$lib/components/AtwellSparrow.svelte';
 
 	// animations
 	onMount(() => {
@@ -84,8 +84,7 @@
 				<a href="/about/gallery"><Button title="Gallery" /></a>
 			</div>
 
-			<!-- <AtwellCursive /> -->
-			<AtwellShield />
+			<AtwellSparrow />
 		</article>
 	</section>
 </main>
