@@ -316,10 +316,6 @@
 		.back {
 			width: 100%;
 		}
-
-		/* .iframe {
-			margin-left: 0;
-		} */
 	}
 
 	@media (min-width: 990px) {
