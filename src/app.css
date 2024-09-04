@@ -27,6 +27,21 @@
 	--anta: 'Anta', sans-serif;
 	--lexend: 'Lexend', sans-serif;
 	--mono: 'Space Mono', monospace;
+
+	/* sizes */
+	--base: 1rem;
+	--sm: calc(var(--base) * 0.875);
+	--md: calc(var(--base) * 1);
+	--lg: calc(var(--base) * 1.25);
+	--xl: calc(var(--base) * 1.5);
+	--xxl: calc(var(--base) * 2);
+
+	--h1: calc(var(--base) * var(--xxl));
+	--h2: calc(var(--base) * var(--xl));
+	--h3: calc(var(--base) * var(--lg));
+	--h4: calc(var(--base) * var(--md));
+	--h5: calc(var(--base) * var(--sm));
+	--h6: calc(var(--base) * var(--base));
 }
 
 :root ::-webkit-scrollbar {
