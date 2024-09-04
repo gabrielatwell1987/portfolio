@@ -75,7 +75,7 @@
 		margin: 0 0 0 25%;
 	}
 
-	@media (min-width: 200px) {
+	@media (min-width: 300px) {
 		.mobile {
 			display: flex;
 			flex-direction: column;

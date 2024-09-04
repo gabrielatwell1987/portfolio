@@ -90,7 +90,7 @@
 </main>
 
 <style>
-	@media screen and (min-width: 200px) {
+	@media screen and (min-width: 300px) {
 		p {
 			line-height: 1.75;
 			font-family: var(--montserrat);

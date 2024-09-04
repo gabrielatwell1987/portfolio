@@ -12,7 +12,7 @@
 </a>
 
 <style>
-	@media (min-width: 200px) {
+	@media (min-width: 300px) {
 		.img {
 			border-radius: 8px;
 			max-width: 100%;
