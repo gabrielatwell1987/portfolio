@@ -134,14 +134,14 @@
 
 	.marquee-content li i {
 		width: 100%;
-		color: var(--lightblack);
+		color: var(--blue);
 		font-size: 5rem;
 		cursor: pointer;
 		mix-blend-mode: hard-light;
 	}
 
 	.marquee-content li i:hover {
-		filter: drop-shadow(0 0 0.1rem var(--off-white));
+		filter: drop-shadow(1px 1px 0.05rem var(--yellow));
 	}
 
 	.marquee-content li i:not(:hover) {
