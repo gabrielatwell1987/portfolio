@@ -74,17 +74,21 @@
 {/if}
 
 <style>
+	:root {
+		--100: 100%;
+	}
+
 	.gabe {
-		width: 100%;
-		height: 100%;
+		width: var(--100);
+		height: var(--100);
 		display: grid;
 		place-content: center;
 	}
 
 	@media (min-width: 300px) {
 		.gabe {
-			width: 100%;
-			height: 100%;
+			width: var(--100);
+			height: var(--100);
 		}
 
 		.gabe:hover {

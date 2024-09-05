@@ -162,6 +162,10 @@
 <br />
 
 <style>
+	:root {
+		--100: 100%;
+	}
+
 	main {
 		width: 75%;
 		border-radius: 10px;
@@ -185,7 +189,7 @@
 		padding-top: 2.5em;
 		line-height: 2.5;
 		font-family: var(--montserrat);
-		width: 100%;
+		width: var(--100);
 	}
 
 	.link {
@@ -269,7 +273,7 @@
 
 		.back {
 			margin-top: 5%;
-			width: 100%;
+			width: var(--100);
 		}
 
 		a {
@@ -314,7 +318,7 @@
 		}
 
 		.back {
-			width: 100%;
+			width: var(--100);
 		}
 	}
 
@@ -333,7 +337,7 @@
 		}
 
 		details {
-			width: 100%;
+			width: var(--100);
 		}
 
 		.glass {
@@ -341,7 +345,7 @@
 		}
 
 		.back {
-			width: 100%;
+			width: var(--100);
 			margin-inline: auto;
 		}
 	}

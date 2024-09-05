@@ -50,6 +50,10 @@
 </nav>
 
 <style>
+	:root {
+		--100: 100%;
+	}
+
 	.desktop {
 		display: block;
 		font-weight: bolder;
@@ -60,7 +64,7 @@
 		justify-content: space-around;
 		align-items: center;
 		height: 5em;
-		width: 100%;
+		width: var(--100);
 		position: relative;
 	}
 
@@ -108,7 +112,7 @@
 			justify-content: space-around;
 			align-items: center;
 			height: 4em;
-			width: 100%;
+			width: var(--100);
 			position: fixed;
 			top: 0;
 			right: 7px;
@@ -136,7 +140,7 @@
 
 	@media (min-width: 750px) {
 		.desktop {
-			width: 100%;
+			width: var(--100);
 			display: flex;
 			align-items: center;
 			margin-top: 0;
@@ -168,7 +172,7 @@
 			justify-content: space-around;
 			align-items: center;
 			height: 5em;
-			width: 100%;
+			width: var(--100);
 			scale: 0.65;
 		}
 
@@ -232,7 +236,7 @@
 
 		.desktop {
 			display: block;
-			width: 100%;
+			width: var(--100);
 			margin-left: 15%;
 		}
 
@@ -241,7 +245,7 @@
 			justify-content: space-evenly;
 			align-items: center;
 			height: 5em;
-			width: 100%;
+			width: var(--100);
 			margin-top: 1rem;
 		}
 
@@ -271,7 +275,7 @@
 
 		.desktop {
 			margin-left: 20%;
-			width: 100%;
+			width: var(--100);
 			line-height: 2;
 			scale: 1.25;
 			text-wrap: nowrap;

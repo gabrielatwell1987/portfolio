@@ -133,15 +133,19 @@
 </main>
 
 <style>
+	:root {
+		--100: 100%;
+	}
+
 	@media screen and (min-width: 300px) {
 		section {
-			width: 100%;
+			width: var(--100);
 			margin: 0;
 			margin-bottom: 10%;
 		}
 
 		img {
-			max-width: 100%;
+			max-width: var(--100);
 		}
 
 		progress {
@@ -171,7 +175,7 @@
 
 		.gabe {
 			margin: 0.5rem auto;
-			max-width: 100%;
+			max-width: var(--100);
 		}
 
 		.gabe:hover {
@@ -192,7 +196,7 @@
 			position: fixed;
 			top: -190px;
 			right: 15%;
-			width: 100%;
+			width: var(--100);
 			z-index: 9;
 		}
 	}
@@ -273,7 +277,7 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			flex-basis: 100%;
+			flex-basis: var(--100);
 			margin: 0 auto;
 			background-color: transparent;
 		}

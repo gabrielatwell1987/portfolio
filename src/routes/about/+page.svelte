@@ -90,6 +90,10 @@
 </main>
 
 <style>
+	:root {
+		--100: 100%;
+	}
+
 	@media screen and (min-width: 300px) {
 		p {
 			line-height: 1.75;
@@ -98,7 +102,7 @@
 		}
 
 		main {
-			width: 100%;
+			width: var(--100);
 			margin: 0 auto;
 		}
 
@@ -106,13 +110,13 @@
 			display: block;
 			margin: 0 auto;
 			text-align: center;
-			width: 100%;
+			width: var(--100);
 			background: url('/logos/white-flower.png') no-repeat center center/contain fixed;
 		}
 
 		article {
 			font-size: 0.8rem;
-			width: 100%;
+			width: var(--100);
 			margin: 0 auto;
 			background-color: transparent;
 		}
@@ -127,12 +131,12 @@
 
 		.gallery {
 			margin-top: 1.5rem;
-			width: 100%;
+			width: var(--100);
 			margin-inline: auto;
 		}
 
 		.hero {
-			width: 100%;
+			width: var(--100);
 			margin-inline: auto;
 		}
 
@@ -167,13 +171,13 @@
 	@media screen and (min-width: 990px) {
 		section {
 			display: block;
-			width: 100%;
+			width: var(--100);
 			margin: 5rem auto;
 		}
 
 		article {
 			font-size: 1rem;
-			width: 100%;
+			width: var(--100);
 			margin: 0 auto;
 			background-color: transparent;
 		}
