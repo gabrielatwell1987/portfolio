@@ -157,6 +157,11 @@
 			font-size: 2rem;
 		}
 
+		.marquee-content li i:hover {
+			color: var(--yellow);
+			mix-blend-mode: hard-light;
+		}
+
 		:root {
 			--marquee-width: 100vw;
 			--marquee-height: 16vh;
