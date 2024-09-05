@@ -169,6 +169,10 @@
 </section>
 
 <style>
+	:root {
+		--100: 100%;
+	}
+
 	.main {
 		width: 90%;
 	}
@@ -186,7 +190,7 @@
 		line-height: 2.5;
 		letter-spacing: 1px;
 		font-family: var(--montserrat);
-		width: 100%;
+		width: var(--100);
 	}
 
 	.link {
@@ -272,7 +276,7 @@
 
 		.back {
 			margin-top: 5%;
-			width: 100%;
+			width: var(--100);
 		}
 
 		a {
@@ -314,7 +318,7 @@
 		}
 
 		.main {
-			width: 100%;
+			width: var(--100);
 		}
 	}
 
@@ -324,7 +328,7 @@
 		}
 
 		details {
-			width: 100%;
+			width: var(--100);
 		}
 
 		summary {
@@ -332,12 +336,12 @@
 		}
 
 		.back {
-			width: 100%;
+			width: var(--100);
 			margin-inline: auto;
 		}
 
 		.structure {
-			width: 100%;
+			width: var(--100);
 			margin: 0 43%;
 		}
 	}

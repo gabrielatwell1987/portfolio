@@ -138,21 +138,6 @@
 		.left {
 			text-align: left;
 		}
-
-		@keyframes wiggle {
-			0% {
-				rotate: 0deg;
-				translate: 0 0;
-			}
-			25% {
-				rotate: -2deg;
-				translate: -5px 0;
-			}
-			80% {
-				rotate: 2deg;
-				translate: 5px 0;
-			}
-		}
 	}
 
 	@media screen and (min-width: 500px) {
@@ -191,21 +176,6 @@
 		.summary {
 			width: 75%;
 			margin-top: 1rem;
-		}
-
-		@keyframes wiggle {
-			0% {
-				rotate: 0deg;
-				translate: 0 0;
-			}
-			25% {
-				rotate: -2deg;
-				translate: -5px 0;
-			}
-			80% {
-				rotate: 2deg;
-				translate: 5px 0;
-			}
 		}
 	}
 
@@ -285,6 +255,21 @@
 
 		a {
 			width: 15%;
+		}
+	}
+
+	@keyframes wiggle {
+		0% {
+			rotate: 0deg;
+			translate: 0 0;
+		}
+		25% {
+			rotate: -2deg;
+			translate: -5px 0;
+		}
+		80% {
+			rotate: 2deg;
+			translate: 5px 0;
 		}
 	}
 </style>

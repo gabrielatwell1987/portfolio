@@ -12,10 +12,14 @@
 </a>
 
 <style>
+	:root {
+		--100: 100%;
+	}
+
 	@media (min-width: 300px) {
 		.img {
 			border-radius: 8px;
-			max-width: 100%;
+			max-width: var(--100);
 			transition: scale 0.25s ease-in-out;
 		}
 
@@ -44,7 +48,7 @@
 
 		.hover-text {
 			visibility: hidden;
-			width: 100%;
+			width: var(--100);
 			background-color: black;
 			color: #fff;
 			text-align: center;
@@ -52,9 +56,9 @@
 			padding: 5px 0;
 			font-size: clamp(1rem, 1.5vw, 1.75rem);
 			position: absolute;
-			z-index: 1;
 			bottom: -10%;
 			left: 41%;
+			z-index: 1;
 			margin-left: -41%;
 			opacity: 0;
 			transition: opacity 1s;
@@ -72,7 +76,6 @@
 
 		a {
 			font-family: var(--montserrat);
-			/* font-size: clamp(0.75rem, 1.5vw, 2rem); */
 			text-decoration: none;
 			font-weight: 700;
 			color: var(--sky);
@@ -97,7 +100,7 @@
 	@media (min-width: 990px) {
 		.link {
 			padding: 2rem;
-			flex-basis: 100%;
+			flex-basis: var(--100);
 			letter-spacing: 5px;
 		}
 

@@ -36,7 +36,6 @@
 <SEO title="Blog Topics" description="a blog about web techniques" keywords="blog topics" />
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
-	<!-- text animation -->
 	<h1 class="title">. . . . . .</h1>
 
 	<!-- links to tech stack pages -->
@@ -46,7 +45,6 @@
 		<a class="sk" href="blog/sveltekit"><SvelteIcon /></a>
 	</section>
 
-	<!-- animation logo -->
 	<div class="animation-link" aria-label="animation">
 		<a href="/blog/posts">
 			<div class="image">
@@ -55,7 +53,6 @@
 		</a>
 	</div>
 
-	<!-- spacing -->
 	<br /><br />
 </main>
 
@@ -110,21 +107,6 @@
 
 	.animation-link {
 		margin-top: clamp(15%, 3vw, 5%);
-	}
-
-	@keyframes wiggle {
-		0% {
-			rotate: 0deg;
-			translate: 0 0;
-		}
-		25% {
-			rotate: -2deg;
-			translate: -5px 0;
-		}
-		80% {
-			rotate: 2deg;
-			translate: 5px 0;
-		}
 	}
 
 	@media (min-width: 300px) {
@@ -195,6 +177,21 @@
 
 		section {
 			margin-left: 2.5%;
+		}
+	}
+
+	@keyframes wiggle {
+		0% {
+			rotate: 0deg;
+			translate: 0 0;
+		}
+		25% {
+			rotate: -2deg;
+			translate: -5px 0;
+		}
+		80% {
+			rotate: 2deg;
+			translate: 5px 0;
 		}
 	}
 </style>

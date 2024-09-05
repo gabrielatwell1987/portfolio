@@ -1,5 +1,5 @@
 <script>
-	import ImageCarousel from '$lib/components/Carousel.svelte';
+	import Carousel from '$lib/components/Carousel.svelte';
 	import SplitType from 'split-type';
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
@@ -30,7 +30,7 @@
 <h1 class="title">images</h1>
 
 <main>
-	<ImageCarousel />
+	<Carousel />
 </main>
 
 <style>

@@ -47,7 +47,6 @@
 </svg>
 
 <style>
-	/* content */
 	path {
 		stroke-dasharray: 300;
 		stroke-dashoffset: 0;

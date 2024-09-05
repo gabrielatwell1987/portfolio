@@ -157,20 +157,24 @@
 
 <style>
 	@media screen and (min-width: 300px) {
+		:root {
+			--100: 100%;
+		}
+
 		.logos {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			margin-inline: auto;
 			flex-basis: 75%;
-			height: 100%;
+			height: var(--100);
 		}
 
 		.ascii {
 			display: flex;
 			justify-content: center;
 			margin-bottom: 3%;
-			width: clamp(50%, 75%, 100%);
+			width: clamp(50%, 75%, var(--100));
 			margin-left: 10%;
 		}
 	}
@@ -181,7 +185,7 @@
 		}
 
 		.logos {
-			width: 100%;
+			width: var(--100);
 			margin-inline: auto;
 		}
 

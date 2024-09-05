@@ -18,12 +18,17 @@
 
 <style>
 	@media (min-width: 300px) {
+		:root {
+			--100: 100%;
+			--5: 5%;
+		}
+
 		section {
-			width: 100%;
+			width: var(--100);
 			border: none;
 			padding: 1rem;
-			margin-top: 5%;
-			margin-bottom: 5%;
+			margin-top: var(--5);
+			margin-bottom: var(--5);
 			margin-inline: auto;
 			text-align: center;
 			border: 1px solid var(--white);
