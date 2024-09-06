@@ -43,7 +43,7 @@
 
 		<a href="/blog/posts">
 			<div class="animation">
-				<Image src="/logos/animation.png" alt="" />
+				<Image src="/logos/animation.webp" alt="" />
 			</div>
 		</a>
 	</section>
@@ -53,7 +53,7 @@
 	</section>
 
 	<section class="bento-item bento-item-4" aria-label="projects">
-		<a href="/projects"><img src="/logos/cursive-atwell.jpg" alt="" /></a>
+		<a href="/projects"><img src="/logos/cursive-atwell.webp" alt="" /></a>
 	</section>
 </main>
 

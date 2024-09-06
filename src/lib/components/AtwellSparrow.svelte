@@ -16,7 +16,7 @@
 </script>
 
 <div class="atwell">
-	<Image src="/logos/sparrow.png" alt="An logo that says Atwell that you can move" />
+	<Image src="/logos/sparrow.webp" alt="An logo that says Atwell that you can move" />
 </div>
 
 <style>

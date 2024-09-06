@@ -80,40 +80,45 @@
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex gabe">
-				<img class="gabe" src="photos/gabe.png" alt="Gabriel Atwell" width="350" height="450" />
-				<img class="gabe" src="photos/gabe2.png" alt="Gabriel's face" width="300" height="350" />
-				<img class="gabe" src="photos/gabe7.png" alt="AI generated" width="375" />
+				<img class="gabe" src="photos/gabe.webp" alt="Gabriel Atwell" width="350" height="450" />
+				<img class="gabe" src="photos/gabe2.webp" alt="Gabriel's face" width="300" height="350" />
+				<img class="gabe" src="photos/gabe7.webp" alt="AI generated" width="375" />
 			</aside>
 		</div>
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
-				<img class="gabe" src="photos/gabe4.png" alt="Gabriel Atwell in a restaurant" width="350" />
-				<img src="/photos/autumn.png" alt="Gabe and his daughter" class="gabe" width="350" />
-				<img class="gabe" src="photos/gabe6.png" alt="Gabe's poodle Archie" width="400" />
+				<img
+					class="gabe"
+					src="photos/gabe4.webp"
+					alt="Gabriel Atwell in a restaurant"
+					width="350"
+				/>
+				<img src="/photos/autumn.webp" alt="Gabe and his daughter" class="gabe" width="350" />
+				<img class="gabe" src="photos/gabe6.webp" alt="Gabe's poodle Archie" width="400" />
 			</aside>
 		</div>
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
-				<img class="gabe" src="photos/gabe8.png" alt="AI generated" width="400" />
-				<img src="/photos/gabe5.png" alt="Gabe" class="gabe" width="400" />
-				<img src="/photos/gabe3.png" alt="Really old" class="gabe" width="350" />
+				<img class="gabe" src="photos/gabe8.webp" alt="AI generated" width="400" />
+				<img src="/photos/gabe5.webp" alt="Gabe" class="gabe" width="400" />
+				<img src="/photos/gabe3.webp" alt="Really old" class="gabe" width="350" />
 			</aside>
 		</div>
 
 		<div class="pictures left" aria-label="pictures">
 			<div class="flex">
-				<img src="/photos/wtf.jpg" alt="Trying to burn gabe" class="gabe" width="500" />
-				<img src="/photos/wtf2.png" alt="Gabe's face on hulk hogan" class="gabe" width="550" />
-				<img src="/photos/ornate1.png" alt="AI generated" class="gabe" width="400" />
+				<img src="/photos/wtf.webp" alt="Trying to burn gabe" class="gabe" width="500" />
+				<img src="/photos/wtf2.webp" alt="Gabe's face on hulk hogan" class="gabe" width="550" />
+				<img src="/photos/ornate1.webp" alt="AI generated" class="gabe" width="400" />
 			</div>
 		</div>
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
-				<img src="/photos/wtf3.png" alt="when gabe was 5 years old" class="gabe" width="450" />
-				<img src="/photos/gabe10.png" alt="AI generated" class="gabe" width="375" />
+				<img src="/photos/wtf3.webp" alt="when gabe was 5 years old" class="gabe" width="450" />
+				<img src="/photos/gabe10.webp" alt="AI generated" class="gabe" width="375" />
 			</aside>
 		</div>
 
@@ -127,7 +132,7 @@
 	<div class="robot" aria-label="robot">
 		<p class="robot-text">Mouse Position Robot:</p>
 		<a class="btn__link" href="/photos/robot"
-			><img class="robot-image" src="/logos/robot.png" alt="A robot made in Spline." /></a
+			><img class="robot-image" src="/logos/robot.webp" alt="A robot made in Spline." /></a
 		>
 	</div>
 </main>

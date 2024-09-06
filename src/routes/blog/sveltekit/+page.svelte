@@ -138,7 +138,7 @@
 				</p>
 
 				<div class="structure">
-					<Image src="/logos/structure.png" alt="Sveltekit structure" />
+					<Image src="/logos/structure.webp" alt="Sveltekit structure" />
 				</div>
 			</details>
 

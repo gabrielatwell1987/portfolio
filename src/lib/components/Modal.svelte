@@ -39,7 +39,7 @@
 
 		<div class="modal-img">
 			<Image
-				src="/logos/newspaper.jpg"
+				src="/logos/newspaper.webp"
 				alt="frontend newspaper clipping"
 				aria-label="newspaper clipping"
 			/>

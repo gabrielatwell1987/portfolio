@@ -7,7 +7,7 @@
 
 <section>
 	<div class="image">
-		<Image src="/logos/success.png" alt="Atwell" />
+		<Image src="/logos/success.webp" alt="Atwell" />
 	</div>
 
 	<h1>Success!</h1>

@@ -53,42 +53,42 @@
 
 	<Project
 		title="S.P.A."
-		img="/projects/web_dev.png"
+		img="/projects/web_dev.webp"
 		url="https://gabe1.vercel.app"
 		description="A single page application"
 	/>
 
 	<Project
 		title="horizontal scroller"
-		img="/projects/scroller.png"
+		img="/projects/scroller.webp"
 		url="https://gabe2.vercel.app"
 		description="Just scroll down"
 	/>
 
 	<Project
 		title="grocery list app"
-		img="/projects/groceries.png"
+		img="/projects/groceries.webp"
 		url="https://react-todo-navy-five.vercel.app/"
 		description="A groceries app"
 	/>
 
 	<Project
 		title="password generator"
-		img="/projects/pw-generator.png"
+		img="/projects/pw-generator.webp"
 		url="https://pw-generator-ebon.vercel.app/"
 		description="A password generator"
 	/>
 
 	<Project
 		title="github api"
-		img="/projects/github.png"
+		img="/projects/github.webp"
 		url="https://adiapp.vercel.app"
 		description="Search github users"
 	/>
 
 	<Project
 		title="data visualizations"
-		img="/projects/data-v.png"
+		img="/projects/data-v.webp"
 		url="https://data-viz-svelte.vercel.app"
 		description="Made with d3 and svelte"
 	/>
