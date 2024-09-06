@@ -95,56 +95,56 @@
 
 	<!-- <Project
 		title="scatterplot chart"
-		img="/projects/chart.png"
+		img="/projects/chart.webp"
 		url="https://piechart-brown.vercel.app"
 		description="Made with d3 and svelte"
 	/> -->
 
 	<!-- <Project
 	title="random user generator"
-	img="/projects/ran_user.png"
+	img="/projects/ran_user.webp"
 	url="https://gabe3.vercel.app/"
 	description="Made with Vue"
 	/> -->
 
 	<!-- <Project
 		title="snippet creator"
-		img="/projects/snippet.png"
+		img="/projects/snippet.webp"
 		url="https://appity.vercel.app"
 		description="Create your own snippets"
 	/> -->
 
 	<!-- <Project
 		title="landing page"
-		img="/projects/landing.png"
+		img="/projects/landing.webp"
 		url="https://landing-page-tailwind-rust.vercel.app/"
 		description="Made with tailwindcss"
 	/> -->
 
 	<!-- <Project
 		title="svelteflix"
-		img="/projects/svelteflix.png"
+		img="/projects/svelteflix.webp"
 		url="https://svelteflix-delta.vercel.app/"
 		description="A netflix clone"
 	/> -->
 
 	<!-- <Project
 		title="pokedex"
-		img="/projects/pokedex.png"
+		img="/projects/pokedex.webp"
 		url="https://pokedex-sample.vercel.app/"
 		description="A pokemon database"
 	/> -->
 
 	<!-- <Project
 		title="starbucks clone"
-		img="/projects/starbucks.png"
+		img="/projects/starbucks.webp"
 		url="https://gabe4.vercel.app"
 		description="A clone of the starbucks website"
 	/> -->
 
 	<!-- <Project
 		title="alphamaps"
-		img="/projects/alphamaps.png"
+		img="/projects/alphamaps.webp"
 		url="https://alphamaps69.vercel.app"
 		description="A three.js project"
 	/> -->
