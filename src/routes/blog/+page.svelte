@@ -48,7 +48,7 @@
 	<div class="animation-link" aria-label="animation">
 		<a href="/blog/posts">
 			<div class="image">
-				<Image src="logos/animation.png" alt="A logo that says web animation techniques." />
+				<Image src="logos/animation.webp" alt="A logo that says web animation techniques." />
 			</div>
 		</a>
 	</div>

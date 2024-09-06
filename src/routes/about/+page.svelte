@@ -111,7 +111,7 @@
 			margin: 0 auto;
 			text-align: center;
 			width: var(--100);
-			background: url('/logos/white-flower.png') no-repeat center center/contain fixed;
+			background: url('/logos/white-flower.webp') no-repeat center center/contain fixed;
 		}
 
 		article {

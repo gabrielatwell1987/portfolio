@@ -34,7 +34,7 @@
 
 <main>
 	<section class="hero-logo">
-		<Image src="/logos/mono-atwell.png" alt="atwell ui" />
+		<Image src="/logos/mono-atwell.webp" alt="atwell ui" />
 	</section>
 </main>
 
