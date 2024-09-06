@@ -48,7 +48,7 @@
 
 	<!-- logo -->
 	<div class="ascii">
-		<Image src="logos/ascii.png" alt="ASCII art" />
+		<Image src="logos/ascii.webp" alt="ASCII art" />
 	</div>
 
 	<Project
@@ -151,7 +151,7 @@
 
 	<!-- logo -->
 	<div class="logos designs">
-		<Figure src="logos/designs.png" alt="A logo that says Atwell Designs" text="EST. 1987" />
+		<Figure src="logos/designs.webp" alt="A logo that says Atwell Designs" text="EST. 1987" />
 	</div>
 </section>
 
