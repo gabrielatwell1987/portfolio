@@ -62,7 +62,7 @@
 	<main>
 		<!-- content -->
 		<article class="glass">
-			<Image src="/logos/skull-glass.png" alt="a skull inside a glass" />
+			<Image src="/logos/skull-glass.webp" alt="a skull inside a glass" />
 		</article>
 
 		<!-- popover -->

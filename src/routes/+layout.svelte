@@ -17,7 +17,7 @@
 
 			newSW.addEventListener('statechange', () => {
 				if (newSW.state === 'installed') {
-					if (confirm('Press okay to update..')) {
+					if (confirm('We need to update the app. Do you want to reload the page?')) {
 						newSW.postMessage({ type: 'SKIP_WAITING' });
 						location.reload();
 					}
@@ -58,9 +58,7 @@
 	/>
 </svelte:head>
 
-<!-- data from SEO and analytics -->
 <Analytics />
-<!-- <SEO title="gabe ATWELL" description="Gabriel Atwell's Portfolio" /> -->
 
 <!-- layout -->
 {#if !isPageLoaded}
