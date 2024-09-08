@@ -184,13 +184,13 @@
 		}
 
 		.gabe:hover {
-			transition: opacity 750ms ease-in-out;
+			transition: filter 750ms ease-in-out;
 			filter: drop-shadow(0 0 0.25rem var(--off-white));
 		}
 
 		.gabe:not(:hover) {
 			filter: drop-shadow(0);
-			transition: opacity 750ms ease-in-out;
+			transition: filter 750ms ease-in-out;
 		}
 
 		.spacing {
