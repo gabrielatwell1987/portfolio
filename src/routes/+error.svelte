@@ -24,7 +24,7 @@
 	}
 
 	h1 {
-		font-size: 6rem;
+		font-size: clamp(2rem, 5vw, 6rem);
 		margin: 5rem auto;
 		text-align: center;
 		color: var(--sky);
@@ -35,12 +35,14 @@
 	}
 
 	p {
-		font-size: 2rem;
+		font-size: clamp(1.5rem, 2.5vw, 2rem);
 		letter-spacing: 3px;
 		line-height: 1.25;
 		text-align: left;
 		padding: 2rem 4rem;
 		color: var(--white);
 		font-family: var(--lexend);
+		text-align: center;
+		text-shadow: 1px 1px 5px var(--smoke);
 	}
 </style>

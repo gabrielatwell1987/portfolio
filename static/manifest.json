@@ -1,11 +1,11 @@
 {
-	"name": "Gabriel's Portfolio",
-	"short_name": "Gabriel's Portfolio",
+	"name": "Gabe's Portfolio",
+	"short_name": "Atwell UI",
 	"start_url": "/",
 	"display": "standalone",
 	"background_color": "#222425",
 	"theme_color": "#c5bec3a6",
-	"description": "Gabriel's Portfolio",
+	"description": "Frontend developer portfolio",
 	"icons": [
 		{
 			"src": "pwa-64x64.png",
