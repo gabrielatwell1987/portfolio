@@ -85,6 +85,16 @@
 		place-content: center;
 	}
 
+	.gabe:hover {
+		transition: filter 750ms ease-in-out;
+		filter: drop-shadow(0 0 0.5rem var(--off-white));
+	}
+
+	.gabe:not(:hover) {
+		filter: drop-shadow(0);
+		transition: filter 750ms ease-in-out;
+	}
+
 	@media (min-width: 300px) {
 		.gabe {
 			width: var(--100);

@@ -11,13 +11,9 @@
 		const main = document.querySelector('main');
 
 		gsap.from(titleText.words, {
-			duration: 5,
+			duration: 3.5,
 			scale: 0,
-			opacity: 0.5,
-			stagger: {
-				each: 0.2,
-				from: 'edges'
-			},
+			opacity: 0,
 			ease: 'back'
 		});
 
