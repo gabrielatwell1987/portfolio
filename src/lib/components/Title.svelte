@@ -6,6 +6,8 @@
 	export let title;
 
 	onMount(() => {
+		gsap.set('.title', { autoAlpha: 0 });
+
 		// SplitType
 		const titleText = new SplitType('#title', { types: 'chars' });
 
@@ -21,6 +23,8 @@
 			},
 			ease: 'elastic.out(0.5, 0.2)'
 		});
+
+		gsap.to('.title', { autoAlpha: 1 });
 	});
 </script>
 

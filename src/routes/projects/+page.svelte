@@ -15,6 +15,7 @@
 		gsap.registerPlugin(Draggable);
 
 		const section = document.querySelector('section');
+		const designs = document.querySelector('.designs');
 
 		// GSAP
 		gsap.set('.link', { autoAlpha: 0, scale: 0 });
@@ -24,7 +25,16 @@
 
 		tl.to('.content', { autoAlpha: 1 })
 			.to('.link', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 2, ease: 'expo.out' }, 0)
-			.from('.title', { scale: 0.25, duration: 3 }, 0);
+			.from('.title', { scale: 0.25, duration: 3 }, 0)
+			.from('.ascii', { y: 100, duration: 1 }, 0);
+
+		designs.addEventListener('mouseenter', () => {
+			gsap.to(designs, { scale: 1.1, duration: 1.5, ease: 'elastic.out' });
+		});
+
+		designs.addEventListener('mouseleave', () => {
+			gsap.to(designs, { scale: 1, duration: 1.5, ease: 'elastic.out' });
+		});
 
 		console.log(section);
 	});
