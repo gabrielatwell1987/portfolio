@@ -1,6 +1,5 @@
 <script>
 	import { gsap } from 'gsap';
-	import { TextPlugin } from 'gsap/dist/TextPlugin';
 	import { onMount } from 'svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
@@ -26,17 +25,17 @@
 		});
 
 		// SplitType
-		const bio = new SplitType('.text', { types: 'lines' });
+		const bio = new SplitType('.text', { types: 'words' });
 
 		gsap.fromTo(
-			bio.lines,
+			bio.words,
 			{
 				autoAlpha: 0,
 				scaleY: 0
 			},
 			{
 				scaleY: 1,
-				duration: 0.75,
+				duration: 1.75,
 				autoAlpha: 1,
 				ease: 'none',
 				stagger: {
