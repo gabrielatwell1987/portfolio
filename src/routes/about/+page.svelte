@@ -1,8 +1,10 @@
 <script>
 	import { gsap } from 'gsap';
+	import { TextPlugin } from 'gsap/dist/TextPlugin';
 	import { onMount } from 'svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import SplitType from 'split-type';
 	import Button from '$lib/components/Button.svelte';
 	import Grid from '$lib/components/Grid.svelte';
 	import Skills from '$lib/components/Skills.svelte';
@@ -22,6 +24,29 @@
 			duration: 1,
 			ease: 'none'
 		});
+
+		// SplitType
+		const bio = new SplitType('.text', { types: 'lines' });
+
+		gsap.fromTo(
+			bio.lines,
+			{
+				autoAlpha: 0,
+				scaleY: 0
+			},
+			{
+				scaleY: 1,
+				duration: 0.75,
+				autoAlpha: 1,
+				ease: 'none',
+				stagger: {
+					amount: 3,
+					grid: 'auto',
+					from: 'end',
+					axis: 'y'
+				}
+			}
+		);
 
 		console.log(main);
 	});

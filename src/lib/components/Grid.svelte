@@ -1,30 +1,30 @@
 <script>
-	import { onMount } from 'svelte';
-	import gsap from 'gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	// import { onMount } from 'svelte';
+	// import gsap from 'gsap';
+	// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 	export let leftTitle;
 	export let rightTitle;
 
-	onMount(() => {
-		gsap.registerPlugin(ScrollTrigger);
+	// onMount(() => {
+	// 	gsap.registerPlugin(ScrollTrigger);
 
-		const grid = document.querySelector('.grid');
+	// 	const grid = document.querySelector('.grid');
 
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: grid,
-				start: 'top bottom',
-				end: 'bottom top'
-			}
-		});
+	// 	const tl = gsap.timeline({
+	// 		scrollTrigger: {
+	// 			trigger: grid,
+	// 			start: 'top bottom',
+	// 			end: 'bottom top'
+	// 		}
+	// 	});
 
-		tl.from('.inline', {
-			y: -50,
-			opacity: 0,
-			duration: 1.75
-		});
-	});
+	// 	tl.from('.inline', {
+	// 		y: 50,
+	// 		opacity: 0,
+	// 		duration: 1.75
+	// 	});
+	// });
 </script>
 
 <section class="grid" aria-label="bio">
