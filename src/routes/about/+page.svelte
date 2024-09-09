@@ -30,16 +30,16 @@
 		gsap.fromTo(
 			bio.words,
 			{
-				autoAlpha: 0,
+				opacity: 0,
 				scaleY: 0
 			},
 			{
 				scaleY: 1,
-				duration: 1.75,
-				autoAlpha: 1,
+				duration: 3,
+				opacity: 1,
 				ease: 'none',
 				stagger: {
-					amount: 3,
+					amount: 2.75,
 					grid: 'auto',
 					from: 'end',
 					axis: 'y'
