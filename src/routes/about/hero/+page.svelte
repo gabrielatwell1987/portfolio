@@ -35,7 +35,7 @@
 		to hearing from you so we can discuss your goals for your online needs!
 	</h4>
 
-	<a class="btn" role="button" href="/projects">Projects</a>
+	<a class="btn" role="button" href="/projects" rel="canonical">Projects</a>
 
 	<h4 class="summary italic">projects I created..</h4>
 	<br />

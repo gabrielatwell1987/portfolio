@@ -105,7 +105,7 @@
 
 			<!-- image gallery -->
 			<div class="gallery">
-				<a href="/about/gallery"><Button title="Gallery" /></a>
+				<a rel="canonical" href="/about/gallery"><Button title="Gallery" /></a>
 			</div>
 
 			<AtwellSparrow />
