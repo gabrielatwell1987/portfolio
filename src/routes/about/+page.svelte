@@ -25,27 +25,21 @@
 		});
 
 		// SplitType
-		const bio = new SplitType('.text', { types: 'words' });
+		const text = new SplitType('.text', {
+			types: 'lines',
+			lineClass: 'line'
+		});
 
-		gsap.fromTo(
-			bio.words,
-			{
-				opacity: 0,
-				scaleY: 0
-			},
-			{
-				scaleY: 1,
-				duration: 2,
-				opacity: 1,
-				ease: 'none',
-				stagger: {
-					amount: 1.5,
-					grid: 'auto',
-					from: 'end',
-					axis: 'y'
-				}
-			}
-		);
+		gsap.set('.line', { yPercent: 100, opacity: 0 });
+
+		gsap.to('.line', {
+			yPercent: 0,
+			opacity: 1,
+			duration: 2,
+			ease: 'power2.out',
+			stagger: 0.25,
+			delay: 0.3
+		});
 
 		console.log(main);
 	});
@@ -176,6 +170,7 @@
 			line-height: 1.35;
 			color: var(--white);
 			font-weight: 500;
+			text-wrap: balance;
 		}
 
 		.text,

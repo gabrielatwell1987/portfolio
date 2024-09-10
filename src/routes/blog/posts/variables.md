@@ -42,3 +42,7 @@
     <Heading title="repeatDelay" />: Sets the delay between repeats.<br>
     <Heading title="endTime" />: Gets the end time of the animation.<br>
 </div>
+
+<div style="margin: 3% 0;"></div>
+
+---

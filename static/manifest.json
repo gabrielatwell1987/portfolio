@@ -4,8 +4,8 @@
 	"start_url": "/",
 	"display": "standalone",
 	"background_color": "#222425",
-	"theme_color": "#c5bec3a6",
-	"description": "Frontend developer portfolio",
+	"theme_color": "#24242475",
+	"description": "Gabriel Atwell's portfolio",
 	"icons": [
 		{
 			"src": "pwa-64x64.png",
