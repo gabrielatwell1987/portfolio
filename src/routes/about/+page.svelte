@@ -35,11 +35,11 @@
 			},
 			{
 				scaleY: 1,
-				duration: 3,
+				duration: 2,
 				opacity: 1,
 				ease: 'none',
 				stagger: {
-					amount: 2.75,
+					amount: 1.5,
 					grid: 'auto',
 					from: 'end',
 					axis: 'y'
