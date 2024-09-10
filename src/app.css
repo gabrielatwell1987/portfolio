@@ -143,16 +143,4 @@ body {
 	code.code {
 		background: var(--blacker);
 	}
-
-	pre code.language-js,
-	pre code.language-javascript {
-		background-color: var(--blackest); /* Light background */
-		color: var(--off-white); /* Your desired text color */
-	}
-
-	/* Target code blocks for CSS */
-	pre code.language-css {
-		background-color: var(--blackest); /* Light green background */
-		color: var(--off-white); /* Your desired text color */
-	}
 }
