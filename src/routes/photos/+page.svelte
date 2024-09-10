@@ -128,13 +128,6 @@
 	<div class="progress-container">
 		<progress id="scrollProgress" value="0" max="100" />
 	</div>
-
-	<div class="robot" aria-label="robot">
-		<p class="robot-text">Mouse Position Robot:</p>
-		<a class="btn__link" href="/photos/robot"
-			><img class="robot-image" src="/logos/robot.webp" alt="A robot made in Spline." /></a
-		>
-	</div>
 </main>
 
 <style>
@@ -174,10 +167,6 @@
 			margin-bottom: 1rem;
 		}
 
-		.robot {
-			display: none;
-		}
-
 		.gabe {
 			margin: 0.5rem auto;
 			max-width: var(--100);
@@ -207,49 +196,6 @@
 	}
 
 	@media (min-width: 850px) {
-		.btn__link {
-			font-size: 2.5rem;
-			font-weight: bolder;
-			text-decoration: none;
-			color: var(--smoke);
-			font-family: var(--montserrat);
-		}
-
-		.btn__link:hover {
-			font-size: 2.5rem;
-			font-weight: bolder;
-			text-decoration: none;
-			color: var(--smoke);
-		}
-
-		.robot {
-			display: block;
-			margin-top: 2rem;
-		}
-
-		.robot-image {
-			display: block;
-			width: 20%;
-			height: 25%;
-			margin: -1rem auto;
-			border-radius: 10px;
-		}
-
-		.robot-image:hover {
-			opacity: 0.5;
-			transition: opacity 0.75s ease-in-out;
-			animation: wiggle 0.5s ease-in-out infinite;
-		}
-
-		.robot-text {
-			font-family: var(--anta);
-			font-size: 1.75rem;
-			font-weight: 700;
-			color: var(--purple);
-			letter-spacing: 5px;
-			text-align: center;
-		}
-
 		.pictures {
 			display: flex;
 			justify-content: space-around;
@@ -297,10 +243,6 @@
 
 		.pictures {
 			margin-left: -12%;
-		}
-
-		.robot {
-			margin-bottom: 5%;
 		}
 
 		.left {
