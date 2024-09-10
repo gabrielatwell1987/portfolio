@@ -1,8 +1,8 @@
 <script>
 	import '../app.css';
+	import { page } from '$app/stores';
 	import NavBar from '$lib/components/NavBar.svelte';
 	import Analytics from '$lib/data/Analytics.svelte';
-	import SEO from '$lib/data/SEO.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import { onMount } from 'svelte';
 	import Loading from '$lib/components/Loading.svelte';
@@ -46,16 +46,21 @@
 
 		detectSWUpdate();
 	});
+
+	$: canonicalUrl = $page.url.origin + $page.url.pathname;
 </script>
 
 <svelte:head>
 	<!-- website theme cdn -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+
 	<!-- font awesome cdn -->
 	<link
 		rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 	/>
+
+	<link rel="canonical" href={canonicalUrl} />
 </svelte:head>
 
 <Analytics />
