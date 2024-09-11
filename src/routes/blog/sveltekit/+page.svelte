@@ -138,7 +138,8 @@
 				</p>
 
 				<div class="structure">
-					<Image src="/logos/structure.webp" alt="Sveltekit structure" />
+					<Image src="/logos/file-structure.webp" alt="Sveltekit structure" />
+					<!-- <Image src="/logos/structure.webp" alt="Sveltekit structure" /> -->
 				</div>
 			</details>
 
@@ -208,6 +209,7 @@
 		width: 50%;
 		margin-left: 24.5%;
 		margin-bottom: 2rem;
+		position: relative;
 	}
 
 	details[open] summary ~ * {
