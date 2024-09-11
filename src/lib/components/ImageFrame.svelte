@@ -28,7 +28,7 @@
 		let mm = gsap.matchMedia();
 
 		mm.add('(max-width: 768px)', () => {
-			gsap.set(h1, { yPercent: -28 });
+			gsap.set(h1, { yPercent: -100, fontWeight: 900 });
 		});
 	});
 </script>
@@ -47,7 +47,7 @@
 		letter-spacing: 3px;
 		font-family: var(--mono);
 		font-size: clamp(0.9rem, 3vw, 2rem);
-		font-weight: 900;
+		font-weight: 700;
 		color: var(--smoke);
 		text-wrap: nowrap;
 	}
