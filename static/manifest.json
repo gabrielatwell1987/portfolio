@@ -10,13 +10,13 @@
 		{
 			"src": "screenshot-narrow.png",
 			"type": "image/png",
-			"sizes": "528x264",
+			"sizes": "640x320",
 			"form_factor": "narrow"
 		},
 		{
 			"src": "screenshot-wide.png",
 			"type": "image/png",
-			"sizes": "1053x287",
+			"sizes": "1174x320",
 			"form_factor": "wide"
 		}
 	],
