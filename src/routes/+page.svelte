@@ -14,6 +14,7 @@
 />
 
 <HeroLogo />
+
 <section class="frame">
 	<ImageFrame
 		src="/logos/frontend_dev.webp"
@@ -21,6 +22,7 @@
 		text="Distinguish your website"
 	/>
 </section>
+
 <Hero />
 
 <style>
