@@ -14,7 +14,7 @@
 			"form_factor": "narrow"
 		},
 		{
-			"src": "screenshot-wide.png",
+			"src": "screenshot-wide.jpg",
 			"type": "image/png",
 			"sizes": "320x320",
 			"form_factor": "wide"
