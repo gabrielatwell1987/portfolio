@@ -240,7 +240,6 @@
 
 	.popover {
 		background: transparent;
-		margin-bottom: -15%;
 	}
 
 	@media (min-width: 300px) {
@@ -346,6 +345,11 @@
 			width: var(--100);
 			margin: 0 43%;
 		}
+
+		.popover {
+			display: block;
+			margin-bottom: -55%;
+		}
 	}
 
 	@media (min-width: 1024px) {
@@ -360,16 +364,11 @@
 		.center {
 			margin-bottom: 5%;
 		}
-
-		.popover {
-			display: block;
-			margin-bottom: -25%;
-		}
 	}
 
 	@media (min-width: 1400px) {
 		.popover {
-			margin-bottom: -20%;
+			margin-bottom: -30%;
 		}
 	}
 

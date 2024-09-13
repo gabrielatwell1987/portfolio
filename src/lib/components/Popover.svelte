@@ -83,6 +83,7 @@
 		background-repeat: round;
 		all: unset;
 		position: relative;
+		top: -17rem;
 		width: 240px;
 		height: 240px;
 		display: flex;
@@ -139,5 +140,11 @@
 
 	.goo-container .menu {
 		background: black;
+	}
+
+	@media (max-width: 1024px) {
+		.dropdown-container {
+			top: -15rem;
+		}
 	}
 </style>
