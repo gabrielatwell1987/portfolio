@@ -62,7 +62,7 @@
 		.modal__p {
 			font-family: var(--lexend);
 			font-weight: 200;
-			font-size: clamp(1.1rem, 2vw, 1.75rem);
+			font-size: clamp(1.1rem, 1vw, 1.75rem);
 			color: var(--white);
 		}
 	}
@@ -124,7 +124,7 @@
 		}
 
 		.modal h4 {
-			font-size: clamp(1.2rem, 3vw, 3rem);
+			font-size: clamp(1.2rem, 2vw, 3rem);
 			font-weight: 600;
 			font-family: var(--anta);
 			color: var(--yellow);
