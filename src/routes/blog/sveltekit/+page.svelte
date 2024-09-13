@@ -64,84 +64,90 @@
 
 		<!-- content -->
 		<section>
-			<details on:toggle={resetAnimation}>
-				<!-- svelte-ignore a11y-no-redundant-roles -->
-				<summary role="button" class="outline contrast spacing"><b>Framework</b></summary>
-				<p class="text">
-					I used sveltekit to create this portfolio website. I decided to go with sveltekit because
-					of the server-side rendering (SSR) and all of the SEO features, as well as making the
-					website really fast. The fact that this, to me, is less than an actual framework as it
-					relies heavily on vanilla HTML, CSS, and JavaScript is what I'm looking for.
-					<br /><br />
-					In comparing all of the frameworks for the best one to use, my list is 1.) Sveltekit 2.) Astro
-					3.) React. I like Astro because it is really easy to use, and you can use any other framework's
-					components you want. I can use svelte with astro, react with astro, etc. I put react as #3
-					because it is really verbose.. but it does the same thing that sveltekit and astro do.
-				</p>
-			</details>
+			<div class="centerDetail">
+				<details on:toggle={resetAnimation}>
+					<!-- svelte-ignore a11y-no-redundant-roles -->
+					<summary role="button" class="outline contrast spacing"><b>Framework</b></summary>
+					<p class="text">
+						I used sveltekit to create this portfolio website. I decided to go with sveltekit
+						because of the server-side rendering (SSR) and all of the SEO features, as well as
+						making the website really fast. The fact that this, to me, is less than an actual
+						framework as it relies heavily on vanilla HTML, CSS, and JavaScript is what I'm looking
+						for.
+						<br /><br />
+						In comparing all of the frameworks for the best one to use, my list is 1.) Sveltekit 2.)
+						Astro 3.) React. I like Astro because it is really easy to use, and you can use any other
+						framework's components you want. I can use svelte with astro, react with astro, etc. I put
+						react as #3 because it is really verbose.. but it does the same thing that sveltekit and
+						astro do.
+					</p>
+				</details>
 
-			<details on:toggle={resetAnimation}>
-				<!-- svelte-ignore a11y-no-redundant-roles -->
-				<summary role="button" class="outline contrast spacing"><b>Based off of basics</b></summary>
-				<p class="text">
-					I am very knowledgable to the fundamentals of web development. CSS is a real hobby that I
-					have because I'm a very visual person. Sveltekit has made it super simple to put my ideas
-					on the web.
-					<br /><br />
-					The framework is based off of html. Javascript is used in a script tag, css is used in a style
-					tag, just like you do it inline in html. Everything is scoped, so it makes it really easy to
-					build things.
-				</p>
-			</details>
+				<details on:toggle={resetAnimation}>
+					<!-- svelte-ignore a11y-no-redundant-roles -->
+					<summary role="button" class="outline contrast spacing"
+						><b>Based off of basics</b></summary
+					>
+					<p class="text">
+						I am very knowledgable to the fundamentals of web development. CSS is a real hobby that
+						I have because I'm a very visual person. Sveltekit has made it super simple to put my
+						ideas on the web.
+						<br /><br />
+						The framework is based off of html. Javascript is used in a script tag, css is used in a
+						style tag, just like you do it inline in html. Everything is scoped, so it makes it really
+						easy to build things.
+					</p>
+				</details>
 
-			<details on:toggle={resetAnimation}>
-				<!-- svelte-ignore a11y-no-redundant-roles -->
-				<summary role="button" class="outline contrast spacing"><b>What is it?</b></summary>
-				<p class="text">
-					Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
-					framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is to
-					React. In the end, sveltekit is a new approach to building rich user interfaces.
-					Originally, svelte was created as a tool to build components for data visualization. It
-					makes creating data visualizations super easy!
-					<br /><br />
-					Svelte is usually used for SPA's (single page applications), but with sveltekit, you can use
-					it's routing features to create a MPA's (multi-page applications). This is what I did with
-					this website.
-				</p>
-			</details>
+				<details on:toggle={resetAnimation}>
+					<!-- svelte-ignore a11y-no-redundant-roles -->
+					<summary role="button" class="outline contrast spacing"><b>What is it?</b></summary>
+					<p class="text">
+						Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
+						framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is
+						to React. In the end, sveltekit is a new approach to building rich user interfaces.
+						Originally, svelte was created as a tool to build components for data visualization. It
+						makes creating data visualizations super easy!
+						<br /><br />
+						Svelte is usually used for SPA's (single page applications), but with sveltekit, you can
+						use it's routing features to create a MPA's (multi-page applications). This is what I did
+						with this website.
+					</p>
+				</details>
 
-			<details on:toggle={resetAnimation}>
-				<!-- svelte-ignore a11y-no-redundant-roles -->
-				<summary role="button" class="outline contrast spacing"><b>Install</b></summary>
-				<p class="text">
-					You need <a href="https://nodejs.org/"><b>Node.js</b></a> installed. Once you have it
-					installed, you will use npm in your terminal. In your terminal, type
-					<code class="code">cd folder</code> to change the directory to whatever folder you want to
-					create your project in. If you're at where you want to be at, type
-					<code class="code">npm create svelte@latest</code>. This will create a new sveltekit
-					project. Once you have the project created, you will cd into the project and run
-					<code class="code">npm install</code>. This will install all of the dependencies that you
-					need to run the project. Once you have the project installed, you will run
-					<code class="code">npm run dev</code>
-					to start a development server and start the project. Now when you make changes to your code
-					and press save, it will update on your development server without having to hit refresh! Also,
-					this starts the project on <code class="code">http://localhost:5173</code>.
-					<br /><br />
-					Once you have the development server running, you can start building your project. You can
-					use the <code class="code">src/routes</code> folder to create new pages. You can use the
-					<code class="code">src/lib</code> folder to store and create new components or data for
-					your project.
-					<br /><br />
-					You can use the <code class="code">+layout.svelte</code> file to create a layout for your
-					project. You can use the <code class="code">+error.svelte</code>
-					file to create an error page. And <code class="code">+page.svelte</code> creates a new page.
-				</p>
+				<details on:toggle={resetAnimation}>
+					<!-- svelte-ignore a11y-no-redundant-roles -->
+					<summary role="button" class="outline contrast spacing"><b>Install</b></summary>
+					<p class="text">
+						You need <a href="https://nodejs.org/"><b>Node.js</b></a> installed. Once you have it
+						installed, you will use npm in your terminal. In your terminal, type
+						<code class="code">cd folder</code> to change the directory to whatever folder you want
+						to create your project in. If you're at where you want to be at, type
+						<code class="code">npm create svelte@latest</code>. This will create a new sveltekit
+						project. Once you have the project created, you will cd into the project and run
+						<code class="code">npm install</code>. This will install all of the dependencies that
+						you need to run the project. Once you have the project installed, you will run
+						<code class="code">npm run dev</code>
+						to start a development server and start the project. Now when you make changes to your code
+						and press save, it will update on your development server without having to hit refresh!
+						Also, this starts the project on <code class="code">http://localhost:5173</code>.
+						<br /><br />
+						Once you have the development server running, you can start building your project. You can
+						use the <code class="code">src/routes</code> folder to create new pages. You can use the
+						<code class="code">src/lib</code> folder to store and create new components or data for
+						your project.
+						<br /><br />
+						You can use the <code class="code">+layout.svelte</code> file to create a layout for
+						your project. You can use the <code class="code">+error.svelte</code>
+						file to create an error page. And <code class="code">+page.svelte</code> creates a new page.
+					</p>
 
-				<div class="structure">
-					<Image src="/logos/file-structure.webp" alt="Sveltekit structure" />
-					<!-- <Image src="/logos/structure.webp" alt="Sveltekit structure" /> -->
-				</div>
-			</details>
+					<div class="structure">
+						<Image src="/logos/file-structure.webp" alt="Sveltekit structure" />
+						<!-- <Image src="/logos/structure.webp" alt="Sveltekit structure" /> -->
+					</div>
+				</details>
+			</div>
 
 			<!-- video -->
 			<div class="iframe">
@@ -297,6 +303,10 @@
 			margin: 0 auto;
 			margin-left: -23%;
 		}
+
+		.centerDetail {
+			margin-top: 70%;
+		}
 	}
 
 	@media (min-width: 500px) {
@@ -320,6 +330,10 @@
 
 		.main {
 			width: var(--100);
+		}
+
+		.centerDetail {
+			margin-top: 0;
 		}
 	}
 
