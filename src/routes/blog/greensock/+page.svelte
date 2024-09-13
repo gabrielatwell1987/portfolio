@@ -292,7 +292,7 @@
 		}
 
 		.centerDetail {
-			margin-top: 120%;
+			margin-top: 150%;
 		}
 	}
 
@@ -352,7 +352,7 @@
 		}
 
 		.centerDetail {
-			margin-top: -45%;
+			margin-top: -30%;
 		}
 	}
 
