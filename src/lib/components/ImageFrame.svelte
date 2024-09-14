@@ -22,14 +22,14 @@
 		});
 
 		imageContainer.addEventListener('mouseleave', () => {
-			gsap.to(imageContainerImg, { y: -75, borderTop: 0, ease: 'expo.inOut' });
+			gsap.to(imageContainerImg, { y: -50, borderTop: 0, ease: 'expo.inOut' });
 			// gsap.to(h1, { color: 'var(--smoke)', delay: 0.75, ease: 'expo.inOut' });
 		});
 
 		let mm = gsap.matchMedia();
 
 		mm.add('(max-width: 768px)', () => {
-			gsap.set(h1, { yPercent: -25, fontWeight: 900 });
+			gsap.set(h1, { yPercent: -50, fontWeight: 900 });
 		});
 	});
 </script>
@@ -57,9 +57,7 @@
 		position: relative;
 		width: calc(fit-content + 10%);
 		height: 5in;
-		/* overflow: hidden; */
 		background: var(--dark-blue);
-		/* border: 3px solid var(--yellow); */
 		border-radius: 15px;
 		margin: 5% 0 3% 0;
 		padding: 2rem;
