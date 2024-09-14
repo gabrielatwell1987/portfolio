@@ -8,13 +8,13 @@
 	"description": "The portfolio of Gabe Atwell, a UI/UX designer and developer.",
 	"screenshots": [
 		{
-			"src": "screenshot-narrow.png",
+			"src": "./icons/screenshot-narrow.png",
 			"type": "image/png",
 			"sizes": "342x320",
 			"form_factor": "narrow"
 		},
 		{
-			"src": "screenshot-wide.jpg",
+			"src": "./icons/screenshot-wide.png",
 			"type": "image/png",
 			"sizes": "512x512",
 			"form_factor": "wide"
@@ -22,23 +22,23 @@
 	],
 	"icons": [
 		{
-			"src": "pwa-64x64.png",
+			"src": "./icons/pwa-64x64.png",
 			"sizes": "64x64",
 			"type": "image/png"
 		},
 		{
-			"src": "pwa-192x192.png",
+			"src": "./icons/pwa-192x192.png",
 			"sizes": "192x192",
 			"type": "image/png"
 		},
 		{
-			"src": "pwa-512x512.png",
+			"src": "./icons/pwa-512x512.png",
 			"sizes": "512x512",
 			"type": "image/png",
 			"purpose": "any"
 		},
 		{
-			"src": "maskable-icon-512x512.png",
+			"src": "./icons/maskable-icon-512x512.png",
 			"sizes": "512x512",
 			"type": "image/png",
 			"purpose": "maskable"
