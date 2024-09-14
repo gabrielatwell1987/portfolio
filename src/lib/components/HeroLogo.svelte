@@ -34,7 +34,9 @@
 
 <main>
 	<section class="hero-logo">
-		<Image src="/logos/mono-atwell.webp" alt="atwell ui" />
+		<a href="/about/hero">
+			<Image src="/logos/mono-atwell.webp" alt="atwell ui" />
+		</a>
 	</section>
 </main>
 
@@ -51,12 +53,19 @@
 		align-items: center;
 		height: 30vh;
 		margin-top: 2.5%;
+		user-select: none;
 	}
 
 	.hero-logo {
 		width: clamp(90%, 10vw, 90%);
 		display: flex;
 		justify-content: center;
+	}
+
+	a {
+		text-decoration: none;
+		cursor: pointer;
+		background: transparent;
 	}
 
 	@media (max-width: 300px) {

@@ -20,7 +20,7 @@
 		</div>
 
 		<div class="gabe-logo">
-			<a class="home" href="/about/hero"><MainLogo /></a>
+			<a class="home" href="/"><MainLogo /></a>
 		</div>
 	</div>
 
@@ -77,6 +77,11 @@
 
 	.gabe-logo {
 		margin: 0 0 0 25%;
+	}
+
+	.home {
+		user-select: none;
+		background: transparent;
 	}
 
 	@media (min-width: 300px) {
