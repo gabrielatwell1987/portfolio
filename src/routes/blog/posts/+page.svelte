@@ -80,9 +80,6 @@
 		margin-top: 5rem;
 		mix-blend-mode: difference;
 	}
-	section {
-		background: url('/logos/circle-scatter-bg.svg') no-repeat center center/cover fixed;
-	}
 
 	a {
 		text-decoration: none;
