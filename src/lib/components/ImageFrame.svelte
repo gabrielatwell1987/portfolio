@@ -13,22 +13,23 @@
 		const imageContainerImg = document.querySelector('.image-container img');
 		const h1 = document.querySelector('h1');
 
-		gsap.set(imageContainerImg, { y: -40 });
+		gsap.set(imageContainerImg, { y: -75 });
+		gsap.set(h1, { y: -15 });
 
 		imageContainer.addEventListener('mouseenter', () => {
 			gsap.to(imageContainerImg, { y: 0, ease: 'expo.inOut' });
-			gsap.to(h1, { color: 'var(--black)', delay: 0.25, ease: 'expo.inOut' });
+			gsap.to(h1, { color: 'var(--off-white)', delay: 0.25, ease: 'expo.inOut' });
 		});
 
 		imageContainer.addEventListener('mouseleave', () => {
-			gsap.to(imageContainerImg, { y: -40, borderTop: 0, ease: 'expo.inOut' });
-			gsap.to(h1, { color: 'var(--smoke)', delay: 0.75, ease: 'expo.inOut' });
+			gsap.to(imageContainerImg, { y: -75, borderTop: 0, ease: 'expo.inOut' });
+			// gsap.to(h1, { color: 'var(--smoke)', delay: 0.75, ease: 'expo.inOut' });
 		});
 
 		let mm = gsap.matchMedia();
 
 		mm.add('(max-width: 768px)', () => {
-			gsap.set(h1, { yPercent: -100, fontWeight: 900 });
+			gsap.set(h1, { yPercent: -25, fontWeight: 900 });
 		});
 	});
 </script>
@@ -46,21 +47,22 @@
 		transform: translate(-50%, -96%);
 		letter-spacing: 3px;
 		font-family: var(--mono);
-		font-size: clamp(0.9rem, 3vw, 2rem);
+		font-size: clamp(0.9rem, 2vw, 2rem);
 		font-weight: 700;
-		color: var(--smoke);
+		color: var(--off-white);
 		text-wrap: nowrap;
 	}
 
 	.image-container {
 		position: relative;
-		width: 80%;
+		width: calc(fit-content + 10%);
 		height: 5in;
 		/* overflow: hidden; */
-		border: 3px solid var(--off-white);
-		border-radius: 10px;
+		background: var(--dark-blue);
+		/* border: 3px solid var(--yellow); */
+		border-radius: 15px;
 		margin: 5% 0 3% 0;
-		padding: 1rem 2rem;
+		padding: 2rem;
 	}
 
 	.image-container img {
@@ -80,7 +82,6 @@
 		.image-container {
 			width: 90%;
 			height: 75%;
-			border: 1px solid var(--off-white);
 		}
 
 		h1 {
