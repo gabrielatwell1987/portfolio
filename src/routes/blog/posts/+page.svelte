@@ -81,6 +81,10 @@
 		mix-blend-mode: difference;
 	}
 
+	section {
+		background: url('/logos/bg1.webp') no-repeat center center/cover fixed;
+	}
+
 	a {
 		text-decoration: none;
 	}
