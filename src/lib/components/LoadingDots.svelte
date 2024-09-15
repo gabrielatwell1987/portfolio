@@ -29,7 +29,7 @@
 		height: 5rem;
 		margin: 2rem 0.5rem;
 		background: transparent;
-		border: 5px solid var(--purple);
+		border: 5px solid var(--sky);
 		border-radius: 50%;
 		-webkit-animation: 0.9s bounce infinite alternate;
 		animation: 0.9s bounce infinite alternate;
@@ -65,6 +65,8 @@
 		.loading div {
 			width: 2rem;
 			height: 2rem;
+			margin: 2rem 0.25rem;
+			border: 3px solid var(--off-white);
 		}
 	}
 </style>
