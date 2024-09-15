@@ -1,11 +1,11 @@
 <script>
-	import LiquidDrop from './LiquidDrop.svelte';
 	// import Pulsing from './Pulsing.svelte';
+	import LoadingDots from './LoadingDots.svelte';
 </script>
 
 <main class="container">
-	<LiquidDrop />
 	<!-- <Pulsing /> -->
+	<LoadingDots />
 </main>
 
 <style>

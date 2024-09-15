@@ -38,9 +38,9 @@
 	}
 
 	.drop:after {
+		content: '';
 		width: 4rem;
 		height: 4rem;
-		content: '';
 		position: absolute;
 		background: var(--yellow);
 		border-radius: 50% 60% 60% 70% / 60% 65% 65% 65%;
@@ -70,11 +70,11 @@
 	@keyframes move {
 		0%,
 		100% {
-			transform: translate(-150px);
+			transform: translate(-100px);
 		}
 
 		50% {
-			transform: translate(150px);
+			transform: translate(100px);
 		}
 	}
 
