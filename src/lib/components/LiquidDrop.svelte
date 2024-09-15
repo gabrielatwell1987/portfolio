@@ -83,7 +83,7 @@
 			left: 0px;
 		}
 		5% {
-			left: 35px;
+			left: -35px;
 		}
 		45% {
 			left: 0px;
@@ -92,7 +92,7 @@
 			left: 0px;
 		}
 		55% {
-			left: -30px;
+			left: 30px;
 		}
 		95% {
 			left: 0px;
