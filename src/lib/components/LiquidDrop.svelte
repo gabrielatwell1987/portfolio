@@ -70,11 +70,11 @@
 	@keyframes move {
 		0%,
 		100% {
-			transform: translate(150px);
+			transform: translate(-150px);
 		}
 
 		50% {
-			transform: translate(-150px);
+			transform: translate(150px);
 		}
 	}
 
