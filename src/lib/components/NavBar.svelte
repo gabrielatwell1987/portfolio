@@ -40,6 +40,7 @@
 	<!-- mobile view -->
 	{#if open}
 		<div class="mobile">
+			<a class="nav-link" href="/">Home</a>
 			<a class="nav-link" href="/projects">Projects</a>
 			<a class="nav-link" href="/blog">Blog</a>
 			<a class="nav-link" href="/about">About</a>
@@ -154,7 +155,7 @@
 			border: none;
 			background-color: transparent;
 			margin-left: 30%;
-			scale: 1.5;
+			scale: 1.3;
 			text-wrap: nowrap;
 		}
 
@@ -178,7 +179,7 @@
 			align-items: center;
 			height: 5em;
 			width: var(--100);
-			scale: 0.65;
+			scale: 0.75;
 		}
 
 		.header-logos {
@@ -282,7 +283,7 @@
 			margin-left: 20%;
 			width: var(--100);
 			line-height: 2;
-			scale: 1.25;
+			scale: 1.3;
 			text-wrap: nowrap;
 		}
 
@@ -300,7 +301,6 @@
 		.desktop {
 			margin-left: 25%;
 			line-height: 1.5;
-			scale: 1.25;
 		}
 
 		.gabe-logo {
@@ -322,7 +322,6 @@
 	@media (min-width: 1300px) {
 		.desktop {
 			margin-left: 30%;
-			scale: 1.15;
 		}
 
 		.gabe-logo {
@@ -339,7 +338,6 @@
 	@media (min-width: 1400px) {
 		.desktop {
 			margin-left: 20%;
-			scale: 1.25;
 		}
 
 		.gabe-logo {
@@ -352,7 +350,7 @@
 		}
 
 		nav {
-			scale: 1;
+			scale: 0.9;
 			margin-right: 0;
 		}
 	}
@@ -379,8 +377,7 @@
 
 	@media (min-width: 1600px) {
 		.desktop {
-			margin: 0.85% 0 0 25%;
-			scale: 1.15;
+			margin: 0.85% 0 0 29%;
 		}
 
 		.gabe-logo {
