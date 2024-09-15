@@ -18,12 +18,11 @@
 
 		imageContainer.addEventListener('mouseenter', () => {
 			gsap.to(imageContainerImg, { y: 0, ease: 'expo.inOut' });
-			gsap.to(h1, { color: 'var(--off-white)', delay: 0.25, ease: 'expo.inOut' });
+			gsap.to(h1, { color: 'var(--off-white)', delay: 0.25, ease: 'circ' });
 		});
 
 		imageContainer.addEventListener('mouseleave', () => {
 			gsap.to(imageContainerImg, { y: -50, borderTop: 0, ease: 'expo.inOut' });
-			// gsap.to(h1, { color: 'var(--smoke)', delay: 0.75, ease: 'expo.inOut' });
 		});
 
 		let mm = gsap.matchMedia();

@@ -5,6 +5,7 @@
 
 	onMount(() => {
 		const modal = document.querySelector('#modal');
+		const article = document.querySelector('article');
 		const openModal = document.querySelector('.open-button');
 		const closeModal = document.querySelector('.close-button');
 
@@ -25,24 +26,22 @@
 	});
 </script>
 
-<button class="open-button" aria-label="open"><i class="fa-regular fa-folder-open" /></button>
+<button class="open-button">
+	<i class="fa-regular fa-folder-open" />
+</button>
 
 <dialog class="modal" id="modal" aria-label="modal">
 	<article>
 		<header>
-			<button rel="prev" class="close-button" aria-label="close"
-				><i class="fa-solid fa-xmark" /></button
-			>
+			<button rel="prev" class="close-button">
+				<i class="fa-solid fa-xmark" />
+			</button>
 
 			<h4>Please contact me for any frontend work!</h4>
 		</header>
 
 		<div class="modal-img">
-			<Image
-				src="/logos/newspaper.webp"
-				alt="frontend newspaper clipping"
-				aria-label="newspaper clipping"
-			/>
+			<Image src="/logos/newspaper.webp" alt="frontend newspaper clipping" />
 		</div>
 
 		<p class="modal__p">
@@ -56,7 +55,48 @@
 	@media (min-width: 300px) {
 		.open-button,
 		.close-button {
-			display: none;
+			display: block;
+			font-size: 1.2rem;
+			font-weight: 800;
+			background-color: transparent;
+			color: var(--white);
+			width: 4%;
+			height: 2%;
+			margin-left: 40%;
+			margin-top: 5%;
+			outline: none;
+			border: 2px solid var(--white);
+			border-radius: 15px;
+			padding: 1rem 1.5rem;
+			outline: none;
+			animation: wiggle 0.5s ease-in-out infinite;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		h4 {
+			font-size: clamp(1.2rem, 2vw, 3rem);
+			font-weight: 600;
+			font-family: var(--anta);
+			color: var(--yellow);
+			margin: 1rem 0 0.5rem 0;
+			mix-blend-mode: hard-light;
+		}
+
+		article {
+			width: 100%;
+		}
+
+		.modal {
+			text-wrap: balance;
+		}
+
+		.modal-img {
+			border-radius: 10px;
+			width: 80%;
+			height: 25%;
+			margin: 1rem auto;
 		}
 
 		.modal__p {

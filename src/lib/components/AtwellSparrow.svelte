@@ -15,30 +15,30 @@
 	});
 </script>
 
-<div class="atwell">
+<div class="sparrow">
 	<Image src="/logos/sparrow.webp" alt="An logo that says Atwell that you can move" />
 </div>
 
 <style>
-	.atwell {
+	.sparrow {
 		border-radius: 3rem;
 		margin: 3.5% auto;
 		width: 30%;
 	}
 
-	.atwell:hover {
+	.sparrow:hover {
 		filter: brightness(0.85);
 		transition: filter 0.5s ease-in-out;
 	}
 
-	.atwell:not(:hover) {
-		filter: brightness(1);
+	.sparrow:not(:hover) {
+		filter: brightness(0.5);
 		transition: filter 0.5s ease-in-out;
 	}
 
 	@media (max-width: 800px) {
-		.atwell {
-			width: 70%;
+		.sparrow {
+			width: 100%;
 			margin-top: 25%;
 		}
 	}
