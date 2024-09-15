@@ -13,11 +13,11 @@
 		const imageContainerImg = document.querySelector('.image-container img');
 		const h1 = document.querySelector('h1');
 
-		gsap.set(imageContainerImg, { y: -75 });
+		gsap.set(imageContainerImg, { y: -50 });
 		gsap.set(h1, { y: -15 });
 
 		imageContainer.addEventListener('mouseenter', () => {
-			gsap.to(imageContainerImg, { y: 0, ease: 'expo.inOut' });
+			gsap.to(imageContainerImg, { y: -10, ease: 'expo.inOut' });
 			gsap.to(h1, { color: 'var(--off-white)', delay: 0.25, ease: 'circ' });
 		});
 
