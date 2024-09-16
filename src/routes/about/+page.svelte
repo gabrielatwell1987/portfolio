@@ -172,6 +172,10 @@
 			font-weight: 500;
 			text-wrap: balance;
 			word-wrap: break-word;
+			word-break: break-all;
+			hyphens: auto;
+			writing-mode: horizontal-tb;
+			white-space: pre-wrap;
 		}
 
 		.text,
