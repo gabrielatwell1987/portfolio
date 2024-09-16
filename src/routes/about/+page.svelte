@@ -164,21 +164,13 @@
 		}
 
 		.text {
-			max-width: 90%;
+			max-width: 95%;
 			margin-inline: auto;
-			font-size: clamp(1rem, 2vw, 2rem);
+			font-size: clamp(1.1rem, 1.75vw, 2rem);
 			line-height: 1.35;
 			color: var(--white);
 			font-weight: 500;
-
-			text-wrap: wrap;
-			word-wrap: break-word;
-			word-break: break-word;
-			overflow-wrap: break-word;
-			hyphens: auto;
-			text-align: justify;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
+			text-wrap: balance;
 		}
 
 		.text,
@@ -218,16 +210,18 @@
 			font-size: 1.3rem;
 		}
 
+		.text {
+			color: var(--white);
+			max-width: 75%;
+			line-height: 1.5;
+		}
+
 		.bio {
 			margin-bottom: -5rem;
 		}
 
 		.margin__b {
 			margin-bottom: -2rem;
-		}
-
-		.text {
-			max-width: 100%;
 		}
 
 		.text__w {
