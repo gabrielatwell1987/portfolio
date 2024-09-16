@@ -57,7 +57,7 @@
 			<div class="bio" aria-label="bio">
 				<p class="text">
 					My name is Gabriel Atwell and I am a frontend web developer. I started out with the
-					basics: HTML, CSS, and JavaScript. I then moved on to more advanced topics such as:
+					basics: HTML, CSS, and JavaScript. I then moved on to more advanced topics such as
 					Svelte/Sveltekit, Node.js, GSAP, and a little bit of three.js but I have begun to teach
 					myself the backend of web development on my spare time with backend languages like Python
 					to become more of a fullstack developer.
@@ -158,29 +158,28 @@
 			margin-inline: auto;
 		}
 
-		.text-hero {
-			font-size: 1.35rem;
-			line-height: 1.5;
-		}
-
 		.text {
 			max-width: 90%;
 			margin-inline: auto;
-			font-size: clamp(1.1rem, 1.75vw, 2rem);
-			line-height: 1.35;
 			color: var(--white);
+			font-size: clamp(1.1rem, 1.75vw, 2rem);
 			font-weight: 500;
 			text-wrap: balance;
 			word-wrap: break-word;
 			word-break: break-all;
+			white-space: unset;
 			hyphens: auto;
-			writing-mode: horizontal-tb;
-			white-space: pre-wrap;
+			line-height: 1.35;
 		}
 
 		.text,
 		.text:hover {
 			mix-blend-mode: difference;
+		}
+
+		.text-hero {
+			font-size: 1.35rem;
+			line-height: 1.5;
 		}
 
 		.drop {
@@ -217,7 +216,7 @@
 
 		.text {
 			color: var(--white);
-			/* max-width: 99%; */
+			max-width: 80%;
 			line-height: 1.5;
 		}
 
@@ -257,13 +256,17 @@
 
 	@media (min-width: 1400px) {
 		.hero {
-			width: 75%;
-			margin-left: 12%;
+			width: 90%;
+			margin-left: 5%;
 		}
 
 		.gallery {
 			width: 75%;
 			margin-left: 12%;
+		}
+
+		.margin__b {
+			text-wrap: balance;
 		}
 	}
 </style>
