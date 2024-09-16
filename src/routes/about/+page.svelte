@@ -166,13 +166,14 @@
 		.text {
 			max-width: 90%;
 			margin-inline: auto;
-			font-size: clamp(1.05rem, 2vw, 2rem);
+			font-size: clamp(1rem, 2vw, 2rem);
 			line-height: 1.35;
 			color: var(--white);
 			font-weight: 500;
-			text-wrap: balance;
+
+			text-wrap: wrap;
 			word-wrap: break-word;
-			word-break: break-all;
+			word-break: break-word;
 			overflow-wrap: break-word;
 			hyphens: auto;
 			text-align: justify;
@@ -217,17 +218,16 @@
 			font-size: 1.3rem;
 		}
 
-		.text {
-			color: var(--white);
-			max-width: 100%;
-		}
-
 		.bio {
 			margin-bottom: -5rem;
 		}
 
 		.margin__b {
 			margin-bottom: -2rem;
+		}
+
+		.text {
+			max-width: 100%;
 		}
 
 		.text__w {
