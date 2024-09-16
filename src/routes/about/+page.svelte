@@ -172,8 +172,10 @@
 			font-weight: 500;
 			text-wrap: balance;
 			word-wrap: break-word;
-			word-break: break-word;
+			word-break: normal;
+			overflow-wrap: break-word;
 			hyphens: auto;
+			text-align: justify;
 		}
 
 		.text,
