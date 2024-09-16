@@ -19,9 +19,6 @@ const config = {
 	],
 	prerender: {
 		entries: ['/photos']
-	},
-	vitePreprocess: {
-		css: false
 	}
 };
 
