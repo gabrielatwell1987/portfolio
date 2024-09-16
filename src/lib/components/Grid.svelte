@@ -1,30 +1,6 @@
 <script>
-	// import { onMount } from 'svelte';
-	// import gsap from 'gsap';
-	// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
 	export let leftTitle;
 	export let rightTitle;
-
-	// onMount(() => {
-	// 	gsap.registerPlugin(ScrollTrigger);
-
-	// 	const grid = document.querySelector('.grid');
-
-	// 	const tl = gsap.timeline({
-	// 		scrollTrigger: {
-	// 			trigger: grid,
-	// 			start: 'top bottom',
-	// 			end: 'bottom top'
-	// 		}
-	// 	});
-
-	// 	tl.from('.inline', {
-	// 		y: 50,
-	// 		opacity: 0,
-	// 		duration: 1.75
-	// 	});
-	// });
 </script>
 
 <section class="grid" aria-label="bio">
@@ -50,7 +26,7 @@
 </section>
 
 <style>
-	@media (min-width: 200px) {
+	@media (min-width: 300px) {
 		.title {
 			font-size: 2.25rem;
 			mix-blend-mode: difference;
@@ -58,12 +34,14 @@
 			font-family: var(--montserrat);
 		}
 
-		p {
-			line-height: 1.75;
+		.left,
+		.right {
+			line-height: 1.25;
 			font-family: var(--montserrat);
 			text-align: left;
 			font-size: 1.25rem;
 			color: var(--white);
+			margin-top: -1rem;
 		}
 
 		.inline {
@@ -78,7 +56,8 @@
 	}
 
 	@media (min-width: 990px) {
-		p {
+		.left,
+		.right {
 			line-height: 1.5;
 			font-size: clamp(1.1rem, 3vw, 1.5rem);
 		}
