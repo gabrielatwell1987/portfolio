@@ -121,6 +121,7 @@
 		border: 3px solid var(--sky);
 		position: relative;
 	}
+
 	.bento-item-1 {
 		grid-column: span 4;
 		display: flex;
@@ -128,6 +129,7 @@
 		align-items: center;
 		font-size: clamp(1.2rem, 3vw, 4rem);
 	}
+
 	.bento-item-2 {
 		grid-column: span 6;
 		display: flex;
@@ -135,9 +137,11 @@
 		align-items: center;
 		padding-left: 10%;
 	}
+
 	.bento-item-3 {
 		grid-column: span 6;
 	}
+
 	.bento-item-4 {
 		grid-column: span 4;
 	}
@@ -200,6 +204,7 @@
 
 		.bento-item {
 			height: 50%;
+			margin-bottom: 0.05rem;
 		}
 
 		.bento-item-2,
