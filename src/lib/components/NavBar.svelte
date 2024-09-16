@@ -91,13 +91,17 @@
 			flex-direction: column;
 			justify-content: space-around;
 			align-items: center;
-			gap: 1.5rem;
+			gap: 1.25rem;
 			margin-top: 15.5rem;
 			z-index: 10;
 			border: 1px solid var(--white);
 			border-radius: 5px;
 			padding: 0.5rem 1rem;
 			background-color: var(--blackest);
+		}
+
+		.mobile a:is(:hover) {
+			color: var(--white);
 		}
 
 		.desktop {
