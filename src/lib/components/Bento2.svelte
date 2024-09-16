@@ -186,7 +186,7 @@
 		}
 
 		h2 {
-			font-size: 2rem;
+			font-size: var(--space-md);
 			font-weight: 700;
 			letter-spacing: 5px;
 			color: var(--off-white);
