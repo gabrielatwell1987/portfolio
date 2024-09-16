@@ -170,7 +170,7 @@
 			line-height: 1.35;
 			color: var(--white);
 			font-weight: 500;
-			/* text-wrap: normal; */
+			text-wrap: balance;
 			word-wrap: break-word;
 		}
 
