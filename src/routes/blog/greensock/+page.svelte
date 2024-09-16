@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import Button from '$lib/components/Button.svelte';
 	import Iframe from '$lib/components/Iframe.svelte';
-	import Image from '$lib/components/Image.svelte';
+	import Heading from './Heading.svelte';
 	import Popover from '$lib/components/Popover.svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
@@ -125,9 +125,65 @@
 					starting. The ease is the easing function that you want to use. The stagger is how long
 					the animation will wait before starting. The onComplete is the function that will run
 					after the animation is complete.
-					<br /><br />
+					<!-- <br /><br />
 					For a list of the variables, go to the
-					<a class="link" href="/blog/posts">Web Animation Techniques</a> page.
+					<a class="link" href="/blog/posts">Web Animation Techniques</a> page. -->
+				</p>
+			</details>
+
+			<details on:toggle={resetAnimation}>
+				<!-- svelte-ignore a11y-no-redundant-roles -->
+				<summary role="button" class="outline contrast spacing"><b>Variables</b></summary>
+				<p class="text">
+					<Heading title="x, y, z" /> Control the position of an element along the x, y, and z axes.<br
+					/>
+					<Heading title="rotation" /> Rotates an element in degrees.<br />
+					<Heading title="scale" /> Scales an element uniformly on all axes.<br />
+					<Heading title="scaleX, scaleY, scaleZ" /> Scale an element along the x, y, and z axes individually.<br
+					/>
+					<Heading title="opacity" /> Controls the transparency of an element.<br />
+					<Heading title="width, height" /> Animates the width and height of an element.<br />
+					<Heading title="color, backgroundColor" /> Changes the color or background color of an element.<br
+					/>
+					<Heading title="borderRadius" /> Animates the border-radius property of an element.<br />
+					<Heading title="skewX, skewY" /> Skews an element along the x and y axes.<br />
+					<Heading title="rotationX, rotationY, rotationZ" /> Rotate an element in 3D space along the
+					x, y, and z axes.<br />
+					<Heading title="duration" /> Specifies the duration of the animation.<br />
+					<Heading title="delay" /> Delays the start of the animation.<br />
+					<Heading title="repeat" /> Specifies how many times an animation should repeat.<br />
+					<Heading title="yoyo" /> When set to true, makes the animation reverse back to the starting
+					point after completing.<br />
+					<Heading title="ease" /> Controls the easing of the animation (e.g: ease: 'power1.inOut').<br
+					/>
+					<Heading title="onStart" /> Callback function that fires when the animation starts.<br />
+					<Heading title="onComplete" /> Callback function that fires when the animation completes.<br
+					/>
+					<Heading title="onUpdate" /> Callback function that fires on each frame during the animation.<br
+					/>
+					<Heading title="onRepeat" /> Callback function that fires each time the animation repeats.<br
+					/>
+					<Heading title="paused" /> If true, the animation starts in a paused state.<br />
+					<Heading title="stagger" /> Staggers the start times of animations in an array or NodeList.<br
+					/>
+					<Heading title="scrub" /> Syncs animations with scroll position (used with ScrollTrigger).<br
+					/>
+					<Heading title="overwrite" /> Controls how existing tweens are overwritten (auto, none, all).<br
+					/>
+					<Heading title="immediateRender" /> Renders the tween immediately upon creation.<br />
+					<Heading title="keyframes" /> Defines multiple animation states within a single tween.<br
+					/>
+					<Heading title="lazy" /> Defers rendering to reduce startup performance cost.<br />
+					<Heading title="id" /> Assigns a unique identifier to the tween for later reference.<br />
+					<Heading title="autoAlpha" /> Combines opacity and visibility (hides an element when opacity
+					reaches 0).<br />
+					<Heading title="kill" /> Kills the tween or timeline.<br />
+					<Heading title="timeScale" /> Adjusts the speed of the animation.<br />
+					<Heading title="progress" /> Sets or gets the progress of the animation.<br />
+					<Heading title="reverse" /> Reverses the animation.<br />
+					<Heading title="seek" /> Moves the playhead to a specific time or label.<br />
+					<Heading title="repeatDelay" /> Sets the delay between repeats.<br />
+					<Heading title="endTime" /> Gets the end time of the animation.<br />
 				</p>
 			</details>
 		</div>

@@ -1,7 +1,6 @@
 <script>
 	import CSS from './css.md';
 	import GSAP from './gsap.md';
-	import VARIABLES from './variables.md';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import Button from '$lib/components/Button.svelte';
@@ -61,8 +60,6 @@
 	<div class="gsap">
 		<h1 class="title">GSAP</h1>
 		<GSAP aria-label="greensock" />
-		<br />
-		<VARIABLES aria-label="variables" />
 	</div>
 
 	<!-- back button -->
