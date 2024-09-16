@@ -171,7 +171,7 @@
 			color: var(--white);
 			font-weight: 500;
 			text-wrap: balance;
-			word-wrap: break-word;
+			/* word-wrap: break-word; */
 		}
 
 		.text,
