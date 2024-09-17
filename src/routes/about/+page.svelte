@@ -17,6 +17,7 @@
 		const main = document.querySelector('main');
 
 		gsap.set('article', { autoAlpha: 0 });
+		gsap.set(['.a', '.b', '.c'], { yPercent: 10, opacity: 0 });
 
 		gsap.to('article', {
 			autoAlpha: 1,
@@ -24,22 +25,40 @@
 			ease: 'none'
 		});
 
-		// SplitType
-		const text = new SplitType('.text', {
-			types: 'lines',
-			lineClass: 'line'
-		});
+		const tl = gsap.timeline();
 
-		gsap.set('.line', { yPercent: 100, opacity: 0 });
-
-		gsap.to('.line', {
+		tl.to('.a', {
 			yPercent: 0,
 			opacity: 1,
 			duration: 2,
 			ease: 'power2.out',
 			stagger: 0.25,
 			delay: 0.3
-		});
+		})
+			.to(
+				'.b',
+				{
+					yPercent: 0,
+					opacity: 1,
+					duration: 2,
+					ease: 'power2.out',
+					stagger: 0.25,
+					delay: 0.3
+				},
+				'-=.75'
+			)
+			.to(
+				'.c',
+				{
+					yPercent: 0,
+					opacity: 1,
+					duration: 2,
+					ease: 'power2.out',
+					stagger: 0.25,
+					delay: 0.3
+				},
+				'-=.5'
+			);
 
 		console.log(main);
 	});
@@ -55,14 +74,14 @@
 			</div>
 
 			<div class="bio" aria-label="bio">
-				<p class="text">
+				<p class="text a">
 					My name is Gabriel Atwell and I am a frontend web developer. I started out with the
 					basics: HTML, CSS, and JavaScript. I then moved on to more advanced topics such as
 					Svelte/Sveltekit, Node.js, GSAP, and a little bit of three.js but I have begun to teach
 					myself the backend of web development on my spare time with backend languages like Python
 					to become more of a fullstack developer.
 				</p>
-				<p class="text">
+				<p class="text b">
 					I have a passion for creating websites that are clean, crisp, and completely functional. I
 					enjoy seeing a physical change when I edit or create code. I also enjoy creating
 					animations for the web! I mainly enjoy animating the web because I believe that it makes
@@ -74,7 +93,7 @@
 				</p>
 
 				<article class="hero text-hero text__w" aria-label="bio">
-					<p class="text margin__b">
+					<p class="text margin__b c">
 						Here is a hero section image that I created with three.js... I currently like the hero
 						section that shows when you first come to the website, but I linked this new hero
 						section as the home page.
