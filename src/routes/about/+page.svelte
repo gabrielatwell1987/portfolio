@@ -181,10 +181,8 @@
 			max-width: var(--100);
 			margin-inline: auto;
 			color: var(--white);
-			font-size: clamp(1rem, 2vw, 2rem);
+			font-size: clamp(1.1rem, 2vw, 2rem);
 			font-weight: 500;
-			text-wrap: balance;
-			/* word-wrap: break-word; */
 			line-height: 1.35;
 		}
 
@@ -232,7 +230,7 @@
 
 		.text {
 			color: var(--white);
-			max-width: 80%;
+			max-width: 90%;
 			line-height: 1.5;
 		}
 
