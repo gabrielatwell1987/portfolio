@@ -5,12 +5,17 @@
 
 	onMount(() => {
 		const modal = document.querySelector('#modal');
-		const article = document.querySelector('article');
 		const openModal = document.querySelector('.open-button');
 		const closeModal = document.querySelector('.close-button');
 
+		gsap.set(modal, { autoAlpha: 0 });
+
 		openModal.addEventListener('click', () => {
-			gsap.to(modal, { autoAlpha: 1, duration: 2, ease: 'power2.out' });
+			gsap.to(modal, {
+				autoAlpha: 1,
+				duration: 2,
+				ease: 'power2.out'
+			});
 
 			modal.showModal();
 		});
