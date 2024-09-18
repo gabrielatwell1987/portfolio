@@ -99,6 +99,7 @@
 			border-radius: 5px;
 			padding: 0.5rem 1rem;
 			background-color: var(--blackest);
+			font-family: var(--orbitron);
 		}
 
 		.mobile a:is(:hover) {

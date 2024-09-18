@@ -204,6 +204,7 @@
 		text-decoration: none;
 		font-size: 1.5rem;
 		color: var(--purple);
+		font-family: var(--orbitron);
 		font-weight: 700;
 	}
 
