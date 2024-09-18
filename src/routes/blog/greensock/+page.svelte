@@ -254,8 +254,8 @@
 	.link {
 		text-decoration: none;
 		font-size: 1.5rem;
-		color: var(--sky);
-		mix-blend-mode: hard-light;
+		color: var(--purple);
+		font-weight: 799;
 	}
 
 	.link:hover {

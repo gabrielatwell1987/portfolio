@@ -45,6 +45,7 @@
 			letter-spacing: 5px;
 			text-shadow: 0px 0px 50px var(--smoke);
 			text-transform: uppercase;
+			filter: drop-shadow(0px 0px 0.75rem var(--smoke));
 		}
 
 		#title {

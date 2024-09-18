@@ -26,6 +26,10 @@
 		max-width: 100%;
 	}
 
+	figure:hover {
+		filter: drop-shadow(0 0 0.25rem var(--yellow));
+	}
+
 	figcaption {
 		color: var(--white);
 		position: absolute;

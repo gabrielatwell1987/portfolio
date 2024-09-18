@@ -203,8 +203,8 @@
 	.link {
 		text-decoration: none;
 		font-size: 1.5rem;
-		color: var(--yellow);
-		mix-blend-mode: hard-light;
+		color: var(--purple);
+		font-weight: 700;
 	}
 
 	.link:hover {

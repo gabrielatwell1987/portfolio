@@ -41,7 +41,7 @@
 		font-size: clamp(3.5rem, 8vw, 8rem);
 		font-weight: 900;
 		color: var(--purple);
-		font-family: var(--anta);
+		font-family: var(--orbitron);
 		letter-spacing: 10px;
 		text-transform: uppercase;
 		margin: 2rem auto;

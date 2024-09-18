@@ -3,7 +3,6 @@
 	import { onMount } from 'svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
-	import SplitType from 'split-type';
 	import Button from '$lib/components/Button.svelte';
 	import Grid from '$lib/components/Grid.svelte';
 	import Skills from '$lib/components/Skills.svelte';
@@ -17,7 +16,8 @@
 		const main = document.querySelector('main');
 
 		gsap.set('article', { autoAlpha: 0 });
-		gsap.set(['.a', '.b', '.c'], { yPercent: 10, opacity: 0 });
+		gsap.set(['.a', '.b'], { yPercent: 10, autoAlpha: 0 });
+		gsap.set(['.hero', '.margin__b'], { yPercent: 10, autoAlpha: 0 });
 
 		gsap.to('article', {
 			autoAlpha: 1,
@@ -29,7 +29,7 @@
 
 		tl.to('.a', {
 			yPercent: 0,
-			opacity: 1,
+			autoAlpha: 1,
 			duration: 2,
 			ease: 'power2.out',
 			stagger: 0.25,
@@ -39,7 +39,7 @@
 				'.b',
 				{
 					yPercent: 0,
-					opacity: 1,
+					autoAlpha: 1,
 					duration: 2,
 					ease: 'power2.out',
 					stagger: 0.25,
@@ -48,16 +48,15 @@
 				'-=.75'
 			)
 			.to(
-				'.c',
+				['.hero', '.margin__b'],
 				{
 					yPercent: 0,
-					opacity: 1,
-					duration: 2,
+					autoAlpha: 1,
+					duration: 1.5,
 					ease: 'power2.out',
-					stagger: 0.25,
 					delay: 0.3
 				},
-				'-=.5'
+				'-=.75'
 			);
 
 		console.log(main);
@@ -93,7 +92,7 @@
 				</p>
 
 				<article class="hero text-hero text__w" aria-label="bio">
-					<p class="text margin__b c">
+					<p class="text margin__b">
 						Here is a hero section image that I created with three.js... I currently like the hero
 						section that shows when you first come to the website, but I linked this new hero
 						section as the home page.
