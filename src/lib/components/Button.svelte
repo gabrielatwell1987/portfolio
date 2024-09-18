@@ -8,7 +8,7 @@
 	@media (min-width: 300px) {
 		button {
 			background-color: transparent;
-			font-family: var(--lexend);
+			font-family: var(--orbitron);
 			color: var(--yellow);
 			border: 1px solid var(--yellow);
 			outline: 3px solid var(--yellow);

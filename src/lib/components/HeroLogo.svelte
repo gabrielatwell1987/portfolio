@@ -23,8 +23,8 @@
 		vfx.add(img, {
 			shader: 'duotone',
 			uniforms: {
-				color1: [0.8, 0.8, 0.8, 1],
-				color2: [0.3, 0.6, 0.9, 0.75],
+				color1: [0.9, 0.9, 0.9, 1],
+				color2: [0.3, 0.4, 0.75, 1],
 				speed: 0.4
 			}
 		});
@@ -35,7 +35,7 @@
 <main>
 	<section class="hero-logo">
 		<a href="/about/hero">
-			<Image src="/logos/mono-atwell.webp" alt="atwell ui" />
+			<Image src="/logos/anta-atwell.webp" alt="atwell ui" />
 		</a>
 	</section>
 </main>
