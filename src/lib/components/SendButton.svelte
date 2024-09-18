@@ -9,7 +9,7 @@
 			background-color: transparent;
 			font-family: var(--orbitron);
 			font-size: clamp(1.2rem, 2vw, 2rem);
-			font-weight: 600;
+			font-weight: 900;
 			color: var(--yellow);
 			border: 1px solid var(--yellow);
 			outline: 3px solid var(--yellow);
@@ -41,14 +41,14 @@
 	@media (min-width: 500px) {
 		.send {
 			width: 70%;
-			font-size: 1.25rem;
+			/* font-size: 1.25rem; */
 		}
 	}
 
 	@media (min-width: 720px) {
 		.send {
 			width: 75%;
-			font-size: 1.5rem;
+			/* font-size: 1.5rem; */
 		}
 
 		.send:hover {
@@ -79,7 +79,7 @@
 			width: 25%;
 			margin-inline: auto;
 			letter-spacing: 0;
-			font-size: 2rem;
+			/* font-size: 2rem; */
 		}
 	}
 

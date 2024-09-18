@@ -9,12 +9,12 @@
 		button {
 			background-color: transparent;
 			font-family: var(--orbitron);
+			font-size: clamp(1.2rem, 2vw, 2rem);
+			font-weight: 900;
 			color: var(--yellow);
 			border: 1px solid var(--yellow);
 			outline: 3px solid var(--yellow);
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
-			font-size: 1.2rem;
-			font-weight: 600;
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
@@ -48,51 +48,46 @@
 
 	@media (min-width: 700px) {
 		button {
-			font-size: 1.5rem;
-			width: 22%;
-			font-size: 1rem;
+			width: 30%;
 			letter-spacing: 2px;
 		}
 	}
 
 	@media (min-width: 990px) {
 		button {
-			width: 20%;
-			font-size: 1.25rem;
+			width: 30%;
 			margin: 3rem auto;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		button {
-			width: 27%;
-			font-size: 1.5rem;
+			width: 35%;
 			margin: 3rem auto;
 		}
 	}
 
 	@media screen and (min-width: 1200px) {
 		button {
-			width: 25%;
+			width: 30%;
 		}
 	}
 
 	@media screen and (min-width: 1300px) {
 		button {
-			width: 20%;
+			width: 30%;
 		}
 	}
 
 	@media screen and (min-width: 1400px) {
 		button {
-			width: 20%;
+			width: 30%;
 		}
 	}
 
 	@media screen and (min-width: 1500px) {
 		button {
-			width: 25%;
-			font-size: 1.75rem;
+			width: 30%;
 		}
 	}
 
