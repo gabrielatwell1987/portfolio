@@ -19,7 +19,7 @@
 
 <Modal />
 
-<form method="POST" action="https://form.taxi/s/xeyymb58" aria-hidden="true">
+<form method="POST" action="https://form.taxi/s/xeyymb58">
 	<fieldset>
 		<label for="name"><span>Name</span></label>
 		<input type="text" id="name" name="name" bind:value={name} required />

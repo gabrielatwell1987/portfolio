@@ -57,6 +57,7 @@
 
 	.desktop {
 		display: block;
+		font-family: var(--orbitron);
 		font-weight: bolder;
 	}
 
@@ -201,7 +202,6 @@
 		}
 
 		.nav-link {
-			font-family: var(--montserrat);
 			text-decoration: none;
 			font-weight: 600;
 			color: var(--white);

@@ -7,6 +7,7 @@
 	import copy from 'copy-to-clipboard';
 	import { onMount } from 'svelte';
 	import SEO from '$lib/data/SEO.svelte';
+	import Avatar from '$lib/components/Avatar.svelte';
 
 	onMount(() => {
 		const codeBlocks = document.querySelectorAll('pre');
@@ -62,6 +63,8 @@
 		<GSAP aria-label="greensock" />
 	</div>
 
+	<Avatar src="/photos/gabe2.webp" alt="Gabriel Atwell's face" name="gabeATWELL" />
+
 	<!-- back button -->
 	<a href="/blog"><Button title="Back" /></a>
 </section>
@@ -72,7 +75,7 @@
 		font-size: clamp(4rem, 7.5vw, 15rem);
 		font-weight: 900;
 		color: var(--white);
-		font-family: var(--anta);
+		font-family: var(--orbitron);
 		letter-spacing: 10px;
 		margin-top: 5rem;
 		mix-blend-mode: difference;

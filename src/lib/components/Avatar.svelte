@@ -18,15 +18,16 @@
 	}
 
 	img:hover {
-		border: 2px solid var(--off-white);
+		border: 2px solid var(--sky);
 	}
 
 	h3 {
 		margin: 0;
 		padding: 0;
 		letter-spacing: 2px;
-		color: var(--purple);
-		font-size: clamp(1rem, 2vw, 1.5rem);
+		color: var(--sky);
+		font-size: clamp(1.1rem, 2vw, 2rem);
+		font-weight: 800;
 	}
 
 	article {
@@ -39,15 +40,15 @@
 
 	@media screen and (min-width: 300px) {
 		img {
-			width: 10%;
-			height: 10%;
+			width: 20%;
+			height: 20%;
 		}
 	}
 
 	@media screen and (min-width: 600px) {
 		img {
-			width: 10%;
-			height: 10%;
+			width: 15%;
+			height: 15%;
 		}
 	}
 

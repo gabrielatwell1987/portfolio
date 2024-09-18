@@ -22,7 +22,7 @@
 <main>
 	<!-- hero section -->
 	<img
-		src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		src="https://images.pexels.com/photos/20853116/pexels-photo-20853116/free-photo-of-programming-code-on-a-screen.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 		alt="Wireframing and design of a website"
 	/>
 

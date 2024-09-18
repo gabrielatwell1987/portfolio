@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
 :root {
 	/* colors */
@@ -27,6 +28,7 @@
 	--anta: 'Anta', sans-serif;
 	--lexend: 'Lexend', sans-serif;
 	--mono: 'Space Mono', monospace;
+	--orbitron: 'Orbitron', sans-serif;
 }
 
 :root ::-webkit-scrollbar {
@@ -77,7 +79,7 @@ body {
 	}
 
 	h2 {
-		font-family: var(--major);
+		font-family: var(--orbitron);
 		text-align: center;
 		color: var(--purple);
 	}
