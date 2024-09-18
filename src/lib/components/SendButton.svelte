@@ -17,7 +17,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 100%;
+			width: clamp(75%, 5vw, 100%);
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
@@ -38,48 +38,17 @@
 		}
 	}
 
-	@media (min-width: 500px) {
-		.send {
-			width: 70%;
-			/* font-size: 1.25rem; */
-		}
-	}
-
 	@media (min-width: 720px) {
-		.send {
-			width: 75%;
-			/* font-size: 1.5rem; */
-		}
-
 		.send:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 	}
 
-	@media (min-width: 775px) {
-		.send {
-			width: 65%;
-		}
-	}
-
-	@media (min-width: 850px) {
-		.send {
-			width: 65%;
-		}
-	}
-
-	@media (min-width: 1024px) {
-		.send {
-			width: 25%;
-		}
-	}
-
 	@media (min-width: 1350px) {
 		.send {
-			width: 25%;
+			/* width: 40%; */
 			margin-inline: auto;
 			letter-spacing: 0;
-			/* font-size: 2rem; */
 		}
 	}
 

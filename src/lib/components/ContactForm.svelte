@@ -109,7 +109,7 @@
 
 		label {
 			margin-left: -1rem;
-			font-family: var(--lexend);
+			font-family: var(--montserrat);
 			font-weight: 600;
 		}
 
