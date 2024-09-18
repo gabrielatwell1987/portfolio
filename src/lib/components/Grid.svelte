@@ -31,13 +31,12 @@
 			font-size: 2.25rem;
 			mix-blend-mode: difference;
 			color: var(--purple);
-			font-family: var(--montserrat);
+			font-family: var(--orbitron);
 		}
 
 		.left,
 		.right {
 			line-height: 1.25;
-			font-family: var(--montserrat);
 			text-align: left;
 			font-size: 1.25rem;
 			color: var(--white);
@@ -103,7 +102,6 @@
 
 		.title {
 			color: var(--purple);
-			font-family: var(--anta);
 		}
 	}
 
