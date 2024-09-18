@@ -19,9 +19,8 @@
 	@media screen and (min-width: 300px) {
 		.legend {
 			margin: 10% 0 5% 0;
-			/* font-family: var(--anta); */
+			font-family: var(--anta);
 			font-size: clamp(2rem, 4vw, 5rem);
-			/* font-weight: 700; */
 			letter-spacing: 3%;
 			padding: 0;
 			color: var(--purple);
