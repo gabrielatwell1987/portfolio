@@ -57,7 +57,7 @@
 </dialog>
 
 <style>
-	@media (min-width: 300px) {
+	@media (min-width: 320px) {
 		.open-button,
 		.close-button {
 			display: block;
@@ -67,7 +67,7 @@
 			color: var(--white);
 			width: 4%;
 			height: 2%;
-			margin-left: 40%;
+			margin-left: 43%;
 			margin-top: 5%;
 			outline: none;
 			border: 2px solid var(--white);
@@ -212,12 +212,14 @@
 		}
 
 		.open-button {
-			margin-left: 20%;
+			margin-left: 25%;
+			scale: 0.85;
 		}
 
 		.close-button {
 			color: var(--black);
 			border: 2px solid var(--black);
+			scale: 0.85;
 		}
 	}
 
@@ -230,21 +232,23 @@
 			color: var(--white);
 		}
 
+		.open-button {
+			margin-left: 30%;
+			scale: 0.9;
+		}
+
 		.close-button {
 			color: var(--white);
 			border: 2px solid var(--white);
+			scale: 0.9;
 		}
 	}
 
 	@media screen and (min-width: 1350px) {
-		.open-button {
-			padding: 2rem 3rem;
-			scale: 0.5;
-		}
-
+		.open-button,
 		.close-button {
 			padding: 2rem 3rem;
-			scale: 0.5;
+			scale: 0.85;
 		}
 
 		i {
@@ -255,6 +259,7 @@
 	@media screen and (min-width: 1500px) {
 		.open-button {
 			scale: 0.85;
+			margin-left: 25%;
 		}
 
 		.close-button {

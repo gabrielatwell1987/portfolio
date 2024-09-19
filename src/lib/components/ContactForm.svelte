@@ -37,28 +37,35 @@
 </form>
 
 <style>
-	@media screen and (min-width: 300px) {
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	@media screen and (min-width: 320px) {
 		:root {
 			--100: 100%;
 		}
 
 		form {
-			width: var(--100);
-			/* margin-left: 54.5%; */
-			margin: 0 auto;
+			width: 70%;
+			margin: 0 75%;
 			display: flex;
+			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			padding: 0.25rem;
 		}
 
-		/* fieldset {
+		fieldset {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			width: var(--100);
 			margin: 0 auto;
-		} */
+		}
 
 		input {
 			width: 131%;
@@ -102,6 +109,7 @@
 			color: var(--white);
 			font-size: 1.05rem;
 			margin-left: -15%;
+			padding: 0.5rem 1rem;
 		}
 
 		textarea:placeholder-shown {
@@ -118,9 +126,10 @@
 		}
 
 		label {
-			margin-left: -1rem;
+			margin-left: -5.5%;
 			font-family: var(--montserrat);
 			font-weight: 600;
+			text-align: center;
 		}
 
 		span {
@@ -142,6 +151,7 @@
 			justify-content: center;
 			align-items: center;
 			margin-top: 1rem;
+			margin-right: 1.5rem;
 		}
 
 		@keyframes wiggle {
@@ -160,6 +170,28 @@
 		}
 	}
 
+	@media (min-width: 375px) {
+		form {
+			width: 70%;
+			margin-left: 67%;
+		}
+
+		.send {
+			margin-left: 0;
+		}
+	}
+
+	@media (min-width: 400px) {
+		form {
+			width: 70%;
+			margin-left: 62%;
+		}
+
+		.send {
+			margin-left: 0;
+		}
+	}
+
 	@media screen and (min-width: 500px) {
 		input,
 		textarea {
@@ -167,12 +199,13 @@
 			margin-left: 0.25%;
 		}
 
-		/* form {
-			margin-left: 19%;
-		} */
+		form {
+			margin-left: 55%;
+			width: 60%;
+		}
 
 		.send {
-			margin-left: 21%;
+			margin-left: 10%;
 		}
 
 		label {
@@ -186,32 +219,33 @@
 			width: 175%;
 		}
 
-		/* form {
-			margin-left: 15%;
-		} */
+		form {
+			margin-left: 49%;
+			width: 50%;
+		}
 
 		.send {
 			width: var(--100);
-			margin-left: 37%;
+			margin-left: 1%;
 		}
 
 		::backdrop {
 			background: transparent;
 		}
+	}
 
-		@keyframes wiggle {
-			0% {
-				rotate: 0deg;
-				translate: 0 0;
-			}
-			25% {
-				rotate: -2deg;
-				translate: -5px 0;
-			}
-			80% {
-				rotate: 2deg;
-				translate: 5px 0;
-			}
+	@media (min-width: 900px) {
+		form {
+			margin-left: 45%;
+			width: 50%;
+		}
+
+		.send {
+			margin-left: 3%;
+		}
+
+		label {
+			margin-left: 0;
 		}
 	}
 
@@ -219,6 +253,8 @@
 		form {
 			display: flex;
 			flex-direction: column;
+			margin-left: 17%;
+			width: 100%;
 		}
 
 		label {
@@ -257,15 +293,20 @@
 	}
 
 	@media screen and (min-width: 1100px) {
+		form {
+			width: 100%;
+		}
+
 		fieldset {
 			width: 65%;
 		}
 	}
 
 	@media screen and (min-width: 1350px) {
-		/* form {
+		form {
+			width: 100%;
 			margin-left: 10%;
-		} */
+		}
 
 		fieldset {
 			width: 75%;
@@ -279,6 +320,29 @@
 		textarea {
 			font-size: 2rem;
 			padding: 2rem;
+		}
+
+		label {
+			margin-left: 0;
+		}
+
+		.send {
+			margin-left: 1%;
+		}
+	}
+
+	@keyframes wiggle {
+		0% {
+			rotate: 0deg;
+			translate: 0 0;
+		}
+		25% {
+			rotate: -2deg;
+			translate: -5px 0;
+		}
+		80% {
+			rotate: 2deg;
+			translate: 5px 0;
 		}
 	}
 </style>

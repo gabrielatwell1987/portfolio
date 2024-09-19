@@ -14,19 +14,11 @@
 		const title = document.querySelector('.title');
 		const section = document.querySelector('.main');
 
-		gsap.set(title, { skewX: 15, autoAlpha: 0, y: 35 });
+		gsap.set(title, { autoAlpha: 0, y: 35 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
 		tl.to(title, { autoAlpha: 1, duration: 2 }, 0);
-
-		title.addEventListener('mouseover', () => {
-			gsap.to(title, { skewX: -15, duration: 0.25, ease: 'none' });
-		});
-
-		title.addEventListener('mouseleave', () => {
-			gsap.to(title, { skewX: 15, duration: 0.25, ease: 'none' });
-		});
 
 		console.log(section);
 	});
@@ -264,6 +256,7 @@
 		summary {
 			margin-left: -1rem;
 			color: var(--yellow);
+			font-family: var(--mono);
 		}
 
 		.text {
@@ -321,6 +314,10 @@
 
 		.iframe {
 			margin-left: 0;
+		}
+
+		.centerDetail {
+			margin-top: 0;
 		}
 	}
 
