@@ -44,11 +44,21 @@
 
 		form {
 			width: var(--100);
-			margin-left: 54.5%;
+			/* margin-left: 54.5%; */
+			margin: 0 auto;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 		}
+
+		/* fieldset {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: var(--100);
+			margin: 0 auto;
+		} */
 
 		input {
 			width: 131%;
@@ -157,9 +167,9 @@
 			margin-left: 0.25%;
 		}
 
-		form {
+		/* form {
 			margin-left: 19%;
-		}
+		} */
 
 		.send {
 			margin-left: 21%;
@@ -176,9 +186,9 @@
 			width: 175%;
 		}
 
-		form {
+		/* form {
 			margin-left: 15%;
-		}
+		} */
 
 		.send {
 			width: var(--100);
@@ -253,9 +263,9 @@
 	}
 
 	@media screen and (min-width: 1350px) {
-		form {
+		/* form {
 			margin-left: 10%;
-		}
+		} */
 
 		fieldset {
 			width: 75%;
