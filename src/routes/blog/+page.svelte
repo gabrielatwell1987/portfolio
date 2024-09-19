@@ -169,7 +169,7 @@
 		}
 
 		.image {
-			margin-top: -10%;
+			margin-top: -20%;
 			margin-left: -17%;
 		}
 
