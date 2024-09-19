@@ -25,7 +25,6 @@
 		gsap.to('.title', {
 			text: 'T O P I C S',
 			fontFamily: 'var(--orbitron)',
-			filter: 'drop-shadow(0px 0px 2.75rem var(--white))',
 			duration: 2.5,
 			ease: 'expoScale(0.5,7,power1.in)',
 			delay: 0.5

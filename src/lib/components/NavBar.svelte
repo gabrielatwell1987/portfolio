@@ -212,7 +212,7 @@
 			color: var(--sky);
 			border-bottom: 5px solid var(--sky);
 			height: 3rem;
-			text-shadow: 2px 2px 1px var(--black);
+			text-shadow: 2px 2px 1px var(--blacker);
 			transition: all 0.35s ease-in-out;
 		}
 
