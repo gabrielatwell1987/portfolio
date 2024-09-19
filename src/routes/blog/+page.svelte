@@ -69,7 +69,6 @@
 		flex-direction: column;
 		gap: 20%;
 		background: transparent;
-		margin-top: -50%;
 	}
 
 	a {
@@ -134,12 +133,20 @@
 		.animation-link {
 			display: block;
 		}
+
+		article {
+			margin-top: -20%;
+		}
 	}
 
 	@media (min-width: 500px) {
 		.image {
 			width: 60%;
 			margin: 0 -30%;
+		}
+
+		article {
+			margin-top: -15%;
 		}
 	}
 
@@ -175,6 +182,7 @@
 		}
 
 		article {
+			margin-top: 2%;
 			margin-right: 5%;
 		}
 	}
