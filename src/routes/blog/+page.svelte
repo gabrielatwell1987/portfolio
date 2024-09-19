@@ -17,9 +17,7 @@
 		gsap.registerPlugin(TextPlugin);
 
 		gsap.set('.title', {
-			color: 'var(--off-white)',
-			fontWeight: 900,
-			fontFamily: 'var(--mono)'
+			color: 'var(--off-white)'
 		});
 
 		gsap.to('.title', {
@@ -40,24 +38,40 @@
 	<h1 class="title">. . . . . .</h1>
 
 	<!-- links to tech stack pages -->
-	<section aria-label="icons">
-		<a class="gs" href="blog/greensock"><GsapIcon /></a>
+	<article>
+		<section aria-label="icons">
+			<a class="gs" href="blog/greensock"><GsapIcon /></a>
 
-		<a class="sk" href="blog/sveltekit"><SvelteIcon /></a>
-	</section>
+			<a class="sk" href="blog/sveltekit"><SvelteIcon /></a>
+		</section>
 
-	<div class="animation-link" aria-label="animation">
-		<a href="/blog/posts">
-			<div class="image">
-				<Image src="logos/animation.webp" alt="A logo that says web animation techniques." />
-			</div>
-		</a>
-	</div>
+		<div class="animation-link" aria-label="animation">
+			<a href="/blog/posts">
+				<div class="image">
+					<Image src="logos/animation.webp" alt="A logo that says web animation techniques." />
+				</div>
+			</a>
+		</div>
+	</article>
 
 	<br /><br />
 </main>
 
 <style>
+	section {
+		margin-top: 10rem;
+	}
+
+	article {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 20%;
+		background: transparent;
+		margin-top: -50%;
+	}
+
 	a {
 		display: block;
 		margin: 0 0 2rem 49%;
@@ -82,7 +96,7 @@
 		color: var(--smoke);
 		border: 1px solid var(--smoke);
 		width: 40%;
-		margin: 0 -18%;
+		margin: 0 auto;
 		border-radius: 8px;
 		cursor: pointer;
 		font-size: 1.25rem;
@@ -101,22 +115,15 @@
 		transition: opacity 0.75s ease-in-out;
 	}
 
-	section {
-		margin-top: 10rem;
-	}
-
 	.animation-link {
-		margin-top: clamp(15%, 3vw, 5%);
+		margin-top: 10%;
 	}
 
 	@media (min-width: 300px) {
 		.image {
-			width: 100%;
-			margin: 0 -53%;
-		}
-
-		.gs {
-			margin-bottom: 20%;
+			width: 15rem;
+			margin-right: 10%;
+			margin: 0 -95%;
 		}
 
 		.gs,
@@ -126,15 +133,10 @@
 
 		.animation-link {
 			display: block;
-			margin-top: 30%;
 		}
 	}
 
 	@media (min-width: 500px) {
-		.gs {
-			margin-bottom: 10%;
-		}
-
 		.image {
 			width: 60%;
 			margin: 0 -30%;
@@ -144,39 +146,36 @@
 	@media (min-width: 720px) {
 		.image {
 			width: 40%;
-			margin: 0 -20%;
+			margin: 0 -21%;
 		}
 
 		.gs {
 			margin-bottom: 10%;
 		}
-
-		.animation-link {
-			margin-top: 15%;
-		}
 	}
 
 	@media (min-width: 990px) {
-		.gs {
+		.gs,
+		.sk {
+			width: 75%;
 			margin-bottom: 5%;
-			width: 15%;
 		}
 
-		.sk {
-			width: 15%;
-			margin-bottom: 8%;
+		.image {
+			margin-top: -10%;
+			margin-left: -17%;
 		}
 
 		main {
 			margin-bottom: 10%;
 		}
 
-		.animation-link {
-			margin-top: -1%;
-		}
-
 		section {
 			margin-left: 2.5%;
+		}
+
+		article {
+			margin-right: 5%;
 		}
 	}
 
