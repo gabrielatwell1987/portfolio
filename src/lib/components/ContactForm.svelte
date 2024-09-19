@@ -11,7 +11,7 @@
 	onMount(() => {
 		const form = document.querySelector('form');
 
-		gsap.set(form, { autoAlpha: 0, x: -175 });
+		gsap.set(form, { autoAlpha: 0 });
 
 		gsap.to(form, { autoAlpha: 1, duration: 3.5 });
 	});
@@ -37,20 +37,75 @@
 </form>
 
 <style>
+	:root {
+		--100: 100%;
+	}
+
 	* {
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
 	}
 
-	@media screen and (min-width: 320px) {
-		:root {
-			--100: 100%;
-		}
+	input,
+	textarea {
+		font-size: clamp(1.1rem, 2vw, 2rem);
+	}
 
+	input:placeholder-shown {
+		letter-spacing: 3px;
+	}
+
+	input:focus {
+		outline: none;
+	}
+
+	input:focus-visible {
+		outline: 2px solid var(--off-white);
+		border: none;
+	}
+
+	input:user-valid,
+	textarea:user-valid {
+		outline: 2px solid var(--success);
+	}
+
+	input:user-invalid,
+	textarea:user-invalid {
+		outline: 2px solid var(--fail);
+	}
+
+	textarea:placeholder-shown {
+		letter-spacing: 3px;
+	}
+
+	textarea:focus {
+		outline: none;
+	}
+
+	textarea:focus-visible {
+		outline: 2px solid var(--off-white);
+		border: none;
+	}
+
+	span {
+		font-size: clamp(1rem, 2vw, 2rem);
+		font-weight: 800;
+		letter-spacing: 3px;
+		color: var(--smoke);
+	}
+
+	#name::-webkit-input-placeholder,
+	#email::-webkit-input-placeholder,
+	#message::-webkit-input-placeholder {
+		color: var(--white);
+		font-weight: 100;
+	}
+
+	@media screen and (min-width: 320px) {
 		form {
-			width: 70%;
-			margin: 0 75%;
+			width: 95%;
+			margin: 0 auto;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -67,82 +122,24 @@
 			margin: 0 auto;
 		}
 
-		input {
-			width: 131%;
+		input,
+		textarea {
+			width: 100%;
 			background-color: transparent;
 			border: 2px solid var(--dark-gray);
 			border-radius: 10px;
 			caret-color: var(--purple);
 			color: var(--white);
-			font-size: 1.05rem;
-			margin-left: -15%;
-		}
-
-		input:placeholder-shown {
-			letter-spacing: 3px;
-		}
-
-		input:focus {
-			outline: none;
-		}
-
-		input:focus-visible {
-			outline: 2px solid var(--off-white);
-			border: none;
-		}
-
-		input:user-valid,
-		textarea:user-valid {
-			outline: 2px solid var(--success);
-		}
-
-		input:user-invalid,
-		textarea:user-invalid {
-			outline: 2px solid var(--fail);
 		}
 
 		textarea {
-			width: 131%;
-			background-color: transparent;
-			border: 2px solid var(--dark-gray);
-			border-radius: 10px;
-			color: var(--white);
-			font-size: 1.05rem;
-			margin-left: -15%;
 			padding: 0.5rem 1rem;
 		}
 
-		textarea:placeholder-shown {
-			letter-spacing: 3px;
-		}
-
-		textarea:focus {
-			outline: none;
-		}
-
-		textarea:focus-visible {
-			outline: 2px solid var(--off-white);
-			border: none;
-		}
-
 		label {
-			margin-left: -5.5%;
 			font-family: var(--montserrat);
 			font-weight: 600;
 			text-align: center;
-		}
-
-		span {
-			font-size: clamp(1rem, 2vw, 2rem);
-			font-weight: 800;
-			letter-spacing: 3px;
-		}
-
-		#name::-webkit-input-placeholder,
-		#email::-webkit-input-placeholder,
-		#message::-webkit-input-placeholder {
-			color: var(--white);
-			font-weight: 100;
 		}
 
 		.send {
@@ -152,78 +149,17 @@
 			align-items: center;
 			margin-top: 1rem;
 			margin-right: 1.5rem;
-		}
-
-		@keyframes wiggle {
-			0% {
-				rotate: 0deg;
-				translate: 0 0;
-			}
-			25% {
-				rotate: -2deg;
-				translate: -5px 0;
-			}
-			80% {
-				rotate: 2deg;
-				translate: 5px 0;
-			}
-		}
-	}
-
-	@media (min-width: 375px) {
-		form {
-			width: 70%;
-			margin-left: 67%;
-		}
-
-		.send {
-			margin-left: 0;
-		}
-	}
-
-	@media (min-width: 400px) {
-		form {
-			width: 70%;
-			margin-left: 62%;
-		}
-
-		.send {
-			margin-left: 0;
-		}
-	}
-
-	@media screen and (min-width: 500px) {
-		input,
-		textarea {
-			width: 150%;
-			margin-left: 0.25%;
-		}
-
-		form {
-			margin-left: 55%;
-			width: 60%;
-		}
-
-		.send {
-			margin-left: 10%;
-		}
-
-		label {
 			margin-left: 5%;
 		}
 	}
 
+	@media screen and (min-width: 500px) {
+		label {
+			margin-left: 0;
+		}
+	}
+
 	@media screen and (min-width: 720px) {
-		input,
-		textarea {
-			width: 175%;
-		}
-
-		form {
-			margin-left: 49%;
-			width: 50%;
-		}
-
 		.send {
 			width: var(--100);
 			margin-left: 1%;
@@ -235,17 +171,8 @@
 	}
 
 	@media (min-width: 900px) {
-		form {
-			margin-left: 45%;
-			width: 50%;
-		}
-
 		.send {
 			margin-left: 3%;
-		}
-
-		label {
-			margin-left: 0;
 		}
 	}
 
@@ -253,8 +180,6 @@
 		form {
 			display: flex;
 			flex-direction: column;
-			margin-left: 17%;
-			width: 100%;
 		}
 
 		label {
@@ -264,14 +189,12 @@
 		}
 
 		input {
-			font-size: 1.5rem;
 			margin-bottom: 1rem;
 			transform: scale(1.05);
 			width: var(--100);
 		}
 
 		textarea {
-			font-size: 1rem;
 			margin-bottom: 1rem;
 			width: var(--100);
 		}
@@ -281,10 +204,9 @@
 			border-image: linear-gradient(to left, var(--smoke), var(--smoke)) 1;
 			font-weight: bolder;
 			font-size: 2rem;
-			margin: 2rem;
 			padding: 2rem 5rem;
 			border-radius: 10px;
-			width: 60%;
+			width: 90%;
 		}
 
 		.send {
@@ -292,33 +214,10 @@
 		}
 	}
 
-	@media screen and (min-width: 1100px) {
-		form {
-			width: 100%;
-		}
-
-		fieldset {
-			width: 65%;
-		}
-	}
-
 	@media screen and (min-width: 1350px) {
-		form {
-			width: 100%;
-			margin-left: 10%;
-		}
-
-		fieldset {
-			width: 75%;
-		}
-
-		input {
-			font-size: 2rem;
-			padding: 2rem;
-		}
-
+		input,
 		textarea {
-			font-size: 2rem;
+			/* font-size: 2rem; */
 			padding: 2rem;
 		}
 

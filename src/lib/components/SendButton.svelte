@@ -17,7 +17,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: clamp(75%, 5vw, 100%);
+			width: 50%;
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
@@ -38,15 +38,9 @@
 		}
 	}
 
-	@media (min-width: 720px) {
-		.send:hover {
-			animation: wiggle 0.5s ease-in-out infinite;
-		}
-	}
-
 	@media (min-width: 1350px) {
 		.send {
-			/* width: 40%; */
+			width: 20%;
 			margin-inline: auto;
 			letter-spacing: 0;
 		}

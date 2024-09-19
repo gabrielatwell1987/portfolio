@@ -214,6 +214,7 @@
 		.open-button {
 			margin-left: 25%;
 			scale: 0.85;
+			margin: 0 0 5% 25%;
 		}
 
 		.close-button {
@@ -259,7 +260,6 @@
 	@media screen and (min-width: 1500px) {
 		.open-button {
 			scale: 0.85;
-			margin-left: 25%;
 		}
 
 		.close-button {
