@@ -66,7 +66,7 @@
 	<article class="card">
 		<Card
 			title="Gabriel Atwell"
-			description="Frontend Developer"
+			description="Trying to make the internet look better.. one website at a time."
 			button="Work"
 			src="/photos/autumn.webp"
 			href="/projects"
