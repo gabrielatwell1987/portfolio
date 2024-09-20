@@ -35,7 +35,7 @@
 
 	.card-image {
 		width: 100%;
-		height: 200px;
+		height: 300px;
 		object-fit: cover;
 		border-radius: 8px 8px 0 0;
 		margin-bottom: 1rem;
@@ -57,7 +57,6 @@
 		color: var(--off-white);
 		font-size: clamp(1rem, 1vw, 1.2rem);
 		font-weight: 300;
-		letter-spacing: 2px;
 		margin-bottom: 1rem;
 	}
 
