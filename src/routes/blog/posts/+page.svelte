@@ -7,7 +7,7 @@
 	import copy from 'copy-to-clipboard';
 	import { onMount } from 'svelte';
 	import SEO from '$lib/data/SEO.svelte';
-	import Avatar from '$lib/components/Avatar.svelte';
+	import Card from '$lib/components/Card.svelte';
 
 	onMount(() => {
 		const codeBlocks = document.querySelectorAll('pre');
@@ -63,7 +63,15 @@
 		<GSAP aria-label="greensock" />
 	</div>
 
-	<Avatar src="/photos/gabe2.webp" alt="Gabriel Atwell's face" name="gabeATWELL" />
+	<article class="card">
+		<Card
+			title="Gabriel Atwell"
+			description="Frontend Developer"
+			button="Work"
+			src="/photos/autumn.webp"
+			href="/projects"
+		/>
+	</article>
 
 	<!-- back button -->
 	<a href="/blog"><Button title="Back" /></a>
@@ -79,6 +87,12 @@
 		letter-spacing: 10px;
 		margin-top: 5rem;
 		mix-blend-mode: difference;
+	}
+
+	article.card {
+		display: flex;
+		justify-content: center;
+		background: transparent;
 	}
 
 	section {

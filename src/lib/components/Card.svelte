@@ -2,27 +2,29 @@
 	export let title;
 	export let description;
 	export let button;
+	export let src;
+	export let href;
 </script>
 
 <main class="card">
-	<img src="https://via.placeholder.com/300x200" alt="card" class="card-image" />
+	<img {src} alt="card" class="card-image" />
 
 	<h2 class="card-title">{title}</h2>
 
 	<p class="card-description">{description}</p>
 
-	<button class="card-button">{button}</button>
+	<a {href} class="card-button">{button}</a>
 </main>
 
 <style>
 	.card {
-		width: 300px;
-		height: 420px;
-		background-color: #ffffff;
+		width: fit-content;
+		height: fit-content;
+		background-color: transparent;
 		border-radius: 8px;
-		border: 1px solid #f0f0f0;
+		border: 2px solid var(--white);
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		padding: 14px;
+		padding: 2rem 3rem 0 3rem;
 		overflow: hidden;
 		transition: all 0.3s ease-in-out;
 	}
@@ -36,34 +38,95 @@
 		height: 200px;
 		object-fit: cover;
 		border-radius: 8px 8px 0 0;
-		margin-bottom: 14px;
+		margin-bottom: 1rem;
+	}
+
+	.card-image:hover {
+		filter: drop-shadow(0 0 0.75rem var(--smoke));
 	}
 
 	.card-title {
-		color: #111827;
-		font-size: 28px;
-		font-weight: 600;
-		margin-bottom: 7px;
+		color: var(--sky);
+		font-size: clamp(1.5rem, 2vw, 2rem);
+		font-weight: 800;
+		letter-spacing: 2px;
+		margin-bottom: 0.5rem;
 	}
 
 	.card-description {
-		color: #4b5563;
-		font-size: 16px;
-		margin-bottom: 14px;
+		color: var(--off-white);
+		font-size: clamp(1rem, 1vw, 1.2rem);
+		font-weight: 300;
+		letter-spacing: 2px;
+		margin-bottom: 1rem;
 	}
 
 	.card-button {
-		background-color: #2c70dd;
-		color: #ffffff;
-		border: none;
-		border-radius: 4px;
-		padding: 8px 16px;
-		font-size: 16px;
-		cursor: pointer;
-		transition: background-color 0.3s ease;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: transparent;
+		color: var(--white);
+		font-family: var(--orbitron);
+		font-size: clamp(1rem, 1vw, 1.2rem);
+		font-weight: 300;
+		letter-spacing: 1px;
+		width: 50%;
+		height: 10%;
+		outline: none;
+		border: 1px solid var(--white);
+		margin: 1rem auto;
+		border-radius: 5rem;
+		filter: drop-shadow(0 0 0.75rem var(--smoke));
+		transition: 750ms;
+		outline: 3px solid currentColor;
+		outline-offset: -7px;
+		padding: 1rem 1.75rem;
+		user-select: none;
 	}
 
 	.card-button:hover {
-		background-color: #2c70dddd;
+		animation: wiggle 0.5s ease-in-out infinite;
+	}
+
+	@media (max-width: 500px) {
+		.card {
+			width: 100%;
+			padding: 1rem 1.5rem 0 1.5rem;
+		}
+
+		.card-image {
+			height: 190px;
+			object-fit: cover;
+		}
+
+		.card-title {
+			font-size: clamp(1.25rem, 2vw, 1.5rem);
+		}
+
+		.card-description {
+			font-size: clamp(1rem, 1vw, 1.2rem);
+		}
+
+		.card-button {
+			font-size: clamp(1rem, 1vw, 1.2rem);
+			font-weight: 500;
+			padding: 0.75rem 1.5rem;
+		}
+	}
+
+	@keyframes wiggle {
+		0% {
+			rotate: 0deg;
+			translate: 0 0;
+		}
+		25% {
+			rotate: -2deg;
+			translate: -5px 0;
+		}
+		80% {
+			rotate: 2deg;
+			translate: 5px 0;
+		}
 	}
 </style>

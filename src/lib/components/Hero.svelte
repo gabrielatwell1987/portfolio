@@ -77,14 +77,14 @@
 			display: block;
 			background-color: transparent;
 			color: var(--white);
-			font-family: var(--lexend);
+			font-family: var(--orbitron);
+			font-size: 1.2rem;
+			font-weight: 500;
 			width: 50%;
 			height: 10%;
 			outline: none;
 			border: 1px solid var(--white);
 			margin: 1rem auto;
-			border-radius: 10px;
-			font-size: 1.2rem;
 			border-radius: 5rem;
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			letter-spacing: 1px;

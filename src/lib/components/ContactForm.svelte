@@ -92,7 +92,7 @@
 		font-size: clamp(1rem, 2vw, 2rem);
 		font-weight: 800;
 		letter-spacing: 3px;
-		color: var(--smoke);
+		color: var(--off-white);
 	}
 
 	#name::-webkit-input-placeholder,
@@ -137,7 +137,7 @@
 		}
 
 		label {
-			font-family: var(--montserrat);
+			font-family: var(--lexend);
 			font-weight: 600;
 			text-align: center;
 		}
