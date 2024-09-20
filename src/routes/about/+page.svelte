@@ -10,6 +10,7 @@
 	import LetterDrop from '$lib/components/LetterDrop.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import AtwellSparrow from '$lib/components/AtwellSparrow.svelte';
+	import CardFlip from '$lib/components/CardFlip.svelte';
 
 	// animations
 	onMount(() => {
@@ -115,6 +116,16 @@
 			<!-- bento grid -->
 			<Bento />
 
+			<!-- card flip -->
+			<div class="flip">
+				<CardFlip
+					src="/logos/skull-glass.webp"
+					alt="skull glass"
+					src2="/logos/designs.webp"
+					alt2="design logo"
+				/>
+			</div>
+
 			<!-- image gallery -->
 			<div class="gallery">
 				<a href="/about/gallery"><Button title="Gallery" /></a>
@@ -163,6 +174,12 @@
 
 		a:hover {
 			font-size: 1.1rem;
+		}
+
+		.flip {
+			display: flex;
+			justify-content: center;
+			align-items: center;
 		}
 
 		.gallery {

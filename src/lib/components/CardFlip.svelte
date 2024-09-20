@@ -19,9 +19,10 @@
 
 <style>
 	.card-container {
-		width: 200px;
-		height: 300px;
+		width: 300px;
+		height: 400px;
 		perspective: 1000px;
+		margin: -0.5rem 0 2rem 0;
 	}
 
 	.card {
@@ -52,13 +53,13 @@
 	}
 
 	.card-front {
-		background-color: #3b82f6;
-		color: #ffffff;
+		background-color: transparent;
+		color: var(--white);
 	}
 
 	.card-back {
-		background-color: #001a9e;
-		color: #ffffff;
+		background-color: transparent;
+		color: var(--white);
 		transform: rotateY(180deg);
 	}
 
@@ -70,5 +71,12 @@
 		top: 0;
 		left: 0;
 		border-radius: 10px;
+	}
+
+	@media screen and (max-width: 600px) {
+		.card-container {
+			width: 175px;
+			height: 275px;
+		}
 	}
 </style>
