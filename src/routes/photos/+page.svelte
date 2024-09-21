@@ -65,9 +65,10 @@
 				gsap.set('.gabe', { borderRadius: '5px', scale: 1 });
 			};
 		});
-
-		console.log(main);
 	});
+
+	$: console.log(main);
+	$: console.log('Photos of Me');
 </script>
 
 <SEO title="Photos of Me" description="Gabriel Atwell's Photos" keywords="photos of gabe" />

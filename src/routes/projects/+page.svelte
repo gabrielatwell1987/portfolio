@@ -14,8 +14,6 @@
 	onMount(() => {
 		gsap.registerPlugin(Draggable);
 
-		const section = document.querySelector('section');
-
 		// GSAP
 		gsap.set('.link', { autoAlpha: 0, scale: 0 });
 		gsap.set('.content', { autoAlpha: 0 });
@@ -27,9 +25,11 @@
 			.to('.link', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 2, ease: 'expo.out' }, 0)
 			.from('.title', { scale: 0.25, duration: 3 }, 0)
 			.to('.ascii', { yPercent: 0, duration: 1.75 }, 0);
-
-		console.log(section);
 	});
+	const section = document.querySelector('section');
+
+	$: console.log(section);
+	$: console.log('Projects page');
 </script>
 
 <SEO

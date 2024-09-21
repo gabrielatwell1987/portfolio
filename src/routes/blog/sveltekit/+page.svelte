@@ -12,16 +12,18 @@
 	// animations
 	onMount(() => {
 		const title = document.querySelector('.title');
-		const section = document.querySelector('.main');
 
 		gsap.set(title, { autoAlpha: 0, y: 35 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
 		tl.to(title, { autoAlpha: 1, duration: 2 }, 0);
-
-		console.log(section);
 	});
+
+	const section = document.querySelector('.main');
+
+	$: console.log(section);
+	$: console.log('Sveltekit page');
 
 	// details animation
 	function resetAnimation(event) {

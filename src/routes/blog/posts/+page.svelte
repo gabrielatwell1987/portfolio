@@ -11,7 +11,6 @@
 
 	onMount(() => {
 		const codeBlocks = document.querySelectorAll('pre');
-		const section = document.querySelector('section');
 
 		codeBlocks.forEach((block) => {
 			const copyPrompt = document.createElement('div');
@@ -44,9 +43,12 @@
 				}, 1000);
 			});
 		});
-
-		console.log(section);
 	});
+
+	const section = document.querySelector('section');
+
+	$: console.log(section);
+	$: console.log('Web animations page');
 </script>
 
 <SEO title="CSS & GSAP" description="Web techniques" keywords="animation techniques" />

@@ -13,8 +13,6 @@
 
 	// animations
 	onMount(() => {
-		const main = document.querySelector('main');
-
 		gsap.set('article', { autoAlpha: 0 });
 		gsap.set(['.a', '.b'], { yPercent: 10, autoAlpha: 0 });
 		gsap.set(['.hero', '.margin__b'], { yPercent: 10, autoAlpha: 0 });
@@ -58,9 +56,12 @@
 				},
 				'-=.75'
 			);
-
-		console.log(main);
 	});
+
+	const main = document.querySelector('main');
+
+	$: console.log(main);
+	$: console.log('About page');
 </script>
 
 <SEO title="About Me" description="About Gabriel Atwell" keywords="about me, about gabe" />

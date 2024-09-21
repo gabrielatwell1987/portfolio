@@ -5,6 +5,7 @@
 	import ImageFrame from '$lib/components/ImageFrame.svelte';
 
 	$: console.log(Hero);
+	$: console.log('Hero section');
 </script>
 
 <SEO

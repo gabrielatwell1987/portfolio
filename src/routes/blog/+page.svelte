@@ -11,8 +11,6 @@
 
 	// animations
 	onMount(() => {
-		const main = document.querySelector('main');
-
 		// text animation
 		gsap.registerPlugin(TextPlugin);
 
@@ -27,9 +25,12 @@
 			ease: 'expoScale(0.5,7,power1.in)',
 			delay: 0.5
 		});
-
-		console.log(main);
 	});
+
+	const main = document.querySelector('main');
+
+	$: console.log(main);
+	$: console.log('Blog page');
 </script>
 
 <SEO title="Blog Topics" description="a blog about web techniques" keywords="blog topics" />
