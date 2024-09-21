@@ -60,9 +60,11 @@
 		</article>
 
 		<div class="centerDetail">
-			<details on:toggle={resetAnimation}>
+			<details name="gsap" on:toggle={resetAnimation}>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
-				<summary role="button" class="outline contrast spacing"><b>What is GSAP?</b></summary>
+				<summary role="button" class="outline contrast spacing"
+					><span class="margin"><b>What is GSAP?</b></span></summary
+				>
 				<p class="text">
 					Greensock Animation Platform (GSAP) is a javascript library that allows you to animate
 					your website. I really like animating the websites that I've built from scratch and GSAP
@@ -76,10 +78,10 @@
 				</p>
 			</details>
 
-			<details on:toggle={resetAnimation}>
+			<details name="gsap" on:toggle={resetAnimation}>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
 				<summary role="button" class="outline contrast spacing"
-					><b>How do you install GSAP?</b></summary
+					><span class="margin"><b>How do you install GSAP?</b></span></summary
 				>
 				<p class="text">
 					In the project, you have to <code class="code">npm install gsap</code> (if you have
@@ -97,9 +99,11 @@
 				</p>
 			</details>
 
-			<details on:toggle={resetAnimation}>
+			<details name="gsap" on:toggle={resetAnimation}>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
-				<summary role="button" class="outline contrast spacing"><b>The syntax</b></summary>
+				<summary role="button" class="outline contrast spacing"
+					><span class="margin"><b>The syntax</b></span></summary
+				>
 				<p class="text">
 					It is quite simple to use GSAP. You can use <code class="code"
 						>gsap.to("element", &lbrace; variables &rbrace;)</code
@@ -119,15 +123,14 @@
 					starting. The ease is the easing function that you want to use. The stagger is how long
 					the animation will wait before starting. The onComplete is the function that will run
 					after the animation is complete.
-					<!-- <br /><br />
-					For a list of the variables, go to the
-					<a class="link" href="/blog/posts">Web Animation Techniques</a> page. -->
 				</p>
 			</details>
 
-			<details on:toggle={resetAnimation}>
+			<details name="gsap" on:toggle={resetAnimation}>
 				<!-- svelte-ignore a11y-no-redundant-roles -->
-				<summary role="button" class="outline contrast spacing"><b>Variables</b></summary>
+				<summary role="button" class="outline contrast spacing"
+					><span class="margin"><b>Variables</b></span></summary
+				>
 				<p class="text">
 					<Heading title="x, y, z" /> Control the position of an element along the x, y, and z axes.<br
 					/><br />
@@ -229,6 +232,7 @@
 		width: 50%;
 		margin-left: 24.5%;
 		margin-bottom: 2rem;
+		position: relative;
 	}
 
 	details[open] summary ~ * {
@@ -351,6 +355,10 @@
 		.centerDetail {
 			margin-top: 170%;
 		}
+
+		.margin {
+			margin-left: 0;
+		}
 	}
 
 	@media (min-width: 500px) {
@@ -382,6 +390,10 @@
 
 		.centerDetail {
 			margin-top: 60%;
+		}
+
+		.margin {
+			margin-left: 3rem;
 		}
 	}
 

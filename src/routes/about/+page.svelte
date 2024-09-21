@@ -6,10 +6,9 @@
 	import Button from '$lib/components/Button.svelte';
 	import Grid from '$lib/components/Grid.svelte';
 	import Skills from '$lib/components/Skills.svelte';
-	import Bento from '$lib/components/Bento2.svelte';
 	import LetterDrop from '$lib/components/LetterDrop.svelte';
+	import Bento from '$lib/components/Bento.svelte';
 	import SEO from '$lib/data/SEO.svelte';
-	import AtwellSparrow from '$lib/components/AtwellSparrow.svelte';
 	import CardFlip from '$lib/components/CardFlip.svelte';
 
 	// animations
@@ -81,6 +80,7 @@
 					myself the backend of web development on my spare time with backend languages like Python
 					to become more of a fullstack developer.
 				</p>
+
 				<p class="text b">
 					I have a passion for creating websites that are clean, crisp, and completely functional. I
 					enjoy seeing a physical change when I edit or create code. I also enjoy creating
@@ -119,10 +119,10 @@
 			<!-- card flip -->
 			<div class="flip">
 				<CardFlip
-					src="/logos/skull-glass.webp"
+					src="/logos/sparrow.webp"
 					alt="skull glass"
-					src2="/logos/designs.webp"
-					alt2="design logo"
+					src2="/logos/skull-glass.webp"
+					alt2="skull logo"
 				/>
 			</div>
 
@@ -130,8 +130,6 @@
 			<div class="gallery">
 				<a href="/about/gallery"><Button title="Gallery" /></a>
 			</div>
-
-			<AtwellSparrow />
 		</article>
 	</section>
 </main>

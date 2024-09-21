@@ -57,9 +57,11 @@
 		<!-- content -->
 		<section>
 			<div class="centerDetail">
-				<details on:toggle={resetAnimation}>
+				<details name="sveltekit" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
-					<summary role="button" class="outline contrast spacing"><b>Framework</b></summary>
+					<summary role="button" class="outline contrast spacing"
+						><span class="margin"><b>Framework</b></span></summary
+					>
 					<p class="text">
 						I used sveltekit to create this portfolio website. I decided to go with sveltekit
 						because of the server-side rendering (SSR) and all of the SEO features, as well as
@@ -75,10 +77,10 @@
 					</p>
 				</details>
 
-				<details on:toggle={resetAnimation}>
+				<details name="sveltekit" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
-						><b>Based off of basics</b></summary
+						><span class="margin"><b>Based off of basics</b></span></summary
 					>
 					<p class="text">
 						I am very knowledgable to the fundamentals of web development. CSS is a real hobby that
@@ -91,9 +93,11 @@
 					</p>
 				</details>
 
-				<details on:toggle={resetAnimation}>
+				<details name="sveltekit" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
-					<summary role="button" class="outline contrast spacing"><b>What is it?</b></summary>
+					<summary role="button" class="outline contrast spacing"
+						><span class="margin"><b>What is it?</b></span></summary
+					>
 					<p class="text">
 						Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
 						framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is
@@ -107,9 +111,11 @@
 					</p>
 				</details>
 
-				<details on:toggle={resetAnimation}>
+				<details name="sveltekit" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
-					<summary role="button" class="outline contrast spacing"><b>Install</b></summary>
+					<summary role="button" class="outline contrast spacing"
+						><span class="margin"><b>Install</b></span></summary
+					>
 					<p class="text">
 						You need <a href="https://nodejs.org/"><b>Node.js</b></a> installed. Once you have it
 						installed, you will use npm in your terminal. In your terminal, type
@@ -301,6 +307,10 @@
 		.centerDetail {
 			margin-top: 70%;
 		}
+
+		.margin {
+			margin-left: 0;
+		}
 	}
 
 	@media (min-width: 500px) {
@@ -332,6 +342,10 @@
 
 		.centerDetail {
 			margin-top: 0;
+		}
+
+		.margin {
+			margin-left: 3rem;
 		}
 	}
 

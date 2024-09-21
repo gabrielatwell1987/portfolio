@@ -58,7 +58,6 @@
 	.desktop {
 		display: block;
 		font-family: var(--orbitron);
-		font-weight: bolder;
 	}
 
 	nav {
@@ -100,6 +99,7 @@
 			padding: 0.5rem 1rem;
 			background-color: var(--blackest);
 			font-family: var(--orbitron);
+			font-weight: 800;
 		}
 
 		.mobile a:is(:hover) {
@@ -135,7 +135,6 @@
 		.nav-link {
 			font-size: clamp(1.1rem, 2vw, 1.5rem);
 			letter-spacing: 2px;
-			font-weight: 800;
 		}
 
 		.nav-link:hover {
@@ -377,6 +376,7 @@
 		.nav-link {
 			margin-left: 5.75rem;
 			margin-right: -5rem;
+			font-weight: 800;
 		}
 	}
 

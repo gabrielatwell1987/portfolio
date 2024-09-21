@@ -39,7 +39,8 @@
 	h1 {
 		color: var(--purple);
 		margin: 5% 0 2rem 0;
-		font-size: clamp(1.25rem, 2vw, 3rem);
+		font-size: clamp(1.75rem, 2vw, 3rem);
+		letter-spacing: 2px;
 	}
 
 	h3 {
@@ -47,6 +48,13 @@
 		margin: 0;
 		margin-top: 0.25rem;
 		margin-bottom: 8%;
-		font-size: clamp(1rem, 2vw, 1.5rem);
+		font-size: clamp(0.75rem, 2vw, 1.5rem);
+	}
+
+	@media (max-width: 768px) {
+		iframe {
+			width: 100%;
+			margin: 0;
+		}
 	}
 </style>
