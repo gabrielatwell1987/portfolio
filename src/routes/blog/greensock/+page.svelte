@@ -56,7 +56,7 @@
 	<main>
 		<!-- popover -->
 		<article class="popover">
-			<Popover text="the syntax is simple" />
+			<Popover text="animate the web" />
 		</article>
 
 		<div class="centerDetail">

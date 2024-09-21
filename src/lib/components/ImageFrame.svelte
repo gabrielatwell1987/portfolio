@@ -10,19 +10,19 @@
 
 	onMount(() => {
 		const imageContainer = document.querySelector('.image-container');
-		const imageContainerImg = document.querySelector('.image-container img');
+		const img = document.querySelector('.image-container img');
 		const h1 = document.querySelector('h1');
 
-		gsap.set(imageContainerImg, { y: -50 });
+		gsap.set(img, { y: -50 });
 		gsap.set(h1, { y: -15 });
 
 		imageContainer.addEventListener('mouseenter', () => {
-			gsap.to(imageContainerImg, { y: -10, ease: 'expo.inOut' });
+			gsap.to(img, { y: -10, duration: 0.75, ease: 'expo.inOut' });
 			gsap.to(h1, { color: 'var(--off-white)', delay: 0.25, ease: 'circ' });
 		});
 
 		imageContainer.addEventListener('mouseleave', () => {
-			gsap.to(imageContainerImg, { y: -50, borderTop: 0, ease: 'expo.inOut' });
+			gsap.to(img, { y: -50, duration: 0.75, borderTop: 0, ease: 'expo.inOut' });
 		});
 
 		let mm = gsap.matchMedia();
