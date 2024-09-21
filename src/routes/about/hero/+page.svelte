@@ -17,6 +17,7 @@
 	});
 
 	$: console.log(ThreeCanvas);
+	$: console.log('Three.js hero section');
 </script>
 
 <SEO title="Welcome" description="Gabriel Atwell's Hero Section" keywords="hero" />

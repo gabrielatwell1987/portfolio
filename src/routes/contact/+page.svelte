@@ -3,6 +3,11 @@
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import SEO from '$lib/data/SEO.svelte';
+
+	const main = document.querySelector('main');
+
+	$: console.log(main);
+	$: console.log('Contact page');
 </script>
 
 <SEO title="Message Me" description="Contact Gabriel Atwell" keywords="contact me, contact gabe" />

@@ -8,7 +8,6 @@
 	// Animations
 	onMount(() => {
 		const titleText = new SplitType('.title', { types: 'words' });
-		const main = document.querySelector('main');
 
 		gsap.from(titleText.words, {
 			duration: 3.5,
@@ -16,9 +15,13 @@
 			opacity: 0,
 			ease: 'back'
 		});
-
-		console.log(main);
 	});
+
+	const main = document.querySelector('main');
+
+	$: console.log(main);
+
+	$: console.log('Image Carousel page');
 </script>
 
 <SEO title="Image Carousel" description="Gabriel Atwell's Images" keywords="image carousel" />
