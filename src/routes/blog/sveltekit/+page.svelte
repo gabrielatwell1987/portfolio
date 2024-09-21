@@ -51,7 +51,7 @@
 	<main>
 		<!-- popover -->
 		<article class="popover">
-			<Popover text="closest to HTML" />
+			<Popover text="easy to use" />
 		</article>
 
 		<!-- content -->
