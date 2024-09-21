@@ -180,4 +180,10 @@
 	svg:hover {
 		scale: 1.05;
 	}
+
+	@media (max-width: 500px) {
+		svg {
+			scale: 1.1;
+		}
+	}
 </style>

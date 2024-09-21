@@ -1,7 +1,4 @@
 <script>
-	import GSAP from './GsapIcon.svelte';
-	import SK from './SvelteIcon.svelte';
-	import Image from '$lib/components/Image.svelte';
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 
@@ -24,37 +21,19 @@
 </script>
 
 <main id="bento-div" class="bt-div" aria-hidden="true">
-	<section class="bento-item bento-item-1" aria-label="contact me">
-		<a href="/contact"><h2>Contact me if you have a question!</h2></a>
-	</section>
+	<div class="flex">
+		<section class="bento-item bento-item-1" aria-label="contact me">
+			<a href="/contact"><h2>Contact me if you have a question!</h2></a>
+		</section>
 
-	<section class="bento-item bento-item-2" aria-label="blog topics">
-		<a href="/blog/sveltekit">
-			<div class="sk">
-				<SK />
-			</div>
-		</a>
+		<section class="bento-item bento-item-3" aria-label="home page">
+			<a href="/photos/robot"><img src="/logos/robot.webp" alt="a robot" /></a>
+		</section>
 
-		<a href="/blog/greensock">
-			<div class="gsap">
-				<GSAP />
-			</div>
-		</a>
-
-		<a href="/blog/posts">
-			<div class="animation">
-				<Image src="/logos/animation.webp" alt="" />
-			</div>
-		</a>
-	</section>
-
-	<section class="bento-item bento-item-3" aria-label="home page">
-		<a href="/"><img src="/icons/portfolio_logo.svg" alt="" /></a>
-	</section>
-
-	<section class="bento-item bento-item-4" aria-label="projects">
-		<a href="/projects"><img src="/logos/cursive-atwell.webp" alt="" /></a>
-	</section>
+		<section class="bento-item bento-item-4" aria-label="projects">
+			<a href="/projects"><img src="/logos/cursive-atwell.webp" alt="" /></a>
+		</section>
+	</div>
 </main>
 
 <style>
@@ -66,6 +45,10 @@
 
 		--border-radius: 0.75rem;
 		--transition-fast: 0.5s ease-in-out;
+	}
+
+	* {
+		position: relative;
 	}
 
 	h2 {
@@ -88,31 +71,10 @@
 	#bento-div {
 		width: 100%;
 		display: grid;
-		grid-template-columns: repeat(10, minmax(0, 1fr));
+		grid-template-columns: repeat(3, minmax(0, 1fr));
 		grid-auto-rows: 35rem;
 		gap: var(--space-sm);
 		padding: var(--space-sm);
-	}
-
-	.animation {
-		width: clamp(75%, 3vw, 100%);
-		transition: scale var(--transition-fast);
-		margin-left: 12.5%;
-	}
-
-	.animation:hover {
-		scale: 1.05;
-	}
-
-	.sk,
-	.gsap {
-		width: 100%;
-		scale: 1.5;
-	}
-
-	.gsap {
-		margin-top: 5rem;
-		margin-left: 40%;
 	}
 
 	.bento-item {
@@ -128,14 +90,6 @@
 		justify-content: center;
 		align-items: center;
 		font-size: clamp(1.2rem, 3vw, 4rem);
-	}
-
-	.bento-item-2 {
-		grid-column: span 6;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding-left: 10%;
 	}
 
 	.bento-item-3 {
@@ -176,11 +130,11 @@
 		}
 
 		.bento-item-1,
-		.bento-item-2,
 		.bento-item-3,
 		.bento-item-4 {
 			grid-column: span 2;
 		}
+
 		.bento-item-3 img {
 			object-fit: contain;
 		}
@@ -189,7 +143,6 @@
 			font-size: var(--space-md);
 			font-weight: 700;
 			letter-spacing: 5px;
-			color: var(--off-white);
 			text-align: center;
 			margin-bottom: 2rem;
 			padding: 2rem;
@@ -207,24 +160,17 @@
 			margin-bottom: 0.05rem;
 		}
 
-		.bento-item-2,
-		.bento-item-3 {
-			padding: 2rem;
+		.bento-item-1 {
+			padding: 1rem;
+			padding-bottom: 0;
 		}
 
-		.bento-item-2 {
-			padding-left: 20%;
-			width: 100%;
-			align-items: center;
-			gap: 1rem;
+		.bento-item-3 {
+			padding: 1rem;
 		}
 
 		.bento-item-4 img {
 			object-fit: contain;
-		}
-
-		.gsap {
-			margin-top: 4.5rem;
 		}
 	}
 </style>
