@@ -38,7 +38,7 @@
 <main>
 	<section>
 		<div class="bento-grid" style="--row: 4">
-			<div class="item mb" style="--row: span 1">
+			<div class="item" style="--row: span 1">
 				<a href="/contact"><h2>Contact me if you have a question!</h2></a>
 			</div>
 
@@ -73,6 +73,7 @@
 
 	.bento-grid {
 		display: grid;
+		place-items: center;
 		gap: var(--space);
 	}
 
@@ -113,7 +114,7 @@
 	}
 
 	.mb {
-		margin-bottom: 0;
+		margin-bottom: 11%;
 	}
 
 	@media (min-width: 50rem) {

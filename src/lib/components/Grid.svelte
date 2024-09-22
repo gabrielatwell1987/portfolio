@@ -38,7 +38,7 @@
 		.right {
 			line-height: 1.25;
 			text-align: left;
-			font-size: 1.25rem;
+			font-size: clamp(1.1rem, 3vw, 1.5rem);
 			color: var(--white);
 			margin-top: -1rem;
 		}
@@ -58,7 +58,6 @@
 		.left,
 		.right {
 			line-height: 1.5;
-			font-size: clamp(1.1rem, 3vw, 1.5rem);
 		}
 
 		.title {
@@ -88,14 +87,12 @@
 
 		.right {
 			text-align: right;
-			font-size: 2rem;
 			letter-spacing: 2px;
 			line-height: 1.5;
 		}
 
 		.left {
 			text-align: left;
-			font-size: 2rem;
 			letter-spacing: 2px;
 			line-height: 1.5;
 		}
@@ -108,20 +105,6 @@
 	@media (min-width: 1024px) {
 		.grid {
 			margin-bottom: -10%;
-		}
-	}
-
-	@media (min-width: 1300px) {
-		.left,
-		.right {
-			font-size: 1.1rem;
-		}
-	}
-
-	@media (min-width: 1400px) {
-		.left,
-		.right {
-			font-size: 1.75rem;
 		}
 	}
 </style>

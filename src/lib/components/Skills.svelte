@@ -85,7 +85,7 @@
 </section>
 
 <style>
-	@media (min-width: 200px) {
+	@media (min-width: 300px) {
 		.border {
 			width: 15%;
 			margin: 10% auto 5% auto;
@@ -94,7 +94,7 @@
 
 		.skills-title {
 			color: var(--yellow);
-			margin-left: 5%;
+			text-align: center;
 		}
 	}
 
@@ -103,7 +103,10 @@
 			display: block;
 			width: 15rem;
 			border: none;
-			margin: -60% 0 0 39.5%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
 		}
 
 		.skills {
@@ -131,7 +134,6 @@
 			text-align: center;
 			font-family: var(--anta);
 			mix-blend-mode: hard-light;
-			margin-left: 71%;
 			text-wrap: nowrap;
 		}
 
@@ -172,13 +174,13 @@
 
 	@media (min-width: 1200px) {
 		.border {
-			margin-top: -35%;
+			margin-top: -30%;
 		}
 	}
 
 	@media (min-width: 1300px) {
 		.border {
-			margin-top: 5%;
+			margin-top: 10%;
 		}
 	}
 

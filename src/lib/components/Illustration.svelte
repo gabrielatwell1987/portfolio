@@ -5,7 +5,6 @@
 <main class="svgs">
 	<section class="flex">
 		<Image src="/logos/code_review.svg" alt="" />
-		<!-- <Image src="/logos/color_palette.svg" alt="" /> -->
 
 		<Image src="/logos/static_website.svg" alt="" />
 	</section>

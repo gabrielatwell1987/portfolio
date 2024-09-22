@@ -102,6 +102,13 @@
 		font-weight: 100;
 	}
 
+	.send {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 1rem;
+	}
+
 	@media screen and (min-width: 320px) {
 		form {
 			width: 95%;
@@ -144,35 +151,12 @@
 
 		.send {
 			width: var(--100);
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-top: 1rem;
-			margin-right: 1.5rem;
-			margin-left: 5%;
-		}
-	}
-
-	@media screen and (min-width: 500px) {
-		label {
-			margin-left: 0;
 		}
 	}
 
 	@media screen and (min-width: 720px) {
-		.send {
-			width: var(--100);
-			margin-left: 1%;
-		}
-
 		::backdrop {
 			background: transparent;
-		}
-	}
-
-	@media (min-width: 900px) {
-		.send {
-			margin-left: 3%;
 		}
 	}
 
@@ -208,25 +192,12 @@
 			border-radius: 10px;
 			width: 90%;
 		}
-
-		.send {
-			margin-left: 0;
-		}
 	}
 
 	@media screen and (min-width: 1350px) {
 		input,
 		textarea {
-			/* font-size: 2rem; */
 			padding: 2rem;
-		}
-
-		label {
-			margin-left: 0;
-		}
-
-		.send {
-			margin-left: 1%;
 		}
 	}
 
