@@ -14,11 +14,9 @@
 		const h1 = document.querySelector('h1');
 
 		gsap.set(img, { y: -50 });
-		gsap.set(h1, { y: -15 });
 
 		imageContainer.addEventListener('mouseenter', () => {
-			gsap.to(img, { y: -10, duration: 0.75, ease: 'none' });
-			gsap.to(h1, { color: 'var(--off-white)', delay: 0.25 });
+			gsap.to(img, { y: 0, duration: 0.75, ease: 'none' });
 		});
 
 		imageContainer.addEventListener('mouseleave', () => {
@@ -29,6 +27,10 @@
 
 		mm.add('(max-width: 768px)', () => {
 			gsap.set(h1, { yPercent: -50, fontWeight: 900 });
+
+			imageContainer.addEventListener('mouseenter', () => {
+				gsap.to(img, { y: -10, duration: 0.75, ease: 'none' });
+			});
 		});
 	});
 </script>
@@ -48,7 +50,7 @@
 		font-family: var(--mono);
 		font-size: clamp(0.9rem, 2vw, 2rem);
 		font-weight: 700;
-		color: var(--off-white);
+		color: var(--smoke);
 		text-wrap: nowrap;
 	}
 
