@@ -22,7 +22,7 @@
 		border-radius: 5px;
 	}
 
-	@media (min-width: 200px) {
+	@media (min-width: 300px) {
 		iframe {
 			display: block;
 			margin: 15% auto;

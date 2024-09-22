@@ -8,6 +8,8 @@
 
 	let lenis;
 
+	const main = document.querySelector('main');
+
 	onMount(() => {
 		if (typeof window !== 'undefined') {
 			// lenis
@@ -21,8 +23,6 @@
 
 			gsap.ticker.lagSmoothing(0);
 		}
-
-		const main = document.querySelector('main');
 
 		// progress
 		document.addEventListener('scroll', function () {
@@ -39,7 +39,7 @@
 		// responsive animations
 		let mm = gsap.matchMedia();
 
-		mm.add('(min-width: 800px', () => {
+		mm.add('(min-width: 1000px', () => {
 			gsap.registerPlugin(ScrollTrigger);
 
 			gsap.set(main, { autoAlpha: 0 });
@@ -48,21 +48,20 @@
 
 			tl.to('.gabe', {
 				stagger: 0.5,
-				scale: 0.84,
+				scale: 0.75,
 				duration: 5,
 				repeat: 1,
 				yoyo: true,
 				scrollTrigger: {
 					trigger: 'main',
 					start: 'top bottom-=95%',
-					x: 200,
 					stagger: -0.5,
 					scrub: 1
 				}
 			}).to('main', { autoAlpha: 1 });
 
 			return () => {
-				gsap.set('.gabe', { borderRadius: '5px', scale: 1 });
+				gsap.set('.gabe', { borderRadius: '5px', scale: 0.9 });
 			};
 		});
 	});
@@ -80,10 +79,10 @@
 		<div class="spacing" />
 
 		<div class="pictures" aria-label="pictures">
-			<aside class="flex gabe">
+			<aside class="flex">
 				<img class="gabe" src="photos/gabe.webp" alt="Gabriel Atwell" width="350" height="450" />
 				<img class="gabe" src="photos/gabe2.webp" alt="Gabriel's face" width="300" height="350" />
-				<img class="gabe" src="photos/gabe7.webp" alt="AI generated" width="375" />
+				<img src="/photos/gabe5.webp" alt="Gabe" class="gabe" width="400" />
 			</aside>
 		</div>
 
@@ -102,24 +101,15 @@
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
-				<img class="gabe" src="photos/gabe8.webp" alt="AI generated" width="400" />
-				<img src="/photos/gabe5.webp" alt="Gabe" class="gabe" width="400" />
 				<img src="/photos/gabe3.webp" alt="Really old" class="gabe" width="350" />
-			</aside>
-		</div>
-
-		<div class="pictures left" aria-label="pictures">
-			<div class="flex">
 				<img src="/photos/wtf.webp" alt="Trying to burn gabe" class="gabe" width="500" />
 				<img src="/photos/wtf2.webp" alt="Gabe's face on hulk hogan" class="gabe" width="550" />
-				<img src="/photos/ornate1.webp" alt="AI generated" class="gabe" width="400" />
-			</div>
+			</aside>
 		</div>
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
 				<img src="/photos/wtf3.webp" alt="when gabe was 5 years old" class="gabe" width="450" />
-				<img src="/photos/gabe10.webp" alt="AI generated" class="gabe" width="375" />
 			</aside>
 		</div>
 
@@ -165,7 +155,7 @@
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;
-			margin-bottom: 1rem;
+			margin-bottom: 5%;
 		}
 
 		.gabe {
@@ -199,22 +189,9 @@
 	@media (min-width: 850px) {
 		.pictures {
 			display: flex;
-			justify-content: space-around;
-		}
-
-		@keyframes wiggle {
-			0% {
-				rotate: 0deg;
-				translate: 0 0;
-			}
-			25% {
-				rotate: -2deg;
-				translate: -5px 0;
-			}
-			80% {
-				rotate: 2deg;
-				translate: 5px 0;
-			}
+			justify-content: center;
+			align-items: center;
+			gap: 5%;
 		}
 	}
 
@@ -236,18 +213,29 @@
 
 		.flex {
 			display: flex;
-			justify-content: space-around;
+			justify-content: center;
 			flex-direction: row;
 			gap: 8%;
-			margin: 7% auto;
+			/* margin: 7% auto; */
 		}
 
-		.pictures {
+		/* .pictures {
 			margin-left: -12%;
-		}
+		} */
+	}
 
-		.left {
-			margin-left: -2%;
+	@keyframes wiggle {
+		0% {
+			rotate: 0deg;
+			translate: 0 0;
+		}
+		25% {
+			rotate: -2deg;
+			translate: -5px 0;
+		}
+		80% {
+			rotate: 2deg;
+			translate: 5px 0;
 		}
 	}
 </style>
