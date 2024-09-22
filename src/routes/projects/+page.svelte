@@ -26,9 +26,7 @@
 			.from('.title', { scale: 0.25, duration: 3 }, 0)
 			.to('.ascii', { yPercent: 0, duration: 1.75 }, 0);
 	});
-	const section = document.querySelector('section');
 
-	$: console.log(section);
 	$: console.log('Projects page');
 </script>
 

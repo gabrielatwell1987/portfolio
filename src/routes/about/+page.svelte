@@ -58,9 +58,6 @@
 			);
 	});
 
-	const main = document.querySelector('main');
-
-	$: console.log(main);
 	$: console.log('About page');
 </script>
 

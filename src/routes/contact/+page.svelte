@@ -4,9 +4,6 @@
 	import { quintOut } from 'svelte/easing';
 	import SEO from '$lib/data/SEO.svelte';
 
-	const main = document.querySelector('main');
-
-	$: console.log(main);
 	$: console.log('Contact page');
 </script>
 
@@ -25,7 +22,7 @@
 		.legend {
 			margin: 10% 0 5% 0;
 			font-family: var(--anta);
-			font-size: clamp(2rem, 4vw, 5rem);
+			font-size: clamp(2rem, 5vw, 9rem);
 			letter-spacing: 3%;
 			padding: 0;
 			color: var(--purple);

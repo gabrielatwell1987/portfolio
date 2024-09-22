@@ -4,7 +4,6 @@
 
 	// animations
 	onMount(() => {
-		const main = document.querySelector('main');
 		const heroTitle = document.querySelector('.hero-title');
 		const up = document.querySelector('.up');
 
@@ -14,8 +13,6 @@
 		textTl.to(heroTitle, { yPercent: -20 }).from(up, { y: 10 }, 0);
 		up.addEventListener('mouseenter', () => textTl.play());
 		up.addEventListener('mouseleave', () => textTl.reverse());
-
-		console.log(main);
 	});
 </script>
 

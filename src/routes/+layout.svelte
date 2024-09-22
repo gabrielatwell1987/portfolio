@@ -72,6 +72,7 @@
 
 <main>
 	<NavBar />
+
 	<br />
 	<br />
 	<br />
@@ -85,6 +86,11 @@
 <footer />
 
 <style>
+	:global(body) {
+		width: 100%;
+		height: 100%;
+	}
+
 	main {
 		width: 100%;
 	}
@@ -92,10 +98,5 @@
 	.footer {
 		margin-top: 7%;
 		margin-bottom: -6%;
-	}
-
-	:global(body) {
-		width: 100%;
-		height: 100%;
 	}
 </style>
