@@ -2,16 +2,8 @@
 	import { onMount } from 'svelte';
 	import * as THREE from 'three';
 	import SplitType from 'split-type';
-	import gsap from 'gsap';
 
 	onMount(() => {
-		// SplitType
-		const h1 = document.querySelector('h1');
-
-		const text = new SplitType(h1, {
-			types: 'chars'
-		});
-
 		// Texture Loader
 		const textureLoader = new THREE.TextureLoader();
 		const star = textureLoader.load('/textures/star.png');

@@ -2,7 +2,6 @@
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 
-	// animations
 	onMount(() => {
 		const heroTitle = document.querySelector('.hero-title');
 		const up = document.querySelector('.up');

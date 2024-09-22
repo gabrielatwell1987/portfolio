@@ -1,5 +1,4 @@
 <script>
-	// animations
 	import { tick } from 'svelte';
 	import { gsap } from 'gsap';
 	import { Flip } from 'gsap/dist/Flip';

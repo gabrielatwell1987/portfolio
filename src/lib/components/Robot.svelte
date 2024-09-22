@@ -1,9 +1,12 @@
 <script>
+	import { onMount } from 'svelte';
+
 	export let title;
 
-	const iFrame = document.querySelector('iframe');
-
-	$: console.log(iFrame);
+	onMount(() => {
+		const iFrame = document.querySelector('iframe');
+		console.log(iFrame);
+	});
 </script>
 
 <main>

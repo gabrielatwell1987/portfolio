@@ -1,10 +1,8 @@
 <script>
-	// import Pulsing from './Pulsing.svelte';
 	import LoadingDots from './LoadingDots.svelte';
 </script>
 
 <main class="container">
-	<!-- <Pulsing /> -->
 	<LoadingDots />
 </main>
 
