@@ -2,6 +2,8 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
+	import { blur } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 	import Lenis from 'lenis';
 	import Title from '$lib/components/Title.svelte';
 	import SEO from '$lib/data/SEO.svelte';
@@ -9,6 +11,8 @@
 	let lenis;
 
 	onMount(() => {
+		const main = document.querySelector('main');
+
 		if (typeof window !== 'undefined') {
 			// lenis
 			lenis = new Lenis();
@@ -21,16 +25,6 @@
 
 			gsap.ticker.lagSmoothing(0);
 		}
-
-		// progress
-		document.addEventListener('scroll', function () {
-			const progressBar = document.getElementById('scrollProgress');
-			const totalHeight = document.body.scrollHeight - window.innerHeight;
-			const scrollPosition = window.scrollY;
-			const scrollPercentage = (scrollPosition / totalHeight) * 100;
-
-			progressBar.value = scrollPercentage;
-		});
 
 		gsap.set('.gabe', { borderRadius: '5%' });
 
@@ -56,7 +50,7 @@
 					stagger: -0.5,
 					scrub: 1
 				}
-			}).to('main', { autoAlpha: 1 });
+			}).to(main, { autoAlpha: 1 });
 
 			return () => {
 				gsap.set('.gabe', { borderRadius: '5px', scale: 0.9 });
@@ -69,7 +63,7 @@
 
 <SEO title="Photos of Me" description="Gabriel Atwell's Photos" keywords="photos of gabe" />
 
-<main>
+<main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<Title title="images" />
 
 	<section>
@@ -112,10 +106,6 @@
 
 		<div class="spacing" />
 	</section>
-
-	<div class="progress-container">
-		<progress id="scrollProgress" value="0" max="100" />
-	</div>
 </main>
 
 <style>
@@ -132,20 +122,6 @@
 
 		img {
 			max-width: var(--100);
-		}
-
-		progress {
-			width: 40%;
-			margin: 17% 0 2rem 30%;
-			background: var(--dark-blue);
-		}
-
-		progress::-webkit-progress-value {
-			background-color: var(--smoke);
-		}
-
-		progress::-moz-progress-bar {
-			background-color: var(--smoke);
 		}
 
 		.flex {
@@ -172,14 +148,6 @@
 
 		.spacing {
 			height: 10vh;
-		}
-
-		.progress-container {
-			position: fixed;
-			top: -190px;
-			right: 15%;
-			width: var(--100);
-			z-index: 9;
 		}
 	}
 
@@ -213,12 +181,7 @@
 			justify-content: center;
 			flex-direction: row;
 			gap: 8%;
-			/* margin: 7% auto; */
 		}
-
-		/* .pictures {
-			margin-left: -12%;
-		} */
 	}
 
 	@keyframes wiggle {

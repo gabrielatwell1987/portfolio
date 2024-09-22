@@ -3,6 +3,7 @@
 	import HeroLogo from '$lib/components/HeroLogo.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import ImageFrame from '$lib/components/ImageFrame.svelte';
+	import AnimatedIntro from '$lib/components/AnimatedIntro.svelte';
 
 	$: console.log(Hero);
 	$: console.log('Hero section');
@@ -16,6 +17,10 @@
 
 <HeroLogo />
 
+<AnimatedIntro text="Do you need a " span="web developer?" />
+
+<Hero />
+
 <section class="frame">
 	<ImageFrame
 		src="/logos/frontend_dev.webp"
@@ -23,8 +28,6 @@
 		text="Distinguish your website"
 	/>
 </section>
-
-<Hero />
 
 <style>
 	.frame {

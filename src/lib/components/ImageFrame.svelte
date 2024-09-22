@@ -17,12 +17,12 @@
 		gsap.set(h1, { y: -15 });
 
 		imageContainer.addEventListener('mouseenter', () => {
-			gsap.to(img, { y: -10, duration: 0.75, ease: 'expo.inOut' });
-			gsap.to(h1, { color: 'var(--off-white)', delay: 0.25, ease: 'circ' });
+			gsap.to(img, { y: -10, duration: 0.75, ease: 'none' });
+			gsap.to(h1, { color: 'var(--off-white)', delay: 0.25 });
 		});
 
 		imageContainer.addEventListener('mouseleave', () => {
-			gsap.to(img, { y: -50, duration: 0.75, borderTop: 0, ease: 'expo.inOut' });
+			gsap.to(img, { y: -50, duration: 0.75, borderTop: 0, ease: 'none' });
 		});
 
 		let mm = gsap.matchMedia();
@@ -66,13 +66,8 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform 0.5s ease;
 		z-index: 2;
 		border-radius: 10px;
-	}
-
-	.image-container:hover img {
-		transform: scale(1.2);
 	}
 
 	@media (max-width: 768px) {
