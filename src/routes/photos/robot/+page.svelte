@@ -2,9 +2,6 @@
 	import Robot from '$lib/components/Robot.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 
-	const main = document.querySelector('main');
-
-	$: console.log(main);
 	$: console.log('Robot page');
 </script>
 

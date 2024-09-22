@@ -17,10 +17,6 @@
 		});
 	});
 
-	const main = document.querySelector('main');
-
-	$: console.log(main);
-
 	$: console.log('Image Carousel page');
 </script>
 

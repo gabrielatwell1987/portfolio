@@ -22,9 +22,6 @@
 		tl.to(title, { autoAlpha: 1, duration: 2, ease: 'back.out(4)' }, 0);
 	});
 
-	const section = document.querySelector('.main');
-
-	$: console.log(section);
 	$: console.log('Greensock page');
 
 	// details animation

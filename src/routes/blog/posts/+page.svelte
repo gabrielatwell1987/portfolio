@@ -45,9 +45,6 @@
 		});
 	});
 
-	const section = document.querySelector('section');
-
-	$: console.log(section);
 	$: console.log('Web animations page');
 </script>
 

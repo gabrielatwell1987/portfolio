@@ -2,10 +2,7 @@
 	import Image from '$lib/components/Image.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 
-	const section = document.querySelector('section');
-
-	$: console.log(section);
-	$: console.log('Success!');
+	$: console.log('Success! Your message was sent.');
 </script>
 
 <SEO title="Success!" description="Successfully Sent" keywords="success, contact success" />

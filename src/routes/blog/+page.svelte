@@ -27,9 +27,6 @@
 		});
 	});
 
-	const main = document.querySelector('main');
-
-	$: console.log(main);
 	$: console.log('Blog page');
 </script>
 

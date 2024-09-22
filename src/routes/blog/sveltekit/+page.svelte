@@ -20,9 +20,6 @@
 		tl.to(title, { autoAlpha: 1, duration: 2 }, 0);
 	});
 
-	const section = document.querySelector('.main');
-
-	$: console.log(section);
 	$: console.log('Sveltekit page');
 
 	// details animation

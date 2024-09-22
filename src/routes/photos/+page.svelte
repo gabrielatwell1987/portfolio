@@ -8,8 +8,6 @@
 
 	let lenis;
 
-	const main = document.querySelector('main');
-
 	onMount(() => {
 		if (typeof window !== 'undefined') {
 			// lenis
@@ -66,7 +64,6 @@
 		});
 	});
 
-	$: console.log(main);
 	$: console.log('Photos of Me');
 </script>
 
