@@ -9,7 +9,7 @@
 <nav>
 	<!-- hamburger icon -->
 	<div class="header-logos">
-		<div class="hamburger">
+		<div class="hamburgerMenu">
 			<Hamburger
 				--color="var(--white)"
 				type="spin"
@@ -197,7 +197,7 @@
 			margin-left: -7rem;
 		}
 
-		.hamburger {
+		.hamburgerMenu {
 			display: none;
 		}
 
