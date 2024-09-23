@@ -1,21 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
-	import { gsap } from 'gsap';
 	import { VFX } from '@vfx-js/core';
 	import Image from '$lib/components/Image.svelte';
 
 	onMount(() => {
-		gsap.set('.hero-logo', { autoAlpha: 0, scale: 0 });
-
-		gsap.to('.hero-logo', {
-			duration: 5,
-			autoAlpha: 1,
-			scale: 1,
-			ease: 'back.out',
-			delay: 0.75,
-			letterSpacing: '15px'
-		});
-
 		// vfx
 		const img = document.querySelector('img');
 		const vfx = new VFX();

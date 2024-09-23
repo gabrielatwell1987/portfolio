@@ -17,7 +17,7 @@
 
 <HeroLogo />
 
-<AnimatedIntro text="Do you need a " span="web developer?" />
+<AnimatedIntro text="Do you need a " span="developer?" />
 
 <Hero />
 
