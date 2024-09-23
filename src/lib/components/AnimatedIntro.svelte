@@ -19,6 +19,7 @@
 				yPercent: 100,
 				autoAlpha: 0,
 				duration: 2.5,
+				fontWeight: 200,
 				ease: 'sine.inOut'
 			},
 			'+=1'
@@ -42,9 +43,9 @@
 
 <style>
 	h1.sentence {
-		font-family: var(--montserrat);
+		font-family: var(--lexend);
 		font-size: clamp(1.25rem, 2.5vw, 10rem);
-		font-weight: 500;
+		font-weight: 200;
 		color: var(--purple);
 		mix-blend-mode: lighten;
 		text-align: center;
@@ -56,7 +57,7 @@
 		font-size: clamp(2.5rem, 12vw, 20rem);
 		color: var(--blue);
 		font-family: var(--montserrat);
-		font-weight: 600;
+		font-weight: 500;
 		text-wrap: none;
 		display: block;
 		letter-spacing: 1px;
@@ -68,19 +69,25 @@
 			0 0 10px var(--off-white), 0 0 15px var(--off-white), 0 0 20px var(--off-white);
 	}
 
+	h1.sentence,
+	span.bigWord {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
 	@media (max-width: 768px) {
 		h1.sentence {
-			margin-top: 5%;
-			font-weight: 200;
+			margin-top: 20%;
+			opacity: 0.9;
+		}
+
+		span.bigWord {
+			font-weight: 600;
 		}
 
 		.glow {
 			text-shadow: 0 0 3px #242424, 0 0 4px var(--off-white), 0 0 5px var(--off-white),
 				0 0 6px var(--off-white), 0 0 15px var(--off-white), 0 0 5px var(--off-white);
-		}
-
-		.animated-text {
-			font-weight: 200;
 		}
 	}
 
