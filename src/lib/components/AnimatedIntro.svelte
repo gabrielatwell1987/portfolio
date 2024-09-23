@@ -43,8 +43,8 @@
 <style>
 	h1.sentence {
 		font-family: var(--montserrat);
-		font-size: clamp(1.75rem, 3vw, 10rem);
-		font-weight: 300;
+		font-size: clamp(1.25rem, 2.5vw, 10rem);
+		font-weight: 500;
 		color: var(--purple);
 		mix-blend-mode: lighten;
 		text-align: center;
@@ -56,7 +56,7 @@
 		font-size: clamp(2.5rem, 12vw, 20rem);
 		color: var(--blue);
 		font-family: var(--montserrat);
-		font-weight: 900;
+		font-weight: 600;
 		text-wrap: none;
 		display: block;
 		letter-spacing: 1px;
@@ -71,12 +71,15 @@
 	@media (max-width: 768px) {
 		h1.sentence {
 			margin-top: 5%;
-			font-weight: 200;
 		}
 
 		.glow {
 			text-shadow: 0 0 3px #242424, 0 0 4px var(--off-white), 0 0 5px var(--off-white),
 				0 0 6px var(--off-white), 0 0 15px var(--off-white), 0 0 5px var(--off-white);
+		}
+
+		.animated-text {
+			font-weight: 200;
 		}
 	}
 
