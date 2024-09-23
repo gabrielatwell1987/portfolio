@@ -11,48 +11,28 @@
 		const biggerWord = document.querySelector('.bigWord');
 		const split = new SplitType(biggerWord, { types: 'chars' });
 
-		gsap.set(littleSentence, {
-			yPercent: 100,
-			autoAlpha: 0
-		});
-		gsap.set(biggerWord, {
-			xPercent: 100,
-			autoAlpha: 0
-		});
-
 		const tl = gsap.timeline({ defaults: { ease: 'power3.inOut', duration: 1.5 } });
 
-		tl.to(
+		tl.from(
 			littleSentence,
 			{
-				yPercent: 0,
-				autoAlpha: 1,
+				yPercent: 100,
+				autoAlpha: 0,
 				duration: 2.5,
 				ease: 'sine.inOut'
 			},
 			'+=1'
-		)
-			.to(
-				biggerWord,
-				{
-					xPercent: 0,
-					autoAlpha: 1,
-					duration: 3,
-					ease: 'sine.inOut'
-				},
-				'-=1.75'
-			)
-			.from(split.chars, {
-				y: -100,
-				scale: 0,
-				opacity: 0,
-				stagger: {
-					amount: 0.5,
-					from: 'random'
-				},
-				duration: 5,
-				ease: 'back.out(1.4)'
-			});
+		).from(split.chars, {
+			xPercent: 150,
+			scale: 0,
+			autoAlpha: 0,
+			stagger: {
+				amount: 0.5,
+				from: 'random'
+			},
+			duration: 5,
+			ease: 'power3.inOut'
+		});
 	});
 </script>
 
