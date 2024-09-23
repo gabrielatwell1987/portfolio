@@ -127,20 +127,12 @@
 		.animation-link {
 			display: block;
 		}
-
-		/* article {
-			margin-top: -20%;
-		} */
 	}
 
 	@media (min-width: 500px) {
 		.image {
 			width: 60%;
 			margin: 0 -30%;
-		}
-
-		article {
-			margin-top: -15%;
 		}
 	}
 
@@ -164,7 +156,6 @@
 
 		.image {
 			margin-top: -20%;
-			margin-left: -17%;
 		}
 
 		main {
