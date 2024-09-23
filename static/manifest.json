@@ -17,7 +17,7 @@
 		{
 			"src": "./icons/screenshot-wide.png",
 			"type": "image/png",
-			"sizes": "1642x510",
+			"sizes": "481x710",
 			"form_factor": "wide",
 			"label": "Wide screenshot"
 		}
