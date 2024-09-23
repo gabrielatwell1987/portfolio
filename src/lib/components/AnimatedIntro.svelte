@@ -71,6 +71,7 @@
 	@media (max-width: 768px) {
 		h1.sentence {
 			margin-top: 5%;
+			font-weight: 200;
 		}
 
 		.glow {
