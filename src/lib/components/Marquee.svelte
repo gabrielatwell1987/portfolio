@@ -72,7 +72,7 @@
 
 <style>
 	:root {
-		--marquee-width: 80vw;
+		--marquee-width: 100vw;
 		--marquee-height: 20vh;
 		--marquee-elements-displayed: 5;
 		--marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));

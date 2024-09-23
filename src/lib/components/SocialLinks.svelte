@@ -23,18 +23,30 @@
 </main>
 
 <style>
-	@media (min-width: 200px) {
-		.size {
-			font-size: 2rem;
-			font-weight: 900;
-			color: var(--blue);
-		}
+	.size {
+		font-size: 5rem;
+		color: var(--blue);
+		font-weight: 900;
+	}
 
+	.size:hover {
+		font-size: 5rem;
+		color: var(--yellow);
+		mix-blend-mode: hard-light;
+		font-weight: 900;
+	}
+
+	.dev-links {
+		margin-left: 0%;
+		display: flex;
+		justify-content: space-evenly;
+		padding: 1rem;
+	}
+
+	@media (max-width: 990px) {
+		.size,
 		.size:hover {
-			font-size: 2rem;
-			font-weight: 900;
-			color: var(--yellow);
-			mix-blend-mode: hard-light;
+			font-size: 3rem;
 		}
 
 		.dev-links {
@@ -46,39 +58,10 @@
 		}
 	}
 
-	@media (min-width: 990px) {
-		.size {
-			font-size: 2.5rem;
-		}
-
+	@media (max-width: 500px) {
+		.size,
 		.size:hover {
-			font-size: 2.5rem;
-		}
-
-		.dev-links {
-			margin-left: 0%;
-			display: flex;
-			justify-content: space-evenly;
-		}
-	}
-
-	@media (min-width: 1024px) {
-		.size {
-			font-size: 3.5rem;
-		}
-
-		.size:hover {
-			font-size: 3.5rem;
-		}
-	}
-
-	@media (min-width: 1400px) {
-		.size {
-			font-size: 5rem;
-		}
-
-		.size:hover {
-			font-size: 5rem;
+			font-size: 2rem;
 		}
 	}
 </style>

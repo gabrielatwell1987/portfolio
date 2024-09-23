@@ -1,6 +1,6 @@
 <script>
-	import gsap from 'gsap';
 	import { onMount } from 'svelte';
+	import gsap from 'gsap';
 	import Image from './Image.svelte';
 
 	onMount(() => {
@@ -80,21 +80,13 @@
 			align-items: center;
 		}
 
-		h4 {
-			font-size: clamp(1.2rem, 2vw, 3rem);
-			font-weight: 600;
-			font-family: var(--anta);
-			color: var(--yellow);
-			margin: 1rem 0 0.5rem 0;
-			mix-blend-mode: hard-light;
-		}
-
 		article {
 			width: 100%;
+			border-radius: 1rem;
 		}
 
-		.modal {
-			text-wrap: balance;
+		header {
+			background: transparent;
 		}
 
 		.modal-img {
@@ -104,52 +96,39 @@
 			margin: 1rem auto;
 		}
 
+		.modal h4 {
+			font-size: clamp(1.2rem, 2vw, 3rem);
+			font-weight: 600;
+			font-family: var(--anta);
+			color: var(--yellow);
+			margin: 2rem 0 0.5rem 0;
+			mix-blend-mode: hard-light;
+		}
+
 		.modal__p {
 			font-family: var(--lexend);
 			font-weight: 200;
 			font-size: clamp(1.1rem, 1vw, 1.75rem);
 			color: var(--white);
+			background: transparent;
+			padding: 0.2rem;
 		}
 	}
 
 	@media screen and (min-width: 720px) {
+		.open-button,
+		.close-button {
+			padding: 1.5rem 2rem;
+		}
+
 		.open-button {
-			display: block;
-			font-size: 1.2rem;
-			font-weight: 800;
-			background-color: transparent;
-			color: var(--white);
-			width: 4%;
-			height: 2%;
 			margin-left: 30%;
-			margin-top: 5%;
-			outline: none;
-			border: 2px solid var(--white);
-			border-radius: 15px;
-			padding: 1rem 1.5rem;
-			outline: none;
-			animation: wiggle 0.5s ease-in-out infinite;
-			display: flex;
-			justify-content: center;
-			align-items: center;
 		}
 
 		.close-button {
-			display: flex;
-			justify-content: center;
-			font-size: 1.2rem;
-			font-weight: 800;
-			background-color: transparent;
-			color: var(--white);
-			width: 4%;
 			margin-left: 44%;
 			margin-right: 2rem;
-			outline: none;
-			border: 2px solid var(--white);
-			border-radius: 15px;
 			padding: 0.75rem 1.25rem;
-			outline: none;
-			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
 		.modal {
@@ -157,24 +136,6 @@
 			width: 93%;
 			height: 83%;
 			margin: 0 auto;
-		}
-
-		#modal {
-			opacity: 0;
-			visibility: hidden;
-		}
-
-		article {
-			border-radius: 1rem;
-		}
-
-		.modal h4 {
-			font-size: clamp(1.2rem, 2vw, 3rem);
-			font-weight: 600;
-			font-family: var(--anta);
-			color: var(--yellow);
-			margin-top: 2rem;
-			mix-blend-mode: hard-light;
 		}
 
 		.modal-img {
@@ -200,27 +161,28 @@
 			line-height: 1.75;
 			width: 75%;
 			margin: 0 auto;
-			padding: 0.5rem;
+			padding: 1rem;
 		}
 
 		.modal h4 {
-			color: var(--black);
-		}
-
-		.modal .modal__p {
-			color: var(--black);
+			color: var(--yellow);
 		}
 
 		.open-button {
 			margin-left: 25%;
-			scale: 0.85;
+			scale: 1;
 			margin: 0 0 5% 25%;
 		}
 
 		.close-button {
-			color: var(--black);
-			border: 2px solid var(--black);
-			scale: 0.85;
+			color: var(--white);
+			border: 2px solid var(--white);
+			scale: 1;
+		}
+
+		.open-button i,
+		.close-button i {
+			font-size: 1.5rem;
 		}
 	}
 
@@ -235,35 +197,18 @@
 
 		.open-button {
 			margin-left: 30%;
-			scale: 0.9;
 		}
 
 		.close-button {
 			color: var(--white);
 			border: 2px solid var(--white);
-			scale: 0.9;
 		}
 	}
 
 	@media screen and (min-width: 1350px) {
 		.open-button,
 		.close-button {
-			padding: 2rem 3rem;
-			scale: 0.85;
-		}
-
-		i {
-			font-size: 2rem;
-		}
-	}
-
-	@media screen and (min-width: 1500px) {
-		.open-button {
-			scale: 0.85;
-		}
-
-		.close-button {
-			scale: 0.85;
+			padding: 2rem 2.5rem;
 		}
 	}
 
