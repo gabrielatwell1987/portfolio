@@ -56,10 +56,6 @@
 </main>
 
 <style>
-	section {
-		margin-top: 10rem;
-	}
-
 	article {
 		display: flex;
 		justify-content: center;
@@ -132,9 +128,9 @@
 			display: block;
 		}
 
-		article {
+		/* article {
 			margin-top: -20%;
-		}
+		} */
 	}
 
 	@media (min-width: 500px) {
@@ -163,7 +159,7 @@
 		.gs,
 		.sk {
 			width: 75%;
-			margin-bottom: 5%;
+			margin-bottom: 35%;
 		}
 
 		.image {
@@ -175,8 +171,8 @@
 			margin-bottom: 10%;
 		}
 
-		section {
-			margin-left: 2.5%;
+		.animation-link {
+			margin-bottom: 0;
 		}
 
 		article {
