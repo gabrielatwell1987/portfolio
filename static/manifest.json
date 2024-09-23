@@ -11,13 +11,15 @@
 			"src": "./icons/screenshot-narrow.png",
 			"type": "image/png",
 			"sizes": "342x320",
-			"form_factor": "narrow"
+			"form_factor": "narrow",
+			"label": "Narrow screenshot"
 		},
 		{
 			"src": "./icons/screenshot-wide.png",
 			"type": "image/png",
-			"sizes": "512x512",
-			"form_factor": "wide"
+			"sizes": "1642x510",
+			"form_factor": "wide",
+			"label": "Wide screenshot"
 		}
 	],
 	"icons": [
