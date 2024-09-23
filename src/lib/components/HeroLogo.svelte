@@ -4,19 +4,18 @@
 	import Image from '$lib/components/Image.svelte';
 
 	onMount(() => {
-		// vfx
 		const img = document.querySelector('img');
 		const vfx = new VFX();
 
-		vfx.add(img, {
-			shader: 'duotone',
-			uniforms: {
-				color1: [0.9, 0.9, 0.9, 1],
-				color2: [0.3, 0.4, 0.75, 1],
-				speed: 0.4
-			}
-		});
-		// vfx.add(img, { shader: 'rgbShift' });
+		// vfx.add(img, {
+		// 	shader: 'duotone',
+		// 	uniforms: {
+		// 		color1: [0.9, 0.9, 0.9, 1],
+		// 		color2: [0.3, 0.4, 0.75, 1],
+		// 		speed: 0.4
+		// 	}
+		// });
+		vfx.add(img, { shader: 'rgbShift' });
 	});
 </script>
 
