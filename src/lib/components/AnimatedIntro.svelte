@@ -1,7 +1,7 @@
 <script>
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
-	// import SplitType from 'split-type';
+	import SplitType from 'split-type';
 
 	export let text;
 	export let span;
@@ -9,6 +9,7 @@
 	onMount(() => {
 		const littleSentence = document.querySelector('.sentence');
 		const biggerWord = document.querySelector('.bigWord');
+		const split = new SplitType(biggerWord, { types: 'chars' });
 
 		gsap.set(littleSentence, {
 			yPercent: 100,
@@ -30,16 +31,28 @@
 				ease: 'sine.inOut'
 			},
 			'+=1'
-		).to(
-			biggerWord,
-			{
-				xPercent: 0,
-				autoAlpha: 1,
-				duration: 3,
-				ease: 'sine.inOut'
-			},
-			'+=0.5'
-		);
+		)
+			.to(
+				biggerWord,
+				{
+					xPercent: 0,
+					autoAlpha: 1,
+					duration: 3,
+					ease: 'sine.inOut'
+				},
+				'-=1.75'
+			)
+			.from(split.chars, {
+				y: -100,
+				scale: 0,
+				opacity: 0,
+				stagger: {
+					amount: 0.5,
+					from: 'random'
+				},
+				duration: 5,
+				ease: 'back.out(1.4)'
+			});
 	});
 </script>
 
@@ -60,12 +73,12 @@
 	}
 
 	span.bigWord {
-		font-size: clamp(2.75rem, 13vw, 20rem);
+		font-size: clamp(2.5rem, 12vw, 20rem);
 		color: var(--blue);
 		font-family: var(--montserrat);
 		font-weight: 900;
 		text-wrap: none;
-		display: inline-block;
+		display: block;
 		letter-spacing: 1px;
 	}
 
