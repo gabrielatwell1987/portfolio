@@ -4,6 +4,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import ImageFrame from '$lib/components/ImageFrame.svelte';
 	import AnimatedIntro from '$lib/components/AnimatedIntro.svelte';
+	import Video from '$lib/components/Video.svelte';
 
 	$: console.log(Hero);
 	$: console.log('Hero section');
@@ -16,6 +17,10 @@
 />
 
 <HeroLogo />
+
+<div class="video">
+	<Video />
+</div>
 
 <AnimatedIntro text="Do you need a " span="developer?" />
 
@@ -33,5 +38,11 @@
 	.frame {
 		display: flex;
 		justify-content: center;
+	}
+
+	.video {
+		display: flex;
+		justify-content: center;
+		margin-top: 5%;
 	}
 </style>
