@@ -18,11 +18,11 @@
 
 <HeroLogo />
 
-<div class="video">
-	<Video />
-</div>
-
 <AnimatedIntro text="Do you need a " span="developer?" />
+
+<div class="video">
+	<Video src="/videos/fed_converted.mp4" />
+</div>
 
 <Hero />
 
