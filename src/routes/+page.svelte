@@ -21,7 +21,7 @@
 <AnimatedIntro text="Do you need a " span="developer?" />
 
 <div class="video">
-	<Video src="/videos/fed_converted.mp4" />
+	<Video src="/videos/fed.mp4" />
 </div>
 
 <Hero />

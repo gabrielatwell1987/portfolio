@@ -5,7 +5,7 @@
 <video controls autoplay muted playsinline loop>
 	<source {src} type="video/mp4" />
 
-	<track kind="captions" src="/videos/captions.vtt" srclang="en" label="English" default />
+	<track kind="captions" src="videos/captions.vtt" srclang="en" label="English" default />
 
 	Your browser does not support the video tag.
 </video>
