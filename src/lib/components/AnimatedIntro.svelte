@@ -76,7 +76,7 @@
 
 	@media (max-width: 768px) {
 		h1.sentence {
-			margin-top: 20%;
+			margin-top: 7%;
 			opacity: 0.9;
 		}
 
