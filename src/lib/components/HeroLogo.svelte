@@ -14,7 +14,7 @@
 <main>
 	<section class="hero-logo">
 		<a href="/about/hero">
-			<Image src="/logos/anta-atwell.webp" alt="atwell ui" />
+			<Image src="/logos/atwellUI1.webp" alt="atwell ui" />
 		</a>
 	</section>
 </main>
@@ -36,7 +36,7 @@
 	}
 
 	.hero-logo {
-		width: clamp(90%, 10vw, 90%);
+		width: clamp(80%, 12vw, 90%);
 		display: flex;
 		justify-content: center;
 	}
