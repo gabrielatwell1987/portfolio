@@ -264,7 +264,7 @@
 		}
 
 		.skills {
-			margin-top: -25%;
+			margin-top: -20%;
 		}
 	}
 
@@ -290,9 +290,5 @@
 			width: 75%;
 			margin-left: 12%;
 		}
-
-		/* .margin__b {
-			text-wrap: balance;
-		} */
 	}
 </style>

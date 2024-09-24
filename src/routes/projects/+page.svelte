@@ -9,6 +9,7 @@
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import SEO from '$lib/data/SEO.svelte';
+	import ImageFrame from '$lib/components/ImageFrame.svelte';
 
 	// animations
 	onMount(() => {
@@ -149,6 +150,14 @@
 		description="A three.js project"
 	/> -->
 
+	<section class="frame">
+		<ImageFrame
+			src="/logos/frontend_dev.webp"
+			alt="Frontend Developer"
+			text="Distinguish your website"
+		/>
+	</section>
+
 	<!-- logo -->
 	<div class="logos designs">
 		<Figure src="logos/designs.webp" alt="A logo that says Atwell Designs" text="EST. 1987" />
@@ -156,6 +165,11 @@
 </section>
 
 <style>
+	.frame {
+		display: flex;
+		justify-content: center;
+	}
+
 	@media screen and (min-width: 300px) {
 		:root {
 			--100: 100%;
