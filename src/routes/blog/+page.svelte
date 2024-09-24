@@ -33,14 +33,19 @@
 <SEO title="Blog Topics" description="a blog about web techniques" keywords="blog topics" />
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
+	<img src="/logos/stars.svg" alt="stars" class="bg" />
 	<h1 class="title">. . . . . .</h1>
 
 	<!-- links to tech stack pages -->
 	<article>
 		<section aria-label="icons">
-			<a class="gs" href="blog/greensock"><GsapIcon /></a>
+			<a class="gs" href="blog/greensock">
+				<GsapIcon />
+			</a>
 
-			<a class="sk" href="blog/sveltekit"><SvelteIcon /></a>
+			<a class="sk" href="blog/sveltekit">
+				<SvelteIcon />
+			</a>
 		</section>
 
 		<div class="animation-link" aria-label="animation">
@@ -68,6 +73,15 @@
 	a {
 		display: block;
 		margin: 0 0 2rem 49%;
+	}
+
+	.bg {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		opacity: 0.25;
 	}
 
 	.title {

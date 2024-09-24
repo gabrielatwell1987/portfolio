@@ -118,9 +118,9 @@
 			<div class="flip">
 				<CardFlip
 					src="/logos/sparrow.webp"
-					alt="skull glass"
-					src2="/logos/skull-glass.webp"
-					alt2="skull logo"
+					alt="Atwell sparrow logo"
+					src2="/logos/blue_a.webp"
+					alt2="a blue A logo"
 				/>
 			</div>
 

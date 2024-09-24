@@ -25,7 +25,6 @@
 			'+=1'
 		).from(split.chars, {
 			xPercent: 150,
-			scale: 0,
 			autoAlpha: 0,
 			stagger: {
 				amount: 0.5,
