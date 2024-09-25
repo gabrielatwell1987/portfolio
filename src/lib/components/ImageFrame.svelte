@@ -76,6 +76,8 @@
 		.image-container {
 			width: 90%;
 			height: 75%;
+			margin-top: 20%;
+			margin-bottom: -5%;
 		}
 
 		h1 {
