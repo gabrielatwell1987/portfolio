@@ -20,8 +20,8 @@
 
 <style>
 	video {
-		width: 100%;
-		max-width: 700px;
+		width: 90%;
+		max-width: 900px;
 		border-radius: 12px;
 	}
 
@@ -29,5 +29,15 @@
 		margin: 0 auto 6% auto;
 		display: flex;
 		justify-content: center;
+	}
+
+	@media (max-width: 700px) {
+		video {
+			max-width: 85%;
+		}
+
+		.video {
+			margin: 0 auto 18% auto;
+		}
 	}
 </style>
