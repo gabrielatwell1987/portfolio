@@ -53,13 +53,14 @@
 	}
 
 	span.bigWord {
-		font-size: clamp(2.5rem, 12vw, 20rem);
+		font-size: clamp(3.25rem, 16vw, 35rem);
 		color: var(--blue);
 		font-family: var(--montserrat);
 		font-weight: 500;
 		text-wrap: none;
 		display: block;
 		letter-spacing: 1px;
+		line-height: 1.2;
 	}
 
 	.glow {
@@ -82,6 +83,7 @@
 
 		span.bigWord {
 			font-weight: 600;
+			margin-top: 2%;
 		}
 
 		.glow {
