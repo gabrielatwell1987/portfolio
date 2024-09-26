@@ -36,6 +36,10 @@
 		font-weight: 900;
 	}
 
+	.size i {
+		cursor: pointer;
+	}
+
 	.dev-links {
 		margin-left: 0%;
 		display: flex;
