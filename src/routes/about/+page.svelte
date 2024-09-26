@@ -176,7 +176,6 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			margin-top: -20%;
 		}
 
 		.gallery {
@@ -185,10 +184,19 @@
 			margin-inline: auto;
 		}
 
-		.hero {
+		.hero,
+		.gallery {
 			width: var(--100);
 			margin-inline: auto;
 		}
+
+		/* .hero,
+		.gallery {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+		} */
 
 		.text {
 			max-width: var(--100);
@@ -272,24 +280,20 @@
 	@media (min-width: 1024px) {
 		.hero {
 			width: 70%;
-			margin-left: 14%;
 		}
 
 		.gallery {
 			width: 70%;
-			margin-left: 15%;
 		}
 	}
 
 	@media (min-width: 1400px) {
 		.hero {
 			width: 90%;
-			margin-left: 5%;
 		}
 
 		.gallery {
 			width: 75%;
-			margin-left: 12%;
 		}
 	}
 </style>
