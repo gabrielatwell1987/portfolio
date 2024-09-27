@@ -7,7 +7,7 @@
 	import copy from 'copy-to-clipboard';
 	import { onMount } from 'svelte';
 	import SEO from '$lib/data/SEO.svelte';
-	import Card from '$lib/components/Card.svelte';
+	import Card2 from '$lib/components/Card2.svelte';
 
 	onMount(() => {
 		const codeBlocks = document.querySelectorAll('pre');
@@ -63,12 +63,12 @@
 	</div>
 
 	<article class="card">
-		<Card
-			title="Gabriel Atwell"
-			description="Trying to make the internet look better.. one website at a time."
-			button="Work"
+		<Card2
 			src="/photos/autumn.webp"
-			href="/projects"
+			alt="gabe's daughter"
+			h1="Gabriel Atwell"
+			p="Trying to make the internet look better.. one website at a time."
+			button="Work"
 		/>
 	</article>
 
