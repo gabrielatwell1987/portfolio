@@ -37,7 +37,9 @@
 	keywords="projects, work"
 />
 
-<Title title="projects" />
+<div class="title">
+	<Title title="projects" />
+</div>
 
 <!-- links to my projects -->
 <section
@@ -191,6 +193,10 @@
 			width: clamp(50%, 75%, var(--100));
 			margin-left: 10%;
 		}
+
+		.title {
+			margin-top: 10%;
+		}
 	}
 
 	@media screen and (min-width: 740px) {
@@ -210,6 +216,10 @@
 
 		.ascii {
 			margin-left: 12.5%;
+		}
+
+		.title {
+			margin-top: 0;
 		}
 	}
 

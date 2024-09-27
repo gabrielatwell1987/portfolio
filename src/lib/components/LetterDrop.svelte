@@ -38,16 +38,20 @@
 	.animated-text {
 		font-family: var(--mono);
 		font-size: clamp(2.5rem, 9vw, 20rem);
-		font-weight: 700;
+		font-weight: 600;
 		color: var(--sky);
 		mix-blend-mode: lighten;
 		text-align: center;
-		margin: 0;
-		padding: 0;
 	}
 
 	.animated-letter {
 		display: inline-block;
+	}
+
+	@media (max-width: 768px) {
+		.animated-text {
+			font-weight: 100;
+		}
 	}
 
 	@keyframes drop {

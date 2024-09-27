@@ -34,6 +34,7 @@
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<img src="/logos/stars.svg" alt="stars" class="bg" />
+
 	<h1 class="title">. . . . . .</h1>
 
 	<!-- links to tech stack pages -->
@@ -81,7 +82,6 @@
 		left: 0;
 		width: 100vw;
 		height: 100vh;
-		opacity: 0.25;
 	}
 
 	.title {
@@ -141,6 +141,10 @@
 		.animation-link {
 			display: block;
 		}
+
+		.bg {
+			opacity: 0.5;
+		}
 	}
 
 	@media (min-width: 500px) {
@@ -158,6 +162,10 @@
 
 		.gs {
 			margin-bottom: 10%;
+		}
+
+		.bg {
+			opacity: 0.25;
 		}
 	}
 
