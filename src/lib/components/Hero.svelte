@@ -22,7 +22,6 @@
 	/>
 
 	<section aria-label="hero">
-		<!-- hero section text and links -->
 		<h3 class="hero-title">Frontend Crafted Web Experiences</h3>
 
 		<h4 class="summary left up">
@@ -36,7 +35,6 @@
 		<h4 class="summary italic">projects I created..</h4>
 	</section>
 
-	<!-- spacing -->
 	<br />
 </main>
 
