@@ -36,7 +36,7 @@
 		position: relative;
 	}
 
-	@media (min-width: 200px) {
+	@media (min-width: 300px) {
 		.title {
 			text-align: center;
 			font-family: var(--anta);
