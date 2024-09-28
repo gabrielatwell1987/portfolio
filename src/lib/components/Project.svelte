@@ -6,8 +6,10 @@
 </script>
 
 <h3 class="link name">{title}</h3>
+
 <a class="link" href={url} target="_blank">
 	<img class="img" src={img} alt={title} width="400px" height="475px" />
+
 	<span class="hover-text">{description}</span>
 </a>
 
@@ -56,7 +58,7 @@
 			padding: 5px 0;
 			font-size: clamp(1rem, 1.5vw, 1.75rem);
 			position: absolute;
-			bottom: -10%;
+			bottom: -5%;
 			left: 41%;
 			z-index: 1;
 			margin-left: -41%;
