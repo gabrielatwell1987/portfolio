@@ -64,9 +64,9 @@
 
 	<article class="card">
 		<Card2
-			src="/photos/autumn.webp"
-			alt="gabe's daughter"
-			h1="Gabriel Atwell"
+			src="/photos/wtf2.webp"
+			alt="hulk hogan"
+			h1="gabeAtwell"
 			p="Trying to make the internet look better.. one website at a time."
 			button="Work"
 		/>

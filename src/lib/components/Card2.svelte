@@ -54,7 +54,7 @@
 		bottom: 0;
 		width: 100%;
 		height: 150px;
-		padding: 1rem;
+		padding: 2rem;
 		background: rgba(93, 95, 145, 0.2);
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
@@ -66,6 +66,7 @@
 	.card-image {
 		width: 100%;
 		height: 300px;
+		margin-inline: auto;
 		object-fit: cover;
 		border-radius: 8px 8px 0 0;
 	}
@@ -141,12 +142,13 @@
 		}
 
 		.card-image {
-			height: 190px;
+			height: fit-content;
 			object-fit: cover;
 		}
 
 		.card-title {
 			font-size: clamp(1.25rem, 2vw, 1.5rem);
+			margin-top: 15%;
 		}
 
 		.card-description {
@@ -156,7 +158,13 @@
 		.card-button {
 			font-size: clamp(1rem, 1vw, 1.2rem);
 			font-weight: 500;
-			padding: 0.75rem 1.5rem;
+			padding: 1rem 1.5rem;
+			margin-top: -3%;
+		}
+
+		.overlay {
+			padding: 1rem;
+			height: 50%;
 		}
 	}
 
