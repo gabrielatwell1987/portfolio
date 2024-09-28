@@ -68,12 +68,12 @@
 		<Image src="logos/ascii.webp" alt="ASCII art" />
 	</div>
 
-	<!-- <Project
+	<Project
 		title="S.P.A."
 		img="/projects/web_dev.webp"
 		url="https://gabe1.vercel.app"
 		description="A single page application"
-	/> -->
+	/>
 
 	<Project
 		title="horizontal scroller"
