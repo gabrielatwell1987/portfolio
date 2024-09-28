@@ -15,6 +15,20 @@
 	onMount(() => {
 		gsap.registerPlugin(Draggable);
 
+		const ascii = document.querySelector('.ascii');
+
+		Draggable.create(ascii, {
+			type: 'x,y',
+			bounds: window,
+			edgeResistance: 0.65,
+			onPress: function () {
+				gsap.to(ascii, { scale: 1.1 });
+			},
+			onRelease: function () {
+				gsap.to(ascii, { scale: 1 });
+			}
+		});
+
 		// GSAP
 		gsap.set('.link', { autoAlpha: 0, scale: 0 });
 		gsap.set('.content', { autoAlpha: 0 });
