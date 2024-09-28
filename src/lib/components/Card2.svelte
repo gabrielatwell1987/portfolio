@@ -68,7 +68,6 @@
 		height: 300px;
 		object-fit: cover;
 		border-radius: 8px 8px 0 0;
-		margin-bottom: 1rem;
 	}
 
 	.card-image:hover {
@@ -106,7 +105,6 @@
 		outline: none;
 		border: 1px solid var(--white);
 		margin: 1rem auto;
-		margin-bottom: 3rem;
 		border-radius: 5rem;
 		filter: drop-shadow(0 0 0.75rem var(--smoke));
 		transition: 750ms;
@@ -114,6 +112,7 @@
 		outline-offset: -7px;
 		padding: 1.5rem 2rem;
 		user-select: none;
+		margin-bottom: 3rem;
 	}
 
 	.card-button:hover {
