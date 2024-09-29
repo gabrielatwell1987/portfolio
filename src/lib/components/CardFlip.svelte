@@ -19,10 +19,10 @@
 
 <style>
 	.card-container {
-		width: 400px;
+		width: 600px;
 		height: 400px;
 		perspective: 1000px;
-		margin: -0.5rem 0 2rem 0;
+		margin: -0.5rem 0 5% 0;
 	}
 
 	.card {
@@ -75,8 +75,9 @@
 
 	@media screen and (max-width: 600px) {
 		.card-container {
-			width: 175px;
+			width: 350px;
 			height: 275px;
+			margin-bottom: 13%;
 		}
 	}
 </style>
