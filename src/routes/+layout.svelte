@@ -6,8 +6,6 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { onMount } from 'svelte';
 	import Loading from '$lib/components/Loading.svelte';
-	import { signIn, signOut } from '@auth/sveltekit/client';
-	// import { SignIn, SignOut } from '@auth/sveltekit/components';
 
 	let isPageLoaded = false;
 
@@ -75,13 +73,6 @@
 <main>
 	<NavBar />
 
-	<div class="auth">
-		<button on:click={() => signIn('github')}>Login</button>
-		<!-- <SignIn provider="github" signInPage="signin" /> -->
-		<button on:click={() => signOut()}>Logout</button>
-		<!-- <SignOut /> -->
-	</div>
-
 	<br />
 	<br />
 	<br />
@@ -107,30 +98,5 @@
 	.footer {
 		margin-top: 7%;
 		margin-bottom: -6%;
-	}
-
-	.auth {
-		display: flex;
-		justify-content: space-evenly;
-		gap: 15%;
-		position: fixed;
-		top: 10%;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-
-	button {
-		border: none;
-		background: none;
-		color: inherit;
-		font: inherit;
-		cursor: pointer;
-		font-family: var(--lexend);
-		font-weight: 200;
-		font-size: clamp(1.2rem, 3vw, 1.5rem);
-	}
-
-	button:nth-of-type(2) {
-		margin-left: 15rem;
 	}
 </style>
