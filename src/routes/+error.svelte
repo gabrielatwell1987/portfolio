@@ -21,6 +21,7 @@
 		border-radius: 5px;
 		padding: 1rem 1.5rem;
 		margin-top: 10%;
+		height: 100vh;
 	}
 
 	h1 {
