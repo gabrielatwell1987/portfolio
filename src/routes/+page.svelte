@@ -10,7 +10,7 @@
 </script>
 
 <SEO
-	title="Gabriel Atwell"
+	title="Frontend Developer"
 	description="Gabriel Atwell's Portfolio"
 	keywords="gabriel atwell, gabe's portfolio"
 />
