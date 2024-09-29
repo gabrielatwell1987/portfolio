@@ -190,14 +190,6 @@
 			margin-inline: auto;
 		}
 
-		/* .hero,
-		.gallery {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-		} */
-
 		.text {
 			max-width: var(--100);
 			margin-inline: auto;
