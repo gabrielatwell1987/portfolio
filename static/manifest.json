@@ -2,7 +2,7 @@
 	"name": "Gabe Atwell",
 	"short_name": "Atwell UI",
 	"start_url": "/",
-	"display": "standalone",
+	"display": "fullscreen",
 	"background_color": "#222425",
 	"theme_color": "#24242475",
 	"description": "The portfolio of Gabe Atwell, a UI/UX designer and developer.",
