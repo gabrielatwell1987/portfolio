@@ -6,6 +6,8 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { onMount } from 'svelte';
 	import Loading from '$lib/components/Loading.svelte';
+	import Login from '$lib/components/Login.svelte';
+	import Logout from '$lib/components/Logout.svelte';
 
 	let isPageLoaded = false;
 
@@ -73,6 +75,11 @@
 <main>
 	<NavBar />
 
+	<div class="auth">
+		<Login />
+		<Logout />
+	</div>
+
 	<br />
 	<br />
 	<br />
@@ -98,5 +105,13 @@
 	.footer {
 		margin-top: 7%;
 		margin-bottom: -6%;
+	}
+
+	.auth {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 15%;
+		height: 30vh;
 	}
 </style>
