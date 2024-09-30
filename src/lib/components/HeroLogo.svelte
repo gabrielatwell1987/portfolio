@@ -14,7 +14,7 @@
 <main>
 	<section class="hero-logo">
 		<a href="/about/hero">
-			<Image src="/logos/atwellUI1.webp" alt="atwell ui" />
+			<Image src="/logos/atwellUI.webp" alt="atwell ui" />
 		</a>
 	</section>
 </main>
