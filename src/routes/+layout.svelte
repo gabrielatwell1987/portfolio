@@ -114,4 +114,10 @@
 		gap: 15%;
 		height: 30vh;
 	}
+
+	@media (max-width: 600px) {
+		.auth {
+			gap: 5%;
+		}
+	}
 </style>
