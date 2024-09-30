@@ -31,6 +31,10 @@
 		// responsive animations
 		let mm = gsap.matchMedia();
 
+		mm.add('(max-width: 500px', () => {
+			gsap.set('.gabe', { scale: 0.85 });
+		});
+
 		mm.add('(min-width: 1000px', () => {
 			gsap.registerPlugin(ScrollTrigger);
 
