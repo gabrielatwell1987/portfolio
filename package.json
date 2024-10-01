@@ -8,7 +8,8 @@
 		"preview": "vite preview",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"test": "vitest"
+		"test": "vitest",
+		"check": "svelte-check"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-vercel": "^5.3.0",
@@ -22,6 +23,7 @@
 		"mdsvex": "^0.11.0",
 		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.10.1",
+		"svelte-check": "^4.0.4",
 		"svelte-hamburgers": "^4.2.0",
 		"three": "^0.167.1",
 		"vite": "^5.2.10"
@@ -29,7 +31,6 @@
 	"type": "module",
 	"dependencies": {
 		"@analytics/google-analytics": "^1.0.7",
-		"@auth/sveltekit": "^1.5.3",
 		"@vfx-js/core": "^0.2.0",
 		"copy-to-clipboard": "^3.3.3",
 		"dat.gui": "^0.7.9",

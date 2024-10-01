@@ -64,8 +64,8 @@
 
 	<article class="card">
 		<Card2
-			src="/photos/wtf2.webp"
-			alt="hulk hogan"
+			src="/photos/ornate1.webp"
+			alt="old school"
 			h1="gabeAtwell"
 			p="Trying to make the internet look better.. one website at a time."
 			button="Work"
