@@ -9,9 +9,7 @@
 	import { quintOut } from 'svelte/easing';
 	import SEO from '$lib/data/SEO.svelte';
 
-	// animations
 	onMount(() => {
-		// text animation
 		gsap.registerPlugin(TextPlugin);
 
 		gsap.set('.title', {
@@ -33,11 +31,8 @@
 <SEO title="Blog Topics" description="a blog about web techniques" keywords="blog topics" />
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
-	<img src="/logos/stars.svg" alt="stars" class="bg" />
+	<h2 class="title">t o p i c s</h2>
 
-	<h1 class="title">. . . . . .</h1>
-
-	<!-- links to tech stack pages -->
 	<article>
 		<section aria-label="icons">
 			<a class="gs" href="blog/greensock">
@@ -74,14 +69,6 @@
 	a {
 		display: block;
 		margin: 0 0 2rem 49%;
-	}
-
-	.bg {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
 	}
 
 	.title {
@@ -141,10 +128,6 @@
 		.animation-link {
 			display: block;
 		}
-
-		.bg {
-			opacity: 0.5;
-		}
 	}
 
 	@media (min-width: 500px) {
@@ -162,10 +145,6 @@
 
 		.gs {
 			margin-bottom: 10%;
-		}
-
-		.bg {
-			opacity: 0.25;
 		}
 	}
 

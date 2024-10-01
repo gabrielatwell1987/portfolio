@@ -91,8 +91,9 @@
 
 	h2 {
 		color: var(--text);
-		font-weight: 600;
+		font-family: var(--mono);
 		font-size: clamp(1.5rem, 2vw, 3rem);
+		font-weight: 600;
 		line-height: 1.1;
 		letter-spacing: 5px;
 	}

@@ -18,7 +18,7 @@
 		const ascii = document.querySelector('.ascii');
 
 		Draggable.create(ascii, {
-			type: 'x,y',
+			type: 'top',
 			bounds: window,
 			edgeResistance: 0.65,
 			onPress: function () {

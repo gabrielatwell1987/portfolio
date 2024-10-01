@@ -32,7 +32,25 @@
 		let mm = gsap.matchMedia();
 
 		mm.add('(max-width: 500px', () => {
-			gsap.set('.gabe', { scale: 0.85 });
+			gsap.registerPlugin(ScrollTrigger);
+
+			gsap.set('.gabe', { scale: 0.75 });
+
+			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
+
+			tl.to('.gabe', {
+				stagger: 0.5,
+				scale: 0.95,
+				duration: 5,
+				repeat: 1,
+				yoyo: true,
+				scrollTrigger: {
+					trigger: 'main',
+					start: 'top bottom-=95%',
+					stagger: -0.5,
+					scrub: 1
+				}
+			});
 		});
 
 		mm.add('(min-width: 1000px', () => {
@@ -55,10 +73,6 @@
 					scrub: 1
 				}
 			}).to(main, { autoAlpha: 1 });
-
-			return () => {
-				gsap.set('.gabe', { borderRadius: '5px', scale: 0.9 });
-			};
 		});
 	});
 
