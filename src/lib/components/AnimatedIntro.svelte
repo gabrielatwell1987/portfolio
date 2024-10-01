@@ -70,7 +70,7 @@
 	}
 
 	h1.sentence,
-	span.bigWord {
+	.bigWord {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
@@ -81,7 +81,7 @@
 			opacity: 0.9;
 		}
 
-		span.bigWord {
+		.bigWord {
 			font-weight: 600;
 			margin-top: 2%;
 		}
