@@ -260,7 +260,8 @@
 
 		summary {
 			margin-left: -1rem;
-			color: var(--yellow);
+			color: var(--off-white);
+			border-color: var(--off-white);
 			font-family: var(--mono);
 		}
 

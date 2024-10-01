@@ -30,9 +30,9 @@
 
 	<!-- desktop view -->
 	<div class="desktop">
+		<a class="nav-link" href="/about">About</a>
 		<a class="nav-link" href="/projects">Projects</a>
 		<a class="nav-link" href="/blog">Blog</a>
-		<a class="nav-link" href="/about">About</a>
 		<a class="nav-link" href="/photos">Photos</a>
 		<a class="nav-link" href="/contact">Contact</a>
 	</div>
@@ -41,9 +41,9 @@
 	{#if open}
 		<div class="mobile">
 			<a class="nav-link" href="/">Home</a>
+			<a class="nav-link" href="/about">About</a>
 			<a class="nav-link" href="/projects">Projects</a>
 			<a class="nav-link" href="/blog">Blog</a>
-			<a class="nav-link" href="/about">About</a>
 			<a class="nav-link" href="/photos">Photos</a>
 			<a class="nav-link" href="/contact">Contact</a>
 		</div>
