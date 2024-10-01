@@ -20,7 +20,7 @@
 <AnimatedIntro text="Do you need a " span="website?" />
 
 <div class="video">
-	<Video src1="/videos/green_effects.webm" src2="/videos/green_effects.mp4" />
+	<Video src1="/videos/seamless.webm" src2="/videos/seamless.mp4" />
 </div>
 
 <Hero />
