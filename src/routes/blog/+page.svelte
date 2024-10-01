@@ -8,6 +8,7 @@
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import SEO from '$lib/data/SEO.svelte';
+	import AnimatedHeading from '$lib/components/AnimatedHeading.svelte';
 
 	onMount(() => {
 		gsap.registerPlugin(TextPlugin);
@@ -50,6 +51,10 @@
 					<Image src="logos/animation.webp" alt="A logo that says web animation techniques." />
 				</div>
 			</a>
+		</div>
+
+		<div class="marginTop">
+			<AnimatedHeading title1="seeing" span="is" title2="believing" />
 		</div>
 	</article>
 
@@ -110,6 +115,10 @@
 	}
 
 	.animation-link {
+		margin-top: 10%;
+	}
+
+	.marginTop {
 		margin-top: 10%;
 	}
 
