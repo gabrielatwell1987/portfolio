@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
 	import * as THREE from 'three';
-	import SplitType from 'split-type';
 
 	onMount(() => {
 		// Texture Loader

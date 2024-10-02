@@ -1,6 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import SEO from '$lib/data/SEO.svelte';
+	import Image from '$lib/components/Image.svelte';
 
 	$: console.log(`There is a ${$page.status} error!`);
 </script>
@@ -8,17 +9,19 @@
 <SEO title="Error!" description="Error Page" keywords="error, gabe's error page" />
 
 <main aria-label="error">
-	<h1>Status: {$page.status}</h1>
+	<Image src="/logos/error.webp" alt="Error" />
 
-	<p>{$page.error.message}</p>
+	<div class="error">
+		<h1>Status: {$page.status}</h1>
+	</div>
+
+	<div class="error"><p>{$page.error.message}</p></div>
 </main>
 
 <style>
 	main {
 		display: grid;
 		place-content: center;
-		border: 5px solid var(--white);
-		border-radius: 5px;
 		padding: 1rem 1.5rem;
 		margin-top: 10%;
 		height: 100vh;
@@ -33,17 +36,28 @@
 		letter-spacing: 7px;
 		margin-bottom: 20%;
 		text-shadow: 5px 7.5px 5px var(--smoke);
+		text-wrap: balance;
 	}
 
 	p {
-		font-size: clamp(1.5rem, 2.5vw, 2rem);
-		letter-spacing: 3px;
+		font-family: var(--lexend);
+		font-size: clamp(1.75rem, 4vw, 4rem);
+		letter-spacing: 5px;
 		line-height: 1.25;
 		text-align: left;
 		padding: 2rem 4rem;
 		color: var(--white);
-		font-family: var(--lexend);
 		text-align: center;
 		text-shadow: 1px 1px 5px var(--smoke);
+		text-wrap: none;
+		margin-bottom: 3%;
+	}
+
+	.error {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10%;
+		width: 100%;
 	}
 </style>
