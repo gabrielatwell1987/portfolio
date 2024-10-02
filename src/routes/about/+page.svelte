@@ -146,30 +146,32 @@
 
 		main {
 			width: var(--100);
-			margin: 0 auto;
+			margin-inline: auto;
 		}
 
 		section {
 			display: block;
-			margin: 0 auto;
+			margin-inline: auto;
 			text-align: center;
 			width: var(--100);
 			background: url('/logos/white-flower.webp') no-repeat center center/contain fixed;
 		}
 
 		article {
-			font-size: 0.8rem;
+			font-size: clamp(0.8rem, 2vw, 1rem);
 			width: var(--100);
-			margin: 0 auto;
+			margin-inline: auto;
 			background-color: transparent;
 		}
 
 		a {
-			font-size: 1rem;
+			font-size: clamp(1rem, 2vw, 1.2rem);
+			font-weight: 700;
+			text-decoration: none;
 		}
 
 		a:hover {
-			font-size: 1.1rem;
+			font-size: clamp(1.1rem, 2vw, 1.3rem);
 		}
 
 		.flip {
@@ -178,16 +180,14 @@
 			align-items: center;
 		}
 
-		.gallery {
-			margin-top: 1.5rem;
-			width: var(--100);
-			margin-inline: auto;
-		}
-
 		.hero,
 		.gallery {
 			width: var(--100);
 			margin-inline: auto;
+		}
+
+		.gallery {
+			margin-top: 1.5rem;
 		}
 
 		.text {
@@ -212,9 +212,15 @@
 		.drop {
 			margin-bottom: 15%;
 		}
+	}
 
-		a {
-			text-decoration: none;
+	@media (min-width: 600px) {
+		.hero {
+			width: 90%;
+		}
+
+		.gallery {
+			width: 90%;
 		}
 	}
 
@@ -226,19 +232,9 @@
 		}
 
 		article {
-			font-size: 1rem;
 			width: var(--100);
 			margin: 0 auto;
 			background-color: transparent;
-		}
-
-		a {
-			font-size: 1.2rem;
-			font-weight: 700;
-		}
-
-		a:hover {
-			font-size: 1.3rem;
 		}
 
 		.text {
@@ -281,11 +277,11 @@
 
 	@media (min-width: 1400px) {
 		.hero {
-			width: 90%;
+			width: 70%;
 		}
 
 		.gallery {
-			width: 75%;
+			width: 70%;
 		}
 	}
 </style>

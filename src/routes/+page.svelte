@@ -5,8 +5,7 @@
 	import AnimatedIntro from '$lib/components/AnimatedIntro.svelte';
 	import Video from '$lib/components/Video.svelte';
 
-	$: console.log(Hero);
-	$: console.log('Hero section');
+	$: console.log('Home page');
 </script>
 
 <SEO

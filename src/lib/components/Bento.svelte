@@ -8,14 +8,15 @@
 		gsap.set(item, { autoAlpha: 0 });
 
 		const tl = gsap.timeline();
+
 		tl.to(
 			item,
 			{
 				autoAlpha: 1,
-				duration: 3.5,
+				duration: 7,
 				ease: 'none',
 				stagger: {
-					each: 1,
+					each: 2,
 					from: 'random'
 				}
 			},
@@ -56,7 +57,6 @@
 <style>
 	:root {
 		--space: 1.5rem;
-		--text: #f8fafc;
 		--surface-1: transparent;
 		--surface-2: #0f172a;
 		--surface-3: #1e293b;
@@ -90,10 +90,9 @@
 	}
 
 	h2 {
-		color: var(--text);
+		color: var(--white);
 		font-family: var(--mono);
-		font-size: clamp(1.5rem, 2vw, 3rem);
-		font-weight: 600;
+		font-size: clamp(1.75rem, 3vw, 3rem);
 		line-height: 1.1;
 		letter-spacing: 5px;
 	}
@@ -110,8 +109,8 @@
 		align-items: center;
 	}
 
-	.item:nth-of-type(1) {
-		padding-bottom: 0;
+	.item:first-child {
+		padding: 2.5rem 1rem 0 1rem;
 	}
 
 	.mb {

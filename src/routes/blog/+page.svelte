@@ -98,8 +98,6 @@
 		margin: 0 auto;
 		border-radius: 8px;
 		cursor: pointer;
-		font-size: 1.25rem;
-		font-weight: 900;
 		letter-spacing: 1px;
 	}
 

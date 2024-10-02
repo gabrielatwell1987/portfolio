@@ -15,18 +15,22 @@
 
 		gsap.set(['.h1-l', 'h1-r'], { y: 50 });
 
-		tl.from(h1L, {
-			opacity: 0,
-			x: -100,
-			duration: 7,
-			ease: 'power4.out'
-		});
+		tl.from(
+			h1L,
+			{
+				opacity: 0,
+				x: -100,
+				duration: 10,
+				ease: 'power4.out'
+			},
+			'+=3'
+		);
 		tl.from(
 			h1R,
 			{
 				opacity: 0,
 				x: 100,
-				duration: 7,
+				duration: 10,
 				ease: 'power4.out'
 			},
 			'<'
@@ -36,7 +40,7 @@
 			{
 				opacity: 0.5,
 				scale: 2,
-				duration: 9,
+				duration: 8,
 				ease: 'power4.out',
 				stagger: 0.25
 			},
@@ -60,7 +64,7 @@
 
 	.h1-l,
 	.h1-r {
-		color: var(--off-white);
+		color: var(--white);
 		font-family: var(--anta);
 		font-size: clamp(1.2rem, 5vw, 5rem);
 		z-index: 2;
