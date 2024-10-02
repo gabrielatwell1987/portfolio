@@ -27,10 +27,9 @@
 <ThreeCanvas />
 
 <section aria-label="hero">
-	<!-- hero section text and links -->
-	<h3 class="hero-title">Frontend Crafted Web Experiences</h3>
+	<h3>Frontend Crafted Web Experiences</h3>
 
-	<h4 class="summary left up">
+	<h4 class="left up">
 		I am a frontend developer who loves to create beautiful and functional websites. This portfolio
 		is a website that I built from scratch to showcase some projects that I created. I look forward
 		to hearing from you so we can discuss your goals for your online needs!
@@ -38,7 +37,7 @@
 
 	<a class="btn" role="button" href="/projects">Projects</a>
 
-	<h4 class="summary italic">projects I created..</h4>
+	<h4 class="italic">projects I created..</h4>
 	<br />
 </section>
 
@@ -56,18 +55,22 @@
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
-			font-size: 1.5rem;
+			font-size: clamp(2rem, 5vw, 4rem);
 			font-weight: 600;
 			font-family: var(--anta);
-			letter-spacing: 2px;
+			letter-spacing: 7px;
 		}
 
 		h4 {
 			color: var(--white);
-			font-weight: 400;
 			letter-spacing: 0.5px;
 			font-family: var(--lexend);
-			font-size: clamp(1rem, 1.5vw, 1.75rem);
+			font-size: clamp(1.25rem, 2vw, 1.75rem);
+			margin-inline: auto;
+			margin-bottom: 3%;
+			font-weight: 500;
+			width: 100%;
+			padding: 0 1.25rem;
 		}
 
 		a {
@@ -120,15 +123,6 @@
 			margin: 1rem auto;
 		}
 
-		.summary {
-			margin: 0 auto;
-			margin-bottom: 3%;
-			font-size: clamp(1rem, 1.5vw, 1.75rem);
-			font-weight: 500;
-			width: 100%;
-			padding: 0 1.25rem;
-		}
-
 		.italic {
 			font-style: italic;
 			font-family: var(--montserrat);
@@ -164,20 +158,6 @@
 		a:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
-
-		h3 {
-			font-size: 2.5rem;
-			letter-spacing: 7px;
-		}
-
-		h4 {
-			color: var(--white);
-		}
-
-		.summary {
-			width: 75%;
-			margin-top: 1rem;
-		}
 	}
 
 	@media screen and (min-width: 990px) {
@@ -185,6 +165,9 @@
 			text-align: center;
 			font-size: 2.5rem;
 			margin: 5rem 0;
+			top: 45%;
+			left: 50%;
+			transform: translate(-50%, -30%);
 		}
 
 		a {
@@ -197,37 +180,9 @@
 		.italic {
 			margin-top: -2rem;
 		}
-
-		.summary {
-			width: 50%;
-			letter-spacing: 3px;
-			margin-top: 1rem;
-		}
-
-		section {
-			top: 45%;
-			left: 50%;
-			transform: translate(-50%, -30%);
-		}
-
-		h3 {
-			font-size: 2.2rem;
-			letter-spacing: 10px;
-		}
 	}
 
 	@media (min-width: 1024px) {
-		h3 {
-			font-size: 2.25rem;
-			width: 90%;
-			margin-inline: auto;
-		}
-
-		.summary {
-			width: 80%;
-			margin-inline: auto;
-		}
-
 		section {
 			top: 40%;
 		}
@@ -239,19 +194,11 @@
 			font-size: 2rem;
 			align-content: center;
 		}
-
-		h3 {
-			font-size: 4rem;
-		}
 	}
 
 	@media screen and (min-width: 1400px) {
 		section {
 			top: 45%;
-		}
-
-		h3 {
-			font-size: 4rem;
 		}
 
 		a {

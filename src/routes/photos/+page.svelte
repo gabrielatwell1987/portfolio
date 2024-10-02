@@ -12,6 +12,7 @@
 
 	onMount(() => {
 		const main = document.querySelector('main');
+		const gabe = document.querySelectorAll('.gabe');
 
 		if (typeof window !== 'undefined') {
 			// lenis
@@ -26,7 +27,7 @@
 			gsap.ticker.lagSmoothing(0);
 		}
 
-		gsap.set('.gabe', { borderRadius: '5%' });
+		gsap.set(gabe, { borderRadius: '5%' });
 
 		// responsive animations
 		let mm = gsap.matchMedia();
@@ -34,11 +35,11 @@
 		mm.add('(max-width: 500px', () => {
 			gsap.registerPlugin(ScrollTrigger);
 
-			gsap.set('.gabe', { scale: 0.75 });
+			gsap.set(gabe, { scale: 0.75 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
-			tl.to('.gabe', {
+			tl.to(gabe, {
 				stagger: 0.5,
 				scale: 0.95,
 				duration: 5,
@@ -60,7 +61,7 @@
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
-			tl.to('.gabe', {
+			tl.to(gabe, {
 				stagger: 0.5,
 				scale: 0.75,
 				duration: 5,

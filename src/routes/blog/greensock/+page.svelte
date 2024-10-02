@@ -250,10 +250,11 @@
 
 	.link {
 		text-decoration: none;
-		font-size: 1.5rem;
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		font-weight: 700;
+		text-decoration: none;
 		color: var(--purple);
 		font-family: var(--orbitron);
-		font-weight: 799;
 	}
 
 	.link:hover {
@@ -337,10 +338,6 @@
 		.back {
 			margin-top: 5%;
 			width: var(--100);
-		}
-
-		a {
-			text-decoration: none;
 		}
 
 		.popover {

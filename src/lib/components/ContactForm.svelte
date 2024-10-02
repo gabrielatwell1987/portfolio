@@ -187,7 +187,7 @@
 			border: 5px solid var(--white);
 			border-image: linear-gradient(to left, var(--smoke), var(--smoke)) 1;
 			font-weight: bolder;
-			font-size: 2rem;
+			/* font-size: 2rem; */
 			padding: 2rem 5rem;
 			border-radius: 10px;
 			width: 90%;

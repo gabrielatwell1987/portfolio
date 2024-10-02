@@ -141,7 +141,6 @@
 
 					<div class="structure">
 						<Image src="/logos/file-structure.webp" alt="Sveltekit structure" />
-						<!-- <Image src="/logos/structure.webp" alt="Sveltekit structure" /> -->
 					</div>
 				</details>
 			</div>
@@ -199,7 +198,8 @@
 
 	.link {
 		text-decoration: none;
-		font-size: 1.5rem;
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		text-decoration: none;
 		color: var(--purple);
 		font-family: var(--orbitron);
 		font-weight: 700;
@@ -284,10 +284,6 @@
 		.back {
 			margin-top: 5%;
 			width: var(--100);
-		}
-
-		a {
-			text-decoration: none;
 		}
 
 		.structure {
