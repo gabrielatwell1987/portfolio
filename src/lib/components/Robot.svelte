@@ -5,7 +5,6 @@
 
 	onMount(() => {
 		const iFrame = document.querySelector('iframe');
-		console.log(iFrame);
 	});
 </script>
 
