@@ -70,7 +70,7 @@
 				scrollTrigger: {
 					trigger: 'main',
 					start: 'top bottom-=95%',
-					end: 'bottom top',
+					end: '+=300%',
 					stagger: -0.5,
 					scrub: 1
 				}
