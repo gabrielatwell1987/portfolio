@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
-	import Lenis from 'lenis';
+	// import Lenis from 'lenis';
 	import Title from '$lib/components/Title.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 
@@ -14,19 +14,19 @@
 
 		gsap.registerPlugin(ScrollTrigger);
 
-		let lenis;
+		// let lenis;
 
-		if (typeof window !== 'undefined') {
-			lenis = new Lenis();
+		// if (typeof window !== 'undefined') {
+		// 	lenis = new Lenis();
 
-			lenis.on('scroll', ScrollTrigger.update);
+		// 	lenis.on('scroll', ScrollTrigger.update);
 
-			gsap.ticker.add((time) => {
-				lenis.raf(time * 375);
-			});
+		// 	gsap.ticker.add((time) => {
+		// 		lenis.raf(time * 375);
+		// 	});
 
-			gsap.ticker.lagSmoothing(0);
-		}
+		// 	gsap.ticker.lagSmoothing(0);
+		// }
 
 		gsap.set(gabe, { borderRadius: '5%' });
 
