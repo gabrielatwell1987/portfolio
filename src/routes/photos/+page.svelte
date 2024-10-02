@@ -8,14 +8,15 @@
 	import Title from '$lib/components/Title.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 
-	let lenis;
-
 	onMount(() => {
 		const main = document.querySelector('main');
 		const gabe = document.querySelectorAll('.gabe');
 
+		gsap.registerPlugin(ScrollTrigger);
+
+		let lenis;
+
 		if (typeof window !== 'undefined') {
-			// lenis
 			lenis = new Lenis();
 
 			lenis.on('scroll', ScrollTrigger.update);
@@ -33,8 +34,6 @@
 		let mm = gsap.matchMedia();
 
 		mm.add('(max-width: 500px', () => {
-			gsap.registerPlugin(ScrollTrigger);
-
 			gsap.set(gabe, { scale: 0.75 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
@@ -56,8 +55,6 @@
 		});
 
 		mm.add('(min-width: 1000px', () => {
-			gsap.registerPlugin(ScrollTrigger);
-
 			gsap.set(main, { autoAlpha: 0 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
