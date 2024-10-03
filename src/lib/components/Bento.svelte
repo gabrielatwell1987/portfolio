@@ -48,7 +48,7 @@
 			</div>
 
 			<div class="item mb" style="--row: span 3">
-				<a href="/projects"><img src="/logos/cursive-atwell.webp" alt="atwell logo" /></a>
+				<a href="/projects"><img src="/logos/skull-logo.webp" alt="atwell logo" /></a>
 			</div>
 		</div>
 	</section>

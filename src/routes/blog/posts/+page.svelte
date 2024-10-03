@@ -51,7 +51,6 @@
 <SEO title="CSS & GSAP" description="Web techniques" keywords="animation techniques" />
 
 <section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
-	<!-- links to my markdown files -->
 	<div class="css">
 		<h1 class="title">CSS</h1>
 		<CSS aria-label="css" />
@@ -72,7 +71,6 @@
 		/>
 	</article>
 
-	<!-- back button -->
 	<a href="/blog"><Button title="Back" /></a>
 </section>
 
