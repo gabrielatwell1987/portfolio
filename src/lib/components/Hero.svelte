@@ -52,10 +52,9 @@
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
-			font-size: 1.5rem;
-			font-weight: 800;
+			font-size: clamp(1.5rem, 5vw, 4rem);
 			font-family: var(--anta);
-			letter-spacing: 2px;
+			letter-spacing: 7px;
 		}
 
 		h4 {
@@ -84,7 +83,7 @@
 			transition: 750ms;
 			outline: 3px solid currentColor;
 			outline-offset: -7px;
-			margin-top: 2rem;
+			margin-top: 3rem;
 			margin-bottom: 0.25rem;
 			padding: 1rem 1.75rem;
 			user-select: none;
@@ -165,15 +164,6 @@
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
-		h3 {
-			font-size: 2.5rem;
-			letter-spacing: 7px;
-		}
-
-		h4 {
-			color: var(--white);
-		}
-
 		.summary {
 			width: 85%;
 		}
@@ -207,16 +197,10 @@
 			width: 90%;
 			height: 100%;
 		}
-
-		h3 {
-			font-size: 2.2rem;
-			letter-spacing: 10px;
-		}
 	}
 
 	@media (min-width: 1024px) {
 		h3 {
-			font-size: 2.25rem;
 			width: 90%;
 			margin-inline: auto;
 		}
@@ -232,17 +216,9 @@
 			width: 20%;
 			font-size: 2rem;
 		}
-
-		h3 {
-			font-size: 4rem;
-		}
 	}
 
 	@media screen and (min-width: 1400px) {
-		h3 {
-			font-size: 4rem;
-		}
-
 		a {
 			width: 15%;
 		}
