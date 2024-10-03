@@ -29,7 +29,7 @@
 <section aria-label="hero">
 	<h3>Frontend Crafted Web Experiences</h3>
 
-	<h4 class="left up">
+	<h4 class="summary left up">
 		I am a frontend developer who loves to create beautiful and functional websites. This portfolio
 		is a website that I built from scratch to showcase some projects that I created. I look forward
 		to hearing from you so we can discuss your goals for your online needs!
@@ -130,6 +130,15 @@
 			color: var(--white);
 		}
 
+		.summary {
+			margin: 0 auto;
+			font-size: clamp(1rem, 1.5vw, 1.75rem);
+			font-weight: 500;
+			width: 100%;
+			padding: 0 1.25rem;
+			margin-bottom: 3%;
+		}
+
 		.left {
 			text-align: left;
 		}
@@ -158,6 +167,10 @@
 		a:hover {
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
+
+		.summary {
+			width: 85%;
+		}
 	}
 
 	@media screen and (min-width: 990px) {
@@ -178,13 +191,24 @@
 		}
 
 		.italic {
-			margin-top: -2rem;
+			margin-top: 1rem;
+		}
+
+		.summary {
+			width: 50%;
+			letter-spacing: 3px;
+			margin-top: 1rem;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		section {
 			top: 40%;
+		}
+
+		.summary {
+			width: 80%;
+			margin-inline: auto;
 		}
 	}
 
