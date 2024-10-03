@@ -19,7 +19,7 @@
 
 <style>
 	.card-container {
-		width: 600px;
+		width: 300px;
 		height: 400px;
 		perspective: 1000px;
 		margin: -0.5rem 0 5% 0;

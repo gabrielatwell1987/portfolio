@@ -119,7 +119,7 @@
 				<CardFlip
 					src="/logos/sparrow.webp"
 					alt="Atwell sparrow logo"
-					src2="/logos/blue-atwell.webp"
+					src2="/logos/skull-glass.webp"
 					alt2="a blue A logo"
 				/>
 			</div>
