@@ -55,8 +55,7 @@
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
-			font-size: clamp(2rem, 5vw, 4rem);
-			font-weight: 600;
+			font-size: clamp(1.5rem, 5vw, 4rem);
 			font-family: var(--anta);
 			letter-spacing: 7px;
 		}
@@ -92,7 +91,7 @@
 			transition: 750ms;
 			outline: 3px solid currentColor;
 			outline-offset: -7px;
-			margin-top: 2rem;
+			margin-top: 3rem;
 			margin-bottom: 0.25rem;
 			padding: 1rem 1.75rem;
 			user-select: none;
