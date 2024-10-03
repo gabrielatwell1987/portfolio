@@ -11,7 +11,7 @@
 		const h1R = document.querySelector('.h1-r');
 		const spanMiddle = document.querySelector('.span');
 
-		const tl = gsap.timeline();
+		const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
 		gsap.set(['.h1-l', 'h1-r'], { y: 50 });
 
@@ -20,8 +20,7 @@
 			{
 				opacity: 0,
 				x: -100,
-				duration: 10,
-				ease: 'power4.out'
+				duration: 10
 			},
 			'+=3'
 		);
@@ -30,8 +29,7 @@
 			{
 				opacity: 0,
 				x: 100,
-				duration: 10,
-				ease: 'power4.out'
+				duration: 10
 			},
 			'<'
 		).fromTo(
@@ -41,10 +39,10 @@
 				opacity: 0.5,
 				scale: 2,
 				duration: 8,
-				ease: 'power4.out',
+				ease: 'circ',
 				stagger: 0.25
 			},
-			'<'
+			'-=8'
 		);
 	});
 </script>
