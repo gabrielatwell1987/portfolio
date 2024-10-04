@@ -14,6 +14,7 @@
 			gsap.to(modal, {
 				autoAlpha: 1,
 				duration: 2,
+				width: '100%',
 				ease: 'power2.out'
 			});
 
@@ -82,7 +83,6 @@
 		article {
 			width: 100%;
 			border-radius: 1rem;
-			scale: 0.9;
 		}
 
 		header {
@@ -98,7 +98,7 @@
 
 		.modal h4 {
 			font-family: var(--anta);
-			font-size: clamp(1.5rem, 2vw, 3rem);
+			font-size: clamp(1.2rem, 2vw, 3rem);
 			font-weight: 600;
 			color: var(--dark-pale);
 			margin: 2rem 0 -0.75rem 0;
@@ -106,7 +106,7 @@
 
 		.modal__p {
 			font-family: var(--lexend);
-			font-size: clamp(1.15rem, 2vw, 2rem);
+			font-size: clamp(1.05rem, 2vw, 2rem);
 			font-weight: 200;
 			color: var(--white);
 			background: transparent;
