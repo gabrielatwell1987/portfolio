@@ -61,14 +61,12 @@
 		.open-button,
 		.close-button {
 			display: block;
-			font-size: 1.2rem;
+			font-size: clamp(1.1rem, 2vw, 1.5rem);
 			font-weight: 800;
 			background-color: transparent;
 			color: var(--white);
 			width: 4%;
 			height: 2%;
-			margin-left: 43%;
-			margin-top: 5%;
 			outline: none;
 			border: 2px solid var(--white);
 			border-radius: 15px;
@@ -78,11 +76,13 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			margin-inline: auto;
 		}
 
 		article {
 			width: 100%;
 			border-radius: 1rem;
+			scale: 0.9;
 		}
 
 		header {
@@ -97,18 +97,17 @@
 		}
 
 		.modal h4 {
-			font-size: clamp(1.2rem, 2vw, 3rem);
-			font-weight: 600;
 			font-family: var(--anta);
-			color: var(--yellow);
-			margin: 2rem 0 0.5rem 0;
-			mix-blend-mode: hard-light;
+			font-size: clamp(1.5rem, 2vw, 3rem);
+			font-weight: 600;
+			color: var(--dark-pale);
+			margin: 2rem 0 -0.75rem 0;
 		}
 
 		.modal__p {
 			font-family: var(--lexend);
+			font-size: clamp(1.15rem, 2vw, 2rem);
 			font-weight: 200;
-			font-size: clamp(1.1rem, 1vw, 1.75rem);
 			color: var(--white);
 			background: transparent;
 			padding: 0.2rem;
@@ -119,16 +118,6 @@
 		.open-button,
 		.close-button {
 			padding: 1.5rem 2rem;
-		}
-
-		.open-button {
-			margin-left: 30%;
-		}
-
-		.close-button {
-			margin-left: 44%;
-			margin-right: 2rem;
-			padding: 0.75rem 1.25rem;
 		}
 
 		.modal {
@@ -153,7 +142,7 @@
 	}
 
 	@media screen and (min-width: 1024px) {
-		h4 {
+		.modal h4 {
 			line-height: 0.95;
 		}
 
@@ -164,51 +153,14 @@
 			padding: 1rem;
 		}
 
-		.modal h4 {
-			color: var(--yellow);
-		}
-
 		.open-button {
-			margin-left: 25%;
-			scale: 1;
-			margin: 0 0 5% 25%;
-		}
-
-		.close-button {
-			color: var(--white);
-			border: 2px solid var(--white);
-			scale: 1;
-		}
-
-		.open-button i,
-		.close-button i {
-			font-size: 1.5rem;
+			margin-bottom: 5%;
 		}
 	}
 
 	@media screen and (min-width: 1100px) {
 		.modal h4 {
-			color: var(--yellow);
-		}
-
-		.modal .modal__p {
-			color: var(--white);
-		}
-
-		.open-button {
-			margin-left: 30%;
-		}
-
-		.close-button {
-			color: var(--white);
-			border: 2px solid var(--white);
-		}
-	}
-
-	@media screen and (min-width: 1350px) {
-		.open-button,
-		.close-button {
-			padding: 2rem 2.5rem;
+			padding: 0.5rem;
 		}
 	}
 
