@@ -20,6 +20,7 @@
 	--purple: hsla(227, 98%, 68%, 0.6);
 	--yellow: hsla(46, 93%, 42%, 0.75);
 	--pale: hsl(39, 87%, 75%);
+	--dark-pale: hsl(39, 87%, 35%);
 	--success: hsla(120, 95%, 26%, 1);
 	--warning: hsla(56, 93%, 43%, 1);
 	--fail: hsla(0, 96%, 31%, 1);
