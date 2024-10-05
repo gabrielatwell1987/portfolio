@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<button class="send" type="submit">Send</button>
+<button class="send" type="submit">Send <i class="fa-solid fa-angle-right" /></button>
 
 <style>
 	@media (min-width: 300px) {
@@ -17,7 +17,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 50%;
+			width: 55%;
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
@@ -40,7 +40,7 @@
 
 	@media (min-width: 768px) {
 		.send {
-			width: 20%;
+			width: 23%;
 			margin-inline: auto;
 			letter-spacing: 0;
 		}
@@ -48,7 +48,7 @@
 
 	@media (min-width: 1350px) {
 		.send {
-			width: 15%;
+			width: 17%;
 			margin-inline: auto;
 			letter-spacing: 0;
 		}
