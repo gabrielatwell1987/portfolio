@@ -69,7 +69,7 @@
 
 	@media (max-width: 500px) {
 		main {
-			min-height: 80vh;
+			min-height: 70vh;
 		}
 	}
 </style>
