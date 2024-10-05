@@ -20,6 +20,20 @@
 			copyPrompt.style.marginLeft = '2%';
 			copyPrompt.style.opacity = '0.25';
 
+			const mediaQuery = window.matchMedia('(max-width: 768px)');
+			function handleMediaQueryChange(e) {
+				if (e.matches) {
+					// For screens 768px or less
+					copyPrompt.style.marginTop = '3%';
+					copyPrompt.style.marginLeft = '5%';
+				} else {
+					copyPrompt.style.marginTop = '1%';
+					copyPrompt.style.marginLeft = '2%';
+				}
+			}
+			handleMediaQueryChange(mediaQuery);
+			mediaQuery.addListener(handleMediaQueryChange);
+
 			const copyPromptText = document.createElement('p');
 			copyPromptText.innerHTML = 'Copy';
 			copyPromptText.style.fontWeight = '700';
