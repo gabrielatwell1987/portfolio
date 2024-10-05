@@ -7,16 +7,18 @@
 
 <SEO title="Success!" description="Successfully Sent" keywords="success, contact success" />
 
-<section>
-	<div class="image">
-		<Image src="/logos/success.webp" alt="Atwell" />
-	</div>
+<main>
+	<section>
+		<div class="image">
+			<Image src="/logos/success.webp" alt="Atwell" />
+		</div>
 
-	<h1>Success!</h1>
+		<h1>Success!</h1>
 
-	<p><i>Your message has been sent.</i></p>
-	<p><b>Thank you for reaching out.</b></p>
-</section>
+		<p><i>Your message has been sent.</i></p>
+		<p><b>Thank you for reaching out.</b></p>
+	</section>
+</main>
 
 <style>
 	@media (min-width: 300px) {
@@ -25,13 +27,15 @@
 			--5: 5%;
 		}
 
+		main {
+			min-height: 70vh;
+		}
+
 		section {
 			width: var(--100);
 			border: none;
 			padding: 1rem;
-			margin-top: var(--5);
-			margin-bottom: var(--5);
-			margin-inline: auto;
+			margin: 5% auto;
 			text-align: center;
 			border: 1px solid var(--white);
 			border-radius: 10px;
@@ -60,6 +64,12 @@
 			padding: 2rem;
 			width: 50%;
 			margin-bottom: 10%;
+		}
+	}
+
+	@media (max-width: 500px) {
+		main {
+			min-height: 60vh;
 		}
 	}
 </style>
