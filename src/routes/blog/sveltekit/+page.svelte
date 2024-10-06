@@ -370,7 +370,6 @@
 
 		.popover {
 			display: block;
-			margin-bottom: -55%;
 		}
 	}
 

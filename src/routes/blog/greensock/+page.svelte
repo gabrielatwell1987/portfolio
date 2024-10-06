@@ -422,7 +422,7 @@
 
 		.popover {
 			display: block;
-			margin-top: 25%;
+			/* margin-top: 25%; */
 		}
 
 		.centerDetail {
@@ -435,19 +435,23 @@
 			font-size: 1.75rem;
 		}
 
+		main {
+			margin-top: 20%;
+		}
+
 		.center {
 			margin-bottom: 5%;
 		}
 
-		.popover {
+		/* .popover {
 			margin-top: 20%;
-		}
+		} */
 	}
 
 	@media (min-width: 1400px) {
-		.popover {
+		/* .popover {
 			margin-top: 15%;
-		}
+		} */
 
 		.title {
 			margin-bottom: -35%;

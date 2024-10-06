@@ -83,7 +83,7 @@
 		background-repeat: round;
 		all: unset;
 		position: relative;
-		top: -17rem;
+		top: -10rem;
 		width: 240px;
 		height: 240px;
 		display: flex;
@@ -144,7 +144,7 @@
 
 	@media (max-width: 1024px) {
 		.dropdown-container {
-			top: -15rem;
+			top: 5rem;
 		}
 	}
 </style>
