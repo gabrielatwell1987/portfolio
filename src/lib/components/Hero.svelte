@@ -209,10 +209,6 @@
 			width: 80%;
 			margin-inline: auto;
 		}
-
-		h3 {
-			text-wrap: balance;
-		}
 	}
 
 	@media screen and (min-width: 1100px) {

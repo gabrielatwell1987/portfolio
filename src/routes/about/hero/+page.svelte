@@ -147,10 +147,6 @@
 		a {
 			width: 30%;
 		}
-
-		/* .btn {
-			padding: 2rem 1rem;
-		} */
 	}
 
 	@media screen and (min-width: 740px) {
@@ -212,10 +208,6 @@
 		.summary {
 			width: 80%;
 			margin-inline: auto;
-		}
-
-		h3 {
-			text-wrap: balance;
 		}
 	}
 
