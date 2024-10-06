@@ -220,7 +220,7 @@
 
 	@media screen and (min-width: 1400px) {
 		a {
-			width: 25%;
+			width: 20%;
 		}
 	}
 
