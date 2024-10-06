@@ -34,7 +34,7 @@
 }
 
 :root ::-webkit-scrollbar {
-	width: 12.5px;
+	width: 15px;
 	height: 10px;
 	background-color: var(--lightblack);
 	border-radius: 5px;
@@ -42,7 +42,7 @@
 }
 :root ::-webkit-scrollbar-thumb {
 	background-color: var(--purple);
-	border-radius: 5px;
+	border-radius: 2px;
 	box-shadow: 0 0 10px var(--blackest);
 }
 :root ::-webkit-scrollbar-thumb:hover {
