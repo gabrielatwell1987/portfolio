@@ -374,6 +374,10 @@
 	}
 
 	@media (min-width: 1024px) {
+		section {
+			margin-top: -55%;
+		}
+
 		summary {
 			font-size: 1.75rem;
 		}
@@ -385,9 +389,17 @@
 		.center {
 			margin-bottom: 5%;
 		}
+
+		.popover {
+			margin-top: -10%;
+		}
 	}
 
 	@media (min-width: 1400px) {
+		section {
+			margin-top: -35%;
+		}
+
 		.popover {
 			margin-bottom: -30%;
 		}
