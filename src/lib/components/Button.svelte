@@ -42,52 +42,52 @@
 
 	@media (min-width: 500px) {
 		button {
-			width: 35%;
+			width: 40%;
 		}
 	}
 
 	@media (min-width: 700px) {
 		button {
-			width: 30%;
+			width: 40%;
 			letter-spacing: 2px;
 		}
 	}
 
 	@media (min-width: 990px) {
 		button {
-			width: 30%;
+			width: 40%;
 			margin: 3rem auto;
 		}
 	}
 
 	@media (min-width: 1024px) {
 		button {
-			width: 35%;
+			width: 40%;
 			margin: 3rem auto;
 		}
 	}
 
 	@media screen and (min-width: 1200px) {
 		button {
-			width: 30%;
+			width: 40%;
 		}
 	}
 
 	@media screen and (min-width: 1300px) {
 		button {
-			width: 30%;
+			width: 40%;
 		}
 	}
 
 	@media screen and (min-width: 1400px) {
 		button {
-			width: 30%;
+			width: 40%;
 		}
 	}
 
 	@media screen and (min-width: 1500px) {
 		button {
-			width: 20%;
+			width: 30%;
 		}
 	}
 
