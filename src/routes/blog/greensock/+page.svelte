@@ -374,6 +374,10 @@
 		.centerDetail {
 			margin-top: 75%;
 		}
+
+		.title {
+			margin-bottom: -55%;
+		}
 	}
 
 	@media (min-width: 720px) {
@@ -391,6 +395,10 @@
 
 		.margin {
 			margin-left: 3rem;
+		}
+
+		.title {
+			margin-bottom: -45%;
 		}
 	}
 
@@ -439,6 +447,10 @@
 	@media (min-width: 1400px) {
 		.popover {
 			margin-top: 15%;
+		}
+
+		.title {
+			margin-bottom: -35%;
 		}
 	}
 

@@ -143,7 +143,7 @@
 
 	@media screen and (min-width: 500px) {
 		a {
-			width: 30%;
+			width: 40%;
 		}
 	}
 
@@ -155,7 +155,7 @@
 
 		a {
 			font-size: 1.25rem;
-			width: 25%;
+			width: 45%;
 			font-size: 1rem;
 			letter-spacing: 2px;
 		}
@@ -177,7 +177,7 @@
 		}
 
 		a {
-			width: 35%;
+			width: 40%;
 			font-size: 1.5rem;
 			margin: 3rem auto;
 			padding: 1.5rem 2.5rem;
@@ -209,18 +209,22 @@
 			width: 80%;
 			margin-inline: auto;
 		}
+
+		h3 {
+			text-wrap: balance;
+		}
 	}
 
 	@media screen and (min-width: 1100px) {
 		a {
-			width: 20%;
+			width: 25%;
 			font-size: 2rem;
 		}
 	}
 
 	@media screen and (min-width: 1400px) {
 		a {
-			width: 15%;
+			width: 25%;
 		}
 	}
 

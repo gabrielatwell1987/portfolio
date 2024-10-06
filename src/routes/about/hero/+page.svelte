@@ -147,6 +147,10 @@
 		a {
 			width: 30%;
 		}
+
+		/* .btn {
+			padding: 2rem 1rem;
+		} */
 	}
 
 	@media screen and (min-width: 740px) {
@@ -209,11 +213,16 @@
 			width: 80%;
 			margin-inline: auto;
 		}
+
+		h3 {
+			text-wrap: balance;
+		}
 	}
 
 	@media screen and (min-width: 1100px) {
 		a {
-			width: 20%;
+			width: 21%;
+			padding: 2.2rem 1rem;
 			font-size: 2rem;
 			align-content: center;
 		}
@@ -225,7 +234,7 @@
 		}
 
 		a {
-			width: 15%;
+			width: 20%;
 		}
 	}
 

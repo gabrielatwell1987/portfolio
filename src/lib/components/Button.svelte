@@ -42,7 +42,7 @@
 
 	@media (min-width: 500px) {
 		button {
-			width: 40%;
+			width: 45%;
 		}
 	}
 

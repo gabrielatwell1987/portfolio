@@ -24,13 +24,13 @@
 
 <style>
 	.size {
-		font-size: 5rem;
+		font-size: 3.5rem;
 		color: var(--blue);
 		font-weight: 900;
 	}
 
 	.size:hover {
-		font-size: 5rem;
+		font-size: 3.5rem;
 		color: var(--yellow);
 		mix-blend-mode: hard-light;
 		font-weight: 900;
