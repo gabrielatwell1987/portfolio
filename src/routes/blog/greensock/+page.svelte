@@ -49,169 +49,173 @@
 <br /><br /><br /><br /><br /><br /><br />
 
 <section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} class="main">
-	<!-- title -->
-	<h1 class="title">GSAP</h1>
+	<div class="seperate">
+		<!-- title -->
+		<h1 class="title">GSAP</h1>
 
-	<main>
-		<!-- popover -->
-		<article class="popover">
-			<Popover text="animate the web" />
-		</article>
+		<main>
+			<!-- popover -->
+			<article class="popover">
+				<Popover text="animate the web" />
+			</article>
 
-		<div class="centerDetail">
-			<details name="gsap" on:toggle={resetAnimation}>
-				<!-- svelte-ignore a11y-no-redundant-roles -->
-				<summary role="button" class="outline contrast spacing"
-					><span class="margin"><b>What is GSAP?</b></span></summary
-				>
-				<p class="text">
-					Greensock Animation Platform (GSAP) is a javascript library that allows you to animate
-					your website. I really like animating the websites that I've built from scratch and GSAP
-					makes it so easy to accomplish! The syntax is really simple which makes no learning curve
-					at all. Other than that, it doesn't take up a lot of space to encorporate these
-					techniques, which makes your web pages 100,000 times faster.
-					<br /><br />
-					Usually, websites use a mixture of GSAP and three js. GSAP makes animating in three js simple,
-					so you can actually edit 3D stuff. What's great is that three js is essentially an easier webGL,
-					so it makes animating with GSAP really simple!
-				</p>
-			</details>
-
-			<details name="gsap" on:toggle={resetAnimation}>
-				<!-- svelte-ignore a11y-no-redundant-roles -->
-				<summary role="button" class="outline contrast spacing"
-					><span class="margin"><b>How do you install GSAP?</b></span></summary
-				>
-				<p class="text">
-					In the project, you have to <code class="code">npm install gsap</code> (if you have
-					Node.js installed) or you can use the CDN (content delivery network). In sveltekit, you
-					have to put all of your GSAP code in an <code class="code">onMount</code> function that
-					you have to import. This is because onMount is displayed once on initial load. If you were
-					to use a regular script tag, it would not work. All of the designs that are animated on
-					this website are all from GSAP. I tend to think that these animations make the website
-					look a lot better than a static website. GSAP is a great tool to use for any web
-					developer. I highly recommend it!
-					<br /><br />
-					You can install GSAP on any javascript framework you want to use! It works on Vue, React, Svelte,
-					and Angular. GSAP uses integer values to edit the DOM, for the most part.. It's also good for
-					vanilla JavaScript.
-				</p>
-			</details>
-
-			<details name="gsap" on:toggle={resetAnimation}>
-				<!-- svelte-ignore a11y-no-redundant-roles -->
-				<summary role="button" class="outline contrast spacing"
-					><span class="margin"><b>The syntax</b></span></summary
-				>
-				<p class="text">
-					It is quite simple to use GSAP. You can use <code class="code"
-						>gsap.to("element", &lbrace; variables &rbrace;)</code
+			<div class="centerDetail">
+				<details name="gsap" on:toggle={resetAnimation}>
+					<!-- svelte-ignore a11y-no-redundant-roles -->
+					<summary role="button" class="outline contrast spacing"
+						><span class="margin"><b>What is GSAP?</b></span></summary
 					>
-					to animate TO a state. You can use
-					<code class="code">gsap.from("element", &lbrace; variables &rbrace;)</code>
-					to animate FROM a state. You can use
-					<code class="code"
-						>gsap.fromTo("element", &lbrace; variables &rbrace;, &lbrace; variables &rbrace;)</code
+					<p class="text">
+						Greensock Animation Platform (GSAP) is a javascript library that allows you to animate
+						your website. I really like animating the websites that I've built from scratch and GSAP
+						makes it so easy to accomplish! The syntax is really simple which makes no learning
+						curve at all. Other than that, it doesn't take up a lot of space to encorporate these
+						techniques, which makes your web pages 100,000 times faster.
+						<br /><br />
+						Usually, websites use a mixture of GSAP and three js. GSAP makes animating in three js simple,
+						so you can actually edit 3D stuff. What's great is that three js is essentially an easier
+						webGL, so it makes animating with GSAP really simple!
+					</p>
+				</details>
+
+				<details name="gsap" on:toggle={resetAnimation}>
+					<!-- svelte-ignore a11y-no-redundant-roles -->
+					<summary role="button" class="outline contrast spacing"
+						><span class="margin"><b>How do you install GSAP?</b></span></summary
 					>
-					to animate FROM a state TO another state.
-					<br /><br />
-					The complete syntax is as follows:
-					<code class="code">gsap.to("element", &lbrace; variables &rbrace;)</code>. You can use the
-					following variables: duration, delay, ease, stagger, and onComplete. The duration is how
-					long the animation will last. The delay is how long the animation will wait before
-					starting. The ease is the easing function that you want to use. The stagger is how long
-					the animation will wait before starting. The onComplete is the function that will run
-					after the animation is complete.
-				</p>
-			</details>
+					<p class="text">
+						In the project, you have to <code class="code">npm install gsap</code> (if you have
+						Node.js installed) or you can use the CDN (content delivery network). In sveltekit, you
+						have to put all of your GSAP code in an <code class="code">onMount</code> function that
+						you have to import. This is because onMount is displayed once on initial load. If you
+						were to use a regular script tag, it would not work. All of the designs that are
+						animated on this website are all from GSAP. I tend to think that these animations make
+						the website look a lot better than a static website. GSAP is a great tool to use for any
+						web developer. I highly recommend it!
+						<br /><br />
+						You can install GSAP on any javascript framework you want to use! It works on Vue, React,
+						Svelte, and Angular. GSAP uses integer values to edit the DOM, for the most part.. It's also
+						good for vanilla JavaScript.
+					</p>
+				</details>
 
-			<details name="gsap" on:toggle={resetAnimation}>
-				<!-- svelte-ignore a11y-no-redundant-roles -->
-				<summary role="button" class="outline contrast spacing"
-					><span class="margin"><b>Variables</b></span></summary
-				>
-				<p class="text">
-					<Heading title="x, y, z" /> Control the position of an element along the x, y, and z axes.<br
-					/><br />
-					<Heading title="rotation" /> Rotates an element in degrees.<br /><br />
-					<Heading title="scale" /> Scales an element uniformly on all axes.<br /><br />
-					<Heading title="scaleX, scaleY, scaleZ" /> Scale an element along the x, y, and z axes individually.<br
-					/><br />
-					<Heading title="opacity" /> Controls the transparency of an element.<br /><br />
-					<Heading title="width, height" /> Animates the width and height of an element.<br /><br />
-					<Heading title="color, backgroundColor" /> Changes the color or background color of an element.<br
-					/><br />
-					<Heading title="borderRadius" /> Animates the border-radius property of an element.<br
-					/><br />
-					<Heading title="skewX, skewY" /> Skews an element along the x and y axes.<br /><br />
-					<Heading title="rotationX, rotationY, rotationZ" /> Rotate an element in 3D space along the
-					x, y, and z axes.<br /><br />
-					<Heading title="duration" /> Specifies the duration of the animation.<br /><br />
-					<Heading title="delay" /> Delays the start of the animation.<br /><br />
-					<Heading title="repeat" /> Specifies how many times an animation should repeat.<br /><br
-					/>
-					<Heading title="yoyo" /> When set to true, makes the animation reverse back to the starting
-					point after completing.<br /><br />
-					<Heading title="ease" /> Controls the easing of the animation (e.g: ease: 'power1.inOut').<br
-					/><br />
-					<Heading title="onStart" /> Callback function that fires when the animation starts.<br
-					/><br />
-					<Heading title="onComplete" /> Callback function that fires when the animation completes.<br
-					/><br />
-					<Heading title="onUpdate" /> Callback function that fires on each frame during the animation.<br
-					/>
-					<Heading title="onRepeat" /> Callback function that fires each time the animation repeats.<br
-					/><br />
-					<Heading title="paused" /> If true, the animation starts in a paused state.<br /><br />
-					<Heading title="stagger" /> Staggers the start times of animations in an array or NodeList.<br
-					/><br />
-					<Heading title="scrub" /> Syncs animations with scroll position (used with ScrollTrigger).<br
-					/><br />
-					<Heading title="overwrite" /> Controls how existing tweens are overwritten (auto, none, all).<br
-					/><br />
-					<Heading title="immediateRender" /> Renders the tween immediately upon creation.<br /><br
-					/>
-					<Heading title="keyframes" /> Defines multiple animation states within a single tween.<br
-					/><br />
-					<Heading title="lazy" /> Defers rendering to reduce startup performance cost.<br /><br />
-					<Heading title="id" /> Assigns a unique identifier to the tween for later reference.<br
-					/><br />
-					<Heading title="autoAlpha" /> Combines opacity and visibility (hides an element when opacity
-					reaches 0).<br /><br />
-					<Heading title="kill" /> Kills the tween or timeline.<br /><br />
-					<Heading title="timeScale" /> Adjusts the speed of the animation.<br /><br />
-					<Heading title="progress" /> Sets or gets the progress of the animation.<br /><br />
-					<Heading title="reverse" /> Reverses the animation.<br /><br />
-					<Heading title="seek" /> Moves the playhead to a specific time or label.<br /><br />
-					<Heading title="repeatDelay" /> Sets the delay between repeats.<br /><br />
-					<Heading title="endTime" /> Gets the end time of the animation.<br /><br />
-				</p>
-			</details>
-		</div>
+				<details name="gsap" on:toggle={resetAnimation}>
+					<!-- svelte-ignore a11y-no-redundant-roles -->
+					<summary role="button" class="outline contrast spacing"
+						><span class="margin"><b>The syntax</b></span></summary
+					>
+					<p class="text">
+						It is quite simple to use GSAP. You can use <code class="code"
+							>gsap.to("element", &lbrace; variables &rbrace;)</code
+						>
+						to animate TO a state. You can use
+						<code class="code">gsap.from("element", &lbrace; variables &rbrace;)</code>
+						to animate FROM a state. You can use
+						<code class="code"
+							>gsap.fromTo("element", &lbrace; variables &rbrace;, &lbrace; variables &rbrace;)</code
+						>
+						to animate FROM a state TO another state.
+						<br /><br />
+						The complete syntax is as follows:
+						<code class="code">gsap.to("element", &lbrace; variables &rbrace;)</code>. You can use
+						the following variables: duration, delay, ease, stagger, and onComplete. The duration is
+						how long the animation will last. The delay is how long the animation will wait before
+						starting. The ease is the easing function that you want to use. The stagger is how long
+						the animation will wait before starting. The onComplete is the function that will run
+						after the animation is complete.
+					</p>
+				</details>
 
-		<!-- video -->
-		<div class="iframe">
-			<Iframe
-				src="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
-				title="YouTube video player"
-			/>
-		</div>
+				<details name="gsap" on:toggle={resetAnimation}>
+					<!-- svelte-ignore a11y-no-redundant-roles -->
+					<summary role="button" class="outline contrast spacing"
+						><span class="margin"><b>Variables</b></span></summary
+					>
+					<p class="text">
+						<Heading title="x, y, z" /> Control the position of an element along the x, y, and z axes.<br
+						/><br />
+						<Heading title="rotation" /> Rotates an element in degrees.<br /><br />
+						<Heading title="scale" /> Scales an element uniformly on all axes.<br /><br />
+						<Heading title="scaleX, scaleY, scaleZ" /> Scale an element along the x, y, and z axes individually.<br
+						/><br />
+						<Heading title="opacity" /> Controls the transparency of an element.<br /><br />
+						<Heading title="width, height" /> Animates the width and height of an element.<br /><br
+						/>
+						<Heading title="color, backgroundColor" /> Changes the color or background color of an element.<br
+						/><br />
+						<Heading title="borderRadius" /> Animates the border-radius property of an element.<br
+						/><br />
+						<Heading title="skewX, skewY" /> Skews an element along the x and y axes.<br /><br />
+						<Heading title="rotationX, rotationY, rotationZ" /> Rotate an element in 3D space along the
+						x, y, and z axes.<br /><br />
+						<Heading title="duration" /> Specifies the duration of the animation.<br /><br />
+						<Heading title="delay" /> Delays the start of the animation.<br /><br />
+						<Heading title="repeat" /> Specifies how many times an animation should repeat.<br /><br
+						/>
+						<Heading title="yoyo" /> When set to true, makes the animation reverse back to the starting
+						point after completing.<br /><br />
+						<Heading title="ease" /> Controls the easing of the animation (e.g: ease: 'power1.inOut').<br
+						/><br />
+						<Heading title="onStart" /> Callback function that fires when the animation starts.<br
+						/><br />
+						<Heading title="onComplete" /> Callback function that fires when the animation completes.<br
+						/><br />
+						<Heading title="onUpdate" /> Callback function that fires on each frame during the animation.<br
+						/>
+						<Heading title="onRepeat" /> Callback function that fires each time the animation repeats.<br
+						/><br />
+						<Heading title="paused" /> If true, the animation starts in a paused state.<br /><br />
+						<Heading title="stagger" /> Staggers the start times of animations in an array or NodeList.<br
+						/><br />
+						<Heading title="scrub" /> Syncs animations with scroll position (used with ScrollTrigger).<br
+						/><br />
+						<Heading title="overwrite" /> Controls how existing tweens are overwritten (auto, none, all).<br
+						/><br />
+						<Heading title="immediateRender" /> Renders the tween immediately upon creation.<br
+						/><br />
+						<Heading title="keyframes" /> Defines multiple animation states within a single tween.<br
+						/><br />
+						<Heading title="lazy" /> Defers rendering to reduce startup performance cost.<br /><br
+						/>
+						<Heading title="id" /> Assigns a unique identifier to the tween for later reference.<br
+						/><br />
+						<Heading title="autoAlpha" /> Combines opacity and visibility (hides an element when opacity
+						reaches 0).<br /><br />
+						<Heading title="kill" /> Kills the tween or timeline.<br /><br />
+						<Heading title="timeScale" /> Adjusts the speed of the animation.<br /><br />
+						<Heading title="progress" /> Sets or gets the progress of the animation.<br /><br />
+						<Heading title="reverse" /> Reverses the animation.<br /><br />
+						<Heading title="seek" /> Moves the playhead to a specific time or label.<br /><br />
+						<Heading title="repeatDelay" /> Sets the delay between repeats.<br /><br />
+						<Heading title="endTime" /> Gets the end time of the animation.<br /><br />
+					</p>
+				</details>
+			</div>
 
-		<!-- learn section -->
-		<h3 class="learn">Learn more about GSAP</h3>
-		<p class="center">
-			If you would like to know more about <a
-				class="link"
-				href="https://greensock.com"
-				aria-label="greensock">greensock</a
-			>, click the link!
-		</p>
+			<!-- video -->
+			<div class="iframe">
+				<Iframe
+					src="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
+					title="YouTube video player"
+				/>
+			</div>
 
-		<!-- back button -->
-		<div class="back">
-			<a href="/blog"><Button title="Back" /></a>
-		</div>
-	</main>
+			<!-- learn section -->
+			<h3 class="learn">Learn more about GSAP</h3>
+			<p class="center">
+				If you would like to know more about <a
+					class="link"
+					href="https://greensock.com"
+					aria-label="greensock">greensock</a
+				>, click the link!
+			</p>
+
+			<!-- back button -->
+			<div class="back">
+				<a href="/blog"><Button title="Back" /></a>
+			</div>
+		</main>
+	</div>
 </section>
 <!-- footer spacing -->
 <br />
@@ -294,6 +298,12 @@
 		align-items: flex-start;
 		flex-direction: column;
 		margin-top: -40%;
+	}
+
+	.seperate {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	@media (min-width: 300px) {
