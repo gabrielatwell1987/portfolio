@@ -50,13 +50,11 @@
 
 <section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} class="main">
 	<div class="seperate">
-		<!-- title -->
 		<h1 class="title">GSAP</h1>
 
 		<main>
-			<!-- popover -->
 			<article class="popover">
-				<Popover text="animate the web" />
+				<Popover text="animation!" />
 			</article>
 
 			<div class="centerDetail">
@@ -192,7 +190,6 @@
 				</details>
 			</div>
 
-			<!-- video -->
 			<div class="iframe">
 				<Iframe
 					src="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
@@ -200,7 +197,6 @@
 				/>
 			</div>
 
-			<!-- learn section -->
 			<h3 class="learn">Learn more about GSAP</h3>
 			<p class="center">
 				If you would like to know more about <a
@@ -210,7 +206,6 @@
 				>, click the link!
 			</p>
 
-			<!-- back button -->
 			<div class="back">
 				<a href="/blog"><Button title="Back" /></a>
 			</div>
@@ -435,7 +430,7 @@
 		}
 
 		.centerDetail {
-			margin-top: -30%;
+			margin-top: -50%;
 		}
 	}
 
@@ -445,7 +440,7 @@
 		}
 
 		main {
-			margin-top: 20%;
+			margin-top: 15%;
 		}
 
 		.center {
@@ -464,6 +459,10 @@
 
 		.title {
 			margin-bottom: -35%;
+		}
+
+		.centerDetail {
+			margin-top: -30%;
 		}
 	}
 
