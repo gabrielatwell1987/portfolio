@@ -12,15 +12,17 @@
 	// animations
 	onMount(() => {
 		const title = document.querySelector('.title');
+		const popover = document.querySelector('.popover');
 
-		gsap.set(title, { autoAlpha: 0, y: 35 });
+		gsap.set(title, { autoAlpha: 0, y: -100 });
+		gsap.set(popover, { y: 75 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.to(title, { autoAlpha: 1, duration: 2 }, 0);
+		tl.to(title, { autoAlpha: 1, duration: 2, ease: 'back.out(4)' }, 0);
 	});
 
-	$: console.log('Sveltekit page');
+	$: console.log('Greensock page');
 
 	// details animation
 	function resetAnimation(event) {
@@ -41,20 +43,20 @@
 	}
 </script>
 
-<SEO title="Sveltekit" description="Svelte, Sveltekit" keywords="sveltekit, ssr" />
+<SEO title="Sveltekit" description="web framework" keywords="sveltekit" />
+
+<!-- spacing -->
+<br /><br /><br /><br /><br /><br /><br />
 
 <section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} class="main">
-	<!-- title -->
-	<h1 class="title">SvelteKit</h1>
+	<div class="seperate">
+		<h1 class="title">Sveltekit</h1>
 
-	<main>
-		<!-- popover -->
-		<article class="popover">
-			<Popover text="easy to use" />
-		</article>
+		<main>
+			<article class="popover">
+				<Popover text="the fundamentals" />
+			</article>
 
-		<!-- content -->
-		<section>
 			<div class="centerDetail">
 				<details name="sveltekit" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
@@ -145,7 +147,6 @@
 				</details>
 			</div>
 
-			<!-- video -->
 			<div class="iframe">
 				<Iframe
 					src="https://www.youtube.com/embed/MoGkX4RvZ38?si=xV4--8APNCqD7Ihn"
@@ -153,7 +154,6 @@
 				/>
 			</div>
 
-			<!-- learn section -->
 			<h3 class="learn">Learn more about Sveltekit</h3>
 			<p class="center">
 				If you would like to know more about <a
@@ -163,50 +163,24 @@
 				>, click the link!
 			</p>
 
-			<!-- back button -->
 			<div class="back">
 				<a href="/blog"><Button title="Back" /></a>
 			</div>
-		</section>
-	</main>
+		</main>
+	</div>
 </section>
+<!-- footer spacing -->
+<br />
 
 <style>
 	:root {
 		--100: 100%;
 	}
 
-	.main {
-		width: 90%;
-	}
-
 	main {
 		width: 75%;
+		border-radius: 10px;
 		margin: 0 auto;
-	}
-
-	p {
-		text-align: left;
-		margin: 0 0 2rem 0;
-		padding: 0.5em 2em;
-		padding-top: 2.5em;
-		line-height: 2.5;
-		letter-spacing: 1px;
-		font-family: var(--montserrat);
-		width: var(--100);
-	}
-
-	.link {
-		text-decoration: none;
-		font-size: clamp(1.5rem, 3vw, 2rem);
-		text-decoration: none;
-		color: var(--purple);
-		font-family: var(--orbitron);
-		font-weight: 700;
-	}
-
-	.link:hover {
-		text-decoration: underline;
 	}
 
 	details {
@@ -220,22 +194,46 @@
 		animation: open 0.5s ease-in-out;
 	}
 
-	.learn {
-		text-align: center;
-		margin: 5rem 0 -0.5rem 0;
-		color: var(--sky);
-		font-family: var(--anta);
-		font-size: clamp(1.5rem, 3vw, 2.5rem);
+	p {
+		text-align: left;
+		margin-bottom: 0 0 2rem 0;
+		padding: 0.5em 2em;
+		padding-top: 2.5em;
+		line-height: 2.5;
+		font-family: var(--montserrat);
+		width: var(--100);
+	}
+
+	.link {
+		text-decoration: none;
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		font-weight: 700;
+		text-decoration: none;
+		color: var(--purple);
+		font-family: var(--orbitron);
+	}
+
+	.link:hover {
+		text-decoration: underline;
+		color: #fff;
 	}
 
 	.title {
 		font-size: clamp(3.75rem, 8vw, 10rem);
 		font-weight: 800;
-		margin: 2rem 0 6rem 0;
+		margin: 3rem 0 -27rem 0;
 		text-align: center;
 		color: var(--smoke);
 		font-family: var(--anta);
 		text-shadow: 0px 0px 25px var(--blue);
+	}
+
+	.learn {
+		margin: 5rem 0 -1rem 0;
+		text-align: center;
+		font-family: var(--anta);
+		color: var(--sky);
+		font-size: clamp(1.5rem, 3vw, 2.5rem);
 	}
 
 	.text {
@@ -246,6 +244,20 @@
 		background: transparent;
 	}
 
+	.centerDetail {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-direction: column;
+		margin-top: -40%;
+	}
+
+	.seperate {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
 	@media (min-width: 300px) {
 		.main {
 			margin: 0 auto;
@@ -254,7 +266,7 @@
 
 		details {
 			min-width: 5rem;
-			width: 15.5rem;
+			width: 17rem;
 			margin: 0 auto;
 		}
 
@@ -268,7 +280,7 @@
 		.text {
 			min-width: 20rem;
 			margin: 0 -4.75rem;
-			margin-left: -3.25rem;
+			margin-left: -2.5rem;
 			font-family: var(--lexend);
 			line-height: 1.5;
 			color: var(--white);
@@ -281,14 +293,13 @@
 			line-height: 1.5;
 		}
 
+		code {
+			font-family: var(--mono);
+		}
+
 		.back {
 			margin-top: 5%;
 			width: var(--100);
-		}
-
-		.structure {
-			margin: 0;
-			border-radius: 12px;
 		}
 
 		.popover {
@@ -297,25 +308,33 @@
 
 		.iframe {
 			margin: 0 auto;
-			margin-left: -23%;
+			margin-left: -15%;
 		}
 
 		.centerDetail {
-			margin-top: 70%;
+			margin-top: 170%;
 		}
 
 		.margin {
 			margin-left: 0;
 		}
+
+		.structure {
+			margin: 1rem 0;
+			border-radius: 12px;
+			width: var(--100);
+			display: grid;
+			place-items: center;
+		}
 	}
 
 	@media (min-width: 500px) {
-		details {
-			width: 15rem;
-		}
-
 		.text {
 			margin-left: -2.5rem;
+		}
+
+		details {
+			width: 15rem;
 		}
 
 		.iframe {
@@ -323,7 +342,11 @@
 		}
 
 		.centerDetail {
-			margin-top: 0;
+			margin-top: 75%;
+		}
+
+		.title {
+			margin-bottom: -55%;
 		}
 	}
 
@@ -332,16 +355,20 @@
 			margin-top: -3rem;
 		}
 
-		.main {
+		.back {
 			width: var(--100);
 		}
 
 		.centerDetail {
-			margin-top: 0;
+			margin-top: 60%;
 		}
 
 		.margin {
 			margin-left: 3rem;
+		}
+
+		.title {
+			margin-bottom: -45%;
 		}
 	}
 
@@ -350,12 +377,12 @@
 			letter-spacing: 2px;
 		}
 
-		details {
-			width: var(--100);
-		}
-
 		summary {
 			font-size: 1.5rem;
+		}
+
+		details {
+			width: var(--100);
 		}
 
 		.back {
@@ -363,27 +390,28 @@
 			margin-inline: auto;
 		}
 
-		.structure {
-			width: var(--100);
-			margin: 0 43%;
-		}
-
 		.popover {
 			display: block;
 		}
+
+		.centerDetail {
+			margin-top: -30%;
+		}
+
+		/* .structure {
+			width: var(--100);
+			display: grid;
+			place-items: center;
+		} */
 	}
 
 	@media (min-width: 1024px) {
-		section {
-			margin-top: -55%;
-		}
-
 		summary {
 			font-size: 1.75rem;
 		}
 
-		.text {
-			line-height: 1.65;
+		main {
+			margin-top: 20%;
 		}
 
 		.center {
@@ -391,17 +419,17 @@
 		}
 
 		.popover {
-			margin-top: -10%;
+			margin-top: 40%;
 		}
 	}
 
 	@media (min-width: 1400px) {
-		section {
-			margin-top: -35%;
+		.popover {
+			margin-top: 15%;
 		}
 
-		.popover {
-			margin-bottom: -30%;
+		.title {
+			margin-bottom: -35%;
 		}
 	}
 
