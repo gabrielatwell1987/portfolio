@@ -136,7 +136,7 @@
 		justify-content: center;
 		align-items: center;
 		font-size: clamp(0.9rem, 1vw, 1.25rem);
-		height: 1rem;
+		height: 0.2rem;
 	}
 
 	.goo-container .menu {

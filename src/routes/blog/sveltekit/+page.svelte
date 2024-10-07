@@ -54,7 +54,7 @@
 
 		<main>
 			<article class="popover">
-				<Popover text="the fundamentals" />
+				<Popover text="fundamentals" />
 			</article>
 
 			<div class="centerDetail">
@@ -395,14 +395,8 @@
 		}
 
 		.centerDetail {
-			margin-top: -30%;
+			margin-top: -50%;
 		}
-
-		/* .structure {
-			width: var(--100);
-			display: grid;
-			place-items: center;
-		} */
 	}
 
 	@media (min-width: 1024px) {
@@ -411,7 +405,7 @@
 		}
 
 		main {
-			margin-top: 20%;
+			margin-top: 15%;
 		}
 
 		.center {
@@ -430,6 +424,10 @@
 
 		.title {
 			margin-bottom: -35%;
+		}
+
+		.centerDetail {
+			margin-top: -30%;
 		}
 	}
 
