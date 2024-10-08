@@ -44,11 +44,12 @@
 			</div>
 
 			<div class="item" style="--col: 2; --row: 1">
-				<a href="/photos/robot"><img src="/logos/robot.webp" alt="a robot" /></a>
+				<a href="/photos/robot"><img src="/logos/robot.webp" alt="a robot" loading="lazy" /></a>
 			</div>
 
 			<div class="item mb" style="--row: span 3">
-				<a href="/projects"><img src="/logos/skull-logo.webp" alt="atwell logo" /></a>
+				<a href="/projects"><img src="/logos/skull-logo.webp" alt="atwell logo" loading="lazy" /></a
+				>
 			</div>
 		</div>
 	</section>

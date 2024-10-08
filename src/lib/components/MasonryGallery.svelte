@@ -65,17 +65,17 @@
 	<Title title="Photos of me" />
 
 	<div class="image-container">
-		<img class="gabe" src="photos/autumn.webp" alt="" />
-		<img class="gabe" src="photos/gabe2.webp" alt="" />
-		<img class="gabe" src="photos/gabe4.webp" alt="" />
-		<img class="gabe" src="photos/gabe3.webp" alt="" />
-		<img class="gabe" src="photos/gabe7.webp" alt="" />
-		<img class="gabe" src="photos/gabe5.webp" alt="" />
-		<img class="gabe" src="photos/gabe6.webp" alt="" />
-		<img class="gabe" src="photos/gabe8.webp" alt="" />
-		<img class="gabe" src="photos/wtf.webp" alt="" />
-		<img class="gabe" src="photos/gabe10.webp" alt="" />
-		<img class="gabe" src="photos/wtf2.webp" alt="" />
+		<img class="gabe" src="photos/autumn.webp" alt="" loading="lazy" />
+		<img class="gabe" src="photos/gabe2.webp" alt="" loading="lazy" />
+		<img class="gabe" src="photos/gabe4.webp" alt="" loading="lazy" />
+		<img class="gabe" src="photos/gabe3.webp" alt="" loading="lazy" />
+		<img class="gabe" src="photos/gabe7.webp" alt="" loading="lazy" />
+		<img class="gabe" src="photos/gabe5.webp" alt="" loading="lazy" />
+		<img class="gabe" src="photos/gabe6.webp" alt="" loading="lazy" />
+		<img class="gabe" src="photos/gabe8.webp" alt="" loading="lazy" />
+		<img class="gabe" src="photos/wtf.webp" alt="" loading="lazy" />
+		<img class="gabe" src="photos/gabe10.webp" alt="" loading="lazy" />
+		<img class="gabe" src="photos/wtf2.webp" alt="" loading="lazy" />
 	</div>
 </section>
 

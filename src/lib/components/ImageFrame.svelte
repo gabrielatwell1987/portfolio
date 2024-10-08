@@ -36,7 +36,7 @@
 </script>
 
 <div class="image-container" bind:this={imageContainer}>
-	<img {src} {alt} />
+	<img {src} {alt} loading="lazy" />
 	<h1>{text}</h1>
 </div>
 

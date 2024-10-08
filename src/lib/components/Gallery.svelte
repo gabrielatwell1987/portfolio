@@ -34,7 +34,7 @@
 				<h1 aria-label={number}>{number}</h1>
 			</div>
 
-			<img src="https://picsum.photos/600/600?random={id}" alt="Random" />
+			<img src="https://picsum.photos/600/600?random={id}" alt="Random" loading="lazy" />
 		</button>
 	{/each}
 </section>

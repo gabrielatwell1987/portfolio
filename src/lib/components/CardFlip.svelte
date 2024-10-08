@@ -8,11 +8,11 @@
 <main class="card-container">
 	<section class="card">
 		<article class="card-front">
-			<img {src} {alt} />
+			<img {src} {alt} loading="lazy" />
 		</article>
 
 		<article class="card-back">
-			<img src={src2} alt={alt2} />
+			<img src={src2} alt={alt2} loading="lazy" />
 		</article>
 	</section>
 </main>

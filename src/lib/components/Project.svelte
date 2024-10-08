@@ -8,7 +8,7 @@
 <h3 class="link name">{title}</h3>
 
 <a class="link" href={url} target="_blank">
-	<img class="img" src={img} alt={title} width="400px" height="475px" />
+	<img class="img" src={img} alt={title} width="400px" height="475px" loading="lazy" />
 
 	<span class="hover-text">{description}</span>
 </a>
