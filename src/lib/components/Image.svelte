@@ -8,7 +8,6 @@
 <style>
 	img {
 		max-width: 100%;
-		width: 100%;
 		height: auto;
 		object-fit: cover;
 		border-radius: 2.5%;
