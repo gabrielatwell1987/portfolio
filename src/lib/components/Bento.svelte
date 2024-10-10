@@ -3,24 +3,22 @@
 	import gsap from 'gsap';
 
 	onMount(() => {
-		const item = document.querySelectorAll('.item');
-
-		gsap.set(item, { autoAlpha: 0 });
+		const bento = document.querySelectorAll('.item');
 
 		const tl = gsap.timeline();
 
-		tl.to(
-			item,
+		tl.from(
+			bento,
 			{
-				autoAlpha: 1,
-				duration: 7,
+				autoAlpha: 0,
+				duration: 5,
 				ease: 'none',
 				stagger: {
 					each: 2,
 					from: 'random'
 				}
 			},
-			'+=3'
+			'+=2.5'
 		);
 
 		const main = () => {
