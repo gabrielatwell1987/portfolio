@@ -78,7 +78,7 @@
 	<Project
 		title="horizontal scroller"
 		img="/projects/scroller.webp"
-		url="https://scrollerness.vercel.app"
+		url="https://scrollernessly.vercel.app"
 		description="Just scroll down"
 	/>
 
