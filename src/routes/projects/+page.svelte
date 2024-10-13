@@ -90,6 +90,13 @@
 	/>
 
 	<Project
+		title="nasa api"
+		img="/projects/nasa.webp"
+		url="https://nasaapi-theta.vercel.app"
+		description="a nasa api project"
+	/>
+
+	<Project
 		title="password generator"
 		img="/projects/pw-generator.webp"
 		url="https://pw-generator-ebon.vercel.app/"
