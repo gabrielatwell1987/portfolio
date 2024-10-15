@@ -278,6 +278,7 @@
 		.gabe-logo {
 			display: block;
 			margin-left: 75%;
+			scale: 1.1;
 		}
 
 		.toggle {
