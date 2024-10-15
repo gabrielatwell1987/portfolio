@@ -25,20 +25,31 @@
 	});
 </script>
 
-<main class="animated-text">
+<!-- <main class="animated-text">
 	<span class="animated-letter"> a </span>
 	<span class="animated-letter"> t </span>
 	<span class="animated-letter"> w </span>
 	<span class="animated-letter"> e </span>
 	<span class="animated-letter"> l </span>
 	<span class="animated-letter"> l </span>
-</main>
+</main> -->
+
+<h1 class="animated-text">
+	<span class="animated-letter"> a </span>
+	<span class="animated-letter"> b </span>
+	<span class="animated-letter"> o </span>
+	<span class="animated-letter"> u </span>
+	<span class="animated-letter"> t </span>
+	<span class="animated-letter" />
+	<span class="animated-letter"> m </span>
+	<span class="animated-letter"> e </span>
+</h1>
 
 <style>
 	.animated-text {
 		font-family: var(--mono);
-		font-size: clamp(2.5rem, 9vw, 20rem);
-		font-weight: 600;
+		font-size: clamp(2rem, 9vw, 20rem);
+		font-weight: 400;
 		color: var(--sky);
 		mix-blend-mode: lighten;
 		text-align: center;

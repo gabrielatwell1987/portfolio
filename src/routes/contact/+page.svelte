@@ -10,7 +10,7 @@
 <SEO title="Message Me" description="Contact Gabriel Atwell" keywords="contact me, contact gabe" />
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
-	<h2 class="legend">Message Me</h2>
+	<h1 class="legend">Message Me</h1>
 
 	<section class="contactForm">
 		<ContactForm />
