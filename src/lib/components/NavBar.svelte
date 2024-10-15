@@ -58,6 +58,7 @@
 	.desktop {
 		display: block;
 		font-family: var(--orbitron);
+		margin-left: clamp(100px, 30%, 200px);
 	}
 
 	nav {
@@ -142,10 +143,7 @@
 		}
 
 		.toggle {
-			position: absolute;
-			top: -2%;
-			left: 3%;
-			margin-left: 10%;
+			margin-top: 1rem;
 		}
 	}
 
@@ -159,8 +157,8 @@
 			flex-direction: row;
 			border: none;
 			background-color: transparent;
-			margin-left: 30%;
-			scale: 1.3;
+			margin-left: 10%;
+			scale: 1.1;
 			text-wrap: nowrap;
 		}
 
@@ -179,9 +177,6 @@
 		}
 
 		nav {
-			display: flex;
-			justify-content: space-around;
-			align-items: center;
 			height: 5em;
 			width: var(--100);
 			scale: 0.75;
@@ -189,7 +184,7 @@
 
 		.header-logos {
 			display: block;
-			margin-left: 2%;
+			margin-left: 15%;
 		}
 
 		.gabe-logo {
@@ -214,27 +209,11 @@
 			text-shadow: 2px 2px 1px var(--blacker);
 			transition: all 0.35s ease-in-out;
 		}
-
-		.toggle {
-			top: 15%;
-			left: 12%;
-		}
 	}
 
 	@media (min-width: 800px) {
-		.toggle {
-			top: 15%;
-			left: 12%;
-		}
-
 		nav {
 			scale: 0.75;
-		}
-	}
-
-	@media (min-width: 900px) {
-		.desktop {
-			margin-left: 30%;
 		}
 	}
 
@@ -247,13 +226,9 @@
 		.desktop {
 			display: block;
 			width: var(--100);
-			margin-left: 15%;
 		}
 
 		nav {
-			display: flex;
-			justify-content: space-evenly;
-			align-items: center;
 			height: 5em;
 			width: var(--100);
 			margin-top: 1rem;
@@ -270,11 +245,6 @@
 			display: block;
 			margin-left: 5%;
 		}
-
-		.toggle {
-			top: 10%;
-			left: 18%;
-		}
 	}
 
 	@media (min-width: 1024px) {
@@ -284,15 +254,13 @@
 		}
 
 		.desktop {
-			margin-left: 20%;
 			width: var(--100);
 			line-height: 2;
-			scale: 1.3;
+			scale: 1;
 			text-wrap: nowrap;
 		}
 
 		.toggle {
-			left: 22%;
 			z-index: 10;
 		}
 
@@ -303,8 +271,8 @@
 
 	@media (min-width: 1100px) {
 		.desktop {
-			margin-left: 25%;
 			line-height: 1.5;
+			margin-left: 0;
 		}
 
 		.gabe-logo {
@@ -313,64 +281,32 @@
 		}
 
 		.toggle {
-			left: 26%;
-		}
-	}
-
-	@media (min-width: 1200px) {
-		.toggle {
-			left: 24%;
+			margin-left: 10%;
 		}
 	}
 
 	@media (min-width: 1300px) {
-		.desktop {
-			margin-left: 30%;
-		}
-
 		.gabe-logo {
 			display: block;
 			margin-left: 75%;
 		}
-
-		.toggle {
-			top: 10%;
-			left: 26%;
-		}
 	}
 
 	@media (min-width: 1400px) {
-		.desktop {
-			margin-left: 20%;
-		}
-
 		.gabe-logo {
 			display: block;
 			margin-left: 175%;
 		}
 
-		.toggle {
-			left: 21%;
-		}
-
 		nav {
-			scale: 0.9;
+			/* scale: 0.9; */
 			margin-right: 0;
 		}
 	}
 
 	@media (min-width: 1500px) {
-		.desktop {
-			margin-left: 25%;
-		}
-
 		.gabe-logo {
 			margin-left: 150%;
-		}
-
-		.toggle {
-			left: 22%;
-			top: 15%;
 		}
 
 		.nav-link {
@@ -382,16 +318,12 @@
 
 	@media (min-width: 1600px) {
 		.desktop {
-			margin: 0.85% 0 0 29%;
+			margin: 0.85% 0 0 17%;
+			scale: 1.3;
 		}
 
 		.gabe-logo {
 			margin-left: 150%;
-		}
-
-		.toggle {
-			left: 20.5%;
-			top: 15%;
 		}
 
 		.nav-link {
