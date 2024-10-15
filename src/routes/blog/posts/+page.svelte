@@ -78,6 +78,7 @@
 	<article class="card">
 		<Card2
 			src="/photos/ornate1.webp"
+			href="/projects"
 			alt="old school"
 			h1="gabeAtwell"
 			p="Trying to make the internet look better.. one website at a time."
