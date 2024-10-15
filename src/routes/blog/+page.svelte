@@ -32,7 +32,7 @@
 <SEO title="Blog Topics" description="a blog about web techniques" keywords="blog topics" />
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
-	<h2 class="title">t o p i c s</h2>
+	<h1 class="title">t o p i c s</h1>
 
 	<article>
 		<section aria-label="icons">
