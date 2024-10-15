@@ -1,6 +1,6 @@
 <script>
 	import Hero from '$lib/components/Hero.svelte';
-	// import HeroLogo from '$lib/components/HeroLogo.svelte';
+	import HeroLogo from '$lib/components/HeroLogo.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import AnimatedIntro from '$lib/components/AnimatedIntro.svelte';
 	// import Video from '$lib/components/Video.svelte';
@@ -14,7 +14,7 @@
 	keywords="gabriel atwell, gabe's portfolio"
 />
 
-<!-- <HeroLogo /> -->
+<HeroLogo />
 
 <AnimatedIntro text="Do you need a " span="website?" />
 

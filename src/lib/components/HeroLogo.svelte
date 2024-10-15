@@ -1,14 +1,14 @@
 <script>
-	import { onMount } from 'svelte';
-	import { VFX } from '@vfx-js/core';
+	// import { onMount } from 'svelte';
+	// import { VFX } from '@vfx-js/core';
 	import Image from '$lib/components/Image.svelte';
 
-	onMount(() => {
-		const img = document.querySelector('img');
-		const vfx = new VFX();
+	// onMount(() => {
+	// 	const img = document.querySelector('img');
+	// 	const vfx = new VFX();
 
-		vfx.add(img, { shader: 'rgbShift' });
-	});
+	// 	vfx.add(img, { shader: 'rgbShift' });
+	// });
 </script>
 
 <main>
