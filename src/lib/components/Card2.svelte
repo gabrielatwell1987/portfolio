@@ -76,7 +76,7 @@
 	}
 
 	.card-title {
-		color: var(--sky);
+		color: var(--white);
 		font-size: clamp(1.5rem, 2vw, 2rem);
 		font-weight: 800;
 		letter-spacing: 2px;
@@ -88,7 +88,7 @@
 		color: var(--off-white);
 		font-size: clamp(1rem, 1vw, 1.2rem);
 		font-weight: 300;
-		margin-bottom: 1rem;
+		margin-bottom: 0.5rem;
 	}
 
 	.card-button {
@@ -111,7 +111,7 @@
 		transition: 750ms;
 		outline: 3px solid currentColor;
 		outline-offset: -7px;
-		padding: 1.5rem 2rem;
+		padding: 2rem;
 		user-select: none;
 		margin-bottom: 3rem;
 	}
