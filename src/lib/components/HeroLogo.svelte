@@ -14,7 +14,8 @@
 <main>
 	<section class="hero-logo">
 		<a href="/about/hero">
-			<Image src="/logos/atwellUI.webp" alt="atwell ui" />
+			<Image src="/logos/atwellUIsans.webp" alt="atwell ui" />
+			<!-- <Image src="/logos/atwellUI.webp" alt="atwell ui" /> -->
 		</a>
 	</section>
 </main>
@@ -45,23 +46,5 @@
 		text-decoration: none;
 		cursor: pointer;
 		background: transparent;
-	}
-
-	@media (max-width: 300px) {
-		main {
-			height: 7vh;
-		}
-	}
-
-	@media (max-width: 720px) {
-		main {
-			height: 20vh;
-		}
-	}
-
-	@media (max-width: 990px) {
-		main {
-			height: 30vh;
-		}
 	}
 </style>
