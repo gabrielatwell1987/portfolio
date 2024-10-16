@@ -108,7 +108,7 @@
 			flex-direction: column;
 			margin-inline: auto;
 			margin-top: -20%;
-			margin-bottom: 40%;
+			margin-bottom: 50%;
 		}
 
 		.skills {
@@ -189,7 +189,7 @@
 	@media (min-width: 1500px) {
 		.border {
 			margin-top: 20%;
-			margin-bottom: 15%;
+			margin-bottom: 25%;
 		}
 	}
 </style>
