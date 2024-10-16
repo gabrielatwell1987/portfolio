@@ -87,8 +87,6 @@
 <style>
 	@media (min-width: 300px) {
 		.border {
-			width: 15%;
-			margin: 10% auto 5% auto;
 			display: none;
 		}
 
@@ -100,13 +98,17 @@
 
 	@media (min-width: 990px) {
 		.border {
-			display: block;
+			/* display: block; */
 			width: 15rem;
+			height: 10vh;
 			border: none;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
+			margin-inline: auto;
+			margin-top: -20%;
+			margin-bottom: 40%;
 		}
 
 		.skills {
@@ -160,33 +162,34 @@
 		}
 	}
 
-	@media (min-width: 1020px) {
-		.border {
-			margin-top: -50%;
-		}
-	}
-
 	@media (min-width: 1100px) {
 		.border {
-			margin-top: -40%;
+			margin-top: 5%;
 		}
 	}
 
 	@media (min-width: 1200px) {
 		.border {
-			margin-top: -30%;
+			margin-top: 15%;
 		}
 	}
 
 	@media (min-width: 1300px) {
 		.border {
-			margin-top: 10%;
+			margin-top: 13%;
 		}
 	}
 
 	@media (min-width: 1400px) {
 		.border {
-			margin-top: 7%;
+			margin-top: 20%;
+		}
+	}
+
+	@media (min-width: 1500px) {
+		.border {
+			margin-top: 20%;
+			margin-bottom: 15%;
 		}
 	}
 </style>

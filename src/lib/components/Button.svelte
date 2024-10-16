@@ -87,7 +87,7 @@
 
 	@media screen and (min-width: 1500px) {
 		button {
-			width: 30%;
+			width: 35%;
 		}
 	}
 
