@@ -68,6 +68,7 @@
 		height: 5em;
 		width: var(--100);
 		position: relative;
+		margin-inline: auto;
 	}
 
 	.header-logos {
@@ -179,7 +180,6 @@
 		nav {
 			height: 5em;
 			width: var(--100);
-			scale: 0.75;
 		}
 
 		.header-logos {
@@ -208,12 +208,6 @@
 			height: 3rem;
 			text-shadow: 2px 2px 1px var(--blacker);
 			transition: all 0.35s ease-in-out;
-		}
-	}
-
-	@media (min-width: 800px) {
-		nav {
-			scale: 0.75;
 		}
 	}
 
@@ -265,7 +259,7 @@
 		}
 
 		nav {
-			margin-right: 7.5%;
+			margin-right: 2rem;
 		}
 	}
 
@@ -300,7 +294,6 @@
 		}
 
 		nav {
-			/* scale: 0.9; */
 			margin-right: 0;
 		}
 	}
@@ -319,8 +312,8 @@
 
 	@media (min-width: 1600px) {
 		.desktop {
-			margin: 0.85% 0 0 17%;
-			scale: 1.3;
+			margin-left: 15em;
+			scale: 1.2;
 		}
 
 		.gabe-logo {

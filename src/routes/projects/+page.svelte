@@ -16,23 +16,24 @@
 		gsap.registerPlugin(Draggable);
 
 		const ascii = document.querySelector('.ascii');
+		const designs = document.querySelector('.designs');
 
-		Draggable.create(ascii, {
+		Draggable.create(designs, {
 			type: 'top',
 			bounds: window,
 			edgeResistance: 0.65,
 			onPress: function () {
-				gsap.to(ascii, { scale: 1.1 });
+				gsap.to(designs, { scale: 1.1 });
 			},
 			onRelease: function () {
-				gsap.to(ascii, { scale: 1 });
+				gsap.to(designs, { scale: 1 });
 			}
 		});
 
 		// GSAP
 		gsap.set('.link', { autoAlpha: 0, scale: 0 });
 		gsap.set('.content', { autoAlpha: 0 });
-		gsap.set('.ascii', { yPercent: 25 });
+		gsap.set(ascii, { yPercent: 25 });
 
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 

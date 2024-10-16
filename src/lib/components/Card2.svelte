@@ -37,6 +37,7 @@
 		border: 1px solid rgba(255, 255, 255, 0.3);
 		user-select: none;
 		border-radius: 20px;
+		padding: 1rem;
 	}
 
 	.swiper-slide img {
@@ -80,15 +81,15 @@
 		font-size: clamp(1.5rem, 2vw, 2rem);
 		font-weight: 800;
 		letter-spacing: 2px;
-		margin-top: 8%;
-		margin-bottom: 0.5rem;
+		margin-top: 10%;
+		margin-bottom: -0.25rem;
 	}
 
 	.card-description {
 		color: var(--off-white);
 		font-size: clamp(1rem, 1vw, 1.2rem);
 		font-weight: 300;
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.05rem;
 	}
 
 	.card-button {
@@ -148,18 +149,20 @@
 
 		.card-title {
 			font-size: clamp(1.25rem, 2vw, 1.5rem);
+			margin-bottom: 0.25rem;
 			margin-top: 15%;
 		}
 
 		.card-description {
 			font-size: clamp(1rem, 1vw, 1.2rem);
+			margin-bottom: 0.5rem;
 		}
 
 		.card-button {
 			font-size: clamp(1rem, 1vw, 1.2rem);
 			font-weight: 500;
-			padding: 1rem 1.5rem;
-			margin-top: -3%;
+			padding: 1.25rem;
+			margin-top: -1%;
 		}
 
 		.overlay {
