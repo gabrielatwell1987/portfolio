@@ -82,6 +82,7 @@
 		font-weight: 800;
 		text-align: center;
 		margin-top: 5%;
+		font-family: var(--orbitron);
 	}
 
 	.gs:not(:hover),
