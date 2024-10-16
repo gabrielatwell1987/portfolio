@@ -62,7 +62,11 @@
 	$: console.log('Web animations page');
 </script>
 
-<SEO title="CSS & GSAP" description="Web techniques" keywords="animation techniques" />
+<SEO
+	title="CSS & GSAP"
+	description="Web techniques"
+	keywords="animation techniques, web techniques for animation"
+/>
 
 <section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<div class="css">

@@ -61,7 +61,7 @@
 	$: console.log('About page');
 </script>
 
-<SEO title="About Me" description="About Gabriel Atwell" keywords="about me, about gabe" />
+<SEO title="About Me" description="About Gabriel Atwell" keywords="about gabe, about gabriel" />
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} aria-label="bio">
 	<section>

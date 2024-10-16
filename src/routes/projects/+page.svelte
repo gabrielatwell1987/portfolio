@@ -49,7 +49,7 @@
 <SEO
 	title="Projects I've Built"
 	description="Gabriel Atwell's Projects"
-	keywords="projects, work"
+	keywords="gabe atwell's projects, gabriel atwell's projects, gabe's work, gabriel's work"
 />
 
 <div class="title">

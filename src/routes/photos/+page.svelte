@@ -81,7 +81,11 @@
 	$: console.log('Photos of Me');
 </script>
 
-<SEO title="Photos of Me" description="Gabriel Atwell's Photos" keywords="photos of gabe" />
+<SEO
+	title="Photos of Me"
+	description="Gabriel Atwell's Photos"
+	keywords="photos of gabe, photos of gabriel"
+/>
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<Title title="images" />
