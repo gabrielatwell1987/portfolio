@@ -43,7 +43,11 @@
 	}
 </script>
 
-<SEO title="Greensock Animation Platform" description="web animations" keywords="GSAP, animation" />
+<SEO
+	title="Greensock Animation Platform"
+	description="web animations"
+	keywords="GSAP, animation, greensock how-to"
+/>
 
 <!-- spacing -->
 <br /><br /><br /><br /><br /><br /><br />

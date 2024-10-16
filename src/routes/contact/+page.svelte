@@ -7,7 +7,11 @@
 	$: console.log('Contact page');
 </script>
 
-<SEO title="Message Me" description="Contact Gabriel Atwell" keywords="contact me, contact gabe" />
+<SEO
+	title="Message Me"
+	description="Contact Gabriel Atwell"
+	keywords="contact gabriel atwell, contact gabe"
+/>
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<h1 class="legend">Message Me</h1>
