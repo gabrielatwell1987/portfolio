@@ -117,7 +117,7 @@
 	@media screen and (min-width: 720px) {
 		.open-button,
 		.close-button {
-			padding: 1.5rem 2rem;
+			padding: 2rem;
 		}
 
 		.modal {
@@ -155,6 +155,10 @@
 
 		.open-button {
 			margin-bottom: 5%;
+		}
+
+		.close-button {
+			padding: 2rem 3rem;
 		}
 	}
 

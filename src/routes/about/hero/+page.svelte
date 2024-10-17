@@ -8,7 +8,7 @@
 		const heroTitle = document.querySelector('.hero-title');
 		const up = document.querySelector('.up');
 
-		gsap.to('main', { autoAlpha: 1, duration: 2.5, ease: 'sine.in' });
+		gsap.from('main', { autoAlpha: 0, duration: 2.5, ease: 'sine.in' });
 
 		const textTl = gsap.timeline({ defaults: { ease: 'power1.inOut' } }, { paused: true });
 		textTl.to(heroTitle, { yPercent: -20 }).from(up, { y: 10 }, 0);
@@ -16,18 +16,21 @@
 		up.addEventListener('mouseleave', () => textTl.reverse());
 	});
 
-	$: console.log(ThreeCanvas);
 	$: console.log('Three.js hero section');
 </script>
 
-<SEO title="Welcome" description="Gabriel Atwell's Hero Section" keywords="hero" />
+<SEO
+	title="atwellUI"
+	description="Welcome to Gabe Atwell's portfolio"
+	keywords="hero section, three.js hero section"
+/>
 
 <br /><br />
 
 <ThreeCanvas />
 
 <section aria-label="hero">
-	<h3>Frontend Crafted Web Experiences</h3>
+	<h3 class="hero-title">Frontend Crafted Web Experiences</h3>
 
 	<h4 class="summary left up">
 		I am a frontend developer who loves to create beautiful and functional websites. This portfolio
