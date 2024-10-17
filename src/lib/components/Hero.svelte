@@ -6,7 +6,7 @@
 		const heroTitle = document.querySelector('.hero-title');
 		const up = document.querySelector('.up');
 
-		gsap.to('main', { autoAlpha: 1, duration: 2.5, ease: 'sine.in' });
+		gsap.from('section', { autoAlpha: 0, duration: 2.5, ease: 'sine.in' });
 
 		const textTl = gsap.timeline({ defaults: { ease: 'power1.inOut' } }, { paused: true });
 		textTl.to(heroTitle, { yPercent: -20 }).from(up, { y: 10 }, 0);
