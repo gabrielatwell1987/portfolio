@@ -216,7 +216,7 @@
 
 	@media screen and (min-width: 1100px) {
 		a {
-			width: 21%;
+			width: 30%;
 			padding: 2.2rem 1rem;
 			font-size: 2rem;
 			align-content: center;
@@ -229,7 +229,7 @@
 		}
 
 		a {
-			width: 20%;
+			width: 25%;
 		}
 	}
 
