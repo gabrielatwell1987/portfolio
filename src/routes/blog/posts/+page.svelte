@@ -7,7 +7,8 @@
 	import copy from 'copy-to-clipboard';
 	import { onMount } from 'svelte';
 	import SEO from '$lib/data/SEO.svelte';
-	import Card2 from '$lib/components/Card2.svelte';
+	import Card from '$lib/components/Card.svelte';
+	// import Card2 from '$lib/components/Card2.svelte';
 
 	onMount(() => {
 		const codeBlocks = document.querySelectorAll('pre');
@@ -80,12 +81,12 @@
 	</div>
 
 	<article class="card">
-		<Card2
+		<Card
 			src="/photos/ornate1.webp"
-			href="/projects"
 			alt="old school"
-			h1="gabeAtwell"
-			p="Trying to make the internet look better.. one website at a time."
+			href="/projects"
+			title="gabeAtwell"
+			desc="Trying to make the internet look better.. one website at a time."
 			button="Work"
 		/>
 	</article>
