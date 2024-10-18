@@ -18,7 +18,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 65%;
+			width: clamp(100px, 65%, 300px);
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
@@ -37,57 +37,6 @@
 			mix-blend-mode: hard-light;
 			outline-offset: 0px;
 			animation: wiggle 0.5s ease-in-out infinite;
-		}
-	}
-
-	@media (min-width: 500px) {
-		button {
-			width: 45%;
-		}
-	}
-
-	@media (min-width: 700px) {
-		button {
-			width: 40%;
-			letter-spacing: 2px;
-		}
-	}
-
-	@media (min-width: 990px) {
-		button {
-			width: 40%;
-			margin: 3rem auto;
-		}
-	}
-
-	@media (min-width: 1024px) {
-		button {
-			width: 40%;
-			margin: 3rem auto;
-		}
-	}
-
-	@media screen and (min-width: 1200px) {
-		button {
-			width: 40%;
-		}
-	}
-
-	@media screen and (min-width: 1300px) {
-		button {
-			width: 40%;
-		}
-	}
-
-	@media screen and (min-width: 1400px) {
-		button {
-			width: 40%;
-		}
-	}
-
-	@media screen and (min-width: 1500px) {
-		button {
-			width: 25%;
 		}
 	}
 

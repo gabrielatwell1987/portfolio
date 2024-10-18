@@ -1,11 +1,11 @@
 <script>
 </script>
 
-<button class="send" type="submit">Send <i class="fa-solid fa-angle-right" /></button>
+<button type="submit">Send <i class="fa-solid fa-angle-right" /></button>
 
 <style>
 	@media (min-width: 300px) {
-		.send {
+		button {
 			background-color: transparent;
 			font-family: var(--orbitron);
 			font-size: clamp(1.2rem, 2vw, 2rem);
@@ -17,7 +17,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: 55%;
+			width: clamp(100px, 55%, 250px);
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
@@ -28,37 +28,13 @@
 			user-select: none;
 		}
 
-		.send:hover,
-		.send:focus {
+		button:hover,
+		button:focus {
 			opacity: 0.8;
 			color: var(--yellow);
 			mix-blend-mode: hard-light;
 			outline-offset: 0px;
 			animation: wiggle 0.5s ease-in-out infinite;
-		}
-	}
-
-	@media (min-width: 768px) {
-		.send {
-			width: 25%;
-			margin-inline: auto;
-			letter-spacing: 0;
-		}
-	}
-
-	@media (min-width: 1200px) {
-		.send {
-			width: 25%;
-			margin-inline: auto;
-			letter-spacing: 0;
-		}
-	}
-
-	@media (min-width: 1350px) {
-		.send {
-			width: 30%;
-			margin-inline: auto;
-			letter-spacing: 0;
 		}
 	}
 

@@ -62,17 +62,16 @@
 		.open-button,
 		.close-button {
 			display: block;
-			font-size: clamp(1.1rem, 2vw, 1.5rem);
+			font-size: clamp(1rem, 2vw, 1.5rem);
 			font-weight: 800;
 			background-color: transparent;
 			color: var(--white);
-			width: 4%;
-			height: 2%;
+			width: 5%;
+			height: 5%;
 			outline: none;
 			border: 2px solid var(--white);
 			border-radius: 15px;
 			padding: 1rem 1.5rem;
-			outline: none;
 			animation: wiggle 0.5s ease-in-out infinite;
 			display: flex;
 			justify-content: center;
@@ -115,11 +114,6 @@
 	}
 
 	@media screen and (min-width: 720px) {
-		.open-button,
-		.close-button {
-			padding: 1.5rem 2rem;
-		}
-
 		.modal {
 			padding: 2rem;
 			width: 93%;
@@ -155,17 +149,19 @@
 
 		.open-button {
 			margin-bottom: 5%;
-			padding: 1.5rem 2rem;
-		}
-
-		.close-button {
-			padding: 1.5rem 2rem;
 		}
 	}
 
 	@media screen and (min-width: 1100px) {
 		.modal h4 {
 			padding: 0.5rem;
+		}
+	}
+
+	@media screen and (min-width: 1500px) {
+		.open-button,
+		.close-button {
+			padding: 2rem 1.75rem;
 		}
 	}
 

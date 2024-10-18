@@ -1,5 +1,6 @@
 <script>
 	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
@@ -13,9 +14,11 @@
 
 	// animations
 	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
 		gsap.set('article', { autoAlpha: 0 });
-		gsap.set(['.a', '.b'], { yPercent: 10, autoAlpha: 0 });
-		gsap.set(['.hero', '.margin__b'], { yPercent: 10, autoAlpha: 0 });
+		gsap.set(['.a', '.b'], { yPercent: 50, autoAlpha: 0 });
+		gsap.set(['.hero', '.margin__b'], { yPercent: 50, autoAlpha: 0 });
 
 		gsap.to('article', {
 			autoAlpha: 1,
@@ -30,8 +33,15 @@
 			autoAlpha: 1,
 			duration: 2,
 			ease: 'power2.out',
-			stagger: 0.25,
-			delay: 0.3
+			stagger: 0.5,
+			delay: 0.3,
+			scrollTrigger: {
+				trigger: '.a',
+				start: 'top 70%',
+				end: 'bottom 30%',
+				scrub: 1,
+				toggleActions: 'play none none reverse'
+			}
 		})
 			.to(
 				'.b',
@@ -40,19 +50,33 @@
 					autoAlpha: 1,
 					duration: 2,
 					ease: 'power2.out',
-					stagger: 0.25,
-					delay: 0.3
+					stagger: 0.5,
+					delay: 0.3,
+					scrollTrigger: {
+						trigger: '.b',
+						start: 'top 70%',
+						end: 'bottom 30%',
+						scrub: 1,
+						toggleActions: 'play none none reverse'
+					}
 				},
-				'-=.75'
+				'+=2'
 			)
 			.to(
 				['.hero', '.margin__b'],
 				{
 					yPercent: 0,
 					autoAlpha: 1,
-					duration: 1.5,
+					duration: 2,
 					ease: 'power2.out',
-					delay: 0.3
+					delay: 0.3,
+					scrollTrigger: {
+						trigger: '.hero',
+						start: 'top 80%',
+						end: 'bottom 30%',
+						scrub: 1,
+						toggleActions: 'play none none reverse'
+					}
 				},
 				'-=.75'
 			);
