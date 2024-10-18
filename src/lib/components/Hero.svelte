@@ -213,14 +213,14 @@
 
 	@media screen and (min-width: 1100px) {
 		a {
-			width: 25%;
+			width: 30%;
 			font-size: 2rem;
 		}
 	}
 
 	@media screen and (min-width: 1400px) {
 		a {
-			width: 20%;
+			width: 25%;
 		}
 	}
 
