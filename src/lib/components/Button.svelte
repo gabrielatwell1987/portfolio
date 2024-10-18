@@ -81,13 +81,13 @@
 
 	@media screen and (min-width: 1400px) {
 		button {
-			width: 40%;
+			width: 35%;
 		}
 	}
 
 	@media screen and (min-width: 1500px) {
 		button {
-			width: 35%;
+			width: 20%;
 		}
 	}
 

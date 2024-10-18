@@ -1,17 +1,18 @@
 <script>
 	export let title;
-	export let description;
+	export let desc;
 	export let button;
 	export let src;
+	export let alt;
 	export let href;
 </script>
 
 <main class="card">
-	<img {src} alt="card" class="card-image" />
+	<img class="card-image" {src} {alt} />
 
 	<h2 class="card-title">{title}</h2>
 
-	<p class="card-description">{description}</p>
+	<p class="card-description">{desc}</p>
 
 	<a {href} class="card-button">{button}</a>
 </main>
@@ -34,10 +35,12 @@
 	}
 
 	.card-image {
-		width: 100%;
+		width: 70%;
 		height: 300px;
 		object-fit: cover;
 		border-radius: 8px 8px 0 0;
+		display: grid;
+		place-self: center;
 		margin-bottom: 1rem;
 	}
 
@@ -70,7 +73,7 @@
 		font-size: clamp(1rem, 1vw, 1.2rem);
 		font-weight: 300;
 		letter-spacing: 1px;
-		width: 50%;
+		width: 30%;
 		height: 10%;
 		outline: none;
 		border: 1px solid var(--white);
