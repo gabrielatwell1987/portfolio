@@ -22,46 +22,6 @@
 		gsap.set(['.a', '.b'], { yPercent: 70, autoAlpha: 0 });
 		gsap.set(['.hero', '.margin__b'], { yPercent: 70, autoAlpha: 0 });
 
-		let mm = gsap.matchMedia();
-
-		mm.add('(max-width: 500px', () => {
-			gsap.set('article', { autoAlpha: 0 });
-			gsap.set(['.a', '.b'], { yPercent: 50, autoAlpha: 0 });
-			gsap.set(['.hero', '.margin__b'], { yPercent: 50, autoAlpha: 0 });
-
-			tl.to('.a', {
-				yPercent: 0,
-				autoAlpha: 1,
-				duration: 2,
-				ease: 'power3.out',
-				stagger: 0.5,
-				delay: 0.3
-			})
-				.to(
-					'.b',
-					{
-						yPercent: 0,
-						autoAlpha: 2,
-						duration: 3,
-						ease: 'power2.out',
-						stagger: 0.5,
-						delay: 0.3
-					},
-					'-=2'
-				)
-				.to(
-					['.hero', '.margin__b'],
-					{
-						yPercent: 0,
-						autoAlpha: 1,
-						duration: 2,
-						ease: 'power2.out',
-						delay: 0.3
-					},
-					'-=.75'
-				);
-		});
-
 		gsap.to('article', {
 			autoAlpha: 1,
 			duration: 1,
@@ -71,14 +31,14 @@
 		tl.to('.a', {
 			yPercent: 0,
 			autoAlpha: 1,
-			duration: 2,
+			duration: 0.25,
 			ease: 'power2.out',
 			stagger: 0.5,
 			delay: 0.3,
 			scrollTrigger: {
 				trigger: '.a',
-				start: 'top 70%',
-				end: 'bottom 30%',
+				start: 'top 90%',
+				// end: 'bottom 10%',
 				scrub: 1,
 				toggleActions: 'play none none reverse'
 			}
@@ -88,14 +48,14 @@
 				{
 					yPercent: 0,
 					autoAlpha: 1,
-					duration: 2,
+					duration: 0.25,
 					ease: 'power2.out',
 					stagger: 0.5,
 					delay: 0.3,
 					scrollTrigger: {
 						trigger: '.b',
-						start: 'top 70%',
-						end: 'bottom 30%',
+						start: 'top 90%',
+						// end: 'bottom 10%',
 						scrub: 1,
 						toggleActions: 'play none none reverse'
 					}
@@ -107,12 +67,12 @@
 				{
 					yPercent: 0,
 					autoAlpha: 1,
-					duration: 2,
+					duration: 0.25,
 					ease: 'power2.out',
 					delay: 0.3,
 					scrollTrigger: {
 						trigger: '.hero',
-						start: 'top 80%',
+						start: 'top 95%',
 						end: 'bottom 30%',
 						scrub: 1,
 						toggleActions: 'play none none reverse'
