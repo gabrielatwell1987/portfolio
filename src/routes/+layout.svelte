@@ -28,7 +28,7 @@
 
 	onMount(async () => {
 		function setErudaPosition() {
-			eruda.position({ x: window.innerWidth - 70, y: window.innerHeight - 130 });
+			eruda.position({ x: window.innerWidth - 70, y: window.innerHeight - 120 });
 		}
 
 		const eruda = (await import('eruda')).default;
