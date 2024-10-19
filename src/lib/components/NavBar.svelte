@@ -3,7 +3,8 @@
 	import MainLogo from '$lib/components/MainLogo.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 
-	let open;
+	let open = false;
+	let isClosing = false;
 </script>
 
 <nav>
@@ -37,17 +38,14 @@
 		<a class="nav-link" href="/contact">Contact</a>
 	</div>
 
-	<!-- mobile view -->
-	{#if open}
-		<div class="mobile">
-			<a class="nav-link" href="/">Home</a>
-			<a class="nav-link" href="/about">About</a>
-			<a class="nav-link" href="/projects">Projects</a>
-			<a class="nav-link" href="/blog">Blog</a>
-			<a class="nav-link" href="/photos">Photos</a>
-			<a class="nav-link" href="/contact">Contact</a>
-		</div>
-	{/if}
+	<div class="mobile {open ? 'open' : ''} {isClosing ? 'closing' : ''}">
+		<a class="nav-link" href="/">Home</a>
+		<a class="nav-link" href="/about">About</a>
+		<a class="nav-link" href="/projects">Projects</a>
+		<a class="nav-link" href="/blog">Blog</a>
+		<a class="nav-link" href="/photos">Photos</a>
+		<a class="nav-link" href="/contact">Contact</a>
+	</div>
 </nav>
 
 <style>
@@ -102,6 +100,21 @@
 			background-color: var(--blackest);
 			font-family: var(--orbitron);
 			font-weight: 800;
+
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 1s ease-in-out, opacity 1.22s ease-in-out;
+			opacity: 0;
+		}
+
+		.mobile.open {
+			max-height: 500px;
+			opacity: 1;
+		}
+
+		.mobile.closing {
+			max-height: 0;
+			opacity: 0;
 		}
 
 		.mobile a:is(:hover) {
