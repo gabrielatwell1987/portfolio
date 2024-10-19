@@ -24,8 +24,8 @@
 
 <Hero />
 
-<style>
-	/* .video {
+<!-- <style>
+	.video {
 		border-radius: 12px;
-	} */
-</style>
+	} 
+</style> -->
