@@ -41,6 +41,7 @@
 		border-radius: 8px 8px 0 0;
 		display: grid;
 		place-self: center;
+		margin-inline: auto;
 		margin-bottom: 1rem;
 	}
 
@@ -112,8 +113,10 @@
 
 		.card-button {
 			font-size: clamp(1rem, 1vw, 1.2rem);
-			font-weight: 500;
-			padding: 0.75rem 1.5rem;
+			font-weight: 700;
+			letter-spacing: 2px;
+			padding: 1rem;
+			width: 100%;
 		}
 	}
 

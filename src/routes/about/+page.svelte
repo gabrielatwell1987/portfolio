@@ -31,7 +31,7 @@
 		tl.to('.a', {
 			yPercent: 0,
 			autoAlpha: 1,
-			duration: 2,
+			duration: 2.5,
 			ease: 'power2.out',
 			stagger: 0.5,
 			delay: 0.3
@@ -41,7 +41,7 @@
 				{
 					yPercent: 0,
 					autoAlpha: 1,
-					duration: 2,
+					duration: 2.5,
 					ease: 'power2.out',
 					stagger: 0.5,
 					delay: 0.3
@@ -53,7 +53,7 @@
 				{
 					yPercent: 0,
 					autoAlpha: 1,
-					duration: 2,
+					duration: 2.5,
 					ease: 'power2.out',
 					delay: 0.3
 				},
