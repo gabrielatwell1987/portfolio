@@ -65,7 +65,8 @@
 				<details name="gsap" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>What is GSAP?</b></span></summary
+						><span class="margin"><b>What is GSAP? <i class="fa-solid fa-caret-right" /></b></span
+						></summary
 					>
 					<p class="text">
 						Greensock Animation Platform (GSAP) is a javascript library that allows you to animate
@@ -83,7 +84,9 @@
 				<details name="gsap" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>How do you install GSAP?</b></span></summary
+						><span class="margin"
+							><b>How do you install GSAP? <i class="fa-solid fa-caret-right" /></b></span
+						></summary
 					>
 					<p class="text">
 						In the project, you have to <code class="code">npm install gsap</code> (if you have
@@ -104,7 +107,8 @@
 				<details name="gsap" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>The syntax</b></span></summary
+						><span class="margin"><b>The syntax <i class="fa-solid fa-caret-right" /></b></span
+						></summary
 					>
 					<p class="text">
 						It is quite simple to use GSAP. You can use <code class="code"
@@ -131,7 +135,8 @@
 				<details name="gsap" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>Variables</b></span></summary
+						><span class="margin"><b>Variables</b></span>
+						<i class="fa-solid fa-caret-right" /></summary
 					>
 					<p class="text">
 						<Heading title="x, y, z" /> Control the position of an element along the x, y, and z axes.<br
