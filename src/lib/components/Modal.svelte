@@ -62,21 +62,25 @@
 		.open-button,
 		.close-button {
 			display: block;
-			font-size: clamp(1rem, 2vw, 1.5rem);
+			font-size: clamp(1.5rem, 2vw, 2.5rem);
 			font-weight: 800;
 			background-color: transparent;
 			color: var(--white);
 			width: 5%;
 			height: 5%;
 			outline: none;
-			border: 2px solid var(--white);
+			border: none;
 			border-radius: 15px;
-			padding: 1rem 1.5rem;
-			animation: wiggle 0.5s ease-in-out infinite;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			margin-inline: auto;
+			cursor: pointer;
+		}
+
+		.open-button:hover,
+		.close-button:hover {
+			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
 		article {
@@ -155,13 +159,6 @@
 	@media screen and (min-width: 1100px) {
 		.modal h4 {
 			padding: 0.5rem;
-		}
-	}
-
-	@media screen and (min-width: 1500px) {
-		.open-button,
-		.close-button {
-			padding: 2rem 1.75rem;
 		}
 	}
 

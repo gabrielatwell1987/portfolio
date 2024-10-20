@@ -61,7 +61,8 @@
 				<details name="sveltekit" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>Framework</b></span></summary
+						><span class="margin"><b>Framework</b></span>
+						<i class="fa-solid fa-caret-right" /></summary
 					>
 					<p class="text">
 						I used sveltekit to create this portfolio website. I decided to go with sveltekit
@@ -81,7 +82,8 @@
 				<details name="sveltekit" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>Based off of basics</b></span></summary
+						><span class="margin"><b>Based off of basics</b></span>
+						<i class="fa-solid fa-caret-right" /></summary
 					>
 					<p class="text">
 						I am very knowledgable to the fundamentals of web development. CSS is a real hobby that
@@ -97,7 +99,8 @@
 				<details name="sveltekit" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>What is it?</b></span></summary
+						><span class="margin"><b>What is it?</b></span>
+						<i class="fa-solid fa-caret-right" /></summary
 					>
 					<p class="text">
 						Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
@@ -115,7 +118,8 @@
 				<details name="sveltekit" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>Install</b></span></summary
+						><span class="margin"><b>Install</b></span>
+						<i class="fa-solid fa-caret-right" /></summary
 					>
 					<p class="text">
 						You need <a href="https://nodejs.org/"><b>Node.js</b></a> installed. Once you have it

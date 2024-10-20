@@ -56,14 +56,15 @@
 			});
 		});
 
-		mm.add('(min-width: 1000px', () => {
+		mm.add('(min-width: 501px', () => {
 			gsap.set(main, { autoAlpha: 0 });
+			gsap.set(gabe, { scale: 0.85 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
 			tl.to(gabe, {
 				stagger: 0.5,
-				scale: 0.8,
+				scale: 0.6,
 				duration: 5,
 				repeat: 1,
 				yoyo: true,
