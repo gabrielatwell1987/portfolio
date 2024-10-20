@@ -83,6 +83,11 @@
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
+		.open-button:focus,
+		.close-button:focus {
+			box-shadow: 0 0 5px var(--offwhite);
+		}
+
 		article {
 			width: 100%;
 			border-radius: 1rem;
