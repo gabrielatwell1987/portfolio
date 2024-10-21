@@ -84,8 +84,7 @@
 				<details name="gsap" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"
-							><b>How do you install GSAP? <i class="fa-solid fa-caret-right" /></b></span
+						><span class="margin"><b>Install GSAP? <i class="fa-solid fa-caret-right" /></b></span
 						></summary
 					>
 					<p class="text">
