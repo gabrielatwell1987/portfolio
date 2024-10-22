@@ -40,16 +40,16 @@
 	<span class="animated-letter"> o </span>
 	<span class="animated-letter"> u </span>
 	<span class="animated-letter"> t </span>
-	<span class="animated-letter" />
+	<span class="animated-letter space" />
 	<span class="animated-letter"> m </span>
 	<span class="animated-letter"> e </span>
 </h1>
 
 <style>
 	.animated-text {
-		font-family: var(--mono);
+		font-family: var(--orbitron);
 		font-size: clamp(2rem, 9vw, 20rem);
-		font-weight: 400;
+		font-weight: 700;
 		color: var(--sky);
 		mix-blend-mode: lighten;
 		text-align: center;
@@ -59,9 +59,17 @@
 		display: inline-block;
 	}
 
+	.space {
+		width: 3.5rem;
+	}
+
 	@media (max-width: 768px) {
 		.animated-text {
-			font-weight: 100;
+			font-weight: 400;
+		}
+
+		.space {
+			width: 1.5rem;
 		}
 	}
 
