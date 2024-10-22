@@ -28,7 +28,8 @@
 <style>
 	@media (min-width: 300px) {
 		.title {
-			font-size: 2.25rem;
+			/* font-size: 2.25rem; */
+			font-size: clamp(1.5rem, 5vw, 5rem);
 			mix-blend-mode: difference;
 			color: var(--purple);
 			font-family: var(--orbitron);
@@ -38,7 +39,7 @@
 		.right {
 			line-height: 1.25;
 			text-align: left;
-			font-size: clamp(1.1rem, 3vw, 1.5rem);
+			font-size: clamp(1.1rem, 3vw, 1.75rem);
 			color: var(--white);
 			margin-top: -1rem;
 		}
@@ -61,7 +62,6 @@
 		}
 
 		.title {
-			font-size: clamp(1.5rem, 5vw, 5rem);
 			letter-spacing: 5px;
 		}
 

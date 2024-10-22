@@ -19,8 +19,8 @@
 		const tl = gsap.timeline();
 
 		gsap.set('article', { autoAlpha: 0 });
-		gsap.set(['.a', '.b'], { yPercent: 50, autoAlpha: 0 });
-		gsap.set(['.hero', '.margin__b'], { yPercent: 50, autoAlpha: 0 });
+		gsap.set(['.a', '.b'], { yPercent: 25, autoAlpha: 0 });
+		gsap.set(['.hero', '.margin__b'], { yPercent: 25, autoAlpha: 0 });
 
 		gsap.to('article', {
 			autoAlpha: 1,
@@ -44,7 +44,7 @@
 					duration: 2.5,
 					ease: 'power2.out',
 					stagger: 0.5,
-					delay: 0.3
+					delay: 0.4
 				},
 				'-=1'
 			)
@@ -55,7 +55,7 @@
 					autoAlpha: 1,
 					duration: 2.5,
 					ease: 'power2.out',
-					delay: 0.3
+					delay: 0.5
 				},
 				'-=.75'
 			);

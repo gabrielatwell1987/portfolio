@@ -65,7 +65,13 @@
 				<details name="gsap" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>What is GSAP? <i class="fa-solid fa-caret-right" /></b></span
+						><span class="margin"
+							><b
+								>What is GSAP? <i
+									class="fa-solid fa-caret-right"
+									style="color: var(--dark-pale)"
+								/></b
+							></span
 						></summary
 					>
 					<p class="text">
@@ -84,7 +90,13 @@
 				<details name="gsap" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>Install GSAP? <i class="fa-solid fa-caret-right" /></b></span
+						><span class="margin"
+							><b
+								>Install GSAP? <i
+									class="fa-solid fa-caret-right"
+									style="color: var(--dark-pale)"
+								/></b
+							></span
 						></summary
 					>
 					<p class="text">
@@ -106,7 +118,10 @@
 				<details name="gsap" on:toggle={resetAnimation}>
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>The syntax <i class="fa-solid fa-caret-right" /></b></span
+						><span class="margin"
+							><b
+								>The syntax <i class="fa-solid fa-caret-right" style="color: var(--dark-pale)" /></b
+							></span
 						></summary
 					>
 					<p class="text">
@@ -135,7 +150,7 @@
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Variables</b></span>
-						<i class="fa-solid fa-caret-right" /></summary
+						<i class="fa-solid fa-caret-right" style="color: var(--dark-pale)" /></summary
 					>
 					<p class="text">
 						<Heading title="x, y, z" /> Control the position of an element along the x, y, and z axes.<br
