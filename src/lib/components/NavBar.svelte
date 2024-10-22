@@ -67,6 +67,8 @@
 		width: var(--100);
 		position: relative;
 		margin-inline: auto;
+		backdrop-filter: blur(0.25rem);
+		-webkit-backdrop-filter: blur(0.25rem);
 	}
 
 	.header-logos {
@@ -144,7 +146,7 @@
 			top: 0;
 			right: 7px;
 			z-index: 10;
-			backdrop-filter: blur(0.075rem);
+			/* backdrop-filter: blur(0.75rem); */
 		}
 
 		.nav-link {
