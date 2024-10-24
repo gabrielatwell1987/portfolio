@@ -3,7 +3,7 @@
 	export let alt;
 </script>
 
-<img {src} {alt} loading="lazy" />
+<img {src} {alt} />
 
 <style>
 	img {
