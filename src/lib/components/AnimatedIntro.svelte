@@ -42,7 +42,7 @@
 
 <style>
 	h1.sentence {
-		font-family: var(--lexend);
+		font-family: var(--montserrat);
 		font-size: clamp(1.25rem, 2.5vw, 10rem);
 		font-weight: 200;
 		color: var(--purple);
@@ -53,9 +53,9 @@
 	}
 
 	span.bigWord {
+		font-family: var(--anta);
 		font-size: clamp(3.25rem, 16vw, 35rem);
 		color: var(--blue);
-		font-family: var(--anta);
 		font-weight: 500;
 		text-wrap: none;
 		display: block;

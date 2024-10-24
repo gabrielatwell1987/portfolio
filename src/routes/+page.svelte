@@ -16,7 +16,7 @@
 
 <HeroLogo />
 
-<AnimatedIntro text="Do you need a " span="website?" />
+<AnimatedIntro text="do you need a " span="website?" />
 
 <!-- <div class="video">
 	<Video src1="/videos/seamless.webm" src2="/videos/seamless.mp4" />

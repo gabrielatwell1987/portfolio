@@ -1,6 +1,5 @@
 <script>
 	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
@@ -14,8 +13,6 @@
 
 	// animations
 	onMount(() => {
-		gsap.registerPlugin(ScrollTrigger);
-
 		const tl = gsap.timeline();
 
 		gsap.set('article', { autoAlpha: 0 });
