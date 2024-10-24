@@ -54,7 +54,7 @@
 
 	span.bigWord {
 		font-family: var(--anta);
-		font-size: clamp(3.25rem, 16vw, 35rem);
+		font-size: clamp(3.6rem, 18vw, 40rem);
 		color: var(--blue);
 		font-weight: 500;
 		text-wrap: none;
