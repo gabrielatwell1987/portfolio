@@ -1,3 +1,43 @@
+@font-face {
+	font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Anta';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/Anta-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Lexend';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/Lexend-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Orbitron';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Space Mono';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/SpaceMono-Regular.ttf') format('truetype');
+}
+
 :root {
 	/* colors */
 	--blackest: hsl(0, 15%, 5%);
