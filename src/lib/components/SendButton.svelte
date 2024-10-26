@@ -17,7 +17,7 @@
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: clamp(100px, 55%, 250px);
+			width: clamp(100px, 55%, 275px);
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
