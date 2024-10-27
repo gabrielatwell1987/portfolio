@@ -2,6 +2,7 @@
 	import { Hamburger } from 'svelte-hamburgers';
 	import MainLogo from '$lib/components/MainLogo.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+	import NavLink from '$lib/components/NavLink.svelte';
 
 	let open = false;
 	let isClosing = false;
@@ -20,9 +21,7 @@
 			/>
 		</div>
 
-		<div class="gabe-logo">
-			<a class="home" href="/"><MainLogo /></a>
-		</div>
+		<MainLogo />
 	</div>
 
 	<div class="toggle">
@@ -31,20 +30,20 @@
 
 	<!-- desktop view -->
 	<div class="desktop">
-		<a class="nav-link" href="/about">About</a>
-		<a class="nav-link" href="/projects">Projects</a>
-		<a class="nav-link" href="/blog">Blog</a>
-		<a class="nav-link" href="/photos">Photos</a>
-		<a class="nav-link" href="/contact">Contact</a>
+		<NavLink href="/about" title="About" />
+		<NavLink href="/projects" title="Projects" />
+		<NavLink href="/blog" title="Blog" />
+		<NavLink href="/photos" title="Photos" />
+		<NavLink href="/contact" title="Contact" />
 	</div>
 
 	<div class="mobile {open ? 'open' : ''} {isClosing ? 'closing' : ''}">
-		<a class="nav-link" href="/">Home</a>
-		<a class="nav-link" href="/about">About</a>
-		<a class="nav-link" href="/projects">Projects</a>
-		<a class="nav-link" href="/blog">Blog</a>
-		<a class="nav-link" href="/photos">Photos</a>
-		<a class="nav-link" href="/contact">Contact</a>
+		<NavLink href="/" title="Home" />
+		<NavLink href="/about" title="About" />
+		<NavLink href="/projects" title="Projects" />
+		<NavLink href="/blog" title="Blog" />
+		<NavLink href="/photos" title="Photos" />
+		<NavLink href="/contact" title="Contact" />
 	</div>
 </nav>
 
@@ -76,15 +75,6 @@
 		justify-content: center;
 		align-items: center;
 		margin-left: 2rem;
-	}
-
-	.gabe-logo {
-		margin: 0 0 0 25%;
-	}
-
-	.home {
-		user-select: none;
-		background: transparent;
 	}
 
 	@media (min-width: 300px) {
@@ -119,10 +109,6 @@
 			opacity: 0;
 		}
 
-		.mobile a:is(:hover) {
-			color: var(--white);
-		}
-
 		.desktop {
 			display: none;
 		}
@@ -130,10 +116,6 @@
 		.header-logos {
 			display: block;
 			margin-left: 25%;
-		}
-
-		.gabe-logo {
-			display: none;
 		}
 
 		nav {
@@ -146,15 +128,6 @@
 			top: 0;
 			right: 7px;
 			z-index: 10;
-		}
-
-		.nav-link {
-			font-size: clamp(1.1rem, 2vw, 1.5rem);
-			letter-spacing: 2px;
-		}
-
-		.nav-link:hover {
-			font-size: clamp(1.1rem, 2vw, 1.5rem);
 		}
 
 		.toggle {
@@ -177,16 +150,6 @@
 			text-wrap: nowrap;
 		}
 
-		a {
-			transition: transform 0.25s ease-in-out;
-			font-weight: 400;
-		}
-
-		a:hover {
-			transform: scale(1.1);
-			font-weight: 600;
-		}
-
 		.mobile {
 			display: none;
 		}
@@ -201,36 +164,12 @@
 			margin-left: 15%;
 		}
 
-		.gabe-logo {
-			display: block;
-			margin-left: -7rem;
-		}
-
 		.hamburgerMenu {
 			display: none;
-		}
-
-		.nav-link {
-			text-decoration: none;
-			font-weight: 600;
-			color: var(--white);
-		}
-
-		.nav-link:hover {
-			color: var(--sky);
-			border-bottom: 5px solid var(--sky);
-			height: 3rem;
-			text-shadow: 2px 2px 1px var(--blacker);
-			transition: all 0.35s ease-in-out;
 		}
 	}
 
 	@media (min-width: 990px) {
-		.nav-link {
-			margin-left: 5rem;
-			margin-right: -5.25rem;
-		}
-
 		.desktop {
 			display: block;
 			width: var(--100);
@@ -248,19 +187,9 @@
 			align-items: center;
 			margin: 3rem;
 		}
-
-		.gabe-logo {
-			display: block;
-			margin-left: 5%;
-		}
 	}
 
 	@media (min-width: 1024px) {
-		.nav-link {
-			margin-left: 5rem;
-			margin-right: -5rem;
-		}
-
 		.desktop {
 			width: var(--100);
 			line-height: 2;
@@ -283,44 +212,14 @@
 			margin-left: 0;
 		}
 
-		.gabe-logo {
-			display: block;
-			margin-left: 75%;
-			scale: 1.1;
-		}
-
 		.toggle {
 			margin-left: 10%;
 		}
 	}
 
-	@media (min-width: 1300px) {
-		.gabe-logo {
-			display: block;
-			margin-left: 75%;
-		}
-	}
-
 	@media (min-width: 1400px) {
-		.gabe-logo {
-			display: block;
-			margin-left: 175%;
-		}
-
 		nav {
 			margin-right: 0;
-		}
-	}
-
-	@media (min-width: 1500px) {
-		.gabe-logo {
-			margin-left: 150%;
-		}
-
-		.nav-link {
-			margin-left: 5.75rem;
-			margin-right: -5rem;
-			font-weight: 800;
 		}
 	}
 
@@ -328,15 +227,6 @@
 		.desktop {
 			margin-left: 15em;
 			scale: 1.2;
-		}
-
-		.gabe-logo {
-			margin-left: 150%;
-		}
-
-		.nav-link {
-			margin-left: 5.75rem;
-			margin-right: -5rem;
 		}
 	}
 </style>
