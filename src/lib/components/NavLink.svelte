@@ -6,6 +6,10 @@
 <a class="nav-link" {href}>{title}</a>
 
 <style>
+	a:is(:hover) {
+		color: var(--white);
+	}
+
 	@media (min-width: 300px) {
 		.nav-link {
 			font-size: clamp(1.1rem, 2vw, 1.5rem);
