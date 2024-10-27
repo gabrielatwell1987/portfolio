@@ -8,7 +8,6 @@
 	import { onMount } from 'svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import Card from '$lib/components/Card.svelte';
-	// import Card2 from '$lib/components/Card2.svelte';
 
 	onMount(() => {
 		const codeBlocks = document.querySelectorAll('pre');

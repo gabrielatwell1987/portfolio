@@ -66,11 +66,7 @@
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
-							><b
-								>What is GSAP? <i
-									class="fa-solid fa-caret-right"
-									style="color: var(--dark-pale)"
-								/></b
+							><b>What is GSAP? <i class="fa-solid fa-caret-right" style="color: var(--pale)" /></b
 							></span
 						></summary
 					>
@@ -78,7 +74,7 @@
 						Greensock Animation Platform (GSAP) is a javascript library that allows you to animate
 						your website. I really like animating the websites that I've built from scratch and GSAP
 						makes it so easy to accomplish! The syntax is really simple which makes no learning
-						curve at all. Other than that, it doesn't take up a lot of space to encorporate these
+						curve at all. Other than that, it doesn't take up a lot of space to incorporate these
 						techniques, which makes your web pages 100,000 times faster.
 						<br /><br />
 						Usually, websites use a mixture of GSAP and three js. GSAP makes animating in three js simple,
@@ -91,11 +87,7 @@
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
-							><b
-								>Install GSAP? <i
-									class="fa-solid fa-caret-right"
-									style="color: var(--dark-pale)"
-								/></b
+							><b>Install GSAP? <i class="fa-solid fa-caret-right" style="color: var(--pale)" /></b
 							></span
 						></summary
 					>
@@ -119,8 +111,7 @@
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
-							><b
-								>The syntax <i class="fa-solid fa-caret-right" style="color: var(--dark-pale)" /></b
+							><b>The syntax <i class="fa-solid fa-caret-right" style="color: var(--pale)" /></b
 							></span
 						></summary
 					>
@@ -150,7 +141,7 @@
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Variables</b></span>
-						<i class="fa-solid fa-caret-right" style="color: var(--dark-pale)" /></summary
+						<i class="fa-solid fa-caret-right" style="color: var(--pale)" /></summary
 					>
 					<p class="text">
 						<Heading title="x, y, z" /> Control the position of an element along the x, y, and z axes.<br

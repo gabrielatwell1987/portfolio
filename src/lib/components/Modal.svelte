@@ -65,7 +65,7 @@
 			font-size: clamp(1.75rem, 2vw, 3rem);
 			font-weight: 800;
 			background-color: transparent;
-			color: var(--white);
+			color: var(--pale);
 			width: 5%;
 			height: 5%;
 			outline: none;
@@ -85,7 +85,7 @@
 
 		.open-button:focus,
 		.close-button:focus {
-			box-shadow: 0 0 5px var(--offwhite);
+			box-shadow: 0 0 5px var(--off-white);
 		}
 
 		article {
@@ -108,12 +108,12 @@
 			font-family: var(--anta);
 			font-size: clamp(1.2rem, 2vw, 3rem);
 			font-weight: 600;
-			color: var(--dark-pale);
+			color: var(--sky);
 			margin: 2rem 0 -0.75rem 0;
 		}
 
 		.modal__p {
-			font-family: var(--lexend);
+			font-family: var(--lexed);
 			font-size: clamp(1.05rem, 2vw, 2rem);
 			font-weight: 200;
 			color: var(--white);

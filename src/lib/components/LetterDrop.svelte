@@ -25,15 +25,6 @@
 	});
 </script>
 
-<!-- <main class="animated-text">
-	<span class="animated-letter"> a </span>
-	<span class="animated-letter"> t </span>
-	<span class="animated-letter"> w </span>
-	<span class="animated-letter"> e </span>
-	<span class="animated-letter"> l </span>
-	<span class="animated-letter"> l </span>
-</main> -->
-
 <h1 class="animated-text">
 	<span class="animated-letter"> a </span>
 	<span class="animated-letter"> b </span>

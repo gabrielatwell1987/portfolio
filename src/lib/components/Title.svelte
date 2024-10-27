@@ -8,7 +8,6 @@
 	onMount(() => {
 		gsap.set('.title', { autoAlpha: 0 });
 
-		// SplitType
 		const titleText = new SplitType('#title', { types: 'chars' });
 
 		gsap.from(titleText.chars, {

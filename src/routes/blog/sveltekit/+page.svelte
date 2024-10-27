@@ -49,7 +49,7 @@
 <br /><br /><br /><br /><br /><br /><br />
 
 <section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} class="main">
-	<div class="seperate">
+	<div class="separate">
 		<h1 class="title">Sveltekit</h1>
 
 		<main>
@@ -62,7 +62,7 @@
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Framework</b></span>
-						<i class="fa-solid fa-caret-right" style="color: var(--dark-pale)" /></summary
+						<i class="fa-solid fa-caret-right" style="color: var(--pale)" /></summary
 					>
 					<p class="text">
 						I used sveltekit to create this portfolio website. I decided to go with sveltekit
@@ -83,10 +83,10 @@
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Based off of basics</b></span>
-						<i class="fa-solid fa-caret-right" style="color: var(--dark-pale)" /></summary
+						<i class="fa-solid fa-caret-right" style="color: var(--pale)" /></summary
 					>
 					<p class="text">
-						I am very knowledgable to the fundamentals of web development. CSS is a real hobby that
+						I am very knowledgeable to the fundamentals of web development. CSS is a real hobby that
 						I have because I'm a very visual person. Sveltekit has made it super simple to put my
 						ideas on the web.
 						<br /><br />
@@ -100,7 +100,7 @@
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>What is it?</b></span>
-						<i class="fa-solid fa-caret-right" style="color: var(--dark-pale)" /></summary
+						<i class="fa-solid fa-caret-right" style="color: var(--pale)" /></summary
 					>
 					<p class="text">
 						Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
@@ -119,7 +119,7 @@
 					<!-- svelte-ignore a11y-no-redundant-roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Install</b></span>
-						<i class="fa-solid fa-caret-right" style="color: var(--dark-pale)" /></summary
+						<i class="fa-solid fa-caret-right" style="color: var(--pale)" /></summary
 					>
 					<p class="text">
 						You need <a href="https://nodejs.org/"><b>Node.js</b></a> installed. Once you have it
@@ -256,7 +256,7 @@
 		margin-top: -40%;
 	}
 
-	.seperate {
+	.separate {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
