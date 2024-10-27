@@ -11,9 +11,9 @@
 			font-family: var(--orbitron);
 			font-size: clamp(1.2rem, 2vw, 2rem);
 			font-weight: 900;
-			color: var(--yellow);
-			border: 1px solid var(--yellow);
-			outline: 3px solid var(--yellow);
+			color: var(--pale);
+			border: 1px solid var(--pale);
+			outline: 3px solid var(--pale);
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			margin-inline: auto;
 			cursor: pointer;
@@ -22,7 +22,7 @@
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
-			mix-blend-mode: difference;
+			/* mix-blend-mode: difference; */
 			padding: 1.5rem 2.5rem;
 			margin-top: 10%;
 			margin-bottom: 2%;
@@ -34,7 +34,7 @@
 		button:focus {
 			opacity: 0.8;
 			color: var(--yellow);
-			mix-blend-mode: hard-light;
+			/* mix-blend-mode: hard-light; */
 			outline-offset: 0px;
 			animation: wiggle 0.5s ease-in-out infinite;
 		}

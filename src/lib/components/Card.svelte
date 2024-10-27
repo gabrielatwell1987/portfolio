@@ -69,7 +69,9 @@
 		justify-content: center;
 		align-items: center;
 		background-color: transparent;
-		color: var(--white);
+		color: var(--sky);
+		border: 1px solid var(--sky);
+		border-radius: 5rem;
 		font-family: var(--orbitron);
 		font-size: clamp(1rem, 1vw, 1.2rem);
 		font-weight: 300;
@@ -77,9 +79,7 @@
 		width: 30%;
 		height: 10%;
 		outline: none;
-		border: 1px solid var(--white);
 		margin: 1rem auto;
-		border-radius: 5rem;
 		filter: drop-shadow(0 0 0.75rem var(--smoke));
 		transition: 750ms;
 		outline: 3px solid currentColor;
