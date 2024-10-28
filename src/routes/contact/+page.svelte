@@ -23,18 +23,20 @@
 
 <style>
 	.legend {
-		margin: 10% 0 5% 0;
+		margin: 10% 0 2% 0;
 		font-family: var(--anta);
 		font-size: clamp(2rem, 5vw, 9rem);
 		letter-spacing: 15px;
 		padding: 0;
 		color: var(--purple);
 		text-transform: uppercase;
+		text-align: center;
 	}
 
 	@media screen and (max-width: 500px) {
 		.legend {
 			letter-spacing: 3px;
+			margin: 10% 0 5% 0;
 		}
 	}
 </style>
