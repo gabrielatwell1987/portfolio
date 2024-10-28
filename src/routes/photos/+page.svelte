@@ -64,7 +64,7 @@
 
 			tl.to(gabe, {
 				stagger: 0.5,
-				scale: 0.6,
+				scale: 0.7,
 				duration: 5,
 				repeat: 1,
 				yoyo: true,
