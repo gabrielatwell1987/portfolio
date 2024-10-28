@@ -1,67 +1,17 @@
 <script>
-	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	import { onMount } from 'svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
-	import Lenis from 'lenis';
 	import Title from '$lib/components/Title.svelte';
+	import Image from '$lib/components/Image.svelte';
 	import SEO from '$lib/data/SEO.svelte';
-
-	let lenis;
-
-	onMount(() => {
-		const main = document.querySelector('main');
-
-		if (typeof window !== 'undefined') {
-			// lenis
-			lenis = new Lenis();
-
-			lenis.on('scroll', ScrollTrigger.update);
-
-			gsap.ticker.add((time) => {
-				lenis.raf(time * 375);
-			});
-
-			gsap.ticker.lagSmoothing(0);
-		}
-
-		gsap.set('.gabe', { borderRadius: '5%' });
-
-		// responsive animations
-		let mm = gsap.matchMedia();
-
-		mm.add('(min-width: 1000px', () => {
-			gsap.registerPlugin(ScrollTrigger);
-
-			gsap.set(main, { autoAlpha: 0 });
-
-			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
-
-			tl.to('.gabe', {
-				stagger: 0.5,
-				scale: 0.75,
-				duration: 5,
-				repeat: 1,
-				yoyo: true,
-				scrollTrigger: {
-					trigger: 'main',
-					start: 'top bottom-=95%',
-					stagger: -0.5,
-					scrub: 1
-				}
-			}).to(main, { autoAlpha: 1 });
-
-			return () => {
-				gsap.set('.gabe', { borderRadius: '5px', scale: 0.9 });
-			};
-		});
-	});
 </script>
 
 <SEO title="Photos of Me" description="Gabriel Atwell's Photos" keywords="photos of gabe" />
 
-<section class="container">
+<section
+	class="container"
+	in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}
+>
 	<Title title="Photos of me" />
 
 	<div class="image-container">
@@ -88,19 +38,26 @@
 	}
 
 	.container {
-		max-width: 85%;
+		max-width: 100%;
 		margin: 10% auto;
+		padding: 10%;
 	}
 
 	.container .image-container {
-		columns: 3 250px;
-		gap: 4%;
+		columns: 3 400px;
+		margin-top: 10%;
 	}
 
 	.container .image-container img {
-		margin-bottom: 5%;
+		margin-bottom: 3%;
 		border-radius: 10px;
-		width: 100%;
+		width: 90%;
 		object-fit: cover;
+		transition: scale 0.5s ease;
+	}
+
+	.container .image-container img:is(:hover) {
+		scale: 0.9;
+		filter: drop-shadow(0 0 0.5rem var(--off-white));
 	}
 </style>
