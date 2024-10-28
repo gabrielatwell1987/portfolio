@@ -10,7 +10,7 @@
 	});
 
 	function toggleDropdown() {
-		const menu = document.querySelector('.menu-content');
+		const menuContent = document.querySelector('.menu-content');
 
 		if ($animation == 1) {
 			animation.set(0);
@@ -18,12 +18,12 @@
 			animation.set(1);
 		}
 
-		gsap.to(menu, {
+		gsap.to(menuContent, {
 			rotate: 180,
 			duration: 0.5,
 			ease: 'power2.inOut',
 			onComplete: () => {
-				gsap.to(menu, {
+				gsap.to(menuContent, {
 					rotate: 0,
 					duration: 0.5,
 					ease: 'power2.inOut'
@@ -156,7 +156,7 @@
 	}
 
 	.goo-container .menu {
-		background: black;
+		background: transparent;
 	}
 
 	@media (max-width: 1024px) {
