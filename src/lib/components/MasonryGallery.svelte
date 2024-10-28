@@ -39,7 +39,6 @@
 
 	.container {
 		max-width: 100%;
-		margin: 10% auto;
 		padding: 10%;
 	}
 
@@ -59,5 +58,11 @@
 	.container .image-container img:is(:hover) {
 		scale: 0.9;
 		filter: drop-shadow(0 0 0.5rem var(--off-white));
+	}
+
+	@media (max-width: 500px) {
+		.container .image-container img {
+			margin-bottom: 5%;
+		}
 	}
 </style>
