@@ -21,6 +21,8 @@
 
 <form method="POST" action="https://form.taxi/s/xeyymb58">
 	<fieldset>
+		<legend>message me</legend>
+
 		<label for="name"><span>Name</span></label>
 		<input type="text" id="name" name="name" bind:value={name} required />
 
@@ -45,6 +47,15 @@
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
+	}
+
+	legend {
+		font-family: var(--montserrat);
+		font-size: clamp(1.25rem, 3vw, 4rem);
+		font-weight: 800;
+		letter-spacing: 3px;
+		color: var(--blue);
+		padding-inline: 1rem;
 	}
 
 	input,
@@ -92,7 +103,7 @@
 		font-size: clamp(1rem, 2vw, 2rem);
 		font-weight: 800;
 		letter-spacing: 3px;
-		color: var(--off-white);
+		color: var(--white);
 	}
 
 	#name::-webkit-input-placeholder,
@@ -133,14 +144,18 @@
 		textarea {
 			width: 100%;
 			background-color: transparent;
-			border: 2px solid var(--dark-gray);
+			border: 3px solid var(--dark-gray);
 			border-radius: 10px;
-			caret-color: var(--purple);
+			caret-color: var(--sky);
 			color: var(--white);
 		}
 
 		textarea {
 			padding: 0.5rem 1rem;
+		}
+
+		legend {
+			margin-bottom: 1rem;
 		}
 
 		label {
@@ -157,6 +172,10 @@
 	@media screen and (min-width: 720px) {
 		::backdrop {
 			background: transparent;
+		}
+
+		legend {
+			margin-bottom: 0;
 		}
 	}
 
@@ -187,7 +206,6 @@
 			border: 5px solid var(--white);
 			border-image: linear-gradient(to left, var(--smoke), var(--smoke)) 1;
 			font-weight: bolder;
-			/* font-size: 2rem; */
 			padding: 2rem 5rem;
 			border-radius: 10px;
 			width: 90%;

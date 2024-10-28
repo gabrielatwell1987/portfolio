@@ -14,7 +14,7 @@
 />
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
-	<h1 class="legend">Message Me</h1>
+	<h1 class="legend">Contact</h1>
 
 	<section class="contactForm">
 		<ContactForm />
@@ -22,14 +22,19 @@
 </main>
 
 <style>
-	@media screen and (min-width: 300px) {
+	.legend {
+		margin: 10% 0 5% 0;
+		font-family: var(--anta);
+		font-size: clamp(2rem, 5vw, 9rem);
+		letter-spacing: 15px;
+		padding: 0;
+		color: var(--purple);
+		text-transform: uppercase;
+	}
+
+	@media screen and (max-width: 500px) {
 		.legend {
-			margin: 10% 0 5% 0;
-			font-family: var(--anta);
-			font-size: clamp(2rem, 5vw, 9rem);
-			letter-spacing: 3%;
-			padding: 0;
-			color: var(--purple);
+			letter-spacing: 3px;
 		}
 	}
 </style>
