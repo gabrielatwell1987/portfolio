@@ -1,5 +1,6 @@
 <script>
 	import { spring } from 'svelte/motion';
+	import gsap from 'gsap';
 
 	export let text;
 
@@ -9,11 +10,26 @@
 	});
 
 	function toggleDropdown() {
+		const menu = document.querySelector('.menu-content');
+
 		if ($animation == 1) {
 			animation.set(0);
 		} else {
 			animation.set(1);
 		}
+
+		gsap.to(menu, {
+			rotate: 180,
+			duration: 0.5,
+			ease: 'power2.inOut',
+			onComplete: () => {
+				gsap.to(menu, {
+					rotate: 0,
+					duration: 0.5,
+					ease: 'power2.inOut'
+				});
+			}
+		});
 	}
 </script>
 
