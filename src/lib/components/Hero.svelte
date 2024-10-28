@@ -53,7 +53,7 @@
 			margin-top: 10%;
 			color: var(--sky);
 			font-size: clamp(1.5rem, 5vw, 4rem);
-			font-family: var(--anta);
+			font-family: var(--montserrat);
 			letter-spacing: 7px;
 		}
 
