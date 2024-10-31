@@ -91,14 +91,13 @@
 		}
 
 		.skills-title {
-			color: var(--yellow);
+			color: var(--dark-pale);
 			text-align: center;
 		}
 	}
 
 	@media (min-width: 990px) {
 		.border {
-			/* display: block; */
 			width: 15rem;
 			height: 10vh;
 			border: none;
@@ -135,7 +134,7 @@
 			font-weight: 900;
 			text-align: center;
 			font-family: var(--anta);
-			mix-blend-mode: hard-light;
+			mix-blend-mode: screen;
 			text-wrap: nowrap;
 		}
 

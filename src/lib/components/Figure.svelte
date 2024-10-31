@@ -5,9 +5,9 @@
 </script>
 
 <figure>
-	<img {src} {alt} />
-
 	<figcaption><p>{text}</p></figcaption>
+
+	<img {src} {alt} />
 </figure>
 
 <style>
@@ -19,6 +19,7 @@
 		align-items: center;
 		position: relative;
 		margin-bottom: 1rem;
+		position: relative;
 	}
 
 	img {
@@ -29,33 +30,20 @@
 	figcaption {
 		color: var(--white);
 		position: absolute;
-		bottom: 0;
-		left: 49%;
-		transform: translate(-49%, 0);
-		color: antiquewhite;
-		backdrop-filter: blur(5px);
+		top: 13%;
+		left: 50%;
+		transform: translateX(-50%);
 		padding: 0.5rem;
 		border-radius: 0.5rem;
+		transform: translateX(-50%);
 	}
 
 	p {
 		margin: 0;
 		padding: 0;
 		text-align: center;
-		font-size: 1.75rem;
+		font-size: clamp(1rem, 2vw, 2rem);
+		font-family: var(--mono);
 		font-weight: 500;
-	}
-
-	@media (min-width: 200px) {
-		p {
-			font-size: 1.5rem;
-			font-family: var(--mono);
-		}
-	}
-
-	@media (min-width: 768px) {
-		p {
-			font-size: 2rem;
-		}
 	}
 </style>
