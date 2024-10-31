@@ -178,13 +178,13 @@
 		<ImageFrame
 			src="/logos/frontend_dev.webp"
 			alt="Frontend Developer"
-			text="Distinguish your website"
+			text="distinguish your website"
 		/>
 	</section>
 
 	<!-- logo -->
 	<div class="logos designs">
-		<Figure src="logos/designs.webp" alt="A logo that says Atwell Designs" text="EST. 1987" />
+		<Figure src="logos/web.webp" alt="A logo that says web" text="building the" />
 	</div>
 </section>
 
