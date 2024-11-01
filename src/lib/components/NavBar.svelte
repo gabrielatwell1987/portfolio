@@ -89,7 +89,9 @@
 
 			max-height: 0;
 			overflow: hidden;
-			transition: max-height 1s ease-in-out, opacity 1.22s ease-in-out;
+			transition:
+				max-height 1s ease-in-out,
+				opacity 1.22s ease-in-out;
 			opacity: 0;
 		}
 
@@ -211,7 +213,7 @@
 
 	@media (min-width: 1400px) {
 		nav {
-			margin-right: 0;
+			margin-right: 5rem;
 		}
 
 		.toggle {
