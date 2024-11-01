@@ -1,6 +1,6 @@
 <script>
-	export let src;
-	export let alt;
+	/** @type {{src: any, alt: any}} */
+	let { src, alt } = $props();
 </script>
 
 <img {src} {alt} />

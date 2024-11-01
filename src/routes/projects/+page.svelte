@@ -1,4 +1,6 @@
 <script>
+	import { run } from 'svelte/legacy';
+
 	import { gsap } from 'gsap';
 	import { Draggable } from 'gsap/dist/Draggable';
 	import { onMount } from 'svelte';
@@ -43,7 +45,9 @@
 			.to('.ascii', { yPercent: 0, duration: 1.75 }, 0);
 	});
 
-	$: console.log('Projects page');
+	run(() => {
+		console.log('Projects page');
+	});
 </script>
 
 <SEO

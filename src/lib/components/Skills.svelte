@@ -1,7 +1,8 @@
 <script>
 	import Image from './Image.svelte';
 
-	export let title;
+	/** @type {{title: any}} */
+	let { title } = $props();
 </script>
 
 <section class="border" aria-label="skills">

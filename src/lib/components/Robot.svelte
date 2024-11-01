@@ -1,7 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 
-	export let title;
+	/** @type {{title: any}} */
+	let { title } = $props();
 
 	onMount(() => {
 		const iFrame = document.querySelector('iframe');
@@ -18,7 +19,7 @@
 		height="100%"
 		title="robot"
 		aria-label="robot"
-	/>
+	></iframe>
 
 	<h3>The robot will follow your mouse movements.</h3>
 </main>

@@ -5,7 +5,7 @@
 
 	gsap.registerPlugin(Flip);
 
-	let selected = 0;
+	let selected = $state(0);
 
 	async function flip(id) {
 		const state = Flip.getState('.grid-item');
@@ -29,7 +29,7 @@
 		{@const details = selected === id}
 		{@const number = id + 1}
 
-		<button class="grid-item" class:details on:click={() => flip(id)}>
+		<button class="grid-item" class:details onclick={() => flip(id)}>
 			<div class="title">
 				<h1 aria-label={number}>{number}</h1>
 			</div>

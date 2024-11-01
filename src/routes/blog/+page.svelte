@@ -1,4 +1,6 @@
 <script>
+	import { run } from 'svelte/legacy';
+
 	import GsapIcon from '$lib/components/GsapIcon.svelte';
 	import SvelteIcon from '$lib/components/SvelteIcon.svelte';
 	import { gsap } from 'gsap';
@@ -26,7 +28,9 @@
 		});
 	});
 
-	$: console.log('Blog page');
+	run(() => {
+		console.log('Blog page');
+	});
 </script>
 
 <SEO title="Blog Topics" description="a blog about web techniques" keywords="blog topics" />

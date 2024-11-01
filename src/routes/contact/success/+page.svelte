@@ -1,8 +1,12 @@
 <script>
+	import { run } from 'svelte/legacy';
+
 	import Image from '$lib/components/Image.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 
-	$: console.log('Success! Your message was sent.');
+	run(() => {
+		console.log('Success! Your message was sent.');
+	});
 </script>
 
 <SEO title="Success!" description="Successfully Sent" keywords="success, contact success" />

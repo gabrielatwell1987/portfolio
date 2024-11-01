@@ -3,7 +3,8 @@
 	import { gsap } from 'gsap';
 	import SplitType from 'split-type';
 
-	export let title;
+	/** @type {{title: any}} */
+	let { title } = $props();
 
 	onMount(() => {
 		gsap.set('.title', { autoAlpha: 0 });

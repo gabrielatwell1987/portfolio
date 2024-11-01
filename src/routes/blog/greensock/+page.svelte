@@ -1,4 +1,6 @@
 <script>
+	import { run } from 'svelte/legacy';
+
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import Button from '$lib/components/Button.svelte';
@@ -22,7 +24,9 @@
 		tl.to(title, { autoAlpha: 1, duration: 2, ease: 'back.out(4)' }, 0);
 	});
 
-	$: console.log('Greensock page');
+	run(() => {
+		console.log('Greensock page');
+	});
 
 	// details animation
 	function resetAnimation(event) {
@@ -62,11 +66,11 @@
 			</article>
 
 			<div class="centerDetail">
-				<details name="gsap" on:toggle={resetAnimation}>
-					<!-- svelte-ignore a11y-no-redundant-roles -->
+				<details name="gsap" ontoggle={resetAnimation}>
+					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
-							><b>What is GSAP? <i class="fa-solid fa-caret-right" style="color: var(--pale)" /></b
+							><b>What is GSAP? <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
 							></span
 						></summary
 					>
@@ -83,11 +87,11 @@
 					</p>
 				</details>
 
-				<details name="gsap" on:toggle={resetAnimation}>
-					<!-- svelte-ignore a11y-no-redundant-roles -->
+				<details name="gsap" ontoggle={resetAnimation}>
+					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
-							><b>Install GSAP? <i class="fa-solid fa-caret-right" style="color: var(--pale)" /></b
+							><b>Install GSAP? <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
 							></span
 						></summary
 					>
@@ -107,11 +111,11 @@
 					</p>
 				</details>
 
-				<details name="gsap" on:toggle={resetAnimation}>
-					<!-- svelte-ignore a11y-no-redundant-roles -->
+				<details name="gsap" ontoggle={resetAnimation}>
+					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
-							><b>The syntax <i class="fa-solid fa-caret-right" style="color: var(--pale)" /></b
+							><b>The syntax <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
 							></span
 						></summary
 					>
@@ -137,11 +141,11 @@
 					</p>
 				</details>
 
-				<details name="gsap" on:toggle={resetAnimation}>
-					<!-- svelte-ignore a11y-no-redundant-roles -->
+				<details name="gsap" ontoggle={resetAnimation}>
+					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Variables</b></span>
-						<i class="fa-solid fa-caret-right" style="color: var(--pale)" /></summary
+						<i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></summary
 					>
 					<p class="text">
 						<Heading title="x, y, z" /> Control the position of an element along the x, y, and z axes.<br

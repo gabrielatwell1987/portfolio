@@ -4,9 +4,9 @@
 	import Modal from './Modal.svelte';
 	import SendButton from '$lib/components/SendButton.svelte';
 
-	let name = '';
-	let email = '';
-	let message = '';
+	let name = $state('');
+	let email = $state('');
+	let message = $state('');
 
 	onMount(() => {
 		const form = document.querySelector('form');
@@ -30,7 +30,7 @@
 		<input type="email" id="email" name="email" bind:value={email} required />
 
 		<label for="message"><span>Message</span></label>
-		<textarea type="text" id="message" name="message" bind:value={message} rows="5" required />
+		<textarea type="text" id="message" name="message" bind:value={message} rows="5" required></textarea>
 
 		<div class="send">
 			<SendButton />

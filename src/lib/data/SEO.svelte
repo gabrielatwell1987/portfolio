@@ -1,11 +1,10 @@
 <script>
 	import { page } from '$app/stores';
 
-	export let title;
-	export let description;
-	export let keywords;
+	/** @type {{title: any, description: any, keywords: any}} */
+	let { title, description, keywords } = $props();
 
-	$: url = $page.url.href;
+	let url = $derived($page.url.href);
 </script>
 
 <svelte:head>

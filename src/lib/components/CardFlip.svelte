@@ -1,8 +1,11 @@
 <script>
-	export let src;
-	export let alt;
-	export let src2;
-	export let alt2;
+	/** @type {{src: any, alt: any, src2: any, alt2: any}} */
+	let {
+		src,
+		alt,
+		src2,
+		alt2
+	} = $props();
 </script>
 
 <main class="card-container">

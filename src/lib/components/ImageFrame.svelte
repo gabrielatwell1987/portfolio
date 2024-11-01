@@ -2,11 +2,10 @@
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 
-	export let src;
-	export let alt;
-	export let text;
+	/** @type {{src: any, alt: any, text: any}} */
+	let { src, alt, text } = $props();
 
-	let imageContainer;
+	let imageContainer = $state();
 
 	onMount(() => {
 		const imageContainer = document.querySelector('.image-container');

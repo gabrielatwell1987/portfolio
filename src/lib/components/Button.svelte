@@ -1,5 +1,6 @@
 <script>
-	export let title;
+	/** @type {{title: any}} */
+	let { title } = $props();
 </script>
 
 <button>{title}</button>

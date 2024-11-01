@@ -1,4 +1,6 @@
 <script>
+	import { run } from 'svelte/legacy';
+
 	import { gsap } from 'gsap';
 	import { onMount } from 'svelte';
 	import { blur } from 'svelte/transition';
@@ -58,7 +60,9 @@
 			);
 	});
 
-	$: console.log('About page');
+	run(() => {
+		console.log('About page');
+	});
 </script>
 
 <SEO title="About Me" description="About Gabriel Atwell" keywords="about gabe, about gabriel" />

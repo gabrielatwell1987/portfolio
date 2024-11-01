@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<button type="submit">Send <i class="fa-solid fa-angle-right" /></button>
+<button type="submit">Send <i class="fa-solid fa-angle-right"></i></button>
 
 <style>
 	@media (min-width: 300px) {

@@ -138,7 +138,7 @@
 	});
 </script>
 
-<canvas class="webgl" aria-label="hero" />
+<canvas class="webgl" aria-label="hero"></canvas>
 
 <style>
 	@media (min-width: 200px) {

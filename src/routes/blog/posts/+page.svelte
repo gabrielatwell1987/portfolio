@@ -1,4 +1,6 @@
 <script>
+	import { run } from 'svelte/legacy';
+
 	import CSS from './css.md';
 	import GSAP from './gsap.md';
 	import { blur } from 'svelte/transition';
@@ -59,7 +61,9 @@
 		});
 	});
 
-	$: console.log('Web animations page');
+	run(() => {
+		console.log('Web animations page');
+	});
 </script>
 
 <SEO
