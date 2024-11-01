@@ -6,6 +6,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { onMount } from 'svelte';
 	import Loading from '$lib/components/Loading.svelte';
+
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
 
