@@ -1,25 +1,18 @@
 <script>
-	import { Hamburger } from 'svelte-hamburgers';
+	import Burger from '$lib/components/Burger.svelte';
 	import MainLogo from '$lib/components/MainLogo.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	import NavLink from '$lib/components/NavLink.svelte';
 
-	let open = $state(false);
+	let open = false;
+
 	let isClosing = false;
 </script>
 
 <nav>
 	<!-- hamburger icon -->
 	<div class="header-logos">
-		<div class="hamburgerMenu">
-			<Hamburger
-				--color="var(--white)"
-				type="spin"
-				bind:open
-				ariaLabel="menu"
-				--active-color="var(--white)"
-			/>
-		</div>
+		<Burger bind:open ariaLabel="Toggle menu" />
 
 		<MainLogo />
 	</div>
@@ -68,6 +61,7 @@
 		margin-inline: auto;
 		backdrop-filter: blur(0.25rem);
 		-webkit-backdrop-filter: blur(0.25rem);
+		z-index: 15;
 	}
 
 	.header-logos {
@@ -162,10 +156,6 @@
 		.header-logos {
 			display: block;
 			margin-left: 15%;
-		}
-
-		.hamburgerMenu {
-			display: none;
 		}
 	}
 
