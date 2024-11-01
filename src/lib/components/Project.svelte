@@ -1,11 +1,15 @@
 <script>
 	/** @type {{title: any, img: any, url: any, description: any}} */
-	let {
-		title,
-		img,
-		url,
-		description
-	} = $props();
+	// let {
+	// 	title,
+	// 	img,
+	// 	url,
+	// 	description
+	// } = $props();
+	export let title;
+	export let img;
+	export let url;
+	export let description;
 </script>
 
 <h3 class="link name">{title}</h3>
