@@ -126,6 +126,7 @@
 
 		.toggle {
 			margin-top: 1rem;
+			margin-left: 1rem;
 		}
 	}
 
@@ -156,6 +157,7 @@
 		.header-logos {
 			display: block;
 			margin-left: 15%;
+			margin-bottom: 15%;
 		}
 	}
 
@@ -210,6 +212,10 @@
 	@media (min-width: 1400px) {
 		nav {
 			margin-right: 0;
+		}
+
+		.toggle {
+			margin-left: 15%;
 		}
 	}
 

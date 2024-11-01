@@ -24,6 +24,7 @@
         cursor: pointer;
         z-index: 10;
         margin-bottom: 80%;
+        margin-right: 10%;
     }
 
     .bar {
@@ -37,10 +38,6 @@
     i {
         color: var(--white);
         scale: 2;
-    }
-
-    i:hover {
-        color: var(--off-white);
     }
 </style>
 
