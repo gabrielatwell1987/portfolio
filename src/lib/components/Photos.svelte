@@ -1,4 +1,6 @@
 <script>
+	import { run } from 'svelte/legacy';
+
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { onMount } from 'svelte';
@@ -78,14 +80,16 @@
 		});
 	});
 
-	$: console.log('Photos of Me');
+	run(() => {
+		console.log('Photos of Me');
+	});
 </script>
 
 <main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
 	<Title title="images" />
 
 	<section>
-		<div class="spacing" />
+		<div class="spacing"></div>
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
@@ -167,7 +171,7 @@
 			</aside>
 		</div>
 
-		<div class="spacing" />
+		<div class="spacing"></div>
 	</section>
 </main>
 

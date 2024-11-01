@@ -2,9 +2,8 @@
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 
-	export let title1;
-	export let title2;
-	export let span;
+	/** @type {{title1: any, title2: any, span: any}} */
+	let { title1, title2, span } = $props();
 
 	onMount(() => {
 		const h1L = document.querySelector('.h1-l');

@@ -1,5 +1,5 @@
 <script>
-	let darkMode = true;
+	let darkMode = $state(true);
 
 	function toggle() {
 		darkMode = !darkMode;
@@ -7,11 +7,11 @@
 	}
 </script>
 
-<button on:click={toggle} aria-label="toggle">
+<button onclick={toggle} aria-label="toggle">
 	{#if darkMode}
-		<i class="fa-regular fa-sun" />
+		<i class="fa-regular fa-sun"></i>
 	{:else}
-		<i class="fa-regular fa-moon" />
+		<i class="fa-regular fa-moon"></i>
 	{/if}
 </button>
 

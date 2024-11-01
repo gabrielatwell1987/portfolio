@@ -4,7 +4,7 @@
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	import NavLink from '$lib/components/NavLink.svelte';
 
-	let open = false;
+	let open = $state(false);
 	let isClosing = false;
 </script>
 

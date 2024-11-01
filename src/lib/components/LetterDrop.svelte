@@ -31,7 +31,7 @@
 	<span class="animated-letter"> o </span>
 	<span class="animated-letter"> u </span>
 	<span class="animated-letter"> t </span>
-	<span class="animated-letter space" />
+	<span class="animated-letter space"></span>
 	<span class="animated-letter"> m </span>
 	<span class="animated-letter"> e </span>
 </h1>

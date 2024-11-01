@@ -1,6 +1,6 @@
 <script>
-	export let src;
-	export let title;
+	/** @type {{src: any, title: any}} */
+	let { src, title } = $props();
 </script>
 
 <iframe
@@ -12,7 +12,7 @@
 	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 	allowfullscreen
 	aria-label={title}
-/>
+></iframe>
 
 <style>
 	iframe {

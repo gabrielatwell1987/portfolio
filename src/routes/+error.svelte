@@ -1,9 +1,13 @@
 <script>
+	import { run } from 'svelte/legacy';
+
 	import { page } from '$app/stores';
 	import SEO from '$lib/data/SEO.svelte';
 	import Image from '$lib/components/Image.svelte';
 
-	$: console.log(`There is a ${$page.status} error!`);
+	run(() => {
+		console.log(`There is a ${$page.status} error!`);
+	});
 </script>
 
 <SEO title="Error!" description="Error Page" keywords="error, gabe's error page" />

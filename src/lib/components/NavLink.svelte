@@ -1,6 +1,6 @@
 <script>
-	export let href;
-	export let title;
+	/** @type {{href: any, title: any}} */
+	let { href, title } = $props();
 </script>
 
 <a class="nav-link" {href}>{title}</a>

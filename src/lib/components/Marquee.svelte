@@ -25,13 +25,13 @@
 				target="_blank"
 				aria-label="GitHub"
 			>
-				<i class="fa-brands fa-github" aria-hidden="true" /></a
+				<i class="fa-brands fa-github" aria-hidden="true"></i></a
 			>
 		</li>
 
 		<li>
 			<a class="size" href="https://codepen.io/gabrielatwell" target="_blank" aria-label="Codepen">
-				<i class="fa-brands fa-codepen" aria-hidden="true" /></a
+				<i class="fa-brands fa-codepen" aria-hidden="true"></i></a
 			>
 		</li>
 
@@ -42,7 +42,7 @@
 				target="_blank"
 				aria-label="LinkedIn"
 			>
-				<i class="fa-brands fa-linkedin" aria-hidden="true" />
+				<i class="fa-brands fa-linkedin" aria-hidden="true"></i>
 			</a>
 		</li>
 
@@ -53,7 +53,7 @@
 				target="_blank"
 				aria-label="Discord"
 			>
-				<i class="fa-brands fa-discord" aria-hidden="true" />
+				<i class="fa-brands fa-discord" aria-hidden="true"></i>
 			</a>
 		</li>
 
@@ -64,7 +64,7 @@
 				target="_blank"
 				aria-label="Reddit"
 			>
-				<i class="fa-brands fa-square-reddit" aria-hidden="true" />
+				<i class="fa-brands fa-square-reddit" aria-hidden="true"></i>
 			</a>
 		</li>
 	</ul>

@@ -33,14 +33,14 @@
 </script>
 
 <button class="open-button">
-	<i class="fa-regular fa-folder-open" />
+	<i class="fa-regular fa-folder-open"></i>
 </button>
 
 <dialog class="modal" id="modal" aria-label="modal">
 	<article>
 		<header>
 			<button rel="prev" class="close-button">
-				<i class="fa-solid fa-xmark" />
+				<i class="fa-solid fa-xmark"></i>
 			</button>
 
 			<h4>Please contact me for any frontend work!</h4>

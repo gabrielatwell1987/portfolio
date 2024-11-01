@@ -2,7 +2,8 @@
 	import { spring } from 'svelte/motion';
 	import gsap from 'gsap';
 
-	export let text;
+	/** @type {{text: any}} */
+	let { text } = $props();
 
 	let animation = spring(0, {
 		stiffness: 0.06,
@@ -34,7 +35,7 @@
 </script>
 
 <main class="dropdown-container" style="--animation: {$animation}">
-	<button class="button" on:click={toggleDropdown}>
+	<button class="button" onclick={toggleDropdown}>
 		<svg
 			width="284"
 			height="284"
@@ -71,8 +72,8 @@
 	</section>
 
 	<section class="goo-container">
-		<div class="button" />
-		<div class="menu" />
+		<div class="button"></div>
+		<div class="menu"></div>
 	</section>
 </main>
 

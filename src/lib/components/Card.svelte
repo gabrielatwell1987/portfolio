@@ -1,10 +1,13 @@
 <script>
-	export let title;
-	export let desc;
-	export let button;
-	export let src;
-	export let alt;
-	export let href;
+	/** @type {{title: any, desc: any, button: any, src: any, alt: any, href: any}} */
+	let {
+		title,
+		desc,
+		button,
+		src,
+		alt,
+		href
+	} = $props();
 </script>
 
 <main class="card">

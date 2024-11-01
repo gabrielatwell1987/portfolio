@@ -3,9 +3,9 @@
 
 <main class="container">
 	<section class="loading">
-		<div />
-		<div />
-		<div />
+		<div></div>
+		<div></div>
+		<div></div>
 	</section>
 </main>
 

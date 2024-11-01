@@ -1,6 +1,6 @@
 <script>
-	export let leftTitle;
-	export let rightTitle;
+	/** @type {{leftTitle: any, rightTitle: any}} */
+	let { leftTitle, rightTitle } = $props();
 </script>
 
 <section class="grid" aria-label="bio">

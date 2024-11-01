@@ -6,8 +6,10 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import { onMount } from 'svelte';
 	import Loading from '$lib/components/Loading.svelte';
+	/** @type {{children?: import('svelte').Snippet}} */
+	let { children } = $props();
 
-	let isPageLoaded = false;
+	let isPageLoaded = $state(false);
 
 	async function detectSWUpdate() {
 		const registration = await navigator.serviceWorker.ready;
@@ -43,7 +45,7 @@
 		detectSWUpdate();
 	});
 
-	$: canonicalUrl = $page.url.origin + $page.url.pathname;
+	let canonicalUrl = $derived($page.url.origin + $page.url.pathname);
 </script>
 
 <svelte:head>
@@ -70,14 +72,14 @@
 	<br />
 	<br />
 	<br />
-	<slot />
+	{@render children?.()}
 
 	<div class="footer">
 		<Footer />
 	</div>
 </main>
 
-<footer />
+<footer></footer>
 
 <style>
 	:global(body) {

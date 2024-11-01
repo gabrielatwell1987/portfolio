@@ -1,6 +1,6 @@
 <script>
-	export let title;
-	export let hover;
+	/** @type {{title: any, hover: any}} */
+	let { title, hover } = $props();
 </script>
 
 <main class="tooltip-container">

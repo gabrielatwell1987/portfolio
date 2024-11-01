@@ -3,8 +3,8 @@
 	import { onMount } from 'svelte';
 	import SplitType from 'split-type';
 
-	export let text;
-	export let span;
+	/** @type {{text: any, span: any}} */
+	let { text, span } = $props();
 
 	onMount(() => {
 		const littleSentence = document.querySelector('.sentence');

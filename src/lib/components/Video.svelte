@@ -1,10 +1,10 @@
 <script>
-	export let src1;
-	export let src2;
+	/** @type {{src1: any, src2: any}} */
+	let { src1, src2 } = $props();
 
-	let duration;
-	let videoWidth;
-	let videoHeight;
+	let duration = $state();
+	let videoWidth = $state();
+	let videoHeight = $state();
 </script>
 
 <div class="video">

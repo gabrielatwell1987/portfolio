@@ -1,4 +1,6 @@
 <script>
+	import { run } from 'svelte/legacy';
+
 	import ThreeCanvas from '$lib/components/ThreeCanvas.svelte';
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
@@ -16,7 +18,9 @@
 		up.addEventListener('mouseleave', () => textTl.reverse());
 	});
 
-	$: console.log('Three.js hero section');
+	run(() => {
+		console.log('Three.js hero section');
+	});
 </script>
 
 <SEO
