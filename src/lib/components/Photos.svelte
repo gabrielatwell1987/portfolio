@@ -1,15 +1,12 @@
 <script>
-	import { run } from 'svelte/legacy';
-
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	import { onMount } from 'svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import Lenis from 'lenis';
 	import Title from '$lib/components/Title.svelte';
 
-	onMount(() => {
+	$effect(() => {
 		const main = document.querySelector('main');
 		const gabe = document.querySelectorAll('.gabe');
 
@@ -78,9 +75,7 @@
 				}
 			}).to(main, { autoAlpha: 1 });
 		});
-	});
 
-	run(() => {
 		console.log('Photos of Me');
 	});
 </script>

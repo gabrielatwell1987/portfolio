@@ -1,10 +1,8 @@
 <script>
-	import { run } from 'svelte/legacy';
-
 	import Image from '$lib/components/Image.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 
-	run(() => {
+	$effect(() => {
 		console.log('Success! Your message was sent.');
 	});
 </script>

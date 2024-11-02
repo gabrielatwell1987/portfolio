@@ -5,7 +5,7 @@
 	function toggleMenu() {
 		setTimeout(() => {
 			open = !open;
-		}, 750);
+		}, 500);
 	}
 </script>
 

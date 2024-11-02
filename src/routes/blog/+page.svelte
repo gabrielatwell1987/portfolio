@@ -1,18 +1,15 @@
 <script>
-	import { run } from 'svelte/legacy';
-
 	import GsapIcon from '$lib/components/GsapIcon.svelte';
 	import SvelteIcon from '$lib/components/SvelteIcon.svelte';
 	import { gsap } from 'gsap';
 	import { TextPlugin } from 'gsap/dist/TextPlugin';
-	import { onMount } from 'svelte';
 	import Image from '$lib/components/Image.svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import SEO from '$lib/data/SEO.svelte';
 	import AnimatedHeading from '$lib/components/AnimatedHeading.svelte';
 
-	onMount(() => {
+	$effect(() => {
 		gsap.registerPlugin(TextPlugin);
 
 		gsap.set('.title', {
@@ -26,9 +23,7 @@
 			ease: 'expoScale(0.5,7,power1.in)',
 			delay: 0.5
 		});
-	});
 
-	run(() => {
 		console.log('Blog page');
 	});
 </script>

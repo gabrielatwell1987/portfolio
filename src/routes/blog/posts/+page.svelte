@@ -1,17 +1,14 @@
 <script>
-	import { run } from 'svelte/legacy';
-
 	import CSS from './css.md';
 	import GSAP from './gsap.md';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import Button from '$lib/components/Button.svelte';
 	import copy from 'copy-to-clipboard';
-	import { onMount } from 'svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import Card from '$lib/components/Card.svelte';
 
-	onMount(() => {
+	$effect(() => {
 		const codeBlocks = document.querySelectorAll('pre');
 
 		codeBlocks.forEach((block) => {
@@ -59,9 +56,7 @@
 				}, 1000);
 			});
 		});
-	});
 
-	run(() => {
 		console.log('Web animations page');
 	});
 </script>

@@ -1,10 +1,8 @@
 <script>
-	import { onMount } from 'svelte';
-
 	/** @type {{title: any}} */
 	let { title } = $props();
 
-	onMount(() => {
+	$effect(() => {
 		const iFrame = document.querySelector('iframe');
 	});
 </script>

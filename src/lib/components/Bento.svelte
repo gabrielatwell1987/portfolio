@@ -1,8 +1,7 @@
 <script>
-	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 
-	onMount(() => {
+	$effect(() => {
 		const bento = document.querySelectorAll('.item');
 
 		const tl = gsap.timeline();

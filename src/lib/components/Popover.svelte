@@ -35,7 +35,7 @@
 </script>
 
 <main class="dropdown-container" style="--animation: {$animation}">
-	<button class="button" onclick={toggleDropdown}>
+	<button class="button" onclick={toggleDropdown} aria-label="popover button">
 		<svg
 			width="284"
 			height="284"

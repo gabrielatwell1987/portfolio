@@ -1,9 +1,6 @@
 <script>
-	import { run } from 'svelte/legacy';
-
 	import { gsap } from 'gsap';
 	import { Draggable } from 'gsap/dist/Draggable';
-	import { onMount } from 'svelte';
 	import Project from '$lib/components/Project.svelte';
 	import Figure from '$lib/components/Figure.svelte';
 	import Title from '$lib/components/Title.svelte';
@@ -14,7 +11,7 @@
 	import ImageFrame from '$lib/components/ImageFrame.svelte';
 
 	// animations
-	onMount(() => {
+	$effect(() => {
 		gsap.registerPlugin(Draggable);
 
 		const ascii = document.querySelector('.ascii');
@@ -43,9 +40,7 @@
 			.to('.link', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 2, ease: 'expo.out' }, 0)
 			.from('.title', { scale: 0.25, duration: 3 }, 0)
 			.to('.ascii', { yPercent: 0, duration: 1.75 }, 0);
-	});
 
-	run(() => {
 		console.log('Projects page');
 	});
 </script>

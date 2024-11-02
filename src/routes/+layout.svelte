@@ -4,7 +4,6 @@
 	import NavBar from '$lib/components/NavBar.svelte';
 	import Analytics from '$lib/data/Analytics.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import { onMount } from 'svelte';
 	import Loading from '$lib/components/Loading.svelte';
 
 	/** @type {{children?: import('svelte').Snippet}} */
@@ -29,7 +28,7 @@
 		});
 	}
 
-	onMount(async () => {
+	$effect(async () => {
 		function setErudaPosition() {
 			eruda.position({ x: window.innerWidth - 70, y: window.innerHeight - 120 });
 		}

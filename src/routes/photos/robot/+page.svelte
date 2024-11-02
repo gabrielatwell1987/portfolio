@@ -1,10 +1,8 @@
 <script>
-	import { run } from 'svelte/legacy';
-
 	import Robot from '$lib/components/Robot.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 
-	run(() => {
+	$effect(() => {
 		console.log('Robot page');
 	});
 </script>

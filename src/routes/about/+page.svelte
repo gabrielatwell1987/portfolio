@@ -1,8 +1,5 @@
 <script>
-	import { run } from 'svelte/legacy';
-
 	import { gsap } from 'gsap';
-	import { onMount } from 'svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import Button from '$lib/components/Button.svelte';
@@ -14,7 +11,7 @@
 	import CardFlip from '$lib/components/CardFlip.svelte';
 
 	// animations
-	onMount(() => {
+	$effect(() => {
 		const tl = gsap.timeline();
 
 		gsap.set('article', { autoAlpha: 0 });
@@ -58,9 +55,7 @@
 				},
 				'-=.75'
 			);
-	});
 
-	run(() => {
 		console.log('About page');
 	});
 </script>

@@ -1,6 +1,5 @@
 <script>
 	import { gsap } from 'gsap';
-	import { onMount } from 'svelte';
 	import Modal from './Modal.svelte';
 	import SendButton from '$lib/components/SendButton.svelte';
 
@@ -8,7 +7,7 @@
 	let email = $state('');
 	let message = $state('');
 
-	onMount(() => {
+	$effect(() => {
 		const form = document.querySelector('form');
 
 		gsap.set(form, { autoAlpha: 0 });
@@ -30,7 +29,8 @@
 		<input type="email" id="email" name="email" bind:value={email} required />
 
 		<label for="message"><span>Message</span></label>
-		<textarea type="text" id="message" name="message" bind:value={message} rows="5" required></textarea>
+		<textarea type="text" id="message" name="message" bind:value={message} rows="5" required
+		></textarea>
 
 		<div class="send">
 			<SendButton />

@@ -1,12 +1,10 @@
 <script>
-	import { run } from 'svelte/legacy';
-
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import SEO from '$lib/data/SEO.svelte';
 
-	run(() => {
+	$effect(() => {
 		console.log('Contact page');
 	});
 </script>

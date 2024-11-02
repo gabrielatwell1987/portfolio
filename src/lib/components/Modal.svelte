@@ -1,9 +1,8 @@
 <script>
-	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 	import Image from './Image.svelte';
 
-	onMount(() => {
+	$effect(() => {
 		const modal = document.querySelector('#modal');
 		const openModal = document.querySelector('.open-button');
 		const closeModal = document.querySelector('.close-button');
@@ -32,14 +31,14 @@
 	});
 </script>
 
-<button class="open-button">
+<button class="open-button" aria-label="open button">
 	<i class="fa-regular fa-folder-open"></i>
 </button>
 
 <dialog class="modal" id="modal" aria-label="modal">
 	<article>
 		<header>
-			<button rel="prev" class="close-button">
+			<button rel="prev" class="close-button" aria-label="close button">
 				<i class="fa-solid fa-xmark"></i>
 			</button>
 
