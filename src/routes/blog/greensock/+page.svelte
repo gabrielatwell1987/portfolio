@@ -1,8 +1,5 @@
 <script>
-	import { run } from 'svelte/legacy';
-
 	import { gsap } from 'gsap';
-	import { onMount } from 'svelte';
 	import Button from '$lib/components/Button.svelte';
 	import Iframe from '$lib/components/Iframe.svelte';
 	import Heading from './Heading.svelte';
@@ -12,7 +9,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 
 	// animations
-	onMount(() => {
+	$effect(() => {
 		const title = document.querySelector('.title');
 		const popover = document.querySelector('.popover');
 
@@ -22,9 +19,7 @@
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
 		tl.to(title, { autoAlpha: 1, duration: 2, ease: 'back.out(4)' }, 0);
-	});
 
-	run(() => {
 		console.log('Greensock page');
 	});
 
@@ -70,7 +65,8 @@
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
-							><b>What is GSAP? <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
+							><b
+								>What is GSAP? <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
 							></span
 						></summary
 					>
@@ -91,7 +87,8 @@
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
-							><b>Install GSAP? <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
+							><b
+								>Install GSAP? <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
 							></span
 						></summary
 					>

@@ -1,5 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 
 	/** @type {{src: any, alt: any, text: any}} */
@@ -7,7 +6,7 @@
 
 	let imageContainer = $state();
 
-	onMount(() => {
+	$effect(() => {
 		const imageContainer = document.querySelector('.image-container');
 		const img = document.querySelector('.image-container img');
 		const h1 = document.querySelector('h1');

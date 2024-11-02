@@ -1,7 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
-
-	onMount(() => {
+	$effect(() => {
 		const root = document.documentElement;
 		const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
 			'--marquee-elements-displayed'

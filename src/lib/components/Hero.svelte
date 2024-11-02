@@ -1,8 +1,7 @@
 <script>
 	import { gsap } from 'gsap';
-	import { onMount } from 'svelte';
 
-	onMount(() => {
+	$effect(() => {
 		const heroTitle = document.querySelector('.hero-title');
 		const up = document.querySelector('.up');
 

@@ -1,12 +1,11 @@
 <script>
 	import { gsap } from 'gsap';
-	import { onMount } from 'svelte';
 	import SplitType from 'split-type';
 
 	/** @type {{text: any, span: any}} */
 	let { text, span } = $props();
 
-	onMount(() => {
+	$effect(() => {
 		const littleSentence = document.querySelector('.sentence');
 		const biggerWord = document.querySelector('.bigWord');
 		const split = new SplitType(biggerWord, { types: 'chars' });
@@ -65,8 +64,13 @@
 
 	.glow {
 		color: var(--sky);
-		text-shadow: 0 0 5px #242424, 0 0 5px var(--off-white), 0 0 5px var(--off-white),
-			0 0 10px var(--off-white), 0 0 15px var(--off-white), 0 0 20px var(--off-white);
+		text-shadow:
+			0 0 5px #242424,
+			0 0 5px var(--off-white),
+			0 0 5px var(--off-white),
+			0 0 10px var(--off-white),
+			0 0 15px var(--off-white),
+			0 0 20px var(--off-white);
 	}
 
 	h1.sentence,
@@ -87,8 +91,13 @@
 		}
 
 		.glow {
-			text-shadow: 0 0 3px #242424, 0 0 4px var(--off-white), 0 0 5px var(--off-white),
-				0 0 6px var(--off-white), 0 0 15px var(--off-white), 0 0 5px var(--off-white);
+			text-shadow:
+				0 0 3px #242424,
+				0 0 4px var(--off-white),
+				0 0 5px var(--off-white),
+				0 0 6px var(--off-white),
+				0 0 15px var(--off-white),
+				0 0 5px var(--off-white);
 		}
 
 		.animated-text {

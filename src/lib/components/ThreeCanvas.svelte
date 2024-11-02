@@ -1,8 +1,7 @@
 <script>
-	import { onMount } from 'svelte';
 	import * as THREE from 'three';
 
-	onMount(() => {
+	$effect(() => {
 		// Texture Loader
 		const textureLoader = new THREE.TextureLoader();
 		const star = textureLoader.load('/textures/star.png');

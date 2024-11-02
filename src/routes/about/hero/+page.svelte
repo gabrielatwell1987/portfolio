@@ -1,12 +1,9 @@
 <script>
-	import { run } from 'svelte/legacy';
-
 	import ThreeCanvas from '$lib/components/ThreeCanvas.svelte';
-	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 	import SEO from '$lib/data/SEO.svelte';
 
-	onMount(() => {
+	$effect(() => {
 		const heroTitle = document.querySelector('.hero-title');
 		const up = document.querySelector('.up');
 
@@ -16,9 +13,7 @@
 		textTl.to(heroTitle, { yPercent: -20 }).from(up, { y: 10 }, 0);
 		up.addEventListener('mouseenter', () => textTl.play());
 		up.addEventListener('mouseleave', () => textTl.reverse());
-	});
 
-	run(() => {
 		console.log('Three.js hero section');
 	});
 </script>

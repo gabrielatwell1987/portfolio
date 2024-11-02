@@ -1,8 +1,5 @@
 <script>
-	import { run } from 'svelte/legacy';
-
 	import { gsap } from 'gsap';
-	import { onMount } from 'svelte';
 	import Button from '$lib/components/Button.svelte';
 	import Iframe from '$lib/components/Iframe.svelte';
 	import Image from '$lib/components/Image.svelte';
@@ -12,7 +9,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 
 	// animations
-	onMount(() => {
+	$effect(() => {
 		const title = document.querySelector('.title');
 		const popover = document.querySelector('.popover');
 
@@ -22,9 +19,7 @@
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
 		tl.to(title, { autoAlpha: 1, duration: 2, ease: 'back.out(4)' }, 0);
-	});
 
-	run(() => {
 		console.log('Greensock page');
 	});
 

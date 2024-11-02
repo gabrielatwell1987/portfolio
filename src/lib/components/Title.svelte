@@ -1,12 +1,11 @@
 <script>
-	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
 	import SplitType from 'split-type';
 
 	/** @type {{title: any}} */
 	let { title } = $props();
 
-	onMount(() => {
+	$effect(() => {
 		gsap.set('.title', { autoAlpha: 0 });
 
 		const titleText = new SplitType('#title', { types: 'chars' });

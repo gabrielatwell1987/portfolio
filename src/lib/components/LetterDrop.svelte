@@ -1,8 +1,7 @@
 <script>
 	import gsap from 'gsap';
-	import { onMount } from 'svelte';
 
-	onMount(() => {
+	$effect(() => {
 		const letters = gsap.utils.toArray('.animated-letter');
 
 		gsap.set(letters, {

@@ -2,7 +2,6 @@
 	import { blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import Title from '$lib/components/Title.svelte';
-	import Image from '$lib/components/Image.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 </script>
 

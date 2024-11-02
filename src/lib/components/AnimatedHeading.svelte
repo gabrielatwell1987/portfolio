@@ -1,11 +1,10 @@
 <script>
-	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 
 	/** @type {{title1: any, title2: any, span: any}} */
 	let { title1, title2, span } = $props();
 
-	onMount(() => {
+	$effect(() => {
 		const h1L = document.querySelector('.h1-l');
 		const h1R = document.querySelector('.h1-r');
 		const spanMiddle = document.querySelector('.span');
