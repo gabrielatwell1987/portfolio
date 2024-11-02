@@ -49,7 +49,7 @@
 
 <section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} class="main">
 	<div class="separate">
-		<h1 class="title">Sveltekit</h1>
+		<h1 class="title">Svelte</h1>
 
 		<main>
 			<article class="popover">
@@ -76,12 +76,16 @@
 						react as #3 because it is really verbose.. but it does the same thing that sveltekit and
 						astro do.
 					</p>
+
+					<div class="structure">
+						<Image src="/logos/fileLayout.webp" alt="how a svelte file looks like" />
+					</div>
 				</details>
 
 				<details name="sveltekit" ontoggle={resetAnimation}>
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>Based off of basics</b></span>
+						><span class="margin"><b>Based off basics</b></span>
 						<i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></summary
 					>
 					<p class="text">
@@ -125,14 +129,14 @@
 						installed, you will use npm in your terminal. In your terminal, type
 						<code class="code">cd folder</code> to change the directory to whatever folder you want
 						to create your project in. If you're at where you want to be at, type
-						<code class="code">npm create svelte@latest</code>. This will create a new sveltekit
-						project. Once you have the project created, you will cd into the project and run
-						<code class="code">npm install</code>. This will install all of the dependencies that
-						you need to run the project. Once you have the project installed, you will run
+						<code class="code">npx sv create</code>. This will create a new svelte project with
+						sveltekit included. All of the dependencies will be installed when the project is
+						created. Once you have the project installed, you will run
 						<code class="code">npm run dev</code>
 						to start a development server and start the project. Now when you make changes to your code
-						and press save, it will update on your development server without having to hit refresh!
-						Also, this starts the project on <code class="code">http://localhost:5173</code>.
+						and press save, it will update on your development server automatically without having to
+						hit refresh! Also, this starts the project on
+						<code class="code">http://localhost:5173</code>.
 						<br /><br />
 						Once you have the development server running, you can start building your project. You can
 						use the <code class="code">src/routes</code> folder to create new pages. You can use the
@@ -147,6 +151,68 @@
 					<div class="structure">
 						<Image src="/logos/file-structure.webp" alt="Sveltekit structure" />
 					</div>
+				</details>
+
+				<details name="sveltekit" ontoggle={resetAnimation}>
+					<!-- svelte-ignore a11y_no_redundant_roles -->
+					<summary role="button" class="outline contrast spacing"
+						><span class="margin"><b>Runes</b></span>
+						<i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></summary
+					>
+					<p class="text">
+						Runes are symbols that you use in .svelte and .svelte.js / .svelte.ts files to control
+						the Svelte compiler. If you think of Svelte as a language, runes are part of the syntax
+						— they are keywords.
+						<br /><br />
+						Runes have a $ prefix and look like functions:
+						<code class="code">let message = $state('hello');</code>.
+						<br /><br />
+						They differ from normal JavaScript functions in important ways, however:
+						<br />🔹 You don’t need to import them — they are part of the language
+						<br />🔹 They’re not values
+						<br />🔹 You can’t assign them to a variable or pass them as arguments to a function -
+						Just like JavaScript keywords, they are only valid in certain positions (the compiler
+						will help you if you put them in the wrong place)
+					</p>
+
+					<p class="text">
+						The state rune allows you to create reactive state, which means that your UI reacts when
+						it changes: <code class="code">let count = $state(0);</code>
+					</p>
+
+					<p class="text">
+						Derived state is declared with the $derived rune: <code class="code"
+							>let doubled = $derived(count * 2);</code
+						>
+					</p>
+
+					<p class="text">
+						Effects are what make your application do things. When Svelte runs an effect function,
+						it tracks which pieces of state (and derived state) are accessed (unless accessed inside
+						untrack), and re-runs the function when that state later changes.
+						<br /><br />
+						You can also create your own effects with the $effect rune, which is useful for animating
+						your website, especially with gsap!
+						<br />
+					</p>
+
+					<div class="structure">
+						<Image src="/logos/effects_rune.webp" alt="the new svelte syntax" />
+					</div>
+
+					<p class="text">
+						The inputs to a component are referred to as props, which is short for properties. You
+						pass props to components just like you pass attributes to elements: <code class="code"
+							>let &lcub; src, alt &rcub; = $props();</code
+						>
+						<br /><br />
+						Destructuring allows us to declare fallback values, which are used if the parent component
+						does not set a given prop:
+						<code class="code">let &lcub; alt = "a wild one" &rcub; = $props();</code>
+						<br /><br />
+						we can use a rest property to get, well, the rest of the props:
+						<code class="code">let &lcub; rest, props, ...fun &rcub; = $props();</code>
+					</p>
 				</details>
 			</div>
 
