@@ -4,7 +4,7 @@
 	$effect(() => {
 		// Texture Loader
 		const textureLoader = new THREE.TextureLoader();
-		const star = textureLoader.load('/textures/star.png');
+		const star = textureLoader.load('/textures/star.webp');
 
 		// Canvas
 		const canvas = document.querySelector('canvas.webgl');
@@ -140,7 +140,7 @@
 <canvas class="webgl" aria-label="hero"></canvas>
 
 <style>
-	@media (min-width: 200px) {
+	@media (max-width: 997px) {
 		canvas {
 			margin-bottom: 15%;
 		}

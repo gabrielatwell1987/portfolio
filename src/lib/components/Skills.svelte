@@ -86,110 +86,77 @@
 </section>
 
 <style>
-	@media (min-width: 300px) {
-		.border {
-			display: none;
-		}
+	.skills {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+		gap: 1rem;
+		align-items: center;
 
-		.skills-title {
-			color: var(--dark-pale);
-			text-align: center;
-		}
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 
-	@media (min-width: 990px) {
-		.border {
-			width: 15rem;
-			height: 10vh;
-			border: none;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-			margin-inline: auto;
-			margin-top: -20%;
-			margin-bottom: 50%;
-		}
+	.skill {
+		border: 5px solid var(--white);
+		border-radius: 12px;
+		padding: 1rem;
+		cursor: pointer;
+	}
 
+	.skills a:hover {
+		transform: scale(1.1);
+		border-color: var(--off-white);
+	}
+
+	.skills li {
+		list-style: none;
+		width: 75%;
+		margin-inline: auto;
+	}
+
+	.skills-title {
+		font-family: var(--anta);
+		font-size: clamp(1.2rem, 5vw, 3rem);
+		color: var(--white);
+		letter-spacing: 3px;
+	}
+
+	.border {
+		border: none;
+		min-height: 60vh;
+		margin-top: 25%;
+	}
+
+	@media (max-width: 768px) {
 		.skills {
-			gap: 1rem;
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
 		}
 
-		.skill li {
-			list-style: none;
-			padding: 0.5rem 0.75rem;
-			width: 100%;
-			font-size: 5rem;
-			border-radius: 12px;
-			text-align: center;
-			mix-blend-mode: difference;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-
-		.skills-title {
-			font-size: 2.5rem;
-			font-weight: 900;
-			text-align: center;
-			font-family: var(--anta);
-			mix-blend-mode: screen;
-			text-wrap: nowrap;
+		.skills li {
+			width: 50%;
 		}
 
 		.skill {
-			display: block;
-			text-align: center;
-			padding: 0;
+			border: 2px solid var(--white);
 		}
 
-		.skill:is(:hover, :focus) {
-			transform: scale(1.25);
-			transition: transform 0.75s ease-in-out;
-			transform-origin: center;
+		.border {
+			margin-bottom: 30%;
+		}
+	}
+
+	@media (max-width: 400px) {
+		.skills {
+			grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
 		}
 
-		.skill:not(:hover, :focus) {
-			transform: scale(1);
-			transition: transform 0.75s ease-in-out;
-			transform-origin: center;
+		.border {
+			margin-bottom: 35%;
 		}
 
 		.icons {
-			width: 5rem;
-		}
-	}
-
-	@media (min-width: 1100px) {
-		.border {
-			margin-top: 5%;
-		}
-	}
-
-	@media (min-width: 1200px) {
-		.border {
-			margin-top: 15%;
-		}
-	}
-
-	@media (min-width: 1300px) {
-		.border {
-			margin-top: 13%;
-		}
-	}
-
-	@media (min-width: 1400px) {
-		.border {
-			margin-top: 20%;
-		}
-	}
-
-	@media (min-width: 1500px) {
-		.border {
-			margin-top: 20%;
-			margin-bottom: 25%;
+			scale: 1.5;
 		}
 	}
 </style>
