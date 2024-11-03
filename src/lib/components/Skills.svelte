@@ -38,7 +38,7 @@
 		<a class="skill" href="https://kit.svelte.dev/" target="_blank">
 			<li>
 				<div class="icons">
-					<Image src="skills/svelte.svg" alt="sveltekit" />
+					<Image src="skills/svelte.svg" alt="svelte kit" />
 				</div>
 			</li>
 		</a>
@@ -62,7 +62,7 @@
 		<a class="skill" href="https://github.com" target="_blank">
 			<li>
 				<div class="icons">
-					<Image src="skills/github.svg" alt="github" />
+					<Image src="skills/github.svg" alt="git hub" />
 				</div>
 			</li>
 		</a>

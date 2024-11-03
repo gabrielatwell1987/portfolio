@@ -197,7 +197,7 @@
 					</p>
 
 					<div class="structure">
-						<Image src="/logos/effects_rune.webp" alt="the new svelte syntax" />
+						<Image src="/logos/effects_rune.webp" alt="effect rune syntax with gsap" />
 					</div>
 
 					<p class="text">
