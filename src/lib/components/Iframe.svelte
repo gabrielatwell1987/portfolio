@@ -36,6 +36,7 @@
 			display: block;
 			margin: 10% auto;
 			width: 50%;
+			height: 25em;
 		}
 	}
 </style>
