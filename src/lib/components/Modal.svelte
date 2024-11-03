@@ -45,9 +45,7 @@
 			<h4>Please contact me for any frontend work!</h4>
 		</header>
 
-		<div class="modal-img">
-			<Image src="/logos/newspaper.webp" alt="frontend newspaper clipping" />
-		</div>
+		<Image src="/logos/newspaper.webp" alt="frontend newspaper clipping" width="500" />
 
 		<p class="modal__p">
 			If you need help with a website, or if you have any questions, please feel free to contact me.
@@ -96,13 +94,6 @@
 			background: transparent;
 		}
 
-		.modal-img {
-			border-radius: 10px;
-			width: 80%;
-			height: 25%;
-			margin: 1rem auto;
-		}
-
 		.modal h4 {
 			font-family: var(--anta);
 			font-size: clamp(1.2rem, 2vw, 3rem);
@@ -127,14 +118,6 @@
 			width: 93%;
 			height: 83%;
 			margin: 0 auto;
-		}
-
-		.modal-img {
-			border-radius: 10px;
-			width: 50%;
-			height: 25%;
-			margin-left: 23%;
-			margin-bottom: 1rem;
 		}
 
 		.modal__p {
