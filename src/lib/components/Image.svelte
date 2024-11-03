@@ -1,9 +1,9 @@
 <script>
 	/** @type {{src: any, alt: any}} */
-	let { src, alt } = $props();
+	let { src, alt, width } = $props();
 </script>
 
-<img {src} {alt} />
+<img {src} {alt} {width} />
 
 <style>
 	img {
@@ -12,5 +12,9 @@
 		object-fit: cover;
 		border-radius: 2.5%;
 		z-index: 9;
+		margin-inline: auto;
+		display: flex;
+		justify-content: center;
+		cursor: pointer;
 	}
 </style>
