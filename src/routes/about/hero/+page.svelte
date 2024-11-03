@@ -125,8 +125,9 @@
 		}
 
 		.italic {
-			font-style: italic;
 			font-family: var(--montserrat);
+			font-size: clamp(1rem, 1.5vw, 1.5rem);
+			font-style: italic;
 			font-weight: 200;
 			color: var(--white);
 		}

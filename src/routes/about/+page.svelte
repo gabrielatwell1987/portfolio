@@ -105,13 +105,13 @@
 			<!-- set up side by side text -->
 			<Grid leftTitle="Frontend" rightTitle="Design based" />
 
-			<!-- skills section -->
-			<div class="skills">
-				<Skills title="Technologies" />
-			</div>
-
 			<!-- bento grid -->
 			<Bento />
+
+			<!-- skills section -->
+			<div class="skills">
+				<Skills title="Skills" />
+			</div>
 
 			<!-- card flip -->
 			<div class="flip">
