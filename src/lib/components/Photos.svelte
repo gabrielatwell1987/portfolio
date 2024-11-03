@@ -104,7 +104,7 @@
 					height="350"
 					loading="lazy"
 				/>
-				<img src="/photos/gabe5.webp" alt="Gabe" class="gabe" width="400" loading="lazy" />
+				<img src="/photos/gabe5.webp" alt="Gabriel" class="gabe" width="400" loading="lazy" />
 			</aside>
 		</div>
 
@@ -113,7 +113,7 @@
 				<img
 					class="gabe"
 					src="photos/gabe4.webp"
-					alt="Gabriel Atwell in a restaurant"
+					alt="Gabriel in a restaurant"
 					width="350"
 					loading="lazy"
 				/>
