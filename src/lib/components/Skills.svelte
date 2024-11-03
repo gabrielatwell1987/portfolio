@@ -98,7 +98,7 @@
 	}
 
 	.skill {
-		border: 5px solid var(--white);
+		border: 3.5px solid var(--white);
 		border-radius: 12px;
 		padding: 1rem;
 		cursor: pointer;
@@ -117,9 +117,9 @@
 
 	.skills-title {
 		font-family: var(--anta);
-		font-size: clamp(1.2rem, 5vw, 3rem);
-		color: var(--white);
-		letter-spacing: 3px;
+		font-size: clamp(1.75rem, 5vw, 5rem);
+		color: var(--off-white);
+		letter-spacing: 5px;
 	}
 
 	.border {
