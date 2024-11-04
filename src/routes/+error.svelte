@@ -11,7 +11,9 @@
 <SEO title="Error!" description="Error Page" keywords="error, gabe's error page" />
 
 <main aria-label="error">
-	<Image src="/logos/error.webp" alt="Error" />
+	<div class="image">
+		<Image src="/logos/error.webp" alt="Error" width="300" />
+	</div>
 
 	<div class="error">
 		<h1>Status: {$page.status}</h1>
@@ -22,21 +24,23 @@
 
 <style>
 	main {
-		display: grid;
-		place-content: center;
 		padding: 1rem 1.5rem;
-		margin-top: 10%;
-		height: 100vh;
+		height: 80vh;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
 	}
 
 	h1 {
 		font-size: clamp(2rem, 5vw, 6rem);
-		margin: 5rem auto;
+		font-weight: 900;
+		margin: 0 auto;
 		text-align: center;
 		color: var(--sky);
 		font-family: var(--anta);
 		letter-spacing: 7px;
-		margin-bottom: 20%;
 		text-shadow: 5px 7.5px 5px var(--smoke);
 		text-wrap: balance;
 	}
@@ -44,6 +48,7 @@
 	p {
 		font-family: var(--lexend);
 		font-size: clamp(1.75rem, 4vw, 4rem);
+		font-weight: 500;
 		letter-spacing: 5px;
 		line-height: 1.25;
 		text-align: left;
@@ -56,10 +61,11 @@
 	}
 
 	.error {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 10%;
 		width: 100%;
+	}
+
+	.image {
+		width: clamp(100px, 20vw, 300px);
+		margin-inline: auto;
 	}
 </style>

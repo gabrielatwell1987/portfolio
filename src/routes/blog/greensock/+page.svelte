@@ -52,7 +52,7 @@
 <br /><br /><br /><br /><br /><br /><br />
 
 <section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} class="main">
-	<div class="seperate">
+	<div class="separate">
 		<h1 class="title">GSAP</h1>
 
 		<main>
@@ -310,7 +310,7 @@
 		margin-top: -40%;
 	}
 
-	.seperate {
+	.separate {
 		display: flex;
 		flex-direction: column;
 		align-items: center;

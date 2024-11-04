@@ -27,6 +27,8 @@
 		width: 50%;
 		height: 50rem;
 		margin: 0 0 0 24.5%;
+		border: 3px solid var(--purple);
+		padding: clamp(0.25rem, 1vw, 1rem);
 		border-radius: 12px;
 		margin-bottom: 2rem;
 	}

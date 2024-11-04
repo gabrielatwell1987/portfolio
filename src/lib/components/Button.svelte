@@ -23,7 +23,6 @@
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
-			/* mix-blend-mode: difference; */
 			padding: 1.5rem 2.5rem;
 			margin-top: 10%;
 			margin-bottom: 2%;
@@ -35,7 +34,6 @@
 		button:focus {
 			opacity: 0.8;
 			color: var(--yellow);
-			/* mix-blend-mode: hard-light; */
 			outline-offset: 0px;
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
