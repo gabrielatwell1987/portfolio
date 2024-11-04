@@ -50,7 +50,6 @@
 
 	.size:hover {
 		color: var(--yellow);
-		mix-blend-mode: hard-light;
 		font-weight: 900;
 	}
 
@@ -71,11 +70,6 @@
 	}
 
 	@media (max-width: 990px) {
-		/* .size,
-		.size:hover {
-			font-size: 3rem;
-		} */
-
 		.dev-links {
 			display: flex;
 			justify-content: space-evenly;
@@ -83,12 +77,5 @@
 			gap: 1.5rem;
 			margin-top: 5rem;
 		}
-	}
-
-	@media (max-width: 500px) {
-		/* .size,
-		.size:hover {
-			font-size: 2rem;
-		} */
 	}
 </style>
