@@ -399,7 +399,7 @@
 		}
 
 		.title {
-			margin-bottom: 5%;
+			margin-bottom: -6em;
 		}
 	}
 

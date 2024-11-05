@@ -378,6 +378,10 @@
 		.margin {
 			margin-left: 0;
 		}
+
+		.title {
+			margin-bottom: -6em;
+		}
 	}
 
 	@media (min-width: 500px) {
