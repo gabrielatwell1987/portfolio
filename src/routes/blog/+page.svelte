@@ -4,8 +4,7 @@
 	import { gsap } from 'gsap';
 	import { TextPlugin } from 'gsap/dist/TextPlugin';
 	import Image from '$lib/components/Image.svelte';
-	import { blur } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+	import { fade } from 'svelte/transition';
 	import SEO from '$lib/data/SEO.svelte';
 	import AnimatedHeading from '$lib/components/AnimatedHeading.svelte';
 
@@ -30,7 +29,7 @@
 
 <SEO title="Blog Topics" description="a blog about web techniques" keywords="blog topics" />
 
-<main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
+<main transition:fade={{ delay: 250, duration: 300 }}>
 	<h1 class="title">t o p i c s</h1>
 
 	<article>

@@ -1,7 +1,6 @@
 <script>
 	import { gsap } from 'gsap';
-	import { blur } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+	import { fade } from 'svelte/transition';
 	import Button from '$lib/components/Button.svelte';
 	import Grid from '$lib/components/Grid.svelte';
 	import Skills from '$lib/components/Skills.svelte';
@@ -62,7 +61,7 @@
 
 <SEO title="About Me" description="About Gabriel Atwell" keywords="about gabe, about gabriel" />
 
-<main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} aria-label="bio">
+<main transition:fade={{ delay: 250, duration: 300 }} aria-label="bio">
 	<section>
 		<article>
 			<div class="drop">
@@ -70,7 +69,7 @@
 			</div>
 
 			<div class="bio" aria-label="bio">
-				<p class="text a">
+				<p class="text a indent">
 					My name is Gabriel Atwell and I am a frontend web developer. I started out with the
 					basics: HTML, CSS, and JavaScript. I then moved on to more advanced topics such as
 					Svelte/Sveltekit, Node.js, GSAP, and a little bit of three.js but I have begun to teach
@@ -134,6 +133,10 @@
 <style>
 	:root {
 		--100: 100%;
+	}
+
+	.indent {
+		text-indent: 2em;
 	}
 
 	@media screen and (min-width: 300px) {

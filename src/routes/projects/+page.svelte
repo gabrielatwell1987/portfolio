@@ -5,8 +5,7 @@
 	import Figure from '$lib/components/Figure.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import Image from '$lib/components/Image.svelte';
-	import { blur } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+	import { fade } from 'svelte/transition';
 	import SEO from '$lib/data/SEO.svelte';
 	import ImageFrame from '$lib/components/ImageFrame.svelte';
 
@@ -56,10 +55,7 @@
 </div>
 
 <!-- links to my projects -->
-<section
-	class="content bevel"
-	in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}
->
+<section class="content bevel" transition:fade={{ delay: 250, duration: 300 }}>
 	<!-- spacing -->
 	<br /><br />
 
