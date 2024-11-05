@@ -69,6 +69,7 @@
 		justify-content: center;
 		align-items: center;
 		margin-left: 2rem;
+		cursor: pointer;
 	}
 
 	@media (min-width: 300px) {

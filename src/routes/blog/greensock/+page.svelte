@@ -278,7 +278,10 @@
 	.title {
 		font-size: clamp(3.75rem, 8vw, 10rem);
 		font-weight: 800;
-		margin: 3rem 0 -27rem 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: -7em;
 		text-align: center;
 		color: var(--smoke);
 		font-family: var(--anta);
@@ -445,6 +448,10 @@
 
 		.centerDetail {
 			margin-top: -50%;
+		}
+
+		.title {
+			margin-bottom: -20%;
 		}
 	}
 
