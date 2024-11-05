@@ -85,6 +85,7 @@
 		a {
 			transition: transform 0.25s ease-in-out;
 			font-weight: 400;
+			cursor: pointer;
 		}
 
 		a:hover {
