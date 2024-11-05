@@ -397,6 +397,10 @@
 			display: grid;
 			place-items: center;
 		}
+
+		.title {
+			margin-bottom: 5%;
+		}
 	}
 
 	@media (min-width: 500px) {
