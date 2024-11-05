@@ -104,8 +104,10 @@
 			<!-- set up side by side text -->
 			<Grid leftTitle="Frontend" rightTitle="Design based" />
 
-			<!-- bento grid -->
-			<Bento />
+			<div class="bento">
+				<!-- bento grid -->
+				<Bento />
+			</div>
 
 			<!-- skills section -->
 			<div class="skills">
@@ -284,6 +286,24 @@
 
 		.gallery {
 			width: 70%;
+		}
+
+		.bento {
+			margin-top: -30em;
+		}
+
+		.flip {
+			margin-top: 10em;
+		}
+	}
+
+	@media (min-width: 1500px) {
+		.bento {
+			margin-top: -20em;
+		}
+
+		.flip {
+			margin-top: 5em;
 		}
 	}
 </style>

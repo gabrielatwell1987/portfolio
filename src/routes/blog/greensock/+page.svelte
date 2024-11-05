@@ -469,7 +469,14 @@
 		}
 
 		.popover {
-			margin-top: 40%;
+			margin-top: -5%;
+		}
+	}
+
+	@media (min-width: 1200px) {
+		.popover {
+			margin-top: -10%;
+			margin-bottom: 5em;
 		}
 	}
 
@@ -479,11 +486,21 @@
 		}
 
 		.title {
-			margin-bottom: -35%;
+			margin-bottom: -30%;
 		}
 
 		.centerDetail {
-			margin-top: -30%;
+			margin-top: -38%;
+		}
+	}
+
+	@media (min-width: 1500px) {
+		.title {
+			margin-bottom: -25%;
+		}
+
+		.popover {
+			margin-block: 10%;
 		}
 	}
 
