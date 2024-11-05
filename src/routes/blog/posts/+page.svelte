@@ -1,8 +1,7 @@
 <script>
 	import CSS from './css.md';
 	import GSAP from './gsap.md';
-	import { blur } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+	import { fade } from 'svelte/transition';
 	import Button from '$lib/components/Button.svelte';
 	import copy from 'copy-to-clipboard';
 	import SEO from '$lib/data/SEO.svelte';
@@ -67,7 +66,7 @@
 	keywords="animation techniques, web techniques for animation"
 />
 
-<section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
+<section transition:fade={{ delay: 250, duration: 300 }}>
 	<div class="css">
 		<h1 class="title">CSS</h1>
 		<CSS aria-label="css" />

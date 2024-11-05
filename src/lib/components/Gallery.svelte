@@ -1,4 +1,5 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import { tick } from 'svelte';
 	import { gsap } from 'gsap';
 	import { Flip } from 'gsap/dist/Flip';
@@ -24,7 +25,7 @@
 </script>
 
 <!-- picture grid -->
-<section class="grid">
+<section class="grid" transition:fade={{ delay: 250, duration: 300 }}>
 	{#each { length: 8 } as _, id}
 		{@const details = selected === id}
 		{@const number = id + 1}

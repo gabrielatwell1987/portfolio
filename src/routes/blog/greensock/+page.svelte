@@ -4,8 +4,7 @@
 	import Iframe from '$lib/components/Iframe.svelte';
 	import Heading from './Heading.svelte';
 	import Popover from '$lib/components/Popover.svelte';
-	import { blur } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+	import { fade } from 'svelte/transition';
 	import SEO from '$lib/data/SEO.svelte';
 
 	// animations
@@ -51,7 +50,7 @@
 <!-- spacing -->
 <br /><br /><br /><br /><br /><br /><br />
 
-<section in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }} class="main">
+<section transition:fade={{ delay: 250, duration: 300 }} class="main">
 	<div class="separate">
 		<h1 class="title">GSAP</h1>
 

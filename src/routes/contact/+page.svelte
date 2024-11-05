@@ -1,7 +1,6 @@
 <script>
 	import ContactForm from '$lib/components/ContactForm.svelte';
-	import { blur } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+	import { fade } from 'svelte/transition';
 	import SEO from '$lib/data/SEO.svelte';
 
 	$effect(() => {
@@ -15,7 +14,7 @@
 	keywords="contact gabriel atwell, contact gabe"
 />
 
-<main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
+<main transition:fade={{ delay: 250, duration: 300 }}>
 	<h1 class="legend">Contact</h1>
 
 	<section class="contactForm">

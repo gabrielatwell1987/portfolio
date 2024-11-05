@@ -1,8 +1,7 @@
 <script>
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	import { blur } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
+	import { fade } from 'svelte/transition';
 	import Lenis from 'lenis';
 	import Title from '$lib/components/Title.svelte';
 
@@ -80,7 +79,7 @@
 	});
 </script>
 
-<main in:blur={{ delay: 350, duration: 1500, easing: quintOut, amount: '1rem' }}>
+<main transition:fade={{ delay: 250, duration: 300 }}>
 	<Title title="images" />
 
 	<section>
