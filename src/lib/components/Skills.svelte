@@ -156,7 +156,7 @@
 		}
 
 		.icons {
-			scale: 1.5;
+			scale: 1.75;
 		}
 	}
 </style>
