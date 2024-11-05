@@ -151,12 +151,16 @@
 			grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
 		}
 
+		.skill {
+			border: none;
+		}
+
 		.border {
 			margin-bottom: 35%;
 		}
 
 		.icons {
-			scale: 1.75;
+			scale: 2.5;
 		}
 	}
 </style>
