@@ -308,7 +308,7 @@
 	}
 
 	.text {
-		font-size: clamp(1.05rem, 2vw, 1.5rem);
+		font-size: clamp(1.05rem, 1vw, 1.35rem);
 	}
 
 	.popover {
@@ -346,6 +346,7 @@
 			color: var(--off-white);
 			border-color: var(--off-white);
 			font-family: var(--mono);
+			font-size: clamp(1rem, 1.25vw, 1.5rem);
 		}
 
 		.text {
@@ -452,10 +453,6 @@
 			letter-spacing: 2px;
 		}
 
-		summary {
-			font-size: 1.5rem;
-		}
-
 		details {
 			width: var(--100);
 		}
@@ -479,10 +476,6 @@
 	}
 
 	@media (min-width: 1024px) {
-		summary {
-			font-size: 1.75rem;
-		}
-
 		main {
 			margin-top: 15%;
 		}

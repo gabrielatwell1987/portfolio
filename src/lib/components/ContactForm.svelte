@@ -100,7 +100,7 @@
 	}
 
 	span {
-		font-size: clamp(1rem, 2vw, 2rem);
+		font-size: clamp(1rem, 1.25vw, 2rem);
 		font-weight: 800;
 		letter-spacing: 3px;
 		color: var(--white);

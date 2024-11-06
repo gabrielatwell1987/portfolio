@@ -38,7 +38,7 @@
 			flex-basis: 50%;
 			justify-content: center;
 			align-items: center;
-			font-family: var(--lexend);
+			font-family: var(--orbitron);
 			font-size: clamp(1.25rem, 2.5vw, 2.5rem);
 			font-weight: 600;
 			margin: 0 auto;

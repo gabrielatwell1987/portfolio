@@ -96,7 +96,7 @@
 
 		.modal h4 {
 			font-family: var(--anta);
-			font-size: clamp(1.2rem, 2vw, 3rem);
+			font-size: clamp(1.2rem, 1.75vw, 3rem);
 			font-weight: 600;
 			color: var(--sky);
 			margin: 2rem 0 -0.75rem 0;
@@ -104,7 +104,7 @@
 
 		.modal__p {
 			font-family: var(--lexed);
-			font-size: clamp(1.05rem, 2vw, 2rem);
+			font-size: clamp(1.05rem, 1.25vw, 2rem);
 			font-weight: 200;
 			color: var(--white);
 			background: transparent;
