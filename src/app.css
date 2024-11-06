@@ -94,6 +94,10 @@
 	scrollbar-color: var(--purple) var(--lightblack);
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: var(--lexend);
 	font-size: 16px;
