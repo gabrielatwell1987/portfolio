@@ -88,7 +88,7 @@
 <style>
 	.skills {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 		gap: 1rem;
 		align-items: center;
 
@@ -152,8 +152,13 @@
 			grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
 		}
 
+		.skills-title {
+			margin-left: 1rem;
+		}
+
 		.skill {
 			border: none;
+			margin: 0.2rem;
 		}
 
 		.border {
@@ -161,7 +166,7 @@
 		}
 
 		.icons {
-			scale: 2.5;
+			scale: 3.5;
 		}
 	}
 </style>
