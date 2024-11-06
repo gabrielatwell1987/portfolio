@@ -51,7 +51,7 @@
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
-			font-size: clamp(1.5rem, 5vw, 4rem);
+			font-size: clamp(1.5rem, 3vw, 4rem);
 			font-family: var(--montserrat);
 			letter-spacing: 7px;
 		}
@@ -117,11 +117,13 @@
 		.btn {
 			text-decoration: none;
 			margin: 1rem auto;
+			font-size: clamp(1rem, 1.25vw, 1.75rem);
+			padding: 1rem 1.75rem;
 		}
 
 		.summary {
 			margin: 0 auto;
-			font-size: clamp(1rem, 1.5vw, 1.5rem);
+			font-size: clamp(1rem, 1.25vw, 1.75rem);
 			font-weight: 500;
 			width: 100%;
 			padding: 0 1.25rem;

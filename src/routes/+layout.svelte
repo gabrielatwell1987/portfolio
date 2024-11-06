@@ -6,6 +6,7 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import Loading from '$lib/components/Loading.svelte';
 	import '@fortawesome/fontawesome-free/css/all.css';
+	import '@picocss/pico/css/pico.min.css';
 
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
@@ -50,8 +51,6 @@
 </script>
 
 <svelte:head>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
-
 	<link rel="canonical" href={canonicalUrl} />
 </svelte:head>
 

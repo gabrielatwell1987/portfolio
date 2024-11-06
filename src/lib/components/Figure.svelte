@@ -42,7 +42,7 @@
 		padding: 0;
 		text-align: center;
 		font-size: clamp(1rem, 2vw, 2rem);
-		font-family: var(--mono);
+		font-family: var(--montserrat);
 		font-weight: 500;
 	}
 </style>

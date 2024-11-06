@@ -55,7 +55,7 @@
 
 	.size,
 	.size:hover {
-		font-size: clamp(2.5rem, 5vw, 5rem);
+		font-size: clamp(2.5rem, 4vw, 5rem);
 	}
 
 	.size i {

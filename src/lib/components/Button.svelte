@@ -10,7 +10,7 @@
 		button {
 			background-color: transparent;
 			font-family: var(--orbitron);
-			font-size: clamp(1.2rem, 2vw, 2rem);
+			font-size: clamp(1.2rem, 1.5vw, 2rem);
 			font-weight: 900;
 			color: var(--pale);
 			border: 1px solid var(--pale);
@@ -23,7 +23,7 @@
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
-			padding: 1.5rem 2.5rem;
+			padding: clamp(0.75rem, 2vw, 1rem) clamp(1.75rem, 3vw, 2rem);
 			margin-top: 10%;
 			margin-bottom: 2%;
 			user-select: none;

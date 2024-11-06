@@ -48,7 +48,7 @@
 		font-family: var(--mono);
 		font-size: clamp(0.9rem, 2vw, 2rem);
 		font-weight: 700;
-		color: var(--smoke);
+		color: var(--purple);
 		text-wrap: nowrap;
 	}
 

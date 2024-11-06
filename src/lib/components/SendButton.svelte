@@ -8,7 +8,7 @@
 		button {
 			background-color: transparent;
 			font-family: var(--orbitron);
-			font-size: clamp(1.2rem, 2vw, 2rem);
+			font-size: clamp(1.2rem, 1.5vw, 2rem);
 			font-weight: 900;
 			color: var(--pale);
 			border: 1px solid var(--pale);
