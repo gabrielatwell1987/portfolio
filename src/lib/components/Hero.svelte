@@ -1,5 +1,6 @@
 <script>
 	import { gsap } from 'gsap';
+	import Button from '$lib/components/Button.svelte';
 
 	$effect(() => {
 		const heroTitle = document.querySelector('.hero-title');
@@ -29,7 +30,7 @@
 			look forward to hearing from you so we can discuss your goals for your online needs!
 		</h4>
 
-		<a class="btn" role="button" href="/projects">Projects</a>
+		<Button href="/projects" title="Projects" />
 
 		<h4 class="summary italic">projects I created..</h4>
 	</section>
@@ -64,39 +65,6 @@
 			font-size: clamp(1rem, 1.5vw, 1.75rem);
 		}
 
-		a {
-			display: block;
-			background-color: transparent;
-			color: var(--white);
-			font-family: var(--orbitron);
-			font-size: 1.2rem;
-			font-weight: 500;
-			width: 50%;
-			height: 10%;
-			outline: none;
-			border: 1px solid var(--white);
-			margin: 1rem auto;
-			border-radius: 5rem;
-			filter: drop-shadow(0 0 0.75rem var(--smoke));
-			letter-spacing: 1px;
-			transition: 750ms;
-			outline: 3px solid currentColor;
-			outline-offset: -7px;
-			margin-top: 3rem;
-			margin-bottom: 0.25rem;
-			padding: 1rem 1.75rem;
-			user-select: none;
-		}
-
-		a:hover,
-		a:focus {
-			border: 1px solid var(--black);
-			background-color: var(--white);
-			color: var(--black);
-			outline-offset: 0px;
-			animation: wiggle 0.5s ease-in-out infinite;
-		}
-
 		img {
 			border-radius: 15px;
 			opacity: 0.25;
@@ -112,13 +80,6 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			width: 100%;
-		}
-
-		.btn {
-			text-decoration: none;
-			margin: 1rem auto;
-			font-size: clamp(1rem, 1.25vw, 1.75rem);
-			padding: 1rem 1.75rem;
 		}
 
 		.summary {
@@ -142,27 +103,10 @@
 		}
 	}
 
-	@media screen and (min-width: 500px) {
-		a {
-			width: 40%;
-		}
-	}
-
 	@media screen and (min-width: 740px) {
 		main {
 			text-align: center;
 			font-size: 2rem;
-		}
-
-		a {
-			font-size: 1.25rem;
-			width: 45%;
-			font-size: 1rem;
-			letter-spacing: 2px;
-		}
-
-		a:hover {
-			animation: wiggle 0.5s ease-in-out infinite;
 		}
 
 		.summary {
@@ -175,13 +119,6 @@
 			text-align: center;
 			font-size: 2.5rem;
 			margin: 5rem 0;
-		}
-
-		a {
-			width: 40%;
-			font-size: 1.5rem;
-			margin: 3rem auto;
-			padding: 1.5rem 2.5rem;
 		}
 
 		.italic {
@@ -209,19 +146,6 @@
 		.summary {
 			width: 80%;
 			margin-inline: auto;
-		}
-	}
-
-	@media screen and (min-width: 1100px) {
-		a {
-			width: 30%;
-			font-size: 2rem;
-		}
-	}
-
-	@media screen and (min-width: 1400px) {
-		a {
-			width: 25%;
 		}
 	}
 
