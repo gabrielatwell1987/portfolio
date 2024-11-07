@@ -1,13 +1,6 @@
 <script>
 	/** @type {{title: any, desc: any, button: any, src: any, alt: any, href: any}} */
-	let {
-		title,
-		desc,
-		button,
-		src,
-		alt,
-		href
-	} = $props();
+	let { title, desc, button, src, alt, href } = $props();
 </script>
 
 <main class="card">
@@ -93,6 +86,8 @@
 
 	.card-button:hover {
 		animation: wiggle 0.5s ease-in-out infinite;
+		color: var(--white);
+		border-color: var(--white);
 	}
 
 	@media (max-width: 500px) {
