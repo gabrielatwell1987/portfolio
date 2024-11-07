@@ -20,7 +20,7 @@
 </script>
 
 <SEO
-	title="atwellUI - developers"
+	title="Three.js hero section"
 	description="Welcome to Gabe Atwell's portfolio"
 	keywords="hero section, three.js hero section"
 />
