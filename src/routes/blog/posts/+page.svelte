@@ -84,7 +84,7 @@
 			href="/projects"
 			title="gabeAtwell"
 			desc="Trying to make the internet look better.. one website at a time."
-			button="Work"
+			button="Projects"
 		/>
 	</article>
 

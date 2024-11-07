@@ -75,7 +75,7 @@
 
 	a {
 		display: block;
-		margin: 0 0 2rem 49%;
+		margin: 0 0 2rem 50%;
 	}
 
 	.title {
@@ -128,6 +128,7 @@
 			width: 15rem;
 			margin-right: 10%;
 			margin: 0 -95%;
+			scale: 1.1;
 		}
 
 		.gs,
@@ -167,6 +168,7 @@
 
 		.image {
 			margin-top: -20%;
+			scale: 1.3;
 		}
 
 		main {

@@ -54,6 +54,7 @@
 			text-align: center;
 			border-radius: 6px;
 			padding: 5px 0;
+			font-family: var(--montserrat);
 			font-size: clamp(1rem, 1.5vw, 1.75rem);
 			position: absolute;
 			bottom: -5%;
