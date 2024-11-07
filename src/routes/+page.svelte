@@ -21,7 +21,10 @@
 <AnimatedIntro text="do you need a " span="website?" />
 
 <!-- <div class="video">
-	<Video src1="/videos/seamless.webm" src2="/videos/seamless.mp4" />
+	<Video
+		src1="https://utfs.io/f/a9fyo7WOVxjArmUl6QLjLEUMdNlCOYwWZAJBTFpcK5ktbaqm"
+		src2="https://utfs.io/f/a9fyo7WOVxjArmUl6QLjLEUMdNlCOYwWZAJBTFpcK5ktbaqm"
+	/>
 </div> -->
 
 <Hero />
@@ -29,5 +32,5 @@
 <!-- <style>
 	.video {
 		border-radius: 12px;
-	} 
+	}
 </style> -->
