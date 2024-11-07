@@ -14,10 +14,17 @@
 		.nav-link {
 			font-size: clamp(1.1rem, 1.5vw, 1.5rem);
 			letter-spacing: 2px;
+			border-radius: 0;
+			border-bottom: 2px solid var(--off-white);
+
+			&:last-child {
+				border-bottom: none;
+			}
 		}
 
 		.nav-link:hover {
 			font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+			border-color: var(--white);
 		}
 	}
 
@@ -26,6 +33,8 @@
 			text-decoration: none;
 			font-weight: 600;
 			color: var(--white);
+			border-bottom: none;
+			border-radius: 3px;
 		}
 
 		.nav-link:hover {

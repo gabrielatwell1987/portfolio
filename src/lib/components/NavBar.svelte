@@ -86,7 +86,7 @@
 			padding: 0.5rem 1rem;
 			background-color: var(--blackest);
 			font-family: var(--orbitron);
-			font-weight: 800;
+			font-weight: 900;
 
 			max-height: 0;
 			overflow: hidden;
