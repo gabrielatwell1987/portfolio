@@ -73,7 +73,7 @@
 	</div>
 
 	<div class="gsap">
-		<h1 class="title">GSAP</h1>
+		<h2 class="title">GSAP</h2>
 		<GSAP aria-label="greensock" />
 	</div>
 

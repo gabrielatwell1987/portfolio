@@ -30,7 +30,7 @@
 <ThreeCanvas />
 
 <section aria-label="hero">
-	<h3 class="hero-title">Frontend Crafted Web Experiences</h3>
+	<h1 class="hero-title">Frontend Crafted Web Experiences</h1>
 
 	<h4 class="summary left up">
 		I am a frontend developer who loves to create beautiful and functional websites. This portfolio
@@ -56,7 +56,7 @@
 			margin-bottom: 2%;
 		}
 
-		h3 {
+		h1 {
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
