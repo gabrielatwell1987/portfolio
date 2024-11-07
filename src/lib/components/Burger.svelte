@@ -1,4 +1,6 @@
 <script>
+	import { fade } from 'svelte/transition';
+
 	export let open = false;
 	export let ariaLabel = 'menu';
 
@@ -12,9 +14,9 @@
 <button class="hamburger" onclick={toggleMenu} aria-label={ariaLabel}>
 	<div class="bar">
 		{#if open}
-			<i class="fa fa-times"></i>
+			<i class="fa fa-times" transition:fade={{ duration: 500 }}></i>
 		{:else}
-			<i class="fa fa-bars"></i>
+			<i class="fa fa-bars" transition:fade={{ duration: 500 }}></i>
 		{/if}
 	</div>
 </button>
@@ -31,18 +33,26 @@
 		z-index: 10;
 		margin-bottom: 80%;
 		margin-right: 10%;
+
+		position: relative;
 	}
 
 	.bar {
 		height: 3px;
 		width: 100%;
-		background-color: var(--white);
 		margin: 3px 0;
 		transition: all 0.3s ease;
+
+		position: absolute;
+		inset: 0;
 	}
 
 	i {
 		color: var(--white);
 		scale: 2;
+		transition: transform 0.2s ease;
+
+		position: absolute;
+		top: 1rem;
 	}
 </style>
