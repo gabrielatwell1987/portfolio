@@ -41,7 +41,11 @@
 	}
 </script>
 
-<SEO title="Sveltekit" description="web framework" keywords="sveltekit, sveltekit how-to" />
+<SEO
+	title="Svelte frontend framework"
+	description="web framework"
+	keywords="sveltekit, sveltekit how-to"
+/>
 
 <!-- spacing -->
 <br /><br /><br /><br /><br /><br /><br />

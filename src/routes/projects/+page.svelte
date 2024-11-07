@@ -45,7 +45,7 @@
 </script>
 
 <SEO
-	title="Projects I've Built"
+	title="Projects I've built"
 	description="Gabriel Atwell's Projects"
 	keywords="gabe atwell's projects, gabriel atwell's projects, gabe's work, gabriel's work"
 />

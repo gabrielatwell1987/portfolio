@@ -7,7 +7,11 @@
 	});
 </script>
 
-<SEO title="Robot" description="Mouse Position Robot" keywords="gabe's robot, spline robot" />
+<SEO
+	title="Mouse position robot"
+	description="Mouse Position Robot"
+	keywords="gabe's robot, spline robot"
+/>
 
 <main>
 	<Robot title="Mouse Position" />

@@ -8,7 +8,11 @@
 	});
 </script>
 
-<SEO title="Error!" description="Error Page" keywords="error, gabe's error page" />
+<SEO
+	title="You've encountered an error!"
+	description="Error Page"
+	keywords="error, gabe's error page"
+/>
 
 <main aria-label="error">
 	<div class="image">

@@ -20,7 +20,7 @@
 </script>
 
 <SEO
-	title="atwellUI"
+	title="atwellUI - developers"
 	description="Welcome to Gabe Atwell's portfolio"
 	keywords="hero section, three.js hero section"
 />
@@ -38,9 +38,9 @@
 		to hearing from you so we can discuss your goals for your online needs!
 	</h4>
 
-<a href="/projects">
-	<Button title="Projects" />
-</a>
+	<a href="/projects">
+		<Button title="Projects" />
+	</a>
 
 	<h4 class="italic">projects I created..</h4>
 	<br />
