@@ -8,7 +8,7 @@
 </script>
 
 <main>
-	<h2>{title}</h2>
+	<h1>{title}</h1>
 
 	<iframe
 		src="https://my.spline.design/robotfollowcursorforlandingpage-887310bccea6e24d681820089ada9b65/"
@@ -33,13 +33,13 @@
 		margin-bottom: 2rem;
 	}
 
-	h2,
+	h1,
 	h3 {
 		text-align: center;
 		margin-top: 0.5rem;
 	}
 
-	h2 {
+	h1 {
 		color: var(--purple);
 		margin: 5% 0 2rem 0;
 		font-size: clamp(1.75rem, 2vw, 3rem);

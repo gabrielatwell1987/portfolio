@@ -32,7 +32,7 @@
 
 		<button class="grid-item" class:details onclick={() => flip(id)}>
 			<div class="title">
-				<h1 aria-label={number}>{number}</h1>
+				<h2 aria-label={number}>{number}</h2>
 			</div>
 
 			<img src="https://picsum.photos/600/600?random={id}" alt="Random" loading="lazy" />
@@ -60,7 +60,7 @@
 		cursor: pointer;
 	}
 
-	h1 {
+	h2 {
 		color: #ffffff;
 		font-size: 2rem;
 		text-transform: capitalize;
@@ -105,7 +105,7 @@
 			min-height: 120vh;
 		}
 
-		h1 {
+		h2 {
 			font-size: 2.5rem;
 		}
 	}
