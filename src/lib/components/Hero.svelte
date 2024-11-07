@@ -30,9 +30,7 @@
 			look forward to hearing from you so we can discuss your goals for your online needs!
 		</h4>
 
-<a href="/projects">
-		<Button title="Projects" />
-</a>
+		<Button href="/projects" title="Projects" />
 
 		<h4 class="summary italic">projects I created..</h4>
 	</section>
