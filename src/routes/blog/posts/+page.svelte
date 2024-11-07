@@ -61,7 +61,7 @@
 </script>
 
 <SEO
-	title="CSS & GSAP"
+	title="Web animation techniques"
 	description="Web techniques"
 	keywords="animation techniques, web techniques for animation"
 />

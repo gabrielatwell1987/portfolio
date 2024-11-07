@@ -27,7 +27,7 @@
 	});
 </script>
 
-<SEO title="Blog Topics" description="a blog about web techniques" keywords="blog topics" />
+<SEO title="Blog topics" description="a blog about web techniques" keywords="blog topics" />
 
 <main transition:fade={{ delay: 250, duration: 300 }}>
 	<h1 class="title">t o p i c s</h1>

@@ -9,7 +9,7 @@
 </script>
 
 <SEO
-	title="Message Me"
+	title="Message me"
 	description="Contact Gabriel Atwell"
 	keywords="contact gabriel atwell, contact gabe"
 />

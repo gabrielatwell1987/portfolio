@@ -59,7 +59,7 @@
 	});
 </script>
 
-<SEO title="About Me" description="About Gabriel Atwell" keywords="about gabe, about gabriel" />
+<SEO title="About Gabe" description="About Gabriel Atwell" keywords="about gabe, about gabriel" />
 
 <main transition:fade={{ delay: 250, duration: 300 }} aria-label="bio">
 	<section>

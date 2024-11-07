@@ -7,7 +7,7 @@
 	});
 </script>
 
-<SEO title="Random Photos" description="Random Photo Gallery" keywords="Random Photos" />
+<SEO title="Random photo gallery" description="Random Photo Gallery" keywords="Random Photos" />
 
 <!-- Photo gallery -->
 <Gallery />
