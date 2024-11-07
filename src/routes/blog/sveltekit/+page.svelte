@@ -232,7 +232,7 @@
 			</p>
 
 			<div class="back">
-				<a href="/blog"><Button title="Back" /></a>
+				<Button href="/blog" title="Back" />
 			</div>
 		</main>
 	</div>

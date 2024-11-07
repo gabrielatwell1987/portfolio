@@ -88,7 +88,7 @@
 		/>
 	</article>
 
-	<a href="/blog"><Button title="Back" /></a>
+	<Button href="/blog" title="Back" />
 </section>
 
 <style>
@@ -111,10 +111,6 @@
 
 	section {
 		background: url('/logos/bg1.webp') no-repeat center center/cover fixed;
-	}
-
-	a {
-		text-decoration: none;
 	}
 
 	.css {
