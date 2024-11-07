@@ -1,9 +1,9 @@
 <script>
 	/** @type {{title: any}} */
-	let { title } = $props();
+	let { href, title } = $props();
 </script>
 
-<button>{title}</button>
+<a {href}><button>{title}</button></a>
 
 <style>
 	@media (min-width: 300px) {

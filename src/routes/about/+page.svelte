@@ -96,7 +96,7 @@
 					</p>
 
 					<div class="hero">
-						<a href="/about/hero"><Button title="Hero" /></a>
+						<Button href="/about/hero" title="Hero" />
 					</div>
 				</article>
 			</div>
@@ -104,8 +104,8 @@
 			<!-- set up side by side text -->
 			<Grid leftTitle="Frontend" rightTitle="Design based" />
 
+			<!-- bento grid -->
 			<div class="bento">
-				<!-- bento grid -->
 				<Bento />
 			</div>
 
@@ -126,7 +126,7 @@
 
 			<!-- image gallery -->
 			<div class="gallery">
-				<a href="/about/gallery"><Button title="Gallery" /></a>
+				<Button href="/about/gallery" title="Gallery" />
 			</div>
 		</article>
 	</section>
@@ -166,16 +166,6 @@
 			width: var(--100);
 			margin-inline: auto;
 			background-color: transparent;
-		}
-
-		a {
-			font-size: clamp(1rem, 2vw, 1.2rem);
-			font-weight: 700;
-			text-decoration: none;
-		}
-
-		a:hover {
-			font-size: clamp(1.1rem, 2vw, 1.3rem);
 		}
 
 		.flip {
