@@ -106,7 +106,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin-bottom: 3rem;
+		margin-bottom: 5rem;
 	}
 	.goo-container {
 		filter: url(#goo);
