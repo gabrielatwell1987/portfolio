@@ -109,6 +109,11 @@
 				<Bento />
 			</div>
 
+			<!-- image gallery -->
+			<div class="gallery">
+				<Button href="/about/gallery" title="Gallery" />
+			</div>
+
 			<!-- skills section -->
 			<div class="skills">
 				<Skills title="Skills" />
@@ -122,11 +127,6 @@
 					src2="/logos/microphone.webp"
 					alt2="a blue A logo"
 				/>
-			</div>
-
-			<!-- image gallery -->
-			<div class="gallery">
-				<Button href="/about/gallery" title="Gallery" />
 			</div>
 		</article>
 	</section>
