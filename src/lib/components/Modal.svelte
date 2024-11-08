@@ -82,7 +82,7 @@
 
 		.open-button:focus,
 		.close-button:focus {
-			box-shadow: 0 0 5px var(--off-white);
+			box-shadow: 0 0 0px var(--off-white);
 		}
 
 		article {
@@ -105,7 +105,7 @@
 		.modal__p {
 			font-family: var(--lexed);
 			font-size: clamp(1.05rem, 1.25vw, 2rem);
-			font-weight: 200;
+			font-weight: 100;
 			color: var(--white);
 			background: transparent;
 			padding: 0.2rem;
