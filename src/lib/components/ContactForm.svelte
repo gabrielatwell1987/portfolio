@@ -54,7 +54,7 @@
 		font-size: clamp(1.25rem, 3vw, 4rem);
 		font-weight: 800;
 		letter-spacing: 3px;
-		color: var(--blue);
+		color: var(--smoke);
 		padding-inline: 1rem;
 	}
 
