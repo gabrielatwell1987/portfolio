@@ -68,42 +68,42 @@
 		title="S.P.A."
 		img="/projects/web_dev.webp"
 		url="https://gabe1.vercel.app"
-		description="A single page application"
+		description="made with HTML/CSS/JS"
 	/> -->
 
 	<Project
 		title="horizontal scroller"
 		img="/projects/scroller.webp"
 		url="https://scrollernessly.vercel.app"
-		description="Just scroll down"
+		description="made with HTML/CSS/JS"
 	/>
 
 	<Project
 		title="grocery list app"
 		img="/projects/groceries.webp"
 		url="https://react-todo-navy-five.vercel.app/"
-		description="A groceries app"
+		description="Made with React"
 	/>
 
 	<Project
 		title="nasa api"
 		img="/projects/nasa.webp"
 		url="https://nasaapi-theta.vercel.app"
-		description="a nasa api project"
+		description="Made with React"
 	/>
 
 	<Project
 		title="password generator"
 		img="/projects/pw-generator.webp"
 		url="https://pw-generator-ebon.vercel.app/"
-		description="A password generator"
+		description="Made with Sveltekit"
 	/>
 
 	<Project
 		title="github api"
 		img="/projects/github.webp"
 		url="https://adiapp.vercel.app"
-		description="Search github users"
+		description="Made with Svelte"
 	/>
 
 	<Project
@@ -131,7 +131,7 @@
 		title="snippet creator"
 		img="/projects/snippet.webp"
 		url="https://appity.vercel.app"
-		description="Create your own snippets"
+		description="Made with Sveltekit"
 	/> -->
 
 	<!-- <Project
@@ -145,28 +145,28 @@
 		title="svelteflix"
 		img="/projects/svelteflix.webp"
 		url="https://svelteflix-delta.vercel.app/"
-		description="A netflix clone"
+		description="Made with Sveltekit"
 	/> -->
 
 	<!-- <Project
 		title="pokedex"
 		img="/projects/pokedex.webp"
 		url="https://pokedex-sample.vercel.app/"
-		description="A pokemon database"
+		description="Made with Sveltekit"
 	/> -->
 
 	<!-- <Project
 		title="starbucks clone"
 		img="/projects/starbucks.webp"
 		url="https://gabe4.vercel.app"
-		description="A clone of the starbucks website"
+		description="made with HTML/CSS/JS"
 	/> -->
 
 	<!-- <Project
 		title="alphamaps"
 		img="/projects/alphamaps.webp"
 		url="https://alphamaps69.vercel.app"
-		description="A three.js project"
+		description="made with Three.js"
 	/> -->
 
 	<section class="frame">
