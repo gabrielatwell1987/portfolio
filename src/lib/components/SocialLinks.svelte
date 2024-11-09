@@ -46,11 +46,13 @@
 	.size {
 		color: var(--blue);
 		font-weight: 900;
+		transition: color 0.5s ease;
 	}
 
 	.size:hover {
 		color: var(--yellow);
 		font-weight: 900;
+		transition: color 0.5s ease;
 	}
 
 	.size,
