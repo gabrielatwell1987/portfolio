@@ -73,12 +73,14 @@
 		aspect-ratio: 16/9;
 		display: block;
 		object-fit: cover;
-		border-radius: 1%;
+		border-radius: 7px;
 		opacity: 0.5;
+		transition: opacity 1s ease;
 	}
 
 	img:hover {
 		opacity: 1;
+		transition: opacity 1s ease;
 	}
 
 	.details {

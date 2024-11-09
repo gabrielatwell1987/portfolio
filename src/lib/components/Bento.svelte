@@ -2,24 +2,6 @@
 	import gsap from 'gsap';
 
 	$effect(() => {
-		const bento = document.querySelectorAll('.item');
-
-		const tl = gsap.timeline();
-
-		tl.from(
-			bento,
-			{
-				autoAlpha: 0,
-				duration: 5,
-				ease: 'none',
-				stagger: {
-					each: 2,
-					from: 'random'
-				}
-			},
-			'+=2.5'
-		);
-
 		const main = () => {
 			const articles = Array.from(document.querySelectorAll('article'));
 
@@ -105,6 +87,20 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		transition:
+			opacity 1s ease,
+			border 1s ease;
+	}
+
+	.item:hover {
+		border: 2px solid var(--white);
+	}
+
+	.item:not(:hover) {
+		opacity: 0.5;
+		transition:
+			opacity 1s ease,
+			border 1s ease;
 	}
 
 	.item:first-child {
