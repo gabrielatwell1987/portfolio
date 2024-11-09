@@ -85,7 +85,7 @@
 	}
 
 	.card-button:hover {
-		animation: wiggle 0.5s ease-in-out infinite;
+		animation: nod 0.5s ease-in-out infinite;
 		color: var(--white);
 		border-color: var(--white);
 	}
@@ -118,18 +118,18 @@
 		}
 	}
 
-	@keyframes wiggle {
+	@keyframes nod {
 		0% {
-			rotate: 0deg;
+			transform: translateY(0);
 			translate: 0 0;
 		}
 		25% {
-			rotate: -2deg;
-			translate: -5px 0;
+			transform: translateY(-2px);
+			translate: 0 -2px;
 		}
 		80% {
-			rotate: 2deg;
-			translate: 5px 0;
+			transform: translateY(2px);
+			translate: 0 2px;
 		}
 	}
 </style>

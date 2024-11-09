@@ -9,7 +9,7 @@
 	span {
 		font-weight: bold;
 		font-size: clamp(1.25rem, 1.75vw, 2rem);
-		color: var(--white);
+		color: var(--purple);
 		margin-right: 0.5rem;
 		text-wrap: balance;
 	}

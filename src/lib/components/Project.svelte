@@ -62,7 +62,7 @@
 			z-index: 1;
 			margin-left: -41%;
 			opacity: 0;
-			transition: opacity 1s;
+			transition: opacity 0.5s;
 		}
 
 		.link:hover .hover-text {
@@ -71,7 +71,7 @@
 		}
 
 		.name {
-			font-weight: 600;
+			font-weight: 900;
 			margin-bottom: -1.5rem;
 		}
 

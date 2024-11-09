@@ -52,7 +52,7 @@
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
-			font-size: clamp(1.5rem, 3vw, 4rem);
+			font-size: clamp(1.5rem, 3vw, 5rem);
 			font-family: var(--montserrat);
 			letter-spacing: 7px;
 		}
@@ -62,7 +62,6 @@
 			font-weight: 400;
 			letter-spacing: 0.5px;
 			font-family: var(--lexend);
-			font-size: clamp(1rem, 1.5vw, 1.75rem);
 		}
 
 		img {
@@ -84,7 +83,7 @@
 
 		.summary {
 			margin: 0 auto;
-			font-size: clamp(1rem, 1.25vw, 1.75rem);
+			font-size: clamp(1rem, 1.75vw, 2rem);
 			font-weight: 500;
 			width: 100%;
 			padding: 0 1.25rem;
