@@ -247,6 +247,10 @@
 		animation: rotate 0.5s ease-in-out forwards;
 	}
 
+	details:not([open]) i {
+		animation: un-rotate 0.5s ease-in-out forwards;
+	}
+
 	details[open] summary ~ * {
 		animation: open 0.5s ease-in-out;
 	}
@@ -518,6 +522,15 @@
 		}
 		to {
 			transform: rotate(90deg);
+		}
+	}
+
+	@keyframes un-rotate {
+		from {
+			transform: rotate(90deg);
+		}
+		to {
+			transform: rotate(0deg);
 		}
 	}
 </style>
