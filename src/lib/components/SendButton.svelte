@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<button type="submit">Send <i class="fa-solid fa-angle-right"></i></button>
+<button type="submit"><p>Send <i class="fa-solid fa-angle-right"></i></p></button>
 
 <style>
 	@media (min-width: 300px) {
@@ -25,14 +25,25 @@
 			margin-top: 10%;
 			margin-bottom: 2%;
 			user-select: none;
-		}
 
-		button:hover,
-		button:focus {
-			opacity: 0.8;
-			color: var(--yellow);
-			outline-offset: 0px;
-			animation: wiggle 0.5s ease-in-out infinite;
+			&:hover,
+			&:focus {
+				opacity: 0.8;
+				color: var(--yellow);
+				outline-offset: 0px;
+				animation: wiggle 0.5s ease-in-out infinite;
+			}
+
+			p {
+				margin: 0;
+				font-size: clamp(1.2rem, 1.5vw, 2rem);
+				font-weight: 900;
+				color: var(--pale);
+			}
+
+			p:hover i {
+				animation: right 0.5s ease-in-out infinite;
+			}
 		}
 	}
 
@@ -48,6 +59,18 @@
 		80% {
 			rotate: 2deg;
 			translate: 5px 0;
+		}
+	}
+
+	@keyframes right {
+		0% {
+			transform: translateX(0);
+		}
+		50% {
+			transform: translateX(10px);
+		}
+		100% {
+			transform: translateX(0);
 		}
 	}
 </style>
