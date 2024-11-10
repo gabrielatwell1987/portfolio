@@ -22,7 +22,7 @@
 	/>
 
 	<section aria-label="hero">
-		<h3 class="hero-title">Frontend Crafted Web Experiences</h3>
+		<h1 class="hero-title">Frontend Crafted Web Experiences</h1>
 
 		<h4 class="summary left up">
 			I am a frontend developer who loves to create beautiful and functional websites. This
@@ -48,11 +48,11 @@
 			margin-bottom: 2%;
 		}
 
-		h3 {
+		h1 {
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
-			font-size: clamp(1.5rem, 3vw, 5rem);
+			font-size: clamp(1.5rem, 4vw, 7rem);
 			font-family: var(--montserrat);
 			letter-spacing: 7px;
 		}
@@ -83,7 +83,7 @@
 
 		.summary {
 			margin: 0 auto;
-			font-size: clamp(1rem, 1.75vw, 2rem);
+			font-size: clamp(1rem, 1.5vw, 2rem);
 			font-weight: 500;
 			width: 100%;
 			padding: 0 1.25rem;
@@ -137,7 +137,7 @@
 	}
 
 	@media (min-width: 1024px) {
-		h3 {
+		h1 {
 			width: 90%;
 			margin-inline: auto;
 		}
