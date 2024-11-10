@@ -262,6 +262,10 @@
 		position: relative;
 	}
 
+	details[open] i {
+		animation: rotate 0.5s ease-in-out forwards;
+	}
+
 	details[open] summary ~ * {
 		animation: open 0.5s ease-in-out;
 	}
@@ -532,6 +536,15 @@
 		to {
 			opacity: 1;
 			margin-top: 0px;
+		}
+	}
+
+	@keyframes rotate {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(90deg);
 		}
 	}
 </style>
