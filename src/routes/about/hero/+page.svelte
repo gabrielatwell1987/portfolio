@@ -60,7 +60,7 @@
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
-			font-size: clamp(1.5rem, 3vw, 5rem);
+			font-size: clamp(1.5rem, 4vw, 7rem);
 			font-family: var(--anta);
 			letter-spacing: 7px;
 		}
@@ -94,7 +94,7 @@
 
 		.summary {
 			margin: 0 auto;
-			font-size: clamp(1rem, 1.75vw, 2rem);
+			font-size: clamp(1rem, 1.5vw, 2rem);
 			font-weight: 500;
 			width: 100%;
 			padding: 0 1.25rem;
