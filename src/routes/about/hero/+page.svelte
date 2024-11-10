@@ -84,6 +84,10 @@
 			width: 100%;
 		}
 
+		a {
+			margin-top: -5rem;
+		}
+
 		.italic {
 			font-family: var(--montserrat);
 			font-size: clamp(1rem, 1.5vw, 1.5rem);
