@@ -60,7 +60,7 @@
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
-			font-size: clamp(1.5rem, 4vw, 7rem);
+			font-size: clamp(1.5rem, 4vw, 6rem);
 			font-family: var(--anta);
 			letter-spacing: 7px;
 		}
