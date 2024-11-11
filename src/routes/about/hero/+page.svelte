@@ -60,7 +60,7 @@
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
-			font-size: clamp(1.5rem, 4vw, 6rem);
+			font-size: clamp(1.5rem, 4vw, 7rem);
 			font-family: var(--anta);
 			letter-spacing: 7px;
 		}
@@ -84,10 +84,6 @@
 			width: 100%;
 		}
 
-		a {
-			margin-top: -5rem;
-		}
-
 		.italic {
 			font-family: var(--montserrat);
 			font-size: clamp(1rem, 1.5vw, 1.5rem);
@@ -98,11 +94,11 @@
 
 		.summary {
 			margin: 0 auto;
-			font-size: clamp(1rem, 1.5vw, 1.75rem);
+			font-size: clamp(1rem, 1.5vw, 1.65rem);
 			font-weight: 500;
 			width: 100%;
 			padding: 0 1.25rem;
-			margin-bottom: 3%;
+			margin-bottom: -5%;
 		}
 
 		.left {
