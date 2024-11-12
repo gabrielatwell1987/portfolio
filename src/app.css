@@ -180,11 +180,10 @@ body {
 		);
 	}
 
-	pre code {
+	/* pre code {
 		background: #303436;
-		/* background: var(--blackest); */
 		color: #fff;
-	}
+	} */
 
 	code {
 		background: #303436;

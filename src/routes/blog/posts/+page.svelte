@@ -37,17 +37,11 @@
 			copyPromptText.innerHTML = 'Copy';
 			copyPromptText.className = 'copy-prompt-text';
 
-			copyPromptText.style.fontWeight = '700';
+			copyPromptText.style.fontSize = 'clamp(1rem, 2vw, 1.25rem)';
+			copyPromptText.style.fontWeight = '900';
 			copyPromptText.style.marginTop = '.5rem';
 			copyPromptText.style.marginLeft = '-.1rem';
-
-			copyPromptText.addEventListener('mouseenter', () => {
-				copyPromptText.style.color = 'white';
-			});
-
-			copyPromptText.addEventListener('mouseleave', () => {
-				copyPromptText.style.color = 'var(--white)';
-			});
+			copyPromptText.style.color = '#fff';
 
 			const copyIcon = document.createElement('img');
 			copyIcon.src = '/icons/ic_copy.svg';
