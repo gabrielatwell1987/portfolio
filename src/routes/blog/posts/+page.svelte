@@ -6,6 +6,7 @@
 	import copy from 'copy-to-clipboard';
 	import SEO from '$lib/data/SEO.svelte';
 	import Card from '$lib/components/Card.svelte';
+	import Image from '$lib/components/Image.svelte';
 
 	$effect(() => {
 		const codeBlocks = document.querySelectorAll('pre');
@@ -91,12 +92,20 @@
 
 <section transition:fade={{ delay: 250, duration: 300 }}>
 	<div class="css">
-		<h1 class="title">CSS</h1>
-		<CSS aria-label="css" />
+		<div class="image">
+			<div class="skillImg">
+				<Image src="/skills/css.svg" alt="css" />
+			</div>
+			<br />
+			<CSS aria-label="css" />
+		</div>
 	</div>
 
 	<div class="gsap">
-		<h2 class="title">GSAP</h2>
+		<div class="skillImg">
+			<Image src="/skills/greensock.svg" alt="gsap" />
+		</div>
+		<br />
 		<GSAP aria-label="greensock" />
 	</div>
 
@@ -115,17 +124,6 @@
 </section>
 
 <style>
-	.title {
-		text-align: center;
-		font-size: clamp(4rem, 7.5vw, 15rem);
-		font-weight: 900;
-		color: var(--white);
-		font-family: var(--orbitron);
-		letter-spacing: 10px;
-		margin-top: 5rem;
-		mix-blend-mode: difference;
-	}
-
 	article.card {
 		display: flex;
 		justify-content: center;
@@ -136,11 +134,20 @@
 		background: url('/logos/bg1.webp') no-repeat center center/cover fixed;
 	}
 
+	.skillImg {
+		margin-inline: auto;
+	}
+
 	.css {
 		margin-bottom: 15%;
 	}
 
 	.gsap {
+		margin-top: -10%;
 		margin-bottom: 5%;
+	}
+
+	.image {
+		margin-top: 5%;
 	}
 </style>
