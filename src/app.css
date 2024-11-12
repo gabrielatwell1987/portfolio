@@ -180,12 +180,20 @@ body {
 		);
 	}
 
+	pre code {
+		background: #303436;
+		/* background: var(--blackest); */
+		color: #fff;
+	}
+
 	code {
-		background: var(--black);
-		color: var(--white);
+		background: #303436;
+		/* background: var(--blackest); */
+		color: var(--off-white);
 	}
 
 	code.code {
-		background: var(--blacker);
+		background: #303436;
+		/* background: var(--blacker); */
 	}
 }

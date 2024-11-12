@@ -13,6 +13,7 @@
 		codeBlocks.forEach((block) => {
 			const copyPrompt = document.createElement('div');
 			copyPrompt.className = 'copy-prompt';
+			block.classList.add('copy-prompt');
 			copyPrompt.style.cursor = 'pointer';
 			copyPrompt.style.marginTop = '1%';
 			copyPrompt.style.marginLeft = '2%';
@@ -34,24 +35,52 @@
 
 			const copyPromptText = document.createElement('p');
 			copyPromptText.innerHTML = 'Copy';
+			copyPromptText.className = 'copy-prompt-text';
+
 			copyPromptText.style.fontWeight = '700';
 			copyPromptText.style.marginTop = '.5rem';
 			copyPromptText.style.marginLeft = '-.1rem';
 
+			copyPromptText.addEventListener('mouseenter', () => {
+				copyPromptText.style.color = 'white';
+			});
+
+			copyPromptText.addEventListener('mouseleave', () => {
+				copyPromptText.style.color = 'var(--white)';
+			});
+
 			const copyIcon = document.createElement('img');
 			copyIcon.src = '/icons/ic_copy.svg';
+			copyIcon.style.opacity = '.9';
+
+			copyIcon.addEventListener('mouseenter', () => {
+				copyIcon.style.opacity = '1';
+			});
+
+			copyIcon.addEventListener('mouseleave', () => {
+				copyIcon.style.opacity = '.75';
+			});
 
 			copyPrompt.appendChild(copyIcon);
 			copyPrompt.appendChild(copyPromptText);
-
 			block.appendChild(copyPrompt);
-			block.querySelector('.copy-prompt > img').addEventListener('click', (evt) => {
+
+			// block.querySelector('.copy-prompt > img').addEventListener('click', (evt) => {
+			// 	copy(block.querySelector('code').textContent);
+
+			// 	block.querySelector('.copy-prompt > p').innerHTML = 'Copied!';
+
+			// 	setTimeout(() => {
+			// 		block.querySelector('.copy-prompt > p').innerHTML = 'Copy';
+			// 	}, 1000);
+			// });
+
+			copyPrompt.addEventListener('click', () => {
 				copy(block.querySelector('code').textContent);
 
-				block.querySelector('.copy-prompt > p').innerHTML = 'Copied!';
-
+				copyPromptText.innerHTML = 'Copied!';
 				setTimeout(() => {
-					block.querySelector('.copy-prompt > p').innerHTML = 'Copy';
+					copyPromptText.innerHTML = 'Copy';
 				}, 1000);
 			});
 		});
