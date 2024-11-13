@@ -13,7 +13,7 @@
 <SEO
 	title="Frontend Developer"
 	description="Gabriel Atwell's Portfolio"
-	keywords="gabriel atwell, gabe atwell, frontend developer, frontend portfolio, web developer, web designer, web development, web design, gabe atwell portfolio, gabe atwell website, gabe atwell developer, gabe atwell web developer, gabe atwell web designer, atwell ui, gabe atwell web design"
+	keywords="gabriel atwell, gabe atwell, frontend developer, frontend dev portfolio, frontend developer portfolio, frontend portfolio projects, frontend portfolio, frontend web developer portfolio, junior web developer portfolio, web developer, web designer, web developer, web development, web design, gabe atwell portfolio, gabe atwell developer, gabe atwell web developer, gabe atwell web designer, atwell design, gabe atwell web design, atwell, user interface"
 />
 
 <HeroLogo />
