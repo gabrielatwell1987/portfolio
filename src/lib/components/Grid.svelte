@@ -28,7 +28,7 @@
 <style>
 	@media (min-width: 300px) {
 		.title {
-			font-size: clamp(1.5rem, 4vw, 5rem);
+			font-size: clamp(2rem, 4vw, 5rem);
 			mix-blend-mode: difference;
 			color: var(--purple);
 			font-family: var(--orbitron);

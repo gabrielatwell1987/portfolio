@@ -64,12 +64,12 @@
 		.glow {
 			color: var(--sky);
 			text-shadow:
-				0 0 5px #242424,
-				0 0 5px var(--off-white),
-				0 0 5px var(--off-white),
-				0 0 10px var(--off-white),
-				0 0 15px var(--off-white),
-				0 0 20px var(--off-white);
+				0 0 5px #0b1215,
+				0 0 5px #eee,
+				0 0 5px #eee,
+				0 0 10px #eee,
+				0 0 15px #eee,
+				0 0 20px #eee;
 		}
 	}
 
@@ -94,12 +94,12 @@
 
 				.glow {
 					text-shadow:
-						0 0 3px #242424,
-						0 0 4px var(--off-white),
-						0 0 5px var(--off-white),
-						0 0 6px var(--off-white),
-						0 0 15px var(--off-white),
-						0 0 5px var(--off-white);
+						0 0 3px #0b1215,
+						0 0 4px #eee,
+						0 0 5px #eee,
+						0 0 6px #eee,
+						0 0 15px #eee,
+						0 0 5px #eee;
 				}
 			}
 		}
