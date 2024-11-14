@@ -43,7 +43,6 @@
 	</a>
 
 	<h4 class="italic">projects I created..</h4>
-	<br />
 </section>
 
 <style>
@@ -54,55 +53,53 @@
 			height: 100vh;
 			position: relative;
 			margin-bottom: 2%;
-		}
 
-		h1 {
-			margin: 2rem auto;
-			margin-top: 10%;
-			color: var(--sky);
-			font-size: clamp(1.5rem, 4vw, 7rem);
-			font-family: var(--anta);
-			letter-spacing: 7px;
-		}
-
-		h4 {
-			color: var(--white);
-			letter-spacing: 0.5px;
-			font-family: var(--lexend);
-			margin-inline: auto;
-			margin-bottom: 3%;
-			font-weight: 400;
-			width: 100%;
-			padding: 0 1.25rem;
-		}
-
-		section {
 			position: absolute;
 			top: 80%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			width: 100%;
-		}
 
-		.italic {
-			font-family: var(--montserrat);
-			font-size: clamp(1rem, 1.5vw, 1.5rem);
-			font-style: italic;
-			font-weight: 200;
-			color: var(--white);
-		}
+			h1 {
+				margin: 2rem auto;
+				margin-top: 10%;
+				color: var(--sky);
+				font-size: clamp(1.5rem, 4vw, 7rem);
+				font-family: var(--anta);
+				letter-spacing: 7px;
+			}
 
-		.summary {
-			margin: 0 auto;
-			font-size: clamp(1rem, 1.5vw, 1.65rem);
-			font-weight: 500;
-			width: 100%;
-			padding: 0 1.25rem;
-			margin-bottom: -5%;
-		}
+			h4 {
+				color: var(--white);
+				letter-spacing: 0.5px;
+				font-family: var(--lexend);
+				margin-inline: auto;
+				margin-bottom: 3%;
+				font-weight: 400;
+				width: 100%;
+				padding: 0 1.25rem;
+			}
 
-		.left {
-			text-align: left;
+			.italic {
+				font-family: var(--montserrat);
+				font-size: clamp(1rem, 1.5vw, 1.5rem);
+				font-style: italic;
+				font-weight: 200;
+				color: var(--white);
+			}
+
+			.summary {
+				margin: 0 auto;
+				font-size: clamp(1rem, 1.5vw, 1.65rem);
+				font-weight: 500;
+				width: 100%;
+				padding: 0 1.25rem;
+				margin-bottom: -5%;
+			}
+
+			.left {
+				text-align: left;
+			}
 		}
 	}
 
@@ -111,10 +108,10 @@
 			text-align: center;
 			font-size: 2rem;
 			top: 85%;
-		}
 
-		.summary {
-			width: 85%;
+			.summary {
+				width: 85%;
+			}
 		}
 	}
 
@@ -126,27 +123,27 @@
 			top: 45%;
 			left: 50%;
 			transform: translate(-50%, -30%);
-		}
 
-		.italic {
-			margin-top: 1rem;
-		}
+			.italic {
+				margin-top: 1rem;
+			}
 
-		.summary {
-			width: 50%;
-			letter-spacing: 3px;
-			margin-top: 1rem;
+			.summary {
+				width: 50%;
+				letter-spacing: 3px;
+				margin-top: 1rem;
+			}
 		}
 	}
 
 	@media (min-width: 1024px) {
 		section {
 			top: 40%;
-		}
 
-		.summary {
-			width: 80%;
-			margin-inline: auto;
+			.summary {
+				width: 80%;
+				margin-inline: auto;
+			}
 		}
 	}
 

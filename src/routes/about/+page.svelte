@@ -137,74 +137,74 @@
 		--100: 100%;
 	}
 
-	.indent {
-		text-indent: 2em;
-	}
-
 	@media screen and (min-width: 300px) {
-		p {
-			line-height: 1.75;
-			font-family: var(--montserrat);
-			text-align: left;
-		}
-
 		main {
 			width: var(--100);
 			margin-inline: auto;
-		}
 
-		section {
-			display: block;
-			margin-inline: auto;
-			text-align: center;
-			width: var(--100);
-			background: url('/logos/white-flower.webp') no-repeat center center/contain fixed;
-		}
+			.indent {
+				text-indent: 2em;
+			}
 
-		article {
-			font-size: clamp(0.8rem, 2vw, 1rem);
-			width: var(--100);
-			margin-inline: auto;
-			background-color: transparent;
-		}
+			section {
+				display: block;
+				margin-inline: auto;
+				text-align: center;
+				width: var(--100);
+				background: url('/logos/white-flower.webp') no-repeat center center/contain fixed;
+			}
 
-		.flip {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
+			article {
+				font-size: clamp(0.8rem, 2vw, 1rem);
+				width: var(--100);
+				margin-inline: auto;
+				background-color: transparent;
+			}
 
-		.hero,
-		.gallery {
-			width: var(--100);
-			margin-inline: auto;
-		}
+			.drop {
+				margin-bottom: 15%;
+			}
 
-		.gallery {
-			margin-top: 1.5rem;
-		}
+			p {
+				line-height: 1.75;
+				font-family: var(--montserrat);
+				text-align: left;
+			}
 
-		.text {
-			max-width: var(--100);
-			margin-inline: auto;
-			color: var(--white);
-			font-size: clamp(1.1rem, 1.5vw, 2rem);
-			font-weight: 500;
-			line-height: 1.35;
-		}
+			.flip {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
 
-		.text,
-		.text:hover {
-			mix-blend-mode: difference;
-		}
+			.hero,
+			.gallery {
+				width: var(--100);
+				margin-inline: auto;
+			}
 
-		.text-hero {
-			font-size: 1.35rem;
-			line-height: 1.5;
-		}
+			.gallery {
+				margin-top: 1.5rem;
+			}
 
-		.drop {
-			margin-bottom: 15%;
+			.text {
+				max-width: var(--100);
+				margin-inline: auto;
+				color: var(--white);
+				font-size: clamp(1.1rem, 1.5vw, 2rem);
+				font-weight: 500;
+				line-height: 1.35;
+			}
+
+			.text,
+			.text:hover {
+				mix-blend-mode: difference;
+			}
+
+			.text-hero {
+				font-size: 1.35rem;
+				line-height: 1.5;
+			}
 		}
 	}
 
@@ -223,39 +223,39 @@
 			display: block;
 			width: var(--100);
 			margin: 5rem auto;
-		}
 
-		article {
-			width: var(--100);
-			margin: 0 auto;
-			background-color: transparent;
-		}
+			article {
+				width: var(--100);
+				margin: 0 auto;
+				background-color: transparent;
+			}
 
-		.text {
-			color: var(--white);
-			max-width: 90%;
-			line-height: 1.5;
-		}
+			.text {
+				color: var(--white);
+				max-width: 90%;
+				line-height: 1.5;
+			}
 
-		.bio {
-			margin-bottom: -5rem;
-		}
+			.bio {
+				margin-bottom: -5rem;
+			}
 
-		.margin__b {
-			margin-bottom: -2rem;
-		}
+			.margin__b {
+				margin-bottom: -2rem;
+			}
 
-		.text__w {
-			width: 75%;
-			margin: 0 auto;
-		}
+			.text__w {
+				width: 75%;
+				margin: 0 auto;
+			}
 
-		.gallery {
-			margin-top: 5%;
-		}
+			.gallery {
+				margin-top: 5%;
+			}
 
-		.skills {
-			margin-top: -20%;
+			.skills {
+				margin-top: -20%;
+			}
 		}
 	}
 

@@ -133,10 +133,10 @@
 
 	main {
 		width: 100%;
-	}
 
-	.footer {
-		margin-top: 7%;
-		margin-bottom: -6%;
+		.footer {
+			margin-top: 7%;
+			margin-bottom: -6%;
+		}
 	}
 </style>

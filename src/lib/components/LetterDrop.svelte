@@ -43,23 +43,23 @@
 		color: var(--sky);
 		mix-blend-mode: lighten;
 		text-align: center;
-	}
 
-	.animated-letter {
-		display: inline-block;
-	}
+		.animated-letter {
+			display: inline-block;
+		}
 
-	.space {
-		width: 3.5rem;
+		.space {
+			width: 3.5rem;
+		}
 	}
 
 	@media (max-width: 768px) {
 		.animated-text {
 			font-weight: 400;
-		}
 
-		.space {
-			width: 1.5rem;
+			.space {
+				width: 1.5rem;
+			}
 		}
 	}
 

@@ -56,24 +56,24 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-	}
 
-	.h1-l,
-	.h1-r {
-		color: var(--white);
-		font-family: var(--anta);
-		font-size: clamp(1.2rem, 5vw, 5rem);
-		z-index: 2;
-		margin-top: 5%;
-		letter-spacing: 5px;
-	}
+		.h1-l,
+		.h1-r {
+			color: var(--white);
+			font-family: var(--anta);
+			font-size: clamp(1.2rem, 5vw, 5rem);
+			z-index: 2;
+			margin-top: 5%;
+			letter-spacing: 5px;
+		}
 
-	.span {
-		color: var(--smoke);
-		font-family: var(--orbitron);
-		font-size: clamp(4rem, 10vw, 20rem);
-		letter-spacing: 3px;
-		z-index: 1;
+		.span {
+			color: var(--smoke);
+			font-family: var(--orbitron);
+			font-size: clamp(4rem, 10vw, 20rem);
+			letter-spacing: 3px;
+			z-index: 1;
+		}
 	}
 
 	@media (max-width: 600px) {

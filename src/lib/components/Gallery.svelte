@@ -49,66 +49,66 @@
 		margin: 5rem auto;
 		background-color: transparent;
 		min-height: 100vh;
-	}
 
-	.grid-item {
-		position: relative;
-		padding: 0;
-		background: none;
-		border: none;
-		overflow: hidden;
-		cursor: pointer;
-	}
+		.grid-item {
+			position: relative;
+			padding: 0;
+			background: none;
+			border: none;
+			overflow: hidden;
+			cursor: pointer;
+		}
 
-	h2 {
-		color: #ffffff;
-		font-size: 2rem;
-		text-transform: capitalize;
-		font-family: var(--lexend);
-	}
+		h2 {
+			color: #ffffff;
+			font-size: 2rem;
+			text-transform: capitalize;
+			font-family: var(--lexend);
+		}
 
-	img {
-		width: 100%;
-		height: 100%;
-		aspect-ratio: 16/9;
-		display: block;
-		object-fit: cover;
-		border-radius: 7px;
-		opacity: 0.5;
-		transition: opacity 1s ease;
-	}
+		img {
+			width: 100%;
+			height: 100%;
+			aspect-ratio: 16/9;
+			display: block;
+			object-fit: cover;
+			border-radius: 7px;
+			opacity: 0.5;
+			transition: opacity 1s ease;
+		}
 
-	img:hover {
-		opacity: 1;
-		transition: opacity 1s ease;
-	}
+		img:hover {
+			opacity: 1;
+			transition: opacity 1s ease;
+		}
 
-	.details {
-		grid-row: span 2;
-		grid-column: span 2;
-	}
+		.details {
+			grid-row: span 2;
+			grid-column: span 2;
+		}
 
-	.title {
-		position: absolute;
-		left: 5%;
-		top: 5%;
-		opacity: 0;
-		translate: 0% 100%;
-	}
+		.title {
+			position: absolute;
+			left: 5%;
+			top: 5%;
+			opacity: 0;
+			translate: 0% 100%;
+		}
 
-	.details .title {
-		opacity: 1;
-		translate: 0%;
+		.details .title {
+			opacity: 1;
+			translate: 0%;
+		}
 	}
 
 	@media (min-width: 1024px) {
 		.grid {
 			grid-template-columns: repeat(3, 1fr);
 			min-height: 120vh;
-		}
 
-		h2 {
-			font-size: 2.5rem;
+			h2 {
+				font-size: 2.5rem;
+			}
 		}
 	}
 </style>
