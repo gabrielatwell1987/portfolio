@@ -55,9 +55,10 @@
 			</a>
 		</div>
 
-		<div class="marginTop">
+		<div class="margin">
 			<AnimatedHeading title1="seeing" span="is" title2="believing" />
 		</div>
+		<!-- <br /> -->
 	</article>
 </main>
 
@@ -69,7 +70,6 @@
 		flex-direction: column;
 		gap: 20%;
 		background: transparent;
-		margin-bottom: 3%;
 
 		a {
 			display: block;
@@ -97,8 +97,9 @@
 			margin-top: 10%;
 		}
 
-		.marginTop {
+		.margin {
 			margin-top: 10%;
+			margin-bottom: 13%;
 		}
 	}
 
@@ -135,6 +136,12 @@
 			width: 10rem;
 		}
 
+		.gs,
+		.sk,
+		.image {
+			margin-top: -5em;
+		}
+
 		.animation-link {
 			display: block;
 		}
@@ -156,6 +163,16 @@
 		.gs {
 			margin-bottom: 10%;
 		}
+
+		.gs,
+		.sk,
+		.image {
+			margin-top: 0;
+		}
+
+		/* .margin {
+			margin-bottom: -25%;
+		} */
 	}
 
 	@media (min-width: 990px) {
@@ -171,7 +188,7 @@
 		}
 
 		main {
-			margin-bottom: 10%;
+			margin-bottom: -12%;
 		}
 
 		.animation-link {
