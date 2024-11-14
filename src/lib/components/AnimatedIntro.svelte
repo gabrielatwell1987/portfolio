@@ -40,7 +40,7 @@
 </main>
 
 <style>
-	h1.sentence {
+	.sentence {
 		font-family: var(--montserrat);
 		font-size: clamp(1.25rem, 2.5vw, 10rem);
 		font-weight: 200;
@@ -49,59 +49,59 @@
 		text-align: center;
 		margin: 10% 0;
 		padding: 2rem;
+
+		.bigWord {
+			font-family: var(--anta);
+			font-size: clamp(3rem, 16vw, 40rem);
+			color: var(--blue);
+			font-weight: 500;
+			text-wrap: none;
+			display: block;
+			letter-spacing: 1px;
+			line-height: 1.2;
+		}
+
+		.glow {
+			color: var(--sky);
+			text-shadow:
+				0 0 5px #242424,
+				0 0 5px var(--off-white),
+				0 0 5px var(--off-white),
+				0 0 10px var(--off-white),
+				0 0 15px var(--off-white),
+				0 0 20px var(--off-white);
+		}
 	}
 
-	span.bigWord {
-		font-family: var(--anta);
-		font-size: clamp(3.6rem, 18vw, 40rem);
-		color: var(--blue);
-		font-weight: 500;
-		text-wrap: none;
-		display: block;
-		letter-spacing: 1px;
-		line-height: 1.2;
-	}
-
-	.glow {
-		color: var(--sky);
-		text-shadow:
-			0 0 5px #242424,
-			0 0 5px var(--off-white),
-			0 0 5px var(--off-white),
-			0 0 10px var(--off-white),
-			0 0 15px var(--off-white),
-			0 0 20px var(--off-white);
-	}
-
-	h1.sentence,
+	.sentence,
 	.bigWord {
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
 
 	@media (max-width: 768px) {
-		h1.sentence {
-			margin-top: 7%;
-			opacity: 0.9;
-		}
-
-		.bigWord {
-			font-weight: 600;
-			margin-top: 2%;
-		}
-
-		.glow {
-			text-shadow:
-				0 0 3px #242424,
-				0 0 4px var(--off-white),
-				0 0 5px var(--off-white),
-				0 0 6px var(--off-white),
-				0 0 15px var(--off-white),
-				0 0 5px var(--off-white);
-		}
-
 		.animated-text {
 			margin-top: -15%;
+
+			.sentence {
+				margin-top: 7%;
+				opacity: 0.9;
+
+				.bigWord {
+					font-weight: 600;
+					margin-top: 2%;
+				}
+
+				.glow {
+					text-shadow:
+						0 0 3px #242424,
+						0 0 4px var(--off-white),
+						0 0 5px var(--off-white),
+						0 0 6px var(--off-white),
+						0 0 15px var(--off-white),
+						0 0 5px var(--off-white);
+				}
+			}
 		}
 	}
 

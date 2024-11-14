@@ -33,26 +33,25 @@
 		z-index: 10;
 		margin-bottom: 80%;
 		margin-right: 10%;
-
 		position: relative;
-	}
 
-	.bar {
-		height: 3px;
-		width: 100%;
-		margin: 3px 0;
-		transition: all 0.3s ease;
+		.bar {
+			height: 3px;
+			width: 100%;
+			margin: 3px 0;
+			transition: all 0.3s ease;
 
-		position: absolute;
-		inset: 0;
-	}
+			position: absolute;
+			inset: 0;
+		}
 
-	i {
-		color: var(--white);
-		scale: 2;
-		transition: transform 0.2s ease;
+		i {
+			color: var(--white);
+			scale: 2;
+			transition: transform 0.2s ease;
 
-		position: absolute;
-		top: 1rem;
+			position: absolute;
+			top: 1rem;
+		}
 	}
 </style>

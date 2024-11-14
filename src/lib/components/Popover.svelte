@@ -107,57 +107,58 @@
 		flex-direction: column;
 		align-items: center;
 		margin-bottom: 5rem;
-	}
-	.goo-container {
-		filter: url(#goo);
-		position: absolute;
-		inset: 0;
-		z-index: -1;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	.button {
-		border: 0;
-		width: 6rem;
-		height: 6rem;
-		background: black;
-		color: white;
-		border-radius: 50%;
-		font-size: 18px;
-		cursor: pointer;
-		position: relative;
-		z-index: 10;
-		scale: calc(1 + (0.1 * var(--animation, 0)));
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	.menu {
-		color: white;
-		border-radius: calc(0.5em + (4em * (1 - var(--animation, 0))));
-		width: 200px;
-		height: 72px;
-		scale: calc(1 * var(--animation, 0));
-		translate: 0 calc(-20px * (1 - var(--animation, 0)));
-		transform-origin: top;
-		margin-top: 8px;
-		padding: 1em;
-		overflow: hidden;
-		opacity: 1 * var(--animation, 0);
-	}
 
-	.menu-content {
-		opacity: calc(-0.9 + (1.9 * var(--animation, 0)));
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-size: clamp(0.9rem, 1vw, 1.25rem);
-		height: 0.2rem;
-	}
+		.goo-container {
+			filter: url(#goo);
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.button {
+			border: 0;
+			width: 6rem;
+			height: 6rem;
+			background: black;
+			color: white;
+			border-radius: 50%;
+			font-size: 18px;
+			cursor: pointer;
+			position: relative;
+			z-index: 10;
+			scale: calc(1 + (0.1 * var(--animation, 0)));
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.menu {
+			color: white;
+			border-radius: calc(0.5em + (4em * (1 - var(--animation, 0))));
+			width: 200px;
+			height: 72px;
+			scale: calc(1 * var(--animation, 0));
+			translate: 0 calc(-20px * (1 - var(--animation, 0)));
+			transform-origin: top;
+			margin-top: 8px;
+			padding: 1em;
+			overflow: hidden;
+			opacity: 1 * var(--animation, 0);
+		}
 
-	.goo-container .menu {
-		background: transparent;
+		.menu-content {
+			opacity: calc(-0.9 + (1.9 * var(--animation, 0)));
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: clamp(0.9rem, 1vw, 1.25rem);
+			height: 0.2rem;
+		}
+
+		.goo-container .menu {
+			background: transparent;
+		}
 	}
 
 	@media (max-width: 1024px) {

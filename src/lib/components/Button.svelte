@@ -28,14 +28,14 @@
 			margin-bottom: 2%;
 			user-select: none;
 			cursor: pointer;
-		}
 
-		button:hover,
-		button:focus {
-			opacity: 0.8;
-			color: var(--yellow);
-			outline-offset: 0px;
-			animation: wiggle 0.5s ease-in-out infinite;
+			&:hover,
+			&:focus {
+				opacity: 0.8;
+				color: var(--yellow);
+				outline-offset: 0px;
+				animation: wiggle 0.5s ease-in-out infinite;
+			}
 		}
 	}
 

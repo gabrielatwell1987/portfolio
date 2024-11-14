@@ -124,30 +124,30 @@
 </section>
 
 <style>
-	article.card {
-		display: flex;
-		justify-content: center;
-		background: transparent;
-	}
-
 	section {
 		background: url('/logos/bg1.webp') no-repeat center center/cover fixed;
-	}
 
-	.skillImg {
-		margin-inline: auto;
-	}
+		.card {
+			display: flex;
+			justify-content: center;
+			background: transparent;
+		}
 
-	.css {
-		margin-bottom: 15%;
-	}
+		.css {
+			margin-bottom: 15%;
 
-	.gsap {
-		margin-top: -10%;
-		margin-bottom: 5%;
-	}
+			.image {
+				margin-top: 5%;
+			}
+		}
 
-	.image {
-		margin-top: 5%;
+		.gsap {
+			margin-top: -10%;
+			margin-bottom: 5%;
+
+			.skillImg {
+				margin-inline: auto;
+			}
+		}
 	}
 </style>

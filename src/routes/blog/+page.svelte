@@ -59,8 +59,6 @@
 			<AnimatedHeading title1="seeing" span="is" title2="believing" />
 		</div>
 	</article>
-
-	<br /><br />
 </main>
 
 <style>
@@ -71,26 +69,37 @@
 		flex-direction: column;
 		gap: 20%;
 		background: transparent;
-	}
+		margin-bottom: 3%;
 
-	a {
-		display: block;
-		margin: 0 0 2rem 50%;
-	}
+		a {
+			display: block;
+			margin: 0 0 2rem 50%;
+		}
 
-	.title {
-		color: var(--white);
-		font-size: clamp(2.75rem, 8vw, 10rem);
-		font-weight: 800;
-		text-align: center;
-		margin-top: 5%;
-		font-family: var(--orbitron);
-	}
+		.gs:not(:hover),
+		.sk:not(:hover) {
+			filter: opacity(0.5);
+			transition: filter 1s ease-in-out;
+		}
 
-	.gs:not(:hover),
-	.sk:not(:hover) {
-		filter: opacity(0.5);
-		transition: filter 1s ease-in-out;
+		.image:hover {
+			animation: wiggle 0.5s ease-in-out infinite;
+		}
+
+		.image:not(:hover) {
+			opacity: 0.5;
+			background-color: var(--smoke);
+			color: black;
+			transition: opacity 0.75s ease-in-out;
+		}
+
+		.animation-link {
+			margin-top: 10%;
+		}
+
+		.marginTop {
+			margin-top: 10%;
+		}
 	}
 
 	.image {
@@ -104,23 +113,13 @@
 		letter-spacing: 1px;
 	}
 
-	.image:hover {
-		animation: wiggle 0.5s ease-in-out infinite;
-	}
-
-	.image:not(:hover) {
-		opacity: 0.5;
-		background-color: var(--smoke);
-		color: black;
-		transition: opacity 0.75s ease-in-out;
-	}
-
-	.animation-link {
-		margin-top: 10%;
-	}
-
-	.marginTop {
-		margin-top: 10%;
+	.title {
+		color: var(--white);
+		font-size: clamp(2.75rem, 8vw, 10rem);
+		font-weight: 800;
+		text-align: center;
+		margin-top: 5%;
+		font-family: var(--orbitron);
 	}
 
 	@media (min-width: 300px) {

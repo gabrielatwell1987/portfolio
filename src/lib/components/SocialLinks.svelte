@@ -43,32 +43,32 @@
 </main>
 
 <style>
-	.size {
-		color: var(--blue);
-		font-weight: 900;
-		transition: color 0.5s ease;
-	}
-
-	.size:hover {
-		color: var(--yellow);
-		font-weight: 900;
-		transition: color 0.5s ease;
-	}
-
-	.size,
-	.size:hover {
-		font-size: clamp(2.5rem, 4vw, 5rem);
-	}
-
-	.size i {
-		cursor: pointer;
-	}
-
 	.dev-links {
 		margin-left: 0%;
 		display: flex;
 		justify-content: space-evenly;
 		padding: 1rem;
+
+		.size {
+			color: var(--blue);
+			font-weight: 900;
+			transition: color 0.5s ease;
+		}
+
+		.size:hover {
+			color: var(--yellow);
+			font-weight: 900;
+			transition: color 0.5s ease;
+		}
+
+		.size,
+		.size:hover {
+			font-size: clamp(2.5rem, 4vw, 5rem);
+		}
+
+		.size i {
+			cursor: pointer;
+		}
 	}
 
 	@media (max-width: 990px) {
