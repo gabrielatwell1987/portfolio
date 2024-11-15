@@ -106,7 +106,7 @@
 
 			<!-- bento grid -->
 			<div class="bento">
-				<Bento />
+				<Bento link="Contact me if you have a question!" />
 			</div>
 
 			<!-- image gallery -->

@@ -22,10 +22,10 @@
 
 <!-- <div class="video">
 	<Video
-		src1="https://utfs.io/f/a9fyo7WOVxjArmUl6QLjLEUMdNlCOYwWZAJBTFpcK5ktbaqm"
-		src2="https://utfs.io/f/a9fyo7WOVxjArmUl6QLjLEUMdNlCOYwWZAJBTFpcK5ktbaqm"
+	src1="https://utfs.io/f/a9fyo7WOVxjArmUl6QLjLEUMdNlCOYwWZAJBTFpcK5ktbaqm"
+	src2="https://utfs.io/f/a9fyo7WOVxjArmUl6QLjLEUMdNlCOYwWZAJBTFpcK5ktbaqm"
 	/>
-</div> -->
+	</div> -->
 
 <Hero />
 
