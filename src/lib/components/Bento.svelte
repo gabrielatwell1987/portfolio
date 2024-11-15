@@ -1,5 +1,7 @@
 <script>
-	import gsap from 'gsap';
+	import Image from '$lib/components/Image.svelte';
+
+	let { link } = $props();
 
 	$effect(() => {
 		const main = () => {
@@ -19,16 +21,21 @@
 	<section>
 		<div class="bento-grid" style="--row: 4">
 			<div class="item" style="--row: span 1">
-				<a href="/contact"><h2>Contact me if you have a question!</h2></a>
+				<a href="/contact">
+					<h2>{link}</h2>
+				</a>
 			</div>
 
 			<div class="item" style="--col: 2; --row: 1">
-				<a href="/photos/robot"><img src="/logos/robot.webp" alt="a robot" loading="lazy" /></a>
+				<a href="/photos/robot">
+					<Image src="/logos/robot.webp" alt="a robot" width="500" />
+				</a>
 			</div>
 
 			<div class="item mb" style="--row: span 3">
-				<a href="/projects"><img src="/logos/skull-logo.webp" alt="atwell logo" loading="lazy" /></a
-				>
+				<a href="/projects">
+					<Image src="/logos/skull-logo.webp" alt="atwell logo" width="500" />
+				</a>
 			</div>
 		</div>
 	</section>
@@ -45,10 +52,6 @@
 
 	* {
 		box-sizing: border-box;
-	}
-
-	img {
-		border-radius: 10px;
 	}
 
 	.bento-grid {
