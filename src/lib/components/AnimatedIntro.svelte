@@ -64,7 +64,7 @@
 		.glow {
 			color: var(--dark-blue);
 			text-shadow:
-				0 0 5px #0b1215,
+				0 0 5px #17262c,
 				0 0 5px #eee,
 				0 0 5px #eee,
 				0 0 10px #eee,
@@ -94,7 +94,7 @@
 
 				.glow {
 					text-shadow:
-						0 0 3px #0b1215,
+						0 0 3px #17262c,
 						0 0 4px #eee,
 						0 0 5px #eee,
 						0 0 6px #eee,
