@@ -72,14 +72,14 @@
 	/> -->
 
 	<Project
-		title="horizontal scroller"
+		title="horizontal scroll"
 		img="/projects/scroller.webp"
 		url="https://scrollernessly.vercel.app"
 		description="made with HTML/CSS/JS"
 	/>
 
 	<Project
-		title="grocery list app"
+		title="grocery list"
 		img="/projects/groceries.webp"
 		url="https://react-todo-navy-five.vercel.app/"
 		description="Made with React"
@@ -93,14 +93,14 @@
 	/>
 
 	<Project
-		title="password generator"
+		title="password maker"
 		img="/projects/pw-generator.webp"
 		url="https://pw-generator-ebon.vercel.app/"
 		description="Made with Sveltekit"
 	/>
 
 	<Project
-		title="github api"
+		title="github search"
 		img="/projects/github.webp"
 		url="https://adiapp.vercel.app"
 		description="Made with Svelte"
