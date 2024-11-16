@@ -14,9 +14,9 @@
 <button class="hamburger" onclick={toggleMenu} aria-label={ariaLabel}>
 	<div class="bar">
 		{#if open}
-			<i class="fa fa-times" transition:fade={{ duration: 500 }}></i>
+			<i class="fa fa-times" transition:fade={{ duration: 500, delay: 250 }}></i>
 		{:else}
-			<i class="fa fa-bars" transition:fade={{ duration: 500 }}></i>
+			<i class="fa fa-bars" transition:fade={{ duration: 500, delay: 250 }}></i>
 		{/if}
 	</div>
 </button>
