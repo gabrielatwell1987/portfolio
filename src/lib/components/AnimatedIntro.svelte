@@ -44,7 +44,7 @@
 		font-family: var(--montserrat);
 		font-size: clamp(1.25rem, 2.5vw, 10rem);
 		font-weight: 200;
-		color: var(--purple);
+		color: var(--white);
 		mix-blend-mode: lighten;
 		text-align: center;
 		margin: 10% 0;
@@ -62,7 +62,7 @@
 		}
 
 		.glow {
-			color: var(--sky);
+			color: var(--dark-blue);
 			text-shadow:
 				0 0 5px #0b1215,
 				0 0 5px #eee,
