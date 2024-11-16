@@ -25,11 +25,13 @@
 </script>
 
 <h1 class="animated-text">
-	<span class="animated-letter"> a </span>
-	<span class="animated-letter"> b </span>
-	<span class="animated-letter"> o </span>
-	<span class="animated-letter"> u </span>
-	<span class="animated-letter"> t </span>
+	<div class="tilt">
+		<span class="animated-letter"> a </span>
+		<span class="animated-letter"> b </span>
+		<span class="animated-letter"> o </span>
+		<span class="animated-letter"> u </span>
+		<span class="animated-letter"> t </span>
+	</div>
 	<span class="animated-letter space"></span>
 	<span class="animated-letter"> m </span>
 	<span class="animated-letter"> e </span>
@@ -38,8 +40,7 @@
 <style>
 	.animated-text {
 		font-family: var(--orbitron);
-		font-size: clamp(2rem, 9vw, 20rem);
-		font-weight: 700;
+		font-size: clamp(2.2rem, 9vw, 20rem);
 		color: var(--sky);
 		mix-blend-mode: lighten;
 		text-align: center;
@@ -50,6 +51,12 @@
 
 		.space {
 			width: 3.5rem;
+		}
+
+		.tilt {
+			transform: rotate(-10deg);
+			font-size: clamp(2rem, 9vw, 20rem);
+			display: inline-block;
 		}
 	}
 
