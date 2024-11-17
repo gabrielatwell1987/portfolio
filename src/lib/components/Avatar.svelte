@@ -17,7 +17,8 @@
 	}
 
 	img:hover {
-		border: 2px solid var(--sky);
+		/* border: 2px solid var(--sky); */
+		scale: 1.05;
 	}
 
 	h3 {
@@ -25,6 +26,7 @@
 		padding: 0;
 		letter-spacing: 2px;
 		color: var(--sky);
+		font-family: var(--orbitron);
 		font-size: clamp(1.1rem, 2vw, 2rem);
 		font-weight: 800;
 	}
@@ -35,6 +37,8 @@
 		align-items: center;
 		background: transparent;
 		gap: 1.75rem;
+		margin: 2rem 0;
+		padding: 0;
 	}
 
 	@media screen and (min-width: 300px) {
@@ -55,6 +59,10 @@
 		img {
 			width: 5%;
 			height: 5%;
+		}
+
+		article {
+			margin-top: 5rem;
 		}
 	}
 </style>

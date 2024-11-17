@@ -8,6 +8,7 @@
 	import { fade } from 'svelte/transition';
 	import SEO from '$lib/data/SEO.svelte';
 	import ImageFrame from '$lib/components/ImageFrame.svelte';
+	import Avatar from '$lib/components/Avatar.svelte';
 
 	// animations
 	$effect(() => {
@@ -169,13 +170,16 @@
 		description="made with Three.js"
 	/> -->
 
-	<section class="frame">
+	<!-- <section class="frame">
 		<ImageFrame
 			src="/logos/frontend_dev.webp"
 			alt="Frontend Developer"
 			text="distinguish your website"
 		/>
-	</section>
+	</section> -->
+
+	<!-- avatar -->
+	<Avatar src="/photos/cartoonGabe.webp" alt="cartoon gabe" name="gabeAtwell" />
 
 	<!-- logo -->
 	<div class="logos designs">
@@ -184,10 +188,10 @@
 </section>
 
 <style>
-	.frame {
+	/* .frame {
 		display: flex;
 		justify-content: center;
-	}
+	} */
 
 	@media screen and (min-width: 300px) {
 		:root {
