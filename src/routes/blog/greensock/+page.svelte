@@ -252,7 +252,7 @@
 	}
 
 	details[open] summary ~ * {
-		animation: open 0.5s ease-in-out;
+		animation: open 0.75s ease-in-out;
 	}
 
 	p {

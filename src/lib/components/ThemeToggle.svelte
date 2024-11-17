@@ -54,11 +54,8 @@
 		color: var(--text-color);
 	}
 
+	button:focus,
 	button:focus {
-		outline: none;
-	}
-
-	button:focus-visible {
-		outline: none;
+		box-shadow: 0 0 0px var(--off-white);
 	}
 </style>
