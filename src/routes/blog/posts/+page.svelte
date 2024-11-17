@@ -60,16 +60,6 @@
 			copyPrompt.appendChild(copyPromptText);
 			block.appendChild(copyPrompt);
 
-			// block.querySelector('.copy-prompt > img').addEventListener('click', (evt) => {
-			// 	copy(block.querySelector('code').textContent);
-
-			// 	block.querySelector('.copy-prompt > p').innerHTML = 'Copied!';
-
-			// 	setTimeout(() => {
-			// 		block.querySelector('.copy-prompt > p').innerHTML = 'Copy';
-			// 	}, 1000);
-			// });
-
 			copyPrompt.addEventListener('click', () => {
 				copy(block.querySelector('code').textContent);
 
