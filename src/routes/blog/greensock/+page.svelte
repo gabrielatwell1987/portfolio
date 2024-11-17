@@ -22,21 +22,42 @@
 		console.log('Greensock page');
 	});
 
+	let allowClose = true;
+	let isOpen = false; // Track state manually
+
 	// details animation
-	function resetAnimation(event) {
+	function handleToggle(event) {
+		event.preventDefault(); // Stop native behavior
 		const detail = event.currentTarget;
+		const content = detail.querySelector('p.text'); // Select the content to animate
+
 		if (detail.open) {
-			const summary = detail.querySelector('summary');
-			const content = summary.nextElementSibling;
+			// Animate when opening
+			isOpen = true;
+			detail.open = true; // Set `open` manually
 
-			content.style.display = 'none';
-			content.offsetHeight; // Force reflow
-			content.style.display = '';
+			gsap.fromTo(
+				content,
+				{ autoAlpha: 0, y: 25 },
+				{ autoAlpha: 1, y: 0, duration: 1, ease: 'power2.out' }
+			);
+		} else if (allowClose) {
+			// Animate when closing
 
-			// Optionally reset animation with class
-			content.classList.remove('animate');
-			void content.offsetWidth; // Force reflow again
-			content.classList.add('animate');
+			allowClose = false; // Prevent interaction during animation
+
+			// Closing animation
+			gsap.to(content, {
+				autoAlpha: 0,
+				y: -25,
+				duration: 0.5,
+				ease: 'power2.in',
+				onComplete: () => {
+					isOpen = false; // Manually close after animation
+					detail.open = false; // Manually close after animation
+					allowClose = true; // Allow interaction again
+				}
+			});
 		}
 	}
 </script>
@@ -60,7 +81,7 @@
 			</article>
 
 			<div class="centerDetail">
-				<details name="gsap" ontoggle={resetAnimation}>
+				<details name="gsap" ontoggle={handleToggle}>
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
@@ -82,7 +103,7 @@
 					</p>
 				</details>
 
-				<details name="gsap" ontoggle={resetAnimation}>
+				<details name="gsap" ontoggle={handleToggle}>
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
@@ -107,7 +128,7 @@
 					</p>
 				</details>
 
-				<details name="gsap" ontoggle={resetAnimation}>
+				<details name="gsap" ontoggle={handleToggle}>
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
@@ -137,7 +158,7 @@
 					</p>
 				</details>
 
-				<details name="gsap" ontoggle={resetAnimation}>
+				<details name="gsap" ontoggle={handleToggle}>
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Variables</b></span>
@@ -251,8 +272,12 @@
 		animation: un-rotate 0.5s ease-in-out forwards;
 	}
 
-	details[open] summary ~ * {
-		animation: open 0.75s ease-in-out;
+	details[open] p.text {
+		display: block;
+	}
+
+	p.text {
+		overflow: hidden;
 	}
 
 	p {
@@ -502,17 +527,6 @@
 
 		.popover {
 			margin-block: 10%;
-		}
-	}
-
-	@keyframes open {
-		from {
-			opacity: 0;
-			margin-top: -10px;
-		}
-		to {
-			opacity: 1;
-			margin-top: 0px;
 		}
 	}
 
