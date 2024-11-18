@@ -29,7 +29,7 @@
 	function handleToggle(event) {
 		event.preventDefault(); // Stop native behavior
 		const detail = event.currentTarget;
-		const content = detail.querySelector('p.text'); // Select the content to animate
+		const content = detail.querySelectorAll('p.text'); // Select the content to animate
 		const structure = detail.querySelector('.structure');
 
 		if (detail.open) {
