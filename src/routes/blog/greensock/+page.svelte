@@ -1,11 +1,11 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import { gsap } from 'gsap';
+	import SEO from '$lib/data/SEO.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import Iframe from '$lib/components/Iframe.svelte';
 	import Heading from './Heading.svelte';
 	import Popover from '$lib/components/Popover.svelte';
-	import { fade } from 'svelte/transition';
-	import SEO from '$lib/data/SEO.svelte';
 
 	// animations
 	$effect(() => {
@@ -43,7 +43,6 @@
 			);
 		} else if (allowClose) {
 			// Animate when closing
-
 			allowClose = false; // Prevent interaction during animation
 
 			// Closing animation
@@ -270,10 +269,6 @@
 
 	details:not([open]) i {
 		animation: un-rotate 0.5s ease-in-out forwards;
-	}
-
-	details[open] p.text {
-		display: block;
 	}
 
 	p.text {
