@@ -76,6 +76,11 @@
 			margin: 0 0 2rem 50%;
 		}
 
+		a:focus {
+			box-shadow: 0 0 0px var(--off-white);
+			background: transparent;
+		}
+
 		.gs:not(:hover),
 		.sk:not(:hover) {
 			filter: opacity(0.5);
