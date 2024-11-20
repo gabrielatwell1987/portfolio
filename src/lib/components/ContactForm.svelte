@@ -56,6 +56,7 @@
 		letter-spacing: 3px;
 		color: var(--smoke);
 		padding-inline: 1rem;
+		text-shadow: 3px 3px 5px var(--off-white);
 	}
 
 	input,

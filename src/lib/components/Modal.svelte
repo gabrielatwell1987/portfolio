@@ -85,13 +85,23 @@
 			box-shadow: 0 0 0px var(--off-white);
 		}
 
+		dialog::backdrop {
+			background: transparent;
+		}
+
 		article {
 			width: 100%;
 			border-radius: 1rem;
+			background: var(--blackest);
+			box-shadow: 0 0 5px 3px var(--off-white);
 		}
 
 		header {
 			background: transparent;
+		}
+
+		.modal {
+			background: none;
 		}
 
 		.modal h4 {
