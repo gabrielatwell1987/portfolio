@@ -20,45 +20,33 @@
 		tl.to(title, { autoAlpha: 1, duration: 2, ease: 'back.out(4)' }, 0);
 
 		console.log('Greensock page');
-	});
 
-	let allowClose = true;
-	let isOpen = false; // Track state manually
+		document.querySelectorAll('details').forEach((details) => {
+			details.addEventListener('toggle', (event) => {
+				const content = event.target;
 
-	// details animation
-	function handleToggle(event) {
-		event.preventDefault(); // Stop native behavior
-		const detail = event.currentTarget;
-		const content = detail.querySelector('p.text'); // Select the content to animate
+				if (content.open) {
+					// opening
+					content.style.maxHeight = `${content.scrollHeight}px`;
 
-		if (detail.open) {
-			// Animate when opening
-			isOpen = true;
-			detail.open = true; // Set `open` manually
-
-			gsap.fromTo(
-				content,
-				{ autoAlpha: 0, y: 25 },
-				{ autoAlpha: 1, y: 0, duration: 1, ease: 'power2.out' }
-			);
-		} else if (allowClose) {
-			// Animate when closing
-			allowClose = false; // Prevent interaction during animation
-
-			// Closing animation
-			gsap.to(content, {
-				autoAlpha: 0,
-				y: -25,
-				duration: 0.5,
-				ease: 'power2.in',
-				onComplete: () => {
-					isOpen = false; // Manually close after animation
-					detail.open = false; // Manually close after animation
-					allowClose = true; // Allow interaction again
+					// natural expansion
+					content.addEventListener(
+						'transitionend',
+						() => {
+							content.style.maxHeight = 'auto';
+						},
+						{ once: true }
+					);
+				} else {
+					// closing
+					content.style.maxHeight = `${content.scrollHeight}px`;
+					requestAnimationFrame(() => {
+						content.style.maxHeight = '5rem';
+					});
 				}
 			});
-		}
-	}
+		});
+	});
 </script>
 
 <SEO
@@ -80,7 +68,7 @@
 			</article>
 
 			<div class="centerDetail">
-				<details name="gsap" ontoggle={handleToggle}>
+				<details name="gsap">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
@@ -102,7 +90,7 @@
 					</p>
 				</details>
 
-				<details name="gsap" ontoggle={handleToggle}>
+				<details name="gsap">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
@@ -127,7 +115,7 @@
 					</p>
 				</details>
 
-				<details name="gsap" ontoggle={handleToggle}>
+				<details name="gsap">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
@@ -157,7 +145,7 @@
 					</p>
 				</details>
 
-				<details name="gsap" ontoggle={handleToggle}>
+				<details name="gsap">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Variables</b></span>
@@ -261,14 +249,23 @@
 		margin-left: 24.5%;
 		margin-bottom: 2rem;
 		position: relative;
-	}
 
-	details[open] i {
-		animation: rotate 0.5s ease-in-out forwards;
-	}
+		overflow: hidden; /* Ensures content doesn't spill out */
+		transition: max-height 0.75s ease-in-out; /* Smooth height transition */
+		max-height: 5rem; /* Closed height (enough to show summary) */
+		padding: 1rem;
 
-	details:not([open]) i {
-		animation: un-rotate 0.5s ease-in-out forwards;
+		&[open] {
+			max-height: 500px; /* Adjust this to be large enough for all content */
+		}
+
+		&[open] i {
+			animation: rotate 0.5s ease-in-out forwards;
+		}
+
+		&:not([open]) i {
+			animation: un-rotate 0.5s ease-in-out forwards;
+		}
 	}
 
 	p.text {
@@ -292,11 +289,11 @@
 		text-decoration: none;
 		color: var(--purple);
 		font-family: var(--orbitron);
-	}
 
-	.link:hover {
-		text-decoration: underline;
-		color: #fff;
+		&:hover {
+			text-decoration: underline;
+			color: #fff;
+		}
 	}
 
 	.title {

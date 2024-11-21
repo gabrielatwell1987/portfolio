@@ -20,46 +20,34 @@
 		tl.to(title, { autoAlpha: 1, duration: 2, ease: 'back.out(4)' }, 0);
 
 		console.log('Greensock page');
-	});
 
-	let allowClose = true;
-	let isOpen = false; // Track state manually
+		document.querySelectorAll('details').forEach((details) => {
+			details.addEventListener('toggle', (event) => {
+				const content = event.target;
 
-	// details animation
-	function handleToggle(event) {
-		event.preventDefault(); // Stop native behavior
-		const detail = event.currentTarget;
-		const content = detail.querySelectorAll('p.text'); // Select the content to animate
-		const structure = detail.querySelector('.structure');
+				if (content.open) {
+					// opening
+					content.style.maxHeight = `${content.scrollHeight}px`;
 
-		if (detail.open) {
-			// Animate when opening
-			isOpen = true;
-			detail.open = true; // Set `open` manually
+					// natural expansion
+					content.addEventListener(
+						'transitionend',
+						() => {
+							content.style.maxHeight = 'auto';
+						},
+						{ once: true }
+					);
+				} else {
+					// closing
+					content.style.maxHeight = `${content.scrollHeight}px`;
 
-			gsap.fromTo(
-				[content, structure],
-				{ autoAlpha: 0, y: 25 },
-				{ autoAlpha: 1, y: 0, duration: 1, ease: 'power2.out' }
-			);
-		} else if (allowClose) {
-			// Animate when closing
-			allowClose = false; // Prevent interaction during animation
-
-			// Closing animation
-			gsap.to([content, structure], {
-				autoAlpha: 0,
-				y: -25,
-				duration: 0.5,
-				ease: 'power2.in',
-				onComplete: () => {
-					isOpen = false; // Manually close after animation
-					detail.open = false; // Manually close after animation
-					allowClose = true; // Allow interaction again
+					requestAnimationFrame(() => {
+						content.style.maxHeight = '5rem';
+					});
 				}
 			});
-		}
-	}
+		});
+	});
 </script>
 
 <SEO
@@ -81,7 +69,7 @@
 			</article>
 
 			<div class="centerDetail">
-				<details name="sveltekit" ontoggle={handleToggle}>
+				<details name="sveltekit">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Framework</b></span>
@@ -106,7 +94,7 @@
 					</div>
 				</details>
 
-				<details name="sveltekit" ontoggle={handleToggle}>
+				<details name="sveltekit">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Based off basics</b></span>
@@ -123,7 +111,7 @@
 					</p>
 				</details>
 
-				<details name="sveltekit" ontoggle={handleToggle}>
+				<details name="sveltekit">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>What is it?</b></span>
@@ -142,7 +130,7 @@
 					</p>
 				</details>
 
-				<details name="sveltekit" ontoggle={handleToggle}>
+				<details name="sveltekit">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Install</b></span>
@@ -177,7 +165,7 @@
 					</div>
 				</details>
 
-				<details name="sveltekit" ontoggle={handleToggle}>
+				<details name="sveltekit">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Runes</b></span>
@@ -281,14 +269,23 @@
 		margin-left: 24.5%;
 		margin-bottom: 2rem;
 		position: relative;
-	}
 
-	details[open] i {
-		animation: rotate 0.5s ease-in-out forwards;
-	}
+		overflow: hidden;
+		transition: max-height 0.75s ease-in-out;
+		max-height: 5rem;
+		padding: 1rem;
 
-	details:not([open]) i {
-		animation: un-rotate 0.5s ease-in-out forwards;
+		&[open] {
+			max-height: 500px;
+		}
+
+		&[open] i {
+			animation: rotate 0.5s ease-in-out forwards;
+		}
+
+		&:not([open]) i {
+			animation: un-rotate 0.5s ease-in-out forwards;
+		}
 	}
 
 	p.text {
@@ -312,11 +309,11 @@
 		text-decoration: none;
 		color: var(--purple);
 		font-family: var(--orbitron);
-	}
 
-	.link:hover {
-		text-decoration: underline;
-		color: #fff;
+		&:hover {
+			text-decoration: underline;
+			color: #fff;
+		}
 	}
 
 	.title {
