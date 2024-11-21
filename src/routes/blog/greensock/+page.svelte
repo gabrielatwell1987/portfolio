@@ -250,6 +250,11 @@
 		margin-bottom: 2rem;
 		position: relative;
 
+		border: none;
+		outline: none;
+		-webkit-appearance: none;
+		appearance: none;
+
 		overflow: hidden; /* Ensures content doesn't spill out */
 		transition: max-height 0.75s ease-in-out; /* Smooth height transition */
 		max-height: 5rem; /* Closed height (enough to show summary) */

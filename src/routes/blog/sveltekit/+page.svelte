@@ -97,7 +97,7 @@
 				<details name="sveltekit">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>Based off basics</b></span>
+						><span class="margin"><b>The basics</b></span>
 						<i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></summary
 					>
 					<p class="text">
@@ -269,6 +269,11 @@
 		margin-left: 24.5%;
 		margin-bottom: 2rem;
 		position: relative;
+
+		border: none;
+		outline: none;
+		-webkit-appearance: none;
+		appearance: none;
 
 		overflow: hidden;
 		transition: max-height 0.75s ease-in-out;
