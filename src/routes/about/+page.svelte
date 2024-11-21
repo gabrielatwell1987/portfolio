@@ -116,7 +116,7 @@
 
 			<!-- skills section -->
 			<div class="skills">
-				<Skills title="Skills" />
+				<Skills />
 			</div>
 
 			<!-- card flip -->

@@ -96,7 +96,7 @@
 	}
 
 	.item:hover {
-		border: 2px solid var(--white);
+		box-shadow: 0 0 5px 3px var(--white);
 	}
 
 	.item:not(:hover) {

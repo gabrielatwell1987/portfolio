@@ -102,10 +102,13 @@
 		border-radius: 12px;
 		padding: 1rem;
 		cursor: pointer;
+		transform: scale(1);
+		transition: transform 0.25s ease-in-out;
 	}
 
 	.skills a:hover {
 		transform: scale(1.1);
+		transition: transform 0.25s ease-in-out;
 		border-color: var(--off-white);
 	}
 
