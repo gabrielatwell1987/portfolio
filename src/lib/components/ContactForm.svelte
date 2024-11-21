@@ -54,7 +54,7 @@
 		font-size: clamp(1.25rem, 3vw, 4rem);
 		font-weight: 800;
 		letter-spacing: 3px;
-		color: var(--smoke);
+		color: var(--darkgray);
 		padding-inline: 1rem;
 		text-shadow: 3px 3px 5px var(--off-white);
 	}
@@ -104,7 +104,7 @@
 		font-size: clamp(1rem, 1.25vw, 2rem);
 		font-weight: 800;
 		letter-spacing: 3px;
-		color: var(--white);
+		color: var(--smoke);
 	}
 
 	#name::-webkit-input-placeholder,
