@@ -57,6 +57,7 @@
 			transform: rotate(-10deg);
 			font-size: clamp(2rem, 9vw, 20rem);
 			display: inline-block;
+			text-shadow: 6px 6px 0px #666;
 		}
 	}
 
