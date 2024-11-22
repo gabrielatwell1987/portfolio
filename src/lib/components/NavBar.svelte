@@ -155,6 +155,7 @@
 		nav {
 			height: 5em;
 			width: var(--100);
+			scale: 0.76;
 		}
 
 		.header-logos {
@@ -174,6 +175,7 @@
 			height: 5em;
 			width: var(--100);
 			margin-top: 1rem;
+			scale: 1;
 		}
 
 		.header-logos {
@@ -210,11 +212,16 @@
 		.toggle {
 			margin-left: 10%;
 		}
+
+		nav {
+			scale: 0.8;
+		}
 	}
 
 	@media (min-width: 1400px) {
 		nav {
 			margin-right: 5rem;
+			scale: 1;
 		}
 
 		.toggle {
