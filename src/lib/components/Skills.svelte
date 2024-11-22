@@ -169,7 +169,7 @@
 		}
 
 		.icons {
-			scale: 3.5;
+			scale: 4.5;
 		}
 	}
 </style>

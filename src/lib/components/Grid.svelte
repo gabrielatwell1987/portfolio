@@ -38,7 +38,7 @@
 		.right {
 			line-height: 1.25;
 			text-align: left;
-			font-size: clamp(1.1rem, 1.75vw, 2rem);
+			font-size: clamp(1.2rem, 1.75vw, 2rem);
 			color: var(--white);
 			margin-top: -1rem;
 		}

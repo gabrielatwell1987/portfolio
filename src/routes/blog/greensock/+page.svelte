@@ -323,7 +323,7 @@
 	}
 
 	.text {
-		font-size: clamp(1.05rem, 1vw, 1.35rem);
+		font-size: clamp(1.15rem, 1.25vw, 1.5rem);
 	}
 
 	.popover {

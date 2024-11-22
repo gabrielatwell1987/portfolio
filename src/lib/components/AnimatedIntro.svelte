@@ -17,7 +17,7 @@
 			{
 				yPercent: 100,
 				autoAlpha: 0,
-				duration: 2.5,
+				duration: 1.25,
 				fontWeight: 200,
 				ease: 'sine.inOut'
 			},
@@ -29,7 +29,7 @@
 				amount: 0.5,
 				from: 'random'
 			},
-			duration: 5,
+			duration: 3,
 			ease: 'power3.inOut'
 		});
 	});
