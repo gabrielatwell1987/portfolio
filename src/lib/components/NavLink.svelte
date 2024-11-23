@@ -12,7 +12,7 @@
 
 	@media (min-width: 300px) {
 		.nav-link {
-			font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+			font-size: clamp(1.25rem, 1.5vw, 1.5rem);
 			letter-spacing: 2px;
 			border-radius: 0;
 			border-bottom: 1px solid var(--white);
