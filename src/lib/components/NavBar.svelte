@@ -81,7 +81,7 @@
 			gap: 1.25rem;
 			margin-top: 15.5rem;
 			z-index: 10;
-			border: 1px solid var(--white);
+			box-shadow: 0 0 8px 4px var(--white);
 			border-radius: 5px;
 			padding: 0.5rem 1rem;
 			background-color: var(--blackest);
@@ -94,16 +94,16 @@
 				max-height 1s ease-in-out,
 				opacity 1.22s ease-in-out;
 			opacity: 0;
-		}
 
-		.mobile.open {
-			max-height: 500px;
-			opacity: 1;
-		}
+			&.open {
+				max-height: 500px;
+				opacity: 1;
+			}
 
-		.mobile.closing {
-			max-height: 0;
-			opacity: 0;
+			&.closing {
+				max-height: 0;
+				opacity: 0;
+			}
 		}
 
 		.desktop {
