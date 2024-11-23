@@ -12,15 +12,11 @@
 
 	@media (min-width: 300px) {
 		.nav-link {
-			font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+			font-size: clamp(1.35rem, 1.5vw, 1.5rem);
 			letter-spacing: 2px;
 
-			&:last-child {
-				border-bottom: none;
-			}
-
 			&:hover {
-				font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+				font-size: clamp(1.35rem, 1.5vw, 1.5rem);
 			}
 		}
 	}

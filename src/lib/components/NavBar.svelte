@@ -79,7 +79,7 @@
 			justify-content: space-around;
 			align-items: center;
 			gap: 1.25rem;
-			margin-top: 15.5rem;
+			margin-top: 17rem;
 			z-index: 10;
 			box-shadow: 0 0 8px 4px var(--white);
 			border-radius: 5px;
@@ -144,7 +144,7 @@
 			border: none;
 			background-color: transparent;
 			margin-left: 10%;
-			scale: 1.1;
+			scale: 0.85;
 			text-wrap: nowrap;
 		}
 
