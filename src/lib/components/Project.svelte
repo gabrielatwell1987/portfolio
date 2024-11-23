@@ -20,7 +20,7 @@
 		.img {
 			border-radius: 8px;
 			max-width: var(--100);
-			transition: scale 0.25s ease-in-out;
+			transition: scale 0.05s ease-in-out;
 		}
 
 		.img:hover {
@@ -62,7 +62,7 @@
 			z-index: 1;
 			margin-left: -41%;
 			opacity: 0;
-			transition: opacity 0.5s;
+			transition: opacity 0.05s;
 		}
 
 		.link:hover .hover-text {
@@ -85,7 +85,7 @@
 
 	@media (min-width: 740px) {
 		img:hover {
-			transition: scale 0.75s ease;
+			transition: scale 0.25s ease;
 		}
 
 		.link {

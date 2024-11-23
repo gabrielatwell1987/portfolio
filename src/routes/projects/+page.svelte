@@ -37,9 +37,9 @@
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 
 		tl.to('.content', { autoAlpha: 1 })
-			.to('.link', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 2, ease: 'expo.out' }, 0)
-			.from('.title', { scale: 0.25, duration: 3 }, 0)
-			.to('.ascii', { yPercent: 0, duration: 1.75 }, 0);
+			.to('.link', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 0.75, ease: 'expo.out' }, 0)
+			.from('.title', { scale: 0.25, duration: 1.25 }, 0)
+			.to('.ascii', { yPercent: 0, duration: 1.5 }, 0);
 
 		console.log('Projects page');
 	});
