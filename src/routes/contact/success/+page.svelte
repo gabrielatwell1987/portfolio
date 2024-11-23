@@ -18,6 +18,7 @@
 		<h1>Success!</h1>
 
 		<p class="small"><i>Your message has been sent.</i></p>
+
 		<p>Thank you for reaching out.</p>
 	</section>
 </main>
@@ -37,13 +38,11 @@
 				padding: clamp(2rem, 5vw, 9rem);
 				margin: 5% auto;
 				text-align: center;
-				border: 1px solid var(--white);
-				border-radius: 10px;
 			}
 
 			h1 {
 				font-family: var(--anta);
-				font-size: clamp(1.2rem, 4vw, 4rem);
+				font-size: clamp(2rem, 5vw, 4rem);
 				font-weight: 900;
 				letter-spacing: 6px;
 				margin: 0.5em 0;
@@ -52,29 +51,29 @@
 			}
 
 			p {
-				font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+				font-size: clamp(1rem, 1.5vw, 2rem);
 				font-weight: 200;
 				margin: 0.5em 0;
 				color: #eee;
 			}
 
 			.small {
-				font-size: clamp(0.6rem, 1.2vw, 1.2rem);
+				font-size: clamp(0.8rem, 1.2vw, 1.5rem);
 				font-weight: 200;
-				margin: 0.5em 0;
+				margin: 2em 0 -0.5rem 0;
 				color: var(--smoke);
 			}
 
 			.image {
-				width: clamp(50%, 20vw, 75%);
+				width: clamp(75%, 20vw, 95%);
 				margin-inline: auto;
+				margin-bottom: clamp(2.5rem, 3vw, 5rem);
 			}
 		}
 	}
 
 	@media (min-width: 720px) {
 		section {
-			/* padding: 5rem; */
 			width: 50%;
 			margin-bottom: 10%;
 		}

@@ -14,5 +14,5 @@
 />
 
 <main>
-	<Robot title="Mouse Position" />
+	<Robot title="mouse robot" />
 </main>
