@@ -72,7 +72,7 @@
 				<details name="sveltekit">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>Framework</b></span>
+						><span class="margin"><b>Svelte</b></span>
 						<i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></summary
 					>
 					<p class="text">
@@ -97,7 +97,7 @@
 				<details name="sveltekit">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>The basics</b></span>
+						><span class="margin"><b>Basics</b></span>
 						<i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></summary
 					>
 					<p class="text">
@@ -114,7 +114,7 @@
 				<details name="sveltekit">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"><b>What is it?</b></span>
+						><span class="margin"><b>Compiler?</b></span>
 						<i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></summary
 					>
 					<p class="text">

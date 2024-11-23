@@ -72,8 +72,7 @@
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
-							><b
-								>What is GSAP? <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
+							><b>What's GSAP? <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
 							></span
 						></summary
 					>
@@ -94,8 +93,7 @@
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
-							><b
-								>Install GSAP? <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
+							><b>Install <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
 							></span
 						></summary
 					>
@@ -119,7 +117,7 @@
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"
-							><b>The syntax <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
+							><b>Syntax <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
 							></span
 						></summary
 					>
