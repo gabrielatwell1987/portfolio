@@ -14,8 +14,6 @@
 		.nav-link {
 			font-size: clamp(1.25rem, 1.5vw, 1.5rem);
 			letter-spacing: 2px;
-			border-radius: 0;
-			border-bottom: 1px solid var(--white);
 
 			&:last-child {
 				border-bottom: none;
@@ -32,7 +30,6 @@
 			text-decoration: none;
 			font-weight: 600;
 			color: var(--white);
-			border-bottom: none;
 			border-radius: 3px;
 
 			&:hover {
