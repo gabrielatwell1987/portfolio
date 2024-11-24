@@ -22,7 +22,7 @@
 		<div class="bento-grid" style="--row: 4">
 			<div class="item" style="--row: span 1">
 				<a href="/contact">
-					<h2>{link}</h2>
+					<Image src="/icons/Contact-Dark.svg" alt="contact me" width="250" />
 				</a>
 			</div>
 
@@ -73,14 +73,6 @@
 		padding-inline: var(--space);
 	}
 
-	h2 {
-		color: var(--white);
-		font-family: var(--mono);
-		font-size: clamp(1.75rem, 3vw, 3rem);
-		line-height: 1.1;
-		letter-spacing: 5px;
-	}
-
 	.item {
 		border: 1px solid var(--surface-3);
 		background-color: var(--surface-2);
@@ -107,10 +99,6 @@
 			border 1s ease;
 	}
 
-	.item:first-child {
-		padding: 2.5rem 1rem 0 1rem;
-	}
-
 	.mb {
 		margin-bottom: 11%;
 	}
@@ -124,11 +112,6 @@
 		.bento-grid > * {
 			grid-column: var(--col);
 			grid-row: var(--row);
-		}
-
-		h2 {
-			letter-spacing: 2px;
-			font-weight: 400;
 		}
 	}
 </style>
