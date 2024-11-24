@@ -68,7 +68,8 @@
 	main {
 		line-height: 1.4;
 		background-color: var(--surface-1);
-		margin-block: 10rem;
+		margin-top: 10rem;
+		margin-bottom: 2rem;
 		padding-inline: var(--space);
 	}
 

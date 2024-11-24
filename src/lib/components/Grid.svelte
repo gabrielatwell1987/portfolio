@@ -75,7 +75,7 @@
 		.grid {
 			display: grid;
 			grid-template-rows: repeat(2, 1fr);
-			margin: 7% 0 -28% 0;
+			margin: 17% 0 -28% 0;
 			gap: 3rem;
 		}
 

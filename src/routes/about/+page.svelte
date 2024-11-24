@@ -101,22 +101,17 @@
 				</article>
 			</div>
 
+			<!-- skills section -->
+			<div class="skills">
+				<Skills />
+			</div>
+
 			<!-- set up side by side text -->
 			<Grid leftTitle="Frontend" rightTitle="Design based" />
 
 			<!-- bento grid -->
 			<div class="bento">
 				<Bento link="Contact me if you have a question!" />
-			</div>
-
-			<!-- image gallery -->
-			<div class="gallery">
-				<Button href="/about/gallery" title="Gallery" />
-			</div>
-
-			<!-- skills section -->
-			<div class="skills">
-				<Skills />
 			</div>
 
 			<!-- card flip -->
@@ -127,6 +122,11 @@
 					src2="/logos/microphone.webp"
 					alt2="a blue A logo"
 				/>
+			</div>
+
+			<!-- image gallery -->
+			<div class="gallery">
+				<Button href="/about/gallery" title="Gallery" />
 			</div>
 		</article>
 	</section>
