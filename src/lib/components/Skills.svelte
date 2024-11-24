@@ -11,14 +11,14 @@
 	<ul class="skills">
 		<a class="skill" href="https://developer.mozilla.org/en-US/docs/Learn/HTML" target="_blank">
 			<li>
-				<div class="icons"><Image src="skills/HTML.svg" alt="html" /></div>
+				<div class="icons"><Image src="skills/HTML-Dark.svg" alt="html" /></div>
 			</li>
 		</a>
 
 		<a class="skill" href="https://developer.mozilla.org/en-US/docs/Learn/CSS" target="_blank">
 			<li>
 				<div class="icons">
-					<Image src="skills/CSS.svg" alt="css" />
+					<Image src="skills/CSS-Dark.svg" alt="css" />
 				</div>
 			</li>
 		</a>
@@ -30,7 +30,7 @@
 		>
 			<li>
 				<div class="icons">
-					<Image src="skills/JavaScript.svg" alt="javascript" />
+					<Image src="skills/JavaScript-Dark.svg" alt="javascript" />
 				</div>
 			</li>
 		</a>
