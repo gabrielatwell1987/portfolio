@@ -35,10 +35,10 @@
 			</li>
 		</a>
 
-		<a class="skill" href="https://kit.svelte.dev/" target="_blank">
+		<a class="skill" href="https://svelte.dev/" target="_blank">
 			<li>
 				<div class="icons">
-					<Image src="skills/Svelte.svg" alt="svelte kit" />
+					<Image src="skills/Svelte-Dark.svg" alt="svelte kit" />
 				</div>
 			</li>
 		</a>
