@@ -11,14 +11,14 @@
 	<ul class="skills">
 		<a class="skill" href="https://developer.mozilla.org/en-US/docs/Learn/HTML" target="_blank">
 			<li>
-				<div class="icons"><Image src="skills/html.svg" alt="html" /></div>
+				<div class="icons"><Image src="skills/HTML.svg" alt="html" /></div>
 			</li>
 		</a>
 
 		<a class="skill" href="https://developer.mozilla.org/en-US/docs/Learn/CSS" target="_blank">
 			<li>
 				<div class="icons">
-					<Image src="skills/css.svg" alt="css" />
+					<Image src="skills/CSS.svg" alt="css" />
 				</div>
 			</li>
 		</a>
@@ -30,7 +30,7 @@
 		>
 			<li>
 				<div class="icons">
-					<Image src="skills/js.svg" alt="javascript" />
+					<Image src="skills/JavaScript.svg" alt="javascript" />
 				</div>
 			</li>
 		</a>
@@ -38,7 +38,7 @@
 		<a class="skill" href="https://kit.svelte.dev/" target="_blank">
 			<li>
 				<div class="icons">
-					<Image src="skills/svelte.svg" alt="svelte kit" />
+					<Image src="skills/Svelte.svg" alt="svelte kit" />
 				</div>
 			</li>
 		</a>
@@ -46,7 +46,7 @@
 		<a class="skill" href="https://gsap.com" target="_blank">
 			<li>
 				<div class="icons">
-					<Image src="skills/greensock.svg" alt="greensock" />
+					<Image src="skills/GSAP-Dark.svg" alt="greensock" />
 				</div>
 			</li>
 		</a>
@@ -54,7 +54,7 @@
 		<a class="skill" href="https://nodejs.org" target="_blank">
 			<li>
 				<div class="icons">
-					<Image src="skills/node.svg" alt="node.js" />
+					<Image src="skills/NodeJS-Dark.svg" alt="node.js" />
 				</div>
 			</li>
 		</a>
@@ -62,7 +62,7 @@
 		<a class="skill" href="https://github.com" target="_blank">
 			<li>
 				<div class="icons">
-					<Image src="skills/github.svg" alt="git hub" />
+					<Image src="skills/Github-Dark.svg" alt="git hub" />
 				</div>
 			</li>
 		</a>
@@ -70,7 +70,7 @@
 		<a class="skill" href="https://sass-lang.com" target="_blank">
 			<li>
 				<div class="icons">
-					<Image src="skills/scss.svg" alt="scss" />
+					<Image src="skills/Sass.svg" alt="scss" />
 				</div>
 			</li>
 		</a>
@@ -78,7 +78,7 @@
 		<a class="skill" href="https://tailwindcss.com" target="_blank">
 			<li>
 				<div class="icons">
-					<Image src="skills/tailwind.svg" alt="tailwind css" />
+					<Image src="skills/TailwindCSS-Dark.svg" alt="tailwind css" />
 				</div>
 			</li>
 		</a>
@@ -88,8 +88,9 @@
 <style>
 	.skills {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-		gap: 1rem;
+		grid-template-columns: repeat(3, minmax(100px, 0.75fr));
+		/* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+		gap: 2rem;
 		align-items: center;
 
 		position: absolute;
@@ -98,12 +99,11 @@
 	}
 
 	.skill {
-		border: 3.5px solid var(--white);
-		border-radius: 12px;
-		padding: 1rem;
+		padding: 0.5rem;
 		cursor: pointer;
 		transform: scale(1);
 		transition: transform 0.25s ease-in-out;
+		margin-bottom: -0.75rem;
 	}
 
 	.skills a:hover {
@@ -134,15 +134,12 @@
 
 	@media (max-width: 768px) {
 		.skills {
-			grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+			grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+			gap: 0.5rem;
 		}
 
 		.skills li {
 			width: 50%;
-		}
-
-		.skill {
-			border: 2px solid var(--white);
 		}
 
 		.border {
@@ -153,6 +150,7 @@
 	@media (max-width: 400px) {
 		.skills {
 			grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+			gap: 1rem;
 		}
 
 		.skills-title {
@@ -161,7 +159,8 @@
 
 		.skill {
 			border: none;
-			margin: 0.3rem;
+			margin: 0.5rem;
+			scale: 0.8;
 		}
 
 		.border {
