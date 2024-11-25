@@ -145,6 +145,7 @@
 		textarea {
 			width: 100%;
 			background-color: transparent;
+			box-shadow: none;
 			border: 3px solid var(--dark-gray);
 			border-radius: 10px;
 			caret-color: var(--sky);
@@ -173,6 +174,7 @@
 	@media screen and (min-width: 720px) {
 		::backdrop {
 			background: transparent;
+			box-shadow: none;
 		}
 
 		legend {

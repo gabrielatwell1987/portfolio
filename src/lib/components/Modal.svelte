@@ -62,6 +62,7 @@
 			font-size: clamp(1.75rem, 2vw, 3rem);
 			font-weight: 800;
 			background-color: transparent;
+			box-shadow: none;
 			color: var(--pale);
 			width: 5%;
 			height: 5%;
@@ -87,6 +88,7 @@
 
 		dialog::backdrop {
 			background: transparent;
+			box-shadow: none;
 		}
 
 		article {

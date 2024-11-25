@@ -36,6 +36,7 @@
 		justify-content: center;
 		align-items: center;
 		background: transparent;
+		box-shadow: none;
 		gap: 1.75rem;
 		margin: 2rem 0;
 		padding: 0;
