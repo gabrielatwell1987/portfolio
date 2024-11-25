@@ -56,9 +56,10 @@
 		}
 
 		.size:hover {
-			color: var(--yellow);
+			color: var(--dark-pale);
 			font-weight: 900;
 			transition: color 0.5s ease;
+			filter: drop-shadow(0 0 1.5rem var(--white));
 		}
 
 		.size,

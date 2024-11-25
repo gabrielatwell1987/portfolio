@@ -70,6 +70,7 @@
 		flex-direction: column;
 		gap: 20%;
 		background: transparent;
+		box-shadow: none;
 
 		a {
 			display: block;

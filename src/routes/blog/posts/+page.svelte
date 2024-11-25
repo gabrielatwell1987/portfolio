@@ -84,7 +84,7 @@
 	<div class="css">
 		<div class="image">
 			<div class="skillImg">
-				<Image src="/skills/css.svg" alt="css" />
+				<Image src="/skills/CSS-Dark.svg" alt="css" />
 			</div>
 			<br />
 			<CSS aria-label="css" />
@@ -93,7 +93,7 @@
 
 	<div class="gsap">
 		<div class="skillImg">
-			<Image src="/skills/greensock.svg" alt="gsap" />
+			<Image src="/skills/GSAP-Dark.svg" alt="gsap" />
 		</div>
 		<br />
 		<GSAP aria-label="greensock" />
@@ -121,6 +121,7 @@
 			display: flex;
 			justify-content: center;
 			background: transparent;
+			box-shadow: none;
 		}
 
 		.css {

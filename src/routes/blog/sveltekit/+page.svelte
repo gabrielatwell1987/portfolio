@@ -348,6 +348,7 @@
 
 	.popover {
 		background: transparent;
+		box-shadow: none;
 	}
 
 	.centerDetail {

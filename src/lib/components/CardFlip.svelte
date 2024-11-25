@@ -1,11 +1,6 @@
 <script>
 	/** @type {{src: any, alt: any, src2: any, alt2: any}} */
-	let {
-		src,
-		alt,
-		src2,
-		alt2
-	} = $props();
+	let { src, alt, src2, alt2 } = $props();
 </script>
 
 <main class="card-container">
@@ -57,11 +52,13 @@
 
 	.card-front {
 		background-color: transparent;
+		box-shadow: none;
 		color: var(--white);
 	}
 
 	.card-back {
 		background-color: transparent;
+		box-shadow: none;
 		color: var(--white);
 		transform: rotateY(180deg);
 	}

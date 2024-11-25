@@ -228,6 +228,7 @@
 				width: var(--100);
 				margin: 0 auto;
 				background-color: transparent;
+				box-shadow: none;
 			}
 
 			.text {
