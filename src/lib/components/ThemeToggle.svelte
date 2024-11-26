@@ -44,6 +44,10 @@
 		outline: none;
 	}
 
+	button i {
+		cursor: pointer;
+	}
+
 	button:hover {
 		text-shadow: 0 0 1px var(--smoke);
 		transition: all 0.35s ease-in-out;
