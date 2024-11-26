@@ -31,7 +31,7 @@
 				opacity: 0.8;
 				color: var(--dark-pale);
 				outline-offset: 0px;
-				animation: wiggle 0.5s ease-in-out infinite;
+				animation: wiggle 0.75s ease-in-out infinite;
 			}
 
 			p {
@@ -42,7 +42,7 @@
 			}
 
 			p:hover i {
-				animation: right 0.5s ease-in-out infinite;
+				animation: right 1s ease-in-out infinite;
 			}
 		}
 	}
