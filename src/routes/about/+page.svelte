@@ -159,6 +159,7 @@
 				width: var(--100);
 				margin-inline: auto;
 				background-color: transparent;
+				box-shadow: none;
 			}
 
 			.drop {
@@ -227,8 +228,6 @@
 			article {
 				width: var(--100);
 				margin: 0 auto;
-				background-color: transparent;
-				box-shadow: none;
 			}
 
 			.text {

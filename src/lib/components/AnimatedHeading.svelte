@@ -18,7 +18,7 @@
 			{
 				opacity: 0,
 				x: -100,
-				duration: 10
+				duration: 4
 			},
 			'+=3'
 		);
@@ -27,7 +27,7 @@
 			{
 				opacity: 0,
 				x: 100,
-				duration: 10
+				duration: 4
 			},
 			'<'
 		).fromTo(
@@ -36,7 +36,7 @@
 			{
 				opacity: 0.5,
 				scale: 2,
-				duration: 8,
+				duration: 5,
 				ease: 'circ',
 				stagger: 0.25
 			},

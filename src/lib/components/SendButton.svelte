@@ -11,17 +11,17 @@
 			font-size: clamp(1.2rem, 1.5vw, 2rem);
 			font-weight: 900;
 			color: var(--pale);
-			border: 1px solid var(--pale);
-			outline: 3px solid var(--pale);
+			border: 1px solid var(--dark-pale);
+			outline: 3px solid var(--dark-pale);
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
-			width: clamp(100px, 60%, 275px);
+			width: fit-content;
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
-			padding: 1.5rem 2.5rem;
+			padding: clamp(0.75rem, 2vw, 1rem) clamp(1.75rem, 3vw, 2rem);
 			margin-top: 10%;
 			margin-bottom: 2%;
 			user-select: none;
@@ -29,7 +29,7 @@
 			&:hover,
 			&:focus {
 				opacity: 0.8;
-				color: var(--yellow);
+				color: var(--dark-pale);
 				outline-offset: 0px;
 				animation: wiggle 0.5s ease-in-out infinite;
 			}
@@ -38,7 +38,7 @@
 				margin: 0;
 				font-size: clamp(1.2rem, 1.5vw, 2rem);
 				font-weight: 900;
-				color: var(--pale);
+				color: var(--dark-pale);
 			}
 
 			p:hover i {

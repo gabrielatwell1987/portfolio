@@ -71,7 +71,7 @@
 			font-size: clamp(1rem, 1vw, 1.2rem);
 			font-weight: 300;
 			letter-spacing: 1px;
-			width: 30%;
+			width: fit-content;
 			height: 10%;
 			outline: none;
 			margin: 1rem auto;
