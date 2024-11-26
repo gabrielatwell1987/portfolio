@@ -101,7 +101,7 @@
 
 	<article class="card">
 		<Card
-			src="/photos/ornate1.webp"
+			src="/photos/cartoonGabe.webp"
 			alt="old school"
 			href="/projects"
 			title="gabeAtwell"
