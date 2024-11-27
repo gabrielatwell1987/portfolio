@@ -53,13 +53,14 @@
 			color: var(--blue);
 			font-weight: 900;
 			transition: color 0.5s ease;
+			-webkit-text-stroke: 1px var(--white);
+			filter: opacity(0.95);
 		}
 
 		.size:hover {
 			color: var(--dark-pale);
 			font-weight: 900;
 			transition: color 0.5s ease;
-			filter: drop-shadow(0 0 1.5rem var(--white));
 		}
 
 		.size,
