@@ -10,14 +10,14 @@
 		{
 			"src": "./icons/screenshot-narrow.png",
 			"type": "image/png",
-			"sizes": "342x320",
+			"sizes": "653x400",
 			"form_factor": "narrow",
 			"label": "Narrow screenshot"
 		},
 		{
 			"src": "./icons/screenshot-wide.png",
 			"type": "image/png",
-			"sizes": "481x710",
+			"sizes": "2174x500",
 			"form_factor": "wide",
 			"label": "Wide screenshot"
 		}
