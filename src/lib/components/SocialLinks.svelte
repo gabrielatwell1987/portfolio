@@ -57,6 +57,12 @@
 			filter: opacity(0.95);
 		}
 
+		.size:focus {
+			outline: none;
+			background: transparent;
+			box-shadow: none;
+		}
+
 		.size:hover {
 			color: var(--dark-pale);
 			font-weight: 900;
