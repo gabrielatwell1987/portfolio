@@ -122,7 +122,7 @@
 
 	.title {
 		color: var(--white);
-		font-size: clamp(2.75rem, 8vw, 10rem);
+		font-size: clamp(2.75rem, 10.5vw, 15rem);
 		font-weight: 800;
 		text-align: center;
 		margin-top: 5%;

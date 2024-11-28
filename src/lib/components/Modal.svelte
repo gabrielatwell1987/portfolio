@@ -56,6 +56,10 @@
 
 <style>
 	@media (min-width: 320px) {
+		.open-button {
+			margin-bottom: 25%;
+		}
+
 		.open-button,
 		.close-button {
 			display: block;
@@ -63,7 +67,7 @@
 			font-weight: 800;
 			background-color: transparent;
 			box-shadow: none;
-			color: var(--pale);
+			color: var(--dark-pale);
 			width: 5%;
 			height: 5%;
 			outline: none;
@@ -78,12 +82,17 @@
 
 		.open-button:hover,
 		.close-button:hover {
-			animation: wiggle 0.5s ease-in-out infinite;
+			animation: wiggle 01s ease-in-out infinite;
 		}
 
 		.open-button:focus,
 		.close-button:focus {
 			box-shadow: 0 0 0px var(--off-white);
+		}
+
+		.open-button i,
+		.close-button i {
+			cursor: pointer;
 		}
 
 		dialog::backdrop {
@@ -137,6 +146,10 @@
 			width: 60%;
 			margin: 1.5rem auto;
 		}
+
+		.open-button {
+			margin-bottom: 15%;
+		}
 	}
 
 	@media screen and (min-width: 1024px) {
@@ -152,7 +165,7 @@
 		}
 
 		.open-button {
-			margin-bottom: 5%;
+			margin-bottom: 15%;
 		}
 	}
 
