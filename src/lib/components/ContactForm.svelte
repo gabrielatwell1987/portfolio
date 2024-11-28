@@ -1,4 +1,5 @@
 <script>
+	import Popup from '$lib/components/Popup.svelte';
 	import { gsap } from 'gsap';
 	import Modal from './Modal.svelte';
 	import SendButton from '$lib/components/SendButton.svelte';
@@ -16,7 +17,16 @@
 	});
 </script>
 
-<Modal />
+<div class="icons">
+	<div class="popover">
+		<Popup
+			title="note"
+			text="I will message you back immediately so please provide a working email!"
+		/>
+	</div>
+
+	<Modal />
+</div>
 
 <form method="POST" action="https://form.taxi/s/xeyymb58">
 	<fieldset>
@@ -119,6 +129,19 @@
 		justify-content: center;
 		align-items: center;
 		margin-top: 1rem;
+	}
+
+	.icons {
+		display: grid;
+		place-content: center;
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+		align-items: center;
+	}
+
+	.popover {
+		display: flex;
+		justify-content: space-evenly;
+		margin-bottom: 15%;
 	}
 
 	@media screen and (min-width: 320px) {

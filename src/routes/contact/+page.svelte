@@ -24,9 +24,9 @@
 
 <style>
 	.legend {
-		margin: 10% 0 2% 0;
+		margin: 10% 0 4% 0;
 		font-family: var(--orbitron);
-		font-size: clamp(2rem, 5vw, 9rem);
+		font-size: clamp(2rem, 8vw, 10rem);
 		font-weight: 900;
 		letter-spacing: 20px;
 		padding: 0;
