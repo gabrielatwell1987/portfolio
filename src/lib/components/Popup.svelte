@@ -3,7 +3,7 @@
 </script>
 
 <div class="popup">
-	<button popovertarget="popover">{title} <i class="fa-solid fa-bell"></i>:</button>
+	<button popovertarget="popover">{title} <i class="fa-solid fa-bell"></i></button>
 
 	<div popover="auto" id="popover">{text}</div>
 </div>
@@ -15,13 +15,12 @@
 
 	button {
 		background-color: transparent;
-		color: var(--white);
+		color: var(--dark-pale);
 		width: fit-content;
 		font-family: var(--anta);
 		font-size: clamp(1rem, 1.5vw, 1.85rem);
-		box-shadow: 0 0 25px var(--white);
 		border-radius: 6px;
-		letter-spacing: 5px;
+		letter-spacing: 3px;
 		padding: 0.75rem 1.15rem;
 		border: none;
 		outline: none;
@@ -29,15 +28,25 @@
 		cursor: pointer;
 	}
 
+	button i {
+		font-size: clamp(1.75rem, 2vw, 3rem);
+	}
+
 	button:hover {
-		color: var(--dark-pale);
-		box-shadow: 0 0 25px var(--dark-pale);
 		animation: wiggle 1s ease-in-out infinite;
+	}
+
+	button:focus {
+		box-shadow: 0 0 0px var(--off-white);
 	}
 
 	#popover {
 		margin-inline: auto;
 		margin-block: 5em;
+		font-family: var(--montserrat);
+		font-size: clamp(1rem, 2vw, 2.25rem);
+		letter-spacing: 5px;
+		padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
 	}
 
 	[popover] {
@@ -87,6 +96,10 @@
 
 	@media (max-width: 500px) {
 		button {
+			letter-spacing: 1px;
+		}
+
+		#popover {
 			letter-spacing: 1px;
 		}
 	}
