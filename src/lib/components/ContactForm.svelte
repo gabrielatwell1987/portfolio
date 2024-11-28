@@ -19,7 +19,7 @@
 
 <div class="icons">
 	<div class="popover">
-		<Popup title="" text="I will message you back immediately so please provide a working email!" />
+		<Popup title="" text="Please provide a working email so I can message you back!" />
 	</div>
 
 	<Modal />
