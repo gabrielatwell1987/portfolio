@@ -12,11 +12,11 @@
 
 	@media (min-width: 300px) {
 		.nav-link {
-			font-size: clamp(1.25rem, 1.5vw, 1.35rem);
+			font-size: clamp(1.25rem, 1.25vw, 1.15rem);
 			letter-spacing: 2px;
 
 			&:hover {
-				font-size: clamp(1.25rem, 1.5vw, 1.35rem);
+				font-size: clamp(1.25rem, 1.25vw, 1.15rem);
 			}
 		}
 	}
@@ -26,14 +26,15 @@
 			text-decoration: none;
 			font-weight: 600;
 			color: var(--white);
-			border-radius: 3px;
+			border-radius: 2px;
 
 			&:hover {
 				color: var(--sky);
-				border-bottom: 5px solid var(--sky);
-				height: 3rem;
+				border-bottom: 3px solid var(--sky);
+				height: 2.75rem;
 				text-shadow: 2px 2px 1px var(--blacker);
 				transition: all 0.35s ease-in-out;
+				border-radius: 2px;
 			}
 		}
 	}
