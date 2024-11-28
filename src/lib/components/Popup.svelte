@@ -25,7 +25,6 @@
 		border: none;
 		outline: none;
 		text-transform: uppercase;
-		cursor: pointer;
 	}
 
 	button i {
