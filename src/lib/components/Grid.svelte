@@ -1,4 +1,5 @@
 <script>
+	import { blur } from 'svelte/transition';
 	/** @type {{leftTitle: any, rightTitle: any}} */
 	let { leftTitle, rightTitle } = $props();
 </script>
@@ -49,8 +50,9 @@
 			border-radius: 15px;
 			padding: 0.5rem;
 			background-color: hsla(210, 2%, 22%, 0.25);
-			backdrop-filter: blur(5px);
-			box-shadow: 0px 0px 15px var(--white);
+			backdrop-filter: blur(7px);
+			-webkit-backdrop-filter: blur(7px);
+			box-shadow: 0px 0px 12px var(--white);
 		}
 	}
 
