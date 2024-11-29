@@ -50,9 +50,7 @@
 	keywords="gabe atwell's projects, gabriel atwell's projects, gabe's work, gabriel's work"
 />
 
-<div class="title">
-	<Title title="projects" />
-</div>
+<Title title="projects" />
 
 <div class="popup">
 	<Popup
@@ -223,10 +221,6 @@
 			margin-left: 10%;
 		}
 
-		.title {
-			margin-top: 10%;
-		}
-
 		.popup {
 			display: flex;
 			justify-content: center;
@@ -252,10 +246,6 @@
 
 		.ascii {
 			margin-left: 12.5%;
-		}
-
-		.title {
-			margin-top: 0;
 		}
 	}
 
