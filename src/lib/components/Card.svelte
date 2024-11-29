@@ -84,7 +84,7 @@
 			user-select: none;
 
 			&:hover {
-				animation: nod 0.75s ease-in-out infinite;
+				animation: nod 1s ease-in-out infinite;
 				color: var(--white);
 				border-color: var(--white);
 			}
