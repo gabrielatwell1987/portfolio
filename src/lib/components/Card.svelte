@@ -57,6 +57,7 @@
 			font-size: clamp(1rem, 1vw, 1.2rem);
 			font-weight: 300;
 			margin-bottom: 1rem;
+			text-indent: 1rem;
 		}
 
 		.card-button {

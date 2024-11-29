@@ -11,11 +11,11 @@
 		const titleText = new SplitType('#title', { types: 'chars' });
 
 		gsap.from(titleText.chars, {
-			duration: 9,
+			duration: 5,
 			scale: 0,
 			opacity: 0,
 			stagger: {
-				amount: 0.5,
+				amount: 0.25,
 				grid: 'auto',
 				from: 'random'
 			},
@@ -40,11 +40,11 @@
 			text-align: center;
 			font-family: var(--anta);
 			font-size: clamp(2.75rem, 10.5vw, 15rem);
-			color: var(--off-white);
+			color: var(--blue);
 			letter-spacing: 5px;
-			text-shadow: 0px 0px 50px var(--smoke);
+			text-shadow: 0px 0px 50px var(--white);
 			text-transform: uppercase;
-			filter: drop-shadow(0px 0px 0.75rem var(--smoke));
+			filter: drop-shadow(0px 0px 0.75rem var(--white));
 		}
 
 		#title {

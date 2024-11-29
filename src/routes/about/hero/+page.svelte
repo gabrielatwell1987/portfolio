@@ -1,20 +1,9 @@
 <script>
 	import ThreeCanvas from '$lib/components/ThreeCanvas.svelte';
-	import gsap from 'gsap';
 	import SEO from '$lib/data/SEO.svelte';
 	import Button from '$lib/components/Button.svelte';
 
 	$effect(() => {
-		const heroTitle = document.querySelector('.hero-title');
-		const up = document.querySelector('.up');
-
-		gsap.from('section', { autoAlpha: 0, duration: 1.5, delay: 0.25, ease: 'sine.in' });
-
-		const textTl = gsap.timeline({ defaults: { ease: 'power1.inOut' } }, { paused: true });
-		textTl.to(heroTitle, { yPercent: -20 }).from(up, { y: 10 }, 0);
-		up.addEventListener('mouseenter', () => textTl.play());
-		up.addEventListener('mouseleave', () => textTl.reverse());
-
 		console.log('Three.js hero section');
 	});
 </script>
@@ -64,9 +53,10 @@
 				margin: 2rem auto;
 				margin-top: 10%;
 				color: var(--sky);
-				font-size: clamp(1.5rem, 4vw, 7rem);
 				font-family: var(--anta);
-				letter-spacing: 7px;
+				font-size: clamp(1.5rem, 4vw, 7rem);
+				font-weight: 700;
+				letter-spacing: 3px;
 			}
 
 			h4 {
@@ -125,13 +115,12 @@
 			transform: translate(-50%, -30%);
 
 			.italic {
-				margin-top: 1rem;
+				margin-top: -2rem;
 			}
 
 			.summary {
 				width: 50%;
 				letter-spacing: 3px;
-				margin-top: 1rem;
 			}
 		}
 	}

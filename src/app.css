@@ -48,13 +48,13 @@
 	--darksmoke: hsla(247, 3%, 50%, 0.45);
 	--smoke: hsla(247, 3%, 50%, 0.65);
 	--off-white: hsla(317, 6%, 76%, 0.65);
-	--white: hsla(330, 4%, 90%, 0.65);
+	--white: hsla(0, 0%, 100%, 0.75);
 	--sky: hsla(187, 64%, 73%, 0.5);
 	--blue: hsla(201, 71%, 45%, 0.5);
-	--dark-blue: hsla(202, 94%, 19%, 0.75);
+	--dark-blue: hsla(202, 97%, 25%, 0.75);
 	--purple: hsla(227, 98%, 68%, 0.6);
 	--yellow: hsla(46, 93%, 42%, 0.75);
-	--pale: hsl(39, 87%, 75%);
+	--pale: hsl(39, 83%, 68%);
 	--dark-pale: hsl(39, 87%, 35%);
 	--success: hsla(120, 95%, 26%, 1);
 	--warning: hsla(56, 93%, 43%, 1);

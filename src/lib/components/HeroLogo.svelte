@@ -27,7 +27,7 @@
 	}
 
 	.hero-logo {
-		width: clamp(80%, 12vw, 90%);
+		width: clamp(99.9%, 25vw, 100%);
 		display: flex;
 		justify-content: center;
 	}

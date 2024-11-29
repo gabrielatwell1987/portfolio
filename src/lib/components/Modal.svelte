@@ -67,7 +67,7 @@
 			font-weight: 800;
 			background-color: transparent;
 			box-shadow: none;
-			color: var(--dark-pale);
+			color: var(--pale);
 			width: 5%;
 			height: 5%;
 			outline: none;
