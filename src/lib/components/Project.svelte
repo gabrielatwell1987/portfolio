@@ -68,7 +68,7 @@
 			z-index: 1;
 			margin-left: -41%;
 			opacity: 0;
-			transition: opacity 0.05s;
+			transition: all 1s;
 		}
 
 		.link:hover .hover-text {
