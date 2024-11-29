@@ -44,7 +44,7 @@
 		margin-block: 5em;
 		font-family: var(--montserrat);
 		font-size: clamp(1rem, 2vw, 2.25rem);
-		letter-spacing: 5px;
+		letter-spacing: 2px;
 		padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
 	}
 
