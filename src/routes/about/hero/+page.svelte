@@ -22,9 +22,9 @@
 	<h1 class="hero-title">Frontend Crafted Web Experiences</h1>
 
 	<h4 class="summary left up">
-		I am a frontend developer who loves to create beautiful and functional websites. This portfolio
-		is a website that I built from scratch to showcase some projects that I created. I look forward
-		to hearing from you so we can discuss your goals for your online needs!
+		I am a frontend developer who loves to create beautiful and functional websites. This website
+		showcases my skills with some projects that I created. I look forward to hearing from you so we
+		can discuss your goals for your online needs!
 	</h4>
 
 	<a href="/projects">
