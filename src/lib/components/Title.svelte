@@ -1,32 +1,34 @@
 <script>
-	import { gsap } from 'gsap';
-	import SplitType from 'split-type';
+	import { fade } from 'svelte/transition';
+
+	// import { gsap } from 'gsap';
+	// import SplitType from 'split-type';
 
 	/** @type {{title: any}} */
 	let { title } = $props();
 
-	$effect(() => {
-		gsap.set('.title', { autoAlpha: 0 });
+	// $effect(() => {
+	// 	gsap.set('.title', { autoAlpha: 0 });
 
-		const titleText = new SplitType('#title', { types: 'chars' });
+	// 	const titleText = new SplitType('#title', { types: 'chars' });
 
-		gsap.from(titleText.chars, {
-			duration: 5,
-			scale: 0,
-			opacity: 0,
-			stagger: {
-				amount: 0.25,
-				grid: 'auto',
-				from: 'random'
-			},
-			ease: 'elastic.out(0.1, 0.2)'
-		});
+	// 	gsap.from(titleText.chars, {
+	// 		duration: 5,
+	// 		scale: 0,
+	// 		opacity: 0,
+	// 		stagger: {
+	// 			amount: 0.25,
+	// 			grid: 'auto',
+	// 			from: 'random'
+	// 		},
+	// 		ease: 'elastic.out(0.1, 0.2)'
+	// 	});
 
-		gsap.to('.title', { autoAlpha: 1 });
-	});
+	// 	gsap.to('.title', { autoAlpha: 1 });
+	// });
 </script>
 
-<main>
+<main transition:fade={{ duration: 500 }}>
 	<h1 class="title" id="title" aria-label={title}>{title}</h1>
 </main>
 
