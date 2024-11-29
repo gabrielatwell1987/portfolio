@@ -1,23 +1,10 @@
 <script>
-	import { gsap } from 'gsap';
 	import Button from '$lib/components/Button.svelte';
-
-	$effect(() => {
-		const heroTitle = document.querySelector('.hero-title');
-		const up = document.querySelector('.up');
-
-		gsap.from('section', { autoAlpha: 0, duration: 2.5, ease: 'sine.in' });
-
-		const textTl = gsap.timeline({ defaults: { ease: 'power1.inOut' } }, { paused: true });
-		textTl.to(heroTitle, { yPercent: -20 }).from(up, { y: 10 }, 0);
-		up.addEventListener('mouseenter', () => textTl.play());
-		up.addEventListener('mouseleave', () => textTl.reverse());
-	});
 </script>
 
 <main>
 	<img
-		src="https://images.pexels.com/photos/20853116/pexels-photo-20853116/free-photo-of-programming-code-on-a-screen.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+		src="https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 		alt="Wireframing and design of a website"
 	/>
 
@@ -52,9 +39,10 @@
 			margin: 2rem auto;
 			margin-top: 10%;
 			color: var(--sky);
+			font-family: var(--anta);
 			font-size: clamp(1.5rem, 4vw, 7rem);
-			font-family: var(--montserrat);
-			letter-spacing: 7px;
+			font-weight: 700;
+			letter-spacing: 3px;
 		}
 
 		h4 {
@@ -127,7 +115,6 @@
 		.summary {
 			width: 50%;
 			letter-spacing: 3px;
-			margin-top: 1rem;
 		}
 
 		img {

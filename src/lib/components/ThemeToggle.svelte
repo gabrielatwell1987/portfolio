@@ -9,9 +9,9 @@
 
 <button onclick={toggle} aria-label="toggle">
 	{#if darkMode}
-		<i class="fa-regular fa-sun"></i>
+		<i class="fa-regular fa-sun" style="width: 1.75rem;"></i>
 	{:else}
-		<i class="fa-regular fa-moon"></i>
+		<i class="fa-regular fa-moon" style="width: 1.75rem;"></i>
 	{/if}
 </button>
 
@@ -22,11 +22,11 @@
 	}
 
 	:global(body) {
-		background-image: radial-gradient(circle at center, #2f2f2f 0%, #000 60%);
+		background-image: radial-gradient(circle at center, #474747 0%, #000 60%);
 	}
 
 	:global(body.light) {
-		background-image: radial-gradient(circle at center, #000 0%, #2f2f2f 60%);
+		background-image: radial-gradient(circle at center, #000 0%, #474747 60%);
 	}
 
 	button {

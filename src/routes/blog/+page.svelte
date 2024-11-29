@@ -104,7 +104,7 @@
 		}
 
 		.margin {
-			margin-top: 10%;
+			margin-top: 15%;
 			margin-bottom: 13%;
 		}
 	}
@@ -175,10 +175,6 @@
 		.image {
 			margin-top: 0;
 		}
-
-		/* .margin {
-			margin-bottom: -25%;
-		} */
 	}
 
 	@media (min-width: 990px) {

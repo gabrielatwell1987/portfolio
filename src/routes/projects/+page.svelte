@@ -7,8 +7,8 @@
 	import Image from '$lib/components/Image.svelte';
 	import { fade } from 'svelte/transition';
 	import SEO from '$lib/data/SEO.svelte';
-	import ImageFrame from '$lib/components/ImageFrame.svelte';
 	import Avatar from '$lib/components/Avatar.svelte';
+	import Popup from '$lib/components/Popup.svelte';
 
 	// animations
 	$effect(() => {
@@ -38,7 +38,6 @@
 
 		tl.to('.content', { autoAlpha: 1 })
 			.to('.link', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 0.75, ease: 'expo.out' }, 0)
-			.from('.title', { scale: 0.25, duration: 1.25 }, 0)
 			.to('.ascii', { yPercent: 0, duration: 1.5 }, 0);
 
 		console.log('Projects page');
@@ -53,6 +52,13 @@
 
 <div class="title">
 	<Title title="projects" />
+</div>
+
+<div class="popup">
+	<Popup
+		title=""
+		text="Hover over the project image to reveal the tech stack I used on the project 👍🏻"
+	/>
 </div>
 
 <!-- links to my projects -->
@@ -179,7 +185,9 @@
 	</section> -->
 
 	<!-- avatar -->
-	<Avatar src="/photos/cartoonGabe.webp" alt="cartoon gabe" name="gabeAtwell" />
+	<div class="avatar">
+		<Avatar src="/photos/cartoonGabe.webp" alt="cartoon gabe" name="gabeAtwell" />
+	</div>
 
 	<!-- logo -->
 	<div class="logos designs">
@@ -218,6 +226,13 @@
 		.title {
 			margin-top: 10%;
 		}
+
+		.popup {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 5%;
+		}
 	}
 
 	@media screen and (min-width: 740px) {
@@ -251,6 +266,10 @@
 
 		.ascii {
 			margin-left: 12%;
+		}
+
+		.avatar {
+			margin-block: 7.5%;
 		}
 	}
 </style>

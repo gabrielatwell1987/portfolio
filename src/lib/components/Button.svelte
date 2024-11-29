@@ -12,9 +12,9 @@
 			font-family: var(--orbitron);
 			font-size: clamp(1.2rem, 1.5vw, 2rem);
 			font-weight: 900;
-			color: var(--dark-pale);
-			border: 1px solid var(--dark-pale);
-			outline: 3px solid var(--dark-pale);
+			color: var(--pale);
+			border: 1px solid var(--pale);
+			outline: 3px solid var(--pale);
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			margin-inline: auto;
 			cursor: pointer;

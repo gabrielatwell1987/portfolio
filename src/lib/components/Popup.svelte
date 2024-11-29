@@ -15,7 +15,7 @@
 
 	button {
 		background-color: transparent;
-		color: var(--dark-pale);
+		color: var(--pale);
 		width: fit-content;
 		font-family: var(--anta);
 		font-size: clamp(1rem, 1.5vw, 1.85rem);

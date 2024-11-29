@@ -26,7 +26,7 @@
 		tl.to('.a', {
 			yPercent: 0,
 			autoAlpha: 1,
-			duration: 1.75,
+			duration: 1.25,
 			ease: 'power2.out',
 			stagger: 0.5,
 			delay: 0.3
@@ -36,7 +36,7 @@
 				{
 					yPercent: 0,
 					autoAlpha: 1,
-					duration: 1.75,
+					duration: 1.25,
 					ease: 'power2.out',
 					stagger: 0.5,
 					delay: 0.4
@@ -48,7 +48,7 @@
 				{
 					yPercent: 0,
 					autoAlpha: 1,
-					duration: 1.75,
+					duration: 1.25,
 					ease: 'power2.out',
 					delay: 0.5
 				},
@@ -194,7 +194,7 @@
 				color: var(--white);
 				font-size: clamp(1.2rem, 1.5vw, 2rem);
 				font-weight: 500;
-				line-height: 1.35;
+				line-height: 1.5;
 			}
 
 			.text,
