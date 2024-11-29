@@ -191,20 +191,18 @@
 			.text {
 				max-width: var(--100);
 				margin-inline: auto;
-				color: var(--white);
 				font-size: clamp(1.2rem, 1.5vw, 2rem);
 				font-weight: 500;
 				line-height: 1.5;
 			}
 
-			.text,
-			.text:hover {
-				mix-blend-mode: difference;
-			}
-
 			.text-hero {
 				font-size: 1.35rem;
 				line-height: 1.5;
+			}
+
+			.bio {
+				color: var(--white);
 			}
 		}
 	}
