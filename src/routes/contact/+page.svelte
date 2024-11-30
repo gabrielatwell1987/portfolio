@@ -15,7 +15,7 @@
 />
 
 <main transition:fade={{ delay: 250, duration: 300 }}>
-	<h1 class="legend">Contact</h1>
+	<h1 class="legend" transition:fade={{ duration: 500 }}>Contact</h1>
 
 	<section class="contactForm">
 		<ContactForm />

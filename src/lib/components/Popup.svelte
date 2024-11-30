@@ -18,7 +18,6 @@
 		color: var(--pale);
 		width: fit-content;
 		font-family: var(--anta);
-		font-size: clamp(1rem, 1.5vw, 1.85rem);
 		border-radius: 6px;
 		letter-spacing: 3px;
 		padding: 0.75rem 1.15rem;
@@ -28,7 +27,7 @@
 	}
 
 	button i {
-		font-size: clamp(1.75rem, 2vw, 3rem);
+		font-size: clamp(2rem, 2vw, 3rem);
 	}
 
 	button:hover {
