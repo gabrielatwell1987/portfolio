@@ -204,13 +204,17 @@ body {
 	} */
 
 	code {
-		background: #303436;
-		/* background: var(--blackest); */
-		color: var(--off-white);
+		background: #222;
+		color: var(--white);
+		font-size: clamp(1.25rem, 2vw, 5rem);
+		letter-spacing: 1px;
+		font-weight: 700;
 	}
 
 	code.code {
-		background: #303436;
-		/* background: var(--blacker); */
+		background: #222;
+		color: var(--white);
+		font-size: clamp(1.1rem, 1.2vw, 1.5rem);
+		font-weight: 700;
 	}
 }
