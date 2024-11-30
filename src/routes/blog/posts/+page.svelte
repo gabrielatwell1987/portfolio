@@ -82,7 +82,7 @@
 
 			const codeElement = block.querySelector('code');
 			if (codeElement) {
-				codeElement.style.fontSize = 'clamp(1rem, 2vw, 1.5rem)';
+				codeElement.style.fontSize = 'clamp(1rem, 2vw, 1.25rem)';
 				codeElement.style.lineHeight = '1.5';
 				codeElement.style.fontFamily = 'monospace';
 			}
