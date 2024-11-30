@@ -49,7 +49,6 @@
 			color: var(--white);
 			font-weight: 400;
 			letter-spacing: 0.5px;
-			font-family: var(--lexend);
 		}
 
 		img {

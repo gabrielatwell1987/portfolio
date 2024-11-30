@@ -38,6 +38,22 @@
 	src: url('/fonts/SpaceMono-Regular.ttf') format('truetype');
 }
 
+@font-face {
+	font-family: 'Bronova';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/Bronova-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Kanit';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/Kanit-Regular.ttf') format('truetype');
+}
+
 :root {
 	/* colors */
 	--blackest: hsl(0, 15%, 5%);
@@ -66,6 +82,8 @@
 	--lexend: 'Lexend', sans-serif;
 	--mono: 'Space Mono', monospace;
 	--orbitron: 'Orbitron', sans-serif;
+	--bronova: 'Bronova', sans-serif;
+	--kanit: 'Kanit', sans-serif;
 }
 
 :root::-webkit-scrollbar {
@@ -95,7 +113,7 @@
 }
 
 body {
-	font-family: var(--lexend);
+	font-family: var(--bronova);
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 1.5;

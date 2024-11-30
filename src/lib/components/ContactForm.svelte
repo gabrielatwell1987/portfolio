@@ -57,7 +57,7 @@
 	}
 
 	legend {
-		font-family: var(--montserrat);
+		font-family: var(--bronova);
 		font-size: clamp(1.25rem, 3vw, 4rem);
 		font-weight: 800;
 		letter-spacing: 3px;
@@ -181,7 +181,7 @@
 		}
 
 		label {
-			font-family: var(--lexend);
+			font-family: var(--bronova);
 			font-weight: 600;
 			text-align: center;
 		}

@@ -62,7 +62,6 @@
 			h4 {
 				color: var(--white);
 				letter-spacing: 0.5px;
-				font-family: var(--lexend);
 				margin-inline: auto;
 				margin-bottom: 3%;
 				font-weight: 400;

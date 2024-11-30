@@ -303,7 +303,7 @@
 		padding: 0.5em 2em;
 		padding-top: 2.5em;
 		line-height: 2.5;
-		font-family: var(--montserrat);
+		font-family: var(--bronova);
 		width: var(--100);
 	}
 
@@ -393,7 +393,6 @@
 			min-width: 20rem;
 			margin: 0 -4.75rem;
 			margin-left: -2.5rem;
-			font-family: var(--lexend);
 			line-height: 1.5;
 			color: var(--white);
 		}

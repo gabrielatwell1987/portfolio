@@ -125,7 +125,7 @@
 		}
 
 		.modal__p {
-			font-family: var(--lexed);
+			font-family: var(--bronova);
 			font-size: clamp(1.15rem, 1.25vw, 2rem);
 			font-weight: 100;
 			color: var(--white);
