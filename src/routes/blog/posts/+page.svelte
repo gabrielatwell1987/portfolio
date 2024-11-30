@@ -12,6 +12,12 @@
 		const codeBlocks = document.querySelectorAll('pre');
 
 		codeBlocks.forEach((block) => {
+			block.style.backgroundColor = '#222';
+			block.style.width = '75%';
+			block.style.margin = '2rem auto';
+			block.style.padding = '1rem';
+			block.style.borderRadius = '12px';
+
 			const copyPrompt = document.createElement('div');
 			copyPrompt.className = 'copy-prompt';
 			block.classList.add('copy-prompt');
@@ -19,11 +25,14 @@
 			copyPrompt.style.marginTop = '1%';
 			copyPrompt.style.marginLeft = '2%';
 			copyPrompt.style.opacity = '0.25';
+			// copyPrompt.style.fontSize = 'clamp(1rem, 2vw, 1.75rem)';
 
 			const mediaQuery = window.matchMedia('(max-width: 768px)');
 			function handleMediaQueryChange(e) {
 				if (e.matches) {
 					// For screens 768px or less
+					block.style.width = '100%';
+					block.style.padding = '0';
 					copyPrompt.style.marginTop = '3%';
 					copyPrompt.style.marginLeft = '5%';
 				} else {
@@ -38,15 +47,17 @@
 			copyPromptText.innerHTML = 'Copy';
 			copyPromptText.className = 'copy-prompt-text';
 
-			copyPromptText.style.fontSize = 'clamp(1rem, 2vw, 1.25rem)';
+			copyPromptText.style.fontSize = 'clamp(1rem, 2vw, 1.75rem)';
 			copyPromptText.style.fontWeight = '900';
 			copyPromptText.style.marginTop = '.5rem';
 			copyPromptText.style.marginLeft = '-.1rem';
 			copyPromptText.style.color = '#fff';
+			copyPromptText.style.cursor = 'pointer';
 
 			const copyIcon = document.createElement('img');
 			copyIcon.src = '/icons/ic_copy.svg';
 			copyIcon.style.opacity = '.9';
+			copyIcon.style.cursor = 'pointer';
 
 			copyIcon.addEventListener('mouseenter', () => {
 				copyIcon.style.opacity = '1';
@@ -68,6 +79,13 @@
 					copyPromptText.innerHTML = 'Copy';
 				}, 1000);
 			});
+
+			const codeElement = block.querySelector('code');
+			if (codeElement) {
+				codeElement.style.fontSize = 'clamp(1rem, 2vw, 1.5rem)';
+				codeElement.style.lineHeight = '1.5';
+				codeElement.style.fontFamily = 'monospace';
+			}
 		});
 
 		console.log('Web animations page');
@@ -86,7 +104,9 @@
 			<div class="skillImg">
 				<Image src="/skills/CSS-Dark.svg" alt="css" />
 			</div>
+
 			<br />
+
 			<CSS aria-label="css" />
 		</div>
 	</div>
@@ -95,7 +115,9 @@
 		<div class="skillImg">
 			<Image src="/skills/GSAP-Dark.svg" alt="gsap" />
 		</div>
+
 		<br />
+
 		<GSAP aria-label="greensock" />
 	</div>
 
