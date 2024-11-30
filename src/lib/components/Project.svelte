@@ -19,7 +19,7 @@
 	}
 
 	.content {
-		margin-bottom: 5rem;
+		margin-bottom: 3rem;
 	}
 
 	@media (min-width: 300px) {
