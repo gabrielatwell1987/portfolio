@@ -168,7 +168,6 @@
 
 			p {
 				line-height: 1.75;
-				font-family: var(--montserrat);
 				text-align: left;
 			}
 

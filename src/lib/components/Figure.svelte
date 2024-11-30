@@ -17,8 +17,6 @@
 		flex-direction: column;
 		align-items: center;
 		position: relative;
-		/* margin-bottom: 1rem; */
-		position: relative;
 
 		img {
 			border-radius: 2.5%;
@@ -41,7 +39,6 @@
 			padding: 0;
 			text-align: center;
 			font-size: clamp(1rem, 2vw, 2rem);
-			font-family: var(--montserrat);
 			font-weight: 500;
 		}
 	}
