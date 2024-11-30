@@ -25,7 +25,6 @@
 			copyPrompt.style.marginTop = '1%';
 			copyPrompt.style.marginLeft = '2%';
 			copyPrompt.style.opacity = '0.25';
-			// copyPrompt.style.fontSize = 'clamp(1rem, 2vw, 1.75rem)';
 
 			const mediaQuery = window.matchMedia('(max-width: 768px)');
 			function handleMediaQueryChange(e) {
@@ -47,7 +46,6 @@
 			copyPromptText.innerHTML = 'Copy';
 			copyPromptText.className = 'copy-prompt-text';
 
-			copyPromptText.style.fontSize = 'clamp(1rem, 2vw, 1.75rem)';
 			copyPromptText.style.fontWeight = '900';
 			copyPromptText.style.marginTop = '.5rem';
 			copyPromptText.style.marginLeft = '-.1rem';
@@ -82,7 +80,7 @@
 
 			const codeElement = block.querySelector('code');
 			if (codeElement) {
-				codeElement.style.fontSize = 'clamp(1rem, 2vw, 1.25rem)';
+				codeElement.style.fontSize = 'clamp(1rem, 1.75vw, 1.15rem)';
 				codeElement.style.lineHeight = '1.5';
 				codeElement.style.fontFamily = 'monospace';
 			}

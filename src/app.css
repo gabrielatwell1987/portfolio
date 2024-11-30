@@ -198,15 +198,10 @@ body {
 		);
 	}
 
-	/* pre code {
-		background: #303436;
-		color: #fff;
-	} */
-
 	code {
 		background: #222;
 		color: var(--white);
-		font-size: clamp(1.25rem, 2vw, 5rem);
+		font-size: clamp(1rem, 2vw, 1.5rem);
 		letter-spacing: 1px;
 		font-weight: 700;
 	}
