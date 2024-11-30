@@ -14,7 +14,7 @@
 	keywords="contact gabriel atwell, contact gabe"
 />
 
-<main transition:fade={{ delay: 250, duration: 300 }}>
+<main>
 	<h1 class="legend" transition:fade={{ duration: 500 }}>Contact</h1>
 
 	<section class="contactForm">

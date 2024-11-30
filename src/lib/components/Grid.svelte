@@ -49,8 +49,8 @@
 			margin: 0.5rem auto;
 			border-radius: 15px;
 			padding: 0.5rem;
-			background-color: hsla(210, 2%, 22%, 0.25);
-			backdrop-filter: blur(7px);
+			background-color: hsla(0, 0%, 26%, 0.25);
+			backdrop-filter: blur(4px);
 			-webkit-backdrop-filter: blur(7px);
 			box-shadow: 0px 0px 12px var(--white);
 		}

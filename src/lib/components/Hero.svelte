@@ -70,6 +70,7 @@
 
 		.summary {
 			margin: 0 auto;
+			font-family: var(--bronova);
 			font-size: clamp(1.15rem, 1.5vw, 2rem);
 			font-weight: 500;
 			width: 100%;
