@@ -90,9 +90,9 @@
 
 				<article class="hero text-hero text__w" aria-label="bio">
 					<p class="text margin__b">
-						Here is a hero section image that I created with three.js... I currently like the hero
-						section that shows when you first come to the website, but I linked this new hero
-						section as the home page.
+						Here is a hero section that I created with three.js... I like the current hero section
+						(with a static image) that shows when you first come to the website, but I linked this
+						new hero section so you can check out what's possible with three.js!
 					</p>
 
 					<div class="hero">
