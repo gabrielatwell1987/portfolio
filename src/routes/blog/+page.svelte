@@ -89,7 +89,7 @@
 		}
 
 		.image:hover {
-			animation: wiggle 0.5s ease-in-out infinite;
+			animation: wiggle 1s ease-in-out infinite;
 		}
 
 		.image:not(:hover) {
@@ -102,11 +102,6 @@
 		.animation-link {
 			margin-top: 10%;
 		}
-
-		/* .margin {
-			margin-top: 15%;
-			margin-bottom: 20%;
-		} */
 	}
 
 	.image {
