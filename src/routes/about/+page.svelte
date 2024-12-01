@@ -100,7 +100,7 @@
 						<div class="icons">
 							<Button href="/about/hero" title="Hero" />
 
-							<Tooltip title="💡" hover="this is an alternative hero section" />
+							<Tooltip title="💡" hover="a three.js hero section" />
 						</div>
 					</div>
 				</article>
