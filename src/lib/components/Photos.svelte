@@ -61,13 +61,14 @@
 
 			tl.to(gabe, {
 				stagger: 0.5,
-				scale: 0.65,
-				duration: 2.75,
+				scale: 0.75,
+				duration: 4,
 				repeat: 1,
 				yoyo: true,
 				scrollTrigger: {
 					trigger: 'main',
 					start: 'top bottom-=95%',
+					end: '+=300%',
 					stagger: 0.75,
 					scrub: 1
 				}
