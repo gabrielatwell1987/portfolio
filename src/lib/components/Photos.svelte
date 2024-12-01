@@ -38,15 +38,15 @@
 
 			tl.to(gabe, {
 				stagger: 0.5,
-				scale: 0.9,
-				duration: 5,
+				scale: 0.99,
+				duration: 2.75,
 				repeat: 1,
 				yoyo: true,
 				scrollTrigger: {
 					trigger: 'main',
 					start: 'top bottom-=95%',
-					end: '+=800%',
-					stagger: -0.5,
+					end: '+=775%',
+					stagger: 2,
 					scrub: 1,
 					invalidateOnRefresh: true
 				}
@@ -61,15 +61,14 @@
 
 			tl.to(gabe, {
 				stagger: 0.5,
-				scale: 0.7,
-				duration: 5,
+				scale: 0.65,
+				duration: 2.75,
 				repeat: 1,
 				yoyo: true,
 				scrollTrigger: {
 					trigger: 'main',
 					start: 'top bottom-=95%',
-					end: '+=300%',
-					stagger: -0.5,
+					stagger: 0.75,
 					scrub: 1
 				}
 			}).to(main, { autoAlpha: 1 });

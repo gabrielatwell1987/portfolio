@@ -42,7 +42,8 @@
 	h1 {
 		color: var(--purple);
 		margin: 5% 0 2rem 0;
-		font-size: clamp(1.75rem, 4vw, 3.75rem);
+		font-family: var(--anta);
+		font-size: clamp(2.5rem, 4vw, 7.5rem);
 		letter-spacing: 4px;
 	}
 
@@ -51,6 +52,7 @@
 		margin: 0;
 		margin-top: 0.25rem;
 		margin-bottom: 8%;
+		font-family: var(--bronova);
 		font-size: clamp(1rem, 3vw, 2rem);
 		opacity: 0.8;
 	}

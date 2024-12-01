@@ -17,30 +17,30 @@
 			h1L,
 			{
 				opacity: 0,
-				x: -100,
-				duration: 4
+				x: -75,
+				duration: 2
 			},
-			'+=3'
+			0
 		);
 		tl.from(
 			h1R,
 			{
 				opacity: 0,
-				x: 100,
-				duration: 4
+				x: 75,
+				duration: 2
 			},
 			'<'
 		).fromTo(
 			spanMiddle,
-			{ opacity: 0, scale: 0.5 },
+			{ opacity: 0, scale: 0 },
 			{
 				opacity: 0.5,
 				scale: 2,
-				duration: 5,
+				duration: 3,
 				ease: 'circ',
 				stagger: 0.25
 			},
-			'-=8'
+			'<'
 		);
 	});
 </script>
@@ -62,6 +62,7 @@
 			color: var(--white);
 			font-family: var(--anta);
 			font-size: clamp(1.2rem, 5vw, 5rem);
+			font-weight: 100;
 			z-index: 2;
 			margin-top: 5%;
 			letter-spacing: 5px;
