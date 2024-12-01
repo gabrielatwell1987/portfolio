@@ -90,7 +90,7 @@
 				}
 
 				&:not(:hover) {
-					opacity: 0.75;
+					opacity: 0.5;
 					transition:
 						opacity 1s ease,
 						border 1s ease;

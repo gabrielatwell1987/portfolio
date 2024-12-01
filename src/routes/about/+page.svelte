@@ -8,6 +8,7 @@
 	import Bento from '$lib/components/Bento.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import CardFlip from '$lib/components/CardFlip.svelte';
+	import Tooltip from '$lib/components/Tooltip.svelte';
 
 	// animations
 	$effect(() => {
@@ -96,7 +97,11 @@
 					</p>
 
 					<div class="hero">
-						<Button href="/about/hero" title="Hero" />
+						<div class="icons">
+							<Button href="/about/hero" title="Hero" />
+
+							<Tooltip title="💡" hover="this is an alternative hero section" />
+						</div>
 					</div>
 				</article>
 			</div>
@@ -175,6 +180,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				margin-bottom: 3rem;
 			}
 
 			.hero,
@@ -202,6 +208,14 @@
 
 			.bio {
 				color: var(--white);
+
+				.icons {
+					display: flex;
+					justify-content: space-evenly;
+					align-items: center;
+					gap: 2rem;
+					margin-top: 2rem;
+				}
 			}
 		}
 	}

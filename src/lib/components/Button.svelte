@@ -50,6 +50,12 @@
 		animation: right 1s ease-in-out infinite;
 	}
 
+	@media (max-width: 500px) {
+		button i {
+			display: none;
+		}
+	}
+
 	@keyframes wiggle {
 		0% {
 			rotate: 0deg;
