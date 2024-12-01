@@ -15,8 +15,6 @@
 			<Image src="/logos/success.webp" alt="Atwell" width="500" />
 		</div>
 
-		<h1>Success!</h1>
-
 		<p class="small"><i>Your message has been sent.</i></p>
 
 		<p>Thank you for reaching out.</p>
@@ -38,16 +36,6 @@
 				padding: clamp(2rem, 5vw, 9rem);
 				margin: 5% auto;
 				text-align: center;
-			}
-
-			h1 {
-				font-family: var(--anta);
-				font-size: clamp(2rem, 5vw, 4rem);
-				font-weight: 900;
-				letter-spacing: 6px;
-				margin: 0.5em 0;
-				color: var(--sky);
-				margin: 0;
 			}
 
 			p {

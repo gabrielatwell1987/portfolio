@@ -103,10 +103,10 @@
 			margin-top: 10%;
 		}
 
-		.margin {
+		/* .margin {
 			margin-top: 15%;
-			margin-bottom: 13%;
-		}
+			margin-bottom: 20%;
+		} */
 	}
 
 	.image {
@@ -150,6 +150,11 @@
 
 		.animation-link {
 			display: block;
+		}
+
+		.margin {
+			margin-top: 15%;
+			margin-bottom: 25%;
 		}
 	}
 
@@ -200,6 +205,10 @@
 		article {
 			margin-top: 2%;
 			margin-right: 5%;
+		}
+
+		.margin {
+			margin-bottom: 13%;
 		}
 	}
 
