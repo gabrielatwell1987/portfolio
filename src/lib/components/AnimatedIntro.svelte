@@ -41,7 +41,7 @@
 
 <style>
 	.sentence {
-		font-family: var(--montserrat);
+		font-family: var(--bronova);
 		font-size: clamp(1.25rem, 2.5vw, 10rem);
 		font-weight: 200;
 		color: var(--white);

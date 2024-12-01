@@ -40,7 +40,7 @@
 
 <style>
 	.animated-text {
-		font-family: var(--orbitron);
+		font-family: var(--anta);
 		font-size: clamp(2.5rem, 9vw, 20rem);
 		color: var(--sky);
 		mix-blend-mode: lighten;

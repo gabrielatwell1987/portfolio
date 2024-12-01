@@ -45,7 +45,7 @@
 		left: 50%;
 		transform: translate(-50%, -96%);
 		letter-spacing: 3px;
-		font-family: var(--lexend);
+		font-family: var(--bronova);
 		font-size: clamp(0.9rem, 2vw, 2rem);
 		font-weight: 700;
 		color: var(--purple);
