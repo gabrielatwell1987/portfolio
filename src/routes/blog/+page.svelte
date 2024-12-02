@@ -11,10 +11,6 @@
 	$effect(() => {
 		gsap.registerPlugin(TextPlugin);
 
-		gsap.set('.title', {
-			color: 'var(--off-white)'
-		});
-
 		gsap.to('.title', {
 			text: 'T O P I C S',
 			fontFamily: 'var(--orbitron)',
@@ -116,7 +112,9 @@
 	}
 
 	.title {
-		color: var(--white);
+		color: var(--sky);
+		text-shadow: 5px 5px 5px var(--dark-gray);
+		filter: drop-shadow(0px 0px 0.75rem var(--white));
 		font-size: clamp(2.75rem, 10.5vw, 15rem);
 		font-weight: 800;
 		text-align: center;

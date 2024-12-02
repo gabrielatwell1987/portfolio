@@ -28,9 +28,12 @@
 		font-family: var(--orbitron);
 		font-size: clamp(2rem, 8vw, 10rem);
 		font-weight: 900;
+		text-shadow: 5px 5px 5px var(--dark-gray);
+		text-transform: uppercase;
+		filter: drop-shadow(0px 0px 0.75rem var(--white));
 		letter-spacing: 20px;
 		padding: 0;
-		color: var(--purple);
+		color: var(--sky);
 		text-transform: uppercase;
 		text-align: center;
 	}

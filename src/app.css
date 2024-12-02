@@ -68,6 +68,7 @@
 	--sky: hsla(187, 64%, 73%, 0.5);
 	--blue: hsla(201, 71%, 45%, 0.5);
 	--dark-blue: hsla(202, 97%, 25%, 0.75);
+	--darkest-blue: hsla(203, 96%, 10%, 0.75);
 	--purple: hsla(227, 98%, 68%, 0.6);
 	--yellow: hsla(46, 93%, 42%, 0.75);
 	--pale: hsl(39, 83%, 68%);
@@ -201,7 +202,7 @@ body {
 	code {
 		background: #222;
 		color: var(--white);
-		font-size: clamp(1rem, 2vw, 1.5rem);
+		font-size: clamp(0.8rem, 1.25vw, 1.25rem);
 		letter-spacing: 1px;
 		font-weight: 700;
 	}
@@ -209,7 +210,7 @@ body {
 	code.code {
 		background: #222;
 		color: var(--white);
-		font-size: clamp(1.1rem, 1.2vw, 1.5rem);
+		font-size: clamp(0.8rem, 1.25vw, 1.25rem);
 		font-weight: 700;
 	}
 }

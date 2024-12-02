@@ -12,7 +12,8 @@
 		const codeBlocks = document.querySelectorAll('pre');
 
 		codeBlocks.forEach((block) => {
-			block.style.backgroundColor = '#222';
+			block.style.backgroundColor = 'var(--darkest-blue)';
+			block.style.border = '2px solid var(--white)';
 			block.style.width = '75%';
 			block.style.margin = '2rem auto';
 			block.style.padding = '1rem';
@@ -80,8 +81,8 @@
 
 			const codeElement = block.querySelector('code');
 			if (codeElement) {
-				codeElement.style.fontSize = 'clamp(1rem, 1.75vw, 1.15rem)';
-				codeElement.style.lineHeight = '1.5';
+				codeElement.style.fontSize = 'clamp(.8rem, .75vw, 1.25rem)';
+				codeElement.style.lineHeight = '1.25';
 				codeElement.style.fontFamily = 'monospace';
 			}
 		});

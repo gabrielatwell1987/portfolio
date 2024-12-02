@@ -58,7 +58,8 @@
 			transform: rotate(-10deg);
 			font-size: clamp(2.3rem, 9vw, 20rem);
 			display: inline-block;
-			text-shadow: 6px 6px 0px #666;
+			text-shadow: 5px 5px 5px var(--dark-gray);
+			filter: drop-shadow(0px 0px 0.75rem var(--white));
 		}
 	}
 
