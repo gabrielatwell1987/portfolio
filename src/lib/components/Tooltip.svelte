@@ -59,7 +59,7 @@
 	}
 
 	.tooltip-top {
-		min-width: 120px;
+		min-width: 160px;
 		bottom: calc(100% + 5px);
 		left: 50%;
 		transform: translateX(-50%);

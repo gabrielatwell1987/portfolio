@@ -91,16 +91,16 @@
 
 				<article class="hero text-hero text__w" aria-label="bio">
 					<p class="text margin__b">
-						Here is a hero section that I created with three.js... I like the current hero section
-						(with a static image) that shows when you first come to the website, but I linked this
-						new hero section so you can check out what's possible with three.js!
+						Here is another hero section that I created but I like the current hero section (with a
+						static image) that shows when you first come to the website, but I linked this new hero
+						section so you can check out it out!
 					</p>
 
 					<div class="hero">
 						<div class="icons">
 							<Button href="/about/hero" title="Hero" />
 
-							<Tooltip title="💡" hover="a three.js hero section" />
+							<Tooltip title="💡" hover="made with three.js" />
 						</div>
 					</div>
 				</article>
