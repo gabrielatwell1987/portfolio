@@ -59,7 +59,7 @@
 		width: var(--100);
 		position: relative;
 		margin-inline: auto;
-		backdrop-filter: blur(01rem);
+		backdrop-filter: blur(0.75rem);
 		-webkit-backdrop-filter: blur(0.25rem);
 		z-index: 15;
 	}

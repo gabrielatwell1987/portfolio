@@ -30,8 +30,6 @@
 	<a href="/projects">
 		<Button title="Projects" />
 	</a>
-
-	<h4 class="italic">projects I created..</h4>
 </section>
 
 <style>
@@ -67,14 +65,6 @@
 				font-weight: 400;
 				width: 100%;
 				padding: 0 1.25rem;
-			}
-
-			.italic {
-				font-family: var(--montserrat);
-				font-size: clamp(1rem, 1.5vw, 1.5rem);
-				font-style: italic;
-				font-weight: 200;
-				color: var(--white);
 			}
 
 			.summary {
@@ -113,10 +103,6 @@
 			top: 45%;
 			left: 50%;
 			transform: translate(-50%, -30%);
-
-			.italic {
-				margin-top: -2rem;
-			}
 
 			.summary {
 				width: 50%;
