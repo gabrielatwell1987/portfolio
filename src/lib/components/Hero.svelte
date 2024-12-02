@@ -18,8 +18,6 @@
 		</h4>
 
 		<Button href="/projects" title="Projects" />
-
-		<h4 class="summary italic">projects I created..</h4>
 	</section>
 
 	<br />
@@ -78,13 +76,6 @@
 			margin-bottom: 3%;
 		}
 
-		.italic {
-			font-style: italic;
-			font-family: var(--montserrat);
-			font-weight: 200;
-			color: var(--white);
-		}
-
 		.left {
 			text-align: left;
 		}
@@ -106,10 +97,6 @@
 			text-align: center;
 			font-size: 2.5rem;
 			margin: 5rem 0;
-		}
-
-		.italic {
-			margin-top: -2rem;
 		}
 
 		.summary {
