@@ -101,7 +101,7 @@
 	<div class="css">
 		<div class="image">
 			<div class="skillImg">
-				<Image src="/skills/CSS-Dark.svg" alt="css" />
+				<Image src="/skills/CSS-Purple.webp" alt="css" />
 			</div>
 
 			<br />
@@ -150,6 +150,11 @@
 
 			.image {
 				margin-top: 5%;
+
+				.skillImg {
+					width: 25%;
+					margin-inline: auto;
+				}
 			}
 		}
 
@@ -159,6 +164,18 @@
 
 			.skillImg {
 				margin-inline: auto;
+			}
+		}
+	}
+
+	@media (max-width: 500px) {
+		section {
+			.css {
+				.image {
+					.skillImg {
+						width: 75%;
+					}
+				}
 			}
 		}
 	}
