@@ -11,6 +11,8 @@
 </script>
 
 <nav>
+	<!-- <InstallBtn /> -->
+
 	<!-- hamburger icon -->
 	<div class="header-logos">
 		<Burger bind:open ariaLabel="Toggle menu" />
@@ -39,9 +41,11 @@
 		<NavLink href="/photos" title="Photos" />
 		<NavLink href="/contact" title="Contact" />
 	</div>
-
-	<InstallBtn />
 </nav>
+
+<div class="install">
+	<InstallBtn />
+</div>
 
 <style>
 	:root {
@@ -134,6 +138,12 @@
 			margin-top: 1rem;
 			margin-left: 1rem;
 		}
+
+		.install {
+			position: fixed;
+			bottom: 4rem;
+			left: 1rem;
+		}
 	}
 
 	@media (min-width: 750px) {
@@ -165,6 +175,11 @@
 			display: block;
 			margin-left: 15%;
 			margin-bottom: 15%;
+		}
+
+		.install {
+			bottom: 6rem;
+			left: 2rem;
 		}
 	}
 
