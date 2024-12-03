@@ -49,7 +49,9 @@
 	}
 </script>
 
-<button aria-label="install" onclick={installApp}><i class="fa-solid fa-download"></i></button>
+<button aria-label="install" onclick={installApp}
+	><i class="fa-solid fa-download"></i> <span class="desc">install</span></button
+>
 
 <style>
 	button {
@@ -58,22 +60,43 @@
 		font-size: clamp(1rem, 2vw, 2rem);
 		font-weight: 700;
 		background-color: var(--blue);
+		border-radius: 8px;
 		outline: none;
 		border: none;
 		cursor: pointer;
 		z-index: 16;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+
+		&:focus {
+			box-shadow: 0 0 0px var(--white);
+		}
+
+		& i {
+			color: var(--white);
+			cursor: pointer;
+			align-items: center;
+		}
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		& .desc {
+			font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+			margin-top: 0.5rem;
+		}
 	}
 
-	button:focus {
-		box-shadow: 0 0 0px var(--white);
-	}
+	@media (max-width: 500px) {
+		button {
+			margin: 1rem;
 
-	button i {
-		color: var(--white);
-		cursor: pointer;
-	}
-
-	button:hover {
-		color: var(--sky);
+			& .desc {
+				display: none;
+			}
+		}
 	}
 </style>
