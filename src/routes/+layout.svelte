@@ -7,6 +7,7 @@
 	import Loading from '$lib/components/Loading.svelte';
 	import '@fortawesome/fontawesome-free/css/all.css';
 	import '@picocss/pico/css/pico.min.css';
+	import InstallButton from '$lib/components/InstallButton.svelte';
 
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
@@ -63,6 +64,8 @@
 
 <main>
 	<NavBar />
+	<br />
+	<InstallButton />
 
 	<br />
 	<br />
