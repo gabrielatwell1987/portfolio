@@ -3,7 +3,7 @@
 	import MainLogo from '$lib/components/MainLogo.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	import NavLink from '$lib/components/NavLink.svelte';
-	import InstallBtn from '$lib/components/InstallBtn.svelte';
+	// import InstallBtn from '$lib/components/InstallBtn.svelte';
 
 	let open = false;
 
@@ -43,9 +43,9 @@
 	</div>
 </nav>
 
-<div class="install">
+<!-- <div class="install">
 	<InstallBtn />
-</div>
+</div> -->
 
 <style>
 	:root {
@@ -139,11 +139,11 @@
 			margin-left: 1rem;
 		}
 
-		.install {
+		/* .install {
 			position: fixed;
 			bottom: 4rem;
 			left: 1rem;
-		}
+		} */
 	}
 
 	@media (min-width: 750px) {
@@ -177,10 +177,10 @@
 			margin-bottom: 15%;
 		}
 
-		.install {
+		/* .install {
 			bottom: 6rem;
 			left: 2rem;
-		}
+		} */
 	}
 
 	@media (min-width: 990px) {
