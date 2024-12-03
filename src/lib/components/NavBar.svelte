@@ -3,6 +3,7 @@
 	import MainLogo from '$lib/components/MainLogo.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
 	import NavLink from '$lib/components/NavLink.svelte';
+	import InstallBtn from '$lib/components/InstallBtn.svelte';
 
 	let open = false;
 
@@ -38,6 +39,8 @@
 		<NavLink href="/photos" title="Photos" />
 		<NavLink href="/contact" title="Contact" />
 	</div>
+
+	<InstallBtn />
 </nav>
 
 <style>
