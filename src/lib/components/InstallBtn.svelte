@@ -37,7 +37,6 @@
 		deferredPrompt.prompt();
 
 		const choiceResult = await deferredPrompt.userChoice;
-
 		if (choiceResult.outcome === 'accepted') {
 			console.log('User accepted the PWA installation');
 		} else {
@@ -64,7 +63,7 @@
 		outline: none;
 		border: none;
 		cursor: pointer;
-		z-index: 16;
+		z-index: 15;
 		display: flex;
 		justify-content: center;
 		align-items: center;
