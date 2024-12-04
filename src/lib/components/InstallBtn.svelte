@@ -1,7 +1,7 @@
 <script>
 	// Reactive variables
 	let deferredPrompt = null;
-	let isInstallable = false;
+	let isInstallable = $state(false);
 
 	$effect(() => {
 		// Effect to handle 'beforeinstallprompt' and 'appinstalled' events
@@ -32,11 +32,15 @@
 
 	// Function to handle the installation
 	async function installApp() {
+		console.log('no deferred prompt');
+
 		if (!deferredPrompt) return;
 
+		console.log('deferred prompt');
 		deferredPrompt.prompt();
 
 		const choiceResult = await deferredPrompt.userChoice;
+		console.log('User choice:', choiceResult.outcome);
 		if (choiceResult.outcome === 'accepted') {
 			console.log('User accepted the PWA installation');
 		} else {
@@ -48,7 +52,7 @@
 	}
 </script>
 
-<button aria-label="install" onclick={installApp}
+<button aria-label="install" onclick={installApp} disabled={!isInstallable}
 	><i class="fa-solid fa-download"></i> <span class="desc">install</span></button
 >
 
