@@ -1,6 +1,6 @@
 <script>
 	// Reactive variables
-	let deferredPrompt = null;
+	let deferredPrompt = $state(null);
 	let isInstallable = $state(false);
 
 	// Effect to listen for PWA events
@@ -33,8 +33,8 @@
 		if (!deferredPrompt) return;
 
 		deferredPrompt.prompt(); // Show the prompt
-		const choiceResult = await deferredPrompt.userChoice;
 
+		const choiceResult = await deferredPrompt.userChoice;
 		if (choiceResult.outcome === 'accepted') {
 			console.log('User accepted the PWA installation');
 		} else {
@@ -61,7 +61,7 @@
 		border-radius: 8px;
 		outline: none;
 		border: none;
-		cursor: pointer;
+		/* cursor: pointer; */
 		z-index: 15;
 		display: flex;
 		justify-content: center;
@@ -74,7 +74,7 @@
 
 		& i {
 			color: var(--white);
-			cursor: pointer;
+			/* cursor: pointer; */
 			align-items: center;
 		}
 
