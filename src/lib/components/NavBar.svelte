@@ -178,7 +178,7 @@
 		}
 
 		.install {
-			bottom: 6rem;
+			bottom: 3rem;
 			left: 2rem;
 		}
 	}
