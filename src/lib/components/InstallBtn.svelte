@@ -29,7 +29,7 @@
 	});
 
 	// Function to handle installation
-	async function installApp() {
+	const installApp = async () => {
 		if (!deferredPrompt) return;
 
 		deferredPrompt.prompt(); // Show the prompt
@@ -44,12 +44,15 @@
 		// Reset after interaction
 		deferredPrompt = null;
 		isInstallable = false;
-	}
+	};
 </script>
 
+<!-- {#if isInstallable} -->
 <button aria-label="install" onclick={installApp} hidden={!isInstallable}
 	><i class="fa-solid fa-download"></i> <span class="desc">install</span></button
 >
+
+<!-- {/if} -->
 
 <style>
 	button {
@@ -61,7 +64,7 @@
 		border-radius: 8px;
 		outline: none;
 		border: none;
-		/* cursor: pointer; */
+		cursor: pointer;
 		z-index: 15;
 		display: flex;
 		justify-content: center;
@@ -74,7 +77,6 @@
 
 		& i {
 			color: var(--white);
-			/* cursor: pointer; */
 			align-items: center;
 		}
 
