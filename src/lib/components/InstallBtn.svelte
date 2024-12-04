@@ -3,56 +3,51 @@
 	let deferredPrompt = null;
 	let isInstallable = $state(false);
 
+	// Effect to listen for PWA events
 	$effect(() => {
-		// Effect to handle 'beforeinstallprompt' and 'appinstalled' events
-		$effect(() => {
-			function onBeforeInstallPrompt(event) {
-				console.log('PWA install prompt fired');
+		function handleBeforeInstallPrompt(event) {
+			event.preventDefault(); // Prevent automatic prompt
+			deferredPrompt = event; // Store the event
+			isInstallable = true; // Show the install button
+			console.log('PWA install prompt fired');
+		}
 
-				event.preventDefault(); // Prevent the default browser install prompt
-				deferredPrompt = event; // Save the prompt event
-				isInstallable = true; // Show the install button
-			}
+		function handleAppInstalled() {
+			console.log('PWA installed');
+			isInstallable = false; // Hide the install button
+		}
 
-			function onAppInstalled() {
-				console.log('PWA installed');
-				isInstallable = false; // Hide the install button
-			}
+		// Add event listeners
+		window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+		window.addEventListener('appinstalled', handleAppInstalled);
 
-			window.addEventListener('beforeinstallprompt', onBeforeInstallPrompt);
-			window.addEventListener('appinstalled', onAppInstalled);
-
-			// Cleanup listeners on destroy
-			return () => {
-				window.removeEventListener('beforeinstallprompt', onBeforeInstallPrompt);
-				window.removeEventListener('appinstalled', onAppInstalled);
-			};
-		});
+		// Cleanup on destroy
+		return () => {
+			window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+			window.removeEventListener('appinstalled', handleAppInstalled);
+		};
 	});
 
-	// Function to handle the installation
+	// Function to handle installation
 	async function installApp() {
-		console.log('no deferred prompt');
-
 		if (!deferredPrompt) return;
 
-		console.log('deferred prompt');
-		deferredPrompt.prompt();
-
+		deferredPrompt.prompt(); // Show the prompt
 		const choiceResult = await deferredPrompt.userChoice;
-		console.log('User choice:', choiceResult.outcome);
+
 		if (choiceResult.outcome === 'accepted') {
 			console.log('User accepted the PWA installation');
 		} else {
 			console.log('User dismissed the PWA installation');
 		}
 
+		// Reset after interaction
 		deferredPrompt = null;
 		isInstallable = false;
 	}
 </script>
 
-<button aria-label="install" onclick={installApp} disabled={!isInstallable}
+<button aria-label="install" onclick={installApp} hidden={!isInstallable}
 	><i class="fa-solid fa-download"></i> <span class="desc">install</span></button
 >
 
@@ -62,7 +57,7 @@
 		margin-inline: auto;
 		font-size: clamp(1rem, 2vw, 2rem);
 		font-weight: 700;
-		background-color: var(--blue);
+		background-color: var(--darkest-blue);
 		border-radius: 8px;
 		outline: none;
 		border: none;

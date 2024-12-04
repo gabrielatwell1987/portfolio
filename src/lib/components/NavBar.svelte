@@ -141,7 +141,7 @@
 
 		.install {
 			position: fixed;
-			bottom: 2rem;
+			bottom: 4rem;
 			left: 1rem;
 		}
 	}
