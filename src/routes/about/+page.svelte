@@ -15,7 +15,7 @@
 		const tl = gsap.timeline();
 
 		gsap.set('article', { autoAlpha: 0 });
-		gsap.set(['.a', '.b'], { yPercent: 25, autoAlpha: 0 });
+		gsap.set(['.a', '.b', '.d'], { yPercent: 25, autoAlpha: 0 });
 		gsap.set(['.hero', '.margin__b'], { yPercent: 25, autoAlpha: 0 });
 
 		gsap.to('article', {
@@ -52,6 +52,17 @@
 					duration: 1.25,
 					ease: 'power2.out',
 					delay: 0.5
+				},
+				'-=.75'
+			)
+			.to(
+				'.d',
+				{
+					yPercent: 0,
+					autoAlpha: 1,
+					duration: 1.25,
+					ease: 'power2.out',
+					delay: 0.6
 				},
 				'-=.75'
 			);
@@ -104,6 +115,18 @@
 						</div>
 					</div>
 				</article>
+
+				<p class="text d indent">
+					Please note: This is a PWA (Progressive Web App) so you can install it on your device if
+					you want to! This makes your website able to be used on any device.. mobile, tablet,
+					laptop, and desktop. It's like having a mobile app that is not made with native
+					technologies! It works on Android and iPhone. There is also offline capabilities, so if
+					your internet goes out, you can still access the site because your device downloads and
+					caches all the whole site! If you don't have it installed, you should see an install
+					button on the bottom-left of the screen. If you press it, an installation prompt should
+					appear. The prompt will only appear after some user interactions(clicks). If you have any
+					questions, please feel free to contact me!
+				</p>
 			</div>
 
 			<!-- skills section -->
