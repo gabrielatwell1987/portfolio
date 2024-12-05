@@ -1,8 +1,26 @@
 <script>
 	import { fade } from 'svelte/transition';
+	import gsap from 'gsap';
 
 	/** @type {{title: any}} */
 	let { title } = $props();
+
+	$effect(() => {
+		const letters = gsap.utils.toArray('.title');
+
+		gsap.from(letters, {
+			scale: 0,
+			transformOrigin: '50% 50%',
+			autoAlpha: 0,
+			duration: 1.5,
+			delay: 0.5,
+			ease: 'sine.inOut',
+			stagger: {
+				each: 0.15,
+				from: 'edges'
+			}
+		});
+	});
 </script>
 
 <main transition:fade={{ duration: 500 }}>
