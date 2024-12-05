@@ -1,32 +1,21 @@
 <script>
 	import GsapIcon from '$lib/components/GsapIcon.svelte';
 	import SvelteIcon from '$lib/components/SvelteIcon.svelte';
-	import { gsap } from 'gsap';
-	import { TextPlugin } from 'gsap/dist/TextPlugin';
 	import Image from '$lib/components/Image.svelte';
 	import { fade } from 'svelte/transition';
 	import SEO from '$lib/data/SEO.svelte';
 	import AnimatedHeading from '$lib/components/AnimatedHeading.svelte';
+	import Title from '$lib/components/Title.svelte';
 
 	$effect(() => {
-		gsap.registerPlugin(TextPlugin);
-
-		gsap.to('.title', {
-			text: 'T O P I C S',
-			fontFamily: 'var(--orbitron)',
-			duration: 2.5,
-			ease: 'expoScale(0.5,7,power1.in)',
-			delay: 0.5
-		});
-
 		console.log('Blog page');
 	});
 </script>
 
 <SEO title="Blog topics" description="a blog about web techniques" keywords="blog topics" />
 
-<main transition:fade={{ delay: 250, duration: 300 }}>
-	<h1 class="title" transition:fade={{ duration: 500 }}>t o p i c s</h1>
+<main transition:fade={{ delay: 300, duration: 500 }}>
+	<Title title="topics" />
 
 	<article>
 		<section aria-label="icons">
@@ -109,17 +98,6 @@
 		border-radius: 8px;
 		cursor: pointer;
 		letter-spacing: 1px;
-	}
-
-	.title {
-		color: var(--sky);
-		text-shadow: 5px 5px 5px var(--dark-gray);
-		filter: drop-shadow(0px 0px 0.75rem var(--white));
-		font-size: clamp(2.75rem, 10.5vw, 15rem);
-		font-weight: 800;
-		text-align: center;
-		margin-top: 5%;
-		font-family: var(--orbitron);
 	}
 
 	@media (min-width: 300px) {

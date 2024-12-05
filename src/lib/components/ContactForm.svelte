@@ -29,13 +29,13 @@
 	<fieldset>
 		<legend>message me</legend>
 
-		<label for="name"><span>Name</span></label>
+		<label for="name"><span>name</span></label>
 		<input type="text" id="name" name="name" bind:value={name} required />
 
-		<label for="email"><span>Email</span></label>
+		<label for="email"><span>email</span></label>
 		<input type="email" id="email" name="email" bind:value={email} required />
 
-		<label for="message"><span>Message</span></label>
+		<label for="message"><span>message</span></label>
 		<textarea type="text" id="message" name="message" bind:value={message} rows="5" required
 		></textarea>
 
@@ -63,7 +63,6 @@
 		letter-spacing: 3px;
 		color: var(--darkgray);
 		padding-inline: 1rem;
-		text-shadow: 3px 3px 5px var(--off-white);
 	}
 
 	input,

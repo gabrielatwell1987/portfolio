@@ -1,5 +1,5 @@
 <!-- transitions -->
-<div align="center" style="font-family: var(--anta); font-size: clamp(1.5rem, 5vw, 6rem); font-weight: 900; letter-spacing: 5px; color: var(--sky); margin-bottom: 2rem;">TRANSITIONS</div>
+<div align="center" style="font-family: var(--anta); font-size: clamp(1.5rem, 5vw, 6rem); font-weight: 900; letter-spacing: 5px; color: var(--sky); margin-bottom: 2rem; text-shadow: 5px 5px 5px var(--dark-gray); filter: drop-shadow(0px 0px 0.75rem var(--white));">TRANSITIONS</div>
 
 <div align="left" style="margin-bottom: 2rem; margin-left: clamp(1rem, 2vw, 3rem); margin-right: clamp(.5rem, 3vw, 3rem); color: var(--white); font-size: clamp(1.25rem, 1.25vw, 1.75rem); font-weight: 100; letter-spacing: 2px; font-family: var(--bronova); line-height: 1.25; text-indent: 1rem;" aria-label="transitions">CSS transitions provide a way to control animation speed when changing CSS properties. Instead of having property changes take effect immediately, you can cause the changes in a property to take place over a period of time. For example, if you change the color of an element from white to black, usually the change is instantaneous. With CSS transitions enabled, changes occur at time intervals that follow an acceleration curve, all of which can be customized. Animations that involve transitioning between two states are often called implicit transitions as the states in between the start and final states are implicitly defined by the browser.</div>
 
@@ -22,7 +22,7 @@ div {
 ```
 
 <!-- animations -->
-<div align="center" style="font-family: var(--anta); font-size: clamp(1.5rem, 5vw, 6rem); font-weight: 900; letter-spacing: 5px; color: var(--sky);  margin-bottom: 2rem; margin-top: 2rem;">ANIMATIONS</div>
+<div align="center" style="font-family: var(--anta); font-size: clamp(1.5rem, 5vw, 6rem); font-weight: 900; letter-spacing: 5px; color: var(--sky);  margin-bottom: 2rem; margin-top: 2rem; text-shadow: 5px 5px 5px var(--dark-gray); filter: drop-shadow(0px 0px 0.75rem var(--white));">ANIMATIONS</div>
 
 <div align="left" style="margin-bottom: 2rem; margin-left: clamp(1rem, 3vw, 3rem); margin-right: clamp(.5rem, 3vw, 3rem); color: var(--white); font-size: clamp(1.25rem, 1.25vw, 1.75rem); font-weight: 100; letter-spacing: 2px; font-family: var(--bronova); code: var(--mono); line-height: 1.25; text-indent: 1rem;" aria-label="animations">In order to create the animations we need to use the <code>@keyframes</code> rule. This rule specifies the animation code. The animation is created by gradually changing from one set of CSS styles to another. During the animation, you can change the set of CSS styles many times. Specify when the style change will happen in percent, or with the keywords <code>from</code> and <code>to</code> which is the same as 0% and 100%. 0% is the beginning of the animation, 100% is when the animation is complete. The following example will change the background-color of the div element from red to yellow:</div>
 
