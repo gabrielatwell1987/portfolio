@@ -2,6 +2,7 @@
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import { fade } from 'svelte/transition';
 	import SEO from '$lib/data/SEO.svelte';
+	import Title from '$lib/components/Title.svelte';
 
 	$effect(() => {
 		console.log('Contact page');
@@ -15,33 +16,9 @@
 />
 
 <main>
-	<h1 class="legend" transition:fade={{ duration: 500 }}>Contact</h1>
+	<Title title="Contact" />
 
 	<section class="contactForm">
 		<ContactForm />
 	</section>
 </main>
-
-<style>
-	.legend {
-		margin: 10% 0 4% 0;
-		font-family: var(--orbitron);
-		font-size: clamp(2rem, 8vw, 10rem);
-		font-weight: 900;
-		text-shadow: 5px 5px 5px var(--dark-gray);
-		text-transform: uppercase;
-		filter: drop-shadow(0px 0px 0.75rem var(--white));
-		letter-spacing: 20px;
-		padding: 0;
-		color: var(--sky);
-		text-transform: uppercase;
-		text-align: center;
-	}
-
-	@media screen and (max-width: 500px) {
-		.legend {
-			letter-spacing: 5px;
-			margin: 10% 0 5% 0;
-		}
-	}
-</style>
