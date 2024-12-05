@@ -39,9 +39,9 @@
 			font-size: clamp(2.75rem, 10.5vw, 15rem);
 			color: var(--sky);
 			letter-spacing: 5px;
-			text-shadow: 0px 0px 10px var(--white);
-			text-transform: uppercase;
+			text-shadow: 5px 5px 5px var(--dark-gray);
 			filter: drop-shadow(0px 0px 0.75rem var(--white));
+			text-transform: uppercase;
 		}
 
 		#title {
