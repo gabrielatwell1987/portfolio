@@ -58,6 +58,7 @@
 		font-size: clamp(1rem, 2vw, 2rem);
 		font-weight: 700;
 		background-color: var(--darkest-blue);
+		color: var(--white);
 		border-radius: 8px;
 		outline: none;
 		border: none;
@@ -78,7 +79,7 @@
 		}
 
 		&:hover {
-			opacity: 0.8;
+			opacity: 0.9;
 		}
 
 		& .desc {
