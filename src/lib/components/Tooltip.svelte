@@ -5,13 +5,13 @@
 
 <main class="tooltip-container">
 	<span class="tooltip-trigger">{title}</span>
+
 	<div class="tooltip tooltip-top">{hover}</div>
 </main>
 
 <style>
 	.tooltip-container {
 		position: relative;
-		display: inline-block;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -34,21 +34,18 @@
 
 	.tooltip {
 		position: absolute;
-		background-color: #333;
+		background-color: var(--blackest);
 		color: var(--white);
 		font-size: clamp(1rem, 2vw, 1.5rem);
 		letter-spacing: 3px;
 		padding: 8px;
-		box-shadow: 0 0 5px var(--white);
+		box-shadow: 0 0 5px var(--dark-blue);
 		border-radius: 4px;
 		max-width: 200px;
 		z-index: 1;
 		opacity: 0;
 		visibility: hidden;
-		transition:
-			opacity 0.3s,
-			visibility 0.3s,
-			transform 0.3s;
+		transition: all 1s ease;
 	}
 
 	.tooltip::after {
@@ -63,13 +60,14 @@
 		bottom: calc(100% + 5px);
 		left: 50%;
 		transform: translateX(-50%);
+		transition: transform 0.25s ease;
 	}
 
 	.tooltip-top::after {
 		top: 100%;
 		left: 50%;
 		margin-left: -5px;
-		border-color: #333333 transparent transparent transparent;
+		border-color: var(--blue) transparent transparent transparent;
 	}
 
 	.tooltip-container:hover .tooltip {
