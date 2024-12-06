@@ -32,13 +32,13 @@
 		let mm = gsap.matchMedia();
 
 		mm.add('(max-width: 500px', () => {
-			gsap.set(gabe, { scale: 0.75 });
+			gsap.set(gabe, { scale: 0.8 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
 			tl.to(gabe, {
 				stagger: 0.5,
-				scale: 0.99,
+				scale: 1,
 				duration: 2.75,
 				repeat: 1,
 				yoyo: true,
@@ -55,13 +55,13 @@
 
 		mm.add('(min-width: 501px', () => {
 			gsap.set(main, { autoAlpha: 0 });
-			gsap.set(gabe, { scale: 0.85 });
+			gsap.set(gabe, { scale: 1 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
 			tl.to(gabe, {
 				stagger: 0.5,
-				scale: 0.75,
+				scale: 0.8,
 				duration: 4,
 				repeat: 1,
 				yoyo: true,
