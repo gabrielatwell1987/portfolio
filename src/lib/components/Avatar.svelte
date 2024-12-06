@@ -14,11 +14,11 @@
 		width: 5%;
 		height: 5%;
 		object-fit: cover;
+		transition: scale 0.5s ease-in-out;
 	}
 
 	img:hover {
-		/* border: 2px solid var(--sky); */
-		scale: 1.05;
+		scale: 1.25;
 	}
 
 	h3 {

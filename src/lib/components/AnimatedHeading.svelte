@@ -58,6 +58,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		overflow-x: clip;
 
 		.h1-l,
 		.h1-r {
