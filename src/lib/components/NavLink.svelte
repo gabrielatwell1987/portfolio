@@ -18,6 +18,11 @@
 			&:hover {
 				font-size: clamp(1.25rem, 1.25vw, 1.15rem);
 			}
+
+			&:focus {
+				box-shadow: 0 0 0px var(--off-white);
+				background: transparent;
+			}
 		}
 	}
 
