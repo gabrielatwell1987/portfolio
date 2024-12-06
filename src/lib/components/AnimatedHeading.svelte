@@ -17,8 +17,9 @@
 			h1L,
 			{
 				opacity: 0,
-				x: -75,
-				duration: 2
+				x: -100,
+				duration: 6,
+				ease: 'power3'
 			},
 			0
 		);
@@ -26,8 +27,9 @@
 			h1R,
 			{
 				opacity: 0,
-				x: 75,
-				duration: 2
+				x: 100,
+				duration: 6,
+				ease: 'power3'
 			},
 			'<'
 		).fromTo(
