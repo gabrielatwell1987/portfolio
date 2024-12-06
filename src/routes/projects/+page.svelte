@@ -10,6 +10,7 @@
 	import Avatar from '$lib/components/Avatar.svelte';
 	import Popup from '$lib/components/Popup.svelte';
 
+	// animations
 	$effect(() => {
 		gsap.registerPlugin(Draggable);
 
@@ -29,11 +30,15 @@
 		});
 
 		// GSAP
+		gsap.set('.link', { autoAlpha: 0, scale: 0 });
+		gsap.set('.content', { autoAlpha: 0 });
+		gsap.set(ascii, { yPercent: 25 });
+
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 
-		tl.from('.content', { autoAlpha: 0 })
-			.from('.link', { autoAlpha: 0, stagger: 0.8, scale: 2, duration: 1.5, ease: 'expo.out' }, 0)
-			.from(ascii, { yPercent: 25, duration: 1.25 }, 0);
+		tl.to('.content', { autoAlpha: 1 })
+			.to('.link', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 1.5, ease: 'expo.out' }, 0)
+			.to('.ascii', { yPercent: 0, duration: 1.5 }, 0);
 
 		console.log('Projects page');
 	});
@@ -189,10 +194,6 @@
 </section>
 
 <style>
-	.content {
-		overflow-x: clip;
-	}
-
 	@media screen and (min-width: 300px) {
 		:root {
 			--100: 100%;
