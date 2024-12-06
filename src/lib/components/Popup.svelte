@@ -42,13 +42,14 @@
 		margin-inline: auto;
 		margin-block: 5em;
 		font-family: var(--bronova);
-		font-size: clamp(1rem, 1.25vw, 1.5rem);
+		font-size: clamp(0.9rem, 1.25vw, 1.5rem);
 		letter-spacing: 2px;
 		padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
+		background-color: rgba(0, 0, 0, 1);
 	}
 
 	[popover] {
-		border: 2px solid var(--sky);
+		border: 3px solid var(--dark-blue);
 		border-radius: 0.5rem;
 		box-shadow: var(--blackest) 0px 20px 25px -5px;
 		padding: 1rem 1.5rem;

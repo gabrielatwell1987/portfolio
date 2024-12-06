@@ -6,25 +6,30 @@
 	let { title } = $props();
 
 	$effect(() => {
-		const letters = gsap.utils.toArray('.title');
+		const letters = gsap.utils.toArray('.title span');
 
 		gsap.from(letters, {
 			scale: 0,
 			transformOrigin: '50% 50%',
 			autoAlpha: 0,
-			duration: 1.5,
-			delay: 0.5,
+			duration: 0.75,
+			delay: 0.25,
 			ease: 'sine.inOut',
 			stagger: {
 				each: 0.15,
-				from: 'edges'
+				from: 'random'
 			}
 		});
 	});
 </script>
 
 <main transition:fade={{ duration: 500 }}>
-	<h1 class="title" id="title" aria-label={title}>{title}</h1>
+	<h2 class="title" id="title" aria-label={title}>
+		{@html title
+			.split('')
+			.map((letter) => `<span>${letter}</span>`)
+			.join('')}
+	</h2>
 </main>
 
 <style>
@@ -42,6 +47,7 @@
 			text-shadow: 5px 5px 5px var(--dark-gray);
 			filter: drop-shadow(0px 0px 0.75rem var(--white));
 			text-transform: uppercase;
+			font-kerning: none;
 		}
 
 		#title {
