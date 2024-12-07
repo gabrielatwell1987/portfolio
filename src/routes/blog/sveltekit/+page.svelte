@@ -331,7 +331,7 @@
 		text-align: center;
 		color: var(--smoke);
 		font-family: var(--anta);
-		text-shadow: 0px 0px 25px var(--blue);
+		text-shadow: 0px 0px 25px var(--dark-blue);
 	}
 
 	.learn {
