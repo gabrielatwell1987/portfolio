@@ -1,6 +1,6 @@
 .title {
 	font-family: var(--anta);
-	font-size: clamp(1.5rem, 5vw, 6rem);
+	font-size: clamp(2rem, 5vw, 6rem);
 	font-weight: 900;
 	letter-spacing: 5px;
 	color: var(--sky);
