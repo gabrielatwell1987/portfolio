@@ -13,7 +13,7 @@
 
 		codeBlocks.forEach((block) => {
 			block.style.backgroundColor = 'var(--darkest-blue)';
-			block.style.border = '2px solid var(--white)';
+			block.style.border = '1px solid var(--white)';
 			block.style.width = '75%';
 			block.style.margin = '2rem auto';
 			block.style.padding = '1rem';
@@ -25,7 +25,11 @@
 			copyPrompt.style.cursor = 'pointer';
 			copyPrompt.style.marginTop = '1%';
 			copyPrompt.style.marginLeft = '2%';
-			copyPrompt.style.opacity = '0.25';
+			copyPrompt.style.opacity = '0.75';
+			copyPrompt.style.display = 'flex';
+			copyPrompt.style.justifyContent = 'start';
+			copyPrompt.style.alignItems = 'center';
+			copyPrompt.style.gap = '0.25rem';
 
 			const mediaQuery = window.matchMedia('(max-width: 768px)');
 			function handleMediaQueryChange(e) {
@@ -33,11 +37,9 @@
 					// For screens 768px or less
 					block.style.width = '100%';
 					block.style.padding = '0';
-					copyPrompt.style.marginTop = '3%';
 					copyPrompt.style.marginLeft = '5%';
 				} else {
-					copyPrompt.style.marginTop = '1%';
-					copyPrompt.style.marginLeft = '2%';
+					copyPrompt.style.marginLeft = '1%';
 				}
 			}
 			handleMediaQueryChange(mediaQuery);
@@ -46,24 +48,24 @@
 			const copyPromptText = document.createElement('p');
 			copyPromptText.innerHTML = 'Copy';
 			copyPromptText.className = 'copy-prompt-text';
-
+			copyPromptText.style.fontFamily = 'var(--kanit)';
 			copyPromptText.style.fontWeight = '900';
-			copyPromptText.style.marginTop = '.5rem';
-			copyPromptText.style.marginLeft = '-.1rem';
+			copyPromptText.style.letterSpacing = '2px';
+			copyPromptText.style.marginTop = '1.5rem';
+			copyPromptText.style.marginLeft = '.5rem';
 			copyPromptText.style.color = '#fff';
 			copyPromptText.style.cursor = 'pointer';
 
 			const copyIcon = document.createElement('img');
 			copyIcon.src = '/icons/ic_copy.svg';
-			copyIcon.style.opacity = '.9';
 			copyIcon.style.cursor = 'pointer';
 
-			copyIcon.addEventListener('mouseenter', () => {
-				copyIcon.style.opacity = '1';
+			copyPrompt.addEventListener('mouseenter', () => {
+				copyPrompt.style.opacity = '1';
 			});
 
-			copyIcon.addEventListener('mouseleave', () => {
-				copyIcon.style.opacity = '.75';
+			copyPrompt.addEventListener('mouseleave', () => {
+				copyPrompt.style.opacity = '.75';
 			});
 
 			copyPrompt.appendChild(copyIcon);
@@ -76,7 +78,7 @@
 				copyPromptText.innerHTML = 'Copied!';
 				setTimeout(() => {
 					copyPromptText.innerHTML = 'Copy';
-				}, 1000);
+				}, 1500);
 			});
 
 			const codeElement = block.querySelector('code');

@@ -200,15 +200,16 @@ body {
 	}
 
 	code {
-		background: #222;
+		background: var(--lightblack);
 		color: var(--white);
+		font-family: var(--mono);
 		font-size: clamp(0.8rem, 1.25vw, 1.25rem);
 		letter-spacing: 1px;
 		font-weight: 700;
 	}
 
 	code.code {
-		background: #222;
+		background: var(--lightblack);
 		color: var(--white);
 		font-size: clamp(0.8rem, 1.25vw, 1.25rem);
 		font-weight: 700;

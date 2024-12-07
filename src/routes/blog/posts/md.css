@@ -1,0 +1,23 @@
+.title {
+	font-family: var(--anta);
+	font-size: clamp(1.5rem, 5vw, 6rem);
+	font-weight: 900;
+	letter-spacing: 5px;
+	color: var(--sky);
+	margin-bottom: 2rem;
+	text-shadow: 5px 5px 5px var(--dark-gray);
+	filter: drop-shadow(0px 0px 0.75rem var(--white));
+}
+
+.body {
+	margin-bottom: 2rem;
+	margin-left: clamp(1rem, 2vw, 3rem);
+	margin-right: clamp(0.5rem, 3vw, 3rem);
+	color: var(--white);
+	font-size: clamp(1.25rem, 1.25vw, 1.75rem);
+	font-weight: 100;
+	letter-spacing: 2px;
+	font-family: var(--bronova);
+	line-height: 1.25;
+	text-indent: 1rem;
+}
