@@ -34,7 +34,7 @@
 
 			<div class="item mb" style="--row: span 3">
 				<a href="/projects">
-					<Image src="/logos/skull-logo.webp" alt="atwell logo" width="500" />
+					<Image src="/logos/logoA.webp" alt="atwell logo" width="500" />
 				</a>
 			</div>
 		</div>
@@ -113,10 +113,5 @@
 				grid-row: var(--row);
 			}
 		}
-
-		/* .bento-grid > * {
-			grid-column: var(--col);
-			grid-row: var(--row);
-		} */
 	}
 </style>

@@ -124,10 +124,10 @@
 
 	<article class="card">
 		<Card
-			src="/photos/cartoonGabe.webp"
+			src="/logos/a-dev.webp"
 			alt="old school"
 			href="/projects"
-			title="gabeAtwell"
+			title="frontend"
 			desc="Trying to make the internet look better.. one website at a time."
 			button="Projects"
 		/>

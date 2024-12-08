@@ -24,6 +24,12 @@
 	}
 </script>
 
+<div class="contentTitle">
+	<h1 class="title">random gallery</h1>
+
+	<p class="subtitle">made with GSAP!</p>
+</div>
+
 <!-- picture grid -->
 <section class="grid" transition:fade={{ delay: 250, duration: 300 }}>
 	{#each { length: 8 } as _, id}
@@ -98,6 +104,33 @@
 		.details .title {
 			opacity: 1;
 			translate: 0%;
+		}
+	}
+
+	.contentTitle {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-top: 5%;
+
+		.title {
+			text-align: center;
+			font-size: clamp(2rem, 3vw, 4rem);
+			font-family: var(--anta);
+			font-weight: 800;
+			margin: 0;
+			letter-spacing: 3px;
+		}
+
+		.subtitle {
+			text-align: center;
+			font-size: clamp(1.2rem, 1.75vw, 2rem);
+			font-family: var(--bronova);
+			font-weight: 100;
+			color: var(--off-white);
+			letter-spacing: 3px;
+			margin: 0;
 		}
 	}
 
