@@ -30,34 +30,36 @@
 		}
 
 		.card-image {
-			width: 70%;
-			height: 300px;
+			width: fit-content;
+			height: fit-content;
 			object-fit: cover;
-			border-radius: 8px 8px 0 0;
+			border-radius: 0 0 8px 8px;
 			display: grid;
 			place-self: center;
 			margin-inline: auto;
 			margin-bottom: 1rem;
-
-			&:hover {
-				filter: drop-shadow(0 0 0.75rem var(--smoke));
-			}
+			padding: 1rem;
+			margin-block: auto;
 		}
 
 		.card-title {
 			color: var(--sky);
-			font-size: clamp(1.5rem, 2vw, 2rem);
+			font-family: var(--anta);
+			font-size: clamp(2rem, 2vw, 4rem);
 			font-weight: 800;
-			letter-spacing: 2px;
+			letter-spacing: 4px;
 			margin-bottom: 0.5rem;
+			text-transform: uppercase;
 		}
 
 		.card-description {
 			color: var(--off-white);
-			font-size: clamp(1rem, 1vw, 1.2rem);
+			font-size: clamp(1.1rem, 1.5vw, 1.5rem);
 			font-weight: 300;
 			margin-bottom: 1rem;
 			text-indent: 1rem;
+			display: flex;
+			justify-content: center;
 		}
 
 		.card-button {

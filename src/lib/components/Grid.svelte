@@ -33,6 +33,7 @@
 			mix-blend-mode: difference;
 			color: var(--purple);
 			font-family: var(--orbitron);
+			text-shadow: 2px 2px 5px var(--darksmoke);
 		}
 
 		.left,
