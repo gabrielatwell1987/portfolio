@@ -65,8 +65,7 @@
 	<NavBar />
 
 	<br />
-	<br />
-	<br />
+
 	{@render children?.()}
 
 	<div class="footer">

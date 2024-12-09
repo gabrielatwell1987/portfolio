@@ -250,8 +250,6 @@
 		</main>
 	</div>
 </section>
-<!-- footer spacing -->
-<br />
 
 <style>
 	:root {
@@ -262,6 +260,7 @@
 		width: 75%;
 		border-radius: 10px;
 		margin: 0 auto;
+		margin-bottom: 5rem;
 	}
 
 	details {
