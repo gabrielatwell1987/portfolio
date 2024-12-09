@@ -14,7 +14,7 @@
 	$effect(() => {
 		gsap.registerPlugin(Draggable);
 
-		const ascii = document.querySelector('.ascii');
+		const lowgow = document.querySelector('.lowgow');
 		const designs = document.querySelector('.designs');
 
 		Draggable.create(designs, {
@@ -32,13 +32,13 @@
 		// GSAP
 		gsap.set('.link', { autoAlpha: 0, scale: 0 });
 		gsap.set('.content', { autoAlpha: 0 });
-		gsap.set(ascii, { yPercent: 25 });
+		gsap.set(lowgow, { yPercent: 25 });
 
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 
 		tl.to('.content', { autoAlpha: 1 })
 			.to('.link', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 1.5, ease: 'expo.out' }, 0)
-			.to('.ascii', { yPercent: 0, duration: 1.5 }, 0);
+			.to('.lowgow', { yPercent: 0, duration: 1.5 }, 0);
 
 		console.log('Projects page');
 	});
@@ -65,8 +65,8 @@
 	<br /><br />
 
 	<!-- logo -->
-	<div class="ascii">
-		<Image src="logos/ascii.webp" alt="ASCII art" />
+	<div class="lowgow">
+		<Image src="icons/lowgow.webp" alt="LOWGOW art" />
 	</div>
 
 	<!-- <Project
@@ -208,12 +208,12 @@
 			height: var(--100);
 		}
 
-		.ascii {
+		.lowgow {
 			display: flex;
 			justify-content: center;
 			margin-bottom: 3%;
-			width: clamp(50%, 75%, var(--100));
-			margin-left: 10%;
+			width: clamp(8em, 25vw, 30em);
+			margin-inline: auto;
 		}
 
 		.popup {
@@ -238,19 +238,11 @@
 			border-radius: 10%;
 			margin: 3rem 0;
 		}
-
-		.ascii {
-			margin-left: 12.5%;
-		}
 	}
 
 	@media screen and (min-width: 990px) {
 		.content {
 			margin-bottom: -5%;
-		}
-
-		.ascii {
-			margin-left: 12%;
 		}
 
 		.avatar {
