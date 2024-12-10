@@ -1,44 +1,42 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import { gsap } from 'gsap';
 	import { Draggable } from 'gsap/dist/Draggable';
 	import Project from '$lib/components/Project.svelte';
 	import Figure from '$lib/components/Figure.svelte';
 	import Title from '$lib/components/Title.svelte';
 	import Image from '$lib/components/Image.svelte';
-	import { fade } from 'svelte/transition';
 	import SEO from '$lib/data/SEO.svelte';
 	import Avatar from '$lib/components/Avatar.svelte';
 	import Popup from '$lib/components/Popup.svelte';
 
 	// animations
 	$effect(() => {
+		const iconLogo = document.querySelector('.iconLogo');
+		const logo = document.querySelector('.logo');
+
 		gsap.registerPlugin(Draggable);
-
-		const lowgow = document.querySelector('.lowgow');
-		const designs = document.querySelector('.designs');
-
-		Draggable.create(designs, {
+		Draggable.create(logo, {
 			type: 'top',
 			bounds: window,
 			edgeResistance: 0.65,
 			onPress: function () {
-				gsap.to(designs, { scale: 1.1 });
+				gsap.to(logo, { scale: 1.1 });
 			},
 			onRelease: function () {
-				gsap.to(designs, { scale: 1 });
+				gsap.to(logo, { scale: 1 });
 			}
 		});
 
-		// GSAP
 		gsap.set('.link', { autoAlpha: 0, scale: 0 });
 		gsap.set('.content', { autoAlpha: 0 });
-		gsap.set(lowgow, { yPercent: 25 });
+		gsap.set(iconLogo, { yPercent: 75 });
 
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 
 		tl.to('.content', { autoAlpha: 1 })
 			.to('.link', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 1.5, ease: 'expo.out' }, 0)
-			.to('.lowgow', { yPercent: 0, duration: 1.5 }, 0);
+			.to('.iconLogo', { yPercent: 0, duration: 1.5 }, 0);
 
 		console.log('Projects page');
 	});
@@ -59,13 +57,9 @@
 	/>
 </div>
 
-<!-- links to my projects -->
 <section class="content bevel" transition:fade={{ delay: 250, duration: 300 }}>
-	<!-- spacing -->
-	<br /><br />
-
 	<!-- logo -->
-	<div class="lowgow">
+	<div class="iconLogo">
 		<Image src="icons/lowgow.webp" alt="LOWGOW art" />
 	</div>
 
@@ -188,7 +182,7 @@
 	</div>
 
 	<!-- logo -->
-	<div class="logos designs">
+	<div class="logo">
 		<Figure src="logos/web.webp" alt="A logo that says web" text="building the" />
 	</div>
 </section>
@@ -199,21 +193,25 @@
 			--100: 100%;
 		}
 
-		.logos {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-inline: auto;
-			flex-basis: 75%;
-			height: var(--100);
-		}
+		section {
+			padding-top: 2rem;
 
-		.lowgow {
-			display: flex;
-			justify-content: center;
-			margin-bottom: 3%;
-			width: clamp(8em, 25vw, 30em);
-			margin-inline: auto;
+			.logo {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-inline: auto;
+				flex-basis: 75%;
+				height: var(--100);
+			}
+
+			.iconLogo {
+				display: flex;
+				justify-content: center;
+				margin-bottom: 3%;
+				width: clamp(8em, 25vw, 30em);
+				margin-inline: auto;
+			}
 		}
 
 		.popup {
@@ -225,28 +223,27 @@
 	}
 
 	@media screen and (min-width: 740px) {
-		.content {
+		section {
 			padding: 2rem;
-		}
 
-		.logos {
-			width: var(--100);
-			margin-inline: auto;
-		}
+			.logo {
+				width: var(--100);
+				margin-inline: auto;
 
-		.designs {
-			border-radius: 10%;
-			margin: 3rem 0;
+				border-radius: 10%;
+				margin: 3rem 0;
+			}
 		}
 	}
 
 	@media screen and (min-width: 990px) {
-		.content {
+		section {
 			margin-bottom: -5%;
-		}
+			padding-top: 5rem;
 
-		.avatar {
-			margin-block: 7.5%;
+			.avatar {
+				margin-block: 7.5%;
+			}
 		}
 	}
 </style>
