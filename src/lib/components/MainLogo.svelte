@@ -51,23 +51,23 @@
 </div>
 
 <style>
-	path {
-		stroke-dasharray: 300;
-		stroke-dashoffset: 0;
-		animation: dash 5s linear;
-	}
-
-	#w {
-		animation-delay: -2.1s;
-	}
-
 	.gabe-logo {
 		margin: 0 0 0 25%;
-	}
 
-	.home {
-		user-select: none;
-		background: transparent;
+		.home {
+			user-select: none;
+			background: transparent;
+
+			path {
+				stroke-dasharray: 300;
+				stroke-dashoffset: 0;
+				animation: dash 5s linear;
+			}
+
+			#w {
+				animation-delay: -2.1s;
+			}
+		}
 	}
 
 	@media (min-width: 300px) {
@@ -80,17 +80,17 @@
 		.gabe-logo {
 			display: block;
 			margin-left: -7rem;
-		}
 
-		a {
-			transition: transform 0.25s ease-in-out;
-			font-weight: 400;
-			cursor: pointer;
-		}
+			a {
+				transition: transform 0.25s ease-in-out;
+				font-weight: 400;
+				cursor: pointer;
+			}
 
-		a:hover {
-			transform: scale(1.1);
-			font-weight: 600;
+			a:hover {
+				transform: scale(1.1);
+				font-weight: 600;
+			}
 		}
 	}
 

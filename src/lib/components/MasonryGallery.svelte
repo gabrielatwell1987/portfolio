@@ -39,24 +39,24 @@
 	.container {
 		max-width: 100%;
 		padding: 10%;
-	}
 
-	.container .image-container {
-		columns: 3 400px;
-		margin-top: 10%;
-	}
+		& .image-container {
+			columns: 3 400px;
+			margin-top: 10%;
+		}
 
-	.container .image-container img {
-		margin-bottom: 3%;
-		border-radius: 10px;
-		width: 90%;
-		object-fit: cover;
-		transition: scale 0.5s ease;
-	}
+		& .image-container img {
+			margin-bottom: 3%;
+			border-radius: 10px;
+			width: 90%;
+			object-fit: cover;
+			transition: scale 0.5s ease;
+		}
 
-	.container .image-container img:is(:hover) {
-		scale: 0.9;
-		filter: drop-shadow(0 0 0.5rem var(--off-white));
+		& .image-container img:is(:hover) {
+			scale: 0.9;
+			filter: drop-shadow(0 0 0.5rem var(--off-white));
+		}
 	}
 
 	@media (max-width: 500px) {

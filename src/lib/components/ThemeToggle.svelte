@@ -42,24 +42,24 @@
 		margin-top: 5%;
 		z-index: 10;
 		outline: none;
-	}
 
-	button i {
-		cursor: pointer;
-	}
+		& i {
+			cursor: pointer;
+		}
 
-	button:hover {
-		text-shadow: 0 0 1px var(--smoke);
-		transition: all 0.35s ease-in-out;
-	}
+		&:hover {
+			text-shadow: 0 0 1px var(--smoke);
+			transition: all 0.35s ease-in-out;
+		}
 
-	button:active {
-		background: inherit;
-		color: var(--text-color);
-	}
+		&:active {
+			background: inherit;
+			color: var(--text-color);
+		}
 
-	button:focus,
-	button:focus {
-		box-shadow: 0 0 0px var(--off-white);
+		&:focus,
+		&:focus {
+			box-shadow: 0 0 0px var(--off-white);
+		}
 	}
 </style>

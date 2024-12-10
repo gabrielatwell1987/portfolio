@@ -26,9 +26,9 @@
 		-webkit-background-clip: text;
 		background-clip: text;
 		transition: all 0.5s linear;
-	}
 
-	h2.mask:hover {
-		filter: drop-shadow(0 0 5px var(--white));
+		&:hover {
+			filter: drop-shadow(0 0 5px var(--white));
+		}
 	}
 </style>

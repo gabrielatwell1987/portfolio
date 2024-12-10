@@ -35,23 +35,11 @@
 
 <div class="image-container" bind:this={imageContainer}>
 	<img {src} {alt} loading="lazy" />
+
 	<h1>{text}</h1>
 </div>
 
 <style>
-	h1 {
-		position: absolute;
-		top: 96%;
-		left: 50%;
-		transform: translate(-50%, -96%);
-		letter-spacing: 3px;
-		font-family: var(--bronova);
-		font-size: clamp(0.9rem, 2vw, 2rem);
-		font-weight: 700;
-		color: var(--purple);
-		text-wrap: nowrap;
-	}
-
 	.image-container {
 		position: relative;
 		width: calc(fit-content + 10%);
@@ -60,14 +48,27 @@
 		border-radius: 15px;
 		margin: 5% 0 3% 0;
 		padding: 2rem;
-	}
 
-	.image-container img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		z-index: 2;
-		border-radius: 10px;
+		& img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: 2;
+			border-radius: 10px;
+		}
+
+		h1 {
+			position: absolute;
+			top: 96%;
+			left: 50%;
+			transform: translate(-50%, -96%);
+			letter-spacing: 3px;
+			font-family: var(--bronova);
+			font-size: clamp(0.9rem, 2vw, 2rem);
+			font-weight: 700;
+			color: var(--purple);
+			text-wrap: nowrap;
+		}
 	}
 
 	@media (max-width: 768px) {
@@ -76,11 +77,11 @@
 			height: 75%;
 			margin-top: 20%;
 			margin-bottom: -5%;
-		}
 
-		h1 {
-			letter-spacing: 0;
-			text-align: center;
+			h1 {
+				letter-spacing: 0;
+				text-align: center;
+			}
 		}
 	}
 </style>

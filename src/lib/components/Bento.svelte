@@ -96,11 +96,11 @@
 						border 1s ease;
 				}
 			}
-		}
-	}
 
-	.mb {
-		margin-bottom: 11%;
+			&:last-child {
+				margin-bottom: 11%;
+			}
+		}
 	}
 
 	@media (min-width: 50rem) {

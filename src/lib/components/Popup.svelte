@@ -24,18 +24,18 @@
 		border: none;
 		outline: none;
 		text-transform: uppercase;
-	}
 
-	button i {
-		font-size: clamp(2rem, 2vw, 3rem);
-	}
+		& i {
+			font-size: clamp(2rem, 2vw, 3rem);
+		}
 
-	button:hover {
-		animation: wiggle 1s ease-in-out infinite;
-	}
+		&:hover {
+			animation: wiggle 1s ease-in-out infinite;
+		}
 
-	button:focus {
-		box-shadow: 0 0 0px var(--off-white);
+		&:focus {
+			box-shadow: 0 0 0px var(--off-white);
+		}
 	}
 
 	#popover {

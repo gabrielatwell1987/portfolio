@@ -55,27 +55,27 @@
 			transition: color 0.5s ease;
 			-webkit-text-stroke: 1px var(--white);
 			filter: opacity(0.95);
-		}
 
-		.size:focus {
-			outline: none;
-			background: transparent;
-			box-shadow: none;
-		}
+			&:focus {
+				outline: none;
+				background: transparent;
+				box-shadow: none;
+			}
 
-		.size:hover {
-			color: var(--dark-pale);
-			font-weight: 900;
-			transition: color 0.5s ease;
-		}
+			&:hover {
+				color: var(--dark-pale);
+				font-weight: 900;
+				transition: color 0.5s ease;
+			}
 
-		.size,
-		.size:hover {
-			font-size: clamp(2.5rem, 4vw, 5rem);
-		}
+			&,
+			&:hover {
+				font-size: clamp(2.5rem, 4vw, 5rem);
+			}
 
-		.size i {
-			cursor: pointer;
+			& i {
+				cursor: pointer;
+			}
 		}
 	}
 

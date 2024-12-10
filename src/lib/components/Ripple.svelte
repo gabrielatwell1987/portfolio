@@ -2,7 +2,9 @@
 	let { title, href } = $props();
 </script>
 
-<a {href}><button class="rippleBtn">{title}</button></a>
+<a {href}>
+	<button class="rippleBtn">{title}</button>
+</a>
 
 <style>
 	.rippleBtn {
@@ -28,31 +30,31 @@
 			outline-offset: 0px;
 			animation: wiggle 0.5s ease-in-out infinite;
 		}
-	}
 
-	.rippleBtn::after {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		background: radial-gradient(circle, var(--smoke) 10%, transparent 50.01%);
-		background-size: 100%;
-		background-repeat: no-repeat;
-		transform: scale(0);
-		opacity: 0;
-		transition:
-			transform 0.6s,
-			opacity 0.6s;
-	}
+		&::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: radial-gradient(circle, var(--smoke) 10%, transparent 50.01%);
+			background-size: 100%;
+			background-repeat: no-repeat;
+			transform: scale(0);
+			opacity: 0;
+			transition:
+				transform 0.6s,
+				opacity 0.6s;
+		}
 
-	.rippleBtn:active::after {
-		transform: scale(3);
-		opacity: 1;
-		transition:
-			transform 0.6s,
-			opacity 0.6s;
+		&:active::after {
+			transform: scale(3);
+			opacity: 1;
+			transition:
+				transform 0.6s,
+				opacity 0.6s;
+		}
 	}
 
 	@keyframes wiggle {

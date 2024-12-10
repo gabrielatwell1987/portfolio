@@ -14,6 +14,7 @@
 		.nav-link {
 			font-size: clamp(1.25rem, 1.25vw, 1.15rem);
 			letter-spacing: 2px;
+			font-weight: 800;
 
 			&:hover {
 				font-size: clamp(1.25rem, 1.25vw, 1.15rem);
@@ -29,7 +30,6 @@
 	@media (min-width: 750px) {
 		.nav-link {
 			text-decoration: none;
-			font-weight: 600;
 			color: var(--white);
 			border-radius: 2px;
 
@@ -46,30 +46,8 @@
 
 	@media (min-width: 990px) {
 		.nav-link {
-			margin-left: 5rem;
+			margin-left: 5.5rem;
 			margin-right: -5.25rem;
-		}
-	}
-
-	@media (min-width: 1024px) {
-		.nav-link {
-			margin-left: 5rem;
-			margin-right: -5rem;
-		}
-	}
-
-	@media (min-width: 1500px) {
-		.nav-link {
-			margin-left: 5.75rem;
-			margin-right: -5rem;
-			font-weight: 800;
-		}
-	}
-
-	@media (min-width: 1600px) {
-		.nav-link {
-			margin-left: 5.75rem;
-			margin-right: -5rem;
 		}
 	}
 </style>
