@@ -177,9 +177,9 @@
 	</section> -->
 
 	<!-- avatar -->
-	<div class="avatar">
-		<Avatar src="/photos/cartoonGabe.webp" alt="cartoon gabe" name="gabeAtwell" />
-	</div>
+	<!-- <div class="avatar"> -->
+	<Avatar src="/photos/cartoonGabe.webp" alt="cartoon gabe" name="gabeAtwell" />
+	<!-- </div> -->
 
 	<!-- logo -->
 	<div class="logo">
@@ -241,9 +241,9 @@
 			margin-bottom: -5%;
 			padding-top: 5rem;
 
-			.avatar {
+			/* .avatar {
 				margin-block: 7.5%;
-			}
+			} */
 		}
 	}
 </style>
