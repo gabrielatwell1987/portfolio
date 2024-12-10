@@ -44,10 +44,10 @@
 		font-size: clamp(1.2rem, 1.5vw, 2rem);
 		font-weight: 900;
 		color: var(--dark-pale);
-	}
 
-	p:hover i {
-		animation: right 1s ease-in-out infinite;
+		&:hover i {
+			animation: right 1s ease-in-out infinite;
+		}
 	}
 
 	@media (max-width: 500px) {

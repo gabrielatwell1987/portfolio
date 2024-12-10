@@ -11,9 +11,6 @@
 </script>
 
 <nav>
-	<!-- <InstallBtn /> -->
-
-	<!-- hamburger icon -->
 	<div class="header-logos">
 		<Burger bind:open ariaLabel="Toggle menu" />
 
@@ -24,7 +21,6 @@
 		<ThemeToggle />
 	</div>
 
-	<!-- desktop view -->
 	<div class="desktop">
 		<NavLink href="/about" title="About" />
 		<NavLink href="/projects" title="Projects" />

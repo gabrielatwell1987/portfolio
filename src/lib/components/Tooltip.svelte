@@ -16,63 +16,64 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-	}
 
-	.tooltip-trigger {
-		cursor: pointer;
-		margin-inline: auto;
-		background-color: var(--black);
-		padding: 0.5rem 1.2rem;
-		box-shadow: 0 0 25px var(--white);
-		border-radius: 12px;
-		font-family: var(--orbitron);
-		font-size: clamp(1.5rem, 2vw, 3rem);
-		font-weight: 600;
-		letter-spacing: 2px;
-		margin-top: 15%;
-	}
+		&:hover .tooltip {
+			opacity: 1;
+			visibility: visible;
+			animation: fadeIn 0.3s forwards;
+		}
 
-	.tooltip {
-		position: absolute;
-		background-color: var(--blackest);
-		color: var(--white);
-		font-size: clamp(1rem, 2vw, 1.5rem);
-		letter-spacing: 3px;
-		padding: 8px;
-		box-shadow: 0 0 5px var(--dark-blue);
-		border-radius: 4px;
-		max-width: 200px;
-		z-index: 1;
-		opacity: 0;
-		visibility: hidden;
-		transition: all 1s ease;
-	}
+		.tooltip-trigger {
+			cursor: pointer;
+			margin-inline: auto;
+			background-color: var(--black);
+			padding: 0.5rem 1.2rem;
+			box-shadow: 0 0 25px var(--white);
+			border-radius: 12px;
+			font-family: var(--orbitron);
+			font-size: clamp(1.5rem, 2vw, 3rem);
+			font-weight: 600;
+			letter-spacing: 2px;
+			margin-top: 15%;
+		}
 
-	.tooltip::after {
-		content: '';
-		position: absolute;
-		border-style: solid;
-		border-width: 5px;
-	}
+		.tooltip {
+			position: absolute;
+			background-color: var(--blackest);
+			color: var(--white);
+			font-size: clamp(1rem, 2vw, 1.5rem);
+			letter-spacing: 3px;
+			padding: 8px;
+			box-shadow: 0 0 5px var(--dark-blue);
+			border-radius: 4px;
+			max-width: 200px;
+			z-index: 1;
+			opacity: 0;
+			visibility: hidden;
+			transition: all 1s ease;
+		}
 
-	.tooltip-top {
-		min-width: 160px;
-		bottom: calc(100% + 5px);
-		left: 50%;
-		transform: translateX(-50%);
-		transition: transform 0.25s ease;
-	}
+		.tooltip::after {
+			content: '';
+			position: absolute;
+			border-style: solid;
+			border-width: 5px;
+		}
 
-	.tooltip-top::after {
-		top: 100%;
-		left: 50%;
-		margin-left: -5px;
-		border-color: var(--blue) transparent transparent transparent;
-	}
+		.tooltip-top {
+			min-width: 160px;
+			bottom: calc(100% + 5px);
+			left: 50%;
+			transform: translateX(-50%);
+			transition: transform 0.25s ease;
+		}
 
-	.tooltip-container:hover .tooltip {
-		opacity: 1;
-		visibility: visible;
+		.tooltip-top::after {
+			top: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-color: var(--blue) transparent transparent transparent;
+		}
 	}
 
 	@media (max-width: 500px) {
@@ -99,9 +100,5 @@
 			opacity: 1;
 			transform: scale(1);
 		}
-	}
-
-	.tooltip-container:hover .tooltip {
-		animation: fadeIn 0.3s forwards;
 	}
 </style>

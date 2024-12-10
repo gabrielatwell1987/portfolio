@@ -37,14 +37,14 @@
 		&:hover {
 			animation: right 0.5s ease-in-out infinite;
 		}
-	}
 
-	path {
-		transition: all 0.2s ease-in;
-	}
+		path {
+			transition: all 0.2s ease-in;
+		}
 
-	.head {
-		transform: translateX(-3px);
+		.head {
+			transform: translateX(-3px);
+		}
 	}
 
 	@keyframes right {

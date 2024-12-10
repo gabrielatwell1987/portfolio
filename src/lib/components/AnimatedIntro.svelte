@@ -40,6 +40,12 @@
 </main>
 
 <style>
+	.sentence,
+	.bigWord {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
 	.sentence {
 		font-family: var(--bronova);
 		font-size: clamp(1.25rem, 2.5vw, 10rem);
@@ -71,12 +77,6 @@
 				0 0 15px #eee,
 				0 0 20px #eee;
 		}
-	}
-
-	.sentence,
-	.bigWord {
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
 	}
 
 	@media (max-width: 768px) {

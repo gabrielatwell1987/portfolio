@@ -5,7 +5,7 @@
 	let { src, alt, width, scale } = $props();
 
 	$effect(() => {
-		gsap.from('.className', {
+		gsap.from('.imgClass', {
 			display: 'block',
 			duration: 3,
 			scale: scale,
@@ -17,7 +17,7 @@
 </script>
 
 <main>
-	<div class="className">
+	<div class="imgClass">
 		<Image {src} {alt} {width} />
 	</div>
 </main>

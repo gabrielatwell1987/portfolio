@@ -19,31 +19,31 @@
 </div>
 
 <style>
-	video {
-		width: 90%;
-		max-width: 1200px;
-		border-radius: 12px;
-
-		mask-image: linear-gradient(transparent, black 20%),
-			linear-gradient(to top, transparent, black 20%),
-			linear-gradient(to right, transparent, black 20%),
-			linear-gradient(to left, transparent, black 20%);
-		mask-composite: intersect;
-	}
-
 	.video {
 		margin: 0 auto 6% auto;
 		display: flex;
 		justify-content: center;
+
+		video {
+			width: 90%;
+			max-width: 1200px;
+			border-radius: 12px;
+
+			mask-image: linear-gradient(transparent, black 20%),
+				linear-gradient(to top, transparent, black 20%),
+				linear-gradient(to right, transparent, black 20%),
+				linear-gradient(to left, transparent, black 20%);
+			mask-composite: intersect;
+		}
 	}
 
 	@media (max-width: 700px) {
-		video {
-			max-width: 85%;
-		}
-
 		.video {
 			margin: 0 auto 18% auto;
+
+			video {
+				max-width: 85%;
+			}
 		}
 	}
 </style>

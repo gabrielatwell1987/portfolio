@@ -25,17 +25,17 @@
 		height: 30vh;
 		margin-top: 2.5%;
 		user-select: none;
-	}
 
-	.hero-logo {
-		width: clamp(99.9%, 25vw, 100%);
-		display: flex;
-		justify-content: center;
-	}
+		.hero-logo {
+			width: clamp(99.9%, 25vw, 100%);
+			display: flex;
+			justify-content: center;
 
-	a {
-		text-decoration: none;
-		cursor: pointer;
-		background: transparent;
+			a {
+				text-decoration: none;
+				cursor: pointer;
+				background: transparent;
+			}
+		}
 	}
 </style>

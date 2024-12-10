@@ -177,10 +177,10 @@
 		transition: scale 500ms ease-in-out;
 		scale: 1.5;
 		margin-top: 5rem;
-	}
 
-	svg:hover {
-		scale: 1.3;
+		&:hover {
+			scale: 1.3;
+		}
 	}
 
 	@media (max-width: 500px) {
