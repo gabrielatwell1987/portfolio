@@ -48,6 +48,7 @@
 			filter: drop-shadow(0px 0px 0.75rem var(--white));
 			text-transform: uppercase;
 			font-kerning: none;
+			margin-top: 3rem;
 		}
 
 		#title {
