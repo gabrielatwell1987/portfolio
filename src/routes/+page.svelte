@@ -3,7 +3,6 @@
 	import HeroLogo from '$lib/components/HeroLogo.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import AnimatedIntro from '$lib/components/AnimatedIntro.svelte';
-	// import Video from '$lib/components/Video.svelte';
 
 	$effect(() => {
 		console.log('Home page');
@@ -20,17 +19,4 @@
 
 <AnimatedIntro text="do you need a " span="website?" />
 
-<!-- <div class="video">
-	<Video
-	src1="https://utfs.io/f/a9fyo7WOVxjArmUl6QLjLEUMdNlCOYwWZAJBTFpcK5ktbaqm"
-	src2="https://utfs.io/f/a9fyo7WOVxjArmUl6QLjLEUMdNlCOYwWZAJBTFpcK5ktbaqm"
-	/>
-	</div> -->
-
 <Hero />
-
-<!-- <style>
-	.video {
-		border-radius: 12px;
-	}
-</style> -->

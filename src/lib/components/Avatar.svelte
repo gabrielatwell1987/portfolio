@@ -22,8 +22,7 @@
 
 		img {
 			border-radius: 50%;
-			width: 5%;
-			height: 5%;
+			width: 20%;
 			object-fit: cover;
 			transition: scale 0.5s ease-in-out;
 		}
@@ -43,27 +42,12 @@
 		}
 	}
 
-	@media screen and (min-width: 300px) {
-		img {
-			width: 20%;
-			height: 20%;
-		}
-	}
-
-	@media screen and (min-width: 600px) {
-		img {
-			width: 15%;
-			height: 15%;
-		}
-	}
-
 	@media screen and (min-width: 950px) {
 		article {
 			margin-top: 5rem;
 
 			img {
-				width: 5%;
-				height: 5%;
+				width: 7%;
 			}
 		}
 	}
