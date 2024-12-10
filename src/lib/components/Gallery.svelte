@@ -112,7 +112,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin-top: 5%;
+		margin-top: 15%;
 
 		.title {
 			text-align: center;
@@ -142,6 +142,10 @@
 			h2 {
 				font-size: 2.5rem;
 			}
+		}
+
+		.contentTitle {
+			margin-top: 5%;
 		}
 	}
 </style>
