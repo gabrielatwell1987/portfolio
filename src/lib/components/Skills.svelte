@@ -112,7 +112,16 @@
 			& a:hover {
 				transform: scale(1.1);
 				transition: transform 0.25s ease-in-out;
-				border-color: var(--off-white);
+			}
+
+			& a:nth-child(odd):hover {
+				rotate: -5deg;
+				transition: rotate 0.25s ease-in-out;
+			}
+
+			& a:nth-child(even):hover {
+				rotate: 5deg;
+				transition: rotate 0.25s ease-in-out;
 			}
 
 			& li {
