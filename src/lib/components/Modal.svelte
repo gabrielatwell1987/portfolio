@@ -63,7 +63,7 @@
 		.open-button,
 		.close-button {
 			display: block;
-			font-size: clamp(2rem, 2vw, 3rem);
+			font-size: clamp(2.5rem, 4vw, 4rem);
 			font-weight: 800;
 			background-color: transparent;
 			box-shadow: none;

@@ -183,6 +183,7 @@
 		.desktop {
 			display: block;
 			width: var(--100);
+			margin-inline: auto;
 		}
 
 		nav {
