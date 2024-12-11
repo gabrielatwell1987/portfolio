@@ -203,7 +203,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				margin-bottom: 3rem;
+				margin-block: 4rem;
 			}
 
 			.hero,
