@@ -26,7 +26,7 @@
 		text-transform: uppercase;
 
 		& i {
-			font-size: clamp(2rem, 2vw, 3rem);
+			font-size: clamp(2.5rem, 4vw, 4rem);
 		}
 
 		&:hover {

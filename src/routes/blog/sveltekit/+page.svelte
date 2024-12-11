@@ -310,7 +310,9 @@
 		}
 
 		& a:hover {
-			text-decoration: underline;
+			border-bottom: 2px solid var(--pale);
+			border-start-start-radius: 0.5rem;
+			border-radius: 0.15rem;
 		}
 	}
 

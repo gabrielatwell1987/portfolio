@@ -26,12 +26,10 @@
 		.tooltip-trigger {
 			cursor: pointer;
 			margin-inline: auto;
-			background-color: var(--black);
 			padding: 0.5rem 1.2rem;
-			box-shadow: 0 0 25px var(--white);
 			border-radius: 12px;
 			font-family: var(--orbitron);
-			font-size: clamp(1.5rem, 2vw, 3rem);
+			font-size: clamp(2.5rem, 2vw, 3rem);
 			font-weight: 600;
 			letter-spacing: 2px;
 			margin-top: 15%;
@@ -43,7 +41,7 @@
 			color: var(--white);
 			font-size: clamp(1rem, 2vw, 1.5rem);
 			letter-spacing: 3px;
-			padding: 8px;
+			padding: 0.5rem;
 			box-shadow: 0 0 5px var(--dark-blue);
 			border-radius: 4px;
 			max-width: 200px;
@@ -51,13 +49,13 @@
 			opacity: 0;
 			visibility: hidden;
 			transition: all 1s ease;
-		}
 
-		.tooltip::after {
-			content: '';
-			position: absolute;
-			border-style: solid;
-			border-width: 5px;
+			&::after {
+				content: '';
+				position: absolute;
+				border-style: solid;
+				border-width: 5px;
+			}
 		}
 
 		.tooltip-top {
@@ -66,19 +64,19 @@
 			left: 50%;
 			transform: translateX(-50%);
 			transition: transform 0.25s ease;
-		}
 
-		.tooltip-top::after {
-			top: 100%;
-			left: 50%;
-			margin-left: -5px;
-			border-color: var(--blue) transparent transparent transparent;
+			&::after {
+				top: 100%;
+				left: 50%;
+				margin-left: -5px;
+				border-color: var(--blue) transparent transparent transparent;
+			}
 		}
 	}
 
 	@media (max-width: 500px) {
 		.tooltip-container {
-			padding: 2rem;
+			padding: 1.5rem;
 		}
 	}
 

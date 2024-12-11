@@ -231,13 +231,15 @@
 
 			.bio {
 				color: var(--white);
+				position: relative;
 
 				.icons {
 					display: flex;
 					justify-content: space-evenly;
 					align-items: center;
-					gap: 2rem;
+					gap: 0.25rem;
 					margin-top: 2rem;
+					margin-left: 3rem;
 				}
 			}
 		}
@@ -272,6 +274,10 @@
 
 			.bio {
 				margin-bottom: -5rem;
+
+				.icons {
+					margin-left: 0;
+				}
 			}
 
 			.margin__b {
