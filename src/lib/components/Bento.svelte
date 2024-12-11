@@ -83,17 +83,20 @@
 				align-items: center;
 				transition:
 					opacity 1s ease,
-					border 1s ease;
+					border 1s ease,
+					box-shadow 1s ease;
 
 				&:hover {
 					box-shadow: 0 0 5px 3px var(--white);
+					opacity: 1;
 				}
 
 				&:not(:hover) {
-					opacity: 0.5;
+					opacity: 0.75;
 					transition:
 						opacity 1s ease,
-						border 1s ease;
+						border 1s ease,
+						box-shadow 1s ease;
 				}
 			}
 
