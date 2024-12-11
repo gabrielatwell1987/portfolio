@@ -304,6 +304,14 @@
 		line-height: 2.5;
 		font-family: var(--bronova);
 		width: var(--100);
+
+		& a {
+			color: var(--pale);
+		}
+
+		& a:hover {
+			text-decoration: underline;
+		}
 	}
 
 	.link {

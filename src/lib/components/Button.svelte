@@ -32,7 +32,6 @@
 			&:hover,
 			&:focus {
 				opacity: 0.8;
-				color: var(--dark-pale);
 				outline-offset: 0px;
 				animation: wiggle 1s ease-in-out infinite;
 			}
@@ -43,7 +42,7 @@
 		margin: 0;
 		font-size: clamp(1.2rem, 1.5vw, 2rem);
 		font-weight: 900;
-		color: var(--dark-pale);
+		color: var(--pale);
 
 		&:hover i {
 			animation: right 1s ease-in-out infinite;
