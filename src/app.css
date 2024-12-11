@@ -203,7 +203,7 @@ body {
 		background: var(--lightblack);
 		color: var(--white);
 		font-family: var(--mono);
-		font-size: clamp(0.8rem, 1.25vw, 1.25rem);
+		font-size: clamp(1rem, 1.25vw, 1.25rem);
 		letter-spacing: 1px;
 		font-weight: 700;
 	}
@@ -211,7 +211,7 @@ body {
 	code.code {
 		background: var(--lightblack);
 		color: var(--white);
-		font-size: clamp(0.8rem, 1.25vw, 1.25rem);
+		font-size: clamp(1rem, 1.25vw, 1.25rem);
 		font-weight: 700;
 	}
 }

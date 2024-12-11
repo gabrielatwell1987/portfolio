@@ -29,7 +29,6 @@
 			&:hover,
 			&:focus {
 				opacity: 0.8;
-				color: var(--pale);
 				outline-offset: 0px;
 				animation: wiggle 1s ease-in-out infinite;
 			}

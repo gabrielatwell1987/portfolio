@@ -17,7 +17,7 @@
 
 		<p class="small"><i>Your message has been sent.</i></p>
 
-		<p>Thank you for reaching out.</p>
+		<p>Thank you for reaching out!</p>
 	</section>
 </main>
 
@@ -40,7 +40,7 @@
 
 			p {
 				font-size: clamp(1rem, 1.5vw, 2rem);
-				font-weight: 200;
+				font-weight: 500;
 				margin: 0.5em 0;
 				color: #eee;
 			}
@@ -49,11 +49,11 @@
 				font-size: clamp(0.8rem, 1.2vw, 1.5rem);
 				font-weight: 200;
 				margin: 2em 0 -0.5rem 0;
-				color: var(--smoke);
+				color: var(--off-white);
 			}
 
 			.image {
-				width: clamp(75%, 20vw, 95%);
+				width: clamp(13em, 70vw, 15in);
 				margin-inline: auto;
 				margin-bottom: clamp(2.5rem, 3vw, 5rem);
 			}
