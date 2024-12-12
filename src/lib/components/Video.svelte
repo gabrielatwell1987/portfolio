@@ -20,7 +20,8 @@
 
 <style>
 	.video {
-		margin: 0 auto 6% auto;
+		margin-inline: auto;
+		margin-block: 3rem;
 		display: flex;
 		justify-content: center;
 
