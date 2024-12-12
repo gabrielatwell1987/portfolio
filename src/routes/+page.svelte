@@ -3,7 +3,6 @@
 	import HeroLogo from '$lib/components/HeroLogo.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import AnimatedIntro from '$lib/components/AnimatedIntro.svelte';
-	import Video from '$lib/components/Video.svelte';
 
 	$effect(() => {
 		console.log('Home page');
@@ -19,7 +18,5 @@
 <HeroLogo />
 
 <AnimatedIntro text="do you need a " span="website?" />
-
-<Video src1="" src2="/videos/2.3MB.mp4" />
 
 <Hero />
