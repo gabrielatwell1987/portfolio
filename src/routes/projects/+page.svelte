@@ -240,10 +240,6 @@
 		section {
 			margin-bottom: -5%;
 			padding-top: 5rem;
-
-			/* .avatar {
-				margin-block: 7.5%;
-			} */
 		}
 	}
 </style>
