@@ -1,12 +1,14 @@
 <script>
 	import Button from '$lib/components/Button.svelte';
+	import Video from '$lib/components/Video.svelte';
 </script>
 
 <main>
-	<img
+	<!-- <img
 		src="https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 		alt="Wireframing and design of a website"
-	/>
+	/> -->
+	<Video src="/videos/seamless.mp4" />
 
 	<section aria-label="hero">
 		<h1 class="hero-title">Frontend Crafted Web Experiences</h1>
@@ -41,6 +43,8 @@
 			font-size: clamp(1.5rem, 4vw, 7rem);
 			font-weight: 700;
 			letter-spacing: 3px;
+
+			-webkit-text-stroke: 0.05rem var(--white);
 		}
 
 		h4 {
@@ -49,14 +53,14 @@
 			letter-spacing: 0.5px;
 		}
 
-		img {
+		/* img {
 			border-radius: 15px;
 			opacity: 0.25;
 			transition: opacity 0.75s ease-in-out;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
-		}
+		} */
 
 		section {
 			position: absolute;
@@ -104,10 +108,10 @@
 			letter-spacing: 3px;
 		}
 
-		img {
+		/* img {
 			width: 90%;
 			height: 100%;
-		}
+		} */
 	}
 
 	@media (min-width: 1024px) {

@@ -1,6 +1,6 @@
 <script>
-	/** @type {{src1: any, src2: any}} */
-	let { src1, src2 } = $props();
+	/** @type {{src: any}} */
+	let { src } = $props();
 
 	let duration = $state();
 	let videoWidth = $state();
@@ -9,12 +9,7 @@
 
 <div class="video">
 	<video bind:duration bind:videoWidth bind:videoHeight autoplay muted playsinline loop>
-		<source src={src1} type="video/webm" />
-		<source src={src2} type="video/mp4" />
-
-		<track kind="captions" src="/videos/captions.vtt" srclang="en" label="English" />
-
-		Your browser does not support the video tag.
+		<source {src} type="video/mp4" />
 	</video>
 </div>
 
@@ -27,6 +22,7 @@
 
 		video {
 			width: 90%;
+			min-width: 320px;
 			max-width: 1200px;
 			border-radius: 12px;
 
