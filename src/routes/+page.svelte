@@ -17,6 +17,8 @@
 
 <HeroLogo />
 
+<!-- <SubmitBtn loading="loading..." submit="submit" href="/about" /> -->
+
 <AnimatedIntro text="do you need a " span="website?" />
 
 <Hero />
