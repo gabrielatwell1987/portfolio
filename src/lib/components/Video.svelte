@@ -14,6 +14,8 @@
 		<source {src2} type="video/mp4" />
 
 		<!-- <source src={src.replace('.webm', '.mp4')} type="video/webm" /> -->
+
+		<p>The video has failed to load..</p>
 	</video>
 </div>
 
