@@ -1,4 +1,5 @@
 <script>
+	import LoadBtn from '../../lib/components/LoadBtn.svelte';
 	import { gsap } from 'gsap';
 	import { fade } from 'svelte/transition';
 	import Button from '$lib/components/Button.svelte';
@@ -154,7 +155,18 @@
 
 			<!-- image gallery -->
 			<div class="gallery">
-				<Button href="/about/gallery" title="Gallery" />
+				<h2>Links:</h2>
+
+				<LoadBtn loading="loading..." submit="Random Gallery" href="/about/gallery" />
+				<LoadBtn loading="loading..." submit="JoyOfCode" href="https://joyofcode.xyz" />
+				<LoadBtn loading="loading..." submit="Kevin Powell" href="https://kevinpowell.co" />
+				<LoadBtn
+					loading="loading..."
+					submit="Frontend Masters"
+					href="https://frontendmasters.com"
+				/>
+
+				<p>These are resources that I used to learn frontend and design for the web 🚀</p>
 			</div>
 		</article>
 	</section>
@@ -214,6 +226,19 @@
 
 			.gallery {
 				margin-top: 1.5rem;
+				text-align: center;
+
+				h2 {
+					margin-bottom: 0.5rem;
+					font-size: clamp(1rem, 1.75vw, 1.5rem);
+				}
+
+				p {
+					font-size: clamp(1rem, 1.25rem, 2rem);
+					text-align: center;
+					margin-top: 2rem;
+					line-height: 1.5;
+				}
 			}
 
 			.text {
