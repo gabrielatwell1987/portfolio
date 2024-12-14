@@ -20,7 +20,7 @@
 
 <!-- <SubmitBtn loading="loading..." submit="submit" href="/about" /> -->
 
-<Video src="/videos/seamless.mp4" src2="/videos/seamless.webm" />
+<Video src="/seamless.mp4" src2="/seamless.webm" />
 
 <AnimatedIntro text="do you need a " span="website?" />
 
