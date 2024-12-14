@@ -4,7 +4,7 @@
 	import Button from '$lib/components/Button.svelte';
 
 	$effect(() => {
-		console.log('Three.js hero section');
+		console.log(ThreeCanvas);
 	});
 </script>
 

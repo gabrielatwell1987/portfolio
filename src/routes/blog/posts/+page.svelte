@@ -89,7 +89,7 @@
 			}
 		});
 
-		console.log('Web animations page');
+		console.log(GSAP, CSS);
 	});
 </script>
 
