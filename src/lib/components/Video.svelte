@@ -32,11 +32,11 @@
 			max-width: 1200px;
 			border-radius: 12px;
 
-			mask-image: linear-gradient(transparent, black 20%),
+			/* mask-image: linear-gradient(transparent, black 20%),
 				linear-gradient(to top, transparent, black 20%),
 				linear-gradient(to right, transparent, black 20%),
-				linear-gradient(to left, transparent, black 20%);
-			mask-composite: intersect;
+				linear-gradient(to left, transparent, black 20%); */
+			/* mask-composite: intersect; */
 		}
 	}
 
