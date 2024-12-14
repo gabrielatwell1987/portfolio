@@ -38,7 +38,7 @@
 			.to('.link', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 1.5, ease: 'expo.out' }, 0)
 			.to('.iconLogo', { yPercent: 0, duration: 1.5 }, 0);
 
-		console.log('Projects page');
+		console.log(Project);
 	});
 </script>
 

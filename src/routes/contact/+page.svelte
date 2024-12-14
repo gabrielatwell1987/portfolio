@@ -4,7 +4,7 @@
 	import Title from '$lib/components/Title.svelte';
 
 	$effect(() => {
-		console.log('Contact page');
+		console.log(ContactForm);
 	});
 </script>
 

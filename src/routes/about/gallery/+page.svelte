@@ -3,7 +3,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 
 	$effect(() => {
-		console.log('Random Photos');
+		console.log(Gallery);
 	});
 </script>
 

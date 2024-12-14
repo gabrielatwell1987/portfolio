@@ -56,9 +56,6 @@
 	keywords="sveltekit, sveltekit how-to"
 />
 
-<!-- spacing -->
-<br /><br /><br /><br /><br /><br /><br />
-
 <section transition:fade={{ delay: 250, duration: 300 }} class="main">
 	<div class="separate">
 		<h1 class="title">Svelte</h1>
@@ -254,6 +251,10 @@
 <style>
 	:root {
 		--100: 100%;
+	}
+
+	section {
+		padding-top: 13rem;
 	}
 
 	main {

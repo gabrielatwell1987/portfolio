@@ -5,7 +5,7 @@
 	import AnimatedIntro from '$lib/components/AnimatedIntro.svelte';
 
 	$effect(() => {
-		console.log('Home page');
+		console.log(Hero);
 	});
 </script>
 
