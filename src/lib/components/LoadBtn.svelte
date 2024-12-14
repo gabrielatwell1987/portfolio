@@ -6,14 +6,12 @@
 		isLoading = true;
 
 		// Simulate an async operation (e.g., API call)
-		await new Promise((resolve) => setTimeout(resolve, 2000));
+		await new Promise((resolve) => setTimeout(resolve, 2500));
 
 		isLoading = false;
 
-		// // Navigate to the destination
-		// window.location.href = href;
-
-		window.open(href, '_blank');
+		// Navigate to the destination
+		window.location.href = href;
 	};
 </script>
 
@@ -76,7 +74,6 @@
 		grid-area: stack;
 	}
 
-	/* Spinner animation */
 	@keyframes spin {
 		from {
 			transform: rotate(0deg);
