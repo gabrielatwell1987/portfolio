@@ -153,9 +153,9 @@
 				/>
 			</div>
 
-			<!-- image gallery -->
-			<div class="gallery">
-				<h2>Links:</h2>
+			<!-- links -->
+			<div class="links">
+				<h2>Useful Links:</h2>
 
 				<LoadBtn loading="loading..." submit="Random Gallery" href="/about/gallery" />
 				<LoadBtn loading="loading..." submit="JoyOfCode" href="https://joyofcode.xyz" />
@@ -166,7 +166,9 @@
 					href="https://frontendmasters.com"
 				/>
 
-				<p>These are resources that I used to learn frontend and design for the web 🚀</p>
+				<p>
+					Most of these links are resources that I used to learn frontend and design for the web 🚀
+				</p>
 			</div>
 		</article>
 	</section>
@@ -219,12 +221,12 @@
 			}
 
 			.hero,
-			.gallery {
+			.links {
 				width: var(--100);
 				margin-inline: auto;
 			}
 
-			.gallery {
+			.links {
 				margin-top: 1.5rem;
 				text-align: center;
 
@@ -234,7 +236,8 @@
 				}
 
 				p {
-					font-size: clamp(1rem, 1.25rem, 2rem);
+					color: var(--off-white);
+					font-size: clamp(1rem, 1.25rem, 2.5rem);
 					text-align: center;
 					margin-top: 2rem;
 					line-height: 1.5;
@@ -275,7 +278,7 @@
 			width: 90%;
 		}
 
-		.gallery {
+		.links {
 			width: 90%;
 		}
 	}
@@ -314,7 +317,7 @@
 				margin: 0 auto;
 			}
 
-			.gallery {
+			.links {
 				margin-top: 5%;
 			}
 
@@ -329,7 +332,7 @@
 			width: 70%;
 		}
 
-		.gallery {
+		.links {
 			width: 70%;
 		}
 	}
@@ -339,7 +342,7 @@
 			width: 70%;
 		}
 
-		.gallery {
+		.links {
 			width: 70%;
 		}
 
