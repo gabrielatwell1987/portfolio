@@ -1,6 +1,6 @@
 <script>
-	/** @type {{src: any}} */
-	let { src } = $props();
+	/** @type {{src: any, src2: any}} */
+	let { src, src2 } = $props();
 
 	let duration = $state();
 	let videoWidth = $state();
@@ -9,7 +9,11 @@
 
 <div class="video">
 	<video bind:duration bind:videoWidth bind:videoHeight autoplay muted playsinline loop>
-		<source {src} type="video/mp4" />
+		<source {src} type="video/webm" />
+
+		<source {src2} type="video/mp4" />
+
+		<!-- <source src={src.replace('.webm', '.mp4')} type="video/webm" /> -->
 	</video>
 </div>
 

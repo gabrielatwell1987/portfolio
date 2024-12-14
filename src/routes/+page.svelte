@@ -3,6 +3,7 @@
 	import HeroLogo from '$lib/components/HeroLogo.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import AnimatedIntro from '$lib/components/AnimatedIntro.svelte';
+	import Video from '$lib/components/Video.svelte';
 
 	$effect(() => {
 		console.log('Home page');
@@ -18,6 +19,8 @@
 <HeroLogo />
 
 <!-- <SubmitBtn loading="loading..." submit="submit" href="/about" /> -->
+
+<Video src="/videos/seamless.mp4" src2="/videos/seamless.webm" />
 
 <AnimatedIntro text="do you need a " span="website?" />
 
