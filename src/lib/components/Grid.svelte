@@ -35,15 +35,15 @@
 			padding: 0.5rem;
 			background-color: hsla(0, 0%, 26%, 0.25);
 			backdrop-filter: blur(4px);
-			-webkit-backdrop-filter: blur(7px);
+			-webkit-backdrop-filter: blur(4px);
 			box-shadow: 0px 0px 12px var(--white);
 
 			.title {
 				font-size: clamp(2rem, 4vw, 5rem);
+				text-shadow: 1px 1px var(--blackest);
 				mix-blend-mode: difference;
-				color: var(--purple);
+				color: var(--blue);
 				font-family: var(--orbitron);
-				text-shadow: 2px 2px 5px var(--darksmoke);
 			}
 
 			.left,
@@ -84,10 +84,6 @@
 			.inline {
 				margin: 0 auto;
 				padding: 1rem 2rem;
-
-				.title {
-					color: var(--purple);
-				}
 			}
 
 			.right {
