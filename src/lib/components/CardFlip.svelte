@@ -3,17 +3,19 @@
 	let { src, alt, src2, alt2 } = $props();
 </script>
 
-<main class="card-container">
-	<section class="card">
-		<article class="card-front">
-			<img {src} {alt} loading="lazy" />
-		</article>
+<div class="flip">
+	<main class="card-container">
+		<section class="card">
+			<article class="card-front">
+				<img {src} {alt} loading="lazy" />
+			</article>
 
-		<article class="card-back">
-			<img src={src2} alt={alt2} loading="lazy" />
-		</article>
-	</section>
-</main>
+			<article class="card-back">
+				<img src={src2} alt={alt2} loading="lazy" />
+			</article>
+		</section>
+	</main>
+</div>
 
 <style>
 	.card-container {
@@ -78,6 +80,27 @@
 			width: 350px;
 			height: 275px;
 			margin-bottom: 13%;
+		}
+	}
+
+	@media screen and (min-width: 300px) {
+		.flip {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-block: 4rem;
+		}
+	}
+
+	@media (min-width: 1400px) {
+		.flip {
+			margin-top: 10em;
+		}
+	}
+
+	@media (min-width: 1500px) {
+		.flip {
+			margin-top: 5em;
 		}
 	}
 </style>

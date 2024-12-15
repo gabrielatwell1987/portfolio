@@ -13,6 +13,4 @@
 	keywords="gabe's robot, spline robot"
 />
 
-<main>
-	<Robot title="mouse robot" />
-</main>
+<Robot title="mouse robot" />
