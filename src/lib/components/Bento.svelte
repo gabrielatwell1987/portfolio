@@ -123,12 +123,7 @@
 	@media (min-width: 1400px) {
 		.bento {
 			margin-top: -30em;
-		}
-	}
-
-	@media (min-width: 1500px) {
-		.bento {
-			margin-top: -20em;
+			margin-bottom: -7em;
 		}
 	}
 </style>

@@ -28,7 +28,7 @@
 
 			p {
 				color: var(--off-white);
-				font-size: clamp(1rem, 1.25rem, 2.5rem);
+				font-size: clamp(1rem, 1.15rem, 2rem);
 				font-style: italic;
 				text-align: center;
 				margin-top: 2rem;

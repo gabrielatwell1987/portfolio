@@ -150,6 +150,10 @@
 	}
 
 	@media (min-width: 769px) {
+		.border {
+			margin-bottom: 5rem;
+		}
+
 		.skills {
 			margin-top: -15%;
 		}
