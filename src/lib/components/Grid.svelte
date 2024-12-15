@@ -42,7 +42,7 @@
 				font-size: clamp(2rem, 4vw, 5rem);
 				text-shadow: 1px 1px var(--blackest);
 				mix-blend-mode: difference;
-				color: var(--blue);
+				color: var(--sky);
 				font-family: var(--orbitron);
 			}
 
