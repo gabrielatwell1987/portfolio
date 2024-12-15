@@ -98,6 +98,7 @@
 		border: none;
 		min-height: 60vh;
 		margin-top: 25%;
+		margin-bottom: -20%;
 
 		.skills {
 			display: grid;
@@ -145,6 +146,12 @@
 			color: var(--off-white);
 			letter-spacing: clamp(3px, 1vw, 9px);
 			text-align: center;
+		}
+	}
+
+	@media (min-width: 769px) {
+		.skills {
+			margin-top: -15%;
 		}
 	}
 

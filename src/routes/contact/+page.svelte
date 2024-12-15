@@ -17,7 +17,5 @@
 <main>
 	<Title title="Contact" />
 
-	<section class="contactForm">
-		<ContactForm />
-	</section>
+	<ContactForm />
 </main>

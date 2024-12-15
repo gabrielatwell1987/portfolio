@@ -1,5 +1,4 @@
 <script>
-	import LoadBtn from '../../lib/components/LoadBtn.svelte';
 	import { gsap } from 'gsap';
 	import { fade } from 'svelte/transition';
 	import Button from '$lib/components/Button.svelte';
@@ -10,14 +9,14 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import CardFlip from '$lib/components/CardFlip.svelte';
 	import Tooltip from '$lib/components/Tooltip.svelte';
+	import UsefulLinks from '$lib/components/UsefulLinks.svelte';
 
-	// animations
 	$effect(() => {
-		const tl = gsap.timeline();
-
 		gsap.set('article', { autoAlpha: 0 });
 		gsap.set(['.a', '.b', '.d'], { yPercent: 25, autoAlpha: 0 });
 		gsap.set(['.hero', '.margin__b'], { yPercent: 25, autoAlpha: 0 });
+
+		const tl = gsap.timeline();
 
 		gsap.to('article', {
 			autoAlpha: 1,
@@ -130,46 +129,20 @@
 				</p>
 			</div>
 
-			<!-- skills section -->
-			<div class="skills">
-				<Skills />
-			</div>
+			<Skills />
 
-			<!-- set up side by side text -->
 			<Grid leftTitle="Frontend" rightTitle="Design based" />
 
-			<!-- bento grid -->
-			<div class="bento">
-				<Bento link="Contact me if you have a question!" />
-			</div>
+			<Bento link="Contact me if you have a question!" />
 
-			<!-- card flip -->
-			<div class="flip">
-				<CardFlip
-					src="/logos/heart-skull.webp"
-					alt="Atwell sparrow logo"
-					src2="/logos/skull-glass.webp"
-					alt2="a blue A logo"
-				/>
-			</div>
+			<CardFlip
+				src="/logos/heart-skull.webp"
+				alt="Atwell sparrow logo"
+				src2="/logos/skull-glass.webp"
+				alt2="a blue A logo"
+			/>
 
-			<!-- links -->
-			<div class="links">
-				<h2>Useful Links:</h2>
-
-				<LoadBtn loading="loading..." submit="Random Gallery" href="/about/gallery" />
-				<LoadBtn loading="loading..." submit="JoyOfCode" href="https://joyofcode.xyz" />
-				<LoadBtn loading="loading..." submit="Kevin Powell" href="https://kevinpowell.co" />
-				<LoadBtn
-					loading="loading..."
-					submit="Frontend Masters"
-					href="https://frontendmasters.com"
-				/>
-
-				<p>
-					Most of these links are resources that I used to learn frontend and design for the web 🚀
-				</p>
-			</div>
+			<UsefulLinks />
 		</article>
 	</section>
 </main>
@@ -213,35 +186,9 @@
 				text-align: left;
 			}
 
-			.flip {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				margin-block: 4rem;
-			}
-
-			.hero,
-			.links {
+			.hero {
 				width: var(--100);
 				margin-inline: auto;
-			}
-
-			.links {
-				margin-top: 1.5rem;
-				text-align: center;
-
-				h2 {
-					margin-bottom: 0.5rem;
-					font-size: clamp(1rem, 1.75vw, 1.5rem);
-				}
-
-				p {
-					color: var(--off-white);
-					font-size: clamp(1rem, 1.25rem, 2.5rem);
-					text-align: center;
-					margin-top: 2rem;
-					line-height: 1.5;
-				}
 			}
 
 			.text {
@@ -275,10 +222,6 @@
 
 	@media (min-width: 600px) {
 		.hero {
-			width: 90%;
-		}
-
-		.links {
 			width: 90%;
 		}
 	}
@@ -316,14 +259,6 @@
 				width: 75%;
 				margin: 0 auto;
 			}
-
-			.links {
-				margin-top: 5%;
-			}
-
-			.skills {
-				margin-top: -20%;
-			}
 		}
 	}
 
@@ -331,37 +266,11 @@
 		.hero {
 			width: 70%;
 		}
-
-		.links {
-			width: 70%;
-		}
 	}
 
 	@media (min-width: 1400px) {
 		.hero {
 			width: 70%;
-		}
-
-		.links {
-			width: 70%;
-		}
-
-		.bento {
-			margin-top: -30em;
-		}
-
-		.flip {
-			margin-top: 10em;
-		}
-	}
-
-	@media (min-width: 1500px) {
-		.bento {
-			margin-top: -20em;
-		}
-
-		.flip {
-			margin-top: 5em;
 		}
 	}
 </style>

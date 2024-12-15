@@ -17,29 +17,31 @@
 	});
 </script>
 
-<main>
-	<section>
-		<div class="bento-grid" style="--row: 4">
-			<div class="item" style="--row: span 1">
-				<a href="/contact">
-					<Image src="/icons/Contact-Dark.svg" alt="contact me" width="250" />
-				</a>
-			</div>
+<div class="bento">
+	<main>
+		<section>
+			<div class="bento-grid" style="--row: 4">
+				<div class="item" style="--row: span 1">
+					<a href="/contact">
+						<Image src="/icons/Contact-Dark.svg" alt="contact me" width="250" />
+					</a>
+				</div>
 
-			<div class="item" style="--col: 2; --row: 1">
-				<a href="/photos/robot">
-					<Image src="/logos/robot.webp" alt="a robot" width="500" />
-				</a>
-			</div>
+				<div class="item" style="--col: 2; --row: 1">
+					<a href="/photos/robot">
+						<Image src="/logos/robot.webp" alt="a robot" width="500" />
+					</a>
+				</div>
 
-			<div class="item mb" style="--row: span 3">
-				<a href="/projects">
-					<Image src="/logos/logoA.webp" alt="atwell logo" width="500" />
-				</a>
+				<div class="item mb" style="--row: span 3">
+					<a href="/projects">
+						<Image src="/logos/logoA.webp" alt="atwell logo" width="500" />
+					</a>
+				</div>
 			</div>
-		</div>
-	</section>
-</main>
+		</section>
+	</main>
+</div>
 
 <style>
 	:root {
@@ -115,6 +117,18 @@
 				grid-column: var(--col);
 				grid-row: var(--row);
 			}
+		}
+	}
+
+	@media (min-width: 1400px) {
+		.bento {
+			margin-top: -30em;
+		}
+	}
+
+	@media (min-width: 1500px) {
+		.bento {
+			margin-top: -20em;
 		}
 	}
 </style>
