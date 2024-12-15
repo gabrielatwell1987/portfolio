@@ -109,7 +109,13 @@
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
-				<img class="gabe" src="/logos/monkeyTattoo.webp" alt="monkey with tattoos" width="350" />
+				<img
+					class="gabe"
+					src="photos/gabe4.webp"
+					alt="Gabriel in a restaurant"
+					width="350"
+					loading="lazy"
+				/>
 
 				<img
 					src="/photos/autumn.webp"
@@ -159,14 +165,6 @@
 				/>
 
 				<img class="gabe" src="/logos/monkey.webp" alt="monkey" width="350" />
-
-				<img
-					class="gabe"
-					src="photos/gabe4.webp"
-					alt="Gabriel in a restaurant"
-					width="350"
-					loading="lazy"
-				/>
 			</aside>
 		</div>
 
