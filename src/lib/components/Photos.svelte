@@ -109,13 +109,8 @@
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
-				<img
-					class="gabe"
-					src="photos/gabe4.webp"
-					alt="Gabriel in a restaurant"
-					width="350"
-					loading="lazy"
-				/>
+				<img class="gabe" src="/logos/monkeyTattoo.webp" alt="monkey with tattoos" width="350" />
+
 				<img
 					src="/photos/autumn.webp"
 					alt="Gabe and his daughter"
@@ -159,7 +154,17 @@
 					src="/photos/wtf3.webp"
 					alt="when gabe was 5 years old"
 					class="gabe"
-					width="450"
+					width="375"
+					loading="lazy"
+				/>
+
+				<img class="gabe" src="/logos/monkey.webp" alt="monkey" width="350" />
+
+				<img
+					class="gabe"
+					src="photos/gabe4.webp"
+					alt="Gabriel in a restaurant"
+					width="350"
 					loading="lazy"
 				/>
 			</aside>
