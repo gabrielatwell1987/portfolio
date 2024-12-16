@@ -2,11 +2,11 @@
 	let { title, text } = $props();
 </script>
 
-<div class="popup">
+<main class="popup">
 	<button popovertarget="popover">{title} <i class="fa-solid fa-bell"></i></button>
 
 	<div popover="auto" id="popover">{text}</div>
-</div>
+</main>
 
 <style>
 	.popup {

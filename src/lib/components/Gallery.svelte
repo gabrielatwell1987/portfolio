@@ -30,7 +30,6 @@
 	<p class="subtitle">made with GSAP!</p>
 </div>
 
-<!-- picture grid -->
 <section class="grid" transition:fade={{ delay: 250, duration: 300 }}>
 	{#each { length: 8 } as _, id}
 		{@const details = selected === id}
