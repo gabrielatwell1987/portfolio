@@ -2,7 +2,7 @@
 	import LoadBtn from '$lib/components/LoadBtn.svelte';
 </script>
 
-<div class="links">
+<main class="links">
 	<h2>Useful Links:</h2>
 
 	<LoadBtn loading="loading..." submit="Random Gallery" href="/about/gallery" />
@@ -12,7 +12,7 @@
 	<LoadBtn loading="loading..." submit="Frontend Masters" href="https://frontendmasters.com" />
 
 	<p>Most of these links are resources that I used to learn frontend and design for the web 🚀</p>
-</div>
+</main>
 
 <style>
 	@media (min-width: 300px) {

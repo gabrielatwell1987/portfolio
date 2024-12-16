@@ -39,9 +39,9 @@
 	</div>
 </nav>
 
-<div class="install">
+<section class="install">
 	<InstallBtn />
-</div>
+</section>
 
 <style>
 	:root {

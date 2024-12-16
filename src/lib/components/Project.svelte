@@ -3,7 +3,7 @@
 	let { title, img, url, description } = $props();
 </script>
 
-<div class="content">
+<main class="content">
 	<h3 class="link name">{title}</h3>
 
 	<a class="link" href={url} target="_blank">
@@ -11,7 +11,7 @@
 
 		<span class="hover-text">{description}</span>
 	</a>
-</div>
+</main>
 
 <style>
 	:root {

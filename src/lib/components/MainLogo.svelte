@@ -1,6 +1,6 @@
 <script></script>
 
-<div class="gabe-logo">
+<main class="gabe-logo">
 	<a class="home" href="/" aria-label="home link">
 		<svg
 			width="202"
@@ -48,7 +48,7 @@
 			/>
 		</svg>
 	</a>
-</div>
+</main>
 
 <style>
 	.gabe-logo {
