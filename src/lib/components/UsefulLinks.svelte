@@ -17,7 +17,7 @@
 <style>
 	@media (min-width: 300px) {
 		.links {
-			width: 100%;
+			width: 30%;
 			margin-inline: auto;
 			margin-top: 1.5rem;
 			text-align: center;
@@ -38,7 +38,7 @@
 		}
 	}
 
-	@media (min-width: 600px) {
+	/* @media (min-width: 600px) {
 		.links {
 			width: 90%;
 		}
@@ -60,5 +60,5 @@
 		.links {
 			width: 70%;
 		}
-	}
+	} */
 </style>
