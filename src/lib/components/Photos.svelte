@@ -45,7 +45,7 @@
 				scrollTrigger: {
 					trigger: 'main',
 					start: 'top bottom-=95%',
-					end: '+=1200%',
+					end: '+=799%',
 					stagger: 2,
 					scrub: 1,
 					invalidateOnRefresh: true
