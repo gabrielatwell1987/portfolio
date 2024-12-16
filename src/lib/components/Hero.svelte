@@ -35,14 +35,12 @@
 
 		h1 {
 			margin: 2rem auto;
-			margin-top: 10%;
+			margin-top: 5%;
 			color: var(--sky);
 			font-family: var(--anta);
 			font-size: clamp(1.5rem, 4vw, 7rem);
 			font-weight: 700;
 			letter-spacing: 3px;
-
-			-webkit-text-stroke: 1px var(--white);
 		}
 
 		h4 {
@@ -75,7 +73,7 @@
 			font-weight: 500;
 			width: 100%;
 			padding: 0 1.5rem;
-			margin-bottom: 3%;
+			margin-bottom: -2%;
 		}
 
 		.left {

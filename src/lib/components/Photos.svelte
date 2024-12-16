@@ -45,7 +45,7 @@
 				scrollTrigger: {
 					trigger: 'main',
 					start: 'top bottom-=95%',
-					end: '+=775%',
+					end: '+=1200%',
 					stagger: 2,
 					scrub: 1,
 					invalidateOnRefresh: true
@@ -67,8 +67,8 @@
 				yoyo: true,
 				scrollTrigger: {
 					trigger: 'main',
-					start: 'top bottom-=95%',
-					end: '+=300%',
+					start: 'top bottom-=90%',
+					end: '+=500%',
 					stagger: 0.75,
 					scrub: 1
 				}

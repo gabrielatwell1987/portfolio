@@ -55,8 +55,6 @@
 				font-size: clamp(1.5rem, 4vw, 7rem);
 				font-weight: 700;
 				letter-spacing: 3px;
-
-				-webkit-text-stroke: 1px var(--white);
 			}
 
 			h4 {
