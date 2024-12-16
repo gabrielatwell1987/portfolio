@@ -21,7 +21,7 @@
 
 			newSW.addEventListener('statechange', () => {
 				if (newSW.state === 'installed') {
-					if (confirm('We need to update the app. Do you want to reload the page?')) {
+					if (confirm('Update available.. Download now?')) {
 						newSW.postMessage({ type: 'SKIP_WAITING' });
 						location.reload();
 					}
