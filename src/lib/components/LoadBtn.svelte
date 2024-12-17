@@ -1,4 +1,4 @@
-Hy<script>
+<script>
 	let isLoading = $state(false);
 	let { loading, submit, href } = $props();
 
@@ -32,7 +32,7 @@ Hy<script>
 
 		.btn {
 			position: relative;
-			width: 50%;
+			width: fit-content;
 			display: flex;
 			align-items: center;
 			justify-content: center;
