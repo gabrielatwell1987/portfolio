@@ -25,6 +25,7 @@
 		height: 30vh;
 		margin-top: 2.5%;
 		user-select: none;
+		padding-top: 5%;
 
 		.hero-logo {
 			width: clamp(99.9%, 25vw, 100%);
