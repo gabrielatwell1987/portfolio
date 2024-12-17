@@ -9,7 +9,7 @@
 	<a class="link" href={url} target="_blank">
 		<img class="img" src={img} alt={title} width="400px" height="475px" loading="lazy" />
 
-		<span class="hover-text">{description}</span>
+		<span class="hover-text">made with {description}</span>
 	</a>
 </main>
 
@@ -23,16 +23,6 @@
 	}
 
 	@media (min-width: 300px) {
-		.img {
-			border-radius: 8px;
-			max-width: var(--100);
-			transition: scale 0.05s ease-in-out;
-		}
-
-		.img:hover {
-			scale: 1.05;
-		}
-
 		.link {
 			text-align: center;
 			background-color: transparent;
@@ -47,45 +37,46 @@
 			font-family: var(--orbitron);
 			font-size: clamp(1.25rem, 2.5vw, 2.5rem);
 			font-weight: 600;
-			margin: 0 auto;
+			margin-inline: auto;
 			letter-spacing: 2px;
 			text-transform: uppercase;
-		}
+			width: fit-content;
 
-		.hover-text {
-			visibility: hidden;
-			width: var(--100);
-			background-color: black;
-			color: #fff;
-			text-align: center;
-			border-radius: 6px;
-			padding: 5px 0;
-			font-family: var(--montserrat);
-			font-size: clamp(1rem, 1.5vw, 1.75rem);
-			position: absolute;
-			bottom: -5%;
-			left: 41%;
-			z-index: 1;
-			margin-left: -41%;
-			opacity: 0;
-			transition: all 1s;
-		}
+			.img {
+				border-radius: 8px;
+				max-width: var(--100);
+				transition: scale 0.05s ease-in-out;
 
-		.link:hover .hover-text {
-			visibility: visible;
-			opacity: 1;
+				&:hover {
+					scale: 1.05;
+				}
+			}
+
+			.hover-text {
+				visibility: hidden;
+				width: var(--100);
+				background-color: black;
+				color: #fff;
+				text-align: center;
+				border-radius: 6px;
+				padding: 5px 0;
+				font-family: var(--bronova);
+				font-size: clamp(1rem, 1.5vw, 1.75rem);
+				z-index: 1;
+				margin-inline: auto;
+				opacity: 0;
+				transition: all 1s;
+			}
+
+			&:hover .hover-text {
+				visibility: visible;
+				opacity: 1;
+			}
 		}
 
 		.name {
 			font-weight: 900;
 			margin-bottom: -1.5rem;
-		}
-
-		a {
-			font-family: var(--montserrat);
-			text-decoration: none;
-			font-weight: 700;
-			color: var(--sky);
 		}
 	}
 
@@ -96,11 +87,10 @@
 
 		.link {
 			letter-spacing: 4px;
-		}
 
-		.hover-text {
-			width: 75%;
-			margin-left: -25%;
+			.hover-text {
+				width: 80%;
+			}
 		}
 	}
 
@@ -109,15 +99,14 @@
 			padding: 2rem;
 			flex-basis: var(--100);
 			letter-spacing: 5px;
+
+			.hover-text {
+				width: 100%;
+			}
 		}
 
 		.name {
 			margin-bottom: -3.5rem;
-		}
-
-		.hover-text {
-			width: 25%;
-			margin-left: -3%;
 		}
 	}
 </style>

@@ -53,7 +53,7 @@
 			color: var(--blue);
 			font-weight: 900;
 			transition: color 0.5s ease;
-			-webkit-text-stroke: 1px var(--white);
+			-webkit-text-stroke: 0.025rem var(--white);
 			filter: opacity(0.95);
 
 			&:focus {

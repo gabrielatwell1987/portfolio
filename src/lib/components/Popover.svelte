@@ -132,6 +132,10 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
+
+			svg {
+				cursor: pointer;
+			}
 		}
 		.menu {
 			color: white;
