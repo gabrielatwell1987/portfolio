@@ -17,7 +17,7 @@
 <style>
 	@media (min-width: 300px) {
 		.links {
-			width: 100%;
+			width: fit-content;
 			margin-inline: auto;
 			margin-top: 1.5rem;
 			text-align: center;

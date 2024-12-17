@@ -67,105 +67,105 @@
 		title="S.P.A."
 		img="/projects/web_dev.webp"
 		url="https://gabe1.vercel.app"
-		description="made with HTML/CSS/JS"
+		description="HTML/CSS/JS"
 	/> -->
 
 	<Project
 		title="horizontal scroll"
 		img="/projects/scroller.webp"
 		url="https://scrollernessly.vercel.app"
-		description="made with HTML/CSS/JS"
+		description="HTML/CSS/JS"
 	/>
 
 	<Project
 		title="grocery list"
 		img="/projects/groceries.webp"
 		url="https://react-todo-navy-five.vercel.app/"
-		description="Made with React"
+		description="React"
 	/>
 
 	<Project
 		title="nasa api"
 		img="/projects/nasa.webp"
 		url="https://nasaapi-theta.vercel.app"
-		description="Made with React"
+		description="React"
 	/>
 
 	<Project
 		title="password maker"
 		img="/projects/pw-generator.webp"
 		url="https://pw-generator-ebon.vercel.app/"
-		description="Made with Sveltekit"
+		description="Sveltekit"
 	/>
 
 	<Project
 		title="github search"
 		img="/projects/github.webp"
 		url="https://adiapp.vercel.app"
-		description="Made with Svelte"
+		description="Svelte"
 	/>
 
 	<Project
 		title="data visualizations"
 		img="/projects/data-v.webp"
 		url="https://data-viz-svelte.vercel.app"
-		description="Made with d3 and svelte"
+		description="d3/svelte"
 	/>
 
 	<!-- <Project
 		title="scatterplot chart"
 		img="/projects/chart.webp"
 		url="https://piechart-brown.vercel.app"
-		description="Made with d3 and svelte"
+		description="d3 and svelte"
 	/> -->
 
 	<!-- <Project
 	title="random user generator"
 	img="/projects/ran_user.webp"
 	url="https://gabe3.vercel.app/"
-	description="Made with Vue"
+	description="Vue"
 	/> -->
 
 	<!-- <Project
 		title="snippet creator"
 		img="/projects/snippet.webp"
 		url="https://appity.vercel.app"
-		description="Made with Sveltekit"
+		description="Sveltekit"
 	/> -->
 
 	<!-- <Project
 		title="landing page"
 		img="/projects/landing.webp"
 		url="https://landing-page-tailwind-rust.vercel.app/"
-		description="Made with tailwindcss"
+		description="tailwindcss"
 	/> -->
 
 	<!-- <Project
 		title="svelteflix"
 		img="/projects/svelteflix.webp"
 		url="https://svelteflix-delta.vercel.app/"
-		description="Made with Sveltekit"
+		description="Sveltekit"
 	/> -->
 
 	<!-- <Project
 		title="pokedex"
 		img="/projects/pokedex.webp"
 		url="https://pokedex-sample.vercel.app/"
-		description="Made with Sveltekit"
+		description="Sveltekit"
 	/> -->
 
 	<!-- <Project
 		title="starbucks clone"
 		img="/projects/starbucks.webp"
 		url="https://gabe4.vercel.app"
-		description="made with HTML/CSS/JS"
+		description="HTML/CSS/JS"
 	/> -->
 
 	<!-- <Project
 		title="alphamaps"
 		img="/projects/alphamaps.webp"
 		url="https://alphamaps69.vercel.app"
-		description="made with Three.js"
+		description="Three.js"
 	/> -->
 
 	<!-- <section class="frame">
@@ -208,7 +208,7 @@
 			.iconLogo {
 				display: flex;
 				justify-content: center;
-				margin-bottom: 3%;
+				margin-bottom: 15%;
 				width: clamp(8em, 25vw, 30em);
 				margin-inline: auto;
 			}
