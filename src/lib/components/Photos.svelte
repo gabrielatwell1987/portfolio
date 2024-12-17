@@ -178,6 +178,10 @@
 	}
 
 	@media screen and (min-width: 300px) {
+		main {
+			padding-top: 5%;
+		}
+
 		section {
 			width: var(--100);
 			margin: 0;

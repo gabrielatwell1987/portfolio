@@ -48,7 +48,9 @@
 	keywords="gabe atwell's projects, gabriel atwell's projects, gabe's work, gabriel's work"
 />
 
-<Title title="projects" />
+<main>
+	<Title title="projects" />
+</main>
 
 <div class="popup">
 	<Popup
@@ -191,6 +193,10 @@
 	@media screen and (min-width: 300px) {
 		:root {
 			--100: 100%;
+		}
+
+		main {
+			padding-top: 5%;
 		}
 
 		section {
