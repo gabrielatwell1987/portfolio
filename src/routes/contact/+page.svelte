@@ -19,3 +19,9 @@
 
 	<ContactForm />
 </main>
+
+<style>
+	main {
+		padding-top: 5%;
+	}
+</style>

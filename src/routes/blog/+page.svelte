@@ -48,6 +48,10 @@
 </main>
 
 <style>
+	main {
+		padding-top: 5%;
+	}
+
 	article {
 		display: flex;
 		justify-content: center;
