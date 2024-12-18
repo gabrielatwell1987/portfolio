@@ -38,19 +38,17 @@
 			text-align: center;
 			font-size: 1.75rem;
 			height: 100vh;
-			position: relative;
 			margin-bottom: 2%;
-			padding-top: 4%;
+			padding-top: 6%;
 
 			position: absolute;
 			top: 80%;
 			left: 50%;
-			transform: translate(-50%, -50%);
+			transform: translate(-50%, -55%);
 			width: 100%;
 
 			h1 {
 				margin: 0 auto 2rem auto;
-				/* margin-top: 4%; */
 				color: var(--sky);
 				font-family: var(--anta);
 				font-size: clamp(1.5rem, 4vw, 7rem);
