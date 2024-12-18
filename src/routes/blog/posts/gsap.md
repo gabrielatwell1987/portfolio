@@ -1,3 +1,7 @@
+<script>
+	import Subheading from './Subheading.svelte';
+</script>
+
 <!-- tweens -->
 <div align="center" class="title">TWEENS</div>
 
@@ -16,7 +20,7 @@ gsap.fromTo('.example', { x: -500, duration: 1, ease: 'expo' }, { x: 0 });
 
 <div align="left" class="body" aria-label="staggers">A value of stagger: 0.1 would cause there to be 0.1 seconds between the start times of each tween. You can even stagger items that are laid out in a grid just by telling GSAP how many columns and rows your grid has. A negative value would do the same but backwards so that the last element begins first. All tweens recognize a stagger property which can be a number, an object, or a function. To get more control, wrap things in a configuration object which can have any of the following properties (in addition to most of the special properties that tweens have.</div>
 
-<div align="left" class="body" aria-label="staggers"><b style="font-weight: 800; color: var(--purple);">Functions</b>: <br>Only use this if you need to run custom logic for distributing the staggers. The function gets called once for each target/element in the Array and should return the total delay from the starting position (not the amount of delay from the previous tween's start time). The function receives the following parameters: index [Integer] - The index value from the list, target [Object] - The target in the list at that index value, list [Array | NodeList] - The targets array (or NodeList).</div>
+<div align="left" class="body" aria-label="staggers"><Subheading subheading="functions" />: <br>Only use this if you need to run custom logic for distributing the staggers. The function gets called once for each target/element in the Array and should return the total delay from the starting position (not the amount of delay from the previous tween's start time). The function receives the following parameters: index [Integer] - The index value from the list, target [Object] - The target in the list at that index value, list [Array | NodeList] - The targets array (or NodeList).</div>
 
 ```js
 gsap.to('.example', {
@@ -114,7 +118,7 @@ gsap.to(".class", {x: 100}, ">");
 
 <div align="left" class="body" aria-label="f.o.u.c">Have you ever noticed an annoying "flash of unstyled content" (FOUC) when a web page first loads? This looks like a weird jump or lag.. That happens because browsers render things as quickly as possible, often BEFORE your JavaScript executes the first time. So what if some of your initial styles are set via JavaScript...like with GSAP?</div>
 
-<div align="left" class="body" aria-label="f.o.u.c"><b style="font-weight: 800; color: var(--purple);">Solution</b>: <br>apply <code>visibility: hidden;</code> to your elements in CSS and then use GSAP's autoAlpha property to show it (or animate it in) when the page loads. autoAlpha affects opacity and visibility, changing it to visible when the opacity is greater than 0.</div>
+<div align="left" class="body" aria-label="f.o.u.c"><Subheading subheading="solution" />: <br>apply <code>visibility: hidden;</code> to your elements in CSS and then use GSAP's autoAlpha property to show it (or animate it in) when the page loads. autoAlpha affects opacity and visibility, changing it to visible when the opacity is greater than 0.</div>
 
 ```css
 /* first you need to hide the element in css */
