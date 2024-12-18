@@ -49,7 +49,7 @@
 			width: 100%;
 
 			h1 {
-				margin: 0 auto;
+				margin: 0 auto 2rem auto;
 				/* margin-top: 4%; */
 				color: var(--sky);
 				font-family: var(--anta);
