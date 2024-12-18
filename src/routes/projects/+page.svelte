@@ -215,7 +215,7 @@
 				display: flex;
 				justify-content: center;
 				margin-bottom: 15%;
-				width: clamp(8em, 25vw, 30em);
+				width: clamp(15em, 25vw, 30em);
 				margin-inline: auto;
 			}
 		}
