@@ -41,7 +41,7 @@
 		.title {
 			text-align: center;
 			font-family: var(--anta);
-			font-size: clamp(2.75rem, 10.5vw, 15rem);
+			font-size: clamp(3.15rem, 10.5vw, 15rem);
 			color: var(--sky);
 			letter-spacing: 5px;
 			text-shadow: 5px 5px 5px var(--dark-gray);
