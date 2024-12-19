@@ -216,7 +216,7 @@
 					justify-content: space-evenly;
 					align-items: center;
 					gap: 0.25rem;
-					margin-top: 2rem;
+					margin-top: -2rem;
 					margin-left: 3rem;
 				}
 			}
@@ -251,6 +251,7 @@
 
 				.icons {
 					margin-left: 0;
+					margin-top: 2rem;
 				}
 			}
 

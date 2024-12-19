@@ -31,7 +31,7 @@
 
 			&:hover,
 			&:focus {
-				opacity: 0.8;
+				opacity: 0.75;
 				outline-offset: 0px;
 				animation: wiggle 1s ease-in-out infinite;
 			}
@@ -46,6 +46,7 @@
 
 		&:hover i {
 			animation: right 1s ease-in-out infinite;
+			opacity: 0.75;
 		}
 	}
 
