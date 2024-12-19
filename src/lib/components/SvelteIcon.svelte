@@ -28,7 +28,7 @@
 		width: clamp(75%, 3vw, 100%);
 		height: 10%;
 		margin-left: -40%;
-		scale: 1.4;
+		scale: 1.1;
 		margin-block: 5rem;
 	}
 </style>
