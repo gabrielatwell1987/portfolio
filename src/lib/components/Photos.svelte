@@ -1,12 +1,8 @@
 <script>
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	import { fade } from 'svelte/transition';
 	import Lenis from 'lenis';
 	import Title from '$lib/components/Title.svelte';
-
-	let duration = $state(300);
-	let delay = $state(100);
 
 	$effect(() => {
 		const main = document.querySelector('main');
@@ -82,7 +78,7 @@
 	});
 </script>
 
-<main transition:fade={{ delay: delay, duration: duration }}>
+<main>
 	<Title title="images" />
 
 	<section>

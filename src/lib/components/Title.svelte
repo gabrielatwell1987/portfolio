@@ -4,6 +4,7 @@
 
 	/** @type {{title: any}} */
 	let { title } = $props();
+	let duration = $state(300);
 
 	$effect(() => {
 		const letters = gsap.utils.toArray('.title span');
@@ -23,7 +24,7 @@
 	});
 </script>
 
-<main transition:fade={{ duration: 500 }}>
+<main transition:fade={{ duration: duration }}>
 	<h2 class="title" id="title" aria-label={title}>
 		{@html title
 			.split('')
