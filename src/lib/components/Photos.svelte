@@ -180,38 +180,38 @@
 	@media screen and (min-width: 300px) {
 		main {
 			padding-top: 5%;
-		}
 
-		section {
-			width: var(--100);
-			margin: 0;
-			margin-bottom: 10%;
-		}
+			section {
+				width: var(--100);
+				margin: 0;
+				margin-bottom: 10%;
 
-		img {
-			max-width: var(--100);
-		}
+				.flex {
+					display: flex;
+					flex-direction: column;
+					gap: 1rem;
+					margin-bottom: 5%;
 
-		.flex {
-			display: flex;
-			flex-direction: column;
-			gap: 1rem;
-			margin-bottom: 5%;
-		}
+					img {
+						max-width: var(--100);
+					}
 
-		.gabe {
-			margin: 0.5rem auto;
-			max-width: var(--100);
-		}
+					.gabe {
+						margin: 0.5rem auto;
+						max-width: var(--100);
 
-		.gabe:hover {
-			transition: filter 750ms ease-in-out;
-			filter: drop-shadow(0 0 0.25rem var(--off-white));
-		}
+						&:hover {
+							transition: filter 750ms ease-in-out;
+							filter: drop-shadow(0 0 0.25rem var(--off-white));
+						}
 
-		.gabe:not(:hover) {
-			filter: drop-shadow(0);
-			transition: filter 750ms ease-in-out;
+						&:not(:hover) {
+							filter: drop-shadow(0);
+							transition: filter 750ms ease-in-out;
+						}
+					}
+				}
+			}
 		}
 
 		.spacing {
@@ -231,24 +231,24 @@
 	@media screen and (min-width: 1200px) {
 		main {
 			text-align: center;
-		}
 
-		section {
-			padding: 1.5rem;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			flex-basis: var(--100);
-			margin: 0 auto;
-			background-color: transparent;
-		}
+			section {
+				padding: 1.5rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				flex-basis: var(--100);
+				margin: 0 auto;
+				background-color: transparent;
 
-		.flex {
-			display: flex;
-			justify-content: center;
-			flex-direction: row;
-			gap: 8%;
+				.flex {
+					display: flex;
+					justify-content: center;
+					flex-direction: row;
+					gap: 8%;
+				}
+			}
 		}
 	}
 
