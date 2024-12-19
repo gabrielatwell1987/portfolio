@@ -28,18 +28,7 @@
 		width: clamp(75%, 3vw, 100%);
 		height: 10%;
 		margin-left: -40%;
-		transition: scale 500ms ease-in-out;
 		scale: 1.4;
 		margin-block: 5rem;
-
-		&:hover {
-			scale: 1.2;
-		}
-	}
-
-	@media (max-width: 500px) {
-		svg {
-			scale: 0.85;
-		}
 	}
 </style>
