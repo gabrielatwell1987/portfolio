@@ -28,7 +28,7 @@
 
 			&:hover,
 			&:focus {
-				opacity: 0.8;
+				opacity: 0.75;
 				outline-offset: 0px;
 				animation: wiggle 1s ease-in-out infinite;
 			}
@@ -38,10 +38,11 @@
 				font-size: clamp(1.2rem, 1.5vw, 2rem);
 				font-weight: 900;
 				color: var(--pale);
-			}
 
-			p:hover i {
-				animation: right 1s ease-in-out infinite;
+				&:hover i {
+					animation: right 1s ease-in-out infinite;
+					opacity: 0.75;
+				}
 			}
 		}
 	}

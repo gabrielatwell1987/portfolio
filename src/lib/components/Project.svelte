@@ -66,6 +66,7 @@
 				margin-inline: auto;
 				opacity: 0;
 				transition: all 1s;
+				text-transform: lowercase;
 			}
 
 			&:hover .hover-text {

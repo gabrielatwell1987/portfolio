@@ -53,11 +53,11 @@
 
 			&:disabled {
 				cursor: not-allowed;
-				opacity: 0.7;
+				opacity: 0.5;
 			}
 
 			&:hover {
-				opacity: 0.8;
+				opacity: 0.75;
 				outline-offset: 0px;
 			}
 
