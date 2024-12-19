@@ -7,6 +7,9 @@
 	import Image from '$lib/components/Image.svelte';
 	import Popover from '$lib/components/Popover.svelte';
 
+	let duration = $state(300);
+	let delay = $state(100);
+
 	// animations
 	$effect(() => {
 		const title = document.querySelector('.title');
@@ -56,7 +59,7 @@
 	keywords="sveltekit, sveltekit how-to"
 />
 
-<section transition:fade={{ delay: 250, duration: 300 }} class="main">
+<section transition:fade={{ delay: delay, duration: duration }} class="main">
 	<div class="separate">
 		<h1 class="title">Svelte</h1>
 

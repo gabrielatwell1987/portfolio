@@ -5,6 +5,9 @@
 	import Lenis from 'lenis';
 	import Title from '$lib/components/Title.svelte';
 
+	let duration = $state(300);
+	let delay = $state(100);
+
 	$effect(() => {
 		const main = document.querySelector('main');
 		const gabe = document.querySelectorAll('.gabe');
@@ -79,7 +82,7 @@
 	});
 </script>
 
-<main transition:fade={{ delay: 250, duration: 300 }}>
+<main transition:fade={{ delay: delay, duration: duration }}>
 	<Title title="images" />
 
 	<section>

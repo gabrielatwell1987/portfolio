@@ -10,7 +10,6 @@
 
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
-
 	let isPageLoaded = $state(false);
 
 	async function detectSWUpdate() {

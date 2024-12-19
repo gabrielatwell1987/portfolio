@@ -3,6 +3,9 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import Title from '$lib/components/Title.svelte';
 
+	let duration = $state(300);
+	let delay = $state(100);
+
 	$effect(() => {
 		console.log(ContactForm);
 	});
@@ -14,7 +17,7 @@
 	keywords="contact gabriel atwell, contact gabe"
 />
 
-<main>
+<main transition:fade={{ delay: delay, duration: duration }}>
 	<Title title="Contact" />
 
 	<ContactForm />

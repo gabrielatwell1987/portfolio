@@ -10,6 +10,9 @@
 	import Avatar from '$lib/components/Avatar.svelte';
 	import Popup from '$lib/components/Popup.svelte';
 
+	let duration = $state(300);
+	let delay = $state(100);
+
 	// animations
 	$effect(() => {
 		const iconLogo = document.querySelector('.iconLogo');
@@ -59,7 +62,7 @@
 	/>
 </div>
 
-<section class="content bevel" transition:fade={{ delay: 250, duration: 300 }}>
+<section class="content bevel" transition:fade={{ delay: delay, duration: duration }}>
 	<!-- logo -->
 	<div class="iconLogo">
 		<Image src="icons/lowgow.webp" alt="LOWGOW art" />
