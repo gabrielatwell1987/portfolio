@@ -28,7 +28,11 @@
 		width: clamp(75%, 3vw, 100%);
 		height: 10%;
 		margin-left: -40%;
-		scale: 1.1;
+		scale: 1.4;
 		margin-block: 5rem;
+
+		@media (max-width: 500px) {
+			scale: 1.1;
+		}
 	}
 </style>
