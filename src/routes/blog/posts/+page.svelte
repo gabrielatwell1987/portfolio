@@ -8,6 +8,9 @@
 	import Card from '$lib/components/Card.svelte';
 	import Image from '$lib/components/Image.svelte';
 
+	let duration = $state(300);
+	let delay = $state(100);
+
 	$effect(() => {
 		const codeBlocks = document.querySelectorAll('pre');
 
@@ -99,7 +102,7 @@
 	keywords="animation techniques, web techniques for animation"
 />
 
-<section transition:fade={{ delay: 250, duration: 300 }}>
+<section transition:fade={{ delay: delay, duration: duration }}>
 	<div class="css">
 		<div class="image">
 			<div class="skillImg">

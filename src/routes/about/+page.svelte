@@ -11,6 +11,9 @@
 	import Tooltip from '$lib/components/Tooltip.svelte';
 	import UsefulLinks from '$lib/components/UsefulLinks.svelte';
 
+	let duration = $state(300);
+	let delay = $state(100);
+
 	$effect(() => {
 		gsap.set('article', { autoAlpha: 0 });
 		gsap.set(['.a', '.b', '.d'], { yPercent: 25, autoAlpha: 0 });
@@ -73,7 +76,7 @@
 
 <SEO title="About Gabe" description="About Gabriel Atwell" keywords="about gabe, about gabriel" />
 
-<main transition:fade={{ delay: 250, duration: 300 }} aria-label="bio">
+<main transition:fade={{ delay: delay, duration: duration }} aria-label="bio">
 	<section>
 		<article>
 			<div class="drop">

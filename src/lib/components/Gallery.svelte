@@ -4,6 +4,9 @@
 	import { gsap } from 'gsap';
 	import { Flip } from 'gsap/dist/Flip';
 
+	let duration = $state(300);
+	let delay = $state(100);
+
 	gsap.registerPlugin(Flip);
 
 	let selected = $state(0);
@@ -30,7 +33,7 @@
 	<p class="subtitle">made with GSAP!</p>
 </div>
 
-<section class="grid" transition:fade={{ delay: 250, duration: 300 }}>
+<section class="grid" transition:fade={{ delay: delay, duration: duration }}>
 	{#each { length: 8 } as _, id}
 		{@const details = selected === id}
 		{@const number = id + 1}

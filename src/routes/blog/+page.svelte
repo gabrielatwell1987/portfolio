@@ -7,6 +7,9 @@
 	import AnimatedHeading from '$lib/components/AnimatedHeading.svelte';
 	import Title from '$lib/components/Title.svelte';
 
+	let duration = $state(300);
+	let delay = $state(100);
+
 	$effect(() => {
 		console.log('Blog page');
 	});
@@ -14,7 +17,7 @@
 
 <SEO title="Blog topics" description="a blog about web techniques" keywords="blog topics" />
 
-<main transition:fade={{ delay: 300, duration: 500 }}>
+<main transition:fade={{ delay: delay, duration: duration }}>
 	<Title title="topics" />
 
 	<article>
@@ -43,7 +46,6 @@
 		<div class="margin">
 			<AnimatedHeading title1="seeing" span="is" title2="believing" />
 		</div>
-		<!-- <br /> -->
 	</article>
 </main>
 
