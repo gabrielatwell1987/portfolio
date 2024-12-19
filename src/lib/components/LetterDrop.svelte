@@ -2,9 +2,10 @@
 	import gsap from 'gsap';
 	import { fade } from 'svelte/transition';
 
+	let duration = $state(300);
+
 	$effect(() => {
 		const letters = gsap.utils.toArray('.animated-letter');
-		const drop = gsap.utils.toArray('.drop');
 
 		gsap.set(letters, {
 			scale: 0,
@@ -15,7 +16,7 @@
 			scale: 1,
 			transformOrigin: '50% 50%',
 			autoAlpha: 1,
-			duration: 1,
+			duration: 1.5,
 			delay: 0.5,
 			ease: 'sine.inOut',
 			stagger: {
@@ -23,20 +24,10 @@
 				from: 'edges'
 			}
 		});
-
-		gsap.from(drop, {
-			y: -30,
-			duration: 2,
-			ease: 'sine.inOut',
-			stagger: {
-				each: 0.5,
-				from: 'start'
-			}
-		});
 	});
 </script>
 
-<h1 class="animated-text" transition:fade={{ duration: 500 }}>
+<h1 class="animated-text" transition:fade={{ duration: duration }}>
 	<div class="tilt">
 		<span class="animated-letter drop">a</span>
 		<span class="animated-letter drop">b</span>
