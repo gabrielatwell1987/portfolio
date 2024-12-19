@@ -174,7 +174,7 @@
 		height: 15%;
 		margin-left: -50%;
 		margin-bottom: 3rem;
-		scale: 1.5;
+		scale: 1.2;
 		margin-top: 5rem;
 	}
 </style>
