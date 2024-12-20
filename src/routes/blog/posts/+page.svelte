@@ -12,84 +12,111 @@
 	let delay = $state(100);
 
 	$effect(() => {
+		// const codeBlocks = document.querySelectorAll('pre');
+
+		// codeBlocks.forEach((block) => {
+		// 	block.style.backgroundColor = 'var(--darkest-blue)';
+		// 	block.style.border = '1px solid var(--white)';
+		// 	block.style.width = '75%';
+		// 	block.style.margin = '2rem auto';
+		// 	block.style.padding = '1rem';
+		// 	block.style.borderRadius = '12px';
+
+		// 	const copyPrompt = document.createElement('div');
+		// 	copyPrompt.className = 'copy-prompt';
+		// 	block.classList.add('copy-prompt');
+		// 	copyPrompt.style.cursor = 'pointer';
+		// 	copyPrompt.style.marginTop = '1%';
+		// 	copyPrompt.style.marginLeft = '2%';
+		// 	copyPrompt.style.opacity = '0.75';
+		// 	copyPrompt.style.display = 'flex';
+		// 	copyPrompt.style.justifyContent = 'start';
+		// 	copyPrompt.style.alignItems = 'center';
+		// 	copyPrompt.style.gap = '0.25rem';
+
+		// 	const mediaQuery = window.matchMedia('(max-width: 768px)');
+		// 	function handleMediaQueryChange(e) {
+		// 		if (e.matches) {
+		// 			// For screens 768px or less
+		// 			block.style.width = '100%';
+		// 			block.style.padding = '0';
+		// 			copyPrompt.style.marginLeft = '5%';
+		// 		} else {
+		// 			copyPrompt.style.marginLeft = '1%';
+		// 		}
+		// 	}
+		// 	handleMediaQueryChange(mediaQuery);
+		// 	mediaQuery.addListener(handleMediaQueryChange);
+
+		// 	const copyPromptText = document.createElement('p');
+		// 	copyPromptText.innerHTML = 'Copy';
+		// 	copyPromptText.className = 'copy-prompt-text';
+		// 	copyPromptText.style.fontFamily = 'var(--kanit)';
+		// 	copyPromptText.style.fontWeight = '900';
+		// 	copyPromptText.style.letterSpacing = '2px';
+		// 	copyPromptText.style.marginTop = '1.5rem';
+		// 	copyPromptText.style.marginLeft = '.5rem';
+		// 	copyPromptText.style.color = '#fff';
+		// 	copyPromptText.style.cursor = 'pointer';
+
+		// 	const copyIcon = document.createElement('img');
+		// 	copyIcon.src = '/icons/ic_copy.svg';
+		// 	copyIcon.style.cursor = 'pointer';
+
+		// 	copyPrompt.addEventListener('mouseenter', () => {
+		// 		copyPrompt.style.opacity = '1';
+		// 	});
+
+		// 	copyPrompt.addEventListener('mouseleave', () => {
+		// 		copyPrompt.style.opacity = '.75';
+		// 	});
+
+		// 	copyPrompt.appendChild(copyIcon);
+		// 	copyPrompt.appendChild(copyPromptText);
+		// 	block.appendChild(copyPrompt);
+
+		// 	copyPrompt.addEventListener('click', () => {
+		// 		copy(block.querySelector('code').textContent);
+
+		// 		copyPromptText.innerHTML = 'Copied!';
+		// 		setTimeout(() => {
+		// 			copyPromptText.innerHTML = 'Copy';
+		// 		}, 1500);
+		// 	});
+
+		// 	const codeElement = block.querySelector('code');
+		// 	if (codeElement) {
+		// 		codeElement.style.fontSize = 'clamp(.8rem, .75vw, 1.25rem)';
+		// 		codeElement.style.lineHeight = '1.25';
+		// 		codeElement.style.fontFamily = 'monospace';
+		// 	}
+
 		const codeBlocks = document.querySelectorAll('pre');
 
+		// Add a single CSS class for the styles
 		codeBlocks.forEach((block) => {
-			block.style.backgroundColor = 'var(--darkest-blue)';
-			block.style.border = '1px solid var(--white)';
-			block.style.width = '75%';
-			block.style.margin = '2rem auto';
-			block.style.padding = '1rem';
-			block.style.borderRadius = '12px';
+			block.classList.add('code-block');
 
+			// Create the copy prompt once
 			const copyPrompt = document.createElement('div');
 			copyPrompt.className = 'copy-prompt';
-			block.classList.add('copy-prompt');
-			copyPrompt.style.cursor = 'pointer';
-			copyPrompt.style.marginTop = '1%';
-			copyPrompt.style.marginLeft = '2%';
-			copyPrompt.style.opacity = '0.75';
-			copyPrompt.style.display = 'flex';
-			copyPrompt.style.justifyContent = 'start';
-			copyPrompt.style.alignItems = 'center';
-			copyPrompt.style.gap = '0.25rem';
+			copyPrompt.innerHTML = `
+				<img src="/icons/ic_copy.svg" class="copy-icon" alt="Copy">
+				<p class="copy-prompt-text">Copy</p>
+			`;
 
-			const mediaQuery = window.matchMedia('(max-width: 768px)');
-			function handleMediaQueryChange(e) {
-				if (e.matches) {
-					// For screens 768px or less
-					block.style.width = '100%';
-					block.style.padding = '0';
-					copyPrompt.style.marginLeft = '5%';
-				} else {
-					copyPrompt.style.marginLeft = '1%';
-				}
-			}
-			handleMediaQueryChange(mediaQuery);
-			mediaQuery.addListener(handleMediaQueryChange);
-
-			const copyPromptText = document.createElement('p');
-			copyPromptText.innerHTML = 'Copy';
-			copyPromptText.className = 'copy-prompt-text';
-			copyPromptText.style.fontFamily = 'var(--kanit)';
-			copyPromptText.style.fontWeight = '900';
-			copyPromptText.style.letterSpacing = '2px';
-			copyPromptText.style.marginTop = '1.5rem';
-			copyPromptText.style.marginLeft = '.5rem';
-			copyPromptText.style.color = '#fff';
-			copyPromptText.style.cursor = 'pointer';
-
-			const copyIcon = document.createElement('img');
-			copyIcon.src = '/icons/ic_copy.svg';
-			copyIcon.style.cursor = 'pointer';
-
-			copyPrompt.addEventListener('mouseenter', () => {
-				copyPrompt.style.opacity = '1';
-			});
-
-			copyPrompt.addEventListener('mouseleave', () => {
-				copyPrompt.style.opacity = '.75';
-			});
-
-			copyPrompt.appendChild(copyIcon);
-			copyPrompt.appendChild(copyPromptText);
 			block.appendChild(copyPrompt);
 
+			// Add copy functionality
 			copyPrompt.addEventListener('click', () => {
-				copy(block.querySelector('code').textContent);
-
-				copyPromptText.innerHTML = 'Copied!';
-				setTimeout(() => {
-					copyPromptText.innerHTML = 'Copy';
-				}, 1500);
+				const codeElement = block.querySelector('code');
+				if (codeElement) {
+					navigator.clipboard.writeText(codeElement.textContent || '');
+					const textElement = copyPrompt.querySelector('.copy-prompt-text');
+					textElement.textContent = 'Copied!';
+					setTimeout(() => (textElement.textContent = 'Copy'), 1500);
+				}
 			});
-
-			const codeElement = block.querySelector('code');
-			if (codeElement) {
-				codeElement.style.fontSize = 'clamp(.8rem, .75vw, 1.25rem)';
-				codeElement.style.lineHeight = '1.25';
-				codeElement.style.fontFamily = 'monospace';
-			}
 		});
 
 		console.log(GSAP, CSS);
