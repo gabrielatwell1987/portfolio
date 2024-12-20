@@ -4,7 +4,7 @@
 	font-weight: 900;
 	letter-spacing: 5px;
 	color: var(--sky);
-	margin-bottom: 2rem;
+	margin-block: 2rem;
 	text-shadow: 5px 5px 5px var(--dark-gray);
 	filter: drop-shadow(0px 0px 0.75rem var(--white));
 }
