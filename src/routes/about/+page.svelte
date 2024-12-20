@@ -200,6 +200,8 @@
 				font-size: clamp(1.2rem, 1.5vw, 2rem);
 				font-weight: 500;
 				line-height: 1.5;
+				hyphens: auto;
+				text-wrap: none;
 			}
 
 			.text-hero {

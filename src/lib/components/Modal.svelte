@@ -59,10 +59,6 @@
 <style>
 	@media (min-width: 320px) {
 		.open-button {
-			margin-bottom: 25%;
-		}
-
-		.open-button {
 			display: block;
 			font-size: clamp(2.5rem, 4vw, 4rem);
 			font-weight: 800;
@@ -78,6 +74,7 @@
 			justify-content: center;
 			align-items: center;
 			margin-inline: auto;
+			margin-bottom: 25%;
 			cursor: pointer;
 
 			&:hover {
@@ -160,6 +157,8 @@
 					color: var(--white);
 					background: transparent;
 					padding: 0.2rem;
+					hyphens: auto;
+					text-wrap: no-wrap;
 				}
 			}
 		}
