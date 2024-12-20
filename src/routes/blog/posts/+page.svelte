@@ -1,9 +1,8 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import CSS from './css.md';
 	import GSAP from './gsap.md';
-	import { fade } from 'svelte/transition';
 	import Button from '$lib/components/Button.svelte';
-	// import copy from 'copy-to-clipboard';
 	import SEO from '$lib/data/SEO.svelte';
 	import Card from '$lib/components/Card.svelte';
 	import Image from '$lib/components/Image.svelte';
