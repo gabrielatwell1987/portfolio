@@ -21,7 +21,7 @@
 	<article>
 		<section aria-label="icons">
 			<a class="gs" href="blog/greensock">
-				<Image src="/logos/gsapPNG.webp" alt="greensock" width="250" />
+				<Image src="/logos/gsapLogo.svg" alt="greensock" width="250" />
 			</a>
 
 			<a class="sk" href="blog/sveltekit">
