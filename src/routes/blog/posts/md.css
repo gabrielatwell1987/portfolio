@@ -19,7 +19,12 @@
 	letter-spacing: 2px;
 	font-family: var(--bronova);
 	line-height: 1.5;
-	text-indent: 1rem;
+	hyphens: auto;
+	overflow-wrap: normal;
+}
+
+.para {
+	text-indent: 0.5rem;
 }
 
 .para::first-letter {

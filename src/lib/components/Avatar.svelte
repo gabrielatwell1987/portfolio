@@ -22,13 +22,13 @@
 
 		img {
 			border-radius: 50%;
-			width: 20%;
+			width: 15%;
 			object-fit: cover;
 			transition: scale 0.5s ease-in-out;
 		}
 
 		img:hover {
-			scale: 1.25;
+			scale: 1.1;
 		}
 
 		h3 {
@@ -47,7 +47,7 @@
 			margin-top: 5rem;
 
 			img {
-				width: 7%;
+				width: 4%;
 			}
 		}
 	}
