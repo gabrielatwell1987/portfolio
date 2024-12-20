@@ -12,33 +12,33 @@
 	let delay = $state(100);
 
 	$effect(() => {
-		const codeBlocks = document.querySelectorAll('pre');
+		// const codeBlocks = document.querySelectorAll('pre');
 
 		// Add a single CSS class for the styles
-		codeBlocks.forEach((block) => {
-			block.classList.add('code-block');
+		// codeBlocks.forEach((block) => {
+		// block.classList.add('code-block');
 
-			// // Create the copy prompt once
-			// const copyPrompt = document.createElement('div');
-			// copyPrompt.className = 'copy-prompt';
-			// copyPrompt.innerHTML = `
-			// 	<img src="/icons/ic_copy.svg" class="copy-icon" alt="Copy">
-			// 	<p class="copy-prompt-text">Copy</p>
-			// `;
+		// // Create the copy prompt once
+		// const copyPrompt = document.createElement('div');
+		// copyPrompt.className = 'copy-prompt';
+		// copyPrompt.innerHTML = `
+		// 	<img src="/icons/ic_copy.svg" class="copy-icon" alt="Copy">
+		// 	<p class="copy-prompt-text">Copy</p>
+		// `;
 
-			// block.appendChild(copyPrompt);
+		// block.appendChild(copyPrompt);
 
-			// // Add copy functionality
-			// copyPrompt.addEventListener('click', () => {
-			// 	const codeElement = block.querySelector('code');
-			// 	if (codeElement) {
-			// 		navigator.clipboard.writeText(codeElement.textContent || '');
-			// 		const textElement = copyPrompt.querySelector('.copy-prompt-text');
-			// 		textElement.textContent = 'Copied!';
-			// 		setTimeout(() => (textElement.textContent = 'Copy'), 1500);
-			// 	}
-			// });
-		});
+		// // Add copy functionality
+		// copyPrompt.addEventListener('click', () => {
+		// 	const codeElement = block.querySelector('code');
+		// 	if (codeElement) {
+		// 		navigator.clipboard.writeText(codeElement.textContent || '');
+		// 		const textElement = copyPrompt.querySelector('.copy-prompt-text');
+		// 		textElement.textContent = 'Copied!';
+		// 		setTimeout(() => (textElement.textContent = 'Copy'), 1500);
+		// 	}
+		// });
+		// });
 
 		console.log(GSAP, CSS);
 	});

@@ -1,5 +1,7 @@
 <script>
+import './md.css';
 	import Subheading from './Subheading.svelte';
+	import Image from '$lib/components/Image.svelte'; 
 </script>
 
 <!-- tweens -->
@@ -7,13 +9,7 @@
 
 <div align="left" class="body" aria-label="tweens">In web animation, a tween stands for "in-betweening". Basically, it is the foundation for the whole GSAP process. There are 3 types of tweens: <code>gsap.to("element", &lbrace; variables &rbrace;)</code> animating one state TO another state, <code>gsap.from("element", &lbrace; variables &rbrace;)</code> animating one state FROM another state, <code>gsap.fromTo("element", &lbrace; variables &rbrace;, &lbrace; variables &rbrace;)</code> specifically choosing the STARTING and ENDING state.</div>
 
-```js
-gsap.to('.example', { skewX: 20, duration: 2.5, ease: 'sine.in' });
-
-gsap.from('.example', { rotate: -360, duration: 5, ease: 'power3.inOut' };
-
-gsap.fromTo('.example', { x: -500, duration: 1, ease: 'expo' }, { x: 0 });
-```
+<Image src="/code/tweens.webp" alt="gsap tweens" width="1500" />
 
 <!-- staggers -->
 <div align="center" class="title">STAGGERS</div>
@@ -22,32 +18,7 @@ gsap.fromTo('.example', { x: -500, duration: 1, ease: 'expo' }, { x: 0 });
 
 <div align="left" class="body" aria-label="staggers"><Subheading subheading="functions" />: <br>Only use this if you need to run custom logic for distributing the staggers. The function gets called once for each target/element in the Array and should return the total delay from the starting position (not the amount of delay from the previous tween's start time). The function receives the following parameters: index [Integer] - The index value from the list, target [Object] - The target in the list at that index value, list [Array | NodeList] - The targets array (or NodeList).</div>
 
-```js
-gsap.to('.example', {
-	y: 100,
-	stagger: 0.1 // 0.1 seconds between when each ".box" element starts animating
-});
-
-gsap.to('.example', {
-	y: 100,
-	stagger: {
-		// wrap advanced options in an object
-		each: 0.1,
-		from: 'center',
-		grid: 'auto',
-		ease: 'power2.inOut',
-		repeat: -1 // Repeats immediately, not waiting for the other staggered animations to finish
-	}
-});
-
-gsap.to('.example', {
-	y: 100,
-	stagger: function (index, target, list) {
-		// your custom logic here. Return the delay from the start (not between each)
-		return index * 0.1;
-	}
-});
-```
+<Image src="/code/staggers.webp" alt="gsap staggers" width="1500" />
 
 <!-- timelines -->
 <div align="center" class="title">TIMELINES</div>
@@ -56,39 +27,14 @@ gsap.to('.example', {
 
 <div align="left" class="body" aria-label="timelines">Timelines makes sequencing multiple tweens really easy and faster to code, in the long run. You can also position them with the position parameter.</div>
 
-```js
-// create a timeline
-let tl = gsap.timeline();
-
-tl.to('.green', { x: 600, duration: 2 }); // add the tweens to the timeline - Note we're using tl.to not gsap.to
-tl.to('.purple', { x: 600, duration: 1 });
-tl.to('.orange', { x: 600, duration: 1 });
-
-// Delays
-let tl = gsap.timeline();
-
-tl.to('.green', { x: 600, duration: 2 });
-tl.to('.purple', { x: 600, duration: 1, delay: 1 });
-tl.to('.orange', { x: 600, duration: 1 });
-```
+<Image src="/code/timelines.webp" alt="gsap timelines" width="1500" />
 
 <!-- percentage keyframes -->
 <div align="center" class="title">PERCENTAGE KEYFRAMES</div>
 
 <div align="left" class="body" aria-label="keyframes">This familiar syntax makes porting animations over from CSS really easy. Instead of using delays and duration in the keyframe object, you specify an overall duration on the tween itself, then define the position of each keyframe using percentages.</div>
 
-```js
-gsap.to(".example", {
- keyframes: {
-  "0%":  { x: 100, y: 100},
-  "75%":  { x: 0, y: 0, ease: 'sine.out'}, // finetune with individual eases
-  "100%": { x: 50, y: 50 },
-   easeEach: 'expo.inOut' // ease between keyframes
- },
- ease: 'none' // ease the entire keyframe block
- duration: 2,
-})
-```
+<Image src="/code/keyframes.webp" alt="gsap percentage keyframes" width="1500" />
 
 <!-- position parameter -->
 <div align="center" class="title">POSITION PARAMETER</div>
@@ -97,21 +43,7 @@ gsap.to(".example", {
 
 <div align="left" class="body" aria-label="position parameter">Notice that the position parameter comes after the vars parameter:</div>
 
-```js
-gsap.to( target, {vars}, **position** );
-
-// absolute - insert exactly 3 seconds from the start of the timeline
-gsap.to(".class", {x: 100}, 3);
-
-// insert at the "someLabel" label. If the label doesn't exist, it'll be added to the end of the timeline.
-gsap.to(".class", {x: 100}, "someLabel");
-
-// insert at the START of the  previous animation
-gsap.to(".class", {x: 100}, "<");
-
-// insert at the END of the previous animation
-gsap.to(".class", {x: 100}, ">");
-```
+<Image src="/code/position.webp" alt="gsap position parameter" width="1500" />
 
 <!-- fouc -->
 <div align="center" class="title">FLASH OF UNSTYLED CONTENT</div>
@@ -120,17 +52,7 @@ gsap.to(".class", {x: 100}, ">");
 
 <div align="left" class="body" aria-label="f.o.u.c"><Subheading subheading="solution" />: <br>apply <code>visibility: hidden;</code> to your elements in CSS and then use GSAP's autoAlpha property to show it (or animate it in) when the page loads. autoAlpha affects opacity and visibility, changing it to visible when the opacity is greater than 0.</div>
 
-```css
-/* first you need to hide the element in css */
-.example {
-	visibility: hidden;
-}
-```
-
-```js
-// then you can use autoAlpha to show it in JS and GSAP
-gsap.to('.example', { autoAlpha: 1, duration: 1 });
-```
+<Image src="/code/fouc.webp" alt="gsap flash of unstyled content" width="1500" />
 
 <!-- scroll trigger -->
 <div align="center" class="title">SCROLL TRIGGER</div>
@@ -139,54 +61,7 @@ gsap.to('.example', { autoAlpha: 1, duration: 1 });
 
 <div align="left" class="body" aria-label="scroll trigger">You don't need to put ScrollTriggers directly into animations (though that's probably the most common use case). You can use the callbacks for anything...</div>
 
-```js
-// Add scrollTrigger to the timeline
-let tl = gsap.timeline({
-	scrollTrigger: {
-		trigger: '.container',
-		pin: true, // pin the trigger element while active
-		start: 'top top', // when the top of the trigger hits the top of the viewport
-		end: '+=500', // end after scrolling 500px beyond the start
-		scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-		snap: {
-			snapTo: 'labels', // snap to the closest label in the timeline
-			duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-			delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
-			ease: 'power1.inOut' // the ease of the snap animation ("power3" by default)
-		}
-	}
-});
-
-// Add animations and labels to the timeline
-tl.addLabel('start')
-	.from('.box p', { scale: 0.3, rotation: 45, autoAlpha: 0 })
-	.addLabel('color')
-	.from('.box', { backgroundColor: '#28a92b' })
-	.addLabel('spin')
-	.to('.box', { rotation: 360 })
-	.addLabel('end');
-
----
-
-// Standalone scrolltrigger
-ScrollTrigger.create({
-	trigger: '#id',
-	start: 'top top',
-	endTrigger: '#otherID',
-	end: 'bottom 50%+=100px',
-	onToggle: (self) => console.log('toggled, isActive:', self.isActive),
-	onUpdate: (self) => {
-		console.log(
-			'progress:',
-			self.progress.toFixed(3),
-			'direction:',
-			self.direction,
-			'velocity',
-			self.getVelocity()
-		);
-	}
-});
-```
+<Image src="/code/scrolltrigger.webp" alt="gsap scrolltrigger" />
 
 <div style="margin: 3% 0;"></div>
 
