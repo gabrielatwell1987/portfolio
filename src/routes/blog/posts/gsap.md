@@ -9,7 +9,7 @@ import './md.css';
 
 <div align="left" class="body para" aria-label="tweens">In web animation, a tween stands for "in-betweening". Basically, it is the foundation for the whole GSAP process. There are 3 types of tweens: <code>gsap.to("element", &lbrace; variables &rbrace;)</code> animating one state TO another state, <code>gsap.from("element", &lbrace; variables &rbrace;)</code> animating one state FROM another state, <code>gsap.fromTo("element", &lbrace; variables &rbrace;, &lbrace; variables &rbrace;)</code> specifically choosing the STARTING and ENDING state.</div>
 
-<Image src="/code/tweens.webp" alt="gsap tweens" width="2000" />
+<Image src="/code/tweens.webp" alt="gsap tweens" />
 
 <!-- staggers -->
 <div align="center" class="title">STAGGERS</div>
@@ -19,7 +19,7 @@ import './md.css';
 <Subheading subheading="functions" />
 <div align="left" class="body" aria-label="staggers">Only use this if you need to run custom logic for distributing the staggers. The function gets called once for each target/element in the Array and should return the total delay from the starting position (not the amount of delay from the previous tween's start time). The function receives the following parameters: index [Integer] - The index value from the list, target [Object] - The target in the list at that index value, list [Array | NodeList] - The targets array (or NodeList).</div>
 
-<Image src="/code/staggers.webp" alt="gsap staggers" width="2000" />
+<Image src="/code/staggers.webp" alt="gsap staggers" />
 
 <!-- timelines -->
 <div align="center" class="title">TIMELINES</div>
@@ -28,14 +28,14 @@ import './md.css';
 
 <div align="left" class="body" aria-label="timelines">Timelines makes sequencing multiple tweens really easy and faster to code, in the long run. You can also position them with the position parameter.</div>
 
-<Image src="/code/timelines.webp" alt="gsap timelines" width="2000" />
+<Image src="/code/timelines.webp" alt="gsap timelines" />
 
 <!-- percentage keyframes -->
 <div align="center" class="title">PERCENTAGE KEYFRAMES</div>
 
 <div align="left" class="body para" aria-label="keyframes">This familiar syntax makes porting animations over from CSS really easy. Instead of using delays and duration in the keyframe object, you specify an overall duration on the tween itself, then define the position of each keyframe using percentages.</div>
 
-<Image src="/code/keyframes.webp" alt="gsap percentage keyframes" width="2000" />
+<Image src="/code/keyframes.webp" alt="gsap percentage keyframes" />
 
 <!-- position parameter -->
 <div align="center" class="title">POSITION PARAMETER</div>
@@ -44,7 +44,7 @@ import './md.css';
 
 <div align="left" class="body" aria-label="position parameter">Notice that the position parameter comes after the vars parameter:</div>
 
-<Image src="/code/position.webp" alt="gsap position parameter" width="2000" />
+<Image src="/code/position.webp" alt="gsap position parameter" />
 
 <!-- fouc -->
 <div align="center" class="title">FLASH OF UNSTYLED CONTENT</div>
@@ -54,7 +54,7 @@ import './md.css';
 <Subheading subheading="solution" />
 <div align="left" class="body" aria-label="f.o.u.c">apply <code>visibility: hidden;</code> to your elements in CSS and then use GSAP's autoAlpha property to show it (or animate it in) when the page loads. autoAlpha affects opacity and visibility, changing it to visible when the opacity is greater than 0.</div>
 
-<Image src="/code/fouc.webp" alt="gsap flash of unstyled content" width="2000" />
+<Image src="/code/fouc.webp" alt="gsap flash of unstyled content" />
 
 <!-- scroll trigger -->
 <div align="center" class="title">SCROLL TRIGGER</div>
@@ -63,7 +63,7 @@ import './md.css';
 
 <div align="left" class="body" aria-label="scroll trigger">You don't need to put ScrollTriggers directly into animations (though that's probably the most common use case). You can use the callbacks for anything...</div>
 
-<Image src="/code/scrolltrigger.webp" alt="gsap scrolltrigger" />
+<Image src="/code/scrolltrigger.webp" alt="gsap scrolltrigger" width="1200" />
 
 <div style="margin: 3% 0;"></div>
 
