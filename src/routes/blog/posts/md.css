@@ -22,6 +22,6 @@
 	text-indent: 1rem;
 }
 
-.body::first-letter {
+.para::first-letter {
 	font-size: 2.5rem;
 }

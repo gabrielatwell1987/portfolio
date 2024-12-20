@@ -13,5 +13,7 @@
 		text-indent: 1rem;
 		color: var(--purple);
 		display: inline;
+		margin-left: clamp(1rem, 2vw, 3rem);
+		margin-right: clamp(0.5rem, 3vw, 3rem);
 	}
 </style>
