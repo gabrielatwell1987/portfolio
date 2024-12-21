@@ -74,12 +74,12 @@
 					<p class="text">
 						In the project, you have to <code class="code">npm install gsap</code> (if you have
 						Node.js installed) or you can use the CDN (content delivery network). In sveltekit, you
-						have to put all of your GSAP code in an <code class="code">onMount</code> function that
-						you have to import. This is because onMount is displayed once on initial load. If you
-						were to use a regular script tag, it would not work. All of the designs that are
-						animated on this website are all from GSAP. I tend to think that these animations make
-						the website look a lot better than a static website. GSAP is a great tool to use for any
-						web developer. I highly recommend it!
+						have to put all of your GSAP code in a <code class="code">$effect</code> rune that runs
+						the code when mounted, $effect is displayed once on initial load. If you were to use a
+						regular script tag, it would not work. All of the designs that are animated on this
+						website are mostly from GSAP, but a lot of them are css too. I tend to think that these
+						animations make the website look a lot better than a static website. GSAP is a great
+						tool to use for any web developer. I highly recommend it!
 						<br /><br />
 						You can install GSAP on any javascript framework you want to use! It works on Vue, React,
 						Svelte, and Angular. GSAP uses integer values to edit the DOM, for the most part.. It's also

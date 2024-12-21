@@ -78,9 +78,9 @@
 						I have because I'm a very visual person. Sveltekit has made it super simple to put my
 						ideas on the web.
 						<br /><br />
-						The framework is based off of html. Javascript is used in a script tag, css is used in a
-						style tag, just like you do it inline in html. Everything is scoped, so it makes it really
-						easy to build things.
+						The framework is based off of html. Javascript is used in a script tag and css is used in
+						a style tag just like you do in a html document. Everything is scoped, so the css inside
+						of a component is the css for that component only.
 					</p>
 				</details>
 
