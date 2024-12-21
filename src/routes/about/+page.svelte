@@ -220,6 +220,7 @@
 					gap: 0.25rem;
 					margin-top: -2rem;
 					margin-left: 3rem;
+					padding-right: 1.2rem;
 				}
 			}
 		}
@@ -254,6 +255,7 @@
 				.icons {
 					margin-left: 0;
 					margin-top: 2rem;
+					padding-right: 0;
 				}
 			}
 
