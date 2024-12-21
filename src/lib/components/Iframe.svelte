@@ -79,7 +79,7 @@
 
 			iframe {
 				flex-basis: 65%;
-				height: 40rem;
+				height: 35rem;
 			}
 		}
 	}
