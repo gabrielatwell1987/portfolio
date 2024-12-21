@@ -12,7 +12,7 @@
 		openModal.addEventListener('click', () => {
 			gsap.to(modal, {
 				autoAlpha: 1,
-				duration: 1.5,
+				duration: 2,
 				width: '100%',
 				ease: 'power2.out'
 			});
@@ -23,7 +23,7 @@
 		closeModal.addEventListener('click', () => {
 			gsap.to(modal, {
 				autoAlpha: 0,
-				duration: 0.75,
+				duration: 1.75,
 				ease: 'power2.out',
 				onComplete: () => modal.close()
 			});
