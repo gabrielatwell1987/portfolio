@@ -23,33 +23,6 @@
 		tl.to(title, { autoAlpha: 1, duration: 2, ease: 'back.out(4)' }, 0);
 
 		console.log('Greensock page');
-
-		document.querySelectorAll('details').forEach((details) => {
-			details.addEventListener('toggle', (event) => {
-				const content = event.target;
-
-				if (content.open) {
-					// opening
-					content.style.maxHeight = `${content.scrollHeight}px`;
-
-					// natural expansion
-					content.addEventListener(
-						'transitionend',
-						() => {
-							content.style.maxHeight = 'auto';
-						},
-						{ once: true }
-					);
-				} else {
-					// closing
-					content.style.maxHeight = `${content.scrollHeight}px`;
-
-					requestAnimationFrame(() => {
-						content.style.maxHeight = '5rem';
-					});
-				}
-			});
-		});
 	});
 </script>
 
@@ -233,6 +206,7 @@
 <style>
 	:root {
 		--100: 100%;
+		interpolate-size: allow-keywords;
 	}
 
 	section {
@@ -257,13 +231,23 @@
 		-webkit-appearance: none;
 		appearance: none;
 
-		overflow: hidden; /* Ensures content doesn't spill out */
-		transition: max-height 0.75s ease-in-out; /* Smooth height transition */
-		max-height: 5rem; /* Closed height (enough to show summary) */
+		overflow: hidden;
 		padding: 1rem;
+		inline-size: 100ch;
 
-		&[open] {
-			max-height: 500px; /* Adjust this to be large enough for all content */
+		&::details-content {
+			opacity: 0;
+			block-size: 0;
+			overflow-y: clip;
+			transition:
+				content-visibility 1s allow-discrete,
+				opacity 1s,
+				block-size 1s;
+		}
+
+		&[open]::details-content {
+			opacity: 1;
+			block-size: auto;
 		}
 
 		&[open] i {
