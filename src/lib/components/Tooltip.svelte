@@ -26,7 +26,7 @@
 		.tooltip-trigger {
 			cursor: pointer;
 			margin-inline: auto;
-			padding: 0.5rem 1.2rem;
+			padding: 0.5rem 1rem;
 			border-radius: 12px;
 			font-family: var(--orbitron);
 			font-size: clamp(2.5rem, 2vw, 3rem);
@@ -39,11 +39,11 @@
 			position: absolute;
 			background-color: var(--blackest);
 			color: var(--white);
-			font-size: clamp(1rem, 2vw, 1.5rem);
+			font-size: clamp(1rem, 1.5vw, 1.25rem);
 			letter-spacing: 3px;
 			padding: 0.5rem;
 			box-shadow: 0 0 5px var(--dark-blue);
-			border-radius: 4px;
+			border-radius: 16px;
 			max-width: 200px;
 			z-index: 1;
 			opacity: 0;
