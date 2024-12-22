@@ -1,6 +1,7 @@
 <script>
 	import { fade } from 'svelte/transition';
 	import { gsap } from 'gsap';
+	import Title from '$lib/components/Title.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import Iframe from '$lib/components/Iframe.svelte';
@@ -35,7 +36,9 @@
 
 <section transition:fade={{ delay: delay, duration: duration }} class="main">
 	<div class="separate">
-		<h1 class="title">GSAP</h1>
+		<div class="margin">
+			<Title title="GSAP" />
+		</div>
 
 		<main>
 			<Popover text="animation!" />
@@ -205,6 +208,11 @@
 		padding-top: 10rem;
 	}
 
+	.margin {
+		margin: 0;
+		margin-bottom: -35em;
+	}
+
 	main {
 		width: 75%;
 		border-radius: 10px;
@@ -257,25 +265,12 @@
 
 	p {
 		text-align: left;
-		margin-bottom: 0 0 2rem 0;
+		margin-bottom: 2rem;
 		padding: 0.5em 2em;
 		padding-top: 2.5em;
 		line-height: 2.5;
 		font-family: var(--bronova);
 		width: var(--100);
-	}
-
-	.title {
-		font-size: clamp(3.75rem, 8vw, 10rem);
-		font-weight: 800;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-bottom: -4em;
-		text-align: center;
-		color: var(--smoke);
-		font-family: var(--anta);
-		text-shadow: 0px 0px 25px var(--dark-blue);
 	}
 
 	.text {
@@ -344,11 +339,7 @@
 
 		.margin {
 			margin-left: 0;
-		}
-
-		.title {
-			margin-bottom: -9em;
-			margin-top: 5%;
+			margin-top: -9em;
 		}
 	}
 
@@ -368,10 +359,6 @@
 		.centerDetail {
 			margin-top: 75%;
 		}
-
-		.title {
-			margin-bottom: -55%;
-		}
 	}
 
 	@media (min-width: 720px) {
@@ -385,10 +372,7 @@
 
 		.margin {
 			margin-left: 3rem;
-		}
-
-		.title {
-			margin-bottom: -45%;
+			margin-top: -5em;
 		}
 	}
 
@@ -409,10 +393,6 @@
 		.centerDetail {
 			margin-top: -50%;
 		}
-
-		.title {
-			margin-bottom: -20%;
-		}
 	}
 
 	@media (min-width: 1024px) {
@@ -422,20 +402,8 @@
 	}
 
 	@media (min-width: 1400px) {
-		.title {
-			margin-top: -8%;
-			margin-bottom: -30%;
-		}
-
 		.centerDetail {
 			margin-top: -38%;
-		}
-	}
-
-	@media (min-width: 1500px) {
-		.title {
-			margin-top: 0;
-			margin-bottom: -25%;
 		}
 	}
 
