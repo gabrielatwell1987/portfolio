@@ -417,12 +417,13 @@
 
 	@media (min-width: 1024px) {
 		main {
-			margin-top: 15%;
+			margin-top: 10%;
 		}
 	}
 
 	@media (min-width: 1400px) {
 		.title {
+			margin-top: -8%;
 			margin-bottom: -30%;
 		}
 
@@ -433,6 +434,7 @@
 
 	@media (min-width: 1500px) {
 		.title {
+			margin-top: 0;
 			margin-bottom: -25%;
 		}
 	}
