@@ -6,6 +6,7 @@
 	import Iframe from '$lib/components/Iframe.svelte';
 	import Image from '$lib/components/Image.svelte';
 	import Popover from '$lib/components/Popover.svelte';
+	import Learn from '$lib/components/Learn.svelte';
 
 	let duration = $state(300);
 	let delay = $state(100);
@@ -37,9 +38,7 @@
 		<h1 class="title">Svelte</h1>
 
 		<main>
-			<article class="popover">
-				<Popover text="fundamentals" />
-			</article>
+			<Popover text="fundamentals" />
 
 			<div class="centerDetail">
 				<details name="sveltekit">
@@ -208,14 +207,7 @@
 				/>
 			</div>
 
-			<h3 class="learn">Learn more about Sveltekit</h3>
-			<p class="center">
-				If you would like to know more about <a
-					class="link"
-					href="https://svelte.dev"
-					aria-label="sveltekit">svelte</a
-				>, click the link!
-			</p>
+			<Learn href="https://svelte.dev" title="svelte" />
 
 			<div class="back">
 				<Button href="/blog" title="Back" />
@@ -304,48 +296,21 @@
 		}
 	}
 
-	.link {
-		text-decoration: none;
-		font-size: clamp(1.5rem, 3vw, 2rem);
-		font-weight: 700;
-		text-decoration: none;
-		color: var(--purple);
-		font-family: var(--orbitron);
-
-		&:hover {
-			text-decoration: underline;
-			color: #fff;
-		}
-	}
-
 	.title {
 		font-size: clamp(3.75rem, 8vw, 10rem);
 		font-weight: 800;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-bottom: -7em;
+		margin-bottom: -4em;
 		text-align: center;
 		color: var(--smoke);
 		font-family: var(--anta);
 		text-shadow: 0px 0px 25px var(--dark-blue);
 	}
 
-	.learn {
-		margin: 5rem 0 -1rem 0;
-		text-align: center;
-		font-family: var(--anta);
-		color: var(--sky);
-		font-size: clamp(1.5rem, 3vw, 2.5rem);
-	}
-
 	.text {
 		font-size: clamp(1.15rem, 1.25vw, 1.5rem);
-	}
-
-	.popover {
-		background: transparent;
-		box-shadow: none;
 	}
 
 	.centerDetail {
@@ -394,13 +359,6 @@
 			color: var(--white);
 		}
 
-		.center {
-			text-align: center;
-			font-size: clamp(1rem, 2vw, 1.35rem);
-			margin-top: -2rem;
-			line-height: 1.5;
-		}
-
 		code {
 			font-family: var(--mono);
 		}
@@ -408,10 +366,6 @@
 		.back {
 			margin-top: 5%;
 			width: var(--100);
-		}
-
-		.popover {
-			display: none;
 		}
 
 		.iframe {
@@ -436,7 +390,8 @@
 		}
 
 		.title {
-			margin-bottom: -6em;
+			margin-bottom: -9em;
+			margin-top: 5%;
 		}
 	}
 
@@ -463,10 +418,6 @@
 	}
 
 	@media (min-width: 720px) {
-		.center {
-			margin-top: -3rem;
-		}
-
 		.back {
 			width: var(--100);
 		}
@@ -498,10 +449,6 @@
 			margin-inline: auto;
 		}
 
-		.popover {
-			display: block;
-		}
-
 		.centerDetail {
 			margin-top: -50%;
 		}
@@ -515,28 +462,9 @@
 		main {
 			margin-top: 15%;
 		}
-
-		.center {
-			margin-bottom: 5%;
-		}
-
-		.popover {
-			margin-top: -5%;
-		}
-	}
-
-	@media (min-width: 1200px) {
-		.popover {
-			margin-top: -10%;
-			margin-bottom: 5em;
-		}
 	}
 
 	@media (min-width: 1400px) {
-		.popover {
-			margin-top: 15%;
-		}
-
 		.title {
 			margin-bottom: -30%;
 		}
@@ -549,10 +477,6 @@
 	@media (min-width: 1500px) {
 		.title {
 			margin-bottom: -25%;
-		}
-
-		.popover {
-			margin-block: 10%;
 		}
 	}
 
