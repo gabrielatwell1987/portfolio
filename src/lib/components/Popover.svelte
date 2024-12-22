@@ -194,7 +194,8 @@
 
 	@media (min-width: 1500px) {
 		.popover {
-			padding-block: 15%;
+			padding-top: 15em;
+			padding-bottom: 15em;
 		}
 	}
 </style>
