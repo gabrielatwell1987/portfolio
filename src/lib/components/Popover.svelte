@@ -187,16 +187,14 @@
 	@media (min-width: 990px) {
 		.popover {
 			display: block;
-			padding-top: 25%;
+			padding-top: 25em;
 			padding-bottom: 5%;
 		}
 	}
 
 	@media (min-width: 1500px) {
 		.popover {
-			display: block;
-			padding-top: 18%;
-			padding-bottom: 15%;
+			padding-block: 15%;
 		}
 	}
 </style>
