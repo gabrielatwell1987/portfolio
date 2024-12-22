@@ -31,55 +31,10 @@
 		}
 	}
 
-	@media (min-width: 300px) {
-		iframe {
-			display: block;
-			margin: 15% auto;
-			flex-basis: 120%;
-			height: auto;
-		}
-	}
-
-	@media (min-width: 500px) {
-		.iframe {
-			margin-inline: auto;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-			iframe {
-				display: block;
-				margin: 10% auto;
-				flex-basis: 60%;
-				height: 25rem;
-			}
-		}
-	}
-
 	@media (min-width: 750px) {
 		.iframe {
-			margin-inline: auto;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
 			iframe {
-				flex-basis: 65%;
-				height: 30rem;
-			}
-		}
-	}
-
-	@media (min-width: 1500px) {
-		.iframe {
-			margin-inline: auto;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-			iframe {
-				flex-basis: 65%;
-				height: 35rem;
+				margin: 6rem 0;
 			}
 		}
 	}
