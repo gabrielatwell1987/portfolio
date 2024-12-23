@@ -120,14 +120,14 @@
 					src="/photos/autumn.webp"
 					alt="Gabe and his daughter"
 					class="gabe"
-					width="350"
+					width="400"
 					loading="lazy"
 				/>
 				<img
 					class="gabe"
-					src="photos/gabe6.webp"
+					src="photos/archie.webp"
 					alt="Gabe's poodle Archie"
-					width="400"
+					width="350"
 					loading="lazy"
 				/>
 			</aside>

@@ -42,7 +42,7 @@
 				<i class="fa-solid fa-xmark"></i>
 			</button>
 
-			<h4>Please contact me for any frontend work!</h4>
+			<h4>Please contact me for any work!</h4>
 		</header>
 
 		<div class="image">
@@ -50,7 +50,7 @@
 		</div>
 
 		<p>
-			If you need help with a website, or if you have any questions, please feel free to contact me.
+			If you need help with a website or if you have any questions, please feel free to contact me.
 			I am always happy to help!
 		</p>
 	</article>

@@ -6,14 +6,12 @@
 
 <style>
 	p {
-		font-size: clamp(1.25rem, 1.25vw, 1.75rem);
+		font-size: clamp(1.25rem, 1.5vw, 2rem);
 		font-weight: 800;
 		font-family: var(--bronova);
 		line-height: 1.5;
 		text-indent: 1rem;
 		color: var(--purple);
-		display: inline;
-		margin-left: clamp(1rem, 2vw, 3rem);
-		margin-right: clamp(0.5rem, 3vw, 3rem);
+		margin-left: clamp(0.1em, 10vw, 5.5em);
 	}
 </style>
