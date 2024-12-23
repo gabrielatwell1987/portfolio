@@ -141,7 +141,7 @@
 
 <style>
 	@media (max-width: 997px) {
-		canvas {
+		.webgl {
 			margin-bottom: 15%;
 		}
 	}

@@ -11,41 +11,41 @@
 <style>
 	.popup {
 		align-content: center;
-	}
 
-	button {
-		background-color: transparent;
-		color: var(--pale);
-		width: fit-content;
-		font-family: var(--anta);
-		border-radius: 6px;
-		letter-spacing: 3px;
-		padding: 0.75rem 1.15rem;
-		border: none;
-		outline: none;
-		text-transform: uppercase;
+		button {
+			background-color: transparent;
+			color: var(--pale);
+			width: fit-content;
+			font-family: var(--anta);
+			border-radius: 6px;
+			letter-spacing: 3px;
+			padding: 0.75rem 1.15rem;
+			border: none;
+			outline: none;
+			text-transform: uppercase;
 
-		& i {
-			font-size: clamp(2.5rem, 4vw, 4rem);
+			& i {
+				font-size: clamp(2.5rem, 4vw, 4rem);
+			}
+
+			&:hover {
+				animation: wiggle 1s ease-in-out infinite;
+			}
+
+			&:focus {
+				box-shadow: 0 0 0px var(--off-white);
+			}
 		}
 
-		&:hover {
-			animation: wiggle 1s ease-in-out infinite;
+		#popover {
+			margin-inline: auto;
+			margin-block: 5em;
+			font-family: var(--bronova);
+			font-size: clamp(0.9rem, 1.25vw, 1.5rem);
+			letter-spacing: 2px;
+			padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
+			background-color: rgba(0, 0, 0, 1);
 		}
-
-		&:focus {
-			box-shadow: 0 0 0px var(--off-white);
-		}
-	}
-
-	#popover {
-		margin-inline: auto;
-		margin-block: 5em;
-		font-family: var(--bronova);
-		font-size: clamp(0.9rem, 1.25vw, 1.5rem);
-		letter-spacing: 2px;
-		padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
-		background-color: rgba(0, 0, 0, 1);
 	}
 
 	[popover] {
