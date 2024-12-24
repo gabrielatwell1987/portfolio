@@ -246,7 +246,7 @@
 			.text {
 				color: var(--white);
 				max-width: 90%;
-				line-height: 1.5;
+				line-height: 1.75;
 			}
 
 			.bio {

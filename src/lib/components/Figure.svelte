@@ -3,11 +3,13 @@
 	let { src, alt, text } = $props();
 </script>
 
-<figure>
-	<figcaption><p>{text}</p></figcaption>
+<div class="logo">
+	<figure>
+		<figcaption><p>{text}</p></figcaption>
 
-	<img {src} {alt} />
-</figure>
+		<img {src} {alt} />
+	</figure>
+</div>
 
 <style>
 	figure {
@@ -40,6 +42,25 @@
 			text-align: center;
 			font-size: clamp(1rem, 2vw, 2rem);
 			font-weight: 500;
+		}
+	}
+
+	@media (min-width: 300px) {
+		.logo {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-inline: auto;
+			flex-basis: 75%;
+		}
+	}
+
+	@media (min-width: 740px) {
+		.logo {
+			width: var(--100);
+			margin-inline: auto;
+			border-radius: 10%;
+			margin: 3rem 0;
 		}
 	}
 </style>
