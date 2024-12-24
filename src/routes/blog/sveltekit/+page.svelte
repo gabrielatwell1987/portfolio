@@ -417,6 +417,10 @@
 			margin-left: 3rem;
 			margin-top: -5em;
 		}
+
+		.text {
+			line-height: 1.75;
+		}
 	}
 
 	@media (min-width: 990px) {

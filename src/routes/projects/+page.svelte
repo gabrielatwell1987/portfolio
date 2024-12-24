@@ -19,6 +19,7 @@
 		const logo = document.querySelector('.logo');
 
 		gsap.registerPlugin(Draggable);
+
 		Draggable.create(logo, {
 			type: 'top',
 			bounds: window,
@@ -181,15 +182,9 @@
 		/>
 	</section> -->
 
-	<!-- avatar -->
-	<!-- <div class="avatar"> -->
 	<Avatar src="/photos/cartoonGabe.webp" alt="cartoon gabe" name="gabeAtwell" />
-	<!-- </div> -->
 
-	<!-- logo -->
-	<div class="logo">
-		<Figure src="logos/web.webp" alt="A logo that says web" text="building the" />
-	</div>
+	<Figure src="logos/web.webp" alt="A logo that says web" text="building the" />
 </section>
 
 <style>
@@ -205,20 +200,11 @@
 		section {
 			padding-top: 2rem;
 
-			.logo {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				margin-inline: auto;
-				flex-basis: 75%;
-				height: var(--100);
-			}
-
 			.iconLogo {
 				display: flex;
 				justify-content: center;
 				margin-bottom: 15%;
-				width: clamp(15em, 25vw, 30em);
+				width: clamp(15em, 40vw, 40em);
 				margin-inline: auto;
 			}
 		}
@@ -234,14 +220,6 @@
 	@media screen and (min-width: 740px) {
 		section {
 			padding: 2rem;
-
-			.logo {
-				width: var(--100);
-				margin-inline: auto;
-
-				border-radius: 10%;
-				margin: 3rem 0;
-			}
 		}
 	}
 

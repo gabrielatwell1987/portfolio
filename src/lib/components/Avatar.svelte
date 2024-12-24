@@ -25,10 +25,10 @@
 			width: 15%;
 			object-fit: cover;
 			transition: scale 0.5s ease-in-out;
-		}
 
-		img:hover {
-			scale: 1.1;
+			&:hover {
+				scale: 1.1;
+			}
 		}
 
 		h3 {
