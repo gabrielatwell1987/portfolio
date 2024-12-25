@@ -31,7 +31,7 @@
 <SEO
 	title="Svelte frontend framework"
 	description="web framework"
-	keywords="sveltekit, sveltekit how-to"
+	keywords="svelte, sveltekit, svelte how to, sveltekit how to"
 />
 
 <section transition:fade={{ delay: delay, duration: duration }} class="main">

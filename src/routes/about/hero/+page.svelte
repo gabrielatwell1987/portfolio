@@ -11,7 +11,7 @@
 <SEO
 	title="Three.js hero section"
 	description="Welcome to Gabe Atwell's portfolio"
-	keywords="hero section, three.js hero section"
+	keywords="hero section, three.js hero section, gabe's hero section"
 />
 
 <br /><br />

@@ -13,7 +13,11 @@
 	});
 </script>
 
-<SEO title="Blog topics" description="a blog about web techniques" keywords="blog topics" />
+<SEO
+	title="Blog topics"
+	description="a blog about web techniques"
+	keywords="blog topics, web animation basics"
+/>
 
 <main transition:fade={{ delay: delay, duration: duration }}>
 	<Title title="topics" />

@@ -31,7 +31,7 @@
 <SEO
 	title="Greensock Animation Platform"
 	description="web animations"
-	keywords="GSAP, animation, greensock how-to"
+	keywords="GSAP, greensock animation platform, web animation, greensock how to"
 />
 
 <section transition:fade={{ delay: delay, duration: duration }} class="main">
