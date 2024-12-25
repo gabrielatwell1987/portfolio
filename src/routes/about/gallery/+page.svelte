@@ -7,7 +7,11 @@
 	});
 </script>
 
-<SEO title="Random photo gallery" description="Random Photo Gallery" keywords="Random Photos" />
+<SEO
+	title="Random photo gallery"
+	description="Random Photo Gallery"
+	keywords="random photo gallery, made with gsap"
+/>
 
 <!-- Photo gallery -->
 <Gallery />

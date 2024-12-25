@@ -15,7 +15,7 @@
 <SEO
 	title="Message me"
 	description="Contact Gabriel Atwell"
-	keywords="contact gabriel atwell, contact gabe"
+	keywords="contact gabriel atwell, contact gabe, message me"
 />
 
 <main transition:fade={{ delay: delay, duration: duration }}>
