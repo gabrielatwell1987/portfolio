@@ -10,7 +10,7 @@
 		{
 			"src": "./icons/screenshot-narrow.png",
 			"type": "image/png",
-			"sizes": "500x500",
+			"sizes": "500x665",
 			"form_factor": "narrow",
 			"label": "Narrow screenshot"
 		},
