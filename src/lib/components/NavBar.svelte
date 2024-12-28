@@ -39,10 +39,7 @@
 	</div>
 </nav>
 
-<!-- <section class="install"> -->
 <InstallBtn />
-
-<!-- </section> -->
 
 <style>
 	:root {
@@ -135,12 +132,6 @@
 			margin-top: 1rem;
 			margin-left: 1rem;
 		}
-
-		/* .install {
-			position: fixed;
-			bottom: 4rem;
-			left: 1rem;
-		} */
 	}
 
 	@media (min-width: 750px) {
@@ -173,11 +164,6 @@
 			margin-left: 15%;
 			margin-bottom: 15%;
 		}
-
-		/* .install {
-			bottom: 3rem;
-			left: 2rem;
-		} */
 	}
 
 	@media (min-width: 990px) {
