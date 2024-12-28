@@ -63,11 +63,15 @@
 		outline: none;
 		border: none;
 		cursor: pointer;
-		z-index: 15;
+		pointer-events: auto;
+		z-index: 1000;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		gap: 1rem;
+		position: fixed;
+		bottom: 4rem;
+		left: 1rem;
 
 		&:focus {
 			box-shadow: 0 0 0px var(--white);
@@ -81,6 +85,13 @@
 		& .desc {
 			font-size: clamp(0.8rem, 1.5vw, 1.5rem);
 			margin-top: 0.5rem;
+		}
+	}
+
+	@media (min-width: 750px) {
+		button {
+			bottom: 3rem;
+			left: 2rem;
 		}
 	}
 
