@@ -10,6 +10,7 @@
 	import CardFlip from '$lib/components/CardFlip.svelte';
 	import Tooltip from '$lib/components/Tooltip.svelte';
 	import UsefulLinks from '$lib/components/UsefulLinks.svelte';
+	import Divider from '$lib/components/Divider.svelte';
 
 	let duration = $state(300);
 	let delay = $state(100);
@@ -148,6 +149,8 @@
 				src2="/logos/skull-glass.webp"
 				alt2="a blue A logo"
 			/>
+
+			<Divider width="50" thickness="5" />
 
 			<UsefulLinks />
 		</article>
