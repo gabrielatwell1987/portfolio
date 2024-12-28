@@ -57,8 +57,8 @@
 		margin-inline: auto;
 		font-size: clamp(1rem, 2vw, 2rem);
 		font-weight: 700;
-		background-color: var(--darkest-blue);
-		color: var(--white);
+		background-color: var(--dark-pale);
+		color: var(--blackest);
 		border-radius: 8px;
 		outline: none;
 		border: none;
@@ -74,7 +74,7 @@
 		}
 
 		& i {
-			color: var(--white);
+			color: var(--blackest);
 			align-items: center;
 		}
 
