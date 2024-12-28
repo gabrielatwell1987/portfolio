@@ -206,6 +206,7 @@
 				line-height: 1.5;
 				hyphens: auto;
 				text-wrap: none;
+				z-index: 7;
 			}
 
 			.text-hero {
