@@ -129,8 +129,8 @@
 		}
 
 		.toggle {
-			margin-top: 1rem;
-			margin-left: 1rem;
+			padding-top: 2rem;
+			padding-left: 1rem;
 		}
 	}
 

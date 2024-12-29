@@ -10,7 +10,7 @@
 		background-color: var(--white);
 		height: var(--thickness);
 		margin-inline: auto;
-		margin-bottom: 10rem;
+		margin-bottom: 4rem;
 		border: none;
 		opacity: 0.5;
 	}
