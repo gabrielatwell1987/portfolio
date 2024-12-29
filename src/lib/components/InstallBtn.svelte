@@ -80,11 +80,13 @@
 		& i {
 			color: var(--blackest);
 			align-items: center;
+			cursor: pointer;
 		}
 
 		& .desc {
 			font-size: clamp(0.8rem, 1.5vw, 1.5rem);
 			margin-top: 0.5rem;
+			cursor: pointer;
 		}
 	}
 
