@@ -37,28 +37,4 @@
 			}
 		}
 	}
-
-	/* @media (min-width: 600px) {
-		.links {
-			width: 90%;
-		}
-	}
-
-	@media screen and (min-width: 990px) {
-		.links {
-			margin-top: 5%;
-		}
-	}
-
-	@media (min-width: 1024px) {
-		.links {
-			width: 70%;
-		}
-	}
-
-	@media (min-width: 1400px) {
-		.links {
-			width: 70%;
-		}
-	} */
 </style>
