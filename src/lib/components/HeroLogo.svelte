@@ -3,7 +3,7 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<main style="cursor: pointer;">
+<main>
 	<section class="hero-logo" transition:fade={{ duration: 500 }}>
 		<a href="/about/hero">
 			<Image src="/logos/atwellUI.webp" alt="atwell ui" width="1200" />

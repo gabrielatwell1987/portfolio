@@ -29,6 +29,7 @@
 <style>
 	a {
 		cursor: pointer;
+		width: fit-content;
 
 		.btn {
 			position: relative;
