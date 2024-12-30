@@ -17,9 +17,7 @@
 		<MainLogo />
 	</div>
 
-	<div class="toggle">
-		<ThemeToggle />
-	</div>
+	<ThemeToggle />
 
 	<div class="desktop">
 		<NavLink href="/about" title="About" />
@@ -46,12 +44,6 @@
 		--100: 100%;
 	}
 
-	.desktop {
-		display: block;
-		font-family: var(--orbitron);
-		margin-left: clamp(100px, 30%, 200px);
-	}
-
 	nav {
 		display: flex;
 		justify-content: space-around;
@@ -63,6 +55,12 @@
 		backdrop-filter: blur(0.75rem);
 		-webkit-backdrop-filter: blur(0.25rem);
 		z-index: 15;
+	}
+
+	.desktop {
+		display: block;
+		font-family: var(--orbitron);
+		margin-left: clamp(100px, 30%, 200px);
 	}
 
 	.header-logos {
@@ -126,11 +124,6 @@
 			top: 0;
 			right: 7px;
 			z-index: 10;
-		}
-
-		.toggle {
-			padding-top: 2rem;
-			padding-left: 1rem;
 		}
 	}
 
@@ -196,10 +189,6 @@
 			text-wrap: nowrap;
 		}
 
-		.toggle {
-			z-index: 10;
-		}
-
 		nav {
 			margin-right: 2rem;
 		}
@@ -209,10 +198,6 @@
 		.desktop {
 			line-height: 1.5;
 			margin-left: 0;
-		}
-
-		.toggle {
-			margin-left: 10%;
 		}
 
 		nav {
@@ -225,15 +210,12 @@
 			margin-right: 5rem;
 			scale: 1;
 		}
-
-		.toggle {
-			margin-left: 15%;
-		}
 	}
 
 	@media (min-width: 1600px) {
 		.desktop {
 			margin-left: 15em;
+			margin-right: 10rem;
 			scale: 1.2;
 		}
 	}
