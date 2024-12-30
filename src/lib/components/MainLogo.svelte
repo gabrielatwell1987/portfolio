@@ -80,6 +80,7 @@
 		.gabe-logo {
 			display: block;
 			margin-left: -7rem;
+			margin-top: 6rem;
 
 			a {
 				transition: transform 0.25s ease-in-out;
@@ -98,6 +99,7 @@
 		.gabe-logo {
 			display: block;
 			margin-left: 5%;
+			margin-top: 0;
 		}
 	}
 

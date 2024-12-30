@@ -3,7 +3,7 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<main>
+<main style="cursor: pointer;">
 	<section class="hero-logo" transition:fade={{ duration: 500 }}>
 		<a href="/about/hero">
 			<Image src="/logos/atwellUI.webp" alt="atwell ui" width="1200" />
@@ -24,8 +24,9 @@
 		align-items: center;
 		height: 30vh;
 		margin-top: 2.5%;
-		user-select: none;
 		padding-top: 5%;
+		width: fit-content;
+		margin-inline: auto;
 
 		.hero-logo {
 			width: clamp(99.9%, 25vw, 100%);
@@ -34,7 +35,6 @@
 
 			a {
 				text-decoration: none;
-				cursor: pointer;
 				background: transparent;
 			}
 		}

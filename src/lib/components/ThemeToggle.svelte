@@ -37,9 +37,9 @@
 		padding: 10px 15px;
 		font-size: clamp(1.5rem, 2vw, 2.25rem);
 		letter-spacing: 3px;
-		width: 100%;
+		width: fit-content;
 		margin-left: 5%;
-		margin-top: 5%;
+		margin-top: 1%;
 		z-index: 10;
 		outline: none;
 
@@ -60,6 +60,37 @@
 		&:focus,
 		&:focus {
 			box-shadow: 0 0 0px var(--off-white);
+		}
+	}
+
+	@media (min-width: 300px) {
+		button {
+			margin-top: 2rem;
+			margin-left: 1rem;
+		}
+	}
+
+	@media (min-width: 750px) {
+		button {
+			margin-left: 3rem;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		button {
+			z-index: 10;
+		}
+	}
+
+	@media (min-width: 1100px) {
+		button {
+			margin-left: 10%;
+		}
+	}
+
+	@media (min-width: 1400px) {
+		button {
+			margin-left: 17%;
 		}
 	}
 </style>
