@@ -202,11 +202,13 @@
 						&:hover {
 							transition: filter 750ms ease-in-out;
 							filter: drop-shadow(0 0 0.25rem var(--off-white));
+							opacity: 1;
 						}
 
 						&:not(:hover) {
 							filter: drop-shadow(0);
 							transition: filter 750ms ease-in-out;
+							opacity: 0.75;
 						}
 					}
 				}

@@ -6,13 +6,19 @@
 
 	$effect(() => {
 		const letters = gsap.utils.toArray('.animated-letter');
+		const drop = gsap.utils.toArray('.drop');
 
 		gsap.set(letters, {
+			scale: 1,
+			autoAlpha: 1
+		});
+
+		gsap.set(drop, {
 			scale: 0,
 			autoAlpha: 0
 		});
 
-		gsap.to(letters, {
+		gsap.to(drop, {
 			scale: 1,
 			transformOrigin: '50% 50%',
 			autoAlpha: 1,
@@ -20,7 +26,7 @@
 			delay: 0.5,
 			ease: 'sine.inOut',
 			stagger: {
-				each: 0.15,
+				each: 0.25,
 				from: 'edges'
 			}
 		});
