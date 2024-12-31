@@ -33,6 +33,14 @@
 
 <Image src="/code/calc.webp" alt="calc-size" />
 
+<!-- details element -->
+<div align="center" class="title">details element</div>
+
+<div align="left" class="body para" aria-label="animations">The <code>&lt;details&gt;</code> element can now be animated using the interpolate-size property, allowing for smooth transitions when opening and closing. Here’s how you can implement this: Enable Interpolation - Add <code>interpolate-size: allow-keywords;</code> to the <code>&lt;details&gt;</code> element to enable transitions to and from intrinsic sizing keywords like auto, min-content, max-content, and fit-content.
+ Apply specific styles to the <code>&lt;details&gt;</code> element and its pseudo-element ::details-content to control the transition behavior.</div>
+
+<Image src="/code/details.webp" alt="details element" />
+
 <div style="margin: 3% 0;"></div>
 
 ---
