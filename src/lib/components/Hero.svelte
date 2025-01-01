@@ -1,5 +1,6 @@
 <script>
 	import Button from '$lib/components/Button.svelte';
+	import HeroTitle from '$lib/components/HeroTitle.svelte';
 </script>
 
 <main>
@@ -10,7 +11,7 @@
 	/> -->
 
 	<section aria-label="hero">
-		<h1 class="hero-title">Frontend Crafted Web Experiences</h1>
+		<HeroTitle title="Frontend Crafted Web Experiences" />
 
 		<h4 class="summary left up">
 			I am a frontend developer who loves to create beautiful and functional websites. This website
@@ -32,16 +33,6 @@
 			height: 100vh;
 			position: relative;
 			margin-bottom: 2%;
-		}
-
-		h1 {
-			margin: 2rem auto;
-			margin-top: 5%;
-			color: var(--sky);
-			font-family: var(--anta);
-			font-size: clamp(1.5rem, 4vw, 7rem);
-			font-weight: 700;
-			letter-spacing: 3px;
 		}
 
 		h4 {
@@ -112,11 +103,6 @@
 	}
 
 	@media (min-width: 1024px) {
-		h1 {
-			width: 90%;
-			margin-inline: auto;
-		}
-
 		.summary {
 			width: 80%;
 			margin-inline: auto;
