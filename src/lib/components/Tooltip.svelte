@@ -33,6 +33,10 @@
 			font-weight: 600;
 			letter-spacing: 2px;
 			margin-top: 15%;
+
+			&:hover {
+				filter: hue-rotate(180deg);
+			}
 		}
 
 		.tooltip {
@@ -40,11 +44,11 @@
 			background-color: var(--blackest);
 			color: var(--white);
 			font-size: clamp(1rem, 1.5vw, 1.25rem);
-			letter-spacing: 3px;
 			padding: 0.5rem;
 			box-shadow: 0 0 5px var(--dark-blue);
 			border-radius: 16px;
 			max-width: 200px;
+			width: fit-content;
 			z-index: 1;
 			opacity: 0;
 			visibility: hidden;

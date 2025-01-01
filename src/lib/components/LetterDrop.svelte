@@ -44,8 +44,8 @@
 
 	<span class="animated-letter space"></span>
 
-	<span class="animated-letter">m</span>
-	<span class="animated-letter">e</span>
+	<span class="animated-letter stroke">m</span>
+	<span class="animated-letter stroke">e</span>
 </h1>
 
 <style>
@@ -55,9 +55,14 @@
 		color: var(--sky);
 		mix-blend-mode: lighten;
 		text-align: center;
+		margin-bottom: 15%;
 
 		.animated-letter {
 			display: inline-block;
+		}
+
+		.stroke {
+			-webkit-text-stroke: 1px var(--off-white);
 		}
 
 		.space {
