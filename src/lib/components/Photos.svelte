@@ -82,8 +82,6 @@
 	<Title title="images" />
 
 	<section>
-		<div class="spacing"></div>
-
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
 				<img
@@ -112,7 +110,7 @@
 					class="gabe"
 					src="photos/gabe4.webp"
 					alt="Gabriel in a restaurant"
-					width="350"
+					width="400"
 					loading="lazy"
 				/>
 
@@ -135,7 +133,8 @@
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
-				<img src="/photos/gabe3.webp" alt="Really old" class="gabe" width="350" loading="lazy" />
+				<img src="/photos/gabe3.webp" alt="Really old" class="gabe" width="400" loading="lazy" />
+
 				<img
 					src="/photos/wtf.webp"
 					alt="Trying to burn gabe"
@@ -159,15 +158,13 @@
 					src="/photos/wtf3.webp"
 					alt="when gabe was 5 years old"
 					class="gabe"
-					width="375"
+					width="400"
 					loading="lazy"
 				/>
 
 				<img class="gabe" src="/logos/monkey.webp" alt="monkey" width="350" />
 			</aside>
 		</div>
-
-		<div class="spacing"></div>
 	</section>
 </main>
 
@@ -184,6 +181,7 @@
 				width: var(--100);
 				margin: 0;
 				margin-bottom: 10%;
+				padding-block: 10vh;
 
 				.flex {
 					display: flex;
@@ -213,10 +211,6 @@
 					}
 				}
 			}
-		}
-
-		.spacing {
-			height: 10vh;
 		}
 	}
 

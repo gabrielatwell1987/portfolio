@@ -73,6 +73,14 @@
 		bottom: 4rem;
 		left: 1rem;
 
+		&:hover {
+			opacity: 1;
+		}
+
+		&:not(:hover) {
+			opacity: 0.9;
+		}
+
 		&:focus {
 			box-shadow: 0 0 0px var(--white);
 		}
