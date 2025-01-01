@@ -2,6 +2,7 @@
 	import ThreeCanvas from '$lib/components/ThreeCanvas.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import Button from '$lib/components/Button.svelte';
+	import HeroTitle from '$lib/components/HeroTitle.svelte';
 
 	$effect(() => {
 		console.log(ThreeCanvas);
@@ -19,7 +20,7 @@
 <ThreeCanvas />
 
 <section aria-label="hero">
-	<h1 class="hero-title">Frontend Crafted Web Experiences</h1>
+	<HeroTitle title="Frontend Crafted Web Experiences" />
 
 	<h4 class="summary left up">
 		I am a frontend developer who loves to create beautiful and functional websites. This website
@@ -46,15 +47,6 @@
 			left: 50%;
 			transform: translate(-50%, -55%);
 			width: 100%;
-
-			h1 {
-				margin: 0 auto 2rem auto;
-				color: var(--sky);
-				font-family: var(--anta);
-				font-size: clamp(1.5rem, 4vw, 7rem);
-				font-weight: 700;
-				letter-spacing: 3px;
-			}
 
 			h4 {
 				color: var(--white);
