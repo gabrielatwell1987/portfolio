@@ -84,9 +84,7 @@
 <main transition:fade={{ delay: delay, duration: duration }} aria-label="bio">
 	<section>
 		<article>
-			<div class="drop">
-				<LetterDrop />
-			</div>
+			<LetterDrop />
 
 			<div class="bio" aria-label="bio">
 				<p class="text a indent">
@@ -185,10 +183,6 @@
 				margin-inline: auto;
 				background-color: transparent;
 				box-shadow: none;
-			}
-
-			.drop {
-				margin-bottom: 15%;
 			}
 
 			p {
