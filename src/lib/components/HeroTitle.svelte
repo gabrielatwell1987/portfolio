@@ -28,7 +28,7 @@
 				);
 				background-clip: text;
 				background-size: var(--bgSize);
-				animation: animate 2s ease-in-out infinite;
+				animation: animate 5s ease-in-out infinite;
 				-webkit-background-clip: text;
 			}
 		}
@@ -40,7 +40,7 @@
 		}
 
 		50% {
-			background-position: 15%;
+			background-position: 50%;
 		}
 
 		100% {

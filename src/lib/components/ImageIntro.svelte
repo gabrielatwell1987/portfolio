@@ -2,46 +2,26 @@
 	import gsap from 'gsap';
 	import Image from '$lib/components/Image.svelte';
 
-	let { src, alt, title, text } = $props();
+	let { src, alt, title, text, width } = $props();
 
 	$effect(() => {
 		const img = document.querySelector('.img');
-		const h1 = document.querySelector('.h1');
-		const p = document.querySelector('.p');
 
 		const tl = gsap.timeline();
 
-		tl.fromTo(
-			h1,
+		tl.to(
+			img,
 			{
-				yPercent: -100,
-				opacity: 0
+				clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+				duration: 6,
+				ease: 'power4.inOut'
 			},
-			{ yPercent: -100, duration: 4, opacity: 1, ease: 'power2.out' },
-			'+=3'
-		)
-			.fromTo(
-				p,
-				{
-					yPercent: 200,
-					opacity: 0
-				},
-				{ yPercent: 200, duration: 4, opacity: 1, ease: 'power2.out' },
-				'<'
-			)
-			.fromTo(
-				img,
-				{
-					scale: 5,
-					ease: 'power2.out'
-				},
-				{
-					scale: 1,
-					duration: 5,
-					ease: 'power2.out'
-				},
-				0
-			);
+			'-=15'
+		).to(img, {
+			clipPath: 'polygon(0 99.9%, 100% 99.9%, 100% 0.1%, 0 0.1%)',
+			duration: 6,
+			ease: 'power4.inOut'
+		});
 	});
 </script>
 
@@ -50,7 +30,9 @@
 		<h1 class="h1">{title}</h1>
 
 		<div class="img">
-			<Image {src} {alt} />
+			<a href="/about/hero">
+				<Image {src} {alt} {width} />
+			</a>
 		</div>
 
 		<p class="p">{text}</p>
@@ -61,6 +43,7 @@
 	main {
 		width: fit-content;
 		margin-inline: auto;
+		margin-top: 7em;
 		overflow: hidden;
 
 		section {
@@ -80,6 +63,12 @@
 				align-items: center;
 				justify-content: center;
 				gap: 2rem;
+				will-change: clip-path;
+
+				a {
+					width: fit-content;
+					background: transparent;
+				}
 			}
 
 			.p {
