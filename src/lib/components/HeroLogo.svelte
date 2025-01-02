@@ -23,7 +23,7 @@
 		justify-content: center;
 		align-items: center;
 		height: 30vh;
-		margin-top: 2.5%;
+		margin-top: 5em;
 		padding-top: 5%;
 		width: fit-content;
 		margin-inline: auto;
