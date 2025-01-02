@@ -19,13 +19,13 @@
 			lenis.on('scroll', ScrollTrigger.update);
 
 			gsap.ticker.add((time) => {
-				lenis.raf(time * 375);
+				lenis.raf(time * 250);
 			});
 
 			gsap.ticker.lagSmoothing(0);
 		}
 
-		gsap.set(gabe, { borderRadius: '5%' });
+		gsap.set(gabe, { borderRadius: '3%' });
 
 		// responsive animations
 		let mm = gsap.matchMedia();
@@ -40,6 +40,7 @@
 				scale: 1,
 				duration: 2.75,
 				repeat: 1,
+				width: '500px',
 				yoyo: true,
 				scrollTrigger: {
 					trigger: 'main',
@@ -125,7 +126,7 @@
 					class="gabe"
 					src="photos/archie.webp"
 					alt="Gabe's poodle Archie"
-					width="350"
+					width="450"
 					loading="lazy"
 				/>
 			</aside>
@@ -133,13 +134,13 @@
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
-				<img src="/photos/gabe3.webp" alt="Really old" class="gabe" width="400" loading="lazy" />
+				<img src="/photos/gabe3.webp" alt="Really old" class="gabe" width="450" loading="lazy" />
 
 				<img
 					src="/photos/wtf.webp"
 					alt="Trying to burn gabe"
 					class="gabe"
-					width="500"
+					width="600"
 					loading="lazy"
 				/>
 				<img
@@ -158,11 +159,11 @@
 					src="/photos/wtf3.webp"
 					alt="when gabe was 5 years old"
 					class="gabe"
-					width="400"
+					width="425"
 					loading="lazy"
 				/>
 
-				<img class="gabe" src="/logos/monkey.webp" alt="monkey" width="350" />
+				<img class="gabe" src="/logos/monkey.webp" alt="monkey" width="550" />
 			</aside>
 		</div>
 	</section>
