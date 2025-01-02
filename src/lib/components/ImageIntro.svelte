@@ -20,7 +20,7 @@
 		).to(img, {
 			clipPath: 'polygon(0 99.9%, 100% 99.9%, 100% 0.1%, 0 0.1%)',
 			duration: 6,
-			ease: 'power4.inOut'
+			ease: 'slow(0.7, 0.7, false)'
 		});
 	});
 </script>
