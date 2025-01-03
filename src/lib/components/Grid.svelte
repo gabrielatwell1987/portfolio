@@ -1,5 +1,4 @@
 <script>
-	import { blur } from 'svelte/transition';
 	/** @type {{leftTitle: any, rightTitle: any}} */
 	let { leftTitle, rightTitle } = $props();
 </script>
@@ -34,13 +33,13 @@
 			border-radius: 15px;
 			padding: 0.5rem;
 			background-color: hsla(0, 0%, 26%, 0.25);
-			backdrop-filter: blur(4px);
+			backdrop-filter: blur(5px);
 			-webkit-backdrop-filter: blur(4px);
 			box-shadow: 0px 0px 12px var(--white);
 
 			.title {
 				font-size: clamp(2rem, 4vw, 5rem);
-				text-shadow: 1px 1px var(--blackest);
+				text-shadow: 0 0 5px var(--off-white);
 				mix-blend-mode: difference;
 				color: var(--sky);
 				font-family: var(--orbitron);
@@ -53,6 +52,7 @@
 				font-size: clamp(1.2rem, 1.75vw, 2rem);
 				color: var(--white);
 				margin-top: -1rem;
+				hyphens: auto;
 			}
 		}
 	}

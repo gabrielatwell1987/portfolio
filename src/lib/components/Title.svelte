@@ -45,8 +45,8 @@
 			font-size: clamp(3.15rem, 10.5vw, 15rem);
 			color: var(--sky);
 			letter-spacing: 5px;
-			text-shadow: 5px 5px 5px var(--dark-gray);
-			filter: drop-shadow(0px 0px 0.75rem var(--white));
+			text-shadow: 2px 2px 2px var(--dark-gray);
+			filter: drop-shadow(0px 0px 0.35rem var(--white));
 			text-transform: uppercase;
 			font-kerning: none;
 			margin-top: 3rem;
@@ -67,7 +67,7 @@
 	@media (min-width: 990px) {
 		.title {
 			font-weight: 800;
-			text-shadow: 5px 5px 5px var(--dark-gray);
+			text-shadow: 4px 4px 4px var(--dark-gray);
 		}
 	}
 </style>

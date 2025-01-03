@@ -12,7 +12,7 @@
 
 .body {
 	margin-bottom: 2rem;
-	max-width: 85%;
+	max-width: 81%;
 	margin-inline: auto;
 	color: var(--white);
 	font-size: clamp(1.25rem, 1.25vw, 1.75rem);
