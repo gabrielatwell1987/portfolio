@@ -32,15 +32,19 @@
 			}
 		});
 
-		gsap.set('.link', { autoAlpha: 0, scale: 0 });
-		gsap.set('.content', { autoAlpha: 0 });
-		gsap.set(iconLogo, { yPercent: 75 });
-
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 
-		tl.to('.content', { autoAlpha: 1 })
-			.to('.link', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 1.5, ease: 'expo.out' }, 0)
-			.to('.iconLogo', { yPercent: 0, duration: 1.5 }, 0);
+		tl.from('.content', { autoAlpha: 0 })
+			.from('.link', { autoAlpha: 0, stagger: 0.8, scale: 0, duration: 1.5, ease: 'expo.out' }, 0)
+			.from('.iconLogo', { scale: 0, duration: 2, ease: 'slow(.75, 1.2, false)' }, 0);
+
+		iconLogo.addEventListener('mouseenter', () => {
+			gsap.to('.iconLogo', { rotation: 5, ease: 'elastic.out(1, 0.3)' });
+		});
+
+		iconLogo.addEventListener('mouseleave', () => {
+			gsap.to('.iconLogo', { rotation: -5, ease: 'elastic.out(1, 0.3)' });
+		});
 
 		console.log(Project);
 	});
@@ -204,7 +208,7 @@
 				display: flex;
 				justify-content: center;
 				margin-bottom: 15%;
-				width: clamp(15em, 40vw, 40em);
+				width: fit-content;
 				margin-inline: auto;
 			}
 		}

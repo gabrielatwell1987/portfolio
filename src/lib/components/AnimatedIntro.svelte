@@ -18,7 +18,6 @@
 				yPercent: 100,
 				autoAlpha: 0,
 				duration: 1.25,
-				fontWeight: 200,
 				ease: 'sine.inOut'
 			},
 			'+=1'
@@ -26,7 +25,7 @@
 			xPercent: 150,
 			autoAlpha: 0,
 			stagger: {
-				amount: 0.5,
+				amount: 0.75,
 				from: 'random'
 			},
 			duration: 3,
@@ -47,9 +46,9 @@
 	}
 
 	.sentence {
-		font-family: var(--bronova);
+		font-family: var(--kanit);
 		font-size: clamp(1.25rem, 2.5vw, 10rem);
-		font-weight: 200;
+		font-weight: 100;
 		color: var(--white);
 		mix-blend-mode: lighten;
 		text-align: center;
@@ -60,7 +59,6 @@
 			font-family: var(--anta);
 			font-size: clamp(3rem, 16vw, 40rem);
 			color: var(--blue);
-			font-weight: 500;
 			text-wrap: none;
 			display: block;
 			letter-spacing: 1px;
