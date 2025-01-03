@@ -196,7 +196,7 @@
 
 					.gabe {
 						margin: 0.5rem auto;
-						max-width: var(--100);
+						max-width: 20em;
 
 						&:hover {
 							transition: filter 750ms ease-in-out;
