@@ -41,11 +41,12 @@
 			letter-spacing: 2px;
 			text-transform: uppercase;
 			width: fit-content;
+			transition: all 0.5s;
 
 			.img {
 				border-radius: 8px;
 				max-width: var(--100);
-				transition: scale 0.05s ease-in-out;
+				transition: scale 0.25s ease-in-out;
 
 				&:hover {
 					scale: 1.05;
