@@ -41,7 +41,7 @@
 			letter-spacing: 2px;
 			text-transform: uppercase;
 			width: fit-content;
-			transition: all 0.5s;
+			transition: all 0.35s;
 
 			.img {
 				border-radius: 8px;
