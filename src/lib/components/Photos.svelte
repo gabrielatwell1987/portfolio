@@ -187,15 +187,16 @@
 				.flex {
 					display: flex;
 					flex-direction: column;
-					gap: 1rem;
-					margin-bottom: 5%;
+					gap: 2rem;
+					margin-bottom: 2%;
 
 					img {
 						max-width: var(--100);
 					}
 
 					.gabe {
-						margin: 0.5rem auto;
+						margin: 1rem;
+						margin-inline: auto;
 						max-width: 20em;
 
 						&:hover {
