@@ -109,4 +109,8 @@ code.code {
 	.copy-prompt-text {
 		margin-top: 3%;
 	}
+
+	.body {
+		max-width: 90%;
+	}
 }
