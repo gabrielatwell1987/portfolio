@@ -1,6 +1,7 @@
 <script>
 	import './md.css';
-	import Image from '$lib/components/Image.svelte'; 
+	import Image from '$lib/components/Image.svelte';
+	import Divider from '$lib/components/Divider.svelte';
 </script>
 
 <!-- transitions -->
@@ -43,4 +44,4 @@
 
 <div style="margin: 3% 0;"></div>
 
----
+<Divider width="75" thickness="5" />

@@ -1,7 +1,8 @@
 <script>
-import './md.css';
+	import './md.css';
 	import Subheading from './Subheading.svelte';
-	import Image from '$lib/components/Image.svelte'; 
+	import Image from '$lib/components/Image.svelte';
+	import Divider from '$lib/components/Divider.svelte';
 </script>
 
 <!-- tweens -->
@@ -67,4 +68,4 @@ import './md.css';
 
 <div style="margin: 3% 0;"></div>
 
----
+<Divider width="75" thickness="5" />
