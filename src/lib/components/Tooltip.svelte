@@ -35,7 +35,7 @@
 			margin-top: 15%;
 
 			&:hover {
-				filter: hue-rotate(180deg);
+				filter: hue-rotate(7deg);
 			}
 		}
 
