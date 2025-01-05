@@ -44,25 +44,21 @@
 
 	<span class="animated-letter space"></span>
 
-	<span class="animated-letter stroke">m</span>
-	<span class="animated-letter stroke">e</span>
+	<span class="animated-letter">m</span>
+	<span class="animated-letter">e</span>
 </h1>
 
 <style>
 	.animated-text {
 		font-family: var(--anta);
 		font-size: clamp(2rem, 9vw, 20rem);
-		color: var(--sky);
+		color: var(--blue);
 		mix-blend-mode: lighten;
 		text-align: center;
 		margin-bottom: 15%;
 
 		.animated-letter {
 			display: inline-block;
-		}
-
-		.stroke {
-			-webkit-text-stroke: 1px var(--off-white);
 		}
 
 		.space {
@@ -73,8 +69,8 @@
 			transform: rotate(-10deg);
 			font-size: clamp(2.3rem, 15vw, 20rem);
 			display: inline-block;
-			text-shadow: 5px 5px 5px var(--dark-gray);
-			filter: drop-shadow(0px 0px 0.75rem var(--white));
+			text-shadow: 0px 0px 5px var(--dark-gray);
+			filter: drop-shadow(0px 0px 0.5rem var(--smoke));
 		}
 	}
 
