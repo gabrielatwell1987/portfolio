@@ -78,16 +78,18 @@
 				.skillImg {
 					width: 25%;
 					margin-inline: auto;
+					margin-block: 3rem;
 				}
 			}
 		}
 
 		.gsap {
-			margin-top: -10%;
+			margin-top: -5%;
 			margin-bottom: 5%;
 
 			.skillImg {
 				margin-inline: auto;
+				margin-top: 6rem;
 			}
 		}
 	}

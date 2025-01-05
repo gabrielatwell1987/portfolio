@@ -3,10 +3,10 @@
 	font-size: clamp(2rem, 5vw, 6rem);
 	font-weight: 900;
 	letter-spacing: 5px;
-	color: var(--sky);
+	color: var(--darkest-blue);
 	margin-block: 2rem;
-	text-shadow: 5px 5px 5px var(--dark-gray);
-	filter: drop-shadow(0px 0px 0.75rem var(--white));
+	text-shadow: 0 0 3px var(--dark-gray);
+	filter: drop-shadow(0px 0px 0.25rem var(--white));
 	text-transform: uppercase;
 }
 
@@ -34,8 +34,8 @@
 
 /* code blocks */
 code {
-	background: var(--lightblack);
-	color: var(--white);
+	background: var(--black);
+	color: var(--off-white);
 	font-family: var(--mono);
 	font-size: clamp(1rem, 1.25vw, 1.25rem);
 	letter-spacing: 1px;
@@ -43,15 +43,15 @@ code {
 }
 
 code.code {
-	background: var(--lightblack);
-	color: var(--white);
+	background: var(--black);
+	color: var(--off-white);
 	font-size: clamp(1rem, 1.25vw, 1.25rem);
 	font-weight: 700;
 }
 
 .code-block {
-	background-color: var(--darkest-blue);
-	border: 1px solid var(--white);
+	background-color: var(--black);
+	border: 1px solid var(--off-white);
 	width: 75%;
 	margin: 2rem auto;
 	padding: 1rem;

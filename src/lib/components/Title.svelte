@@ -43,9 +43,9 @@
 			text-align: center;
 			font-family: var(--anta);
 			font-size: clamp(3.15rem, 10.5vw, 15rem);
-			color: var(--sky);
+			color: var(--blue);
 			letter-spacing: 5px;
-			text-shadow: 2px 2px 2px var(--dark-gray);
+			text-shadow: 2px 2px 2px var(--darksmoke);
 			filter: drop-shadow(0px 0px 0.35rem var(--white));
 			text-transform: uppercase;
 			font-kerning: none;

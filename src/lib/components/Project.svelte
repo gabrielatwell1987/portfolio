@@ -26,7 +26,7 @@
 		.link {
 			text-align: center;
 			background-color: transparent;
-			color: var(--purple);
+			color: var(--sky);
 			border: none;
 			padding: 1rem;
 			display: flex;
