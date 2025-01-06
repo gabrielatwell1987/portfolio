@@ -54,4 +54,10 @@
 			top: 1rem;
 		}
 	}
+
+	@media (min-width: 755px) {
+		.hamburger {
+			opacity: 0;
+		}
+	}
 </style>
