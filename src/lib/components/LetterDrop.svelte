@@ -81,10 +81,6 @@
 			.space {
 				width: 1.5rem;
 			}
-
-			.tilt {
-				text-shadow: 2px 2px 0px #666;
-			}
 		}
 	}
 </style>

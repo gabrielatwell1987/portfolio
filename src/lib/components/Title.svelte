@@ -44,9 +44,10 @@
 			font-family: var(--anta);
 			font-size: clamp(3.15rem, 10.5vw, 15rem);
 			color: var(--blue);
+			mix-blend-mode: lighten;
 			letter-spacing: 5px;
 			text-shadow: 0px 0px 5px var(--dark-gray);
-			filter: drop-shadow(0px 0px 0.35rem var(--smoke));
+			filter: drop-shadow(0px 0px 0.5rem var(--smoke));
 			text-transform: uppercase;
 			font-kerning: none;
 			margin-top: 3rem;
@@ -67,7 +68,6 @@
 	@media (min-width: 990px) {
 		.title {
 			font-weight: 800;
-			text-shadow: 4px 4px 4px var(--dark-gray);
 		}
 	}
 </style>
