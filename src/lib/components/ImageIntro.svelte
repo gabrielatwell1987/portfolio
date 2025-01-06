@@ -9,21 +9,11 @@
 
 		const tl = gsap.timeline();
 
-		// tl.to(
-		// 	img,
-		// 	{
-		// 		clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
-		// 		duration: 4,
-		// 		ease: 'power4.inOut'
-		// 	},
-		// 	'-=15'
-		// ).to(img, {
-		// 	clipPath: 'polygon(0 99.9%, 100% 99.9%, 100% 0.1%, 0 0.1%)',
-		// 	duration: 4,
-		// 	ease: 'slow(0.7, 0.7, false)'
-		// });
-
 		tl.from(img, { autoAlpha: 0, duration: 3, ease: 'power4.inOut' });
+
+		return () => {
+			tl.kill();
+		};
 	});
 </script>
 

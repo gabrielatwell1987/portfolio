@@ -31,6 +31,10 @@
 			duration: 3,
 			ease: 'power3.inOut'
 		});
+
+		return () => {
+			tl.kill();
+		};
 	});
 </script>
 

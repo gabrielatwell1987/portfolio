@@ -75,6 +75,14 @@
 			}).to(main, { autoAlpha: 1 });
 		});
 
+		return () => {
+			lenis.off('scroll', ScrollTrigger.update);
+			lenis.destroy();
+
+			gsap.killTweensOf(main);
+			gsap.killTweensOf(gabe);
+		};
+
 		console.log('Photos of Me');
 	});
 </script>

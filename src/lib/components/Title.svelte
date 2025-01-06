@@ -9,7 +9,7 @@
 	$effect(() => {
 		const letters = gsap.utils.toArray('.title span');
 
-		gsap.from(letters, {
+		const title = gsap.from(letters, {
 			scale: 0,
 			transformOrigin: '50% 50%',
 			autoAlpha: 0,
@@ -21,6 +21,10 @@
 				from: 'random'
 			}
 		});
+
+		return () => {
+			gsap.killTweensOf(title);
+		};
 	});
 </script>
 

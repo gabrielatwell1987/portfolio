@@ -71,6 +71,15 @@
 				'-=.75'
 			);
 
+		return () => {
+			gsap.killTweensOf('.d');
+			gsap.killTweensOf('.hero');
+			gsap.killTweensOf('.margin__b');
+			gsap.killTweensOf('.b');
+			gsap.killTweensOf('.a');
+			gsap.killTweensOf('article');
+		};
+
 		console.log('About page');
 	});
 </script>

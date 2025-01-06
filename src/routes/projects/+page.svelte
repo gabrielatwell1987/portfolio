@@ -51,6 +51,13 @@
 		});
 
 		console.log(Project);
+
+		return () => {
+			gsap.killTweensOf(logo);
+			gsap.killTweensOf('.content');
+			gsap.killTweensOf('.link');
+			gsap.killTweensOf('.iconLogo');
+		};
 	});
 </script>
 

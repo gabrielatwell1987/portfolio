@@ -14,6 +14,10 @@
 		gsap.set(form, { autoAlpha: 0 });
 
 		gsap.to(form, { autoAlpha: 1, duration: 3.5 });
+
+		return () => {
+			gsap.killTweensOf(form);
+		};
 	});
 </script>
 
