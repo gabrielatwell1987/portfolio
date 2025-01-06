@@ -28,6 +28,10 @@
 				onComplete: () => modal.close()
 			});
 		});
+
+		return () => {
+			gsap.killTweensOf(modal);
+		};
 	});
 </script>
 

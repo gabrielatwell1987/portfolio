@@ -30,6 +30,11 @@
 				from: 'edges'
 			}
 		});
+
+		return () => {
+			gsap.killTweensOf(letters);
+			gsap.killTweensOf(drop);
+		};
 	});
 </script>
 

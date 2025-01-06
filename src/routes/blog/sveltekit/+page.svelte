@@ -24,7 +24,10 @@
 
 		tl.to(title, { autoAlpha: 1, duration: 2, ease: 'back.out(4)' }, 0);
 
-		console.log('Greensock page');
+		return () => {
+			gsap.killTweensOf(title);
+			gsap.killTweensOf(popover);
+		};
 	});
 </script>
 
