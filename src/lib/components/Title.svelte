@@ -45,8 +45,8 @@
 			font-size: clamp(3.15rem, 10.5vw, 15rem);
 			color: var(--blue);
 			letter-spacing: 5px;
-			text-shadow: 2px 2px 2px var(--darksmoke);
-			filter: drop-shadow(0px 0px 0.35rem var(--white));
+			text-shadow: 0px 0px 5px var(--dark-gray);
+			filter: drop-shadow(0px 0px 0.35rem var(--smoke));
 			text-transform: uppercase;
 			font-kerning: none;
 			margin-top: 3rem;
