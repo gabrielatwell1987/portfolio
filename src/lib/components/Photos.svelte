@@ -82,8 +82,6 @@
 			gsap.killTweensOf(main);
 			gsap.killTweensOf(gabe);
 		};
-
-		console.log('Photos of Me');
 	});
 </script>
 
