@@ -1,12 +1,15 @@
 <script>
 	import '../app.css';
 	import { page } from '$app/stores';
+	import '@fortawesome/fontawesome-free/css/all.css';
+	import '@picocss/pico/css/pico.min.css';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import gsap from 'gsap';
+	import Lenis from 'lenis';
 	import NavBar from '$lib/components/NavBar.svelte';
 	import Analytics from '$lib/data/Analytics.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Loading from '$lib/components/Loading.svelte';
-	import '@fortawesome/fontawesome-free/css/all.css';
-	import '@picocss/pico/css/pico.min.css';
 
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
@@ -44,6 +47,29 @@
 		isPageLoaded = true;
 
 		detectSWUpdate();
+
+		// lenis
+		gsap.registerPlugin(ScrollTrigger);
+		ScrollTrigger.refresh();
+
+		let lenis;
+
+		if (typeof window !== 'undefined') {
+			lenis = new Lenis();
+
+			lenis.on('scroll', ScrollTrigger.update);
+
+			gsap.ticker.add((time) => {
+				lenis.raf(time * 350);
+			});
+
+			gsap.ticker.lagSmoothing(0);
+		}
+
+		return () => {
+			lenis.off('scroll', ScrollTrigger.update);
+			lenis.destroy();
+		};
 	});
 
 	let canonicalUrl = $derived($page.url.origin + $page.url.pathname);
