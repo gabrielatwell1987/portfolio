@@ -35,7 +35,7 @@
 			margin: 0;
 			padding: 0;
 			letter-spacing: 2px;
-			color: var(--sky);
+			color: var(--purple);
 			font-family: var(--orbitron);
 			font-size: clamp(1.1rem, 2vw, 2rem);
 			font-weight: 800;
