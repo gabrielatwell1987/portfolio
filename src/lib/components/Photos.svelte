@@ -1,29 +1,10 @@
 <script>
 	import { gsap } from 'gsap';
-	// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	// import Lenis from 'lenis';
 	import Title from '$lib/components/Title.svelte';
 
 	$effect(() => {
 		const main = document.querySelector('main');
 		const gabe = document.querySelectorAll('.gabe');
-
-		// gsap.registerPlugin(ScrollTrigger);
-		// ScrollTrigger.refresh();
-
-		// let lenis;
-
-		// if (typeof window !== 'undefined') {
-		// 	lenis = new Lenis();
-
-		// 	lenis.on('scroll', ScrollTrigger.update);
-
-		// 	gsap.ticker.add((time) => {
-		// 		lenis.raf(time * 250);
-		// 	});
-
-		// 	gsap.ticker.lagSmoothing(0);
-		// }
 
 		gsap.set(gabe, { borderRadius: '3%' });
 
@@ -76,9 +57,6 @@
 		});
 
 		return () => {
-			// lenis.off('scroll', ScrollTrigger.update);
-			// lenis.destroy();
-
 			gsap.killTweensOf(main);
 			gsap.killTweensOf(gabe);
 		};

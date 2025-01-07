@@ -39,7 +39,7 @@
 
 			.title {
 				font-size: clamp(2rem, 4vw, 5rem);
-				text-shadow: 0 0 5px var(--off-white);
+				text-shadow: 0 0 5px var(--smoke);
 				mix-blend-mode: difference;
 				color: var(--sky);
 				font-family: var(--orbitron);
