@@ -230,6 +230,7 @@
 
 	section {
 		padding-top: 13rem;
+		overflow: hidden;
 	}
 
 	.margin {

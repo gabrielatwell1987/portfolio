@@ -221,6 +221,7 @@
 
 		section {
 			padding-top: 2rem;
+			overflow: hidden;
 
 			.iconLogo {
 				display: flex;
