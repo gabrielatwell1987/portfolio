@@ -209,6 +209,7 @@
 
 	section {
 		padding-top: 10rem;
+		overflow: hidden;
 	}
 
 	.margin {
