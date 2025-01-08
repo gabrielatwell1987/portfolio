@@ -95,35 +95,42 @@
 		title="horizontal scroll"
 		img="/projects/scroller.webp"
 		url="https://scrollernessly.vercel.app"
-		description="HTML/CSS/JS"
+		description="html/css/js"
 	/>
 
 	<Project
 		title="grocery list"
 		img="/projects/groceries.webp"
 		url="https://react-todo-navy-five.vercel.app/"
-		description="React"
+		description="react"
 	/>
 
 	<Project
+		title="e-commerce product page"
+		img="/projects/ecommerce.webp"
+		url="https://ecommerceproductpage-bay.vercel.app"
+		description="html/css/js"
+	/>
+
+	<!-- <Project
 		title="nasa api"
 		img="/projects/nasa.webp"
 		url="https://nasaapi-theta.vercel.app"
 		description="React"
-	/>
+	/> -->
 
 	<Project
 		title="password maker"
 		img="/projects/pw-generator.webp"
 		url="https://pw-generator-ebon.vercel.app/"
-		description="Sveltekit"
+		description="sveltekit"
 	/>
 
 	<Project
 		title="github search"
 		img="/projects/github.webp"
 		url="https://adiapp.vercel.app"
-		description="Svelte"
+		description="svelte"
 	/>
 
 	<Project
