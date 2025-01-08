@@ -55,14 +55,14 @@
 
 			.hover-text {
 				visibility: hidden;
-				width: var(--100);
+				width: 100%;
 				background-color: black;
-				color: #fff;
+				color: var(--white);
 				text-align: center;
 				border-radius: 6px;
-				padding: 5px 0;
+				padding: 5px 3px;
 				font-family: var(--bronova);
-				font-size: clamp(1rem, 1.5vw, 1.75rem);
+				font-size: clamp(1rem, 1.15vw, 1.5rem);
 				z-index: 1;
 				margin-inline: auto;
 				opacity: 0;
