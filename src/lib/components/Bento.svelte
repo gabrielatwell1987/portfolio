@@ -100,6 +100,10 @@
 						border 1s ease,
 						box-shadow 1s ease;
 				}
+
+				&:last-child {
+					margin-bottom: 2.3rem;
+				}
 			}
 
 			&:last-child {
