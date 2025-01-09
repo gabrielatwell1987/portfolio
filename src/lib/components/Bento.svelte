@@ -117,6 +117,12 @@
 				grid-column: var(--col);
 				grid-row: var(--row);
 			}
+
+			& .item {
+				&:first-child {
+					scale: 0.75;
+				}
+			}
 		}
 	}
 
