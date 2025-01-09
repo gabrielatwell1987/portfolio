@@ -3,9 +3,10 @@
 </script>
 
 <main class="links">
+	<LoadBtn loading="loading..." submit="Random Gallery" href="/about/gallery" />
+
 	<h2>Useful Links:</h2>
 
-	<LoadBtn loading="loading..." submit="Random Gallery" href="/about/gallery" />
 	<LoadBtn loading="loading..." submit="JoyOfCode" href="https://joyofcode.xyz" />
 	<LoadBtn loading="loading..." submit="Kevin Powell" href="https://kevinpowell.co" />
 	<LoadBtn loading="loading..." submit="Traversy Media" href="https://traversymedia.com" />
@@ -24,7 +25,8 @@
 			text-align: center;
 
 			h2 {
-				margin-bottom: 0.5rem;
+				margin-top: 2rem;
+				margin-bottom: 0.75rem;
 				font-size: clamp(1rem, 1.75vw, 1.5rem);
 			}
 

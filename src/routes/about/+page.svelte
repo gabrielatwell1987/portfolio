@@ -157,8 +157,6 @@
 				alt2="a blue A logo"
 			/>
 
-			<Divider width="50" thickness="5" />
-
 			<UsefulLinks />
 		</article>
 	</section>
