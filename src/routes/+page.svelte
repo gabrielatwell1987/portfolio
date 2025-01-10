@@ -3,6 +3,16 @@
 	import { goto } from '$app/navigation';
 	import HeroTitle from '$lib/components/HeroTitle.svelte';
 
+	let videoElement;
+
+	function handleVisibilityChange() {
+		if (document.hidden && videoElement) {
+			videoElement.pause(); // Pause the video when the page is hidden
+		} else if (videoElement) {
+			videoElement.play(); // Resume the video when the page becomes visible
+		}
+	}
+
 	$effect(() => {
 		const heroVideo = document.querySelector('.hero-video');
 		const heroContent = document.querySelector('.hero-content');
@@ -10,6 +20,12 @@
 		gsap.from(heroVideo, { opacity: 0, duration: 1, delay: 0.5 });
 
 		gsap.fromTo(heroContent, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, delay: 1 });
+
+		document.addEventListener('visibilitychange', handleVisibilityChange);
+
+		return () => {
+			document.removeEventListener('visibilitychange', handleVisibilityChange);
+		};
 	});
 
 	function proceedToMain() {
@@ -19,7 +35,7 @@
 </script>
 
 <main class="hero">
-	<video autoplay muted loop playsinline class="hero-video" preload="true">
+	<video autoplay muted loop playsinline class="hero-video" preload="true" bind:this={videoElement}>
 		<source src="/videos/skully.mp4" type="video/mp4" />
 
 		<source src="/videos/skully.webm" type="video/webm" />
