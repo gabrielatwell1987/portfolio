@@ -1,22 +1,115 @@
 <script>
-	import Hero from '$lib/components/Hero.svelte';
-	import SEO from '$lib/data/SEO.svelte';
-	import AnimatedIntro from '$lib/components/AnimatedIntro.svelte';
-	import ImageIntro from '$lib/components/ImageIntro.svelte';
+	import gsap from 'gsap';
+	import { goto } from '$app/navigation';
+	import HeroTitle from '$lib/components/HeroTitle.svelte';
 
 	$effect(() => {
-		console.log(Hero);
+		const heroVideo = document.querySelector('.hero-video');
+		const heroContent = document.querySelector('.hero-content');
+
+		gsap.from(heroVideo, { opacity: 0, duration: 1, delay: 0.5 });
+
+		gsap.fromTo(heroContent, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, delay: 1 });
 	});
+
+	function proceedToMain() {
+		localStorage.setItem('visitedLanding', 'true');
+		goto('/landing');
+	}
 </script>
 
-<SEO
-	title="Frontend Developer"
-	description="Gabriel Atwell's Portfolio"
-	keywords="gabriel atwell, gabe atwell, frontend developer, frontend dev portfolio, frontend developer portfolio, frontend portfolio projects, frontend portfolio, frontend web developer portfolio, junior web developer portfolio, web developer, web designer, web developer, web development, web design, gabe atwell portfolio, gabe atwell developer, gabe atwell web developer, gabe atwell web designer, atwell design, gabe atwell web design, atwell ui"
-/>
+<main class="hero">
+	<video autoplay muted loop playsinline class="hero-video" preload="true">
+		<source src="/videos/skully.mp4" type="video/mp4" />
 
-<ImageIntro src="/logos/atwellUI.webp" alt="" title="" text="" width="1200" />
+		<source src="/videos/skully.webm" type="video/webm" />
 
-<AnimatedIntro text="do you need a " span="website?" />
+		Your browser does not support the video tag.
+	</video>
 
-<Hero />
+	<div class="hero-content">
+		<HeroTitle title="Welcome!" />
+
+		<p>
+			<span>This is the frontend portfolio of Gabe Atwell</span>! If you have any questions, you can
+			contact me and I will get back to you 👋
+		</p>
+
+		<a href="/landing" class="cta-button" onclick={proceedToMain}>Enter site</a>
+	</div>
+</main>
+
+<style>
+	.hero {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	.hero-video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 1;
+		opacity: 0.2;
+	}
+
+	.hero-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		color: white;
+		z-index: 1;
+
+		& p {
+			margin: 2rem 0;
+			font-family: var(--bronova);
+			font-size: clamp(1rem, 1.5vw, 1.75rem);
+
+			& span {
+				font-size: clamp(1.2rem, 1.5vw, 2rem);
+				font-weight: 600;
+				color: var(--sky);
+			}
+		}
+
+		& .cta-button {
+			padding: 0.8rem 1rem;
+			background: var(--white);
+			color: var(--blackest);
+			border: none;
+			border-radius: 6px;
+			text-decoration: none;
+			font-family: var(--orbitron);
+			font-size: clamp(1rem, 1.15vw, 2rem);
+			font-weight: 600;
+			cursor: pointer;
+			transition: background 0.3s ease;
+
+			&:hover {
+				background: rgba(255, 255, 255, 1);
+			}
+		}
+	}
+
+	@keyframes animate {
+		0% {
+			background-position: 0;
+		}
+
+		50% {
+			background-position: 50%;
+		}
+
+		100% {
+			background-position: 0;
+		}
+	}
+</style>

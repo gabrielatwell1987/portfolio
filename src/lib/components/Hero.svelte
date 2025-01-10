@@ -4,14 +4,10 @@
 </script>
 
 <main>
-	<!-- <img
+	<img
 		src="https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 		alt="Wireframing and design of a website"
-	/> -->
-
-	<video autoplay muted loop playsinline>
-		<source src="/videos/seamless.mp4" type="video/mp4" />
-	</video>
+	/>
 
 	<section aria-label="hero">
 		<HeroTitle title="Frontend Crafted Web Experiences" />
@@ -38,20 +34,19 @@
 			margin-bottom: 2%;
 		}
 
-		h4 {
-			color: var(--white);
-			font-weight: 400;
-			letter-spacing: 0.5px;
-		}
-
-		img,
-		video {
+		img {
 			border-radius: 15px;
-			opacity: 0.25;
+			opacity: 0.15;
 			transition: opacity 0.75s ease-in-out;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+		}
+
+		h4 {
+			color: var(--white);
+			font-weight: 400;
+			letter-spacing: 0.5px;
 		}
 
 		section {
@@ -100,8 +95,7 @@
 			letter-spacing: 3px;
 		}
 
-		img,
-		video {
+		img {
 			width: 90%;
 			height: 100%;
 		}

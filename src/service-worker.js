@@ -89,7 +89,12 @@ const VIDEO_CACHE = `video-cache-${version}`;
 const ASSETS = [...build, ...files];
 
 // List of video files to cache
-const VIDEO_ASSETS = ['/videos/seamless.webm', '/videos/seamless.mp4'];
+const VIDEO_ASSETS = [
+	'/videos/seamless.webm',
+	'/videos/seamless.mp4',
+	'/videos/skully.webm',
+	'/videos/skully.mp4'
+];
 
 // Install service worker
 self.addEventListener('install', (event) => {
