@@ -11,7 +11,7 @@
 
 		gsap.from(heroVideo, { opacity: 0, duration: 1, delay: 0.5 });
 
-		gsap.fromTo(heroContent, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, delay: 1 });
+		gsap.from(heroContent, { opacity: 0, y: 50, duration: 1.5, delay: 1 });
 
 		document.addEventListener('visibilitychange', handleVisibilityChange);
 
