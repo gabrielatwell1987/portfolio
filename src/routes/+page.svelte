@@ -44,11 +44,11 @@
 	</video>
 
 	<div class="hero-content">
-		<HeroTitle title="Welcome!" />
+		<HeroTitle title="Welcome! 👋" />
 
 		<p>
 			<span>This is the frontend portfolio of Gabe Atwell</span>! If you have any questions, you can
-			contact me and I will get back to you 👋
+			contact me and I will get back to you.
 		</p>
 
 		<a href="/landing" class="cta-button" onclick={proceedToMain}>Enter site</a>
