@@ -5,14 +5,6 @@
 
 	let videoElement;
 
-	function handleVisibilityChange() {
-		if (document.hidden && videoElement) {
-			videoElement.pause(); // Pause the video when the page is hidden
-		} else if (videoElement) {
-			videoElement.play(); // Resume the video when the page becomes visible
-		}
-	}
-
 	$effect(() => {
 		const heroVideo = document.querySelector('.hero-video');
 		const heroContent = document.querySelector('.hero-content');
@@ -27,6 +19,14 @@
 			document.removeEventListener('visibilitychange', handleVisibilityChange);
 		};
 	});
+
+	function handleVisibilityChange() {
+		if (document.hidden && videoElement) {
+			videoElement.pause(); // Pause the video when the page is hidden
+		} else if (videoElement) {
+			videoElement.play(); // Resume the video when the page becomes visible
+		}
+	}
 
 	function proceedToMain() {
 		localStorage.setItem('visitedLanding', 'true');
