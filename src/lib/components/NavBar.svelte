@@ -28,7 +28,7 @@
 	</div>
 
 	<div class="mobile {open ? 'open' : ''} {isClosing ? 'closing' : ''}">
-		<NavLink href="/" title="Home" />
+		<NavLink href="/landing" title="Home" />
 		<NavLink href="/about" title="About" />
 		<NavLink href="/projects" title="Projects" />
 		<NavLink href="/blog" title="Blog" />
