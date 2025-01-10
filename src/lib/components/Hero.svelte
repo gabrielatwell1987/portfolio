@@ -4,11 +4,14 @@
 </script>
 
 <main>
-	<!-- <img src="/logos/gen3.webp" alt="generative art" /> -->
-	<img
+	<!-- <img
 		src="https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 		alt="Wireframing and design of a website"
-	/>
+	/> -->
+
+	<video autoplay muted loop playsinline>
+		<source src="/videos/html.mp4" type="video/mp4" />
+	</video>
 
 	<section aria-label="hero">
 		<HeroTitle title="Frontend Crafted Web Experiences" />
@@ -41,7 +44,8 @@
 			letter-spacing: 0.5px;
 		}
 
-		img {
+		img,
+		video {
 			border-radius: 15px;
 			opacity: 0.25;
 			transition: opacity 0.75s ease-in-out;
@@ -96,7 +100,8 @@
 			letter-spacing: 3px;
 		}
 
-		img {
+		img,
+		video {
 			width: 90%;
 			height: 100%;
 		}
