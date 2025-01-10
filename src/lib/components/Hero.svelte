@@ -10,7 +10,7 @@
 	/> -->
 
 	<video autoplay muted loop playsinline>
-		<source src="/videos/html.mp4" type="video/mp4" />
+		<source src="/videos/seamless.mp4" type="video/mp4" />
 	</video>
 
 	<section aria-label="hero">
