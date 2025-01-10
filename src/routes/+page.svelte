@@ -44,7 +44,7 @@
 	</video>
 
 	<div class="hero-content">
-		<HeroTitle title="Welcome! 👋" />
+		<HeroTitle title="Welcome!" />
 
 		<p>
 			<span>This is the frontend portfolio of Gabe Atwell</span>! If you have any questions, you can
