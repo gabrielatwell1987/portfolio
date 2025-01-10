@@ -3,6 +3,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import AnimatedIntro from '$lib/components/AnimatedIntro.svelte';
 	import ImageIntro from '$lib/components/ImageIntro.svelte';
+	import Video from '$lib/components/Video.svelte';
 
 	$effect(() => {
 		console.log(Hero);
@@ -18,5 +19,7 @@
 <ImageIntro src="/logos/atwellUI.webp" alt="" title="" text="" width="1200" />
 
 <AnimatedIntro text="do you need a " span="website?" />
+
+<Video src="/videos/seamless.mp4" type="video/mp4" />
 
 <Hero />
