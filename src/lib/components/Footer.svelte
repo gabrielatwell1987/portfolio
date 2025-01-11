@@ -2,43 +2,44 @@
 	import SocialLinks from './SocialLinks.svelte';
 </script>
 
-<footer>
-	<SocialLinks />
-</footer>
+<!-- <footer> -->
+<SocialLinks />
+
+<!-- </footer> -->
 
 <style>
-	footer {
+	/* footer {
 		margin-top: -10%;
-	}
+	} */
 
-	@media (min-width: 200px) {
+	/* @media (min-width: 300px) {
 		footer {
 			margin-top: -10%;
 			margin-bottom: 5%;
 		}
-	}
+	} */
 
-	@media (min-width: 500px) {
+	/* @media (min-width: 500px) {
 		footer {
 			margin-top: -5%;
 		}
-	}
+	} */
 
-	@media (min-width: 720px) {
+	/* @media (min-width: 720px) {
 		footer {
 			margin-top: -5%;
 		}
-	}
+	} */
 
-	@media (min-width: 990px) {
+	/* @media (min-width: 990px) {
 		footer {
 			margin-top: -5%;
 		}
-	}
+	} */
 
-	@media (min-width: 1200px) {
+	/* @media (min-width: 1200px) {
 		footer {
 			margin-top: -5%;
 		}
-	}
+	} */
 </style>

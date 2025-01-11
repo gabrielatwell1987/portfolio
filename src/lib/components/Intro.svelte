@@ -59,11 +59,11 @@
 <style>
 	.hero {
 		position: relative;
-		width: 100%;
+		width: 100vw;
 		height: 100vh;
 		overflow: hidden;
 
-		.hero-video {
+		& .hero-video {
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -75,14 +75,14 @@
 			opacity: 0.2;
 		}
 
-		.hero-content {
+		& .hero-content {
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			text-align: center;
 			color: white;
-			z-index: 1;
+			z-index: 2;
 
 			& p {
 				font-family: var(--bronova);
