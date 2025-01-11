@@ -89,16 +89,14 @@
 <main>
 	<NavBar />
 
-	<br />
+	<!-- <br /> -->
 
 	{@render children?.()}
 
-	<div class="footer">
-		<Footer />
-	</div>
+	<!-- <div class="footer"> -->
+	<Footer />
+	<!-- </div> -->
 </main>
-
-<footer></footer>
 
 <style>
 	:global(body) {
@@ -108,10 +106,14 @@
 
 	main {
 		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		position: relative;
 
-		.footer {
+		/* .footer {
 			margin-top: 7%;
 			margin-bottom: -6%;
-		}
+		} */
 	}
 </style>
