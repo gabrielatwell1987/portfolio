@@ -89,13 +89,9 @@
 <main>
 	<NavBar />
 
-	<!-- <br /> -->
-
 	{@render children?.()}
 
-	<!-- <div class="footer"> -->
 	<Footer />
-	<!-- </div> -->
 </main>
 
 <style>
@@ -110,10 +106,6 @@
 		flex-direction: column;
 		justify-content: space-evenly;
 		position: relative;
-
-		/* .footer {
-			margin-top: 7%;
-			margin-bottom: -6%;
-		} */
+		overflow: hidden;
 	}
 </style>
