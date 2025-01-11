@@ -62,57 +62,58 @@
 		width: 100%;
 		height: 100vh;
 		overflow: hidden;
-	}
 
-	.hero-video {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		z-index: 1;
-		opacity: 0.2;
-	}
-
-	.hero-content {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		text-align: center;
-		color: white;
-		z-index: 1;
-
-		& p {
-			font-family: var(--bronova);
-			font-size: clamp(0.9rem, 1.25vw, 1.5rem);
-			margin: -1rem 0 1rem 0;
-
-			& span {
-				font-size: clamp(1rem, 1.5vw, 2rem);
-				font-weight: 600;
-				color: var(--sky);
-			}
+		.hero-video {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: 1;
+			opacity: 0.2;
 		}
 
-		& .cta-button {
-			padding: 0.8rem 1rem;
-			background: var(--white);
-			color: var(--blackest);
-			border: none;
-			border-radius: 6px;
-			text-decoration: none;
-			font-family: var(--orbitron);
-			font-size: clamp(1rem, 1.15vw, 2rem);
-			font-weight: 600;
-			letter-spacing: 2px;
-			cursor: pointer;
-			transition: background 0.3s ease;
+		.hero-content {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			color: white;
+			z-index: 1;
 
-			&:hover {
-				background: var(--off-white);
+			& p {
+				font-family: var(--bronova);
+				font-size: clamp(0.9rem, 1.25vw, 1.5rem);
+				margin: -1rem 0 1rem 0;
+
+				& span {
+					font-family: var(--montserrat);
+					font-size: clamp(1rem, 1.5vw, 2rem);
+					font-weight: 700;
+					color: var(--sky);
+				}
+			}
+
+			& .cta-button {
+				padding: 0.8rem 1rem;
+				background: var(--white);
+				color: var(--blackest);
+				border: none;
+				border-radius: 6px;
+				text-decoration: none;
+				font-family: var(--orbitron);
+				font-size: clamp(1rem, 1.15vw, 2rem);
+				font-weight: 600;
+				letter-spacing: 2px;
+				cursor: pointer;
+				transition: background 0.3s ease;
+
+				&:hover {
+					background: var(--off-white);
+				}
 			}
 		}
 	}
