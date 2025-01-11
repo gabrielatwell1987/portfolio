@@ -66,6 +66,7 @@
 				width: 100%;
 				padding: 0 1.25rem;
 				margin-bottom: -5%;
+				hyphens: auto;
 			}
 
 			.left {

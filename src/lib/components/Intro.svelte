@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
 	import gsap from 'gsap';
 	import { goto } from '$app/navigation';
 	import HeroTitle from '$lib/components/HeroTitle.svelte';
@@ -47,9 +47,10 @@
 		<HeroTitle title="Welcome!" />
 
 		<p>
-			<span>This is the frontend portfolio of Gabe Atwell</span>! If you have any questions, you can
-			contact me and I will get back to you.
+			<span>This is the frontend portfolio of Gabe Atwell!</span>
 		</p>
+
+		<p>If you have any questions, you can contact me and I will get back to you.</p>
 
 		<a href="/landing" class="cta-button" onclick={proceedToMain}>Enter site</a>
 	</div>
@@ -85,12 +86,12 @@
 		z-index: 1;
 
 		& p {
-			margin: 2rem 0;
 			font-family: var(--bronova);
-			font-size: clamp(1rem, 1.5vw, 1.75rem);
+			font-size: clamp(0.9rem, 1.25vw, 1.5rem);
+			margin: -1rem 0 1rem 0;
 
 			& span {
-				font-size: clamp(1.2rem, 1.5vw, 2rem);
+				font-size: clamp(1rem, 1.5vw, 2rem);
 				font-weight: 600;
 				color: var(--sky);
 			}
@@ -106,11 +107,20 @@
 			font-family: var(--orbitron);
 			font-size: clamp(1rem, 1.15vw, 2rem);
 			font-weight: 600;
+			letter-spacing: 2px;
 			cursor: pointer;
 			transition: background 0.3s ease;
 
 			&:hover {
-				background: rgba(255, 255, 255, 1);
+				background: var(--off-white);
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero-content {
+			p {
+				hyphens: auto;
 			}
 		}
 	}
@@ -128,10 +138,4 @@
 			background-position: 0;
 		}
 	}
-</style> -->
-
-<script>
-	import Intro from '$lib/components/Intro.svelte';
-</script>
-
-<Intro />
+</style>
