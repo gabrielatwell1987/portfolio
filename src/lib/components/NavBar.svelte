@@ -22,7 +22,7 @@
 	<div class="desktop">
 		<NavLink href="/about" title="About" />
 		<NavLink href="/projects" title="Projects" />
-		<NavLink href="/blog" title="Blog" />
+		<NavLink href="/blog" title="Learn" />
 		<NavLink href="/photos" title="Photos" />
 		<NavLink href="/contact" title="Contact" />
 	</div>
@@ -31,7 +31,7 @@
 		<NavLink href="/landing" title="Home" />
 		<NavLink href="/about" title="About" />
 		<NavLink href="/projects" title="Projects" />
-		<NavLink href="/blog" title="Blog" />
+		<NavLink href="/blog" title="Learn" />
 		<NavLink href="/photos" title="Photos" />
 		<NavLink href="/contact" title="Contact" />
 	</div>
