@@ -18,7 +18,7 @@
 
 			tl.to(gabe, {
 				stagger: 0.5,
-				scale: 1,
+				scale: 0.95,
 				duration: 2.75,
 				repeat: 1,
 				width: '500px',
@@ -179,8 +179,10 @@
 					}
 
 					.gabe {
-						margin: 1rem;
 						margin-inline: auto;
+						/* margin: 1rem; */
+						margin-inline: auto;
+						margin-bottom: 3rem;
 						max-width: 20em;
 
 						&:hover {
