@@ -6,7 +6,6 @@
 	import Button from '$lib/components/Button.svelte';
 	import Iframe from '$lib/components/Iframe.svelte';
 	import Heading from './Heading.svelte';
-	import Popover from '$lib/components/Popover.svelte';
 	import Learn from '$lib/components/Learn.svelte';
 
 	let duration = $state(300);
@@ -44,16 +43,11 @@
 		</div>
 
 		<main>
-			<Popover text="animation!" />
-
 			<div class="centerDetail">
 				<details name="gsap">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"
-							><b>What's GSAP? <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
-							></span
-						></summary
+						><span class="margin"><b>What's GSAP?</b></span></summary
 					>
 					<p class="text">
 						Greensock Animation Platform (GSAP) is a javascript library that allows you to animate
@@ -71,10 +65,7 @@
 				<details name="gsap">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"
-							><b>Install <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
-							></span
-						></summary
+						><span class="margin"><b>Install</b></span></summary
 					>
 					<p class="text">
 						In the project, you have to <code class="code">npm install gsap</code> (if you have
@@ -95,10 +86,7 @@
 				<details name="gsap">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
-						><span class="margin"
-							><b>Syntax <i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></b
-							></span
-						></summary
+						><span class="margin"><b>Syntax</b></span></summary
 					>
 					<p class="text">
 						It is quite simple to use GSAP. You can use <code class="code"
@@ -126,8 +114,7 @@
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Variables</b></span>
-						<i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></summary
-					>
+					</summary>
 					<p class="text">
 						<Heading title="x, y, z" /> Control the position of an element along the x, y, and z axes.<br
 						/>
@@ -185,12 +172,10 @@
 				</details>
 			</div>
 
-			<div class="iframe">
-				<Iframe
-					src="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
-					title="YouTube video player"
-				/>
-			</div>
+			<Iframe
+				src="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
+				title="YouTube video player"
+			/>
 
 			<Learn href="https://greensock.com" title="greensock" />
 
@@ -208,228 +193,54 @@
 	}
 
 	section {
-		padding-top: 10rem;
-		overflow: hidden;
-	}
-
-	.margin {
-		margin: 0;
-		margin-bottom: -35em;
-	}
-
-	main {
-		width: 75%;
-		border-radius: 10px;
-		margin: 0 auto;
-		margin-bottom: 5rem;
-	}
-
-	details {
-		width: 50%;
-		margin-left: 24.5%;
-		margin-bottom: 2rem;
-		position: relative;
-
-		border: none;
-		outline: none;
-		-webkit-appearance: none;
-		appearance: none;
-
-		overflow: hidden;
-		padding: 1rem;
-		inline-size: 100ch;
-
-		&::details-content {
-			opacity: 0;
-			block-size: 0;
-			overflow-y: clip;
-			transition:
-				content-visibility 1s allow-discrete,
-				opacity 1s,
-				block-size 1s;
-		}
-
-		&[open]::details-content {
-			opacity: 1;
-			block-size: auto;
-		}
-
-		&[open] i {
-			animation: rotate 0.5s ease-in-out forwards;
-		}
-
-		&:not([open]) i {
-			animation: un-rotate 0.5s ease-in-out forwards;
-		}
-	}
-
-	p.text {
-		overflow: hidden;
-	}
-
-	p {
-		text-align: left;
-		margin-bottom: 2rem;
-		padding: 0.5em 2em;
-		padding-top: 2.5em;
-		line-height: 2.5;
-		font-family: var(--bronova);
-		width: var(--100);
-	}
-
-	.text {
-		font-size: clamp(1.15rem, 1.25vw, 1.5rem);
-	}
-
-	.centerDetail {
-		display: flex;
-		justify-content: center;
-		align-items: flex-start;
-		flex-direction: column;
-		margin-top: -40%;
-	}
-
-	.separate {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	@media (min-width: 300px) {
 		main {
-			margin: 0 auto;
-			margin-right: 2.5rem;
-			position: relative;
-		}
+			.centerDetail {
+				details {
+					max-width: 70vw;
+					margin-inline: auto;
+					position: relative;
 
-		details {
-			min-width: 5rem;
-			width: 17rem;
-			margin: 0 auto;
-		}
+					border: none;
+					outline: none;
+					-webkit-appearance: none;
+					appearance: none;
 
-		summary {
-			margin-left: -1rem;
-			color: var(--off-white);
-			border-color: var(--off-white);
-			font-family: var(--mono);
-			font-size: clamp(1rem, 1.25vw, 1.5rem);
-		}
+					overflow: hidden;
+					padding: 1rem;
+					inline-size: 100ch;
 
-		.text {
-			min-width: 20rem;
-			margin: 0 -4.75rem;
-			margin-left: -2.5rem;
-			line-height: 1.5;
-			color: var(--white);
-		}
+					&::details-content {
+						opacity: 0;
+						block-size: 0;
+						overflow-y: clip;
+						transition:
+							content-visibility 1s allow-discrete,
+							opacity 1s,
+							block-size 1s;
+					}
 
-		code {
-			font-family: var(--mono);
-		}
-
-		.back {
-			margin-top: 5%;
-			width: var(--100);
-		}
-
-		.iframe {
-			margin: 0 auto;
-			margin-left: -23%;
+					&[open]::details-content {
+						opacity: 1;
+						block-size: auto;
+					}
+				}
+			}
 		}
 
 		.margin {
-			margin-left: 0;
-			margin-top: -2rem;
-			margin-bottom: 1rem;
+			margin-block: 5rem;
 		}
 	}
 
-	@media (min-width: 500px) {
-		.text {
-			margin-left: -2.5rem;
-		}
-
+	@media (max-width: 768px) {
 		details {
-			width: 15rem;
-		}
-
-		.iframe {
-			margin-left: 0;
-		}
-
-		.centerDetail {
-			margin-top: 75%;
+			max-width: 50vw;
 		}
 	}
 
-	@media (min-width: 720px) {
-		.back {
-			width: var(--100);
-		}
-
-		.centerDetail {
-			margin-top: 60%;
-		}
-
-		.margin {
-			margin-left: 3rem;
-			margin-top: -5em;
-		}
-
-		.text {
-			line-height: 1.75;
-		}
-	}
-
-	@media (min-width: 990px) {
-		.spacing {
-			letter-spacing: 2px;
-		}
-
+	@media (max-width: 500px) {
 		details {
-			width: var(--100);
-		}
-
-		.back {
-			width: var(--100);
-			margin-inline: auto;
-		}
-
-		.centerDetail {
-			margin-top: -50em;
-			/* margin-top: -50%; */
-		}
-	}
-
-	@media (min-width: 1024px) {
-		main {
-			margin-top: -20%;
-			margin-right: 13rem;
-		}
-	}
-
-	@media (min-width: 1400px) {
-		.centerDetail {
-			margin-top: -38%;
-		}
-	}
-
-	@keyframes rotate {
-		from {
-			transform: rotate(0deg);
-		}
-		to {
-			transform: rotate(90deg);
-		}
-	}
-
-	@keyframes un-rotate {
-		from {
-			transform: rotate(90deg);
-		}
-		to {
-			transform: rotate(0deg);
+			max-width: 30vw;
 		}
 	}
 </style>

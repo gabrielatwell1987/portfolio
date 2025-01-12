@@ -19,22 +19,21 @@
 <style>
 	.iframe {
 		margin-inline: auto;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		display: grid;
+		place-items: center;
+		height: 100vh;
 
 		iframe {
-			margin: 3rem 0 0 19%;
 			border: 2px solid var(--dark-gray);
 			padding: 0.5rem;
 			border-radius: 5px;
 		}
 	}
 
-	@media (min-width: 750px) {
+	@media (max-width: 500px) {
 		.iframe {
 			iframe {
-				margin: 6rem 0;
+				width: 95%;
 			}
 		}
 	}

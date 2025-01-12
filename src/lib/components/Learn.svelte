@@ -29,6 +29,7 @@
 		font-family: var(--anta);
 		color: var(--sky);
 		font-size: clamp(1.5rem, 3vw, 2.5rem);
+		margin-top: -7rem;
 	}
 
 	@media (min-width: 300px) {
