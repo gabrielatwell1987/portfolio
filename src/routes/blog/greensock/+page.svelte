@@ -296,9 +296,10 @@
 	}
 
 	@media (min-width: 300px) {
-		.main {
+		main {
 			margin: 0 auto;
-			margin-right: 1rem;
+			margin-right: 2.5rem;
+			position: relative;
 		}
 
 		details {
@@ -334,16 +335,13 @@
 
 		.iframe {
 			margin: 0 auto;
-			margin-left: -15%;
-		}
-
-		.centerDetail {
-			margin-top: 170%;
+			margin-left: -23%;
 		}
 
 		.margin {
 			margin-left: 0;
-			margin-top: -9em;
+			margin-top: -2rem;
+			margin-bottom: 1rem;
 		}
 	}
 
@@ -399,13 +397,15 @@
 		}
 
 		.centerDetail {
-			margin-top: -50%;
+			margin-top: -50em;
+			/* margin-top: -50%; */
 		}
 	}
 
 	@media (min-width: 1024px) {
 		main {
-			margin-top: 10%;
+			margin-top: -20%;
+			margin-right: 13rem;
 		}
 	}
 
