@@ -79,7 +79,7 @@
 			height: 100%;
 			object-fit: cover;
 			z-index: 1;
-			opacity: 0.15;
+			opacity: 0.25;
 		}
 
 		& .intro-content {
