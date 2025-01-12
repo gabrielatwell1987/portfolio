@@ -34,8 +34,16 @@
 	}
 </script>
 
-<main class="hero">
-	<video autoplay muted loop playsinline class="hero-video" preload="true" bind:this={videoElement}>
+<main class="intro">
+	<video
+		autoplay
+		muted
+		loop
+		playsinline
+		class="intro-video"
+		preload="true"
+		bind:this={videoElement}
+	>
 		<source src="/videos/skully.mp4" type="video/mp4" />
 
 		<source src="/videos/skully.webm" type="video/webm" />
@@ -43,7 +51,7 @@
 		Your browser does not support the video tag.
 	</video>
 
-	<div class="hero-content">
+	<div class="intro-content">
 		<HeroTitle title="Welcome!" />
 
 		<p>
@@ -57,32 +65,31 @@
 </main>
 
 <style>
-	.hero {
+	.intro {
 		position: relative;
 		width: 100vw;
 		height: 100vh;
 		overflow: hidden;
 
-		& .hero-video {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+		& .intro-video {
+			position: fixed;
+			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
 			z-index: 1;
-			opacity: 0.2;
+			opacity: 0.15;
 		}
 
-		& .hero-content {
+		& .intro-content {
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			text-align: center;
 			color: white;
-			z-index: 2;
+			z-index: 1;
 
 			& p {
 				font-family: var(--bronova);
@@ -119,7 +126,7 @@
 	}
 
 	@media (max-width: 768px) {
-		.hero-content {
+		.intro-content {
 			p {
 				hyphens: auto;
 			}
