@@ -317,7 +317,7 @@
 		justify-content: center;
 		align-items: flex-start;
 		flex-direction: column;
-		margin-top: -40%;
+		/* margin-top: -40%; */
 	}
 
 	.separate {
@@ -331,15 +331,17 @@
 	}
 
 	@media (min-width: 300px) {
-		.main {
+		main {
 			margin: 0 auto;
-			margin-right: 1rem;
+			margin-right: 3rem;
+			position: relative;
 		}
 
 		details {
 			min-width: 5rem;
 			width: 17rem;
 			margin: 0 auto;
+			padding-right: 4rem;
 		}
 
 		summary {
@@ -369,7 +371,7 @@
 
 		.iframe {
 			margin: 0 auto;
-			margin-left: -15%;
+			margin-right: 1.5rem;
 		}
 
 		.centerDetail {
@@ -378,7 +380,8 @@
 
 		.margin {
 			margin-left: 0;
-			margin-top: -9em;
+			margin-top: -5rem;
+			margin-bottom: -30rem;
 		}
 
 		.structure {
@@ -449,6 +452,7 @@
 	@media (min-width: 1024px) {
 		main {
 			margin-top: 10%;
+			margin-right: 12rem;
 		}
 	}
 
