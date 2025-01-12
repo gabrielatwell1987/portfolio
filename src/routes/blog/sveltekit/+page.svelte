@@ -5,7 +5,6 @@
 	import Button from '$lib/components/Button.svelte';
 	import Iframe from '$lib/components/Iframe.svelte';
 	import Image from '$lib/components/Image.svelte';
-	import Popover from '$lib/components/Popover.svelte';
 	import Learn from '$lib/components/Learn.svelte';
 	import Title from '$lib/components/Title.svelte';
 
@@ -44,15 +43,12 @@
 		</div>
 
 		<main>
-			<Popover text="fundamentals" />
-
 			<div class="centerDetail">
 				<details name="sveltekit">
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Svelte</b></span>
-						<i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></summary
-					>
+					</summary>
 					<p class="text">
 						I used sveltekit to create this portfolio website. I decided to go with sveltekit
 						because of the server-side rendering (SSR) and all of the SEO features, as well as
@@ -76,8 +72,7 @@
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Basics</b></span>
-						<i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></summary
-					>
+					</summary>
 					<p class="text">
 						I am very knowledgeable to the fundamentals of web development. CSS is a real hobby that
 						I have because I'm a very visual person. Sveltekit has made it super simple to put my
@@ -93,8 +88,7 @@
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Compiler?</b></span>
-						<i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></summary
-					>
+					</summary>
 					<p class="text">
 						Svelte is a client based compiler that generates optimized javascript. Sveltekit is a
 						framework that uses svelte under the hood. Think of how Nuxt is to Vue, or how Next is
@@ -112,8 +106,7 @@
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Install</b></span>
-						<i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></summary
-					>
+					</summary>
 					<p class="text">
 						You need <a href="https://nodejs.org/"><b>Node.js</b></a> installed. Once you have it
 						installed, you will use npm in your terminal. In your terminal, type
@@ -147,8 +140,7 @@
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Runes</b></span>
-						<i class="fa-solid fa-caret-right" style="color: var(--pale)"></i></summary
-					>
+					</summary>
 					<p class="text">
 						Runes are symbols that you use in .svelte and .svelte.js / .svelte.ts files to control
 						the Svelte compiler. If you think of Svelte as a language, runes are part of the syntax
@@ -188,6 +180,7 @@
 
 					<div class="structure">
 						<Image src="/logos/effects_rune.webp" alt="effect rune syntax with gsap" />
+						<br />
 					</div>
 
 					<p class="text">
@@ -206,12 +199,10 @@
 				</details>
 			</div>
 
-			<div class="iframe">
-				<Iframe
-					src="https://www.youtube.com/embed/tErKyuUTzsM?si=w9Rly4TIEZuH8sDr"
-					title="YouTube video player"
-				/>
-			</div>
+			<Iframe
+				src="https://www.youtube.com/embed/tErKyuUTzsM?si=w9Rly4TIEZuH8sDr"
+				title="YouTube video player"
+			/>
 
 			<Learn href="https://svelte.dev" title="svelte" />
 
@@ -229,254 +220,54 @@
 	}
 
 	section {
-		padding-top: 13rem;
-		overflow: hidden;
-	}
-
-	.margin {
-		margin: 0;
-		margin-bottom: -35em;
-	}
-
-	main {
-		width: 75%;
-		border-radius: 10px;
-		margin: 0 auto;
-		margin-bottom: 5rem;
-	}
-
-	details {
-		width: 50%;
-		margin-left: 24.5%;
-		margin-bottom: 2rem;
-		position: relative;
-
-		border: none;
-		outline: none;
-		-webkit-appearance: none;
-		appearance: none;
-
-		overflow: hidden;
-		padding: 1rem;
-		inline-size: 100ch;
-
-		&::details-content {
-			opacity: 0;
-			block-size: 0;
-			overflow-y: clip;
-			transition:
-				content-visibility 1s allow-discrete,
-				opacity 1s,
-				block-size 1s;
-		}
-
-		&[open]::details-content {
-			opacity: 1;
-			block-size: auto;
-		}
-
-		&[open] i {
-			animation: rotate 0.5s ease-in-out forwards;
-		}
-
-		&:not([open]) i {
-			animation: un-rotate 0.5s ease-in-out forwards;
-		}
-	}
-
-	p.text {
-		overflow: hidden;
-	}
-
-	p {
-		text-align: left;
-		margin-bottom: 2rem;
-		padding: 0.5em 2em;
-		padding-top: 2.5em;
-		line-height: 2.5;
-		font-family: var(--bronova);
-		width: var(--100);
-
-		& a {
-			color: var(--pale);
-		}
-
-		& a:hover {
-			border-bottom: 2px solid var(--pale);
-			border-start-start-radius: 0.5rem;
-			border-radius: 0.15rem;
-		}
-	}
-
-	.text {
-		font-size: clamp(1.15rem, 1.25vw, 1.5rem);
-	}
-
-	.centerDetail {
-		display: flex;
-		justify-content: center;
-		align-items: flex-start;
-		flex-direction: column;
-		/* margin-top: -40%; */
-	}
-
-	.separate {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.structure {
-		pointer-events: none;
-	}
-
-	@media (min-width: 300px) {
 		main {
-			margin: 0 auto;
-			margin-right: 3rem;
-			position: relative;
-		}
+			.centerDetail {
+				details {
+					max-width: 70vw;
+					margin-inline: auto;
+					position: relative;
 
-		details {
-			min-width: 5rem;
-			width: 17rem;
-			margin: 0 auto;
-			padding-right: 4rem;
-		}
+					border: none;
+					outline: none;
+					-webkit-appearance: none;
+					appearance: none;
 
-		summary {
-			margin-left: -1rem;
-			color: var(--off-white);
-			border-color: var(--off-white);
-			font-family: var(--mono);
-			font-size: clamp(1rem, 1.25vw, 1.5rem);
-		}
+					overflow: hidden;
+					padding: 1rem;
+					inline-size: 100ch;
 
-		.text {
-			min-width: 20rem;
-			margin: 0 -4.75rem;
-			margin-left: -2.5rem;
-			line-height: 1.5;
-			color: var(--white);
-		}
+					&::details-content {
+						opacity: 0;
+						block-size: 0;
+						overflow-y: clip;
+						transition:
+							content-visibility 1s allow-discrete,
+							opacity 1s,
+							block-size 1s;
+					}
 
-		code {
-			font-family: var(--mono);
-		}
-
-		.back {
-			margin-top: 5%;
-			width: var(--100);
-		}
-
-		.iframe {
-			margin: 0 auto;
-			margin-right: 1.5rem;
-		}
-
-		.centerDetail {
-			margin-top: 170%;
+					&[open]::details-content {
+						opacity: 1;
+						block-size: auto;
+					}
+				}
+			}
 		}
 
 		.margin {
-			margin-left: 0;
-			margin-top: -5rem;
-			margin-bottom: -30rem;
-		}
-
-		.structure {
-			margin: 1rem 0;
-			border-radius: 12px;
-			width: var(--100);
-			display: grid;
-			place-items: center;
+			margin-block: 5rem;
 		}
 	}
 
-	@media (min-width: 500px) {
-		.text {
-			margin-left: -2.5rem;
-		}
-
+	@media (max-width: 768px) {
 		details {
-			width: 15rem;
-		}
-
-		.iframe {
-			margin-left: 0;
-		}
-
-		.centerDetail {
-			margin-top: 75%;
+			max-width: 50vw;
 		}
 	}
 
-	@media (min-width: 720px) {
-		.back {
-			width: var(--100);
-		}
-
-		.centerDetail {
-			margin-top: 60%;
-		}
-
-		.margin {
-			margin-left: 3rem;
-			margin-top: -5em;
-		}
-
-		.text {
-			line-height: 1.75;
-		}
-	}
-
-	@media (min-width: 990px) {
-		.spacing {
-			letter-spacing: 2px;
-		}
-
+	@media (max-width: 500px) {
 		details {
-			width: var(--100);
-		}
-
-		.back {
-			width: var(--100);
-			margin-inline: auto;
-		}
-
-		.centerDetail {
-			margin-top: -50%;
-		}
-	}
-
-	@media (min-width: 1024px) {
-		main {
-			margin-top: 10%;
-			margin-right: 12rem;
-		}
-	}
-
-	@media (min-width: 1400px) {
-		.centerDetail {
-			margin-top: -38%;
-		}
-	}
-
-	@keyframes rotate {
-		from {
-			transform: rotate(0deg);
-		}
-		to {
-			transform: rotate(90deg);
-		}
-	}
-
-	@keyframes un-rotate {
-		from {
-			transform: rotate(90deg);
-		}
-		to {
-			transform: rotate(0deg);
+			max-width: 30vw;
 		}
 	}
 </style>
