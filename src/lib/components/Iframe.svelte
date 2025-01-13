@@ -6,11 +6,11 @@
 <main class="iframe">
 	<iframe
 		width="560"
-		height="315"
+		height="360"
 		{src}
 		{title}
 		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
 		allowfullscreen
 		aria-label={title}
 	></iframe>
@@ -25,7 +25,6 @@
 
 		iframe {
 			border: 2px solid var(--dark-gray);
-			padding: 0.5rem;
 			border-radius: 5px;
 		}
 	}
@@ -33,7 +32,8 @@
 	@media (max-width: 500px) {
 		.iframe {
 			iframe {
-				width: 95%;
+				width: 100%;
+				margin-bottom: 5rem;
 			}
 		}
 	}
