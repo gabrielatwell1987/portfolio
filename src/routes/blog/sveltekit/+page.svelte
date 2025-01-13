@@ -250,6 +250,10 @@
 						opacity: 1;
 						block-size: auto;
 					}
+
+					& summary {
+						color: var(--pale);
+					}
 				}
 			}
 		}
