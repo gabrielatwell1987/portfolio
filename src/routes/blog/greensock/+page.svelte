@@ -238,17 +238,9 @@
 
 	@media (max-width: 768px) {
 		details {
-			max-width: 50vw;
-
 			& summary {
 				color: var(--pale);
 			}
-		}
-	}
-
-	@media (max-width: 500px) {
-		details {
-			max-width: 30vw;
 		}
 	}
 </style>
