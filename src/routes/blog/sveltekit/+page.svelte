@@ -223,7 +223,7 @@
 		main {
 			.centerDetail {
 				details {
-					max-width: 70vw;
+					max-width: 90vw;
 					margin-inline: auto;
 					position: relative;
 
@@ -266,6 +266,10 @@
 	@media (max-width: 768px) {
 		details {
 			max-width: 50vw;
+
+			& summary {
+				color: var(--pale);
+			}
 		}
 	}
 

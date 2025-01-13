@@ -28,8 +28,8 @@
 				</div>
 
 				<div class="item" style="--col: 2; --row: 1">
-					<a href="/photos/robot">
-						<Image src="/logos/robot.webp" alt="a robot" width="500" />
+					<a href="/blog">
+						<Image src="/logos/learn.webp" alt="learning web techniques" width="500" />
 					</a>
 				</div>
 
