@@ -110,8 +110,11 @@
 		 */
 
 		const clock = new THREE.Clock();
+		let isAnimating = true;
 
 		const tick = () => {
+			if (!isAnimating) return;
+
 			const elapsedTime = clock.getElapsedTime();
 
 			// Update objects
@@ -133,7 +136,24 @@
 			window.requestAnimationFrame(tick);
 		};
 
+		// Visibility change handler
+		function handleVisibilityChange() {
+			if (document.hidden) {
+				isAnimating = false;
+			} else {
+				isAnimating = true;
+				tick();
+			}
+		}
+
+		// Listen for visibility changes
+		document.addEventListener('visibilitychange', handleVisibilityChange);
+
 		tick();
+
+		return () => {
+			document.removeEventListener('visibilitychange', handleVisibilityChange);
+		};
 	});
 </script>
 

@@ -43,7 +43,7 @@
 			padding-top: 6%;
 
 			position: absolute;
-			top: 80%;
+			top: 55%;
 			left: 50%;
 			transform: translate(-50%, -55%);
 			width: 100%;
@@ -59,11 +59,11 @@
 			}
 
 			.summary {
-				margin: 0 auto;
+				margin-inline: auto;
 				font-family: var(--bronova);
 				font-size: clamp(1.15rem, 1.5vw, 2rem);
 				font-weight: 500;
-				width: 100%;
+				width: 95%;
 				padding: 0 1.25rem;
 				margin-bottom: -5%;
 				hyphens: auto;
@@ -79,11 +79,11 @@
 		section {
 			text-align: center;
 			font-size: 2rem;
-			top: 85%;
+			top: 60%;
 
-			.summary {
+			/* .summary {
 				width: 85%;
-			}
+			} */
 		}
 	}
 
@@ -97,7 +97,6 @@
 			transform: translate(-50%, -30%);
 
 			.summary {
-				width: 50%;
 				letter-spacing: 3px;
 			}
 		}
@@ -107,16 +106,15 @@
 		section {
 			top: 40%;
 
-			.summary {
-				width: 80%;
+			/* .summary {
 				margin-inline: auto;
-			}
+			} */
 		}
 	}
 
 	@media screen and (min-width: 1400px) {
 		section {
-			top: 45%;
+			top: 25%;
 		}
 	}
 
