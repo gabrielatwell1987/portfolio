@@ -31,8 +31,8 @@
 </script>
 
 <SEO
-	title="Svelte frontend framework"
-	description="web framework"
+	title="Svelte compiler"
+	description="Build rich user interfaces with Svelte"
 	keywords="svelte, sveltekit, svelte how to, sveltekit how to"
 />
 
