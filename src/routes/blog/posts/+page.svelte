@@ -97,7 +97,7 @@
 			}
 		}
 
-		@media (width < 500px) {
+		@media (width <= 500px) {
 			.css {
 				.image {
 					.skillImg {

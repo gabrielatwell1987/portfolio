@@ -40,10 +40,8 @@
 			font-size: clamp(1.1rem, 2vw, 2rem);
 			font-weight: 800;
 		}
-	}
 
-	@media screen and (width > 950px) {
-		article {
+		@media screen and (width >= 950px) {
 			margin-top: 5rem;
 
 			img {

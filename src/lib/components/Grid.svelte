@@ -26,7 +26,7 @@
 </section>
 
 <style>
-	@media (width > 300px) {
+	@media (width >= 300px) {
 		.inline {
 			display: inline-block;
 			margin: 0.5rem auto;
@@ -57,7 +57,7 @@
 		}
 	}
 
-	@media (width > 990px) {
+	@media (width >= 990px) {
 		.left,
 		.right {
 			line-height: 1.5;
@@ -100,7 +100,7 @@
 		}
 	}
 
-	@media (width > 1024px) {
+	@media (width >= 1024px) {
 		.grid {
 			margin-bottom: -10%;
 		}

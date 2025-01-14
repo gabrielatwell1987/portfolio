@@ -34,7 +34,7 @@
 </section>
 
 <style>
-	@media screen and (width > 300px) {
+	@media screen and (width >= 300px) {
 		section {
 			text-align: center;
 			font-size: 1.75rem;
@@ -75,7 +75,7 @@
 		}
 	}
 
-	@media screen and (width > 740px) {
+	@media screen and (width >= 740px) {
 		section {
 			text-align: center;
 			font-size: 2rem;
@@ -83,7 +83,7 @@
 		}
 	}
 
-	@media screen and (width > 990px) {
+	@media screen and (width >= 990px) {
 		section {
 			text-align: center;
 			font-size: 2.5rem;
@@ -98,13 +98,13 @@
 		}
 	}
 
-	@media (width > 1024px) {
+	@media (width >= 1024px) {
 		section {
 			top: 40%;
 		}
 	}
 
-	@media screen and (width > 1400px) {
+	@media screen and (width >= 1400px) {
 		section {
 			top: 25%;
 		}

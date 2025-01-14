@@ -110,7 +110,7 @@
 				margin-bottom: 11%;
 			}
 
-			@media (width > 50rem) {
+			@media (width >= 50rem) {
 				grid-template-columns: repeat(var(--col-count, 3), 1fr);
 				grid-template-rows: repeat(var(--row-count, 3), auto);
 
@@ -122,7 +122,7 @@
 		}
 	}
 
-	@media (width > 1400px) {
+	@media (width >= 1400px) {
 		.bento {
 			margin-top: -30em;
 			margin-bottom: -7em;

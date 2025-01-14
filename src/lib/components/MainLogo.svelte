@@ -69,11 +69,11 @@
 			}
 		}
 
-		@media (width > 300px) {
+		@media (width >= 300px) {
 			display: none;
 		}
 
-		@media (width > 750px) {
+		@media (width >= 750px) {
 			display: block;
 			margin-left: -7rem;
 			margin-top: 6rem;
@@ -90,33 +90,33 @@
 			}
 		}
 
-		@media (width > 990px) {
+		@media (width >= 990px) {
 			display: block;
 			margin-left: 5%;
 			margin-top: 0;
 		}
 
-		@media (width > 1100px) {
+		@media (width >= 1100px) {
 			display: block;
 			margin-left: 75%;
 			scale: 1.1;
 		}
 
-		@media (width > 1300px) {
+		@media (width >= 1300px) {
 			display: block;
 			margin-left: 75%;
 		}
 
-		@media (width > 1400px) {
+		@media (width >= 1400px) {
 			display: block;
 			margin-left: 175%;
 		}
 
-		@media (width > 1500px) {
+		@media (width >= 1500px) {
 			margin-left: 150%;
 		}
 
-		@media (width > 1600px) {
+		@media (width >= 1600px) {
 			margin-left: 150%;
 		}
 	}

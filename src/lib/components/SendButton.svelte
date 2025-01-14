@@ -45,7 +45,7 @@
 				}
 			}
 
-			@media (width < 500px) {
+			@media (width <= 500px) {
 				& i {
 					display: none;
 				}

@@ -45,7 +45,7 @@
 		}
 	}
 
-	@media (width > 300px) {
+	@media (width >= 300px) {
 		.logo {
 			display: flex;
 			justify-content: center;
@@ -55,7 +55,7 @@
 		}
 	}
 
-	@media (width > 740px) {
+	@media (width >= 740px) {
 		.logo {
 			width: var(--100);
 			margin-inline: auto;

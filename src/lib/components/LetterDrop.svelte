@@ -78,7 +78,7 @@
 			filter: drop-shadow(0px 0px 0.5rem var(--smoke));
 		}
 
-		@media (width < 768px) {
+		@media (width <= 768px) {
 			font-weight: 400;
 
 			.space {

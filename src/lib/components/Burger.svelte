@@ -54,7 +54,7 @@
 			top: 1rem;
 		}
 
-		@media (width > 755px) {
+		@media (width >= 755px) {
 			opacity: 0;
 		}
 	}

@@ -22,7 +22,7 @@
 		margin-bottom: 3rem;
 	}
 
-	@media (width > 300px) {
+	@media (width >= 300px) {
 		.link {
 			text-align: center;
 			background-color: transparent;
@@ -82,7 +82,7 @@
 		}
 	}
 
-	@media (width > 740px) {
+	@media (width >= 740px) {
 		img:hover {
 			transition: scale 0.25s ease;
 		}
@@ -96,7 +96,7 @@
 		}
 	}
 
-	@media (width > 990px) {
+	@media (width >= 990px) {
 		.link {
 			padding: 2rem;
 			flex-basis: var(--100);

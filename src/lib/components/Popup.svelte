@@ -36,7 +36,7 @@
 				box-shadow: 0 0 0px var(--off-white);
 			}
 
-			@media (width < 500px) {
+			@media (width <= 500px) {
 				letter-spacing: 1px;
 			}
 		}

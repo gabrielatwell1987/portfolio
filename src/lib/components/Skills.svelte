@@ -139,7 +139,7 @@
 				margin-bottom: -0.75rem;
 			}
 
-			@media (width > 769px) {
+			@media (width >= 769px) {
 				margin-top: -15%;
 			}
 		}
@@ -152,11 +152,11 @@
 			text-align: center;
 		}
 
-		@media (width > 769px) {
+		@media (width >= 769px) {
 			margin-bottom: 5rem;
 		}
 
-		@media (width < 768px) {
+		@media (width <= 768px) {
 			margin-bottom: 30%;
 
 			.skills {
@@ -169,7 +169,7 @@
 			}
 		}
 
-		@media (width < 400px) {
+		@media (width <= 400px) {
 			margin-bottom: 35%;
 
 			.skills {

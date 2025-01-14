@@ -131,7 +131,7 @@
 				}
 			}
 
-			@media (width < 768px) {
+			@media (width <= 768px) {
 				p {
 					hyphens: auto;
 				}

@@ -236,7 +236,7 @@
 		}
 	}
 
-	@media (max-width: 768px) {
+	@media (width <= 768px) {
 		details {
 			& summary {
 				color: var(--pale);

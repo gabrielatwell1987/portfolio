@@ -158,7 +158,7 @@
 		--100: 100%;
 	}
 
-	@media screen and (width > 300px) {
+	@media screen and (width >= 300px) {
 		main {
 			padding-top: 5%;
 
@@ -180,7 +180,6 @@
 
 					.gabe {
 						margin-inline: auto;
-						/* margin: 1rem; */
 						margin-inline: auto;
 						margin-bottom: 3rem;
 						max-width: 20em;
@@ -202,7 +201,7 @@
 		}
 	}
 
-	@media (width > 850px) {
+	@media (width >= 850px) {
 		.pictures {
 			display: flex;
 			justify-content: center;
@@ -211,7 +210,7 @@
 		}
 	}
 
-	@media screen and (width > 1200px) {
+	@media screen and (width >= 1200px) {
 		main {
 			text-align: center;
 
