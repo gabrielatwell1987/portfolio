@@ -39,7 +39,7 @@
 <section transition:fade={{ delay: delay, duration: duration }} class="main">
 	<div class="separate">
 		<div class="margin">
-			<h1><Title title="GSAP" /></h1>
+			<Title title="GSAP" />
 		</div>
 
 		<main>
