@@ -68,7 +68,9 @@
 />
 
 <main>
-	<Title title="projects" />
+	<h1>
+		<Title title="projects" />
+	</h1>
 </main>
 
 <div class="popup">

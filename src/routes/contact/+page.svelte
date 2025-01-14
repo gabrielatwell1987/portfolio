@@ -13,13 +13,13 @@
 </script>
 
 <SEO
-	title="Message me"
+	title="Contact Gabriel Atwell"
 	description="Contact Gabriel Atwell"
 	keywords="contact gabriel atwell, contact gabe, message me"
 />
 
 <main transition:fade={{ delay: delay, duration: duration }}>
-	<Title title="Contact" />
+	<h1><Title title="Contact" /></h1>
 
 	<ContactForm />
 </main>
