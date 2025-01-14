@@ -39,9 +39,7 @@
 <section transition:fade={{ delay: delay, duration: duration }} class="main">
 	<div class="separate">
 		<div class="margin">
-			<h1>
-				<Title title="Svelte" />
-			</h1>
+			<Title title="Svelte" />
 		</div>
 
 		<main>

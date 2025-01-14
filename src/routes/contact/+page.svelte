@@ -19,7 +19,7 @@
 />
 
 <main transition:fade={{ delay: delay, duration: duration }}>
-	<h1><Title title="Contact" /></h1>
+	<Title title="Contact" />
 
 	<ContactForm />
 </main>

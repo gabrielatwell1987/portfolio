@@ -29,12 +29,12 @@
 </script>
 
 <main transition:fade={{ duration: duration }}>
-	<h2 class="title" id="title" aria-label={title}>
+	<h1 class="title" id="title" aria-label={title}>
 		{@html title
 			.split('')
 			.map((letter) => `<span>${letter}</span>`)
 			.join('')}
-	</h2>
+	</h1>
 </main>
 
 <style>
