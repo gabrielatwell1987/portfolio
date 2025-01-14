@@ -85,8 +85,8 @@
 </script>
 
 <SEO
-	title="About Gabe"
-	description="About Gabriel Atwell"
+	title="Who is Gabe Atwell?"
+	description="All about Gabriel Atwell"
 	keywords="about gabe, about gabriel, gabe's bio"
 />
 

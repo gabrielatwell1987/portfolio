@@ -25,7 +25,9 @@
 	<div class="css">
 		<div class="image">
 			<div class="skillImg">
-				<Image src="/skills/CSS-Purple.webp" alt="css" />
+				<h1>
+					<Image src="/skills/CSS-Purple.webp" alt="css" />
+				</h1>
 			</div>
 
 			<br />
@@ -36,7 +38,9 @@
 
 	<div class="gsap">
 		<div class="skillImg">
-			<Image src="/skills/GSAP-Dark.svg" alt="gsap" />
+			<h1>
+				<Image src="/skills/GSAP-Dark.svg" alt="gsap" />
+			</h1>
 		</div>
 
 		<br />

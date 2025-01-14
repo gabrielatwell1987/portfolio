@@ -64,7 +64,9 @@
 </script>
 
 <main>
-	<Title title="images" />
+	<h1>
+		<Title title="images" />
+	</h1>
 
 	<section>
 		<div class="pictures" aria-label="pictures">
