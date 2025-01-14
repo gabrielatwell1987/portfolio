@@ -160,13 +160,13 @@
 <canvas class="webgl" aria-label="hero"></canvas>
 
 <style>
-	@media (max-width: 997px) {
+	@media (width <= 997px) {
 		.webgl {
 			margin-bottom: 15%;
 		}
 	}
 
-	@media (min-width: 990px) {
+	@media (width >= 990px) {
 		.webgl {
 			height: 100vh;
 			width: 70vw;

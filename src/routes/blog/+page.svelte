@@ -115,7 +115,7 @@
 			letter-spacing: 1px;
 		}
 
-		@media (width > 300px) {
+		@media (width >= 300px) {
 			.image {
 				width: 15rem;
 				margin-right: 10%;
@@ -143,14 +143,14 @@
 			}
 		}
 
-		@media (width > 500px) {
+		@media (width >= 500px) {
 			.image {
 				width: 60%;
 				margin: 0 -30%;
 			}
 		}
 
-		@media (width > 720px) {
+		@media (width >= 720px) {
 			.image {
 				width: 40%;
 				margin: 0 -21%;
@@ -167,7 +167,7 @@
 			}
 		}
 
-		@media (width > 990px) {
+		@media (width >= 990px) {
 			.gs,
 			.sk {
 				width: 75%;

@@ -6,7 +6,7 @@
 <a {href}><p><button>{title} <i class="fa-solid fa-angle-right"></i></button></p></a>
 
 <style>
-	@media (width > 300px) {
+	@media (width >= 300px) {
 		button {
 			background-color: transparent;
 			font-family: var(--orbitron);
@@ -37,7 +37,7 @@
 			}
 		}
 
-		@media (width < 500px) {
+		@media (width <= 500px) {
 			button i {
 				display: none;
 			}

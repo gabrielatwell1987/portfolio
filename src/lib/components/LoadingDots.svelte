@@ -34,7 +34,7 @@
 		-webkit-animation: 0.9s bounce infinite alternate;
 		animation: 0.9s bounce infinite alternate;
 
-		@media screen and (width < 500px) {
+		@media screen and (width <= 500px) {
 			width: 2rem;
 			height: 2rem;
 			margin: 2rem 0.25rem;

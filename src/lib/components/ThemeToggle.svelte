@@ -62,24 +62,24 @@
 			box-shadow: 0 0 0px var(--off-white);
 		}
 
-		@media (width > 300px) {
+		@media (width >= 300px) {
 			margin-top: 2rem;
 			margin-left: 1rem;
 		}
 
-		@media (width > 750px) {
+		@media (width >= 750px) {
 			margin-left: 3rem;
 		}
 
-		@media (width > 1024px) {
+		@media (width >= 1024px) {
 			z-index: 10;
 		}
 
-		@media (width > 1100px) {
+		@media (width >= 1100px) {
 			margin-left: 10%;
 		}
 
-		@media (width > 1400px) {
+		@media (width >= 1400px) {
 			margin-left: 17%;
 		}
 	}

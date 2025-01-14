@@ -28,7 +28,7 @@
 			border-radius: 5px;
 		}
 
-		@media (width < 500px) {
+		@media (width <= 500px) {
 			iframe {
 				width: 100%;
 				margin-bottom: 5rem;

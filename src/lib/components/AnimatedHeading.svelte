@@ -79,7 +79,7 @@
 			z-index: 1;
 		}
 
-		@media (width < 600px) {
+		@media (width <= 600px) {
 			margin-bottom: -35%;
 		}
 	}

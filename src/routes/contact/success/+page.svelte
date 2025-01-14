@@ -22,7 +22,7 @@
 </main>
 
 <style>
-	@media (width > 300px) {
+	@media (width >=18.75rem) {
 		:root {
 			--100: 100%;
 			--5: 5%;
@@ -60,14 +60,14 @@
 		}
 	}
 
-	@media (width > 720px) {
+	@media (width >= 720px) {
 		section {
 			width: 50%;
 			margin-bottom: 10%;
 		}
 	}
 
-	@media (max-width: 500px) {
+	@media (width <= 500px) {
 		main {
 			min-height: 70vh;
 		}

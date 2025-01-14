@@ -108,7 +108,7 @@
 			translate: 0%;
 		}
 
-		@media (width > 1024px) {
+		@media (width >= 1024px) {
 			grid-template-columns: repeat(3, 1fr);
 			min-height: 120vh;
 
@@ -144,7 +144,7 @@
 			margin: 0;
 		}
 
-		@media (width > 1024px) {
+		@media (width >= 1024px) {
 			margin-top: 5%;
 		}
 	}

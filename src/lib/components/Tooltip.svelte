@@ -77,7 +77,7 @@
 			}
 		}
 
-		@media (width < 500px) {
+		@media (width <= 500px) {
 			padding: 1.5rem;
 		}
 	}

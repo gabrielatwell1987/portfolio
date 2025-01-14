@@ -97,12 +97,12 @@
 			cursor: pointer;
 		}
 
-		@media (width > 750px) {
+		@media (width >= 750px) {
 			bottom: 3rem;
 			left: 2rem;
 		}
 
-		@media (width < 500px) {
+		@media (width <= 500px) {
 			margin: 1rem;
 
 			& .desc {

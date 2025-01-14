@@ -10,7 +10,7 @@
 		color: var(--white);
 	}
 
-	@media (width > 300px) {
+	@media (width >= 300px) {
 		.nav-link {
 			font-size: clamp(1.25rem, 1.25vw, 1.15rem);
 			letter-spacing: 2px;
@@ -27,7 +27,7 @@
 		}
 	}
 
-	@media (width > 750px) {
+	@media (width >= 750px) {
 		.nav-link {
 			text-decoration: none;
 			color: var(--white);
@@ -44,7 +44,7 @@
 		}
 	}
 
-	@media (width > 990px) {
+	@media (width >= 990px) {
 		.nav-link {
 			margin-left: 5.5rem;
 			margin-right: -5.25rem;

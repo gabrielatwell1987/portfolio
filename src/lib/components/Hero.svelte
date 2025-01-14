@@ -25,7 +25,7 @@
 </main>
 
 <style>
-	@media screen and (width > 300px) {
+	@media screen and (width >= 300px) {
 		main {
 			text-align: center;
 			font-size: 1.75rem;
@@ -72,7 +72,7 @@
 		}
 	}
 
-	@media screen and (width > 740px) {
+	@media screen and (width >= 740px) {
 		main {
 			text-align: center;
 			font-size: 2rem;
@@ -83,7 +83,7 @@
 		}
 	}
 
-	@media screen and (width > 990px) {
+	@media screen and (width >= 990px) {
 		main {
 			text-align: center;
 			font-size: 2.5rem;
@@ -101,7 +101,7 @@
 		}
 	}
 
-	@media (width > 1024px) {
+	@media (width >= 1024px) {
 		.summary {
 			width: 80%;
 			margin-inline: auto;

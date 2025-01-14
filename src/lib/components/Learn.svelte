@@ -32,7 +32,7 @@
 		margin-top: -7rem;
 	}
 
-	@media (width > 300px) {
+	@media (width >= 300px) {
 		.center {
 			text-align: center;
 			font-size: clamp(1rem, 2vw, 1.35rem);
@@ -41,7 +41,7 @@
 		}
 	}
 
-	@media (width > 1024px) {
+	@media (width >= 1024px) {
 		.center {
 			margin-bottom: 5%;
 		}
