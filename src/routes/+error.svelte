@@ -9,8 +9,8 @@
 </script>
 
 <SEO
-	title="You've encountered an error!"
-	description="Error Page"
+	title="Error Page"
+	description="You've encountered an error!"
 	keywords="error, gabe's error page"
 />
 
