@@ -78,10 +78,8 @@
 			letter-spacing: 3px;
 			z-index: 1;
 		}
-	}
 
-	@media (max-width: 600px) {
-		.simpleHeading {
+		@media (width < 600px) {
 			margin-bottom: -35%;
 		}
 	}

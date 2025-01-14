@@ -22,7 +22,7 @@
 </main>
 
 <style>
-	@media (min-width: 300px) {
+	@media (width > 300px) {
 		:root {
 			--100: 100%;
 			--5: 5%;
@@ -60,7 +60,7 @@
 		}
 	}
 
-	@media (min-width: 720px) {
+	@media (width > 720px) {
 		section {
 			width: 50%;
 			margin-bottom: 10%;

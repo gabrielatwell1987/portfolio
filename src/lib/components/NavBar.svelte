@@ -71,7 +71,7 @@
 		cursor: pointer;
 	}
 
-	@media (min-width: 300px) {
+	@media (width > 300px) {
 		.mobile {
 			display: flex;
 			flex-direction: column;
@@ -127,7 +127,7 @@
 		}
 	}
 
-	@media (min-width: 750px) {
+	@media (width > 750px) {
 		.desktop {
 			width: var(--100);
 			display: flex;
@@ -159,7 +159,7 @@
 		}
 	}
 
-	@media (min-width: 990px) {
+	@media (width > 990px) {
 		.desktop {
 			display: block;
 			width: var(--100);
@@ -181,7 +181,7 @@
 		}
 	}
 
-	@media (min-width: 1024px) {
+	@media (width > 1024px) {
 		.desktop {
 			width: var(--100);
 			line-height: 2;
@@ -194,7 +194,7 @@
 		}
 	}
 
-	@media (min-width: 1100px) {
+	@media (width > 1100px) {
 		.desktop {
 			line-height: 1.5;
 			margin-left: 0;
@@ -205,14 +205,14 @@
 		}
 	}
 
-	@media (min-width: 1400px) {
+	@media (width > 1400px) {
 		nav {
 			margin-right: 5rem;
 			scale: 1;
 		}
 	}
 
-	@media (min-width: 1600px) {
+	@media (width > 1600px) {
 		.desktop {
 			margin-left: 15em;
 			margin-right: 10rem;

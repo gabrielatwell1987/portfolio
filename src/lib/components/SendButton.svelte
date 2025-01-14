@@ -44,12 +44,12 @@
 					opacity: 0.75;
 				}
 			}
-		}
-	}
 
-	@media (max-width: 500px) {
-		button i {
-			display: none;
+			@media (width < 500px) {
+				& i {
+					display: none;
+				}
+			}
 		}
 	}
 

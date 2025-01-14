@@ -144,7 +144,7 @@
 		margin-bottom: 15%;
 	}
 
-	@media screen and (min-width: 320px) {
+	@media screen and (width > 320px) {
 		form {
 			width: 95%;
 			margin: 0 auto;
@@ -194,7 +194,7 @@
 		}
 	}
 
-	@media screen and (min-width: 720px) {
+	@media screen and (width > 720px) {
 		::backdrop {
 			background: transparent;
 			box-shadow: none;
@@ -205,7 +205,7 @@
 		}
 	}
 
-	@media screen and (min-width: 1024px) {
+	@media screen and (width > 1024px) {
 		form {
 			display: flex;
 			flex-direction: column;
@@ -238,7 +238,7 @@
 		}
 	}
 
-	@media screen and (min-width: 1350px) {
+	@media screen and (width > 1350px) {
 		input,
 		textarea {
 			padding: 2rem;

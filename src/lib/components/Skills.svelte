@@ -138,6 +138,10 @@
 				transition: transform 0.25s ease-in-out;
 				margin-bottom: -0.75rem;
 			}
+
+			@media (width > 769px) {
+				margin-top: -15%;
+			}
 		}
 
 		.skills-title {
@@ -147,20 +151,12 @@
 			letter-spacing: clamp(3px, 1vw, 9px);
 			text-align: center;
 		}
-	}
 
-	@media (min-width: 769px) {
-		.border {
+		@media (width > 769px) {
 			margin-bottom: 5rem;
 		}
 
-		.skills {
-			margin-top: -15%;
-		}
-	}
-
-	@media (max-width: 768px) {
-		.border {
+		@media (width < 768px) {
 			margin-bottom: 30%;
 
 			.skills {
@@ -172,10 +168,8 @@
 				}
 			}
 		}
-	}
 
-	@media (max-width: 400px) {
-		.border {
+		@media (width < 400px) {
 			margin-bottom: 35%;
 
 			.skills {

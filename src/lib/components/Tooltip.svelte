@@ -76,10 +76,8 @@
 				border-color: var(--blue) transparent transparent transparent;
 			}
 		}
-	}
 
-	@media (max-width: 500px) {
-		.tooltip-container {
+		@media (width < 500px) {
 			padding: 1.5rem;
 		}
 	}

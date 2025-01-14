@@ -91,10 +91,8 @@
 				border-color: var(--white);
 			}
 		}
-	}
 
-	@media (max-width: 500px) {
-		.card {
+		@media (width < 500px) {
 			width: 100%;
 			padding: 1rem 1.5rem 0 1.5rem;
 

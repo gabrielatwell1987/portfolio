@@ -96,17 +96,13 @@
 			margin-top: 0.5rem;
 			cursor: pointer;
 		}
-	}
 
-	@media (min-width: 750px) {
-		button {
+		@media (width > 750px) {
 			bottom: 3rem;
 			left: 2rem;
 		}
-	}
 
-	@media (max-width: 500px) {
-		button {
+		@media (width < 500px) {
 			margin: 1rem;
 
 			& .desc {

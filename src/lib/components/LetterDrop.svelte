@@ -77,10 +77,8 @@
 			text-shadow: 0px 0px 5px var(--dark-gray);
 			filter: drop-shadow(0px 0px 0.5rem var(--smoke));
 		}
-	}
 
-	@media (max-width: 768px) {
-		.animated-text {
+		@media (width < 768px) {
 			font-weight: 400;
 
 			.space {

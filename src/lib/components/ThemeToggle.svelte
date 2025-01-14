@@ -61,35 +61,25 @@
 		&:focus {
 			box-shadow: 0 0 0px var(--off-white);
 		}
-	}
 
-	@media (min-width: 300px) {
-		button {
+		@media (width > 300px) {
 			margin-top: 2rem;
 			margin-left: 1rem;
 		}
-	}
 
-	@media (min-width: 750px) {
-		button {
+		@media (width > 750px) {
 			margin-left: 3rem;
 		}
-	}
 
-	@media (min-width: 1024px) {
-		button {
+		@media (width > 1024px) {
 			z-index: 10;
 		}
-	}
 
-	@media (min-width: 1100px) {
-		button {
+		@media (width > 1100px) {
 			margin-left: 10%;
 		}
-	}
 
-	@media (min-width: 1400px) {
-		button {
+		@media (width > 1400px) {
 			margin-left: 17%;
 		}
 	}

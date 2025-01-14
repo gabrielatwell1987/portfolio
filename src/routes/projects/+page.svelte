@@ -210,7 +210,7 @@
 </section>
 
 <style>
-	@media screen and (min-width: 300px) {
+	@media screen and (width > 300px) {
 		:root {
 			--100: 100%;
 		}
@@ -240,13 +240,13 @@
 		}
 	}
 
-	@media screen and (min-width: 740px) {
+	@media screen and (width > 740px) {
 		section {
 			padding: 2rem;
 		}
 	}
 
-	@media screen and (min-width: 990px) {
+	@media screen and (width > 990px) {
 		section {
 			margin-bottom: -5%;
 			padding-top: 5rem;

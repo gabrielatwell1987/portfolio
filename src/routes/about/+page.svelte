@@ -167,7 +167,7 @@
 		--100: 100%;
 	}
 
-	@media screen and (min-width: 300px) {
+	@media screen and (width > 300px) {
 		main {
 			width: var(--100);
 			margin-inline: auto;
@@ -235,13 +235,13 @@
 		}
 	}
 
-	@media (min-width: 600px) {
+	@media (width > 600px) {
 		.hero {
 			width: 90%;
 		}
 	}
 
-	@media screen and (min-width: 990px) {
+	@media screen and (width > 990px) {
 		section {
 			display: block;
 			width: var(--100);
@@ -279,13 +279,13 @@
 		}
 	}
 
-	@media (min-width: 1024px) {
+	@media (width > 1024px) {
 		.hero {
 			width: 70%;
 		}
 	}
 
-	@media (min-width: 1400px) {
+	@media (width > 1400px) {
 		.hero {
 			width: 70%;
 		}

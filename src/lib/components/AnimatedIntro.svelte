@@ -81,7 +81,7 @@
 		}
 	}
 
-	@media (max-width: 768px) {
+	@media (width < 768px) {
 		.animated-text {
 			margin-top: -15%;
 
