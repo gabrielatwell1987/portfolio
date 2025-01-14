@@ -42,7 +42,7 @@
 		position: relative;
 	}
 
-	@media (min-width: 300px) {
+	@media (width > 300px) {
 		.title {
 			text-align: center;
 			font-family: var(--anta);
@@ -62,14 +62,14 @@
 		}
 	}
 
-	@media (min-width: 740px) {
+	@media (width > 740px) {
 		.title {
 			letter-spacing: 20px;
 			margin: 2rem auto;
 		}
 	}
 
-	@media (min-width: 990px) {
+	@media (width > 990px) {
 		.title {
 			font-weight: 800;
 		}

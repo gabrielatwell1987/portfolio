@@ -42,7 +42,7 @@
 		}
 	}
 
-	@media screen and (min-width: 950px) {
+	@media screen and (width > 950px) {
 		article {
 			margin-top: 5rem;
 

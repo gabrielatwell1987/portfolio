@@ -78,7 +78,7 @@
 				.skillImg {
 					width: 25%;
 					margin-inline: auto;
-					margin-block: 3rem;
+					margin-block: 7rem;
 				}
 			}
 		}
@@ -92,10 +92,8 @@
 				margin-top: 6rem;
 			}
 		}
-	}
 
-	@media (max-width: 500px) {
-		section {
+		@media (width < 500px) {
 			.css {
 				.image {
 					.skillImg {

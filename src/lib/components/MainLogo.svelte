@@ -68,16 +68,12 @@
 				animation-delay: -2.1s;
 			}
 		}
-	}
 
-	@media (min-width: 300px) {
-		.gabe-logo {
+		@media (width > 300px) {
 			display: none;
 		}
-	}
 
-	@media (min-width: 750px) {
-		.gabe-logo {
+		@media (width > 750px) {
 			display: block;
 			margin-left: -7rem;
 			margin-top: 6rem;
@@ -93,46 +89,34 @@
 				font-weight: 600;
 			}
 		}
-	}
 
-	@media (min-width: 990px) {
-		.gabe-logo {
+		@media (width > 990px) {
 			display: block;
 			margin-left: 5%;
 			margin-top: 0;
 		}
-	}
 
-	@media (min-width: 1100px) {
-		.gabe-logo {
+		@media (width > 1100px) {
 			display: block;
 			margin-left: 75%;
 			scale: 1.1;
 		}
-	}
 
-	@media (min-width: 1300px) {
-		.gabe-logo {
+		@media (width > 1300px) {
 			display: block;
 			margin-left: 75%;
 		}
-	}
 
-	@media (min-width: 1400px) {
-		.gabe-logo {
+		@media (width > 1400px) {
 			display: block;
 			margin-left: 175%;
 		}
-	}
 
-	@media (min-width: 1500px) {
-		.gabe-logo {
+		@media (width > 1500px) {
 			margin-left: 150%;
 		}
-	}
 
-	@media (min-width: 1600px) {
-		.gabe-logo {
+		@media (width > 1600px) {
 			margin-left: 150%;
 		}
 	}

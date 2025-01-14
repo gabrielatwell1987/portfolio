@@ -130,13 +130,11 @@
 					background: var(--off-white);
 				}
 			}
-		}
-	}
 
-	@media (max-width: 768px) {
-		.intro-content {
-			p {
-				hyphens: auto;
+			@media (width < 768px) {
+				p {
+					hyphens: auto;
+				}
 			}
 		}
 	}

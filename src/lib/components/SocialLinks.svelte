@@ -78,10 +78,8 @@
 				cursor: pointer;
 			}
 		}
-	}
 
-	@media (max-width: 990px) {
-		.dev-links {
+		@media (width < 990px) {
 			display: flex;
 			justify-content: space-evenly;
 			align-items: center;

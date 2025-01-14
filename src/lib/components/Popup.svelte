@@ -35,6 +35,10 @@
 			&:focus {
 				box-shadow: 0 0 0px var(--off-white);
 			}
+
+			@media (width < 500px) {
+				letter-spacing: 1px;
+			}
 		}
 
 		#popover {
@@ -45,6 +49,10 @@
 			letter-spacing: 2px;
 			padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
 			background-color: rgba(0, 0, 0, 1);
+
+			@media (width < 500px) {
+				letter-spacing: 1px;
+			}
 		}
 	}
 
@@ -90,16 +98,6 @@
 	@starting-style {
 		[popover]:popover-open::backdrop {
 			background-color: rgb(0 0 0 / 0%);
-		}
-	}
-
-	@media (max-width: 500px) {
-		button {
-			letter-spacing: 1px;
-		}
-
-		#popover {
-			letter-spacing: 1px;
 		}
 	}
 

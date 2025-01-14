@@ -33,6 +33,13 @@
 		border-radius: 50%;
 		-webkit-animation: 0.9s bounce infinite alternate;
 		animation: 0.9s bounce infinite alternate;
+
+		@media screen and (width < 500px) {
+			width: 2rem;
+			height: 2rem;
+			margin: 2rem 0.25rem;
+			border: 5px solid var(--off-white);
+		}
 	}
 
 	.loading div:nth-child(2) {
@@ -58,15 +65,6 @@
 			opacity: 0.3;
 			-webkit-transform: translate3d(0, -2rem, 0);
 			transform: translate3d(0, -2rem, 0);
-		}
-	}
-
-	@media screen and (max-width: 500px) {
-		.loading div {
-			width: 2rem;
-			height: 2rem;
-			margin: 2rem 0.25rem;
-			border: 5px solid var(--off-white);
 		}
 	}
 </style>

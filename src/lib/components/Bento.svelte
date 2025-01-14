@@ -109,22 +109,20 @@
 			&:last-child {
 				margin-bottom: 11%;
 			}
-		}
-	}
 
-	@media (min-width: 50rem) {
-		.bento-grid {
-			grid-template-columns: repeat(var(--col-count, 3), 1fr);
-			grid-template-rows: repeat(var(--row-count, 3), auto);
+			@media (width > 50rem) {
+				grid-template-columns: repeat(var(--col-count, 3), 1fr);
+				grid-template-rows: repeat(var(--row-count, 3), auto);
 
-			& > * {
-				grid-column: var(--col);
-				grid-row: var(--row);
+				& > * {
+					grid-column: var(--col);
+					grid-row: var(--row);
+				}
 			}
 		}
 	}
 
-	@media (min-width: 1400px) {
+	@media (width > 1400px) {
 		.bento {
 			margin-top: -30em;
 			margin-bottom: -7em;

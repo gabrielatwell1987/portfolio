@@ -13,5 +13,4 @@
 	keywords="random photo gallery, made with gsap"
 />
 
-<!-- Photo gallery -->
 <Gallery />

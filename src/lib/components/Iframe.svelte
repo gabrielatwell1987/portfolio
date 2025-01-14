@@ -27,10 +27,8 @@
 			border: 2px solid var(--dark-gray);
 			border-radius: 5px;
 		}
-	}
 
-	@media (max-width: 500px) {
-		.iframe {
+		@media (width < 500px) {
 			iframe {
 				width: 100%;
 				margin-bottom: 5rem;

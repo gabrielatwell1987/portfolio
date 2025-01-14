@@ -53,10 +53,8 @@
 			position: absolute;
 			top: 1rem;
 		}
-	}
 
-	@media (min-width: 755px) {
-		.hamburger {
+		@media (width > 755px) {
 			opacity: 0;
 		}
 	}

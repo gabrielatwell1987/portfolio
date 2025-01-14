@@ -17,7 +17,7 @@
 </main>
 
 <style>
-	@media (min-width: 300px) {
+	@media (width > 300px) {
 		.links {
 			width: fit-content;
 			margin-inline: auto;

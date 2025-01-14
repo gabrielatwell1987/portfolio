@@ -107,6 +107,15 @@
 			opacity: 1;
 			translate: 0%;
 		}
+
+		@media (width > 1024px) {
+			grid-template-columns: repeat(3, 1fr);
+			min-height: 120vh;
+
+			h2 {
+				font-size: 2.5rem;
+			}
+		}
 	}
 
 	.contentTitle {
@@ -134,19 +143,8 @@
 			letter-spacing: 3px;
 			margin: 0;
 		}
-	}
 
-	@media (min-width: 1024px) {
-		.grid {
-			grid-template-columns: repeat(3, 1fr);
-			min-height: 120vh;
-
-			h2 {
-				font-size: 2.5rem;
-			}
-		}
-
-		.contentTitle {
+		@media (width > 1024px) {
 			margin-top: 5%;
 		}
 	}
