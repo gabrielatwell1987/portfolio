@@ -23,7 +23,7 @@
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
-			padding: clamp(0.75rem, 2vw, 1rem) clamp(1.75rem, 3vw, 2rem);
+			padding: clamp(0.3em, 2vw, 0.7em) clamp(1em, 3vw, 1.2em);
 			margin-top: 10%;
 			margin-bottom: 2%;
 			user-select: none;
@@ -34,6 +34,12 @@
 				opacity: 0.75;
 				outline-offset: 0px;
 				animation: wiggle 1s ease-in-out infinite;
+			}
+		}
+
+		@media (width < 500px) {
+			button i {
+				display: none;
 			}
 		}
 	}
@@ -47,12 +53,6 @@
 		&:hover i {
 			animation: right 1s ease-in-out infinite;
 			opacity: 0.75;
-		}
-	}
-
-	@media (width < 500px) {
-		button i {
-			display: none;
 		}
 	}
 

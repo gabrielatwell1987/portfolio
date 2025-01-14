@@ -113,11 +113,11 @@
 			}
 
 			& .cta-button {
-				padding: 0.8rem 1rem;
+				padding: 0.8em 1em;
 				background: var(--white);
 				color: var(--blackest);
 				border: none;
-				border-radius: 6px;
+				border-radius: 0.3em;
 				text-decoration: none;
 				font-family: var(--orbitron);
 				font-size: clamp(1rem, 1.15vw, 2rem);

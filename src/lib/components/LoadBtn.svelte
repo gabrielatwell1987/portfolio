@@ -37,7 +37,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			padding: 0.5rem 1.1rem;
+			padding: 0.2em 0.6em;
 			border: 1px solid var(--pale);
 			outline: 3px solid var(--pale);
 			color: var(--pale);
@@ -45,7 +45,7 @@
 			border-radius: 0.75rem;
 			background-color: transparent;
 			font-family: var(--orbitron);
-			font-size: clamp(1.2rem, 1.5vw, 2rem);
+			font-size: clamp(1.1rem, 1.5vw, 2rem);
 			font-weight: 900;
 			cursor: pointer;
 			user-select: none;
