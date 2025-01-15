@@ -12,7 +12,7 @@
 					link.addEventListener('click', (event) => {
 						event.preventDefault(); // Prevent default behavior
 						const url = link.getAttribute('href');
-						window.open(url, '_blank', 'noopener,noreferrer'); // Opens in-app browser
+						window.open(url, '_self', 'noopener,noreferrer'); // Opens in-app browser
 					});
 				});
 			});
