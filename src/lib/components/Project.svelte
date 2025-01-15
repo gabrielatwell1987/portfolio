@@ -6,7 +6,7 @@
 <main class="content">
 	<h3 class="link name">{title}</h3>
 
-	<a class="link" href={url} target="_blank">
+	<a class="link" href={url} target="_self">
 		<img class="img" src={img} alt={title} width="400px" height="475px" loading="lazy" />
 
 		<span class="hover-text">made with {description}</span>
