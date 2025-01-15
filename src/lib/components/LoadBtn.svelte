@@ -11,7 +11,8 @@
 		isLoading = false;
 
 		// Navigate to the destination
-		window.location.href = href;
+		window.open(href, '_blank', 'noopener,noreferrer');
+		// window.location.href = href;
 	};
 </script>
 
