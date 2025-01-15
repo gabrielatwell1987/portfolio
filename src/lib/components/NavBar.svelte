@@ -78,11 +78,11 @@
 			justify-content: space-around;
 			align-items: center;
 			gap: 1.25rem;
-			margin-top: 17rem;
+			margin-top: 18rem;
 			z-index: 10;
 			box-shadow: 0 0 8px 4px var(--white);
 			border-radius: 5px;
-			padding: 0.5rem 1rem;
+			padding: 0.75rem;
 			background-color: var(--blackest);
 			font-family: var(--orbitron);
 			font-weight: 900;
@@ -186,7 +186,6 @@
 			width: var(--100);
 			line-height: 2;
 			scale: 1;
-			text-wrap: nowrap;
 		}
 
 		nav {

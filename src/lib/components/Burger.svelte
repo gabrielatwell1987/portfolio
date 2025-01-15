@@ -12,7 +12,7 @@
 </script>
 
 <button class="hamburger" onclick={toggleMenu} aria-label={ariaLabel}>
-	<div class="bar">
+	<div class="bars">
 		{#if open}
 			<i class="fa fa-times" transition:fade={{ duration: 500, delay: 250 }}></i>
 		{:else}
@@ -35,7 +35,7 @@
 		margin-right: 10%;
 		position: relative;
 
-		.bar {
+		.bars {
 			height: 3px;
 			width: 100%;
 			margin: 3px 0;
@@ -52,6 +52,10 @@
 
 			position: absolute;
 			top: 1rem;
+
+			&.fa-times {
+				color: var(--off-white);
+			}
 		}
 
 		@media (width >= 755px) {
