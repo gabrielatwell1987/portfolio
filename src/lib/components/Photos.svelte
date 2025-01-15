@@ -26,7 +26,7 @@
 				scrollTrigger: {
 					trigger: 'main',
 					start: 'top bottom-=95%',
-					end: '+=799%',
+					end: '+=1399%',
 					stagger: 2,
 					scrub: 1,
 					invalidateOnRefresh: true
@@ -36,11 +36,13 @@
 
 		mm.add('(min-width: 501px', () => {
 			gsap.set(main, { autoAlpha: 0 });
-			gsap.set(gabe, { scale: 1 });
+			gsap.set(gabe, { scale: 1, opacity: 0 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
 			tl.to(gabe, {
+				y: 75,
+				opacity: 1,
 				stagger: 0.5,
 				scale: 0.8,
 				duration: 4,
@@ -48,8 +50,11 @@
 				yoyo: true,
 				scrollTrigger: {
 					trigger: 'main',
-					start: 'top bottom-=90%',
-					end: '+=500%',
+					start: 'top 0%',
+					end: '+=400%',
+					toggleActions: 'play none none reverse',
+					// start: 'top bottom-=90%',
+					// end: '+=500%',
 					stagger: 0.75,
 					scrub: 1
 				}
