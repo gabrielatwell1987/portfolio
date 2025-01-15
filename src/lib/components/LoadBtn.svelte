@@ -11,7 +11,8 @@
 		isLoading = false;
 
 		// Navigate to the destination
-		window.open(href, '_blank', 'noopener,noreferrer');
+		const resolvedUrl = new URL(href, window.location.origin).toString();
+		window.open(resolvedUrl, '_blank', 'noopener,noreferrer');
 		// window.location.href = href;
 	};
 </script>
