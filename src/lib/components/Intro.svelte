@@ -110,12 +110,16 @@
 				font-family: var(--bronova);
 				font-size: clamp(0.9rem, 1.25vw, 1.5rem);
 				margin: -1rem 0 2rem 0;
+
+				& a {
+					font-weight: 700;
+				}
 			}
 
 			& .cta-button {
 				padding: 0.8em 1em;
 				background: var(--white);
-				color: var(--blackest);
+				color: var(--black);
 				border: none;
 				border-radius: 0.3em;
 				text-decoration: none;
