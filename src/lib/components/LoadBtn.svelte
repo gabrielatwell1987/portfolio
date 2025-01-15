@@ -12,7 +12,6 @@
 
 		// Navigate to the destination
 		window.open(href, '_blank', 'noopener,noreferrer');
-		// window.location.href = href;
 	};
 </script>
 
