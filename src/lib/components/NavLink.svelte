@@ -6,15 +6,19 @@
 <a aria-hidden="true" class="nav-link" {href}>{title}</a>
 
 <style>
-	a:is(:hover) {
-		color: var(--white);
+	a {
+		color: var(--smoke);
+
+		&:is(:hover) {
+			color: var(--white);
+		}
 	}
 
 	@media (width >= 300px) {
 		.nav-link {
 			font-size: clamp(1.25rem, 1.25vw, 1.15rem);
-			letter-spacing: 2px;
 			font-weight: 800;
+			letter-spacing: 2px;
 
 			&:hover {
 				font-size: clamp(1.25rem, 1.25vw, 1.15rem);

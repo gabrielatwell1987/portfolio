@@ -19,6 +19,8 @@
 	:root {
 		--bg-color: var(--blackest);
 		--text-color: var(--white);
+		--sun: var(--pale);
+		--moon: var(--darkest-blue);
 	}
 
 	:global(body) {
@@ -40,11 +42,20 @@
 		width: fit-content;
 		margin-left: 5%;
 		margin-top: 1%;
+
 		z-index: 10;
 		outline: none;
 
 		& i {
 			cursor: pointer;
+
+			&.fa-sun {
+				color: var(--sun);
+			}
+
+			&.fa-moon {
+				color: var(--moon);
+			}
 		}
 
 		&:hover {
@@ -63,16 +74,16 @@
 		}
 
 		@media (width >= 300px) {
-			margin-top: 2rem;
+			margin-top: 1.75rem;
 			margin-left: 1rem;
+
+			& i {
+				font-weight: 800;
+			}
 		}
 
 		@media (width >= 750px) {
 			margin-left: 3rem;
-		}
-
-		@media (width >= 1024px) {
-			z-index: 10;
 		}
 
 		@media (width >= 1100px) {
