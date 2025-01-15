@@ -12,7 +12,7 @@
 <SEO
 	title="The main page of Gabriel Atwell's portfolio"
 	description="The home page of Gabriel Atwell's portfolio"
-	keywords="gabriel atwell home page, gabe atwell home page"
+	keywords="gabriel atwell home page, gabe atwell home page, frontend crafted web experiences, atwell ui"
 />
 
 <ImageIntro src="/logos/atwellUI.webp" alt="" title="" text="" width="1200" />

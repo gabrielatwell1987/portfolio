@@ -64,7 +64,7 @@
 <SEO
 	title="Projects I've built"
 	description="Work Gabe has done"
-	keywords="gabe atwell's projects, gabriel atwell's projects, gabe's work, gabriel's work"
+	keywords="gabe atwell's projects, gabriel atwell's projects, gabe's work, gabriel's work, projects"
 />
 
 <main>

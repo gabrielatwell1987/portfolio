@@ -87,7 +87,7 @@
 <SEO
 	title="Who is Gabe Atwell?"
 	description="All about Gabriel Atwell"
-	keywords="about gabe, about gabriel, gabe's bio"
+	keywords="about gabe, about gabriel, gabe's bio, about me"
 />
 
 <main transition:fade={{ delay: delay, duration: duration }} aria-label="bio">

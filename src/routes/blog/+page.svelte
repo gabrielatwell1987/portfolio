@@ -16,7 +16,7 @@
 <SEO
 	title="Learn Web Animation Basics"
 	description="about learning web techniques"
-	keywords="blog topics, web animation basics"
+	keywords="blog topics, web animation basics, topics"
 />
 
 <main transition:fade={{ delay: delay, duration: duration }}>

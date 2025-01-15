@@ -15,7 +15,7 @@
 <SEO
 	title="Photos of Me"
 	description="Gabriel Atwell's Photos"
-	keywords="photos of gabe, photos of gabriel"
+	keywords="photos of gabe, photos of gabriel, images"
 />
 
 <main transition:fade={{ delay: delay, duration: duration }}>

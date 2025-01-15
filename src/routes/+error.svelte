@@ -20,10 +20,14 @@
 	</div>
 
 	<div class="error">
+		<h2>You have encountered an error</h2>
+
 		<h1>Status: {$page.status}</h1>
 	</div>
 
-	<div class="error"><p>{$page.error.message}</p></div>
+	<div class="error">
+		<p>{$page.error.message}</p>
+	</div>
 </main>
 
 <style>
@@ -34,12 +38,12 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: flex-start;
+		align-items: center;
 
 		h1 {
 			font-size: clamp(2rem, 5vw, 6rem);
 			font-weight: 900;
-			margin: 0 auto;
+			margin-inline: auto;
 			text-align: center;
 			color: var(--sky);
 			font-family: var(--anta);
@@ -48,9 +52,21 @@
 			text-wrap: balance;
 		}
 
+		h2 {
+			font-size: clamp(1.5rem, 2.5vw, 3rem);
+			font-weight: 700;
+			margin-inline: auto;
+			margin-block: 0;
+			text-align: center;
+			color: var(--blue);
+			font-family: var(--bronova);
+			letter-spacing: 5px;
+			text-wrap: balance;
+		}
+
 		p {
 			font-family: var(--lexend);
-			font-size: clamp(1.75rem, 4vw, 4rem);
+			font-size: clamp(1.75rem, 3vw, 2rem);
 			font-weight: 500;
 			letter-spacing: 5px;
 			line-height: 1.25;
@@ -70,6 +86,7 @@
 		.image {
 			width: clamp(100px, 20vw, 300px);
 			margin-inline: auto;
+			margin-top: 10rem;
 		}
 	}
 </style>
