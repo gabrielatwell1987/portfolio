@@ -50,7 +50,7 @@
 	}
 
 	.sentence {
-		font-family: var(--kanit);
+		font-family: var(--bronova);
 		font-size: clamp(1.25rem, 2.5vw, 10rem);
 		font-weight: 100;
 		color: var(--white);

@@ -70,11 +70,8 @@ code.code {
 	opacity: 0.75;
 	display: flex;
 	align-items: center;
-	/* gap: 0.25rem; */
 	margin-top: 1rem;
-	/* display: flex; */
 	gap: 1rem;
-	/* align-items: center; */
 	transition: opacity 0.2s;
 
 	&:hover {
@@ -88,7 +85,7 @@ code.code {
 }
 
 .copy-prompt-text {
-	font-family: var(--kanit);
+	font-family: var(--bronova);
 	font-weight: 900;
 	letter-spacing: 2px;
 	color: #fff;

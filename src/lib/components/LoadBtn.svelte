@@ -52,7 +52,7 @@
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			border-radius: 0.75rem;
 			background-color: transparent;
-			font-family: var(--orbitron);
+			font-family: var(--opensans);
 			font-size: clamp(1.1rem, 1.5vw, 2rem);
 			font-weight: 900;
 			cursor: pointer;

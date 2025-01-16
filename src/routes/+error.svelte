@@ -65,7 +65,7 @@
 		}
 
 		p {
-			font-family: var(--lexend);
+			font-family: var(--bronova);
 			font-size: clamp(1.75rem, 3vw, 2rem);
 			font-weight: 500;
 			letter-spacing: 5px;

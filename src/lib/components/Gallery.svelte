@@ -71,7 +71,7 @@
 			color: #ffffff;
 			font-size: 2rem;
 			text-transform: capitalize;
-			font-family: var(--lexend);
+			font-family: var(--bronova);
 		}
 
 		img {
