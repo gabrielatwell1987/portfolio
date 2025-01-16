@@ -134,12 +134,6 @@
 					background: var(--off-white);
 				}
 			}
-
-			@media (width <= 768px) {
-				p {
-					hyphens: auto;
-				}
-			}
 		}
 	}
 
