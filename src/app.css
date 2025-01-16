@@ -1,25 +1,9 @@
 @font-face {
-	font-family: 'Montserrat';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
-}
-
-@font-face {
 	font-family: 'Anta';
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
 	src: url('/fonts/Anta-Regular.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'Lexend';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url('/fonts/Lexend-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
@@ -47,11 +31,11 @@
 }
 
 @font-face {
-	font-family: 'Kanit';
+	font-family: 'Open Sans';
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 700;
 	font-display: swap;
-	src: url('/fonts/Kanit-Regular.ttf') format('truetype');
+	src: url('/fonts/OpenSans-Bold.ttf') format('truetype');
 }
 
 :root {
@@ -78,13 +62,11 @@
 	--fail: hsla(0, 96%, 31%, 1);
 
 	/* fonts */
-	--montserrat: 'Montserrat', sans-serif;
 	--anta: 'Anta', sans-serif;
-	--lexend: 'Lexend', sans-serif;
 	--mono: 'Space Mono', monospace;
 	--orbitron: 'Orbitron', sans-serif;
 	--bronova: 'Bronova', sans-serif;
-	--kanit: 'Kanit', sans-serif;
+	--opensans: 'Open Sans', sans-serif;
 }
 
 :root::-webkit-scrollbar {
@@ -149,7 +131,7 @@ body {
 	h3,
 	h4 {
 		text-align: center;
-		font-family: var(--montserrat);
+		font-family: var(--opensans);
 		color: var(--sky);
 	}
 

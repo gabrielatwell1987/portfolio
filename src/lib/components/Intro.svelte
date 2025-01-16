@@ -94,12 +94,12 @@
 			z-index: 1;
 
 			& h1 {
-				font-family: var(--bronova);
+				font-family: var(--opensans);
 				font-size: clamp(0.9rem, 1.25vw, 1.5rem);
 				margin: -1rem 0 1rem 0;
 
 				& span {
-					font-family: var(--montserrat);
+					font-family: var(--bronova);
 					font-size: clamp(1rem, 1.5vw, 2rem);
 					font-weight: 700;
 					color: var(--sky);
