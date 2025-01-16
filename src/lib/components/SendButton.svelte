@@ -21,7 +21,7 @@
 			border-radius: 0.75rem;
 			transition: 750ms;
 			outline-offset: -7px;
-			padding: clamp(0.3em, 2vw, 0.7em) clamp(1em, 3vw, 1.2em);
+			padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
 			margin-top: 10%;
 			margin-bottom: 2%;
 			user-select: none;
