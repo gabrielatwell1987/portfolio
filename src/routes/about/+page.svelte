@@ -10,7 +10,6 @@
 	import CardFlip from '$lib/components/CardFlip.svelte';
 	import Tooltip from '$lib/components/Tooltip.svelte';
 	import UsefulLinks from '$lib/components/UsefulLinks.svelte';
-	import Divider from '$lib/components/Divider.svelte';
 
 	let duration = $state(300);
 	let delay = $state(100);
@@ -79,8 +78,6 @@
 			gsap.killTweensOf('.a');
 			gsap.killTweensOf('article');
 		};
-
-		console.log('About page');
 	});
 </script>
 
@@ -208,7 +205,6 @@
 				font-size: clamp(1.2rem, 1.5vw, 2rem);
 				font-weight: 500;
 				line-height: 1.5;
-				hyphens: auto;
 				text-wrap: none;
 				z-index: 7;
 			}

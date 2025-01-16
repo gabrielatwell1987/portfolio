@@ -1,23 +1,30 @@
 <script>
 	let isLoading = $state(false);
-	let { loading, submit, href } = $props();
+	let { loading, submit, href, delay } = $props();
 
 	const handleSubmit = async () => {
+		event.preventDefault();
+
 		isLoading = true;
 
 		// Simulate an async operation (e.g., API call)
-		await new Promise((resolve) => setTimeout(resolve, 2500));
+		await new Promise((resolve) => setTimeout(resolve, delay));
 
 		isLoading = false;
 
+		const screenWidth = window.innerWidth;
+
 		// Navigate to the destination
-		window.open(href, '_blank', 'noopener,noreferrer');
+		if (screenWidth <= 500) {
+			window.location.href = href;
+		} else {
+			window.open(href, '_blank', 'noopener,noreferrer');
+		}
 	};
 </script>
 
-<!-- svelte-ignore a11y_missing_attribute -->
-<a>
-	<button class="btn" onclick={handleSubmit} disabled={isLoading}>
+<a {href} onclick={handleSubmit}>
+	<button class="btn" disabled={isLoading}>
 		<span class="btn-text">{isLoading ? loading : submit}</span>
 
 		{#if isLoading}
@@ -30,6 +37,7 @@
 	a {
 		cursor: pointer;
 		width: fit-content;
+		text-decoration: none;
 
 		.btn {
 			position: relative;

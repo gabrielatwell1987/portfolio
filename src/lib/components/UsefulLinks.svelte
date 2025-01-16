@@ -3,15 +3,28 @@
 </script>
 
 <main class="links">
-	<LoadBtn loading="loading..." submit="Random Gallery" href="/about/gallery" />
-
 	<h2>Useful Links:</h2>
 
-	<LoadBtn loading="loading..." submit="JoyOfCode" href="https://joyofcode.xyz" />
-	<LoadBtn loading="loading..." submit="Kevin Powell" href="https://kevinpowell.co" />
-	<LoadBtn loading="loading..." submit="Traversy Media" href="https://traversymedia.com" />
-	<LoadBtn loading="loading..." submit="Frontend Masters" href="https://frontendmasters.com" />
-	<LoadBtn loading="loading..." submit="Creative Coding" href="https://creativecodingclub.com" />
+	<LoadBtn loading="loading..." delay={1500} submit="JoyOfCode" href="https://joyofcode.xyz" />
+	<LoadBtn loading="loading..." delay={1500} submit="Kevin Powell" href="https://kevinpowell.co" />
+	<LoadBtn
+		loading="loading..."
+		delay={1500}
+		submit="Traversy Media"
+		href="https://traversymedia.com"
+	/>
+	<LoadBtn
+		loading="loading..."
+		delay={1500}
+		submit="Frontend Masters"
+		href="https://frontendmasters.com"
+	/>
+	<LoadBtn
+		loading="loading..."
+		delay={1500}
+		submit="Creative Coding"
+		href="https://creativecodingclub.com"
+	/>
 
 	<p>Most of these links are resources that I used to learn frontend and design for the web 🚀</p>
 </main>
