@@ -14,7 +14,7 @@
 </script>
 
 <SEO
-	title="Learn Web Animation Basics"
+	title="Learn web animation basics"
 	description="about learning web techniques"
 	keywords="blog topics, web animation basics, topics"
 />

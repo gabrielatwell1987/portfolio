@@ -31,7 +31,7 @@
 </script>
 
 <SEO
-	title="Greensock Animation Platform"
+	title="Greensock animation platform"
 	description="web animations"
 	keywords="GSAP, greensock animation platform, web animation, greensock how to"
 />
