@@ -55,6 +55,7 @@
 
 			&.fa-moon {
 				color: var(--moon);
+				-webkit-text-stroke: 0.035rem var(--white);
 			}
 		}
 
