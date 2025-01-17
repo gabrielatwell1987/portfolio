@@ -5,13 +5,13 @@
 	$effect(() => {
 		const main = document.querySelector('main');
 		const gabe = document.querySelectorAll('.gabe');
-
-		gsap.set(gabe, { borderRadius: '3%' });
+		const pictures = document.querySelectorAll('.pictures');
 
 		// responsive animations
 		let mm = gsap.matchMedia();
 
 		mm.add('(max-width: 500px', () => {
+			gsap.set(pictures, { autoAlpha: 0 });
 			gsap.set(gabe, { scale: 0.8 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
@@ -24,19 +24,19 @@
 				width: '500px',
 				yoyo: true,
 				scrollTrigger: {
-					trigger: 'main',
+					trigger: 'images',
 					start: 'top bottom-=95%',
-					end: '+=1399%',
+					end: '+=2399%',
 					stagger: 2,
 					scrub: 1,
 					invalidateOnRefresh: true
 				}
-			});
+			}).to(pictures, { autoAlpha: 1, duration: 2 });
 		});
 
 		mm.add('(min-width: 501px', () => {
-			gsap.set(main, { autoAlpha: 0 });
-			gsap.set(gabe, { scale: 1 });
+			gsap.set(pictures, { autoAlpha: 0 });
+			gsap.set(gabe, { scale: 1, autoAlpha: 0 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
@@ -47,8 +47,9 @@
 				duration: 4,
 				repeat: 1,
 				yoyo: true,
+				autoAlpha: 1,
 				scrollTrigger: {
-					trigger: 'main',
+					trigger: 'pictures',
 					start: 'top 0%',
 					end: '+=400%',
 					toggleActions: 'play none none reverse',
@@ -57,11 +58,12 @@
 					stagger: 0.75,
 					scrub: 1
 				}
-			}).to(main, { autoAlpha: 1 });
+			}).to(pictures, { autoAlpha: 1, duration: 2 });
 		});
 
 		return () => {
 			gsap.killTweensOf(main);
+			gsap.killTweensOf(pictures);
 			gsap.killTweensOf(gabe);
 		};
 	});
@@ -69,6 +71,8 @@
 
 <main>
 	<Title title="images" />
+
+	<h2>scroll down</h2>
 
 	<section>
 		<div class="pictures" aria-label="pictures">
@@ -96,7 +100,7 @@
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
 				<img
-					class="gabe"
+					class="gabe ar58"
 					src="photos/gabe4.webp"
 					alt="Gabriel in a restaurant"
 					width="400"
@@ -106,12 +110,12 @@
 				<img
 					src="/photos/autumn.webp"
 					alt="Gabe and his daughter"
-					class="gabe"
+					class="gabe ar58"
 					width="400"
 					loading="lazy"
 				/>
 				<img
-					class="gabe"
+					class="gabe ar58"
 					src="photos/archie.webp"
 					alt="Gabe's poodle Archie"
 					width="450"
@@ -134,7 +138,7 @@
 				<img
 					src="/photos/wtf2.webp"
 					alt="Gabe's face on hulk hogan"
-					class="gabe"
+					class="gabe ar11"
 					width="550"
 					loading="lazy"
 				/>
@@ -166,6 +170,13 @@
 		main {
 			padding-top: 5%;
 
+			h2 {
+				font-size: clamp(0.9rem, 1.5vw, 2rem);
+				font-weight: 100;
+				letter-spacing: 0.1em;
+				margin: 0;
+			}
+
 			section {
 				width: var(--100);
 				margin: 0;
@@ -187,6 +198,7 @@
 						margin-inline: auto;
 						margin-bottom: 3rem;
 						max-width: 20em;
+						border-radius: 3%;
 
 						&:hover {
 							transition: filter 750ms ease-in-out;
@@ -198,6 +210,14 @@
 							filter: drop-shadow(0);
 							transition: filter 750ms ease-in-out;
 							opacity: 0.75;
+						}
+
+						&.ar58 {
+							aspect-ratio: 5 / 8;
+						}
+
+						&.ar11 {
+							aspect-ratio: 1 / 1;
 						}
 					}
 				}
