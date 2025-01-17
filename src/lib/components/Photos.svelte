@@ -36,13 +36,12 @@
 
 		mm.add('(min-width: 501px', () => {
 			gsap.set(main, { autoAlpha: 0 });
-			gsap.set(gabe, { scale: 1, opacity: 0.6 });
+			gsap.set(gabe, { scale: 1 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
 			tl.to(gabe, {
 				y: 75,
-				opacity: 1,
 				stagger: 0.5,
 				scale: 0.8,
 				duration: 4,
