@@ -87,29 +87,11 @@
 	--space-2000: 10rem;
 }
 
-:root::-webkit-scrollbar {
-	width: 15px;
-	height: 10px;
-	background-color: var(--lightblack);
-	border-radius: 5px;
-	box-shadow: 0 0 10px var(--blackest);
-}
-
-:root::-webkit-scrollbar-thumb {
-	background-color: var(--purple);
-	border-radius: 2px;
-	box-shadow: 0 0 10px var(--blackest);
-}
-
-:root::-webkit-scrollbar-thumb:hover {
-	background-color: var(--blue);
-}
-
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	scrollbar-color: var(--purple) var(--lightblack);
+	scrollbar-color: var(--off-white) var(--blacker);
 }
 
 body {
