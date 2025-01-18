@@ -26,7 +26,7 @@
 				scrollTrigger: {
 					trigger: 'images',
 					start: 'top bottom-=95%',
-					end: '+=2399%',
+					end: '+=1399%',
 					stagger: 2,
 					scrub: 1,
 					invalidateOnRefresh: true
