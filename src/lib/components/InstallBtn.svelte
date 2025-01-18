@@ -55,10 +55,11 @@
 	button {
 		width: fit-content;
 		margin-inline: auto;
+		font-family: var(--bronova);
 		font-size: clamp(1rem, 2vw, 2rem);
 		font-weight: 700;
 		background-color: var(--dark-pale);
-		color: var(--blackest);
+		color: var(--black);
 		border-radius: 8px;
 		outline: none;
 		border: none;
@@ -86,7 +87,7 @@
 		}
 
 		& i {
-			color: var(--blackest);
+			color: var(--black);
 			align-items: center;
 			cursor: pointer;
 		}
@@ -105,9 +106,9 @@
 		@media (width <= 500px) {
 			margin: 1rem;
 
-			& .desc {
+			/* & .desc {
 				display: none;
-			}
+			} */
 		}
 	}
 </style>

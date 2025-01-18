@@ -15,6 +15,11 @@
 	let delay = $state(100);
 
 	$effect(() => {
+		console.log(Grid);
+		console.log(Skills);
+		console.log(Bento);
+		console.log(Tooltip);
+
 		gsap.set('article', { autoAlpha: 0 });
 		gsap.set(['.a', '.b', '.d'], { yPercent: 25, autoAlpha: 0 });
 		gsap.set(['.hero', '.margin__b'], { yPercent: 25, autoAlpha: 0 });
