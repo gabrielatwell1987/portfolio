@@ -212,6 +212,7 @@
 				line-height: 1.5;
 				text-wrap: none;
 				z-index: 7;
+				color: var(--white);
 			}
 
 			.text-hero {
@@ -254,7 +255,6 @@
 			}
 
 			.text {
-				color: var(--white);
 				max-width: 90%;
 				line-height: 1.75;
 			}
