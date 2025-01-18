@@ -67,6 +67,24 @@
 	--orbitron: 'Orbitron', sans-serif;
 	--bronova: 'Bronova', sans-serif;
 	--opensans: 'Open Sans', sans-serif;
+
+	/* spacing */
+	--space-100: 0.5rem;
+	--space-150: 0.75rem;
+	--space-200: 1rem;
+	--space-250: 1.25rem;
+	--space-300: 1.5rem;
+	--space-350: 1.75rem;
+	--space-400: 2rem;
+	--space-500: 2.5rem;
+	--space-600: 3rem;
+	--space-800: 4rem;
+	--space-1000: 5rem;
+	--space-1200: 6rem;
+	--space-1400: 7rem;
+	--space-1600: 8rem;
+	--space-1800: 9rem;
+	--space-2000: 10rem;
 }
 
 :root::-webkit-scrollbar {

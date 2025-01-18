@@ -1,8 +1,8 @@
 <script>
 	import '../app.css';
-	import { page } from '$app/stores';
 	import '@fortawesome/fontawesome-free/css/all.css';
 	import '@picocss/pico/css/pico.min.css';
+	import { page } from '$app/stores';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import gsap from 'gsap';
 	import Lenis from 'lenis';
