@@ -4,12 +4,13 @@
 	import Button from '$lib/components/Button.svelte';
 	import Grid from '$lib/components/Grid.svelte';
 	import Skills from '$lib/components/Skills.svelte';
-	import LetterDrop from '$lib/components/LetterDrop.svelte';
+	// import LetterDrop from '$lib/components/LetterDrop.svelte';
 	import Bento from '$lib/components/Bento.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import CardFlip from '$lib/components/CardFlip.svelte';
 	import Tooltip from '$lib/components/Tooltip.svelte';
 	import UsefulLinks from '$lib/components/UsefulLinks.svelte';
+	import HeroImage from '$lib/components/HeroImage.svelte';
 
 	let duration = $state(300);
 	let delay = $state(100);
@@ -95,7 +96,8 @@
 <main transition:fade={{ delay: delay, duration: duration }} aria-label="bio">
 	<section>
 		<article>
-			<LetterDrop />
+			<!-- <LetterDrop /> -->
+			<HeroImage src="/photos/svelteExample.webp" alt="example of svelte 4" title="About Me" />
 
 			<div class="bio" aria-label="bio">
 				<p class="text a indent">

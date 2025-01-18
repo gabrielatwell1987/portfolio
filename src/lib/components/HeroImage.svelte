@@ -14,6 +14,8 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		margin-top: 1rem;
+		margin-bottom: 5rem;
 
 		img {
 			width: fit-content;
@@ -26,7 +28,8 @@
 
 		h1 {
 			margin-block: -3.5rem;
-			font-size: clamp(1.5rem, 5vw + 1rem, 4rem);
+			font-family: var(--anta);
+			font-size: clamp(2rem, 5vw, 6rem);
 			letter-spacing: 0.1em;
 		}
 	}
