@@ -1,6 +1,10 @@
 <script>
 	import Intro from '$lib/components/Intro.svelte';
 	import SEO from '$lib/data/SEO.svelte';
+
+	$effect(() => {
+		console.log(Intro);
+	});
 </script>
 
 <SEO
