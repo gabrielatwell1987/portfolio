@@ -5,6 +5,8 @@
 	import ImageIntro from '$lib/components/ImageIntro.svelte';
 
 	$effect(() => {
+		console.log(ImageIntro);
+		console.log(AnimatedIntro);
 		console.log(Hero);
 	});
 </script>
