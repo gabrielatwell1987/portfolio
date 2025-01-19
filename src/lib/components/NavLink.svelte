@@ -6,20 +6,17 @@
 <a class="nav-link" {href}>{title}</a>
 
 <style>
-	a {
-		color: var(--smoke);
-
-		&:is(:hover) {
-			color: var(--white);
-		}
-	}
-
 	@media (width >= 300px) {
 		.nav-link {
 			font-family: var(--bronova);
 			font-size: clamp(1.25rem, 1.25vw, 1.15rem);
 			font-weight: 900;
 			letter-spacing: 2px;
+			color: var(--white);
+
+			&:is(:hover) {
+				color: var(--smoke);
+			}
 
 			&:hover {
 				font-size: clamp(1.25rem, 1.25vw, 1.15rem);

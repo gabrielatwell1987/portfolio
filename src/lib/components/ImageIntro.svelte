@@ -17,7 +17,7 @@
 	});
 </script>
 
-<main>
+<main aria-label="go to the hero page">
 	<section>
 		<h1 class="h1">{title}</h1>
 

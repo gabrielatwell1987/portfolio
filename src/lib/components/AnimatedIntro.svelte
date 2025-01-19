@@ -38,9 +38,9 @@
 	});
 </script>
 
-<main class="animated-text">
+<section class="animated-text" aria-label="animated text">
 	<h1 class="sentence">{text}<span class="bigWord glow">{span}</span></h1>
-</main>
+</section>
 
 <style>
 	.sentence,

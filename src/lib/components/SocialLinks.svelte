@@ -5,12 +5,12 @@
 		class="size yellow"
 		href="https://www.github.com/gabrielatwell1987/portfolio"
 		target="_blank"
-		aria-label="home link"
+		aria-label="github link"
 	>
 		<i class="fa-brands fa-github"></i></a
 	>
 
-	<a class="size" href="https://codepen.io/gabrielatwell" target="_blank" aria-label="home link">
+	<a class="size" href="https://codepen.io/gabrielatwell" target="_blank" aria-label="codepen link">
 		<i class="fa-brands fa-codepen"></i></a
 	>
 
@@ -18,7 +18,7 @@
 		class="size"
 		href="https://www.linkedin.com/in/gabrielatwell/"
 		target="_blank"
-		aria-label="home link"
+		aria-label="linkedin link"
 	>
 		<i class="fa-brands fa-linkedin"></i>
 	</a>
@@ -27,7 +27,7 @@
 		class="size"
 		href="https://discordapp.com/users/1007777351809114112"
 		target="_blank"
-		aria-label="home link"
+		aria-label="discord link"
 	>
 		<i class="fa-brands fa-discord"></i>
 	</a>
@@ -36,7 +36,7 @@
 		class="size"
 		href="https://www.reddit.com/user/gatwell702"
 		target="_blank"
-		aria-label="home link"
+		aria-label="reddit link"
 	>
 		<i class="fa-brands fa-square-reddit"></i>
 	</a>

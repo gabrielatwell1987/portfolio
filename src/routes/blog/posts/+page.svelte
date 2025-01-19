@@ -53,7 +53,7 @@
 			src="/logos/a-dev.webp"
 			alt="old school"
 			href="/projects"
-			title="frontend"
+			title="web builder"
 			desc="Trying to make the internet look better.. one website at a time."
 			button="Projects"
 		/>
