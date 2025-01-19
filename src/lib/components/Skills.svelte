@@ -70,18 +70,10 @@
 		<a class="skill" href="https://markdownguide.org" target="_blank">
 			<li>
 				<div class="icons">
-					<Image src="skills/Markdown-Dark.svg" alt="scss" />
+					<Image src="skills/Markdown-Dark.svg" alt="markdown" />
 				</div>
 			</li>
 		</a>
-
-		<!-- <a class="skill" href="https://sass-lang.com" target="_blank">
-			<li>
-				<div class="icons">
-					<Image src="skills/Sass.svg" alt="scss" />
-				</div>
-			</li>
-		</a> -->
 
 		<a class="skill" href="https://tailwindcss.com" target="_blank">
 			<li>

@@ -80,7 +80,7 @@
 			gap: 1.25rem;
 			margin-top: 18rem;
 			z-index: 10;
-			box-shadow: 0 0 8px 4px var(--white);
+			box-shadow: 0 0 6px 2px var(--white);
 			border-radius: 5px;
 			padding: 0.75rem;
 			background-color: var(--blackest);
