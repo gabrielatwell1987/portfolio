@@ -84,7 +84,6 @@
 			border-radius: 5px;
 			padding: 0.75rem;
 			background-color: var(--blackest);
-			/* font-family: var(--orbitron); */
 			font-weight: 900;
 
 			max-height: 0;
