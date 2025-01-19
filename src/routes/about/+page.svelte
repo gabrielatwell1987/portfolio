@@ -97,7 +97,7 @@
 	<section>
 		<article>
 			<!-- <LetterDrop /> -->
-			<HeroImage src="/photos/svelteExample.webp" alt="example of svelte 4" title="About Me" />
+			<HeroImage src="/logos/wireframeBg.webp" alt="a laptop hero image" title="About Me" />
 
 			<div class="bio" aria-label="bio">
 				<p class="text a indent">
