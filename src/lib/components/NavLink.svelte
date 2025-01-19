@@ -3,7 +3,7 @@
 	let { href, title } = $props();
 </script>
 
-<a aria-hidden="true" class="nav-link" {href}>{title}</a>
+<a class="nav-link" {href}>{title}</a>
 
 <style>
 	a {

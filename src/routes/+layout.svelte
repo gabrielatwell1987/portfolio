@@ -10,6 +10,7 @@
 	import Analytics from '$lib/data/Analytics.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Loading from '$lib/components/Loading.svelte';
+	import SkipLink from '$lib/components/SkipLink.svelte';
 
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
@@ -86,10 +87,14 @@
 	<Loading />
 {/if}
 
+<SkipLink />
+
 <main>
 	<NavBar />
 
-	{@render children?.()}
+	<div id="main-content" tabindex="-1">
+		{@render children?.()}
+	</div>
 
 	<Footer />
 </main>
