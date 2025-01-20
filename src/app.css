@@ -68,23 +68,23 @@
 	--bronova: 'Bronova', sans-serif;
 	--opensans: 'Open Sans', sans-serif;
 
-	/* spacing */
-	--space-100: 0.5rem;
-	--space-150: 0.75rem;
-	--space-200: 1rem;
-	--space-250: 1.25rem;
-	--space-300: 1.5rem;
-	--space-350: 1.75rem;
-	--space-400: 2rem;
-	--space-500: 2.5rem;
-	--space-600: 3rem;
-	--space-800: 4rem;
-	--space-1000: 5rem;
-	--space-1200: 6rem;
-	--space-1400: 7rem;
-	--space-1600: 8rem;
-	--space-1800: 9rem;
-	--space-2000: 10rem;
+	/* sizing */
+	--size-100: 0.5rem;
+	--size-150: 0.75rem;
+	--size-200: 1rem;
+	--size-250: 1.25rem;
+	--size-300: 1.5rem;
+	--size-350: 1.75rem;
+	--size-400: 2rem;
+	--size-500: 2.5rem;
+	--size-600: 3rem;
+	--size-800: 4rem;
+	--size-1000: 5rem;
+	--size-1200: 6rem;
+	--size-1400: 7rem;
+	--size-1600: 8rem;
+	--size-1800: 9rem;
+	--size-2000: 10rem;
 }
 
 * {
