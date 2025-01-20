@@ -1,5 +1,4 @@
 <script>
-	import { fade } from 'svelte/transition';
 	import { gsap } from 'gsap';
 	import SEO from '$lib/data/SEO.svelte';
 	import Button from '$lib/components/Button.svelte';
@@ -7,9 +6,6 @@
 	import Image from '$lib/components/Image.svelte';
 	import Learn from '$lib/components/Learn.svelte';
 	import Title from '$lib/components/Title.svelte';
-
-	let duration = $state(300);
-	let delay = $state(100);
 
 	// animations
 	$effect(() => {
@@ -36,7 +32,7 @@
 	keywords="svelte, sveltekit, svelte how to, sveltekit how to"
 />
 
-<section transition:fade={{ delay: delay, duration: duration }} class="main">
+<section class="main">
 	<div class="separate">
 		<div class="margin">
 			<Title title="Svelte" />
