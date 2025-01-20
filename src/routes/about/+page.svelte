@@ -21,17 +21,17 @@
 		console.log(Bento);
 		console.log(Tooltip);
 
-		gsap.set('article', { autoAlpha: 0 });
+		// gsap.set('article', { autoAlpha: 0 });
 		gsap.set(['.a', '.b', '.d'], { yPercent: 25, autoAlpha: 0 });
 		gsap.set(['.hero', '.margin__b'], { yPercent: 25, autoAlpha: 0 });
 
 		const tl = gsap.timeline();
 
-		gsap.to('article', {
-			autoAlpha: 1,
-			duration: 1,
-			ease: 'none'
-		});
+		// gsap.to('article', {
+		// 	autoAlpha: 1,
+		// 	duration: 1,
+		// 	ease: 'none'
+		// });
 
 		tl.to('.a', {
 			yPercent: 0,
