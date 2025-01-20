@@ -21,17 +21,10 @@
 		console.log(Bento);
 		console.log(Tooltip);
 
-		// gsap.set('article', { autoAlpha: 0 });
 		gsap.set(['.a', '.b', '.d'], { yPercent: 25, autoAlpha: 0 });
 		gsap.set(['.hero', '.margin__b'], { yPercent: 25, autoAlpha: 0 });
 
 		const tl = gsap.timeline();
-
-		// gsap.to('article', {
-		// 	autoAlpha: 1,
-		// 	duration: 1,
-		// 	ease: 'none'
-		// });
 
 		tl.to('.a', {
 			yPercent: 0,
@@ -95,7 +88,7 @@
 
 <main transition:fade={{ delay: delay, duration: duration }} aria-label="bio">
 	<section>
-		<article>
+		<article id="bio">
 			<!-- <LetterDrop /> -->
 			<HeroImage src="/logos/wireframeBg.webp" alt="a laptop hero image" title="About Me" />
 
@@ -185,7 +178,7 @@
 				margin-inline: auto;
 				text-align: center;
 				width: var(--100);
-				background: url('/logos/white-flower.webp') no-repeat center center/contain fixed;
+				/* background: url('/logos/white-flower.webp') no-repeat center center/contain fixed; */
 			}
 
 			article {
