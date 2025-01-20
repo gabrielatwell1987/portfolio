@@ -19,7 +19,7 @@
 		const logo = document.querySelector('.logo');
 
 		gsap.set('.content', { autoAlpha: 0 });
-		// gsap.set('.link', { autoAlpha: 0 });
+		gsap.set('.link', { autoAlpha: 0 });
 		gsap.set('.iconLogo', { autoAlpha: 0, scale: 0 });
 
 		gsap.registerPlugin(Draggable);
@@ -39,7 +39,7 @@
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 
 		tl.to('.content', { autoAlpha: 1 })
-			// .to('.link', { autoAlpha: 1, stagger: 0.8, scale: 1, duration: 1.5, ease: 'expo.out' }, 0)
+			.to('.link', { autoAlpha: 1, duration: 1.5, ease: 'expo.out' }, 0)
 			.to('.iconLogo', { scale: 1, autoAlpha: 1, duration: 2, ease: 'slow(.75, 1.2, false)' }, 0);
 
 		iconLogo.addEventListener('mouseenter', () => {
@@ -55,7 +55,7 @@
 		return () => {
 			gsap.killTweensOf(logo);
 			gsap.killTweensOf('.content');
-			// gsap.killTweensOf('.link');
+			gsap.killTweensOf('.link');
 			gsap.killTweensOf('.iconLogo');
 		};
 	});
