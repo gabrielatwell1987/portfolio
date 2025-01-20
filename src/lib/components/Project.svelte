@@ -1,4 +1,6 @@
 <script>
+	import { fade } from 'svelte/transition';
+
 	/** @type {{title: any, img: any, url: any, description: any}} */
 	let { title, img, url, description } = $props();
 
