@@ -1,9 +1,12 @@
 <script>
 	/** @type {{title: any, img: any, url: any, description: any}} */
 	let { title, img, url, description } = $props();
+
+	let duration = $state(500);
+	let delay = $state(600);
 </script>
 
-<main class="content">
+<main class="content" transition:fade={{ delay: delay, duration: duration }}>
 	<h3 class="link name">{title}</h3>
 
 	<a class="link" href={url} target="_self">
