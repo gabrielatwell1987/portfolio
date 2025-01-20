@@ -94,6 +94,10 @@
 	scrollbar-color: var(--off-white) var(--blacker);
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	cursor: url('/icons/pointer.svg'), auto;
 	font-family: var(--bronova);
