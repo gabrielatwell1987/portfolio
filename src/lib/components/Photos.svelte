@@ -1,11 +1,14 @@
 <script>
 	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Title from '$lib/components/Title.svelte';
 
 	$effect(() => {
 		const main = document.querySelector('main');
 		const gabe = document.querySelectorAll('.gabe');
 		const pictures = document.querySelectorAll('.pictures');
+
+		gsap.registerPlugin(ScrollTrigger);
 
 		// responsive animations
 		let mm = gsap.matchMedia();
