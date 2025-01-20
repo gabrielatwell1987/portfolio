@@ -105,10 +105,6 @@
 
 		@media (width <= 500px) {
 			margin: 1rem;
-
-			/* & .desc {
-				display: none;
-			} */
 		}
 	}
 </style>

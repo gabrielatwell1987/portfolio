@@ -24,7 +24,6 @@
 
 			&:focus {
 				box-shadow: 0 0 0px var(--off-white);
-				background: transparent;
 			}
 		}
 	}

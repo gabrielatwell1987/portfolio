@@ -30,7 +30,6 @@
 	@media (width >= 300px) {
 		.link {
 			text-align: center;
-			background-color: transparent;
 			color: var(--sky);
 			border: none;
 			padding: 1rem;

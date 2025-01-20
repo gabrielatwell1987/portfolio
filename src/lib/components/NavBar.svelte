@@ -6,7 +6,6 @@
 	import InstallBtn from '$lib/components/InstallBtn.svelte';
 
 	let open = false;
-
 	let isClosing = false;
 </script>
 

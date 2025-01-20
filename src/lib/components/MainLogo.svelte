@@ -56,7 +56,6 @@
 
 		.home {
 			user-select: none;
-			background: transparent;
 
 			path {
 				stroke-dasharray: 300;

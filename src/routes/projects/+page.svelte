@@ -71,7 +71,7 @@
 	<Title title="projects" />
 </main>
 
-<div class="popup">
+<div class="popup" transition:fade={{ delay: delay, duration: duration }}>
 	<Popup
 		title=""
 		text="Hover over the project image to reveal the tech stack I used on the project 👍🏻"
