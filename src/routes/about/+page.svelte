@@ -1,19 +1,14 @@
 <script>
 	import { gsap } from 'gsap';
-	import { fade } from 'svelte/transition';
 	import Button from '$lib/components/Button.svelte';
 	import Grid from '$lib/components/Grid.svelte';
 	import Skills from '$lib/components/Skills.svelte';
-	// import LetterDrop from '$lib/components/LetterDrop.svelte';
 	import Bento from '$lib/components/Bento.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import CardFlip from '$lib/components/CardFlip.svelte';
 	import Tooltip from '$lib/components/Tooltip.svelte';
 	import UsefulLinks from '$lib/components/UsefulLinks.svelte';
 	import HeroImage from '$lib/components/HeroImage.svelte';
-
-	let duration = $state(300);
-	let delay = $state(100);
 
 	$effect(() => {
 		console.log(Grid);
@@ -86,10 +81,9 @@
 	keywords="about gabe, about gabriel, gabe's bio, about me"
 />
 
-<main transition:fade={{ delay: delay, duration: duration }} aria-label="bio">
+<main aria-label="bio">
 	<section>
 		<article id="bio">
-			<!-- <LetterDrop /> -->
 			<HeroImage src="/logos/wireframeBg.webp" alt="a laptop hero image" title="About Me" />
 
 			<div class="bio" aria-label="bio">

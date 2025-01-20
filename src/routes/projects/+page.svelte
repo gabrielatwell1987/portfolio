@@ -15,7 +15,6 @@
 
 	// animations
 	$effect(() => {
-		const iconLogo = document.querySelector('.iconLogo');
 		const logo = document.querySelector('.logo');
 
 		gsap.set('.content', { autoAlpha: 0 });
@@ -41,14 +40,6 @@
 		tl.to('.content', { autoAlpha: 1 })
 			.to('.link', { autoAlpha: 1, duration: 1.5, ease: 'expo.out' }, 0)
 			.to('.iconLogo', { scale: 1, autoAlpha: 1, duration: 2, ease: 'slow(.75, 1.2, false)' }, 0);
-
-		iconLogo.addEventListener('mouseenter', () => {
-			gsap.to('.iconLogo', { rotation: 5, ease: 'elastic.out(1, 0.3)' });
-		});
-
-		iconLogo.addEventListener('mouseleave', () => {
-			gsap.to('.iconLogo', { rotation: -5, ease: 'elastic.out(1, 0.3)' });
-		});
 
 		console.log(Project);
 

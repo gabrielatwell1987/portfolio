@@ -1,5 +1,4 @@
 <script>
-	import { fade } from 'svelte/transition';
 	import { gsap } from 'gsap';
 	import Title from '$lib/components/Title.svelte';
 	import SEO from '$lib/data/SEO.svelte';
@@ -7,9 +6,6 @@
 	import Iframe from '$lib/components/Iframe.svelte';
 	import Heading from './Heading.svelte';
 	import Learn from '$lib/components/Learn.svelte';
-
-	let duration = $state(300);
-	let delay = $state(100);
 
 	// animations
 	$effect(() => {
@@ -36,7 +32,7 @@
 	keywords="GSAP, greensock animation platform, web animation, greensock how to"
 />
 
-<section transition:fade={{ delay: delay, duration: duration }} class="main">
+<section class="main">
 	<div class="separate">
 		<div class="margin">
 			<Title title="GSAP" />

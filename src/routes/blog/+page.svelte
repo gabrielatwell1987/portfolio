@@ -1,12 +1,8 @@
 <script>
-	import { fade } from 'svelte/transition';
 	import Image from '$lib/components/Image.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import AnimatedHeading from '$lib/components/AnimatedHeading.svelte';
 	import Title from '$lib/components/Title.svelte';
-
-	let duration = $state(300);
-	let delay = $state(100);
 
 	$effect(() => {
 		console.log('Blog page');
@@ -19,7 +15,7 @@
 	keywords="blog topics, web animation basics, topics"
 />
 
-<main transition:fade={{ delay: delay, duration: duration }}>
+<main>
 	<Title title="topics" />
 
 	<article>
