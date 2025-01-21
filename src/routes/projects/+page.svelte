@@ -1,5 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
+	import { duration, delay } from '$lib/data/timings.svelte.js';
 	import { gsap } from 'gsap';
 	import { Draggable } from 'gsap/dist/Draggable';
 	import Project from '$lib/components/Project.svelte';
@@ -9,9 +10,6 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import Avatar from '$lib/components/Avatar.svelte';
 	import Popup from '$lib/components/Popup.svelte';
-
-	let duration = $state(300);
-	let delay = $state(100);
 
 	// animations
 	$effect(() => {

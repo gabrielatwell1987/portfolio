@@ -1,4 +1,6 @@
 <script>
+	import { fade } from 'svelte/transition';
+	import { duration, delay } from '$lib/data/timings.svelte.js';
 	import Image from '$lib/components/Image.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import AnimatedHeading from '$lib/components/AnimatedHeading.svelte';
@@ -15,7 +17,7 @@
 	keywords="blog topics, web animation basics, topics"
 />
 
-<main>
+<main transition:fade={{ duration, delay }}>
 	<Title title="topics" />
 
 	<article>
