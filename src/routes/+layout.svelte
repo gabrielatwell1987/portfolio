@@ -43,7 +43,6 @@
 		addEventListener('resize', setErudaPosition);
 
 		isPageLoaded = true;
-
 		detectSWUpdate();
 	});
 
@@ -56,7 +55,7 @@
 
 <Analytics />
 
-<!-- layout -->
+<!-- loading animation -->
 {#if !isPageLoaded}
 	<Loading />
 {/if}
@@ -67,7 +66,7 @@
 	<NavBar />
 
 	<div id="main-content" tabindex="-1">
-		{@render children?.()}
+		{@render children()}
 	</div>
 
 	<Footer />

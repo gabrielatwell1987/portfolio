@@ -1,5 +1,7 @@
 <script>
 	import { page } from '$app/stores';
+	import { fade } from 'svelte/transition';
+	import { duration, delay } from '$lib/data/timings.svelte.js';
 	import SEO from '$lib/data/SEO.svelte';
 	import Image from '$lib/components/Image.svelte';
 
@@ -14,7 +16,7 @@
 	keywords="error, gabe's error page"
 />
 
-<main aria-label="error">
+<main aria-label="error" transition:fade={{ duration, delay }}>
 	<div class="image">
 		<Image src="/logos/error.webp" alt="Error" width="300" />
 	</div>

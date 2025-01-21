@@ -38,10 +38,6 @@
 	src: url('/fonts/OpenSans-Bold.ttf') format('truetype');
 }
 
-@view-transition {
-	navigation: auto;
-}
-
 :root {
 	/* colors */
 	--blackest: hsl(0, 15%, 5%);

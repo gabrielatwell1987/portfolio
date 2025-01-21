@@ -1,4 +1,6 @@
 <script>
+	import { fade } from 'svelte/transition';
+	import { duration, delay } from '$lib/data/timings.svelte.js';
 	import CSS from './css.md';
 	import GSAP from './gsap.md';
 	import Button from '$lib/components/Button.svelte';
@@ -17,7 +19,7 @@
 	keywords="animation techniques, web techniques for animation"
 />
 
-<section>
+<section transition:fade={{ duration, delay }}>
 	<div class="css">
 		<div class="image">
 			<div class="skillImg">

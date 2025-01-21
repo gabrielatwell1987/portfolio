@@ -33,7 +33,7 @@
 		});
 
 		return () => {
-			tl.kill();
+			gsap.killTweensOf([littleSentence, split.chars]);
 		};
 	});
 </script>

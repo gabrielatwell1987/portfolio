@@ -1,27 +1,16 @@
 <script>
-	import gsap from 'gsap';
+	import { fade } from 'svelte/transition';
+	import { duration } from '$lib/data/timings.svelte.js';
 	import Image from '$lib/components/Image.svelte';
 
 	let { src, alt, title, text, width } = $props();
-
-	$effect(() => {
-		const img = document.querySelector('.img');
-
-		const tl = gsap.timeline();
-
-		tl.from(img, { autoAlpha: 0, duration: 3, ease: 'power4.inOut' });
-
-		return () => {
-			tl.kill();
-		};
-	});
 </script>
 
 <main aria-label="go to the hero page">
 	<section>
 		<h1 class="h1">{title}</h1>
 
-		<div class="img">
+		<div class="img" transition:fade={{ duration: duration }}>
 			<a href="/about/hero">
 				<Image {src} {alt} {width} />
 			</a>
