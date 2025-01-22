@@ -29,7 +29,7 @@
 				scrollTrigger: {
 					trigger: 'images',
 					start: 'top bottom-=95%',
-					end: '+=1400%',
+					end: 'bottom top',
 					stagger: 2,
 					scrub: 1,
 					invalidateOnRefresh: true
