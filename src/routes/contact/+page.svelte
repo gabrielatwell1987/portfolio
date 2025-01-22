@@ -1,6 +1,5 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import { duration, delay } from '$lib/data/timings.svelte.js';
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import Title from '$lib/components/Title.svelte';
@@ -16,7 +15,7 @@
 	keywords="contact gabriel atwell, contact gabe, message me"
 />
 
-<main transition:fade={{ duration: duration, delay: delay }}>
+<main>
 	<Title title="Contact" />
 
 	<ContactForm />

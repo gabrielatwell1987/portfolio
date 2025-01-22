@@ -3,7 +3,6 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import Photos from '$lib/components/Photos.svelte';
 	// import MasonryGallery from '$lib/components/MasonryGallery.svelte';
-	import { duration, delay } from '$lib/data/timings.svelte.js';
 
 	$effect(() => {
 		console.log(Photos);
@@ -16,7 +15,7 @@
 	keywords="photos of gabe, photos of gabriel, images"
 />
 
-<main transition:fade={{ duration: duration, delay: delay }}>
+<main>
 	<Photos />
 
 	<!-- <MasonryGallery /> -->
