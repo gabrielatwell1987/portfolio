@@ -13,15 +13,15 @@
 
 <style>
 	:root::view-transition-old(root) {
-		animation: 1s cubic-bezier(0.4, 0, 1, 1) both fade-out;
-		/* 1s cubic-bezier(0.4, 0, 0.2, 1) both old; */
+		animation:
+			1s cubic-bezier(0.4, 0, 1, 1) both fade-out,
+			1s cubic-bezier(0.4, 0, 1, 1) both scale-out;
 	}
 
 	:root::view-transition-new(root) {
-		animation: 1s cubic-bezier(0, 0, 0.2, 1) 1s both fade-in;
-		/* 1s cubic-bezier(0.4, 0, 0.2, 1) both new; */
-
-		/* transform: translateY(-50px); */
+		animation:
+			1s cubic-bezier(0, 0, 0.2, 1) 1s both fade-in,
+			1s cubic-bezier(0, 0, 0.2, 1) 1s both scale-in;
 	}
 
 	@keyframes fade-in {
@@ -44,23 +44,23 @@
 		}
 	}
 
-	/* @keyframes new {
+	@keyframes scale-in {
 		from {
-			transform: translateY(-50px);
+			scale: 0.98;
 		}
 
 		to {
-			transform: translateY(0);
+			scale: 1;
 		}
-	} */
+	}
 
-	/* @keyframes old {
+	@keyframes scale-out {
 		from {
-			transform: translateY(0);
+			scale: 1;
 		}
 
 		to {
-			transform: translateY(50px);
+			scale: 0.98;
 		}
-	} */
+	}
 </style>
