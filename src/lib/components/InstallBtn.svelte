@@ -73,6 +73,7 @@
 		position: fixed;
 		bottom: 4rem;
 		left: 1rem;
+		view-transition-name: installbtn;
 
 		&:hover {
 			opacity: 1;

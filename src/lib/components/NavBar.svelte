@@ -122,6 +122,7 @@
 			top: 0;
 			right: 7px;
 			z-index: 10;
+			view-transition-name: navigation;
 		}
 	}
 

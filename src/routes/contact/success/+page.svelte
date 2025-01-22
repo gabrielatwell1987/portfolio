@@ -1,6 +1,5 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import { duration, delay } from '$lib/data/timings.svelte.js';
 	import Image from '$lib/components/Image.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 
@@ -11,7 +10,7 @@
 
 <SEO title="Message sent!" description="Successfully Sent" keywords="success, contact success" />
 
-<main transition:fade={{ duration, delay }}>
+<main>
 	<section>
 		<div class="image">
 			<h1><Image src="/logos/success.webp" alt="Atwell" width="500" /></h1>

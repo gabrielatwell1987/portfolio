@@ -67,7 +67,7 @@
 	/>
 </div>
 
-<section class="content bevel" transition:fade={{ delay: delay, duration: duration }}>
+<section class="content bevel">
 	<!-- logo -->
 	<div class="iconLogo">
 		<Image src="/logos/blueTriangle.webp" alt="atwell logo" />

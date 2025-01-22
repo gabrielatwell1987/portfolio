@@ -2,7 +2,6 @@
 	import gsap from 'gsap';
 	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
-	import { duration, delay } from '$lib/data/timings.svelte.js';
 	import HeroTitle from '$lib/components/HeroTitle.svelte';
 
 	let videoElement;
@@ -36,7 +35,7 @@
 	}
 </script>
 
-<main class="intro" transition:fade={{ duration, delay }}>
+<main class="intro">
 	<video
 		autoplay
 		muted
