@@ -12,55 +12,45 @@
 </script>
 
 <style>
+	:root {
+		background-color: #000;
+	}
+
 	:root::view-transition-old(root) {
+		background-color: inherit;
 		animation:
 			1s cubic-bezier(0.4, 0, 1, 1) both fade-out,
-			1s cubic-bezier(0.4, 0, 1, 1) both scale-out;
+			1s cubic-bezier(0.4, 0, 1, 1) both out;
 	}
 
 	:root::view-transition-new(root) {
+		background-color: inherit;
 		animation:
 			1s cubic-bezier(0, 0, 0.2, 1) 1s both fade-in,
-			1s cubic-bezier(0, 0, 0.2, 1) 1s both scale-in;
+			1s cubic-bezier(0, 0, 0.2, 1) 1s both in;
 	}
 
-	@keyframes fade-in {
+	@keyframes in {
 		from {
+			scale: 0.98;
 			opacity: 0;
 		}
 
 		to {
+			scale: 1;
 			opacity: 1;
 		}
 	}
 
-	@keyframes fade-out {
+	@keyframes out {
 		from {
+			scale: 1;
 			opacity: 1;
 		}
 
 		to {
+			scale: 0.98;
 			opacity: 0;
-		}
-	}
-
-	@keyframes scale-in {
-		from {
-			scale: 0.98;
-		}
-
-		to {
-			scale: 1;
-		}
-	}
-
-	@keyframes scale-out {
-		from {
-			scale: 1;
-		}
-
-		to {
-			scale: 0.98;
 		}
 	}
 </style>
