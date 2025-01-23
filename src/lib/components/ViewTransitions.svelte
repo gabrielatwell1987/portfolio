@@ -65,7 +65,7 @@
 	@keyframes in-safari {
 		from {
 			scale: 0.97;
-			opacity: 0.75;
+			opacity: 0.95;
 		}
 
 		to {
@@ -82,7 +82,7 @@
 
 		to {
 			scale: 0.97;
-			opacity: 0.75;
+			opacity: 0.95;
 		}
 	}
 </style>
