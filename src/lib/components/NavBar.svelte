@@ -66,7 +66,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		/* margin-left: 2rem; */
+		margin-left: 5rem;
 		cursor: pointer;
 	}
 
@@ -152,8 +152,8 @@
 
 		.header-logos {
 			display: block;
-			/* margin-left: 15%; */
 			margin-bottom: 15%;
+			margin-left: -5rem;
 		}
 	}
 
