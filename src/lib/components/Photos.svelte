@@ -15,17 +15,16 @@
 
 		mm.add('(max-width: 500px', () => {
 			gsap.set(pictures, { autoAlpha: 0 });
-			gsap.set(gabe, { scale: 0.8 });
+			gsap.set(gabe, { scale: 0.9 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
 			tl.to(gabe, {
-				stagger: 0.5,
-				scale: 0.95,
-				duration: 2.75,
-				repeat: 1,
+				// stagger: 0.5,
+				// duration: 2.75,
+				// repeat: 1,
 				width: '500px',
-				yoyo: true,
+				// yoyo: true,
 				scrollTrigger: {
 					trigger: 'images',
 					start: 'top bottom-=95%',
