@@ -12,13 +12,6 @@
 </script>
 
 <style>
-	@supports (-webkit-touch-callout: none) {
-		:root::view-transition-old(root),
-		:root::view-transition-new(root) {
-			background-color: black !important;
-		}
-	}
-
 	:root {
 		background-color: #000;
 	}
@@ -36,7 +29,7 @@
 	@keyframes in {
 		from {
 			scale: 0.97;
-			opacity: 0.1;
+			opacity: 0.75;
 		}
 
 		to {
@@ -53,7 +46,7 @@
 
 		to {
 			scale: 0.97;
-			opacity: 0.1;
+			opacity: 0.75;
 		}
 	}
 </style>
