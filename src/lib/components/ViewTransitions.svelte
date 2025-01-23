@@ -29,7 +29,7 @@
 	@supports (-webkit-touch-callout: none) {
 		:root::view-transition-old(root) {
 			background-color: #000;
-			animation: 1s cubic-bezier(0.4, 0, 1, 1) both out-safari;
+			animation: 0.5s cubic-bezier(0.4, 0, 1, 1) both out-safari;
 		}
 
 		:root::view-transition-new(root) {
