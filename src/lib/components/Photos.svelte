@@ -13,37 +13,23 @@
 		// responsive animations
 		let mm = gsap.matchMedia();
 
-		mm.add('(max-width: 500px', () => {
+		mm.add('(max-width: 767px', () => {
 			gsap.set(pictures, { autoAlpha: 0 });
 			gsap.set(gabe, { scale: 0.9 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
-			tl.to(gabe, {
-				// stagger: 0.5,
-				// duration: 2.75,
-				// repeat: 1,
-				width: '500px',
-				// yoyo: true,
-				scrollTrigger: {
-					trigger: 'images',
-					start: 'top bottom-=95%',
-					end: 'bottom top',
-					stagger: 2,
-					scrub: 1,
-					invalidateOnRefresh: true
-				}
-			}).to(pictures, { autoAlpha: 1, duration: 2 });
+			tl.to(pictures, { autoAlpha: 1, duration: 2 });
 		});
 
-		mm.add('(min-width: 501px', () => {
+		mm.add('(min-width: 768px', () => {
 			gsap.set(pictures, { autoAlpha: 0 });
-			gsap.set(gabe, { scale: 1, autoAlpha: 0 });
+			gsap.set(gabe, { scale: 1, x: '-30%', autoAlpha: 0 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
 			tl.to(gabe, {
-				y: 75,
+				x: 0,
 				stagger: 0.5,
 				scale: 0.8,
 				duration: 4,
@@ -55,8 +41,6 @@
 					start: 'top 0%',
 					end: '+=400%',
 					toggleActions: 'play none none reverse',
-					// start: 'top bottom-=90%',
-					// end: '+=500%',
 					stagger: 0.75,
 					scrub: 1
 				}
@@ -177,6 +161,9 @@
 				font-weight: 100;
 				letter-spacing: 0.1em;
 				margin: 0;
+				border-bottom: 1px solid var(--purple);
+				width: fit-content;
+				margin-inline: auto;
 			}
 
 			section {

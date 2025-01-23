@@ -66,7 +66,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-left: 2rem;
+		/* margin-left: 2rem; */
 		cursor: pointer;
 	}
 
@@ -109,7 +109,6 @@
 
 		.header-logos {
 			display: block;
-			margin-left: 25%;
 		}
 
 		nav {
@@ -153,7 +152,7 @@
 
 		.header-logos {
 			display: block;
-			margin-left: 15%;
+			/* margin-left: 15%; */
 			margin-bottom: 15%;
 		}
 	}
@@ -163,6 +162,9 @@
 			display: block;
 			width: var(--100);
 			margin-inline: auto;
+			scale: 0.8;
+			position: relative;
+			right: 100px;
 		}
 
 		nav {
@@ -184,11 +186,12 @@
 		.desktop {
 			width: var(--100);
 			line-height: 2;
-			scale: 1;
+			scale: 0.8;
+			right: 0;
 		}
 
 		nav {
-			margin-right: 2rem;
+			margin-right: 3rem;
 		}
 	}
 
