@@ -33,7 +33,7 @@
 	@keyframes in {
 		from {
 			scale: 0.98;
-			opacity: 0;
+			opacity: 0.5;
 		}
 
 		to {
@@ -50,7 +50,7 @@
 
 		to {
 			scale: 0.98;
-			opacity: 0;
+			opacity: 0.5;
 		}
 	}
 </style>
