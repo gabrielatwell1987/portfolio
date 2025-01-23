@@ -18,18 +18,18 @@
 
 	:root::view-transition-old(root) {
 		background-color: #000;
-		animation: 1s cubic-bezier(0.4, 0, 1, 1) both out;
+		animation: 1.5s cubic-bezier(0.4, 0, 1, 1) both out;
 	}
 
 	:root::view-transition-new(root) {
 		background-color: #000;
-		animation: 1s cubic-bezier(0, 0, 0.2, 1) 1s both in;
+		animation: 1.5s cubic-bezier(0, 0, 0.2, 1) 1s both in;
 	}
 
 	@keyframes in {
 		from {
-			scale: 0.98;
-			opacity: 0.5;
+			scale: 0.97;
+			opacity: 0.1;
 		}
 
 		to {
@@ -45,8 +45,8 @@
 		}
 
 		to {
-			scale: 0.98;
-			opacity: 0.5;
+			scale: 0.97;
+			opacity: 0.1;
 		}
 	}
 </style>
