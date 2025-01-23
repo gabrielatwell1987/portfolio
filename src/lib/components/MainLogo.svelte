@@ -56,6 +56,9 @@
 
 		.home {
 			user-select: none;
+			outline: none;
+			background-color: transparent;
+			box-shadow: none;
 
 			path {
 				stroke-dasharray: 300;
@@ -66,6 +69,12 @@
 			#w {
 				animation-delay: -1.75s;
 			}
+		}
+
+		&:focus {
+			outline: none;
+			background-color: transparent;
+			box-shadow: none;
 		}
 
 		@media (width >= 300px) {
@@ -102,12 +111,10 @@
 		}
 
 		@media (width >= 1300px) {
-			display: block;
 			margin-left: 75%;
 		}
 
 		@media (width >= 1400px) {
-			display: block;
 			margin-left: 175%;
 		}
 

@@ -59,6 +59,8 @@
 
 			&:focus {
 				outline: none;
+				background-color: transparent;
+				box-shadow: none;
 			}
 
 			&:hover {
