@@ -12,6 +12,13 @@
 </script>
 
 <style>
+	@supports (-webkit-touch-callout: none) {
+		:root::view-transition-old(root),
+		:root::view-transition-new(root) {
+			background-color: black !important;
+		}
+	}
+
 	:root {
 		background-color: #000;
 	}
