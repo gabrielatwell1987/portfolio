@@ -198,6 +198,33 @@
 						<code class="code">let &lcub; rest, props, ...fun &rcub; = $props();</code>
 					</p>
 				</details>
+
+				<details name="sveltekit">
+					<!-- svelte-ignore a11y_no_redundant_roles -->
+					<summary role="button" class="outline contrast spacing"
+						><span class="margin"><b>View Transitions</b></span>
+					</summary>
+
+					<p class="text">
+						If you have a sveltekit project and you've been trying to use view transitions and
+						nothing is working, it's because sveltekit has a different way of doing things. In order
+						to make the framework see the correct view transition api code, you need to add the
+						following javascript code:
+					</p>
+
+					<div class="structure">
+						<Image src="/code/onNavigate.webp" alt="onNavigate" />
+						<br />
+					</div>
+
+					<p class="text">
+						This makes your view transitions work for a sveltekit project! I have made a <code
+							>&lt; ViewTransition /&gt;</code
+						>
+						component that you can use for your whole project by adding it in
+						<code>+layout.svelte</code>.
+					</p>
+				</details>
 			</div>
 
 			<Iframe
