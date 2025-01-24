@@ -31,11 +31,12 @@
 		h1 {
 			margin-block: -1.2em;
 			padding-bottom: 1.5rem;
-			color: var(--blue);
-			font-family: var(--anta);
-			font-size: clamp(2rem, 5vw, 6rem);
-			letter-spacing: 0.1em;
-			-webkit-text-stroke: 0.005em var(--white);
+			font-size: clamp(2rem, 4vw, 5rem);
+			font-weight: 700;
+			text-shadow: 0 0 5px var(--smoke);
+			mix-blend-mode: difference;
+			color: var(--sky);
+			font-family: var(--orbitron);
 
 			@media (width <= 500px) {
 				padding-bottom: 0;
