@@ -34,7 +34,6 @@
 			font-size: clamp(2rem, 4vw, 5rem);
 			font-weight: 700;
 			text-shadow: 0 0 5px var(--smoke);
-			mix-blend-mode: difference;
 			color: var(--sky);
 			font-family: var(--orbitron);
 
