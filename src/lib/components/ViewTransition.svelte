@@ -2,7 +2,7 @@
 	import { onNavigate } from '$app/navigation';
 
 	// view transition
-	onNavigate((navigation) => {
+	onNavigate(() => {
 		if (!document.startViewTransition) return;
 
 		return new Promise((resolve) => {
