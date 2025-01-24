@@ -42,6 +42,15 @@
 
 <Image src="/code/details.webp" alt="details element" />
 
-<div style="margin: 3% 0;"></div>
+<!-- view transitions -->
+<div align="center" class="title">view transitions</div>
+
+<div align="left" class="body para" aria-label="view transitions"> The <code>view transitions</code> api is used to transition your website between pages for MPA (multi-page application) use or between elements for SPA (single page application) use. It's quite easy to do, it takes one line of code. In the following image, I've included some examples of how to set it up. The first example <code>@view-transition &#123;navigation: auto;&#125;</code> is all you have to add to your css to make a crossfade animation happen on every page transition. You have to add this to your <code>:root</code> in css for it to happen to every page transition. </div>
+
+<div align="left" class="body para" aria-label="view transitions">The example: <code>::view-transition-old(root), ::view-transition-new(root)</code> examples are to customize the transitions. Old is the state that the page is leaving from and new means the state the page is going to. (root) means the root of the file.. if you want the animate the transition of a specific DOM element, you would change the root with the class/id of the element (.example or #example). To select both of these at once you use <code>::view-transition-group</code>.</div>
+
+<Image src="/code/view-transitions.webp" alt="view transitions" />
+
+<div style="margin: 5% 0;"></div>
 
 <Divider width="75" thickness="5" />
