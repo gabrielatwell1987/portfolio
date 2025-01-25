@@ -27,15 +27,15 @@
 	}
 
 	@supports (-webkit-touch-callout: none) {
-		:root::view-transition-old(root) {
+		/* :root::view-transition-old(root) {
 			background-color: #000;
 			animation: 0.25s cubic-bezier(0.4, 0, 1, 1) both out-safari;
-		}
+		} */
 
-		:root::view-transition-new(root) {
+		/* :root::view-transition-new(root) {
 			background-color: #000;
 			animation: 0.75s cubic-bezier(0, 0, 0.2, 1) 1s both in-safari;
-		}
+		} */
 	}
 
 	@keyframes in {
