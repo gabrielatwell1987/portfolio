@@ -37,7 +37,7 @@ code {
 	background: var(--black);
 	color: var(--off-white);
 	font-family: var(--mono);
-	font-size: clamp(1rem, 1.25vw, 1.25rem);
+	font-size: clamp(0.9rem, 1vw, 1.1rem);
 	letter-spacing: 1px;
 	font-weight: 700;
 }
@@ -45,7 +45,7 @@ code {
 code.code {
 	background: var(--black);
 	color: var(--off-white);
-	font-size: clamp(1rem, 1.25vw, 1.25rem);
+	font-size: clamp(0.9rem, 1vw, 1.1rem);
 	font-weight: 700;
 }
 

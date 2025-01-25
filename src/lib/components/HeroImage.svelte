@@ -39,6 +39,7 @@
 
 			@media (width <= 500px) {
 				padding-bottom: 0;
+				mix-blend-mode: normal;
 			}
 		}
 	}
