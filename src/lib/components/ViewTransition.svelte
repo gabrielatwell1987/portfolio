@@ -34,7 +34,7 @@
 
 		:root::view-transition-new(root) {
 			background-color: #000;
-			animation: 0.75s cubic-bezier(0, 0, 0.2, 1) 1s both in-safari;
+			animation: 0.75s cubic-bezier(0, 0, 0.2, 1) both in-safari;
 		}
 	}
 
@@ -65,24 +65,20 @@
 	@keyframes in-safari {
 		from {
 			opacity: 0.65;
-			scale: 0.97;
 		}
 
 		to {
 			opacity: 1;
-			scale: 1;
 		}
 	}
 
 	@keyframes out-safari {
 		from {
 			opacity: 1;
-			scale: 1;
 		}
 
 		to {
 			opacity: 0.65;
-			scale: 0.97;
 		}
 	}
 </style>
