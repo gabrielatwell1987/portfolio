@@ -116,12 +116,17 @@
 		.header-logos {
 			display: block;
 		}
+
+		nav {
+			margin: 0;
+		}
 	}
 
 	@media (width >= 750px) {
 		.desktop {
 			display: flex;
 			gap: 0.25rem;
+			scale: 0.9;
 		}
 
 		.mobile {
@@ -131,11 +136,16 @@
 		.header-logos {
 			display: flex;
 		}
+
+		nav {
+			margin: 1rem;
+		}
 	}
 
 	@media (width >= 990px) {
 		.desktop {
-			gap: 2rem;
+			gap: 1.5rem;
+			scale: 1;
 		}
 	}
 </style>
