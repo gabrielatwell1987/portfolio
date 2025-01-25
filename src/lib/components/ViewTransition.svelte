@@ -19,33 +19,23 @@
 	:root::view-transition-old(root) {
 		background-color: #000;
 		animation: 0.75s cubic-bezier(0.4, 0, 1, 1) both out;
-
-		clip-path: inset(0);
-		background-clip: border-box;
-		border: none;
-		-webkit-clip-path: inset(0);
 	}
 
 	:root::view-transition-new(root) {
 		background-color: #000;
 		animation: 0.75s cubic-bezier(0, 0, 0.2, 1) 1s both in;
-
-		clip-path: inset(0);
-		background-clip: border-box;
-		border: none;
-		-webkit-clip-path: inset(0);
 	}
 
 	@supports (-webkit-touch-callout: none) {
-		/* :root::view-transition-old(root) {
+		:root::view-transition-old(root) {
 			background-color: #000;
 			animation: 0.25s cubic-bezier(0.4, 0, 1, 1) both out-safari;
-		} */
+		}
 
-		/* :root::view-transition-new(root) {
+		:root::view-transition-new(root) {
 			background-color: #000;
 			animation: 0.75s cubic-bezier(0, 0, 0.2, 1) 1s both in-safari;
-		} */
+		}
 	}
 
 	@keyframes in {
@@ -75,20 +65,24 @@
 	@keyframes in-safari {
 		from {
 			opacity: 0.65;
+			scale: 0.97;
 		}
 
 		to {
 			opacity: 1;
+			scale: 1;
 		}
 	}
 
 	@keyframes out-safari {
 		from {
 			opacity: 1;
+			scale: 1;
 		}
 
 		to {
 			opacity: 0.65;
+			scale: 0.97;
 		}
 	}
 </style>
