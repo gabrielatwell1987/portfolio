@@ -45,29 +45,35 @@
 
 	nav {
 		display: flex;
-		justify-content: space-around;
+		justify-content: space-evenly;
 		align-items: center;
 		height: 5em;
 		width: var(--100);
-		position: relative;
 		margin-inline: auto;
 		backdrop-filter: blur(0.75rem);
 		-webkit-backdrop-filter: blur(0.25rem);
 		z-index: 15;
-	}
-
-	.desktop {
-		display: block;
-		font-family: var(--orbitron);
-		margin-left: clamp(100px, 30%, 200px);
+		view-transition-name: navigation;
+		position: fixed;
+		top: 0;
+		left: 0;
+		margin: 1rem;
 	}
 
 	.header-logos {
 		display: flex;
+		align-items: center;
+		gap: 1rem;
+		cursor: pointer;
+	}
+
+	.desktop {
+		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-left: 5rem;
-		cursor: pointer;
+		gap: 2rem;
+		font-family: var(--orbitron);
+		font-weight: 600;
 	}
 
 	@media (width > 300px) {
@@ -110,114 +116,26 @@
 		.header-logos {
 			display: block;
 		}
-
-		nav {
-			display: flex;
-			justify-content: space-around;
-			align-items: center;
-			height: 4em;
-			width: var(--100);
-			position: fixed;
-			top: 0;
-			right: 7px;
-			z-index: 10;
-			view-transition-name: navigation;
-		}
 	}
 
 	@media (width >= 750px) {
 		.desktop {
-			width: var(--100);
 			display: flex;
-			align-items: center;
-			margin-top: 0;
-			gap: 1rem;
-			flex-direction: row;
-			border: none;
-			background-color: transparent;
-			margin-left: 10%;
-			scale: 0.85;
-			text-wrap: nowrap;
+			gap: 0.25rem;
 		}
 
 		.mobile {
 			display: none;
 		}
 
-		nav {
-			height: 5em;
-			width: var(--100);
-			scale: 0.76;
-		}
-
 		.header-logos {
-			display: block;
-			margin-bottom: 15%;
-			margin-left: -5rem;
+			display: flex;
 		}
 	}
 
 	@media (width >= 990px) {
 		.desktop {
-			display: block;
-			width: var(--100);
-			margin-inline: auto;
-			scale: 0.8;
-			position: relative;
-			right: 100px;
-		}
-
-		nav {
-			height: 5em;
-			width: var(--100);
-			margin-top: 1rem;
-			scale: 1;
-		}
-
-		.header-logos {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin: 3rem;
-		}
-	}
-
-	@media (width >= 1024px) {
-		.desktop {
-			width: var(--100);
-			line-height: 2;
-			scale: 0.8;
-			right: 0;
-		}
-
-		nav {
-			margin-right: 3rem;
-		}
-	}
-
-	@media (width >= 1100px) {
-		.desktop {
-			line-height: 1.5;
-			margin-left: 0;
-		}
-
-		nav {
-			scale: 0.8;
-		}
-	}
-
-	@media (width >= 1400px) {
-		nav {
-			margin-right: 5rem;
-			scale: 1;
-		}
-	}
-
-	@media (width >= 1600px) {
-		.desktop {
-			margin-left: 15em;
-			margin-right: 10rem;
-			scale: 1.2;
+			gap: 2rem;
 		}
 	}
 </style>

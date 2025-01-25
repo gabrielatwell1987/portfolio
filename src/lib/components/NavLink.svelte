@@ -34,6 +34,7 @@
 			text-decoration: none;
 			color: var(--white);
 			border-radius: 2px;
+			scale: 0.8;
 
 			&:hover {
 				color: var(--sky);
@@ -48,8 +49,7 @@
 
 	@media (width >= 990px) {
 		.nav-link {
-			margin-left: 5.5rem;
-			margin-right: -5.25rem;
+			scale: 1;
 		}
 	}
 </style>

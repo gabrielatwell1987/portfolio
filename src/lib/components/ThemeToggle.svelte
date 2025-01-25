@@ -36,12 +36,14 @@
 		border: none;
 		border-radius: 5px;
 		color: var(--text-color);
-		padding: 10px 15px;
+		/* padding: 2rem 2.25rem; */
+		padding-top: 2rem;
 		font-size: clamp(1.5rem, 2vw, 2.25rem);
 		letter-spacing: 3px;
 		width: fit-content;
-		margin-left: 5%;
-		margin-top: 1%;
+		display: flex;
+		align-items: center;
+		height: 100%;
 
 		z-index: 10;
 		outline: none;
@@ -75,24 +77,9 @@
 		}
 
 		@media (width >= 300px) {
-			margin-top: 1.75rem;
-			margin-left: 1rem;
-
 			& i {
 				font-weight: 800;
 			}
-		}
-
-		@media (width >= 750px) {
-			margin-left: 3rem;
-		}
-
-		@media (width >= 1100px) {
-			margin-left: 10%;
-		}
-
-		@media (width >= 1400px) {
-			margin-left: 17%;
 		}
 	}
 </style>
