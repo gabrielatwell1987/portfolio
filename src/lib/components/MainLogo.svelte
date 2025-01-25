@@ -52,8 +52,6 @@
 
 <style>
 	.gabe-logo {
-		margin-left: 25%;
-
 		.home {
 			user-select: none;
 			outline: none;
@@ -83,8 +81,7 @@
 
 		@media (width >= 750px) {
 			display: block;
-			margin-bottom: 6rem;
-			margin-right: 3rem;
+			scale: 0.8;
 
 			a {
 				transition: transform 0.25s ease-in-out;
@@ -99,31 +96,7 @@
 		}
 
 		@media (width >= 990px) {
-			margin-left: 5%;
-			margin-right: 0;
-			margin-bottom: 0;
-			scale: 0.8;
-		}
-
-		@media (width >= 1100px) {
-			margin-left: 75%;
-			scale: 1.1;
-		}
-
-		@media (width >= 1300px) {
-			margin-left: 75%;
-		}
-
-		@media (width >= 1400px) {
-			margin-left: 175%;
-		}
-
-		@media (width >= 1500px) {
-			margin-left: 150%;
-		}
-
-		@media (width >= 1600px) {
-			margin-left: 150%;
+			scale: 1;
 		}
 	}
 
