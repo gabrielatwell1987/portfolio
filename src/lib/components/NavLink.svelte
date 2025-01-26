@@ -15,7 +15,8 @@
 			color: var(--white);
 
 			&:is(:hover) {
-				color: var(--smoke);
+				color: var(--off-white);
+				transition: color 0.35s ease-in-out;
 			}
 
 			&:hover {

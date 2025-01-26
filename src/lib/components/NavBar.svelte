@@ -5,8 +5,8 @@
 	import NavLink from '$lib/components/NavLink.svelte';
 	import InstallBtn from '$lib/components/InstallBtn.svelte';
 
-	let open = false;
-	let isClosing = false;
+	let open = $state(false);
+	let isClosing = $state(false);
 </script>
 
 <nav>
@@ -48,7 +48,6 @@
 		justify-content: space-evenly;
 		align-items: center;
 		height: 5em;
-		width: var(--100);
 		margin-inline: auto;
 		backdrop-filter: blur(0.75rem);
 		-webkit-backdrop-filter: blur(0.25rem);
@@ -56,7 +55,8 @@
 		view-transition-name: navigation;
 		position: fixed;
 		top: 0;
-		left: 0;
+		left: 50%;
+		transform: translateX(-50%);
 		margin: 1rem;
 	}
 
@@ -119,6 +119,9 @@
 
 		nav {
 			margin: 0;
+			width: var(--100);
+			background-color: transparent;
+			border-radius: 5rem;
 		}
 	}
 
@@ -139,6 +142,12 @@
 
 		nav {
 			margin: 1rem;
+			background-color: var(--black);
+			border: 0.05rem solid var(--white);
+			border-radius: 1rem;
+			width: 90%;
+			backdrop-filter: blur(0);
+			-webkit-backdrop-filter: blur(0);
 		}
 	}
 

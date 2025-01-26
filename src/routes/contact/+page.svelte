@@ -1,5 +1,4 @@
 <script>
-	import { fade } from 'svelte/transition';
 	import ContactForm from '$lib/components/ContactForm.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import Title from '$lib/components/Title.svelte';
