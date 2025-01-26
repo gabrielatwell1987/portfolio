@@ -1,4 +1,5 @@
 <script>
+	import { blur } from 'svelte/transition';
 	import Burger from '$lib/components/Burger.svelte';
 	import MainLogo from '$lib/components/MainLogo.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
@@ -49,8 +50,8 @@
 		align-items: center;
 		height: 5em;
 		margin-inline: auto;
-		backdrop-filter: blur(0.75rem);
-		-webkit-backdrop-filter: blur(0.25rem);
+		backdrop-filter: blur(0.15rem);
+		-webkit-backdrop-filter: blur(0.15rem);
 		z-index: 15;
 		view-transition-name: navigation;
 		position: fixed;
@@ -121,7 +122,6 @@
 			margin: 0;
 			width: var(--100);
 			background-color: transparent;
-			border-radius: 5rem;
 		}
 	}
 
@@ -142,12 +142,6 @@
 
 		nav {
 			margin: 1rem;
-			background-color: var(--black);
-			border: 0.05rem solid var(--white);
-			border-radius: 1rem;
-			width: 90%;
-			backdrop-filter: blur(0);
-			-webkit-backdrop-filter: blur(0);
 		}
 	}
 
