@@ -45,9 +45,9 @@
 <style>
 	.dev-links {
 		margin-top: 6rem;
-		margin-left: 0%;
 		display: flex;
 		justify-content: space-evenly;
+		gap: 5rem;
 		padding: 1rem;
 
 		.size {
@@ -83,7 +83,7 @@
 			display: flex;
 			justify-content: space-evenly;
 			align-items: center;
-			gap: 1.5rem;
+			gap: 1.65rem;
 			margin-top: 2rem;
 		}
 	}

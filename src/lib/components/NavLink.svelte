@@ -15,7 +15,7 @@
 			color: var(--white);
 
 			&:is(:hover) {
-				color: var(--off-white);
+				color: var(--dark-gray);
 				transition: color 0.35s ease-in-out;
 			}
 
@@ -41,8 +41,8 @@
 				color: var(--sky);
 				border-bottom: 5px solid var(--sky);
 				height: 2.75rem;
-				text-shadow: 2px 2px 1px var(--blacker);
-				transition: all 0.35s ease-in-out;
+				text-shadow: 3px 3px 1px var(--black);
+				transition: all 0.15s ease-in-out;
 				border-radius: 2px;
 			}
 		}
