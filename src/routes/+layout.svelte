@@ -55,15 +55,13 @@
 </svelte:head>
 
 <Analytics />
+<SkipLink />
+<ViewTransition />
 
 <!-- loading animation -->
 {#if !isPageLoaded}
 	<Loading />
 {/if}
-
-<SkipLink />
-
-<ViewTransition />
 
 <main>
 	<NavBar />
@@ -89,36 +87,4 @@
 		position: relative;
 		overflow: hidden;
 	}
-
-	/* @keyframes fade-in {
-		from {
-			opacity: 0;
-		}
-
-		to {
-			opacity: 1;
-		}
-	} */
-
-	/* @keyframes fade-out {
-		from {
-			opacity: 1;
-		}
-
-		to {
-			opacity: 0;
-		}
-	} */
-
-	/* @keyframes slide-from-right {
-		from {
-			transform: translateX(-50px);
-		}
-	} */
-
-	/* @keyframes slide-to-left {
-		to {
-			transform: translateX(50px);
-		}
-	} */
 </style>
