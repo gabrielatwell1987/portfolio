@@ -11,7 +11,7 @@
 
 		const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
-		gsap.set(['.h1-l', 'h1-r'], { y: 50 });
+		gsap.set(['.h1-l', 'h1-r'], { y: 40 });
 
 		tl.from(
 			h1L,
@@ -63,7 +63,7 @@
 		.h1-l,
 		.h1-r {
 			color: var(--white);
-			font-family: var(--anta);
+			font-family: var(--bronova);
 			font-size: clamp(1.2rem, 5vw, 5rem);
 			font-weight: 100;
 			z-index: 2;

@@ -60,8 +60,8 @@
 		padding: 2rem;
 
 		.bigWord {
-			font-family: var(--anta);
-			font-size: clamp(3rem, 16vw, 40rem);
+			font-family: var(--orbitron);
+			font-size: clamp(3rem, 15vw, 40rem);
 			color: var(--blue);
 			text-wrap: none;
 			display: block;

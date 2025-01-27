@@ -1,7 +1,6 @@
 <script>
 	import gsap from 'gsap';
 	import { goto } from '$app/navigation';
-	import { fade } from 'svelte/transition';
 	import HeroTitle from '$lib/components/HeroTitle.svelte';
 
 	let videoElement;
@@ -95,7 +94,7 @@
 			z-index: 1;
 
 			& h1 {
-				font-family: var(--opensans);
+				font-family: var(--orbitron);
 				font-size: clamp(0.9rem, 1.25vw, 1.5rem);
 				margin: -1rem 0 1rem 0;
 

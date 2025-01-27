@@ -30,7 +30,7 @@
 		section {
 			.h1 {
 				color: var(--blue);
-				font-family: var(--anta);
+				font-family: var(--orbitron);
 				font-size: clamp(3rem, 7vw, 6rem);
 				letter-spacing: 22px;
 				text-align: center;

@@ -45,8 +45,8 @@
 	@media (width >= 300px) {
 		.title {
 			text-align: center;
-			font-family: var(--anta);
-			font-size: clamp(3.15rem, 10.5vw, 15rem);
+			font-family: var(--orbitron);
+			font-size: clamp(2.5rem, 10.5vw, 15rem);
 			color: var(--blue);
 			mix-blend-mode: lighten;
 			letter-spacing: 5px;
@@ -54,7 +54,7 @@
 			filter: drop-shadow(0px 0px 0.5rem var(--smoke));
 			text-transform: uppercase;
 			font-kerning: none;
-			margin-top: 3rem;
+			margin-top: 5rem;
 		}
 
 		#title {
