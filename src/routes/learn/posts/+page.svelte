@@ -56,7 +56,7 @@
 		/>
 	</article>
 
-	<Button href="/blog" title="Back" />
+	<Button href="/learn" title="Back" />
 </section>
 
 <style>

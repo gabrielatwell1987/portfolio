@@ -181,7 +181,7 @@
 			<Learn href="https://greensock.com" title="greensock" />
 
 			<div class="back">
-				<Button href="/blog" title="Back" />
+				<Button href="/learn" title="Back" />
 			</div>
 		</main>
 	</div>

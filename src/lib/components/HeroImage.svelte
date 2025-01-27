@@ -34,7 +34,7 @@
 			font-size: clamp(2rem, 4vw, 5rem);
 			font-weight: 700;
 			text-shadow: 0 0 5px var(--smoke);
-			color: var(--sky);
+			color: var(--off-white);
 			font-family: var(--orbitron);
 
 			@media (width <= 500px) {

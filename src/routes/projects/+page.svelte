@@ -40,7 +40,7 @@
 />
 
 <main>
-	<Title title="projects" />
+	<Title title="showcase" />
 </main>
 
 <div class="popup">
