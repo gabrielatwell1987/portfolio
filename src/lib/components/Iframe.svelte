@@ -30,8 +30,10 @@
 
 		@media (width <= 500px) {
 			iframe {
-				width: 100%;
+				width: 99%;
 				margin-bottom: 5rem;
+				margin-right: 1.27rem;
+				scale: 0.95;
 			}
 		}
 	}
