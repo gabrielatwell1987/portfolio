@@ -100,7 +100,7 @@
 
 				& span {
 					font-family: var(--bronova);
-					font-size: clamp(1rem, 1.5vw, 2rem);
+					font-size: clamp(0.99rem, 2vw, 2rem);
 					font-weight: 700;
 					color: var(--sky);
 				}
@@ -109,7 +109,7 @@
 			& p {
 				font-family: var(--bronova);
 				font-size: clamp(0.9rem, 1.25vw, 1.5rem);
-				margin: -1rem 0 2rem 0;
+				margin: -0.5rem 0 2rem 0;
 
 				& a {
 					font-weight: 700;
