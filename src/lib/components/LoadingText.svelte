@@ -51,7 +51,7 @@
 		justify-content: space-evenly;
 
 		& span {
-			animation: moveLetters 2.4s infinite ease-in-out;
+			animation: moveLetters 2.2s infinite ease-in-out;
 			transform: translateX(0);
 			position: relative;
 			display: inline-block;
