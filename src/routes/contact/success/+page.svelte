@@ -35,7 +35,8 @@
 			section {
 				width: var(--100);
 				padding: clamp(2rem, 5vw, 9rem);
-				margin: 5% auto;
+				margin-inline: auto;
+				margin-top: 25%;
 				text-align: center;
 			}
 

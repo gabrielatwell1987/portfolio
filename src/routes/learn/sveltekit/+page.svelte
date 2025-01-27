@@ -235,7 +235,7 @@
 			<Learn href="https://svelte.dev" title="svelte" />
 
 			<div class="back">
-				<Button href="/blog" title="Back" />
+				<Button href="/learn" title="Back" />
 			</div>
 		</main>
 	</div>

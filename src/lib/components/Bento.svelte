@@ -28,7 +28,7 @@
 				</div>
 
 				<div class="item" style="--col: 2; --row: 1">
-					<a href="/blog">
+					<a href="/learn">
 						<Image src="/logos/learn.webp" alt="learning web techniques" width="500" />
 					</a>
 				</div>
