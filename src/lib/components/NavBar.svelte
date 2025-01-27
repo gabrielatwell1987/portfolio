@@ -21,8 +21,8 @@
 
 	<div class="desktop">
 		<NavLink href="/about" title="About" />
-		<NavLink href="/projects" title="Projects" />
-		<NavLink href="/blog" title="Learn" />
+		<NavLink href="/projects" title="Work" />
+		<NavLink href="/learn" title="Learn" />
 		<NavLink href="/photos" title="Photos" />
 		<NavLink href="/contact" title="Contact" />
 	</div>
@@ -30,8 +30,8 @@
 	<div class="mobile {open ? 'open' : ''} {isClosing ? 'closing' : ''}">
 		<NavLink href="/landing" title="Home" />
 		<NavLink href="/about" title="About" />
-		<NavLink href="/projects" title="Projects" />
-		<NavLink href="/blog" title="Learn" />
+		<NavLink href="/projects" title="Work" />
+		<NavLink href="/learn" title="Learn" />
 		<NavLink href="/photos" title="Photos" />
 		<NavLink href="/contact" title="Contact" />
 	</div>

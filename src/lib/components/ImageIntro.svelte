@@ -1,6 +1,4 @@
 <script>
-	import { fade } from 'svelte/transition';
-	import { duration } from '$lib/data/timings.svelte.js';
 	import Image from '$lib/components/Image.svelte';
 
 	let { src, alt, title, text, width } = $props();
@@ -10,7 +8,7 @@
 	<section>
 		<h1 class="h1">{title}</h1>
 
-		<div class="img" transition:fade={{ duration: duration }}>
+		<div class="img">
 			<a href="/about/hero">
 				<Image {src} {alt} {width} />
 			</a>

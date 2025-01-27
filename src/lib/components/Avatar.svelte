@@ -6,7 +6,9 @@
 <article>
 	<img {src} {alt} />
 
-	<h3>{name}</h3>
+	<a href="/contact">
+		<h3>{name}</h3>
+	</a>
 </article>
 
 <style>

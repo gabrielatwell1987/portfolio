@@ -29,7 +29,7 @@
 	</h4>
 
 	<a href="/projects">
-		<Button title="Projects" />
+		<Button title="Creations" />
 	</a>
 </section>
 

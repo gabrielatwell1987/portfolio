@@ -18,7 +18,7 @@
 			we can discuss your goals for your online needs!
 		</h4>
 
-		<Button href="/projects" title="Projects" />
+		<Button href="/projects" title="Creations" />
 	</section>
 
 	<br />

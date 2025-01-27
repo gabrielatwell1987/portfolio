@@ -1,8 +1,5 @@
 <script>
-	import { fade } from 'svelte/transition';
-	import { duration, delay } from '$lib/data/timings.svelte.js';
 	import { gsap } from 'gsap';
-	import { Draggable } from 'gsap/dist/Draggable';
 	import Project from '$lib/components/Project.svelte';
 	import Figure from '$lib/components/Figure.svelte';
 	import Title from '$lib/components/Title.svelte';
@@ -18,20 +15,6 @@
 		gsap.set('.content', { autoAlpha: 0 });
 		gsap.set('.link', { autoAlpha: 0 });
 		gsap.set('.iconLogo', { autoAlpha: 0, scale: 0 });
-
-		gsap.registerPlugin(Draggable);
-
-		Draggable.create(logo, {
-			type: 'top',
-			bounds: window,
-			edgeResistance: 0.65,
-			onPress: function () {
-				gsap.to(logo, { scale: 1.1 });
-			},
-			onRelease: function () {
-				gsap.to(logo, { scale: 1 });
-			}
-		});
 
 		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 
@@ -60,7 +43,7 @@
 	<Title title="projects" />
 </main>
 
-<div class="popup" transition:fade={{ delay: delay, duration: duration }}>
+<div class="popup">
 	<Popup
 		title=""
 		text="Hover over the project image to reveal the tech stack I used on the project 👍🏻"
