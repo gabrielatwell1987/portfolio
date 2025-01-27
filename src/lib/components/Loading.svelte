@@ -1,9 +1,9 @@
 <script>
-	import LoadingDots from './LoadingDots.svelte';
+	import LoadingText from './LoadingText.svelte';
 </script>
 
 <main class="container">
-	<LoadingDots />
+	<LoadingText />
 </main>
 
 <style>
