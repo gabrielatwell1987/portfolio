@@ -7,11 +7,11 @@
 }
 
 @font-face {
-	font-family: 'Space Mono';
+	font-family: 'Courier Prime';
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url('/fonts/SpaceMono-Regular.ttf') format('truetype');
+	src: url('/fonts/CourierPrime-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -46,7 +46,7 @@
 	--fail: hsla(0, 96%, 31%, 1);
 
 	/* fonts */
-	--mono: 'Space Mono', monospace;
+	--mono: 'Courier Prime', monospace;
 	--orbitron: 'Orbitron-Black', sans-serif;
 	--bronova: 'Bronova', sans-serif;
 

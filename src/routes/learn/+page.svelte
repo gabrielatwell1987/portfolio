@@ -11,9 +11,9 @@
 </script>
 
 <SEO
-	title="Learn web animation basics"
-	description="about learning web techniques"
-	keywords="blog topics, web animation basics, topics"
+	title="Learn about web techniques"
+	description="about learning web techniques and web animation basics"
+	keywords="topics to learn, web animation basics, topics, web techniques"
 />
 
 <main>
@@ -21,17 +21,17 @@
 
 	<article>
 		<section aria-label="icons">
-			<a class="gs" href="blog/greensock">
+			<a class="gs" href="learn/greensock">
 				<Image src="/logos/gsapLogo.svg" alt="greensock" width="250" />
 			</a>
 
-			<a class="sk" href="blog/sveltekit">
+			<a class="sk" href="learn/sveltekit">
 				<Image src="/logos/svelteLogo.png" alt="sveltekit" width="350" />
 			</a>
 		</section>
 
 		<div class="animation-link" aria-label="animation">
-			<a href="/blog/posts">
+			<a href="/learn/posts">
 				<div class="image">
 					<Image
 						src="logos/animation.webp"
