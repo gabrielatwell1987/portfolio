@@ -1,7 +1,15 @@
 <script>
 </script>
 
-<button type="submit"><p>Send <i class="fa-solid fa-angle-right"></i></p></button>
+<button type="submit">
+	<p>
+		Send <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="1rem">
+			<path
+				d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+			/>
+		</svg>
+	</p>
+</button>
 
 <style>
 	@media (min-width: 300px) {
@@ -39,14 +47,14 @@
 				font-weight: 900;
 				color: var(--pale);
 
-				&:hover i {
+				&:hover svg {
 					animation: right 1s ease-in-out infinite;
 					opacity: 0.75;
 				}
 			}
 
 			@media (width <= 500px) {
-				& i {
+				& svg {
 					display: none;
 				}
 			}

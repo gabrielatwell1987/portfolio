@@ -1,6 +1,7 @@
 <script>
 	import gsap from 'gsap';
 	import Image from './Image.svelte';
+	import '@fortawesome/fontawesome-free/css/all.css';
 
 	$effect(() => {
 		const modal = document.querySelector('#modal');
