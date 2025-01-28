@@ -1,4 +1,6 @@
-<script></script>
+<script>
+	import '@fortawesome/fontawesome-free/css/all.css';
+</script>
 
 <main class="dev-links" aria-label="links">
 	<a
@@ -7,8 +9,8 @@
 		target="_blank"
 		aria-label="github link"
 	>
-		<i class="fa-brands fa-github"></i></a
-	>
+		<i class="fa-brands fa-github"></i>
+	</a>
 
 	<a class="size" href="https://codepen.io/gabrielatwell" target="_blank" aria-label="codepen link">
 		<i class="fa-brands fa-codepen"></i></a
@@ -52,6 +54,7 @@
 
 		.size {
 			color: var(--blue);
+			font-size: clamp(2.5rem, 4vw, 5rem);
 			font-weight: 900;
 			transition: color 0.5s ease;
 			-webkit-text-stroke: 0.025rem var(--white);
@@ -67,11 +70,6 @@
 				color: var(--dark-pale);
 				font-weight: 900;
 				transition: color 0.5s ease;
-			}
-
-			&,
-			&:hover {
-				font-size: clamp(2.5rem, 4vw, 5rem);
 			}
 
 			& i {
