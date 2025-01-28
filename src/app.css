@@ -3,7 +3,7 @@
 	font-style: normal;
 	font-weight: 900;
 	font-display: swap;
-	src: url('/fonts/Orbitron-Black.ttf') format('truetype');
+	src: url('/fonts/Orbitron-Black.woff2') format('woff2');
 }
 
 @font-face {
@@ -11,7 +11,7 @@
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url('/fonts/CourierPrime-Regular.ttf') format('truetype');
+	src: url('/fonts/CourierPrime-Regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -19,7 +19,7 @@
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url('/fonts/Bronova-Regular.ttf') format('truetype');
+	src: url('/fonts/Bronova-Regular.woff2') format('woff2');
 }
 
 :root {
