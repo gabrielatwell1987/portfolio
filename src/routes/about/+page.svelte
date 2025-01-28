@@ -75,6 +75,10 @@
 	});
 </script>
 
+<svelte:head>
+	<link rel="preload" as="image" href="/logos/wireframeBg.webp" type="image/webp" />
+</svelte:head>
+
 <SEO
 	title="Who is Gabe Atwell?"
 	description="All about Gabriel Atwell"
