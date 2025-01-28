@@ -1,9 +1,24 @@
 <script>
 	/** @type {{src: any, alt: any}} */
 	let { src, alt, width } = $props();
+
+	let imageElement;
+
+	$effect(() => {
+		const observer = new IntersectionObserver(([entry], observer) => {
+			if (entry.isIntersecting) {
+				imageElement.src = src;
+				observer.unobserve(imageElement);
+			}
+		});
+
+		observer.observe(imageElement);
+
+		return () => observer.disconnect();
+	});
 </script>
 
-<img {src} {alt} {width} />
+<img {src} {alt} {width} bind:this={imageElement} />
 
 <style>
 	img {

@@ -2,6 +2,7 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Title from '$lib/components/Title.svelte';
+	import Image from '$lib/components/Image.svelte';
 
 	$effect(() => {
 		const main = document.querySelector('main');
@@ -71,6 +72,7 @@
 					height="450"
 					loading="lazy"
 				/>
+
 				<img
 					class="gabe"
 					src="photos/gabe2.webp"
@@ -79,6 +81,7 @@
 					height="350"
 					loading="lazy"
 				/>
+
 				<img src="/photos/gabe5.webp" alt="Gabriel" class="gabe" width="400" loading="lazy" />
 			</aside>
 		</div>
@@ -100,6 +103,7 @@
 					width="400"
 					loading="lazy"
 				/>
+
 				<img
 					class="gabe ar58"
 					src="photos/archie.webp"
@@ -121,6 +125,7 @@
 					width="600"
 					loading="lazy"
 				/>
+
 				<img
 					src="/photos/wtf2.webp"
 					alt="Gabe's face on hulk hogan"
