@@ -11,7 +11,9 @@
 	<ul class="skills">
 		<a class="skill" href="https://developer.mozilla.org/en-US/docs/Learn/HTML" target="_blank">
 			<li>
-				<div class="icons"><Image src="skills/HTML-Dark.svg" alt="html" /></div>
+				<div class="icons">
+					<Image src="skills/HTML-Dark.svg" alt="html" />
+				</div>
 			</li>
 		</a>
 

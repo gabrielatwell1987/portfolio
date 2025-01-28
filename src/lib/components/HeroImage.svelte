@@ -6,7 +6,12 @@
 </script>
 
 <div class="image-hero" transition:fade={{ duration: duration }}>
-	<img {src} {alt} />
+	<picture>
+		<source srcset={src} media="(max-width: 768px)" />
+		<source srcset={src} media="(max-width: 1200px)" />
+
+		<img {src} {alt} width="1200" />
+	</picture>
 
 	<h1>{title}</h1>
 </div>
