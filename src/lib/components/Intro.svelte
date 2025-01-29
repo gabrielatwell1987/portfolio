@@ -1,18 +1,10 @@
 <script>
-	import gsap from 'gsap';
 	import { goto } from '$app/navigation';
 	import HeroTitle from '$lib/components/HeroTitle.svelte';
 
 	let videoElement;
 
 	$effect(() => {
-		const heroVideo = document.querySelector('.hero-video');
-		const heroContent = document.querySelector('.hero-content');
-
-		gsap.from(heroVideo, { opacity: 0, duration: 1, delay: 0.5 });
-
-		gsap.from(heroContent, { opacity: 0, y: 50, duration: 1.5, delay: 1 });
-
 		document.addEventListener('visibilitychange', handleVisibilityChange);
 
 		return () => {
@@ -22,9 +14,9 @@
 
 	function handleVisibilityChange() {
 		if (document.hidden && videoElement) {
-			videoElement.pause(); // Pause the video when the page is hidden
+			videoElement.pause();
 		} else if (videoElement) {
-			videoElement.play(); // Resume the video when the page becomes visible
+			videoElement.play();
 		}
 	}
 
@@ -43,6 +35,7 @@
 		class="intro-video"
 		preload="true"
 		bind:this={videoElement}
+		aria-label="intro video"
 	>
 		<source src="/videos/skully.mp4" type="video/mp4" />
 
@@ -71,7 +64,6 @@
 		position: relative;
 		width: 100vw;
 		height: 100vh;
-		overflow: hidden;
 
 		& .intro-video {
 			position: fixed;
@@ -82,6 +74,7 @@
 			object-fit: cover;
 			z-index: 1;
 			opacity: 0.25;
+			overflow: visible;
 		}
 
 		& .intro-content {

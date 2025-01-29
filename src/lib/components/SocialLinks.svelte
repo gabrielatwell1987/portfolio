@@ -50,26 +50,17 @@
 
 		.size {
 			color: var(--blue);
+			font-size: clamp(2.5rem, 4vw, 5rem);
 			font-weight: 900;
 			transition: color 0.5s ease;
 			-webkit-text-stroke: 0.025rem var(--white);
 			filter: opacity(0.95);
+			cursor: pointer;
 
 			&:focus {
 				outline: none;
 				background-color: transparent;
 				box-shadow: none;
-			}
-
-			&:hover {
-				color: var(--dark-pale);
-				font-weight: 900;
-				transition: color 0.5s ease;
-			}
-
-			&,
-			&:hover {
-				font-size: clamp(2.5rem, 4vw, 5rem);
 			}
 
 			& i {
