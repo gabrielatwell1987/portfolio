@@ -69,6 +69,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		align-items: center;
 		gap: 1rem;
 		position: fixed;
 		bottom: 4rem;
@@ -76,11 +77,11 @@
 		view-transition-name: installbtn;
 
 		&:hover {
-			opacity: 1;
+			opacity: 0.9;
 		}
 
 		&:not(:hover) {
-			opacity: 0.9;
+			opacity: 1;
 		}
 
 		&:focus {
@@ -88,13 +89,15 @@
 		}
 
 		& i {
+			font-size: clamp(1.1rem, 1.5vw, 1.5rem);
 			color: var(--black);
 			align-items: center;
 			cursor: pointer;
 		}
 
 		& .desc {
-			font-size: clamp(0.8rem, 1.5vw, 1.5rem);
+			font-size: clamp(1.15rem, 1.5vw, 1.5rem);
+			font-weight: 900;
 			margin-top: 0.5rem;
 			cursor: pointer;
 		}
