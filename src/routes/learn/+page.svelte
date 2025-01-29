@@ -6,6 +6,8 @@
 
 	$effect(() => {
 		console.log('Blog page');
+
+		document.documentElement.scrollTo(0, 0);
 	});
 </script>
 
@@ -50,6 +52,7 @@
 <style>
 	main {
 		padding-top: 5%;
+		min-height: 100vh;
 
 		article {
 			display: flex;
@@ -59,6 +62,7 @@
 			gap: 20%;
 			background: transparent;
 			box-shadow: none;
+			min-height: 100vh;
 
 			a {
 				display: block;
