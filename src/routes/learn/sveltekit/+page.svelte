@@ -14,11 +14,6 @@
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
 		tl.from(details, { autoAlpha: 0, y: 100, stagger: 0.5, duration: 2 }, 0);
-
-		return () => {
-			gsap.killTweensOf(title);
-			gsap.killTweensOf(popover);
-		};
 	});
 </script>
 
