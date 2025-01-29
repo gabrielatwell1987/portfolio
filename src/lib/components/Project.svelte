@@ -39,6 +39,7 @@
 			margin-inline: auto;
 			letter-spacing: 2px;
 			text-transform: uppercase;
+			text-decoration: none;
 			width: fit-content;
 			transition: all 0.35s;
 
