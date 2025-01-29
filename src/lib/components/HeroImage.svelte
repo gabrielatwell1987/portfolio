@@ -1,11 +1,8 @@
 <script>
-	import { fade } from 'svelte/transition';
-	import { duration } from '$lib/data/timings.svelte.js';
-
 	let { src, alt, title } = $props();
 </script>
 
-<div class="image-hero" transition:fade={{ duration: duration }}>
+<div class="image-hero">
 	<picture>
 		<source srcset={src} media="(max-width: 768px)" />
 		<source srcset={src} media="(max-width: 1200px)" />

@@ -1,5 +1,4 @@
 <script>
-	import { fade } from 'svelte/transition';
 	import CSS from './css.md';
 	import GSAP from './gsap.md';
 	import Button from '$lib/components/Button.svelte';
