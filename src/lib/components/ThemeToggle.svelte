@@ -9,6 +9,7 @@
 
 <button onclick={toggle} aria-label="toggle">
 	{#if darkMode}
+		<!-- sun -->
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 512 512"
@@ -21,6 +22,7 @@
 			/>
 		</svg>
 	{:else}
+		<!-- moon -->
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="0 0 384 512"

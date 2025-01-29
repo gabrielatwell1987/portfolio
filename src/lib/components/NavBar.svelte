@@ -1,5 +1,4 @@
 <script>
-	import { blur } from 'svelte/transition';
 	import Burger from '$lib/components/Burger.svelte';
 	import MainLogo from '$lib/components/MainLogo.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';

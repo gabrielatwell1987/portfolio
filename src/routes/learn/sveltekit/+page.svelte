@@ -9,20 +9,11 @@
 
 	// animations
 	$effect(() => {
-		const title = document.querySelector('.title');
-		const popover = document.querySelector('.popover');
 		const details = document.querySelectorAll('details');
-
-		gsap.set(title, { autoAlpha: 0 });
-		gsap.set(popover, { y: 75 });
 
 		let tl = gsap.timeline({ defaults: { duration: 3 } });
 
-		tl.to(title, { autoAlpha: 1, duration: 2, ease: 'back.out(4)' }, 0).from(
-			details,
-			{ autoAlpha: 0, y: 100, stagger: 0.5, duration: 2 },
-			0
-		);
+		tl.from(details, { autoAlpha: 0, y: 100, stagger: 0.5, duration: 2 }, 0);
 
 		return () => {
 			gsap.killTweensOf(title);

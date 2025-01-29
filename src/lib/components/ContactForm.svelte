@@ -1,24 +1,11 @@
 <script>
 	import Popup from '$lib/components/Popup.svelte';
-	import { gsap } from 'gsap';
 	import Modal from './Modal.svelte';
 	import SendButton from '$lib/components/SendButton.svelte';
 
 	let name = $state('');
 	let email = $state('');
 	let message = $state('');
-
-	$effect(() => {
-		const form = document.querySelector('form');
-
-		gsap.set(form, { autoAlpha: 0 });
-
-		gsap.to(form, { autoAlpha: 1, duration: 3.5 });
-
-		return () => {
-			gsap.killTweensOf(form);
-		};
-	});
 </script>
 
 <div class="icons">

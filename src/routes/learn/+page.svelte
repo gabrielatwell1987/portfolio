@@ -1,5 +1,4 @@
 <script>
-	import { fade } from 'svelte/transition';
 	import Image from '$lib/components/Image.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import AnimatedHeading from '$lib/components/AnimatedHeading.svelte';

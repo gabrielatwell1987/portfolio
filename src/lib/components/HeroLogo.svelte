@@ -1,10 +1,9 @@
 <script>
 	import Image from '$lib/components/Image.svelte';
-	import { fade } from 'svelte/transition';
 </script>
 
 <main>
-	<section class="hero-logo" transition:fade={{ duration: 500 }}>
+	<section class="hero-logo">
 		<a href="/about/hero">
 			<Image src="/logos/atwellUI.webp" alt="atwell ui" width="1200" />
 		</a>
