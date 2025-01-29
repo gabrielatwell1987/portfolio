@@ -48,31 +48,42 @@
 		gap: 5rem;
 		padding: 1rem;
 
-		.size {
-			color: var(--blue);
-			font-size: clamp(2.5rem, 4vw, 5rem);
-			font-weight: 900;
-			transition: color 0.5s ease;
-			-webkit-text-stroke: 0.025rem var(--white);
-			cursor: pointer;
-
-			&:focus {
-				outline: none;
-				background-color: transparent;
-				box-shadow: none;
-			}
-
-			& i {
-				cursor: pointer;
-			}
-		}
-
 		@media (width <= 990px) {
 			display: flex;
 			justify-content: space-evenly;
 			align-items: center;
 			gap: 1.65rem;
 			margin-top: 2rem;
+		}
+	}
+
+	.size {
+		color: var(--blue);
+		font-size: clamp(2.5rem, 4vw, 5rem);
+		font-weight: 900;
+		transition:
+			color 0.5s ease,
+			opacity 0.5s ease;
+		-webkit-text-stroke: 0.025rem var(--white);
+		cursor: pointer;
+		opacity: 1;
+		position: relative;
+		z-index: 200;
+		pointer-events: all;
+
+		&:hover {
+			color: var(--dark-pale);
+			opacity: 0.8;
+		}
+
+		&:focus {
+			outline: none;
+			background-color: transparent;
+			box-shadow: none;
+		}
+
+		& i {
+			cursor: pointer;
 		}
 	}
 </style>
