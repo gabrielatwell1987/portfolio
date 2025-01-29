@@ -104,6 +104,7 @@ body {
 
 	a {
 		cursor: pointer;
+		text-underline-offset: 0.3rem;
 	}
 
 	.atwellLogo,
