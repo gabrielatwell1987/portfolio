@@ -72,7 +72,7 @@
 			top: 0;
 
 			&.times {
-				color: var(--off-white);
+				color: var(--dark-gray);
 			}
 		}
 
