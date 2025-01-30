@@ -99,6 +99,7 @@
 			}
 
 			& p {
+				color: var(--white);
 				font-family: var(--bronova);
 				font-size: clamp(0.9rem, 1.25vw, 1.5rem);
 				margin: -0.5rem 0 2rem 0;
