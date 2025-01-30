@@ -37,16 +37,21 @@
 
 <style>
 	.spacer {
-		height: 100vh;
+		height: 10vh;
 
 		&:nth-child(2) {
-			height: 200vh;
+			height: 50vh;
 		}
 	}
 
 	.sticky-wrapper {
-		height: 200vh;
+		/* width: 100vw; */
+		height: 100vh;
 		position: relative;
+		/* background-image: url('logos/establishedLogo.webp'); */
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
 
 		.sticky-container {
 			position: relative;
@@ -58,7 +63,9 @@
 			.parallax-image {
 				width: 300px;
 				height: 400px;
-				background-color: var(--white);
+				/* background-image: url('/logos/svelteCode.webp'); */
+				background-image: url('/logos/large-blue.webp');
+				/* background-image: url('/logos/wireframeBg.webp'); */
 				background-size: cover;
 				background-position: center;
 
