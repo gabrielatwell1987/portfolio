@@ -38,10 +38,10 @@
 			scale: 0.8;
 
 			&:hover {
-				color: var(--sky);
-				border-bottom: 5px solid var(--sky);
+				color: var(--off-white);
+				border-bottom: 5px solid var(--off-white);
 				height: 2.75rem;
-				text-shadow: 3px 3px 1px var(--black);
+				text-shadow: 3px 3px 1px var(--blacker);
 				transition: all 0.15s ease-in-out;
 				border-radius: 2px;
 			}
