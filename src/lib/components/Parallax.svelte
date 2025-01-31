@@ -9,23 +9,25 @@
 
 		const parallaxImage = document.querySelector('.parallax-image');
 
-		gsap.to(parallaxImage, {
+		gsap.from(parallaxImage, {
 			scrollTrigger: {
 				trigger: '.sticky-wrapper',
 				start: 'top top',
 				end: 'bottom top',
-				scrub: true,
+				scrub: 1,
 				pin: true
 			},
 			x: 100,
-			y: '15vh',
+			yPercent: 50,
 			scale: 3,
 			ease: 'none'
 		});
+
+		return () => {
+			gsap.killTweensOf(parallaxImage);
+		};
 	});
 </script>
-
-<div class="spacer"></div>
 
 <div class="sticky-wrapper">
 	<div class="sticky-container">
@@ -33,17 +35,7 @@
 	</div>
 </div>
 
-<div class="spacer"></div>
-
 <style>
-	.spacer {
-		height: 10vh;
-
-		&:nth-child(2) {
-			height: 50vh;
-		}
-	}
-
 	.sticky-wrapper {
 		height: 100vh;
 		position: relative;
