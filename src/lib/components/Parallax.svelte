@@ -48,7 +48,7 @@
 		/* width: 100vw; */
 		height: 100vh;
 		position: relative;
-		/* background-image: url('logos/establishedLogo.webp'); */
+		background-image: url('logos/skullLaptop.svg');
 		background-size: contain;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -63,9 +63,7 @@
 			.parallax-image {
 				width: 300px;
 				height: 400px;
-				/* background-image: url('/logos/svelteCode.webp'); */
-				background-image: url('/logos/large-blue.webp');
-				/* background-image: url('/logos/wireframeBg.webp'); */
+				background-image: url('/logos/darkTexture.webp');
 				background-size: cover;
 				background-position: center;
 
