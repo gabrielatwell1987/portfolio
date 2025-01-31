@@ -5,7 +5,6 @@
 <main class="popup">
 	<button popovertarget="popover"
 		>{title}
-		<!-- <i class="fa-solid fa-bell"></i> -->
 
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 1em; height: 1em;">
 			<path

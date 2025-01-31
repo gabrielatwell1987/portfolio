@@ -1,7 +1,6 @@
 <script>
 	import '../app.css';
 	import '@picocss/pico/css/pico.min.css';
-	import '@fortawesome/fontawesome-free/css/all.css';
 	import { page } from '$app/stores';
 	import NavBar from '$lib/components/NavBar.svelte';
 	import Analytics from '$lib/data/Analytics.svelte';
