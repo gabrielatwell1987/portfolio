@@ -3,6 +3,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import AnimatedIntro from '$lib/components/AnimatedIntro.svelte';
 	import ImageIntro from '$lib/components/ImageIntro.svelte';
+	import Parallax from '$lib/components/Parallax.svelte';
 
 	$effect(() => {
 		console.log(ImageIntro);
@@ -16,6 +17,8 @@
 	description="The home page of Gabriel Atwell's portfolio"
 	keywords="gabriel atwell home page, gabe atwell home page, frontend crafted web experiences, atwell ui"
 />
+
+<Parallax />
 
 <ImageIntro src="/logos/atwellUI.webp" alt="" title="" text="" width="1200" />
 

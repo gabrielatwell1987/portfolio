@@ -45,7 +45,6 @@
 	}
 
 	.sticky-wrapper {
-		/* width: 100vw; */
 		height: 100vh;
 		position: relative;
 		background-image: url('logos/skullLaptop.svg');
@@ -63,7 +62,7 @@
 			.parallax-image {
 				width: 300px;
 				height: 400px;
-				background-image: url('/logos/darkTexture.webp');
+				background-image: url('/textures/white.webp');
 				background-size: cover;
 				background-position: center;
 
