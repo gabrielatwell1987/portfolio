@@ -53,8 +53,8 @@
 		border: none;
 		cursor: pointer;
 		z-index: 10;
-		margin-bottom: 80%;
-		margin-right: 10%;
+		margin-bottom: 2em;
+		margin-left: 2em;
 		position: relative;
 
 		.bars {
