@@ -54,19 +54,27 @@
 		padding-top: 5%;
 		min-height: 100vh;
 
+		section {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 3em;
+			flex-direction: column;
+		}
+
 		article {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
-			gap: 20%;
+			gap: 3em;
 			background: transparent;
 			box-shadow: none;
 			min-height: 100vh;
 
 			a {
 				display: block;
-				margin: 0 0 2rem 50%;
+				margin: 0 0 2em 0;
 
 				&:focus {
 					box-shadow: 0 0 0px var(--off-white);
@@ -82,7 +90,7 @@
 			.gs:not(:hover),
 			.sk:not(:hover) {
 				filter: opacity(0.5);
-				scale: 0.95;
+				scale: 0.97;
 				transition:
 					filter 1s ease-in-out,
 					scale 0.25s ease-in-out;
@@ -99,7 +107,7 @@
 				transition: opacity 0.75s ease-in-out;
 			}
 
-			.animation-link {
+			.margin {
 				margin-top: 10%;
 			}
 		}
@@ -118,48 +126,21 @@
 		@media (width >= 300px) {
 			.image {
 				width: 15rem;
-				margin-right: 10%;
-				margin: 0 -95%;
 				scale: 1.1;
-			}
-
-			.gs {
-				margin-bottom: 5rem;
 			}
 
 			.gs,
 			.sk {
-				width: 10rem;
+				width: 10em;
 				margin-inline: auto;
 			}
 
 			.animation-link {
 				display: block;
 			}
-
-			.margin {
-				margin-top: 15%;
-				margin-bottom: 25%;
-			}
-		}
-
-		@media (width >= 500px) {
-			.image {
-				width: 60%;
-				margin: 0 -30%;
-			}
 		}
 
 		@media (width >= 720px) {
-			.image {
-				width: 40%;
-				margin: 0 -21%;
-			}
-
-			.gs {
-				margin-bottom: 12rem;
-			}
-
 			.gs,
 			.sk,
 			.image {
@@ -170,29 +151,11 @@
 		@media (width >= 990px) {
 			.gs,
 			.sk {
-				width: 75%;
-				margin-bottom: 35%;
+				width: 15em;
 			}
 
 			.image {
-				margin-top: -20%;
 				scale: 1.3;
-			}
-
-			& {
-				margin-bottom: -12%;
-			}
-
-			.animation-link {
-				margin-bottom: 0;
-			}
-
-			article {
-				margin-top: 2%;
-			}
-
-			.margin {
-				margin-bottom: 13%;
 			}
 		}
 	}

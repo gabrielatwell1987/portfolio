@@ -91,20 +91,20 @@
 			background-color: var(--blackest);
 			font-weight: 900;
 
-			max-height: 0;
+			translate: 100% 0;
 			overflow: hidden;
 			transition:
-				max-height 1s ease-in-out,
-				opacity 1.22s ease-in-out;
+				opacity 1.22s ease-in-out,
+				translate 1.22s ease-in-out;
 			opacity: 0;
 
 			&.open {
-				max-height: 500px;
+				translate: 0 0;
 				opacity: 1;
 			}
 
 			&.closing {
-				max-height: 0;
+				translate: 100% 0;
 				opacity: 0;
 			}
 		}
