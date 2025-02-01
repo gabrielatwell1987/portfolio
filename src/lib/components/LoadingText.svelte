@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <div class="loading-container">
 	<div class="loading-text">
 		<span>L</span>
@@ -25,32 +22,29 @@
 		position: relative;
 		margin: 0 32px;
 
-		.loading-text {
-			font-family: var(--orbitron);
-		}
-
 		&:before {
 			content: '';
 			position: absolute;
 			width: 100%;
-			height: 3px;
-			background-color: var(--off-white);
+			height: 6px;
+			background-color: var(--sky);
 			bottom: 0;
 			left: 0;
 			border-radius: 10px;
-			animation: movingLine 2.4s infinite ease-in-out;
 		}
 	}
 
 	.loading-text {
+		font-family: var(--orbitron);
 		font-size: 5vw;
 		line-height: 64px;
 		letter-spacing: 10px;
-		margin-bottom: 32px;
+		margin-bottom: 2rem;
 		display: flex;
 		justify-content: space-evenly;
 
 		& span {
+			color: var(--sky);
 			animation: moveLetters 2.2s infinite ease-in-out;
 			transform: translateX(0);
 			position: relative;
@@ -85,31 +79,6 @@
 			&:nth-child(7) {
 				animation-delay: 0.7s;
 			}
-		}
-	}
-
-	@keyframes movingLine {
-		0% {
-			opacity: 0;
-			width: 0;
-		}
-
-		33.3%,
-		66% {
-			opacity: 0.8;
-			width: 100%;
-		}
-
-		85% {
-			width: 0;
-			left: initial;
-			right: 0;
-			opacity: 1;
-		}
-
-		100% {
-			opacity: 0;
-			width: 0;
 		}
 	}
 
