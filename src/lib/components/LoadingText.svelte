@@ -8,6 +8,8 @@
 		<span>N</span>
 		<span>G</span>
 	</div>
+
+	<div class="loading-line"></div>
 </div>
 
 <style>
@@ -21,17 +23,6 @@
 		color: var(--off-white);
 		position: relative;
 		margin: 0 32px;
-
-		&:before {
-			content: '';
-			position: absolute;
-			width: 100%;
-			height: 6px;
-			background-color: var(--sky);
-			bottom: 0;
-			left: 0;
-			border-radius: 10px;
-		}
 	}
 
 	.loading-text {
@@ -42,6 +33,7 @@
 		margin-bottom: 2rem;
 		display: flex;
 		justify-content: space-evenly;
+		position: relative;
 
 		& span {
 			color: var(--sky);
@@ -82,6 +74,18 @@
 		}
 	}
 
+	.loading-line {
+		content: '';
+		position: absolute;
+		width: 80%;
+		height: 6px;
+		background-color: var(--sky);
+		bottom: 0;
+		left: 0;
+		border-radius: 10px;
+		animation: moveLine 2.2s infinite linear;
+	}
+
 	@keyframes moveLetters {
 		0% {
 			transform: translateX(-15vw);
@@ -97,6 +101,18 @@
 		100% {
 			transform: translateX(15vw);
 			opacity: 0;
+		}
+	}
+
+	@keyframes moveLine {
+		0% {
+			transform: translateX(-100%);
+		}
+		50% {
+			transform: translateX(0);
+		}
+		100% {
+			transform: translateX(100%);
 		}
 	}
 </style>
