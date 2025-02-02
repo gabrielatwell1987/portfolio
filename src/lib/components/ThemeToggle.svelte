@@ -45,14 +45,18 @@
 		--text-color: var(--white);
 		--sun: var(--pale);
 		--moon: var(--darkest-blue);
+		--light: #474747;
+		--dark: #000;
 	}
 
 	:global(body) {
-		background-image: radial-gradient(circle at center, #474747 0%, #000 60%);
+		background-color: var(--light);
+		transition: background-color 0.5s ease-in-out;
 	}
 
 	:global(body.light) {
-		background-image: radial-gradient(circle at center, #000 0%, #474747 60%);
+		background-color: var(--dark);
+		transition: background-color 0.5s ease-in-out;
 	}
 
 	button {
