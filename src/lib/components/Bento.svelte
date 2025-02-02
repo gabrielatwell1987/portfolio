@@ -1,8 +1,6 @@
 <script>
 	import Image from '$lib/components/Image.svelte';
 
-	let { link } = $props();
-
 	$effect(() => {
 		const main = () => {
 			const articles = Array.from(document.querySelectorAll('article'));
