@@ -62,7 +62,7 @@
 
 			&:disabled {
 				cursor: not-allowed;
-				opacity: 0.5;
+				opacity: 0.75;
 			}
 
 			&:hover {
@@ -78,7 +78,7 @@
 			.spinner {
 				width: 2rem;
 				height: 2rem;
-				border: 2px solid var(--pale);
+				border: 2px solid var(--light-text);
 				border-top-color: transparent;
 				border-radius: 50%;
 				animation: spin 0.6s linear infinite;
