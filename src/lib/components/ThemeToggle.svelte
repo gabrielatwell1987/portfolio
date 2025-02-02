@@ -50,12 +50,12 @@
 	}
 
 	:global(body) {
-		background-color: var(--light);
+		background-color: var(--dark);
 		transition: background-color 0.5s ease-in-out;
 	}
 
 	:global(body.light) {
-		background-color: var(--dark);
+		background-color: var(--light);
 		transition: background-color 0.5s ease-in-out;
 	}
 
