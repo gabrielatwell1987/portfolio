@@ -50,7 +50,7 @@
 				line-height: 1.35;
 				text-align: left;
 				font-size: clamp(1.2rem, 1.75vw, 2rem);
-				color: var(--white);
+				color: var(--text-color);
 				margin-top: -1rem;
 				hyphens: auto;
 			}

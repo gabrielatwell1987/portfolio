@@ -1,14 +1,14 @@
 <script>
-	let darkMode = $state(true);
+	let isLightTheme = $state(true);
 
 	function toggle() {
-		darkMode = !darkMode;
+		isLightTheme = !isLightTheme;
 		window.document.body.classList.toggle('light');
 	}
 </script>
 
 <button onclick={toggle} aria-label="toggle">
-	{#if darkMode}
+	{#if isLightTheme}
 		<!-- sun -->
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -45,18 +45,28 @@
 		--text-color: var(--white);
 		--sun: var(--pale);
 		--moon: var(--darkest-blue);
-		--light: #474747;
-		--dark: #000;
+		--light: hsl(0, 0%, 40%);
+		--dark: hsl(0, 0%, 0%);
+		--light-text: var(--blackest);
+		--dark-text: var(--white);
 	}
 
 	:global(body) {
+		--text-color: var(--dark-text);
 		background-color: var(--dark);
-		transition: background-color 0.5s ease-in-out;
+		color: var(--text-color);
+		transition:
+			background-color 0.5s ease-in-out,
+			color 0.5s ease-in-out;
 	}
 
 	:global(body.light) {
+		--text-color: var(--light-text);
 		background-color: var(--light);
-		transition: background-color 0.5s ease-in-out;
+		color: var(--text-color);
+		transition:
+			background-color 0.5s ease-in-out,
+			color 0.5s ease-in-out;
 	}
 
 	button {

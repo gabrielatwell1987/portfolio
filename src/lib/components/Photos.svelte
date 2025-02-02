@@ -162,12 +162,13 @@
 			padding-top: 5%;
 
 			h2 {
+				color: var(--text-color);
 				font-family: var(--bronova);
 				font-size: clamp(0.9rem, 1.5vw, 2rem);
 				font-weight: 300;
 				letter-spacing: 0.1em;
 				margin: 0;
-				border-bottom: 1px solid var(--purple);
+				border-bottom: 1px solid var(--text-color);
 				width: fit-content;
 				margin-inline: auto;
 			}

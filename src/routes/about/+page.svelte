@@ -176,6 +176,7 @@
 				margin-inline: auto;
 				text-align: center;
 				width: var(--100);
+				color: var(--text-color);
 			}
 
 			article {
@@ -184,16 +185,19 @@
 				margin-inline: auto;
 				background-color: transparent;
 				box-shadow: none;
+				color: var(--text-color);
 			}
 
 			p {
 				line-height: 1.75;
 				text-align: left;
+				color: var(--text-color);
 			}
 
 			.hero {
 				width: var(--100);
 				margin-inline: auto;
+				color: var(--text-color);
 			}
 
 			.text {
@@ -204,7 +208,7 @@
 				line-height: 1.5;
 				text-wrap: none;
 				z-index: 7;
-				color: var(--white);
+				color: var(--text-color);
 			}
 
 			.text-hero {

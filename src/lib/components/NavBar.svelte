@@ -83,7 +83,7 @@
 			justify-content: space-around;
 			align-items: center;
 			gap: 1.25rem;
-			margin-top: 18rem;
+			margin-top: 15.5rem;
 			z-index: 10;
 			box-shadow: 0 0 6px 2px var(--white);
 			border-radius: 5px;

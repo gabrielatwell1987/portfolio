@@ -5,7 +5,9 @@
 
 <div class="logo">
 	<figure>
-		<figcaption><p>{text}</p></figcaption>
+		<figcaption>
+			<p>{text}</p>
+		</figcaption>
 
 		<img {src} {alt} />
 	</figure>
@@ -26,7 +28,6 @@
 		}
 
 		figcaption {
-			color: var(--white);
 			position: absolute;
 			top: 13%;
 			left: 50%;
@@ -37,6 +38,7 @@
 		}
 
 		p {
+			color: var(--text-color);
 			margin: 0;
 			padding: 0;
 			text-align: center;
