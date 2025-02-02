@@ -212,7 +212,8 @@
 					}
 
 					& summary {
-						color: var(--pale);
+						color: var(--text-color);
+						border-color: var(--text-color);
 					}
 				}
 
@@ -230,7 +231,8 @@
 	@media (width <= 768px) {
 		details {
 			& summary {
-				color: var(--pale);
+				color: var(--text-color);
+				border-color: var(--text-color);
 			}
 		}
 	}

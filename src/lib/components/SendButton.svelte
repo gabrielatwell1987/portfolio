@@ -14,13 +14,13 @@
 <style>
 	@media (min-width: 300px) {
 		button {
-			background-color: transparent;
+			background-color: var(--pale);
 			font-family: var(--orbitron);
 			font-size: clamp(1.2rem, 1.5vw, 2rem);
 			font-weight: 900;
-			color: var(--pale);
-			border: 1px solid var(--pale);
-			outline: 3px solid var(--pale);
+			color: var(--light-text);
+			border: 1px solid var(--light-text);
+			outline: 3px solid var(--light-text);
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			margin-inline: auto;
 			cursor: pointer;
@@ -45,7 +45,7 @@
 				margin: 0;
 				font-size: clamp(1.2rem, 1.5vw, 2rem);
 				font-weight: 900;
-				color: var(--pale);
+				color: var(--light-text);
 
 				&:hover svg {
 					animation: right 1s ease-in-out infinite;

@@ -46,12 +46,12 @@
 			align-items: center;
 			justify-content: center;
 			padding: 0.2em 0.6em;
-			border: 1px solid var(--pale);
-			outline: 3px solid var(--pale);
-			color: var(--pale);
+			border: 1px solid var(--light-text);
+			outline: 3px solid var(--light-text);
+			color: var(--light-text);
 			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			border-radius: 0.75rem;
-			background-color: transparent;
+			background-color: var(--pale);
 			font-family: var(--opensans);
 			font-size: clamp(1.1rem, 1.5vw, 2rem);
 			font-weight: 900;
