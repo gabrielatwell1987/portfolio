@@ -14,7 +14,7 @@
 	margin-bottom: 2rem;
 	max-width: 90%;
 	margin-inline: auto;
-	color: var(--white);
+	color: var(--text-color);
 	font-size: clamp(1.25rem, 1.25vw, 1.75rem);
 	font-weight: 100;
 	letter-spacing: 2px;

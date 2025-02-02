@@ -52,13 +52,14 @@
 		font-size: clamp(1.25rem, 3vw, 4rem);
 		font-weight: 800;
 		letter-spacing: 3px;
-		color: var(--darkgray);
+		color: var(--text-color);
 		padding-inline: 1rem;
 	}
 
 	input,
 	textarea {
 		font-size: clamp(1.1rem, 2vw, 2rem);
+		outline: 1px solid var(--text-color);
 	}
 
 	input:placeholder-shown {
@@ -101,7 +102,7 @@
 		font-size: clamp(1rem, 1.25vw, 2rem);
 		font-weight: 800;
 		letter-spacing: 3px;
-		color: var(--smoke);
+		color: var(--text-color);
 	}
 
 	#name::-webkit-input-placeholder,
@@ -217,7 +218,7 @@
 
 		fieldset {
 			border: 5px solid var(--white);
-			border-image: linear-gradient(to left, var(--smoke), var(--smoke)) 1;
+			border-image: linear-gradient(to left, var(--text-color), var(--text-color)) 1;
 			font-weight: bolder;
 			padding: 2rem 5rem;
 			border-radius: 10px;

@@ -82,7 +82,6 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			text-align: center;
-			color: white;
 			z-index: 1;
 
 			& h1 {
@@ -112,7 +111,7 @@
 			& .cta-button {
 				padding: 0.8em 1em;
 				background: var(--white);
-				color: var(--black);
+				color: var(--light-text);
 				border: none;
 				border-radius: 0.3em;
 				text-decoration: none;

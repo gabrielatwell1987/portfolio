@@ -23,8 +23,8 @@
 					var(--sky),
 					var(--off-white),
 					var(--white),
-					var(--off-white),
-					var(--sky)
+					var(--black),
+					var(--blackest)
 				);
 				background-clip: text;
 				background-size: var(--bgSize);

@@ -33,17 +33,17 @@
 	@media (width >= 750px) {
 		.nav-link {
 			text-decoration: none;
-			color: var(--white);
-			border-radius: 2px;
+			border-radius: 1px;
 			scale: 0.8;
+			color: var(--text-color);
 
 			&:hover {
-				color: var(--off-white);
-				border-bottom: 5px solid var(--off-white);
+				color: var(--text-color);
+				text-shadow: 1px 1px 1px var(--text-color);
+				border-bottom: 4px solid var(--text-color);
 				height: 2.75rem;
-				text-shadow: 3px 3px 1px var(--blacker);
 				transition: all 0.15s ease-in-out;
-				border-radius: 2px;
+				border-radius: 1px;
 			}
 		}
 	}

@@ -25,7 +25,7 @@
 	@media (width >= 300px) {
 		.link {
 			text-align: center;
-			color: var(--sky);
+			color: var(--text-color);
 			border: none;
 			padding: 1rem;
 			display: flex;

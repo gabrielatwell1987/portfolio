@@ -269,6 +269,10 @@
 						color: var(--pale);
 					}
 				}
+
+				& .text {
+					color: var(--text-color);
+				}
 			}
 		}
 
