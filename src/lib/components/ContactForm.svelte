@@ -52,7 +52,7 @@
 		font-size: clamp(1.25rem, 3vw, 4rem);
 		font-weight: 800;
 		letter-spacing: 3px;
-		color: var(--text-color);
+		color: var(--text-blue);
 		padding-inline: 1rem;
 	}
 
@@ -102,7 +102,7 @@
 		font-size: clamp(1rem, 1.25vw, 2rem);
 		font-weight: 800;
 		letter-spacing: 3px;
-		color: var(--text-color);
+		color: var(--text-blue);
 	}
 
 	#name::-webkit-input-placeholder,

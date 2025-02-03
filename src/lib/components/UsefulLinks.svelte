@@ -41,7 +41,7 @@
 				margin-top: 2rem;
 				margin-bottom: 0.75rem;
 				font-size: clamp(1rem, 1.75vw, 1.5rem);
-				color: var(--text-color);
+				color: var(--text-blue);
 			}
 
 			p {

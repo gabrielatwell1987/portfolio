@@ -49,10 +49,12 @@
 		--dark: hsl(0, 0%, 0%);
 		--light-text: var(--blackest);
 		--dark-text: var(--white);
+		--text-blue: var(--sky);
 	}
 
 	:global(body) {
 		--text-color: var(--dark-text);
+		--text-blue: var(--sky);
 		background-color: var(--dark);
 		color: var(--text-color);
 		transition:
@@ -62,6 +64,7 @@
 
 	:global(body.light) {
 		--text-color: var(--light-text);
+		--text-blue: var(--darkest-blue);
 		background-color: var(--light);
 		color: var(--text-color);
 		transition:

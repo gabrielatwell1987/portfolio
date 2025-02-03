@@ -45,11 +45,8 @@
 			text-align: center;
 			font-family: var(--orbitron);
 			font-size: clamp(2.5rem, 10.5vw, 15rem);
-			color: var(--sky);
-			mix-blend-mode: lighten;
+			color: var(--text-blue);
 			letter-spacing: 5px;
-			text-shadow: 0px 0px 5px var(--dark-gray);
-			filter: drop-shadow(0px 0px 0.75rem var(--smoke));
 			text-transform: uppercase;
 			font-kerning: none;
 			margin-top: 5rem;

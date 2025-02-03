@@ -40,7 +40,7 @@
 				margin: 0;
 				padding: 0;
 				letter-spacing: 2px;
-				color: var(--text-color);
+				color: var(--text-blue);
 				font-family: var(--orbitron);
 				font-size: clamp(1.1rem, 2vw, 2rem);
 				font-weight: 800;
