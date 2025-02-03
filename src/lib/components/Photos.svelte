@@ -1,8 +1,8 @@
 <script>
 	import { gsap } from 'gsap';
+	import { Draggable } from 'gsap/dist/Draggable';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Title from '$lib/components/Title.svelte';
-	import Image from '$lib/components/Image.svelte';
 
 	$effect(() => {
 		const main = document.querySelector('main');
@@ -24,6 +24,18 @@
 		});
 
 		mm.add('(min-width: 768px', () => {
+			gsap.registerPlugin(Draggable);
+
+			Draggable.create(gabe, {
+				type: 'x,y',
+				onPress: function () {
+					gsap.to(this.target, { scale: 1.3, duration: 2, ease: 'elastic' });
+				},
+				onRelease: function () {
+					gsap.to(this.target, { scale: 1, duration: 2, ease: 'elastic' });
+				}
+			});
+
 			gsap.set(pictures, { autoAlpha: 0 });
 			gsap.set(gabe, { scale: 1, x: '-30%', autoAlpha: 0 });
 
