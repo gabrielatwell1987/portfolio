@@ -1,17 +1,16 @@
 <script>
-	// import Image from '$lib/components/Image.svelte';
 	import gsap from 'gsap';
 
 	$effect(() => {
 		const asciiTl = gsap.timeline();
 
-		asciiTl.from('.ascii', {
-			opacity: 0,
-			scale: 1.2,
-			x: -100,
-			duration: 5,
-			ease: 'slow(0.7, 0.7, false)'
-		});
+		asciiTl.fromTo(
+			'.ascii',
+			{
+				scale: 2
+			},
+			{ scale: 1.2, y: 100, duration: 2, ease: 'slow(0.7, 0.7, false)' }
+		);
 	});
 </script>
 
