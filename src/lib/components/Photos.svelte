@@ -4,6 +4,8 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Title from '$lib/components/Title.svelte';
 
+	let scale = $state(1);
+
 	$effect(() => {
 		const main = document.querySelector('main');
 		const gabe = document.querySelectorAll('.gabe');
@@ -28,11 +30,21 @@
 
 			Draggable.create(gabe, {
 				type: 'x,y',
+				bounds: main,
 				onPress: function () {
-					gsap.to(this.target, { scale: 1.3, duration: 2, ease: 'elastic' });
+					gsap.to(this.target, {
+						scale: 1.1,
+						duration: 1,
+						transformOrigin: 'center center',
+						ease: 'elastic'
+					});
 				},
 				onRelease: function () {
-					gsap.to(this.target, { scale: 1, duration: 2, ease: 'elastic' });
+					gsap.to(this.target, {
+						scale: scale,
+						duration: 0.3,
+						ease: 'elastic'
+					});
 				}
 			});
 
