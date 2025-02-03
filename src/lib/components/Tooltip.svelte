@@ -3,7 +3,7 @@
 	let { title, hover } = $props();
 </script>
 
-<main class="tooltip-container">
+<main class="tooltip-container" aria-label="tooltip container">
 	<span class="tooltip-trigger">{title}</span>
 
 	<div class="tooltip tooltip-top">{hover}</div>
