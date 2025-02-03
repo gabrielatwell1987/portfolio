@@ -90,10 +90,10 @@
 				margin: -1rem 0 1rem 0;
 
 				& span {
+					color: var(--text-blue);
 					font-family: var(--bronova);
 					font-size: clamp(0.99rem, 2vw, 2rem);
 					font-weight: 700;
-					color: var(--sky);
 				}
 			}
 

@@ -266,7 +266,7 @@
 					}
 
 					& summary {
-						color: var(--text-color);
+						color: var(--text-blue);
 						border-color: var(--text-color);
 					}
 				}
@@ -285,7 +285,7 @@
 	@media (width <= 768px) {
 		details {
 			& summary {
-				color: var(--text-color);
+				color: var(--text-blue);
 				border-color: var(--text-color);
 			}
 		}

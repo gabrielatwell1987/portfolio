@@ -25,7 +25,7 @@
 	@media (width >= 300px) {
 		.link {
 			text-align: center;
-			color: var(--text-color);
+			color: var(--text-blue);
 			border: none;
 			padding: 1rem;
 			display: flex;
