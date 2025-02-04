@@ -110,13 +110,20 @@
 			<aside class="flex">
 				<img src="/photos/gabe3.webp" alt="Really old" class="gabe" loading="lazy" />
 
-				<img src="/photos/wtf.webp" alt="Trying to burn gabe" class="gabe" loading="lazy" />
+				<img
+					src="/photos/wtf.webp"
+					alt="Trying to burn gabe"
+					class="gabe"
+					loading="lazy"
+					style="width: 50em; height: 20em;"
+				/>
 
 				<img
 					src="/photos/wtf2.webp"
 					alt="Gabe's face on hulk hogan"
 					class="gabe ar11"
 					loading="lazy"
+					style="width: 50em; height: 20em;"
 				/>
 			</aside>
 		</div>
@@ -170,6 +177,8 @@
 					}
 
 					& .flex {
+						place-items: center;
+
 						& .gabe {
 							margin-inline: auto;
 							margin-bottom: 2em;

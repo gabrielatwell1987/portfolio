@@ -44,7 +44,7 @@
 		}
 
 		h4 {
-			color: var(--white);
+			color: var(--text-color);
 			font-weight: 400;
 			letter-spacing: 0.5px;
 		}
