@@ -22,7 +22,10 @@
 		width: 300px;
 		height: 400px;
 		perspective: 1000px;
-		margin: -0.5rem 0 5% 0;
+		margin-bottom: 5%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
 		&:hover .card {
 			transform: rotateY(180deg);
