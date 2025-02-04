@@ -213,7 +213,7 @@
 
 					& summary {
 						color: var(--text-blue);
-						border-color: var(--text-color);
+						border-color: var(--text-gray);
 					}
 				}
 
@@ -232,7 +232,7 @@
 		details {
 			& summary {
 				color: var(--text-blue);
-				border-color: var(--text-color);
+				border-color: var(--text-gray);
 			}
 		}
 	}

@@ -38,7 +38,7 @@
 		}
 
 		p {
-			color: var(--text-blue);
+			color: var(--text-gray);
 			margin: 0;
 			padding: 0;
 			text-align: center;

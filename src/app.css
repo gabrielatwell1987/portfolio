@@ -149,7 +149,7 @@ body {
 		content: '';
 		position: absolute;
 		inset: 0;
-		background: var(--text-color);
+		background: var(--text-gray);
 		clip-path: polygon(
 			0 80px,
 			80px 0,

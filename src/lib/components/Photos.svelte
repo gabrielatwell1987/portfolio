@@ -1,14 +1,11 @@
 <script>
 	import { gsap } from 'gsap';
-	import { Draggable } from 'gsap/dist/Draggable';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Title from '$lib/components/Title.svelte';
 
-	let scale = $state(1);
-
 	$effect(() => {
 		const main = document.querySelector('main');
-		const gabe = document.querySelectorAll('.gabe');
+		const gabeElements = document.querySelectorAll('.gabe');
 		const pictures = document.querySelectorAll('.pictures');
 
 		gsap.registerPlugin(ScrollTrigger);
@@ -18,72 +15,22 @@
 
 		mm.add('(max-width: 767px', () => {
 			gsap.set(pictures, { autoAlpha: 0 });
-			gsap.set(gabe, { scale: 0.9 });
+			gsap.set(gabeElements, { scale: 0.9 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
-
 			tl.to(pictures, { autoAlpha: 1, duration: 2 });
-		});
-
-		mm.add('(min-width: 768px', () => {
-			gsap.registerPlugin(Draggable);
-
-			Draggable.create(gabe, {
-				type: 'x,y',
-				bounds: main,
-				onPress: function () {
-					gsap.to(this.target, {
-						scale: 1.1,
-						duration: 1,
-						transformOrigin: 'center center',
-						ease: 'elastic'
-					});
-				},
-				onRelease: function () {
-					gsap.to(this.target, {
-						scale: scale,
-						duration: 0.3,
-						ease: 'elastic'
-					});
-				}
-			});
-
-			gsap.set(pictures, { autoAlpha: 0 });
-			gsap.set(gabe, { scale: 1, x: '-30%', autoAlpha: 0 });
-
-			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
-
-			tl.to(gabe, {
-				x: 0,
-				stagger: 0.5,
-				scale: 0.8,
-				duration: 4,
-				repeat: 1,
-				yoyo: true,
-				autoAlpha: 1,
-				scrollTrigger: {
-					trigger: 'pictures',
-					start: 'top 0%',
-					end: '+=400%',
-					toggleActions: 'play none none reverse',
-					stagger: 0.75,
-					scrub: 1
-				}
-			}).to(pictures, { autoAlpha: 1, duration: 2 });
 		});
 
 		return () => {
 			gsap.killTweensOf(main);
 			gsap.killTweensOf(pictures);
-			gsap.killTweensOf(gabe);
+			gsap.killTweensOf(gabeElements);
 		};
 	});
 </script>
 
 <main>
 	<Title title="images" />
-
-	<h2>scroll down</h2>
 
 	<section>
 		<div class="pictures" aria-label="pictures">
@@ -146,16 +93,16 @@
 					src="/photos/wtf.webp"
 					alt="Trying to burn gabe"
 					class="gabe"
-					width="600"
 					loading="lazy"
+					style="width: 55em; height: 20em;"
 				/>
 
 				<img
 					src="/photos/wtf2.webp"
 					alt="Gabe's face on hulk hogan"
 					class="gabe ar11"
-					width="550"
 					loading="lazy"
+					style="width: 55em; height: 20em;"
 				/>
 			</aside>
 		</div>
@@ -184,18 +131,7 @@
 	@media screen and (width >= 300px) {
 		main {
 			padding-top: 5%;
-
-			h2 {
-				color: var(--text-color);
-				font-family: var(--bronova);
-				font-size: clamp(0.9rem, 1.5vw, 2rem);
-				font-weight: 300;
-				letter-spacing: 0.1em;
-				margin: 0;
-				border-bottom: 1px solid var(--text-color);
-				width: fit-content;
-				margin-inline: auto;
-			}
+			position: relative;
 
 			section {
 				width: var(--100);
@@ -203,11 +139,22 @@
 				margin-bottom: 10%;
 				padding-block: 10vh;
 
+				& .pictures {
+					display: grid;
+					grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+					gap: 2rem;
+
+					& img {
+						width: 100%;
+						height: auto;
+					}
+				}
+
 				.flex {
 					display: flex;
-					flex-direction: column;
 					gap: 2rem;
 					margin-bottom: 2%;
+					align-items: center;
 
 					img {
 						max-width: var(--100);
@@ -215,21 +162,22 @@
 
 					.gabe {
 						margin-inline: auto;
-						margin-inline: auto;
 						margin-bottom: 3rem;
 						max-width: 20em;
 						border-radius: 3%;
+						filter: drop-shadow(0);
+						transition:
+							filter 500ms ease-in-out,
+							opacity 200ms ease-in-out,
+							transform 1s ease-in-out;
+						opacity: 0.75;
+						transform: translate(0, 0);
 
 						&:hover {
-							transition: filter 750ms ease-in-out;
-							filter: drop-shadow(0 0 0.25rem var(--off-white));
+							filter: drop-shadow(0 0 0.25rem var(--text-gray));
 							opacity: 1;
-						}
-
-						&:not(:hover) {
-							filter: drop-shadow(0);
-							transition: filter 750ms ease-in-out;
-							opacity: 0.75;
+							transform: scale(1.1);
+							z-index: 10;
 						}
 
 						&.ar58 {
