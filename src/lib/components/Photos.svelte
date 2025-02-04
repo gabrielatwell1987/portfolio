@@ -18,20 +18,22 @@
 			gsap.set(gabeElements, { scale: 0.9 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
-			tl.to(pictures, { autoAlpha: 1, duration: 2 });
+
+			tl.to(pictures, { autoAlpha: 1, duration: 2 }).from(gabeElements, {
+				opacity: 0,
+				stagger: 0.5
+			});
 		});
 
 		mm.add('(min-width: 768px', () => {
-			gsap.set(pictures, { autoAlpha: 0 });
-			gsap.set(gabeElements, { scale: 1, x: '-30%', autoAlpha: 0 });
+			gsap.set(gabeElements, { scale: 0.75, x: '-30%', autoAlpha: 0 });
 
 			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
 			tl.to(gabeElements, {
 				x: 0,
+				scale: 1,
 				stagger: 0.5,
-				scale: 0.8,
-				duration: 4,
 				repeat: 1,
 				yoyo: true,
 				autoAlpha: 1,
@@ -41,9 +43,18 @@
 					end: '+=400%',
 					toggleActions: 'play none none reverse',
 					stagger: 0.75,
-					scrub: 1
+					scrub: 2
 				}
-			}).to(pictures, { autoAlpha: 1, duration: 2 });
+			}).to(gabeElements, { scale: 1.1, duration: 2 });
+
+			tl.to(
+				gabeElements,
+				{
+					rotation: (i) => (i % 2 === 0 ? -2 : 2),
+					duration: 1
+				},
+				0
+			);
 		});
 
 		return () => {
@@ -55,20 +66,14 @@
 </script>
 
 <main>
-	<Title title="images" />
+	<Title title="pics of me" />
 
 	<h2>scroll down</h2>
 
 	<section>
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
-				<img
-					class="gabe"
-					src="/photos/gabe.webp"
-					alt="Gabriel Atwell"
-					loading="lazy"
-					style="width: 50em; height: 30em;"
-				/>
+				<img class="gabe" src="/photos/gabe.webp" alt="Gabriel Atwell" loading="lazy" />
 
 				<img class="gabe" src="/photos/gabe2.webp" alt="Gabriel's face" loading="lazy" />
 
@@ -83,7 +88,6 @@
 					src="/photos/gabe4.webp"
 					alt="Gabriel in a restaurant"
 					loading="lazy"
-					style="width: 50em; height: 30em;"
 				/>
 
 				<img
@@ -91,7 +95,6 @@
 					alt="Gabe and his daughter"
 					class="gabe ar58"
 					loading="lazy"
-					style="width: 50em; height: 30em;"
 				/>
 
 				<img
@@ -105,22 +108,15 @@
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
-				<img src="/photos/gabe3.webp" alt="Really old" class="gabe" width="450" loading="lazy" />
+				<img src="/photos/gabe3.webp" alt="Really old" class="gabe" loading="lazy" />
 
-				<img
-					src="/photos/wtf.webp"
-					alt="Trying to burn gabe"
-					class="gabe"
-					loading="lazy"
-					style="width: 55em; height: 20em;"
-				/>
+				<img src="/photos/wtf.webp" alt="Trying to burn gabe" class="gabe" loading="lazy" />
 
 				<img
 					src="/photos/wtf2.webp"
 					alt="Gabe's face on hulk hogan"
 					class="gabe ar11"
 					loading="lazy"
-					style="width: 55em; height: 20em;"
 				/>
 			</aside>
 		</div>
@@ -145,7 +141,7 @@
 			padding-top: 5%;
 			position: relative;
 
-			h2 {
+			& h2 {
 				color: var(--text-gray);
 				border-bottom: 1px solid var(--text-gray);
 				font-family: var(--bronova);
@@ -157,7 +153,7 @@
 				margin-inline: auto;
 			}
 
-			section {
+			& section {
 				width: var(--100);
 				margin: 0;
 				margin-bottom: 10%;
@@ -166,47 +162,38 @@
 				& .pictures {
 					display: grid;
 					grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-					gap: 2rem;
+					gap: 4rem;
 
 					& img {
 						width: 100%;
 						height: auto;
 					}
-				}
 
-				.flex {
-					display: flex;
-					gap: 2rem;
-					margin-bottom: 2%;
-					align-items: center;
+					& .flex {
+						& .gabe {
+							margin-inline: auto;
+							margin-bottom: 2em;
+							max-width: 20em;
+							border-radius: 3%;
 
-					/* & img {
-						max-width: var(--100);
-					} */
+							&:hover {
+								filter: drop-shadow(0 0 0.25rem var(--text-gray));
+								opacity: 1;
+							}
 
-					.gabe {
-						margin-inline: auto;
-						margin-bottom: 3rem;
-						max-width: 20em;
-						border-radius: 3%;
+							&:not(:hover) {
+								filter: drop-shadow(0);
+								transition: filter 750ms ease-in-out;
+								opacity: 0.75;
+							}
 
-						&:hover {
-							filter: drop-shadow(0 0 0.25rem var(--text-gray));
-							opacity: 1;
-						}
+							&.ar58 {
+								aspect-ratio: 5 / 8;
+							}
 
-						&:not(:hover) {
-							filter: drop-shadow(0);
-							transition: filter 750ms ease-in-out;
-							opacity: 0.75;
-						}
-
-						&.ar58 {
-							aspect-ratio: 5 / 8;
-						}
-
-						&.ar11 {
-							aspect-ratio: 1 / 1;
+							&.ar11 {
+								aspect-ratio: 1 / 1;
+							}
 						}
 					}
 				}
@@ -220,6 +207,10 @@
 			justify-content: center;
 			align-items: center;
 			gap: 5%;
+
+			& .flex {
+				margin-bottom: 6em;
+			}
 		}
 	}
 
