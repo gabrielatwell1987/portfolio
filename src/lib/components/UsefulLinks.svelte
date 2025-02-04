@@ -45,7 +45,7 @@
 			}
 
 			p {
-				color: var(--text-color);
+				color: var(--text-gray);
 				font-size: clamp(1rem, 1.15rem, 2rem);
 				font-style: italic;
 				text-align: center;

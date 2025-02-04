@@ -46,8 +46,7 @@
 		--space: 1.5rem;
 		--surface-1: transparent;
 		--surface-2: #0f172a;
-		--surface-3: #1e293b;
-		--gradient: linear-gradient(20deg, hsla(0 0% 0% / 0) 20%, hsla(0 0% 100% / 0.065) 120%);
+		--gradient: radial-gradient(hsla(0, 0%, 85%, 0.473), hsl(0 0% 0%) 88%);
 	}
 
 	* {
@@ -68,11 +67,12 @@
 
 		.bento-grid {
 			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 			place-items: center;
 			gap: var(--space);
 
 			.item {
-				border: 1px solid var(--surface-3);
+				border: 1px solid var(--text-color);
 				background-color: var(--surface-2);
 				background-image: var(--gradient);
 				padding: var(--space);
