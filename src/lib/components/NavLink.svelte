@@ -40,10 +40,11 @@
 				height: 2.75rem;
 				transition: all 0.15s ease-in-out;
 				border-radius: 1px;
+				opacity: 0.5;
 			}
 
 			&:not(:hover) {
-				opacity: 0.85;
+				opacity: 1;
 			}
 		}
 	}

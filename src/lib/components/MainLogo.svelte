@@ -59,10 +59,10 @@
 			box-shadow: none;
 
 			& svg {
-				opacity: 0.85;
+				opacity: 1;
 
 				&:hover {
-					opacity: 1;
+					opacity: 0.75;
 				}
 
 				& path {
