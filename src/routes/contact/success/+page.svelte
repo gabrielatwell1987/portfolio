@@ -43,14 +43,14 @@
 				font-size: clamp(1rem, 1.5vw, 2rem);
 				font-weight: 500;
 				margin: 0.5em 0;
-				color: #eee;
+				color: var(--text-blue);
 			}
 
 			.small {
 				font-size: clamp(0.8rem, 1.2vw, 1.5rem);
 				font-weight: 200;
 				margin: 2em 0 -0.5rem 0;
-				color: var(--off-white);
+				color: var(--text-gray);
 			}
 
 			.image {
