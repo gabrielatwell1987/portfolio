@@ -2,6 +2,17 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Title from '$lib/components/Title.svelte';
+	import archie from '$lib/images/archie.webp';
+	import autumn from '$lib/images/autumn.webp';
+	import gabe from '$lib/images/gabe.webp';
+	import gabe2 from '$lib/images/gabe2.webp';
+	import gabe3 from '$lib/images/gabe3.webp';
+	import gabe4 from '$lib/images/gabe4.webp';
+	import gabe5 from '$lib/images/gabe5.webp';
+	import monkey from '$lib/images/monkey.webp';
+	import wtf from '$lib/images/wtf.webp';
+	import wtf2 from '$lib/images/wtf2.webp';
+	import wtf3 from '$lib/images/wtf3.webp';
 
 	$effect(() => {
 		const main = document.querySelector('main');
@@ -73,45 +84,30 @@
 	<section>
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
-				<img class="gabe" src="/photos/gabe.webp" alt="Gabriel Atwell" loading="lazy" />
+				<img class="gabe" src={gabe} alt="Gabriel Atwell" loading="lazy" />
 
-				<img class="gabe" src="/photos/gabe2.webp" alt="Gabriel's face" loading="lazy" />
+				<img class="gabe" src={gabe2} alt="Gabriel's face" loading="lazy" />
 
-				<img src="/photos/gabe5.webp" alt="Gabriel" class="gabe" loading="lazy" />
+				<img src={gabe5} alt="Gabriel" class="gabe" loading="lazy" />
 			</aside>
 		</div>
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
-				<img
-					class="gabe ar58"
-					src="/photos/gabe4.webp"
-					alt="Gabriel in a restaurant"
-					loading="lazy"
-				/>
+				<img class="gabe ar58" src={gabe4} alt="Gabriel in a restaurant" loading="lazy" />
 
-				<img
-					src="/photos/autumn.webp"
-					alt="Gabe and his daughter"
-					class="gabe ar58"
-					loading="lazy"
-				/>
+				<img src={autumn} alt="Gabe and his daughter" class="gabe ar58" loading="lazy" />
 
-				<img
-					class="gabe ar58"
-					src="/photos/archie.webp"
-					alt="Gabe's poodle Archie"
-					loading="lazy"
-				/>
+				<img class="gabe ar58" src={archie} alt="Gabe's poodle Archie" loading="lazy" />
 			</aside>
 		</div>
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
-				<img src="/photos/gabe3.webp" alt="Really old" class="gabe" loading="lazy" />
+				<img src={gabe3} alt="Really old" class="gabe" loading="lazy" />
 
 				<img
-					src="/photos/wtf.webp"
+					src={wtf}
 					alt="Trying to burn gabe"
 					class="gabe"
 					loading="lazy"
@@ -119,7 +115,7 @@
 				/>
 
 				<img
-					src="/photos/wtf2.webp"
+					src={wtf2}
 					alt="Gabe's face on hulk hogan"
 					class="gabe ar11"
 					loading="lazy"
@@ -130,9 +126,9 @@
 
 		<div class="pictures" aria-label="pictures">
 			<aside class="flex">
-				<img src="/photos/wtf3.webp" alt="when gabe was 5 years old" class="gabe" loading="lazy" />
+				<img src={wtf3} alt="when gabe was 5 years old" class="gabe" loading="lazy" />
 
-				<img class="gabe" src="/logos/monkey.webp" alt="monkey" loading="lazy" />
+				<img class="gabe" src={monkey} alt="monkey" loading="lazy" />
 			</aside>
 		</div>
 	</section>
