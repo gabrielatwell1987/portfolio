@@ -52,20 +52,28 @@
 
 <style>
 	.gabe-logo {
-		.home {
+		& .home {
 			user-select: none;
 			outline: none;
 			background-color: transparent;
 			box-shadow: none;
 
-			path {
-				stroke-dasharray: 300;
-				stroke-dashoffset: 0;
-				animation: dash 5s linear;
-			}
+			& svg {
+				opacity: 0.85;
 
-			#w {
-				animation-delay: -1.75s;
+				&:hover {
+					opacity: 1;
+				}
+
+				& path {
+					stroke-dasharray: 300;
+					stroke-dashoffset: 0;
+					animation: dash 5s linear;
+				}
+
+				& #w {
+					animation-delay: -1.75s;
+				}
 			}
 		}
 
@@ -83,13 +91,13 @@
 			display: block;
 			scale: 0.8;
 
-			a {
+			& a {
 				transition: transform 0.25s ease-in-out;
 				font-weight: 400;
 				cursor: pointer;
 			}
 
-			a:hover {
+			& a:hover {
 				transform: scale(1.1);
 				font-weight: 600;
 			}

@@ -19,10 +19,6 @@
 				transition: color 0.35s ease-in-out;
 			}
 
-			&:hover {
-				font-size: clamp(1.25rem, 1.25vw, 1.15rem);
-			}
-
 			&:focus {
 				box-shadow: 0 0 0px var(--off-white);
 				background-color: transparent;
@@ -44,6 +40,10 @@
 				height: 2.75rem;
 				transition: all 0.15s ease-in-out;
 				border-radius: 1px;
+			}
+
+			&:not(:hover) {
+				opacity: 0.85;
 			}
 		}
 	}
