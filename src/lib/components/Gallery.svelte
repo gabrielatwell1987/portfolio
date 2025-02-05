@@ -58,23 +58,31 @@
 		background-color: transparent;
 		min-height: 100vh;
 
-		.grid-item {
+		& .grid-item {
 			position: relative;
 			padding: 0;
 			background: none;
 			border: none;
 			overflow: hidden;
 			cursor: pointer;
+
+			& .title {
+				position: absolute;
+				left: 5%;
+				top: 5%;
+				opacity: 0;
+				translate: 0% 100%;
+
+				& h2 {
+					color: var(--text-color);
+					font-size: 2rem;
+					text-transform: capitalize;
+					font-family: var(--bronova);
+				}
+			}
 		}
 
-		h2 {
-			color: #ffffff;
-			font-size: 2rem;
-			text-transform: capitalize;
-			font-family: var(--bronova);
-		}
-
-		img {
+		& img {
 			width: 100%;
 			height: 100%;
 			aspect-ratio: 16/9;
@@ -83,29 +91,21 @@
 			border-radius: 7px;
 			opacity: 0.5;
 			transition: opacity 1s ease;
+
+			&:hover {
+				opacity: 1;
+				transition: opacity 1s ease;
+			}
 		}
 
-		img:hover {
-			opacity: 1;
-			transition: opacity 1s ease;
-		}
-
-		.details {
+		& .details {
 			grid-row: span 2;
 			grid-column: span 2;
-		}
 
-		.title {
-			position: absolute;
-			left: 5%;
-			top: 5%;
-			opacity: 0;
-			translate: 0% 100%;
-		}
-
-		.details .title {
-			opacity: 1;
-			translate: 0%;
+			& .title {
+				opacity: 1;
+				translate: 0%;
+			}
 		}
 
 		@media (width >= 1024px) {
@@ -125,21 +125,22 @@
 		justify-content: center;
 		margin-top: 15%;
 
-		.title {
+		& .title {
 			text-align: center;
 			font-size: clamp(2rem, 3vw, 4rem);
 			font-family: var(--anta);
 			font-weight: 800;
 			margin: 0;
 			letter-spacing: 3px;
+			color: var(--text-blue);
 		}
 
-		.subtitle {
+		& .subtitle {
 			text-align: center;
 			font-size: clamp(1.2rem, 1.75vw, 2rem);
 			font-family: var(--bronova);
 			font-weight: 100;
-			color: var(--off-white);
+			color: var(--text-color);
 			letter-spacing: 3px;
 			margin: 0;
 		}
