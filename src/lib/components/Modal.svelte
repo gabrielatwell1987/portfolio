@@ -73,7 +73,7 @@
 			font-weight: 800;
 			background-color: transparent;
 			box-shadow: none;
-			color: var(--pale);
+			color: var(--dark-pale);
 			width: 5%;
 			height: 5%;
 			outline: none;
@@ -105,7 +105,7 @@
 			font-weight: 800;
 			background-color: transparent;
 			box-shadow: none;
-			color: var(--pale);
+			color: var(--dark-pale);
 			width: 5%;
 			height: 5%;
 			outline: none;

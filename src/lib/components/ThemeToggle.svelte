@@ -45,8 +45,9 @@
 		--text-color: var(--white);
 		--sun: var(--pale);
 		--moon: var(--darkest-blue);
-		--light: var(--off-white);
-		--dark: hsl(0, 0%, 0%);
+		--light: var(--white);
+		--dark: var(--blackest);
+		/* --dark: hsl(0, 0%, 0%); */
 		--light-text: var(--blackest);
 		--dark-text: var(--white);
 		--text-blue: var(--sky);

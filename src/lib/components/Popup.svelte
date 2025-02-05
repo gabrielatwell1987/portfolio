@@ -22,7 +22,7 @@
 
 		button {
 			background-color: transparent;
-			color: var(--pale);
+			color: var(--dark-pale);
 			width: fit-content;
 			font-family: var(--anta);
 			border-radius: 6px;
