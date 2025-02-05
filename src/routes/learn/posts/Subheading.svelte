@@ -11,7 +11,7 @@
 		font-family: var(--bronova);
 		line-height: 1.5;
 		text-indent: 1rem;
-		color: var(--purple);
+		color: var(--text-blue);
 		margin-left: clamp(0.1em, 10vw, 5.5em);
 	}
 </style>

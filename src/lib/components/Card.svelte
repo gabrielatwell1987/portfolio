@@ -19,14 +19,15 @@
 		height: fit-content;
 		background-color: transparent;
 		border-radius: 8px;
-		border: 2px solid var(--white);
+		border: 2px solid var(--text-color);
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 		padding: 2rem 3rem 0 3rem;
 		overflow: hidden;
 		transition: all 0.3s ease-in-out;
 
 		&:hover {
-			box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+			box-shadow: 0 0 5em var(--text-gray);
+			/* box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); */
 		}
 
 		.card-image {
@@ -43,8 +44,8 @@
 		}
 
 		.card-title {
-			color: var(--sky);
-			font-family: var(--anta);
+			color: var(--text-blue);
+			font-family: var(--orbitron);
 			font-size: clamp(2rem, 2vw, 4rem);
 			font-weight: 800;
 			letter-spacing: 4px;
@@ -53,7 +54,7 @@
 		}
 
 		.card-description {
-			color: var(--off-white);
+			color: var(--text-color);
 			font-size: clamp(1.1rem, 1.5vw, 1.5rem);
 			font-weight: 300;
 			margin-bottom: 1rem;
@@ -67,8 +68,8 @@
 			justify-content: center;
 			align-items: center;
 			background-color: transparent;
-			color: var(--sky);
-			border: 1px solid var(--sky);
+			color: var(--text-blue);
+			border: 1px solid var(--text-blue);
 			border-radius: 5rem;
 			font-family: var(--orbitron);
 			font-size: clamp(1rem, 1vw, 1.2rem);
@@ -78,7 +79,7 @@
 			height: 10%;
 			outline: none;
 			margin: 1rem auto;
-			filter: drop-shadow(0 0 0.75rem var(--smoke));
+			filter: drop-shadow(0 0 0.75rem var(--text-gray));
 			transition: 750ms;
 			outline: 3px solid currentColor;
 			outline-offset: -7px;
@@ -87,8 +88,8 @@
 
 			&:hover {
 				animation: nod 1s ease-in-out infinite;
-				color: var(--white);
-				border-color: var(--white);
+				color: var(--text-color);
+				border-color: var(--text-color);
 			}
 		}
 
