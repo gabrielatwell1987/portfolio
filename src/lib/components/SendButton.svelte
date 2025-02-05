@@ -14,7 +14,7 @@
 <style>
 	@media (min-width: 300px) {
 		button {
-			background-color: var(--pale);
+			background-color: var(--dark-pale);
 			font-family: var(--orbitron);
 			font-size: clamp(1.2rem, 1.5vw, 2rem);
 			font-weight: 900;
