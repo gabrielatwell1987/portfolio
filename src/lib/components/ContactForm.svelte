@@ -59,7 +59,7 @@
 	input,
 	textarea {
 		font-size: clamp(1.1rem, 2vw, 2rem);
-		outline: 1px solid var(--text-color);
+		outline: 1px solid var(--text-gray);
 	}
 
 	input:placeholder-shown {
@@ -71,7 +71,7 @@
 	}
 
 	input:focus-visible {
-		outline: 2px solid var(--off-white);
+		outline: 2px solid var(--text-gray);
 		border: none;
 	}
 
@@ -94,7 +94,7 @@
 	}
 
 	textarea:focus-visible {
-		outline: 2px solid var(--off-white);
+		outline: 2px solid var(--text-gray);
 		border: none;
 	}
 
