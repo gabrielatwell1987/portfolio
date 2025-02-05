@@ -7,6 +7,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import Avatar from '$lib/components/Avatar.svelte';
 	import Popup from '$lib/components/Popup.svelte';
+	import cartoonGabe from '$lib/images/cartoonGabe.webp';
 
 	// animations
 	$effect(() => {
@@ -176,7 +177,7 @@
 		/>
 	</section> -->
 
-	<Avatar src="/photos/cartoonGabe.webp" alt="cartoon gabe" name="gabeAtwell" />
+	<Avatar src={cartoonGabe} alt="cartoon gabe" name="gabeAtwell" />
 
 	<Figure src="logos/web.webp" alt="A logo that says web" text="building the" />
 </section>
