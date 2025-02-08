@@ -41,7 +41,7 @@
 				animation: wiggle 1s ease-in-out infinite;
 			}
 
-			p {
+			& p {
 				margin: 0;
 				font-size: clamp(1.2rem, 1.5vw, 2rem);
 				font-weight: 900;
@@ -49,7 +49,6 @@
 
 				&:hover svg {
 					animation: right 1s ease-in-out infinite;
-					opacity: 0.75;
 				}
 			}
 

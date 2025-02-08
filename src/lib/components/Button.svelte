@@ -29,7 +29,6 @@
 
 				&:hover svg {
 					animation: right 1s ease-in-out infinite;
-					opacity: 0.75;
 				}
 
 				& button {
@@ -60,11 +59,11 @@
 						outline-offset: 0px;
 						animation: wiggle 1s ease-in-out infinite;
 					}
-				}
 
-				@media (width <= 500px) {
-					button svg {
-						display: none;
+					@media (width <= 500px) {
+						& svg {
+							display: none;
+						}
 					}
 				}
 			}

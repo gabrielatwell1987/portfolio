@@ -139,17 +139,17 @@
 				box-shadow: none;
 			}
 
-			article {
+			& article {
 				width: 100%;
 				border-radius: 1rem;
 				background: var(--blackest);
 				box-shadow: 0 0 5px 3px var(--dark-blue);
 
-				header {
+				& header {
 					background: transparent;
 					border-bottom: none;
 
-					h4 {
+					& h4 {
 						font-family: var(--anta);
 						font-size: clamp(1.5rem, 1.75vw, 3rem);
 						font-weight: 600;
@@ -159,7 +159,7 @@
 					}
 				}
 
-				p {
+				& p {
 					font-family: var(--bronova);
 					font-size: clamp(1.15rem, 1.25vw, 2rem);
 					font-weight: 100;

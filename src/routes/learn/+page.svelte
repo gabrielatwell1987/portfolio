@@ -54,15 +54,7 @@
 		padding-top: 5%;
 		min-height: 100vh;
 
-		section {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 3em;
-			flex-direction: column;
-		}
-
-		article {
+		& article {
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -72,42 +64,39 @@
 			box-shadow: none;
 			min-height: 100vh;
 
-			a {
-				display: block;
-				margin: 0 0 2em 0;
+			& section {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 3em;
+				flex-direction: column;
 
-				&:focus {
-					box-shadow: 0 0 0px var(--off-white);
-					background: transparent;
+				& a {
+					display: block;
+					margin: 0 0 2em 0;
+
+					&:focus {
+						box-shadow: 0 0 0px var(--off-white);
+						background: transparent;
+					}
+				}
+
+				& .gs,
+				& .sk {
+					transition: scale 0.25s ease-in-out;
+				}
+
+				& .gs:not(:hover),
+				& .sk:not(:hover) {
+					filter: opacity(0.5);
+					scale: 0.97;
+					transition:
+						filter 1s ease-in-out,
+						scale 0.25s ease-in-out;
 				}
 			}
 
-			.gs,
-			.sk {
-				transition: scale 0.25s ease-in-out;
-			}
-
-			.gs:not(:hover),
-			.sk:not(:hover) {
-				filter: opacity(0.5);
-				scale: 0.97;
-				transition:
-					filter 1s ease-in-out,
-					scale 0.25s ease-in-out;
-			}
-
-			.image:hover {
-				animation: wiggle 1s ease-in-out infinite;
-			}
-
-			.image:not(:hover) {
-				opacity: 0.5;
-				background-color: var(--smoke);
-				color: black;
-				transition: opacity 0.75s ease-in-out;
-			}
-
-			.margin {
+			& .margin {
 				margin-top: 10%;
 			}
 		}
@@ -121,14 +110,20 @@
 			border-radius: 8px;
 			cursor: pointer;
 			letter-spacing: 1px;
+
+			&:hover {
+				animation: wiggle 1s ease-in-out infinite;
+			}
+
+			&:not(:hover) {
+				opacity: 0.5;
+				background-color: var(--smoke);
+				color: black;
+				transition: opacity 0.75s ease-in-out;
+			}
 		}
 
 		@media (width >= 300px) {
-			.image {
-				width: 15rem;
-				scale: 1.1;
-			}
-
 			.gs,
 			.sk {
 				width: 10em;
@@ -137,6 +132,11 @@
 
 			.animation-link {
 				display: block;
+
+				.image {
+					width: 15rem;
+					scale: 1.1;
+				}
 			}
 		}
 

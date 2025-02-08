@@ -23,7 +23,7 @@
 			animation: fadeIn 0.3s forwards;
 		}
 
-		.tooltip-trigger {
+		& .tooltip-trigger {
 			cursor: pointer;
 			margin-inline: auto;
 			padding: 0.5rem 1rem;
@@ -39,7 +39,7 @@
 			}
 		}
 
-		.tooltip {
+		& .tooltip {
 			position: absolute;
 			background-color: var(--blackest);
 			color: var(--white);
@@ -62,7 +62,7 @@
 			}
 		}
 
-		.tooltip-top {
+		& .tooltip-top {
 			min-width: 160px;
 			bottom: calc(100% + 5px);
 			left: 50%;
