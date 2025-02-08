@@ -60,18 +60,18 @@
 		margin-bottom: 2rem;
 		padding-inline: var(--space);
 
-		section {
+		& section {
 			margin-inline: auto;
 			width: min(1000px, 100%);
 		}
 
-		.bento-grid {
+		& .bento-grid {
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 			place-items: center;
 			gap: var(--space);
 
-			.item {
+			& .item {
 				border: 1px solid var(--text-color);
 				background-color: var(--surface-2);
 				background-image: var(--gradient);
