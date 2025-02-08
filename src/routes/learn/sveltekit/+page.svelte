@@ -273,6 +273,10 @@
 
 				& .text {
 					color: var(--text-color);
+
+					& a {
+						color: var(--text-link);
+					}
 				}
 			}
 		}
