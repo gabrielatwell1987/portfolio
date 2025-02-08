@@ -62,7 +62,7 @@
 
 		.h1-l,
 		.h1-r {
-			color: var(--white);
+			color: var(--text-color);
 			font-family: var(--bronova);
 			font-size: clamp(1.2rem, 5vw, 5rem);
 			font-weight: 100;
@@ -72,7 +72,7 @@
 		}
 
 		.span {
-			color: var(--text-color);
+			color: var(--text-blue);
 			font-family: var(--orbitron);
 			font-size: clamp(4rem, 10vw, 20rem);
 			letter-spacing: 3px;
