@@ -86,16 +86,23 @@
 			margin-bottom: 25%;
 			cursor: pointer;
 
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--text-color);
+			}
+
 			&:hover {
 				animation: wiggle 01s ease-in-out infinite;
 			}
 
-			&:focus {
-				box-shadow: 0 0 0px var(--off-white);
-			}
-
 			& svg {
 				cursor: pointer;
+
+				&:focus,
+				&:focus-visible {
+					outline: 1px solid var(--text-color);
+					background: transparent;
+				}
 			}
 		}
 
@@ -122,8 +129,10 @@
 				animation: wiggle 01s ease-in-out infinite;
 			}
 
-			&:focus {
-				box-shadow: 0 0 0px var(--off-white);
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--text-color);
+				background: transparent;
 			}
 
 			& i {

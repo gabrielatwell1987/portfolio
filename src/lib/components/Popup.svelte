@@ -20,6 +20,12 @@
 	.popup {
 		align-content: center;
 
+		&:focus,
+		&:focus-visible {
+			outline: 1px solid var(--text-color);
+			background: transparent;
+		}
+
 		button {
 			background-color: transparent;
 			color: var(--dark-pale);
@@ -40,8 +46,10 @@
 				animation: wiggle 1s ease-in-out infinite;
 			}
 
-			&:focus {
-				box-shadow: 0 0 0px var(--off-white);
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--text-color);
+				background: transparent;
 			}
 
 			@media (width <= 500px) {

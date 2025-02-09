@@ -58,6 +58,12 @@
 			background-color: transparent;
 			box-shadow: none;
 
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--text-color);
+				background: transparent;
+			}
+
 			& svg {
 				opacity: 1;
 
@@ -75,12 +81,6 @@
 					animation-delay: -1.75s;
 				}
 			}
-		}
-
-		&:focus {
-			outline: none;
-			background-color: transparent;
-			box-shadow: none;
 		}
 
 		@media (width >= 300px) {

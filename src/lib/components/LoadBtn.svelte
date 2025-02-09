@@ -39,7 +39,7 @@
 		width: fit-content;
 		text-decoration: none;
 
-		.btn {
+		& .btn {
 			position: relative;
 			width: fit-content;
 			display: flex;
@@ -59,6 +59,11 @@
 			user-select: none;
 			margin-inline: auto;
 			margin-bottom: 1rem;
+
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--text-color);
+			}
 
 			&:disabled {
 				cursor: not-allowed;

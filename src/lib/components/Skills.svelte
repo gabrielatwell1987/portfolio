@@ -131,6 +131,13 @@
 				transform: scale(1);
 				transition: transform 0.25s ease-in-out;
 				margin-bottom: -0.75rem;
+				background-color: transparent;
+
+				&:focus,
+				&:focus-visible {
+					outline: 1px solid var(--text-color);
+					background: transparent;
+				}
 			}
 
 			@media (width >= 769px) {

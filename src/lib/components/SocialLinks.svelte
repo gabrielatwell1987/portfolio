@@ -100,16 +100,17 @@
 		position: relative;
 		z-index: 200;
 		pointer-events: all;
+		background-color: transparent;
+
+		&:focus,
+		&:focus-visible {
+			outline: 1px solid var(--text-color);
+			background: transparent;
+		}
 
 		&:hover {
 			color: var(--dark-pale);
 			opacity: 0.8;
-		}
-
-		&:focus {
-			outline: none;
-			background-color: transparent;
-			box-shadow: none;
 		}
 
 		& svg {
