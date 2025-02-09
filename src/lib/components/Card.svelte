@@ -27,7 +27,6 @@
 
 		&:hover {
 			box-shadow: 0 0 5em var(--text-gray);
-			/* box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); */
 		}
 
 		.card-image {
@@ -90,6 +89,12 @@
 				animation: nod 1s ease-in-out infinite;
 				color: var(--text-color);
 				border-color: var(--text-color);
+			}
+
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--text-color);
+				background: transparent;
 			}
 		}
 

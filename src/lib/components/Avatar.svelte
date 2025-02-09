@@ -36,7 +36,7 @@
 		a {
 			text-decoration: none;
 
-			h3 {
+			& h3 {
 				margin: 0;
 				padding: 0;
 				letter-spacing: 2px;
@@ -45,12 +45,18 @@
 				font-size: clamp(1.1rem, 2vw, 2rem);
 				font-weight: 800;
 			}
+
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--text-color);
+				background: transparent;
+			}
 		}
 
 		@media screen and (width >= 950px) {
 			margin-top: 5rem;
 
-			img {
+			& img {
 				width: 4%;
 			}
 		}

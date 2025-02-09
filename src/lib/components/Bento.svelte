@@ -86,6 +86,14 @@
 					border 1s ease,
 					box-shadow 1s ease;
 
+				& a {
+					&:focus,
+					&:focus-visible {
+						outline: 1px solid var(--text-color);
+						background: transparent;
+					}
+				}
+
 				&:hover {
 					box-shadow: 0 0 5px 3px var(--white);
 					opacity: 1;

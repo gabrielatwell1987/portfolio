@@ -21,6 +21,12 @@
 		a {
 			text-decoration: none;
 
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--text-color);
+				background: transparent;
+			}
+
 			& p {
 				margin: 0;
 				font-size: clamp(1.2rem, 1.5vw, 2rem);
@@ -53,11 +59,17 @@
 					user-select: none;
 					cursor: pointer;
 
-					&:hover,
-					&:focus {
+					&:hover {
 						opacity: 0.75;
 						outline-offset: 0px;
 						animation: wiggle 1s ease-in-out infinite;
+					}
+
+					&:focus,
+					&:focus-visible {
+						outline: 1px solid var(--text-color);
+						background: transparent;
+						color: var(--text-color);
 					}
 
 					@media (width <= 500px) {

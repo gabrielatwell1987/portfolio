@@ -42,8 +42,15 @@
 			text-decoration: none;
 			width: fit-content;
 			transition: all 0.35s;
+			background-color: transparent;
 
-			.img {
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--text-color);
+				background: transparent;
+			}
+
+			& .img {
 				border-radius: 8px;
 				max-width: var(--100);
 				transition: scale 0.25s ease-in-out;
@@ -53,7 +60,7 @@
 				}
 			}
 
-			.hover-text {
+			& .hover-text {
 				visibility: hidden;
 				width: 100%;
 				background-color: black;
@@ -90,7 +97,7 @@
 		.link {
 			letter-spacing: 4px;
 
-			.hover-text {
+			& .hover-text {
 				width: 80%;
 			}
 		}
@@ -102,7 +109,7 @@
 			flex-basis: var(--100);
 			letter-spacing: 5px;
 
-			.hover-text {
+			& .hover-text {
 				width: 100%;
 			}
 		}

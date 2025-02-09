@@ -50,6 +50,7 @@
 		--text-blue: var(--sky);
 		--text-gray: var(--smoke);
 		--text-link: var(--sky);
+		--text-pale: var(--pale);
 	}
 
 	:global(body) {
@@ -57,6 +58,7 @@
 		--text-blue: var(--sky);
 		--text-gray: var(--smoke);
 		--text-link: var(--purple);
+		--text-pale: var(--pale);
 		background-color: var(--dark);
 		color: var(--text-color);
 		transition:
@@ -69,6 +71,7 @@
 		--text-blue: var(--darkest-blue);
 		--text-gray: var(--lightblack);
 		--text-link: var(--dark-blue);
+		--text-pale: var(--dark-pale);
 		background-color: var(--light);
 		color: var(--text-color);
 		transition:
@@ -107,8 +110,9 @@
 		}
 
 		&:focus,
-		&:focus {
-			box-shadow: 0 0 0px var(--off-white);
+		&:focus-visible {
+			outline: 1px solid var(--text-color);
+			background: transparent;
 		}
 
 		@media (width >= 300px) {

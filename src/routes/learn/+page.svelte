@@ -75,8 +75,9 @@
 					display: block;
 					margin: 0 0 2em 0;
 
-					&:focus {
-						box-shadow: 0 0 0px var(--off-white);
+					&:focus,
+					&:focus-visible {
+						outline: 1px solid var(--text-color);
 						background: transparent;
 					}
 				}
@@ -101,6 +102,13 @@
 			}
 		}
 
+		& a {
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--text-color);
+				background: transparent;
+			}
+		}
 		.image {
 			background-color: transparent;
 			color: var(--smoke);

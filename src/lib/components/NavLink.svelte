@@ -13,15 +13,17 @@
 			font-weight: 900;
 			letter-spacing: 2px;
 			color: var(--white);
+			background-color: transparent;
+
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--text-color);
+				background: transparent;
+			}
 
 			&:is(:hover) {
 				color: var(--dark-gray);
 				transition: color 0.35s ease-in-out;
-			}
-
-			&:focus {
-				box-shadow: 0 0 0px var(--off-white);
-				background-color: transparent;
 			}
 		}
 	}

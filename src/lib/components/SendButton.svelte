@@ -34,8 +34,7 @@
 			margin-bottom: 2%;
 			user-select: none;
 
-			&:hover,
-			&:focus {
+			&:hover {
 				opacity: 0.75;
 				outline-offset: 0px;
 				animation: wiggle 1s ease-in-out infinite;
@@ -45,11 +44,18 @@
 				margin: 0;
 				font-size: clamp(1.2rem, 1.5vw, 2rem);
 				font-weight: 900;
-				color: var(--light-text);
+				color: var(--light-color);
 
 				&:hover svg {
 					animation: right 1s ease-in-out infinite;
 				}
+			}
+
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--text-color);
+				background: transparent;
+				color: var(--text-color);
 			}
 
 			@media (width <= 500px) {
