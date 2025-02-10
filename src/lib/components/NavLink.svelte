@@ -12,8 +12,11 @@
 			font-size: clamp(1.25rem, 1.25vw, 1.15rem);
 			font-weight: 900;
 			letter-spacing: 2px;
-			color: var(--white);
+			color: var(--text-color);
 			background-color: transparent;
+			transition:
+				color 0.35s ease-in-out,
+				opacity 0.35s ease-in-out;
 
 			&:focus,
 			&:focus-visible {
@@ -22,8 +25,7 @@
 			}
 
 			&:is(:hover) {
-				color: var(--dark-gray);
-				transition: color 0.35s ease-in-out;
+				opacity: 0.5;
 			}
 		}
 	}
@@ -36,13 +38,12 @@
 			color: var(--text-color);
 
 			&:hover {
-				color: var(--text-color);
-				text-shadow: 1px 1px 1px var(--text-color);
-				border-bottom: 4px solid var(--text-color);
+				color: var(--text-gray);
+				text-shadow: 1px 1px 1px var(--text-gray);
+				border-bottom: 4px solid var(--text-gray);
 				height: 2.75rem;
 				transition: all 0.15s ease-in-out;
 				border-radius: 1px;
-				opacity: 0.5;
 			}
 
 			&:not(:hover) {

@@ -102,13 +102,13 @@
 		font-size: clamp(1rem, 1.25vw, 2rem);
 		font-weight: 800;
 		letter-spacing: 3px;
-		color: var(--text-blue);
+		color: var(--text-color);
 	}
 
 	#name::-webkit-input-placeholder,
 	#email::-webkit-input-placeholder,
 	#message::-webkit-input-placeholder {
-		color: var(--white);
+		color: var(--text-color);
 		font-weight: 100;
 	}
 
@@ -218,7 +218,7 @@
 
 		fieldset {
 			border: 5px solid var(--white);
-			border-image: linear-gradient(to left, var(--text-color), var(--text-color)) 1;
+			border-image: linear-gradient(to left, var(--text-gray), var(--text-blue)) 1;
 			font-weight: bolder;
 			padding: 2rem 5rem;
 			border-radius: 10px;
