@@ -85,7 +85,7 @@
 				top: 100%;
 				left: 50%;
 				margin-left: -5px;
-				border-color: var(--blue) transparent transparent transparent;
+				border-color: var(--text-gray) transparent transparent transparent;
 			}
 		}
 
