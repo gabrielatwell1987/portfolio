@@ -51,7 +51,7 @@
 			color: var(--text-anti);
 			filter: drop-shadow(0 0 0.75rem var(--text-color));
 			border-radius: 0.75rem;
-			background-color: var(--text-pale);
+			background-color: var(--text-gray);
 			font-family: var(--bronova);
 			font-size: clamp(1.1rem, 1.5vw, 2rem);
 			font-weight: 900;
@@ -83,7 +83,7 @@
 			.spinner {
 				width: 2rem;
 				height: 2rem;
-				border: 2px solid var(--light-text);
+				border: 2px solid var(--text-anti);
 				border-top-color: transparent;
 				border-radius: 50%;
 				animation: spin 0.6s linear infinite;
