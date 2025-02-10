@@ -2,6 +2,7 @@
 	import '../app.css';
 	import '@picocss/pico/css/pico.min.css';
 	import { page } from '$app/stores';
+	import { navigating } from '$app/stores';
 	import NavBar from '$lib/components/NavBar.svelte';
 	import Analytics from '$lib/data/Analytics.svelte';
 	import Footer from '$lib/components/Footer.svelte';
@@ -44,6 +45,13 @@
 
 		isPageLoaded = true;
 		detectSWUpdate();
+
+		// navigating
+		if ($navigating) {
+			if (document.startViewTransition) {
+				document.startViewTransition();
+			}
+		}
 	});
 
 	let canonicalUrl = $derived($page.url.origin + $page.url.pathname);
