@@ -34,8 +34,8 @@
 
 /* code blocks */
 code {
-	background: var(--black);
-	color: var(--off-white);
+	background: var(--text-color);
+	color: var(--text-anti);
 	font-family: var(--mono);
 	font-size: clamp(0.9rem, 1vw, 1.1rem);
 	letter-spacing: 1px;
@@ -43,15 +43,15 @@ code {
 }
 
 code.code {
-	background: var(--black);
-	color: var(--off-white);
+	background: var(--text-color);
+	color: var(--text-anti);
 	font-size: clamp(0.9rem, 1vw, 1.1rem);
 	font-weight: 700;
 }
 
 .code-block {
-	background-color: var(--black);
-	border: 1px solid var(--off-white);
+	background-color: var(--text-color);
+	border: 1px solid var(--text-anti);
 	width: 75%;
 	margin: 2rem auto;
 	padding: 1rem;

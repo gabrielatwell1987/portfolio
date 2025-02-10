@@ -38,13 +38,13 @@
 				}
 
 				& button {
-					background-color: var(--dark-pale);
+					background-color: var(--text-gray);
 					font-family: var(--orbitron);
 					font-size: clamp(1.2rem, 1.5vw, 2rem);
 					font-weight: 900;
-					color: var(--light-text);
-					border: 1px solid var(--light-text);
-					outline: 3px solid var(--light-text);
+					color: var(--text-anti);
+					border: 1px solid var(--text-anti);
+					outline: 3px solid var(--text-anti);
 					filter: drop-shadow(0 0 0.75rem var(--smoke));
 					margin-inline: auto;
 					cursor: pointer;
