@@ -35,7 +35,7 @@
 			background-color: hsla(0, 0%, 26%, 0.25);
 			backdrop-filter: blur(5px);
 			-webkit-backdrop-filter: blur(4px);
-			box-shadow: 0px 0px 12px var(--white);
+			box-shadow: 0px 0px 12px var(--text-color);
 
 			.title {
 				font-size: clamp(2rem, 4vw, 5rem);

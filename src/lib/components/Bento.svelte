@@ -95,7 +95,7 @@
 				}
 
 				&:hover {
-					box-shadow: 0 0 5px 3px var(--white);
+					box-shadow: 0 0 5px 3px var(--text-gray);
 					opacity: 1;
 				}
 

@@ -85,10 +85,10 @@
 			gap: 1.25rem;
 			margin-top: 15.5rem;
 			z-index: 10;
-			box-shadow: 0 0 6px 2px var(--white);
+			box-shadow: 0 0 10px 7px var(--text-gray);
 			border-radius: 5px;
 			padding: 0.75rem;
-			background-color: var(--blackest);
+			background-color: var(--text-anti);
 			font-weight: 900;
 
 			translate: 100% 0;
