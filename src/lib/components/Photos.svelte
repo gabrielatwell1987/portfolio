@@ -51,10 +51,10 @@
 				scrollTrigger: {
 					trigger: 'pictures',
 					start: 'top 0%',
-					end: '+=400%',
+					end: '+=500%',
 					toggleActions: 'play none none reverse',
 					stagger: 0.75,
-					scrub: 2
+					scrub: 1
 				}
 			}).to(gabeElements, { scale: 1.1, duration: 2 });
 
@@ -79,7 +79,7 @@
 <main>
 	<Title title="pics of me" />
 
-	<h2>scroll down</h2>
+	<h2>scroll down <span class="arrow">&darr;</span></h2>
 
 	<section>
 		<div class="pictures" aria-label="pictures">
@@ -146,7 +146,6 @@
 
 			& h2 {
 				color: var(--text-gray);
-				border-bottom: 1px solid var(--text-gray);
 				font-family: var(--bronova);
 				font-size: clamp(0.9rem, 1.5vw, 2rem);
 				font-weight: 300;
@@ -154,6 +153,10 @@
 				margin: 0;
 				width: fit-content;
 				margin-inline: auto;
+
+				& .arrow {
+					font-size: clamp(1.5rem, 2.5vw, 3rem);
+				}
 			}
 
 			& section {
