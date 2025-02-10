@@ -28,7 +28,7 @@
 
 		button {
 			background-color: transparent;
-			color: var(--dark-pale);
+			color: var(--text-pale);
 			width: fit-content;
 			font-family: var(--anta);
 			border-radius: 6px;

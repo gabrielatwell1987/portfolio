@@ -60,8 +60,6 @@
 
 <style>
 	section {
-		background: url('/logos/bg1.webp') no-repeat center center/cover fixed;
-
 		.card {
 			display: flex;
 			justify-content: center;

@@ -40,7 +40,6 @@
 <style>
 	:root {
 		--bg-color: var(--blackest);
-		--text-color: var(--white);
 		--sun: var(--pale);
 		--moon: var(--darkest-blue);
 		--light: var(--white);
@@ -51,14 +50,17 @@
 		--text-gray: var(--smoke);
 		--text-link: var(--sky);
 		--text-pale: var(--pale);
+		--text-color: var(--white);
+		--text-anti: var(--blackest);
 	}
 
 	:global(body) {
+		--text-anti: var(--blackest);
 		--text-color: var(--dark-text);
 		--text-blue: var(--sky);
 		--text-gray: var(--smoke);
 		--text-link: var(--purple);
-		--text-pale: var(--pale);
+		--text-pale: var(--yellow);
 		background-color: var(--dark);
 		color: var(--text-color);
 		transition:
@@ -68,6 +70,7 @@
 
 	:global(body.light) {
 		--text-color: var(--light-text);
+		--text-anti: var(--white);
 		--text-blue: var(--darkest-blue);
 		--text-gray: var(--lightblack);
 		--text-link: var(--dark-blue);
