@@ -38,12 +38,13 @@
 			color: var(--text-color);
 
 			&:hover {
-				color: var(--text-gray);
-				text-shadow: 1px 1px 1px var(--text-gray);
-				border-bottom: 4px solid var(--text-gray);
+				color: var(--text-color);
+				text-shadow: 1px 1px 1px var(--text-color);
+				border-bottom: 4px solid var(--text-color);
 				height: 2.75rem;
 				transition: all 0.15s ease-in-out;
 				border-radius: 1px;
+				opacity: 0.8;
 			}
 
 			&:not(:hover) {
