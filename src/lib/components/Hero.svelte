@@ -36,11 +36,12 @@
 
 		img {
 			border-radius: 15px;
-			opacity: 0.15;
+			opacity: var(--opacity);
 			transition: opacity 0.75s ease-in-out;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			box-shadow: 0 0 10px var(--text-gray);
 		}
 
 		h4 {
