@@ -54,11 +54,11 @@
 	}
 
 	::view-transition-old(hero-image) {
-		animation: scale-out 1.25s ease-out forwards;
+		animation: scale-out 0.75s ease-out forwards;
 	}
 
 	::view-transition-new(hero-image) {
-		animation: scale-in 1.75s ease-in forwards;
+		animation: scale-in 0.75s ease-in forwards;
 	}
 
 	@keyframes scale-out {
@@ -67,14 +67,14 @@
 			opacity: 1;
 		}
 		to {
-			scale: 0.85;
+			scale: 0.8;
 			opacity: 0;
 		}
 	}
 
 	@keyframes scale-in {
 		from {
-			scale: 0.8;
+			scale: 1.2;
 			opacity: 0;
 		}
 		to {
