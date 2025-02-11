@@ -52,6 +52,8 @@
 		--text-pale: var(--pale);
 		--text-color: var(--white);
 		--text-anti: var(--blackest);
+		--text-button: var(--blackest);
+		--opacity: 1;
 	}
 
 	:global(body) {
@@ -61,6 +63,8 @@
 		--text-gray: var(--smoke);
 		--text-link: var(--purple);
 		--text-pale: var(--yellow);
+		--text-button: var(--dark);
+		--opacity: 0.15;
 		background-color: var(--dark);
 		color: var(--text-color);
 		transition:
@@ -75,6 +79,8 @@
 		--text-gray: var(--lightblack);
 		--text-link: var(--dark-blue);
 		--text-pale: var(--dark-pale);
+		--text-button: var(--blackest);
+		--opacity: 0.35;
 		background-color: var(--light);
 		color: var(--text-color);
 		transition:
