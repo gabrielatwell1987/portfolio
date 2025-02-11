@@ -40,12 +40,14 @@
 			h2 {
 				margin-top: 2rem;
 				margin-bottom: 0.75rem;
+				font-family: var(--bronova);
 				font-size: clamp(1rem, 1.75vw, 1.5rem);
 				color: var(--text-blue);
 			}
 
 			p {
 				color: var(--text-gray);
+				font-family: var(--bronova);
 				font-size: clamp(1rem, 1.15rem, 2rem);
 				font-style: italic;
 				text-align: center;
