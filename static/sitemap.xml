@@ -23,7 +23,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.gabrielatwell.com/blog</loc>
+  <loc>https://www.gabrielatwell.com/learn</loc>
   <lastmod>2024-09-03T22:33:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -38,17 +38,17 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.gabrielatwell.com/blog/greensock</loc>
+  <loc>https://www.gabrielatwell.com/learn/greensock</loc>
   <lastmod>2024-09-03T22:33:15+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gabrielatwell.com/blog/sveltekit</loc>
+  <loc>https://www.gabrielatwell.com/learn/sveltekit</loc>
   <lastmod>2024-09-03T22:33:15+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://www.gabrielatwell.com/blog/posts</loc>
+  <loc>https://www.gabrielatwell.com/learn/posts</loc>
   <lastmod>2024-09-03T22:33:15+00:00</lastmod>
   <priority>0.64</priority>
 </url>
