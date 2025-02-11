@@ -218,7 +218,7 @@
 
 		fieldset {
 			border: 5px solid var(--white);
-			border-image: linear-gradient(to left, var(--text-gray), var(--text-blue)) 1;
+			border-image: linear-gradient(45deg, var(--text-gray) 40%, var(--text-blue)) 1;
 			font-weight: bolder;
 			padding: 2rem 5rem;
 			border-radius: 10px;
