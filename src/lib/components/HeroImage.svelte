@@ -21,6 +21,7 @@
 		justify-content: center;
 		margin-top: 1rem;
 		margin-bottom: 5rem;
+		view-transition-name: hero-image;
 
 		img {
 			width: fit-content;
@@ -43,6 +44,42 @@
 				padding-bottom: 0;
 				mix-blend-mode: normal;
 			}
+		}
+	}
+
+	::view-transition-old(hero-image),
+	::view-transition-new(hero-image) {
+		animation: none;
+		mix-blend-mode: normal;
+	}
+
+	::view-transition-old(hero-image) {
+		animation: scale-out 1.25s ease-out forwards;
+	}
+
+	::view-transition-new(hero-image) {
+		animation: scale-in 1.75s ease-in forwards;
+	}
+
+	@keyframes scale-out {
+		from {
+			scale: 1;
+			opacity: 1;
+		}
+		to {
+			scale: 0.85;
+			opacity: 0;
+		}
+	}
+
+	@keyframes scale-in {
+		from {
+			scale: 0.8;
+			opacity: 0;
+		}
+		to {
+			scale: 1;
+			opacity: 1;
 		}
 	}
 </style>
