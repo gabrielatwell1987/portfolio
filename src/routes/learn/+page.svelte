@@ -142,7 +142,7 @@
 				display: block;
 
 				.image {
-					width: 15rem;
+					width: 25em;
 					scale: 1.1;
 				}
 			}
