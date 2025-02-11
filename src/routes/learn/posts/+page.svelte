@@ -129,12 +129,12 @@
 
 	::view-transition-old(css-skill-image),
 	::view-transition-old(gsap-skill-image) {
-		animation: scale-fade-out 2s ease-out forwards;
+		animation: scale-fade-out 0.75s ease-out forwards;
 	}
 
 	::view-transition-new(css-skill-image),
 	::view-transition-new(gsap-skill-image) {
-		animation: scale-fade-in 1s ease-in forwards;
+		animation: scale-fade-in 0.75s ease-in forwards;
 	}
 
 	@keyframes scale-fade-out {
