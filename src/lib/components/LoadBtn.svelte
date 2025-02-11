@@ -52,7 +52,7 @@
 			filter: drop-shadow(0 0 0.75rem var(--text-color));
 			border-radius: 0.75rem;
 			background-color: var(--text-gray);
-			font-family: var(--bronova);
+			font-family: var(--mono);
 			font-size: clamp(1.1rem, 1.5vw, 2rem);
 			font-weight: 900;
 			cursor: pointer;
