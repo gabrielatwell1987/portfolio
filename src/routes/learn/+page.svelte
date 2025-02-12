@@ -22,23 +22,19 @@
 
 	<article>
 		<section aria-label="icons">
-			<a class="gs" href="learn/greensock">
+			<a class="gs" href="learn/greensock" style="width: clamp(10em, 25vw, 13em);">
 				<Image src="/logos/gsapLogo.svg" alt="greensock" width="250" />
 			</a>
 
-			<a class="sk" href="learn/sveltekit">
+			<a class="sk" href="learn/sveltekit" style="width: clamp(10em, 25vw, 13em);">
 				<Image src="/logos/svelteLogo.png" alt="sveltekit" width="350" />
 			</a>
 		</section>
 
 		<div class="animation-link" aria-label="animation">
 			<a href="/learn/posts">
-				<div class="image">
-					<Image
-						src="logos/animation.webp"
-						alt="A logo that says web animation techniques."
-						width="3000"
-					/>
+				<div class="image" style="width: clamp(15em, 25vw, 25em);">
+					<Image src="logos/animation.webp" alt="A logo that says web animation techniques." />
 				</div>
 			</a>
 		</div>
@@ -84,16 +80,15 @@
 
 				& .gs,
 				& .sk {
-					transition: scale 0.25s ease-in-out;
+					transition:
+						filter 1s ease-in-out,
+						scale 0.25s ease-in-out;
 				}
 
 				& .gs:not(:hover),
 				& .sk:not(:hover) {
 					filter: opacity(0.5);
-					scale: 0.97;
-					transition:
-						filter 1s ease-in-out,
-						scale 0.25s ease-in-out;
+					scale: 0.95;
 				}
 			}
 
@@ -113,11 +108,11 @@
 			background-color: transparent;
 			color: var(--smoke);
 			border: 1px solid var(--smoke);
-			width: 40%;
 			margin: 0 auto;
 			border-radius: 8px;
 			cursor: pointer;
 			letter-spacing: 1px;
+			transition: opacity 0.75s ease-in-out;
 
 			&:hover {
 				animation: wiggle 1s ease-in-out infinite;
@@ -127,24 +122,17 @@
 				opacity: 0.5;
 				background-color: var(--smoke);
 				color: black;
-				transition: opacity 0.75s ease-in-out;
 			}
 		}
 
 		@media (width >= 300px) {
 			.gs,
 			.sk {
-				width: 10em;
 				margin-inline: auto;
 			}
 
 			.animation-link {
 				display: block;
-
-				.image {
-					width: 15em;
-					scale: 1.1;
-				}
 			}
 		}
 
@@ -153,17 +141,6 @@
 			.sk,
 			.image {
 				margin-top: 0;
-			}
-		}
-
-		@media (width >= 990px) {
-			.gs,
-			.sk {
-				width: 13em;
-			}
-
-			.image {
-				scale: 2;
 			}
 		}
 	}
