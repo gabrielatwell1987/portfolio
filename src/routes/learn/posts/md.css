@@ -32,7 +32,6 @@
 	font-size: 2rem;
 }
 
-/* code blocks */
 code {
 	background: var(--text-color);
 	color: var(--text-anti);
@@ -42,71 +41,7 @@ code {
 	font-weight: 700;
 }
 
-code.code {
-	background: var(--text-color);
-	color: var(--text-anti);
-	font-size: clamp(0.9rem, 1vw, 1.1rem);
-	font-weight: 700;
-}
-
-.code-block {
-	background-color: var(--text-color);
-	border: 1px solid var(--text-anti);
-	width: 75%;
-	margin: 2rem auto;
-	padding: 1rem;
-	border-radius: 12px;
-	position: relative;
-}
-
-.code-block code {
-	font-size: clamp(0.8rem, 0.75vw, 1.25rem);
-	line-height: 1.25;
-	font-family: monospace;
-}
-
-.copy-prompt {
-	cursor: pointer;
-	opacity: 0.75;
-	display: flex;
-	align-items: center;
-	margin-top: 1rem;
-	gap: 1rem;
-	transition: opacity 0.2s;
-
-	&:hover {
-		opacity: 1;
-	}
-}
-
-.copy-icon {
-	width: 16px;
-	height: 16px;
-}
-
-.copy-prompt-text {
-	font-family: var(--bronova);
-	font-weight: 900;
-	letter-spacing: 2px;
-	color: #fff;
-	margin-top: 1.5%;
-}
-
-/* Media query for smaller screens */
 @media (max-width: 768px) {
-	.code-block {
-		width: 90%;
-		padding: 0;
-	}
-
-	.copy-prompt {
-		margin-left: 5%;
-	}
-
-	.copy-prompt-text {
-		margin-top: 3%;
-	}
-
 	.body {
 		max-width: 95%;
 	}
