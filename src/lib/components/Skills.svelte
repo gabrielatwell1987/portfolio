@@ -111,12 +111,12 @@
 
 			& a:nth-child(odd):hover {
 				rotate: -5deg;
-				transition: rotate 0.25s ease-in-out;
+				transition: rotate 0.5s ease-in-out;
 			}
 
 			& a:nth-child(even):hover {
 				rotate: 5deg;
-				transition: rotate 0.25s ease-in-out;
+				transition: rotate 0.5s ease-in-out;
 			}
 
 			& li {

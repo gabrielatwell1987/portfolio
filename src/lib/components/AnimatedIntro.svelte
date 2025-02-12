@@ -61,7 +61,7 @@
 		.bigWord {
 			font-family: var(--orbitron);
 			font-size: clamp(3rem, 15vw, 40rem);
-			color: var(--text-color);
+			color: var(--text-blue);
 			text-wrap: none;
 			display: block;
 			letter-spacing: 1px;

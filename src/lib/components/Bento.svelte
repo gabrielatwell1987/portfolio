@@ -45,8 +45,9 @@
 	:root {
 		--space: 1.5rem;
 		--surface-1: transparent;
-		--surface-2: #0f172a;
-		--gradient: radial-gradient(hsla(0, 0%, 85%, 0.473), hsl(0 0% 0%) 88%);
+		--surface-2: var(--text-anti);
+		--gradient: radial-gradient(var(--text-gray), var(--dark) 88%);
+		/* --gradient: radial-gradient(hsla(0, 0%, 85%, 0.473), hsl(0 0% 0%) 88%); */
 	}
 
 	* {
@@ -72,7 +73,7 @@
 			gap: var(--space);
 
 			& .item {
-				border: 1px solid var(--text-color);
+				box-shadow: 0 0 5px 2px var(--text-gray);
 				background-color: var(--surface-2);
 				background-image: var(--gradient);
 				padding: var(--space);
