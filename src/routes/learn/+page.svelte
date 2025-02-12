@@ -37,7 +37,7 @@
 					<Image
 						src="logos/animation.webp"
 						alt="A logo that says web animation techniques."
-						width="2000"
+						width="3000"
 					/>
 				</div>
 			</a>
@@ -142,7 +142,7 @@
 				display: block;
 
 				.image {
-					width: 25em;
+					width: 15em;
 					scale: 1.1;
 				}
 			}
@@ -159,11 +159,11 @@
 		@media (width >= 990px) {
 			.gs,
 			.sk {
-				width: 15em;
+				width: 13em;
 			}
 
 			.image {
-				scale: 1.3;
+				scale: 2;
 			}
 		}
 	}
