@@ -111,8 +111,8 @@
 
 			& .cta-button {
 				padding: 0.8em 1em;
-				background: var(--white);
-				color: var(--light-text);
+				background: var(--text-color);
+				color: var(--text-anti);
 				border: none;
 				border-radius: 0.3em;
 				text-decoration: none;
