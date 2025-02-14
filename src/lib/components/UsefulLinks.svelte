@@ -25,6 +25,12 @@
 		submit="Creative Coding"
 		href="https://creativecodingclub.com"
 	/>
+	<LoadBtn
+		loading="loading..."
+		delay={1500}
+		submit="Beginner HTML"
+		href="https://www.websiteplanet.com/blog/html-guide-beginners/"
+	/>
 
 	<p>Most of these links are resources that I used to learn frontend and design for the web 🚀</p>
 </main>
