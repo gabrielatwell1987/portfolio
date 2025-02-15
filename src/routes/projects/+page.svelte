@@ -61,11 +61,18 @@
 		description="HTML/CSS/JS"
 	/> -->
 
-	<Project
+	<!-- <Project
 		title="horizontal scroll"
 		img="/projects/scroller.webp"
 		url="https://scrollernessly.vercel.app"
 		description="html/css/js"
+	/> -->
+
+	<Project
+		title="palette pro"
+		img="/projects/palettePro.webp"
+		url="https://palette-pro-three.vercel.app"
+		description="sveltekit"
 	/>
 
 	<Project
