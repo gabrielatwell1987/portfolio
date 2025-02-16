@@ -69,8 +69,8 @@
 	/> -->
 
 	<Project
-		title="palette pro"
-		img="/projects/palettePro.webp"
+		title="pixipalette"
+		img="/projects/pixipalette.webp"
 		url="https://palette-pro-three.vercel.app"
 		description="sveltekit"
 	/>
