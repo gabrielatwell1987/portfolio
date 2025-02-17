@@ -71,7 +71,7 @@
 	<Project
 		title="pixipalette"
 		img="/projects/pixipalette.webp"
-		url="https://palette-pro-three.vercel.app"
+		url="https://pixipalette.vercel.app"
 		description="sveltekit"
 	/>
 
