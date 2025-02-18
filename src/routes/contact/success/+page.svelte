@@ -35,7 +35,7 @@
 				width: var(--100);
 				padding: clamp(2rem, 5vw, 9rem);
 				margin-inline: auto;
-				margin-top: 25%;
+				margin-top: var(--5);
 				text-align: center;
 			}
 
