@@ -1,4 +1,6 @@
 <script>
+	import '@fortawesome/fontawesome-free/css/all.css';
+
 	// Reactive variables
 	let deferredPrompt = $state(null);
 	let isInstallable = $state(false);
@@ -47,9 +49,11 @@
 	};
 </script>
 
-<button aria-label="install" onclick={installApp} hidden={!isInstallable}
-	><i class="fa-solid fa-download"></i> <span class="desc">install</span></button
->
+<button aria-label="install" onclick={installApp} hidden={!isInstallable}>
+	<i class="fa-solid fa-download"></i> <span class="desc">install</span>
+
+	<span class="desc">install</span>
+</button>
 
 <style>
 	button {
