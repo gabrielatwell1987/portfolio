@@ -50,7 +50,7 @@
 </script>
 
 <button aria-label="install" onclick={installApp} hidden={!isInstallable}>
-	<i class="fa-solid fa-download"></i> <span class="desc">install</span>
+	<i class="fa-solid fa-download"></i>
 
 	<span class="desc">install</span>
 </button>
