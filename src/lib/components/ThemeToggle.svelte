@@ -78,7 +78,7 @@
 		--text-blue: var(--darkest-blue);
 		--text-gray: var(--lightblack);
 		--text-link: var(--dark-blue);
-		--text-pale: var(--dark-pale);
+		--text-pale: var(--anti);
 		--text-button: var(--text-anti);
 		--opacity: 0.35;
 		background-color: var(--light);
