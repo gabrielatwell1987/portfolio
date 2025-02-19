@@ -1,6 +1,7 @@
 <script>
 	import { goto } from '$app/navigation';
 	import HeroTitle from '$lib/components/HeroTitle.svelte';
+	import Button from '$lib/components/Button.svelte';
 
 	let videoElement;
 
@@ -55,7 +56,7 @@
 			If you have any questions, you can <a href="/contact">contact</a> me and I will get back to you.
 		</p>
 
-		<a href="/landing" class="cta-button" onclick={proceedToMain}>Enter site</a>
+		<Button title="Enter site" href="/landing" onclick={proceedToMain} />
 	</div>
 </main>
 
@@ -106,25 +107,6 @@
 				& a {
 					color: var(--text-link);
 					font-weight: 700;
-				}
-			}
-
-			& .cta-button {
-				padding: 0.8em 1em;
-				background: var(--text-color);
-				color: var(--text-anti);
-				border: none;
-				border-radius: 0.3em;
-				text-decoration: none;
-				font-family: var(--orbitron);
-				font-size: clamp(1rem, 1.15vw, 2rem);
-				font-weight: 600;
-				letter-spacing: 2px;
-				cursor: pointer;
-				transition: background 0.3s ease;
-
-				&:hover {
-					background: var(--off-white);
 				}
 			}
 		}
