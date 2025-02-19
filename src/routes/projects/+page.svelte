@@ -78,14 +78,14 @@
 	<Project
 		title="grocery list"
 		img="/projects/groceries.webp"
-		url="https://react-todo-navy-five.vercel.app/"
+		url="https://legit-shopping-list.vercel.app/"
 		description="react"
 	/>
 
 	<Project
 		title="e-commerce product page"
 		img="/projects/ecommerce.webp"
-		url="https://ecommerceproductpage-bay.vercel.app"
+		url="https://e-commerce-products.vercel.app"
 		description="html/css/js"
 	/>
 
@@ -99,21 +99,21 @@
 	<Project
 		title="password maker"
 		img="/projects/pw-generator.webp"
-		url="https://pw-generator-ebon.vercel.app/"
+		url="https://make-a-password.vercel.app/"
 		description="sveltekit"
 	/>
 
 	<Project
 		title="github search"
 		img="/projects/github.webp"
-		url="https://adiapp.vercel.app"
+		url="https://github-user-api-search.vercel.app"
 		description="svelte"
 	/>
 
 	<Project
 		title="data visualizations"
 		img="/projects/data-v.webp"
-		url="https://data-viz-svelte.vercel.app"
+		url="https://visual-svelte.vercel.app"
 		description="d3/svelte"
 	/>
 
