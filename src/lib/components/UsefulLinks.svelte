@@ -2,7 +2,7 @@
 	import LoadBtn from '$lib/components/LoadBtn.svelte';
 </script>
 
-<main class="links">
+<main class="links" id="useful-links">
 	<h2>Useful Links:</h2>
 
 	<LoadBtn loading="loading..." delay={1500} submit="JoyOfCode" href="https://joyofcode.xyz" />
