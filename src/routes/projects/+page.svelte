@@ -52,7 +52,9 @@
 </div>
 
 <section class="content bevel">
-	<IconLogo />
+	<a href="/about#useful-links">
+		<IconLogo />
+	</a>
 
 	<!-- <Project
 		title="S.P.A."
