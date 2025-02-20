@@ -3,10 +3,16 @@
 </script>
 
 <div class="iconLogo">
-	<Image src="/logos/blueTriangle.webp" alt="atwell logo" />
+	<Image src="/logos/shieldy.webp" alt="atwell logo" width="600" class="logo-image" />
 </div>
 
 <style>
+	:global(.logo-image) {
+		width: 100%;
+		height: auto;
+		max-width: 600px;
+	}
+
 	.iconLogo {
 		display: flex;
 		justify-content: center;
@@ -14,6 +20,16 @@
 		width: fit-content;
 		margin-inline: auto;
 		view-transition-name: icon-logo;
+
+		@media (width <= 768px) {
+			margin-bottom: 10%;
+			max-width: 80%;
+		}
+
+		@media (width <= 480px) {
+			margin-bottom: 8%;
+			max-width: 90%;
+		}
 	}
 
 	::view-transition-old(icon-logo),

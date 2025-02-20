@@ -85,7 +85,7 @@
 	<Project
 		title="e-commerce product page"
 		img="/projects/ecommerce.webp"
-		url="https://e-comerce-products.vercel.app"
+		url="https://fake-store-products.vercel.app"
 		description="html/css/js"
 	/>
 
