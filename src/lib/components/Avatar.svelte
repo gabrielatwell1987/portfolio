@@ -44,6 +44,11 @@
 				font-family: var(--orbitron);
 				font-size: clamp(1.1rem, 2vw, 2rem);
 				font-weight: 800;
+
+				&:hover {
+					/* text-decoration: underline; */
+					border-bottom: 1px solid var(--text-blue);
+				}
 			}
 
 			&:focus,
