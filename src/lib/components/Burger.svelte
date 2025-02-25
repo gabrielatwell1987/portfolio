@@ -64,7 +64,6 @@
 			width: 100%;
 			margin: 3px 0;
 			transition: all 0.3s ease;
-
 			position: absolute;
 			inset: 0;
 		}
@@ -72,7 +71,6 @@
 		svg {
 			color: var(--text-gray);
 			transition: transform 0.2s ease;
-
 			position: absolute;
 			top: 0;
 

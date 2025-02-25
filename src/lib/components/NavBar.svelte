@@ -114,7 +114,9 @@
 		}
 
 		.header-logos {
-			display: block;
+			display: flex;
+			align-items: center;
+			gap: 1rem;
 		}
 
 		nav {
@@ -123,8 +125,9 @@
 			margin-inline: auto;
 			margin-top: 0.5rem;
 			border-radius: 5px;
-			background-color: transparent;
 			box-shadow: 0 0 5px var(--text-gray);
+
+			padding: 0.75rem 0 0 0;
 		}
 	}
 
