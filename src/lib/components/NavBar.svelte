@@ -119,8 +119,12 @@
 
 		nav {
 			margin: 0;
-			width: var(--100);
+			width: 97%;
+			margin-inline: auto;
+			margin-top: 0.5rem;
+			border-radius: 5px;
 			background-color: transparent;
+			box-shadow: 0 0 5px var(--text-gray);
 		}
 	}
 
@@ -145,6 +149,10 @@
 	}
 
 	@media (width >= 990px) {
+		nav {
+			box-shadow: none;
+		}
+
 		.desktop {
 			gap: 1.5rem;
 			scale: 1;
