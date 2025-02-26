@@ -74,7 +74,7 @@
 			height: 100%;
 			object-fit: cover;
 			z-index: 1;
-			opacity: var(--opacity);
+			opacity: 0.35;
 		}
 
 		& .intro-content {
