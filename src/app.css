@@ -53,6 +53,7 @@
 	/* sizing */
 	--base-size: 1.2rem;
 	--scale: 1.25;
+	--radius: 5px;
 	--xl: calc(var(-lg) * var(--scale) * var(--scale) * var(--scale));
 	--lg: calc(var(--h1) * var(--scale) * var(--scale));
 	--h1: calc(var(--h2) * var(--scale) * var(--scale));

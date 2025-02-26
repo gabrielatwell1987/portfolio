@@ -30,7 +30,7 @@
 		.inline {
 			display: inline-block;
 			margin: 0.5rem auto;
-			border-radius: 15px;
+			border-radius: var(--radius);
 			padding: 0.5rem;
 			background-color: hsla(0, 0%, 26%, 0.25);
 			backdrop-filter: blur(5px);

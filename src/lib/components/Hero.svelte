@@ -35,7 +35,7 @@
 		}
 
 		img {
-			border-radius: 15px;
+			border-radius: var(--radius);
 			opacity: var(--opacity);
 			transition: opacity 0.75s ease-in-out;
 			width: 100%;
@@ -59,7 +59,7 @@
 		}
 
 		.summary {
-			margin: 0 auto;
+			margin-inline: auto;
 			font-family: var(--bronova);
 			font-size: clamp(1.15rem, 1.5vw, 2rem);
 			font-weight: 500;

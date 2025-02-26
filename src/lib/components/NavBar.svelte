@@ -115,19 +115,23 @@
 
 		.header-logos {
 			display: flex;
+			justify-content: center;
 			align-items: center;
 			gap: 1rem;
+			height: 100%;
 		}
 
 		nav {
-			margin: 0;
 			width: 97%;
 			margin-inline: auto;
-			margin-top: 0.5rem;
-			border-radius: 5px;
+			margin-block: 0.25rem;
+			border-radius: var(--radius);
 			box-shadow: 0 0 5px var(--text-gray);
-
-			padding: 0.75rem 0 0 0;
+			padding: 1.2rem 0 0.4rem 0;
+			height: 3em;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
 		}
 	}
 

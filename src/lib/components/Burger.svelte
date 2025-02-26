@@ -76,6 +76,8 @@
 
 			&.times {
 				color: var(--text-gray);
+				width: 100%;
+				height: auto;
 			}
 		}
 

@@ -77,7 +77,7 @@
 				background-color: var(--surface-2);
 				background-image: var(--gradient);
 				padding: var(--space);
-				border-radius: 0.5rem;
+				border-radius: var(--radius);
 				text-decoration: none;
 				display: flex;
 				justify-content: center;
