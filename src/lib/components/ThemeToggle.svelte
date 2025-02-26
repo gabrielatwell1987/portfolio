@@ -93,7 +93,6 @@
 		border: none;
 		border-radius: 5px;
 		color: var(--text-color);
-		padding-top: 1rem;
 		font-size: clamp(1.5rem, 2vw, 2.25rem);
 		letter-spacing: 3px;
 		width: fit-content;
@@ -121,6 +120,7 @@
 		&:focus,
 		&:focus-visible {
 			outline: 1px solid var(--text-color);
+			padding: 1em;
 			background: transparent;
 		}
 
