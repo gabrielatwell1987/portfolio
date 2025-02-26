@@ -28,7 +28,7 @@
 			aspect-ratio: 16 / 9;
 			object-fit: cover;
 			mask: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, transparent);
-			border-radius: 0.5em;
+			border-radius: var(--radius);
 		}
 
 		h1 {

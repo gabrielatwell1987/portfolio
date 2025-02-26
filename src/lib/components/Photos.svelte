@@ -182,7 +182,7 @@
 							margin-inline: auto;
 							margin-bottom: 2em;
 							max-width: 20em;
-							border-radius: 3%;
+							border-radius: var(--radius);
 
 							&:hover {
 								filter: drop-shadow(0 0 0.25rem var(--text-gray));

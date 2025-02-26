@@ -158,7 +158,7 @@
 			background-color: transparent;
 			box-shadow: none;
 			border: 3px solid var(--dark-gray);
-			border-radius: 10px;
+			border-radius: var(--radius);
 			caret-color: var(--sky);
 			color: var(--white);
 		}

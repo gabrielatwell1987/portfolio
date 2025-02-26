@@ -50,7 +50,7 @@
 			outline: 3px solid var(--text-anti);
 			color: var(--text-anti);
 			filter: drop-shadow(0 0 0.75rem var(--text-color));
-			border-radius: 0.75rem;
+			border-radius: var(--radius);
 			background-color: var(--text-gray);
 			font-family: var(--mono);
 			font-size: clamp(1.1rem, 1.5vw, 2rem);
