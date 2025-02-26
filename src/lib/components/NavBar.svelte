@@ -129,9 +129,6 @@
 			box-shadow: 0 0 5px var(--text-gray);
 			padding: 1.2rem 0 0.4rem 0;
 			height: 3em;
-			display: flex;
-			justify-content: space-evenly;
-			align-items: center;
 		}
 	}
 
@@ -152,6 +149,7 @@
 
 		nav {
 			margin: 1rem;
+			height: 5em;
 		}
 	}
 
