@@ -128,7 +128,7 @@
 			border-radius: var(--radius);
 			box-shadow: 0 0 5px var(--text-gray);
 			padding: 1.2rem 0 0.4rem 0;
-			height: 3em;
+			height: 3.75em;
 		}
 	}
 
