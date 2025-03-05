@@ -1,14 +1,14 @@
 <script>
 	/** @type {{href: any, title: any}} */
-	let { href, title } = $props();
+	let { href, title, onclick } = $props();
 </script>
 
-<a class="nav-link" {href}>{title}</a>
+<a class="nav-link" {href} {onclick}>{title}</a>
 
 <style>
 	@media (width >= 300px) {
 		.nav-link {
-			font-family: var(--bronova);
+			font-family: var(--bronova-bold);
 			font-size: clamp(1.25rem, 1.25vw, 1.15rem);
 			font-weight: 900;
 			letter-spacing: 2px;
@@ -39,7 +39,7 @@
 
 			&:hover {
 				color: var(--text-color);
-				text-shadow: 1px 1px 1px var(--text-color);
+				text-shadow: 1px 1px 1px var(--text-anti);
 				border-bottom: 4px solid var(--text-color);
 				height: 2.75rem;
 				transition: all 0.15s ease-in-out;

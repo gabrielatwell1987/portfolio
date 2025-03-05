@@ -7,6 +7,16 @@
 
 	let open = $state(false);
 	let isClosing = $state(false);
+
+	function closeMenu() {
+		if (open) {
+			isClosing = true;
+			setTimeout(() => {
+				open = false;
+				isClosing = false;
+			}, 1000); // Match this with your transition duration (1s)
+		}
+	}
 </script>
 
 <nav>
@@ -27,12 +37,12 @@
 	</div>
 
 	<div class="mobile {open ? 'open' : ''} {isClosing ? 'closing' : ''}">
-		<NavLink href="/landing" title="Home" />
-		<NavLink href="/about" title="About" />
-		<NavLink href="/projects" title="Work" />
-		<NavLink href="/learn" title="Learn" />
-		<NavLink href="/photos" title="Photos" />
-		<NavLink href="/contact" title="Contact" />
+		<NavLink href="/landing" title="Home" onclick={closeMenu} />
+		<NavLink href="/about" title="About" onclick={closeMenu} />
+		<NavLink href="/projects" title="Work" onclick={closeMenu} />
+		<NavLink href="/learn" title="Learn" onclick={closeMenu} />
+		<NavLink href="/photos" title="Photos" onclick={closeMenu} />
+		<NavLink href="/contact" title="Contact" onclick={closeMenu} />
 	</div>
 </nav>
 
@@ -89,13 +99,12 @@
 			border-radius: 5px;
 			padding: 0.75rem;
 			background-color: var(--text-anti);
-			font-weight: 900;
 
 			translate: 100% 0;
 			overflow: hidden;
 			transition:
-				opacity 1.22s ease-in-out,
-				translate 1.22s ease-in-out;
+				opacity 1s ease-in-out,
+				translate 1s ease-in-out;
 			opacity: 0;
 
 			&.open {
