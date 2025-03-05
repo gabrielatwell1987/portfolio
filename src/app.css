@@ -22,6 +22,14 @@
 	src: url('/fonts/Bronova-Regular.woff2') format('woff2');
 }
 
+@font-face {
+	font-family: 'Bronova Bold';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('/fonts/Bronova-bold.woff2') format('woff2');
+}
+
 :root {
 	/* colors */
 	--blackest: hsl(0, 15%, 5%);
@@ -49,14 +57,16 @@
 	--mono: 'Courier Prime', monospace;
 	--orbitron: 'Orbitron-Black', sans-serif;
 	--bronova: 'Bronova', sans-serif;
+	--bronova-bold: 'Bronova Bold', sans-serif;
 
 	/* sizing */
 	--base-size: 1.2rem;
-	--scale: 1.25;
+	--scale: 1.2;
 	--radius: 5px;
-	--xl: calc(var(-lg) * var(--scale) * var(--scale) * var(--scale));
-	--lg: calc(var(--h1) * var(--scale) * var(--scale));
-	--h1: calc(var(--h2) * var(--scale) * var(--scale));
+	--xxl: calc(var(--xl) * var(--scale) * var(--scale));
+	--xl: calc(var(--h1) * var(--scale) * var(--scale));
+	--lg: calc(var(--h1) * var(--scale));
+	--h1: calc(var(--h2) * var(--scale));
 	--h2: calc(var(--h3) * var(--scale));
 	--h3: calc(var(--h4) * var(--scale));
 	--h4: calc(var(--h5) * var(--scale));
