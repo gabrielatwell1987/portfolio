@@ -1,4 +1,4 @@
-<img src="http://localhost:5173/logos/shieldy.webp" width="300" height="auto" />
+<img src="http://gabrielatwell.com/logos/shieldy.webp" width="300" height="auto" />
 
 # Gabriel Atwell's Portfolio
 
