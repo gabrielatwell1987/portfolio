@@ -42,7 +42,7 @@
 		justify-content: center;
 		align-items: center;
 
-		h1 {
+		& h1 {
 			font-size: clamp(2rem, 5vw, 6rem);
 			font-weight: 900;
 			margin-inline: auto;
@@ -54,7 +54,7 @@
 			text-wrap: balance;
 		}
 
-		h2 {
+		& h2 {
 			font-size: clamp(1.5rem, 2.5vw, 3rem);
 			font-weight: 700;
 			margin-inline: auto;
@@ -66,7 +66,7 @@
 			text-wrap: balance;
 		}
 
-		p {
+		& p {
 			font-family: var(--bronova);
 			font-size: clamp(1.75rem, 3vw, 2rem);
 			font-weight: 500;
@@ -81,11 +81,11 @@
 			margin-bottom: 3%;
 		}
 
-		.error {
+		& .error {
 			width: 100%;
 		}
 
-		.image {
+		& .image {
 			width: clamp(100px, 20vw, 300px);
 			margin-inline: auto;
 			margin-top: 10rem;
