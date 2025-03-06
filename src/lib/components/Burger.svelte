@@ -56,7 +56,7 @@
 		cursor: pointer;
 		z-index: 10;
 		margin-bottom: 2em;
-		margin-left: 2em;
+		margin-left: 1em;
 		position: relative;
 
 		.bars {
