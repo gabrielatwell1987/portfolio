@@ -57,6 +57,7 @@
 			outline: none;
 			background-color: transparent;
 			box-shadow: none;
+			margin: 0;
 
 			&:focus,
 			&:focus-visible {
@@ -90,7 +91,6 @@
 		}
 
 		@media (width >= 300px) and (width < 750px) {
-			display: block;
 			scale: 0.6;
 
 			& a svg {
@@ -99,7 +99,6 @@
 		}
 
 		@media (width >= 750px) {
-			display: block;
 			scale: 0.8;
 			margin-bottom: 0;
 
