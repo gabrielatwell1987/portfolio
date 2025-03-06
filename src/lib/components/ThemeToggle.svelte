@@ -53,6 +53,7 @@
 		--text-color: var(--white);
 		--text-anti: var(--blackest);
 		--text-button: var(--blackest);
+		--button-bg: var(--yellow);
 		--opacity: 1;
 	}
 
@@ -64,6 +65,7 @@
 		--text-link: var(--purple);
 		--text-pale: var(--yellow);
 		--text-button: var(--text-anti);
+		--button-bg: var(--yellow);
 		--opacity: 0.15;
 		background-color: var(--dark);
 		color: var(--text-color);
@@ -80,6 +82,7 @@
 		--text-link: var(--dark-blue);
 		--text-pale: var(--dark-pale);
 		--text-button: var(--text-anti);
+		--button-bg: var(--yellow);
 		--opacity: 0.35;
 		background-color: var(--light);
 		color: var(--text-color);

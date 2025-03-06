@@ -38,7 +38,7 @@
 				}
 
 				& button {
-					background-color: var(--text-pale);
+					background-color: var(--button-bg);
 					font-family: var(--orbitron);
 					font-size: clamp(1.2rem, 1.5vw, 2rem);
 					font-weight: 900;
