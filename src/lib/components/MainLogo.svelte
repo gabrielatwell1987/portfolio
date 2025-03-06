@@ -84,12 +84,24 @@
 		}
 
 		@media (width >= 300px) {
-			display: none;
+			display: block;
+			scale: 0.5;
+			margin-bottom: 1em;
+		}
+
+		@media (width >= 300px) and (width < 750px) {
+			display: block;
+			scale: 0.6;
+
+			& a svg {
+				width: 150px;
+			}
 		}
 
 		@media (width >= 750px) {
 			display: block;
 			scale: 0.8;
+			margin-bottom: 0;
 
 			& a {
 				transition: transform 0.25s ease-in-out;
