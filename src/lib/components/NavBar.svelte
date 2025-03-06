@@ -93,12 +93,17 @@
 			justify-content: space-around;
 			align-items: center;
 			gap: 1.25rem;
-			margin-top: 15.5rem;
 			z-index: 10;
 			box-shadow: 0 0 10px 7px var(--text-gray);
 			border-radius: 5px;
 			padding: 0.75rem;
 			background-color: var(--text-anti);
+
+			min-width: 150px;
+			width: auto;
+			position: absolute;
+			right: 0;
+			top: 10%;
 
 			translate: 100% 0;
 			overflow: hidden;
@@ -170,6 +175,20 @@
 		.desktop {
 			gap: 1.5rem;
 			scale: 1;
+		}
+	}
+
+	@media (width < 750px) {
+		nav {
+			justify-content: space-between;
+			padding-inline: 0.75rem;
+		}
+
+		.header-logos {
+			flex: 1;
+			justify-content: flex-start;
+			align-items: center;
+			gap: 0.5rem;
 		}
 	}
 </style>
