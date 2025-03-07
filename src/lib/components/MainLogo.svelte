@@ -86,12 +86,13 @@
 
 		@media (width >= 300px) {
 			display: block;
-			scale: 0.5;
+			scale: 0.7;
 			margin-bottom: 1em;
 		}
 
 		@media (width >= 300px) and (width < 750px) {
-			scale: 0.6;
+			scale: 0.75;
+			margin-left: 0.11rem;
 
 			& a svg {
 				width: 150px;
