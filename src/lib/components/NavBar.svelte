@@ -98,6 +98,7 @@
 			border-radius: 5px;
 			padding: 0.75rem;
 			background-color: var(--text-anti);
+			backdrop-filter: blur(125px);
 
 			min-width: 150px;
 			width: auto;
