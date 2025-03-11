@@ -46,12 +46,12 @@
 			align-items: center;
 			justify-content: center;
 			padding: 0.2em 0.6em;
-			border: 1px solid var(--text-anti);
-			outline: 3px solid var(--text-anti);
-			color: var(--text-anti);
+			border: 1px solid var(--dark);
+			outline: 3px solid var(--dark);
+			color: var(--dark);
 			filter: drop-shadow(0 0 0.75rem var(--text-color));
 			border-radius: var(--radius);
-			background-color: var(--text-gray);
+			background-color: var(--button-bg);
 			font-family: var(--mono);
 			font-size: clamp(1.1rem, 1.5vw, 2rem);
 			font-weight: 900;
@@ -71,7 +71,6 @@
 			}
 
 			&:hover {
-				opacity: 0.75;
 				outline-offset: 0px;
 			}
 
@@ -83,7 +82,7 @@
 			.spinner {
 				width: 2rem;
 				height: 2rem;
-				border: 2px solid var(--text-anti);
+				border: 2px solid var(--dark);
 				border-top-color: transparent;
 				border-radius: 50%;
 				animation: spin 0.6s linear infinite;
