@@ -189,6 +189,37 @@
 </section>
 
 <style>
+	.bevel {
+		position: relative;
+	}
+
+	.bevel:before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: var(--text-gray);
+		clip-path: polygon(
+			0 80px,
+			80px 0,
+			calc(100% - 80px) 0,
+			100% 80px,
+			100% calc(100% - 80px),
+			calc(100% - 80px) 100%,
+			80px 100%,
+			0 calc(100% - 80px),
+			0 80px,
+			5px calc(80px + 2.07px),
+			5px calc(100% - 80px - 2.07px),
+			calc(80px + 2.07px) calc(100% - 5px),
+			calc(100% - 80px - 2.07px) calc(100% - 5px),
+			calc(100% - 5px) calc(100% - 80px - 2.07px),
+			calc(100% - 5px) calc(80px + 2.07px),
+			calc(100% - 80px - 2.07px) 5px,
+			calc(80px + 2.07px) 5px,
+			5px calc(80px + 2.07px)
+		);
+	}
+
 	@media screen and (width >= 300px) {
 		:root {
 			--100: 100%;
