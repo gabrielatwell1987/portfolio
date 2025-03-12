@@ -167,68 +167,65 @@
 			width: var(--100);
 			margin-inline: auto;
 
-			.indent {
-				text-indent: 2em;
-			}
-
-			section {
+			& section {
 				display: block;
 				margin-inline: auto;
 				text-align: center;
 				width: var(--100);
 				color: var(--text-color);
+
+				& article {
+					font-size: clamp(0.8rem, 2vw, 1rem);
+					width: var(--100);
+					margin-inline: auto;
+					background-color: transparent;
+					box-shadow: none;
+					color: var(--text-color);
+				}
+
+				& .bio {
+					color: var(--white);
+					position: relative;
+
+					& .icons {
+						display: flex;
+						justify-content: space-evenly;
+						align-items: center;
+						gap: 0.25rem;
+						margin-left: 3rem;
+						padding-right: 1.2rem;
+					}
+
+					& .indent {
+						text-indent: 2em;
+					}
+
+					& .text {
+						max-width: var(--100);
+						margin-inline: auto;
+						font-size: clamp(1.2rem, 1.5vw, 2rem);
+						font-weight: 500;
+						line-height: 1.5;
+						text-wrap: none;
+						z-index: 7;
+						color: var(--text-color);
+					}
+
+					& .text-hero {
+						font-size: 1.35rem;
+					}
+				}
 			}
 
-			article {
-				font-size: clamp(0.8rem, 2vw, 1rem);
-				width: var(--100);
-				margin-inline: auto;
-				background-color: transparent;
-				box-shadow: none;
-				color: var(--text-color);
-			}
-
-			p {
-				line-height: 1.75;
+			& p {
 				text-align: left;
 				color: var(--text-color);
 			}
 
-			.hero {
+			& .hero {
 				width: var(--100);
 				margin-inline: auto;
 				color: var(--text-color);
-			}
-
-			.text {
-				max-width: var(--100);
-				margin-inline: auto;
-				font-size: clamp(1.2rem, 1.5vw, 2rem);
-				font-weight: 500;
-				line-height: 1.5;
-				text-wrap: none;
-				z-index: 7;
-				color: var(--text-color);
-			}
-
-			.text-hero {
-				font-size: 1.35rem;
-				line-height: 1.5;
-			}
-
-			.bio {
-				color: var(--white);
-				position: relative;
-
-				.icons {
-					display: flex;
-					justify-content: space-evenly;
-					align-items: center;
-					gap: 0.25rem;
-					margin-top: -2rem;
-					margin-left: 3rem;
-					padding-right: 1.2rem;
-				}
 			}
 		}
 	}
@@ -245,33 +242,33 @@
 			width: var(--100);
 			margin: 5rem auto;
 
-			article {
+			& article {
 				width: var(--100);
 				margin: 0 auto;
 			}
 
-			.text {
-				max-width: 90%;
-				line-height: 1.75;
-			}
-
-			.bio {
+			& .bio {
 				margin-bottom: -5rem;
 
-				.icons {
+				& .icons {
 					margin-left: 0;
 					margin-top: 2rem;
 					padding-right: 0;
 				}
-			}
 
-			.margin__b {
-				margin-bottom: -2rem;
-			}
+				& .text {
+					max-width: 90%;
+					line-height: 1.75;
+				}
 
-			.text__w {
-				width: 75%;
-				margin: 0 auto;
+				& .margin__b {
+					margin-bottom: -2rem;
+				}
+
+				& .text__w {
+					width: 75%;
+					margin: 0 auto;
+				}
 			}
 		}
 	}

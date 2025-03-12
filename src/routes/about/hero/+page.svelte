@@ -46,7 +46,7 @@
 			transform: translate(-50%, -55%);
 			width: 100%;
 
-			h4 {
+			& h4 {
 				color: var(--text-color);
 				letter-spacing: 0.5px;
 				margin-inline: auto;
@@ -56,18 +56,18 @@
 				padding: 0 1.25rem;
 			}
 
-			.summary {
+			& .summary {
 				margin-inline: auto;
 				font-family: var(--bronova);
 				font-size: clamp(1.15rem, 1.5vw, 2rem);
 				font-weight: 500;
-				width: 95%;
+				width: 80%;
 				padding: 0 1.25rem;
 				margin-bottom: -5%;
 				hyphens: auto;
 			}
 
-			.left {
+			& .left {
 				text-align: left;
 			}
 		}
@@ -90,7 +90,7 @@
 			left: 50%;
 			transform: translate(-50%, -30%);
 
-			.summary {
+			& .summary {
 				letter-spacing: 3px;
 			}
 		}

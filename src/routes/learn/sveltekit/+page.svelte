@@ -11,9 +11,9 @@
 	$effect(() => {
 		const details = document.querySelectorAll('details');
 
-		let tl = gsap.timeline({ defaults: { duration: 3 } });
+		let tl = gsap.timeline({ defaults: { duration: 1 } });
 
-		tl.from(details, { autoAlpha: 0, y: 100, stagger: 0.5, duration: 2 }, 0);
+		tl.from(details, { autoAlpha: 0, y: 100, stagger: 0.5 }, 0);
 	});
 </script>
 
@@ -235,8 +235,8 @@
 
 	section {
 		main {
-			.centerDetail {
-				details {
+			& .centerDetail {
+				& details {
 					max-width: 90vw;
 					margin-inline: auto;
 					position: relative;
@@ -281,7 +281,7 @@
 			}
 		}
 
-		.margin {
+		& .margin {
 			margin-block: 5rem;
 		}
 	}
