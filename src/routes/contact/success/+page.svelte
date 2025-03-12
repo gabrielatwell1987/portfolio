@@ -31,7 +31,7 @@
 		main {
 			min-height: 70vh;
 
-			section {
+			& section {
 				width: var(--100);
 				padding: clamp(2rem, 5vw, 9rem);
 				margin-inline: auto;
@@ -39,21 +39,21 @@
 				text-align: center;
 			}
 
-			p {
+			& p {
 				font-size: clamp(1rem, 1.5vw, 2rem);
 				font-weight: 500;
 				margin: 0.5em 0;
 				color: var(--text-blue);
 			}
 
-			.small {
+			& .small {
 				font-size: clamp(0.8rem, 1.2vw, 1.5rem);
 				font-weight: 200;
 				margin: 2em 0 -0.5rem 0;
 				color: var(--text-gray);
 			}
 
-			.image {
+			& .image {
 				width: clamp(13em, 70vw, 15in);
 				margin-inline: auto;
 				margin-bottom: clamp(2.5rem, 3vw, 5rem);
