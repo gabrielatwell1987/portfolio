@@ -8,6 +8,7 @@
 	import Avatar from '$lib/components/Avatar.svelte';
 	import Popup from '$lib/components/Popup.svelte';
 	import cartoonGabe from '$lib/images/cartoonGabe.webp';
+	// import Testimonial from '$lib/components/Testimonial.svelte';
 
 	// animations
 	$effect(() => {
@@ -72,10 +73,18 @@
 
 	<Project
 		title="busy little bat sewing"
-		img="/projects/busybat.webp"
+		img="/projects/busybatleopard.webp"
 		url="https://busybat.vercel.app"
 		description="sveltekit"
 	/>
+
+	<!-- <Testimonial
+		name="Busy Little Bat Sewing"
+		title="Owner"
+		testimonial="Gabe was a pleasure to work with. He was very professional and made sure I was happy with the final product. I would recommend him to anyone looking for a website."
+		rating="5,"
+		avatar="/projects/busybatleopard.webp"
+	/> -->
 
 	<Project
 		title="pixipalette"
