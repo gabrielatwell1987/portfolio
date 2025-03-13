@@ -71,6 +71,13 @@
 	/> -->
 
 	<Project
+		title="busy little bat sewing"
+		img="/projects/busybat.webp"
+		url="https://busybat.vercel.app"
+		description="sveltekit"
+	/>
+
+	<Project
 		title="pixipalette"
 		img="/projects/pixipalette.webp"
 		url="https://pixipalette.vercel.app"
@@ -180,8 +187,7 @@
 			src="/logos/frontend_dev.webp"
 			alt="Frontend Developer"
 			text="distinguish your website"
-		/>
-	</section> -->
+		/> -->
 
 	<Avatar src={cartoonGabe} alt="cartoon gabe" name="gabeAtwell" />
 
