@@ -56,7 +56,7 @@
 					font-size: clamp(1.15rem, 1.5vw, 2rem);
 					font-weight: 400;
 					letter-spacing: 0.5px;
-					width: 80%;
+					width: 99%;
 					padding: 0 1.5rem;
 					margin-bottom: -2%;
 					color: var(--text-color);
@@ -75,7 +75,7 @@
 			font-size: 2rem;
 
 			& .summary {
-				width: 85%;
+				width: 95%;
 			}
 		}
 	}
@@ -100,7 +100,7 @@
 
 	@media (width >= 1024px) {
 		.summary {
-			width: 80%;
+			width: 90%;
 			margin-inline: auto;
 		}
 	}

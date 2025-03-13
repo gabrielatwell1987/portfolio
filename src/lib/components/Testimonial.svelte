@@ -96,6 +96,10 @@
 		gap: 1rem;
 		max-width: 55em;
 		padding: 1rem 0;
+
+		@media (width <= 500px) {
+			padding: 1em;
+		}
 	}
 
 	.avatar {
