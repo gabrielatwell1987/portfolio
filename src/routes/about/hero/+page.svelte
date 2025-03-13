@@ -61,7 +61,7 @@
 				font-family: var(--bronova);
 				font-size: clamp(1.15rem, 1.5vw, 2rem);
 				font-weight: 500;
-				width: 80%;
+				width: 99%;
 				padding: 0 1.25rem;
 				margin-bottom: -5%;
 				hyphens: auto;
@@ -92,6 +92,7 @@
 
 			& .summary {
 				letter-spacing: 3px;
+				width: 90%;
 			}
 		}
 	}
