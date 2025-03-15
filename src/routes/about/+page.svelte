@@ -113,8 +113,8 @@
 				<article class="hero text-hero text__w" aria-label="bio">
 					<p class="text margin__b">
 						Here is another hero section that I created but I like the current hero section (with a
-						static image) that shows when you first come to the website, but I linked this new hero
-						section so you can check out it out!
+						static image) that shows when you first come to the website. This hero section was built
+						with three.js and I linked this new hero section so you can check out it out!
 					</p>
 
 					<div class="hero">
