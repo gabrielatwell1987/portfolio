@@ -5,7 +5,9 @@
 	import Title from '$lib/components/Title.svelte';
 
 	$effect(() => {
-		console.log('Blog page');
+		const main = document.querySelector('main');
+
+		console.log(main);
 
 		document.documentElement.scrollTo(0, 0);
 	});

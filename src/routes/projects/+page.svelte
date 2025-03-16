@@ -13,6 +13,7 @@
 	// animations
 	$effect(() => {
 		const logo = document.querySelector('.logo');
+		const section = document.querySelector('section');
 
 		gsap.set('.content', { autoAlpha: 0 });
 		gsap.set('.link', { autoAlpha: 0 });
@@ -25,7 +26,7 @@
 			0
 		);
 
-		console.log(Project);
+		console.log(section);
 
 		return () => {
 			gsap.killTweensOf(logo);

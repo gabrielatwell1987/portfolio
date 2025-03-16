@@ -4,7 +4,9 @@
 	// import Parallax from '$lib/components/Parallax.svelte';
 
 	$effect(() => {
-		console.log(Photos);
+		const main = document.querySelector('main');
+
+		console.log(main);
 	});
 </script>
 

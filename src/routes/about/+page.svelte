@@ -11,17 +11,16 @@
 	import HeroImage from '$lib/components/HeroImage.svelte';
 
 	$effect(() => {
-		console.log(Grid);
-		console.log(Skills);
-		console.log(Bento);
-		console.log(Tooltip);
+		const main = document.querySelector('main');
 
-		gsap.set(['.a', '.b', '.d'], { yPercent: 25, autoAlpha: 0 });
-		gsap.set(['.hero', '.margin__b'], { yPercent: 25, autoAlpha: 0 });
+		console.log(main);
+
+		gsap.set(['.first', '.second', '.third'], { yPercent: 25, autoAlpha: 0 });
+		gsap.set(['.hero', '.content_width'], { yPercent: 25, autoAlpha: 0 });
 
 		const tl = gsap.timeline();
 
-		tl.to('.a', {
+		tl.to('.first', {
 			yPercent: 0,
 			autoAlpha: 1,
 			duration: 1.25,
@@ -30,7 +29,7 @@
 			delay: 0.3
 		})
 			.to(
-				'.b',
+				'.second',
 				{
 					yPercent: 0,
 					autoAlpha: 1,
@@ -42,7 +41,7 @@
 				'-=1'
 			)
 			.to(
-				['.hero', '.margin__b'],
+				['.hero', '.content_width'],
 				{
 					yPercent: 0,
 					autoAlpha: 1,
@@ -53,7 +52,7 @@
 				'-=.75'
 			)
 			.to(
-				'.d',
+				'.third',
 				{
 					yPercent: 0,
 					autoAlpha: 1,
@@ -65,11 +64,11 @@
 			);
 
 		return () => {
-			gsap.killTweensOf('.d');
+			gsap.killTweensOf('.third');
 			gsap.killTweensOf('.hero');
-			gsap.killTweensOf('.margin__b');
-			gsap.killTweensOf('.b');
-			gsap.killTweensOf('.a');
+			gsap.killTweensOf('.content_width');
+			gsap.killTweensOf('.second');
+			gsap.killTweensOf('.first');
 			gsap.killTweensOf('article');
 		};
 	});
@@ -91,7 +90,7 @@
 			<HeroImage src="/logos/wireframeBg.webp" alt="a laptop hero image" title="About Me" />
 
 			<div class="bio" aria-label="bio">
-				<p class="text a indent">
+				<p class="text first indent">
 					My name is Gabriel Atwell and I am a frontend web developer. I started out with the
 					basics: HTML, CSS, and JavaScript. I then moved on to more advanced topics such as
 					Svelte/Sveltekit, Node.js, GSAP, and a little bit of three.js but I have begun to teach
@@ -99,7 +98,7 @@
 					to become more of a fullstack developer.
 				</p>
 
-				<p class="text b">
+				<p class="text second">
 					I have a passion for creating websites that are clean, crisp, and completely functional. I
 					enjoy seeing a physical change when I edit or create code. I also enjoy creating
 					animations for the web! I mainly enjoy animating the web because I believe that it makes
@@ -111,10 +110,10 @@
 				</p>
 
 				<article class="hero text-hero text__w" aria-label="bio">
-					<p class="text margin__b">
+					<p class="text content_width">
 						Here is another hero section that I created but I like the current hero section (with a
 						static image) that shows when you first come to the website. This hero section was built
-						with three.js and I linked this new hero section so you can check out it out!
+						with three.js.. Check out it out!
 					</p>
 
 					<div class="hero">
@@ -126,7 +125,7 @@
 					</div>
 				</article>
 
-				<p class="text d indent">
+				<p class="text third indent">
 					Please note: This is a PWA (Progressive Web App) so you can install it on your device if
 					you want to! This makes your website able to be used on any device.. mobile, tablet,
 					laptop, and desktop. It's like having a mobile app that is not made with native
@@ -261,7 +260,7 @@
 					line-height: 1.75;
 				}
 
-				& .margin__b {
+				& .content_width {
 					margin-bottom: -2rem;
 				}
 
