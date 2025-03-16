@@ -3,12 +3,6 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import AnimatedIntro from '$lib/components/AnimatedIntro.svelte';
 	import ImageIntro from '$lib/components/ImageIntro.svelte';
-
-	$effect(() => {
-		console.log(ImageIntro);
-		console.log(AnimatedIntro);
-		console.log(Hero);
-	});
 </script>
 
 <SEO

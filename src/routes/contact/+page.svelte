@@ -4,7 +4,9 @@
 	import Title from '$lib/components/Title.svelte';
 
 	$effect(() => {
-		console.log(ContactForm);
+		const main = document.querySelector('main');
+
+		console.log(main);
 	});
 </script>
 
