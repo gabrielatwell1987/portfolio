@@ -125,7 +125,7 @@
 	<Project
 		title="github search"
 		img="/projects/github.webp"
-		url="https://github-user-api-search.vercel.app"
+		url="https://github-user-search-api.vercel.app"
 		description="svelte"
 	/>
 
