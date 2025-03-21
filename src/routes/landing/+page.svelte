@@ -6,7 +6,7 @@
 </script>
 
 <SEO
-	title="The main page of Gabe Atwell's portfolio"
+	title="Gabe Atwell's portfolio"
 	description="The home page of Gabriel Atwell's portfolio"
 	keywords="gabriel atwell home page, gabe atwell home page, frontend crafted web experiences, atwell ui, do you need a website"
 />
