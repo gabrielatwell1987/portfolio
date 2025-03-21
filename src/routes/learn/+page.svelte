@@ -20,7 +20,10 @@
 />
 
 <main>
-	<Title title="topics" />
+	<!-- <Title title="topics" /> -->
+	<div class="margin">
+		<AnimatedHeading title1="seeing" span="is" title2="believing" />
+	</div>
 
 	<article>
 		<section aria-label="icons">
@@ -41,9 +44,9 @@
 			</a>
 		</div>
 
-		<div class="margin">
+		<!-- <div class="margin">
 			<AnimatedHeading title1="seeing" span="is" title2="believing" />
-		</div>
+		</div> -->
 	</article>
 </main>
 
@@ -51,6 +54,15 @@
 	main {
 		padding-top: 5%;
 		min-height: 100vh;
+
+		& .margin {
+			margin-top: 5%;
+
+			@media (width <= 600px) {
+				margin-top: 3em;
+				margin-bottom: 10em;
+			}
+		}
 
 		& article {
 			display: flex;
@@ -66,8 +78,15 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				gap: 3em;
-				flex-direction: column;
+				gap: 25em;
+
+				@media (width <= 980px) {
+					gap: 10em;
+				}
+
+				@media (width <= 500px) {
+					gap: 0.75em;
+				}
 
 				& a {
 					display: block;
@@ -92,10 +111,6 @@
 					filter: opacity(0.5);
 					scale: 0.95;
 				}
-			}
-
-			& .margin {
-				margin-top: 10%;
 			}
 		}
 
