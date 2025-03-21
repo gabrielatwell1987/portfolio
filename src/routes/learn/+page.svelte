@@ -60,7 +60,7 @@
 
 			@media (width <= 600px) {
 				margin-top: 3em;
-				margin-bottom: 10em;
+				margin-bottom: 7em;
 			}
 		}
 
