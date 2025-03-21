@@ -56,7 +56,7 @@
 					font-size: clamp(1.15rem, 1.5vw, 2rem);
 					font-weight: 400;
 					letter-spacing: 0.5px;
-					width: 90%;
+					width: 85%;
 					padding: 0 1.5rem;
 					margin-bottom: -2%;
 					color: var(--text-color);
