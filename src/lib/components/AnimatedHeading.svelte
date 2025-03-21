@@ -59,6 +59,7 @@
 		justify-content: center;
 		align-items: center;
 		overflow-x: clip;
+		margin-top: 5em;
 
 		.h1-l,
 		.h1-r {
