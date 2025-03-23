@@ -27,26 +27,22 @@
 
 	<article>
 		<section aria-label="icons">
-			<a class="gs" href="learn/greensock" style="width: clamp(10em, 25vw, 13em);">
+			<a class="gs" href="learn/greensock" style="width: clamp(10em, 25vw, 20em);">
 				<Image src="/logos/gsapLogo.svg" alt="greensock" width="250" />
 			</a>
 
-			<a class="sk" href="learn/sveltekit" style="width: clamp(10em, 25vw, 13em);">
+			<a class="sk" href="learn/sveltekit" style="width: clamp(10em, 25vw, 18em);">
 				<Image src="/logos/svelteLogo.png" alt="sveltekit" width="350" />
 			</a>
 		</section>
 
 		<div class="animation-link" aria-label="animation">
 			<a href="/learn/posts">
-				<div class="image" style="width: clamp(15em, 25vw, 25em);">
+				<div class="image" style="width: clamp(15em, 25vw, 30em);">
 					<Image src="logos/animation.webp" alt="A logo that says web animation techniques." />
 				</div>
 			</a>
 		</div>
-
-		<!-- <div class="margin">
-			<AnimatedHeading title1="seeing" span="is" title2="believing" />
-		</div> -->
 	</article>
 </main>
 
@@ -59,8 +55,8 @@
 			margin-top: 5%;
 
 			@media (width <= 600px) {
-				margin-top: 3em;
-				margin-bottom: 3em;
+				margin-top: 5em;
+				margin-bottom: 5em;
 			}
 		}
 
@@ -86,6 +82,7 @@
 
 				@media (width <= 500px) {
 					gap: 0.75em;
+					margin-bottom: -1em;
 				}
 
 				& a {
