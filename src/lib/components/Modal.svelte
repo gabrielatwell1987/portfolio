@@ -1,42 +1,24 @@
 <script>
 	import '@fortawesome/fontawesome-free/css/all.css';
-	import gsap from 'gsap';
 	import Image from './Image.svelte';
 
-	$effect(() => {
-		const modal = document.querySelector('#modal');
-		const openModal = document.querySelector('.open-button');
-		const closeModal = document.querySelector('.close-button');
+	let isOpen = $state(false);
+	let modal;
 
-		gsap.set(modal, { autoAlpha: 0 });
+	function openModal() {
+		modal.showModal();
+		isOpen = true;
+	}
 
-		openModal.addEventListener('click', () => {
-			gsap.to(modal, {
-				autoAlpha: 1,
-				duration: 2,
-				width: '100%',
-				ease: 'power2.out'
-			});
-
-			modal.showModal();
-		});
-
-		closeModal.addEventListener('click', () => {
-			gsap.to(modal, {
-				autoAlpha: 0,
-				duration: 1.75,
-				ease: 'power2.out',
-				onComplete: () => modal.close()
-			});
-		});
-
-		return () => {
-			gsap.killTweensOf(modal);
-		};
-	});
+	function closeModal() {
+		isOpen = false;
+		setTimeout(() => {
+			if (!isOpen) modal.close();
+		}, 1750);
+	}
 </script>
 
-<button class="open-button" aria-label="open button">
+<button class="open-button" aria-label="open button" onclick={openModal}>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 576 512"
@@ -48,10 +30,10 @@
 	</svg>
 </button>
 
-<dialog id="modal" aria-label="modal">
+<dialog id="modal" aria-label="modal" bind:this={modal} class:open={isOpen}>
 	<article>
 		<header>
-			<button rel="prev" class="close-button" aria-label="close button">
+			<button rel="prev" class="close-button" aria-label="close button" onclick={closeModal}>
 				<i class="fa-solid fa-xmark"></i>
 			</button>
 
@@ -70,6 +52,23 @@
 </dialog>
 
 <style>
+	dialog {
+		opacity: 0;
+		visibility: hidden;
+		width: 0;
+		transition:
+			opacity 2s ease-out,
+			visibility 2s ease-out,
+			width 2s ease-out;
+		background: none;
+
+		&.open {
+			opacity: 1;
+			visibility: visible;
+			width: 100%;
+		}
+	}
+
 	@media (min-width: 320px) {
 		.open-button {
 			display: block;
@@ -79,7 +78,6 @@
 			box-shadow: none;
 			color: var(--text-pale);
 			width: fit-content;
-			/* height: 100%; */
 			outline: none;
 			border: none;
 			border-radius: 15px;
@@ -128,6 +126,7 @@
 			margin-inline: auto;
 			margin-top: -1rem;
 			cursor: pointer;
+			padding: 0 2rem;
 
 			&:hover {
 				animation: wiggle 01s ease-in-out infinite;
@@ -137,6 +136,7 @@
 			&:focus-visible {
 				outline: 1px solid var(--text-color);
 				background: transparent;
+				/* padding: 0 2rem; */
 			}
 
 			& i {
