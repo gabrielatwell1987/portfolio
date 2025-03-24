@@ -1,5 +1,4 @@
 <script>
-	import { gsap } from 'gsap';
 	import Title from '$lib/components/Title.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import Button from '$lib/components/Button.svelte';
@@ -7,13 +6,13 @@
 	import Heading from './Heading.svelte';
 	import Learn from '$lib/components/Learn.svelte';
 
+	let detailsVisible = $state(false);
+
 	// animations
 	$effect(() => {
-		const details = document.querySelectorAll('details');
-
-		let tl = gsap.timeline({ defaults: { duration: 1 } });
-
-		tl.from(details, { autoAlpha: 0, y: 100, stagger: 0.5 }, 0);
+		setTimeout(() => {
+			detailsVisible = true;
+		}, 100);
 	});
 </script>
 
@@ -31,7 +30,11 @@
 
 		<main>
 			<div class="centerDetail">
-				<details name="gsap">
+				<details
+					name="gsap"
+					class:animate-in={detailsVisible}
+					style="--anim-delay: 0s; visibility: hidden;"
+				>
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>What's GSAP?</b></span></summary
@@ -49,7 +52,11 @@
 					</p>
 				</details>
 
-				<details name="gsap">
+				<details
+					name="gsap"
+					class:animate-in={detailsVisible}
+					style="--anim-delay: 0.5s; visibility: hidden;"
+				>
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Install</b></span></summary
@@ -70,7 +77,11 @@
 					</p>
 				</details>
 
-				<details name="gsap">
+				<details
+					name="gsap"
+					class:animate-in={detailsVisible}
+					style="--anim-delay: 1s; visibility: hidden;"
+				>
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Syntax</b></span></summary
@@ -97,7 +108,11 @@
 					</p>
 				</details>
 
-				<details name="gsap">
+				<details
+					name="gsap"
+					class:animate-in={detailsVisible}
+					style="--anim-delay: 1.5s; visibility: hidden;"
+				>
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>Variables</b></span>
@@ -179,6 +194,11 @@
 		interpolate-size: allow-keywords;
 	}
 
+	.animate-in {
+		animation: fadeInUp 1s ease forwards;
+		animation-delay: var(--anim-delay, 0s);
+	}
+
 	section {
 		main {
 			& .centerDetail {
@@ -234,6 +254,19 @@
 				color: var(--text-blue);
 				border-color: var(--text-gray);
 			}
+		}
+	}
+
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(100px);
+			visibility: hidden;
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+			visibility: visible;
 		}
 	}
 </style>

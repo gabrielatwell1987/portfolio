@@ -1,45 +1,25 @@
 <script>
-	import { gsap } from 'gsap';
-	import SplitType from 'split-type';
-
 	/** @type {{text: any, span: any}} */
 	let { text, span } = $props();
 
+	let mounted = $state(false);
+	let chars = $state([]);
+
 	$effect(() => {
-		const littleSentence = document.querySelector('.sentence');
-		const biggerWord = document.querySelector('.bigWord');
-		const split = new SplitType(biggerWord, { types: 'chars' });
-
-		const tl = gsap.timeline({ defaults: { ease: 'power3.inOut', duration: 1.5 } });
-
-		tl.from(
-			littleSentence,
-			{
-				yPercent: 100,
-				autoAlpha: 0,
-				duration: 1.25,
-				ease: 'sine.inOut'
-			},
-			'+=1'
-		).from(split.chars, {
-			xPercent: 150,
-			autoAlpha: 0,
-			stagger: {
-				amount: 0.75,
-				from: 'random'
-			},
-			duration: 3,
-			ease: 'power3.inOut'
-		});
-
-		return () => {
-			gsap.killTweensOf([littleSentence, split.chars]);
-		};
+		chars = span.split('');
+		mounted = true;
 	});
 </script>
 
 <section class="animated-text" aria-label="animated text">
-	<h1 class="sentence">{text}<span class="bigWord glow">{span}</span></h1>
+	<h1 class="sentence" class:animate={mounted}>
+		{text}
+		<span class="bigWord glow">
+			{#each chars as char, i}
+				<span class="char" style="--delay: {0.05 + i * 0.05}s">{char}</span>
+			{/each}
+		</span>
+	</h1>
 </section>
 
 <style>
@@ -57,27 +37,46 @@
 		text-align: center;
 		margin: 10% 0;
 		padding: 2rem;
+		transform: translateY(100%);
+		opacity: 0;
+		transition:
+			transform 1.25s ease-in-out,
+			opacity 1.25s ease-in-out;
+		transition-delay: 1s;
+	}
 
-		.bigWord {
-			font-family: var(--orbitron);
-			font-size: clamp(3rem, 15vw, 40rem);
-			color: var(--text-blue);
-			text-wrap: none;
-			display: block;
-			letter-spacing: 1px;
-			line-height: 1.2;
-		}
+	.sentence.animate {
+		transform: translateY(0);
+		opacity: 1;
+	}
 
-		.glow {
-			color: var(--dark-blue);
-			text-shadow:
-				0 0 5px #17262c,
-				0 0 5px #eee,
-				0 0 5px #eee,
-				0 0 10px #eee,
-				0 0 15px #eee,
-				0 0 20px #eee;
-		}
+	.bigWord {
+		font-family: var(--orbitron);
+		font-size: clamp(3rem, 15vw, 40rem);
+		color: var(--text-blue);
+		text-wrap: none;
+		display: block;
+		letter-spacing: 1px;
+		line-height: 1.2;
+	}
+
+	.char {
+		display: inline-block;
+		transform: translateX(150%);
+		opacity: 0;
+		animation: charAnimation 3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+		animation-delay: calc(var(--delay) + 2.25s);
+	}
+
+	.glow {
+		color: var(--dark-blue);
+		text-shadow:
+			0 0 5px #17262c,
+			0 0 5px #eee,
+			0 0 5px #eee,
+			0 0 10px #eee,
+			0 0 15px #eee,
+			0 0 20px #eee;
 	}
 
 	@media (width <= 768px) {
@@ -103,6 +102,17 @@
 						0 0 5px #eee;
 				}
 			}
+		}
+	}
+
+	@keyframes charAnimation {
+		0% {
+			transform: translateX(150%);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
 		}
 	}
 

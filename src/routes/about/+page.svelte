@@ -1,5 +1,5 @@
 <script>
-	import { gsap } from 'gsap';
+	// import { gsap } from 'gsap';
 	import Button from '$lib/components/Button.svelte';
 	import Grid from '$lib/components/Grid.svelte';
 	import Skills from '$lib/components/Skills.svelte';
@@ -10,68 +10,68 @@
 	import UsefulLinks from '$lib/components/UsefulLinks.svelte';
 	import HeroImage from '$lib/components/HeroImage.svelte';
 
-	$effect(() => {
-		const main = document.querySelector('main');
+	// $effect(() => {
+	// 	const main = document.querySelector('main');
 
-		console.log(main);
+	// 	console.log(main);
 
-		gsap.set(['.first', '.second', '.third'], { yPercent: 25, autoAlpha: 0 });
-		gsap.set(['.hero', '.content_width'], { yPercent: 25, autoAlpha: 0 });
+	// 	gsap.set(['.first', '.second', '.third'], { yPercent: 25, autoAlpha: 0 });
+	// 	gsap.set(['.hero', '.content_width'], { yPercent: 25, autoAlpha: 0 });
 
-		const tl = gsap.timeline();
+	// 	const tl = gsap.timeline();
 
-		tl.to('.first', {
-			yPercent: 0,
-			autoAlpha: 1,
-			duration: 1.25,
-			ease: 'power2.out',
-			stagger: 0.5,
-			delay: 0.3
-		})
-			.to(
-				'.second',
-				{
-					yPercent: 0,
-					autoAlpha: 1,
-					duration: 1.25,
-					ease: 'power2.out',
-					stagger: 0.5,
-					delay: 0.4
-				},
-				'-=1'
-			)
-			.to(
-				['.hero', '.content_width'],
-				{
-					yPercent: 0,
-					autoAlpha: 1,
-					duration: 1.25,
-					ease: 'power2.out',
-					delay: 0.5
-				},
-				'-=.75'
-			)
-			.to(
-				'.third',
-				{
-					yPercent: 0,
-					autoAlpha: 1,
-					duration: 1.25,
-					ease: 'power2.out',
-					delay: 0.6
-				},
-				'-=.75'
-			);
+	// 	tl.to('.first', {
+	// 		yPercent: 0,
+	// 		autoAlpha: 1,
+	// 		duration: 1.25,
+	// 		ease: 'power2.out',
+	// 		stagger: 0.5,
+	// 		delay: 0.3
+	// 	})
+	// 		.to(
+	// 			'.second',
+	// 			{
+	// 				yPercent: 0,
+	// 				autoAlpha: 1,
+	// 				duration: 1.25,
+	// 				ease: 'power2.out',
+	// 				stagger: 0.5,
+	// 				delay: 0.4
+	// 			},
+	// 			'-=1'
+	// 		)
+	// 		.to(
+	// 			['.hero', '.content_width'],
+	// 			{
+	// 				yPercent: 0,
+	// 				autoAlpha: 1,
+	// 				duration: 1.25,
+	// 				ease: 'power2.out',
+	// 				delay: 0.5
+	// 			},
+	// 			'-=.75'
+	// 		)
+	// 		.to(
+	// 			'.third',
+	// 			{
+	// 				yPercent: 0,
+	// 				autoAlpha: 1,
+	// 				duration: 1.25,
+	// 				ease: 'power2.out',
+	// 				delay: 0.6
+	// 			},
+	// 			'-=.75'
+	// 		);
 
-		return () => {
-			gsap.killTweensOf('.third');
-			gsap.killTweensOf('.hero');
-			gsap.killTweensOf('.content_width');
-			gsap.killTweensOf('.second');
-			gsap.killTweensOf('.first');
-			gsap.killTweensOf('article');
-		};
-	});
+	// 	return () => {
+	// 		gsap.killTweensOf('.third');
+	// 		gsap.killTweensOf('.hero');
+	// 		gsap.killTweensOf('.content_width');
+	// 		gsap.killTweensOf('.second');
+	// 		gsap.killTweensOf('.first');
+	// 		gsap.killTweensOf('article');
+	// 	};
+	// });
 </script>
 
 <svelte:head>
@@ -90,7 +90,7 @@
 			<HeroImage src="/logos/wireframeBg.webp" alt="a laptop hero image" title="About Me" />
 
 			<div class="bio" aria-label="bio">
-				<p class="text first indent">
+				<p class="text indent">
 					My name is Gabriel Atwell and I am a frontend web developer. I started out with the
 					basics: HTML, CSS, and JavaScript. I then moved on to more advanced topics such as
 					Svelte/Sveltekit, Node.js, GSAP, and a little bit of three.js but I have begun to teach
@@ -98,7 +98,7 @@
 					to become more of a fullstack developer.
 				</p>
 
-				<p class="text second">
+				<p class="text">
 					I have a passion for creating websites that are clean, crisp, and completely functional. I
 					enjoy seeing a physical change when I edit or create code. I also enjoy creating
 					animations for the web! I mainly enjoy animating the web because I believe that it makes
@@ -125,7 +125,7 @@
 					</div>
 				</article>
 
-				<p class="text third indent">
+				<p class="text indent">
 					Please note: This is a PWA (Progressive Web App) so you can install it on your device if
 					you want to! This makes your website able to be used on any device.. mobile, tablet,
 					laptop, and desktop. It's like having a mobile app that is not made with native

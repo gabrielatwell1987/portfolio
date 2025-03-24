@@ -1,6 +1,6 @@
 <script>
-	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	// import { gsap } from 'gsap';
+	// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Title from '$lib/components/Title.svelte';
 	import archie from '$lib/images/archie.webp';
 	import autumn from '$lib/images/autumn.webp';
@@ -14,64 +14,102 @@
 	import wtf2 from '$lib/images/wtf2.webp';
 	import wtf3 from '$lib/images/wtf3.webp';
 
+	let visibleSections = $state([false, false, false, false]);
+
 	$effect(() => {
-		const main = document.querySelector('main');
-		const gabeElements = document.querySelectorAll('.gabe');
-		const pictures = document.querySelectorAll('.pictures');
+		// const main = document.querySelector('main');
+		// const gabeElements = document.querySelectorAll('.gabe');
+		// const pictures = document.querySelectorAll('.pictures');
 
-		gsap.registerPlugin(ScrollTrigger);
+		// gsap.registerPlugin(ScrollTrigger);
 
-		// responsive animations
-		let mm = gsap.matchMedia();
+		// // responsive animations
+		// let mm = gsap.matchMedia();
 
-		mm.add('(max-width: 767px', () => {
-			gsap.set(pictures, { autoAlpha: 0 });
-			gsap.set(gabeElements, { scale: 0.9 });
+		// mm.add('(max-width: 767px', () => {
+		// 	gsap.set(pictures, { autoAlpha: 0 });
+		// 	gsap.set(gabeElements, { scale: 0.9 });
 
-			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
+		// 	let tl = gsap.timeline({ defaults: { duration: 1.5 } });
 
-			tl.to(pictures, { autoAlpha: 1, duration: 2 }).from(gabeElements, {
-				opacity: 0,
-				stagger: 0.5
-			});
+		// 	tl.to(pictures, { autoAlpha: 1, duration: 2 }).from(gabeElements, {
+		// 		opacity: 0,
+		// 		stagger: 0.5
+		// 	});
+		// });
+
+		// mm.add('(min-width: 768px', () => {
+		// 	gsap.set(gabeElements, { scale: 0.75, x: '-30%', autoAlpha: 0 });
+
+		// 	let tl = gsap.timeline({ defaults: { duration: 1.5 } });
+
+		// 	tl.to(gabeElements, {
+		// 		x: 0,
+		// 		scale: 1,
+		// 		stagger: 0.5,
+		// 		repeat: 1,
+		// 		yoyo: true,
+		// 		autoAlpha: 1,
+		// 		scrollTrigger: {
+		// 			trigger: 'pictures',
+		// 			start: 'top 0%',
+		// 			end: '+=500%',
+		// 			toggleActions: 'play none none reverse',
+		// 			stagger: 0.75,
+		// 			scrub: 1
+		// 		}
+		// 	}).to(gabeElements, { scale: 1.1, duration: 2 });
+
+		// 	tl.to(
+		// 		gabeElements,
+		// 		{
+		// 			rotation: (i) => (i % 2 === 0 ? -2 : 2),
+		// 			duration: 1
+		// 		},
+		// 		0
+		// 	);
+		// });
+
+		// return () => {
+		// 	gsap.killTweensOf(main);
+		// 	gsap.killTweensOf(pictures);
+		// 	gsap.killTweensOf(gabeElements);
+		// };
+
+		const pictureElements = document.querySelectorAll('.pictures');
+
+		if (!pictureElements.length) return;
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					const index = Array.from(pictureElements).indexOf(entry.target);
+					if (index >= 0) {
+						if (entry.isIntersecting) {
+							visibleSections[index] = true;
+						} else if (entry.boundingClientRect.top > 0) {
+							// Only reset when scrolling back up
+							visibleSections[index] = false;
+						}
+					}
+				});
+			},
+			{
+				root: null,
+				rootMargin: '0px',
+				threshold: 0.1
+			}
+		);
+
+		pictureElements.forEach((section) => {
+			observer.observe(section);
 		});
 
-		mm.add('(min-width: 768px', () => {
-			gsap.set(gabeElements, { scale: 0.75, x: '-30%', autoAlpha: 0 });
-
-			let tl = gsap.timeline({ defaults: { duration: 1.5 } });
-
-			tl.to(gabeElements, {
-				x: 0,
-				scale: 1,
-				stagger: 0.5,
-				repeat: 1,
-				yoyo: true,
-				autoAlpha: 1,
-				scrollTrigger: {
-					trigger: 'pictures',
-					start: 'top 0%',
-					end: '+=500%',
-					toggleActions: 'play none none reverse',
-					stagger: 0.75,
-					scrub: 1
-				}
-			}).to(gabeElements, { scale: 1.1, duration: 2 });
-
-			tl.to(
-				gabeElements,
-				{
-					rotation: (i) => (i % 2 === 0 ? -2 : 2),
-					duration: 1
-				},
-				0
-			);
-		});
-
+		// Cleanup when component is destroyed
 		return () => {
-			gsap.killTweensOf(main);
-			gsap.killTweensOf(pictures);
-			gsap.killTweensOf(gabeElements);
+			pictureElements.forEach((section) => {
+				observer.unobserve(section);
+			});
 		};
 	});
 </script>
@@ -82,36 +120,54 @@
 	<h2>scroll down <span class="arrow">&darr;</span></h2>
 
 	<section>
-		<div class="pictures" aria-label="pictures">
+		<div class="pictures" aria-label="pictures" class:visible={visibleSections[0]}>
 			<aside class="flex">
-				<img class="gabe" src={gabe} alt="Gabriel Atwell" loading="lazy" />
+				<img class="gabe" src={gabe} alt="Gabriel Atwell" loading="lazy" style="--index: 0" />
 
-				<img class="gabe" src={gabe2} alt="Gabriel's face" loading="lazy" />
+				<img class="gabe" src={gabe2} alt="Gabriel's face" loading="lazy" style="--index: 1" />
 
-				<img src={gabe5} alt="Gabriel" class="gabe" loading="lazy" />
+				<img src={gabe5} alt="Gabriel" class="gabe" loading="lazy" style="--index: 2" />
 			</aside>
 		</div>
 
-		<div class="pictures" aria-label="pictures">
+		<div class="pictures" aria-label="pictures" class:visible={visibleSections[1]}>
 			<aside class="flex">
-				<img class="gabe ar58" src={gabe4} alt="Gabriel in a restaurant" loading="lazy" />
+				<img
+					class="gabe ar58"
+					src={gabe4}
+					alt="Gabriel in a restaurant"
+					loading="lazy"
+					style="--index: 0"
+				/>
 
-				<img src={autumn} alt="Gabe and his daughter" class="gabe ar58" loading="lazy" />
+				<img
+					src={autumn}
+					alt="Gabe and his daughter"
+					class="gabe ar58"
+					loading="lazy"
+					style="--index: 1"
+				/>
 
-				<img class="gabe ar58" src={archie} alt="Gabe's poodle Archie" loading="lazy" />
+				<img
+					class="gabe ar58"
+					src={archie}
+					alt="Gabe's poodle Archie"
+					loading="lazy"
+					style="--index: 2"
+				/>
 			</aside>
 		</div>
 
-		<div class="pictures" aria-label="pictures">
+		<div class="pictures" aria-label="pictures" class:visible={visibleSections[2]}>
 			<aside class="flex">
-				<img src={gabe3} alt="Really old" class="gabe" loading="lazy" />
+				<img src={gabe3} alt="Really old" class="gabe" loading="lazy" style="--index: 0" />
 
 				<img
 					src={wtf}
 					alt="Trying to burn gabe"
 					class="gabe"
 					loading="lazy"
-					style="width: 50em; height: 20em;"
+					style="width: 50em; height: 20em; --index: 1"
 				/>
 
 				<img
@@ -119,16 +175,22 @@
 					alt="Gabe's face on hulk hogan"
 					class="gabe ar11"
 					loading="lazy"
-					style="width: 50em; height: 20em;"
+					style="width: 50em; height: 20em; --index: 2"
 				/>
 			</aside>
 		</div>
 
-		<div class="pictures" aria-label="pictures">
+		<div class="pictures" aria-label="pictures" class:visible={visibleSections[3]}>
 			<aside class="flex">
-				<img src={wtf3} alt="when gabe was 5 years old" class="gabe" loading="lazy" />
+				<img
+					src={wtf3}
+					alt="when gabe was 5 years old"
+					class="gabe"
+					loading="lazy"
+					style="--index: 0"
+				/>
 
-				<img class="gabe" src={monkey} alt="monkey" loading="lazy" />
+				<img class="gabe" src={monkey} alt="monkey" loading="lazy" style="--index: 1" />
 			</aside>
 		</div>
 	</section>
@@ -137,6 +199,8 @@
 <style>
 	:root {
 		--100: 100%;
+		--animation-duration: 1.5s;
+		--stagger-delay: 0.5s;
 	}
 
 	@media screen and (width >= 300px) {
@@ -156,6 +220,7 @@
 
 				& .arrow {
 					font-size: clamp(1.5rem, 2.5vw, 3rem);
+					animation: fadeIn 1s ease-in-out infinite alternate;
 				}
 			}
 
@@ -169,6 +234,32 @@
 					display: grid;
 					grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 					gap: 4rem;
+					opacity: 0;
+					visibility: hidden;
+					transition:
+						opacity 1s ease-out,
+						visibility 1s ease-out;
+
+					&.visible {
+						opacity: 1;
+						visibility: visible;
+					}
+
+					@media (width <= 767px) {
+						&.visible .gabe {
+							/* opacity: 0; */
+							animation: fadeIn var(--animation-duration) ease-out forwards;
+							animation-delay: calc(var(--index) * var(--stagger-delay));
+						}
+					}
+
+					@media (width >= 768px) {
+						&.visible .gabe {
+							/* opacity: 0; */
+							animation: fadeIn var(--animation-duration) ease-out forwards;
+							animation-delay: calc(var(--index) * var(--stagger-delay));
+						}
+					}
 
 					& img {
 						width: 100%;
@@ -183,16 +274,16 @@
 							margin-bottom: 2em;
 							max-width: 20em;
 							border-radius: var(--radius);
+							transition: filter 750ms ease-in-out;
 
 							&:hover {
 								filter: drop-shadow(0 0 0.25rem var(--text-gray));
-								opacity: 1;
+								animation: wiggle 1s ease-in-out infinite !important;
 							}
 
 							&:not(:hover) {
 								filter: drop-shadow(0);
 								transition: filter 750ms ease-in-out;
-								opacity: 0.75;
 							}
 
 							&.ar58 {
@@ -246,18 +337,26 @@
 		}
 	}
 
+	@keyframes fadeIn {
+		0% {
+			/* opacity: 0; */
+			transform: translateY(20px);
+		}
+		100% {
+			/* opacity: 1; */
+			transform: translateY(0);
+		}
+	}
+
 	@keyframes wiggle {
 		0% {
-			rotate: 0deg;
-			translate: 0 0;
+			transform: rotate(0deg);
 		}
 		25% {
-			rotate: -2deg;
-			translate: -5px 0;
+			transform: rotate(-2deg);
 		}
 		80% {
-			rotate: 2deg;
-			translate: 5px 0;
+			transform: rotate(2deg);
 		}
 	}
 </style>
