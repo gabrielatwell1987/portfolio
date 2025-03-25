@@ -55,12 +55,15 @@
 	dialog {
 		opacity: 0;
 		visibility: hidden;
-		width: 0;
 		transition:
-			opacity 2s ease-out,
-			visibility 2s ease-out,
-			width 2s ease-out;
+			opacity 1.5s ease-out,
+			visibility 1.5s ease-out,
+			width 1.5s ease-out;
 		background: none;
+		-webkit-transition:
+			opacity 1.5s ease-out,
+			visibility 1.5s ease-out,
+			transform 1.5s ease-out;
 
 		&.open {
 			opacity: 1;
@@ -157,6 +160,10 @@
 				border-radius: 1rem;
 				background: var(--blackest);
 				box-shadow: 0 0 5px 3px var(--dark-blue);
+
+				@media (width <= 500px) {
+					padding: 3em 1em;
+				}
 
 				& header {
 					background: transparent;

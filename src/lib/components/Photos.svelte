@@ -1,6 +1,4 @@
 <script>
-	// import { gsap } from 'gsap';
-	// import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Title from '$lib/components/Title.svelte';
 	import archie from '$lib/images/archie.webp';
 	import autumn from '$lib/images/autumn.webp';
@@ -15,67 +13,9 @@
 	import wtf3 from '$lib/images/wtf3.webp';
 
 	let visibleSections = $state([false, false, false, false]);
+	let imagesAnimated = $state([[], [], [], []]);
 
 	$effect(() => {
-		// const main = document.querySelector('main');
-		// const gabeElements = document.querySelectorAll('.gabe');
-		// const pictures = document.querySelectorAll('.pictures');
-
-		// gsap.registerPlugin(ScrollTrigger);
-
-		// // responsive animations
-		// let mm = gsap.matchMedia();
-
-		// mm.add('(max-width: 767px', () => {
-		// 	gsap.set(pictures, { autoAlpha: 0 });
-		// 	gsap.set(gabeElements, { scale: 0.9 });
-
-		// 	let tl = gsap.timeline({ defaults: { duration: 1.5 } });
-
-		// 	tl.to(pictures, { autoAlpha: 1, duration: 2 }).from(gabeElements, {
-		// 		opacity: 0,
-		// 		stagger: 0.5
-		// 	});
-		// });
-
-		// mm.add('(min-width: 768px', () => {
-		// 	gsap.set(gabeElements, { scale: 0.75, x: '-30%', autoAlpha: 0 });
-
-		// 	let tl = gsap.timeline({ defaults: { duration: 1.5 } });
-
-		// 	tl.to(gabeElements, {
-		// 		x: 0,
-		// 		scale: 1,
-		// 		stagger: 0.5,
-		// 		repeat: 1,
-		// 		yoyo: true,
-		// 		autoAlpha: 1,
-		// 		scrollTrigger: {
-		// 			trigger: 'pictures',
-		// 			start: 'top 0%',
-		// 			end: '+=500%',
-		// 			toggleActions: 'play none none reverse',
-		// 			stagger: 0.75,
-		// 			scrub: 1
-		// 		}
-		// 	}).to(gabeElements, { scale: 1.1, duration: 2 });
-
-		// 	tl.to(
-		// 		gabeElements,
-		// 		{
-		// 			rotation: (i) => (i % 2 === 0 ? -2 : 2),
-		// 			duration: 1
-		// 		},
-		// 		0
-		// 	);
-		// });
-
-		// return () => {
-		// 	gsap.killTweensOf(main);
-		// 	gsap.killTweensOf(pictures);
-		// 	gsap.killTweensOf(gabeElements);
-		// };
-
 		const pictureElements = document.querySelectorAll('.pictures');
 
 		if (!pictureElements.length) return;
@@ -87,9 +27,36 @@
 					if (index >= 0) {
 						if (entry.isIntersecting) {
 							visibleSections[index] = true;
+
+							// Animate the images when section becomes visible
+							const images = entry.target.querySelectorAll('.gabe');
+							images.forEach((img, imgIndex) => {
+								// Only animate if not already animated
+								if (!imagesAnimated[index][imgIndex]) {
+									setTimeout(() => {
+										img.animate(
+											[
+												{ opacity: 0, transform: 'translateY(20px)' },
+												{ opacity: 1, transform: 'translateY(0)' }
+											],
+											{
+												duration: 1000,
+												easing: 'ease-out',
+												fill: 'forwards'
+											}
+										);
+										// Mark as animated
+										imagesAnimated[index][imgIndex] = true;
+									}, imgIndex * 500); // Stagger delay
+								}
+							});
+
+							// Update animation state array
+							imagesAnimated[index] = Array(images.length).fill(false);
 						} else if (entry.boundingClientRect.top > 0) {
 							// Only reset when scrolling back up
 							visibleSections[index] = false;
+							imagesAnimated[index] = [];
 						}
 					}
 				});
@@ -247,17 +214,13 @@
 
 					@media (width <= 767px) {
 						&.visible .gabe {
-							/* opacity: 0; */
-							animation: fadeIn var(--animation-duration) ease-out forwards;
-							animation-delay: calc(var(--index) * var(--stagger-delay));
+							opacity: 0;
 						}
 					}
 
 					@media (width >= 768px) {
 						&.visible .gabe {
-							/* opacity: 0; */
-							animation: fadeIn var(--animation-duration) ease-out forwards;
-							animation-delay: calc(var(--index) * var(--stagger-delay));
+							opacity: 0;
 						}
 					}
 
@@ -275,15 +238,24 @@
 							max-width: 20em;
 							border-radius: var(--radius);
 							transition: filter 750ms ease-in-out;
+							transform: translateY(0);
+
+							@media (width <= 500px) {
+								scale: 0.9;
+							}
 
 							&:hover {
 								filter: drop-shadow(0 0 0.25rem var(--text-gray));
-								animation: wiggle 1s ease-in-out infinite !important;
+								animation-name: wiggle;
+								animation-duration: 1s;
+								animation-timing-function: ease-in-out;
+								animation-iteration-count: infinite;
 							}
 
 							&:not(:hover) {
 								filter: drop-shadow(0);
 								transition: filter 750ms ease-in-out;
+								/* animation-name: none; */
 							}
 
 							&.ar58 {
@@ -339,11 +311,11 @@
 
 	@keyframes fadeIn {
 		0% {
-			/* opacity: 0; */
+			opacity: 0;
 			transform: translateY(20px);
 		}
 		100% {
-			/* opacity: 1; */
+			opacity: 1;
 			transform: translateY(0);
 		}
 	}

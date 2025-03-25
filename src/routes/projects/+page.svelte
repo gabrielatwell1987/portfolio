@@ -3,7 +3,6 @@
 	import Project from '$lib/components/Project.svelte';
 	import Figure from '$lib/components/Figure.svelte';
 	import Title from '$lib/components/Title.svelte';
-	import IconLogo from '$lib/components/IconLogo.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import Avatar from '$lib/components/Avatar.svelte';
 	import Popup from '$lib/components/Popup.svelte';
@@ -54,10 +53,6 @@
 </div>
 
 <section class="content bevel">
-	<a href="/about#useful-links">
-		<IconLogo />
-	</a>
-
 	<!-- <Project
 		title="S.P.A."
 		img="/projects/web_dev.webp"
@@ -207,6 +202,10 @@
 <style>
 	.bevel {
 		position: relative;
+
+		@media (width <= 500px) {
+			padding: 4em 0;
+		}
 	}
 
 	.bevel:before {
