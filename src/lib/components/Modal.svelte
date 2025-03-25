@@ -55,20 +55,27 @@
 	dialog {
 		opacity: 0;
 		visibility: hidden;
+		transform: scale(0.99);
 		transition:
 			opacity 1.5s ease-out,
 			visibility 1.5s ease-out,
-			width 1.5s ease-out;
+			transform 1.5s ease-out;
 		background: none;
 		-webkit-transition:
 			opacity 1.5s ease-out,
 			visibility 1.5s ease-out,
 			transform 1.5s ease-out;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+		-webkit-perspective: 1000;
+		perspective: 1000;
+		will-change: opacity, transform;
 
 		&.open {
 			opacity: 1;
 			visibility: visible;
 			width: 100%;
+			transform: scale(1);
 		}
 	}
 
@@ -139,7 +146,6 @@
 			&:focus-visible {
 				outline: 1px solid var(--text-color);
 				background: transparent;
-				/* padding: 0 2rem; */
 			}
 
 			& i {
