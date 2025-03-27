@@ -1,5 +1,5 @@
 <script>
-	import { gsap } from 'gsap';
+	// import { gsap } from 'gsap';
 	import Project from '$lib/components/Project.svelte';
 	import Figure from '$lib/components/Figure.svelte';
 	import Title from '$lib/components/Title.svelte';
@@ -10,29 +10,29 @@
 	// import Testimonial from '$lib/components/Testimonial.svelte';
 
 	// animations
-	$effect(() => {
-		const logo = document.querySelector('.logo');
-		const section = document.querySelector('section');
+	// $effect(() => {
+	// 	const logo = document.querySelector('.logo');
+	// 	const section = document.querySelector('section');
 
-		gsap.set('.content', { autoAlpha: 0 });
-		gsap.set('.link', { autoAlpha: 0 });
+	// 	gsap.set('.content', { autoAlpha: 0 });
+	// 	gsap.set('.link', { autoAlpha: 0 });
 
-		let tl = gsap.timeline({ defaults: { duration: 1.9 } });
+	// 	let tl = gsap.timeline({ defaults: { duration: 1.9 } });
 
-		tl.to('.content', { autoAlpha: 1 }).to(
-			'.link',
-			{ autoAlpha: 1, duration: 1.5, ease: 'expo.out' },
-			0
-		);
+	// 	tl.to('.content', { autoAlpha: 1 }).to(
+	// 		'.link',
+	// 		{ autoAlpha: 1, duration: 1.5, ease: 'expo.out' },
+	// 		0
+	// 	);
 
-		console.log(section);
+	// 	console.log(section);
 
-		return () => {
-			gsap.killTweensOf(logo);
-			gsap.killTweensOf('.content');
-			gsap.killTweensOf('.link');
-		};
-	});
+	// 	return () => {
+	// 		gsap.killTweensOf(logo);
+	// 		gsap.killTweensOf('.content');
+	// 		gsap.killTweensOf('.link');
+	// 	};
+	// });
 </script>
 
 <SEO
@@ -52,13 +52,15 @@
 	/>
 </div>
 
-<section class="content bevel">
+<section class="bevel">
 	<!-- <Project
 		title="S.P.A."
 		img="/projects/web_dev.webp"
 		url="https://gabe1.vercel.app"
 		description="HTML/CSS/JS"
 	/> -->
+
+	<!--  -->
 
 	<!-- <Project
 		title="horizontal scroll"
@@ -67,11 +69,14 @@
 		description="html/css/js"
 	/> -->
 
+	<!--  -->
+
 	<Project
 		title="busy little bat sewing co."
 		img="/projects/busybatleopard.webp"
 		url="https://busybat.vercel.app"
 		description="sveltekit"
+		index={0}
 	/>
 
 	<!-- <Testimonial
@@ -82,26 +87,37 @@
 		avatar="/projects/busybatleopard.webp"
 	/> -->
 
+	<!--  -->
+
 	<Project
 		title="pixipalette"
 		img="/projects/pixipalette.webp"
 		url="https://pixipalette.vercel.app"
 		description="sveltekit"
+		index={1}
 	/>
+
+	<!--  -->
 
 	<Project
 		title="grocery list"
 		img="/projects/groceries.webp"
 		url="https://legit-shopping-list.vercel.app/"
 		description="react"
+		index={2}
 	/>
+
+	<!--  -->
 
 	<Project
 		title="e-commerce product page"
 		img="/projects/ecommerce.webp"
 		url="https://fake-store-products.vercel.app"
 		description="html/css/js"
+		index={3}
 	/>
+
+	<!--  -->
 
 	<!-- <Project
 		title="nasa api"
@@ -110,12 +126,17 @@
 		description="React"
 	/> -->
 
+	<!--  -->
+
 	<Project
 		title="password maker"
 		img="/projects/pw-generator.webp"
 		url="https://make-a-password.vercel.app/"
 		description="sveltekit"
+		index={4}
 	/>
+
+	<!--  -->
 
 	<!-- <Project
 		title="github search"
@@ -124,12 +145,17 @@
 		description="svelte"
 	/> -->
 
+	<!--  -->
+
 	<Project
 		title="data visualizations"
 		img="/projects/data-v.webp"
 		url="https://visual-svelte.vercel.app"
 		description="d3/svelte"
+		index={5}
 	/>
+
+	<!--  -->
 
 	<!-- <Project
 		title="scatterplot chart"
@@ -138,12 +164,16 @@
 		description="d3 and svelte"
 	/> -->
 
+	<!--  -->
+
 	<!-- <Project
 	title="random user generator"
 	img="/projects/ran_user.webp"
 	url="https://gabe3.vercel.app/"
 	description="Vue"
 	/> -->
+
+	<!--  -->
 
 	<!-- <Project
 		title="snippet creator"
@@ -152,12 +182,16 @@
 		description="Sveltekit"
 	/> -->
 
+	<!--  -->
+
 	<!-- <Project
 		title="landing page"
 		img="/projects/landing.webp"
 		url="https://landing-page-tailwind-rust.vercel.app/"
 		description="tailwindcss"
 	/> -->
+
+	<!--  -->
 
 	<!-- <Project
 		title="svelteflix"
@@ -166,12 +200,16 @@
 		description="Sveltekit"
 	/> -->
 
+	<!--  -->
+
 	<!-- <Project
 		title="pokedex"
 		img="/projects/pokedex.webp"
 		url="https://pokedex-sample.vercel.app/"
 		description="Sveltekit"
 	/> -->
+
+	<!--  -->
 
 	<!-- <Project
 		title="starbucks clone"
@@ -180,12 +218,16 @@
 		description="HTML/CSS/JS"
 	/> -->
 
+	<!--  -->
+
 	<!-- <Project
 		title="alphamaps"
 		img="/projects/alphamaps.webp"
 		url="https://alphamaps69.vercel.app"
 		description="Three.js"
 	/> -->
+
+	<!--  -->
 
 	<!-- <section class="frame">
 		<ImageFrame
