@@ -112,13 +112,6 @@ body {
 		text-underline-offset: 0.3rem;
 	}
 
-	.atwellLogo,
-	.content,
-	.linksize,
-	.greensock {
-		visibility: hidden;
-	}
-
 	h2 {
 		text-align: center;
 		color: var(--purple);

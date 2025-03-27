@@ -1,9 +1,9 @@
 <script>
 	/** @type {{title: any, img: any, url: any, description: any}} */
-	let { title, img, url, description } = $props();
+	let { title, img, url, description, index = 0 } = $props();
 </script>
 
-<main class="content">
+<main class="content" style="--stagger-delay: {index * 1.25}s;">
 	<h3 class="link name">{title}</h3>
 
 	<a class="link" href={url} target="_blank">
@@ -20,6 +20,9 @@
 
 	.content {
 		margin-bottom: 3rem;
+		opacity: 0;
+		animation: fadeIn 0.8s ease-out forwards;
+		animation-delay: var(--stagger-delay, 0s);
 	}
 
 	@media (width >= 300px) {
@@ -116,6 +119,17 @@
 
 		.name {
 			margin-bottom: -3.5rem;
+		}
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 </style>

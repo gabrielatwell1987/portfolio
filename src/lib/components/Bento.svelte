@@ -21,18 +21,24 @@
 			<div class="bento-grid" style="--row: 4">
 				<div class="item" style="--row: span 1">
 					<a href="/contact">
+						<h2>contact</h2>
+
 						<Image src="/icons/Contact-Dark.svg" alt="contact me" width="250" />
 					</a>
 				</div>
 
 				<div class="item" style="--col: 2; --row: 1">
 					<a href="/learn">
+						<h2>learn</h2>
+
 						<Image src="/logos/learn.webp" alt="learning web techniques" width="500" />
 					</a>
 				</div>
 
 				<div class="item mb" style="--row: span 3">
 					<a href="/projects">
+						<h2>projects</h2>
+
 						<Image src="/logos/logoA.webp" alt="atwell logo" width="500" />
 					</a>
 				</div>
@@ -87,7 +93,18 @@
 					border 1s ease,
 					box-shadow 1s ease;
 
+				& h2 {
+					font-family: var(--bronova);
+					font-size: clamp(1.25rem, 3vw, 1.75rem);
+					font-weight: 200;
+					letter-spacing: 2px;
+					color: var(--dark-text);
+					margin-bottom: 1rem;
+				}
+
 				& a {
+					text-decoration: none;
+
 					&:focus,
 					&:focus-visible {
 						outline: 1px solid var(--text-color);
