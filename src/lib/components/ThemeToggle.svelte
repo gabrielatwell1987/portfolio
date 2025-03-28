@@ -54,7 +54,6 @@
 		--text-anti: var(--blackest);
 		--text-button: var(--blackest);
 		--button-bg: var(--yellow);
-		--subtle: var(--off-white);
 		--opacity: 1;
 	}
 
@@ -68,7 +67,6 @@
 		--text-button: var(--text-anti);
 		--button-bg: var(--yellow);
 		--opacity: 0.15;
-		--subtle: var(--smoke);
 		background-color: var(--dark);
 		color: var(--text-color);
 		transition:
@@ -86,7 +84,6 @@
 		--text-button: var(--text-anti);
 		--button-bg: var(--yellow);
 		--opacity: 0.35;
-		--subtle: var(--off-white);
 		background-color: var(--light);
 		color: var(--text-color);
 		transition:
