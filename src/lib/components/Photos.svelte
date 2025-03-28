@@ -87,79 +87,81 @@
 	<h2>scroll down <span class="arrow">&darr;</span></h2>
 
 	<section>
-		<div class="pictures" aria-label="pictures" class:visible={visibleSections[0]}>
-			<aside class="flex">
-				<img class="gabe" src={gabe} alt="Gabriel Atwell" loading="lazy" style="--index: 0" />
+		<article class="content">
+			<div class="pictures" aria-label="pictures" class:visible={visibleSections[0]}>
+				<aside class="flex">
+					<img class="gabe" src={gabe} alt="Gabriel Atwell" loading="lazy" style="--index: 0" />
 
-				<img class="gabe" src={gabe2} alt="Gabriel's face" loading="lazy" style="--index: 1" />
+					<img class="gabe" src={gabe2} alt="Gabriel's face" loading="lazy" style="--index: 1" />
 
-				<img src={gabe5} alt="Gabriel" class="gabe" loading="lazy" style="--index: 2" />
-			</aside>
-		</div>
+					<img src={gabe5} alt="Gabriel" class="gabe" loading="lazy" style="--index: 2" />
+				</aside>
+			</div>
 
-		<div class="pictures" aria-label="pictures" class:visible={visibleSections[1]}>
-			<aside class="flex">
-				<img
-					class="gabe ar58"
-					src={gabe4}
-					alt="Gabriel in a restaurant"
-					loading="lazy"
-					style="--index: 0"
-				/>
+			<div class="pictures" aria-label="pictures" class:visible={visibleSections[1]}>
+				<aside class="flex">
+					<img
+						class="gabe ar58"
+						src={gabe4}
+						alt="Gabriel in a restaurant"
+						loading="lazy"
+						style="--index: 0"
+					/>
 
-				<img
-					src={autumn}
-					alt="Gabe and his daughter"
-					class="gabe ar58"
-					loading="lazy"
-					style="--index: 1"
-				/>
+					<img
+						src={autumn}
+						alt="Gabe and his daughter"
+						class="gabe ar58"
+						loading="lazy"
+						style="--index: 1"
+					/>
 
-				<img
-					class="gabe ar58"
-					src={archie}
-					alt="Gabe's poodle Archie"
-					loading="lazy"
-					style="--index: 2"
-				/>
-			</aside>
-		</div>
+					<img
+						class="gabe ar58"
+						src={archie}
+						alt="Gabe's poodle Archie"
+						loading="lazy"
+						style="--index: 2"
+					/>
+				</aside>
+			</div>
 
-		<div class="pictures" aria-label="pictures" class:visible={visibleSections[2]}>
-			<aside class="flex">
-				<img src={gabe3} alt="Really old" class="gabe" loading="lazy" style="--index: 0" />
+			<div class="pictures" aria-label="pictures" class:visible={visibleSections[2]}>
+				<aside class="flex">
+					<img src={gabe3} alt="Really old" class="gabe" loading="lazy" style="--index: 0" />
 
-				<img
-					src={wtf}
-					alt="Trying to burn gabe"
-					class="gabe"
-					loading="lazy"
-					style="width: 50em; height: 20em; --index: 1"
-				/>
+					<img
+						src={wtf}
+						alt="Trying to burn gabe"
+						class="gabe"
+						loading="lazy"
+						style="width: 50em; height: 20em; --index: 1"
+					/>
 
-				<img
-					src={wtf2}
-					alt="Gabe's face on hulk hogan"
-					class="gabe ar11"
-					loading="lazy"
-					style="width: 50em; height: 20em; --index: 2"
-				/>
-			</aside>
-		</div>
+					<img
+						src={wtf2}
+						alt="Gabe's face on hulk hogan"
+						class="gabe ar11"
+						loading="lazy"
+						style="width: 50em; height: 20em; --index: 2"
+					/>
+				</aside>
+			</div>
 
-		<div class="pictures" aria-label="pictures" class:visible={visibleSections[3]}>
-			<aside class="flex">
-				<img
-					src={wtf3}
-					alt="when gabe was 5 years old"
-					class="gabe"
-					loading="lazy"
-					style="--index: 0"
-				/>
+			<div class="pictures" aria-label="pictures" class:visible={visibleSections[3]}>
+				<aside class="flex">
+					<img
+						src={wtf3}
+						alt="when gabe was 5 years old"
+						class="gabe"
+						loading="lazy"
+						style="--index: 0"
+					/>
 
-				<img class="gabe" src={monkey} alt="monkey" loading="lazy" style="--index: 1" />
-			</aside>
-		</div>
+					<img class="gabe" src={monkey} alt="monkey" loading="lazy" style="--index: 1" />
+				</aside>
+			</div>
+		</article>
 	</section>
 </main>
 
@@ -196,6 +198,12 @@
 				margin: 0;
 				margin-bottom: 10%;
 				padding-block: 10vh;
+
+				& .content {
+					padding: 5em 15vw;
+					background-color: var(--subtle);
+					box-shadow: 0 0 1rem var(--text-color);
+				}
 
 				& .pictures {
 					display: grid;
