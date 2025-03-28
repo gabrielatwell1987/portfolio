@@ -50,7 +50,7 @@
 			outline: 3px solid var(--dark);
 			color: var(--dark);
 			filter: drop-shadow(0 0 0.75rem var(--text-color));
-			border-radius: var(--radius);
+			border-radius: var(--button-radius);
 			background-color: var(--button-bg);
 			font-family: var(--mono);
 			font-size: clamp(1.1rem, 1.5vw, 2rem);

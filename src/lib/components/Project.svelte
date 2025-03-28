@@ -47,6 +47,8 @@
 			transition: all 0.35s;
 			background-color: transparent;
 
+			position: relative;
+
 			&:focus,
 			&:focus-visible {
 				outline: 1px solid var(--text-color);
@@ -54,7 +56,7 @@
 			}
 
 			& .img {
-				border-radius: 8px;
+				border-radius: var(--radius);
 				max-width: var(--100);
 				transition: scale 0.25s ease-in-out;
 
@@ -66,10 +68,10 @@
 			& .hover-text {
 				visibility: hidden;
 				width: 100%;
-				background-color: black;
-				color: var(--white);
+				background-color: var(--text-anti);
+				color: var(--text-color);
 				text-align: center;
-				border-radius: 6px;
+				border-radius: var(--button-radius);
 				padding: 5px 3px;
 				font-family: var(--bronova);
 				font-size: clamp(1rem, 1.15vw, 1.5rem);
@@ -78,6 +80,11 @@
 				opacity: 0;
 				transition: all 1s;
 				text-transform: lowercase;
+
+				position: absolute;
+				bottom: 1rem;
+				left: 50%;
+				transform: translateX(-50%);
 			}
 
 			&:hover .hover-text {

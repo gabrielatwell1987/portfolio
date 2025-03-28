@@ -54,11 +54,12 @@
 		--text-anti: var(--blackest);
 		--text-button: var(--blackest);
 		--button-bg: var(--yellow);
+		--subtle: var(--off-white);
 		--opacity: 1;
 	}
 
 	:global(body) {
-		--text-anti: var(--blackest);
+		--text-anti: var(--black);
 		--text-color: var(--dark-text);
 		--text-blue: var(--sky);
 		--text-gray: var(--smoke);
@@ -67,6 +68,7 @@
 		--text-button: var(--text-anti);
 		--button-bg: var(--yellow);
 		--opacity: 0.15;
+		--subtle: var(--smoke);
 		background-color: var(--dark);
 		color: var(--text-color);
 		transition:
@@ -84,6 +86,7 @@
 		--text-button: var(--text-anti);
 		--button-bg: var(--yellow);
 		--opacity: 0.35;
+		--subtle: var(--off-white);
 		background-color: var(--light);
 		color: var(--text-color);
 		transition:
