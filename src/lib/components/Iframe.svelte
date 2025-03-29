@@ -31,7 +31,7 @@
 		& .responsive-iframe {
 			position: relative;
 			width: 100%;
-			max-width: 1200px;
+			max-width: 1500px;
 			height: 0;
 			padding-bottom: 56.25%;
 			overflow: hidden;
