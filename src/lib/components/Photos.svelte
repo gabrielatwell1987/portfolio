@@ -213,6 +213,11 @@
 						background-color: rgba(var(--subtle-rgb), 0.25);
 						z-index: -1;
 					}
+
+					@media (width <= 500px) {
+						padding: 2em 0;
+						margin: 0.5rem;
+					}
 				}
 
 				& .pictures {
@@ -229,18 +234,6 @@
 						opacity: 1;
 						visibility: visible;
 					}
-
-					/* @media (width <= 767px) {
-						&.visible .gabe {
-							opacity: 1;
-						}
-					} */
-
-					/* @media (width >= 768px) {
-						&.visible .gabe {
-							opacity: 1;
-						}
-					} */
 
 					& img {
 						width: 100%;
