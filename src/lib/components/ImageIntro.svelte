@@ -48,8 +48,8 @@
 		margin-top: 7em;
 		overflow: hidden;
 
-		section {
-			.h1 {
+		& section {
+			& .h1 {
 				color: var(--blue);
 				font-family: var(--orbitron);
 				font-size: clamp(3rem, 7vw, 6rem);
@@ -60,7 +60,7 @@
 				view-transition-name: hero-title;
 			}
 
-			.img {
+			& .img {
 				display: flex;
 				flex-direction: column;
 				align-items: center;
@@ -68,14 +68,14 @@
 				gap: 2rem;
 				will-change: clip-path;
 
-				a {
+				& a {
 					width: fit-content;
 					background: transparent;
 					view-transition-name: hero-image;
 				}
 			}
 
-			.p {
+			& .p {
 				color: var(--smoke);
 				letter-spacing: 2px;
 				font-family: var(--bronova);
