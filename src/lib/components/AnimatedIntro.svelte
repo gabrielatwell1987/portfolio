@@ -43,11 +43,11 @@
 			transform 1.25s ease-in-out,
 			opacity 1.25s ease-in-out;
 		transition-delay: 1s;
-	}
 
-	.sentence.animate {
-		transform: translateY(0);
-		opacity: 1;
+		&.animate {
+			transform: translateY(0);
+			opacity: 1;
+		}
 	}
 
 	.bigWord {
@@ -58,14 +58,14 @@
 		display: block;
 		letter-spacing: 1px;
 		line-height: 1.2;
-	}
 
-	.char {
-		display: inline-block;
-		transform: translateX(150%);
-		opacity: 0;
-		animation: charAnimation 3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
-		animation-delay: calc(var(--delay) + 2.25s);
+		& .char {
+			display: inline-block;
+			transform: translateX(150%);
+			opacity: 0;
+			animation: charAnimation 3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+			animation-delay: calc(var(--delay) + 2.25s);
+		}
 	}
 
 	.glow {
