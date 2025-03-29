@@ -143,7 +143,11 @@
 			])}
 
 			{@render imageSection(3, [
-				{ src: wtf3, alt: 'when gabe was 5 years old' },
+				{
+					src: wtf3,
+					alt: 'when gabe was 5 years old',
+					style: 'scale: .8;'
+				},
 				{ src: monkey, alt: 'a monkey' }
 			])}
 		</article>
@@ -200,11 +204,14 @@
 				padding-block: 10vh;
 
 				& .content {
-					padding: 5em 15vw;
+					padding: 2rem;
 					position: relative;
 					background-color: transparent;
 					box-shadow: 0 0 1rem var(--text-color);
 					isolation: isolate;
+					width: 100%;
+					max-width: 1600px;
+					margin-inline: auto;
 
 					&::before {
 						content: '';
@@ -215,15 +222,19 @@
 					}
 
 					@media (width <= 500px) {
-						padding: 2em 0;
-						margin: 0.5rem;
+						padding: 0;
+					}
+
+					@media (width >= 768px) {
+						padding: 4rem;
+					}
+
+					@media (width >= 1200px) {
+						padding: 5em;
 					}
 				}
 
 				& .pictures {
-					display: grid;
-					grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-					gap: 4rem;
 					opacity: 0;
 					visibility: hidden;
 					transition:
@@ -241,15 +252,26 @@
 					}
 
 					& .flex {
+						display: grid;
+						grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+						gap: 4rem;
 						place-items: center;
+						width: 100%;
+
+						@media (width >= 768px) {
+							gap: 3rem;
+						}
 
 						& .gabe {
+							width: 100%;
+							height: auto;
 							margin-inline: auto;
 							margin-bottom: 2em;
-							max-width: 20em;
 							border-radius: var(--radius);
 							transition: filter 750ms ease-in-out;
 							transform: translateY(0);
+							object-fit: cover;
+							scale: 0.85;
 
 							@media (width <= 500px) {
 								scale: 0.9;
@@ -266,7 +288,6 @@
 							&:not(:hover) {
 								filter: drop-shadow(0);
 								transition: filter 750ms ease-in-out;
-								/* animation-name: none; */
 							}
 
 							&.ar58 {
