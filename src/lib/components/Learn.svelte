@@ -2,7 +2,7 @@
 	let { href, title } = $props();
 </script>
 
-<h3 class="learn">Learn more about GSAP</h3>
+<h3 class="learn">Learn more about {title}</h3>
 
 <p class="center">
 	If you would like to know more about <a class="link" {href} aria-label="greensock">{title}</a>,
