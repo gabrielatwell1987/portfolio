@@ -18,24 +18,24 @@
 <div class="bento">
 	<main>
 		<section>
-			<div class="bento-grid" style="--row: 4">
-				<div class="item" style="--row: span 1">
+			<div class="bento-grid">
+				<div class="item">
 					<a href="/contact">
 						<h2>contact</h2>
 
-						<Image src="/icons/Contact-Dark.svg" alt="contact me" width="250" />
+						<p>Feel free to contact me about anything!</p>
 					</a>
 				</div>
 
-				<div class="item" style="--col: 2; --row: 1">
+				<div class="item">
 					<a href="/learn">
 						<h2>learn</h2>
 
-						<Image src="/logos/learn.webp" alt="learning web techniques" width="500" />
+						<p>If you'd like to learn about web technologies</p>
 					</a>
 				</div>
 
-				<div class="item mb" style="--row: span 3">
+				<div class="item mb">
 					<a href="/projects">
 						<h2>projects</h2>
 
@@ -49,11 +49,10 @@
 
 <style>
 	:root {
-		--space: 1.5rem;
+		--space: 1rem;
 		--surface-1: transparent;
 		--surface-2: var(--text-anti);
 		--gradient: radial-gradient(var(--text-gray), var(--dark) 88%);
-		/* --gradient: radial-gradient(hsla(0, 0%, 85%, 0.473), hsl(0 0% 0%) 88%); */
 	}
 
 	* {
@@ -63,7 +62,6 @@
 	main {
 		line-height: 1.4;
 		background-color: var(--surface-1);
-		margin-top: 10rem;
 		margin-bottom: 2rem;
 		padding-inline: var(--space);
 
@@ -74,11 +72,36 @@
 
 		& .bento-grid {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-			place-items: center;
 			gap: var(--space);
+			grid-template-columns: 1fr;
+			grid-template-areas:
+				'item-one'
+				'item-two'
+				'item-three';
+			margin-bottom: 2rem;
+			position: relative;
+
+			@media (width >= 768px) {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-areas:
+					'item-one item-two'
+					'item-three item-three';
+			}
+
+			@media (width >= 50rem) {
+				grid-template-columns: repeat(3, 1fr);
+				grid-template-areas:
+					'item-one item-one item-two'
+					'item-three item-three item-two';
+			}
+
+			@media (width <= 500px) {
+				margin-top: 5em;
+			}
 
 			& .item {
+				width: 100%;
+
 				box-shadow: 0 0 5px 2px var(--text-gray);
 				background-color: var(--surface-2);
 				background-image: var(--gradient);
@@ -94,12 +117,33 @@
 					box-shadow 1s ease;
 
 				& h2 {
-					font-family: var(--bronova);
+					font-family: var(--bronova-bold);
 					font-size: clamp(1.25rem, 3vw, 1.75rem);
 					font-weight: 200;
 					letter-spacing: 2px;
 					color: var(--dark-text);
 					margin-bottom: 1rem;
+					text-transform: uppercase;
+					transition: border-bottom 0.5s ease;
+					width: fit-content;
+					margin-inline: auto;
+
+					&:hover {
+						text-decoration: underline;
+						text-underline-offset: 0.5rem;
+					}
+				}
+
+				& p {
+					font-family: var(--bronova);
+					font-size: clamp(1rem, 1.5vw, 1.25rem);
+					color: var(--dark-text);
+					text-align: center;
+					margin-bottom: 0;
+
+					&:nth-child(2) {
+						line-height: 1.5;
+					}
 				}
 
 				& a {
@@ -125,6 +169,18 @@
 						box-shadow 1s ease;
 				}
 
+				&:nth-child(1) {
+					grid-area: item-one;
+				}
+
+				&:nth-child(2) {
+					grid-area: item-two;
+				}
+
+				&:nth-child(3) {
+					grid-area: item-three;
+				}
+
 				&:last-child {
 					margin-bottom: 2.3rem;
 				}
@@ -133,23 +189,23 @@
 			&:last-child {
 				margin-bottom: 11%;
 			}
-
-			@media (width >= 50rem) {
-				grid-template-columns: repeat(var(--col-count, 3), 1fr);
-				grid-template-rows: repeat(var(--row-count, 3), auto);
-
-				& > * {
-					grid-column: var(--col);
-					grid-row: var(--row);
-				}
-			}
 		}
 	}
 
-	@media (width >= 1400px) {
+	.bento {
+		position: relative;
+		margin-top: 2rem;
+	}
+
+	@media (width >= 768px) and (width < 1024px) {
 		.bento {
-			margin-top: -30em;
-			margin-bottom: -7em;
+			margin-top: 3rem;
+		}
+	}
+
+	@media (width >= 1024px) and (width < 2000px) {
+		.bento {
+			margin-top: -20em;
 		}
 	}
 </style>
