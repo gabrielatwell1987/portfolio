@@ -120,19 +120,19 @@
 			{/snippet}
 
 			{@render imageSection(0, [
-				{ src: gabe, alt: 'Gabriel Atwell' },
+				{ src: gabe, alt: 'Gabe sitting with his phone' },
 				{ src: gabe2, alt: "Gabriel's face" },
-				{ src: gabe5, alt: 'Gabriel' }
+				{ src: gabe5, alt: 'Gabe standing still' }
 			])}
 
 			{@render imageSection(1, [
-				{ src: gabe4, alt: 'Gabriel in a restaurant', classes: 'ar58' },
-				{ src: autumn, alt: 'Gabe and his daughter', classes: 'ar58' },
-				{ src: archie, alt: "Gabe's poodle Archie", classes: 'ar58' }
+				{ src: gabe4, alt: 'Gabe in a restaurant', classes: 'ar58' },
+				{ src: autumn, alt: 'Gabe and his daughter Autumn', classes: 'ar58' },
+				{ src: archie, alt: 'Gabe and his poodle Archie', classes: 'ar58' }
 			])}
 
 			{@render imageSection(2, [
-				{ src: gabe3, alt: 'Really old' },
+				{ src: gabe3, alt: 'Gabe in Arizona fixing a car' },
 				{ src: wtf, alt: 'Trying to burn Gabe', style: 'width: 50em; height: 20em;' },
 				{
 					src: wtf2,
@@ -148,7 +148,7 @@
 					alt: 'when gabe was 5 years old',
 					style: 'scale: .8;'
 				},
-				{ src: monkey, alt: 'a monkey' }
+				{ src: monkey, alt: 'a monkey with glasses' }
 			])}
 		</article>
 	</section>

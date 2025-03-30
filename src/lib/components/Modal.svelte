@@ -41,7 +41,11 @@
 		</header>
 
 		<div class="image">
-			<Image src="/logos/newspaper.webp" alt="frontend newspaper clipping" width="500" />
+			<Image
+				src="/logos/newspaper.webp"
+				alt="newspaper clipping for a frontend developer"
+				width="500"
+			/>
 		</div>
 
 		<p>

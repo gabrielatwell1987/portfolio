@@ -18,7 +18,7 @@
 
 <main aria-label="error" transition:fade={{ duration, delay }}>
 	<div class="image">
-		<Image src="/logos/error.webp" alt="Error" width="300" />
+		<Image src="/logos/error.webp" alt="an error has occurred" width="300" />
 	</div>
 
 	<div class="error">
