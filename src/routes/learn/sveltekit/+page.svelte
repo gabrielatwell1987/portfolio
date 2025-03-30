@@ -222,7 +222,7 @@
 					</p>
 
 					<div class="structure">
-						<Image src="/code/onNavigate.webp" alt="onNavigate" />
+						<Image src="/code/snippet.webp" alt="snippet example in code" />
 						<br />
 					</div>
 
@@ -253,7 +253,7 @@
 					</p>
 
 					<div class="structure">
-						<Image src="/code/onNavigate.webp" alt="onNavigate" />
+						<Image src="/code/onNavigate.webp" alt="onNavigate example in code" />
 						<br />
 					</div>
 
