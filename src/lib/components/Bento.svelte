@@ -35,7 +35,7 @@
 					</a>
 				</div>
 
-				<div class="item mb">
+				<div class="item">
 					<a href="/projects">
 						<h2>projects</h2>
 
@@ -136,7 +136,8 @@
 
 				& p {
 					font-family: var(--bronova);
-					font-size: clamp(1rem, 1.5vw, 1.25rem);
+					font-size: clamp(1rem, 1.25vw, 1.25rem);
+					font-weight: 300;
 					color: var(--dark-text);
 					text-align: center;
 					margin-bottom: 0;
