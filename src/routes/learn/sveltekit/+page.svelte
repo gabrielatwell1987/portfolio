@@ -238,7 +238,7 @@
 				<details
 					name="sveltekit"
 					class:animate-in={detailsVisible}
-					style="--anim-delay: 2.5s; visibility: hidden;"
+					style="--anim-delay: 3s; visibility: hidden;"
 				>
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
