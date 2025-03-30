@@ -211,6 +211,37 @@
 				>
 					<!-- svelte-ignore a11y_no_redundant_roles -->
 					<summary role="button" class="outline contrast spacing"
+						><span class="margin"><b>Snippets</b></span>
+					</summary>
+
+					<p class="text">
+						Snippets allow you to reuse content within a component, without extracting it out into a
+						separate file. Like function declarations, snippets can have an arbitrary number of
+						parameters, which can have default values, and you can destructure each parameter. You
+						cannot use rest parameters, however.
+					</p>
+
+					<div class="structure">
+						<Image src="/code/onNavigate.webp" alt="onNavigate" />
+						<br />
+					</div>
+
+					<p class="text">
+						Snippets can be declared anywhere inside your component. They can reference values
+						declared outside themselves, for example in the <code>&lt;script&gt;</code> tag or in
+						<code>&lcub;#each ...&rcub;</code> blocks. They can also reference other snippets, but not
+						themselves. Snippets are not reactive, so they will not re-run when the state changes. You
+						can use them to create reusable components that are not reactive.
+					</p>
+				</details>
+
+				<details
+					name="sveltekit"
+					class:animate-in={detailsVisible}
+					style="--anim-delay: 2.5s; visibility: hidden;"
+				>
+					<!-- svelte-ignore a11y_no_redundant_roles -->
+					<summary role="button" class="outline contrast spacing"
 						><span class="margin"><b>View Transitions</b></span>
 					</summary>
 
