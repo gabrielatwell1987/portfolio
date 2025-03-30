@@ -57,7 +57,7 @@
 	<article class="card">
 		<Card
 			src="/logos/a-dev.webp"
-			alt="old school"
+			alt="a logo that says atwell developer"
 			href="/projects"
 			title="web builder"
 			desc="Trying to make the internet look better.. one website at a time."
