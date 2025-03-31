@@ -76,6 +76,12 @@
 	--sm: calc(var(--base-size) / var(--scale));
 }
 
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -90,10 +96,6 @@ body {
 	overflow-x: hidden;
 	overflow-y: auto;
 	background-color: #000;
-}
-
-html {
-	scroll-behavior: smooth;
 }
 
 body {
