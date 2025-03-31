@@ -101,7 +101,6 @@
 
 			& .item {
 				width: 100%;
-
 				box-shadow: 0 0 5px 2px var(--text-gray);
 				background-color: var(--surface-2);
 				background-image: var(--gradient);
