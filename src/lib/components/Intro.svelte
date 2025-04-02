@@ -48,9 +48,9 @@
 	<div class="intro-content">
 		<HeroTitle title="Welcome!" />
 
-		<h1>
+		<h2>
 			<span>This is the frontend portfolio of Gabe Atwell!</span>
-		</h1>
+		</h2>
 
 		<p>
 			If you have any questions, you can <a href="/contact">contact</a> me and I will get back to you.
@@ -85,7 +85,7 @@
 			text-align: center;
 			z-index: 1;
 
-			& h1 {
+			& h2 {
 				font-family: var(--orbitron);
 				font-size: clamp(0.9rem, 1.25vw, 1.5rem);
 				margin: -1rem 0 1rem 0;

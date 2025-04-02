@@ -35,9 +35,9 @@
 	<div class="css">
 		<div class="image">
 			<div class="skillImg">
-				<h1>
+				<h2>
 					<Image src="/skills/CSS-Purple.webp" alt="new css logo" />
-				</h1>
+				</h2>
 			</div>
 
 			<CSS aria-label="css" />
@@ -46,9 +46,9 @@
 
 	<div class="gsap">
 		<div class="skillImg">
-			<h1>
+			<h2>
 				<Image src="/skills/GSAP-Dark.svg" alt="greensock animation platform" />
-			</h1>
+			</h2>
 		</div>
 
 		<GSAP aria-label="greensock" />
