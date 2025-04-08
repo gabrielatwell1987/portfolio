@@ -1,8 +1,7 @@
 <script>
-	import Image from '$lib/components/Image.svelte';
 	import SEO from '$lib/data/SEO.svelte';
-	import AnimatedHeading from '$lib/components/AnimatedHeading.svelte';
-	import Title from '$lib/components/Title.svelte';
+	import Image from '$lib/components/Image.svelte';
+	import AnimatedHeading from '$lib/components/learn/AnimatedHeading.svelte';
 
 	$effect(() => {
 		const main = document.querySelector('main');

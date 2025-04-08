@@ -1,6 +1,6 @@
 <script>
 	import SEO from '$lib/data/SEO.svelte';
-	import Photos from '$lib/components/Photos.svelte';
+	import Photos from '$lib/components/photos/Photos.svelte';
 	// import Parallax from '$lib/components/Parallax.svelte';
 
 	$effect(() => {

@@ -1,8 +1,8 @@
 <script>
-	import Hero from '$lib/components/Hero.svelte';
 	import SEO from '$lib/data/SEO.svelte';
-	import AnimatedIntro from '$lib/components/AnimatedIntro.svelte';
-	import ImageIntro from '$lib/components/ImageIntro.svelte';
+	import Hero from '$lib/components/landing/Hero.svelte';
+	import AnimatedIntro from '$lib/components/landing/AnimatedIntro.svelte';
+	import ImageIntro from '$lib/components/landing/ImageIntro.svelte';
 </script>
 
 <SEO

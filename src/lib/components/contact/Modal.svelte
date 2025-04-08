@@ -1,6 +1,6 @@
 <script>
 	import '@fortawesome/fontawesome-free/css/all.css';
-	import Image from './Image.svelte';
+	import Image from '$lib/components/Image.svelte';
 
 	let isOpen = $state(false);
 	let modal;

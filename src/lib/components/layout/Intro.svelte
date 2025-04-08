@@ -1,7 +1,7 @@
 <script>
 	import { goto } from '$app/navigation';
-	import HeroTitle from '$lib/components/HeroTitle.svelte';
-	import Button from '$lib/components/Button.svelte';
+	import HeroTitle from '$lib/components/layout/HeroTitle.svelte';
+	import Button from '$lib/components/layout/Button.svelte';
 
 	let videoElement;
 

@@ -1,10 +1,10 @@
 <script>
 	import SEO from '$lib/data/SEO.svelte';
-	import Button from '$lib/components/Button.svelte';
+	import Button from '$lib/components/layout/Button.svelte';
 	import Iframe from '$lib/components/Iframe.svelte';
 	import Image from '$lib/components/Image.svelte';
 	import Learn from '$lib/components/Learn.svelte';
-	import Title from '$lib/components/Title.svelte';
+	import Title from '$lib/components/layout/Title.svelte';
 
 	let detailsVisible = $state(false);
 
