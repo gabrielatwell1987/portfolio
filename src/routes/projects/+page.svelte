@@ -54,10 +54,10 @@
 	/>
 
 	<!-- <Testimonial
-		name="Busy Little Bat Sewing"
-		title="Owner"
+		name="Adrienne Atwell"
+		title="Busy Little Bat Sewing - Owner"
 		testimonial="Gabe was a pleasure to work with. He was very professional and made sure I was happy with the final product. I would recommend him to anyone looking for a website."
-		rating="5,"
+		rating="5"
 		avatar="/projects/busybatleopard.webp"
 	/> -->
 

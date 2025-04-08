@@ -32,14 +32,6 @@
 			<strong>{name}</strong>
 
 			<span>{title}{company ? `, ${company}` : ''}</span>
-
-			{#if rating > 0}
-				<div class="rating">
-					{#each stars as isFilled}
-						<span class="star">{isFilled ? '★' : '☆'}</span>
-					{/each}
-				</div>
-			{/if}
 		</div>
 	</footer>
 </article>
@@ -47,100 +39,97 @@
 <style>
 	.testimonial {
 		background-color: var(--text-anti);
-		border-radius: 0.5rem;
+		border-radius: var(--radius);
 		padding: 2rem;
 		position: relative;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-		margin-top: -3rem;
+		box-shadow: 0 0 12px var(--text-color);
+		margin-top: -2rem;
 		margin-bottom: 2rem;
 		max-width: 50em;
 		width: 100%;
 		margin-inline: auto;
+		padding-bottom: 5em;
 		transition:
 			transform 0.2s,
 			box-shadow 0.2s;
 
 		&:hover {
 			transform: translateY(-5px);
-			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+			box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.1);
+		}
+
+		& .author-info {
+			display: flex;
+			flex-direction: column;
+
+			border-radius: var(--radius);
+			padding: 0.75rem;
+
+			& strong {
+				font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+				font-weight: 600;
+				color: var(--text-color);
+			}
+
+			& span {
+				font-size: clamp(0.8rem, 1.2vw, 1rem);
+				font-weight: 400;
+				color: var(--text-color);
+				opacity: 0.5;
+			}
+		}
+
+		& .quote-mark {
+			position: absolute;
+			top: 1rem;
+			left: 1.5rem;
+			font-size: 4rem;
+			color: var(--text-color);
+			font-family: Georgia, serif;
+			line-height: 1;
+		}
+
+		& blockquote {
+			margin: 0;
+			padding-left: 1rem;
+			font-style: italic;
+			color: var(--text-color);
+			line-height: 1.5;
+			border-left: none;
+		}
+
+		& .testimonial-footer {
+			background-color: transparent;
+			border-top: 1px solid var(--text-color);
+			margin-top: 1.5rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1rem;
+			max-width: 55em;
+			padding: 1rem 0;
+			display: flex;
+			align-items: center;
+
+			& .avatar {
+				width: clamp(4em, 5vw, 5em);
+				height: clamp(4em, 5vw, 5em);
+				border-radius: 50%;
+				overflow: hidden;
+				flex-shrink: 0;
+				margin-bottom: 1em;
+
+				& img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
 		}
 	}
 
 	.highlighted {
-		border-left: 3px solid hsl(215, 94%, 6%);
-	}
-
-	.quote-mark {
-		position: absolute;
-		top: 1rem;
-		left: 1.5rem;
-		font-size: 4rem;
-		color: var(--text-color);
-		font-family: Georgia, serif;
-		line-height: 1;
-	}
-
-	blockquote {
-		margin: 0;
-		padding-left: 1rem;
-		font-style: italic;
-		color: var(--text-gray);
-		line-height: 1.6;
-	}
-
-	.testimonial-footer {
-		margin-top: 1.5rem;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 1rem;
-		max-width: 55em;
-		padding: 1rem 0;
-
-		@media (width <= 500px) {
-			padding: 1em;
-		}
-	}
-
-	.avatar {
-		width: 5em;
-		height: 5em;
-		border-radius: 50%;
-		overflow: hidden;
-		flex-shrink: 0;
-
-		& img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-	}
-
-	.author-info {
-		display: flex;
-		flex-direction: column;
-		border-radius: var(--radius);
-
-		& strong {
-			font-size: clamp(0.9rem, 1.5vw, 1.2rem);
-			font-weight: 600;
-			color: var(--light);
-			letter-spacing: 5px;
-		}
-
-		& span {
-			font-weight: 400;
-			color: var(--light);
-			opacity: 0.25;
-		}
-	}
-
-	.rating {
-		margin-top: 0.5rem;
-	}
-
-	.star {
-		color: var(--button-bg);
+		border-left: 3px solid hsl(0, 0%, 16%);
 	}
 
 	@media (max-width: 640px) {
