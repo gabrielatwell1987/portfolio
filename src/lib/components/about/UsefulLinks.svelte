@@ -1,5 +1,5 @@
 <script>
-	import LoadBtn from '$lib/components/LoadBtn.svelte';
+	import LoadBtn from '$lib/components/about/LoadBtn.svelte';
 </script>
 
 <main class="links" id="useful-links">

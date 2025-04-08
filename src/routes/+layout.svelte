@@ -3,11 +3,11 @@
 	import '@picocss/pico/css/pico.min.css';
 	import { page } from '$app/stores';
 	import { navigating } from '$app/stores';
-	import NavBar from '$lib/components/NavBar.svelte';
 	import Analytics from '$lib/data/Analytics.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import Loading from '$lib/components/Loading.svelte';
-	import SkipLink from '$lib/components/SkipLink.svelte';
+	import NavBar from '$lib/components/navigation/NavBar.svelte';
+	import Footer from '$lib/components/layout/Footer.svelte';
+	import Loading from '$lib/components/layout/Loading.svelte';
+	import SkipLink from '$lib/components/layout/SkipLink.svelte';
 	import ViewTransition from '$lib/components/ViewTransition.svelte';
 
 	/** @type {{children?: import('svelte').Snippet}} */

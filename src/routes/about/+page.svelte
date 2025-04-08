@@ -1,77 +1,13 @@
 <script>
-	// import { gsap } from 'gsap';
-	import Button from '$lib/components/Button.svelte';
-	import Grid from '$lib/components/Grid.svelte';
-	import Skills from '$lib/components/Skills.svelte';
-	import Bento from '$lib/components/Bento.svelte';
 	import SEO from '$lib/data/SEO.svelte';
-	import CardFlip from '$lib/components/CardFlip.svelte';
+	import Button from '$lib/components/layout/Button.svelte';
+	import Grid from '$lib/components/about/Grid.svelte';
+	import Skills from '$lib/components/about/Skills.svelte';
+	import Bento from '$lib/components/about/Bento.svelte';
+	import CardFlip from '$lib/components/about/CardFlip.svelte';
 	import Tooltip from '$lib/components/Tooltip.svelte';
-	import UsefulLinks from '$lib/components/UsefulLinks.svelte';
-	import HeroImage from '$lib/components/HeroImage.svelte';
-
-	// $effect(() => {
-	// 	const main = document.querySelector('main');
-
-	// 	console.log(main);
-
-	// 	gsap.set(['.first', '.second', '.third'], { yPercent: 25, autoAlpha: 0 });
-	// 	gsap.set(['.hero', '.content_width'], { yPercent: 25, autoAlpha: 0 });
-
-	// 	const tl = gsap.timeline();
-
-	// 	tl.to('.first', {
-	// 		yPercent: 0,
-	// 		autoAlpha: 1,
-	// 		duration: 1.25,
-	// 		ease: 'power2.out',
-	// 		stagger: 0.5,
-	// 		delay: 0.3
-	// 	})
-	// 		.to(
-	// 			'.second',
-	// 			{
-	// 				yPercent: 0,
-	// 				autoAlpha: 1,
-	// 				duration: 1.25,
-	// 				ease: 'power2.out',
-	// 				stagger: 0.5,
-	// 				delay: 0.4
-	// 			},
-	// 			'-=1'
-	// 		)
-	// 		.to(
-	// 			['.hero', '.content_width'],
-	// 			{
-	// 				yPercent: 0,
-	// 				autoAlpha: 1,
-	// 				duration: 1.25,
-	// 				ease: 'power2.out',
-	// 				delay: 0.5
-	// 			},
-	// 			'-=.75'
-	// 		)
-	// 		.to(
-	// 			'.third',
-	// 			{
-	// 				yPercent: 0,
-	// 				autoAlpha: 1,
-	// 				duration: 1.25,
-	// 				ease: 'power2.out',
-	// 				delay: 0.6
-	// 			},
-	// 			'-=.75'
-	// 		);
-
-	// 	return () => {
-	// 		gsap.killTweensOf('.third');
-	// 		gsap.killTweensOf('.hero');
-	// 		gsap.killTweensOf('.content_width');
-	// 		gsap.killTweensOf('.second');
-	// 		gsap.killTweensOf('.first');
-	// 		gsap.killTweensOf('article');
-	// 	};
-	// });
+	import UsefulLinks from '$lib/components/about/UsefulLinks.svelte';
+	import HeroImage from '$lib/components/about/HeroImage.svelte';
 </script>
 
 <svelte:head>

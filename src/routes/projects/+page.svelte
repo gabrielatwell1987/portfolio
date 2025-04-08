@@ -1,38 +1,12 @@
 <script>
-	// import { gsap } from 'gsap';
-	import Project from '$lib/components/Project.svelte';
-	import Figure from '$lib/components/Figure.svelte';
-	import Title from '$lib/components/Title.svelte';
 	import SEO from '$lib/data/SEO.svelte';
-	import Avatar from '$lib/components/Avatar.svelte';
+	import Project from '$lib/components/projects/Project.svelte';
+	import Figure from '$lib/components/projects/Figure.svelte';
+	import Title from '$lib/components/layout/Title.svelte';
+	import Avatar from '$lib/components/projects/Avatar.svelte';
 	import Popup from '$lib/components/Popup.svelte';
 	import cartoonGabe from '$lib/images/cartoonGabe.webp';
-	// import Testimonial from '$lib/components/Testimonial.svelte';
-
-	// animations
-	// $effect(() => {
-	// 	const logo = document.querySelector('.logo');
-	// 	const section = document.querySelector('section');
-
-	// 	gsap.set('.content', { autoAlpha: 0 });
-	// 	gsap.set('.link', { autoAlpha: 0 });
-
-	// 	let tl = gsap.timeline({ defaults: { duration: 1.9 } });
-
-	// 	tl.to('.content', { autoAlpha: 1 }).to(
-	// 		'.link',
-	// 		{ autoAlpha: 1, duration: 1.5, ease: 'expo.out' },
-	// 		0
-	// 	);
-
-	// 	console.log(section);
-
-	// 	return () => {
-	// 		gsap.killTweensOf(logo);
-	// 		gsap.killTweensOf('.content');
-	// 		gsap.killTweensOf('.link');
-	// 	};
-	// });
+	// import Testimonial from '$lib/components/projects/Testimonial.svelte';
 </script>
 
 <SEO

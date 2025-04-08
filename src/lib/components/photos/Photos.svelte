@@ -1,5 +1,5 @@
 <script>
-	import Title from '$lib/components/Title.svelte';
+	import Title from '$lib/components/layout/Title.svelte';
 	import archie from '$lib/images/archie.webp';
 	import autumn from '$lib/images/autumn.webp';
 	import gabe from '$lib/images/gabe.webp';
