@@ -49,7 +49,7 @@
 		<HeroTitle title="Welcome!" />
 
 		<h2>
-			<span>This is the frontend portfolio of Gabe Atwell!</span>
+			<span>This is the frontend portfolio of Gabe Atwell</span>
 		</h2>
 
 		<p>
