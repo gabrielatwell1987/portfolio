@@ -7,6 +7,7 @@
 	import Popup from '$lib/components/Popup.svelte';
 	import cartoonGabe from '$lib/images/cartoonGabe.webp';
 	// import Testimonial from '$lib/components/projects/Testimonial.svelte';
+	// import adrienne from '$lib/images/adrienne.webp';
 </script>
 
 <SEO
@@ -58,7 +59,7 @@
 		title="Busy Little Bat Sewing - Owner"
 		testimonial="Gabe was a pleasure to work with. He was very professional and made sure I was happy with the final product. I would recommend him to anyone looking for a website."
 		rating="5"
-		avatar="/projects/busybatleopard.webp"
+		avatar={adrienne}
 	/> -->
 
 	<!--  -->
