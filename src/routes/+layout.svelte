@@ -8,7 +8,7 @@
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import Loading from '$lib/components/layout/Loading.svelte';
 	import SkipLink from '$lib/components/layout/SkipLink.svelte';
-	import ViewTransition from '$lib/components/ViewTransition.svelte';
+	import ViewTransition from '$lib/components/layout/ViewTransition.svelte';
 
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();

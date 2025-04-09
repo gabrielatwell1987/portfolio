@@ -1,5 +1,5 @@
 <script>
-	import Popup from '$lib/components/Popup.svelte';
+	import Popup from '$lib/components/layout/Popup.svelte';
 	import Modal from './Modal.svelte';
 	import SendButton from '$lib/components/layout/SendButton.svelte';
 

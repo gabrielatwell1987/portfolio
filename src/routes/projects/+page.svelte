@@ -4,7 +4,7 @@
 	import Figure from '$lib/components/projects/Figure.svelte';
 	import Title from '$lib/components/layout/Title.svelte';
 	import Avatar from '$lib/components/projects/Avatar.svelte';
-	import Popup from '$lib/components/Popup.svelte';
+	import Popup from '$lib/components/layout/Popup.svelte';
 	import cartoonGabe from '$lib/images/cartoonGabe.webp';
 	// import Testimonial from '$lib/components/projects/Testimonial.svelte';
 	// import adrienne from '$lib/images/adrienne.webp';

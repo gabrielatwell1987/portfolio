@@ -5,7 +5,7 @@
 	import Skills from '$lib/components/about/Skills.svelte';
 	import Bento from '$lib/components/about/Bento.svelte';
 	import CardFlip from '$lib/components/about/CardFlip.svelte';
-	import Tooltip from '$lib/components/Tooltip.svelte';
+	import Tooltip from '$lib/components/about/Tooltip.svelte';
 	import UsefulLinks from '$lib/components/about/UsefulLinks.svelte';
 	import HeroImage from '$lib/components/about/HeroImage.svelte';
 </script>

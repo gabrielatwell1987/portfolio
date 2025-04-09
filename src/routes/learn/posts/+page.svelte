@@ -3,8 +3,8 @@
 	import GSAP from './gsap.md';
 	import Button from '$lib/components/layout/Button.svelte';
 	import SEO from '$lib/data/SEO.svelte';
-	import Card from '$lib/components/Card.svelte';
-	import Image from '$lib/components/Image.svelte';
+	import Card from '$lib/components/layout/Card.svelte';
+	import Image from '$lib/components/layout/Image.svelte';
 
 	let mounted = $state(false);
 
