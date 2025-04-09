@@ -1,8 +1,8 @@
 <script>
 	import './md.css';
 	import Subheading from './Subheading.svelte';
-	import Image from '$lib/components/Image.svelte';
-	import Divider from '$lib/components/Divider.svelte';
+	import Image from '$lib/components/layout/Image.svelte';
+	import Divider from '$lib/components/utils/Divider.svelte';
 </script>
 
 <!-- tweens -->
