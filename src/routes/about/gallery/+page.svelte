@@ -1,6 +1,6 @@
 <script>
-	import Gallery from '$lib/components/Gallery.svelte';
 	import SEO from '$lib/data/SEO.svelte';
+	import Gallery from '$lib/components/utils/Gallery.svelte';
 
 	$effect(() => {
 		console.log(Gallery);
