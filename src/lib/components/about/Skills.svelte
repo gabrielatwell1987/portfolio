@@ -1,5 +1,5 @@
 <script>
-	import Image from '../Image.svelte';
+	import Image from '$lib/components/layout/Image.svelte';
 
 	/** @type {{title: any}} */
 	let { title } = $props();

@@ -1,7 +1,7 @@
 <script>
 	import Burger from '$lib/components/navigation/Burger.svelte';
 	import MainLogo from '$lib/components/navigation/MainLogo.svelte';
-	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
+	import ThemeToggle from '$lib/components/layout/ThemeToggle.svelte';
 	import NavLink from '$lib/components/navigation/NavLink.svelte';
 	import InstallBtn from '$lib/components/navigation/InstallBtn.svelte';
 

@@ -1,5 +1,5 @@
 <script>
-	import Image from '$lib/components/Image.svelte';
+	import Image from '$lib/components/layout/Image.svelte';
 </script>
 
 <div class="iconLogo">

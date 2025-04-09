@@ -2,9 +2,9 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import Title from '$lib/components/layout/Title.svelte';
 	import Button from '$lib/components/layout/Button.svelte';
-	import Iframe from '$lib/components/Iframe.svelte';
+	import Iframe from '$lib/components/learn/Iframe.svelte';
 	import Heading from './Heading.svelte';
-	import Learn from '$lib/components/Learn.svelte';
+	import Learn from '$lib/components/learn/Learn.svelte';
 
 	let detailsVisible = $state(false);
 

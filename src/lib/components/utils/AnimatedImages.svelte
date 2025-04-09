@@ -1,5 +1,5 @@
 <script>
-	import Image from '$lib/components/Image.svelte';
+	import Image from '$lib/components/layout/Image.svelte';
 	import gsap from 'gsap';
 
 	let { src, alt, width, scale } = $props();

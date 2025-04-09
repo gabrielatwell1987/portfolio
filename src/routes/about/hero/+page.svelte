@@ -1,6 +1,6 @@
 <script>
-	import ThreeCanvas from '$lib/components/ThreeCanvas.svelte';
 	import SEO from '$lib/data/SEO.svelte';
+	import ThreeCanvas from '$lib/components/layout/ThreeCanvas.svelte';
 	import Button from '$lib/components/layout/Button.svelte';
 	import HeroTitle from '$lib/components/layout/HeroTitle.svelte';
 

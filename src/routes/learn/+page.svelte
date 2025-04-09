@@ -1,6 +1,6 @@
 <script>
 	import SEO from '$lib/data/SEO.svelte';
-	import Image from '$lib/components/Image.svelte';
+	import Image from '$lib/components/layout/Image.svelte';
 	import AnimatedHeading from '$lib/components/learn/AnimatedHeading.svelte';
 
 	$effect(() => {
