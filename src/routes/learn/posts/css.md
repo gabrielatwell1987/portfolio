@@ -1,7 +1,7 @@
 <script>
 	import './md.css';
 	import Image from '$lib/components/layout/Image.svelte';
-	import Divider from '$lib/components/utils/Divider.svelte';
+	import Divider from '$lib/components/learn/Divider.svelte';
 </script>
 
 <!-- transitions -->
