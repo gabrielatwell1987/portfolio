@@ -19,10 +19,9 @@
 />
 
 <main>
-	<!-- <Title title="topics" /> -->
-	<div class="margin">
+	<h1 class="margin">
 		<AnimatedHeading title1="seeing" span="is" title2="believing" />
-	</div>
+	</h1>
 
 	<article>
 		<section aria-label="icons">
