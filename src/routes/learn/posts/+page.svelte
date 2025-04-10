@@ -35,9 +35,9 @@
 	<div class="css">
 		<div class="image">
 			<div class="skillImg">
-				<h2>
+				<h1>
 					<Image src="/skills/CSS-Purple.webp" alt="new css logo" />
-				</h2>
+				</h1>
 			</div>
 
 			<CSS aria-label="css" />
