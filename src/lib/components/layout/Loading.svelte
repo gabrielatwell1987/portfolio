@@ -1,9 +1,9 @@
 <script>
-	import LoadingText from './LoadingText.svelte';
+	import LoadingSkeleton from './LoadingSkeleton.svelte';
 </script>
 
 <main class="container">
-	<LoadingText />
+	<LoadingSkeleton />
 </main>
 
 <style>
