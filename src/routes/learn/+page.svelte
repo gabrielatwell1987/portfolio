@@ -19,9 +19,9 @@
 />
 
 <main>
-	<h1 class="margin">
+	<section class="margin">
 		<AnimatedHeading title1="seeing" span="is" title2="believing" />
-	</h1>
+	</section>
 
 	<article>
 		<section aria-label="icons">

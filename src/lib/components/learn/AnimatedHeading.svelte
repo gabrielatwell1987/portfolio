@@ -48,7 +48,7 @@
 </script>
 
 <section class="simpleHeading">
-	<h2 class="h1-l">{title1}</h2>
+	<h1 class="h1-l">{title1}</h1>
 	<span class="span">{span}</span>
 	<h2 class="h1-r">{title2}</h2>
 </section>
