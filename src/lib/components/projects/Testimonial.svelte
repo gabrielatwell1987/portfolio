@@ -31,14 +31,16 @@
 		<div class="author-info">
 			<strong>{name}</strong>
 
-			<span>{title}{company ? `, ${company}` : ''}</span>
+			<span>{title} {company ? `, ${company}` : ''}</span>
 		</div>
 	</footer>
 </article>
 
 <style>
 	.testimonial {
-		background-color: var(--text-anti);
+		--dark-bg-rgb: var(--text-color);
+		--light-bg-rgb: var(--text-anti);
+		background-color: hsla(var(--light-bg-rgb), 0.25);
 		border-radius: var(--radius);
 		padding: 2rem;
 		position: relative;
@@ -46,7 +48,7 @@
 		margin-top: -2rem;
 		margin-bottom: 2rem;
 		max-width: 50em;
-		width: 100%;
+		width: 95%;
 		margin-inline: auto;
 		padding-bottom: 5em;
 		transition:
@@ -55,7 +57,6 @@
 
 		&:hover {
 			transform: translateY(-5px);
-			box-shadow: 0 0.5rem 1.2rem rgba(0, 0, 0, 0.1);
 		}
 
 		& .author-info {
@@ -66,15 +67,15 @@
 			padding: 0.75rem;
 
 			& strong {
-				font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+				font-size: clamp(1rem, 1.75vw, 1.3rem);
 				font-weight: 600;
 				color: var(--text-color);
 			}
 
 			& span {
-				font-size: clamp(0.8rem, 1.2vw, 1rem);
-				font-weight: 400;
 				color: var(--text-color);
+				font-size: clamp(0.9rem, 1.25vw, 1.1rem);
+				font-weight: 400;
 				opacity: 0.5;
 			}
 		}
@@ -128,6 +129,10 @@
 		}
 	}
 
+	:global(body.light) .testimonial {
+		background-color: rgba(var(--dark-bg-rgb), 0.25);
+	}
+
 	.highlighted {
 		border-left: 3px solid hsl(0, 0%, 16%);
 	}
@@ -135,6 +140,8 @@
 	@media (max-width: 640px) {
 		.testimonial {
 			padding: 1.5rem;
+			width: 90%;
+			margin-inline: auto;
 		}
 	}
 </style>
