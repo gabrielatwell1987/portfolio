@@ -6,8 +6,8 @@
 	import Avatar from '$lib/components/projects/Avatar.svelte';
 	import Popup from '$lib/components/layout/Popup.svelte';
 	import cartoonGabe from '$lib/images/cartoonGabe.webp';
-	// import Testimonial from '$lib/components/projects/Testimonial.svelte';
-	// import adrienne from '$lib/images/adrienne.webp';
+	import Testimonial from '$lib/components/projects/Testimonial.svelte';
+	import adrienne from '$lib/images/adrienne.webp';
 </script>
 
 <SEO
@@ -54,13 +54,13 @@
 		index={0}
 	/>
 
-	<!-- <Testimonial
-		name="Adrienne Atwell"
+	<Testimonial
+		name="Adrienne Cornelson"
 		title="Busy Little Bat Sewing - Owner"
-		testimonial="Gabe was a pleasure to work with. He was very professional and made sure I was happy with the final product. I would recommend him to anyone looking for a website."
+		testimonial="Gabe was a pleasure to work with. He was very responsive and made sure to ask questions when he needed clarification. He took my ideas and made them a reality! I would highly recommend him for any web development project."
 		rating="5"
 		avatar={adrienne}
-	/> -->
+	/>
 
 	<!--  -->
 
