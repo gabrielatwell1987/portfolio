@@ -49,7 +49,7 @@
 	<Project
 		title="busy little bat sewing"
 		img="/projects/busybatleopard.webp"
-		url="https://busybat.vercel.app"
+		url="https://busybatsewing.com"
 		description="sveltekit"
 		index={0}
 	/>
