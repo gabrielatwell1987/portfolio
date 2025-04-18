@@ -53,4 +53,4 @@
 
 <div style="margin: 5% 0;"></div>
 
-<Divider width="75" thickness="5" />
+<Divider width="75" thickness="7" />
