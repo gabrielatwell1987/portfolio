@@ -28,24 +28,6 @@
 </div>
 
 <section class="bevel">
-	<!-- <Project
-		title="S.P.A."
-		img="/projects/web_dev.webp"
-		url="https://gabe1.vercel.app"
-		description="HTML/CSS/JS"
-	/> -->
-
-	<!--  -->
-
-	<!-- <Project
-		title="horizontal scroll"
-		img="/projects/scroller.webp"
-		url="https://scrollernessly.vercel.app"
-		description="html/css/js"
-	/> -->
-
-	<!--  -->
-
 	<Project
 		title="busy little bat sewing"
 		img="/projects/busybatleopard.webp"
@@ -94,15 +76,6 @@
 
 	<!--  -->
 
-	<!-- <Project
-		title="nasa api"
-		img="/projects/nasa.webp"
-		url="https://nasaapi-theta.vercel.app"
-		description="React"
-	/> -->
-
-	<!--  -->
-
 	<Project
 		title="password maker"
 		img="/projects/pw-generator.webp"
@@ -113,15 +86,6 @@
 
 	<!--  -->
 
-	<!-- <Project
-		title="github search"
-		img="/projects/github.webp"
-		url="https://github-user-search-api.vercel.app"
-		description="svelte"
-	/> -->
-
-	<!--  -->
-
 	<Project
 		title="data visualizations"
 		img="/projects/data-v.webp"
@@ -129,6 +93,42 @@
 		description="d3/svelte"
 		index={5}
 	/>
+
+	<!--  -->
+
+	<!-- <Project
+		title="S.P.A."
+		img="/projects/web_dev.webp"
+		url="https://gabe1.vercel.app"
+		description="HTML/CSS/JS"
+	/> -->
+
+	<!--  -->
+
+	<!-- <Project
+		title="horizontal scroll"
+		img="/projects/scroller.webp"
+		url="https://scrollernessly.vercel.app"
+		description="html/css/js"
+	/> -->
+
+	<!--  -->
+
+	<!-- <Project
+	title="nasa api"
+	img="/projects/nasa.webp"
+	url="https://nasaapi-theta.vercel.app"
+	description="React"
+	/> -->
+
+	<!--  -->
+
+	<!-- <Project
+	title="github search"
+	img="/projects/github.webp"
+	url="https://github-user-search-api.vercel.app"
+	description="svelte"
+	/> -->
 
 	<!--  -->
 
@@ -211,7 +211,7 @@
 			text="distinguish your website"
 		/> -->
 
-	<Figure src="logos/web.webp" alt="A logo that says web" text="building the" />
+	<!-- <Figure src="logos/web.webp" alt="A logo that says web" text="building the" /> -->
 
 	<Avatar src={cartoonGabe} alt="cartoon gabe" name="gabeAtwell" />
 </section>
