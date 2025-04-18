@@ -211,9 +211,9 @@
 			text="distinguish your website"
 		/> -->
 
-	<Avatar src={cartoonGabe} alt="cartoon gabe" name="gabeAtwell" />
-
 	<Figure src="logos/web.webp" alt="A logo that says web" text="building the" />
+
+	<Avatar src={cartoonGabe} alt="cartoon gabe" name="gabeAtwell" />
 </section>
 
 <style>

@@ -30,11 +30,10 @@
 		figcaption {
 			position: absolute;
 			top: 13%;
-			left: 50%;
-			transform: translateX(-50%);
 			padding: 0.5rem;
 			border-radius: 0.5rem;
-			transform: translateX(-50%);
+			animation: figcaption 10s ease-in-out forwards;
+			margin-inline: auto;
 		}
 
 		p {
@@ -63,6 +62,18 @@
 			margin-inline: auto;
 			border-radius: 10%;
 			margin: 3rem 0;
+		}
+	}
+
+	@keyframes figcaption {
+		0% {
+			transform: translateY(-20%);
+			opacity: 0;
+		}
+
+		100% {
+			transform: translateY(0);
+			opacity: 1;
 		}
 	}
 </style>
