@@ -9,9 +9,8 @@
 	span {
 		font-family: var(--orbitron);
 		font-size: clamp(1.2rem, 1.5vw, 2rem);
-		font-weight: 900;
 		line-height: 1.75;
-		color: var(--text-gray);
+		color: var(--text-color);
 		margin-right: 0.5rem;
 		text-wrap: balance;
 	}
