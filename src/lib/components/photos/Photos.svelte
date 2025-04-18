@@ -159,7 +159,7 @@
 		--100: 100%;
 		--animation-duration: 1.5s;
 		--stagger-delay: 0.5s;
-		--subtle-rgb: 50, 50, 50;
+		--subtle-rgb: 40, 40, 40;
 	}
 
 	@media screen and (width >= 300px) {
