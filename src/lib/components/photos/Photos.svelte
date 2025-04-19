@@ -249,12 +249,16 @@
 					& img {
 						width: 100%;
 						height: auto;
+
+						&:first-child {
+							padding-top: 2em;
+						}
 					}
 
 					& .flex {
 						display: grid;
 						grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-						gap: 4rem;
+						gap: 1em;
 						place-items: center;
 						width: 100%;
 
@@ -312,7 +316,7 @@
 			gap: 5%;
 
 			& .flex {
-				margin-bottom: 6em;
+				margin-bottom: 1em;
 			}
 		}
 	}
@@ -331,11 +335,17 @@
 				margin: 0 auto;
 				background-color: transparent;
 
+				& img {
+					&:first-child {
+						padding-top: 0;
+					}
+				}
+
 				.flex {
 					display: flex;
 					justify-content: center;
 					flex-direction: row;
-					gap: 8%;
+					gap: 5%;
 				}
 			}
 		}
