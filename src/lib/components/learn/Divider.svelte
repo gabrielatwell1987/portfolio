@@ -21,7 +21,7 @@
 		border-bottom-left-radius: 2px;
 		border-bottom-right-radius: 2px;
 		opacity: 0.5;
-		animation: shrink 6s ease-in-out infinite;
+		/* animation: shrink 6s ease-in-out infinite; */
 	}
 
 	@keyframes shrink {
