@@ -51,6 +51,7 @@
 		width: 95%;
 		margin-inline: auto;
 		padding-bottom: 5em;
+		animation: fade-in 0.8s ease-out forwards;
 		transition:
 			transform 0.2s,
 			box-shadow 0.2s;
@@ -142,6 +143,17 @@
 			padding: 1.5rem;
 			width: 90%;
 			margin-inline: auto;
+		}
+	}
+
+	@keyframes fade-in {
+		0% {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 </style>
