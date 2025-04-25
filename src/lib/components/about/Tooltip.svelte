@@ -56,7 +56,7 @@
 		& .tooltip {
 			position: absolute;
 			background-color: var(--black);
-			color: var(--off-white);
+			color: var(---white);
 			font-size: clamp(1rem, 1.5vw, 1.25rem);
 			padding: 0.5rem;
 			box-shadow: 0 0 5px var(--text-blue);

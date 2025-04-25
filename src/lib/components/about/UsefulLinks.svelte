@@ -5,8 +5,20 @@
 <main class="links" id="useful-links">
 	<h2>Useful Links:</h2>
 
+	<LoadBtn
+		loading="loading..."
+		delay={1500}
+		submit="Beginner HTML"
+		href="https://www.websiteplanet.com/blog/html-guide-beginners/"
+	/>
 	<LoadBtn loading="loading..." delay={1500} submit="JoyOfCode" href="https://joyofcode.xyz" />
 	<LoadBtn loading="loading..." delay={1500} submit="Kevin Powell" href="https://kevinpowell.co" />
+	<LoadBtn
+		loading="loading..."
+		delay={1500}
+		submit="Creative Coding"
+		href="https://creativecodingclub.com"
+	/>
 	<LoadBtn
 		loading="loading..."
 		delay={1500}
@@ -18,18 +30,6 @@
 		delay={1500}
 		submit="Frontend Masters"
 		href="https://frontendmasters.com"
-	/>
-	<LoadBtn
-		loading="loading..."
-		delay={1500}
-		submit="Creative Coding"
-		href="https://creativecodingclub.com"
-	/>
-	<LoadBtn
-		loading="loading..."
-		delay={1500}
-		submit="Beginner HTML"
-		href="https://www.websiteplanet.com/blog/html-guide-beginners/"
 	/>
 
 	<p>Most of these links are resources that I used to learn frontend and design for the web 🚀</p>

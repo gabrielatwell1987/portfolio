@@ -78,7 +78,7 @@
 
 			<Grid leftTitle="Frontend" rightTitle="Design based" />
 
-			<Bento link="Contact me if you have a question!" />
+			<Bento />
 
 			<CardFlip
 				src="/logos/heart-skull.webp"

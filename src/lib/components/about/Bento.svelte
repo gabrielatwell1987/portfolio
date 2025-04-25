@@ -21,6 +21,8 @@
 			<div class="bento-grid">
 				<div class="item">
 					<a href="/contact">
+						<Image src="/icons/contactIcon.svg" alt="an icon for contact" width="100" />
+
 						<h2>contact</h2>
 
 						<p>Feel free to contact me about anything!</p>
@@ -29,6 +31,8 @@
 
 				<div class="item">
 					<a href="/learn">
+						<Image src="/icons/learnIcon.svg" alt="an icon for learning" width="100" />
+
 						<h2>learn</h2>
 
 						<p>If you'd like to learn about web technologies</p>
@@ -39,7 +43,7 @@
 					<a href="/projects">
 						<h2>projects</h2>
 
-						<Image src="/logos/logoA.webp" alt="atwell logo" width="500" />
+						<Image src="/logos/logoA.webp" alt="atwell logo" width="300" />
 					</a>
 				</div>
 			</div>
@@ -130,6 +134,10 @@
 					&:hover {
 						text-decoration: underline;
 						text-underline-offset: 0.5rem;
+					}
+
+					&:nth-child(2) {
+						margin-top: 0.5em;
 					}
 				}
 
