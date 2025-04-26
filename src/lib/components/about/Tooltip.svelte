@@ -44,12 +44,12 @@
 
 			& svg {
 				fill: var(--button-bg);
-				width: clamp(0.85em, 2vw, 1.5em);
-				height: clamp(0.85em, 2vw, 1.5em);
+				width: clamp(0.85em, 5vw, 3em);
+				height: clamp(0.85em, 5vw, 3em);
 			}
 
 			&:hover {
-				filter: hue-rotate(7deg);
+				filter: drop-shadow(0 0 25px var(--text-link));
 			}
 		}
 
