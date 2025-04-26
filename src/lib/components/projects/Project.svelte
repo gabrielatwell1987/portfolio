@@ -37,7 +37,7 @@
 			justify-content: center;
 			align-items: center;
 			font-family: var(--orbitron);
-			font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+			font-size: clamp(1.75rem, 2.75vw, 2.75rem);
 			font-weight: 600;
 			margin-inline: auto;
 			letter-spacing: 2px;
@@ -68,8 +68,8 @@
 			& .hover-text {
 				visibility: hidden;
 				width: 100%;
-				background-color: var(--text-anti);
-				color: var(--text-color);
+				background-color: var(--text-color);
+				color: var(--text-anti);
 				text-align: center;
 				border-radius: var(--button-radius);
 				padding: 5px 3px;

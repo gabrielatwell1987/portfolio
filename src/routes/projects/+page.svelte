@@ -28,21 +28,23 @@
 </div>
 
 <section class="bevel">
-	<Project
-		title="busy little bat sewing"
-		img="/projects/busybatleopard.webp"
-		url="https://busybatsewing.com"
-		description="sveltekit"
-		index={0}
-	/>
+	<div class="whole">
+		<Project
+			title="busy little bat sewing"
+			img="/projects/busybatleopard.webp"
+			url="https://busybatsewing.com"
+			description="sveltekit"
+			index={0}
+		/>
 
-	<Testimonial
-		name="Adrienne Cornelson"
-		title="Busy Little Bat Sewing - Owner"
-		testimonial="Gabe was a pleasure to work with. He was very responsive and made sure to ask questions when he needed clarification. He took my ideas and made them a reality! I would highly recommend him for any web development project."
-		rating="5"
-		avatar={adrienne}
-	/>
+		<Testimonial
+			name="Adrienne Cornelson"
+			title="Busy Little Bat Sewing - Owner"
+			testimonial="Gabe was a pleasure to work with. He was very responsive and made sure to ask questions when he needed clarification. He took my ideas and made them a reality! I would highly recommend him for any web development project."
+			rating="5"
+			avatar={adrienne}
+		/>
+	</div>
 
 	<!--  -->
 
@@ -213,15 +215,28 @@
 
 	<!-- <Figure src="logos/web.webp" alt="A logo that says web" text="building the" /> -->
 
-	<Avatar src={cartoonGabe} alt="cartoon gabe" name="gabeAtwell" />
+	<!-- <Avatar src={cartoonGabe} alt="cartoon gabe" name="gabeAtwell" /> -->
 </section>
 
 <style>
 	.bevel {
 		position: relative;
 
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+		place-items: center;
+
 		@media (width <= 500px) {
 			padding: 4em 0;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		}
+
+		& .whole {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 0.25rem;
 		}
 	}
 

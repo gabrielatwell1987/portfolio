@@ -18,13 +18,17 @@
 		align-items: center;
 		background: transparent;
 		box-shadow: none;
-		gap: 1.75rem;
-		margin: 2rem 0;
-		padding: 0;
+		gap: 2rem;
+		padding: 1.5rem;
+		width: fit-content;
+		margin-inline: auto;
+		position: relative;
+		z-index: 1;
 
 		img {
 			border-radius: 50%;
-			width: 15%;
+			width: 60px;
+			height: 60px;
 			object-fit: cover;
 			transition: scale 0.5s ease-in-out;
 
@@ -42,11 +46,11 @@
 				letter-spacing: 2px;
 				color: var(--text-blue);
 				font-family: var(--orbitron);
-				font-size: clamp(1.1rem, 2vw, 2rem);
+				font-size: clamp(1rem, 1.5vw, 1.75rem);
 				font-weight: 800;
+				white-space: nowrap;
 
 				&:hover {
-					/* text-decoration: underline; */
 					border-bottom: 1px solid var(--text-blue);
 				}
 			}
@@ -57,12 +61,15 @@
 				background: transparent;
 			}
 		}
+	}
 
-		@media screen and (width >= 950px) {
-			margin-top: 5rem;
+	@media screen and (width >= 950px) {
+		article {
+			padding: 2rem;
 
-			& img {
-				width: 4%;
+			img {
+				width: 80px;
+				height: 80px;
 			}
 		}
 	}
