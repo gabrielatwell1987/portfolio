@@ -52,6 +52,8 @@
 		</a>
 
 		{#if isExpanded}
+			<!-- svelte-ignore a11y_click_events_have_key_events -->
+			<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 			<div class="expanded-overlay" onclick={handleClose} role="dialog" aria-modal="true">
 				<div class="expanded-text" style:view-transition-name="morph">
 					{text}
@@ -121,7 +123,6 @@
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
-		text-fill-color: transparent;
 	}
 
 	.close-button {
