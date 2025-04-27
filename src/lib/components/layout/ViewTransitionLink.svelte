@@ -143,8 +143,7 @@
 		color: var(--text-color);
 
 		&:hover {
-			background: rgba(255, 255, 255, 0.1);
-			transform: rotate(90deg);
+			transform: rotate(15deg);
 		}
 
 		&:focus {
