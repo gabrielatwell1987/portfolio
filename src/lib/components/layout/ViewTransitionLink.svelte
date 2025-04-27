@@ -1,16 +1,23 @@
 <script>
 	let { href = '', text = '', class: className = '' } = $props();
 	let isExpanded = $state(false);
+	let linkRect = $state(null);
 
 	async function handleClick(event) {
 		event.preventDefault();
+		const rect = event.currentTarget.getBoundingClientRect();
+		linkRect = {
+			left: rect.left,
+			top: rect.top,
+			width: rect.width,
+			height: rect.height
+		};
 
 		if (!document.startViewTransition) {
 			isExpanded = true;
 			return;
 		}
 
-		// Remove requestAnimationFrame and directly start transition
 		document.startViewTransition(() => {
 			isExpanded = true;
 		});
@@ -32,27 +39,23 @@
 </script>
 
 <div class="link-wrapper">
-	<a
-		{href}
-		class={`transition-link ${className}`}
-		onclick={handleClick}
-		style:view-transition-name="link-expand"
-	>
-		{text}
-	</a>
+	<div class="text-wrapper">
+		<a
+			{href}
+			class={`transition-link ${className} ${isExpanded ? 'expanded' : ''}`}
+			onclick={handleClick}
+			style:view-transition-name="morph"
+			style:--initial-left="{linkRect?.left}px"
+			style:--initial-top="{linkRect?.top}px"
+		>
+			{text}
+		</a>
 
-	{#if isExpanded}
-		<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
-		<div class="expanded-overlay" role="dialog" aria-modal="true">
-			<!-- svelte-ignore a11y_click_events_have_key_events -->
-			<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-			<div
-				class="expanded-content"
-				style:view-transition-name="link-expand"
-				onclick={(e) => e.stopPropagation()}
-				role="dialog"
-				tabindex="0"
-			>
+		{#if isExpanded}
+			<div class="expanded-overlay" onclick={handleClose} role="dialog" aria-modal="true">
+				<div class="expanded-text" style:view-transition-name="morph">
+					{text}
+				</div>
 				<button
 					class="close-button"
 					onclick={handleClose}
@@ -61,35 +64,41 @@
 				>
 					×
 				</button>
-				<h2>{text}</h2>
-				<p>These are my projects!</p>
 			</div>
-		</div>
-	{/if}
+		{/if}
+	</div>
 </div>
 
 <style>
 	.link-wrapper {
 		position: relative;
 		display: inline-block;
+	}
 
-		& .transition-link {
-			display: inline-block;
-			text-decoration: none;
-			padding: 0.5rem 1rem;
-			border-radius: 0.25rem;
-			background: transparent;
-			color: var(--text-color, #1f2937);
-			transition: transform 0.2s;
-			font-family: var(--bronova);
-			font-size: clamp(1.5rem, 2vw, 2.25rem);
-			font-weight: 600;
-			position: relative;
-			z-index: 1000;
+	.text-wrapper {
+		position: relative;
+		display: inline-block;
+	}
 
-			&:hover {
-				transform: scale(1.05);
-			}
+	.transition-link {
+		display: inline-block;
+		text-decoration: none;
+		padding: 0.5rem 1rem;
+		border-radius: 0.25rem;
+		background: transparent;
+		color: var(--text-color);
+		font-family: var(--bronova);
+		font-size: clamp(1.5rem, 2vw, 2.25rem);
+		font-weight: 600;
+		transition: transform 0.2s;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+
+		&.expanded {
+			opacity: 0;
+			pointer-events: none;
 		}
 	}
 
@@ -102,103 +111,126 @@
 		z-index: 1000;
 	}
 
-	.expanded-content {
-		background: var(--text-anti);
-		padding: 2rem;
-		border-radius: 0.5rem;
-		width: 90vw;
-		max-width: 600px;
-		color: var(--text-color, #1f2937);
-		position: relative;
-		transform-origin: center center;
-		contain: paint layout;
-		view-transition-name: link-expand;
-		overflow: hidden;
+	.expanded-text {
+		font-family: var(--orbitron);
+		font-size: clamp(4rem, 8vw, 12rem);
+		font-weight: 800;
+		text-align: center;
+		line-height: 1.1;
+		background: linear-gradient(135deg, var(--text-color) 0%, var(--text-blue) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		text-fill-color: transparent;
+	}
 
-		& h2 {
-			font-family: var(--orbitron);
-			font-size: clamp(2rem, 2vw, 5rem);
-			font-weight: 600;
+	.close-button {
+		position: fixed;
+		top: 2rem;
+		right: 2rem;
+		width: 3rem;
+		height: 3rem;
+		display: grid;
+		place-items: center;
+		cursor: pointer;
+		background: transparent;
+		border-radius: 50%;
+		font-size: 2rem;
+		transition: all 0.2s;
+		outline: none;
+		border: none;
+		color: var(--text-color);
+
+		&:hover {
+			background: rgba(255, 255, 255, 0.1);
+			transform: rotate(90deg);
 		}
 
-		& .close-button {
-			position: absolute;
-			top: 0;
-			right: 1rem;
-			width: 2rem;
-			height: 2rem;
-			display: grid;
-			place-items: center;
-			cursor: pointer;
-			background: transparent;
-			border-radius: 0.25rem;
-			font-size: clamp(1rem, 2vw, 2rem);
-			transition: background-color 0.2s;
+		&:focus {
 			outline: none;
-			border: none;
+			box-shadow:
+				0 0 0 2px var(--text-anti),
+				0 0 0 4px var(--text-color);
+		}
 
-			&:focus {
-				outline: none;
-				box-shadow:
-					0 0 0 2px var(--text-anti),
-					0 0 0 4px var(--text-color);
-			}
+		&:focus:not(:focus-visible) {
+			outline: none;
+			box-shadow: none;
+		}
 
-			/* Remove focus outline for mouse users, keep it for keyboard navigation */
-			&:focus:not(:focus-visible) {
-				outline: none;
-				box-shadow: none;
-			}
-
-			&:focus-visible {
-				outline: none;
-				box-shadow:
-					0 0 0 2px var(--text-anti),
-					0 0 0 4px var(--text-color);
-			}
+		&:focus-visible {
+			outline: none;
+			box-shadow:
+				0 0 0 2px var(--text-anti),
+				0 0 0 4px var(--text-color);
 		}
 	}
 
-	@keyframes slide-and-fade-in {
+	/* View transition animations */
+	::view-transition-old(morph),
+	::view-transition-new(morph) {
+		height: fit-content;
+		width: fit-content;
+		mix-blend-mode: normal;
+	}
+
+	::view-transition-old(morph) {
+		animation: morph-to-big 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+	}
+
+	::view-transition-new(morph) {
+		animation: morph-to-small 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+	}
+
+	@keyframes morph-to-big {
 		from {
-			opacity: 0;
-			transform: translateX(-50px) scale(0.95);
+			position: fixed;
+			left: var(--initial-left);
+			top: var(--initial-top);
+			transform: scale(1);
+			font-size: clamp(1.5rem, 2vw, 2.25rem);
+			font-family: var(--bronova);
+			color: var(--text-color);
+			-webkit-text-fill-color: var(--text-color);
 		}
 		to {
-			opacity: 1;
-			transform: translateX(0) scale(1);
+			position: fixed;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			font-size: clamp(4rem, 8vw, 12rem);
+			font-family: var(--orbitron);
+			background: linear-gradient(135deg, var(--text-color) 0%, var(--text-blue) 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			text-fill-color: transparent;
 		}
 	}
 
-	@keyframes slide-and-fade-out {
+	@keyframes morph-to-small {
 		from {
-			opacity: 1;
-			transform: translateX(0) scale(1);
+			position: fixed;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			font-size: clamp(4rem, 8vw, 12rem);
+			font-family: var(--orbitron);
+			background: linear-gradient(135deg, var(--text-color) 0%, var(--text-blue) 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			text-fill-color: transparent;
 		}
 		to {
-			opacity: 0;
-			transform: translateX(50px) scale(0.95);
+			position: fixed;
+			left: var(--initial-left);
+			top: var(--initial-top);
+			transform: scale(1);
+			font-size: clamp(1.5rem, 2vw, 2.25rem);
+			font-family: var(--bronova);
+			color: var(--text-color);
+			-webkit-text-fill-color: var(--text-color);
 		}
-	}
-
-	/* Fix view transition styles to properly handle the animation */
-	::view-transition-group(*) {
-		animation: none;
-	}
-
-	::view-transition-old(link-expand),
-	::view-transition-new(link-expand) {
-		height: auto;
-		width: auto;
-		transform-origin: top left;
-		will-change: transform;
-	}
-
-	::view-transition-old(link-expand) {
-		animation: slide-and-fade-out 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
-	}
-
-	::view-transition-new(link-expand) {
-		animation: slide-and-fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
 	}
 </style>
