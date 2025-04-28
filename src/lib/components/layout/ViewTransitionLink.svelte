@@ -1,236 +1,104 @@
 <script>
-	let { href = '', text = '', class: className = '' } = $props();
-	let isExpanded = $state(false);
-	let linkRect = $state(null);
+	let { text, link } = $props();
+	let isHeading = $state(false);
 
-	async function handleClick(event) {
-		event.preventDefault();
-		const rect = event.currentTarget.getBoundingClientRect();
-		linkRect = {
-			left: rect.left,
-			top: rect.top,
-			width: rect.width,
-			height: rect.height
-		};
+	function handleClick(e) {
+		e.preventDefault();
 
 		if (!document.startViewTransition) {
-			isExpanded = true;
+			isHeading = !isHeading;
 			return;
 		}
 
 		document.startViewTransition(() => {
-			isExpanded = true;
-		});
-	}
-
-	async function handleClose(event) {
-		event.preventDefault();
-		event.stopPropagation();
-
-		if (!document.startViewTransition) {
-			isExpanded = false;
-			return;
-		}
-
-		document.startViewTransition(() => {
-			isExpanded = false;
+			isHeading = !isHeading;
 		});
 	}
 </script>
 
-<div class="link-wrapper">
-	<div class="text-wrapper">
-		<a
-			{href}
-			class={`transition-link ${className} ${isExpanded ? 'expanded' : ''}`}
-			onclick={handleClick}
-			style:view-transition-name="morph"
-			style:--initial-left="{linkRect?.left}px"
-			style:--initial-top="{linkRect?.top}px"
-		>
-			{text}
-		</a>
-
-		{#if isExpanded}
-			<!-- svelte-ignore a11y_click_events_have_key_events -->
-			<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-			<div class="expanded-overlay" onclick={handleClose} role="dialog" aria-modal="true">
-				<div class="expanded-text" style:view-transition-name="morph">
-					{text}
-				</div>
-				<button
-					class="close-button"
-					onclick={handleClose}
-					onkeydown={(e) => e.key === 'Enter' && handleClose(e)}
-					aria-label="Close"
-				>
-					×
-				</button>
-			</div>
-		{/if}
-	</div>
-</div>
+<section class="wrapper">
+	{#if isHeading}
+		<button class="heading" onclick={handleClick} type="button">{text}</button>
+	{:else}
+		<a href={link} class="link" onclick={handleClick} type="button">{link}</a>
+	{/if}
+</section>
 
 <style>
-	.link-wrapper {
-		position: relative;
-		display: inline-block;
-	}
-
-	.text-wrapper {
-		position: relative;
-		display: inline-block;
-	}
-
-	.transition-link {
-		display: inline-block;
-		text-decoration: none;
-		padding: 0.5rem 1rem;
-		border-radius: 0.25rem;
-		background: transparent;
+	.wrapper {
+		height: 100vh;
+		width: 100%;
+		background-color: transparent;
 		color: var(--text-color);
-		font-family: var(--bronova);
-		font-size: clamp(1.5rem, 2vw, 2.25rem);
-		font-weight: 600;
-		transition: transform 0.2s;
+		margin: 0;
+		padding: 0;
 
-		&:hover {
-			transform: scale(1.05);
+		& .heading {
+			font-size: clamp(3rem, 5vw, 10rem);
+			font-weight: 800;
+			color: var(--text-color);
+			text-align: center;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			view-transition-name: text-element;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			outline: none;
+
+			&:focus-visible,
+			&:focus {
+				outline: none;
+				box-shadow: none;
+				border: none;
+			}
 		}
 
-		&.expanded {
+		& .link {
+			font-size: clamp(1rem, 2.5vw, 4rem);
+			font-weight: 600;
+			color: var(--text-color);
+			text-decoration: none;
+			padding: 0.7rem;
+			view-transition-name: text-element;
+			background-color: transparent;
+		}
+	}
+
+	@supports (view-transition-name: text-element) {
+		::view-transition-group(text-element) {
+			animation-duration: 0.25s;
+			animation-timing-function: ease-in-out;
+		}
+
+		::view-transition-old(text-element) {
 			opacity: 0;
-			pointer-events: none;
+			animation: old 0.001s ease-in-out;
+		}
+
+		::view-transition-new(text-element) {
+			opacity: 1;
+			animation: new 0.001s ease-in-out;
 		}
 	}
 
-	.expanded-overlay {
-		position: fixed;
-		inset: 0;
-		background: rgba(0, 0, 0, 0.5);
-		display: grid;
-		place-items: center;
-		z-index: 1000;
-	}
-
-	.expanded-text {
-		font-family: var(--orbitron);
-		font-size: clamp(4rem, 8vw, 12rem);
-		font-weight: 800;
-		text-align: center;
-		line-height: 1.1;
-		background: linear-gradient(135deg, var(--text-color) 0%, var(--text-blue) 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-	}
-
-	.close-button {
-		position: fixed;
-		top: 2rem;
-		right: 2rem;
-		width: 3rem;
-		height: 3rem;
-		display: grid;
-		place-items: center;
-		cursor: pointer;
-		background: transparent;
-		border-radius: 50%;
-		font-size: 2rem;
-		transition: all 0.2s;
-		outline: none;
-		border: none;
-		color: var(--text-color);
-
-		&:hover {
-			transform: rotate(15deg);
+	@keyframes old {
+		0% {
+			opacity: 0;
 		}
-
-		&:focus {
-			outline: none;
-			box-shadow:
-				0 0 0 2px var(--text-anti),
-				0 0 0 4px var(--text-color);
-		}
-
-		&:focus:not(:focus-visible) {
-			outline: none;
-			box-shadow: none;
-		}
-
-		&:focus-visible {
-			outline: none;
-			box-shadow:
-				0 0 0 2px var(--text-anti),
-				0 0 0 4px var(--text-color);
+		100% {
+			opacity: 1;
 		}
 	}
 
-	/* View transition animations */
-	::view-transition-old(morph),
-	::view-transition-new(morph) {
-		height: fit-content;
-		width: fit-content;
-		mix-blend-mode: normal;
-	}
-
-	::view-transition-old(morph) {
-		animation: morph-to-big 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-	}
-
-	::view-transition-new(morph) {
-		animation: morph-to-small 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-	}
-
-	@keyframes morph-to-big {
-		from {
-			position: fixed;
-			left: var(--initial-left);
-			top: var(--initial-top);
-			transform: scale(1);
-			font-size: clamp(1.5rem, 2vw, 2.25rem);
-			font-family: var(--bronova);
-			color: var(--text-color);
-			-webkit-text-fill-color: var(--text-color);
+	@keyframes new {
+		0% {
+			opacity: 1;
 		}
-		to {
-			position: fixed;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-			font-size: clamp(4rem, 8vw, 12rem);
-			font-family: var(--orbitron);
-			background: linear-gradient(135deg, var(--text-color) 0%, var(--text-blue) 100%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-			text-fill-color: transparent;
-		}
-	}
-
-	@keyframes morph-to-small {
-		from {
-			position: fixed;
-			left: 50%;
-			top: 50%;
-			transform: translate(-50%, -50%);
-			font-size: clamp(4rem, 8vw, 12rem);
-			font-family: var(--orbitron);
-			background: linear-gradient(135deg, var(--text-color) 0%, var(--text-blue) 100%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-			text-fill-color: transparent;
-		}
-		to {
-			position: fixed;
-			left: var(--initial-left);
-			top: var(--initial-top);
-			transform: scale(1);
-			font-size: clamp(1.5rem, 2vw, 2.25rem);
-			font-family: var(--bronova);
-			color: var(--text-color);
-			-webkit-text-fill-color: var(--text-color);
+		100% {
+			opacity: 0;
 		}
 	}
 </style>
