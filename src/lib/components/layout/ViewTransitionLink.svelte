@@ -27,6 +27,7 @@
 <style>
 	.wrapper {
 		width: 100%;
+		height: 1em;
 		background-color: transparent;
 		color: var(--text-color);
 		margin: 0;
