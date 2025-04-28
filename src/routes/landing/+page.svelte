@@ -3,7 +3,6 @@
 	import Hero from '$lib/components/landing/Hero.svelte';
 	import AnimatedIntro from '$lib/components/landing/AnimatedIntro.svelte';
 	import ImageIntro from '$lib/components/landing/ImageIntro.svelte';
-	import ViewTransitionLink from '$lib/components/layout/ViewTransitionLink.svelte';
 </script>
 
 <SEO
@@ -17,5 +16,3 @@
 <AnimatedIntro text="do you need a " span="website?" />
 
 <Hero />
-
-<ViewTransitionLink link="jamal" text="wilo mcgee" />
