@@ -26,7 +26,6 @@
 
 <style>
 	.wrapper {
-		height: 100vh;
 		width: 100%;
 		background-color: transparent;
 		color: var(--text-color);
@@ -69,19 +68,19 @@
 
 	@supports (view-transition-name: text-element) {
 		::view-transition-group(text-element) {
-			animation-duration: 0.25s;
+			animation-duration: 0.061242s;
 			animation-timing-function: ease-in-out;
 		}
 
-		::view-transition-old(text-element) {
+		/* ::view-transition-old(text-element) {
 			opacity: 0;
 			animation: old 0.001s ease-in-out;
-		}
+		} */
 
-		::view-transition-new(text-element) {
+		/* ::view-transition-new(text-element) {
 			opacity: 1;
-			animation: new 0.001s ease-in-out;
-		}
+			animation: new 1ms ease-in-out;
+		} */
 	}
 
 	@keyframes old {
