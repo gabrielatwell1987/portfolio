@@ -1,13 +1,11 @@
 <script>
 	import SEO from '$lib/data/SEO.svelte';
 	import Project from '$lib/components/projects/Project.svelte';
-	import Figure from '$lib/components/projects/Figure.svelte';
 	import Title from '$lib/components/layout/Title.svelte';
-	import Avatar from '$lib/components/projects/Avatar.svelte';
 	import Popup from '$lib/components/layout/Popup.svelte';
-	import cartoonGabe from '$lib/images/cartoonGabe.webp';
 	import Testimonial from '$lib/components/projects/Testimonial.svelte';
 	import adrienne from '$lib/images/adrienne.webp';
+	import ViewTransitionLink from '$lib/components/layout/ViewTransitionLink.svelte';
 </script>
 
 <SEO
@@ -19,6 +17,10 @@
 <main>
 	<Title title="showcase" />
 </main>
+
+<div class="center">
+	<ViewTransitionLink link="contact me" text="if you have questions" />
+</div>
 
 <div class="popup">
 	<Popup
@@ -219,6 +221,20 @@
 </section>
 
 <style>
+	.center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		margin-top: -2em;
+		margin-bottom: 7em;
+
+		@media (width <= 768px) {
+			margin-top: -1em;
+			margin-bottom: 5em;
+		}
+	}
+
 	.bevel {
 		position: relative;
 

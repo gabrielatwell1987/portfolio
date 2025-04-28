@@ -34,6 +34,7 @@
 		padding: 0;
 
 		& .heading {
+			font-family: var(--bronova);
 			font-size: clamp(3rem, 5vw, 10rem);
 			font-weight: 800;
 			color: var(--text-color);
@@ -57,7 +58,8 @@
 		}
 
 		& .link {
-			font-size: clamp(1rem, 2.5vw, 4rem);
+			font-family: var(--orbitron);
+			font-size: clamp(2rem, 2.5vw, 4rem);
 			font-weight: 600;
 			color: var(--text-color);
 			text-decoration: none;
@@ -69,7 +71,8 @@
 
 	@supports (view-transition-name: text-element) {
 		::view-transition-group(text-element) {
-			animation-duration: 0.061242s;
+			animation-duration: 0.1s;
+			/* animation-duration: 0.061242s; */
 			animation-timing-function: ease-in-out;
 		}
 
