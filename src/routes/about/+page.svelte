@@ -1,4 +1,5 @@
 <script>
+	import ViewTransition from './../../lib/components/layout/ViewTransition.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import Button from '$lib/components/layout/Button.svelte';
 	import Grid from '$lib/components/about/Grid.svelte';
@@ -8,6 +9,7 @@
 	import Tooltip from '$lib/components/about/Tooltip.svelte';
 	import UsefulLinks from '$lib/components/about/UsefulLinks.svelte';
 	import HeroImage from '$lib/components/about/HeroImage.svelte';
+	import ViewTransitionLink from '$lib/components/layout/ViewTransitionLink.svelte';
 </script>
 
 <svelte:head>
@@ -62,14 +64,18 @@
 				</article>
 
 				<p class="text indent">
-					Please note: This is a PWA (Progressive Web App) so you can install it on your device if
-					you want to! This makes your website able to be used on any device.. mobile, tablet,
-					laptop, and desktop. It's like having a mobile app that is not made with native
-					technologies! It works on Android and iPhone. There is also offline capabilities, so if
-					your internet goes out, you can still access the site because your device downloads and
-					caches the whole site! If you don't have it installed, you should see an install button on
-					the bottom-left of the screen. If you press it, an installation prompt should appear. The
-					prompt will only appear after some user interactions (clicks). If you have any questions,
+					Please note: This is a <ViewTransitionLink
+						link="pwa"
+						heading="progressive web app"
+						linkFontSize="clamp(1.2rem, 1.5vw, 2rem)"
+						headingFontSize="clamp(3rem, 5vw, 7rem)"
+					/> so you can install it on your device if you want to! This makes your website able to be
+					used on any device.. mobile, tablet, laptop, and desktop. It's like having a mobile app that
+					is not made with native technologies! It works on Android and iPhone. There is also offline
+					capabilities, so if your internet goes out, you can still access the site because your device
+					downloads and caches the whole site! If you don't have it installed, you should see an install
+					button on the bottom-left of the screen. If you press it, an installation prompt should appear.
+					The prompt will only appear after some user interactions (clicks). If you have any questions,
 					please feel free to contact me!
 				</p>
 			</div>
