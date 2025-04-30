@@ -45,7 +45,6 @@
 					color: var(--light-text);
 					border: 1px solid var(--light-text);
 					outline: 3px solid var(--light-text);
-					filter: drop-shadow(0 0 0.75rem var(--smoke));
 					margin-inline: auto;
 					cursor: pointer;
 					letter-spacing: 1px;
@@ -63,6 +62,7 @@
 						opacity: 0.75;
 						outline-offset: 0px;
 						animation: wiggle 1s ease-in-out infinite;
+						filter: drop-shadow(0 0 0.75rem var(--smoke));
 					}
 
 					&:focus,
