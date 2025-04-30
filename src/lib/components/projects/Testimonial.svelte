@@ -45,16 +45,22 @@
 		padding: 2rem;
 		position: relative;
 		box-shadow: 0 0 12px var(--text-color);
-		margin-top: -2rem;
+		margin-top: -6rem;
 		margin-bottom: 2rem;
 		max-width: 50em;
 		width: 95%;
 		margin-inline: auto;
 		padding-bottom: 5em;
 		animation: fade-in 0.8s ease-out forwards;
+		scale: 0.75;
 		transition:
 			transform 0.2s,
 			box-shadow 0.2s;
+
+		@media (width <= 500px) {
+			scale: 0.95;
+			margin-top: -2rem;
+		}
 
 		&:hover {
 			transform: translateY(-5px);
