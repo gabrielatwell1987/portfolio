@@ -84,36 +84,33 @@
 
 	@supports (view-transition-name: text-element) {
 		::view-transition-group(text-element) {
-			animation-duration: 0.061242s;
-			animation-timing-function: ease-in-out;
+			transform-origin: center;
 		}
 
-		/* ::view-transition-old(text-element) {
-			opacity: 0;
-			animation: old 0.001s ease-in-out;
-		} */
-
-		/* ::view-transition-new(text-element) {
-			opacity: 1;
-			animation: new 1ms ease-in-out;
-		} */
-	}
-
-	@keyframes old {
-		0% {
-			opacity: 0;
+		::view-transition-old(text-element) {
+			animation: fade-out 0.1s cubic-bezier(0.4, 0, 0.2, 1) both;
 		}
-		100% {
-			opacity: 1;
+
+		::view-transition-new(text-element) {
+			animation: fade-in 0.1s cubic-bezier(0.4, 0, 0.2, 1) both;
 		}
 	}
 
-	@keyframes new {
-		0% {
+	@keyframes fade-out {
+		from {
 			opacity: 1;
 		}
-		100% {
+		to {
 			opacity: 0;
+		}
+	}
+
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
 		}
 	}
 </style>
