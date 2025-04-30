@@ -1,5 +1,5 @@
 <script>
-	let { text, link } = $props();
+	let { heading, headingFontSize, link, linkFontSize } = $props();
 	let isHeading = $state(false);
 
 	function handleClick(e) {
@@ -18,23 +18,31 @@
 
 <section class="wrapper">
 	{#if isHeading}
-		<button class="heading" onclick={handleClick} type="button">{text}</button>
+		<button class="heading" onclick={handleClick} type="button" style="font-size: {headingFontSize}"
+			>{heading}</button
+		>
 	{:else}
-		<a href={link} class="link" onclick={handleClick} type="button">{link}</a>
+		<a
+			href={link}
+			class="link"
+			onclick={handleClick}
+			type="button"
+			style="font-size: {linkFontSize}">{link}</a
+		>
 	{/if}
 </section>
 
 <style>
 	.wrapper {
-		width: 100%;
-		height: 1em;
-		background-color: transparent;
-		color: var(--text-color);
-		margin: 0;
+		all: inherit;
+		display: inline;
+		background: none;
+		border: none;
 		padding: 0;
+		margin: 0;
 
 		& .heading {
-			font-family: var(--bronova);
+			font-family: var(--orbitron);
 			font-size: clamp(3rem, 5vw, 10rem);
 			font-weight: 800;
 			color: var(--text-color);
@@ -48,6 +56,9 @@
 			border: none;
 			cursor: pointer;
 			outline: none;
+			margin: 0;
+			padding: 0;
+			cursor: pointer;
 
 			&:focus-visible,
 			&:focus {
@@ -58,21 +69,22 @@
 		}
 
 		& .link {
-			font-family: var(--orbitron);
-			font-size: clamp(2rem, 2.5vw, 4rem);
-			font-weight: 600;
-			color: var(--text-color);
+			all: inherit;
+			display: inline;
 			text-decoration: none;
-			padding: 0.7rem;
+			background: none;
+			border: none;
+			padding: 0;
+			margin: 0;
 			view-transition-name: text-element;
-			background-color: transparent;
+			cursor: pointer;
+			font-weight: 700;
 		}
 	}
 
 	@supports (view-transition-name: text-element) {
 		::view-transition-group(text-element) {
-			animation-duration: 0.1s;
-			/* animation-duration: 0.061242s; */
+			animation-duration: 0.061242s;
 			animation-timing-function: ease-in-out;
 		}
 

@@ -18,10 +18,6 @@
 	<Title title="showcase" />
 </main>
 
-<div class="center">
-	<ViewTransitionLink link="contact me" text="if you have questions" />
-</div>
-
 <div class="popup">
 	<Popup
 		title=""
@@ -221,23 +217,8 @@
 </section>
 
 <style>
-	.center {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		margin-top: -2em;
-		margin-bottom: 7em;
-
-		@media (width <= 768px) {
-			margin-top: -1em;
-			margin-bottom: 5em;
-		}
-	}
-
 	.bevel {
 		position: relative;
-
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 		place-items: center;
