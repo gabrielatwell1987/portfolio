@@ -17,10 +17,24 @@
 			text-align: center;
 			font-family: var(--orbitron);
 			font-size: clamp(2.5rem, 10.5vw, 15rem);
-			color: var(--text-blue);
 			letter-spacing: 5px;
 			text-transform: uppercase;
 			font-kerning: none;
+
+			background: linear-gradient(
+				120deg,
+				var(--text-color) 0%,
+				var(--text-blue) 25%,
+				var(--text-color) 50%,
+				var(--text-blue) 75%,
+				var(--text-color) 100%
+			);
+			background-size: 200% auto;
+			-webkit-background-clip: text;
+			background-clip: text;
+
+			animation: gradient 6s linear infinite;
+			color: transparent;
 			margin-top: 5rem;
 			view-transition-name: page-title;
 		}
@@ -76,6 +90,15 @@
 		to {
 			opacity: 1;
 			transform: translateX(0);
+		}
+	}
+
+	@keyframes gradient {
+		0% {
+			background-position: 0% center;
+		}
+		100% {
+			background-position: 200% center;
 		}
 	}
 </style>
