@@ -58,6 +58,13 @@
 			user-select: none;
 			margin-inline: auto;
 			margin-bottom: 1rem;
+			transition: 750ms;
+
+			&:hover {
+				opacity: 0.95;
+				outline-offset: 0px;
+				filter: drop-shadow(0 0 0.75rem var(--smoke));
+			}
 
 			&:focus,
 			&:focus-visible {

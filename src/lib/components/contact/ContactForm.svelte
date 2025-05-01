@@ -1,7 +1,7 @@
 <script>
 	import Popup from '$lib/components/layout/Popup.svelte';
 	import Modal from './Modal.svelte';
-	import SendButton from '$lib/components/layout/SendButton.svelte';
+	import SendButton from '$lib/components/contact/SendButton.svelte';
 
 	let name = $state('');
 	let email = $state('');
