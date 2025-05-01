@@ -19,16 +19,22 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin-top: 1rem;
+		/* margin-top: 1rem; */
 		margin-bottom: 5rem;
 		view-transition-name: hero-image;
 
 		img {
 			width: fit-content;
+			height: auto;
 			aspect-ratio: 16 / 9;
 			object-fit: cover;
-			mask: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, transparent);
+			mask: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 60%, transparent);
 			border-radius: var(--radius);
+
+			@media (width <= 500px) {
+				width: 100%;
+				height: 80vw;
+			}
 		}
 
 		h1 {
