@@ -64,19 +64,15 @@
 				</article>
 
 				<p class="text indent">
-					Please note: This is a <ViewTransitionLink
-						link="pwa"
-						heading="progressive web app"
-						linkFontSize="clamp(1.2rem, 1.5vw, 2rem)"
-						headingFontSize="clamp(2.5rem, 5vw, 7rem)"
-					/> so you can install it on your device if you want to! This makes your website able to be
-					used on any device.. mobile, tablet, laptop, and desktop. It's like having a mobile app that
-					is not made with native technologies! It works on Android and iPhone. There is also offline
-					capabilities, so if your internet goes out, you can still access the site because your device
-					downloads and caches the whole site! If you don't have it installed, you should see an install
-					button on the bottom-left of the screen. If you press it, an installation prompt should appear.
-					The prompt will only appear after some user interactions (clicks). If you have any questions,
-					please feel free to contact me!
+					Please note: This is a <span>pwa</span> (progressive web app) so you can install it on your
+					device if you want to! This makes your website able to be used on any device.. mobile, tablet,
+					laptop, and desktop. It's like having a mobile app that is not made with native technologies!
+					It works on Android and iPhone. There is also offline capabilities, so if your internet goes
+					out, you can still access the site because your device downloads and caches the whole site!
+					If you don't have it installed, you should see an install button on the bottom-left of the
+					screen. If you press it, an installation prompt should appear. The prompt will only appear
+					after some user interactions (clicks). If you have any questions, please feel free to contact
+					me!
 				</p>
 			</div>
 
@@ -150,6 +146,11 @@
 						text-wrap: none;
 						z-index: 7;
 						color: var(--text-color);
+
+						& span {
+							color: var(--text-link);
+							font-weight: 600;
+						}
 					}
 
 					& .text-hero {
