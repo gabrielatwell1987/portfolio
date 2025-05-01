@@ -32,7 +32,11 @@
 		href="https://frontendmasters.com"
 	/>
 
-	<p>Most of these links are resources that I used to learn frontend and design for the web 🚀</p>
+	<p>
+		All of these links are resources that I used to learn frontend and design for the web <span
+			>🛠️</span
+		>
+	</p>
 </main>
 
 <style>
@@ -43,7 +47,7 @@
 			margin-top: 1.5rem;
 			text-align: center;
 
-			h2 {
+			& h2 {
 				margin-top: 2rem;
 				margin-bottom: 0.75rem;
 				font-family: var(--bronova);
@@ -51,7 +55,7 @@
 				color: var(--text-blue);
 			}
 
-			p {
+			& p {
 				color: var(--text-gray);
 				font-family: var(--bronova);
 				font-size: clamp(1rem, 1.15rem, 2rem);
@@ -59,6 +63,10 @@
 				text-align: center;
 				margin-top: 2rem;
 				line-height: 1.5;
+
+				& span {
+					font-style: normal;
+				}
 			}
 		}
 	}
