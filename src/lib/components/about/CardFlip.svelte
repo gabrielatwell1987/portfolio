@@ -59,6 +59,7 @@
 					position: absolute;
 					top: 0;
 					left: 0;
+					filter: drop-shadow(0 0 0.25rem var(--text-color));
 					border-radius: 10px;
 				}
 			}

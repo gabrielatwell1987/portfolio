@@ -68,7 +68,7 @@
 						link="pwa"
 						heading="progressive web app"
 						linkFontSize="clamp(1.2rem, 1.5vw, 2rem)"
-						headingFontSize="clamp(3rem, 5vw, 7rem)"
+						headingFontSize="clamp(2.5rem, 5vw, 7rem)"
 					/> so you can install it on your device if you want to! This makes your website able to be
 					used on any device.. mobile, tablet, laptop, and desktop. It's like having a mobile app that
 					is not made with native technologies! It works on Android and iPhone. There is also offline

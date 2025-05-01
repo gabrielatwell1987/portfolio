@@ -44,7 +44,6 @@
 		& .heading {
 			font-family: var(--orbitron);
 			font-size: clamp(3rem, 5vw, 10rem);
-			font-weight: 800;
 			color: var(--text-color);
 			text-align: center;
 			position: fixed;
