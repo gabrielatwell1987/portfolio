@@ -14,7 +14,7 @@
 			setTimeout(() => {
 				open = false;
 				isClosing = false;
-			}, 1000); // Match this with your transition duration (1s)
+			}, 500); // Match this with your transition duration (1s)
 		}
 	}
 </script>
@@ -112,7 +112,7 @@
 			overflow: hidden;
 			transition:
 				opacity 1s ease-in-out,
-				translate 1s ease-in-out;
+				translate 0.65s ease-in-out;
 			opacity: 0;
 
 			&.open {

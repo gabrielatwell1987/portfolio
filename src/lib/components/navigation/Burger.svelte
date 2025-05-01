@@ -8,7 +8,7 @@
 	function toggleMenu() {
 		setTimeout(() => {
 			open = !open;
-		}, 10);
+		}, 50);
 	}
 </script>
 
