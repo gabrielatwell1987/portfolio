@@ -21,7 +21,6 @@
 			color: var(--light-text);
 			border: 1px solid var(--light-text);
 			outline: 3px solid var(--light-text);
-			filter: drop-shadow(0 0 0.75rem var(--smoke));
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
@@ -35,7 +34,8 @@
 			user-select: none;
 
 			&:hover {
-				opacity: 0.75;
+				filter: drop-shadow(0 0 0.75rem var(--smoke));
+				opacity: 0.95;
 				outline-offset: 0px;
 				animation: wiggle 1s ease-in-out infinite;
 			}

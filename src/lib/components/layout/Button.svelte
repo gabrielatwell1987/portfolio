@@ -59,7 +59,7 @@
 					cursor: pointer;
 
 					&:hover {
-						opacity: 0.75;
+						opacity: 0.95;
 						outline-offset: 0px;
 						animation: wiggle 1s ease-in-out infinite;
 						filter: drop-shadow(0 0 0.75rem var(--smoke));
