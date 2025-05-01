@@ -32,7 +32,7 @@
 		}
 
 		h1 {
-			margin-block: -1.2em;
+			margin-block: -1.4em;
 			padding-bottom: 1.5rem;
 			font-size: clamp(2rem, 4vw, 5rem);
 			font-weight: 700;
