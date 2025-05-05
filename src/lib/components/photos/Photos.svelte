@@ -11,6 +11,7 @@
 	import wtf from '$lib/images/wtf.webp';
 	import wtf2 from '$lib/images/wtf2.webp';
 	import wtf3 from '$lib/images/wtf3.webp';
+	import kids from '$lib/images/kids.webp';
 
 	let visibleSections = $state([false, false, false, false]);
 	let imagesAnimated = $state([[], [], [], []]);
@@ -148,6 +149,7 @@
 					alt: 'when gabe was 5 years old',
 					style: 'scale: .8;'
 				},
+				{ src: kids, alt: 'Gabe and his kids' },
 				{ src: monkey, alt: 'a monkey with glasses' }
 			])}
 		</article>
