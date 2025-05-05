@@ -22,7 +22,7 @@
 
 			newSW.addEventListener('statechange', () => {
 				if (newSW.state === 'installed') {
-					if (confirm('Update available.. Download now?')) {
+					if (confirm('Update available.. Install now?')) {
 						newSW.postMessage({ type: 'SKIP_WAITING' });
 						location.reload();
 					}
