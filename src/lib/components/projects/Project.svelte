@@ -68,7 +68,7 @@
 			& .hover-text {
 				visibility: hidden;
 				width: 100%;
-				background-color: var(--text-color);
+				background-color: var(--text-gray);
 				color: var(--text-anti);
 				text-align: center;
 				border-radius: var(--button-radius);

@@ -60,7 +60,7 @@
 			&:hover {
 				opacity: 0.95;
 				outline-offset: 0px;
-				filter: drop-shadow(0 0 0.75rem var(--smoke));
+				filter: drop-shadow(0 0 0.75rem var(--text-gray));
 			}
 
 			&:focus,
@@ -71,10 +71,6 @@
 			&:disabled {
 				cursor: not-allowed;
 				opacity: 0.75;
-			}
-
-			&:hover {
-				outline-offset: 0px;
 			}
 
 			& .btn-text {
