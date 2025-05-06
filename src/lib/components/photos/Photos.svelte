@@ -121,9 +121,9 @@
 			{/snippet}
 
 			{@render imageSection(0, [
+				{ src: kids, alt: 'Gabe and his kids' },
 				{ src: gabe, alt: 'Gabe sitting with his phone' },
-				{ src: gabe2, alt: "Gabriel's face" },
-				{ src: gabe5, alt: 'Gabe standing still' }
+				{ src: gabe2, alt: "Gabriel's face" }
 			])}
 
 			{@render imageSection(1, [
@@ -149,7 +149,7 @@
 					alt: 'when gabe was 5 years old',
 					style: 'scale: .8;'
 				},
-				{ src: kids, alt: 'Gabe and his kids' },
+				{ src: gabe5, alt: 'Gabe standing still' },
 				{ src: monkey, alt: 'a monkey with glasses' }
 			])}
 		</article>
