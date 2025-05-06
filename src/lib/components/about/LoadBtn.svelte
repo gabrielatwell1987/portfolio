@@ -42,16 +42,13 @@
 		& .btn {
 			position: relative;
 			width: fit-content;
-			display: flex;
-			align-items: center;
-			justify-content: center;
 			padding: 0.2em 0.6em;
 			border: 1px solid var(--dark);
 			outline: 3px solid var(--dark);
 			color: var(--dark);
 			border-radius: var(--button-radius);
 			background-color: var(--button-bg);
-			font-family: var(--mono);
+			font-family: var(--orbitron);
 			font-size: clamp(1.1rem, 1.5vw, 2rem);
 			font-weight: 900;
 			cursor: pointer;
@@ -80,12 +77,11 @@
 				outline-offset: 0px;
 			}
 
-			.btn-text {
-				margin-right: 10px;
+			& .btn-text {
 				grid-area: stack;
 			}
 
-			.spinner {
+			& .spinner {
 				width: 2rem;
 				height: 2rem;
 				border: 2px solid var(--dark);
