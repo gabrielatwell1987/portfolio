@@ -19,12 +19,19 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		/* margin-top: 1rem; */
 		margin-bottom: 5rem;
 		view-transition-name: hero-image;
+		width: 100vw;
+		margin-left: calc(-50vw + 50%);
+		position: relative;
 
-		img {
-			width: fit-content;
+		& picture {
+			width: 100%;
+			display: block;
+		}
+
+		& img {
+			width: 100%;
 			height: auto;
 			aspect-ratio: 16 / 9;
 			object-fit: cover;
@@ -37,7 +44,7 @@
 			}
 		}
 
-		h1 {
+		& h1 {
 			margin-block: -1.4em;
 			padding-bottom: 1.5rem;
 			font-size: clamp(2rem, 4vw, 5rem);
