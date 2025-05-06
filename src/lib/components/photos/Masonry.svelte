@@ -18,22 +18,20 @@
 
 <section>
 	<div class="masonry">
-		<img src={kids} alt="Gabe and his kids" width="400" />
-		<img src={gabe} alt="Gabe sitting with his phone" width="400" />
-		<img src={gabe2} alt="Gabriel's face" width="400" />
-		<img src={gabe3} alt="Gabe in Arizona fixing a car" width="400" />
-		<img src={gabe4} alt="Gabe in a restaurant" width="400" />
-		<img src={gabe5} alt="Gabe standing still" width="400" />
-		<img src={autumn} alt="Gabe and his daughter Autumn" width="400" />
-		<img src={archie} alt="Gabe and his poodle Archie" width="400" />
-		<img src={monkey} alt="A monkey with glasses" width="400" />
-		<img src={wtf} alt="Trying to burn Gabe" width="400" />
-		<img src={wtf2} alt="Gabe's face on hulk hogan" width="400" />
-		<!-- <img src={wtf3} alt="When gabe was 5 years old" width="400" /> -->
+		{#each [{ src: kids, alt: 'Gabe and his kids' }, { src: gabe, alt: 'Gabe sitting with his phone' }, { src: gabe2, alt: "Gabriel's face" }, { src: gabe3, alt: 'Gabe in Arizona fixing a car' }, { src: gabe4, alt: 'Gabe in a restaurant' }, { src: gabe5, alt: 'Gabe standing still' }, { src: autumn, alt: 'Gabe and his daughter Autumn' }, { src: archie, alt: 'Gabe and his poodle Archie' }, { src: monkey, alt: 'A monkey with glasses' }, { src: wtf, alt: 'Trying to burn Gabe' }, { src: wtf2, alt: "Gabe's face on hulk hogan" }] as img, i}
+			<img src={img.src} alt={img.alt} width="400" style="animation-delay: {i * 0.2}s;" />
+		{/each}
 	</div>
 </section>
 
 <style>
+	:root {
+		--100: 100%;
+		--animation-duration: 0.75s;
+		--stagger-delay: 0.75s;
+		--subtle-rgb: 40, 40, 40;
+	}
+
 	section {
 		display: flex;
 		justify-content: center;
@@ -70,11 +68,24 @@
 				transition: transform 0.3s ease-out;
 				border-radius: 5px;
 				margin-bottom: 0.05rem;
+				animation: fadeIn var(--animation-duration) ease-out forwards;
+				opacity: 0;
 
 				&:hover {
 					transform: scale(0.95);
 				}
 			}
+		}
+	}
+
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+			/* transform: translateY(20px); */
+		}
+		100% {
+			opacity: 1;
+			/* transform: translateY(0); */
 		}
 	}
 </style>
