@@ -23,37 +23,33 @@
 
 			background: linear-gradient(
 				120deg,
-				var(--text-color) 0%,
-				var(--text-blue) 25%,
-				var(--text-color) 50%,
-				var(--text-blue) 75%,
-				var(--text-color) 100%
+				var(--text-link) 0%,
+				var(--dark-text) 25%,
+				var(--text-link) 50%,
+				var(--dark-text) 75%,
+				var(--text-link) 100%
 			);
-			background-size: 200% auto;
-			-webkit-background-clip: text;
+			color: var(--moon);
+			background-size: 400%;
 			background-clip: text;
-
-			animation: gradient 6s linear infinite;
-			color: transparent;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: var(--moon);
+			-webkit-text-stroke-color: var(--text-gray);
+			-webkit-text-stroke-width: 2px;
+			animation: gradientAnimation 5s ease infinite;
 			margin-top: 5rem;
 			view-transition-name: page-title;
-		}
 
-		#title {
-			font-kerning: none;
-		}
-	}
+			@media (width >= 740px) {
+				-webkit-text-stroke-width: 6px;
+				letter-spacing: 20px;
+				margin: 2rem auto;
+			}
 
-	@media (width >= 740px) {
-		.title {
-			letter-spacing: 20px;
-			margin: 2rem auto;
-		}
-	}
-
-	@media (width >= 990px) {
-		.title {
-			font-weight: 800;
+			@media (width >= 990px) {
+				-webkit-text-stroke-width: 8px;
+				font-weight: 800;
+			}
 		}
 	}
 
@@ -93,12 +89,15 @@
 		}
 	}
 
-	@keyframes gradient {
+	@keyframes gradientAnimation {
 		0% {
-			background-position: 0% center;
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
 		}
 		100% {
-			background-position: 200% center;
+			background-position: 0% 50%;
 		}
 	}
 </style>
