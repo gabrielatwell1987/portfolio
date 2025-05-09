@@ -55,13 +55,12 @@
 		--text-button: var(--blackest);
 		--button-bg: var(--yellow);
 		--opacity: 1;
-		--faded-text: hsla(0, 0%, 25%, 0.479);
 	}
 
 	:global(body) {
-		--dark-text: var(--dark);
+		--dark-text: var(--white);
 		--text-anti: var(--black);
-		--text-color: var(--dark-text);
+		--text-color: var(--white);
 		--text-blue: var(--sky);
 		--text-gray: var(--smoke);
 		--text-link: var(--purple);
@@ -69,7 +68,6 @@
 		--text-button: var(--text-anti);
 		--button-bg: var(--yellow);
 		--opacity: 0.15;
-		--faded-text: hsla(0, 0%, 25%, 0.75);
 		background-color: var(--dark);
 		color: var(--text-color);
 		transition:
@@ -88,7 +86,6 @@
 		--text-button: var(--text-anti);
 		--button-bg: var(--yellow);
 		--opacity: 0.35;
-		--faded-text: hsla(0, 0%, 25%, 0.2);
 		background-color: var(--light);
 		color: var(--text-color);
 		transition:
