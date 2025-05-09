@@ -67,7 +67,6 @@
 				transform: scale(1);
 				transition: transform 0.3s ease-out;
 				border-radius: 5px;
-				margin-bottom: 0.05rem;
 				animation: fadeIn var(--animation-duration) ease-out forwards;
 				opacity: 0;
 
