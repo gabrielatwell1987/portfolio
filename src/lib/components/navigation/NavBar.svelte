@@ -57,16 +57,11 @@
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
-		/* height: 5em; */
 		margin-inline: auto;
 		backdrop-filter: blur(0.15rem);
 		-webkit-backdrop-filter: blur(0.15rem);
 		z-index: 15;
 		view-transition-name: navigation;
-		/* position: fixed; */
-		/* top: 0; */
-		/* left: 50%; */
-		/* transform: translateX(-50%); */
 		margin: 1rem;
 		position: sticky;
 		top: 0;
