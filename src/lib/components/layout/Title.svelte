@@ -23,33 +23,37 @@
 
 			background: linear-gradient(
 				120deg,
-				var(--text-link) 0%,
-				var(--dark-text) 25%,
-				var(--text-link) 50%,
-				var(--dark-text) 75%,
-				var(--text-link) 100%
+				var(--text-color) 0%,
+				var(--text-blue) 25%,
+				var(--text-color) 50%,
+				var(--text-blue) 75%,
+				var(--text-color) 100%
 			);
-			color: var(--moon);
-			background-size: 400%;
-			background-clip: text;
+			background-size: 200% auto;
 			-webkit-background-clip: text;
-			-webkit-text-fill-color: var(--moon);
-			-webkit-text-stroke-color: var(--text-gray);
-			-webkit-text-stroke-width: 2px;
-			animation: gradientAnimation 5s ease infinite;
+			background-clip: text;
+
+			animation: gradient 6s linear infinite;
+			color: transparent;
 			margin-top: 5rem;
 			view-transition-name: page-title;
+		}
 
-			@media (width >= 740px) {
-				-webkit-text-stroke-width: 6px;
-				letter-spacing: 20px;
-				margin: 2rem auto;
-			}
+		#title {
+			font-kerning: none;
+		}
+	}
 
-			@media (width >= 990px) {
-				-webkit-text-stroke-width: 8px;
-				font-weight: 800;
-			}
+	@media (width >= 740px) {
+		.title {
+			letter-spacing: 20px;
+			margin: 2rem auto;
+		}
+	}
+
+	@media (width >= 990px) {
+		.title {
+			font-weight: 800;
 		}
 	}
 
@@ -89,15 +93,12 @@
 		}
 	}
 
-	@keyframes gradientAnimation {
+	@keyframes gradient {
 		0% {
-			background-position: 0% 50%;
-		}
-		50% {
-			background-position: 100% 50%;
+			background-position: 0% center;
 		}
 		100% {
-			background-position: 0% 50%;
+			background-position: 200% center;
 		}
 	}
 </style>
