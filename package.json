@@ -1,6 +1,6 @@
 {
 	"name": "portfolio",
-	"version": "0.5.4",
+	"version": "0.9.5",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev --host",

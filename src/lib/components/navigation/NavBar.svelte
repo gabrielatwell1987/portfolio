@@ -33,6 +33,7 @@
 		<NavLink href="/projects" title="Work" />
 		<NavLink href="/learn" title="Learn" />
 		<NavLink href="/photos" title="Photos" />
+		<NavLink href="/hire" title="Hire" />
 		<NavLink href="/contact" title="Contact" />
 	</div>
 
@@ -42,6 +43,7 @@
 		<NavLink href="/projects" title="Work" onclick={closeMenu} />
 		<NavLink href="/learn" title="Learn" onclick={closeMenu} />
 		<NavLink href="/photos" title="Photos" onclick={closeMenu} />
+		<NavLink href="/hire" title="Hire" onclick={closeMenu} />
 		<NavLink href="/contact" title="Contact" onclick={closeMenu} />
 	</div>
 </nav>
