@@ -103,7 +103,9 @@
 		max-width: 1200px;
 		margin-inline: auto;
 		padding: 1rem;
-		scale: 0.85;
+		overflow-y: auto;
+		height: calc(100dvh - 4rem);
+		position: relative;
 
 		& .form-grid {
 			display: grid;
@@ -114,12 +116,24 @@
 			margin-bottom: 1rem;
 			border-radius: var(--radius);
 
+			@media (width <= 500px) {
+				grid-template-columns: 1fr;
+			}
+
 			&:nth-child(2) {
 				grid-template-columns: repeat(2, 1fr);
+
+				@media (width <= 500px) {
+					grid-template-columns: 1fr;
+				}
 			}
 
 			&:nth-child(3) {
 				grid-template-columns: repeat(2, 1fr);
+
+				@media (width <= 500px) {
+					grid-template-columns: 1fr;
+				}
 			}
 		}
 
@@ -216,12 +230,6 @@
 		&:disabled {
 			background: var(--text-gray);
 			cursor: not-allowed;
-		}
-	}
-
-	@media (max-width: 640px) {
-		.form-grid {
-			grid-template-columns: 1fr;
 		}
 	}
 </style>
