@@ -127,11 +127,11 @@
 			transition: opacity 0.75s ease-in-out;
 
 			&:hover {
-				animation: wiggle 1s ease-in-out infinite;
+				animation: wiggle 0.85s ease-in-out infinite;
 			}
 
 			&:not(:hover) {
-				opacity: 0.5;
+				opacity: 0.75;
 				background-color: var(--smoke);
 				color: black;
 			}

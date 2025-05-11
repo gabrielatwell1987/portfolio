@@ -18,7 +18,7 @@
 			{
 				opacity: 0,
 				x: -100,
-				duration: 8,
+				duration: 2,
 				ease: 'power3'
 			},
 			0
@@ -28,7 +28,7 @@
 			{
 				opacity: 0,
 				x: 100,
-				duration: 8,
+				duration: 2,
 				ease: 'power3'
 			},
 			'<'
@@ -38,7 +38,7 @@
 			{
 				opacity: 0.5,
 				scale: 2,
-				duration: 4,
+				duration: 1,
 				ease: 'circ',
 				stagger: 0.25
 			},
