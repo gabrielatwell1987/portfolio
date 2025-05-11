@@ -150,7 +150,7 @@
 				border: 1px solid var(--text-color);
 				color: var(--text-color);
 				font-family: inherit;
-				font-size: inherit;
+				font-size: clamp(0.8rem, 1vw, 1.75rem);
 				cursor: pointer;
 				line-height: inherit;
 				outline: none;
@@ -202,6 +202,7 @@
 	textarea::placeholder {
 		color: var(--text-color);
 		opacity: 0.7;
+		font-size: clamp(0.8rem, 1vw, 1.75rem);
 	}
 
 	input:focus,
@@ -221,6 +222,11 @@
 		font-size: clamp(1rem, 1.5vw, 2rem);
 		font-weight: 500;
 		cursor: pointer;
+		letter-spacing: 3px;
+
+		@media (width <= 500px) {
+			letter-spacing: 1px;
+		}
 
 		&:hover {
 			background-color: var(--text-pale);
