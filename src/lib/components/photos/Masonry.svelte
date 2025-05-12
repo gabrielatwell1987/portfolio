@@ -66,13 +66,8 @@
 				display: block;
 				transform: scale(1);
 				transition: transform 0.3s ease-out;
-				border-radius: 5px;
 				animation: fadeIn var(--animation-duration) ease-out forwards;
 				opacity: 0;
-
-				&:hover {
-					transform: scale(0.99);
-				}
 			}
 		}
 	}
