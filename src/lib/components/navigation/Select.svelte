@@ -7,7 +7,7 @@
 	}
 </script>
 
-<select on:change={handleSelect}>
+<select onchange={handleSelect}>
 	<option value="/hire">Hire</option>
 	<option value="/contact">Contact</option>
 </select>
