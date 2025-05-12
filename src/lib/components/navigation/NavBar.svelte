@@ -4,6 +4,7 @@
 	import ThemeToggle from '$lib/components/layout/ThemeToggle.svelte';
 	import NavLink from '$lib/components/navigation/NavLink.svelte';
 	import InstallBtn from '$lib/components/navigation/InstallBtn.svelte';
+	import Select from '$lib/components/navigation/Select.svelte';
 
 	let open = $state(false);
 	let isClosing = $state(false);
@@ -31,10 +32,11 @@
 	<div class="desktop">
 		<NavLink href="/about" title="About" />
 		<NavLink href="/projects" title="Work" />
-		<NavLink href="/hire" title="Hire" />
+		<!-- <NavLink href="/hire" title="Hire" /> -->
 		<NavLink href="/learn" title="Learn" />
 		<NavLink href="/photos" title="Photos" />
-		<NavLink href="/contact" title="Contact" />
+		<Select />
+		<!-- <NavLink href="/contact" title="Contact" /> -->
 	</div>
 
 	<div class="mobile {open ? 'open' : ''} {isClosing ? 'closing' : ''}">
