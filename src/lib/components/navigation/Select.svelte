@@ -1,6 +1,8 @@
 <script>
 	import { goto } from '$app/navigation';
 
+	let { path1, path2 } = $props();
+
 	function handleSelect(event) {
 		const path = event.target.value;
 		if (path) goto(path);
@@ -8,8 +10,8 @@
 </script>
 
 <select onchange={handleSelect}>
-	<option value="/hire">Hire</option>
-	<option value="/contact">Contact</option>
+	<option value={path1}>Hire</option>
+	<option value={path2}>Contact</option>
 </select>
 
 <style>
