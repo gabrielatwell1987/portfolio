@@ -34,7 +34,7 @@
 		<NavLink href="/projects" title="Work" />
 		<NavLink href="/learn" title="Learn" />
 		<NavLink href="/photos" title="Photos" />
-		<ContactSelect />
+		<ContactSelect path1="/hire" path2="/contact" />
 	</div>
 
 	<div class="mobile {open ? 'open' : ''} {isClosing ? 'closing' : ''}">
