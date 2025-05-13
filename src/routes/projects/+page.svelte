@@ -269,10 +269,6 @@
 			--100: 100%;
 		}
 
-		main {
-			padding-top: 5%;
-		}
-
 		section {
 			padding-top: 2rem;
 			overflow: hidden;
