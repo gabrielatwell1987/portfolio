@@ -2,16 +2,21 @@
 	import { goto } from '$app/navigation';
 
 	let { path1, path2 } = $props();
+	let selected = $state('');
 
 	function handleSelect(event) {
 		const path = event.target.value;
-		if (path) goto(path);
+		if (path) {
+			selected = path;
+			goto(path);
+		}
 	}
 </script>
 
-<select onchange={handleSelect}>
-	<option value={path1}>Hire</option>
+<select value={selected} onchange={handleSelect}>
+	<option value="">Select</option>
 	<option value={path2}>Contact</option>
+	<option value={path1}>Hire</option>
 </select>
 
 <style>
