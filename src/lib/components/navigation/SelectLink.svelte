@@ -2,21 +2,29 @@
 	import { goto } from '$app/navigation';
 
 	let { path1, path2 } = $props();
-	let selected = $state('');
+	let selectValue = $state('');
 
 	function handleSelect(event) {
-		const path = event.target.value;
-		if (path) {
-			selected = path;
-			goto(path);
+		const selectedRoute = event.target.value;
+
+		if (selectedRoute) {
+			// Append a unique query parameter to force navigation
+			const uniqueParam = `t=${Date.now()}`;
+
+			selectValue = '';
+
+			goto(`${selectedRoute}?${uniqueParam}`);
+
+			// Reset the select value to allow re-selection
+			selectValue = '';
 		}
 	}
 </script>
 
-<select value={selected} onchange={handleSelect}>
-	<option value="">Select</option>
-	<option value={path2}>Contact</option>
+<select onchange={handleSelect} bind:value={selectValue}>
+	<option value="" disabled selected>Select</option>
 	<option value={path1}>Hire</option>
+	<option value={path2}>Contact</option>
 </select>
 
 <style>
