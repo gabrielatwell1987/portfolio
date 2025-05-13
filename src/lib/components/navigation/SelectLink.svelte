@@ -43,7 +43,7 @@
 
 		& option {
 			background-color: var(--text-anti);
-			color: var(--text-link);
+			color: var(--text-color);
 			padding: 0.25rem;
 			letter-spacing: 1px;
 			font-weight: 500;
