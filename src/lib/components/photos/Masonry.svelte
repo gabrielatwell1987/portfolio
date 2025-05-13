@@ -6,7 +6,7 @@
 	import gabe3 from '$lib/images/gabe3.webp';
 	import gabe4 from '$lib/images/gabe4.webp';
 	import gabe5 from '$lib/images/gabe5.webp';
-	import monkey from '$lib/images/monkey.webp';
+	// import monkey from '$lib/images/monkey.webp';
 	import wtf from '$lib/images/wtf.webp';
 	import wtf2 from '$lib/images/wtf2.webp';
 	// import wtf3 from '$lib/images/wtf3.webp';
@@ -18,7 +18,7 @@
 
 <section>
 	<div class="masonry">
-		{#each [{ src: kids, alt: 'Gabe and his kids' }, { src: gabe, alt: 'Gabe sitting with his phone' }, { src: gabe2, alt: "Gabriel's face" }, { src: gabe3, alt: 'Gabe in Arizona fixing a car' }, { src: gabe4, alt: 'Gabe in a restaurant' }, { src: gabe5, alt: 'Gabe standing still' }, { src: autumn, alt: 'Gabe and his daughter Autumn' }, { src: archie, alt: 'Gabe and his poodle Archie' }, { src: monkey, alt: 'A monkey with glasses' }, { src: wtf, alt: 'Trying to burn Gabe' }, { src: wtf2, alt: "Gabe's face on hulk hogan" }] as img, i}
+		{#each [{ src: kids, alt: 'Gabe and his kids' }, { src: gabe, alt: 'Gabe sitting with his phone' }, { src: gabe2, alt: "Gabriel's face" }, { src: gabe3, alt: 'Gabe in Arizona fixing a car' }, { src: gabe4, alt: 'Gabe in a restaurant' }, { src: gabe5, alt: 'Gabe standing still' }, { src: autumn, alt: 'Gabe and his daughter Autumn' }, { src: archie, alt: 'Gabe and his poodle Archie' }, { src: wtf, alt: 'Trying to burn Gabe' }, { src: wtf2, alt: "Gabe's face on hulk hogan" }] as img, i}
 			<img src={img.src} alt={img.alt} width="400" style="animation-delay: {i * 0.2}s;" />
 		{/each}
 	</div>
