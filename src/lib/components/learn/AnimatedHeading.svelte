@@ -59,7 +59,7 @@
 		justify-content: center;
 		align-items: center;
 		overflow-x: clip;
-		margin-top: 5em;
+		margin-top: -6em;
 
 		.h1-l,
 		.h1-r {
@@ -80,7 +80,12 @@
 			z-index: 1;
 		}
 
+		@media (width <= 1150px) {
+			margin-top: -3em;
+		}
+
 		@media (width <= 600px) {
+			margin-top: 5em;
 			margin-bottom: -35%;
 		}
 	}
