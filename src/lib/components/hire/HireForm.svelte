@@ -1,5 +1,10 @@
 <script>
+	import Popup from '$lib/components/layout/Popup.svelte';
 </script>
+
+<div class="popover">
+	<Popup title="" text="Please fill out this questionnaire and I'll contact you back 😎" />
+</div>
 
 <section class="hire-form-container">
 	<form action="https://formspree.io/f/xwpoqdno" method="POST">
@@ -98,6 +103,12 @@
 </section>
 
 <style>
+	.popover {
+		display: flex;
+		justify-content: space-evenly;
+		margin-bottom: 2em;
+	}
+
 	.hire-form-container {
 		width: 100%;
 		max-width: 1200px;
