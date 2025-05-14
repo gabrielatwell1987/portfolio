@@ -22,9 +22,9 @@
 </script>
 
 <select onchange={handleSelect} bind:value={selectValue}>
-	<option value="" disabled selected>Select</option>
-	<option value={path1}>Hire</option>
-	<option value={path2}>Contact</option>
+	<option value="" disabled selected>Connect</option>
+	<option value={path1}>Hire Me</option>
+	<option value={path2}>Contact Me</option>
 </select>
 
 <style>
