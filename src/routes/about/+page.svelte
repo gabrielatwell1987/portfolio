@@ -67,12 +67,13 @@
 					Please note: This is a <span>pwa</span> (progressive web app) so you can install it on your
 					device if you want to! This makes your website able to be used on any device.. mobile, tablet,
 					laptop, and desktop. It's like having a mobile app that is not made with native technologies!
-					It works on Android and iPhone. There is also offline capabilities, so if your internet goes
-					out, you can still access the site because your device downloads and caches the whole site!
-					If you don't have it installed, you should see an install button on the bottom-left of the
-					screen. If you press it, an installation prompt should appear. The prompt will only appear
-					after some user interactions (clicks). If you have any questions, please feel free to contact
-					me!
+					It works on Android and iPhone. On your iphone you have to tap the share icon in the Safari
+					browser and choose the 'Add to Home Screen' option.. that's the only way to save a pwa on an
+					iOS device. There is also offline capabilities, so if your internet goes out, you can still
+					access the site because your device downloads and caches the whole site! If you don't have
+					it installed, you should see an install button on the bottom-left of the screen. If you press
+					it, an installation prompt should appear. The prompt will only appear after some user interactions
+					(clicks). If you have any questions, please feel free to contact me!
 				</p>
 			</div>
 

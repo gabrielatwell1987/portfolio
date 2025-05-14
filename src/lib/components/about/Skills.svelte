@@ -91,7 +91,7 @@
 	.border {
 		border: none;
 		min-height: 60vh;
-		margin-top: 25%;
+		margin-top: 30%;
 		margin-bottom: -20%;
 
 		.skills {
