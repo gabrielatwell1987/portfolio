@@ -78,7 +78,7 @@
 		.grid {
 			display: grid;
 			grid-template-rows: repeat(2, 1fr);
-			margin: 0 0 -50% 0;
+			margin: -8em 0 -50% 0;
 			gap: 3rem;
 
 			.inline {
