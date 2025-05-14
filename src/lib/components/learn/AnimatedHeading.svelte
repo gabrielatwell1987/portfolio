@@ -85,8 +85,8 @@
 		}
 
 		@media (width <= 600px) {
-			margin-top: 5em;
-			margin-bottom: -35%;
+			margin-top: -2em;
+			margin-bottom: -25%;
 		}
 	}
 </style>

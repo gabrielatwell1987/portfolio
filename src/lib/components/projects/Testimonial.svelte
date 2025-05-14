@@ -100,6 +100,7 @@
 		& blockquote {
 			margin: 0;
 			padding-left: 1rem;
+			font-size: clamp(1.2rem, 1.5vw, 2.25rem);
 			font-style: italic;
 			color: var(--text-color);
 			line-height: 1.5;

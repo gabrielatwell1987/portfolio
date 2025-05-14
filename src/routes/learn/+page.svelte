@@ -120,7 +120,8 @@
 			background-color: transparent;
 			color: var(--smoke);
 			border: 1px solid var(--smoke);
-			margin: 0 auto;
+			margin-inline: auto;
+			margin-top: 1em;
 			border-radius: 8px;
 			cursor: pointer;
 			letter-spacing: 1px;
