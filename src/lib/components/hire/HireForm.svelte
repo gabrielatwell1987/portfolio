@@ -106,7 +106,7 @@
 	.popover {
 		display: flex;
 		justify-content: space-evenly;
-		margin-bottom: 2em;
+		margin-bottom: 3em;
 	}
 
 	.hire-form-container {
