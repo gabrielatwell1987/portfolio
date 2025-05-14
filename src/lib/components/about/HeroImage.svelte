@@ -46,16 +46,24 @@
 
 		& h1 {
 			margin-block: -1.4em;
-			padding-bottom: 1.5rem;
-			font-size: clamp(2rem, 4vw, 5rem);
+			padding-bottom: 4rem;
+			font-size: clamp(2rem, 6vw, 7rem);
 			font-weight: 700;
 			text-shadow: 0 0 5px var(--smoke);
 			color: var(--text-blue);
 			font-family: var(--orbitron);
 
+			@media (width <= 1300px) {
+				padding-bottom: 2rem;
+				mix-blend-mode: normal;
+			}
+
+			@media (width <= 1050px) {
+				padding-bottom: 1rem;
+			}
+
 			@media (width <= 500px) {
 				padding-bottom: 0;
-				mix-blend-mode: normal;
 			}
 		}
 	}
