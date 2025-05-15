@@ -87,12 +87,22 @@
 	<!--  -->
 
 	<Project
+		title="think.flow"
+		img="/projects/thinkflow.webp"
+		url="https://thinkdotflow.vercel.app"
+		description="sveltekit"
+		index={5}
+	/>
+
+	<!--  -->
+
+	<!-- <Project
 		title="data visualizations"
 		img="/projects/data-v.webp"
 		url="https://visual-svelte.vercel.app"
 		description="d3/svelte"
 		index={5}
-	/>
+	/> -->
 
 	<!--  -->
 
