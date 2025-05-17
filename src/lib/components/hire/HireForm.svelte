@@ -122,7 +122,7 @@
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			gap: 1.5rem;
-			border: 2px solid var(--text-anti);
+			border: 2px solid var(--text-gray);
 			padding: 1rem 2rem;
 			margin-bottom: 1rem;
 			border-radius: var(--radius);
@@ -151,6 +151,7 @@
 		& .form-group {
 			display: flex;
 			flex-direction: column;
+
 			& select {
 				appearance: none;
 				background-color: transparent;
@@ -158,7 +159,7 @@
 				background-repeat: no-repeat;
 				background-position: right 0.75rem center;
 				padding-right: 2.5rem;
-				border: 1px solid var(--text-color);
+				border: 1px solid var(--text-gray);
 				color: var(--text-color);
 				font-family: inherit;
 				font-size: clamp(0.8rem, 1vw, 1.75rem);
@@ -187,7 +188,7 @@
 		font-family: var(--bronova);
 		font-size: clamp(1rem, 1vw, 1.75rem);
 		font-weight: 700;
-		color: var(--text-pale);
+		color: var(--text-color);
 	}
 
 	.tac {
@@ -198,7 +199,7 @@
 	select,
 	textarea {
 		padding: 0.75rem;
-		border: 2px solid var(--text-color);
+		border: 2px solid var(--text-gray);
 		border-radius: 4px;
 		background: transparent;
 		color: var(--text-color);
@@ -220,7 +221,7 @@
 	select:focus,
 	textarea:focus {
 		outline: none;
-		border-color: var(--text-color);
+		border-color: var(--text-gray);
 	}
 
 	.submit-button {
