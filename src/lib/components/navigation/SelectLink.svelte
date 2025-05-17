@@ -30,7 +30,7 @@
 <style>
 	select {
 		background-color: transparent;
-		color: var(--text-color);
+		color: var(--text-gray);
 		border: 1px solid var(--text-color);
 		border-radius: var(--radius);
 		padding: 0.5rem;
@@ -50,7 +50,7 @@
 
 		&:focus {
 			outline: none;
-			border-color: var(--text-pale);
+			border-color: var(--text-gray);
 			box-shadow: none;
 		}
 
