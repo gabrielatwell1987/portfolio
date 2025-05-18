@@ -64,7 +64,7 @@
 					position: absolute;
 					top: 0;
 					left: 0;
-					filter: drop-shadow(0 0 0.25rem var(--text-color));
+					filter: drop-shadow(0 0 0.25rem var(--clr-main));
 					border-radius: 10px;
 
 					@media (width <= 500px) {

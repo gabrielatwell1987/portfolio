@@ -93,10 +93,10 @@
 			align-items: center;
 			gap: 1.25rem;
 			z-index: 10;
-			box-shadow: 0 0 10px 7px var(--text-gray);
+			box-shadow: 0 0 10px 7px var(--clr-gray);
 			border-radius: 5px;
 			padding: 0.75rem;
-			background-color: var(--text-anti);
+			background-color: var(--clr-inverted);
 			backdrop-filter: blur(125px);
 
 			min-width: 150px;
@@ -140,7 +140,7 @@
 			margin-inline: auto;
 			margin-block: 0.25rem;
 			border-radius: var(--radius);
-			box-shadow: 0 0 5px var(--text-gray);
+			box-shadow: 0 0 5px var(--clr-gray);
 			padding: 1.2rem 0 0.4rem 0;
 			height: 3.75em;
 		}

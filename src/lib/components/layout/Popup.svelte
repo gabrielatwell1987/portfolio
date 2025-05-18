@@ -22,13 +22,13 @@
 
 		&:focus,
 		&:focus-visible {
-			outline: 1px solid var(--text-color);
+			outline: 1px solid var(--clr-main);
 			background: transparent;
 		}
 
 		button {
 			background-color: transparent;
-			color: var(--text-pale);
+			color: var(--clr-pale);
 			width: fit-content;
 			font-family: var(--anta);
 			border-radius: 6px;
@@ -48,7 +48,7 @@
 
 			&:focus,
 			&:focus-visible {
-				outline: 1px solid var(--text-color);
+				outline: 1px solid var(--clr-main);
 				background: transparent;
 			}
 

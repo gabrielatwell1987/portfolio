@@ -110,7 +110,7 @@
 				margin-inline: auto;
 				text-align: center;
 				width: var(--100);
-				color: var(--text-color);
+				color: var(--clr-main);
 
 				& article {
 					font-size: clamp(0.8rem, 2vw, 1rem);
@@ -118,7 +118,7 @@
 					margin-inline: auto;
 					background-color: transparent;
 					box-shadow: none;
-					color: var(--text-color);
+					color: var(--clr-main);
 				}
 
 				& .bio {
@@ -146,10 +146,10 @@
 						line-height: 1.5;
 						text-wrap: none;
 						z-index: 7;
-						color: var(--text-color);
+						color: var(--clr-main);
 
 						& span {
-							color: var(--text-link);
+							color: var(--clr-link);
 							font-weight: 600;
 						}
 					}
@@ -162,13 +162,13 @@
 
 			& p {
 				text-align: left;
-				color: var(--text-color);
+				color: var(--clr-main);
 			}
 
 			& .hero {
 				width: var(--100);
 				margin-inline: auto;
-				color: var(--text-color);
+				color: var(--clr-main);
 			}
 		}
 	}

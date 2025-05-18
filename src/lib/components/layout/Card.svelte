@@ -19,14 +19,14 @@
 		height: fit-content;
 		background-color: transparent;
 		border-radius: 8px;
-		border: 2px solid var(--text-color);
+		border: 2px solid var(--clr-main);
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 		padding: 2rem 3rem 0 3rem;
 		overflow: hidden;
 		transition: all 0.3s ease-in-out;
 
 		&:hover {
-			box-shadow: 0 0 5em var(--text-gray);
+			box-shadow: 0 0 5em var(--clr-gray);
 		}
 
 		.card-image {
@@ -43,7 +43,7 @@
 		}
 
 		.card-title {
-			color: var(--text-blue);
+			color: var(--clr-blue);
 			font-family: var(--orbitron);
 			font-size: clamp(2rem, 2vw, 4rem);
 			font-weight: 800;
@@ -53,7 +53,7 @@
 		}
 
 		.card-description {
-			color: var(--text-color);
+			color: var(--clr-main);
 			font-size: clamp(1.1rem, 1.5vw, 1.5rem);
 			font-weight: 300;
 			margin-bottom: 1rem;
@@ -67,8 +67,8 @@
 			justify-content: center;
 			align-items: center;
 			background-color: transparent;
-			color: var(--text-blue);
-			border: 1px solid var(--text-blue);
+			color: var(--clr-blue);
+			border: 1px solid var(--clr-blue);
 			border-radius: 5rem;
 			font-family: var(--orbitron);
 			font-size: clamp(1rem, 1vw, 1.2rem);
@@ -78,7 +78,7 @@
 			height: 10%;
 			outline: none;
 			margin: 1rem auto;
-			filter: drop-shadow(0 0 0.75rem var(--text-gray));
+			filter: drop-shadow(0 0 0.75rem var(--clr-gray));
 			transition: 750ms;
 			outline: 3px solid currentColor;
 			outline-offset: -7px;
@@ -87,13 +87,13 @@
 
 			&:hover {
 				animation: nod 1s ease-in-out infinite;
-				color: var(--text-color);
-				border-color: var(--text-color);
+				color: var(--clr-main);
+				border-color: var(--clr-main);
 			}
 
 			&:focus,
 			&:focus-visible {
-				outline: 1px solid var(--text-color);
+				outline: 1px solid var(--clr-main);
 				background: transparent;
 			}
 		}

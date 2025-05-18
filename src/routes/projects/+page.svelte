@@ -251,7 +251,7 @@
 		content: '';
 		position: absolute;
 		inset: 0;
-		background: var(--text-gray);
+		background: var(--clr-gray);
 		clip-path: polygon(
 			0 80px,
 			80px 0,

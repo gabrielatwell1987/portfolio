@@ -47,7 +47,7 @@
 			width: 100%;
 
 			& h4 {
-				color: var(--text-color);
+				color: var(--clr-main);
 				letter-spacing: 0.5px;
 				margin-inline: auto;
 				margin-bottom: 3%;

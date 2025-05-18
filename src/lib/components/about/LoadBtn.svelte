@@ -60,12 +60,12 @@
 			&:hover {
 				opacity: 0.95;
 				outline-offset: 0px;
-				filter: drop-shadow(0 0 0.75rem var(--text-gray));
+				filter: drop-shadow(0 0 0.75rem var(--clr-gray));
 			}
 
 			&:focus,
 			&:focus-visible {
-				outline: 1px solid var(--text-color);
+				outline: 1px solid var(--clr-main);
 			}
 
 			&:disabled {

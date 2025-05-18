@@ -89,7 +89,7 @@
 
 					&:focus,
 					&:focus-visible {
-						outline: 1px solid var(--text-color);
+						outline: 1px solid var(--clr-main);
 						background: transparent;
 					}
 				}
@@ -112,7 +112,7 @@
 		& a {
 			&:focus,
 			&:focus-visible {
-				outline: 1px solid var(--text-color);
+				outline: 1px solid var(--clr-main);
 				background: transparent;
 			}
 		}

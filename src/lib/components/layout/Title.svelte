@@ -23,11 +23,11 @@
 
 			background: linear-gradient(
 				120deg,
-				var(--text-color) 0%,
-				var(--text-blue) 25%,
-				var(--text-color) 50%,
-				var(--text-blue) 75%,
-				var(--text-color) 100%
+				var(--clr-main) 0%,
+				var(--clr-blue) 25%,
+				var(--clr-main) 50%,
+				var(--clr-blue) 75%,
+				var(--clr-main) 100%
 			);
 			background-size: 200% auto;
 			-webkit-background-clip: text;

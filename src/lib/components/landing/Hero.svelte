@@ -40,7 +40,7 @@
 				width: 100%;
 				height: 100%;
 				object-fit: cover;
-				box-shadow: 0 0 10px var(--text-gray);
+				box-shadow: 0 0 10px var(--clr-gray);
 			}
 
 			& section {
@@ -59,7 +59,7 @@
 					width: 85%;
 					padding: 0 1.5rem;
 					margin-bottom: -2%;
-					color: var(--text-color);
+					color: var(--clr-main);
 
 					@media (width <= 500px) {
 						width: 100%;

@@ -55,8 +55,8 @@
 	:root {
 		--space: 1rem;
 		--surface-1: transparent;
-		--surface-2: var(--text-anti);
-		--gradient: radial-gradient(var(--text-gray), var(--dark) 88%);
+		--surface-2: var(--clr-inverted);
+		--gradient: radial-gradient(var(--clr-gray), var(--dark) 88%);
 	}
 
 	* {
@@ -105,7 +105,7 @@
 
 			& .item {
 				width: 100%;
-				box-shadow: 0 0 5px 2px var(--text-gray);
+				box-shadow: 0 0 5px 2px var(--clr-gray);
 				background-color: var(--surface-2);
 				background-image: var(--gradient);
 				padding: var(--space);
@@ -159,13 +159,13 @@
 
 					&:focus,
 					&:focus-visible {
-						outline: 1px solid var(--text-color);
+						outline: 1px solid var(--clr-main);
 						background: transparent;
 					}
 				}
 
 				&:hover {
-					box-shadow: 0 0 5px 3px var(--text-gray);
+					box-shadow: 0 0 5px 3px var(--clr-gray);
 					opacity: 1;
 				}
 

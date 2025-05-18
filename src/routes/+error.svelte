@@ -47,7 +47,7 @@
 			font-weight: 900;
 			margin-inline: auto;
 			text-align: center;
-			color: var(--text-blue);
+			color: var(--clr-blue);
 			font-family: var(--orbitron);
 			letter-spacing: 7px;
 			text-shadow: 5px 7.5px 5px var(--smoke);
@@ -60,7 +60,7 @@
 			margin-inline: auto;
 			margin-block: 0;
 			text-align: center;
-			color: var(--text-color);
+			color: var(--clr-main);
 			font-family: var(--bronova);
 			letter-spacing: 5px;
 			text-wrap: balance;
@@ -74,7 +74,7 @@
 			line-height: 1.25;
 			text-align: left;
 			padding: 2rem 4rem;
-			color: var(--text-color);
+			color: var(--clr-main);
 			text-align: center;
 			text-shadow: 1px 1px 5px var(--smoke);
 			text-wrap: none;

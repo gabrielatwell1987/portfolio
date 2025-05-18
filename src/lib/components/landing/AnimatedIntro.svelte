@@ -33,7 +33,7 @@
 		font-family: var(--bronova);
 		font-size: clamp(1.25rem, 2.5vw, 10rem);
 		font-weight: 100;
-		color: var(--text-color);
+		color: var(--clr-main);
 		text-align: center;
 		margin: 10% 0;
 		padding: 2rem;
@@ -53,7 +53,7 @@
 	.bigWord {
 		font-family: var(--orbitron);
 		font-size: clamp(3rem, 15vw, 40rem);
-		color: var(--text-blue);
+		color: var(--clr-blue);
 		text-wrap: none;
 		display: block;
 		letter-spacing: 1px;

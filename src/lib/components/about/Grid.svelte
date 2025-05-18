@@ -35,13 +35,13 @@
 			background-color: hsla(0, 0%, 26%, 0.25);
 			backdrop-filter: blur(5px);
 			-webkit-backdrop-filter: blur(4px);
-			box-shadow: 0px 0px 12px var(--text-color);
+			box-shadow: 0px 0px 12px var(--clr-main);
 
 			.title {
 				font-size: clamp(2rem, 4vw, 5rem);
-				text-shadow: 0 0 5px 3px var(--text-gray);
+				text-shadow: 0 0 5px 3px var(--clr-gray);
 				mix-blend-mode: difference;
-				color: var(--text-blue);
+				color: var(--clr-blue);
 				font-family: var(--orbitron);
 			}
 
@@ -50,7 +50,7 @@
 				line-height: 1.35;
 				text-align: left;
 				font-size: clamp(1.2rem, 1.75vw, 2rem);
-				color: var(--text-color);
+				color: var(--clr-main);
 				margin-top: -1rem;
 				hyphens: auto;
 			}

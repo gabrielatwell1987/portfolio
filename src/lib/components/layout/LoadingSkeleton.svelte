@@ -26,7 +26,7 @@
 		</clipPath>
 		<linearGradient id="fill">
 			<!-- First stop - leading edge -->
-			<stop offset="0.599964" stop-color="var(--text-gray)" stop-opacity="1">
+			<stop offset="0.599964" stop-color="var(--clr-gray)" stop-opacity="1">
 				<animate
 					attributeName="offset"
 					values="-2; -2; 1"
@@ -52,7 +52,7 @@
 			</stop>
 
 			<!-- Final stop - trailing edge -->
-			<stop offset="2.59996" stop-color="var(--text-gray)" stop-opacity="1">
+			<stop offset="2.59996" stop-color="var(--clr-gray)" stop-opacity="1">
 				<animate
 					attributeName="offset"
 					values="0; 0; 3"

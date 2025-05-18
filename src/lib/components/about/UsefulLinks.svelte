@@ -52,11 +52,11 @@
 				margin-bottom: 0.75rem;
 				font-family: var(--bronova);
 				font-size: clamp(1rem, 1.75vw, 1.5rem);
-				color: var(--text-blue);
+				color: var(--clr-blue);
 			}
 
 			& p {
-				color: var(--text-gray);
+				color: var(--clr-gray);
 				font-family: var(--bronova);
 				font-size: clamp(1rem, 1.15rem, 2rem);
 				font-style: italic;

@@ -20,11 +20,11 @@
 				letter-spacing: 3px;
 				background-image: linear-gradient(
 					to right,
-					var(--text-blue),
-					var(--text-color),
-					var(--text-blue),
-					var(--text-color),
-					var(--text-blue)
+					var(--clr-blue),
+					var(--clr-main),
+					var(--clr-blue),
+					var(--clr-main),
+					var(--clr-blue)
 				);
 				background-clip: text;
 				background-size: var(--bgSize);

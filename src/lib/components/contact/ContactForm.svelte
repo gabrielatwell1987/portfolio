@@ -52,14 +52,14 @@
 		font-size: clamp(1.25rem, 3vw, 4rem);
 		font-weight: 800;
 		letter-spacing: 3px;
-		color: var(--text-blue);
+		color: var(--clr-blue);
 		padding-inline: 1rem;
 	}
 
 	input,
 	textarea {
 		font-size: clamp(1.1rem, 2vw, 2rem);
-		outline: 1px solid var(--text-gray);
+		outline: 1px solid var(--clr-gray);
 	}
 
 	input {
@@ -72,7 +72,7 @@
 		}
 
 		&:focus-visible {
-			outline: 2px solid var(--text-gray);
+			outline: 2px solid var(--clr-gray);
 			border: none;
 		}
 	}
@@ -93,7 +93,7 @@
 		}
 
 		&:focus-visible {
-			outline: 2px solid var(--text-gray);
+			outline: 2px solid var(--clr-gray);
 			border: none;
 		}
 
@@ -106,13 +106,13 @@
 		font-size: clamp(1rem, 1.25vw, 2rem);
 		font-weight: 800;
 		letter-spacing: 3px;
-		color: var(--text-color);
+		color: var(--clr-main);
 	}
 
 	#name::-webkit-input-placeholder,
 	#email::-webkit-input-placeholder,
 	#message::-webkit-input-placeholder {
-		color: var(--text-color);
+		color: var(--clr-main);
 		font-weight: 100;
 	}
 
@@ -203,7 +203,7 @@
 
 			& fieldset {
 				border: 5px solid var(--white);
-				border-image: linear-gradient(45deg, var(--text-gray) 40%, var(--text-blue)) 1;
+				border-image: linear-gradient(45deg, var(--clr-gray) 40%, var(--clr-blue)) 1;
 				font-weight: bolder;
 				padding: 2rem 5rem;
 				border-radius: 10px;

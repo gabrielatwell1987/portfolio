@@ -11,7 +11,7 @@
 <style>
 	.divider {
 		width: var(--width);
-		background-color: var(--text-color);
+		background-color: var(--clr-main);
 		height: var(--thickness);
 		margin-inline: auto;
 		margin-bottom: 4rem;

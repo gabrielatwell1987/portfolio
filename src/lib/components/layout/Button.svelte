@@ -23,7 +23,7 @@
 
 			&:focus,
 			&:focus-visible {
-				outline: 1px solid var(--text-color);
+				outline: 1px solid var(--clr-main);
 				background: transparent;
 			}
 
@@ -67,9 +67,9 @@
 
 					&:focus,
 					&:focus-visible {
-						outline: 1px solid var(--text-color);
+						outline: 1px solid var(--clr-main);
 						background: transparent;
-						color: var(--text-color);
+						color: var(--clr-main);
 					}
 
 					@media (width <= 500px) {

@@ -15,7 +15,7 @@
 		font-size: clamp(1.5rem, 3vw, 2rem);
 		font-weight: 700;
 		text-decoration: none;
-		color: var(--text-link);
+		color: var(--clr-link);
 		font-family: var(--orbitron);
 	}
 
@@ -23,7 +23,7 @@
 		margin: 5rem 0 -1rem 0;
 		text-align: center;
 		font-family: var(--anta);
-		color: var(--text-blue);
+		color: var(--clr-blue);
 		font-size: clamp(1.5rem, 3vw, 2.5rem);
 		margin-top: -7rem;
 	}
@@ -34,7 +34,7 @@
 			font-size: clamp(1rem, 2vw, 1.35rem);
 			margin-top: 2rem;
 			line-height: 1.5;
-			color: var(--text-color);
+			color: var(--clr-main);
 		}
 	}
 

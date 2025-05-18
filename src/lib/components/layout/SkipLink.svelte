@@ -12,7 +12,7 @@
 		left: 1em;
 		border-radius: 5px;
 		background-color: transparent;
-		color: var(--text-pale);
+		color: var(--clr-pale);
 		padding: 0.5rem 0.75rem;
 		position: absolute;
 		z-index: 100;

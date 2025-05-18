@@ -90,7 +90,7 @@
 			font-weight: 800;
 			background-color: transparent;
 			box-shadow: none;
-			color: var(--text-pale);
+			color: var(--clr-pale);
 			width: fit-content;
 			outline: none;
 			border: none;
@@ -104,7 +104,7 @@
 
 			&:focus,
 			&:focus-visible {
-				outline: 1px solid var(--text-color);
+				outline: 1px solid var(--clr-main);
 			}
 
 			&:hover {
@@ -116,7 +116,7 @@
 
 				&:focus,
 				&:focus-visible {
-					outline: 1px solid var(--text-color);
+					outline: 1px solid var(--clr-main);
 					background: transparent;
 				}
 			}
@@ -128,7 +128,7 @@
 			font-weight: 800;
 			background-color: transparent;
 			box-shadow: none;
-			color: var(--text-pale);
+			color: var(--clr-pale);
 			width: 5%;
 			height: 5%;
 			outline: none;
@@ -148,7 +148,7 @@
 
 			&:focus,
 			&:focus-visible {
-				outline: 1px solid var(--text-color);
+				outline: 1px solid var(--clr-main);
 				background: transparent;
 			}
 

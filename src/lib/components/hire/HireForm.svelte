@@ -122,7 +122,7 @@
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			gap: 1.5rem;
-			border: 2px solid var(--text-gray);
+			border: 2px solid var(--clr-gray);
 			padding: 1rem 2rem;
 			margin-bottom: 1rem;
 			border-radius: var(--radius);
@@ -159,8 +159,8 @@
 				background-repeat: no-repeat;
 				background-position: right 0.75rem center;
 				padding-right: 2.5rem;
-				border: 1px solid var(--text-gray);
-				color: var(--text-color);
+				border: 1px solid var(--clr-gray);
+				color: var(--clr-main);
 				font-family: inherit;
 				font-size: clamp(0.8rem, 1vw, 1.75rem);
 				cursor: pointer;
@@ -168,12 +168,12 @@
 				outline: none;
 
 				&:focus {
-					border-color: var(--text-color);
+					border-color: var(--clr-main);
 					box-shadow: none;
 				}
 				& option {
-					background-color: var(--text-anti);
-					color: var(--text-color);
+					background-color: var(--clr-inverted);
+					color: var(--clr-main);
 					padding: 0.5rem;
 				}
 			}
@@ -188,7 +188,7 @@
 		font-family: var(--bronova);
 		font-size: clamp(1rem, 1vw, 1.75rem);
 		font-weight: 700;
-		color: var(--text-color);
+		color: var(--clr-main);
 	}
 
 	.tac {
@@ -199,10 +199,10 @@
 	select,
 	textarea {
 		padding: 0.75rem;
-		border: 2px solid var(--text-gray);
+		border: 2px solid var(--clr-gray);
 		border-radius: 4px;
 		background: transparent;
-		color: var(--text-color);
+		color: var(--clr-main);
 		font-size: 1rem;
 		width: 100%;
 		transition:
@@ -212,7 +212,7 @@
 
 	input::placeholder,
 	textarea::placeholder {
-		color: var(--text-color);
+		color: var(--clr-main);
 		opacity: 0.7;
 		font-size: clamp(0.8rem, 1vw, 1.75rem);
 	}
@@ -221,14 +221,14 @@
 	select:focus,
 	textarea:focus {
 		outline: none;
-		border-color: var(--text-gray);
+		border-color: var(--clr-gray);
 	}
 
 	.submit-button {
 		padding: 1rem 2rem;
 		background: transparent;
-		color: var(--text-pale);
-		border: 1px solid var(--text-pale);
+		color: var(--clr-pale);
+		border: 1px solid var(--clr-pale);
 		border-radius: var(--radius);
 		font-family: var(--orbitron);
 		font-size: clamp(1rem, 1.5vw, 2rem);
@@ -241,12 +241,12 @@
 		}
 
 		&:hover {
-			background-color: var(--text-pale);
+			background-color: var(--clr-pale);
 			color: var(--dark);
 		}
 
 		&:disabled {
-			background: var(--text-gray);
+			background: var(--clr-gray);
 			cursor: not-allowed;
 		}
 	}

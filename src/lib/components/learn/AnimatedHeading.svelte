@@ -63,7 +63,7 @@
 
 		.h1-l,
 		.h1-r {
-			color: var(--text-color);
+			color: var(--clr-main);
 			font-family: var(--bronova);
 			font-size: clamp(1.2rem, 5vw, 5rem);
 			font-weight: 100;
@@ -73,7 +73,7 @@
 		}
 
 		.span {
-			color: var(--text-blue);
+			color: var(--clr-blue);
 			font-family: var(--orbitron);
 			font-size: clamp(4rem, 10vw, 20rem);
 			letter-spacing: 3px;

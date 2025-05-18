@@ -10,7 +10,7 @@
 		font-family: var(--orbitron);
 		font-size: clamp(1.2rem, 1.5vw, 2rem);
 		line-height: 1.75;
-		color: var(--text-color);
+		color: var(--clr-main);
 		margin-right: 0.5rem;
 		text-wrap: balance;
 	}
