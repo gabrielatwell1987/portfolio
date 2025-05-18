@@ -30,6 +30,7 @@
 		.inline {
 			display: inline-block;
 			margin: 0.5rem auto;
+			margin: 0;
 			border-radius: var(--radius);
 			padding: 0.5rem;
 			background-color: hsla(0, 0%, 26%, 0.25);
@@ -78,7 +79,7 @@
 		.grid {
 			display: grid;
 			grid-template-rows: repeat(2, 1fr);
-			margin: -8em 0 -50% 0;
+			margin: -10em 0 -50% 0;
 			gap: 3rem;
 
 			.inline {

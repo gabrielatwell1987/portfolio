@@ -6,10 +6,8 @@
 	import gabe3 from '$lib/images/gabe3.webp';
 	import gabe4 from '$lib/images/gabe4.webp';
 	import gabe5 from '$lib/images/gabe5.webp';
-	// import monkey from '$lib/images/monkey.webp';
 	import wtf from '$lib/images/wtf.webp';
 	import wtf2 from '$lib/images/wtf2.webp';
-	// import wtf3 from '$lib/images/wtf3.webp';
 	import kids from '$lib/images/kids.webp';
 	import Title from '$lib/components/layout/Title.svelte';
 </script>
