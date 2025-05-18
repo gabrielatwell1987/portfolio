@@ -31,7 +31,7 @@
 		>
 			<path
 				d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"
-				fill="var(--text-blue)"
+				fill="var(--clr-blue)"
 			/>
 		</svg>
 	{/if}
@@ -39,37 +39,37 @@
 
 <style>
 	:root {
-		--bg-color: var(--blackest);
+		--clr-bg: var(--blackest);
 		--sun: var(--pale);
 		--moon: var(--darkest-blue);
 		--light: var(--white);
 		--dark: var(--blackest);
 		--light-text: var(--blackest);
 		--dark-text: var(--white);
-		--text-blue: var(--sky);
-		--text-gray: var(--smoke);
-		--text-link: var(--sky);
-		--text-pale: var(--pale);
-		--text-color: var(--white);
-		--text-anti: var(--blackest);
-		--text-button: var(--blackest);
+		--clr-blue: var(--sky);
+		--clr-gray: var(--smoke);
+		--clr-link: var(--sky);
+		--clr-pale: var(--pale);
+		--clr-main: var(--white);
+		--clr-inverted: var(--blackest);
+		--clr-button-text: var(--blackest);
 		--button-bg: var(--yellow);
 		--opacity: 1;
 	}
 
 	:global(body) {
 		--dark-text: var(--white);
-		--text-anti: var(--black);
-		--text-color: var(--white);
-		--text-blue: var(--sky);
-		--text-gray: var(--smoke);
-		--text-link: var(--purple);
-		--text-pale: var(--yellow);
-		--text-button: var(--text-anti);
+		--clr-inverted: var(--black);
+		--clr-main: var(--white);
+		--clr-blue: var(--sky);
+		--clr-gray: var(--smoke);
+		--clr-link: var(--purple);
+		--clr-pale: var(--yellow);
+		--clr-button-text: var(--clr-inverted);
 		--button-bg: var(--yellow);
 		--opacity: 0.15;
 		background-color: var(--dark);
-		color: var(--text-color);
+		color: var(--clr-main);
 		transition:
 			background-color 0.5s ease-in-out,
 			color 0.5s ease-in-out;
@@ -77,17 +77,17 @@
 
 	:global(body.light) {
 		--dark-text: var(--white);
-		--text-color: var(--light-text);
-		--text-anti: var(--white);
-		--text-blue: var(--darkest-blue);
-		--text-gray: var(--lightblack);
-		--text-link: var(--dark-blue);
-		--text-pale: var(--dark-pale);
-		--text-button: var(--text-anti);
+		--clr-main: var(--light-text);
+		--clr-inverted: var(--white);
+		--clr-blue: var(--darkest-blue);
+		--clr-gray: var(--lightblack);
+		--clr-link: var(--dark-blue);
+		--clr-pale: var(--dark-pale);
+		--clr-button-text: var(--clr-inverted);
 		--button-bg: var(--yellow);
 		--opacity: 0.35;
 		background-color: var(--light);
-		color: var(--text-color);
+		color: var(--clr-main);
 		transition:
 			background-color 0.5s ease-in-out,
 			color 0.5s ease-in-out;
@@ -97,7 +97,7 @@
 		background: transparent;
 		border: none;
 		border-radius: 5px;
-		color: var(--text-color);
+		color: var(--clr-main);
 		font-size: clamp(1.5rem, 2vw, 2.25rem);
 		letter-spacing: 3px;
 		width: fit-content;
@@ -119,12 +119,12 @@
 
 		&:active {
 			background: inherit;
-			color: var(--text-color);
+			color: var(--clr-main);
 		}
 
 		&:focus,
 		&:focus-visible {
-			outline: 1px solid var(--text-color);
+			outline: 1px solid var(--clr-main);
 			padding: 1em;
 			background: transparent;
 		}

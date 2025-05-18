@@ -30,8 +30,8 @@
 <style>
 	select {
 		background-color: transparent;
-		color: var(--text-gray);
-		border: 1px solid var(--text-color);
+		color: var(--clr-gray);
+		border: 1px solid var(--clr-main);
 		border-radius: var(--radius);
 		padding: 0.5rem;
 		cursor: pointer;
@@ -50,13 +50,13 @@
 
 		&:focus {
 			outline: none;
-			border-color: var(--text-gray);
+			border-color: var(--clr-gray);
 			box-shadow: none;
 		}
 
 		& option {
-			background-color: var(--text-anti);
-			color: var(--text-color);
+			background-color: var(--clr-inverted);
+			color: var(--clr-main);
 			padding: 0.25rem;
 			letter-spacing: 1px;
 			font-weight: 500;

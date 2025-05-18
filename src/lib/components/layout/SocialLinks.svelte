@@ -88,7 +88,7 @@
 	}
 
 	.size {
-		color: var(--text-blue);
+		color: var(--clr-blue);
 		font-size: clamp(2.5rem, 4vw, 5rem);
 		font-weight: 900;
 		transition:
@@ -104,7 +104,7 @@
 
 		&:focus,
 		&:focus-visible {
-			outline: 1px solid var(--text-color);
+			outline: 1px solid var(--clr-main);
 			background: transparent;
 		}
 

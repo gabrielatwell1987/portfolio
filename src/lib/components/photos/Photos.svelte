@@ -179,12 +179,12 @@
 				bottom: -1rem;
 				right: 1em;
 				background-color: transparent;
-				color: var(--text-color);
+				color: var(--clr-main);
 				width: fit-content;
 			}
 
 			& h2 {
-				color: var(--text-gray);
+				color: var(--clr-gray);
 				font-family: var(--bronova);
 				font-size: clamp(0.9rem, 1.5vw, 2rem);
 				font-weight: 300;
@@ -209,7 +209,7 @@
 					padding: 2rem;
 					position: relative;
 					background-color: transparent;
-					box-shadow: 0 0 1rem var(--text-color);
+					box-shadow: 0 0 1rem var(--clr-main);
 					isolation: isolate;
 					width: 100%;
 					max-width: 1600px;
@@ -284,7 +284,7 @@
 							}
 
 							&:hover {
-								filter: drop-shadow(0 0 0.25rem var(--text-gray));
+								filter: drop-shadow(0 0 0.25rem var(--clr-gray));
 								animation-name: wiggle;
 								animation-duration: 1s;
 								animation-timing-function: ease-in-out;

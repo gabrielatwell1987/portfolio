@@ -14,7 +14,7 @@
 <style>
 	@media (min-width: 300px) {
 		button {
-			background-color: var(--text-pale);
+			background-color: var(--clr-pale);
 			font-family: var(--orbitron);
 			font-size: clamp(1.2rem, 1.5vw, 2rem);
 			font-weight: 900;
@@ -53,9 +53,9 @@
 
 			&:focus,
 			&:focus-visible {
-				outline: 1px solid var(--text-color);
+				outline: 1px solid var(--clr-main);
 				background: transparent;
-				color: var(--text-color);
+				color: var(--clr-main);
 			}
 
 			@media (width <= 500px) {

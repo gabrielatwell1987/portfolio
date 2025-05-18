@@ -232,13 +232,13 @@
 					}
 
 					& summary {
-						color: var(--text-blue);
-						border-color: var(--text-gray);
+						color: var(--clr-blue);
+						border-color: var(--clr-gray);
 					}
 				}
 
 				& .text {
-					color: var(--text-color);
+					color: var(--clr-main);
 				}
 			}
 		}
@@ -251,8 +251,8 @@
 	@media (width <= 768px) {
 		details {
 			& summary {
-				color: var(--text-blue);
-				border-color: var(--text-gray);
+				color: var(--clr-blue);
+				border-color: var(--clr-gray);
 			}
 		}
 	}

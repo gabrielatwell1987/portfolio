@@ -12,7 +12,7 @@
 			font-size: clamp(1.25rem, 1.25vw, 1.15rem);
 			font-weight: 900;
 			letter-spacing: 2px;
-			color: var(--text-color);
+			color: var(--clr-main);
 			background-color: transparent;
 			transition:
 				color 0.35s ease-in-out,
@@ -20,7 +20,7 @@
 
 			&:focus,
 			&:focus-visible {
-				outline: 1px solid var(--text-color);
+				outline: 1px solid var(--clr-main);
 				background: transparent;
 			}
 
@@ -35,12 +35,12 @@
 			text-decoration: none;
 			border-radius: 1px;
 			scale: 0.8;
-			color: var(--text-color);
+			color: var(--clr-main);
 
 			&:hover {
-				color: var(--text-color);
-				text-shadow: 1px 1px 1px var(--text-anti);
-				border-bottom: 4px solid var(--text-color);
+				color: var(--clr-main);
+				text-shadow: 1px 1px 1px var(--clr-inverted);
+				border-bottom: 4px solid var(--clr-main);
 				height: 2.75rem;
 				transition: all 0.15s ease-in-out;
 				border-radius: 1px;

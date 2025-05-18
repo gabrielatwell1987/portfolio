@@ -28,7 +28,7 @@
 	@media (width >= 300px) {
 		.link {
 			text-align: center;
-			color: var(--text-link);
+			color: var(--clr-link);
 			border: none;
 			padding: 1rem;
 			display: flex;
@@ -51,7 +51,7 @@
 
 			&:focus,
 			&:focus-visible {
-				outline: 1px solid var(--text-color);
+				outline: 1px solid var(--clr-main);
 				background: transparent;
 			}
 
@@ -68,8 +68,8 @@
 			& .hover-text {
 				visibility: hidden;
 				width: 100%;
-				background-color: var(--text-gray);
-				color: var(--text-anti);
+				background-color: var(--clr-gray);
+				color: var(--clr-inverted);
 				text-align: center;
 				border-radius: var(--button-radius);
 				padding: 5px 3px;

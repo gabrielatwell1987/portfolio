@@ -14,7 +14,7 @@
 	margin-bottom: 2rem;
 	max-width: 90%;
 	margin-inline: auto;
-	color: var(--text-color);
+	color: var(--clr-main);
 	font-size: clamp(1.25rem, 1.25vw, 1.75rem);
 	font-weight: 100;
 	letter-spacing: 2px;
@@ -33,8 +33,8 @@
 }
 
 code {
-	background: var(--text-color);
-	color: var(--text-anti);
+	background: var(--clr-main);
+	color: var(--clr-inverted);
 	font-family: var(--mono);
 	font-size: clamp(0.9rem, 1vw, 1.1rem);
 	letter-spacing: 1px;

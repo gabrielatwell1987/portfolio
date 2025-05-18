@@ -44,20 +44,20 @@
 				margin: 0;
 				padding: 0;
 				letter-spacing: 2px;
-				color: var(--text-blue);
+				color: var(--clr-blue);
 				font-family: var(--orbitron);
 				font-size: clamp(1rem, 1.5vw, 1.75rem);
 				font-weight: 800;
 				white-space: nowrap;
 
 				&:hover {
-					border-bottom: 1px solid var(--text-blue);
+					border-bottom: 1px solid var(--clr-blue);
 				}
 			}
 
 			&:focus,
 			&:focus-visible {
-				outline: 1px solid var(--text-color);
+				outline: 1px solid var(--clr-main);
 				background: transparent;
 			}
 		}

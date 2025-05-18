@@ -132,11 +132,11 @@
 				transition: transform 0.25s ease-in-out;
 				margin-bottom: -0.75rem;
 				background-color: transparent;
-				filter: drop-shadow(0 0 0.5rem var(--text-gray));
+				filter: drop-shadow(0 0 0.5rem var(--clr-gray));
 
 				&:focus,
 				&:focus-visible {
-					outline: 1px solid var(--text-color);
+					outline: 1px solid var(--clr-main);
 					background: transparent;
 				}
 			}

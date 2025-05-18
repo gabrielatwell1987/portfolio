@@ -37,7 +37,7 @@
 		}
 
 		p {
-			color: var(--text-gray);
+			color: var(--clr-gray);
 			margin: 0;
 			padding: 0;
 			text-align: center;

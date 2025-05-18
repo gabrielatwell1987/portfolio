@@ -38,13 +38,13 @@
 
 <style>
 	.testimonial {
-		--dark-bg-rgb: var(--text-color);
-		--light-bg-rgb: var(--text-anti);
+		--dark-bg-rgb: var(--clr-main);
+		--light-bg-rgb: var(--clr-inverted);
 		background-color: hsla(var(--light-bg-rgb), 0.25);
 		border-radius: var(--radius);
 		padding: 2rem;
 		position: relative;
-		box-shadow: 0 0 12px var(--text-color);
+		box-shadow: 0 0 12px var(--clr-main);
 		margin-top: -6rem;
 		margin-bottom: 2rem;
 		max-width: 50em;
@@ -76,11 +76,11 @@
 			& strong {
 				font-size: clamp(1rem, 1.75vw, 1.3rem);
 				font-weight: 600;
-				color: var(--text-color);
+				color: var(--clr-main);
 			}
 
 			& span {
-				color: var(--text-color);
+				color: var(--clr-main);
 				font-size: clamp(0.9rem, 1.25vw, 1.1rem);
 				font-weight: 400;
 				opacity: 0.5;
@@ -92,7 +92,7 @@
 			top: 1rem;
 			left: 1.5rem;
 			font-size: 4rem;
-			color: var(--text-color);
+			color: var(--clr-main);
 			font-family: Georgia, serif;
 			line-height: 1;
 		}
@@ -102,14 +102,14 @@
 			padding-left: 1rem;
 			font-size: clamp(1.2rem, 1.5vw, 2.25rem);
 			font-style: italic;
-			color: var(--text-color);
+			color: var(--clr-main);
 			line-height: 1.5;
 			border-left: none;
 		}
 
 		& .testimonial-footer {
 			background-color: transparent;
-			border-top: 1px solid var(--text-color);
+			border-top: 1px solid var(--clr-main);
 			margin-top: 1.5rem;
 			display: flex;
 			justify-content: center;

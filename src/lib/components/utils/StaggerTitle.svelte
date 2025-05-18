@@ -26,7 +26,7 @@
 			text-align: center;
 			font-family: var(--orbitron);
 			font-size: clamp(2.5rem, 10.5vw, 15rem);
-			color: var(--text-blue);
+			color: var(--clr-blue);
 			letter-spacing: 5px;
 			text-transform: uppercase;
 			font-kerning: none;
