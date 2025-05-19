@@ -94,10 +94,12 @@
 		display: grid;
 		min-height: 100vh;
 		place-items: center;
-		padding-block: 10em;
+		padding-bottom: 5em;
 
 		@media (width >= 768px) and (width <= 990px) {
-			padding-block: 2em;
+			padding-block: 1em;
+			margin-top: -15em;
+			margin-bottom: -10em;
 		}
 	}
 
@@ -110,11 +112,12 @@
 
 		.skills {
 			display: grid;
-			grid-template-columns: repeat(3, minmax(100px, 0.75fr));
-			gap: 2rem;
+			grid-template-columns: repeat(3, minmax(100px, 1fr));
+			gap: 1rem;
 			align-items: center;
-			width: 90%;
-			max-width: 800px;
+			justify-content: center;
+			width: min(40%, 800px);
+			margin-inline: auto;
 
 			& a:hover {
 				transform: scale(1.1);
@@ -145,6 +148,8 @@
 				background-color: transparent;
 				filter: drop-shadow(0 0 0.5rem var(--text-gray));
 				width: clamp(100px, 10vw, 200px);
+				display: grid;
+				place-items: center;
 
 				&:focus,
 				&:focus-visible {
@@ -164,20 +169,22 @@
 
 		@media (width <= 768px) {
 			.skills {
-				grid-template-columns: repeat(2, minmax(100px, 1fr));
-				gap: 0.15rem;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1rem;
+				width: min(35%, 600px);
 
 				& li {
-					width: 80%;
+					width: 70%;
 				}
 			}
 		}
 
 		@media (width <= 400px) {
 			.skills {
-				grid-template-columns: repeat(2, minmax(50px, 1fr));
-				gap: 1rem;
-				margin-right: 1em;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 0.5rem;
+				width: min(25%, 300px);
+				margin-left: 6.25em;
 
 				& li {
 					width: 50%;
@@ -185,11 +192,12 @@
 
 				& .skill {
 					border: none;
-					margin: 1rem;
 					scale: 0.5;
+					margin: 0;
+					padding: 0;
 
 					& .icons {
-						scale: 4.5;
+						scale: 2.25;
 					}
 				}
 			}
