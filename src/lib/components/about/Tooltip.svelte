@@ -43,7 +43,7 @@
 			margin-top: 15%;
 
 			& svg {
-				fill: var(--button-bg);
+				fill: var(--clr-button);
 				width: clamp(0.85em, 5vw, 3em);
 				height: clamp(0.85em, 5vw, 3em);
 			}

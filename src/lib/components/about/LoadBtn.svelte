@@ -47,7 +47,7 @@
 			outline: 3px solid var(--dark);
 			color: var(--dark);
 			border-radius: var(--button-radius);
-			background-color: var(--button-bg);
+			background-color: var(--clr-button);
 			font-family: var(--orbitron);
 			font-size: clamp(1.1rem, 1.5vw, 2rem);
 			font-weight: 900;
