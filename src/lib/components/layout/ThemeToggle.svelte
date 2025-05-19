@@ -53,7 +53,7 @@
 		--clr-main: var(--white);
 		--clr-inverted: var(--blackest);
 		--clr-button-text: var(--blackest);
-		--button-bg: var(--yellow);
+		--clr-button: var(--yellow);
 		--opacity: 1;
 	}
 
@@ -66,7 +66,7 @@
 		--clr-link: var(--purple);
 		--clr-pale: var(--yellow);
 		--clr-button-text: var(--clr-inverted);
-		--button-bg: var(--yellow);
+		--clr-button: var(--yellow);
 		--opacity: 0.15;
 		background-color: var(--dark);
 		color: var(--clr-main);
@@ -84,7 +84,7 @@
 		--clr-link: var(--dark-blue);
 		--clr-pale: var(--dark-pale);
 		--clr-button-text: var(--clr-inverted);
-		--button-bg: var(--yellow);
+		--clr-button: var(--yellow);
 		--opacity: 0.35;
 		background-color: var(--light);
 		color: var(--clr-main);
