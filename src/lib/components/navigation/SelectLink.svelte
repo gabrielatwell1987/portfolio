@@ -30,7 +30,7 @@
 <style>
 	select {
 		background-color: transparent;
-		color: var(--clr-gray);
+		color: var(--clr-main);
 		border: 1px solid var(--clr-main);
 		border-radius: var(--radius);
 		padding: 0.5rem;
