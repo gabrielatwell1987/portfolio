@@ -187,7 +187,7 @@
 
 			& article {
 				width: var(--100);
-				margin: 0 auto;
+				margin-inline: auto;
 			}
 
 			& .bio {
