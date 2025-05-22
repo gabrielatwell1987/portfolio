@@ -39,12 +39,12 @@
 
 	<div class="mobile {open ? 'open' : ''} {isClosing ? 'closing' : ''}">
 		<NavLink href="/landing" title="Home" onclick={closeMenu} />
-		<NavLink href="/about" title="About" onclick={closeMenu} />
-		<NavLink href="/projects" title="Work" onclick={closeMenu} />
-		<NavLink href="/learn" title="Learn" onclick={closeMenu} />
-		<NavLink href="/photos" title="Photos" onclick={closeMenu} />
-		<NavLink href="/hire" title="Hire" onclick={closeMenu} />
-		<NavLink href="/contact" title="Contact" onclick={closeMenu} />
+		<NavLink href="/about" title="About Gabe" onclick={closeMenu} />
+		<NavLink href="/projects" title="Work I've Done" onclick={closeMenu} />
+		<NavLink href="/learn" title="Learn the Web" onclick={closeMenu} />
+		<NavLink href="/photos" title="Photos of Me" onclick={closeMenu} />
+		<NavLink href="/hire" title="Hire Me" onclick={closeMenu} />
+		<NavLink href="/contact" title="Contact Me" onclick={closeMenu} />
 	</div>
 </nav>
 
