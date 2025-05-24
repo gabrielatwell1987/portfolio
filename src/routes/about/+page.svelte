@@ -1,5 +1,4 @@
 <script>
-	import ViewTransition from './../../lib/components/layout/ViewTransition.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 	import Button from '$lib/components/layout/Button.svelte';
 	import Grid from '$lib/components/about/Grid.svelte';
@@ -9,7 +8,6 @@
 	import Tooltip from '$lib/components/about/Tooltip.svelte';
 	import UsefulLinks from '$lib/components/about/UsefulLinks.svelte';
 	import HeroImage from '$lib/components/about/HeroImage.svelte';
-	import ViewTransitionLink from '$lib/components/layout/ViewTransitionLink.svelte';
 </script>
 
 <svelte:head>
