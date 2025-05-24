@@ -15,7 +15,7 @@
 </svelte:head>
 
 <SEO
-	title="Who is Gabe Atwell?"
+	title="Who is Gabe?"
 	description="All about Gabriel Atwell"
 	keywords="about gabe, about gabriel, gabe's bio, about me"
 />
