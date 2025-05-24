@@ -17,7 +17,7 @@
 </script>
 
 <SEO
-	title="Svelte compiler"
+	title="Sveltekit Framework"
 	description="Build rich user interfaces with Svelte"
 	keywords="svelte, sveltekit, svelte how to, sveltekit how to"
 />

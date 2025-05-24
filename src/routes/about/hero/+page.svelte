@@ -10,7 +10,7 @@
 </script>
 
 <SEO
-	title="Three.js hero section"
+	title="Gabe Atwell's Portfolio"
 	description="Welcome to Gabe Atwell's portfolio"
 	keywords="hero section, three.js hero section, gabe's hero section"
 />

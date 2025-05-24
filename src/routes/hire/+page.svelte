@@ -6,7 +6,7 @@
 
 <SEO
 	title="Hire Gabriel Atwell"
-	description="Hire Gabriel Atwell"
+	description="If you need help with web development or design, please fill out the form."
 	keywords="hire gabriel atwell, project questionnaire"
 />
 

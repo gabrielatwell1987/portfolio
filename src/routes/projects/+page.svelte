@@ -9,7 +9,7 @@
 </script>
 
 <SEO
-	title="Projects I've built"
+	title="My work"
 	description="Work Gabe has done"
 	keywords="gabe atwell's projects, gabriel atwell's projects, gabe's work, gabriel's work, projects"
 />
