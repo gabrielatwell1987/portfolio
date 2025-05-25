@@ -39,6 +39,7 @@
 		"eruda": "^3.0.1",
 		"from": "^0.1.7",
 		"highlight.js": "^11.9.0",
+		"marked": "^15.0.12",
 		"split-type": "^0.3.4",
 		"svelte": "^5.1.9"
 	}
