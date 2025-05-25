@@ -73,9 +73,6 @@ You don't need to put ScrollTriggers directly into animations (though that's pro
 <script>
 	import './md.css';
 	import Subheading from './Subheading.svelte';
-	import Image from '$lib/components/layout/Image.svelte';
-	import Divider from '$lib/components/learn/Divider.svelte';
-	import CenteredImage from './CenteredImage.svelte';
 </script>
 
 <style>
