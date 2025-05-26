@@ -115,17 +115,23 @@ body {
 		text-underline-offset: 0.3rem;
 	}
 
-	h2 {
+	h1 {
 		text-align: center;
-		color: var(--purple);
+		color: var(--sky);
+		font-family: var(--orbitron);
 	}
 
-	h1,
+	h2 {
+		text-align: center;
+		color: var(--sky);
+		font-family: var(--bronova);
+	}
+
 	h3,
 	h4 {
 		text-align: center;
-		font-family: var(--orbitron);
-		color: var(--sky);
+		font-family: var(--bronova);
+		color: var(--purple);
 	}
 
 	.visually-hidden {

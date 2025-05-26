@@ -5,6 +5,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import Card from '$lib/components/layout/Card.svelte';
 	import Image from '$lib/components/layout/Image.svelte';
+	import TableOfContents from './TableOfContents.svelte';
 
 	let mounted = $state(false);
 
@@ -30,6 +31,8 @@
 	description="Web techniques"
 	keywords="animation techniques, web techniques for animation"
 />
+
+<TableOfContents />
 
 <section class:mounted>
 	<div class="css">
