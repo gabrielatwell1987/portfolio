@@ -5,56 +5,30 @@
 
 <article class="toc">
 	<div class="css">
-		<ul>
-			<h3>CSS</h3>
+		<dl>
+			<dt>CSS</dt>
 
-			<li>
-				<a href="#transitions">Transitions</a>
-			</li>
-			<li>
-				<a href="#animations">Animations</a>
-			</li>
-			<li>
-				<a href="#interpolate">Interpolate Size</a>
-			</li>
-			<li>
-				<a href="#calc">Calc Size</a>
-			</li>
-			<li>
-				<a href="#details">Details Element</a>
-			</li>
-			<li>
-				<a href="#view">View Transitions</a>
-			</li>
-		</ul>
+			<dd><a href="#transitions">Transitions</a></dd>
+			<dd><a href="#animations">Animations</a></dd>
+			<dd><a href="#interpolate">Interpolate</a></dd>
+			<dd><a href="#calc">Calc</a></dd>
+			<dd><a href="#details">Details</a></dd>
+			<dd><a href="#view">View Transitions</a></dd>
+		</dl>
 	</div>
 
 	<div class="gsap">
-		<ul>
-			<h3>GSAP</h3>
+		<dl>
+			<dt>GSAP</dt>
 
-			<li>
-				<a href="#tweens">Tweens</a>
-			</li>
-			<li>
-				<a href="#staggers">Staggers</a>
-			</li>
-			<li>
-				<a href="#timelines">Timelines</a>
-			</li>
-			<li>
-				<a href="#percentage">Percentage Keyframes</a>
-			</li>
-			<li>
-				<a href="#position">Position Parameter</a>
-			</li>
-			<li>
-				<a href="#fouc">FOUC (Flash of Unstyled Content)</a>
-			</li>
-			<li>
-				<a href="#scrolltrigger">ScrollTrigger</a>
-			</li>
-		</ul>
+			<dd><a href="#tweens">Tweens</a></dd>
+			<dd><a href="#staggers">Staggers</a></dd>
+			<dd><a href="#timelines">Timelines</a></dd>
+			<dd><a href="#percentage">Percentage Keyframes</a></dd>
+			<dd><a href="#position">Position Parameter</a></dd>
+			<dd><a href="#fouc">Flash of Unstyled Content</a></dd>
+			<dd><a href="#scrolltrigger">ScrollTrigger</a></dd>
+		</dl>
 	</div>
 </article>
 
@@ -64,6 +38,7 @@
 		margin-top: 1em;
 		color: var(--clr-pale);
 		font-family: var(--bronova-bold);
+		font-size: clamp(1.1rem, 3vw, 2.5rem);
 		font-weight: 800;
 	}
 
@@ -72,29 +47,48 @@
 		grid-template-columns: repeat(2, 1fr);
 		background: transparent;
 		height: fit-content;
+		box-shadow: none;
+		padding-bottom: 6em;
 
-		& h3 {
+		@media (width <= 1200px) {
+			padding-bottom: 2em;
+		}
+
+		@media (width <= 768px) {
+			grid-template-columns: 1fr;
+		}
+
+		@media (width <= 500px) {
+			padding-bottom: 2em;
+		}
+
+		& dt {
 			display: block;
 			color: var(--clr-main);
+			font-size: clamp(1.2rem, 3vw, 2rem);
+			font-weight: 900;
+			letter-spacing: 3px;
+			margin-bottom: 1rem;
 		}
 
 		& .css,
 		& .gsap {
 			margin: 1em;
 
-			& ul {
+			& dl {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
 
-				& li {
-					&::marker {
-						color: var(--clr-inverted);
-					}
+				& dd {
+					color: var(--clr-link);
+					font-size: clamp(0.9rem, 2vw, 1.2rem);
+					font-weight: 600;
+					text-wrap: balance;
 
-					& a {
-						color: var(--clr-blue);
+					& a:visited {
+						color: var(--clr-pale);
 					}
 				}
 			}
