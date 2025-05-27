@@ -35,7 +35,7 @@
 <style>
 	h2 {
 		display: block;
-		margin-top: 1em;
+		margin-top: 2em;
 		color: var(--clr-pale);
 		font-family: var(--bronova-bold);
 		font-size: clamp(1.1rem, 3vw, 2.5rem);
