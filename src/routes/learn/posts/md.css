@@ -1,8 +1,9 @@
-body {
+.css,
+.gsap {
 	margin-bottom: 2rem;
 	max-width: 100%;
 	margin-inline: auto;
-	padding: 2em;
+	padding: 1em;
 	color: var(--clr-main);
 	font-size: clamp(1.25rem, 1.25vw, 1.75rem);
 	font-weight: 100;
@@ -11,6 +12,15 @@ body {
 	line-height: 1.5;
 	hyphens: auto;
 	overflow-wrap: normal;
+}
+
+@media (max-width: 768px) {
+	.css,
+	.gsap {
+		padding: 0.1rem;
+		max-width: 95%;
+		margin-inline: auto;
+	}
 }
 
 .css img,
@@ -33,6 +43,13 @@ body {
 	color: var(--clr-main);
 }
 
+@media (max-width: 768px) {
+	.css p,
+	.gsap p {
+		padding: 0.1rem;
+	}
+}
+
 html body h1 {
 	font-family: var(--orbitron);
 	font-size: clamp(2rem, 5vw, 8rem);
@@ -52,10 +69,4 @@ html body h2 {
 	color: var(--clr-blue);
 	letter-spacing: 2px;
 	margin-block: 1.5rem;
-}
-
-@media (max-width: 768px) {
-	.body {
-		max-width: 95%;
-	}
 }
