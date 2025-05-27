@@ -1,4 +1,4 @@
-# CSS Techniques
+# CSS Tips
 
 <div id="transitions">
 

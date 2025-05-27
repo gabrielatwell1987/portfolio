@@ -1,18 +1,6 @@
-.title {
-	font-family: var(--orbitron);
-	font-size: clamp(2rem, 5vw, 6rem);
-	font-weight: 900;
-	letter-spacing: 5px;
-	color: var(--darkest-blue);
-	margin-block: 2rem;
-	text-shadow: 0 0 3px var(--dark-gray);
-	filter: drop-shadow(0px 0px 0.25rem var(--white));
-	text-transform: uppercase;
-}
-
-.body {
+body {
 	margin-bottom: 2rem;
-	max-width: 90%;
+	max-width: 100%;
 	margin-inline: auto;
 	padding: 2em;
 	color: var(--clr-main);
@@ -25,41 +13,29 @@
 	overflow-wrap: normal;
 }
 
-.para {
-	text-indent: 0.5rem;
-}
-
-.para::first-letter {
-	font-size: 2rem;
-}
-
-code {
-	background: var(--clr-main);
-	color: var(--clr-inverted);
-	font-family: var(--mono);
-	font-size: clamp(0.9rem, 1vw, 1.1rem);
-	letter-spacing: 1px;
-	font-weight: 700;
-}
-
-img {
+.css img,
+.gsap img {
 	display: block;
 	margin-top: -2em;
 	max-width: 100%;
 	height: auto;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	box-shadow: none;
 	text-align: center;
+	border-radius: var(--radius);
+	margin-bottom: 2rem;
 }
 
-p {
+.css p,
+.gsap p {
 	padding: 2em;
 	line-height: 1.6;
 	margin-bottom: 1rem;
+	color: var(--clr-main);
 }
 
-h1 {
+html body h1 {
 	font-family: var(--orbitron);
-	font-size: clamp(2.5rem, 6vw, 8rem);
+	font-size: clamp(2rem, 5vw, 8rem);
 	font-weight: 900;
 	color: var(--clr-pale);
 	letter-spacing: 5px;
@@ -69,11 +45,11 @@ h1 {
 	text-transform: uppercase;
 }
 
-h2 {
-	font-family: var(--orbitron);
+html body h2 {
+	font-family: var(--bronova-bold);
 	font-size: clamp(1.5rem, 3vw, 2.5rem);
-	font-weight: 600;
-	color: var(--darkest-blue);
+	font-weight: 500;
+	color: var(--clr-blue);
 	letter-spacing: 2px;
 	margin-block: 1.5rem;
 }
