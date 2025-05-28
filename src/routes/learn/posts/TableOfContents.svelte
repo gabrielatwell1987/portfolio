@@ -26,7 +26,7 @@
 			<dd><a href="#timelines">Timelines</a></dd>
 			<dd><a href="#percentage">Percentage Keyframes</a></dd>
 			<dd><a href="#position">Position Parameter</a></dd>
-			<dd><a href="#fouc">Flash of Unstyled Content</a></dd>
+			<dd><a href="#fouc">F.O.U.C.</a></dd>
 			<dd><a href="#scrolltrigger">ScrollTrigger</a></dd>
 		</dl>
 	</div>
