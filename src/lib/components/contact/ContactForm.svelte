@@ -139,11 +139,8 @@
 	@media screen and (width >= 320px) {
 		form {
 			width: 95%;
-			margin: 0 auto;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
+			margin-inline: auto;
+			display: grid;
 			padding: 0.25rem;
 
 			& fieldset {
@@ -174,9 +171,11 @@
 			}
 
 			& label {
-				font-family: var(--bronova);
-				font-weight: 600;
-				text-align: center;
+				& span {
+					font-family: var(--bronova);
+					font-size: clamp(1.25rem, 1.5vw, 3rem);
+					font-weight: 500;
+				}
 			}
 
 			& .send {
@@ -198,9 +197,6 @@
 
 	@media screen and (width >= 1024px) {
 		form {
-			display: flex;
-			flex-direction: column;
-
 			& fieldset {
 				border: 5px solid var(--white);
 				border-image: linear-gradient(45deg, var(--clr-gray) 40%, var(--clr-blue)) 1;
@@ -211,8 +207,6 @@
 
 				& label {
 					margin-bottom: 1rem;
-					text-align: center;
-					transform: scale(1.5);
 				}
 
 				& input {
