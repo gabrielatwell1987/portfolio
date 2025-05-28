@@ -1,6 +1,6 @@
 <script>
 	import SEO from '$lib/data/SEO.svelte';
-	import HireForm from '$lib/components/hire/HireForm.svelte';
+	import HireForm from '$lib/components/contact/HireForm.svelte';
 	import Title from '$lib/components/layout/Title.svelte';
 </script>
 
