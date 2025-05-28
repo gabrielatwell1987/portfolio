@@ -143,4 +143,8 @@ body {
 		height: 1px;
 		white-space: nowrap;
 	}
+
+	img {
+		font-style: italic;
+	}
 }
