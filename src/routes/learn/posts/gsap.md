@@ -1,4 +1,4 @@
-# GSAP Features
+# Greensock Animation Platform
 
 <div id="tweens">
 
