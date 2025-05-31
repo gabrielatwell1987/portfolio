@@ -3,6 +3,7 @@
 	import Hero from '$lib/components/landing/Hero.svelte';
 	import AnimatedIntro from '$lib/components/landing/AnimatedIntro.svelte';
 	import ImageIntro from '$lib/components/landing/ImageIntro.svelte';
+	import GabeMorph from '$lib/components/landing/GabeMorph.svelte';
 </script>
 
 <SEO
@@ -16,3 +17,5 @@
 <AnimatedIntro text="do you need a " span="website?" />
 
 <Hero />
+
+<GabeMorph />
