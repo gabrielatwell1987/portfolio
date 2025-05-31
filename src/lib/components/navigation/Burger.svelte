@@ -47,8 +47,16 @@
 				height: 0.3rem;
 				background-color: var(--clr-main);
 				border-radius: 2px;
-				transition: all 0.3s ease;
+				transition: all 0.5s ease;
 				transform-origin: center;
+			}
+
+			& .bar-1 {
+				width: 2em;
+			}
+
+			& .bar-3 {
+				width: 1.75em;
 			}
 		}
 
@@ -58,6 +66,7 @@
 
 			.bar-1 {
 				transform: translateY(1.2rem) rotate(45deg);
+				width: 2.5em;
 			}
 
 			.bar-2 {
@@ -67,6 +76,7 @@
 
 			.bar-3 {
 				transform: translateY(-0.5rem) rotate(-45deg);
+				width: 2.5em;
 			}
 		}
 
