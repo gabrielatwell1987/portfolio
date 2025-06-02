@@ -28,6 +28,7 @@
 			<dd><a href="#position">Position Parameter</a></dd>
 			<dd><a href="#fouc">F.O.U.C.</a></dd>
 			<dd><a href="#scrolltrigger">ScrollTrigger</a></dd>
+			<dd><a href="#morphsvg">MorphSVG</a></dd>
 		</dl>
 	</div>
 </article>

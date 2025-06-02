@@ -84,6 +84,18 @@ You don't need to put ScrollTriggers directly into animations (though that's pro
 
 ![gsap scrolltrigger](/code/scrolltrigger.webp)
 
+<div id="morphsvg">
+
+## MorphSVG
+
+</div>
+
+MorphSVGPlugin morphs SVG paths by animating the data inside the d attribute. MorphSVGPlugin finds the paths and automatically figures out how to add enough points to the circle to get a super smooth morph. It will rip through all that ugly path data, convert everything to cubic beziers, and dynamically subdivide them when necessary, adding points so that the beginning and ending quantities match (but visually it looks the same). It's all done seamlessly under the hood.
+
+There's a utility function, `MorphSVGPlugin.convertToPath()`, that can convert primitive shapes like `<circle>`, `<rect>`, `<ellipse>`, `<polygon>`, `<polyline>`, and `<line>` directly into the equivalent `<path>` that looks identical to the original and is swapped right into the DOM.
+
+![gsap morphsvg](/code/morphsvg.webp)
+
 ---
 
 <script>
