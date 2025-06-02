@@ -6,6 +6,7 @@
 	import Card from '$lib/components/layout/Card.svelte';
 	import Image from '$lib/components/layout/Image.svelte';
 	import TableOfContents from './TableOfContents.svelte';
+	import GabeMorph from '$lib/components/learn/GabeMorph.svelte';
 
 	let mounted = $state(false);
 
@@ -32,7 +33,11 @@
 	keywords="animation techniques, web techniques for animation"
 />
 
-<TableOfContents />
+<section class="tocLogo">
+	<GabeMorph />
+
+	<TableOfContents />
+</section>
 
 <section class:mounted>
 	<div class="css">
@@ -72,6 +77,10 @@
 </section>
 
 <style>
+	.tocLogo {
+		padding-top: 5em;
+	}
+
 	section {
 		&.mounted {
 			opacity: 1;
