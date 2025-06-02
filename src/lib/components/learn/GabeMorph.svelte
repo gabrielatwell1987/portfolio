@@ -7,23 +7,20 @@
 
 		MorphSVGPlugin.convertToPath('#sourceSVG rect, #sourceSVG circle, #sourceSVG polygon');
 
-		// Set transform origins for all elements
 		gsap.set('#square1, #G', { transformOrigin: 'center center' });
 		gsap.set('#circle, #A', { transformOrigin: 'center center' });
 		gsap.set('#triangle, #B', { transformOrigin: 'center center' });
 		gsap.set('#square2, #E', { transformOrigin: 'center center' });
 
-		// OPTION 1: Timeline-specific defaults (recommended for this use case)
 		const tl = gsap.timeline({
 			defaults: {
-				duration: 1.725,
+				duration: 2,
 				ease: 'power2.inOut'
 			},
 
 			delay: 0.5
 		});
 
-		// Now animations inherit the defaults - much cleaner!
 		tl.to('#square1', { morphSVG: '#G' })
 			.to('#circle', { morphSVG: '#A' }, 0)
 			.to('#triangle', { morphSVG: '#B' }, 0)
@@ -33,10 +30,42 @@
 
 <section class="morph">
 	<svg id="sourceSVG" width="400px" height="100px" viewBox="0 0 400 100">
-		<rect id="square1" x="0" y="0" width="80" height="80" fill="var(--clr-link)" />
-		<circle id="circle" cx="140" cy="40" r="40" fill="var(--clr-blue)" />
-		<polygon id="triangle" points="200,80 280,80 240,0" fill="var(--clr-inverted)" />
-		<rect id="square2" x="300" y="0" width="80" height="80" fill="var(--clr-link)" />
+		<rect
+			id="square1"
+			x="0"
+			y="0"
+			width="80"
+			height="80"
+			fill="var(--clr-link)"
+			stroke="var(--clr-main)"
+			stroke-width="2"
+		/>
+		<circle
+			id="circle"
+			cx="140"
+			cy="40"
+			r="40"
+			fill="var(--clr-blue)"
+			stroke="var(--clr-main)"
+			stroke-width="2"
+		/>
+		<polygon
+			id="triangle"
+			points="200,80 280,80 240,0"
+			fill="var(--clr-inverted)"
+			stroke="var(--clr-main)"
+			stroke-width="2"
+		/>
+		<rect
+			id="square2"
+			x="300"
+			y="0"
+			width="80"
+			height="80"
+			fill="var(--clr-link)"
+			stroke="var(--clr-main)"
+			stroke-width="2"
+		/>
 	</svg>
 
 	<svg id="targetSVG" width="400" height="100" viewBox="0 0 400 100">
