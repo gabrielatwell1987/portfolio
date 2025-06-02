@@ -94,6 +94,8 @@ MorphSVGPlugin morphs SVG paths by animating the data inside the d attribute. Mo
 
 There's a utility function, `MorphSVGPlugin.convertToPath()`, that can convert primitive shapes like `<circle>`, `<rect>`, `<ellipse>`, `<polygon>`, `<polyline>`, and `<line>` directly into the equivalent `<path>` that looks identical to the original and is swapped right into the DOM.
 
+![install morphsvg](/code/morphsvg-install.webp)
+
 ![gsap morphsvg](/code/morphsvg.webp)
 
 ---
