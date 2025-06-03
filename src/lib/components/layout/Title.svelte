@@ -20,40 +20,23 @@
 			letter-spacing: 5px;
 			text-transform: uppercase;
 			font-kerning: none;
-
-			background: linear-gradient(
-				120deg,
-				var(--clr-main) 0%,
-				var(--clr-blue) 25%,
-				var(--clr-main) 50%,
-				var(--clr-blue) 75%,
-				var(--clr-main) 100%
-			);
-			background-size: 200% auto;
-			-webkit-background-clip: text;
-			background-clip: text;
-
+			color: var(--clr-blue);
 			animation: gradient 6s linear infinite;
-			color: transparent;
 			margin-top: 5rem;
 			view-transition-name: page-title;
+
+			@media (width >= 740px) {
+				letter-spacing: 20px;
+				margin: 2rem auto;
+			}
+
+			@media (width >= 990px) {
+				font-weight: 800;
+			}
 		}
 
 		#title {
 			font-kerning: none;
-		}
-	}
-
-	@media (width >= 740px) {
-		.title {
-			letter-spacing: 20px;
-			margin: 2rem auto;
-		}
-	}
-
-	@media (width >= 990px) {
-		.title {
-			font-weight: 800;
 		}
 	}
 
