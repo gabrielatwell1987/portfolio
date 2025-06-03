@@ -52,6 +52,7 @@
 				margin-bottom: 0.75rem;
 				font-family: var(--bronova);
 				font-size: clamp(1rem, 1.75vw, 1.5rem);
+				font-weight: 600;
 				color: var(--clr-blue);
 			}
 
