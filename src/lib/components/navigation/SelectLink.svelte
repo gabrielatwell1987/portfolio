@@ -31,7 +31,7 @@
 	select {
 		background-color: transparent;
 		color: var(--clr-main);
-		border: 1px solid var(--clr-main);
+		border: 2px solid var(--clr-main);
 		border-radius: var(--radius);
 		padding: 0.5rem;
 		cursor: pointer;
@@ -55,8 +55,8 @@
 		}
 
 		& option {
-			background-color: var(--clr-inverted);
-			color: var(--clr-main);
+			background-color: var(--clr-main);
+			color: var(--clr-inverted);
 			padding: 0.25rem;
 			letter-spacing: 1px;
 			font-weight: 500;
