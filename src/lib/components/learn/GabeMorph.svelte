@@ -29,7 +29,7 @@
 </script>
 
 <section class="morph">
-	<svg id="sourceSVG" width="400px" height="100px" viewBox="0 0 400 100">
+	<svg id="sourceSVG" viewBox="0 0 400 100" preserveAspectRatio="xMidYMid meet">
 		<rect
 			id="square1"
 			x="0"
@@ -68,7 +68,7 @@
 		/>
 	</svg>
 
-	<svg id="targetSVG" width="400" height="100" viewBox="0 0 400 100">
+	<svg id="targetSVG" viewBox="0 0 400 100" preserveAspectRatio="xMidYMid meet">
 		<!-- Letter G positioned to match square1 (0-80 area) -->
 		<path
 			id="G"
@@ -98,13 +98,31 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		width: 100%;
+		padding: 1rem;
+
+		@media (width <= 500px) {
+			padding: 0.5rem;
+			scale: 0.8;
+		}
 
 		& svg {
-			max-width: 25em;
 			width: 100%;
+			height: auto;
+			max-width: min(90vw, 25em);
+			min-width: 320px;
 			margin: 0;
 			padding: 0;
 			fill: var(--clr-main);
+
+			@media (width >= 1200px) {
+				max-width: 30em;
+			}
+
+			@media (width <= 500px) {
+				max-width: 95vw;
+				min-width: 280px;
+			}
 		}
 
 		& #targetSVG {
