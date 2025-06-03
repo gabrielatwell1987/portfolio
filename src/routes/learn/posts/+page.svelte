@@ -5,7 +5,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import Card from '$lib/components/layout/Card.svelte';
 	import Image from '$lib/components/layout/Image.svelte';
-	import TableOfContents from './TableOfContents.svelte';
+	import TableOfContents from '$lib/components/learn/TableOfContents.svelte';
 	import GabeMorph from '$lib/components/learn/GabeMorph.svelte';
 
 	let mounted = $state(false);

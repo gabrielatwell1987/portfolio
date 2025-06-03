@@ -41,6 +41,7 @@
 		font-family: var(--bronova-bold);
 		font-size: clamp(1.1rem, 3vw, 2.5rem);
 		font-weight: 800;
+		text-align: center;
 	}
 
 	.toc {
