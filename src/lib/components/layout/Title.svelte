@@ -19,9 +19,9 @@
 			font-size: clamp(2.5rem, 10.5vw, 15rem);
 			letter-spacing: 5px;
 			text-transform: uppercase;
+			text-shadow: 0 0 10px var(--clr-inverted);
 			font-kerning: none;
 			color: var(--clr-blue);
-			animation: gradient 6s linear infinite;
 			margin-top: 5rem;
 			view-transition-name: page-title;
 
@@ -73,15 +73,6 @@
 		to {
 			opacity: 1;
 			transform: translateX(0);
-		}
-	}
-
-	@keyframes gradient {
-		0% {
-			background-position: 0% center;
-		}
-		100% {
-			background-position: 200% center;
 		}
 	}
 </style>
