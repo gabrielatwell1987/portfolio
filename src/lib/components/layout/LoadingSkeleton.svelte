@@ -7,6 +7,7 @@
 	preserveAspectRatio="none"
 >
 	<title id="loading-aria">Loading...</title>
+
 	<rect
 		x="0"
 		y="0"
@@ -16,14 +17,15 @@
 		style="fill: url('#fill');"
 	></rect>
 	<defs>
-		<clipPath id="clip-path">
+		<clipPath id="clip-path" class="skeleton-lines">
 			<rect x="48" y="5" rx="3" ry="3" width="88" height="13" />
 			<rect x="48" y="24" rx="3" ry="3" width="52" height="13" />
 			<rect x="0" y="56" rx="3" ry="3" width="410" height="13" />
-			<rect x="0" y="75" rx="3" ry="3" width="380" height="13" />
-			<rect x="0" y="94" rx="3" ry="3" width="178" height="13" />
+			<rect x="0" y="83" rx="3" ry="3" width="380" height="13" />
+			<rect x="0" y="110" rx="3" ry="3" width="178" height="13" />
 			<circle cx="20" cy="20" r="20" />
 		</clipPath>
+
 		<linearGradient id="fill">
 			<!-- First stop - leading edge -->
 			<stop offset="0.599964" stop-color="var(--clr-gray)" stop-opacity="1">
