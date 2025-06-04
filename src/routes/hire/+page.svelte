@@ -5,12 +5,12 @@
 </script>
 
 <SEO
-	title="Hire me to build your website"
+	title="Need a website built?"
 	description="If you need help with web development or design, please fill out the form."
 	keywords="hire gabriel atwell, hire gabe atwell, project questionnaire"
 />
 
-<Title title="need help?" />
+<Title title="hire me" />
 
 <section>
 	<HireForm />
