@@ -13,7 +13,7 @@
 </script>
 
 <SEO
-	title="Learn about web techniques"
+	title="learn about web techniques"
 	description="about learning web techniques and web animation basics"
 	keywords="topics to learn, web animation basics, topics, web techniques"
 />
