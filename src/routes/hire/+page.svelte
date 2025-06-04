@@ -5,7 +5,7 @@
 </script>
 
 <SEO
-	title="Hire Gabe"
+	title="Hire me to build your website"
 	description="If you need help with web development or design, please fill out the form."
 	keywords="hire gabriel atwell, hire gabe atwell, project questionnaire"
 />
