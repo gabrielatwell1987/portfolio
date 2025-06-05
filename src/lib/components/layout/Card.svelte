@@ -21,9 +21,10 @@
 		border-radius: 8px;
 		border: 2px solid var(--clr-main);
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		padding: 2rem 3rem 0 3rem;
 		overflow: hidden;
 		transition: all 0.3s ease-in-out;
+		padding-block: 1em;
+		padding-inline: 2em;
 
 		&:hover {
 			box-shadow: 0 0 5em var(--clr-gray);
@@ -37,9 +38,7 @@
 			display: grid;
 			place-self: center;
 			margin-inline: auto;
-			margin-bottom: 1rem;
 			padding: 1rem;
-			margin-block: auto;
 		}
 
 		.card-title {
