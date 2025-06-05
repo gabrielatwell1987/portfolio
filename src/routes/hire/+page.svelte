@@ -10,7 +10,7 @@
 	keywords="hire gabriel atwell, hire gabe atwell, project questionnaire"
 />
 
-<Title title="hire me" />
+<Title title="for hire" />
 
 <section>
 	<HireForm />
