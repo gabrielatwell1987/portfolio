@@ -1,8 +1,8 @@
 <script>
 	import SEO from '$lib/data/SEO.svelte';
 	// import Photos from '$lib/components/photos/Photos.svelte';
-	// import Masonry from '$lib/components/photos/Masonry.svelte';
-	import Carousel from '$lib/components/photos/Carousel.svelte';
+	import Masonry from '$lib/components/photos/Masonry.svelte';
+	// import Carousel from '$lib/components/photos/Carousel.svelte';
 
 	$effect(() => {
 		const main = document.querySelector('main');
@@ -20,7 +20,7 @@
 <main>
 	<!-- <Photos /> -->
 
-	<!-- <Masonry /> -->
+	<Masonry />
 
-	<Carousel />
+	<!-- <Carousel /> -->
 </main>
