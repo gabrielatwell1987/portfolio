@@ -1,6 +1,14 @@
 <script>
 	import { browser } from '$app/environment';
 
+	// Import images
+	import gabe from '$lib/images/gabe.webp';
+	import gabe2 from '$lib/images/gabe2.webp';
+	import gabe3 from '$lib/images/gabe3.webp';
+	import gabe4 from '$lib/images/gabe4.webp';
+	import gabe5 from '$lib/images/gabe5.webp';
+	import autumn from '$lib/images/autumn.webp';
+
 	let slider = $state();
 
 	function activate(e) {
@@ -35,10 +43,7 @@
 
 <main>
 	<ul class="slider" bind:this={slider}>
-		<li
-			class="item"
-			style="background-image: url('https://cdn.mos.cms.futurecdn.net/dP3N4qnEZ4tCTCLq59iysd.jpg')"
-		>
+		<li class="item image-16x9" style="background-image: url('{gabe}')">
 			<div class="content">
 				<h2 class="title">"Lossless Youths"</h2>
 				<p class="description">
@@ -47,7 +52,7 @@
 				</p>
 			</div>
 		</li>
-		<li class="item" style="background-image: url('https://i.redd.it/tc0aqpv92pn21.jpg')">
+		<li class="item image-16x9" style="background-image: url('{gabe2}')">
 			<div class="content">
 				<h2 class="title">"Estrange Bond"</h2>
 				<p class="description">
@@ -56,10 +61,7 @@
 				</p>
 			</div>
 		</li>
-		<li
-			class="item"
-			style="background-image: url('https://wharferj.files.wordpress.com/2015/11/bio_north.jpg')"
-		>
+		<li class="item" style="background-image: url('{gabe3}')">
 			<div class="content">
 				<h2 class="title">"The Gate Keeper"</h2>
 				<p class="description">
@@ -68,10 +70,7 @@
 				</p>
 			</div>
 		</li>
-		<li
-			class="item"
-			style="background-image: url('https://images7.alphacoders.com/878/878663.jpg')"
-		>
+		<li class="item" style="background-image: url('{gabe4}')">
 			<div class="content">
 				<h2 class="title">"Last Trace Of Us"</h2>
 				<p class="description">
@@ -80,10 +79,7 @@
 				</p>
 			</div>
 		</li>
-		<li
-			class="item"
-			style="background-image: url('https://theawesomer.com/photos/2017/07/simon_stalenhag_the_electric_state_6.jpg')"
-		>
+		<li class="item" style="background-image: url('{gabe5}')">
 			<div class="content">
 				<h2 class="title">"Urban Decay"</h2>
 				<p class="description">
@@ -92,10 +88,7 @@
 				</p>
 			</div>
 		</li>
-		<li
-			class="item"
-			style="background-image: url('https://da.se/app/uploads/2015/09/simon-december1994.jpg')"
-		>
+		<li class="item" style="background-image: url('{autumn}')">
 			<div class="content">
 				<h2 class="title">"The Migration"</h2>
 				<p class="description">
@@ -119,6 +112,12 @@
 		height: 100dvh;
 		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 		padding-block: 10em;
+
+		& .image-16x9 {
+			aspect-ratio: 16 / 9;
+			object-fit: cover;
+			width: 100%;
+		}
 	}
 
 	.item {
