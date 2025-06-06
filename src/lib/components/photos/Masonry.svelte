@@ -5,10 +5,11 @@
 	import gabe2 from '$lib/images/gabe2.webp';
 	import gabe3 from '$lib/images/gabe3.webp';
 	import gabe4 from '$lib/images/gabe4.webp';
-	import gabe5 from '$lib/images/gabe5.webp';
 	import wtf from '$lib/images/wtf.webp';
 	import wtf2 from '$lib/images/wtf2.webp';
 	import kids from '$lib/images/kids.webp';
+	import young from '$lib/images/gabe-young.webp';
+	import crest from '$lib/images/atwell_crest.webp';
 	import Title from '$lib/components/layout/Title.svelte';
 </script>
 
@@ -16,7 +17,7 @@
 
 <section>
 	<div class="masonry">
-		{#each [{ src: kids, alt: 'Gabe and his kids' }, { src: gabe, alt: 'Gabe sitting with his phone' }, { src: gabe2, alt: "Gabriel's face" }, { src: gabe3, alt: 'Gabe in Arizona fixing a car' }, { src: gabe4, alt: 'Gabe in a restaurant' }, { src: gabe5, alt: 'Gabe standing still' }, { src: autumn, alt: 'Gabe and his daughter Autumn' }, { src: archie, alt: 'Gabe and his poodle Archie' }, { src: wtf, alt: 'Trying to burn Gabe' }, { src: wtf2, alt: "Gabe's face on hulk hogan" }] as img, i}
+		{#each [{ src: kids, alt: 'Gabe and his kids' }, { src: gabe, alt: 'Gabe sitting with his phone' }, { src: gabe2, alt: "Gabriel's face" }, { src: gabe3, alt: 'Gabe in Arizona fixing a car' }, { src: gabe4, alt: 'Gabe in a restaurant' }, { src: crest, alt: 'the Atwell family crest' }, { src: young, alt: 'when gabe was 8 years old he had awesome bangs' }, { src: archie, alt: 'Gabe and his poodle Archie' }, { src: wtf, alt: 'Trying to burn Gabe' }, { src: wtf2, alt: "Gabe's face on hulk hogan" }, { src: autumn, alt: 'Gabe and his daughter Autumn' }] as img, i}
 			<img src={img.src} alt={img.alt} width="400" style="animation-delay: {i * 0.2}s;" />
 		{/each}
 	</div>
