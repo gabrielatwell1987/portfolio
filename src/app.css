@@ -1,3 +1,7 @@
+/* layer order */
+@layer foundations, reset, base, typography, components, utilities;
+
+/* font-faces need global scope */
 @font-face {
 	font-family: 'Orbitron-Black';
 	font-style: normal;
@@ -30,88 +34,100 @@
 	src: url('/fonts/Bronova-bold.woff2') format('woff2');
 }
 
-:root {
-	/* colors */
-	--blackest: hsl(0, 15%, 5%);
-	--blacker: hsla(205, 4%, 7%, 0.5);
-	--black: hsla(205, 4%, 14%, 1);
-	--lightblack: hsl(240, 0%, 19%);
-	--dark-gray: hsl(0, 0%, 27%);
-	--darksmoke: hsla(247, 3%, 50%, 0.45);
-	--smoke: hsla(247, 3%, 50%, 0.65);
-	--off-white: hsla(0, 0%, 69%, 0.65);
-	--white: hsla(0, 0%, 100%, 0.75);
-	--sky: hsla(187, 64%, 73%, 0.5);
-	--blue: hsla(201, 71%, 45%, 0.5);
-	--dark-blue: hsla(202, 97%, 25%, 0.75);
-	--darkest-blue: hsla(203, 96%, 10%, 0.75);
-	--purple: hsla(227, 98%, 68%, 0.6);
-	--yellow: hsla(46, 93%, 42%, 0.75);
-	--pale: hsl(44, 94%, 40%);
-	--dark-pale: hsl(39, 87%, 35%);
-	--success: hsla(120, 95%, 26%, 1);
-	--warning: hsla(56, 93%, 43%, 1);
-	--fail: hsla(0, 96%, 31%, 1);
+@layer foundations {
+	:root {
+		/* colors */
+		--blackest: hsl(0, 15%, 5%);
+		--blacker: hsla(205, 4%, 7%, 0.5);
+		--black: hsla(205, 4%, 14%, 1);
+		--lightblack: hsl(240, 0%, 19%);
+		--dark-gray: hsl(0, 0%, 27%);
+		--darksmoke: hsla(247, 3%, 50%, 0.45);
+		--smoke: hsla(247, 3%, 50%, 0.65);
+		--off-white: hsla(0, 0%, 69%, 0.65);
+		--white: hsla(0, 0%, 100%, 0.75);
+		--sky: hsla(187, 64%, 73%, 0.5);
+		--blue: hsla(201, 71%, 45%, 0.5);
+		--dark-blue: hsla(202, 97%, 25%, 0.75);
+		--darkest-blue: hsla(203, 96%, 10%, 0.75);
+		--purple: hsla(227, 98%, 68%, 0.6);
+		--yellow: hsla(46, 93%, 42%, 0.75);
+		--pale: hsl(44, 94%, 40%);
+		--dark-pale: hsl(39, 87%, 35%);
+		--success: hsla(120, 95%, 26%, 1);
+		--warning: hsla(56, 93%, 43%, 1);
+		--fail: hsla(0, 96%, 31%, 1);
 
-	/* fonts */
-	--mono: 'Courier Prime', monospace;
-	--orbitron: 'Orbitron-Black', sans-serif;
-	--bronova: 'Bronova', sans-serif;
-	--bronova-bold: 'Bronova Bold', sans-serif;
+		/* fonts */
+		--mono: 'Courier Prime', monospace;
+		--orbitron: 'Orbitron-Black', sans-serif;
+		--bronova: 'Bronova', sans-serif;
+		--bronova-bold: 'Bronova Bold', sans-serif;
 
-	/* sizing */
-	--base-size: 1.2rem;
-	--scale: 1.2;
-	--radius: 5px;
-	--xxl: calc(var(--xl) * var(--scale) * var(--scale));
-	--xl: calc(var(--h1) * var(--scale) * var(--scale));
-	--lg: calc(var(--h1) * var(--scale));
-	--h1: calc(var(--h2) * var(--scale));
-	--h2: calc(var(--h3) * var(--scale));
-	--h3: calc(var(--h4) * var(--scale));
-	--h4: calc(var(--h5) * var(--scale));
-	--h5: calc(var(--h6) * var(--scale));
-	--h6: var(--base-size);
-	--sm: calc(var(--base-size) / var(--scale));
-	--xs: calc(var(--sm) / var(--scale));
+		/* sizing */
+		--base-size: 1.2rem;
+		--scale: 1.2;
+		--radius: 5px;
+		--xxl: calc(var(--xl) * var(--scale) * var(--scale));
+		--xl: calc(var(--h1) * var(--scale) * var(--scale));
+		--lg: calc(var(--h1) * var(--scale));
+		--h1: calc(var(--h2) * var(--scale));
+		--h2: calc(var(--h3) * var(--scale));
+		--h3: calc(var(--h4) * var(--scale));
+		--h4: calc(var(--h5) * var(--scale));
+		--h5: calc(var(--h6) * var(--scale));
+		--h6: var(--base-size);
+		--sm: calc(var(--base-size) / var(--scale));
+		--xs: calc(var(--sm) / var(--scale));
 
-	--timing: 1s;
-}
+		--timing: 1s;
+	}
 
-@media (prefers-reduced-motion: no-preference) {
-	html {
-		scroll-behavior: smooth;
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			scroll-behavior: smooth;
+		}
 	}
 }
 
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	scrollbar-color: var(--off-white) var(--blacker);
+@layer reset {
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		scrollbar-color: var(--off-white) var(--blacker);
+	}
 }
 
-html,
-body {
-	width: 100%;
-	height: auto;
-	overflow-x: hidden;
-	overflow-y: auto;
-	background-color: #000;
+@layer base {
+	html,
+	body {
+		width: 100%;
+		height: auto;
+		overflow-x: hidden;
+		overflow-y: auto;
+		background-color: #000;
+	}
+
+	body {
+		cursor: url('/icons/pointer.svg'), auto;
+		font-family: var(--bronova);
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		width: 100%;
+		height: 100%;
+		font-display: swap;
+	}
+
+	img {
+		font-style: italic;
+	}
 }
 
-body {
-	cursor: url('/icons/pointer.svg'), auto;
-	font-family: var(--bronova);
-	font-size: 16px;
-	font-weight: 500;
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	width: 100%;
-	height: 100%;
-	font-display: swap;
-
+@layer typography {
 	a {
 		cursor: pointer;
 		text-underline-offset: 0.3rem;
@@ -135,7 +151,9 @@ body {
 		font-family: var(--bronova);
 		color: var(--purple);
 	}
+}
 
+@layer utilities {
 	.visually-hidden {
 		position: absolute;
 		clip: rect(0 0 0 0);
@@ -144,9 +162,5 @@ body {
 		width: 1px;
 		height: 1px;
 		white-space: nowrap;
-	}
-
-	img {
-		font-style: italic;
 	}
 }
