@@ -86,7 +86,7 @@
 	@media (min-width: 320px) {
 		.open-button {
 			display: block;
-			font-size: clamp(2.5rem, 4vw, 4rem);
+			font-size: clamp(var(--h4), 4vw, var(--xl));
 			font-weight: 800;
 			background-color: transparent;
 			box-shadow: none;
@@ -124,7 +124,7 @@
 
 		.close-button {
 			display: block;
-			font-size: clamp(2.5rem, 4vw, 4rem);
+			font-size: clamp(var(--h4), 4vw, var(--xl));
 			font-weight: 800;
 			background-color: transparent;
 			box-shadow: none;
@@ -181,7 +181,7 @@
 
 					& h4 {
 						font-family: var(--anta);
-						font-size: clamp(1.5rem, 1.75vw, 3rem);
+						font-size: clamp(var(--h5), 1.75vw, var(--h2));
 						font-weight: 600;
 						line-height: 1;
 						color: var(--purple);
@@ -191,7 +191,7 @@
 
 				& p {
 					font-family: var(--bronova);
-					font-size: clamp(1.15rem, 1.25vw, 2rem);
+					font-size: clamp(var(--h6), 1.25vw, var(--h4));
 					font-weight: 100;
 					color: var(--white);
 					background: transparent;

@@ -15,7 +15,7 @@
 				margin-top: 5%;
 				color: transparent;
 				font-family: var(--orbitron);
-				font-size: clamp(1.5rem, 4vw, 7rem);
+				font-size: clamp(var(--h4), 4vw, var(--xxl));
 				font-weight: 700;
 				letter-spacing: 3px;
 				background-image: linear-gradient(

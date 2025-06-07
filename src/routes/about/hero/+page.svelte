@@ -35,7 +35,7 @@
 	@media screen and (width >= 300px) {
 		section {
 			text-align: center;
-			font-size: 1.75rem;
+			font-size: clamp(var(--sm), 1.5vw, var(--h4));
 			height: 100vh;
 			margin-bottom: 2%;
 			padding-top: 6%;
@@ -59,7 +59,7 @@
 			& .summary {
 				margin-inline: auto;
 				font-family: var(--bronova);
-				font-size: clamp(1.15rem, 1.5vw, 2rem);
+				font-size: clamp(var(--sm), 1.5vw, var(--h4));
 				font-weight: 500;
 				width: 99%;
 				padding: 0 1.25rem;
@@ -76,7 +76,7 @@
 	@media screen and (width >= 740px) {
 		section {
 			text-align: center;
-			font-size: 2rem;
+			/* font-size: 2rem; */
 			top: 60%;
 		}
 	}
@@ -84,7 +84,7 @@
 	@media screen and (width >= 990px) {
 		section {
 			text-align: center;
-			font-size: 2.5rem;
+			/* font-size: 2.5rem; */
 			margin: 5rem 0;
 			top: 45%;
 			left: 50%;

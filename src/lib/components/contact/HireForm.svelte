@@ -162,7 +162,7 @@
 				border: 1px solid var(--clr-gray);
 				color: var(--clr-main);
 				font-family: inherit;
-				font-size: clamp(0.8rem, 1vw, 1.75rem);
+				font-size: clamp(var(--sm), 1vw, var(--h4));
 				cursor: pointer;
 				line-height: inherit;
 				outline: none;
@@ -186,7 +186,7 @@
 
 	.label-text {
 		font-family: var(--bronova);
-		font-size: clamp(1rem, 1vw, 1.75rem);
+		font-size: clamp(var(--sm), 1vw, var(--h4));
 		font-weight: 700;
 		color: var(--clr-main);
 	}
@@ -203,7 +203,7 @@
 		border-radius: 4px;
 		background: transparent;
 		color: var(--clr-main);
-		font-size: 1rem;
+		font-size: var(--sm);
 		width: 100%;
 		transition:
 			border-color 0.2s,
@@ -231,7 +231,7 @@
 		border: 1px solid var(--clr-pale);
 		border-radius: var(--radius);
 		font-family: var(--orbitron);
-		font-size: clamp(1rem, 1.5vw, 2rem);
+		font-size: clamp(var(--h6), 1.5vw, var(--h3));
 		font-weight: 500;
 		cursor: pointer;
 		letter-spacing: 3px;

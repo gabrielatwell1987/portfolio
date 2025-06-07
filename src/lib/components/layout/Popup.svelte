@@ -39,7 +39,7 @@
 			text-transform: uppercase;
 
 			& svg {
-				font-size: clamp(var(--h1), 4vw, var(--xxl));
+				font-size: clamp(var(--h4), 4vw, var(--xxl));
 			}
 
 			&:hover {
