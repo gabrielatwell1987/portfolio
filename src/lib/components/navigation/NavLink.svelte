@@ -9,7 +9,7 @@
 	@media (width >= 300px) {
 		.nav-link {
 			font-family: var(--bronova-bold);
-			font-size: clamp(1.25rem, 1.25vw, 1.15rem);
+			font-size: clamp(var(--h6), 1.25vw, var(--h5));
 			font-weight: 900;
 			letter-spacing: 2px;
 			color: var(--clr-main);

@@ -44,7 +44,7 @@
 		.card-title {
 			color: var(--clr-blue);
 			font-family: var(--orbitron);
-			font-size: clamp(2rem, 2vw, 4rem);
+			font-size: clamp(var(--h3), 2vw, var(--xxl));
 			font-weight: 800;
 			letter-spacing: 4px;
 			margin-bottom: 0.5rem;
@@ -53,7 +53,7 @@
 
 		.card-description {
 			color: var(--clr-main);
-			font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+			font-size: clamp(var(--xs), 1.5vw, var(--h4));
 			font-weight: 300;
 			margin-bottom: 1rem;
 			text-indent: 1rem;
@@ -70,7 +70,7 @@
 			border: 1px solid var(--clr-blue);
 			border-radius: 5rem;
 			font-family: var(--orbitron);
-			font-size: clamp(1rem, 1vw, 1.2rem);
+			font-size: clamp(var(--sm), 1vw, var(--h6));
 			font-weight: 300;
 			letter-spacing: 1px;
 			width: fit-content;
@@ -107,15 +107,15 @@
 			}
 
 			.card-title {
-				font-size: clamp(1.25rem, 2vw, 1.5rem);
+				font-size: clamp(var(--h6), 2vw, var(--h5));
 			}
 
 			.card-description {
-				font-size: clamp(1rem, 1vw, 1.2rem);
+				font-size: clamp(var(--xs), 1vw, var(--h6));
 			}
 
 			.card-button {
-				font-size: clamp(1rem, 1vw, 1.2rem);
+				font-size: clamp(var(--sm), 1vw, var(--h6));
 				font-weight: 700;
 				letter-spacing: 2px;
 				padding: 1rem;

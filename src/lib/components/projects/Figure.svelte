@@ -41,7 +41,7 @@
 			margin: 0;
 			padding: 0;
 			text-align: center;
-			font-size: clamp(1rem, 2vw, 2rem);
+			font-size: clamp(var(--sm), 2vw, var(--h4));
 			font-weight: 500;
 		}
 	}

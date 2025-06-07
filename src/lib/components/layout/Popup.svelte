@@ -39,7 +39,7 @@
 			text-transform: uppercase;
 
 			& svg {
-				font-size: clamp(2.5rem, 4vw, 4rem);
+				font-size: clamp(var(--h1), 4vw, var(--xxl));
 			}
 
 			&:hover {
@@ -61,7 +61,7 @@
 			margin-inline: auto;
 			margin-block: 5em;
 			font-family: var(--bronova);
-			font-size: clamp(0.9rem, 1.25vw, 1.5rem);
+			font-size: clamp(var(--xs), 1.25vw, var(--h5));
 			letter-spacing: 2px;
 			padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
 			background-color: rgba(0, 0, 0, 1);

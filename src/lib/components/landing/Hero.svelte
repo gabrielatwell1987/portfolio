@@ -53,7 +53,7 @@
 				& .summary {
 					margin-inline: auto;
 					font-family: var(--bronova);
-					font-size: clamp(1.15rem, 1.5vw, 2rem);
+					font-size: clamp(var(--sm), 1.5vw, var(--h4));
 					font-weight: 400;
 					letter-spacing: 0.5px;
 					width: 85%;

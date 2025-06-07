@@ -183,7 +183,7 @@
 		& .title {
 			color: var(--clr-main);
 			font-family: var(--bronova-bold);
-			font-size: clamp(1.2rem, 3vw, 3.5rem);
+			font-size: clamp(var(--h6), 3vw, var(--h2));
 			text-transform: uppercase;
 		}
 

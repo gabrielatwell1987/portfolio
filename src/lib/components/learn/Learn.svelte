@@ -12,7 +12,7 @@
 <style>
 	.link {
 		text-decoration: none;
-		font-size: clamp(1.5rem, 3vw, 2rem);
+		font-size: clamp(var(--h6), 3vw, var(--h4));
 		font-weight: 700;
 		text-decoration: none;
 		color: var(--clr-link);
@@ -24,14 +24,14 @@
 		text-align: center;
 		font-family: var(--anta);
 		color: var(--clr-blue);
-		font-size: clamp(1.5rem, 3vw, 2.5rem);
+		font-size: clamp(var(--h5), 3vw, var(--h2));
 		margin-top: -7rem;
 	}
 
 	@media (width >= 300px) {
 		.center {
 			text-align: center;
-			font-size: clamp(1rem, 2vw, 1.35rem);
+			font-size: clamp(var(--sm), 2vw, var(--h6));
 			margin-top: 2rem;
 			line-height: 1.5;
 			color: var(--clr-main);

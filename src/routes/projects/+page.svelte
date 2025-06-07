@@ -5,7 +5,6 @@
 	import Popup from '$lib/components/layout/Popup.svelte';
 	import Testimonial from '$lib/components/projects/Testimonial.svelte';
 	import adrienne from '$lib/images/adrienne.webp';
-	import ViewTransitionLink from '$lib/components/layout/ViewTransitionLink.svelte';
 </script>
 
 <SEO
@@ -220,10 +219,6 @@
 			alt="Frontend Developer"
 			text="distinguish your website"
 		/> -->
-
-	<!-- <Figure src="logos/web.webp" alt="A logo that says web" text="building the" /> -->
-
-	<!-- <Avatar src={cartoonGabe} alt="cartoon gabe" name="gabeAtwell" /> -->
 </section>
 
 <style>
