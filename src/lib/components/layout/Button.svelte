@@ -40,7 +40,7 @@
 				& button {
 					background-color: var(--clr-button);
 					font-family: var(--orbitron);
-					font-size: clamp(1.2rem, 1.5vw, 2rem);
+					font-size: clamp(var(--h6), 1.5vw, var(--h4));
 					font-weight: 900;
 					color: var(--light-text);
 					border: 1px solid var(--light-text);

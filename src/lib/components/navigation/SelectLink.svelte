@@ -36,7 +36,7 @@
 		padding: 0.5rem;
 		cursor: pointer;
 		font-family: var(--bronova);
-		font-size: clamp(0.9rem, 1.25vw, 1.15rem);
+		font-size: clamp(var(--sm), 1.25vw, var(--h6));
 		font-weight: 700;
 		-webkit-appearance: none;
 		-moz-appearance: none;

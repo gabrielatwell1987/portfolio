@@ -60,7 +60,7 @@
 		width: fit-content;
 		margin-inline: auto;
 		font-family: var(--bronova);
-		font-size: clamp(1rem, 2vw, 2rem);
+		font-size: clamp(var(--sm), 2vw, var(--h4));
 		font-weight: 700;
 		background-color: var(--dark-pale);
 		color: var(--black);
@@ -93,14 +93,14 @@
 		}
 
 		& i {
-			font-size: clamp(1.1rem, 1.5vw, 1.5rem);
+			font-size: clamp(var(--sm), 1.5vw, var(--h5));
 			color: var(--black);
 			align-items: center;
 			cursor: pointer;
 		}
 
 		& .desc {
-			font-size: clamp(1.15rem, 1.5vw, 1.5rem);
+			font-size: clamp(var(--sm), 1.5vw, var(--h5));
 			font-weight: 900;
 			margin-top: 0.5rem;
 			cursor: pointer;

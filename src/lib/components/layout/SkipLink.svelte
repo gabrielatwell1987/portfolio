@@ -17,7 +17,7 @@
 		position: absolute;
 		z-index: 100;
 		text-decoration: none;
-		font-size: clamp(0.8rem, 1vw, 0.9rem);
+		font-size: clamp(var(--xs), 1vw, var(--sm));
 		font-weight: 700;
 	}
 

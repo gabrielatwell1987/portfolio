@@ -39,7 +39,7 @@
 		margin-top: 2em;
 		color: var(--clr-pale);
 		font-family: var(--bronova-bold);
-		font-size: clamp(1.1rem, 3vw, 2.5rem);
+		font-size: clamp(var(--h6), 3vw, var(--h2));
 		font-weight: 800;
 		text-align: center;
 	}
@@ -67,7 +67,7 @@
 		& dt {
 			display: block;
 			color: var(--clr-main);
-			font-size: clamp(1.2rem, 3vw, 2rem);
+			font-size: clamp(var(--h6), 3vw, var(--h4));
 			font-weight: 900;
 			letter-spacing: 3px;
 			margin-bottom: 1rem;
@@ -85,7 +85,7 @@
 
 				& dd {
 					color: var(--clr-link);
-					font-size: clamp(0.9rem, 2vw, 1.2rem);
+					font-size: clamp(var(--sm), 2vw, var(--h6));
 					font-weight: 600;
 					text-wrap: balance;
 

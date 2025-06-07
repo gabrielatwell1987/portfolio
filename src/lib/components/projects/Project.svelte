@@ -37,7 +37,7 @@
 			justify-content: center;
 			align-items: center;
 			font-family: var(--orbitron);
-			font-size: clamp(1.75rem, 2.75vw, 2.75rem);
+			font-size: clamp(var(--h5), 2.75vw, var(--h3));
 			font-weight: 600;
 			margin-inline: auto;
 			letter-spacing: 2px;
@@ -74,7 +74,7 @@
 				border-radius: var(--button-radius);
 				padding: 5px 3px;
 				font-family: var(--bronova);
-				font-size: clamp(1rem, 1.15vw, 1.5rem);
+				font-size: clamp(var(--sm), 1.15vw, var(--h5));
 				z-index: 1;
 				margin-inline: auto;
 				opacity: 0;

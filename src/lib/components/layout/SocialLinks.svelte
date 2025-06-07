@@ -89,7 +89,7 @@
 
 	.size {
 		color: var(--clr-blue);
-		font-size: clamp(2.5rem, 4vw, 5rem);
+		font-size: clamp(var(--h2), 4vw, var(--xxl));
 		font-weight: 900;
 		transition:
 			color 0.5s ease,

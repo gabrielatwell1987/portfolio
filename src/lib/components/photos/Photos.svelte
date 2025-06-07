@@ -186,7 +186,7 @@
 			& h2 {
 				color: var(--clr-gray);
 				font-family: var(--bronova);
-				font-size: clamp(0.9rem, 1.5vw, 2rem);
+				font-size: clamp(var(--sm), 1.5vw, var(--h3));
 				font-weight: 300;
 				letter-spacing: 0.1em;
 				margin: 0;
@@ -194,7 +194,7 @@
 				margin-inline: auto;
 
 				& .arrow {
-					font-size: clamp(1.5rem, 2.5vw, 3rem);
+					font-size: clamp(var(--h5), 2.5vw, var(--h2));
 					animation: fadeIn 1s ease-in-out infinite alternate;
 				}
 			}

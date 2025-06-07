@@ -74,14 +74,14 @@
 			padding: 0.75rem;
 
 			& strong {
-				font-size: clamp(1rem, 1.75vw, 1.3rem);
+				font-size: clamp(var(--sm), 1.75vw, var(--h5));
 				font-weight: 600;
 				color: var(--clr-main);
 			}
 
 			& span {
 				color: var(--clr-main);
-				font-size: clamp(0.9rem, 1.25vw, 1.1rem);
+				font-size: clamp(var(--xs), 1.25vw, var(--h6));
 				font-weight: 400;
 				opacity: 0.5;
 			}
@@ -100,7 +100,7 @@
 		& blockquote {
 			margin: 0;
 			padding-left: 1rem;
-			font-size: clamp(1.2rem, 1.5vw, 2.25rem);
+			font-size: clamp(var(--h6), 1.5vw, var(--h3));
 			font-style: italic;
 			color: var(--clr-main);
 			line-height: 1.5;
