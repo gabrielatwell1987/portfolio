@@ -49,7 +49,7 @@
 
 	legend {
 		font-family: var(--bronova);
-		font-size: clamp(1.25rem, 3vw, 4rem);
+		font-size: clamp(var(--h6), 3vw, var(--xxl));
 		font-weight: 800;
 		letter-spacing: 3px;
 		color: var(--clr-blue);
@@ -58,7 +58,7 @@
 
 	input,
 	textarea {
-		font-size: clamp(1.1rem, 2vw, 2rem);
+		font-size: clamp(var(--sm), 2vw, var(--h4));
 		outline: 1px solid var(--clr-gray);
 	}
 
@@ -103,7 +103,7 @@
 	}
 
 	span {
-		font-size: clamp(1rem, 1.25vw, 2rem);
+		font-size: clamp(var(--sm), 1.25vw, var(--h4));
 		font-weight: 800;
 		letter-spacing: 3px;
 		color: var(--clr-main);
@@ -173,7 +173,7 @@
 			& label {
 				& span {
 					font-family: var(--bronova);
-					font-size: clamp(1.25rem, 1.5vw, 3rem);
+					font-size: clamp(var(--h6), 1.5vw, var(--h3));
 					font-weight: 500;
 				}
 			}

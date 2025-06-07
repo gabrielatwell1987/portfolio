@@ -111,7 +111,7 @@
 				color: var(--clr-main);
 
 				& article {
-					font-size: clamp(0.8rem, 2vw, 1rem);
+					font-size: clamp(var(--xs), 2vw, var(--sm));
 					width: var(--100);
 					margin-inline: auto;
 					background-color: transparent;
@@ -139,7 +139,7 @@
 					& .text {
 						max-width: var(--100);
 						margin-inline: auto;
-						font-size: clamp(1.2rem, 1.5vw, 2rem);
+						font-size: clamp(var(--sm), 1.5vw, var(--h4));
 						font-weight: 500;
 						line-height: 1.5;
 						text-wrap: none;
@@ -153,7 +153,7 @@
 					}
 
 					& .text-hero {
-						font-size: 1.35rem;
+						font-size: var(--h5);
 					}
 				}
 			}

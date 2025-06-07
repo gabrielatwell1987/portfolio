@@ -40,14 +40,14 @@
 			}
 
 			& p {
-				font-size: clamp(1rem, 1.5vw, 2rem);
+				font-size: clamp(var(--sm), 1.5vw, var(--h4));
 				font-weight: 500;
 				margin: 0.5em 0;
 				color: var(--clr-blue);
 			}
 
 			& .small {
-				font-size: clamp(0.8rem, 1.2vw, 1.5rem);
+				font-size: clamp(var(--xs), 1.2vw, var(--h6));
 				font-weight: 200;
 				margin: 2em 0 -0.5rem 0;
 				color: var(--clr-gray);
