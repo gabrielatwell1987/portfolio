@@ -31,6 +31,7 @@
 			img="/projects/busybatleopard.webp"
 			url="https://busybatsewing.com"
 			description="sveltekit"
+			summary="A custom website for a local business that sells handmade items. The site features a product page, a contact form, and I even created the brand."
 			index={0}
 		/>
 
@@ -50,6 +51,7 @@
 		img="/projects/pixipalette.webp"
 		url="https://pixipalette.vercel.app"
 		description="sveltekit"
+		summary="A color palette generator that tells users the hex, rgb, and hsl colors of images. I tried making the app as user-friendly as possible."
 		index={1}
 	/>
 
@@ -60,6 +62,7 @@
 		img="/projects/groceries.webp"
 		url="https://legit-shopping-list.vercel.app/"
 		description="react"
+		summary="A grocery list app that allows users to add, remove, and edit items. The app is built with React and features a simple and intuitive interface."
 		index={2}
 	/>
 
@@ -70,6 +73,7 @@
 		img="/projects/ecommerce.webp"
 		url="https://fake-store-products.vercel.app"
 		description="html/css/js"
+		summary="My version of an e-commerce product page that features a product image, title, price, and description. The page is built with HTML, CSS, and JavaScript. I used the fake store API to populate the product data."
 		index={3}
 	/>
 
@@ -80,6 +84,7 @@
 		img="/projects/pw-generator.webp"
 		url="https://make-a-password.vercel.app/"
 		description="sveltekit"
+		summary="If you're like me and have a hard time creating passwords, this app is for you! It generates random passwords based on user input."
 		index={4}
 	/>
 
@@ -90,6 +95,7 @@
 		img="/projects/thinkflow.webp"
 		url="https://thinkdotflow.vercel.app"
 		description="sveltekit"
+		summary="A brand I made up out of thin air.. This website is a blog page where you can add, edit, and remove posts."
 		index={5}
 	/>
 
@@ -100,6 +106,7 @@
 		img="/projects/data-v.webp"
 		url="https://visual-svelte.vercel.app"
 		description="d3/svelte"
+		summary="What I built to learn data visualization with d3 and svelte. It features a scatterplot chart, bar chart, and line chart."
 		index={5}
 	/> -->
 
@@ -110,6 +117,7 @@
 		img="/projects/web_dev.webp"
 		url="https://gabe1.vercel.app"
 		description="HTML/CSS/JS"
+		summary="A single page application that I built to showcase my skills in HTML, CSS, and JavaScript. It features a responsive design and a simple layout."
 	/> -->
 
 	<!--  -->
@@ -119,6 +127,7 @@
 		img="/projects/scroller.webp"
 		url="https://scrollernessly.vercel.app"
 		description="html/css/js"
+		summary="A horizontal scrolling website that I built to showcase my skills in HTML, CSS, and JavaScript. It features a responsive design and a simple layout."
 	/> -->
 
 	<!--  -->
@@ -128,6 +137,7 @@
 	img="/projects/nasa.webp"
 	url="https://nasaapi-theta.vercel.app"
 	description="React"
+	summary="Built with react using the nasa api."
 	/> -->
 
 	<!--  -->
@@ -137,6 +147,7 @@
 	img="/projects/github.webp"
 	url="https://github-user-search-api.vercel.app"
 	description="svelte"
+	summary="Search for GitHub users and view their profiles. Built with Svelte."
 	/> -->
 
 	<!--  -->
@@ -155,6 +166,7 @@
 	img="/projects/ran_user.webp"
 	url="https://gabe3.vercel.app/"
 	description="Vue"
+	summary="Generate random users"
 	/> -->
 
 	<!--  -->
@@ -164,6 +176,7 @@
 		img="/projects/snippet.webp"
 		url="https://appity.vercel.app"
 		description="Sveltekit"
+		summary="Create code snippets and share them with others."
 	/> -->
 
 	<!--  -->

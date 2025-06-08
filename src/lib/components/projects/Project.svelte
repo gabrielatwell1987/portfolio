@@ -1,6 +1,6 @@
 <script>
 	/** @type {{title: any, img: any, url: any, description: any}} */
-	let { title, img, url, description, index = 0 } = $props();
+	let { title, img, url, description, summary, index = 0 } = $props();
 </script>
 
 <main class="content" style="--stagger-delay: {index * 1.25}s;">
@@ -11,6 +11,8 @@
 
 		<span class="hover-text">made with {description}</span>
 	</a>
+
+	<p class="summary">{summary}</p>
 </main>
 
 <style>
@@ -26,6 +28,16 @@
 	}
 
 	@media (width >= 300px) {
+		.summary {
+			width: 75%;
+			margin-inline: auto;
+			font-size: clamp(var(--sm), 1.15vw, var(--h5));
+			color: var(--clr-pale);
+			margin-top: 1rem;
+			text-align: center;
+			line-height: 1.5;
+		}
+
 		.link {
 			text-align: center;
 			color: var(--clr-link);
