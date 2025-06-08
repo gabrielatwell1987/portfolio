@@ -39,7 +39,7 @@
 			box-shadow: 0px 0px 12px var(--clr-main);
 
 			.title {
-				font-size: clamp(2rem, 4vw, 5rem);
+				font-size: clamp(var(--h4), 4vw, var(--xxl));
 				text-shadow: 0 0 5px 3px var(--clr-gray);
 				mix-blend-mode: difference;
 				color: var(--clr-blue);
@@ -50,7 +50,7 @@
 			.right {
 				line-height: 1.35;
 				text-align: left;
-				font-size: clamp(1.2rem, 1.75vw, 2rem);
+				font-size: clamp(var(--sm), 1.75vw, var(--h3));
 				color: var(--clr-main);
 				margin-top: -1rem;
 				hyphens: auto;

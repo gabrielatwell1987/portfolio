@@ -121,7 +121,7 @@
 
 				& h2 {
 					font-family: var(--bronova-bold);
-					font-size: clamp(1.25rem, 3vw, 1.75rem);
+					font-size: clamp(var(--h6), 3vw, var(--h4));
 					font-weight: 900;
 					letter-spacing: 2px;
 					color: var(--dark-text);
@@ -143,7 +143,7 @@
 
 				& p {
 					font-family: var(--bronova);
-					font-size: clamp(1rem, 1.25vw, 1.25rem);
+					font-size: clamp(var(--sm), 1.25vw, var(--h6));
 					font-weight: 300;
 					color: var(--dark-text);
 					text-align: center;

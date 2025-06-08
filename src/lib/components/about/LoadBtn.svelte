@@ -49,7 +49,7 @@
 			border-radius: var(--button-radius);
 			background-color: var(--clr-link);
 			font-family: var(--bronova);
-			font-size: clamp(1.1rem, 1.5vw, 2rem);
+			font-size: clamp(var(--h6), 1.5vw, var(--h3));
 			font-weight: 400;
 			cursor: pointer;
 			user-select: none;
