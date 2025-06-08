@@ -95,7 +95,7 @@
 		img="/projects/thinkflow.webp"
 		url="https://thinkdotflow.vercel.app"
 		description="sveltekit"
-		summary="A brand I made up out of thin air.. This website is a blog page where you can add, edit, and remove posts."
+		summary="Custom blog page where you can add, edit, and remove posts."
 		index={5}
 	/>
 
