@@ -1,5 +1,5 @@
 /* layer order */
-@layer foundations, reset, base, typography, components, utilities;
+@layer root, reset, base, typography, components, utilities;
 
 /* font-faces need global scope */
 @font-face {
@@ -34,7 +34,7 @@
 	src: url('/fonts/Bronova-bold.woff2') format('woff2');
 }
 
-@layer foundations {
+@layer root {
 	:root {
 		/* colors */
 		--blackest: hsl(0, 15%, 5%);
