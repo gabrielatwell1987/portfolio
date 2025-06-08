@@ -47,7 +47,7 @@
 		& h1 {
 			margin-block: -1.4em;
 			padding-bottom: 4rem;
-			font-size: clamp(2rem, 6vw, 7rem);
+			font-size: clamp(var(--h3), 6vw, var(--xxl));
 			font-weight: 700;
 			text-shadow: 0 0 5px var(--smoke);
 			color: var(--clr-blue);

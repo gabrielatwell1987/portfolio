@@ -51,7 +51,7 @@
 				margin-top: 2rem;
 				margin-bottom: 0.75rem;
 				font-family: var(--bronova);
-				font-size: clamp(1rem, 1.75vw, 1.5rem);
+				font-size: clamp(var(--sm), 1.75vw, var(--h5));
 				font-weight: 600;
 				color: var(--clr-blue);
 			}
@@ -59,7 +59,7 @@
 			& p {
 				color: var(--clr-gray);
 				font-family: var(--bronova);
-				font-size: clamp(1rem, 1.15rem, 2rem);
+				font-size: clamp(var(--sm), 1.15rem, var(--h4));
 				font-style: italic;
 				text-align: center;
 				margin-top: 2rem;

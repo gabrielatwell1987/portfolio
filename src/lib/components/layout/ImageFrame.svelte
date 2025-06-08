@@ -64,7 +64,7 @@
 			transform: translate(-50%, -96%);
 			letter-spacing: 3px;
 			font-family: var(--bronova);
-			font-size: clamp(0.9rem, 2vw, 2rem);
+			font-size: clamp(var(--h6), 2vw, var(--h3));
 			font-weight: 700;
 			color: var(--purple);
 			text-wrap: nowrap;

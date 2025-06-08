@@ -37,7 +37,7 @@
 			padding: 0.5rem 1rem;
 			border-radius: 12px;
 			font-family: var(--orbitron);
-			font-size: clamp(2.5rem, 2vw, 3rem);
+			font-size: clamp(var(--h2), 2vw, var(--xl));
 			font-weight: 600;
 			letter-spacing: 2px;
 			margin-top: 15%;
@@ -57,7 +57,7 @@
 			position: absolute;
 			background-color: var(--black);
 			color: var(---white);
-			font-size: clamp(1rem, 1.5vw, 1.25rem);
+			font-size: clamp(var(--sm), 1.5vw, var(--h6));
 			padding: 0.5rem;
 			box-shadow: 0 0 5px var(--clr-blue);
 			border-radius: 16px;
