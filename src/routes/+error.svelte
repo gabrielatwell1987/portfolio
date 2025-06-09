@@ -43,19 +43,19 @@
 		align-items: center;
 
 		& h1 {
-			font-size: clamp(2rem, 5vw, 6rem);
+			font-size: clamp(var(--h5), 5vw, var(--xxl));
 			font-weight: 900;
+			-webkit-text-stroke: 1px var(--clr-main);
 			margin-inline: auto;
 			text-align: center;
 			color: var(--clr-blue);
 			font-family: var(--orbitron);
 			letter-spacing: 7px;
-			text-shadow: 5px 7.5px 5px var(--smoke);
 			text-wrap: balance;
 		}
 
 		& h2 {
-			font-size: clamp(1.5rem, 2.5vw, 3rem);
+			font-size: clamp(var(--h4), 2.5vw, var(--xl));
 			font-weight: 700;
 			margin-inline: auto;
 			margin-block: 0;
@@ -68,16 +68,16 @@
 
 		& p {
 			font-family: var(--bronova);
-			font-size: clamp(1.75rem, 3vw, 2rem);
+			font-size: clamp(var(--h5), 3vw, var(--h3));
 			font-weight: 500;
 			letter-spacing: 5px;
 			line-height: 1.25;
 			text-align: left;
 			padding: 2rem 4rem;
-			color: var(--clr-main);
+			color: var(--clr-gray);
 			text-align: center;
-			text-shadow: 1px 1px 5px var(--smoke);
 			text-wrap: none;
+			margin-top: -2em;
 			margin-bottom: 3%;
 		}
 
