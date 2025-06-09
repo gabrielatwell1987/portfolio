@@ -24,6 +24,7 @@
 			color: var(--clr-blue);
 			margin-top: 5rem;
 			view-transition-name: page-title;
+			-webkit-text-stroke: 2px var(--clr-main);
 
 			@media (width >= 740px) {
 				letter-spacing: 20px;
