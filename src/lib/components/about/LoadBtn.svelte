@@ -56,6 +56,8 @@
 			margin-inline: auto;
 			margin-bottom: 1rem;
 			transition: 750ms;
+			display: flex;
+			gap: 0.5em;
 
 			&:hover {
 				opacity: 0.95;
