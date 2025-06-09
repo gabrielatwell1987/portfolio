@@ -19,12 +19,21 @@
 			font-size: clamp(2.5rem, 10.5vw, 15rem);
 			letter-spacing: 5px;
 			text-transform: uppercase;
-			text-shadow: 0 0 10px var(--clr-inverted);
 			font-kerning: none;
 			color: var(--clr-blue);
 			margin-top: 5rem;
 			view-transition-name: page-title;
-			-webkit-text-stroke: 2px var(--clr-main);
+			/* Multiple text shadows to create stroke effect */
+			text-shadow:
+				0 0 1px var(--clr-inverted),
+				-2px -2px 0 var(--clr-main),
+				2px -2px 0 var(--clr-main),
+				-2px 2px 0 var(--clr-main),
+				2px 2px 0 var(--clr-main),
+				-2px 0 0 var(--clr-main),
+				2px 0 0 var(--clr-main),
+				0 -2px 0 var(--clr-main),
+				0 2px 0 var(--clr-main);
 
 			@media (width >= 740px) {
 				letter-spacing: 20px;
