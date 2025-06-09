@@ -30,9 +30,7 @@
 		<textarea type="text" id="message" name="message" bind:value={message} rows="5" required
 		></textarea>
 
-		<div class="send">
-			<SendButton />
-		</div>
+		<SendButton />
 	</fieldset>
 </form>
 
@@ -116,13 +114,6 @@
 		font-weight: 100;
 	}
 
-	.send {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-top: 1rem;
-	}
-
 	.icons {
 		display: grid;
 		place-content: center;
@@ -176,10 +167,6 @@
 					font-size: clamp(var(--h6), 1.5vw, var(--h3));
 					font-weight: 500;
 				}
-			}
-
-			& .send {
-				width: var(--100);
 			}
 		}
 	}

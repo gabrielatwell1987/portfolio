@@ -21,13 +21,13 @@
 			color: var(--light-text);
 			border: 1px solid var(--light-text);
 			outline: 3px solid var(--light-text);
+			outline-offset: -7px;
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
 			width: fit-content;
 			border-radius: var(--radius);
 			transition: 750ms;
-			outline-offset: -7px;
 			padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
 			margin-top: 10%;
 			margin-bottom: 2%;

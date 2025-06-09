@@ -67,7 +67,7 @@
 			src="/logos/a-dev.webp"
 			alt="a logo that says atwell developer"
 			href="/projects"
-			title="web builder"
+			title="web design + development"
 			desc="Trying to make the internet look better.. one website at a time."
 			button="Projects"
 		/>

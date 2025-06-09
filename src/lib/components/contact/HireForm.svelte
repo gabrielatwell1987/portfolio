@@ -1,5 +1,6 @@
 <script>
 	import Popup from '$lib/components/layout/Popup.svelte';
+	import SendButton from '$lib/components/contact/SendButton.svelte';
 </script>
 
 <div class="popover">
@@ -98,7 +99,8 @@
 			></textarea>
 		</label>
 
-		<button type="submit" class="submit-button full-width"> Submit </button>
+		<!-- <button type="submit" class="submit-button full-width"> Submit </button> -->
+		<SendButton />
 	</form>
 </section>
 
@@ -224,30 +226,18 @@
 		border-color: var(--clr-gray);
 	}
 
-	.submit-button {
-		padding: 1rem 2rem;
-		background: transparent;
-		color: var(--clr-pale);
-		border: 1px solid var(--clr-pale);
-		border-radius: var(--radius);
-		font-family: var(--orbitron);
-		font-size: clamp(var(--h6), 1.5vw, var(--h3));
-		font-weight: 500;
-		cursor: pointer;
-		letter-spacing: 3px;
-
-		@media (width <= 500px) {
-			letter-spacing: 1px;
+	@keyframes wiggle {
+		0% {
+			rotate: 0deg;
+			translate: 0 0;
 		}
-
-		&:hover {
-			background-color: var(--clr-pale);
-			color: var(--dark);
+		25% {
+			rotate: -2deg;
+			translate: -5px 0;
 		}
-
-		&:disabled {
-			background: var(--clr-gray);
-			cursor: not-allowed;
+		80% {
+			rotate: 2deg;
+			translate: 5px 0;
 		}
 	}
 </style>
