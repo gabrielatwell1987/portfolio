@@ -3,6 +3,7 @@
 	import Hero from '$lib/components/landing/Hero.svelte';
 	import AnimatedIntro from '$lib/components/landing/AnimatedIntro.svelte';
 	import ImageIntro from '$lib/components/landing/ImageIntro.svelte';
+	import WaveBackground from '$lib/components/landing/WaveBackground.svelte';
 </script>
 
 <SEO
@@ -11,8 +12,32 @@
 	keywords="gabriel atwell home page, gabe atwell home page, frontend crafted web experiences, atwell ui, do you need a website"
 />
 
-<ImageIntro src="/logos/atwellUI.webp" alt="atwell user interface" title="" text="" width="1200" />
+<!-- Page-wide wave background -->
+<WaveBackground
+	position="bottom"
+	opacity={0.5}
+	color="var(--clr-inverted)"
+	height="1500px"
+	className="gentle"
+/>
 
-<AnimatedIntro text="do you need a " span="website?" />
+<section class="content">
+	<ImageIntro
+		src="/logos/atwellUI.webp"
+		alt="atwell user interface"
+		title=""
+		text=""
+		width="1200"
+	/>
 
-<Hero />
+	<AnimatedIntro text="do you need a " span="website?" />
+
+	<Hero />
+</section>
+
+<style>
+	.content {
+		position: relative;
+		z-index: 1;
+	}
+</style>
