@@ -124,6 +124,12 @@
 				animation: fadeIn var(--animation-duration) ease-out forwards;
 				opacity: 0;
 				overflow: hidden;
+
+				&:focus {
+					border: none;
+					outline: none;
+					box-shadow: none;
+				}
 			}
 
 			& img {
@@ -139,13 +145,16 @@
 				outline: none;
 			}
 		}
-	} /* Popover styles */
+	}
+
+	/* Popover styles */
 	#image-popover {
 		border: none;
 		padding: 0;
 		background: transparent;
 		max-width: 90vw;
 		max-height: 90vh;
+		overflow: hidden;
 		margin: auto;
 		transform: scale(0.8);
 		opacity: 0;
