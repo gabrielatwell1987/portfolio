@@ -73,7 +73,7 @@
 		img="/projects/ecommerce.webp"
 		url="https://fake-store-products.vercel.app"
 		description="html/css/js"
-		summary="My version of an e-commerce product page that features a product image, title, price, and description. The page is built with HTML, CSS, and JavaScript. I used the fake store API to populate the product data."
+		summary="My version of an e-commerce product page that features a product image, title, price, and description. I used the fake store API to populate the product data."
 		index={3}
 	/>
 
@@ -95,7 +95,7 @@
 		img="/projects/thinkflow.webp"
 		url="https://thinkdotflow.vercel.app"
 		description="sveltekit"
-		summary="Custom blog page where you can add, edit, and remove posts."
+		summary="Custom blog page where you can add, edit, and remove posts. It uses localStorage to save the posts, so they persist even after refreshing the page."
 		index={5}
 	/>
 
