@@ -53,6 +53,27 @@
 			color: var(--clr-blue);
 			font-family: var(--orbitron);
 
+			/* scroll-driven animations */
+			@media (prefers-reduced-motion: no-preference) {
+				@supports (animation-timeline: scroll()) {
+					animation: title linear both;
+					animation-timeline: scroll(root);
+					animation-range: 0vh 108vh;
+
+					@media (width <= 990px) {
+						animation-range: 0vh 50vh;
+					}
+
+					@media (width <= 768px) {
+						animation-range: 0vh 35vh;
+					}
+
+					@media (width <= 500px) {
+						animation-range: 0vh 25vh;
+					}
+				}
+			}
+
 			@media (width <= 1300px) {
 				padding-bottom: 2rem;
 				mix-blend-mode: normal;
@@ -62,7 +83,7 @@
 				padding-bottom: 1rem;
 			}
 
-			@media (width <= 500px) {
+			@media (width <= 768px) {
 				padding-bottom: 0;
 			}
 		}
@@ -101,6 +122,19 @@
 		to {
 			scale: 1;
 			opacity: 1;
+		}
+	}
+
+	@keyframes title {
+		from {
+			opacity: 0;
+			translate: 0 100px;
+			letter-spacing: 7px;
+		}
+		to {
+			opacity: 1;
+			translate: 0 0;
+			letter-spacing: 0px;
 		}
 	}
 </style>
