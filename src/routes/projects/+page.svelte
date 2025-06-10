@@ -240,6 +240,11 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 		place-items: center;
+		margin: 1em;
+
+		@media (width <= 768px) {
+			margin: 0;
+		}
 
 		@media (width <= 500px) {
 			padding: 4em 0;
@@ -260,7 +265,6 @@
 		position: absolute;
 		inset: 0;
 		background: var(--clr-gray);
-		margin: 1em;
 		clip-path: polygon(
 			0 80px,
 			80px 0,
@@ -281,10 +285,6 @@
 			calc(80px + 2.07px) 5px,
 			5px calc(80px + 2.07px)
 		);
-
-		@media (width <= 768px) {
-			margin: 0;
-		}
 	}
 
 	@media screen and (width >= 300px) {
