@@ -86,7 +86,7 @@
 	@media (min-width: 320px) {
 		.open-button {
 			display: block;
-			font-size: clamp(var(--h4), 4vw, var(--xl));
+			font-size: clamp(var(--h2), 4vw, var(--xl));
 			font-weight: 800;
 			background-color: transparent;
 			box-shadow: none;
@@ -124,7 +124,7 @@
 
 		.close-button {
 			display: block;
-			font-size: clamp(var(--h4), 4vw, var(--xl));
+			font-size: clamp(var(--h2), 4vw, var(--xl));
 			font-weight: 800;
 			background-color: transparent;
 			box-shadow: none;
