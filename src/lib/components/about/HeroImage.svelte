@@ -136,7 +136,7 @@
 	@keyframes title {
 		0% {
 			opacity: 0;
-			translate: 0 100px;
+			translate: 0 -150px;
 			letter-spacing: 10px;
 		}
 		55% {
