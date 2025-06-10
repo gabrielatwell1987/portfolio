@@ -67,6 +67,9 @@
 			background: transparent;
 			box-shadow: none;
 			min-height: 100vh;
+			background-color: var(--blacker);
+			margin: 2em;
+			border-radius: 45em;
 
 			& section {
 				display: flex;
