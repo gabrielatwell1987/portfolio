@@ -60,6 +60,14 @@
 					animation-timeline: scroll(root);
 					animation-range: 0vh 108vh;
 
+					@media (width <= 1300px) {
+						animation-range: 0vh 65vh;
+					}
+
+					@media (width <= 1090px) {
+						animation-range: 0vh 58vh;
+					}
+
 					@media (width <= 990px) {
 						animation-range: 0vh 50vh;
 					}
@@ -126,12 +134,15 @@
 	}
 
 	@keyframes title {
-		from {
+		0% {
 			opacity: 0;
 			translate: 0 100px;
-			letter-spacing: 7px;
+			letter-spacing: 10px;
 		}
-		to {
+		55% {
+			opacity: 0;
+		}
+		100% {
 			opacity: 1;
 			translate: 0 0;
 			letter-spacing: 0px;
