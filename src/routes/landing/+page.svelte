@@ -16,7 +16,7 @@
 <WaveBackground
 	position="bottom"
 	opacity={0.5}
-	color="var(--clr-inverted)"
+	color="var(--blacker)"
 	height="1500px"
 	className="gentle"
 />
