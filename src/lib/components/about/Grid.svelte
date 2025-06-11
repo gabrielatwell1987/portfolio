@@ -50,7 +50,7 @@
 			.right {
 				line-height: 1.35;
 				text-align: left;
-				font-size: clamp(var(--sm), 1.75vw, var(--h3));
+				font-size: clamp(var(--h6), 1.75vw, var(--h3));
 				color: var(--clr-main);
 				margin-top: -1rem;
 				hyphens: auto;
