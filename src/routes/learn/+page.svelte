@@ -71,6 +71,10 @@
 			margin: 2em;
 			border-radius: 45em;
 
+			@media (width <= 768px) {
+				margin: 0;
+			}
+
 			& section {
 				display: flex;
 				justify-content: center;
