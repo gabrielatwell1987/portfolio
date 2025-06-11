@@ -44,7 +44,7 @@
 			width: fit-content;
 			padding: 0.2em 0.6em;
 			border: 1px solid var(--clr-main);
-			outline: 3px solid var(--clr-main);
+			outline: 1px solid var(--clr-main);
 			color: var(--clr-main);
 			border-radius: var(--button-radius);
 			background-color: var(--clr-link);

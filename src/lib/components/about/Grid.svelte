@@ -39,7 +39,7 @@
 			box-shadow: 0px 0px 12px var(--clr-main);
 
 			.title {
-				font-size: clamp(var(--h4), 4vw, var(--xxl));
+				font-size: clamp(var(--h3), 4vw, var(--xxl));
 				text-shadow: 0 0 5px 3px var(--clr-gray);
 				mix-blend-mode: difference;
 				color: var(--clr-blue);
@@ -55,6 +55,12 @@
 				margin-top: -1rem;
 				hyphens: auto;
 			}
+		}
+
+		.grid {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
 		}
 	}
 
