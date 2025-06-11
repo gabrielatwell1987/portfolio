@@ -61,7 +61,7 @@
 					animation-range: 0vh 108vh;
 
 					@media (width <= 1600px) {
-						animation-range: 0vh 82vh;
+						animation-range: 0vh 85vh;
 					}
 
 					@media (width <= 1300px) {
