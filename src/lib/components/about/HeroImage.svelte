@@ -60,6 +60,10 @@
 					animation-timeline: scroll(root);
 					animation-range: 0vh 108vh;
 
+					@media (width <= 1600px) {
+						animation-range: 0vh 82vh;
+					}
+
 					@media (width <= 1300px) {
 						animation-range: 0vh 65vh;
 					}
