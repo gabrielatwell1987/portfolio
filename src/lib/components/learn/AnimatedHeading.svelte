@@ -61,6 +61,10 @@
 		overflow-x: clip;
 		margin-top: -6em;
 
+		@media (width <= 768px) {
+			padding-bottom: 1em;
+		}
+
 		.h1-l,
 		.h1-r {
 			color: var(--clr-main);
