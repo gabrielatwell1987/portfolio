@@ -77,7 +77,7 @@
 		}
 
 		.span {
-			color: var(--clr-blue);
+			color: var(--clr-link);
 			font-family: var(--orbitron);
 			font-size: clamp(4rem, 10vw, 20rem);
 			letter-spacing: 3px;
