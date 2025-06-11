@@ -121,7 +121,7 @@
 
 				& h2 {
 					font-family: var(--bronova-bold);
-					font-size: clamp(var(--h6), 3vw, var(--h4));
+					font-size: clamp(var(--h5), 3vw, var(--h4));
 					font-weight: 900;
 					letter-spacing: 2px;
 					color: var(--dark-text);
