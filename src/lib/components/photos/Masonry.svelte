@@ -54,7 +54,7 @@
 
 <section>
 	<div class="masonry">
-		{#each [{ src: kids, alt: 'Gabe and his kids' }, { src: gabe, alt: 'Gabe sitting with his phone' }, { src: gabe2, alt: "Gabriel's face" }, { src: gabe3, alt: 'Gabe in Arizona fixing a car' }, { src: gabe4, alt: 'Gabe in a restaurant' }, { src: crest, alt: 'the Atwell family crest' }, { src: wtf3, alt: 'gabe when he was 4 years old' }, { src: archie, alt: 'Gabe and his poodle Archie' }, { src: wtf, alt: 'Trying to burn Gabe' }, { src: wtf2, alt: "Gabe's face on hulk hogan" }, { src: autumn, alt: 'Gabe and his daughter Autumn' }] as img, i}
+		{#each [{ src: kids, alt: 'Gabe and his kids' }, { src: gabe, alt: 'Gabe sitting with his phone' }, { src: gabe2, alt: "Gabriel's face" }, { src: gabe3, alt: 'Gabe in Arizona fixing a car' }, { src: gabe4, alt: 'Gabe in a restaurant' }, { src: crest, alt: 'the Atwell family crest' }, { src: autumn, alt: 'Gabe and his daughter Autumn' }, { src: archie, alt: 'Gabe and his poodle Archie' }, { src: wtf, alt: 'Trying to burn Gabe' }, { src: wtf2, alt: "Gabe's face on hulk hogan" }] as img, i}
 			<button type="button" style="animation-delay: {i * 0.2}s;" onclick={() => openPopover(img)}>
 				<img src={img.src} alt={img.alt} />
 			</button>
