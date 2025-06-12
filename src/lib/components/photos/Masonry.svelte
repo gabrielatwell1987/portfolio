@@ -158,9 +158,15 @@
 		margin: auto;
 		transform: scale(0.8);
 		opacity: 0;
+		border: 2px solid var(--clr-main);
+		border-radius: var(--radius);
 		transition:
 			transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
 			opacity 0.3s ease-out;
+
+		@media (width <= 768px) {
+			border: 1px solid var(--clr-main);
+		}
 
 		&.open {
 			transform: scale(1);
@@ -172,21 +178,20 @@
 			max-height: 90vh;
 			object-fit: contain;
 			cursor: pointer;
-			border-radius: 8px;
 			box-shadow: 0 0 10px var(--clr-inverted);
 		}
-	}
 
-	#image-popover::backdrop {
-		background: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
-		backdrop-filter: blur(4px);
-		-webkit-backdrop-filter: blur(4px);
-		opacity: 0;
-		transition: opacity 0.3s ease-out;
-	}
+		&::backdrop {
+			background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
+			backdrop-filter: blur(4px);
+			-webkit-backdrop-filter: blur(4px);
+			opacity: 0;
+			transition: opacity 0.3s ease-out;
+		}
 
-	#image-popover.open::backdrop {
-		opacity: 1;
+		&.open::backdrop {
+			opacity: 1;
+		}
 	}
 
 	@keyframes fadeIn {
