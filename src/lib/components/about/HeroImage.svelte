@@ -20,7 +20,7 @@
 		align-items: center;
 		justify-content: center;
 		margin-bottom: 5rem;
-		view-transition-name: hero-image;
+		/* view-transition-name: hero-image; */
 		width: 100vw;
 		margin-left: calc(-50vw + 50%);
 		position: relative;
@@ -101,7 +101,7 @@
 		}
 	}
 
-	::view-transition-old(hero-image),
+	/* ::view-transition-old(hero-image),
 	::view-transition-new(hero-image) {
 		animation: none;
 		mix-blend-mode: normal;
@@ -135,13 +135,12 @@
 			scale: 1;
 			opacity: 1;
 		}
-	}
+	} */
 
 	@keyframes title {
 		0% {
 			opacity: 0;
-			translate: 0 -150px;
-			letter-spacing: 10px;
+			translate: 0 -2em;
 		}
 		55% {
 			opacity: 0;
@@ -149,7 +148,6 @@
 		100% {
 			opacity: 1;
 			translate: 0 0;
-			letter-spacing: 0px;
 		}
 	}
 </style>
