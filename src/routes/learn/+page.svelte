@@ -67,12 +67,13 @@
 			background: transparent;
 			box-shadow: none;
 			min-height: 100vh;
-			background-color: var(--blacker);
 			margin: 2em;
+			border: 0.25em solid var(--blacker);
 			border-radius: 45em;
 
 			@media (width <= 768px) {
 				margin: 0;
+				border: 2px solid var(--blacker);
 			}
 
 			& section {
