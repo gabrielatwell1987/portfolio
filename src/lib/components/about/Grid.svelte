@@ -39,11 +39,16 @@
 			box-shadow: 0px 0px 12px var(--clr-main);
 
 			.title {
+				color: var(--clr-blue);
+				font-family: var(--orbitron);
 				font-size: clamp(var(--h3), 4vw, var(--xxl));
 				text-shadow: 0 0 5px 3px var(--clr-gray);
 				mix-blend-mode: difference;
-				color: var(--clr-blue);
-				font-family: var(--orbitron);
+				-webkit-text-stroke: 2px var(--clr-main);
+
+				@media (width <= 768px) {
+					-webkit-text-stroke: 1px var(--clr-main);
+				}
 			}
 
 			.left,
