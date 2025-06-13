@@ -41,7 +41,7 @@
 			.title {
 				color: var(--clr-blue);
 				font-family: var(--orbitron);
-				font-size: clamp(var(--h3), 4vw, var(--xxl));
+				font-size: clamp(var(--h3), 4.75vw, var(--xxl));
 				text-shadow: 0 0 5px 3px var(--clr-gray);
 				mix-blend-mode: difference;
 				-webkit-text-stroke: 2px var(--clr-main);
