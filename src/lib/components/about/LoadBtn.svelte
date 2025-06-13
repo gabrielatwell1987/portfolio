@@ -57,6 +57,7 @@
 			margin-bottom: 1rem;
 			transition: 750ms;
 			display: flex;
+			align-items: center;
 			gap: 0.5em;
 
 			&:hover {
@@ -80,8 +81,8 @@
 			}
 
 			& .spinner {
-				width: 2rem;
-				height: 2rem;
+				width: 1.5rem;
+				height: 1.5rem;
 				border: 2px solid var(--clr-main);
 				border-top-color: transparent;
 				border-radius: 50%;
