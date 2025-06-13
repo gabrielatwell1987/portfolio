@@ -70,3 +70,12 @@ html body h2 {
 	letter-spacing: 2px;
 	margin-block: 1.5rem;
 }
+
+html body p {
+	font-size: clamp(1rem, 1.25vw, 1.75rem);
+	font-weight: 300;
+	color: var(--clr-main);
+	line-height: 1.5;
+	margin-block: 1rem;
+	letter-spacing: 2px;
+}
