@@ -17,7 +17,7 @@
 				font-family: var(--orbitron);
 				font-size: clamp(var(--h4), 4vw, var(--xxl));
 				font-weight: 700;
-				letter-spacing: 3px;
+				letter-spacing: -1px;
 				background-image: linear-gradient(
 					to right,
 					var(--clr-blue),

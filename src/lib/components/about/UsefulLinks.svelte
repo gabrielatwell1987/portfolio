@@ -54,6 +54,7 @@
 				font-size: clamp(var(--sm), 1.75vw, var(--h5));
 				font-weight: 600;
 				color: var(--clr-blue);
+				letter-spacing: -1px;
 			}
 
 			& p {
@@ -64,6 +65,7 @@
 				text-align: center;
 				margin-top: 2rem;
 				line-height: 1.5;
+				letter-spacing: 0px;
 
 				& span {
 					font-style: normal;

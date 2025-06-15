@@ -39,7 +39,6 @@
 			font-family: var(--orbitron);
 			font-size: clamp(var(--h2), 2vw, var(--xl));
 			font-weight: 600;
-			letter-spacing: 2px;
 			margin-top: 15%;
 
 			& svg {

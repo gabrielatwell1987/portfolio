@@ -37,6 +37,7 @@
 			margin-top: 1rem;
 			text-align: center;
 			line-height: 1.5;
+			letter-spacing: 0px;
 		}
 
 		.link {
@@ -53,7 +54,7 @@
 			font-size: clamp(var(--h5), 2.75vw, var(--h3));
 			font-weight: 600;
 			margin-inline: auto;
-			letter-spacing: 2px;
+			letter-spacing: 0px;
 			text-transform: uppercase;
 			text-decoration: none;
 			width: fit-content;
@@ -118,8 +119,6 @@
 		}
 
 		.link {
-			letter-spacing: 4px;
-
 			& .hover-text {
 				width: 80%;
 			}
@@ -130,7 +129,6 @@
 		.link {
 			padding: 2rem;
 			flex-basis: var(--100);
-			letter-spacing: 5px;
 
 			& .hover-text {
 				width: 100%;

@@ -56,7 +56,7 @@
 		color: var(--clr-blue);
 		text-wrap: none;
 		display: block;
-		letter-spacing: 1px;
+		letter-spacing: -1px;
 		line-height: 1.2;
 
 		& .char {

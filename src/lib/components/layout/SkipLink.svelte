@@ -19,6 +19,7 @@
 		text-decoration: none;
 		font-size: clamp(var(--xs), 1vw, var(--sm));
 		font-weight: 700;
+		letter-spacing: 1px;
 	}
 
 	.skip-link:not(:focus) {

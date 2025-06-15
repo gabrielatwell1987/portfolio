@@ -53,7 +53,7 @@
 				color: var(--blue);
 				font-family: var(--orbitron);
 				font-size: clamp(3rem, 7vw, 6rem);
-				letter-spacing: 22px;
+				letter-spacing: -1px;
 				text-align: center;
 				margin: 0;
 				text-transform: lowercase;

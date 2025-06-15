@@ -55,7 +55,7 @@
 					font-family: var(--bronova);
 					font-size: clamp(var(--sm), 1.5vw, var(--h4));
 					font-weight: 400;
-					letter-spacing: 0.5px;
+					letter-spacing: 0px;
 					width: 85%;
 					padding: 0 1.5rem;
 					margin-bottom: -2%;
