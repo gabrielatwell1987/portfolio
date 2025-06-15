@@ -20,7 +20,6 @@
 		align-items: center;
 		justify-content: center;
 		margin-bottom: 5rem;
-		/* view-transition-name: hero-image; */
 		width: 100vw;
 		margin-left: calc(-50vw + 50%);
 		position: relative;
@@ -52,6 +51,7 @@
 			text-shadow: 0 0 5px var(--smoke);
 			color: var(--clr-blue);
 			font-family: var(--orbitron);
+			letter-spacing: -1px;
 
 			/* scroll-driven animations */
 			@media (prefers-reduced-motion: no-preference) {
@@ -100,42 +100,6 @@
 			}
 		}
 	}
-
-	/* ::view-transition-old(hero-image),
-	::view-transition-new(hero-image) {
-		animation: none;
-		mix-blend-mode: normal;
-	}
-
-	::view-transition-old(hero-image) {
-		animation: scale-out 0.75s ease-out forwards;
-	}
-
-	::view-transition-new(hero-image) {
-		animation: scale-in 0.75s ease-in forwards;
-	}
-
-	@keyframes scale-out {
-		from {
-			scale: 1;
-			opacity: 1;
-		}
-		to {
-			scale: 0.8;
-			opacity: 0;
-		}
-	}
-
-	@keyframes scale-in {
-		from {
-			scale: 1.2;
-			opacity: 0;
-		}
-		to {
-			scale: 1;
-			opacity: 1;
-		}
-	} */
 
 	@keyframes title {
 		0% {
