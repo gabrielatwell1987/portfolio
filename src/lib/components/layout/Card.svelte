@@ -46,7 +46,7 @@
 			font-family: var(--orbitron);
 			font-size: clamp(var(--h3), 2vw, var(--xxl));
 			font-weight: 800;
-			letter-spacing: 4px;
+			letter-spacing: -1px;
 			margin-bottom: 0.5rem;
 			text-transform: uppercase;
 		}
@@ -59,6 +59,7 @@
 			text-indent: 1rem;
 			display: flex;
 			justify-content: center;
+			letter-spacing: 0px;
 		}
 
 		.card-button {
@@ -117,7 +118,6 @@
 			.card-button {
 				font-size: clamp(var(--sm), 1vw, var(--h6));
 				font-weight: 700;
-				letter-spacing: 2px;
 				padding: 1rem;
 				width: 100%;
 			}

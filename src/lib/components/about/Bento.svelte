@@ -123,7 +123,7 @@
 					font-family: var(--bronova-bold);
 					font-size: clamp(var(--h5), 3vw, var(--h3));
 					font-weight: 900;
-					letter-spacing: 2px;
+					letter-spacing: -1px;
 					color: var(--dark-text);
 					margin-bottom: 1rem;
 					text-transform: uppercase;
@@ -148,6 +148,7 @@
 					color: var(--dark-text);
 					text-align: center;
 					margin-bottom: 0;
+					letter-spacing: 0px;
 
 					&:nth-child(2) {
 						line-height: 1.5;
@@ -156,6 +157,7 @@
 
 				& a {
 					text-decoration: none;
+					letter-spacing: 1px;
 
 					&:focus,
 					&:focus-visible {

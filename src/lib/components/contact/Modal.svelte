@@ -186,6 +186,7 @@
 						line-height: 1;
 						color: var(--purple);
 						margin: -0.5rem 0 -2rem 0;
+						letter-spacing: -1px;
 					}
 				}
 
@@ -198,6 +199,7 @@
 					padding: 0.2rem;
 					hyphens: auto;
 					text-wrap: no-wrap;
+					letter-spacing: 0px;
 				}
 			}
 		}

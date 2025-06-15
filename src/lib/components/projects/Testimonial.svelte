@@ -77,6 +77,7 @@
 				font-size: clamp(var(--sm), 1.75vw, var(--h5));
 				font-weight: 600;
 				color: var(--clr-main);
+				letter-spacing: 0px;
 			}
 
 			& span {
@@ -84,6 +85,7 @@
 				font-size: clamp(var(--xs), 1.25vw, var(--h6));
 				font-weight: 400;
 				opacity: 0.5;
+				letter-spacing: -1px;
 			}
 		}
 

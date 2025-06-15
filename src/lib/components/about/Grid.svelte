@@ -45,6 +45,7 @@
 				text-shadow: 0 0 5px 3px var(--clr-gray);
 				mix-blend-mode: difference;
 				-webkit-text-stroke: 2px var(--clr-main);
+				letter-spacing: -1px;
 
 				@media (width <= 768px) {
 					-webkit-text-stroke: 1px var(--clr-main);
@@ -59,6 +60,7 @@
 				color: var(--clr-main);
 				margin-top: -1rem;
 				hyphens: auto;
+				letter-spacing: 0px;
 			}
 		}
 
@@ -73,10 +75,6 @@
 		.left,
 		.right {
 			line-height: 1.5;
-
-			.title {
-				letter-spacing: 5px;
-			}
 
 			.titleLeft {
 				text-align: right;
@@ -100,13 +98,11 @@
 
 			.right {
 				text-align: right;
-				letter-spacing: 2px;
 				line-height: 1.5;
 			}
 
 			.left {
 				text-align: left;
-				letter-spacing: 2px;
 				line-height: 1.5;
 			}
 		}

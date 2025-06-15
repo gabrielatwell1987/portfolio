@@ -17,7 +17,7 @@
 			text-align: center;
 			font-family: var(--orbitron);
 			font-size: clamp(2.5rem, 10.5vw, 15rem);
-			letter-spacing: 5px;
+			letter-spacing: -1px;
 			text-transform: uppercase;
 			font-kerning: none;
 			color: var(--clr-blue);
@@ -36,7 +36,6 @@
 				0 2px 0 var(--clr-main);
 
 			@media (width >= 740px) {
-				letter-spacing: 20px;
 				margin: 2rem auto;
 			}
 

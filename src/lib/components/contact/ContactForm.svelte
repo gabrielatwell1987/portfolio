@@ -49,7 +49,7 @@
 		font-family: var(--bronova);
 		font-size: clamp(var(--h6), 3vw, var(--xxl));
 		font-weight: 800;
-		letter-spacing: 3px;
+		letter-spacing: 1px;
 		color: var(--clr-blue);
 		padding-inline: 1rem;
 	}
@@ -96,14 +96,14 @@
 		}
 
 		&:placeholder-shown {
-			letter-spacing: 3px;
+			letter-spacing: 0px;
 		}
 	}
 
 	span {
 		font-size: clamp(var(--sm), 1.25vw, var(--h4));
 		font-weight: 800;
-		letter-spacing: 3px;
+		letter-spacing: 0px;
 		color: var(--clr-main);
 	}
 
