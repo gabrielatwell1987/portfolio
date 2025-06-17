@@ -7,7 +7,7 @@
 	});
 </script>
 
-<SEO title="message sent!" description="Successfully Sent" keywords="success, contact success" />
+<SEO title="Message Sent!" description="Successfully Sent" keywords="success, contact success" />
 
 <main>
 	<section>

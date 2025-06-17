@@ -11,7 +11,7 @@
 </script>
 
 <SEO
-	title="contact gabe"
+	title="Contact Me"
 	description="Contact Gabe"
 	keywords="contact gabe atwell, contact gabriel atwell, contact gabe, message me"
 />

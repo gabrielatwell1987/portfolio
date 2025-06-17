@@ -5,7 +5,7 @@
 </script>
 
 <SEO
-	title="Need a website built?"
+	title="Need a Website Built?"
 	description="If you need help with web development or design, please fill out the form."
 	keywords="hire gabriel atwell, hire gabe atwell, project questionnaire"
 />
