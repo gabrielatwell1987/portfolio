@@ -71,16 +71,18 @@
 			font-family: var(--bronova);
 			font-size: clamp(1.2rem, 5vw, 5rem);
 			font-weight: 100;
-			z-index: 2;
 			margin-top: 5%;
-			letter-spacing: 5px;
+			letter-spacing: 1px;
+			text-transform: lowercase;
+			z-index: 2;
 		}
 
 		.span {
 			color: var(--clr-link);
 			font-family: var(--orbitron);
 			font-size: clamp(4rem, 10vw, 20rem);
-			letter-spacing: 3px;
+			-webkit-text-stroke: 1px var(--clr-main);
+			letter-spacing: 0px;
 			z-index: 1;
 		}
 
