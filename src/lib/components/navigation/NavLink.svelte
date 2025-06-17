@@ -25,7 +25,8 @@
 			}
 
 			&:is(:hover) {
-				opacity: 0.5;
+				opacity: 0.75;
+				color: var(--clr-pale);
 			}
 		}
 	}
@@ -38,9 +39,9 @@
 			color: var(--clr-main);
 
 			&:hover {
-				color: var(--clr-main);
-				text-shadow: 1px 1px 1px var(--clr-inverted);
-				border-bottom: 4px solid var(--clr-main);
+				color: var(--clr-pale);
+				text-shadow: 1px 1px 1px var(--clr-gray);
+				border-bottom: 4px solid var(--clr-pale);
 				height: 2.75rem;
 				transition: all 0.15s ease-in-out;
 				border-radius: 1px;
