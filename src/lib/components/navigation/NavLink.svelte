@@ -40,7 +40,7 @@
 
 			&:hover {
 				color: var(--clr-pale);
-				text-shadow: 1px 1px 1px var(--clr-gray);
+				text-shadow: 0px 0px 1px var(--clr-inverted);
 				border-bottom: 4px solid var(--clr-pale);
 				height: 2.75rem;
 				transition: all 0.15s ease-in-out;
