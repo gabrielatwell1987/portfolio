@@ -28,7 +28,7 @@
 </svelte:head>
 
 <SEO
-	title="web animation techniques"
+	title="Web Animation Techniques"
 	description="Web techniques"
 	keywords="animation techniques, web techniques for animation"
 />

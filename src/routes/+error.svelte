@@ -11,7 +11,7 @@
 </script>
 
 <SEO
-	title="error page"
+	title="There's been an error!"
 	description="You've encountered an error!"
 	keywords="error, gabe's error page"
 />

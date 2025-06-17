@@ -12,7 +12,7 @@
 </script>
 
 <SEO
-	title="photos of me"
+	title="Photos of Me"
 	description="Gabriel Atwell's Photos"
 	keywords="photos of gabe, photos of gabriel, images"
 />
