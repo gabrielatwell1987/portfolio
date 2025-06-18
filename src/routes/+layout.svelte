@@ -9,10 +9,15 @@
 	import Loading from '$lib/components/layout/Loading.svelte';
 	import SkipLink from '$lib/components/layout/SkipLink.svelte';
 	import ViewTransition from '$lib/components/layout/ViewTransition.svelte';
-
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
 	let isPageLoaded = $state(false);
+	let canonicalUrl = $derived(() => {
+		const { origin, pathname } = $page.url;
+		// Remove trailing slash except for root path, and ensure consistent formatting
+		const normalizedPath = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
+		return `${origin}${normalizedPath}`;
+	});
 
 	async function detectSWUpdate() {
 		const registration = await navigator.serviceWorker.ready;
@@ -53,8 +58,6 @@
 			}
 		}
 	});
-
-	let canonicalUrl = $derived($page.url.origin + $page.url.pathname);
 </script>
 
 <svelte:head>
