@@ -67,6 +67,7 @@
 		margin: 1rem;
 		position: sticky;
 		top: 0;
+		animation: slide-right 2s ease-in-out forwards;
 	}
 
 	.header-logos {
@@ -75,7 +76,6 @@
 		gap: 1rem;
 		cursor: pointer;
 	}
-
 	.desktop {
 		display: flex;
 		justify-content: center;
@@ -83,10 +83,25 @@
 		gap: 2rem;
 		font-family: var(--orbitron);
 		font-weight: 600;
+
+		@media (width > 300px) and (width < 750px) {
+			display: none;
+		}
+
+		@media (width >= 750px) {
+			display: flex;
+			gap: 0.25rem;
+			scale: 0.9;
+		}
+
+		@media (width >= 990px) {
+			gap: 1.5rem;
+			scale: 1;
+		}
 	}
 
-	@media (width > 300px) {
-		.mobile {
+	.mobile {
+		@media (width > 300px) and (width < 750px) {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
@@ -123,19 +138,48 @@
 			}
 		}
 
-		.desktop {
+		@media (width >= 750px) {
 			display: none;
 		}
+	}
 
-		.header-logos {
-			display: flex;
+	.header-logos {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		cursor: pointer;
+
+		@media (width > 300px) and (width < 750px) {
 			justify-content: center;
-			align-items: center;
-			gap: 1rem;
 			height: 100%;
 		}
 
-		nav {
+		@media (width >= 750px) {
+			display: flex;
+		}
+
+		@media (width < 750px) {
+			flex: 1;
+			justify-content: flex-start;
+			gap: 0.5rem;
+		}
+	}
+
+	nav {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		margin-inline: auto;
+		backdrop-filter: blur(0.15rem);
+		-webkit-backdrop-filter: blur(0.15rem);
+		z-index: 15;
+		view-transition-name: navigation;
+		margin: 1rem;
+		position: sticky;
+		top: 0;
+		animation: slide-right 2s ease-in-out forwards;
+
+		@media (width > 300px) and (width < 750px) {
 			width: 97%;
 			margin-inline: auto;
 			margin-block: 0.25rem;
@@ -144,51 +188,29 @@
 			padding: 1.2rem 0 0.4rem 0;
 			height: 3.75em;
 		}
-	}
 
-	@media (width >= 750px) {
-		.desktop {
-			display: flex;
-			gap: 0.25rem;
-			scale: 0.9;
-		}
-
-		.mobile {
-			display: none;
-		}
-
-		.header-logos {
-			display: flex;
-		}
-
-		nav {
+		@media (width >= 750px) {
 			margin: 1rem;
 			height: 5em;
 		}
-	}
 
-	@media (width >= 990px) {
-		nav {
+		@media (width >= 990px) {
 			box-shadow: none;
 		}
 
-		.desktop {
-			gap: 1.5rem;
-			scale: 1;
-		}
-	}
-
-	@media (width < 750px) {
-		nav {
+		@media (width < 750px) {
 			justify-content: space-between;
 			padding-inline: 0.75rem;
 		}
+	}
 
-		.header-logos {
-			flex: 1;
-			justify-content: flex-start;
-			align-items: center;
-			gap: 0.5rem;
+	@keyframes slide-right {
+		from {
+			translate: -120% 0;
+		}
+
+		to {
+			translate: 0 0;
 		}
 	}
 </style>
