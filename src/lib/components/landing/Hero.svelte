@@ -25,87 +25,77 @@
 </main>
 
 <style>
-	@media screen and (width >= 300px) {
-		main {
-			text-align: center;
-			font-size: 1.75rem;
-			height: 100vh;
-			position: relative;
-			margin-bottom: 2%;
+	main {
+		text-align: center;
+		font-size: 1.75rem;
+		height: 100vh;
+		position: relative;
+		margin-bottom: 2%;
 
-			& img {
-				border-radius: var(--radius);
-				opacity: 0.15;
-				transition: opacity 0.75s ease-in-out;
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				box-shadow: 0 0 10px var(--clr-gray);
-			}
-
-			& section {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-				width: 100%;
-
-				& .summary {
-					margin-inline: auto;
-					font-family: var(--bronova);
-					font-size: clamp(var(--sm), 1.5vw, var(--h4));
-					font-weight: 400;
-					letter-spacing: 0px;
-					width: 85%;
-					padding: 0 1.5rem;
-					margin-bottom: -2%;
-					color: var(--clr-main);
-
-					@media (width <= 500px) {
-						width: 100%;
-					}
-				}
-
-				& .left {
-					text-align: left;
-				}
-			}
-		}
-	}
-
-	@media screen and (width >= 740px) {
-		main {
-			text-align: center;
+		@media screen and (width >= 740px) {
 			font-size: 2rem;
-
-			& .summary {
-				width: 95%;
-			}
 		}
-	}
 
-	@media screen and (width >= 990px) {
-		main {
-			text-align: center;
+		@media screen and (width >= 990px) {
 			font-size: 2.5rem;
 			margin: 5rem 0;
+		}
 
-			& .summary {
-				width: 50%;
-				letter-spacing: 3px;
-			}
+		& img {
+			border-radius: var(--radius);
+			opacity: 0.15;
+			transition: opacity 0.75s ease-in-out;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			box-shadow: 0 0 10px var(--clr-gray);
 
-			& img {
+			@media screen and (width >= 990px) {
 				width: 90%;
 				height: 100%;
 			}
 		}
-	}
 
-	@media (width >= 1024px) {
-		.summary {
-			width: 90%;
-			margin-inline: auto;
+		& section {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+
+			& .summary {
+				margin-inline: auto;
+				font-family: var(--bronova);
+				font-size: clamp(var(--sm), 1.5vw, var(--h4));
+				font-weight: 400;
+				letter-spacing: 0px;
+				width: 85%;
+				padding: 0 1.5rem;
+				margin-bottom: -2%;
+				color: var(--clr-main);
+
+				@media (width <= 500px) {
+					width: 100%;
+				}
+
+				@media screen and (width >= 740px) {
+					width: 95%;
+				}
+
+				@media screen and (width >= 990px) {
+					width: 50%;
+					letter-spacing: 3px;
+				}
+
+				@media (width >= 1024px) {
+					width: 90%;
+					margin-inline: auto;
+				}
+			}
+
+			& .left {
+				text-align: left;
+			}
 		}
 	}
 

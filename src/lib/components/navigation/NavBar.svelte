@@ -67,7 +67,7 @@
 		margin: 1rem;
 		position: sticky;
 		top: 0;
-		animation: slide-right 2s ease-in-out forwards;
+		/* animation: slide-right 0.05s ease-in-out forwards; */
 	}
 
 	.header-logos {
@@ -204,13 +204,13 @@
 		}
 	}
 
-	@keyframes slide-right {
+	/* @keyframes slide-right {
 		from {
-			translate: -120% 0;
+			translate: -100% 0;
 		}
 
 		to {
 			translate: 0 0;
 		}
-	}
+	} */
 </style>

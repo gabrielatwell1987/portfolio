@@ -124,46 +124,41 @@
 				background: transparent;
 			}
 		}
-		.image {
-			background-color: transparent;
-			color: var(--smoke);
-			border: 1px solid var(--smoke);
-			margin-inline: auto;
-			margin-top: 1em;
-			border-radius: 8px;
-			cursor: pointer;
-			letter-spacing: 1px;
-			transition: opacity 0.75s ease-in-out;
+	}
 
-			&:hover {
-				animation: wiggle 0.85s ease-in-out infinite;
-			}
+	.image {
+		background-color: transparent;
+		color: var(--smoke);
+		border: 1px solid var(--smoke);
+		margin-inline: auto;
+		margin-top: 1em;
+		border-radius: 8px;
+		cursor: pointer;
+		letter-spacing: 1px;
+		transition: opacity 0.75s ease-in-out;
 
-			&:not(:hover) {
-				opacity: 0.75;
-				background-color: var(--smoke);
-				color: black;
-			}
+		&:hover {
+			animation: wiggle 0.85s ease-in-out infinite;
 		}
 
-		@media (width >= 300px) {
-			.gs,
-			.sk {
-				margin-inline: auto;
-			}
-
-			.animation-link {
-				display: block;
-			}
+		&:not(:hover) {
+			opacity: 0.75;
+			background-color: var(--smoke);
+			color: black;
 		}
+	}
+
+	.gs,
+	.sk {
+		margin-inline: auto;
 
 		@media (width >= 720px) {
-			.gs,
-			.sk,
-			.image {
-				margin-top: 0;
-			}
+			margin-top: 0;
 		}
+	}
+
+	.animation-link {
+		display: block;
 	}
 
 	@keyframes wiggle {

@@ -40,8 +40,8 @@
 </main>
 
 <style>
-	@media (width >= 300px) {
-		.links {
+	.links {
+		@media (width >= 300px) {
 			width: fit-content;
 			margin-inline: auto;
 			margin-top: 1.5rem;

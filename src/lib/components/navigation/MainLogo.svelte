@@ -84,11 +84,9 @@
 			}
 		}
 
-		@media (width >= 300px) {
-			display: block;
-			scale: 0.7;
-			margin-bottom: 1em;
-		}
+		display: block;
+		scale: 0.7;
+		margin-bottom: 1em;
 
 		@media (width >= 300px) and (width < 750px) {
 			scale: 0.75;

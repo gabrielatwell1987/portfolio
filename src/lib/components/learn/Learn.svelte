@@ -27,19 +27,14 @@
 		font-size: clamp(var(--h5), 3vw, var(--h2));
 		margin-top: -7rem;
 	}
+	.center {
+		text-align: center;
+		font-size: clamp(var(--sm), 2vw, var(--h6));
+		margin-top: 2rem;
+		line-height: 1.5;
+		color: var(--clr-main);
 
-	@media (width >= 300px) {
-		.center {
-			text-align: center;
-			font-size: clamp(var(--sm), 2vw, var(--h6));
-			margin-top: 2rem;
-			line-height: 1.5;
-			color: var(--clr-main);
-		}
-	}
-
-	@media (width >= 1024px) {
-		.center {
+		@media (width >= 1024px) {
 			margin-bottom: 5%;
 		}
 	}

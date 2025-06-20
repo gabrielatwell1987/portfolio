@@ -98,131 +98,125 @@
 		--100: 100%;
 	}
 
-	@media screen and (width >= 300px) {
-		main {
-			width: var(--100);
-			margin-inline: auto;
+	main {
+		width: var(--100);
+		margin-inline: auto;
 
-			& section {
-				display: block;
-				margin-inline: auto;
-				text-align: center;
-				width: var(--100);
-				color: var(--clr-main);
-
-				& article {
-					font-size: clamp(var(--xs), 2vw, var(--sm));
-					width: var(--100);
-					margin-inline: auto;
-					background-color: transparent;
-					box-shadow: none;
-					color: var(--clr-main);
-				}
-
-				& .bio {
-					color: var(--white);
-					position: relative;
-
-					& .icons {
-						display: flex;
-						justify-content: space-evenly;
-						align-items: center;
-						gap: 0.25rem;
-						margin-left: 3rem;
-						padding-right: 1.2rem;
-					}
-
-					& .indent {
-						text-indent: 2em;
-					}
-
-					& .text {
-						max-width: var(--100);
-						margin-inline: auto;
-						font-size: clamp(var(--h6), 1.5vw, var(--h4));
-						font-weight: 500;
-						line-height: 1.5;
-						text-wrap: none;
-						z-index: 7;
-						color: var(--clr-main);
-
-						& span {
-							color: var(--clr-link);
-							font-weight: 600;
-						}
-					}
-
-					& .text-hero {
-						font-size: var(--h5);
-					}
-				}
-			}
-
-			& p {
-				text-align: left;
-				color: var(--clr-main);
-			}
-
-			& .hero {
-				width: var(--100);
-				margin-inline: auto;
-				color: var(--clr-main);
-			}
-		}
-	}
-
-	@media (width >= 600px) {
-		.hero {
-			width: 90%;
-		}
-	}
-
-	@media screen and (width >= 990px) {
-		section {
+		& section {
 			display: block;
+			margin-inline: auto;
+			text-align: center;
 			width: var(--100);
-			margin: 5rem auto;
+			color: var(--clr-main);
+
+			@media screen and (width >= 990px) {
+				display: block;
+				width: var(--100);
+				margin: 5rem auto;
+			}
 
 			& article {
+				font-size: clamp(var(--xs), 2vw, var(--sm));
 				width: var(--100);
 				margin-inline: auto;
+				background-color: transparent;
+				box-shadow: none;
+				color: var(--clr-main);
+
+				@media screen and (width >= 990px) {
+					width: var(--100);
+					margin-inline: auto;
+				}
 			}
 
 			& .bio {
-				margin-bottom: -5rem;
+				color: var(--white);
+				position: relative;
+
+				@media screen and (width >= 990px) {
+					margin-bottom: -5rem;
+				}
 
 				& .icons {
-					margin-left: 0;
-					margin-top: 2rem;
-					padding-right: 0;
+					display: flex;
+					justify-content: space-evenly;
+					align-items: center;
+					gap: 0.25rem;
+					margin-left: 3rem;
+					padding-right: 1.2rem;
+
+					@media screen and (width >= 990px) {
+						margin-left: 0;
+						margin-top: 2rem;
+						padding-right: 0;
+					}
+				}
+
+				& .indent {
+					text-indent: 2em;
 				}
 
 				& .text {
-					max-width: 90%;
-					line-height: 1.75;
+					max-width: var(--100);
+					margin-inline: auto;
+					font-size: clamp(var(--h6), 1.5vw, var(--h4));
+					font-weight: 500;
+					line-height: 1.5;
+					text-wrap: none;
+					z-index: 7;
+					color: var(--clr-main);
+
+					@media screen and (width >= 990px) {
+						max-width: 90%;
+						line-height: 1.75;
+					}
+
+					& span {
+						color: var(--clr-link);
+						font-weight: 600;
+					}
+				}
+
+				& .text-hero {
+					font-size: var(--h5);
 				}
 
 				& .content_width {
-					margin-bottom: -2rem;
+					@media screen and (width >= 990px) {
+						margin-bottom: -2rem;
+					}
 				}
 
 				& .text__w {
-					width: 75%;
-					margin: 0 auto;
+					@media screen and (width >= 990px) {
+						width: 75%;
+						margin: 0 auto;
+					}
 				}
 			}
 		}
-	}
 
-	@media (width >= 1024px) {
-		.hero {
-			width: 70%;
+		& p {
+			text-align: left;
+			color: var(--clr-main);
 		}
-	}
 
-	@media (width >= 1400px) {
-		.hero {
-			width: 70%;
+		& .hero {
+			width: var(--100);
+			margin-inline: auto;
+			color: var(--clr-main);
+
+			@media (width >= 600px) {
+				width: 90%;
+			}
+
+			@media (width >= 1024px) {
+				width: 70%;
+			}
+
+			@media (width >= 1400px) {
+				width: 70%;
+			}
 		}
 	}
 </style>

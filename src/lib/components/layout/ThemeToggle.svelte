@@ -129,14 +129,10 @@
 			background: transparent;
 		}
 
-		@media (width >= 300px) {
-			& svg {
-				font-weight: 800;
-			}
-		}
+		& svg {
+			font-weight: 800;
 
-		@media (width >= 990px) {
-			& svg {
+			@media (width >= 990px) {
 				padding-top: 1rem;
 			}
 		}
