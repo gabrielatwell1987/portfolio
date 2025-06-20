@@ -96,7 +96,7 @@
 		& .masonry {
 			columns: 1;
 			column-gap: 0;
-			margin: 0;
+			margin: 0.5rem;
 			margin-top: 1rem;
 			padding: 0;
 			width: 100%;
