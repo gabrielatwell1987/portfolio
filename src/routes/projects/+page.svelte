@@ -235,6 +235,10 @@
 </section>
 
 <style>
+	:root {
+		--100: 100%;
+	}
+
 	.bevel {
 		position: relative;
 		display: grid;
@@ -287,34 +291,24 @@
 		);
 	}
 
-	@media screen and (width >= 300px) {
-		:root {
-			--100: 100%;
-		}
+	section {
+		padding-top: 2rem;
+		overflow: hidden;
 
-		section {
-			padding-top: 2rem;
-			overflow: hidden;
-		}
-
-		.popup {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-bottom: 5%;
-		}
-	}
-
-	@media screen and (width >= 740px) {
-		section {
+		@media screen and (width >= 740px) {
 			padding: 2rem;
 		}
-	}
 
-	@media screen and (width >= 990px) {
-		section {
+		@media screen and (width >= 990px) {
 			margin-bottom: -5%;
 			padding-top: 5rem;
 		}
+	}
+
+	.popup {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 5%;
 	}
 </style>

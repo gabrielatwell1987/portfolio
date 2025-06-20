@@ -81,91 +81,23 @@
 			width: 100%;
 			transform: scale(1);
 		}
-	}
 
-	@media (min-width: 320px) {
-		.open-button {
-			display: block;
-			font-size: clamp(var(--h2), 4vw, var(--xl));
-			font-weight: 800;
-			background-color: transparent;
-			box-shadow: none;
-			color: var(--clr-pale);
-			width: fit-content;
-			outline: none;
-			border: none;
-			border-radius: 15px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-inline: auto;
-			margin-bottom: 25%;
-			cursor: pointer;
-
-			&:focus,
-			&:focus-visible {
-				outline: 1px solid var(--clr-main);
-			}
-
-			&:hover {
-				animation: wiggle 01s ease-in-out infinite;
-			}
-
-			& svg {
-				cursor: pointer;
-
-				&:focus,
-				&:focus-visible {
-					outline: 1px solid var(--clr-main);
-					background: transparent;
-				}
-			}
+		@media screen and (min-width: 720px) {
+			padding: 2rem;
+			width: 93%;
+			height: 83%;
+			margin: 0 auto;
 		}
 
-		.close-button {
-			display: block;
-			font-size: clamp(var(--h2), 4vw, var(--xl));
-			font-weight: 800;
-			background-color: transparent;
-			box-shadow: none;
-			color: var(--clr-pale);
-			width: 5%;
-			height: 5%;
-			outline: none;
-			border: none;
-			border-radius: 15px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-inline: auto;
-			margin-top: -1rem;
-			cursor: pointer;
-			padding: 0 2rem;
-
-			&:hover {
-				animation: wiggle 01s ease-in-out infinite;
-			}
-
-			&:focus,
-			&:focus-visible {
-				outline: 1px solid var(--clr-main);
-				background: transparent;
-			}
-
-			& i {
-				cursor: pointer;
-			}
-		}
-
-		dialog {
-			background: none;
-
-			&::backdrop {
+		&::backdrop {
+			@media (min-width: 320px) {
 				background: transparent;
 				box-shadow: none;
 			}
+		}
 
-			& article {
+		& article {
+			@media (min-width: 320px) {
 				width: 100%;
 				border-radius: 1rem;
 				background: var(--blackest);
@@ -205,42 +137,112 @@
 		}
 	}
 
-	@media screen and (min-width: 720px) {
-		dialog {
-			padding: 2rem;
-			width: 93%;
-			height: 83%;
-			margin: 0 auto;
+	.open-button {
+		@media (min-width: 320px) {
+			display: block;
+			font-size: clamp(var(--h2), 4vw, var(--xl));
+			font-weight: 800;
+			background-color: transparent;
+			box-shadow: none;
+			color: var(--clr-pale);
+			width: fit-content;
+			outline: none;
+			border: none;
+			border-radius: 15px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-inline: auto;
+			margin-bottom: 25%;
+			cursor: pointer;
+
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--clr-main);
+			}
+
+			&:hover {
+				animation: wiggle 01s ease-in-out infinite;
+			}
+
+			& svg {
+				cursor: pointer;
+
+				&:focus,
+				&:focus-visible {
+					outline: 1px solid var(--clr-main);
+					background: transparent;
+				}
+			}
 		}
 
-		.open-button {
+		@media screen and (min-width: 720px) {
+			margin-bottom: 15%;
+		}
+
+		@media screen and (min-width: 1024px) {
 			margin-bottom: 15%;
 		}
 	}
 
-	@media screen and (min-width: 1024px) {
-		h4 {
+	.close-button {
+		@media (min-width: 320px) {
+			display: block;
+			font-size: clamp(var(--h2), 4vw, var(--xl));
+			font-weight: 800;
+			background-color: transparent;
+			box-shadow: none;
+			color: var(--clr-pale);
+			width: 5%;
+			height: 5%;
+			outline: none;
+			border: none;
+			border-radius: 15px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-inline: auto;
+			margin-top: -1rem;
+			cursor: pointer;
+			padding: 0 2rem;
+
+			&:hover {
+				animation: wiggle 01s ease-in-out infinite;
+			}
+
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--clr-main);
+				background: transparent;
+			}
+
+			& i {
+				cursor: pointer;
+			}
+		}
+	}
+
+	h4 {
+		@media screen and (min-width: 1024px) {
 			line-height: 0.95;
 		}
 
-		p {
+		@media screen and (min-width: 1100px) {
+			padding: 0.5rem;
+		}
+	}
+
+	p {
+		@media screen and (min-width: 1024px) {
 			line-height: 1.75;
 			margin-inline: auto;
 			padding: 1rem;
 		}
-
-		.image {
-			margin-block: 1rem;
-		}
-
-		.open-button {
-			margin-bottom: 15%;
-		}
 	}
 
-	@media screen and (min-width: 1100px) {
-		h4 {
-			padding: 0.5rem;
+	.image {
+		@media screen and (min-width: 1024px) {
+			margin-block: 1rem;
 		}
 	}
 

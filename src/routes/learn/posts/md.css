@@ -12,11 +12,8 @@
 	line-height: 1.5;
 	hyphens: auto;
 	overflow-wrap: normal;
-}
 
-@media (max-width: 768px) {
-	.css,
-	.gsap {
+	@media (max-width: 768px) {
 		padding: 0.1rem;
 		max-width: 95%;
 		margin-inline: auto;
@@ -41,11 +38,8 @@
 	line-height: 1.6;
 	margin-bottom: 1rem;
 	color: var(--clr-main);
-}
 
-@media (max-width: 768px) {
-	.css p,
-	.gsap p {
+	@media (max-width: 768px) {
 		padding: 0.1rem;
 	}
 }

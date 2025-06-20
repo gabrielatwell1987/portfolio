@@ -163,171 +163,50 @@
 		--stagger-delay: 0.5s;
 		--subtle-rgb: 40, 40, 40;
 	}
+	main {
+		padding-top: 5%;
+		position: relative;
 
-	@media screen and (width >= 300px) {
-		main {
-			padding-top: 5%;
-			position: relative;
-
-			&.active-content {
-				background-color: rgba(var(--subtle-rgb), 0.05);
-				transition: background-color 0.5s ease;
-			}
-
-			& .back-to-top {
-				position: absolute;
-				bottom: -1rem;
-				right: 1em;
-				background-color: transparent;
-				color: var(--clr-main);
-				width: fit-content;
-			}
-
-			& h2 {
-				color: var(--clr-gray);
-				font-family: var(--bronova);
-				font-size: clamp(var(--sm), 1.5vw, var(--h3));
-				font-weight: 300;
-				letter-spacing: 0.1em;
-				margin: 0;
-				width: fit-content;
-				margin-inline: auto;
-
-				& .arrow {
-					font-size: clamp(var(--h5), 2.5vw, var(--h2));
-					animation: fadeIn 1s ease-in-out infinite alternate;
-				}
-			}
-
-			& section {
-				width: var(--100);
-				margin: 0;
-				margin-bottom: 10%;
-				padding-block: 10vh;
-
-				& .content {
-					padding: 2rem;
-					position: relative;
-					background-color: transparent;
-					box-shadow: 0 0 1rem var(--clr-main);
-					isolation: isolate;
-					width: 100%;
-					max-width: 1600px;
-					margin-inline: auto;
-
-					&::before {
-						content: '';
-						position: absolute;
-						inset: 0;
-						background-color: rgba(var(--subtle-rgb), 0.25);
-						z-index: -1;
-					}
-
-					@media (width <= 500px) {
-						padding: 0;
-					}
-
-					@media (width >= 768px) {
-						padding: 4rem;
-					}
-
-					@media (width >= 1200px) {
-						padding: 5em;
-					}
-				}
-
-				& .pictures {
-					opacity: 0;
-					visibility: hidden;
-					transition:
-						opacity 1s ease-out,
-						visibility 1s ease-out;
-
-					&.visible {
-						opacity: 1;
-						visibility: visible;
-					}
-
-					& img {
-						width: 100%;
-						height: auto;
-
-						&:first-child {
-							padding-top: 2em;
-						}
-					}
-
-					& .flex {
-						display: grid;
-						grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-						gap: 1em;
-						place-items: center;
-						width: 100%;
-
-						@media (width >= 768px) {
-							gap: 3rem;
-						}
-
-						& .gabe {
-							width: 100%;
-							height: auto;
-							margin-inline: auto;
-							margin-bottom: 2em;
-							border-radius: var(--radius);
-							transition: filter 750ms ease-in-out;
-							transform: translateY(0);
-							object-fit: cover;
-							scale: 0.85;
-
-							@media (width <= 500px) {
-								scale: 0.9;
-							}
-
-							&:hover {
-								filter: drop-shadow(0 0 0.25rem var(--clr-gray));
-								animation-name: wiggle;
-								animation-duration: 1s;
-								animation-timing-function: ease-in-out;
-								animation-iteration-count: infinite;
-							}
-
-							&:not(:hover) {
-								filter: drop-shadow(0);
-								transition: filter 750ms ease-in-out;
-							}
-
-							&.ar58 {
-								aspect-ratio: 5 / 8;
-							}
-
-							&.ar11 {
-								aspect-ratio: 1 / 1;
-							}
-						}
-					}
-				}
-			}
+		&.active-content {
+			background-color: rgba(var(--subtle-rgb), 0.05);
+			transition: background-color 0.5s ease;
 		}
-	}
 
-	@media (width >= 850px) {
-		.pictures {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 5%;
-
-			& .flex {
-				margin-bottom: 1em;
-			}
-		}
-	}
-
-	@media screen and (width >= 1200px) {
-		main {
+		@media screen and (width >= 1200px) {
 			text-align: center;
+		}
 
-			section {
+		& .back-to-top {
+			position: absolute;
+			bottom: -1rem;
+			right: 1em;
+			background-color: transparent;
+			color: var(--clr-main);
+			width: fit-content;
+		}
+
+		& h2 {
+			color: var(--clr-gray);
+			font-family: var(--bronova);
+			font-size: clamp(var(--sm), 1.5vw, var(--h3));
+			font-weight: 300;
+			letter-spacing: 0.1em;
+			margin: 0;
+			width: fit-content;
+			margin-inline: auto;
+
+			& .arrow {
+				font-size: clamp(var(--h5), 2.5vw, var(--h2));
+				animation: fadeIn 1s ease-in-out infinite alternate;
+			}
+		}
+		& section {
+			width: var(--100);
+			margin: 0;
+			margin-bottom: 10%;
+			padding-block: 10vh;
+
+			@media screen and (width >= 1200px) {
 				padding: 1.5rem;
 				display: flex;
 				flex-direction: column;
@@ -348,6 +227,118 @@
 					justify-content: center;
 					flex-direction: row;
 					gap: 5%;
+				}
+			}
+
+			& .content {
+				padding: 2rem;
+				position: relative;
+				background-color: transparent;
+				box-shadow: 0 0 1rem var(--clr-main);
+				isolation: isolate;
+				width: 100%;
+				max-width: 1600px;
+				margin-inline: auto;
+
+				&::before {
+					content: '';
+					position: absolute;
+					inset: 0;
+					background-color: rgba(var(--subtle-rgb), 0.25);
+					z-index: -1;
+				}
+
+				@media (width <= 500px) {
+					padding: 0;
+				}
+
+				@media (width >= 768px) {
+					padding: 4rem;
+				}
+
+				@media (width >= 1200px) {
+					padding: 5em;
+				}
+			}
+			& .pictures {
+				opacity: 0;
+				visibility: hidden;
+				transition:
+					opacity 1s ease-out,
+					visibility 1s ease-out;
+
+				@media (width >= 850px) {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					gap: 5%;
+
+					& .flex {
+						margin-bottom: 1em;
+					}
+				}
+
+				&.visible {
+					opacity: 1;
+					visibility: visible;
+				}
+
+				& img {
+					width: 100%;
+					height: auto;
+
+					&:first-child {
+						padding-top: 2em;
+					}
+				}
+
+				& .flex {
+					display: grid;
+					grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+					gap: 1em;
+					place-items: center;
+					width: 100%;
+
+					@media (width >= 768px) {
+						gap: 3rem;
+					}
+
+					& .gabe {
+						width: 100%;
+						height: auto;
+						margin-inline: auto;
+						margin-bottom: 2em;
+						border-radius: var(--radius);
+						transition: filter 750ms ease-in-out;
+						transform: translateY(0);
+						object-fit: cover;
+						scale: 0.85;
+
+						@media (width <= 500px) {
+							scale: 0.9;
+						}
+
+						&:hover {
+							filter: drop-shadow(0 0 0.25rem var(--clr-gray));
+							animation-name: wiggle;
+							animation-duration: 1s;
+							animation-timing-function: ease-in-out;
+							animation-iteration-count: infinite;
+						}
+
+						&:not(:hover) {
+							filter: drop-shadow(0);
+							transition: filter 750ms ease-in-out;
+						}
+
+						&.ar58 {
+							aspect-ratio: 5 / 8;
+						}
+
+						&.ar11 {
+							aspect-ratio: 1 / 1;
+						}
+					}
 				}
 			}
 		}

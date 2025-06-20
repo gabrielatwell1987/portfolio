@@ -21,41 +21,35 @@
 </main>
 
 <style>
-	@media (width >= 300px) {
-		.title {
-			text-align: center;
-			font-family: var(--orbitron);
-			font-size: clamp(2.5rem, 10.5vw, 15rem);
-			color: var(--clr-blue);
-			letter-spacing: 5px;
-			text-transform: uppercase;
-			font-kerning: none;
-			margin-top: 5rem;
-		}
+	.title {
+		text-align: center;
+		font-family: var(--orbitron);
+		font-size: clamp(2.5rem, 10.5vw, 15rem);
+		color: var(--clr-blue);
+		letter-spacing: 5px;
+		text-transform: uppercase;
+		font-kerning: none;
+		margin-top: 5rem;
 
-		#title {
-			font-kerning: none;
-		}
-
-		.letter {
-			display: inline-block;
-			opacity: 0;
-			animation: slide-in 0.5s forwards;
-			animation-delay: calc(var(--index) * 0.2s);
-		}
-	}
-
-	@media (width >= 740px) {
-		.title {
+		@media (width >= 740px) {
 			letter-spacing: 20px;
 			margin: 2rem auto;
 		}
-	}
 
-	@media (width >= 990px) {
-		.title {
+		@media (width >= 990px) {
 			font-weight: 800;
 		}
+	}
+
+	#title {
+		font-kerning: none;
+	}
+
+	.letter {
+		display: inline-block;
+		opacity: 0;
+		animation: slide-in 0.5s forwards;
+		animation-delay: calc(var(--index) * 0.2s);
 	}
 
 	::view-transition-old(letter-*),

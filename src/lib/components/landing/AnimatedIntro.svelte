@@ -79,29 +79,35 @@
 			0 0 20px #eee;
 	}
 
-	@media (width <= 768px) {
-		.animated-text {
+	.animated-text {
+		@media (width <= 768px) {
 			margin-top: -15%;
+		}
+	}
 
-			.sentence {
-				margin-top: 7%;
-				opacity: 0.9;
+	.sentence {
+		@media (width <= 768px) {
+			margin-top: 7%;
+			opacity: 0.9;
+		}
+	}
 
-				.bigWord {
-					font-weight: 600;
-					margin-top: 2%;
-				}
+	.bigWord {
+		@media (width <= 768px) {
+			font-weight: 600;
+			margin-top: 2%;
+		}
+	}
 
-				.glow {
-					text-shadow:
-						0 0 3px #17262c,
-						0 0 4px #eee,
-						0 0 5px #eee,
-						0 0 6px #eee,
-						0 0 15px #eee,
-						0 0 5px #eee;
-				}
-			}
+	.glow {
+		@media (width <= 768px) {
+			text-shadow:
+				0 0 3px #17262c,
+				0 0 4px #eee,
+				0 0 5px #eee,
+				0 0 6px #eee,
+				0 0 15px #eee,
+				0 0 5px #eee;
 		}
 	}
 

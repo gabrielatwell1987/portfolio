@@ -26,8 +26,8 @@
 </section>
 
 <style>
-	@media (width >= 300px) {
-		.inline {
+	.inline {
+		@media (width >= 300px) {
 			display: inline-block;
 			margin: 0.5rem auto;
 			margin: 0;
@@ -64,37 +64,24 @@
 			}
 		}
 
-		.grid {
+		@media (width >= 990px) {
+			margin: 0 auto;
+			padding: 1rem 2rem;
+		}
+	}
+
+	.grid {
+		@media (width >= 300px) {
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;
 		}
-	}
 
-	@media (width >= 990px) {
-		.left,
-		.right {
-			line-height: 1.5;
-
-			.titleLeft {
-				text-align: right;
-			}
-
-			.titleRight {
-				text-align: left;
-			}
-		}
-
-		.grid {
+		@media (width >= 990px) {
 			display: grid;
 			grid-template-rows: repeat(2, 1fr);
 			margin: -10em 0 -50% 0;
 			gap: 3rem;
-
-			.inline {
-				margin: 0 auto;
-				padding: 1rem 2rem;
-			}
 
 			.right {
 				text-align: right;
@@ -106,11 +93,24 @@
 				line-height: 1.5;
 			}
 		}
+
+		@media (width >= 1024px) {
+			margin-bottom: -10%;
+		}
 	}
 
-	@media (width >= 1024px) {
-		.grid {
-			margin-bottom: -10%;
+	.left,
+	.right {
+		@media (width >= 990px) {
+			line-height: 1.5;
+
+			.titleLeft {
+				text-align: right;
+			}
+
+			.titleRight {
+				text-align: left;
+			}
 		}
 	}
 </style>

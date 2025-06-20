@@ -61,13 +61,16 @@
 		mix-blend-mode: lighten;
 		text-align: center;
 		margin-bottom: 15%;
-
 		.animated-letter {
 			display: inline-block;
 		}
 
 		.space {
 			width: 3.5rem;
+
+			@media (width <= 768px) {
+				width: 1.5rem;
+			}
 		}
 
 		.tilt {
@@ -80,10 +83,6 @@
 
 		@media (width <= 768px) {
 			font-weight: 400;
-
-			.space {
-				width: 1.5rem;
-			}
 		}
 	}
 </style>

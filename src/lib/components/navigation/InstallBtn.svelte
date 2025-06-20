@@ -98,7 +98,6 @@
 			align-items: center;
 			cursor: pointer;
 		}
-
 		& .desc {
 			font-size: clamp(var(--sm), 1.5vw, var(--h5));
 			font-weight: 900;

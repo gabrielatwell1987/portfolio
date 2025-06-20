@@ -234,6 +234,11 @@
 					& summary {
 						color: var(--clr-blue);
 						border-color: var(--clr-gray);
+
+						@media (width <= 768px) {
+							color: var(--clr-blue);
+							border-color: var(--clr-gray);
+						}
 					}
 				}
 
@@ -245,15 +250,6 @@
 
 		& .margin {
 			margin-block: 5rem;
-		}
-	}
-
-	@media (width <= 768px) {
-		details {
-			& summary {
-				color: var(--clr-blue);
-				border-color: var(--clr-gray);
-			}
 		}
 	}
 

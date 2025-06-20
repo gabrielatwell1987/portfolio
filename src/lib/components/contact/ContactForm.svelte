@@ -120,15 +120,14 @@
 		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 		align-items: center;
 	}
-
 	.popover {
 		display: flex;
 		justify-content: space-evenly;
 		margin-bottom: 15%;
 	}
 
-	@media screen and (width >= 320px) {
-		form {
+	form {
+		@media screen and (width >= 320px) {
 			width: 95%;
 			margin-inline: auto;
 			display: grid;
@@ -169,21 +168,8 @@
 				}
 			}
 		}
-	}
 
-	@media screen and (width >= 720px) {
-		::backdrop {
-			background: transparent;
-			box-shadow: none;
-		}
-
-		legend {
-			margin-bottom: 0;
-		}
-	}
-
-	@media screen and (width >= 1024px) {
-		form {
+		@media screen and (width >= 1024px) {
 			& fieldset {
 				border: 5px solid var(--white);
 				border-image: linear-gradient(45deg, var(--clr-gray) 40%, var(--clr-blue)) 1;
@@ -210,9 +196,22 @@
 		}
 	}
 
-	@media screen and (width >= 1350px) {
-		input,
-		textarea {
+	::backdrop {
+		@media screen and (width >= 720px) {
+			background: transparent;
+			box-shadow: none;
+		}
+	}
+
+	legend {
+		@media screen and (width >= 720px) {
+			margin-bottom: 0;
+		}
+	}
+
+	input,
+	textarea {
+		@media screen and (width >= 1350px) {
 			padding: 2rem;
 		}
 	}

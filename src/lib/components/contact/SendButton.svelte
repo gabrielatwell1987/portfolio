@@ -12,8 +12,8 @@
 </button>
 
 <style>
-	@media (min-width: 300px) {
-		button {
+	button {
+		@media (min-width: 300px) {
 			background-color: var(--clr-pale);
 			font-family: var(--orbitron);
 			font-size: clamp(var(--h6), 1.5vw, var(--h4));
@@ -58,8 +58,8 @@
 				color: var(--clr-main);
 			}
 
-			@media (width <= 500px) {
-				& svg {
+			& svg {
+				@media (width <= 500px) {
 					display: none;
 				}
 			}
