@@ -44,9 +44,9 @@
 			width: fit-content;
 			padding: 0.2em 0.6em;
 			border: 1px solid var(--clr-main);
+			border-radius: var(--radius);
 			outline: 1px solid var(--clr-main);
 			color: var(--clr-main);
-			border-radius: var(--button-radius);
 			background-color: var(--clr-link);
 			font-family: var(--bronova);
 			font-size: clamp(var(--h6), 1.5vw, var(--h3));
@@ -64,7 +64,7 @@
 			&:hover {
 				opacity: 0.95;
 				outline-offset: 0px;
-				filter: drop-shadow(0 0 0.75rem var(--clr-gray));
+				filter: drop-shadow(0 0 0.5rem var(--clr-main));
 			}
 
 			&:focus,
