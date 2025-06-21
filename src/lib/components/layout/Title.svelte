@@ -69,11 +69,11 @@
 	}
 
 	::view-transition-old(page-title) {
-		animation: slide-out 0.75s ease-out forwards;
+		animation: slide-out 0.5s ease-out forwards;
 	}
 
 	::view-transition-new(page-title) {
-		animation: slide-in 1s ease-in forwards;
+		animation: slide-in 0.75s ease-in forwards;
 	}
 
 	@keyframes slide-out {
