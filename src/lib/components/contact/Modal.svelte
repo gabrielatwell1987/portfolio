@@ -4,17 +4,18 @@
 
 	let isOpen = $state(false);
 	let modal;
-
 	function openModal() {
 		modal.showModal();
-		isOpen = true;
+		// Small delay to ensure CSS transition starts from initial state
+		setTimeout(() => {
+			isOpen = true;
+		}, 20);
 	}
-
 	function closeModal() {
 		isOpen = false;
 		setTimeout(() => {
 			if (!isOpen) modal.close();
-		}, 1750);
+		}, 350);
 	}
 </script>
 
@@ -61,14 +62,14 @@
 		visibility: hidden;
 		transform: scale(0.99);
 		transition:
-			opacity 1.5s ease-out,
-			visibility 1.5s ease-out,
-			transform 1.5s ease-out;
+			opacity 0.3s ease-out,
+			visibility 0.3s ease-out,
+			transform 0.3s ease-out;
 		background: none;
 		-webkit-transition:
-			opacity 1.5s ease-out,
-			visibility 1.5s ease-out,
-			transform 1.5s ease-out;
+			opacity 0.3s ease-out,
+			visibility 0.3s ease-out,
+			transform 0.3s ease-out;
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 		-webkit-perspective: 1000;
@@ -82,22 +83,29 @@
 			transform: scale(1);
 		}
 
-		@media screen and (min-width: 720px) {
+		@media screen and (width >= 720px) {
 			padding: 2rem;
 			width: 93%;
 			height: 83%;
 			margin: 0 auto;
 		}
 
+		@media (width <= 768px) {
+			transition:
+				opacity 0.5s ease-out,
+				visibility 0.5s ease-out,
+				transform 0.5s ease-out;
+		}
+
 		&::backdrop {
-			@media (min-width: 320px) {
+			@media (width >= 320px) {
 				background: transparent;
 				box-shadow: none;
 			}
 		}
 
 		& article {
-			@media (min-width: 320px) {
+			@media (width >= 320px) {
 				width: 100%;
 				border-radius: 1rem;
 				background: var(--blackest);
@@ -138,7 +146,7 @@
 	}
 
 	.open-button {
-		@media (min-width: 320px) {
+		@media (width >= 320px) {
 			display: block;
 			font-size: clamp(var(--h2), 4vw, var(--xl));
 			font-weight: 800;
@@ -176,17 +184,17 @@
 			}
 		}
 
-		@media screen and (min-width: 720px) {
+		@media screen and (width >= 720px) {
 			margin-bottom: 15%;
 		}
 
-		@media screen and (min-width: 1024px) {
+		@media screen and (width >= 1024px) {
 			margin-bottom: 15%;
 		}
 	}
 
 	.close-button {
-		@media (min-width: 320px) {
+		@media (width >= 320px) {
 			display: block;
 			font-size: clamp(var(--h2), 4vw, var(--xl));
 			font-weight: 800;
@@ -223,17 +231,17 @@
 	}
 
 	h4 {
-		@media screen and (min-width: 1024px) {
+		@media screen and (width >= 1024px) {
 			line-height: 0.95;
 		}
 
-		@media screen and (min-width: 1100px) {
+		@media screen and (width >= 1100px) {
 			padding: 0.5rem;
 		}
 	}
 
 	p {
-		@media screen and (min-width: 1024px) {
+		@media screen and (width >= 1024px) {
 			line-height: 1.75;
 			margin-inline: auto;
 			padding: 1rem;
@@ -241,7 +249,7 @@
 	}
 
 	.image {
-		@media screen and (min-width: 1024px) {
+		@media screen and (width >= 1024px) {
 			margin-block: 1rem;
 		}
 	}
