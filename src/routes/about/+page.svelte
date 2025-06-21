@@ -77,7 +77,7 @@
 
 			<Skills />
 
-			<Grid leftTitle="Frontend" rightTitle="Design based" />
+			<Grid leftTitle="Frontend" rightTitle="Design Based" />
 
 			<Bento />
 
