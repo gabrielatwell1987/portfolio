@@ -93,6 +93,47 @@
 			color 0.5s ease-in-out;
 	}
 
+	/* Respect user's system color scheme preference */
+	@media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {
+		:global(body:not(.light)) {
+			--dark-text: var(--white);
+			--clr-inverted: var(--black);
+			--clr-main: var(--white);
+			--clr-blue: var(--sky);
+			--clr-gray: var(--smoke);
+			--clr-link: var(--purple);
+			--clr-pale: var(--yellow);
+			--clr-button-text: var(--clr-inverted);
+			--clr-button: var(--yellow);
+			--opacity: 0.15;
+			background-color: var(--dark);
+			color: var(--clr-main);
+			transition:
+				background-color 0.5s ease-in-out,
+				color 0.5s ease-in-out;
+		}
+	}
+
+	@media (prefers-color-scheme: light) {
+		:global(body:not(.light)) {
+			--dark-text: var(--white);
+			--clr-main: var(--light-text);
+			--clr-inverted: var(--white);
+			--clr-blue: var(--darkest-blue);
+			--clr-gray: var(--lightblack);
+			--clr-link: var(--dark-blue);
+			--clr-pale: var(--dark-pale);
+			--clr-button-text: var(--clr-inverted);
+			--clr-button: var(--yellow);
+			--opacity: 0.35;
+			background-color: var(--light);
+			color: var(--clr-main);
+			transition:
+				background-color 0.5s ease-in-out,
+				color 0.5s ease-in-out;
+		}
+	}
+
 	button {
 		background: transparent;
 		border: none;
