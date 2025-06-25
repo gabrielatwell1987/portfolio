@@ -25,7 +25,31 @@
 			<label class="form-group">
 				<span class="label-text">Location</span>
 
-				<input type="text" name="location" placeholder="(e.g: Los Angeles, CA.)" required />
+				<input
+					type="text"
+					name="location"
+					list="locations"
+					placeholder="(e.g: Los Angeles, CA.)"
+					required
+				/>
+				<datalist id="locations">
+					<option value="Las Vegas, NV."> </option>
+					<option value="Los Angeles, CA"> </option>
+					<option value="New York, NY"> </option>
+					<option value="Chicago, IL"> </option>
+					<option value="Houston, TX"> </option>
+					<option value="Phoenix, AZ"> </option>
+					<option value="Philadelphia, PA"> </option>
+					<option value="San Antonio, TX"> </option>
+					<option value="San Diego, CA"> </option>
+					<option value="Dallas, TX"> </option>
+					<option value="San Francisco, CA"> </option>
+					<option value="Austin, TX"></option>
+					<option value="Seattle, WA"> </option>
+					<option value="Denver, CO"></option>
+					<option value="Boston, MA"> </option>
+					<option value="Miami, FL"></option>
+				</datalist>
 			</label>
 		</div>
 
@@ -39,7 +63,14 @@
 			<label class="form-group">
 				<span class="label-text">Company</span>
 
-				<input type="text" name="company" placeholder="Your company (optional)" />
+				<input type="text" name="company" list="companies" placeholder="Your company (optional)" />
+				<datalist id="companies">
+					<option value="Startup"> </option>
+					<option value="Small Business"> </option>
+					<option value="Enterprise"> </option>
+					<option value="Non-profit"> </option>
+					<option value="Freelancer"> </option>
+				</datalist>
 			</label>
 
 			<label class="form-group">
