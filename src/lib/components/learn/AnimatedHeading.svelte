@@ -59,10 +59,15 @@
 		justify-content: center;
 		align-items: center;
 		overflow-x: clip;
-		margin-top: -6em;
+		padding-top: 1em;
+
+		@media (width <= 1150px) {
+			padding-top: 2em;
+		}
 
 		@media (width <= 768px) {
-			padding-bottom: 1em;
+			margin-bottom: -25%;
+			padding-block: 1em;
 		}
 
 		.h1-l,
@@ -84,15 +89,6 @@
 			-webkit-text-stroke: 1px var(--clr-main);
 			letter-spacing: 0px;
 			z-index: 1;
-		}
-
-		@media (width <= 1150px) {
-			margin-top: -3em;
-		}
-
-		@media (width <= 600px) {
-			margin-top: -2em;
-			margin-bottom: -25%;
 		}
 	}
 </style>
