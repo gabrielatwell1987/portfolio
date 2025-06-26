@@ -23,6 +23,11 @@
 		width: 100vw;
 		margin-left: calc(-50vw + 50%);
 		position: relative;
+		padding-top: 2em;
+
+		@media (width <= 768px) {
+			padding-top: 1em;
+		}
 
 		& picture {
 			width: 100%;

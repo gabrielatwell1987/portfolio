@@ -13,6 +13,14 @@
 	}
 
 	@media (width >= 300px) {
+		main {
+			padding-top: 2em;
+
+			@media (width <=768px) {
+				padding-top: 0;
+			}
+		}
+
 		.title {
 			text-align: center;
 			font-family: var(--orbitron);
