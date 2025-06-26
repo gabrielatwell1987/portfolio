@@ -173,6 +173,10 @@
 		& svg {
 			font-weight: 800;
 
+			@media (width >= 750px) {
+				padding-top: 1rem;
+			}
+
 			@media (width >= 990px) {
 				padding-top: 1rem;
 			}
