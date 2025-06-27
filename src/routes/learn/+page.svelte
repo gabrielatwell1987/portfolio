@@ -19,7 +19,7 @@
 />
 
 <main>
-	<section class="margin">
+	<section>
 		<AnimatedHeading title1="seeing" span="is" title2="believing" />
 	</section>
 
@@ -46,28 +46,22 @@
 
 <style>
 	main {
-		padding-top: 5%;
+		padding-top: 7em;
 		min-height: 100vh;
 
-		& .margin {
-			margin-top: 5%;
-
-			@media (width <= 600px) {
-				margin-top: 5em;
-				margin-bottom: 5em;
-			}
+		@media (width <= 768px) {
+			padding-top: 5em;
 		}
 
 		& article {
 			display: flex;
-			justify-content: center;
+			justify-content: flex-start;
 			align-items: center;
 			flex-direction: column;
 			gap: 3em;
 			background: transparent;
 			box-shadow: none;
 			min-height: 100vh;
-			margin: 2em;
 			border: 0.25em solid var(--blacker);
 			border-radius: 45em;
 
