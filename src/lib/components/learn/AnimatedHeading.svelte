@@ -66,7 +66,6 @@
 		}
 
 		@media (width <= 768px) {
-			margin-bottom: -25%;
 			padding-block: 1em;
 		}
 
