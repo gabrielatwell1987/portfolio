@@ -80,11 +80,11 @@
 	<!--  -->
 
 	<Project
-		title="password maker"
-		img="/projects/pw-generator.webp"
+		title="passcraft"
+		img="/projects/passcraft.webp"
 		url="https://make-a-password.vercel.app/"
 		description="sveltekit"
-		summary="If you're like me and have a hard time creating passwords, this app is for you! It generates random passwords based on user input."
+		summary="If you're like me and have a hard time creating passwords, PassCraft is for you! It generates random passwords based on user input."
 		index={4}
 	/>
 
