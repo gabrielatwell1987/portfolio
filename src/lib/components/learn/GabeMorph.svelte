@@ -30,6 +30,7 @@
 
 <section class="morph">
 	<svg id="sourceSVG" viewBox="0 0 400 100" preserveAspectRatio="xMidYMid meet">
+		<title>Shapes</title>
 		<rect
 			id="square1"
 			x="0"
@@ -69,6 +70,7 @@
 	</svg>
 
 	<svg id="targetSVG" viewBox="0 0 400 100" preserveAspectRatio="xMidYMid meet">
+		<title>Gabe</title>
 		<!-- Letter G positioned to match square1 (0-80 area) -->
 		<path
 			id="G"
