@@ -130,7 +130,6 @@
 			></textarea>
 		</label>
 
-		<!-- <button type="submit" class="submit-button full-width"> Submit </button> -->
 		<SendButton />
 	</form>
 </section>

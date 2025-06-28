@@ -164,7 +164,6 @@
 			font-size: clamp(1.75rem, 3vw, 5rem);
 			color: var(--off-white);
 			letter-spacing: -1px;
-			/* letter-spacing: clamp(3px, 1vw, 9px); */
 			text-align: center;
 		}
 
