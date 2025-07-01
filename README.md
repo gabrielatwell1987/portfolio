@@ -8,4 +8,4 @@
 This is a portfolio website that I built to showcase my projects and skills. It is built with sveltekit and GSAP. I coded this from scratch, it's completely custom. I also added markdown for my blog posts, and I try to update the site regularly.
 </article>
 
-### Please contact me if you have any questions!
+## Please contact me if you have any questions!
