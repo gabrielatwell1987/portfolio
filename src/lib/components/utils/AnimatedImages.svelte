@@ -5,7 +5,7 @@
 	let { src, alt, width, scale } = $props();
 
 	$effect(() => {
-		gsap.from('.imgClass', {
+		const tween = gsap.from('.imgClass', {
 			display: 'block',
 			duration: 3,
 			scale: scale,
@@ -13,6 +13,10 @@
 			ease: 'power2.out',
 			stagger: 0.5
 		});
+
+		return () => {
+			tween.kill();
+		};
 	});
 </script>
 

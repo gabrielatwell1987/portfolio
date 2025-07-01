@@ -13,23 +13,35 @@
 
 		gsap.set(img, { y: -50 });
 
-		imageContainer.addEventListener('mouseenter', () => {
+		const handleMouseEnter = () => {
 			gsap.to(img, { y: 0, duration: 0.75, ease: 'none' });
-		});
+		};
 
-		imageContainer.addEventListener('mouseleave', () => {
+		const handleMouseLeave = () => {
 			gsap.to(img, { y: -50, duration: 0.75, borderTop: 0, ease: 'none' });
-		});
+		};
+
+		imageContainer.addEventListener('mouseenter', handleMouseEnter);
+		imageContainer.addEventListener('mouseleave', handleMouseLeave);
 
 		let mm = gsap.matchMedia();
 
 		mm.add('(max-width: 768px)', () => {
 			gsap.set(h1, { yPercent: -50, fontWeight: 900 });
 
-			imageContainer.addEventListener('mouseenter', () => {
+			const handleMobileMouseEnter = () => {
 				gsap.to(img, { y: -10, duration: 0.75, ease: 'none' });
-			});
+			};
+
+			imageContainer.addEventListener('mouseenter', handleMobileMouseEnter);
 		});
+
+		return () => {
+			imageContainer.removeEventListener('mouseenter', handleMouseEnter);
+			imageContainer.removeEventListener('mouseleave', handleMouseLeave);
+			mm.kill();
+			gsap.killTweensOf([img, h1]);
+		};
 	});
 </script>
 

@@ -5,12 +5,16 @@
 	$effect(() => {
 		gsap.registerPlugin(MorphSVGPlugin);
 
-		gsap.to('#website', {
+		const morphTween = gsap.to('#website', {
 			morphSVG: '#help  ',
 			duration: 2.5,
 			repeat: -1,
 			yoyo: true
 		});
+
+		return () => {
+			morphTween.kill();
+		};
 	});
 </script>
 

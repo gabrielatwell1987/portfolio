@@ -11,6 +11,10 @@
 			},
 			{ scale: 1.2, y: 100, duration: 2, ease: 'slow(0.7, 0.7, false)' }
 		);
+
+		return () => {
+			asciiTl.kill();
+		};
 	});
 </script>
 
