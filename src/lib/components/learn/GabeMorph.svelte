@@ -25,6 +25,10 @@
 			.to('#circle', { morphSVG: '#A' }, 0)
 			.to('#triangle', { morphSVG: '#B' }, 0)
 			.to('#square2', { morphSVG: '#E' }, 0);
+
+		return () => {
+			tl.kill();
+		};
 	});
 </script>
 
@@ -102,8 +106,9 @@
 		align-items: center;
 		width: 100%;
 		padding: 1rem;
+		padding-top: 5em;
 
-		@media (width <= 500px) {
+		@media (width <= 768px) {
 			padding: 0.5rem;
 			scale: 0.8;
 		}
