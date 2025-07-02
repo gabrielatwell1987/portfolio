@@ -34,7 +34,7 @@
 
 <section class="morph">
 	<svg id="sourceSVG" viewBox="0 0 400 100" preserveAspectRatio="xMidYMid meet">
-		<title>Shapes</title>
+		<title>Gabe</title>
 		<rect
 			id="square1"
 			x="0"
