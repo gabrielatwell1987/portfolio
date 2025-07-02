@@ -101,7 +101,7 @@
 			--clr-main: var(--white);
 			--clr-blue: var(--sky);
 			--clr-gray: var(--smoke);
-			--clr-link: var(--purple);
+			--clr-link: var(--mid-blue);
 			--clr-pale: var(--yellow);
 			--clr-button-text: var(--clr-inverted);
 			--clr-button: var(--yellow);
