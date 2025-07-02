@@ -6,10 +6,22 @@
 <main class="content" style="--stagger-delay: {index * 1.25}s;">
 	<h3 class="link name">{title}</h3>
 
-	<a class="link" href={url} target="_blank">
-		<img class="img" src={img} alt={title} width="400px" height="475px" loading="lazy" />
+	<a
+		class="link"
+		href={url}
+		target="_blank"
+		aria-label="View {title} project - made with {description}"
+	>
+		<img
+			class="img"
+			src={img}
+			alt="Screenshot of {title} project"
+			width="400px"
+			height="475px"
+			loading="lazy"
+		/>
 
-		<span class="hover-text">made with {description}</span>
+		<span class="hover-text" aria-hidden="true">made with {description}</span>
 	</a>
 
 	<p class="summary">{summary}</p>

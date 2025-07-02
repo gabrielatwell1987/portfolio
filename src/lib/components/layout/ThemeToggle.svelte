@@ -1,13 +1,28 @@
 <script>
+	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
+
 	let isLightTheme = $state(true);
+	let themeStatus = $state('');
 
 	function toggle() {
 		isLightTheme = !isLightTheme;
 		window.document.body.classList.toggle('light');
+		themeStatus = isLightTheme ? 'Switched to light theme' : 'Switched to dark theme';
+
+		// Clear status after announcement
+		setTimeout(() => {
+			themeStatus = '';
+		}, 2000);
 	}
 </script>
 
-<button onclick={toggle} aria-label="toggle">
+<A11yAnnouncer message={themeStatus} />
+
+<button
+	onclick={toggle}
+	aria-label="Toggle between light and dark theme"
+	aria-pressed={isLightTheme}
+>
 	{#if isLightTheme}
 		<svg
 			xmlns="http://www.w3.org/2000/svg"

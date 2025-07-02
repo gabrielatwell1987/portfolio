@@ -19,7 +19,7 @@
 </script>
 
 <main class="ascii">
-	<img src="/logos/ascii.webp" alt="ASCII Art" />
+	<img src="/logos/ascii.webp" alt="ASCII art representation of Gabe Atwell's name and profile" />
 </main>
 
 <style>

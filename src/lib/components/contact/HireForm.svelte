@@ -1,29 +1,40 @@
 <script>
 	import Popup from '$lib/components/layout/Popup.svelte';
 	import SendButton from '$lib/components/contact/SendButton.svelte';
+	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
+
+	let submitStatus = $state('');
 </script>
 
 <div class="popover">
 	<Popup title="" text="Please fill out this questionnaire and I'll contact you back 😎" />
 </div>
 
+<A11yAnnouncer message={submitStatus} />
+
 <section class="hire-form-container">
-	<form action="https://formspree.io/f/xwpoqdno" method="POST">
+	<form action="https://formspree.io/f/xwpoqdno" method="POST" novalidate>
 		<div class="form-grid">
 			<label class="form-group">
-				<span class="label-text">Name</span>
+				<span class="label-text">Name <span aria-hidden="true">*</span></span>
 
-				<input type="text" name="name" placeholder="Your name" required />
+				<input type="text" name="name" placeholder="Your name" required autocomplete="name" />
 			</label>
 
 			<label class="form-group">
-				<span class="label-text">Email</span>
+				<span class="label-text">Email <span aria-hidden="true">*</span></span>
 
-				<input type="email" name="email" placeholder="your.email@example.com" required />
+				<input
+					type="email"
+					name="email"
+					placeholder="your.email@example.com"
+					required
+					autocomplete="email"
+				/>
 			</label>
 
 			<label class="form-group">
-				<span class="label-text">Location</span>
+				<span class="label-text">Location <span aria-hidden="true">*</span></span>
 
 				<input
 					type="text"
@@ -31,6 +42,7 @@
 					list="locations"
 					placeholder="(e.g: Los Angeles, CA.)"
 					required
+					autocomplete="address-level2"
 				/>
 				<datalist id="locations">
 					<option value="Las Vegas, NV."> </option>

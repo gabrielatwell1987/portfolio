@@ -29,7 +29,7 @@
 
 	<ThemeToggle />
 
-	<div class="desktop">
+	<div class="desktop" role="navigation" aria-label="Desktop navigation menu">
 		<NavLink href="/about" title="About" />
 		<NavLink href="/projects" title="Work" />
 		<NavLink href="/learn" title="Learn" />
@@ -37,7 +37,12 @@
 		<SelectLink path1="/hire" path2="/contact" />
 	</div>
 
-	<div class="mobile {open ? 'open' : ''} {isClosing ? 'closing' : ''}">
+	<div
+		class="mobile {open ? 'open' : ''} {isClosing ? 'closing' : ''}"
+		id="mobile-menu"
+		role="navigation"
+		aria-label="Main navigation menu"
+	>
 		<NavLink href="/landing" title="Home" onclick={closeMenu} />
 		<NavLink href="/about" title="About Gabe" onclick={closeMenu} />
 		<NavLink href="/projects" title="Work I've Done" onclick={closeMenu} />

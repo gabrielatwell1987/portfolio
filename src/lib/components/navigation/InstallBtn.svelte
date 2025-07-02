@@ -1,9 +1,11 @@
 <script>
 	import '@fortawesome/fontawesome-free/css/all.css';
+	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 
 	// Reactive variables
 	let deferredPrompt = $state(null);
 	let isInstallable = $state(false);
+	let installStatus = $state('');
 
 	// Effect to listen for PWA events
 	$effect(() => {
@@ -11,12 +13,14 @@
 			event.preventDefault(); // Prevent automatic prompt
 			deferredPrompt = event; // Store the event
 			isInstallable = true; // Show the install button
+			installStatus = 'App can now be installed';
 			console.log('PWA install prompt fired');
 		}
 
 		function handleAppInstalled() {
 			console.log('PWA installed');
 			isInstallable = false; // Hide the install button
+			installStatus = 'App installed successfully';
 		}
 
 		// Add event listeners
@@ -30,26 +34,37 @@
 		};
 	});
 
-	// Function to handle installation
+	// Install button click handler
 	const installApp = async () => {
 		if (!deferredPrompt) return;
+
+		installStatus = 'Installing app...';
 
 		deferredPrompt.prompt(); // Show the prompt
 
 		const choiceResult = await deferredPrompt.userChoice;
 		if (choiceResult.outcome === 'accepted') {
 			console.log('User accepted the PWA installation');
+			installStatus = 'Installation accepted';
 		} else {
 			console.log('User dismissed the PWA installation');
+			installStatus = 'Installation declined';
 		}
 
 		// Reset after interaction
 		deferredPrompt = null;
 		isInstallable = false;
+
+		// Clear status after a delay
+		setTimeout(() => {
+			installStatus = '';
+		}, 3000);
 	};
 </script>
 
-<button aria-label="install" onclick={installApp} hidden={!isInstallable}>
+<A11yAnnouncer message={installStatus} />
+
+<button aria-label="Install this app as a PWA" onclick={installApp} hidden={!isInstallable}>
 	<i class="fa-solid fa-download"></i>
 
 	<span class="desc">install</span>

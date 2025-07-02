@@ -2,10 +2,13 @@
 	import Popup from '$lib/components/layout/Popup.svelte';
 	import Modal from './Modal.svelte';
 	import SendButton from '$lib/components/contact/SendButton.svelte';
+	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 
 	let name = $state('');
 	let email = $state('');
 	let message = $state('');
+	let submitStatus = $state(''); // For screen reader announcements
+	let isSubmitting = $state(false);
 </script>
 
 <div class="icons">
@@ -16,23 +19,56 @@
 	<Modal />
 </div>
 
-<form method="POST" action="https://form.taxi/s/xeyymb58">
+<!-- Live region for form status announcements -->
+<A11yAnnouncer message={submitStatus} />
+
+<form method="POST" action="https://form.taxi/s/xeyymb58" novalidate>
 	<fieldset>
 		<legend>message me</legend>
 
-		<label for="name"><span>name</span></label>
-		<input type="text" id="name" name="name" bind:value={name} required />
+		<label for="name">
+			<span>name <span aria-hidden="true">*</span></span>
+		</label>
+		<input
+			type="text"
+			id="name"
+			name="name"
+			bind:value={name}
+			required
+			aria-describedby="name-error"
+			autocomplete="name"
+		/>
 
-		<label for="email"><span>email</span></label>
-		<input type="email" id="email" name="email" bind:value={email} required />
+		<label for="email">
+			<span>email <span aria-hidden="true">*</span></span>
+		</label>
+		<input
+			type="email"
+			id="email"
+			name="email"
+			bind:value={email}
+			required
+			aria-describedby="email-error"
+			autocomplete="email"
+		/>
 
-		<label for="message"><span>message</span></label>
-		<textarea type="text" id="message" name="message" bind:value={message} rows="5" required
+		<label for="message">
+			<span>message <span aria-hidden="true">*</span></span>
+		</label>
+		<textarea
+			id="message"
+			name="message"
+			bind:value={message}
+			rows="5"
+			required
+			aria-describedby="message-error"
 		></textarea>
 
 		<SendButton />
 	</fieldset>
 </form>
+
+<A11yAnnouncer {submitStatus} />
 
 <style>
 	:root {

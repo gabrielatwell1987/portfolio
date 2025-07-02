@@ -21,7 +21,7 @@
 	}
 </script>
 
-<select onchange={handleSelect} bind:value={selectValue}>
+<select onchange={handleSelect} bind:value={selectValue} aria-label="Connect with Gabe">
 	<option value="" disabled selected>Connect</option>
 	<option value={path1}>Hire Me</option>
 	<option value={path2}>Contact Me</option>
