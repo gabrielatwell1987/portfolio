@@ -1,16 +1,21 @@
 <script>
+	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
+
 	let isLoading = $state(false);
 	let { loading, submit, href, delay } = $props();
+	let statusMessage = $state('');
 
 	const handleSubmit = async () => {
 		event.preventDefault();
 
 		isLoading = true;
+		statusMessage = `Loading ${submit}...`;
 
 		// Simulate an async operation (e.g., API call)
 		await new Promise((resolve) => setTimeout(resolve, delay));
 
 		isLoading = false;
+		statusMessage = `${submit} loaded successfully`;
 
 		const screenWidth = window.innerWidth;
 
@@ -20,11 +25,18 @@
 		} else {
 			window.open(href, '_blank', 'noopener,noreferrer');
 		}
+
+		// Clear status message after navigation
+		setTimeout(() => {
+			statusMessage = '';
+		}, 1000);
 	};
 </script>
 
-<a {href} onclick={handleSubmit}>
-	<button class="btn" disabled={isLoading}>
+<A11yAnnouncer message={statusMessage} />
+
+<a {href} onclick={handleSubmit} aria-label="Visit {submit} (opens in new tab)">
+	<button class="btn" disabled={isLoading} aria-live="polite">
 		<span class="btn-text">{isLoading ? loading : submit}</span>
 
 		{#if isLoading}

@@ -8,7 +8,14 @@
 	}
 </script>
 
-<button class="hamburger" class:open onclick={toggleMenu} aria-label={ariaLabel}>
+<button
+	class="hamburger"
+	class:open
+	onclick={toggleMenu}
+	aria-label={ariaLabel}
+	aria-expanded={open}
+	aria-controls="mobile-menu"
+>
 	<div class="bars">
 		<span class="bar bar-1"></span>
 		<span class="bar bar-2"></span>

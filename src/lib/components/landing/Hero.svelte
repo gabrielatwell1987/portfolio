@@ -6,7 +6,7 @@
 <main>
 	<img
 		src="https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-		alt="Wireframing and design of a website"
+		alt="Close-up of hands drawing wireframes and planning website layout on paper"
 	/>
 
 	<section aria-label="hero">

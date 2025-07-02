@@ -1,25 +1,51 @@
 <script>
 	import '@fortawesome/fontawesome-free/css/all.css';
 	import Image from '$lib/components/layout/Image.svelte';
+	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 
 	let isOpen = $state(false);
 	let modal;
+	let previousActiveElement;
+	let statusMessage = $state('');
+
 	function openModal() {
+		previousActiveElement = document.activeElement;
 		modal.showModal();
+		statusMessage = 'Contact information modal opened';
 		// Small delay to ensure CSS transition starts from initial state
 		setTimeout(() => {
 			isOpen = true;
+			// Focus the close button for keyboard accessibility
+			const closeButton = modal.querySelector('.close-button');
+			if (closeButton) closeButton.focus();
 		}, 20);
 	}
+
 	function closeModal() {
 		isOpen = false;
+		statusMessage = 'Contact information modal closed';
 		setTimeout(() => {
-			if (!isOpen) modal.close();
+			if (!isOpen) {
+				modal.close();
+				// Return focus to the element that opened the modal
+				if (previousActiveElement) {
+					previousActiveElement.focus();
+				}
+			}
 		}, 350);
+	}
+
+	// Handle escape key to close modal
+	function handleKeydown(event) {
+		if (event.key === 'Escape') {
+			closeModal();
+		}
 	}
 </script>
 
-<button class="open-button" aria-label="open button" onclick={openModal}>
+<A11yAnnouncer message={statusMessage} />
+
+<button class="open-button" aria-label="Open contact information modal" onclick={openModal}>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 576 512"
@@ -32,10 +58,22 @@
 	</svg>
 </button>
 
-<dialog id="modal" aria-label="modal" bind:this={modal} class:open={isOpen}>
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+<dialog
+	id="modal"
+	aria-labelledby="modal-title"
+	bind:this={modal}
+	class:open={isOpen}
+	onkeydown={handleKeydown}
+>
 	<article>
 		<header>
-			<button rel="prev" class="close-button" aria-label="close button" onclick={closeModal}>
+			<button
+				rel="prev"
+				class="close-button"
+				aria-label="Close contact information modal"
+				onclick={closeModal}
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
@@ -44,6 +82,7 @@
 					stroke-width="2"
 					stroke-linecap="round"
 					stroke-linejoin="round"
+					aria-hidden="true"
 				>
 					<title>Close</title>
 					<line x1="18" y1="6" x2="6" y2="18"></line>
@@ -51,7 +90,7 @@
 				</svg>
 			</button>
 
-			<h4>Please contact me for any work!</h4>
+			<h4 id="modal-title">Please contact me for any work!</h4>
 		</header>
 
 		<div class="image">

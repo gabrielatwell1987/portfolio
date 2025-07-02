@@ -1,9 +1,9 @@
-<main class="dev-links" aria-label="links">
+<nav class="dev-links" aria-label="Social media links">
 	<a
 		class="size yellow"
 		href="https://www.github.com/gabrielatwell1987/portfolio"
 		target="_blank"
-		aria-label="github link"
+		aria-label="Visit Gabriel's GitHub profile (opens in new tab)"
 	>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 596 512" style="width: 1em;">
 			<title>GitHub</title>
@@ -15,7 +15,12 @@
 		</svg>
 	</a>
 
-	<a class="size" href="https://codepen.io/gabrielatwell" target="_blank" aria-label="codepen link">
+	<a
+		class="size"
+		href="https://codepen.io/gabrielatwell"
+		target="_blank"
+		aria-label="Visit Gabriel's CodePen profile (opens in new tab)"
+	>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 -5 552 545" style="width: 1em;">
 			<title>CodePen</title>
 			<path
@@ -46,7 +51,7 @@
 		class="size"
 		href="https://discordapp.com/users/1007777351809114112"
 		target="_blank"
-		aria-label="discord link"
+		aria-label="Contact Gabriel on Discord (opens in new tab)"
 	>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style="width: 1em;">
 			<title>Discord</title>
@@ -62,7 +67,7 @@
 		class="size"
 		href="https://www.reddit.com/user/gatwell702"
 		target="_blank"
-		aria-label="reddit link"
+		aria-label="Visit Gabriel's Reddit profile (opens in new tab)"
 	>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 548 512" style="width: 1em;">
 			<title>Reddit</title>
@@ -73,7 +78,7 @@
 			/>
 		</svg>
 	</a>
-</main>
+</nav>
 
 <style>
 	.dev-links {
