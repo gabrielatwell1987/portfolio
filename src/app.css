@@ -57,10 +57,10 @@
 		--white: oklab(1 0 0 / 0.75);
 		/* --sky: hsla(187, 64%, 73%, 0.5); */
 		--sky: oklab(0.8 -0.075 -0.055 / 0.5);
+		/* --light-blue: hsla(202, 97%, 55%, 1); */
+		--light-blue: oklab(0.6 -0.04 -0.145);
 		/* --blue: hsla(201, 71%, 45%, 0.5); */
 		--blue: oklab(0.6 -0.055 -0.138 / 0.5);
-		/* --mid-blue: hsla(202, 97%, 55%, 1); */
-		--mid-blue: oklab(0.6 -0.04 -0.145);
 		/* --dark-blue: hsla(202, 97%, 25%, 0.75); */
 		--dark-blue: oklab(0.4 -0.035 -0.125 / 0.75);
 		/* --darkest-blue: hsla(203, 96%, 10%, 0.75); */
