@@ -59,7 +59,7 @@
 			letter-spacing: -1px;
 
 			/* scroll-driven animations */
-			@media (prefers-reduced-motion: no-preference) {
+			/* @media (prefers-reduced-motion: no-preference) {
 				@supports (animation-timeline: scroll()) {
 					animation: title linear both;
 					animation-timeline: scroll(root);
@@ -89,7 +89,7 @@
 						animation-range: 0vh 25vh;
 					}
 				}
-			}
+			} */
 
 			@media (width <= 1300px) {
 				padding-bottom: 2rem;
