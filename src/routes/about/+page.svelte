@@ -7,7 +7,7 @@
 	import CardFlip from '$lib/components/about/CardFlip.svelte';
 	import Tooltip from '$lib/components/about/Tooltip.svelte';
 	import UsefulLinks from '$lib/components/about/UsefulLinks.svelte';
-	import HeroImage from '$lib/components/about/HeroImage.svelte';
+	import AboutHero from '$lib/components/about/HeroImage.svelte';
 </script>
 
 <svelte:head>
@@ -23,7 +23,7 @@
 <main aria-label="bio">
 	<section>
 		<article id="bio">
-			<HeroImage src="/logos/svelteCode.webp" alt="svelte code" title="About Me" />
+			<AboutHero src="/logos/svelteCode.webp" alt="svelte code" title="About Me" />
 
 			<div class="bio" aria-label="bio">
 				<p class="text indent">
