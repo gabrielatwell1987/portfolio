@@ -7,7 +7,7 @@
 	import CardFlip from '$lib/components/about/CardFlip.svelte';
 	import Tooltip from '$lib/components/about/Tooltip.svelte';
 	import UsefulLinks from '$lib/components/about/UsefulLinks.svelte';
-	import AboutHero from '$lib/components/about/HeroImage.svelte';
+	import AboutHero from '$lib/components/about/AboutHero.svelte';
 </script>
 
 <svelte:head>
