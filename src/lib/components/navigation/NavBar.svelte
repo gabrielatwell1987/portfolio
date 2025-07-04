@@ -34,7 +34,7 @@
 		<li><NavLink href="/projects" title="Work" /></li>
 		<li><NavLink href="/learn" title="Learn" /></li>
 		<li><NavLink href="/photos" title="Photos" /></li>
-		<li><SelectLink path1="/hire" path2="/contact" /></li>
+		<SelectLink path1="/hire" path2="/contact" />
 	</ul>
 
 	<ul
@@ -147,7 +147,7 @@
 			}
 
 			& li {
-				padding: 0.05rem;
+				padding: 0.15rem;
 			}
 		}
 
