@@ -126,7 +126,8 @@
 			position: absolute;
 			right: 0;
 			top: 100%;
-			margin-top: 0.5rem;
+			margin-top: 0.25rem;
+			margin-right: 0.25rem;
 
 			translate: 100% 0;
 			overflow: hidden;
@@ -143,6 +144,10 @@
 			&.closing {
 				translate: 100% 0;
 				opacity: 0;
+			}
+
+			& li {
+				padding: 0.05rem;
 			}
 		}
 
