@@ -4,6 +4,7 @@
 
 	let mounted = $state(false);
 	let chars = $state([]);
+	let dynamicAriaLabel = $derived(`${text} ${span}`);
 
 	$effect(() => {
 		chars = span.split('');
@@ -11,7 +12,7 @@
 	});
 </script>
 
-<section class="animated-text" aria-label={text}>
+<section class="animated-text" aria-label={dynamicAriaLabel}>
 	<h1 class="sentence" class:animate={mounted}>
 		{text}
 		<span class="bigWord glow">
