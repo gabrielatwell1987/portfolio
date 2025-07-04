@@ -1,7 +1,7 @@
 <script>
 	import SEO from '$lib/data/SEO.svelte';
 	import Hero from '$lib/components/landing/Hero.svelte';
-	import AnimatedIntro from '$lib/components/landing/AnimatedIntro.svelte';
+	import DoYouNeed from '$lib/components/landing/DoYouNeed.svelte';
 	import ImageIntro from '$lib/components/landing/ImageIntro.svelte';
 	import WaveBackground from '$lib/components/landing/WaveBackground.svelte';
 </script>
@@ -29,7 +29,7 @@
 		width="1200"
 	/>
 
-	<AnimatedIntro text="do you need a " span="website?" />
+	<DoYouNeed text="do you need a " span="website?" />
 
 	<Hero />
 </section>
