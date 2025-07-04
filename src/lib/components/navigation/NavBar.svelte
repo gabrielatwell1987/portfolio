@@ -29,28 +29,27 @@
 
 	<ThemeToggle />
 
-	<div class="desktop" role="navigation" aria-label="Desktop navigation menu">
-		<NavLink href="/about" title="About" />
-		<NavLink href="/projects" title="Work" />
-		<NavLink href="/learn" title="Learn" />
-		<NavLink href="/photos" title="Photos" />
-		<SelectLink path1="/hire" path2="/contact" />
-	</div>
+	<ul class="desktop" aria-label="Desktop navigation menu">
+		<li><NavLink href="/about" title="About" /></li>
+		<li><NavLink href="/projects" title="Work" /></li>
+		<li><NavLink href="/learn" title="Learn" /></li>
+		<li><NavLink href="/photos" title="Photos" /></li>
+		<li><SelectLink path1="/hire" path2="/contact" /></li>
+	</ul>
 
-	<div
+	<ul
 		class="mobile {open ? 'open' : ''} {isClosing ? 'closing' : ''}"
 		id="mobile-menu"
-		role="navigation"
 		aria-label="Main navigation menu"
 	>
-		<NavLink href="/landing" title="Home" onclick={closeMenu} />
-		<NavLink href="/about" title="About Gabe" onclick={closeMenu} />
-		<NavLink href="/projects" title="Work I've Done" onclick={closeMenu} />
-		<NavLink href="/learn" title="Learn the Web" onclick={closeMenu} />
-		<NavLink href="/photos" title="Photos of Me" onclick={closeMenu} />
-		<NavLink href="/hire" title="Hire Me" onclick={closeMenu} />
-		<NavLink href="/contact" title="Contact Me" onclick={closeMenu} />
-	</div>
+		<li><NavLink href="/landing" title="Home" onclick={closeMenu} /></li>
+		<li><NavLink href="/about" title="About Gabe" onclick={closeMenu} /></li>
+		<li><NavLink href="/projects" title="Work I've Done" onclick={closeMenu} /></li>
+		<li><NavLink href="/learn" title="Learn the Web" onclick={closeMenu} /></li>
+		<li><NavLink href="/photos" title="Photos of Me" onclick={closeMenu} /></li>
+		<li><NavLink href="/hire" title="Hire Me" onclick={closeMenu} /></li>
+		<li><NavLink href="/contact" title="Contact Me" onclick={closeMenu} /></li>
+	</ul>
 </nav>
 
 <InstallBtn />
@@ -90,6 +89,7 @@
 		gap: 2rem;
 		font-family: var(--orbitron);
 		font-weight: 600;
+		list-style: none;
 
 		@media (width > 300px) and (width < 750px) {
 			display: none;
@@ -120,7 +120,7 @@
 			padding: 0.75rem;
 			background-color: var(--clr-inverted);
 			backdrop-filter: blur(125px);
-
+			list-style: none;
 			min-width: 150px;
 			width: auto;
 			position: absolute;
