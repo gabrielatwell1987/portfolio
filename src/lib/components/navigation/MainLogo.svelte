@@ -1,7 +1,7 @@
 <script></script>
 
 <main class="gabe-logo">
-	<a class="home" href="/landing" aria-label="Navigate to home page">
+	<a class="home" href="/landing">
 		<svg
 			width="202"
 			height="54"
