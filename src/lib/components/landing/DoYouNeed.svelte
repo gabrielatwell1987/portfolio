@@ -11,7 +11,7 @@
 	});
 </script>
 
-<section class="animated-text" aria-label="animated text">
+<section class="animated-text" aria-label={text}>
 	<h1 class="sentence" class:animate={mounted}>
 		{text}
 		<span class="bigWord glow">
