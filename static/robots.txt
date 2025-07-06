@@ -1,4 +1,11 @@
 User-agent: *
-Disallow: 
+Allow: /
+Disallow: /api/
+Disallow: /.well-known/
 Disallow: /cgi-bin/
-Sitemap: http://gabrielatwell.com/sitemap.xml
+
+# Sitemap location
+Sitemap: https://www.gabrielatwell.com/sitemap.xml
+
+# Crawl delay to prevent overloading
+Crawl-delay: 1

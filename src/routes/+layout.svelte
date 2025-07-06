@@ -16,7 +16,12 @@
 		const { origin, pathname } = $page.url;
 		// Remove trailing slash except for root path, and ensure consistent formatting
 		const normalizedPath = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
-		return `${origin}${normalizedPath}`;
+		// Ensure we always use the canonical domain
+		const canonicalOrigin =
+			origin.includes('localhost') || origin.includes('127.0.0.1')
+				? origin
+				: 'https://www.gabrielatwell.com';
+		return `${canonicalOrigin}${normalizedPath}`;
 	});
 
 	async function detectSWUpdate() {
