@@ -8,9 +8,24 @@
 		keywords = ''
 	} = $props();
 
-	let url = $derived($page.url.href);
+	let url = $derived(() => {
+		const { origin, pathname } = $page.url;
+		// Remove trailing slash except for root path, and ensure consistent formatting
+		const normalizedPath = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
+		// Ensure we always use the canonical domain
+		const canonicalOrigin =
+			origin.includes('localhost') || origin.includes('127.0.0.1')
+				? origin
+				: 'https://www.gabrielatwell.com';
+		return `${canonicalOrigin}${normalizedPath}`;
+	});
 	let siteName = 'Atwell UI';
-	let baseUrl = $derived($page.url.origin);
+	let baseUrl = $derived(() => {
+		const { origin } = $page.url;
+		return origin.includes('localhost') || origin.includes('127.0.0.1')
+			? origin
+			: 'https://www.gabrielatwell.com';
+	});
 </script>
 
 <svelte:head>
@@ -36,11 +51,15 @@
 
 	<script type="application/ld+json">
 		{JSON.stringify({
-			"@context": "http://schema.org",
+			"@context": "https://schema.org",
 			"@type": "WebSite",
 			"name": "Gabriel Atwell",
           	"description": "The portfolio of Gabriel Atwell, a web developer and designer based in Las Vegas, NV.",
-			"url": url
+			"url": url,
+			"author": {
+				"@type": "Person",
+				"name": "Gabriel Atwell"
+			}
 		})}
 	</script>
 </svelte:head>

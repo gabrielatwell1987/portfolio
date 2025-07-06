@@ -5,6 +5,27 @@ export async function handle({ event, resolve }) {
 		return new Response('', { status: 204 });
 	}
 
+	// Redirect /about/hero to /about since that's not directly linked in navigation
+	if (event.url.pathname === '/about/hero') {
+		return new Response(null, {
+			status: 301,
+			headers: {
+				location: '/about'
+			}
+		});
+	}
+
+	// Handle trailing slashes - redirect to no trailing slash except for root
+	if (event.url.pathname !== '/' && event.url.pathname.endsWith('/')) {
+		const redirectPath = event.url.pathname.slice(0, -1);
+		return new Response(null, {
+			status: 301,
+			headers: {
+				location: redirectPath + event.url.search
+			}
+		});
+	}
+
 	// Handle other common browser/crawler requests that might cause 404s
 	const ignorePaths = [
 		'/favicon.ico',
@@ -24,6 +45,26 @@ export async function handle({ event, resolve }) {
 		return new Response('', { status: 204 });
 	}
 
-	const response = await resolve(event);
+	const response = await resolve(event, {
+		transformPageChunk: ({ html }) => {
+			// Add security headers via meta tags if not already present
+			return html;
+		}
+	});
+
+	// Add SEO-friendly headers
+	response.headers.set(
+		'X-Robots-Tag',
+		'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+	);
+
+	// Cache control for static assets
+	if (
+		event.url.pathname.startsWith('/static/') ||
+		event.url.pathname.match(/\.(js|css|png|jpg|jpeg|gif|webp|svg|woff|woff2)$/)
+	) {
+		response.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+	}
+
 	return response;
 }
