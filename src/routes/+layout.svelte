@@ -12,17 +12,6 @@
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
 	let isPageLoaded = $state(false);
-	let canonicalUrl = $derived(() => {
-		const { origin, pathname } = $page.url;
-		// Remove trailing slash except for root path, and ensure consistent formatting
-		const normalizedPath = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
-		// Ensure we always use the canonical domain
-		const canonicalOrigin =
-			origin.includes('localhost') || origin.includes('127.0.0.1')
-				? origin
-				: 'https://www.gabrielatwell.com';
-		return `${canonicalOrigin}${normalizedPath}`;
-	});
 
 	async function detectSWUpdate() {
 		const registration = await navigator.serviceWorker.ready;
@@ -64,10 +53,6 @@
 		}
 	});
 </script>
-
-<svelte:head>
-	<link rel="canonical" href={canonicalUrl} />
-</svelte:head>
 
 <Analytics />
 <SkipLink />
