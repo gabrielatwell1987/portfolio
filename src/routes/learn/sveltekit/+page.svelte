@@ -24,9 +24,7 @@
 
 <section class="main">
 	<div class="separate">
-		<div class="margin">
-			<Title title="Svelte" />
-		</div>
+		<Title title="Svelte" />
 
 		<main>
 			<div class="centerDetail">
@@ -343,10 +341,6 @@
 					}
 				}
 			}
-		}
-
-		& .margin {
-			margin-block: 5rem;
 		}
 	}
 
