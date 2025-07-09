@@ -85,6 +85,10 @@
 			text-align: center;
 			z-index: 1;
 
+			@media (width <= 500px) {
+				padding-top: 2em;
+			}
+
 			& h2 {
 				font-family: var(--orbitron);
 				font-size: clamp(var(--sm), 1.25vw, var(--h5));

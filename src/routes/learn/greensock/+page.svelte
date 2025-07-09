@@ -24,9 +24,7 @@
 
 <section class="main">
 	<div class="separate">
-		<div class="margin">
-			<Title title="GSAP" />
-		</div>
+		<Title title="GSAP" />
 
 		<main>
 			<div class="centerDetail">
@@ -246,10 +244,6 @@
 					color: var(--clr-main);
 				}
 			}
-		}
-
-		& .margin {
-			margin-block: 5rem;
 		}
 	}
 

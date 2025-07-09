@@ -17,7 +17,7 @@
 			padding-top: 2em;
 
 			@media (width <=768px) {
-				padding-top: 0;
+				padding-top: 1em;
 			}
 		}
 

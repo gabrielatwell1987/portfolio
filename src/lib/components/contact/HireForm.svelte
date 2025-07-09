@@ -151,6 +151,11 @@
 		display: flex;
 		justify-content: space-evenly;
 		margin-bottom: 3em;
+
+		@media (width <= 768px) {
+			margin-top: -1em;
+			margin-bottom: 1em;
+		}
 	}
 
 	.hire-form-container {
@@ -161,6 +166,10 @@
 		overflow-y: auto;
 		height: calc(100dvh - 4rem);
 		position: relative;
+
+		@media (width <= 768px) {
+			padding: 0.5rem;
+		}
 
 		& .form-grid {
 			display: grid;

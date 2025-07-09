@@ -25,11 +25,11 @@
 
 	<article>
 		<section aria-label="icons">
-			<a class="gs" href="learn/greensock" style="width: clamp(10em, 25vw, 20em);">
+			<a class="gs" href="learn/greensock" style="width: clamp(10em, 25vw, 30em);">
 				<Image src="/logos/gsapLogo.svg" alt="greensock animation platform" width="250" />
 			</a>
 
-			<a class="sk" href="learn/sveltekit" style="width: clamp(10em, 25vw, 18em);">
+			<a class="sk" href="learn/sveltekit" style="width: clamp(10em, 25vw, 30em);">
 				<Image src="/logos/svelteLogo.png" alt="sveltekit web framework" width="350" />
 			</a>
 		</section>
@@ -61,13 +61,15 @@
 			gap: 3em;
 			background: transparent;
 			box-shadow: none;
-			min-height: 100vh;
-			border: 0.25em solid var(--blacker);
+			min-height: 86vh;
+			background-color: var(--blacker);
 			border-radius: 45em;
 
 			@media (width <= 768px) {
 				margin: 0;
-				border: 2px solid var(--blacker);
+				padding: 3em;
+				padding-bottom: 4.5em;
+				min-height: auto;
 			}
 
 			& section {
