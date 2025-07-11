@@ -341,6 +341,10 @@
 					}
 				}
 			}
+
+			& .back {
+				text-align: center;
+			}
 		}
 	}
 

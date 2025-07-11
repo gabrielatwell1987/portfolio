@@ -244,6 +244,10 @@
 					color: var(--clr-main);
 				}
 			}
+
+			& .back {
+				text-align: center;
+			}
 		}
 	}
 
