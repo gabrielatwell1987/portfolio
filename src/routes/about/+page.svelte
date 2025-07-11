@@ -139,17 +139,12 @@
 
 				& .icons {
 					display: flex;
-					justify-content: space-evenly;
+					justify-content: center;
 					align-items: center;
-					gap: 0.25rem;
-					margin-left: 3rem;
-					padding-right: 1.2rem;
-
-					@media screen and (width >= 990px) {
-						margin-left: 0;
-						margin-top: 2rem;
-						padding-right: 0;
-					}
+					gap: 15vw;
+					margin: 2rem auto 0;
+					padding: 0;
+					width: fit-content;
 				}
 
 				& .indent {
