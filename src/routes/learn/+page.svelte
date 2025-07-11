@@ -55,35 +55,32 @@
 
 		& article {
 			display: flex;
-			justify-content: flex-start;
+			justify-content: center;
 			align-items: center;
 			flex-direction: column;
 			gap: 3em;
-			background: transparent;
 			box-shadow: none;
+			max-width: 80vw;
 			min-height: 86vh;
 			background-color: var(--blacker);
 			border-radius: 45em;
+			margin-inline: auto;
 
 			@media (width <= 768px) {
 				margin: 0;
 				padding: 3em;
-				padding-bottom: 4.5em;
+				/* padding-bottom: 4.5em; */
 				min-height: auto;
+				margin-inline: auto;
 			}
 
 			& section {
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				gap: 25em;
-
-				@media (width <= 980px) {
-					gap: 10em;
-				}
+				gap: 10vw;
 
 				@media (width <= 500px) {
-					gap: 0.75em;
 					margin-bottom: -1em;
 				}
 
