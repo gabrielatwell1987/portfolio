@@ -73,7 +73,9 @@
 		/>
 	</article>
 
-	<Button href="/learn" title="Back" />
+	<div class="back">
+		<Button href="/learn" title="Back" />
+	</div>
 </section>
 
 <style>
@@ -85,6 +87,10 @@
 		&.mounted {
 			opacity: 1;
 			scale: 1;
+		}
+
+		& .back {
+			text-align: center;
 		}
 
 		& .card {
