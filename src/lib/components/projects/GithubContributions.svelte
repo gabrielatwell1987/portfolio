@@ -176,7 +176,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		overflow-y: visible;
+		overflow-x: auto;
 
 		& .contributions-header {
 			margin-bottom: 2rem;
@@ -210,7 +210,6 @@
 			padding: 1.5rem;
 			background: rgba(255, 255, 255, 0.02);
 			border-radius: 8px;
-			/* overflow-x: auto; */
 
 			@media (width <= 500px) {
 				min-width: 90vw;
@@ -355,11 +354,13 @@
 			margin: 0 auto;
 			max-width: none;
 			max-height: none;
+			overflow-x: auto;
 			overflow-y: visible;
 
 			& .calendar-container {
 				padding: 1rem;
 				gap: 0.75rem;
+				overflow-x: auto;
 
 				& .calendar {
 					gap: 0.5rem;
