@@ -210,7 +210,7 @@
 			padding: 1.5rem;
 			background: rgba(255, 255, 255, 0.02);
 			border-radius: 8px;
-			overflow-x: auto;
+			/* overflow-x: auto; */
 
 			@media (width <= 500px) {
 				min-width: 90vw;
