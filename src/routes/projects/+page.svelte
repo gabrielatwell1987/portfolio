@@ -5,6 +5,7 @@
 	import Popup from '$lib/components/layout/Popup.svelte';
 	import Testimonial from '$lib/components/projects/Testimonial.svelte';
 	import adrienne from '$lib/images/adrienne.webp';
+	import GithubContributions from '$lib/components/projects/GithubContributions.svelte';
 </script>
 
 <SEO
@@ -23,6 +24,12 @@
 		text="Hover over the project image to reveal the tech stack I used on the project 👍🏻"
 	/>
 </div>
+
+<section class="github-section">
+	<div class="container">
+		<GithubContributions />
+	</div>
+</section>
 
 <section class="bevel">
 	<div class="whole">
@@ -237,6 +244,24 @@
 <style>
 	:root {
 		--100: 100%;
+	}
+
+	.github-section {
+		padding: 2rem 1rem;
+		margin: 2rem 0;
+		background: transparent;
+		border-radius: 12px;
+
+		@media (width <= 768px) {
+			margin: 1rem;
+			padding: 1rem;
+		}
+
+		& .container {
+			max-width: 1200px;
+			margin: 0 auto;
+			text-align: center;
+		}
 	}
 
 	.bevel {
