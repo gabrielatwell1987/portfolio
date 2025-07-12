@@ -176,8 +176,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		/* max-height: 80vh; */
-		/* overflow-y: auto; */
+		overflow-y: visible;
 
 		& .contributions-header {
 			margin-bottom: 2rem;
@@ -203,6 +202,7 @@
 
 		& .calendar-container {
 			min-width: 50vw;
+			width: 100%;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -210,6 +210,7 @@
 			padding: 1.5rem;
 			background: rgba(255, 255, 255, 0.02);
 			border-radius: 8px;
+			overflow-x: auto;
 
 			@media (width <= 500px) {
 				min-width: 90vw;
@@ -231,6 +232,7 @@
 					display: flex;
 					gap: 2px;
 					overflow-x: auto;
+					min-width: max-content;
 					padding-bottom: 0;
 					scrollbar-width: none;
 					-ms-overflow-style: none;
