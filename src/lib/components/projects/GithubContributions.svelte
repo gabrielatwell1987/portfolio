@@ -284,7 +284,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		overflow-x: auto;
 
 		& .contributions-header {
 			margin-bottom: 2rem;
@@ -317,7 +316,6 @@
 			gap: 1rem;
 			padding: 1.5rem;
 			border-radius: 8px;
-			overflow-x: auto;
 
 			@media (width <= 500px) {
 				min-width: 99vw;
