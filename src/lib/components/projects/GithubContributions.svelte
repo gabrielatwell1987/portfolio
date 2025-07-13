@@ -153,6 +153,19 @@
 		}
 	});
 
+	// Scroll to beginning on mount for mobile
+	$effect(() => {
+		if (typeof window !== 'undefined') {
+			const wrapper = document.querySelector('.calendar-svg-wrapper');
+			if (wrapper && isMobile) {
+				// Small delay to ensure DOM is ready
+				setTimeout(() => {
+					wrapper.scrollLeft = 0;
+				}, 100);
+			}
+		}
+	});
+
 	// Get current dimensions based on mobile state
 	function getCurrentDimensions() {
 		return {
@@ -317,8 +330,15 @@
 			padding: 1.5rem;
 			border-radius: 8px;
 
+			/* Responsive padding */
+			@media (width <= 767px) {
+				padding: 1rem;
+				gap: 0.75rem;
+			}
+
 			@media (width <= 500px) {
 				min-width: 99vw;
+				padding: 0.5rem;
 			}
 
 			& .calendar-svg-wrapper {
@@ -326,11 +346,59 @@
 				overflow-y: visible;
 				width: 100%;
 				display: flex;
-				justify-content: center;
+				justify-content: flex-start;
+				scroll-behavior: smooth;
+
+				&::-webkit-scrollbar {
+					height: 6px;
+				}
+
+				&::-webkit-scrollbar-track {
+					background: transparent;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					background: var(--clr-main);
+					opacity: 0.3;
+					border-radius: 3px;
+				}
 
 				& .contributions-svg {
 					min-width: max-content;
 					font-family: var(--bronova);
+					max-width: 100%;
+					height: auto;
+
+					/* Make SVG responsive to viewport width */
+					@media (width <= 1200px) {
+						transform: scale(0.9);
+						transform-origin: center;
+					}
+
+					@media (width <= 900px) {
+						transform: scale(0.8);
+						transform-origin: center;
+					}
+
+					@media (width <= 767px) {
+						transform: scale(0.7);
+						transform-origin: center;
+					}
+
+					@media (width <= 600px) {
+						transform: scale(0.6);
+						transform-origin: center;
+					}
+
+					@media (width <= 480px) {
+						transform: scale(0.5);
+						transform-origin: center;
+					}
+
+					@media (width <= 360px) {
+						transform: scale(0.45);
+						transform-origin: center;
+					}
 
 					& .month-label {
 						font-size: 16px;
@@ -451,16 +519,14 @@
 			margin-left: calc(50% - 49.5vw);
 			max-width: none;
 			max-height: none;
-			overflow-x: auto;
 			overflow-y: visible;
 
 			& .calendar-container {
-				padding: 1rem;
-				gap: 0.75rem;
-				overflow-x: auto;
-
 				& .calendar-svg-wrapper {
 					& .contributions-svg {
+						/* Override scaling for mobile to use smaller cells instead */
+						transform: none !important;
+
 						& .month-label {
 							font-size: 8px;
 						}
