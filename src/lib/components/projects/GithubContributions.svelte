@@ -208,11 +208,10 @@
 			align-items: center;
 			gap: 1rem;
 			padding: 1.5rem;
-			background: rgba(255, 255, 255, 0.02);
 			border-radius: 8px;
 
 			@media (width <= 500px) {
-				min-width: 90vw;
+				min-width: 99vw;
 			}
 
 			& .calendar {
@@ -350,8 +349,9 @@
 	@media (width <= 767px) {
 		.github-contributions {
 			padding: 1rem 0.5rem;
-			width: 90%;
+			width: 99vw;
 			margin: 0 auto;
+			margin-left: calc(50% - 49.5vw);
 			max-width: none;
 			max-height: none;
 			overflow-x: auto;
