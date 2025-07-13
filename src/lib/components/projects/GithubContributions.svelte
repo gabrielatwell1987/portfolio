@@ -103,20 +103,97 @@
 		return count === 1 ? 'contribution' : 'contributions';
 	}
 
-	// Sync scrolling between months and grid
-	let monthsElement = $state();
-	let gridElement = $state();
+	// Constants for SVG layout
+	const CELL_SIZE = 12;
+	const CELL_GAP = 2;
+	const DAYS_IN_WEEK = 7;
+	const GRID_HEIGHT = DAYS_IN_WEEK * (CELL_SIZE + CELL_GAP) - CELL_GAP;
+	const MONTH_LABEL_HEIGHT = 20;
+	const DAY_LABEL_WIDTH = 30;
 
-	function syncScrollFromGrid(event) {
-		if (monthsElement && event.target === gridElement) {
-			monthsElement.scrollLeft = event.target.scrollLeft;
+	// Month names
+	const MONTHS = [
+		'Jan',
+		'Feb',
+		'Mar',
+		'Apr',
+		'May',
+		'Jun',
+		'Jul',
+		'Aug',
+		'Sep',
+		'Oct',
+		'Nov',
+		'Dec'
+	];
+
+	// Day labels
+	const DAYS = ['Mon', 'Wed', 'Fri'];
+	const DAY_INDICES = [1, 3, 5]; // Monday, Wednesday, Friday
+
+	// Mobile constants
+	const MOBILE_CELL_SIZE = 9;
+	const MOBILE_CELL_GAP = 1;
+	const MOBILE_GRID_HEIGHT = DAYS_IN_WEEK * (MOBILE_CELL_SIZE + MOBILE_CELL_GAP) - MOBILE_CELL_GAP;
+	const MOBILE_MONTH_LABEL_HEIGHT = 16;
+	const MOBILE_DAY_LABEL_WIDTH = 25;
+
+	// Reactive dimensions based on screen size
+	let isMobile = $state(false);
+
+	// Update mobile state based on window width
+	$effect(() => {
+		if (typeof window !== 'undefined') {
+			const updateMobile = () => {
+				isMobile = window.innerWidth <= 767;
+			};
+			updateMobile();
+			window.addEventListener('resize', updateMobile);
+			return () => window.removeEventListener('resize', updateMobile);
 		}
+	});
+
+	// Get current dimensions based on mobile state
+	function getCurrentDimensions() {
+		return {
+			cellSize: isMobile ? MOBILE_CELL_SIZE : CELL_SIZE,
+			cellGap: isMobile ? MOBILE_CELL_GAP : CELL_GAP,
+			gridHeight: isMobile ? MOBILE_GRID_HEIGHT : GRID_HEIGHT,
+			monthLabelHeight: isMobile ? MOBILE_MONTH_LABEL_HEIGHT : MONTH_LABEL_HEIGHT,
+			dayLabelWidth: isMobile ? MOBILE_DAY_LABEL_WIDTH : DAY_LABEL_WIDTH
+		};
 	}
 
-	function syncScrollFromMonths(event) {
-		if (gridElement && event.target === monthsElement) {
-			gridElement.scrollLeft = event.target.scrollLeft;
-		}
+	// Calculate month positions
+	function getMonthPositions() {
+		const months = [];
+		const { cellSize, cellGap, dayLabelWidth } = getCurrentDimensions();
+		let currentMonth = -1;
+		let weekIndex = 0;
+
+		contributionsData.weeks.forEach((week, index) => {
+			if (week.contributionDays.length > 0) {
+				const firstDay = new Date(week.contributionDays[0].date);
+				const month = firstDay.getMonth();
+
+				if (month !== currentMonth) {
+					months.push({
+						name: MONTHS[month],
+						x: weekIndex * (cellSize + cellGap) + dayLabelWidth
+					});
+					currentMonth = month;
+				}
+				weekIndex++;
+			}
+		});
+
+		return months;
+	}
+
+	// Calculate total width
+	function getTotalWidth() {
+		const { cellSize, cellGap, dayLabelWidth } = getCurrentDimensions();
+		return dayLabelWidth + contributionsData.weeks.length * (cellSize + cellGap);
 	}
 </script>
 
@@ -130,26 +207,57 @@
 	</header>
 
 	<div class="calendar-container">
-		<div class="calendar" role="img" aria-label="GitHub contributions calendar grid">
-			<!-- Contribution grid -->
-			<div class="grid" bind:this={gridElement} onscroll={syncScrollFromGrid}>
-				{#each contributionsData.weeks as week}
-					<div class="week">
-						{#each week.contributionDays as day}
-							<div
-								class="day {getContributionLevel(day.contributionCount)}"
-								title="{day.contributionCount} {getContributionText(
-									day.contributionCount
-								)} on {formatDate(day.date)}"
-								aria-label="{day.contributionCount} {getContributionText(
-									day.contributionCount
-								)} on {formatDate(day.date)}"
-								role="gridcell"
-							></div>
-						{/each}
-					</div>
+		<div class="calendar-svg-wrapper">
+			<svg
+				width={getTotalWidth()}
+				height={getCurrentDimensions().monthLabelHeight + getCurrentDimensions().gridHeight}
+				class="contributions-svg"
+			>
+				<!-- Month labels -->
+				{#each getMonthPositions() as month}
+					<text x={month.x} y={isMobile ? 12 : 15} class="month-label" text-anchor="start">
+						{month.name}
+					</text>
 				{/each}
-			</div>
+
+				<!-- Day labels -->
+				{#each DAYS as day, i}
+					<text
+						x={getCurrentDimensions().dayLabelWidth - 5}
+						y={getCurrentDimensions().monthLabelHeight +
+							DAY_INDICES[i] * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap) +
+							getCurrentDimensions().cellSize / 2 +
+							4}
+						class="day-label"
+						text-anchor="end"
+					>
+						{day}
+					</text>
+				{/each}
+
+				<!-- Contribution grid -->
+				{#each contributionsData.weeks as week, weekIndex}
+					{#each week.contributionDays as day, dayIndex}
+						<rect
+							x={getCurrentDimensions().dayLabelWidth +
+								weekIndex * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap)}
+							y={getCurrentDimensions().monthLabelHeight +
+								dayIndex * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap)}
+							width={getCurrentDimensions().cellSize}
+							height={getCurrentDimensions().cellSize}
+							rx={isMobile ? '1' : '2'}
+							class="contribution-day {getContributionLevel(day.contributionCount)}"
+							data-count={day.contributionCount}
+							data-date={day.date}
+						>
+							<title>
+								{day.contributionCount}
+								{getContributionText(day.contributionCount)} on {formatDate(day.date)}
+							</title>
+						</rect>
+					{/each}
+				{/each}
+			</svg>
 		</div>
 
 		<!-- Legend -->
@@ -209,75 +317,66 @@
 			gap: 1rem;
 			padding: 1.5rem;
 			border-radius: 8px;
+			overflow-x: auto;
 
 			@media (width <= 500px) {
 				min-width: 99vw;
 			}
 
-			& .calendar {
-				display: grid;
-				grid-template-areas:
-					'weekdays months'
-					'weekdays grid';
-				grid-template-columns: auto 1fr;
-				gap: 0.75rem;
-				font-size: 0.75rem;
-				color: var(--clr-main);
-				align-items: start;
+			& .calendar-svg-wrapper {
+				overflow-x: auto;
+				overflow-y: visible;
+				width: 100%;
+				display: flex;
+				justify-content: center;
 
-				& .grid {
-					grid-area: grid;
-					display: flex;
-					gap: 2px;
-					overflow-x: auto;
+				& .contributions-svg {
 					min-width: max-content;
-					padding-bottom: 0;
-					scrollbar-width: none;
-					-ms-overflow-style: none;
+					font-family: var(--bronova);
 
-					&::-webkit-scrollbar {
-						display: none;
+					& .month-label {
+						font-size: 16px;
+						fill: var(--clr-main);
+						opacity: 0.7;
+						font-weight: 400;
 					}
 
-					& .week {
-						display: flex;
-						flex-direction: column;
-						gap: 2px;
-						min-width: 0.75rem;
+					& .day-label {
+						font-size: 12px;
+						fill: var(--clr-main);
+						opacity: 0.7;
+						font-weight: 400;
+					}
 
-						& .day {
-							width: 0.75rem;
-							height: 0.75rem;
-							border-radius: 2px;
-							border: none;
-							transition: all 0.2s ease;
-							cursor: pointer;
+					& .contribution-day {
+						transition: all 0.2s ease;
+						cursor: pointer;
 
-							&:hover {
-								transform: scale(1.2);
-								z-index: 1;
-							}
+						&:hover {
+							stroke: var(--clr-main);
+							stroke-width: 1px;
+							opacity: 0.8;
+						}
 
-							/* Contribution levels */
-							&.none {
-								background-color: var(--clr-inverted);
-							}
+						/* Contribution levels */
+						&.none {
+							fill: var(--clr-inverted);
+						}
 
-							&.low {
-								background-color: #0e4429;
-							}
+						&.low {
+							fill: #0e4429;
+						}
 
-							&.medium {
-								background-color: #006d32;
-							}
+						&.medium {
+							fill: #006d32;
+						}
 
-							&.high {
-								background-color: #26a641;
-							}
+						&.high {
+							fill: #26a641;
+						}
 
-							&.very-high {
-								background-color: #39d353;
-							}
+						&.very-high {
+							fill: #39d353;
 						}
 					}
 				}
@@ -331,8 +430,8 @@
 	}
 
 	/* Dark theme adjustments */
-	:global(body.dark) .day.none {
-		background-color: var(--clr-inverted);
+	:global(body.dark) .contribution-day.none {
+		fill: var(--clr-inverted);
 	}
 
 	:global(body.dark) .legend-square.none {
@@ -341,8 +440,8 @@
 
 	/* Hover effects - scale more on larger screens */
 	@media (min-width: 768px) {
-		.day:hover {
-			transform: scale(1.3);
+		.contribution-day:hover {
+			stroke-width: 2px;
 		}
 	}
 
@@ -362,31 +461,19 @@
 				gap: 0.75rem;
 				overflow-x: auto;
 
-				& .calendar {
-					gap: 0.5rem;
-					overflow-x: auto;
+				& .calendar-svg-wrapper {
+					& .contributions-svg {
+						& .month-label {
+							font-size: 8px;
+						}
 
-					& .months {
-						padding-left: 0;
-						margin-bottom: 0.375rem;
-						gap: 1px;
-					}
+						& .day-label {
+							font-size: 7px;
+						}
 
-					& .weekdays {
-						padding-right: 0.65rem;
-					}
-
-					& .grid {
-						gap: 1px;
-
-						& .week {
-							gap: 1px;
-							min-width: 0.65rem;
-
-							& .day {
-								width: 0.65rem;
-								height: 0.65rem;
-								border-radius: 1px;
+						& .contribution-day {
+							&:hover {
+								stroke-width: 1px;
 							}
 						}
 					}
