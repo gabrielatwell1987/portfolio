@@ -31,7 +31,7 @@
 
 	<ul class="desktop" aria-label="Desktop navigation menu">
 		<li><NavLink href="/about" title="About" /></li>
-		<li><NavLink href="/projects" title="Work" /></li>
+		<li><NavLink href="/projects" title="Builds" /></li>
 		<li><NavLink href="/learn" title="Learn" /></li>
 		<li><NavLink href="/photos" title="Photos" /></li>
 		<SelectLink path1="/hire" path2="/contact" />
@@ -44,7 +44,7 @@
 	>
 		<li><NavLink href="/landing" title="Home" onclick={closeMenu} /></li>
 		<li><NavLink href="/about" title="About Gabe" onclick={closeMenu} /></li>
-		<li><NavLink href="/projects" title="Work I've Done" onclick={closeMenu} /></li>
+		<li><NavLink href="/projects" title="Things I've Built" onclick={closeMenu} /></li>
 		<li><NavLink href="/learn" title="Learn the Web" onclick={closeMenu} /></li>
 		<li><NavLink href="/photos" title="Photos of Me" onclick={closeMenu} /></li>
 		<li><NavLink href="/hire" title="Hire Me" onclick={closeMenu} /></li>
