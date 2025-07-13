@@ -1,12 +1,63 @@
 <script>
-	// Generate mock GitHub contributions data
-	function generateContributionsData() {
+	import { onMount } from 'svelte';
+
+	// Svelte 5 state
+	let contributionsData = $state({ weeks: [] });
+	let totalContributions = $state(0);
+	let isLoading = $state(true);
+	let isError = $state(false);
+	let errorMessage = $state('');
+	let isUsingFallback = $state(false);
+
+	// Fetch real GitHub contributions data
+	async function fetchContributionsData() {
+		try {
+			isLoading = true;
+			isError = false;
+
+			const response = await fetch('/api/github-contributions');
+			const data = await response.json();
+
+			if (data.success) {
+				contributionsData = { weeks: data.weeks };
+				totalContributions = data.totalContributions;
+				isUsingFallback = false;
+			} else {
+				// Use fallback data if API fails
+				contributionsData = { weeks: data.weeks };
+				totalContributions = data.totalContributions;
+				isUsingFallback = true;
+				errorMessage = data.error || 'Failed to fetch GitHub data';
+				console.warn('Using fallback data:', errorMessage);
+			}
+		} catch (error) {
+			console.error('Error fetching contributions:', error);
+			isError = true;
+			errorMessage = 'Failed to load contributions data';
+
+			// Generate fallback data
+			contributionsData = generateFallbackData();
+			totalContributions = contributionsData.weeks.reduce((total, week) => {
+				return (
+					total +
+					week.contributionDays.reduce((weekTotal, day) => {
+						return weekTotal + day.contributionCount;
+					}, 0)
+				);
+			}, 0);
+			isUsingFallback = true;
+		} finally {
+			isLoading = false;
+		}
+	}
+
+	// Fallback data generator (kept as backup)
+	function generateFallbackData() {
 		const weeks = [];
 		const today = new Date();
 		const oneYearAgo = new Date(today);
 		oneYearAgo.setFullYear(today.getFullYear() - 1);
 
-		// Start from the beginning of the week one year ago
 		const startDate = new Date(oneYearAgo);
 		startDate.setDate(startDate.getDate() - startDate.getDay());
 
@@ -15,22 +66,18 @@
 		while (currentDate <= today) {
 			const week = { contributionDays: [] };
 
-			// Generate 7 days for this week
 			for (let i = 0; i < 7; i++) {
 				if (currentDate <= today) {
-					// Generate realistic contribution patterns
 					let contributionCount = 0;
 					const dayOfWeek = currentDate.getDay();
 					const random = Math.random();
 
-					// More contributions on weekdays, less on weekends
 					if (dayOfWeek >= 1 && dayOfWeek <= 5) {
 						if (random < 0.7) contributionCount = Math.floor(Math.random() * 8) + 1;
 					} else {
 						if (random < 0.4) contributionCount = Math.floor(Math.random() * 4) + 1;
 					}
 
-					// Some days with heavy activity
 					if (random > 0.95) contributionCount = Math.floor(Math.random() * 15) + 10;
 
 					week.contributionDays.push({
@@ -60,22 +107,9 @@
 		return '#216e39';
 	}
 
-	// Svelte 5 state
-	let contributionsData = $state(generateContributionsData());
-
-	// Calculate total contributions
-	let totalContributions = $state(0);
-
-	// Update total when data changes
-	$effect(() => {
-		totalContributions = contributionsData.weeks.reduce((total, week) => {
-			return (
-				total +
-				week.contributionDays.reduce((weekTotal, day) => {
-					return weekTotal + day.contributionCount;
-				}, 0)
-			);
-		}, 0);
+	// Load data when component mounts
+	onMount(() => {
+		fetchContributionsData();
 	});
 
 	// Function to get contribution level for styling
@@ -213,79 +247,100 @@
 <section class="github-contributions" aria-label="GitHub Contributions Calendar">
 	<header class="contributions-header">
 		<h2>GitHub Contributions</h2>
-		<p class="total-contributions">
-			{totalContributions}
-			{getContributionText(totalContributions)} this year
-		</p>
+		{#if isLoading}
+			<p class="total-contributions loading">Loading contributions...</p>
+		{:else if isError}
+			<p class="total-contributions error">
+				Failed to load GitHub data
+				{#if isUsingFallback}
+					- showing sample data
+				{/if}
+			</p>
+		{:else}
+			<p class="total-contributions">
+				{totalContributions}
+				{getContributionText(totalContributions)} this year
+				{#if isUsingFallback}
+					<span class="fallback-notice">(using fallback data)</span>
+				{/if}
+			</p>
+		{/if}
 	</header>
 
-	<div class="calendar-container">
-		<div class="calendar-svg-wrapper">
-			<svg
-				width={getTotalWidth()}
-				height={getCurrentDimensions().monthLabelHeight + getCurrentDimensions().gridHeight}
-				class="contributions-svg"
-			>
-				<!-- Month labels -->
-				{#each getMonthPositions() as month}
-					<text x={month.x} y={isMobile ? 12 : 15} class="month-label" text-anchor="start">
-						{month.name}
-					</text>
-				{/each}
-
-				<!-- Day labels -->
-				{#each DAYS as day, i}
-					<text
-						x={getCurrentDimensions().dayLabelWidth - 5}
-						y={getCurrentDimensions().monthLabelHeight +
-							DAY_INDICES[i] * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap) +
-							getCurrentDimensions().cellSize / 2 +
-							4}
-						class="day-label"
-						text-anchor="end"
-					>
-						{day}
-					</text>
-				{/each}
-
-				<!-- Contribution grid -->
-				{#each contributionsData.weeks as week, weekIndex}
-					{#each week.contributionDays as day, dayIndex}
-						<rect
-							x={getCurrentDimensions().dayLabelWidth +
-								weekIndex * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap)}
-							y={getCurrentDimensions().monthLabelHeight +
-								dayIndex * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap)}
-							width={getCurrentDimensions().cellSize}
-							height={getCurrentDimensions().cellSize}
-							rx={isMobile ? '1' : '2'}
-							class="contribution-day {getContributionLevel(day.contributionCount)}"
-							data-count={day.contributionCount}
-							data-date={day.date}
-						>
-							<title
-								>{day.contributionCount}
-								{getContributionText(day.contributionCount)} on {formatDate(day.date)}</title
-							>
-						</rect>
+	{#if isLoading}
+		<div class="loading-container">
+			<div class="loading-spinner"></div>
+		</div>
+	{:else}
+		<div class="calendar-container">
+			<div class="calendar-svg-wrapper">
+				<svg
+					width={getTotalWidth()}
+					height={getCurrentDimensions().monthLabelHeight + getCurrentDimensions().gridHeight}
+					class="contributions-svg"
+				>
+					<!-- Month labels -->
+					{#each getMonthPositions() as month}
+						<text x={month.x} y={isMobile ? 12 : 15} class="month-label" text-anchor="start">
+							{month.name}
+						</text>
 					{/each}
-				{/each}
-			</svg>
-		</div>
 
-		<!-- Legend -->
-		<div class="legend">
-			<span class="legend-text">Less</span>
-			<div class="legend-squares">
-				<div class="legend-square none" title="No contributions"></div>
-				<div class="legend-square low" title="1-3 contributions"></div>
-				<div class="legend-square medium" title="4-6 contributions"></div>
-				<div class="legend-square high" title="7-9 contributions"></div>
-				<div class="legend-square very-high" title="10+ contributions"></div>
+					<!-- Day labels -->
+					{#each DAYS as day, i}
+						<text
+							x={getCurrentDimensions().dayLabelWidth - 5}
+							y={getCurrentDimensions().monthLabelHeight +
+								DAY_INDICES[i] *
+									(getCurrentDimensions().cellSize + getCurrentDimensions().cellGap) +
+								getCurrentDimensions().cellSize / 2 +
+								4}
+							class="day-label"
+							text-anchor="end"
+						>
+							{day}
+						</text>
+					{/each}
+
+					<!-- Contribution grid -->
+					{#each contributionsData.weeks as week, weekIndex}
+						{#each week.contributionDays as day, dayIndex}
+							<rect
+								x={getCurrentDimensions().dayLabelWidth +
+									weekIndex * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap)}
+								y={getCurrentDimensions().monthLabelHeight +
+									dayIndex * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap)}
+								width={getCurrentDimensions().cellSize}
+								height={getCurrentDimensions().cellSize}
+								rx={isMobile ? '1' : '2'}
+								class="contribution-day {getContributionLevel(day.contributionCount)}"
+								data-count={day.contributionCount}
+								data-date={day.date}
+							>
+								<title
+									>{day.contributionCount}
+									{getContributionText(day.contributionCount)} on {formatDate(day.date)}</title
+								>
+							</rect>
+						{/each}
+					{/each}
+				</svg>
 			</div>
-			<span class="legend-text">More</span>
+
+			<!-- Legend -->
+			<div class="legend">
+				<span class="legend-text">Less</span>
+				<div class="legend-squares">
+					<div class="legend-square none" title="No contributions"></div>
+					<div class="legend-square low" title="1-3 contributions"></div>
+					<div class="legend-square medium" title="4-6 contributions"></div>
+					<div class="legend-square high" title="7-9 contributions"></div>
+					<div class="legend-square very-high" title="10+ contributions"></div>
+				</div>
+				<span class="legend-text">More</span>
+			</div>
 		</div>
-	</div>
+	{/if}
 </section>
 
 <style>
@@ -318,6 +373,39 @@
 			opacity: 0.7;
 			margin: 0;
 			font-weight: 400;
+
+			&.loading {
+				opacity: 0.5;
+			}
+
+			&.error {
+				color: #ff6b6b;
+				opacity: 0.8;
+			}
+
+			& .fallback-notice {
+				font-size: 0.8em;
+				opacity: 0.6;
+				font-style: italic;
+			}
+		}
+
+		& .loading-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 200px;
+			width: 100%;
+
+			& .loading-spinner {
+				width: 40px;
+				height: 40px;
+				border: 3px solid var(--clr-main);
+				border-top: 3px solid transparent;
+				border-radius: 50%;
+				animation: spin 1s linear infinite;
+				opacity: 0.7;
+			}
 		}
 
 		& .calendar-container {
@@ -508,6 +596,16 @@
 	@media (min-width: 768px) {
 		.contribution-day:hover {
 			stroke-width: 2px;
+		}
+	}
+
+	/* Loading spinner animation */
+	@keyframes spin {
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
 		}
 	}
 
