@@ -138,12 +138,12 @@
 	}
 
 	// Constants for SVG layout
-	const CELL_SIZE = 12;
-	const CELL_GAP = 2;
+	const CELL_SIZE = 17;
+	const CELL_GAP = 5;
 	const DAYS_IN_WEEK = 7;
 	const GRID_HEIGHT = DAYS_IN_WEEK * (CELL_SIZE + CELL_GAP) - CELL_GAP;
 	const MONTH_LABEL_HEIGHT = 20;
-	const DAY_LABEL_WIDTH = 30;
+	const DAY_LABEL_WIDTH = 50;
 
 	// Month names
 	const MONTHS = [
@@ -328,6 +328,7 @@
 <section class="github-contributions" aria-label="GitHub Contributions Calendar">
 	<header class="contributions-header">
 		<h2>GitHub Contributions</h2>
+
 		{#if isLoading}
 			<p class="total-contributions loading">Loading contributions...</p>
 		{:else if isError}
@@ -364,6 +365,7 @@
 					<div class="tooltip-content">
 						{mobileTooltip.content}
 					</div>
+
 					<div class="tooltip-date">
 						{mobileTooltip.date}
 					</div>
@@ -633,14 +635,14 @@
 					}
 
 					& .month-label {
-						font-size: 16px;
+						font-size: 1.1rem;
 						fill: var(--clr-main);
 						opacity: 0.7;
 						font-weight: 400;
 					}
 
 					& .day-label {
-						font-size: 12px;
+						font-size: 0.9rem;
 						fill: var(--clr-main);
 						opacity: 0.7;
 						font-weight: 400;
