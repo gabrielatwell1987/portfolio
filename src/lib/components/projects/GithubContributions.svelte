@@ -166,11 +166,11 @@
 	const DAY_INDICES = [1, 3, 5]; // Monday, Wednesday, Friday
 
 	// Mobile constants
-	const MOBILE_CELL_SIZE = 9;
-	const MOBILE_CELL_GAP = 1;
+	const MOBILE_CELL_SIZE = 12;
+	const MOBILE_CELL_GAP = 5;
 	const MOBILE_GRID_HEIGHT = DAYS_IN_WEEK * (MOBILE_CELL_SIZE + MOBILE_CELL_GAP) - MOBILE_CELL_GAP;
 	const MOBILE_MONTH_LABEL_HEIGHT = 16;
-	const MOBILE_DAY_LABEL_WIDTH = 25;
+	const MOBILE_DAY_LABEL_WIDTH = 30;
 
 	// Reactive dimensions based on screen size
 	let isMobile = $state(false);
@@ -182,18 +182,6 @@
 		y: 0,
 		content: '',
 		date: ''
-	});
-
-	// Update mobile state based on window width
-	$effect(() => {
-		if (typeof window !== 'undefined') {
-			const updateMobile = () => {
-				isMobile = window.innerWidth <= 767;
-			};
-			updateMobile();
-			window.addEventListener('resize', updateMobile);
-			return () => window.removeEventListener('resize', updateMobile);
-		}
 	});
 
 	// Handle mobile touch events for tooltips
@@ -241,39 +229,6 @@
 		}
 	}
 
-	// Add click listener to document for mobile tooltip hiding
-	$effect(() => {
-		if (typeof window !== 'undefined' && isMobile) {
-			const handleDocumentClick = (event) => {
-				if (mobileTooltip.visible) {
-					// Hide if clicking outside tooltip and contribution days
-					if (
-						!event.target.closest('.mobile-tooltip') &&
-						!event.target.classList.contains('contribution-day')
-					) {
-						mobileTooltip.visible = false;
-					}
-				}
-			};
-
-			document.addEventListener('click', handleDocumentClick);
-			return () => document.removeEventListener('click', handleDocumentClick);
-		}
-	});
-
-	// Scroll to beginning on mount for mobile
-	$effect(() => {
-		if (typeof window !== 'undefined') {
-			const wrapper = document.querySelector('.calendar-svg-wrapper');
-			if (wrapper && isMobile) {
-				// Small delay to ensure DOM is ready
-				setTimeout(() => {
-					wrapper.scrollLeft = 0;
-				}, 100);
-			}
-		}
-	});
-
 	// Get current dimensions based on mobile state
 	function getCurrentDimensions() {
 		return {
@@ -316,6 +271,58 @@
 		const { cellSize, cellGap, dayLabelWidth } = getCurrentDimensions();
 		return dayLabelWidth + contributionsData.weeks.length * (cellSize + cellGap);
 	}
+
+	$effect(() => {
+		// Update mobile state based on window width
+		if (typeof window !== 'undefined') {
+			const updateMobile = () => {
+				isMobile = window.innerWidth <= 767;
+			};
+			updateMobile();
+			window.addEventListener('resize', updateMobile);
+			return () => window.removeEventListener('resize', updateMobile);
+		}
+
+		// Add click listener to document for mobile tooltip hiding
+		if (typeof window !== 'undefined' && isMobile) {
+			const handleDocumentClick = (event) => {
+				if (mobileTooltip.visible) {
+					// Hide if clicking outside tooltip and contribution days
+					if (
+						!event.target.closest('.mobile-tooltip') &&
+						!event.target.classList.contains('contribution-day')
+					) {
+						mobileTooltip.visible = false;
+					}
+				}
+			};
+
+			document.addEventListener('click', handleDocumentClick);
+			return () => document.removeEventListener('click', handleDocumentClick);
+		}
+
+		// Scroll to beginning on mount for mobile
+		if (typeof window !== 'undefined') {
+			const wrapper = document.querySelector('.calendar-svg-wrapper');
+			if (wrapper && isMobile) {
+				// Small delay to ensure DOM is ready
+				setTimeout(() => {
+					wrapper.scrollLeft = 0;
+				}, 100);
+			}
+		}
+
+		// Scroll to beginning on mount for mobile
+		if (typeof window !== 'undefined') {
+			const wrapper = document.querySelector('.calendar-svg-wrapper');
+			if (wrapper && isMobile) {
+				// Small delay to ensure DOM is ready
+				setTimeout(() => {
+					wrapper.scrollLeft = 0;
+				}, 100);
+			}
+		}
+	});
 </script>
 
 <section class="github-contributions" aria-label="GitHub Contributions Calendar">
@@ -659,7 +666,7 @@
 
 						/* Contribution levels */
 						&.none {
-							fill: var(--clr-inverted);
+							fill: var(--clr-gray);
 						}
 
 						&.low {
@@ -710,7 +717,7 @@
 						border: none;
 
 						&.none {
-							background-color: var(--clr-inverted);
+							background-color: var(--clr-gray);
 						}
 
 						&.low {
@@ -789,11 +796,11 @@
 						transform: none !important;
 
 						& .month-label {
-							font-size: 8px;
+							font-size: 1rem;
 						}
 
 						& .day-label {
-							font-size: 7px;
+							font-size: 0.5rem;
 						}
 
 						& .contribution-day {
@@ -810,7 +817,7 @@
 					margin-top: 0.75rem;
 
 					& .legend-squares {
-						gap: 1px;
+						gap: 2px;
 
 						& .legend-square {
 							width: 0.65rem;
