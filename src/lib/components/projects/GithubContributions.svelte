@@ -175,6 +175,15 @@
 	// Reactive dimensions based on screen size
 	let isMobile = $state(false);
 
+	// Mobile tooltip state
+	let mobileTooltip = $state({
+		visible: false,
+		x: 0,
+		y: 0,
+		content: '',
+		date: ''
+	});
+
 	// Update mobile state based on window width
 	$effect(() => {
 		if (typeof window !== 'undefined') {
@@ -184,6 +193,71 @@
 			updateMobile();
 			window.addEventListener('resize', updateMobile);
 			return () => window.removeEventListener('resize', updateMobile);
+		}
+	});
+
+	// Handle mobile touch events for tooltips
+	function handleDayTouch(event, day) {
+		// On mobile, show custom tooltip; on desktop, let native title work
+		if (isMobile) {
+			event.preventDefault();
+			event.stopPropagation();
+
+			const rect = event.target.getBoundingClientRect();
+			const containerRect = event.target.closest('.calendar-container').getBoundingClientRect();
+
+			// Calculate position relative to the container
+			const x = rect.left + rect.width / 2 - containerRect.left;
+			const y = rect.top - containerRect.top - 40; // Move tooltip higher
+
+			mobileTooltip = {
+				visible: true,
+				x: Math.max(50, Math.min(x, containerRect.width - 50)), // Keep within bounds
+				y: Math.max(10, y), // Keep above minimum
+				content: `${day.contributionCount} ${getContributionText(day.contributionCount)}`,
+				date: formatDate(day.date)
+			};
+
+			// Hide tooltip after 3 seconds
+			setTimeout(() => {
+				if (mobileTooltip.visible) {
+					mobileTooltip.visible = false;
+				}
+			}, 3000);
+		}
+		// On desktop, don't prevent default to allow native title tooltips
+	}
+
+	// Hide mobile tooltip when touching elsewhere
+	function hideMobileTooltip(event) {
+		if (isMobile && mobileTooltip.visible) {
+			// Don't hide if touching the tooltip itself or a contribution day
+			if (
+				!event.target.closest('.mobile-tooltip') &&
+				!event.target.classList.contains('contribution-day')
+			) {
+				mobileTooltip.visible = false;
+			}
+		}
+	}
+
+	// Add click listener to document for mobile tooltip hiding
+	$effect(() => {
+		if (typeof window !== 'undefined' && isMobile) {
+			const handleDocumentClick = (event) => {
+				if (mobileTooltip.visible) {
+					// Hide if clicking outside tooltip and contribution days
+					if (
+						!event.target.closest('.mobile-tooltip') &&
+						!event.target.classList.contains('contribution-day')
+					) {
+						mobileTooltip.visible = false;
+					}
+				}
+			};
+
+			document.addEventListener('click', handleDocumentClick);
+			return () => document.removeEventListener('click', handleDocumentClick);
 		}
 	});
 
@@ -273,6 +347,22 @@
 		</div>
 	{:else}
 		<div class="calendar-container">
+			<!-- Mobile tooltip -->
+			{#if mobileTooltip.visible && isMobile}
+				<div
+					class="mobile-tooltip"
+					style="left: {mobileTooltip.x}px; top: {mobileTooltip.y}px;"
+					role="tooltip"
+				>
+					<div class="tooltip-content">
+						{mobileTooltip.content}
+					</div>
+					<div class="tooltip-date">
+						{mobileTooltip.date}
+					</div>
+				</div>
+			{/if}
+
 			<div class="calendar-svg-wrapper">
 				<svg
 					width={getTotalWidth()}
@@ -316,11 +406,20 @@
 								class="contribution-day {getContributionLevel(day.contributionCount)}"
 								data-count={day.contributionCount}
 								data-date={day.date}
+								onclick={(e) => handleDayTouch(e, day)}
+								onkeydown={(e) => {
+									if (e.key === 'Enter' || e.key === ' ') {
+										handleDayTouch(e, day);
+									}
+								}}
+								role="button"
+								tabindex="0"
+								aria-label="{day.contributionCount} {getContributionText(
+									day.contributionCount
+								)} on {formatDate(day.date)}"
 							>
-								<title
-									>{day.contributionCount}
-									{getContributionText(day.contributionCount)} on {formatDate(day.date)}</title
-								>
+								<!-- prettier-ignore -->
+								<title>{day.contributionCount} {getContributionText(day.contributionCount)} on {formatDate(day.date)}</title>
 							</rect>
 						{/each}
 					{/each}
@@ -417,6 +516,44 @@
 			gap: 1rem;
 			padding: 1.5rem;
 			border-radius: 8px;
+			position: relative;
+
+			/* Mobile tooltip */
+			& .mobile-tooltip {
+				position: absolute;
+				background: var(--clr-main);
+				color: var(--clr-bg);
+				padding: 0.5rem 0.75rem;
+				border-radius: 6px;
+				font-size: 0.75rem;
+				font-family: var(--bronova);
+				pointer-events: none;
+				z-index: 1000;
+				transform: translateX(-50%);
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+				animation: tooltipFadeIn 0.2s ease-out;
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 100%;
+					left: 50%;
+					transform: translateX(-50%);
+					border: 5px solid transparent;
+					border-top-color: var(--clr-main);
+				}
+
+				& .tooltip-content {
+					font-weight: 600;
+					margin-bottom: 0.125rem;
+				}
+
+				& .tooltip-date {
+					font-size: 0.65rem;
+					opacity: 0.9;
+					font-weight: 400;
+				}
+			}
 
 			/* Responsive padding */
 			@media (width <= 767px) {
@@ -506,10 +643,18 @@
 						transition: all 0.2s ease;
 						cursor: pointer;
 
+						/* Ensure title tooltips work on desktop */
 						&:hover {
 							stroke: var(--clr-main);
 							stroke-width: 1px;
 							opacity: 0.8;
+						}
+
+						/* Hide native tooltips on mobile to avoid conflicts */
+						@media (max-width: 767px) {
+							& title {
+								display: none;
+							}
 						}
 
 						/* Contribution levels */
@@ -531,6 +676,12 @@
 
 						&.very-high {
 							fill: #39d353;
+						}
+
+						/* Focus styles for accessibility */
+						&:focus {
+							outline: 2px solid var(--clr-main);
+							outline-offset: 2px;
 						}
 					}
 				}
@@ -606,6 +757,18 @@
 		}
 		100% {
 			transform: rotate(360deg);
+		}
+	}
+
+	/* Mobile tooltip animation */
+	@keyframes tooltipFadeIn {
+		0% {
+			opacity: 0;
+			transform: translateX(-50%) translateY(-5px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(-50%) translateY(0);
 		}
 	}
 
