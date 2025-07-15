@@ -172,8 +172,9 @@
 	const MOBILE_MONTH_LABEL_HEIGHT = 16;
 	const MOBILE_DAY_LABEL_WIDTH = 30;
 
-	// Reactive dimensions based on screen size
-	let isMobile = $state(false);
+	// Reactive dimensions based on container size
+	let isSmallContainer = $state(false);
+	let containerElement = $state(null);
 
 	// Mobile tooltip state
 	let mobileTooltip = $state({
@@ -192,8 +193,8 @@
 		// Announce to screen readers
 		announcement = `${day.contributionCount} ${getContributionText(day.contributionCount)} on ${formatDate(day.date)}`;
 
-		// On mobile, show custom tooltip; on desktop, let native title work
-		if (isMobile) {
+		// On smaller containers, show custom tooltip; on larger containers, let native title work
+		if (isSmallContainer) {
 			event.preventDefault();
 			event.stopPropagation();
 
@@ -219,7 +220,7 @@
 				}
 			}, 3000);
 		}
-		// On desktop, don't prevent default to allow native title tooltips
+		// On larger containers, don't prevent default to allow native title tooltips
 	}
 
 	// Enhanced keyboard navigation
@@ -266,7 +267,7 @@
 
 	// Hide mobile tooltip when touching elsewhere
 	function hideMobileTooltip(event) {
-		if (isMobile && mobileTooltip.visible) {
+		if (isSmallContainer && mobileTooltip.visible) {
 			// Don't hide if touching the tooltip itself or a contribution day
 			if (
 				!event.target.closest('.mobile-tooltip') &&
@@ -277,14 +278,14 @@
 		}
 	}
 
-	// Get current dimensions based on mobile state
+	// Get current dimensions based on container size
 	function getCurrentDimensions() {
 		return {
-			cellSize: isMobile ? MOBILE_CELL_SIZE : CELL_SIZE,
-			cellGap: isMobile ? MOBILE_CELL_GAP : CELL_GAP,
-			gridHeight: isMobile ? MOBILE_GRID_HEIGHT : GRID_HEIGHT,
-			monthLabelHeight: isMobile ? MOBILE_MONTH_LABEL_HEIGHT : MONTH_LABEL_HEIGHT,
-			dayLabelWidth: isMobile ? MOBILE_DAY_LABEL_WIDTH : DAY_LABEL_WIDTH
+			cellSize: isSmallContainer ? MOBILE_CELL_SIZE : CELL_SIZE,
+			cellGap: isSmallContainer ? MOBILE_CELL_GAP : CELL_GAP,
+			gridHeight: isSmallContainer ? MOBILE_GRID_HEIGHT : GRID_HEIGHT,
+			monthLabelHeight: isSmallContainer ? MOBILE_MONTH_LABEL_HEIGHT : MONTH_LABEL_HEIGHT,
+			dayLabelWidth: isSmallContainer ? MOBILE_DAY_LABEL_WIDTH : DAY_LABEL_WIDTH
 		};
 	}
 
@@ -321,18 +322,21 @@
 	}
 
 	$effect(() => {
-		// Update mobile state based on window width
-		if (typeof window !== 'undefined') {
-			const updateMobile = () => {
-				isMobile = window.innerWidth <= 767;
-			};
-			updateMobile();
-			window.addEventListener('resize', updateMobile);
-			return () => window.removeEventListener('resize', updateMobile);
+		// Update container-based responsive state using ResizeObserver
+		if (typeof window !== 'undefined' && containerElement) {
+			const resizeObserver = new ResizeObserver((entries) => {
+				for (const entry of entries) {
+					const containerWidth = entry.contentRect.width;
+					isSmallContainer = containerWidth <= 600;
+				}
+			});
+
+			resizeObserver.observe(containerElement);
+			return () => resizeObserver.disconnect();
 		}
 
-		// Add click listener to document for mobile tooltip hiding
-		if (typeof window !== 'undefined' && isMobile) {
+		// Add click listener to document for tooltip hiding on small containers
+		if (typeof window !== 'undefined' && isSmallContainer) {
 			const handleDocumentClick = (event) => {
 				if (mobileTooltip.visible) {
 					// Hide if clicking outside tooltip and contribution days
@@ -349,21 +353,10 @@
 			return () => document.removeEventListener('click', handleDocumentClick);
 		}
 
-		// Scroll to beginning on mount for mobile
+		// Scroll to beginning on mount for small containers
 		if (typeof window !== 'undefined') {
 			const wrapper = document.querySelector('.calendar-svg-wrapper');
-			if (wrapper && isMobile) {
-				// Small delay to ensure DOM is ready
-				setTimeout(() => {
-					wrapper.scrollLeft = 0;
-				}, 100);
-			}
-		}
-
-		// Scroll to beginning on mount for mobile
-		if (typeof window !== 'undefined') {
-			const wrapper = document.querySelector('.calendar-svg-wrapper');
-			if (wrapper && isMobile) {
+			if (wrapper && isSmallContainer) {
 				// Small delay to ensure DOM is ready
 				setTimeout(() => {
 					wrapper.scrollLeft = 0;
@@ -373,7 +366,11 @@
 	});
 </script>
 
-<section class="github-contributions" aria-label="GitHub Contributions Calendar">
+<section
+	class="github-contributions"
+	aria-label="GitHub Contributions Calendar"
+	bind:this={containerElement}
+>
 	<!-- Screen reader announcements -->
 	<div class="visually-hidden" aria-live="polite" aria-atomic="true">
 		{announcement}
@@ -415,8 +412,8 @@
 		</div>
 	{:else}
 		<div class="calendar-container">
-			<!-- Mobile tooltip -->
-			{#if mobileTooltip.visible && isMobile}
+			<!-- Custom tooltip for smaller containers -->
+			{#if mobileTooltip.visible && isSmallContainer}
 				<div
 					class="mobile-tooltip"
 					style="left: {mobileTooltip.x}px; top: {mobileTooltip.y}px;"
@@ -452,7 +449,12 @@
 					<!-- Month labels -->
 					<g role="group" aria-label="Month labels">
 						{#each getMonthPositions() as month}
-							<text x={month.x} y={isMobile ? 12 : 15} class="month-label" text-anchor="start">
+							<text
+								x={month.x}
+								y={isSmallContainer ? 12 : 15}
+								class="month-label"
+								text-anchor="start"
+							>
 								{month.name}
 							</text>
 						{/each}
@@ -487,7 +489,7 @@
 										dayIndex * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap)}
 									width={getCurrentDimensions().cellSize}
 									height={getCurrentDimensions().cellSize}
-									rx={isMobile ? '1' : '2'}
+									rx={isSmallContainer ? '1' : '2'}
 									class="contribution-day {getContributionLevel(day.contributionCount)}"
 									data-count={day.contributionCount}
 									data-date={day.date}
@@ -566,6 +568,10 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+
+		/* Enable container queries */
+		container-type: inline-size;
+		container-name: github-contributions;
 
 		& .contributions-header {
 			margin-bottom: 2rem;
@@ -670,14 +676,14 @@
 				}
 			}
 
-			/* Responsive padding */
-			@media (width <= 767px) {
+			/* Responsive padding using container queries */
+			@container github-contributions (wth <= 767px) {
 				padding: 1rem;
 				gap: 0.75rem;
 			}
 
-			@media (width <= 500px) {
-				min-width: 99vw;
+			@container github-contributions (wth <= 500px) {
+				min-width: 99%;
 				padding: 0.5rem;
 			}
 
@@ -709,33 +715,33 @@
 					max-width: 100%;
 					height: auto;
 
-					/* Make SVG responsive to viewport width */
-					@media (width <= 1200px) {
+					/* Make SVG responsive using container queries */
+					@container github-contributions (width <= 800px) {
 						transform: scale(0.9);
 						transform-origin: center;
 					}
 
-					@media (width <= 900px) {
+					@container github-contributions (width <= 700px) {
 						transform: scale(0.8);
 						transform-origin: center;
 					}
 
-					@media (width <= 767px) {
+					@container github-contributions (width <= 600px) {
 						transform: scale(0.7);
 						transform-origin: center;
 					}
 
-					@media (width <= 600px) {
+					@container github-contributions (width <= 500px) {
 						transform: scale(0.6);
 						transform-origin: center;
 					}
 
-					@media (width <= 480px) {
+					@container github-contributions (width <= 400px) {
 						transform: scale(0.5);
 						transform-origin: center;
 					}
 
-					@media (width <= 360px) {
+					@container github-contributions (width <= 320px) {
 						transform: scale(0.45);
 						transform-origin: center;
 					}
@@ -765,8 +771,8 @@
 							opacity: 0.8;
 						}
 
-						/* Hide native tooltips on mobile to avoid conflicts */
-						@media (max-width: 767px) {
+						/* Hide native tooltips on smaller containers to avoid conflicts */
+						@container github-contributions (width <= 600px) {
 							& title {
 								display: none;
 							}
@@ -866,8 +872,8 @@
 		background-color: var(--clr-inverted);
 	}
 
-	/* Hover effects - scale more on larger screens */
-	@media (min-width: 768px) {
+	/* Hover effects - enhanced focus on larger containers */
+	@container github-contributions (width >= 600px) {
 		.contribution-day:hover {
 			stroke-width: 2px;
 		}
@@ -895,20 +901,15 @@
 		}
 	}
 
-	@media (width <= 767px) {
+	/* Container query for smaller layouts */
+	@container github-contributions (width <= 600px) {
 		.github-contributions {
 			padding: 1rem 0.5rem;
-			width: 99vw;
-			margin: 0 auto;
-			margin-left: calc(50% - 49.5vw);
-			max-width: none;
-			max-height: none;
-			overflow-y: visible;
 
 			& .calendar-container {
 				& .calendar-svg-wrapper {
 					& .contributions-svg {
-						/* Override scaling for mobile to use smaller cells instead */
+						/* Override scaling for smaller containers to use smaller cells instead */
 						transform: none !important;
 
 						& .month-label {
@@ -916,7 +917,7 @@
 						}
 
 						& .day-label {
-							font-size: 0.5rem;
+							font-size: 0.8rem;
 						}
 
 						& .contribution-day {
@@ -928,7 +929,7 @@
 				}
 
 				& .legend {
-					font-size: 0.65rem;
+					font-size: 0.75rem;
 					gap: 0.375rem;
 					margin-top: 0.75rem;
 
@@ -939,6 +940,38 @@
 							width: 0.65rem;
 							height: 0.65rem;
 							border-radius: 1px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/* Very small container adjustments */
+	@container github-contributions (width <= 400px) {
+		.github-contributions {
+			& .calendar-container {
+				min-width: 100vw;
+
+				& .legend {
+					font-size: 0.65rem;
+
+					& .legend-squares {
+						& .legend-square {
+							width: 0.6rem;
+							height: 0.6rem;
+						}
+					}
+				}
+
+				& .calendar-svg-wrapper {
+					& .contributions-svg {
+						& .month-label {
+							font-size: 0.9rem;
+						}
+
+						& .day-label {
+							font-size: 0.7rem;
 						}
 					}
 				}
