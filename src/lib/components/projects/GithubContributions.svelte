@@ -184,8 +184,14 @@
 		date: ''
 	});
 
+	// Screen reader announcement
+	let announcement = $state('');
+
 	// Handle mobile touch events for tooltips
 	function handleDayTouch(event, day) {
+		// Announce to screen readers
+		announcement = `${day.contributionCount} ${getContributionText(day.contributionCount)} on ${formatDate(day.date)}`;
+
 		// On mobile, show custom tooltip; on desktop, let native title work
 		if (isMobile) {
 			event.preventDefault();
@@ -214,6 +220,48 @@
 			}, 3000);
 		}
 		// On desktop, don't prevent default to allow native title tooltips
+	}
+
+	// Enhanced keyboard navigation
+	function handleDayKeydown(event, day, weekIndex, dayIndex) {
+		const { key } = event;
+
+		// Handle activation keys
+		if (key === 'Enter' || key === ' ') {
+			event.preventDefault();
+			handleDayTouch(event, day);
+			return;
+		}
+
+		// Handle arrow key navigation
+		if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(key)) {
+			event.preventDefault();
+
+			let newWeekIndex = weekIndex;
+			let newDayIndex = dayIndex;
+
+			switch (key) {
+				case 'ArrowLeft':
+					newWeekIndex = Math.max(0, weekIndex - 1);
+					break;
+				case 'ArrowRight':
+					newWeekIndex = Math.min(contributionsData.weeks.length - 1, weekIndex + 1);
+					break;
+				case 'ArrowUp':
+					newDayIndex = Math.max(0, dayIndex - 1);
+					break;
+				case 'ArrowDown':
+					newDayIndex = Math.min(6, dayIndex + 1);
+					break;
+			}
+
+			// Find and focus the target element
+			const targetSelector = `[data-week="${newWeekIndex}"][data-day="${newDayIndex}"]`;
+			const targetElement = document.querySelector(targetSelector);
+			if (targetElement) {
+				targetElement.focus();
+			}
+		}
 	}
 
 	// Hide mobile tooltip when touching elsewhere
@@ -326,8 +374,20 @@
 </script>
 
 <section class="github-contributions" aria-label="GitHub Contributions Calendar">
+	<!-- Screen reader announcements -->
+	<div class="visually-hidden" aria-live="polite" aria-atomic="true">
+		{announcement}
+	</div>
+
 	<header class="contributions-header">
 		<h2>GitHub Contributions</h2>
+
+		<!-- Instructions for screen reader users -->
+		<div class="visually-hidden">
+			Navigate through the contribution calendar using tab to move through days. Use arrow keys for
+			more precise navigation. Press Enter or Space to get detailed information about a specific
+			day.
+		</div>
 
 		{#if isLoading}
 			<p class="total-contributions loading">Loading contributions...</p>
@@ -361,6 +421,8 @@
 					class="mobile-tooltip"
 					style="left: {mobileTooltip.x}px; top: {mobileTooltip.y}px;"
 					role="tooltip"
+					aria-live="polite"
+					id="mobile-tooltip"
 				>
 					<div class="tooltip-content">
 						{mobileTooltip.content}
@@ -377,75 +439,119 @@
 					width={getTotalWidth()}
 					height={getCurrentDimensions().monthLabelHeight + getCurrentDimensions().gridHeight}
 					class="contributions-svg"
+					role="img"
+					aria-labelledby="contributions-title"
+					aria-describedby="contributions-desc"
 				>
+					<title id="contributions-title">GitHub Contributions Calendar</title>
+					<desc id="contributions-desc">
+						A calendar showing daily GitHub contributions over the past year. Each square represents
+						a day, with darker colors indicating more contributions. Navigate with tab and enter
+						keys to explore individual days.
+					</desc>
 					<!-- Month labels -->
-					{#each getMonthPositions() as month}
-						<text x={month.x} y={isMobile ? 12 : 15} class="month-label" text-anchor="start">
-							{month.name}
-						</text>
-					{/each}
+					<g role="group" aria-label="Month labels">
+						{#each getMonthPositions() as month}
+							<text x={month.x} y={isMobile ? 12 : 15} class="month-label" text-anchor="start">
+								{month.name}
+							</text>
+						{/each}
+					</g>
 
 					<!-- Day labels -->
-					{#each DAYS as day, i}
-						<text
-							x={getCurrentDimensions().dayLabelWidth - 5}
-							y={getCurrentDimensions().monthLabelHeight +
-								DAY_INDICES[i] *
-									(getCurrentDimensions().cellSize + getCurrentDimensions().cellGap) +
-								getCurrentDimensions().cellSize / 2 +
-								4}
-							class="day-label"
-							text-anchor="end"
-						>
-							{day}
-						</text>
-					{/each}
+					<g role="group" aria-label="Day labels">
+						{#each DAYS as day, i}
+							<text
+								x={getCurrentDimensions().dayLabelWidth - 5}
+								y={getCurrentDimensions().monthLabelHeight +
+									DAY_INDICES[i] *
+										(getCurrentDimensions().cellSize + getCurrentDimensions().cellGap) +
+									getCurrentDimensions().cellSize / 2 +
+									4}
+								class="day-label"
+								text-anchor="end"
+							>
+								{day}
+							</text>
+						{/each}
+					</g>
 
 					<!-- Contribution grid -->
-					{#each contributionsData.weeks as week, weekIndex}
-						{#each week.contributionDays as day, dayIndex}
-							<rect
-								x={getCurrentDimensions().dayLabelWidth +
-									weekIndex * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap)}
-								y={getCurrentDimensions().monthLabelHeight +
-									dayIndex * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap)}
-								width={getCurrentDimensions().cellSize}
-								height={getCurrentDimensions().cellSize}
-								rx={isMobile ? '1' : '2'}
-								class="contribution-day {getContributionLevel(day.contributionCount)}"
-								data-count={day.contributionCount}
-								data-date={day.date}
-								onclick={(e) => handleDayTouch(e, day)}
-								onkeydown={(e) => {
-									if (e.key === 'Enter' || e.key === ' ') {
-										handleDayTouch(e, day);
-									}
-								}}
-								role="button"
-								tabindex="0"
-								aria-label="{day.contributionCount} {getContributionText(
-									day.contributionCount
-								)} on {formatDate(day.date)}"
-							>
-								<!-- prettier-ignore -->
-								<title>{day.contributionCount} {getContributionText(day.contributionCount)} on {formatDate(day.date)}</title>
-							</rect>
+					<g role="group" aria-label="Daily contributions grid">
+						{#each contributionsData.weeks as week, weekIndex}
+							{#each week.contributionDays as day, dayIndex}
+								<rect
+									x={getCurrentDimensions().dayLabelWidth +
+										weekIndex * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap)}
+									y={getCurrentDimensions().monthLabelHeight +
+										dayIndex * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap)}
+									width={getCurrentDimensions().cellSize}
+									height={getCurrentDimensions().cellSize}
+									rx={isMobile ? '1' : '2'}
+									class="contribution-day {getContributionLevel(day.contributionCount)}"
+									data-count={day.contributionCount}
+									data-date={day.date}
+									data-week={weekIndex}
+									data-day={dayIndex}
+									onclick={(e) => handleDayTouch(e, day)}
+									onkeydown={(e) => handleDayKeydown(e, day, weekIndex, dayIndex)}
+									role="button"
+									tabindex="0"
+									aria-label="{day.contributionCount} {getContributionText(
+										day.contributionCount
+									)} on {formatDate(day.date)}"
+									aria-describedby="legend-desc"
+								>
+									<!-- prettier-ignore -->
+									<title>{day.contributionCount} {getContributionText(day.contributionCount)} on {formatDate(day.date)}</title>
+								</rect>
+							{/each}
 						{/each}
-					{/each}
+					</g>
 				</svg>
 			</div>
 
 			<!-- Legend -->
-			<div class="legend">
-				<span class="legend-text">Less</span>
-				<div class="legend-squares">
-					<div class="legend-square none" title="No contributions"></div>
-					<div class="legend-square low" title="1-3 contributions"></div>
-					<div class="legend-square medium" title="4-6 contributions"></div>
-					<div class="legend-square high" title="7-9 contributions"></div>
-					<div class="legend-square very-high" title="10+ contributions"></div>
+			<div class="legend" role="img" aria-labelledby="legend-title" aria-describedby="legend-desc">
+				<div id="legend-title" class="visually-hidden">Contribution levels legend</div>
+				<div id="legend-desc" class="visually-hidden">
+					Legend showing contribution intensity levels from none to very high, represented by color
+					intensity from light to dark green.
 				</div>
-				<span class="legend-text">More</span>
+				<span class="legend-text" aria-hidden="true">Less</span>
+				<div class="legend-squares" role="group" aria-label="Contribution level indicators">
+					<div
+						class="legend-square none"
+						role="img"
+						aria-label="No contributions level"
+						title="No contributions"
+					></div>
+					<div
+						class="legend-square low"
+						role="img"
+						aria-label="Low contributions level: 1-3 contributions"
+						title="1-3 contributions"
+					></div>
+					<div
+						class="legend-square medium"
+						role="img"
+						aria-label="Medium contributions level: 4-6 contributions"
+						title="4-6 contributions"
+					></div>
+					<div
+						class="legend-square high"
+						role="img"
+						aria-label="High contributions level: 7-9 contributions"
+						title="7-9 contributions"
+					></div>
+					<div
+						class="legend-square very-high"
+						role="img"
+						aria-label="Very high contributions level: 10+ contributions"
+						title="10+ contributions"
+					></div>
+				</div>
+				<span class="legend-text" aria-hidden="true">More</span>
 			</div>
 		</div>
 	{/if}
@@ -689,7 +795,15 @@
 
 						/* Focus styles for accessibility */
 						&:focus {
-							outline: 2px solid var(--clr-main);
+							outline: 3px solid var(--clr-main);
+							outline-offset: 2px;
+							stroke: var(--clr-main);
+							stroke-width: 2px;
+						}
+
+						/* Keyboard navigation enhancement */
+						&:focus-visible {
+							outline: 3px solid var(--clr-main);
 							outline-offset: 2px;
 						}
 					}
