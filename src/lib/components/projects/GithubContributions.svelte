@@ -1,6 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
-
 	// Svelte 5 state
 	let contributionsData = $state({ weeks: [] });
 	let totalContributions = $state(0);
@@ -106,11 +104,6 @@
 		if (count <= 9) return '#30a14e';
 		return '#216e39';
 	}
-
-	// Load data when component mounts
-	onMount(() => {
-		fetchContributionsData();
-	});
 
 	// Function to get contribution level for styling
 	function getContributionLevel(count) {
@@ -322,6 +315,9 @@
 	}
 
 	$effect(() => {
+		// Fetch contributions data on mount
+		fetchContributionsData();
+
 		// Update container-based responsive state using ResizeObserver
 		if (typeof window !== 'undefined' && containerElement) {
 			const resizeObserver = new ResizeObserver((entries) => {
