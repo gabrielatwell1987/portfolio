@@ -126,7 +126,7 @@
 			position: absolute;
 			right: 0;
 			top: 100%;
-			margin-top: 0.25rem;
+			margin-top: -2em;
 			margin-right: 0.25rem;
 
 			translate: 100% 0;

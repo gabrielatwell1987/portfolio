@@ -24,7 +24,7 @@
 			<dd><a href="#tweens">Tweens</a></dd>
 			<dd><a href="#staggers">Staggers</a></dd>
 			<dd><a href="#timelines">Timelines</a></dd>
-			<dd><a href="#percentage">Percentage Keyframes</a></dd>
+			<dd><a href="#percentage">Keyframes</a></dd>
 			<dd><a href="#position">Position Parameter</a></dd>
 			<dd><a href="#fouc">F.O.U.C.</a></dd>
 			<dd><a href="#scrolltrigger">ScrollTrigger</a></dd>
