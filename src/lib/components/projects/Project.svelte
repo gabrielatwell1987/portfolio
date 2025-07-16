@@ -5,14 +5,7 @@
 
 <main class="content" style="--stagger-delay: {index * 1.25}s;">
 	<!-- title -->
-	<a
-		class="link"
-		href={url}
-		target="_blank"
-		aria-label="View {title} project - made with {description}"
-	>
-		<h3 class="link name">{title}</h3></a
-	>
+	<h3 class="link name">{title}</h3>
 
 	<!-- screenshot -->
 	<a
@@ -106,10 +99,6 @@
 			&:focus-visible {
 				outline: 1px solid var(--clr-main);
 				background: transparent;
-			}
-
-			&:hover {
-				scale: 1.05;
 			}
 
 			& .img {
