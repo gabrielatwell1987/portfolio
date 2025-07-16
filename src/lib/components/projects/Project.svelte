@@ -5,7 +5,9 @@
 
 <main class="content" style="--stagger-delay: {index * 1.25}s;">
 	<!-- title -->
-	<h3 class="link name">{title}</h3>
+	<a href={url} target="_blank">
+		<h3 class="link name">{title}</h3>
+	</a>
 
 	<!-- screenshot -->
 	<a
@@ -52,6 +54,10 @@
 			text-align: center;
 			line-height: 1.5;
 			letter-spacing: 0px;
+		}
+
+		& a {
+			text-decoration: none;
 		}
 
 		& .link {
