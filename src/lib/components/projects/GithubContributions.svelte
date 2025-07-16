@@ -650,16 +650,6 @@
 				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 				animation: tooltipFadeIn 0.2s ease-out;
 
-				&::after {
-					content: '';
-					position: absolute;
-					top: 100%;
-					left: 50%;
-					transform: translateX(-50%);
-					border: 5px solid transparent;
-					border-top-color: var(--clr-main);
-				}
-
 				& .tooltip-content {
 					font-weight: 600;
 					margin-bottom: 0.125rem;
