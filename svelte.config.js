@@ -4,22 +4,12 @@ import { mdsvex } from 'mdsvex';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	kit: {
-		adapter: adapter()
-	},
-	vitePlugin: {
-		inspector: true
-	},
+	kit: { adapter: adapter() },
+	vitePlugin: { inspector: true },
 	https: true,
 	extensions: ['.svelte', '.md', '.svx'],
-	preprocess: [
-		mdsvex({
-			extensions: ['.md', '.svx']
-		})
-	],
-	prerender: {
-		entries: ['/photos']
-	}
+	preprocess: [mdsvex({ extensions: ['.md', '.svx'] })],
+	prerender: { entries: ['/photos'] }
 };
 
 export default config;
