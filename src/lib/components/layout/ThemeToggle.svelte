@@ -9,6 +9,13 @@
 		window.document.body.classList.toggle('light');
 		themeStatus = isLightTheme ? 'Switched to light theme' : 'Switched to dark theme';
 
+		// Dispatch custom event for theme change
+		window.dispatchEvent(
+			new CustomEvent('theme-change', {
+				detail: { isLightTheme }
+			})
+		);
+
 		// Clear status after announcement
 		setTimeout(() => {
 			themeStatus = '';
