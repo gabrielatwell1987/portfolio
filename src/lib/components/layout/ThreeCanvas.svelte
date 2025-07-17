@@ -2,6 +2,57 @@
 	import * as THREE from 'three';
 
 	$effect(() => {
+		// Helper function to convert CSS colors to RGB
+		const convertToRGB = (colorValue) => {
+			if (!colorValue) return null;
+			try {
+				const tempDiv = document.createElement('div');
+				tempDiv.style.backgroundColor = colorValue;
+				document.body.appendChild(tempDiv);
+				const computedStyle = getComputedStyle(tempDiv);
+				const computedColor = computedStyle.backgroundColor;
+				document.body.removeChild(tempDiv);
+
+				// If still not RGB, try with a canvas for better conversion
+				if (computedColor.startsWith('oklab') || computedColor === colorValue) {
+					const canvas = document.createElement('canvas');
+					canvas.width = 1;
+					canvas.height = 1;
+					const ctx = canvas.getContext('2d');
+					ctx.fillStyle = colorValue;
+					ctx.fillRect(0, 0, 1, 1);
+					const imageData = ctx.getImageData(0, 0, 1, 1);
+					const rgb = imageData.data;
+					return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+				}
+
+				return computedColor;
+			} catch (error) {
+				console.error('Error converting color:', colorValue, error);
+				return null;
+			}
+		};
+
+		// Get CSS custom properties from body element (where ThemeToggle sets them)
+		const bodyStyles = getComputedStyle(document.body);
+		const primaryColorRaw = bodyStyles.getPropertyValue('--clr-main').trim();
+		const secondaryColorRaw = bodyStyles.getPropertyValue('--clr-inverted').trim();
+		const accentColorRaw = bodyStyles.getPropertyValue('--clr-pale').trim();
+
+		// Convert colors to RGB format
+		const primaryColor = convertToRGB(primaryColorRaw) || '#ffffff';
+		const secondaryColor = convertToRGB(secondaryColorRaw) || '#000000';
+		const accentColor = convertToRGB(accentColorRaw) || '#ffff00';
+
+		console.log('Initial color conversion:', {
+			primaryColorRaw,
+			primaryColor,
+			secondaryColorRaw,
+			secondaryColor,
+			accentColorRaw,
+			accentColor
+		});
+
 		// Texture Loader
 		const textureLoader = new THREE.TextureLoader();
 		const star = textureLoader.load('/textures/star.webp');
@@ -25,10 +76,10 @@
 
 		particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positionArray, 3));
 
-		// Materials
-
+		// Materials - using CSS custom properties
 		const material = new THREE.PointsMaterial({
-			size: 0.009
+			size: 0.015,
+			color: primaryColor || '#ffffff' // fallback to white
 		});
 
 		const particlesMaterial = new THREE.PointsMaterial({
@@ -36,9 +87,102 @@
 			transparent: true,
 			alphaMap: star,
 			alphaTest: 0.001,
-			color: 'hsla(60, 64%, 33%, 0.75)',
+			color: accentColor || secondaryColor || 'hsla(60, 64%, 33%, 0.75)',
 			blending: THREE.AdditiveBlending
 		});
+
+		// Function to update colors when theme changes
+		function updateColors() {
+			const bodyStyles = getComputedStyle(document.body);
+			const newPrimaryColor = bodyStyles.getPropertyValue('--clr-main').trim();
+			const newSecondaryColor = bodyStyles.getPropertyValue('--clr-inverted').trim();
+			const newAccentColor = bodyStyles.getPropertyValue('--clr-pale').trim();
+
+			console.log('Raw CSS values:', { newPrimaryColor, newSecondaryColor, newAccentColor });
+			console.log('Body classes:', document.body.classList.toString());
+
+			// Convert oklab/complex colors to RGB
+			const convertToRGB = (colorValue) => {
+				if (!colorValue) return null;
+				try {
+					const tempDiv = document.createElement('div');
+					tempDiv.style.backgroundColor = colorValue; // Use background color instead
+					document.body.appendChild(tempDiv);
+					const computedStyle = getComputedStyle(tempDiv);
+					const computedColor = computedStyle.backgroundColor;
+					document.body.removeChild(tempDiv);
+
+					// If still not RGB, try with a canvas for better conversion
+					if (computedColor.startsWith('oklab') || computedColor === colorValue) {
+						const canvas = document.createElement('canvas');
+						canvas.width = 1;
+						canvas.height = 1;
+						const ctx = canvas.getContext('2d');
+						ctx.fillStyle = colorValue;
+						ctx.fillRect(0, 0, 1, 1);
+						const imageData = ctx.getImageData(0, 0, 1, 1);
+						const rgb = imageData.data;
+						return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+					}
+
+					return computedColor;
+				} catch (error) {
+					console.error('Error converting color:', colorValue, error);
+					return null;
+				}
+			};
+
+			// Use CSS variables with conversion - with fallbacks
+			let primaryConverted = null;
+			let accentConverted = null;
+			let secondaryConverted = null;
+
+			if (newPrimaryColor && newPrimaryColor.length > 0) {
+				primaryConverted = convertToRGB(newPrimaryColor);
+				console.log('Converting primary:', newPrimaryColor, '->', primaryConverted);
+			}
+			if (newAccentColor && newAccentColor.length > 0) {
+				accentConverted = convertToRGB(newAccentColor);
+				console.log('Converting accent:', newAccentColor, '->', accentConverted);
+			}
+			if (newSecondaryColor && newSecondaryColor.length > 0) {
+				secondaryConverted = convertToRGB(newSecondaryColor);
+				console.log('Converting secondary:', newSecondaryColor, '->', secondaryConverted);
+			}
+
+			// Apply colors with fallbacks
+			if (primaryConverted) {
+				material.color.set(primaryConverted);
+			} else {
+				// Fallback based on theme
+				const isLight = document.body.classList.contains('light');
+				material.color.set(isLight ? '#333333' : '#ffffff');
+			}
+
+			if (accentConverted) {
+				particlesMaterial.color.set(accentConverted);
+			} else if (secondaryConverted) {
+				particlesMaterial.color.set(secondaryConverted);
+			} else {
+				// Fallback based on theme
+				const isLight = document.body.classList.contains('light');
+				particlesMaterial.color.set(isLight ? '#b8860b' : '#ffd700');
+			}
+		}
+
+		// Listen for theme changes
+		const themeObserver = new MutationObserver(updateColors);
+		themeObserver.observe(document.body, {
+			attributes: true,
+			attributeFilter: ['class', 'style']
+		});
+
+		// Also listen for custom theme change events if your ThemeToggle dispatches them
+		document.addEventListener('theme-change', updateColors);
+
+		// Test initial color values
+		console.log('Initial colors check:');
+		updateColors();
 
 		// Mesh
 		const sphere = new THREE.Points(geometry, material);
@@ -46,7 +190,6 @@
 		scene.add(sphere, particlesMesh);
 
 		// Lights
-
 		const pointLight = new THREE.PointLight(0xffffff, 0.1);
 		pointLight.position.set(2, 3, 4);
 		scene.add(pointLight);
@@ -108,7 +251,6 @@
 		/**
 		 * Animate
 		 */
-
 		const clock = new THREE.Clock();
 		let isAnimating = true;
 
@@ -125,9 +267,6 @@
 				particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.0000008);
 				particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.0000008);
 			}
-
-			// Update Orbital Controls
-			// controls.update()
 
 			// Render
 			renderer.render(scene, camera);
@@ -153,6 +292,9 @@
 
 		return () => {
 			document.removeEventListener('visibilitychange', handleVisibilityChange);
+			document.removeEventListener('mousemove', animateParticles);
+			document.removeEventListener('theme-change', updateColors);
+			themeObserver.disconnect();
 		};
 	});
 </script>
