@@ -44,7 +44,7 @@
 		<div class="image">
 			<div class="skillImg">
 				<h1>
-					<Image src="/skills/CSS-Purple.webp" alt="new css logo" />
+					<Image src="/skills/CSS-Purple.webp" alt="new css logo" aspectRatio="1/1" />
 				</h1>
 			</div>
 
@@ -55,7 +55,7 @@
 	<div class="gsap">
 		<div class="skillImg">
 			<h2>
-				<Image src="/skills/GSAP-Dark.svg" alt="greensock animation platform" />
+				<Image src="/skills/GSAP-Dark.svg" alt="greensock animation platform" aspectRatio="1/1" />
 			</h2>
 		</div>
 

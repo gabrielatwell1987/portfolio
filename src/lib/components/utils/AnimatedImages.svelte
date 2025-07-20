@@ -22,7 +22,7 @@
 
 <main>
 	<div class="imgClass">
-		<Image {src} {alt} {width} />
+		<Image {src} {alt} {width} aspectRatio="16/9" />
 	</div>
 </main>
 

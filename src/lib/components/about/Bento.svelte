@@ -21,7 +21,12 @@
 			<div class="bento-grid">
 				<div class="item">
 					<a href="/contact">
-						<Image src="/icons/contactIcon.svg" alt="an icon for contact" width="100" />
+						<Image
+							src="/icons/contactIcon.svg"
+							alt="an icon for contact"
+							width="100"
+							aspectRatio="4/3"
+						/>
 
 						<h2>contact</h2>
 
@@ -31,7 +36,12 @@
 
 				<div class="item">
 					<a href="/learn">
-						<Image src="/icons/learnIcon.svg" alt="an icon for learning" width="100" />
+						<Image
+							src="/icons/learnIcon.svg"
+							alt="an icon for learning"
+							width="100"
+							aspectRatio="1/1"
+						/>
 
 						<h2>learn</h2>
 
@@ -43,7 +53,7 @@
 					<a href="/projects">
 						<h2>projects</h2>
 
-						<Image src="/logos/logoA.webp" alt="atwell logo" width="300" />
+						<Image src="/logos/logoA.webp" alt="atwell logo" width="300" aspectRatio="16/9" />
 					</a>
 				</div>
 			</div>

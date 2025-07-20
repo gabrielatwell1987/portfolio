@@ -12,7 +12,7 @@
 <main>
 	<section>
 		<div class="image">
-			<h1><Image src="/logos/success.webp" alt="Atwell" width="500" /></h1>
+			<Image src="/logos/success.webp" alt="Atwell" width="500" aspectRatio="16/9" />
 		</div>
 
 		<p class="small"><i>Your message has been sent.</i></p>
