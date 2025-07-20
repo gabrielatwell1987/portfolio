@@ -1,24 +1,24 @@
 <script>
-	/** @type {{src: any, alt: any}} */
+	/** @type {{src: any, alt: any, width?: any}} */
 	let { src, alt, width } = $props();
 
-	let imageElement;
-
-	$effect(() => {
+	function lazyLoadImg(node) {
 		const observer = new IntersectionObserver(([entry], observer) => {
 			if (entry.isIntersecting) {
-				imageElement.src = src;
-				observer.unobserve(imageElement);
+				node.src = src;
+				observer.unobserve(node);
 			}
 		});
-
-		observer.observe(imageElement);
-
-		return () => observer.disconnect();
-	});
+		observer.observe(node);
+		return {
+			destroy() {
+				observer.disconnect();
+			}
+		};
+	}
 </script>
 
-<img {src} {alt} {width} bind:this={imageElement} />
+<img use:lazyLoadImg {alt} {width} />
 
 <style>
 	img {
