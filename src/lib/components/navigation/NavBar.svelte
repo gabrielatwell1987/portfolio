@@ -72,6 +72,8 @@
 		left: 1rem;
 		right: 1rem;
 		width: calc(100% - 2rem);
+		height: 5em;
+		min-height: 5em;
 		padding: 0 1rem;
 		margin-inline: auto;
 	}
@@ -184,11 +186,13 @@
 			box-shadow: 0 0 5px var(--clr-gray);
 			padding: 1.2rem 0.75rem 0.4rem 0.75rem;
 			height: 3.75em;
+			min-height: 3.75em;
 			justify-content: space-between;
 		}
 
 		@media (width >= 750px) {
 			height: 5em;
+			min-height: 5em;
 		}
 
 		@media (width >= 990px) {
