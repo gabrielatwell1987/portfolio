@@ -26,11 +26,21 @@
 	<article>
 		<section aria-label="icons">
 			<a class="gs" href="learn/greensock" style="width: clamp(10em, 25vw, 30em);">
-				<Image src="/logos/gsapLogo.svg" alt="greensock animation platform" width="250" />
+				<Image
+					src="/logos/gsapLogo.svg"
+					alt="greensock animation platform"
+					width="250"
+					aspectRatio="1/1"
+				/>
 			</a>
 
 			<a class="sk" href="learn/sveltekit" style="width: clamp(10em, 25vw, 30em);">
-				<Image src="/logos/svelteLogo.png" alt="sveltekit web framework" width="350" />
+				<Image
+					src="/logos/svelteLogo.png"
+					alt="sveltekit web framework"
+					width="350"
+					aspectRatio="1/1"
+				/>
 			</a>
 		</section>
 

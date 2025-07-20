@@ -52,7 +52,11 @@
 					</p>
 
 					<div class="structure">
-						<Image src="/logos/fileLayout.webp" alt="how a svelte file looks like" />
+						<Image
+							src="/logos/fileLayout.webp"
+							alt="how a svelte file looks like"
+							aspectRatio="16/9"
+						/>
 					</div>
 				</details>
 
@@ -132,7 +136,7 @@
 					</p>
 
 					<div class="structure">
-						<Image src="/logos/file-structure.webp" alt="Sveltekit structure" />
+						<Image src="/logos/file-structure.webp" alt="Sveltekit structure" aspectRatio="9/32" />
 					</div>
 				</details>
 
@@ -183,7 +187,11 @@
 					</p>
 
 					<div class="structure">
-						<Image src="/logos/effects_rune.webp" alt="effect rune syntax with gsap" />
+						<Image
+							src="/logos/effects_rune.webp"
+							alt="effect rune syntax with gsap"
+							aspectRatio="3/4"
+						/>
 						<br />
 					</div>
 
@@ -220,7 +228,7 @@
 					</p>
 
 					<div class="structure">
-						<Image src="/code/snippet.webp" alt="snippet example in code" />
+						<Image src="/code/snippet.webp" alt="snippet example in code" aspectRatio="16/9" />
 						<br />
 					</div>
 
@@ -251,7 +259,11 @@
 					</p>
 
 					<div class="structure">
-						<Image src="/code/onNavigate.webp" alt="onNavigate example in code" />
+						<Image
+							src="/code/onNavigate.webp"
+							alt="onNavigate example in code"
+							aspectRatio="16/9"
+						/>
 						<br />
 					</div>
 

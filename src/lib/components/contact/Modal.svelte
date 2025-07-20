@@ -98,6 +98,7 @@
 				src="/logos/newspaper.webp"
 				alt="newspaper clipping for a frontend developer"
 				width="500"
+				aspectRatio="16/9"
 			/>
 		</div>
 

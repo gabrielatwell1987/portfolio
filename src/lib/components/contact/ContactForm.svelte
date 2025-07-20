@@ -7,8 +7,8 @@
 	let name = $state('');
 	let email = $state('');
 	let message = $state('');
-	let submitStatus = $state(''); // For screen reader announcements
-	let isSubmitting = $state(false);
+	let submitStatus = $state('');
+	// let isSubmitting = $state(false);
 </script>
 
 <div class="icons">

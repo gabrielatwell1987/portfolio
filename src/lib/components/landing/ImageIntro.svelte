@@ -33,7 +33,7 @@
 
 		<div class="img">
 			<a href="/about/hero" onclick={handleTransitionClick}>
-				<Image {src} {alt} {width} />
+				<Image {src} {alt} {width} aspectRatio="16/9" />
 			</a>
 		</div>
 
