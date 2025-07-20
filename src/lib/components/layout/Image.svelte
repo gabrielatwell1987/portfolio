@@ -1,6 +1,17 @@
 <script>
-	/** @type {{src: any, alt: any, width?: any, aspectRatio?: string}} */
-	let { src, alt, width, aspectRatio } = $props();
+	/** @type {{src: any, alt: any, width?: any, height?: any, aspectRatio?: string}} */
+	let { src, alt, width, height, aspectRatio } = $props();
+
+	let computedHeight = $derived.by(() => {
+		if (height) return height;
+		if (width && aspectRatio) {
+			const [w, h] = aspectRatio.split('/').map(Number);
+			if (w && h) {
+				return Math.round((Number(width) * h) / w);
+			}
+		}
+		return undefined;
+	});
 
 	function lazyLoadImg(node) {
 		const observer = new IntersectionObserver(([entry], observer) => {
@@ -22,6 +33,7 @@
 	use:lazyLoadImg
 	{alt}
 	{width}
+	height={computedHeight}
 	style={aspectRatio ? `aspect-ratio: ${aspectRatio};` : undefined}
 />
 

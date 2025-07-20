@@ -24,6 +24,7 @@
 		margin-left: calc(-50vw + 50%);
 		position: relative;
 		padding-top: 2em;
+		aspect-ratio: 16 / 9;
 
 		@media (width <= 768px) {
 			padding-top: 1em;
