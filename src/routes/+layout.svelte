@@ -81,11 +81,12 @@
 	}
 
 	main {
+		min-height: 100vh;
 		width: 100%;
 		height: 100%;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-evenly;
+		justify-content: flex-start;
 		position: relative;
 		overflow: hidden;
 	}
