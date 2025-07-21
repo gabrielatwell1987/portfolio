@@ -89,5 +89,21 @@
 		justify-content: flex-start;
 		position: relative;
 		overflow: hidden;
+		/* Prevent layout shift during loading */
+		contain: layout style;
+	}
+
+	/* Reserve space for content to prevent CLS */
+	#main-content {
+		min-height: calc(100vh - 120px); /* Account for nav and footer */
+		contain: layout style;
+		/* Additional stability for content loading */
+		will-change: auto;
+	}
+
+	/* Prevent layout shifts during page transitions */
+	main {
+		contain: layout;
+		isolation: isolate;
 	}
 </style>

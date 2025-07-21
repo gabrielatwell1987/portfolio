@@ -8,7 +8,7 @@
 			<Image
 				src="/logos/atwellUI.webp"
 				alt="atwell user interface"
-				width="1200"
+				width="800"
 				aspectRatio="16/9"
 			/>
 		</a>

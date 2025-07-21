@@ -12,6 +12,7 @@
 
 <svelte:head>
 	<link rel="preload" as="image" href="/logos/wireframeBg.webp" type="image/webp" />
+	<link rel="preload" as="image" href="/logos/svelteCode-768.webp" type="image/webp" />
 </svelte:head>
 
 <SEO
