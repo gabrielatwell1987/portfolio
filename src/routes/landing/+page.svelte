@@ -21,13 +21,7 @@
 />
 
 <section class="content">
-	<ImageIntro
-		src="/logos/atwellUI.webp"
-		alt="atwell user interface"
-		title=""
-		text=""
-		width="1200"
-	/>
+	<ImageIntro src="/logos/atwellUI.webp" alt="atwell user interface" title="" text="" width="800" />
 
 	<DoYouNeed text="do you need a " span="website?" />
 

@@ -146,6 +146,22 @@
 
 	img {
 		font-style: italic;
+		/* Prevent layout shift for images */
+		height: auto;
+		max-width: 100%;
+		aspect-ratio: attr(width) / attr(height);
+	}
+
+	/* CLS prevention for images without explicit dimensions */
+	img:not([width]):not([height]) {
+		aspect-ratio: 16 / 9; /* Default aspect ratio */
+		width: 100%;
+		height: auto;
+	}
+
+	/* Prevent layout shift for lazy-loaded content */
+	[loading='lazy'] {
+		min-height: 200px;
 	}
 }
 
