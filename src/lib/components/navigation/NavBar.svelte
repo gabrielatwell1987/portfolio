@@ -72,9 +72,8 @@
 		left: 1rem;
 		right: 1rem;
 		width: calc(100% - 2rem);
-		height: 5em;
 		min-height: 5em;
-		padding: 0 1rem;
+		padding: 0.5rem 1rem;
 		margin-inline: auto;
 	}
 
@@ -88,7 +87,8 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 2rem;
+		flex-wrap: wrap;
+		gap: clamp(0.25rem, 2vw, 1.5rem);
 		font-family: var(--orbitron);
 		font-weight: 600;
 		list-style: none;
@@ -99,13 +99,10 @@
 
 		@media (width >= 750px) {
 			display: flex;
-			gap: 0.25rem;
-			scale: 0.9;
 		}
 
-		@media (width >= 990px) {
-			gap: 1.5rem;
-			scale: 1;
+		@media (width <= 1100px) {
+			padding-top: 2rem;
 		}
 	}
 

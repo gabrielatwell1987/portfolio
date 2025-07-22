@@ -31,7 +31,6 @@
 		@media (width >= 750px) {
 			text-decoration: none;
 			border-radius: 1px;
-			scale: 0.8;
 
 			&:hover {
 				color: var(--clr-pale);
@@ -46,10 +45,6 @@
 			&:not(:hover) {
 				opacity: 1;
 			}
-		}
-
-		@media (width >= 990px) {
-			scale: 1;
 		}
 	}
 </style>
