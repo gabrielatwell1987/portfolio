@@ -9,17 +9,20 @@
 
 	// Effect to listen for PWA events
 	$effect(() => {
+		console.log('🔧 InstallBtn: Effect started, setting up PWA event listeners');
+
 		function handleBeforeInstallPrompt(event) {
-			event.preventDefault(); // Prevent automatic prompt
-			deferredPrompt = event; // Store the event
-			isInstallable = true; // Show the install button
+			console.log('🎯 InstallBtn: beforeinstallprompt event fired!');
+			event.preventDefault();
+			deferredPrompt = event;
+			isInstallable = true;
 			installStatus = 'App can now be installed';
-			console.log('PWA install prompt fired');
+			console.log('✅ InstallBtn: Button should now be visible, isInstallable =', true);
 		}
 
 		function handleAppInstalled() {
-			console.log('PWA installed');
-			isInstallable = false; // Hide the install button
+			console.log('🎉 InstallBtn: PWA installed successfully');
+			isInstallable = false;
 			installStatus = 'App installed successfully';
 		}
 
@@ -27,8 +30,11 @@
 		window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
 		window.addEventListener('appinstalled', handleAppInstalled);
 
+		console.log('👂 InstallBtn: Event listeners added for beforeinstallprompt and appinstalled');
+
 		// Cleanup on destroy
 		return () => {
+			console.log('🧹 InstallBtn: Cleaning up event listeners');
 			window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
 			window.removeEventListener('appinstalled', handleAppInstalled);
 		};
@@ -36,18 +42,27 @@
 
 	// Install button click handler
 	const installApp = async () => {
-		if (!deferredPrompt) return;
+		console.log('📱 InstallBtn: Install button clicked');
+		console.log('📱 InstallBtn: deferredPrompt available?', !!deferredPrompt);
+
+		if (!deferredPrompt) {
+			console.log('❌ InstallBtn: No deferredPrompt available, cannot install');
+			return;
+		}
 
 		installStatus = 'Installing app...';
+		console.log('⏳ InstallBtn: Showing install prompt...');
 
-		deferredPrompt.prompt(); // Show the prompt
+		deferredPrompt.prompt();
 
 		const choiceResult = await deferredPrompt.userChoice;
+		console.log('🗳️ InstallBtn: User choice result:', choiceResult.outcome);
+
 		if (choiceResult.outcome === 'accepted') {
-			console.log('User accepted the PWA installation');
+			console.log('✅ InstallBtn: User accepted the PWA installation');
 			installStatus = 'Installation accepted';
 		} else {
-			console.log('User dismissed the PWA installation');
+			console.log('❌ InstallBtn: User dismissed the PWA installation');
 			installStatus = 'Installation declined';
 		}
 
