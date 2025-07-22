@@ -45,8 +45,13 @@
 		background-repeat: no-repeat;
 		background-position: right 0.75rem center;
 		padding-right: 2.5rem;
+		min-width: auto;
+		width: max-content;
 		margin-top: 1rem;
-		min-width: 4.4em;
+
+		@media (width <= 1085px) {
+			margin-top: 0;
+		}
 
 		&:focus {
 			outline: none;
