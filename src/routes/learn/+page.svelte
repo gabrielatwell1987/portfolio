@@ -29,7 +29,7 @@
 				<Image
 					src="/logos/gsapLogo.svg"
 					alt="greensock animation platform"
-					width="250"
+					width="300"
 					aspectRatio="1/1"
 				/>
 			</a>
@@ -132,7 +132,6 @@
 	.image {
 		background-color: transparent;
 		color: var(--smoke);
-		border: 1px solid var(--smoke);
 		margin-inline: auto;
 		margin-top: 1em;
 		border-radius: 8px;
@@ -142,12 +141,6 @@
 
 		&:hover {
 			animation: wiggle 0.85s ease-in-out infinite;
-		}
-
-		&:not(:hover) {
-			opacity: 0.75;
-			background-color: var(--smoke);
-			color: black;
 		}
 	}
 
