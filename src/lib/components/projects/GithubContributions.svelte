@@ -501,7 +501,7 @@
 									aria-describedby="legend-desc"
 								>
 									<!-- prettier-ignore -->
-									<title>{day.contributionCount} {getContributionText(day.contributionCount)} on {formatDate(day.date)}</title>
+									<title>{day.contributionCount + ' ' + getContributionText(day.contributionCount) + ' on ' + formatDate(day.date)}</title>
 								</rect>
 							{/each}
 						{/each}
