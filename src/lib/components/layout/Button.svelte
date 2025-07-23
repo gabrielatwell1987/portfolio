@@ -1,9 +1,9 @@
 <script>
 	/** @type {{title: any}} */
-	let { href, title } = $props();
+	let { href, title, class: className = '' } = $props();
 </script>
 
-<a {href}>
+<a {href} class={className}>
 	{title}
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="1rem">
 		<title>Right Arrow</title>
