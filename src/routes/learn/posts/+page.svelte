@@ -7,6 +7,7 @@
 	import Image from '$lib/components/layout/Image.svelte';
 	import TableOfContents from '$lib/components/learn/TableOfContents.svelte';
 	import GabeMorph from '$lib/components/learn/GabeMorph.svelte';
+	import BackToTop from '$lib/components/learn/BackToTop.svelte';
 
 	let mounted = $state(false);
 
@@ -33,7 +34,7 @@
 	keywords="animation techniques, web techniques for animation"
 />
 
-<section class="tocLogo">
+<section class="tocLogo" id="top">
 	<GabeMorph />
 
 	<TableOfContents />
@@ -74,7 +75,9 @@
 	</article>
 
 	<div class="back">
-		<Button href="/learn" title="Back" />
+		<BackToTop />
+
+		<Button href="/learn" title="Back" class="back-button" />
 	</div>
 </section>
 
@@ -91,6 +94,20 @@
 
 		& .back {
 			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 0;
+			margin: 0;
+
+			& :global(.back-button) {
+				margin-top: 1em;
+				margin-bottom: 0;
+			}
+
+			@media (width <= 500px) {
+				gap: 1em;
+			}
 		}
 
 		& .card {
