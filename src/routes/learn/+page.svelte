@@ -79,7 +79,7 @@
 			@media (width <= 768px) {
 				margin: 0;
 				padding: 3em;
-				/* padding-bottom: 4.5em; */
+				min-width: 100vw;
 				min-height: auto;
 				margin-inline: auto;
 			}
