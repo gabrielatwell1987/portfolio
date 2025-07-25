@@ -16,13 +16,13 @@
 	<form action="https://formspree.io/f/xwpoqdno" method="POST" novalidate>
 		<div class="form-grid">
 			<label class="form-group">
-				<span class="label-text">Name <span aria-hidden="true">*</span></span>
+				<span class="label-text">Name</span>
 
 				<input type="text" name="name" placeholder="Your name" required autocomplete="name" />
 			</label>
 
 			<label class="form-group">
-				<span class="label-text">Email <span aria-hidden="true">*</span></span>
+				<span class="label-text">Email</span>
 
 				<input
 					type="email"
@@ -34,7 +34,7 @@
 			</label>
 
 			<label class="form-group">
-				<span class="label-text">Location <span aria-hidden="true">*</span></span>
+				<span class="label-text">Location</span>
 
 				<input
 					type="text"
@@ -164,7 +164,7 @@
 		margin-inline: auto;
 		padding: 1rem;
 		overflow-y: auto;
-		height: calc(100dvh - 4rem);
+		height: calc(100dvh - 3em);
 		position: relative;
 
 		@media (width <= 768px) {
