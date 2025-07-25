@@ -89,6 +89,7 @@
 		--clr-pale: var(--yellow);
 		--clr-button-text: var(--clr-inverted);
 		--clr-button: var(--yellow);
+		--clr-inputs: var(--dark-gray);
 		--opacity: 0.15;
 		background-color: var(--dark);
 		color: var(--clr-main);
@@ -107,6 +108,7 @@
 		--clr-pale: var(--dark-pale);
 		--clr-button-text: var(--clr-inverted);
 		--clr-button: var(--yellow);
+		--clr-inputs: var(--clr-inverted);
 		--opacity: 0.35;
 		background-color: var(--light);
 		color: var(--clr-main);
@@ -127,6 +129,7 @@
 			--clr-pale: var(--yellow);
 			--clr-button-text: var(--clr-inverted);
 			--clr-button: var(--yellow);
+			--clr-inputs: var(--dark-gray);
 			--opacity: 0.15;
 			background-color: var(--dark);
 			color: var(--clr-main);
@@ -147,6 +150,7 @@
 			--clr-pale: var(--dark-pale);
 			--clr-button-text: var(--clr-inverted);
 			--clr-button: var(--yellow);
+			--clr-inputs: var(--clr-inverted);
 			--opacity: 0.35;
 			background-color: var(--light);
 			color: var(--clr-main);
