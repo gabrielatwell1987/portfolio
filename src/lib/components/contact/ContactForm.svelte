@@ -199,6 +199,10 @@
 				position: relative;
 				color: var(--clr-inputs);
 
+				@media (width <= 500px) {
+					transform: translate(20px, 18px);
+				}
+
 				&::before {
 					content: '';
 					position: absolute;
