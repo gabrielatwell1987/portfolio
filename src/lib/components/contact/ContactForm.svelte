@@ -26,9 +26,7 @@
 	<fieldset>
 		<legend>message me</legend>
 
-		<label for="name">
-			<span>name <span aria-hidden="true">*</span></span>
-		</label>
+		<label for="name">name</label>
 		<input
 			type="text"
 			id="name"
@@ -39,9 +37,7 @@
 			autocomplete="name"
 		/>
 
-		<label for="email">
-			<span>email <span aria-hidden="true">*</span></span>
-		</label>
+		<label for="email">email</label>
 		<input
 			type="email"
 			id="email"
@@ -52,9 +48,7 @@
 			autocomplete="email"
 		/>
 
-		<label for="message">
-			<span>message <span aria-hidden="true">*</span></span>
-		</label>
+		<label for="message">message</label>
 		<textarea
 			id="message"
 			name="message"
@@ -75,6 +69,10 @@
 		--100: 100%;
 	}
 
+	:global(body.light) form {
+		--label-bg: var(--dark-gray);
+	}
+
 	* {
 		box-sizing: border-box;
 		margin: 0;
@@ -88,66 +86,53 @@
 		letter-spacing: 1px;
 		color: var(--clr-blue);
 		padding-inline: 1rem;
+
+		@media screen and (width >= 720px) {
+			margin-bottom: 0;
+		}
 	}
 
 	input,
 	textarea {
 		font-size: clamp(var(--sm), 2vw, var(--h4));
-		outline: 1px solid var(--clr-gray);
+		outline: none;
+
+		&:user-valid {
+			outline: 2px solid var(--success);
+		}
+
+		&:user-invalid {
+			outline: 2px solid var(--fail);
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		@media screen and (width >= 1350px) {
+			padding: 2rem;
+		}
 	}
 
 	input {
 		&:placeholder-shown {
 			letter-spacing: 3px;
 		}
-
-		&:focus {
-			outline: none;
-		}
-
-		&:focus-visible {
-			outline: 2px solid var(--clr-gray);
-			border: none;
-		}
-	}
-
-	input:user-valid,
-	textarea:user-valid {
-		outline: 2px solid var(--success);
-	}
-
-	input:user-invalid,
-	textarea:user-invalid {
-		outline: 2px solid var(--fail);
 	}
 
 	textarea {
-		&:focus {
-			outline: none;
-		}
-
-		&:focus-visible {
-			outline: 2px solid var(--clr-gray);
-			border: none;
-		}
-
 		&:placeholder-shown {
 			letter-spacing: 0px;
 		}
 	}
 
-	span {
-		font-size: clamp(var(--sm), 1.25vw, var(--h4));
-		font-weight: 800;
-		letter-spacing: 0px;
-		color: var(--clr-main);
-	}
-
-	#name::-webkit-input-placeholder,
-	#email::-webkit-input-placeholder,
-	#message::-webkit-input-placeholder {
-		color: var(--clr-main);
-		font-weight: 100;
+	#name,
+	#email,
+	#message {
+		&::-webkit-input-placeholder {
+			color: var(--clr-main);
+			font-weight: 100;
+		}
 	}
 
 	.icons {
@@ -155,14 +140,17 @@
 		place-content: center;
 		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 		align-items: center;
-	}
-	.popover {
-		display: flex;
-		justify-content: space-evenly;
-		margin-bottom: 15%;
+
+		& .popover {
+			display: flex;
+			justify-content: space-evenly;
+			margin-bottom: 15%;
+		}
 	}
 
 	form {
+		--label-bg: var(--dark); /* Default to dark mode */
+
 		@media screen and (width >= 320px) {
 			width: 95%;
 			margin-inline: auto;
@@ -177,6 +165,7 @@
 				width: var(--100);
 				margin: 0 auto;
 			}
+
 			& input,
 			& textarea {
 				width: 100%;
@@ -197,10 +186,31 @@
 			}
 
 			& label {
-				& span {
-					font-family: var(--bronova);
-					font-size: clamp(var(--h6), 1.5vw, var(--h3));
-					font-weight: 500;
+				transform: translate(20px, 22px);
+				background-color: transparent;
+				width: fit-content;
+				padding: 0 0.5rem;
+				font-family: var(--bronova);
+				font-size: clamp(var(--h6), 1.5vw, var(--h3));
+				font-weight: 500;
+				z-index: 5;
+				border-radius: var(--radius);
+				align-self: flex-start;
+				position: relative;
+				color: var(--clr-inputs);
+
+				&::before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: -4px;
+					right: -4px;
+					height: 2rem;
+					background-color: var(--label-bg);
+					color: var(--clr-inputs);
+					transform: translateY(-50%);
+					z-index: -1;
+					border-radius: var(--radius);
 				}
 			}
 		}
@@ -213,10 +223,6 @@
 				padding: 2rem 5rem;
 				border-radius: 10px;
 				width: 90%;
-
-				& label {
-					margin-bottom: 1rem;
-				}
 
 				& input {
 					margin-bottom: 1rem;
