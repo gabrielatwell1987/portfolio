@@ -137,6 +137,7 @@
 			& img {
 				width: 100%;
 				height: auto;
+				aspect-ratio: 1;
 				padding: 0;
 				margin: 0;
 				display: block;
@@ -151,24 +152,20 @@
 
 	/* Popover styles */
 	#image-popover {
-		border: none;
 		padding: 0;
 		background: transparent;
-		max-width: 90vw;
-		max-height: 90vh;
+		max-width: 80vw;
+		max-height: 80vh;
+		width: 100%;
 		overflow: hidden;
 		margin: auto;
-		transform: scale(0.8);
+		transform: scale(0.9);
 		opacity: 0;
-		border: 2px solid var(--clr-main);
+		border: none;
 		border-radius: var(--radius);
 		transition:
 			transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
 			opacity 0.3s ease-out;
-
-		@media (width <= 768px) {
-			border: 1px solid var(--clr-main);
-		}
 
 		&.open {
 			transform: scale(1);
@@ -177,7 +174,7 @@
 
 		& img {
 			max-width: 100%;
-			max-height: 90vh;
+			max-height: 95vh;
 			object-fit: contain;
 			cursor: pointer;
 			box-shadow: 0 0 10px var(--clr-inverted);
