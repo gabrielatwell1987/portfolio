@@ -36,7 +36,7 @@
 		font-weight: 100;
 		color: var(--clr-main);
 		text-align: center;
-		margin: 10% 0;
+		margin: 0;
 		padding: 2rem;
 		transform: translateY(100%);
 		opacity: 0;
