@@ -13,9 +13,7 @@
 		letter-spacing: 2px;
 		color: var(--clr-main);
 		background-color: transparent;
-		transition:
-			color 0.35s ease-in-out,
-			opacity 0.35s ease-in-out;
+		transition: opacity 0.15s ease-in-out;
 
 		&:focus,
 		&:focus-visible {
@@ -25,7 +23,6 @@
 
 		&:is(:hover) {
 			opacity: 0.75;
-			color: var(--clr-pale);
 		}
 
 		@media (width >= 750px) {
@@ -33,13 +30,11 @@
 			border-radius: 1px;
 
 			&:hover {
-				color: var(--clr-pale);
 				text-shadow: 0px 0px 1px var(--clr-inverted);
-				border-bottom: 4px solid var(--clr-pale);
+				border-bottom: 4px solid var(--clr-main);
 				height: 2.75rem;
 				transition: all 0.15s ease-in-out;
 				border-radius: 1px;
-				opacity: 0.8;
 			}
 
 			&:not(:hover) {
