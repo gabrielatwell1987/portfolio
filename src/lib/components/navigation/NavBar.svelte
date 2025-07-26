@@ -94,11 +94,11 @@
 		list-style: none;
 
 		@media (width > 300px) and (width < 750px) {
-			display: none;
+			visibility: hidden;
 		}
 
 		@media (width >= 750px) {
-			display: flex;
+			visibility: visible;
 		}
 
 		@media (width <= 1100px) {
@@ -129,6 +129,7 @@
 		}
 
 		@media (width > 300px) and (width < 750px) {
+			visibility: visible;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
@@ -149,7 +150,8 @@
 		}
 
 		@media (width >= 750px) {
-			display: none;
+			/* display: none; */
+			visibility: hidden;
 		}
 	}
 

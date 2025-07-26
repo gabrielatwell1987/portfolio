@@ -63,7 +63,7 @@
 	<Loading />
 {/if}
 
-<main>
+<main style="visibility: {isPageLoaded ? 'visible' : 'hidden'};">
 	<NavBar />
 
 	<div id="main-content" tabindex="-1">
@@ -91,6 +91,9 @@
 		overflow: hidden;
 		/* Prevent layout shift during loading */
 		contain: layout style;
+		/* Always reserve space to prevent CLS */
+		opacity: 1;
+		transition: opacity 0.3s ease-in-out;
 	}
 
 	/* Reserve space for content to prevent CLS */
