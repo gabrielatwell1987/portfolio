@@ -47,8 +47,6 @@
 			&:hover {
 				opacity: 0.95;
 				outline-offset: 0px;
-				animation: wiggle 1s ease-in-out infinite;
-				filter: drop-shadow(0 0 0.75rem var(--smoke));
 			}
 
 			&:hover svg {
@@ -60,21 +58,6 @@
 					display: none;
 				}
 			}
-		}
-	}
-
-	@keyframes wiggle {
-		0% {
-			rotate: 0deg;
-			translate: 0 0;
-		}
-		25% {
-			rotate: -2deg;
-			translate: -5px 0;
-		}
-		80% {
-			rotate: 2deg;
-			translate: 5px 0;
 		}
 	}
 
