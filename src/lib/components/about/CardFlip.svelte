@@ -18,17 +18,28 @@
 </div>
 
 <style>
+	.flip {
+		margin-inline: auto;
+		margin-bottom: 10em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-items: center;
+
+		@media (width <= 500px) {
+			margin-bottom: -10em;
+		}
+	}
+
 	.card-container {
 		width: 300px;
 		height: 400px;
 		perspective: 1000px;
-		margin-bottom: 5%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 
 		@media screen and (width <= 600px) {
-			margin-bottom: 13%;
 			object-fit: contain;
 		}
 
@@ -66,6 +77,7 @@
 					left: 0;
 					filter: drop-shadow(0 0 0.25rem var(--clr-main));
 					border-radius: 10px;
+					aspect-ratio: 3 / 4;
 
 					@media (width <= 500px) {
 						width: 85vw;
@@ -87,27 +99,6 @@
 				color: var(--white);
 				transform: rotateY(180deg);
 			}
-		}
-	}
-
-	@media screen and (width >= 300px) {
-		.flip {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-block: 4rem;
-		}
-	}
-
-	@media (width <= 1400px) {
-		.flip {
-			margin-top: 10em;
-		}
-	}
-
-	@media (width <= 1500px) {
-		.flip {
-			margin-top: 5em;
 		}
 	}
 </style>
