@@ -14,7 +14,6 @@
 			{alt}
 			width="1200"
 			height="675"
-			loading="lazy"
 			decoding="async"
 			style="aspect-ratio: 16/9; max-width: 100%; height: auto;"
 		/>
