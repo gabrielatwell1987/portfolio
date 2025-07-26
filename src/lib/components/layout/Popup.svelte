@@ -29,7 +29,7 @@
 
 		button {
 			background-color: transparent;
-			color: var(--clr-pale);
+			color: var(--clr-gray);
 			width: fit-content;
 			font-family: var(--anta);
 			border-radius: 6px;
