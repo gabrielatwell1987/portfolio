@@ -76,17 +76,17 @@
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 24 24"
+					viewBox="0 0 27 27"
 					fill="none"
 					stroke="currentColor"
-					stroke-width="2"
+					stroke-width="3"
 					stroke-linecap="round"
 					stroke-linejoin="round"
 					aria-hidden="true"
 				>
 					<title>Close</title>
-					<line x1="18" y1="6" x2="6" y2="18"></line>
-					<line x1="6" y1="6" x2="18" y2="18"></line>
+					<line x1="18" y1="12" x2="6" y2="25"></line>
+					<line x1="6" y1="12" x2="18" y2="25"></line>
 				</svg>
 			</button>
 
@@ -177,7 +177,7 @@
 						font-size: clamp(var(--h5), 1.75vw, var(--h2));
 						font-weight: 600;
 						line-height: 1;
-						color: var(--purple);
+						color: var(--clr-pale);
 						margin: -0.5rem 0 -2rem 0;
 						letter-spacing: -1px;
 					}
@@ -228,6 +228,7 @@
 
 			& svg {
 				cursor: pointer;
+				fill: var(--clr-gray);
 
 				&:focus,
 				&:focus-visible {
@@ -281,7 +282,7 @@
 			& svg {
 				width: 3rem;
 				height: 3rem;
-				stroke: var(--clr-pale);
+				stroke: var(--clr-gray);
 				flex-shrink: 0;
 			}
 		}
