@@ -108,8 +108,8 @@
 
 	.mobile {
 		position: fixed;
-		right: 1.25rem;
-		top: 4rem;
+		right: 1rem;
+		top: 2rem;
 		z-index: 10;
 		translate: 100% 0;
 		overflow: hidden;
@@ -150,7 +150,6 @@
 		}
 
 		@media (width >= 750px) {
-			/* display: none; */
 			visibility: hidden;
 		}
 	}
