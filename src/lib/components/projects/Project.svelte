@@ -120,10 +120,11 @@
 			& .hover-text {
 				visibility: hidden;
 				width: 100%;
-				background-color: var(--clr-gray);
+				background-color: var(--clr-main);
 				color: var(--clr-inverted);
 				text-align: center;
-				border-radius: var(--button-radius);
+				border: 1px solid var(--clr-inverted);
+				border-radius: var(--radius);
 				padding: 5px 3px;
 				font-family: var(--bronova);
 				font-size: clamp(var(--sm), 1.15vw, var(--h5));

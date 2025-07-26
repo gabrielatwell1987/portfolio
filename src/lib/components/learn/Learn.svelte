@@ -2,40 +2,51 @@
 	let { href, title } = $props();
 </script>
 
-<h3 class="learn">Learn more about {title}</h3>
+<article class="learn-article">
+	<h3 class="learn">Learn more about {title}</h3>
 
-<p class="center">
-	If you would like to know more about <a class="link" {href} aria-label="greensock">{title}</a>,
-	click the link!
-</p>
+	<p class="center">
+		If you would like to know more about <a class="link" {href} aria-label="greensock">{title}</a>,
+		click the link!
+	</p>
+</article>
 
 <style>
-	.link {
-		text-decoration: none;
-		font-size: clamp(var(--h6), 3vw, var(--h4));
-		font-weight: 700;
-		text-decoration: none;
-		color: var(--clr-link);
-		font-family: var(--orbitron);
-	}
+	.learn-article {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: transparent;
+		box-shadow: none;
+		padding: 0;
+		margin: 0;
 
-	.learn {
-		margin: 5rem 0 -1rem 0;
-		text-align: center;
-		font-family: var(--anta);
-		color: var(--clr-blue);
-		font-size: clamp(var(--h5), 3vw, var(--h2));
-		margin-top: -7rem;
-	}
-	.center {
-		text-align: center;
-		font-size: clamp(var(--sm), 2vw, var(--h6));
-		margin-top: 2rem;
-		line-height: 1.5;
-		color: var(--clr-main);
+		& .learn {
+			text-align: center;
+			font-family: var(--anta);
+			color: var(--clr-blue);
+			font-size: clamp(var(--h6), 2vw, var(--h3));
+			padding: 0;
+			margin: 0;
+		}
 
-		@media (width >= 1024px) {
-			margin-bottom: 5%;
+		& .center {
+			text-align: center;
+			font-size: clamp(var(--xs), 1.5vw, var(--h4));
+			line-height: 1.5;
+			color: var(--clr-main);
+			margin: 0;
+			padding: 0;
+
+			& .link {
+				text-decoration: none;
+				color: var(--clr-link);
+				font-family: var(--orbitron);
+				font-size: clamp(var(--sm), 1.25vw, var(--h4));
+				font-weight: 700;
+				margin: 0;
+				padding: 0;
+			}
 		}
 	}
 </style>
