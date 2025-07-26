@@ -15,6 +15,7 @@
 
 	let selectedImage = $state(null);
 	let isOpen = $state(false);
+
 	function openPopover(img) {
 		// If a popover is already open, close it first
 		if (isOpen) {
