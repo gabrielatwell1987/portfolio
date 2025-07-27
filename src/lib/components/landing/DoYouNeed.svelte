@@ -30,6 +30,10 @@
 		-moz-osx-font-smoothing: grayscale;
 	}
 
+	.animated-text {
+		padding-top: 10em;
+	}
+
 	.sentence {
 		font-family: var(--bronova);
 		font-size: clamp(1.25rem, 2.5vw, 10rem);

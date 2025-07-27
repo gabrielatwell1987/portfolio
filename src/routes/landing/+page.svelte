@@ -2,7 +2,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import Hero from '$lib/components/landing/Hero.svelte';
 	import DoYouNeed from '$lib/components/landing/DoYouNeed.svelte';
-	import ImageIntro from '$lib/components/landing/ImageIntro.svelte';
+	// import ImageIntro from '$lib/components/landing/ImageIntro.svelte';
 	import WaveBackground from '$lib/components/landing/WaveBackground.svelte';
 </script>
 
@@ -21,7 +21,7 @@
 />
 
 <section class="content">
-	<ImageIntro src="/logos/atwellUI.webp" alt="atwell user interface" title="" text="" width="800" />
+	<!-- <ImageIntro src="/logos/atwellUI.webp" alt="atwell user interface" title="" text="" width="800" /> -->
 
 	<DoYouNeed text="do you need a " span="website?" />
 
