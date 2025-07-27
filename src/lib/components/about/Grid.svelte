@@ -29,7 +29,6 @@
 	.inline {
 		@media (width >= 300px) {
 			display: inline-block;
-			margin: 0.5rem auto;
 			margin: 0;
 			border-radius: var(--radius);
 			padding: 0.5rem;

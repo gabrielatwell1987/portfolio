@@ -1,11 +1,31 @@
 <script>
 	/** @type {{src: any, alt: any, src2: any, alt2: any}} */
 	let { src, alt, src2, alt2 } = $props();
+
+	let isFlipped = $state(false);
+
+	function toggleFlip() {
+		isFlipped = !isFlipped;
+	}
+
+	function handleKeydown(event) {
+		if (event.key === 'Enter' || event.key === ' ') {
+			event.preventDefault();
+			toggleFlip();
+		}
+	}
 </script>
 
 <div class="flip">
 	<main class="card-container">
-		<section class="card">
+		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+		<section
+			class="card"
+			class:flipped={isFlipped}
+			onclick={toggleFlip}
+			onkeydown={handleKeydown}
+			aria-label="Flip card to see alternate view"
+		>
 			<article class="card-front">
 				<img {src} {alt} loading="lazy" />
 			</article>
@@ -24,10 +44,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		align-items: center;
 
 		@media (width <= 500px) {
-			margin-bottom: -10em;
+			margin-bottom: 3em;
 		}
 	}
 
@@ -43,8 +62,10 @@
 			object-fit: contain;
 		}
 
-		&:hover .card {
-			transform: rotateY(180deg);
+		@media (hover: hover) {
+			&:hover .card {
+				transform: rotateY(180deg);
+			}
 		}
 
 		.card {
@@ -55,6 +76,21 @@
 			transition: transform 0.7s;
 			transform-style: preserve-3d;
 			cursor: pointer;
+			border: none;
+			background: transparent;
+			padding: 0;
+			margin: 0;
+			display: block;
+			box-sizing: border-box;
+
+			&.flipped {
+				transform: rotateY(180deg);
+			}
+
+			&:focus {
+				outline: 2px solid var(--clr-main);
+				outline-offset: 2px;
+			}
 
 			.card-front,
 			.card-back {

@@ -5,8 +5,8 @@
 	let { title } = $props();
 </script>
 
-<section class="page-grid">
-	<div class="border" aria-label="skills">
+<section class="skills-container">
+	<div class="skills-inner" aria-label="skills">
 		<h3 class="skills-title">{title}</h3>
 
 		<ul class="skills">
@@ -90,7 +90,7 @@
 </section>
 
 <style>
-	.page-grid {
+	.skills-container {
 		display: grid;
 		min-height: 100vh;
 		place-items: center;
@@ -101,9 +101,13 @@
 			margin-top: -15em;
 			margin-bottom: -10em;
 		}
+
+		@media (width <= 500px) {
+			margin-block: -5em;
+		}
 	}
 
-	.border {
+	.skills-inner {
 		border: none;
 		display: grid;
 		gap: 1em;
