@@ -63,9 +63,9 @@
 	<Loading />
 {/if}
 
-<main style="visibility: {isPageLoaded ? 'visible' : 'hidden'};">
-	<NavBar />
+<NavBar />
 
+<main style="visibility: {isPageLoaded ? 'visible' : 'hidden'};">
 	<div id="main-content" tabindex="-1">
 		{@render children()}
 	</div>
@@ -87,26 +87,13 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
-		position: relative;
 		overflow: hidden;
-		/* Prevent layout shift during loading */
-		contain: layout style;
-		/* Always reserve space to prevent CLS */
 		opacity: 1;
 		transition: opacity 0.3s ease-in-out;
 	}
 
-	/* Reserve space for content to prevent CLS */
 	#main-content {
-		min-height: calc(100vh - 120px); /* Account for nav and footer */
-		contain: layout style;
-		/* Additional stability for content loading */
+		min-height: calc(100vh - 120px);
 		will-change: auto;
-	}
-
-	/* Prevent layout shifts during page transitions */
-	main {
-		contain: layout;
-		isolation: isolate;
 	}
 </style>
