@@ -20,7 +20,7 @@
 	}
 </script>
 
-<nav>
+<nav class="navigation">
 	<div class="header-logos">
 		<Burger bind:open ariaLabel="Toggle menu" />
 
@@ -59,7 +59,7 @@
 		--100: 100%;
 	}
 
-	nav {
+	nav.navigation {
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
@@ -172,7 +172,7 @@
 		}
 	}
 
-	nav {
+	nav.navigation {
 		@media (width > 300px) and (width < 750px) {
 			width: 97%;
 			left: 1.5%;
