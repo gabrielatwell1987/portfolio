@@ -86,7 +86,6 @@
 			user-select: none;
 
 			&:hover {
-				animation: nod 1s ease-in-out infinite;
 				color: var(--clr-main);
 				border-color: var(--clr-main);
 			}
@@ -121,21 +120,6 @@
 				padding: 1rem;
 				width: 100%;
 			}
-		}
-	}
-
-	@keyframes nod {
-		0% {
-			transform: translateY(0);
-			translate: 0 0;
-		}
-		25% {
-			transform: translateY(-2px);
-			translate: 0 -2px;
-		}
-		80% {
-			transform: translateY(2px);
-			translate: 0 2px;
 		}
 	}
 </style>
