@@ -138,7 +138,7 @@
 			& img {
 				width: 100%;
 				height: auto;
-				aspect-ratio: 1;
+				aspect-ratio: auto;
 				padding: 0;
 				margin: 0;
 				display: block;
