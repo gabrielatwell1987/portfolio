@@ -79,7 +79,7 @@
 					if (random > 0.95) contributionCount = Math.floor(Math.random() * 15) + 10;
 
 					week.contributionDays.push({
-						date: currentDate.toISOString().split('T')[0],
+						date: `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(currentDate.getDate()).padStart(2, '0')}`,
 						contributionCount,
 						color: getContributionColor(contributionCount)
 					});
@@ -116,7 +116,9 @@
 
 	// Function to format date for tooltip
 	function formatDate(dateString) {
-		const date = new Date(dateString);
+		// Parse the date string (YYYY-MM-DD) to avoid timezone issues
+		const [year, month, day] = dateString.split('-').map(Number);
+		const date = new Date(year, month - 1, day); // month is 0-indexed
 		return date.toLocaleDateString('en-US', {
 			weekday: 'long',
 			year: 'numeric',
@@ -288,18 +290,28 @@
 		const { cellSize, cellGap, dayLabelWidth } = getCurrentDimensions();
 		let currentMonth = -1;
 		let weekIndex = 0;
+		let lastLabelX = -100;
 
 		contributionsData.weeks.forEach((week, index) => {
 			if (week.contributionDays.length > 0) {
-				const firstDay = new Date(week.contributionDays[0].date);
-				const month = firstDay.getMonth();
+				// Parse the date string (YYYY-MM-DD) to avoid timezone issues
+				const dateString = week.contributionDays[0].date;
+				const [year, month, day] = dateString.split('-').map(Number);
+				const firstDay = new Date(year, month - 1, day); // month is 0-indexed
+				const monthIndex = firstDay.getMonth();
 
-				if (month !== currentMonth) {
+				if (monthIndex !== currentMonth) {
+					const proposedX = weekIndex * (cellSize + cellGap) + dayLabelWidth;
+					const minSpacing = 40;
+					const actualX = Math.max(proposedX, lastLabelX + minSpacing);
+
 					months.push({
-						name: MONTHS[month],
-						x: weekIndex * (cellSize + cellGap) + dayLabelWidth
+						name: MONTHS[monthIndex],
+						x: actualX
 					});
-					currentMonth = month;
+
+					currentMonth = monthIndex;
+					lastLabelX = actualX;
 				}
 				weekIndex++;
 			}
