@@ -222,7 +222,7 @@
 		@media screen and (width >= 1024px) {
 			& fieldset {
 				border: 5px solid var(--white);
-				border-image: linear-gradient(45deg, var(--clr-gray) 40%, var(--clr-blue)) 1;
+				border-image: linear-gradient(75deg, var(--clr-main), var(--clr-inverted)) 1;
 				font-weight: bolder;
 				padding: 2rem 5rem;
 				border-radius: 10px;

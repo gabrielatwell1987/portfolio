@@ -241,7 +241,7 @@
 		font-family: var(--bronova);
 		font-size: clamp(var(--sm), 1vw, var(--h4));
 		font-weight: 700;
-		color: var(--clr-main);
+		color: var(--clr-blue);
 	}
 
 	.tac {
