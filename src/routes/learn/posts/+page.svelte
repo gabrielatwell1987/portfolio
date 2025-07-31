@@ -55,7 +55,12 @@
 	<div class="gsap">
 		<div class="skillImg">
 			<h2>
-				<Image src="/skills/GSAP-Dark.svg" alt="greensock animation platform" aspectRatio="1/1" />
+				<Image
+					src="/skills/GSAP-Dark.svg"
+					alt="greensock animation platform"
+					aspectRatio="1/1"
+					class="gsap-logo"
+				/>
 			</h2>
 		</div>
 
@@ -137,6 +142,7 @@
 				margin-inline: auto;
 				margin-top: 6rem;
 				view-transition-name: gsap-skill-image;
+				max-width: 15em;
 			}
 		}
 
