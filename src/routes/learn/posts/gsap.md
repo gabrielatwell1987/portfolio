@@ -154,8 +154,6 @@ To use the MorphSVG plugin, you can either use npm or use the cdn. Npm makes it 
 </div>
 </div>
 
----
-
 <script>
 	import './md.css';
 	import Subheading from './Subheading.svelte';
