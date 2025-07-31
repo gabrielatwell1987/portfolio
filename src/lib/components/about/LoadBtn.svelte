@@ -75,9 +75,7 @@
 		text-decoration: none;
 
 		&:hover {
-			opacity: 0.95;
-			outline-offset: 0px;
-			filter: drop-shadow(0 0 0.5rem var(--clr-main));
+			opacity: 0.9;
 		}
 
 		&:focus,
