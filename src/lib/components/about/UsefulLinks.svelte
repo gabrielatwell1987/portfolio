@@ -5,32 +5,39 @@
 <main class="links" id="useful-links">
 	<h2>Useful Links:</h2>
 
-	<LoadBtn
-		loading="loading..."
-		delay={1500}
-		submit="Beginner HTML"
-		href="https://www.websiteplanet.com/blog/html-guide-beginners/"
-	/>
-	<LoadBtn loading="loading..." delay={1500} submit="JoyOfCode" href="https://joyofcode.xyz" />
-	<LoadBtn loading="loading..." delay={1500} submit="Kevin Powell" href="https://kevinpowell.co" />
-	<LoadBtn
-		loading="loading..."
-		delay={1500}
-		submit="Creative Coding"
-		href="https://creativecodingclub.com"
-	/>
-	<LoadBtn
-		loading="loading..."
-		delay={1500}
-		submit="Traversy Media"
-		href="https://traversymedia.com"
-	/>
-	<LoadBtn
-		loading="loading..."
-		delay={1500}
-		submit="Frontend Masters"
-		href="https://frontendmasters.com"
-	/>
+	<div class="buttons">
+		<LoadBtn
+			loading="loading..."
+			delay={1500}
+			submit="Beginner HTML"
+			href="https://www.websiteplanet.com/blog/html-guide-beginners/"
+		/>
+		<LoadBtn loading="loading..." delay={1500} submit="JoyOfCode" href="https://joyofcode.xyz" />
+		<LoadBtn
+			loading="loading..."
+			delay={1500}
+			submit="Kevin Powell"
+			href="https://kevinpowell.co"
+		/>
+		<LoadBtn
+			loading="loading..."
+			delay={1500}
+			submit="Creative Coding"
+			href="https://creativecodingclub.com"
+		/>
+		<LoadBtn
+			loading="loading..."
+			delay={1500}
+			submit="Traversy Media"
+			href="https://traversymedia.com"
+		/>
+		<LoadBtn
+			loading="loading..."
+			delay={1500}
+			submit="Frontend Masters"
+			href="https://frontendmasters.com"
+		/>
+	</div>
 
 	<p>
 		All of these links are resources that I used to learn frontend and design for the web <span
@@ -41,6 +48,16 @@
 
 <style>
 	.links {
+		& .buttons {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(200px, 1fr));
+			gap: 0.25rem;
+
+			@media (width <= 768px) {
+				grid-template-columns: 1fr;
+			}
+		}
+
 		@media (width >= 300px) {
 			width: fit-content;
 			margin-inline: auto;
@@ -49,12 +66,19 @@
 
 			& h2 {
 				margin-top: 2rem;
-				margin-bottom: 0.75rem;
+				margin-bottom: 1.2em;
+				margin-inline: auto;
 				font-family: var(--bronova);
-				font-size: clamp(var(--sm), 1.75vw, var(--h5));
+				font-size: clamp(var(--h6), 2vw, var(--h4));
 				font-weight: 600;
 				color: var(--clr-blue);
 				letter-spacing: -1px;
+				border-bottom: 2px solid var(--clr-blue);
+				width: fit-content;
+
+				@media (width <= 768px) {
+					border-bottom: 1px solid var(--clr-blue);
+				}
 			}
 
 			& p {
