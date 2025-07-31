@@ -39,6 +39,7 @@
 
 		@media (width <= 768px) {
 			padding-top: 1em;
+			margin-bottom: 2.5em;
 			min-height: 40vh;
 		}
 
@@ -73,39 +74,6 @@
 			color: var(--clr-blue);
 			font-family: var(--orbitron);
 			letter-spacing: -1px;
-
-			/* scroll-driven animations */
-			/* @media (prefers-reduced-motion: no-preference) {
-				@supports (animation-timeline: scroll()) {
-					animation: title linear both;
-					animation-timeline: scroll(root);
-					animation-range: 0vh 108vh;
-
-					@media (width <= 1600px) {
-						animation-range: 0vh 85vh;
-					}
-
-					@media (width <= 1300px) {
-						animation-range: 0vh 65vh;
-					}
-
-					@media (width <= 1090px) {
-						animation-range: 0vh 58vh;
-					}
-
-					@media (width <= 990px) {
-						animation-range: 0vh 50vh;
-					}
-
-					@media (width <= 768px) {
-						animation-range: 0vh 35vh;
-					}
-
-					@media (width <= 500px) {
-						animation-range: 0vh 25vh;
-					}
-				}
-			} */
 
 			@media (width <= 1300px) {
 				padding-bottom: 2rem;
