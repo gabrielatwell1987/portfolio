@@ -3,10 +3,6 @@
 	import ThreeCanvas from '$lib/components/layout/ThreeCanvas.svelte';
 	import Button from '$lib/components/layout/Button.svelte';
 	import HeroTitle from '$lib/components/layout/HeroTitle.svelte';
-
-	$effect(() => {
-		console.log(ThreeCanvas);
-	});
 </script>
 
 <SEO
@@ -15,106 +11,124 @@
 	keywords="hero section, three.js hero section, gabe's hero section"
 />
 
-<br /><br />
+<!-- Three.js Background -->
+<div class="hero-container">
+	<ThreeCanvas />
 
-<ThreeCanvas />
+	<section aria-label="hero" class="hero-content">
+		<HeroTitle title="Frontend Crafted Web Experiences" />
 
-<section aria-label="hero">
-	<HeroTitle title="Frontend Crafted Web Experiences" />
+		<h4 class="summary">
+			I am a frontend developer who loves to create beautiful and functional websites. This website
+			showcases my skills with some projects that I created. I look forward to hearing from you so
+			we can discuss your goals for your online needs!
+		</h4>
 
-	<h4 class="summary left up">
-		I am a frontend developer who loves to create beautiful and functional websites. This website
-		showcases my skills with some projects that I created. I look forward to hearing from you so we
-		can discuss your goals for your online needs!
-	</h4>
-
-	<Button href="/projects" title="Creations" />
-</section>
+		<div class="button-wrapper">
+			<Button href="/projects" title="Creations" />
+		</div>
+	</section>
+</div>
 
 <style>
-	section {
-		text-align: center;
-		font-size: clamp(var(--sm), 1.5vw, var(--h4));
+	.hero-container {
+		position: relative;
+		width: 100vw;
 		height: 100vh;
-		margin-bottom: 2%;
-		padding-top: 6%;
+		min-height: 100vh; /* CLS prevention: Reserve space immediately */
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		/* Remove margin-top to prevent layout shifts */
+		/* Use padding-top if you need space from header */
+		padding-top: 2rem;
+		background: transparent;
+		/* Ensure immediate space reservation */
+		contain: layout;
+		/* Minimal loading state to prevent flash - subtle dark background */
+		background: rgba(0, 0, 0, 0.95);
+	}
 
-		position: absolute;
-		top: 55%;
-		left: 50%;
-		transform: translate(-50%, -55%);
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
 		width: 100%;
+		max-width: 1200px;
+		padding: 2rem;
+		/* CLS prevention: Reserve minimum space for content */
+		min-height: 60vh;
 
-		@media screen and (width >= 300px) {
-			/* Base styles already set above */
-		}
+		/* Ensure content is always visible */
+		backdrop-filter: blur(1px);
+		background: rgba(0, 0, 0, 0.1);
+		border-radius: 12px;
 
-		@media screen and (width >= 740px) {
-			text-align: center;
-			/* font-size: 2rem; */
-			top: 60%;
-		}
-
-		@media screen and (width >= 990px) {
-			text-align: center;
-			/* font-size: 2.5rem; */
-			margin: 5rem 0;
-			top: 45%;
-			left: 50%;
-			transform: translate(-50%, -30%);
-
-			& .summary {
-				letter-spacing: 3px;
-				width: 90%;
-			}
-		}
-
-		@media (width >= 1024px) {
-			top: 40%;
-		}
-
-		@media screen and (width >= 1400px) {
-			top: 25%;
-		}
-
-		& h4 {
-			color: var(--clr-main);
-			letter-spacing: 0px;
-			margin-inline: auto;
-			margin-bottom: 3%;
-			font-weight: 400;
-			width: 100%;
-			padding: 0 1.25rem;
-		}
-
-		& .summary {
-			margin-inline: auto;
-			font-family: var(--bronova);
-			font-size: clamp(var(--sm), 1.5vw, var(--h4));
-			font-weight: 500;
-			width: 99%;
-			padding: 0 1.25rem;
-			margin-bottom: -5%;
-			hyphens: auto;
-		}
-
-		& .left {
-			text-align: left;
+		@media (width <= 768px) {
+			padding: 1rem;
+			min-height: 50vh;
 		}
 	}
 
-	@keyframes wiggle {
-		0% {
-			rotate: 0deg;
-			translate: 0 0;
+	.summary {
+		color: var(--clr-main);
+		font-family: var(--bronova);
+		font-size: clamp(var(--sm), 2vw, var(--h4));
+		font-weight: 400;
+		line-height: 1.6;
+		letter-spacing: 1px;
+		max-width: 600px;
+		margin: 1.5rem auto;
+		text-align: left;
+		/* CLS prevention: Reserve minimum height */
+		min-height: 3rem;
+
+		@media (width >= 990px) {
+			letter-spacing: 2px;
+			max-width: 90%;
 		}
-		25% {
-			rotate: -2deg;
-			translate: -5px 0;
+
+		@media (width <= 768px) {
+			text-align: center;
+			font-size: clamp(var(--xs), 4vw, var(--sm));
 		}
-		80% {
-			rotate: 2deg;
-			translate: 5px 0;
+	}
+
+	.button-wrapper {
+		margin-top: 2rem;
+		/* CLS prevention: Reserve space for button */
+		min-height: 3rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	/* Accessibility improvements */
+	@media (prefers-reduced-motion: reduce) {
+		.hero-content {
+			backdrop-filter: none;
+			transition: none;
 		}
+	}
+
+	/* Additional CLS prevention */
+	.hero-content > * {
+		/* Prevent child elements from causing layout shifts */
+		contain: layout;
+	}
+
+	/* Reserve space for components while they load */
+	.hero-content :global(h1) {
+		min-height: 3rem; /* Reserve space for HeroTitle */
+	}
+
+	.hero-content :global(button) {
+		min-height: 2.5rem; /* Reserve space for Button */
+		min-width: 8rem;
 	}
 </style>
