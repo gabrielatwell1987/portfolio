@@ -15,15 +15,22 @@
 <section class="animated-text" aria-label={dynamicAriaLabel}>
 	<h1 class="sentence" class:animate={mounted}>
 		{text}
-		<span class="bigWord glow">
-			{#each chars as char, i}
-				<span class="char" style="--delay: {0.05 + i * 0.05}s">{char}</span>
-			{/each}
-		</span>
+
+		<a href="/about/hero"
+			><span class="bigWord glow">
+				{#each chars as char, i}
+					<span class="char" style="--delay: {0.05 + i * 0.05}s">{char}</span>
+				{/each}
+			</span></a
+		>
 	</h1>
 </section>
 
 <style>
+	/* a {
+		text-decoration: none;
+	} */
+
 	.sentence,
 	.bigWord {
 		-webkit-font-smoothing: antialiased;
