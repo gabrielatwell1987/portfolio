@@ -35,18 +35,14 @@
 		position: relative;
 		width: 100vw;
 		height: 100vh;
-		min-height: 100vh; /* CLS prevention: Reserve space immediately */
+		min-height: 100vh;
 		overflow: hidden;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		/* Remove margin-top to prevent layout shifts */
-		/* Use padding-top if you need space from header */
 		padding-top: 2rem;
 		background: transparent;
-		/* Ensure immediate space reservation */
 		contain: layout;
-		/* Minimal loading state to prevent flash - subtle dark background */
 		background: rgba(0, 0, 0, 0.95);
 	}
 
@@ -61,10 +57,7 @@
 		width: 100%;
 		max-width: 1200px;
 		padding: 2rem;
-		/* CLS prevention: Reserve minimum space for content */
 		min-height: 60vh;
-
-		/* Ensure content is always visible */
 		backdrop-filter: blur(1px);
 		background: rgba(0, 0, 0, 0.1);
 		border-radius: 12px;
@@ -85,7 +78,6 @@
 		max-width: 600px;
 		margin: 1.5rem auto;
 		text-align: left;
-		/* CLS prevention: Reserve minimum height */
 		min-height: 3rem;
 
 		@media (width >= 990px) {
@@ -101,14 +93,12 @@
 
 	.button-wrapper {
 		margin-top: 2rem;
-		/* CLS prevention: Reserve space for button */
 		min-height: 3rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 
-	/* Accessibility improvements */
 	@media (prefers-reduced-motion: reduce) {
 		.hero-content {
 			backdrop-filter: none;
@@ -116,19 +106,16 @@
 		}
 	}
 
-	/* Additional CLS prevention */
 	.hero-content > * {
-		/* Prevent child elements from causing layout shifts */
 		contain: layout;
 	}
 
-	/* Reserve space for components while they load */
 	.hero-content :global(h1) {
-		min-height: 3rem; /* Reserve space for HeroTitle */
+		min-height: 3rem;
 	}
 
 	.hero-content :global(button) {
-		min-height: 2.5rem; /* Reserve space for Button */
+		min-height: 2.5rem;
 		min-width: 8rem;
 	}
 </style>
