@@ -302,16 +302,20 @@
 <canvas class="webgl" aria-label="hero"></canvas>
 
 <style>
-	@media (width <= 997px) {
-		.webgl {
-			margin-bottom: 15%;
-		}
-	}
-
-	@media (width >= 990px) {
-		.webgl {
-			height: 100vh;
-			width: 70vw;
-		}
+	.webgl {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: 0;
+		/* Reserve space immediately to prevent CLS */
+		min-height: 100vh;
+		/* Ensure canvas doesn't cause horizontal scroll */
+		max-width: 100vw;
+		/* Prevent any layout shifts during loading */
+		display: block;
+		/* Transparent background - let the Three.js scene handle the visuals */
+		background: transparent;
 	}
 </style>
