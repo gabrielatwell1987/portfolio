@@ -1,36 +1,142 @@
 <script>
 	import Button from '$lib/components/layout/Button.svelte';
 	import HeroTitle from '$lib/components/layout/HeroTitle.svelte';
+
+	let mounted = $state(false);
+	let titleText = 'Frontend Crafted Web Experiences';
+	let displayedTitle = $state('');
+	let showContent = $state(false);
+
+	$effect(() => {
+		mounted = true;
+
+		// Typewriter effect for title
+		let i = 0;
+		const typeWriter = () => {
+			if (i < titleText.length) {
+				displayedTitle += titleText.charAt(i);
+				i++;
+				setTimeout(typeWriter, 100);
+			} else {
+				setTimeout(() => {
+					showContent = true;
+				}, 500);
+			}
+		};
+
+		setTimeout(typeWriter, 1000);
+	});
+
+	// Particle system
+	let particles = $state([]);
+
+	$effect(() => {
+		if (mounted) {
+			particles = Array.from({ length: 50 }, (_, i) => ({
+				id: i,
+				x: Math.random() * 100,
+				y: Math.random() * 100,
+				size: Math.random() * 4 + 1,
+				duration: Math.random() * 20 + 10,
+				delay: Math.random() * 5
+			}));
+		}
+	});
 </script>
 
-<main>
-	<img
-		src="https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-		alt="Close-up of hands drawing wireframes and planning website layout on paper"
-	/>
+<main role="banner" aria-label="Hero section">
+	<!-- Animated Background -->
+	<div class="background-container" aria-hidden="true">
+		<div class="gradient-bg"></div>
 
-	<section aria-label="hero">
-		<HeroTitle title="Frontend Crafted Web Experiences" />
+		<!-- Floating Particles -->
+		{#if mounted}
+			{#each particles as particle (particle.id)}
+				<div
+					class="particle"
+					aria-hidden="true"
+					style="
+						left: {particle.x}%;
+						top: {particle.y}%;
+						width: {particle.size}px;
+						height: {particle.size}px;
+						animation-duration: {particle.duration}s;
+						animation-delay: {particle.delay}s;
+					"
+				></div>
+			{/each}
+		{/if}
 
-		<h4 class="summary left up">
-			I am a frontend developer who loves to create beautiful and functional websites. This website
-			showcases my skills with some projects that I created. I look forward to hearing from you so
-			we can discuss your goals for your online needs!
-		</h4>
+		<!-- Geometric Shapes -->
+		<div class="shape shape-1" aria-hidden="true"></div>
 
-		<Button href="/projects" title="Creations" />
+		<div class="shape shape-2" aria-hidden="true"></div>
+
+		<div class="shape shape-3" aria-hidden="true"></div>
+	</div>
+
+	<section aria-label="Introduction and portfolio overview" class="hero-content">
+		<!-- Typewriter Title -->
+		<header class="title-container">
+			<h1 class="hero-title" aria-live="polite" aria-atomic="true">
+				<span class="visually-hidden">Loading title:</span>
+
+				{displayedTitle}<span class="cursor" class:blink={mounted} aria-hidden="true">|</span>
+			</h1>
+		</header>
+
+		<!-- Animated Content -->
+		<div class="content-wrapper" class:show={showContent} aria-live="polite">
+			<p class="summary">
+				I am a frontend developer who loves to create beautiful and functional websites. This
+				website showcases my skills with some projects that I created. I look forward to hearing
+				from you so we can discuss your goals for your online needs!
+			</p>
+
+			<nav class="button-container" aria-label="Primary navigation">
+				<Button href="/projects" title="Creations" />
+			</nav>
+
+			<!-- Portfolio Stats -->
+			<section aria-labelledby="stats-heading" class="stats-section">
+				<h2 id="stats-heading" class="visually-hidden">Portfolio Statistics</h2>
+
+				<dl class="stats-container">
+					<div class="stat-item">
+						<dt class="visually-hidden">Work approach</dt>
+						<dd class="stat-number" aria-label="One hundred percent">100%</dd>
+						<dt class="stat-label">Custom</dt>
+					</div>
+
+					<div class="stat-item">
+						<dt class="visually-hidden">Years of experience</dt>
+						<dd class="stat-number" aria-label="Three plus">3+</dd>
+						<dt class="stat-label">Years</dt>
+					</div>
+
+					<div class="stat-item">
+						<dt class="visually-hidden">Creativity level</dt>
+						<dd class="stat-number" aria-label="Infinite">∞</dd>
+						<dt class="stat-label">Creativity</dt>
+					</div>
+				</dl>
+			</section>
+		</div>
 	</section>
-
-	<br />
 </main>
 
 <style>
 	main {
+		position: relative;
+		min-height: 100vh;
+		height: auto;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		text-align: center;
 		font-size: 1.75rem;
-		height: 100vh;
-		position: relative;
-		margin-bottom: 2%;
+		padding: 2rem 0;
 
 		@media screen and (width >= 740px) {
 			font-size: 2rem;
@@ -38,79 +144,357 @@
 
 		@media screen and (width >= 990px) {
 			font-size: 2.5rem;
-			margin: 5rem 0;
 		}
 
-		& img {
-			border-radius: var(--radius);
-			opacity: 0.15;
-			transition: opacity 0.75s ease-in-out;
+		@media (height <= 700px) {
+			min-height: auto;
+			height: auto;
+			padding: 1rem 0;
+		}
+	}
+
+	.background-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+
+		& .gradient-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
-			object-fit: cover;
-			box-shadow: 0 0 10px var(--clr-gray);
-
-			@media screen and (width >= 990px) {
-				width: 90%;
-				height: 100%;
-			}
+			background: linear-gradient(
+				135deg,
+				rgba(23, 38, 44, 0.95) 0%,
+				rgba(30, 60, 80, 0.9) 30%,
+				rgba(45, 85, 120, 0.85) 60%,
+				rgba(20, 40, 60, 0.95) 100%
+			);
+			animation: gradientShift 8s ease-in-out infinite;
 		}
 
-		& section {
+		& .particle {
 			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			width: 100%;
+			background: rgba(255, 255, 255, 0.3);
+			border-radius: 50%;
+			pointer-events: none;
+			animation: float linear infinite;
+		}
 
-			& .summary {
-				margin-inline: auto;
-				font-family: var(--bronova);
-				font-size: clamp(var(--sm), 1.5vw, var(--h4));
-				font-weight: 400;
-				letter-spacing: 0px;
-				width: 85%;
-				padding: 0 1.5rem;
-				margin-bottom: -2%;
-				color: var(--clr-main);
+		& .shape {
+			position: absolute;
+			border-radius: 30%;
+			opacity: 0.1;
+			animation: shapeFloat 20s ease-in-out infinite;
 
-				@media (width <= 500px) {
-					width: 100%;
-				}
-
-				@media screen and (width >= 740px) {
-					width: 95%;
-				}
-
-				@media screen and (width >= 990px) {
-					width: 50%;
-					letter-spacing: 3px;
-				}
-
-				@media (width >= 1024px) {
-					width: 90%;
-					margin-inline: auto;
-				}
+			&.shape-1 {
+				top: 10%;
+				left: 10%;
+				width: 200px;
+				height: 200px;
+				background: linear-gradient(45deg, var(--clr-blue), transparent);
+				animation-delay: 0s;
 			}
 
-			& .left {
-				text-align: left;
+			&.shape-2 {
+				top: 60%;
+				right: 15%;
+				width: 300px;
+				height: 300px;
+				background: linear-gradient(-45deg, var(--clr-main), transparent);
+				animation-delay: 7s;
+			}
+
+			&.shape-3 {
+				bottom: 20%;
+				left: 20%;
+				width: 150px;
+				height: 150px;
+				background: linear-gradient(90deg, var(--clr-blue), transparent);
+				animation-delay: 14s;
 			}
 		}
 	}
 
-	@keyframes wiggle {
+	.hero-content {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		max-width: 1200px;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 80vh;
+
+		@media (height <= 700px) {
+			min-height: auto;
+			padding: 1rem;
+		}
+
+		@media (width <= 768px) {
+			padding: 1rem;
+		}
+
+		& .title-container {
+			margin-bottom: 2rem;
+
+			@media (height <= 700px) {
+				margin-bottom: 1rem;
+			}
+
+			& .hero-title {
+				font-family: var(--orbitron);
+				font-size: clamp(var(--h4), 5vw, var(--xxl));
+				font-weight: 700;
+				color: var(--clr-main);
+				text-shadow:
+					0 0 10px rgba(255, 255, 255, 0.3),
+					0 0 20px rgba(255, 255, 255, 0.2),
+					0 0 30px rgba(255, 255, 255, 0.1);
+				line-height: 1.2;
+				margin: 0;
+				word-wrap: normal;
+				overflow-wrap: break-word;
+				hyphens: none;
+
+				@media (height <= 700px) {
+					line-height: 1.1;
+				}
+
+				& .cursor {
+					color: var(--clr-blue);
+					font-weight: 300;
+					animation: none;
+
+					&.blink {
+						animation: blink 1s infinite;
+
+						@media (prefers-reduced-motion: reduce) {
+							animation: none;
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+
+		& .content-wrapper {
+			opacity: 0;
+			transform: translateY(30px);
+			transition: all 0.5s ease-out;
+
+			@media (prefers-reduced-motion: reduce) {
+				transform: none;
+				transition: opacity 0.3s ease-out;
+			}
+
+			&.show {
+				opacity: 1;
+				transform: translateY(0);
+
+				@media (prefers-reduced-motion: reduce) {
+					transform: none;
+				}
+			}
+
+			& .summary {
+				font-family: var(--bronova);
+				font-size: clamp(var(--sm), 2vw, var(--h6));
+				font-weight: 400;
+				letter-spacing: 1px;
+				line-height: 1.6;
+				color: rgba(255, 255, 255, 0.9);
+				max-width: 600px;
+				margin: 0 auto 3rem auto;
+				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+				@media screen and (width >= 990px) {
+					letter-spacing: 2px;
+				}
+			}
+
+			& .button-container {
+				display: flex;
+				gap: 1.5rem;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+				margin-bottom: 3rem;
+			}
+
+			& .stats-section {
+				margin-top: 2rem;
+
+				& .stats-container {
+					display: flex;
+					justify-content: center;
+					gap: 3rem;
+					flex-wrap: wrap;
+					list-style: none;
+					margin: 0;
+					padding: 0;
+
+					& .stat-item {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						padding: 1rem;
+						background: rgba(255, 255, 255, 0.1);
+						border-radius: 12px;
+						backdrop-filter: blur(10px);
+						border: 1px solid rgba(255, 255, 255, 0.2);
+						transition: all 0.3s ease;
+
+						@media (prefers-reduced-motion: reduce) {
+							transition: none;
+						}
+
+						&:hover,
+						&:focus-within {
+							transform: translateY(-5px);
+							background: rgba(255, 255, 255, 0.15);
+							box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+							@media (prefers-reduced-motion: reduce) {
+								transform: none;
+							}
+						}
+
+						& .stat-number {
+							font-family: var(--orbitron);
+							font-size: clamp(var(--sm), 3vw, var(--h2));
+							font-weight: 700;
+							color: var(--clr-blue);
+							text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+							margin: 0;
+						}
+
+						& .stat-label {
+							font-family: var(--bronova);
+							font-size: 0.9rem;
+							color: rgba(255, 255, 255, 0.8);
+							text-transform: uppercase;
+							letter-spacing: 1px;
+							margin-top: 0.5rem;
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/* Mobile Responsiveness */
+	@media (width <= 768px) {
+		.hero-content {
+			& .content-wrapper {
+				& .summary {
+					padding: 0 1rem;
+				}
+
+				& .stats-container {
+					gap: 1.5rem;
+
+					& .stat-item {
+						padding: 0.75rem;
+					}
+				}
+			}
+		}
+
+		.background-container {
+			& .shape {
+				&.shape-1,
+				&.shape-2,
+				&.shape-3 {
+					display: none; /* Hide shapes on mobile for better performance */
+				}
+			}
+		}
+	}
+
+	/* Keyframes */
+	@keyframes gradientShift {
+		0%,
+		100% {
+			background: linear-gradient(
+				135deg,
+				rgba(23, 38, 44, 0.95) 0%,
+				rgba(30, 60, 80, 0.9) 30%,
+				rgba(45, 85, 120, 0.85) 60%,
+				rgba(20, 40, 60, 0.95) 100%
+			);
+		}
+		50% {
+			background: linear-gradient(
+				135deg,
+				rgba(30, 50, 70, 0.95) 0%,
+				rgba(40, 70, 100, 0.9) 30%,
+				rgba(25, 45, 65, 0.85) 60%,
+				rgba(35, 55, 75, 0.95) 100%
+			);
+		}
+	}
+
+	@keyframes float {
 		0% {
-			rotate: 0deg;
-			translate: 0 0;
+			transform: translateY(0) rotate(0deg);
+			opacity: 0;
 		}
-		25% {
-			rotate: -2deg;
-			translate: -5px 0;
+		10% {
+			opacity: 1;
 		}
-		80% {
-			rotate: 2deg;
-			translate: 5px 0;
+		90% {
+			opacity: 1;
+		}
+		100% {
+			transform: translateY(-100vh) rotate(360deg);
+			opacity: 0;
+		}
+	}
+
+	@keyframes shapeFloat {
+		0%,
+		100% {
+			transform: translateY(0) rotate(0deg);
+		}
+		33% {
+			transform: translateY(-20px) rotate(120deg);
+		}
+		66% {
+			transform: translateY(10px) rotate(240deg);
+		}
+	}
+
+	@keyframes blink {
+		0%,
+		50% {
+			opacity: 1;
+		}
+		51%,
+		100% {
+			opacity: 0;
+		}
+	}
+
+	@keyframes bounce {
+		0%,
+		20%,
+		50%,
+		80%,
+		100% {
+			transform: translateX(-50%) translateY(0);
+		}
+		40% {
+			transform: translateX(-50%) translateY(-10px);
+		}
+		60% {
+			transform: translateX(-50%) translateY(-5px);
 		}
 	}
 </style>
