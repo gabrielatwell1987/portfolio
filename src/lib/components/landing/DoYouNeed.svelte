@@ -27,10 +27,6 @@
 </section>
 
 <style>
-	/* a {
-		text-decoration: none;
-	} */
-
 	.sentence,
 	.bigWord {
 		-webkit-font-smoothing: antialiased;
