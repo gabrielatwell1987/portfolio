@@ -1,6 +1,7 @@
 <script>
-	import Button from '$lib/components/layout/Button.svelte';
-	import HeroTitle from '$lib/components/layout/HeroTitle.svelte';
+	// import Button from '$lib/components/layout/Button.svelte';
+	import HeroButton from './HeroButton.svelte';
+	// import HeroTitle from '$lib/components/layout/HeroTitle.svelte';
 
 	let mounted = $state(false);
 	let titleText = 'Frontend Crafted Web Experiences';
@@ -100,7 +101,8 @@
 			</p>
 
 			<nav class="button-container" aria-label="Primary navigation">
-				<Button href="/projects" title="Creations" />
+				<!-- <Button href="/projects" title="Creations" /> -->
+				<HeroButton href="/projects" title="Creations" />
 			</nav>
 
 			<!-- Portfolio Stats -->
