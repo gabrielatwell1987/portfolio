@@ -37,7 +37,7 @@
 	h2 {
 		display: block;
 		margin-top: 2em;
-		color: var(--clr-pale);
+		color: var(--clr-blue);
 		font-family: var(--bronova-bold);
 		font-size: clamp(var(--h6), 3vw, var(--h2));
 		font-weight: 800;

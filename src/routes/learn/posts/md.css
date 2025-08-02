@@ -92,16 +92,15 @@
 }
 
 html body h1 {
-	font-family: var(--orbitron);
+	font-family: var(--bronova-bold);
 	font-size: clamp(2rem, 5vw, 8rem);
 	font-weight: 900;
-	color: var(--clr-pale);
+	color: var(--clr-gray);
 	letter-spacing: -1px;
 	margin-block: 2rem;
 	text-shadow: 0 0 3px var(--dark-gray);
-	filter: drop-shadow(0px 0px 0.25rem var(--white));
 	text-transform: uppercase;
-	scroll-margin-top: 8rem; /* Account for fixed navigation */
+	scroll-margin-top: 8rem;
 }
 
 html body h2 {
