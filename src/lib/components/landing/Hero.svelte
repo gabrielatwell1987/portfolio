@@ -1,7 +1,5 @@
 <script>
-	// import Button from '$lib/components/layout/Button.svelte';
 	import HeroButton from './HeroButton.svelte';
-	// import HeroTitle from '$lib/components/layout/HeroTitle.svelte';
 
 	let mounted = $state(false);
 	let titleText = 'Frontend Crafted Web Experiences';
@@ -145,6 +143,7 @@
 		text-align: center;
 		font-size: 1.75rem;
 		padding: 2rem 0;
+		margin-top: 3em;
 
 		@media screen and (width >= 740px) {
 			font-size: 2rem;
@@ -158,6 +157,7 @@
 			min-height: auto;
 			height: auto;
 			padding: 1rem 0;
+			margin-top: 2.5em;
 		}
 	}
 

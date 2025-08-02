@@ -14,13 +14,13 @@
 <style>
 	button {
 		@media (min-width: 300px) {
-			background-color: var(--clr-pale);
+			background-color: transparent;
 			font-family: var(--orbitron);
 			font-size: clamp(var(--h6), 1.5vw, var(--h4));
 			font-weight: 900;
-			color: var(--light-text);
-			border: 1px solid var(--light-text);
-			outline: 3px solid var(--light-text);
+			color: var(--clr-gray);
+			border: 1px solid var(--clr-gray);
+			outline: 3px solid var(--clr-gray);
 			outline-offset: -7px;
 			margin-inline: auto;
 			cursor: pointer;
@@ -29,7 +29,7 @@
 			border-radius: var(--radius);
 			transition: 750ms;
 			padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
-			margin-top: 10%;
+			margin-top: 2vw;
 			margin-bottom: 2%;
 			user-select: none;
 
