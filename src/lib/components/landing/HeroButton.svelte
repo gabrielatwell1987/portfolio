@@ -22,9 +22,9 @@
 			font-family: var(--orbitron);
 			font-size: clamp(var(--h6), 1.5vw, var(--h4));
 			font-weight: 900;
-			color: var(--clr-gray);
-			border: 1px solid var(--clr-gray);
-			outline: 3px solid var(--clr-gray);
+			color: var(--clr-main);
+			border: 1px solid var(--clr-main);
+			outline: 3px solid var(--clr-main);
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
