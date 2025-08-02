@@ -149,12 +149,11 @@
 <style>
 	.popover {
 		position: absolute;
-		top: 7em;
-		right: 7em;
+		top: 20vh;
+		right: 8vw;
 
 		@media (width <= 768px) {
-			margin-top: -1em;
-			margin-bottom: 1em;
+			display: none;
 		}
 	}
 
@@ -163,7 +162,7 @@
 		max-width: 1200px;
 		margin-inline: auto;
 		padding: 1rem;
-		/* overflow-y: auto; */
+		overflow-y: auto;
 		height: calc(100dvh - 3em);
 		position: relative;
 
