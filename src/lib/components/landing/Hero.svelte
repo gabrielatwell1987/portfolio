@@ -213,7 +213,7 @@
 				width: 30vw;
 				height: 30vw;
 				background: linear-gradient(-45deg, var(--clr-main), transparent);
-				animation-delay: 7s;
+				animation-delay: 3s;
 				clip-path: polygon(
 					50% 0%,
 					61% 35%,
@@ -235,7 +235,8 @@
 				width: 12vw;
 				height: 12vw;
 				background: linear-gradient(90deg, var(--clr-blue), transparent);
-				animation-delay: 14s;
+				animation: antiShapeFloat 10s ease-in-out infinite;
+				animation-delay: 5s;
 				clip-path: polygon(
 					50% 0%,
 					61% 35%,
@@ -529,6 +530,19 @@
 		}
 		66% {
 			transform: translateY(10px) rotate(240deg);
+		}
+	}
+
+	@keyframes antiShapeFloat {
+		0%,
+		100% {
+			transform: translateY(0) rotate(0deg);
+		}
+		33% {
+			transform: translateY(20px) rotate(-120deg);
+		}
+		66% {
+			transform: translateY(-10px) rotate(240deg);
 		}
 	}
 
