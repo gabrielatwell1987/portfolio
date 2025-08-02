@@ -148,9 +148,9 @@
 
 <style>
 	.popover {
-		display: flex;
-		justify-content: space-evenly;
-		margin-bottom: 3em;
+		position: absolute;
+		top: 7em;
+		right: 7em;
 
 		@media (width <= 768px) {
 			margin-top: -1em;
@@ -163,7 +163,7 @@
 		max-width: 1200px;
 		margin-inline: auto;
 		padding: 1rem;
-		overflow-y: auto;
+		/* overflow-y: auto; */
 		height: calc(100dvh - 3em);
 		position: relative;
 
