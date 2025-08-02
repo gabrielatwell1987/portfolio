@@ -33,7 +33,6 @@
 			transition: 750ms;
 			outline-offset: -7px;
 			padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
-			margin-top: 10%;
 			margin-bottom: 2%;
 			user-select: none;
 			opacity: 0.9;
