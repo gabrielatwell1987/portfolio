@@ -6,32 +6,38 @@
 	let titleText = 'Frontend Crafted Web Experiences';
 	let displayedTitle = $state('');
 	let showContent = $state(false);
+	let particles = $state([]);
 
 	$effect(() => {
 		mounted = true;
 
-		// Typewriter effect for title
-		let i = 0;
-		const typeWriter = () => {
-			if (i < titleText.length) {
-				displayedTitle += titleText.charAt(i);
-				i++;
-				setTimeout(typeWriter, 100);
-			} else {
-				setTimeout(() => {
-					showContent = true;
-				}, 500);
-			}
-		};
+		// Check for reduced motion preference once
+		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-		setTimeout(typeWriter, 1000);
-	});
+		// Typewriter effect with reduced motion support
+		if (prefersReducedMotion) {
+			// Show content immediately without typewriter effect
+			displayedTitle = titleText;
+			showContent = true;
+		} else {
+			// Normal typewriter effect
+			let i = 0;
+			const typeWriter = () => {
+				if (i < titleText.length) {
+					displayedTitle += titleText.charAt(i);
+					i++;
+					setTimeout(typeWriter, 100);
+				} else {
+					setTimeout(() => {
+						showContent = true;
+					}, 500);
+				}
+			};
+			setTimeout(typeWriter, 1000);
+		}
 
-	// Particle system
-	let particles = $state([]);
-
-	$effect(() => {
-		if (mounted) {
+		// Particle system with reduced motion check
+		if (!prefersReducedMotion) {
 			particles = Array.from({ length: 50 }, (_, i) => ({
 				id: i,
 				x: Math.random() * 100,
@@ -41,6 +47,7 @@
 				delay: Math.random() * 5
 			}));
 		}
+		// If reduced motion is preferred, particles array stays empty
 	});
 </script>
 
@@ -69,10 +76,9 @@
 
 		<!-- Geometric Shapes -->
 		<div class="shape shape-1" aria-hidden="true"></div>
-
 		<div class="shape shape-2" aria-hidden="true"></div>
-
 		<div class="shape shape-3" aria-hidden="true"></div>
+		<div class="shape shape-4" aria-hidden="true"></div>
 	</div>
 
 	<section aria-label="Introduction and portfolio overview" class="hero-content">
@@ -192,30 +198,67 @@
 			animation: shapeFloat 20s ease-in-out infinite;
 
 			&.shape-1 {
-				top: 10%;
+				top: 30%;
 				left: 10%;
-				width: 200px;
-				height: 200px;
+				width: 10vw;
+				height: 10vw;
 				background: linear-gradient(45deg, var(--clr-blue), transparent);
 				animation-delay: 0s;
+				border-radius: 50%;
 			}
 
 			&.shape-2 {
-				top: 60%;
+				top: 25%;
 				right: 15%;
-				width: 300px;
-				height: 300px;
+				width: 30vw;
+				height: 30vw;
 				background: linear-gradient(-45deg, var(--clr-main), transparent);
 				animation-delay: 7s;
+				clip-path: polygon(
+					50% 0%,
+					61% 35%,
+					98% 35%,
+					68% 57%,
+					79% 91%,
+					50% 70%,
+					21% 91%,
+					32% 57%,
+					2% 35%,
+					39% 35%
+				);
+				border-radius: 0;
 			}
 
 			&.shape-3 {
 				bottom: 20%;
 				left: 20%;
-				width: 150px;
-				height: 150px;
+				width: 12vw;
+				height: 12vw;
 				background: linear-gradient(90deg, var(--clr-blue), transparent);
 				animation-delay: 14s;
+				clip-path: polygon(
+					50% 0%,
+					61% 35%,
+					98% 35%,
+					68% 57%,
+					79% 91%,
+					50% 70%,
+					21% 91%,
+					32% 57%,
+					2% 35%,
+					39% 35%
+				);
+				border-radius: 0;
+			}
+
+			&.shape-4 {
+				top: 70%;
+				right: 30%;
+				width: 30vw;
+				height: 30vw;
+				background: linear-gradient(45deg, var(--clr-blue), transparent);
+				animation-delay: 0s;
+				border-radius: 50%;
 			}
 		}
 	}
@@ -411,9 +454,27 @@
 			& .shape {
 				&.shape-1,
 				&.shape-2,
-				&.shape-3 {
-					display: none; /* Hide shapes on mobile for better performance */
+				&.shape-3,
+				&.shape-4 {
+					display: none;
 				}
+			}
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.background-container {
+			& .gradient-bg {
+				animation: none;
+			}
+
+			& .particle {
+				animation: none;
+				opacity: 0;
+			}
+
+			& .shape {
+				animation: none;
 			}
 		}
 	}
