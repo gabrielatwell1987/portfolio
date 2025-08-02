@@ -141,6 +141,10 @@
 		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 		align-items: center;
 
+		@media (width <= 768px) {
+			margin-top: -15vw;
+		}
+
 		& .popover {
 			display: flex;
 			justify-content: space-evenly;
