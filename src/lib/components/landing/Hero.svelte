@@ -99,7 +99,6 @@
 			</p>
 
 			<nav class="button-container" aria-label="Primary navigation">
-				<!-- <Button href="/projects" title="Creations" /> -->
 				<HeroButton href="/projects" title="Creations" />
 			</nav>
 
@@ -115,15 +114,15 @@
 					</div>
 
 					<div class="stat-item">
-						<dt class="visually-hidden">Years of experience</dt>
+						<dt class="visually-hidden">Years of experience approach</dt>
 						<dd class="stat-number" aria-label="Three plus">3+</dd>
 						<dt class="stat-label">Years</dt>
 					</div>
 
 					<div class="stat-item">
-						<dt class="visually-hidden">Creativity level</dt>
-						<dd class="stat-number" aria-label="Infinite">∞</dd>
-						<dt class="stat-label">Creativity</dt>
+						<dt class="visually-hidden">Responsive design approach</dt>
+						<dd class="stat-number" aria-label="Fully responsive">Fully</dd>
+						<dt class="stat-label">Responsive</dt>
 					</div>
 				</dl>
 			</section>
@@ -142,7 +141,7 @@
 		justify-content: center;
 		text-align: center;
 		font-size: 1.75rem;
-		padding: 2rem 0;
+		padding: 5rem 0 0 0;
 		margin-top: 3em;
 
 		@media screen and (width >= 740px) {
@@ -153,7 +152,7 @@
 			font-size: 2.5rem;
 		}
 
-		@media (height <= 700px) {
+		@media (height <= 768px) {
 			min-height: auto;
 			height: auto;
 			padding: 1rem 0;
@@ -182,7 +181,7 @@
 				rgba(45, 85, 120, 0.85) 60%,
 				rgba(20, 40, 60, 0.95) 100%
 			);
-			animation: gradientShift 8s ease-in-out infinite;
+			animation: gradientShift 50s ease-in-out infinite;
 		}
 
 		& .particle {
@@ -200,7 +199,7 @@
 			animation: shapeFloat 20s ease-in-out infinite;
 
 			&.shape-1 {
-				top: 30%;
+				top: 25%;
 				left: 10%;
 				width: 10vw;
 				height: 10vw;
@@ -209,9 +208,10 @@
 				border-radius: 50%;
 			}
 
+			/* star */
 			&.shape-2 {
-				top: 25%;
-				right: 15%;
+				top: 15%;
+				right: 5%;
 				width: 30vw;
 				height: 30vw;
 				background: linear-gradient(-45deg, var(--clr-main), transparent);
@@ -231,13 +231,14 @@
 				border-radius: 0;
 			}
 
+			/* star */
 			&.shape-3 {
 				bottom: 20%;
 				left: 20%;
 				width: 12vw;
 				height: 12vw;
 				background: linear-gradient(90deg, var(--clr-blue), transparent);
-				animation: antiShapeFloat 10s ease-in-out infinite;
+				animation: antiShapeFloat 15s ease-in-out infinite;
 				animation-delay: 5s;
 				clip-path: polygon(
 					50% 0%,
@@ -256,9 +257,9 @@
 
 			&.shape-4 {
 				top: 70%;
-				right: 30%;
-				width: 30vw;
-				height: 30vw;
+				right: 12%;
+				width: 50vw;
+				height: 50vw;
 				background: linear-gradient(45deg, var(--clr-blue), transparent);
 				animation-delay: 0s;
 				border-radius: 50%;
@@ -354,7 +355,7 @@
 				font-weight: 400;
 				letter-spacing: 1px;
 				line-height: 1.6;
-				color: rgba(255, 255, 255, 0.9);
+				color: var(--clr-main);
 				max-width: 600px;
 				margin: 0 auto 3rem auto;
 				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -423,11 +424,12 @@
 						& .stat-label {
 							font-family: var(--bronova);
 							font-size: 0.9rem;
-							color: rgba(255, 255, 255, 0.8);
+							color: var(--clr-main);
 							text-transform: uppercase;
 							letter-spacing: 1px;
 							margin-top: 0.5rem;
 							margin-bottom: 0;
+							font-weight: 600;
 						}
 					}
 				}
@@ -484,14 +486,22 @@
 
 	/* Keyframes */
 	@keyframes gradientShift {
-		0%,
-		100% {
+		0% {
 			background: linear-gradient(
 				135deg,
 				rgba(23, 38, 44, 0.95) 0%,
 				rgba(30, 60, 80, 0.9) 30%,
 				rgba(45, 85, 120, 0.85) 60%,
 				rgba(20, 40, 60, 0.95) 100%
+			);
+		}
+		25% {
+			background: linear-gradient(
+				135deg,
+				rgba(26, 44, 54, 0.95) 0%,
+				rgba(35, 65, 90, 0.9) 30%,
+				rgba(40, 80, 115, 0.85) 60%,
+				rgba(25, 45, 65, 0.95) 100%
 			);
 		}
 		50% {
@@ -501,6 +511,24 @@
 				rgba(40, 70, 100, 0.9) 30%,
 				rgba(25, 45, 65, 0.85) 60%,
 				rgba(35, 55, 75, 0.95) 100%
+			);
+		}
+		75% {
+			background: linear-gradient(
+				135deg,
+				rgba(27, 44, 57, 0.95) 0%,
+				rgba(35, 65, 90, 0.9) 30%,
+				rgba(35, 65, 95, 0.85) 60%,
+				rgba(28, 48, 68, 0.95) 100%
+			);
+		}
+		100% {
+			background: linear-gradient(
+				135deg,
+				rgba(23, 38, 44, 0.95) 0%,
+				rgba(30, 60, 80, 0.9) 30%,
+				rgba(45, 85, 120, 0.85) 60%,
+				rgba(20, 40, 60, 0.95) 100%
 			);
 		}
 	}
@@ -517,7 +545,7 @@
 			opacity: 1;
 		}
 		100% {
-			transform: translateY(-100vh) rotate(360deg);
+			transform: translateY(-100vh) rotate(180deg);
 			opacity: 0;
 		}
 	}
