@@ -29,10 +29,10 @@
 		align-items: center;
 		justify-content: center;
 		margin-bottom: 5rem;
-		width: 100vw;
 		margin-left: calc(-50vw + 50%);
+		width: 100vw;
 		position: relative;
-		padding-top: 2em;
+		padding-top: 0;
 		aspect-ratio: 16 / 9;
 		contain: layout;
 		min-height: 50vh;
