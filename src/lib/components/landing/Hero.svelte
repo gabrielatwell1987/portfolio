@@ -140,23 +140,15 @@
 		align-items: center;
 		justify-content: center;
 		text-align: center;
-		font-size: 1.75rem;
 		padding: 5rem 0 0 0;
-		margin-top: 3em;
-
-		@media screen and (width >= 740px) {
-			font-size: 2rem;
-		}
-
-		@media screen and (width >= 990px) {
-			font-size: 2.5rem;
-		}
+		margin-top: 1.75em;
+		font-size: clamp(var(--h6), 4vw, var(--h1));
 
 		@media (height <= 768px) {
 			min-height: auto;
 			height: auto;
-			padding: 1rem 0;
-			margin-top: 2.5em;
+			padding: 1em 0 0 0;
+			margin-top: 3.5em;
 		}
 	}
 
@@ -303,7 +295,7 @@
 					0 0 10px rgba(255, 255, 255, 0.3),
 					0 0 20px rgba(255, 255, 255, 0.2),
 					0 0 30px rgba(255, 255, 255, 0.1);
-				line-height: 1.2;
+				line-height: 1;
 				margin: 0;
 				word-wrap: normal;
 				overflow-wrap: break-word;
@@ -351,7 +343,7 @@
 
 			& .summary {
 				font-family: var(--bronova);
-				font-size: clamp(var(--sm), 2vw, var(--h6));
+				font-size: clamp(var(--sm), 1.25vw, var(--h3));
 				font-weight: 400;
 				letter-spacing: 1px;
 				line-height: 1.6;
