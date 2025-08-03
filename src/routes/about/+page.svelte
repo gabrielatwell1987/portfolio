@@ -24,7 +24,9 @@
 <main aria-label="bio">
 	<section>
 		<article id="bio">
-			<AboutHero src="/logos/svelteCode.webp" alt="svelte code" title="About Me" />
+			<div class="hero-section">
+				<AboutHero src="/logos/svelteCode.webp" alt="svelte code" title="About Me" />
+			</div>
 
 			<div class="bio" aria-label="bio">
 				<p class="text indent">
@@ -102,6 +104,11 @@
 	main {
 		width: var(--100);
 		margin-inline: auto;
+		padding-top: 0;
+
+		& .hero-section {
+			margin-top: clamp(-9.75em, -12vw, -3em);
+		}
 
 		& section {
 			display: block;
@@ -109,11 +116,12 @@
 			text-align: center;
 			width: var(--100);
 			color: var(--clr-main);
+			margin-top: 0;
 
 			@media screen and (width >= 990px) {
 				display: block;
 				width: var(--100);
-				margin: 5rem auto;
+				margin: 0 auto;
 			}
 
 			& article {
