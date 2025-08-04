@@ -35,7 +35,7 @@
 			padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
 			margin-bottom: 2%;
 			user-select: none;
-			opacity: 0.9;
+			opacity: 0.75;
 
 			&:focus,
 			&:focus-visible {
@@ -45,7 +45,7 @@
 			}
 
 			&:hover {
-				opacity: 0.95;
+				opacity: 1;
 				outline-offset: 0px;
 			}
 
