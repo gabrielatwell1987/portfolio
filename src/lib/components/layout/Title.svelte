@@ -4,7 +4,7 @@
 </script>
 
 <main>
-	<h1 class="title" id="title" aria-label={title}>{title}</h1>
+	<h1 class="title exclude-transition" id="title" aria-label={title}>{title}</h1>
 </main>
 
 <style>
