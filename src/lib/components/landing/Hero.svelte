@@ -290,7 +290,7 @@
 				font-family: var(--orbitron);
 				font-size: clamp(var(--h4), 5vw, var(--xxl));
 				font-weight: 700;
-				color: var(--clr-main);
+				color: var(--clr-blue);
 				text-shadow:
 					0 0 10px rgba(255, 255, 255, 0.3),
 					0 0 20px rgba(255, 255, 255, 0.2),
