@@ -16,12 +16,12 @@
 			font-weight: 900;
 			color: var(--clr-main);
 			border: 1px solid var(--clr-main);
-			border-radius: var(--radius);
 			outline: 3px solid var(--clr-main);
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
 			width: fit-content;
+			border-radius: var(--button-radius);
 			transition: 750ms;
 			outline-offset: -7px;
 			padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
