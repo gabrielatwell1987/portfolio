@@ -7,6 +7,7 @@
 	import TableOfContents from '$lib/components/learn/TableOfContents.svelte';
 	import GabeMorph from '$lib/components/learn/GabeMorph.svelte';
 	import BackToTop from '$lib/components/learn/BackToTop.svelte';
+	import ViewTransitionImage from '$lib/components/layout/ViewTransitionImage.svelte';
 
 	let mounted = $state(false);
 
@@ -44,7 +45,11 @@
 		<div class="image">
 			<div class="skillImg">
 				<h1>
-					<Image src="/skills/CSS-Purple.webp" alt="new css logo" aspectRatio="1/1" />
+					<ViewTransitionImage
+						src="/skills/CSS-Purple.webp"
+						alt="new css logo"
+						transitionName="css-logo-transition"
+					/>
 				</h1>
 			</div>
 
@@ -129,7 +134,6 @@
 					width: 25%;
 					margin-inline: auto;
 					margin-block: 7rem;
-					view-transition-name: css-skill-image;
 				}
 			}
 		}
@@ -141,9 +145,12 @@
 			& .skillImg {
 				margin-inline: auto;
 				margin-top: 6rem;
-				view-transition-name: gsap-skill-image;
 				max-width: 15em;
 			}
+		}
+
+		:global(.gsap .skillImg img) {
+			view-transition-name: gsap-image !important;
 		}
 
 		@media (width <= 500px) {

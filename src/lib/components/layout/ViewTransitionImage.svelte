@@ -1,28 +1,96 @@
 <script>
-	let { src, alt } = $props();
+	let { src, alt, maxWidth, maxHeight, transitionName = 'expandable-image' } = $props();
 	let expanded = $state(false);
+	let imgElement = $state();
+	let naturalDimensions = $state({ width: 0, height: 0 });
+	let isSVG = $derived(src?.endsWith('.svg'));
 
 	function toggleExpand() {
+		// Temporarily disable other view transitions during image expansion
+		const existingTransitionElements = document.querySelectorAll('[style*="view-transition-name"]');
+		existingTransitionElements.forEach((el) => {
+			if (el !== imgElement) {
+				el.style.viewTransitionName = 'none';
+			}
+		});
+
 		if (document.startViewTransition) {
-			document.startViewTransition(() => {
-				expanded = !expanded;
-			});
+			document
+				.startViewTransition(() => {
+					expanded = !expanded;
+				})
+				.finished.then(() => {
+					// Re-enable other view transitions after completion
+					existingTransitionElements.forEach((el) => {
+						if (el !== imgElement) {
+							el.style.removeProperty('view-transition-name');
+						}
+					});
+				});
 		} else {
 			expanded = !expanded;
 		}
 	}
+
+	function handleImageLoad() {
+		if (imgElement) {
+			naturalDimensions = {
+				width: imgElement.naturalWidth,
+				height: imgElement.naturalHeight
+			};
+			console.log('Natural dimensions:', naturalDimensions); // Debug log
+		}
+	}
+
+	// Calculate display dimensions with proper constraint handling
+	let displayDimensions = $derived(() => {
+		if (!naturalDimensions.width || !naturalDimensions.height) {
+			return { width: 300, height: 300 };
+		}
+
+		// If no constraints provided, use natural dimensions
+		if (!maxWidth && !maxHeight) {
+			return {
+				width: naturalDimensions.width,
+				height: naturalDimensions.height
+			};
+		}
+
+		// Start with natural dimensions
+		let width = naturalDimensions.width;
+		let height = naturalDimensions.height;
+
+		// Apply maxWidth constraint if provided
+		if (maxWidth) {
+			width = Math.min(maxWidth, naturalDimensions.width);
+		}
+
+		// Apply maxHeight constraint if provided
+		if (maxHeight) {
+			height = Math.min(maxHeight, naturalDimensions.height);
+		}
+
+		return { width, height };
+	});
 </script>
 
-<div class={expanded ? 'expanded' : ''}>
+<section class={expanded ? 'expanded' : ''}>
 	<button type="button" onclick={toggleExpand} class="img-button">
-		<img {src} {alt} />
+		<img
+			bind:this={imgElement}
+			{src}
+			{alt}
+			onload={handleImageLoad}
+			style="width: {displayDimensions.width}px; height: {displayDimensions.height}px; view-transition-name: {transitionName};"
+			class:svg={isSVG}
+		/>
 	</button>
-</div>
+</section>
 
 <style>
-	div {
+	section {
 		cursor: pointer;
-		width: max-content;
+		width: fit-content;
 		z-index: 500;
 	}
 
@@ -31,6 +99,16 @@
 		border: none;
 		background: none;
 		cursor: pointer;
+		width: fit-content;
+		display: block;
+	}
+
+	img {
+		object-fit: fill;
+	}
+
+	img.svg {
+		object-fit: contain;
 	}
 
 	.expanded {
@@ -39,11 +117,12 @@
 		background: rgb(0 0 0 / 0.9);
 		display: grid;
 		place-items: center;
-		z-index: 999;
+		z-index: 9999;
 		width: 100vw;
 		height: 100vh;
 		margin: 0;
-		padding: 0;
+		padding: 20px;
+		box-sizing: border-box;
 	}
 
 	.expanded .img-button {
@@ -63,11 +142,8 @@
 		padding: 0;
 	}
 
-	img {
-		width: 300px;
-		height: 300px;
-		object-fit: cover;
-		view-transition-name: testing;
+	.expanded img.svg {
+		filter: brightness(1.1);
 	}
 
 	::view-transition-old(testing),
