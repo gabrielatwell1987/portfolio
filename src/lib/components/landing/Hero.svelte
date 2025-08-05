@@ -207,7 +207,7 @@
 				width: 30vw;
 				height: 30vw;
 				background: linear-gradient(-45deg, var(--clr-main), transparent);
-				animation-delay: 3s;
+				animation-delay: 2s;
 				clip-path: polygon(
 					50% 0%,
 					61% 35%,
@@ -231,7 +231,7 @@
 				height: 12vw;
 				background: linear-gradient(90deg, var(--clr-blue), transparent);
 				animation: antiShapeFloat 15s ease-in-out infinite;
-				animation-delay: 5s;
+				animation-delay: 3s;
 				clip-path: polygon(
 					50% 0%,
 					61% 35%,
