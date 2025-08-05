@@ -1,6 +1,5 @@
 <script>
 	import { onNavigate } from '$app/navigation';
-	import { browser } from '$app/environment';
 
 	// view transition
 	onNavigate(() => {
