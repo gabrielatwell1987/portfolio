@@ -123,6 +123,12 @@
 		margin: 0;
 		padding: 20px;
 		box-sizing: border-box;
+
+		@media (width <= 768px) {
+			width: 100dvw;
+			height: 100dvh;
+			padding: 0.5em;
+		}
 	}
 
 	.expanded .img-button {
@@ -132,6 +138,13 @@
 		place-items: center;
 		margin: 0;
 		padding: 0;
+
+		@media (width <= 768px) {
+			width: 100%;
+			height: 100%;
+			max-width: 100dvw;
+			max-height: 100dvh;
+		}
 	}
 
 	.expanded img {
@@ -140,6 +153,13 @@
 		object-fit: contain;
 		margin: 0;
 		padding: 0;
+
+		@media (width <= 768px) {
+			width: 100%;
+			height: 100%;
+			max-width: calc(100dvw - 1em);
+			max-height: calc(100dvh - 1em);
+		}
 	}
 
 	.expanded img.svg {
