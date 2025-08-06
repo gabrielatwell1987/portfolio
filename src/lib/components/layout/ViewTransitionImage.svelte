@@ -56,22 +56,6 @@
 			};
 		}
 
-		// // Start with natural dimensions
-		// let width = naturalDimensions.width;
-		// let height = naturalDimensions.height;
-
-		// // Apply maxWidth constraint if provided
-		// if (maxWidth) {
-		// 	width = Math.min(maxWidth, naturalDimensions.width);
-		// }
-
-		// // Apply maxHeight constraint if provided
-		// if (maxHeight) {
-		// 	height = Math.min(maxHeight, naturalDimensions.height);
-		// }
-
-		// return { width, height };
-
 		// Calculate scaling factors
 		let scaleX = maxWidth ? maxWidth / naturalDimensions.width : 1;
 		let scaleY = maxHeight ? maxHeight / naturalDimensions.height : 1;
@@ -116,6 +100,12 @@
 		cursor: pointer;
 		width: fit-content;
 		display: block;
+	}
+
+	.img-button:focus,
+	.img-button:focus-visible {
+		outline: none;
+		box-shadow: none;
 	}
 
 	img {

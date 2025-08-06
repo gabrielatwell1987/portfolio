@@ -91,7 +91,8 @@
 	border-radius: var(--radius);
 }
 
-html body h1 {
+.css h1,
+.gsap h1 {
 	font-family: var(--bronova-bold);
 	font-size: clamp(2rem, 5vw, 8rem);
 	font-weight: 900;
@@ -104,7 +105,8 @@ html body h1 {
 	display: none;
 }
 
-html body h2 {
+.css h2,
+.gsap h2 {
 	font-family: var(--bronova-bold);
 	font-size: clamp(1.5rem, 3vw, 2.5rem);
 	font-weight: 500;
@@ -119,7 +121,8 @@ div[id] {
 	scroll-margin-top: 8rem;
 }
 
-html body p {
+.css p,
+.gsap p {
 	font-size: clamp(1rem, 1.25vw, 1.75rem);
 	font-weight: 300;
 	color: var(--clr-main);
