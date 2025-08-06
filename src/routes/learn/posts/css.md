@@ -1,4 +1,4 @@
-# CSS Tips
+# CSS
 
 <div class="grid-section" id="transitions">
 <div class="content">

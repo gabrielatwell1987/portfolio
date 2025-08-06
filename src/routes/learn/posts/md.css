@@ -101,6 +101,7 @@ html body h1 {
 	text-shadow: 0 0 3px var(--dark-gray);
 	text-transform: uppercase;
 	scroll-margin-top: 8rem;
+	display: none;
 }
 
 html body h2 {

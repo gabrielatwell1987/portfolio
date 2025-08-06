@@ -44,13 +44,11 @@
 	<div class="css">
 		<div class="image">
 			<div class="skillImg">
-				<h1>
-					<ViewTransitionImage
-						src="/skills/CSS-Purple.webp"
-						alt="new css logo"
-						transitionName="css-logo-transition"
-					/>
-				</h1>
+				<ViewTransitionImage
+					src="/skills/CSS-Purple.webp"
+					alt="new css logo"
+					transitionName="css-logo-transition"
+				/>
 			</div>
 
 			<CSS aria-label="css" />
@@ -59,14 +57,12 @@
 
 	<div class="gsap">
 		<div class="skillImg">
-			<h2>
-				<Image
-					src="/skills/GSAP-Dark.svg"
-					alt="greensock animation platform"
-					aspectRatio="1/1"
-					class="gsap-logo"
-				/>
-			</h2>
+			<Image
+				src="/skills/GSAP-Dark.svg"
+				alt="greensock animation platform"
+				aspectRatio="1/1"
+				class="gsap-logo"
+			/>
 		</div>
 
 		<GSAP aria-label="greensock" />
@@ -134,6 +130,10 @@
 					width: 25%;
 					margin-inline: auto;
 					margin-block: 7rem;
+
+					@media (width <= 768px) {
+						width: 85%;
+					}
 				}
 			}
 		}
@@ -144,63 +144,10 @@
 
 			& .skillImg {
 				margin-inline: auto;
-				margin-top: 6rem;
+				margin-block: 7rem;
 				max-width: 15em;
+				width: 100%;
 			}
-		}
-
-		:global(.gsap .skillImg img) {
-			view-transition-name: gsap-image;
-		}
-
-		@media (width <= 500px) {
-			.css {
-				.image {
-					.skillImg {
-						width: 75%;
-					}
-				}
-			}
-		}
-	}
-
-	::view-transition-old(css-skill-image),
-	::view-transition-new(css-skill-image),
-	::view-transition-old(gsap-skill-image),
-	::view-transition-new(gsap-skill-image) {
-		animation: none;
-		mix-blend-mode: normal;
-	}
-
-	::view-transition-old(css-skill-image),
-	::view-transition-old(gsap-skill-image) {
-		animation: scale-fade-out 0.75s ease-out forwards;
-	}
-
-	::view-transition-new(css-skill-image),
-	::view-transition-new(gsap-skill-image) {
-		animation: scale-fade-in 0.75s ease-in forwards;
-	}
-
-	@keyframes scale-fade-out {
-		from {
-			opacity: 1;
-			transform: scale(1);
-		}
-		to {
-			opacity: 0;
-			transform: scale(0.8);
-		}
-	}
-
-	@keyframes scale-fade-in {
-		from {
-			opacity: 0;
-			transform: scale(1.2);
-		}
-		to {
-			opacity: 1;
-			transform: scale(1);
 		}
 	}
 </style>
