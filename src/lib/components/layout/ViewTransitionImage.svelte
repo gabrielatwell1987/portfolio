@@ -56,21 +56,36 @@
 			};
 		}
 
-		// Start with natural dimensions
-		let width = naturalDimensions.width;
-		let height = naturalDimensions.height;
+		// // Start with natural dimensions
+		// let width = naturalDimensions.width;
+		// let height = naturalDimensions.height;
 
-		// Apply maxWidth constraint if provided
-		if (maxWidth) {
-			width = Math.min(maxWidth, naturalDimensions.width);
-		}
+		// // Apply maxWidth constraint if provided
+		// if (maxWidth) {
+		// 	width = Math.min(maxWidth, naturalDimensions.width);
+		// }
 
-		// Apply maxHeight constraint if provided
-		if (maxHeight) {
-			height = Math.min(maxHeight, naturalDimensions.height);
-		}
+		// // Apply maxHeight constraint if provided
+		// if (maxHeight) {
+		// 	height = Math.min(maxHeight, naturalDimensions.height);
+		// }
 
-		return { width, height };
+		// return { width, height };
+
+		// Calculate scaling factors
+		let scaleX = maxWidth ? maxWidth / naturalDimensions.width : 1;
+		let scaleY = maxHeight ? maxHeight / naturalDimensions.height : 1;
+
+		// Use the smaller scale to maintain aspect ratio
+		let scale = Math.min(scaleX, scaleY);
+
+		// Only scale down, never scale up beyond natural dimensions
+		scale = Math.min(scale, 1);
+
+		return {
+			width: Math.round(naturalDimensions.width * scale),
+			height: Math.round(naturalDimensions.height * scale)
+		};
 	});
 </script>
 
@@ -104,7 +119,7 @@
 	}
 
 	img {
-		object-fit: fill;
+		object-fit: contain;
 	}
 
 	img.svg {
