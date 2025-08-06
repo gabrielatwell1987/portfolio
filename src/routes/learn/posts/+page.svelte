@@ -150,7 +150,7 @@
 		}
 
 		:global(.gsap .skillImg img) {
-			view-transition-name: gsap-image !important;
+			view-transition-name: gsap-image;
 		}
 
 		@media (width <= 500px) {
