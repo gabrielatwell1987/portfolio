@@ -54,12 +54,13 @@
 	a.btn {
 		position: relative;
 		width: fit-content;
-		padding: 0.2em 0.6em;
 		border: 1px solid var(--clr-main);
 		border-radius: var(--radius);
-		outline: 1px solid var(--clr-main);
+		outline: 2px solid var(--clr-main);
+		outline-offset: -7px;
+		padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
 		color: var(--clr-main);
-		background-color: var(--clr-link);
+		background-color: transparent;
 		font-family: var(--bronova);
 		font-size: clamp(var(--h6), 1.5vw, var(--h3));
 		font-weight: 400;
@@ -67,15 +68,17 @@
 		user-select: none;
 		margin-inline: auto;
 		margin-bottom: 1rem;
-		transition: hover 0.3s ease-in-out;
+		transition: 750ms;
 		display: flex;
 		align-items: center;
 		gap: 0.5em;
 		letter-spacing: 1px;
 		text-decoration: none;
+		opacity: 0.75;
 
 		&:hover {
-			opacity: 0.9;
+			opacity: 0.95;
+			outline-offset: 0px;
 		}
 
 		&:focus,
