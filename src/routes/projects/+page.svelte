@@ -3,7 +3,7 @@
 	import Title from '$lib/components/layout/Title.svelte';
 	import Popup from '$lib/components/layout/Popup.svelte';
 	import Testimonial from '$lib/components/projects/Testimonial.svelte';
-	import adrienne from '$lib/images/adrienne.webp';
+	// import adrienne from '$lib/images/adrienne.webp';
 	import projects from '$lib/components/projects/projects.json';
 	import testimonials from '$lib/components/projects/testimonials.json';
 	// import user from '$lib/images/user.webp';

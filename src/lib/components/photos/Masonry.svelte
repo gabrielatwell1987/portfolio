@@ -1,17 +1,6 @@
 <script>
-	import archie from '$lib/images/archie.webp';
-	import autumn from '$lib/images/autumn.webp';
-	import gabe from '$lib/images/gabe.webp';
-	import gabe2 from '$lib/images/gabe2.webp';
-	import gabe3 from '$lib/images/gabe3.webp';
-	import gabe4 from '$lib/images/gabe4.webp';
-	import wtf from '$lib/images/wtf.webp';
-	import wtf2 from '$lib/images/wtf2.webp';
-	import kids from '$lib/images/kids.webp';
-	import crest from '$lib/images/atwell_crest.webp';
-	import suicidal from '$lib/images/st.webp';
-	import wilo from '$lib/images/wilo_mcgee.webp';
 	import Title from '$lib/components/layout/Title.svelte';
+	import images from '$lib/components/photos/images.json';
 
 	let selectedImage = $state(null);
 	let isOpen = $state(false);
@@ -57,7 +46,7 @@
 
 <section>
 	<div class="masonry">
-		{#each [{ src: kids, alt: 'Gabe and his kids' }, { src: gabe, alt: 'Gabe sitting with his phone' }, { src: gabe2, alt: "Gabriel's face" }, { src: gabe3, alt: 'Gabe in Arizona fixing a car' }, { src: suicidal, alt: 'Gabe with a suicidal tendencies hat' }, { src: gabe4, alt: 'Gabe in a restaurant' }, { src: crest, alt: 'the Atwell family crest' }, { src: autumn, alt: 'Gabe and his daughter Autumn' }, { src: archie, alt: 'Gabe and his poodle Archie' }, { src: wtf, alt: 'Trying to burn Gabe' }, { src: wtf2, alt: "Gabe's face on hulk hogan" }, { src: wilo, alt: 'Gabe with thick glasses' }] as img, i}
+		{#each images as img, i}
 			<button type="button" style="animation-delay: {i * 0.2}s;" onclick={() => openPopover(img)}>
 				<img src={img.src} alt={img.alt} />
 			</button>
