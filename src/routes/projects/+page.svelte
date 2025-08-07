@@ -4,6 +4,8 @@
 	import Popup from '$lib/components/layout/Popup.svelte';
 	import Testimonial from '$lib/components/projects/Testimonial.svelte';
 	import adrienne from '$lib/images/adrienne.webp';
+	import projects from '$lib/components/projects/projects.json';
+	import testimonials from '$lib/components/projects/testimonials.json';
 	// import user from '$lib/images/user.webp';
 
 	// State management with $state
@@ -11,86 +13,6 @@
 	let GithubContributions = $state(null);
 	let showProjects = $state(false);
 	let showGithub = $state(false);
-
-	// Projects data
-	const projects = [
-		{
-			title: 'busy little bat sewing',
-			img: '/projects/busybatleopard.webp',
-			url: 'https://busybatsewing.com',
-			description: 'sveltekit',
-			summary:
-				'A custom website for a local business that sells handmade items. The site features a product page, a contact form, and I even created the brand.',
-			index: 0
-		},
-		{
-			title: 'pixipalette',
-			img: '/projects/pixipalette.webp',
-			url: 'https://pixipalette.vercel.app',
-			description: 'sveltekit',
-			summary:
-				'A color palette generator that tells users the hex, rgb, and hsl colors of images. I tried making the app as user-friendly as possible.',
-			index: 1
-		},
-		{
-			title: 'grocery list',
-			img: '/projects/groceries.webp',
-			url: 'https://legit-shopping-list.vercel.app/',
-			description: 'react',
-			summary:
-				'A grocery list app that allows users to add, remove, and edit items. The app is built with React and features a simple and intuitive interface.',
-			index: 2
-		},
-		{
-			title: 'e-commerce product page',
-			img: '/projects/ecommerce.webp',
-			url: 'https://fake-store-products.vercel.app',
-			description: 'html/css/js',
-			summary:
-				'My version of an e-commerce product page that features a product image, title, price, and description. I used the fake store API to populate the product data.',
-			index: 3
-		},
-		{
-			title: 'passcraft',
-			img: '/projects/passcraft.webp',
-			url: 'https://make-a-password.vercel.app/',
-			description: 'sveltekit',
-			summary:
-				"If you're like me and have a hard time creating passwords, PassCraft is for you! It generates random passwords based on user input.",
-			index: 4
-		},
-		{
-			title: 'think.flow',
-			img: '/projects/thinkflow.webp',
-			url: 'https://thinkdotflow.vercel.app',
-			description: 'sveltekit',
-			summary:
-				'Custom blog page where you can add, edit, and remove posts. It uses localStorage to save the posts, so they persist even after refreshing the page.',
-			index: 5
-		}
-	];
-
-	// Testimonials data - matched by project index
-	const testimonials = [
-		{
-			projectIndex: 0,
-			name: 'Adrienne Cornelson',
-			title: 'Busy Little Bat Sewing - Owner',
-			testimonial:
-				'Gabe was a pleasure to work with. He was very responsive and made sure to ask questions when he needed clarification. He took my ideas and made them a reality! I would highly recommend him for any web development project.',
-			rating: '5',
-			avatar: adrienne
-		}
-		// Add more testimonials here:
-		// {
-		// 	projectIndex: 3,
-		// 	name: 'Testing McGee',
-		// 	title: 'Grocery list - Owner',
-		// 	testimonial: 'Sometimes, women call me a pervert. I prefer the term connoisseur.',
-		// 	rating: '2',
-		// 	avatar: user
-		// }
-	];
 
 	// Helper function to get testimonial for a project
 	function getTestimonialForProject(projectIndex) {
@@ -108,7 +30,6 @@
 
 		// Small delay to ensure initial page render is complete
 		const timer = setTimeout(loadProject, 100);
-
 		return () => clearTimeout(timer);
 	});
 
@@ -123,7 +44,6 @@
 
 			// Load GitHub after projects are ready
 			const timer = setTimeout(loadGithub, 200);
-
 			return () => clearTimeout(timer);
 		}
 	});
