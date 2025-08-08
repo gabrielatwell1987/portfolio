@@ -101,6 +101,11 @@
 			overflow-x: auto;
 			margin: 1rem 0;
 		}
+
+		:global(p) {
+			margin: 0;
+			margin-bottom: 0.2rem;
+		}
 	}
 
 	@keyframes fadeInUp {
