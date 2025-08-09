@@ -5,27 +5,24 @@
 	let selectedImage = $state(null);
 	let isOpen = $state(false);
 	let popoverImage = $state(null);
+	let popoverElement = $state(null);
 
 	function openPopover(img) {
-		// If a popover is already open, close it first
 		if (isOpen) {
 			isOpen = false;
+
 			setTimeout(() => {
 				selectedImage = img;
-				const popover = document.getElementById('image-popover');
-				popover.showPopover();
-
-				// Trigger animation after popover is shown
+				popoverElement?.showPopover();
 				setTimeout(() => {
 					isOpen = true;
 				}, 10);
 			}, 50);
 		} else {
 			selectedImage = img;
-			const popover = document.getElementById('image-popover');
-			popover.showPopover();
 
-			// Trigger animation after popover is shown
+			popoverElement?.showPopover();
+
 			setTimeout(() => {
 				isOpen = true;
 			}, 10);
@@ -35,10 +32,8 @@
 	function closePopover() {
 		isOpen = false;
 
-		// Wait for animation to complete before hiding
 		setTimeout(() => {
-			const popover = document.getElementById('image-popover');
-			popover.hidePopover();
+			popoverElement?.hidePopover();
 			selectedImage = null;
 		}, 1000);
 	}
@@ -48,15 +43,13 @@
 		const naturalWidth = img.naturalWidth;
 		const naturalHeight = img.naturalHeight;
 
-		// Calculate the scale factor to fit within viewport constraints
 		const maxWidth = window.innerWidth * 0.8;
 		const maxHeight = window.innerHeight * 0.8;
 
 		const scaleX = maxWidth / naturalWidth;
 		const scaleY = maxHeight / naturalHeight;
-		const scale = Math.min(scaleX, scaleY, 1); // Don't scale up
+		const scale = Math.min(scaleX, scaleY, 1);
 
-		// Set the exact dimensions to match aspect ratio
 		img.style.width = `${naturalWidth * scale}px`;
 		img.style.height = `${naturalHeight * scale}px`;
 	}
@@ -75,10 +68,10 @@
 </section>
 
 <!-- Popover for enlarged image -->
-<div id="image-popover" popover="auto" class:open={isOpen}>
+<div id="image-popover" bind:this={popoverElement} popover="auto" class:open={isOpen}>
 	{#if selectedImage}
-		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<img
 			bind:this={popoverImage}
 			src={selectedImage.src}
