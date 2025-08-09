@@ -28,19 +28,23 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: 5rem;
+		margin-bottom: 5.5rem;
 		margin-left: calc(-50vw + 50%);
 		width: 100vw;
 		position: relative;
 		padding-top: 0;
-		aspect-ratio: 16 / 9;
+		aspect-ratio: 21 / 9;
 		contain: layout;
 		min-height: 50vh;
 
 		@media (width <= 768px) {
-			padding-top: 1em;
-			margin-bottom: 2.5em;
+			padding-top: 3em;
+			margin-bottom: 7em;
 			min-height: 40vh;
+		}
+
+		@media (width <= 500px) {
+			margin-bottom: 2.5em;
 		}
 
 		& picture {
@@ -66,8 +70,8 @@
 		}
 
 		& h1 {
-			margin-block: -1.4em;
-			padding-bottom: 4rem;
+			margin-block: -0.9em;
+			padding-bottom: 3em;
 			font-size: clamp(var(--h3), 6vw, var(--xxl));
 			font-weight: 700;
 			text-shadow: 0 0 5px var(--smoke);
