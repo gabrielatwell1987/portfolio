@@ -4,6 +4,7 @@
 
 	let selectedImage = $state(null);
 	let isOpen = $state(false);
+	let popoverImage = $state(null);
 
 	function openPopover(img) {
 		// If a popover is already open, close it first
@@ -30,6 +31,7 @@
 			}, 10);
 		}
 	}
+
 	function closePopover() {
 		isOpen = false;
 
@@ -40,6 +42,24 @@
 			selectedImage = null;
 		}, 1000);
 	}
+
+	function handleImageLoad(event) {
+		const img = event.target;
+		const naturalWidth = img.naturalWidth;
+		const naturalHeight = img.naturalHeight;
+
+		// Calculate the scale factor to fit within viewport constraints
+		const maxWidth = window.innerWidth * 0.8;
+		const maxHeight = window.innerHeight * 0.8;
+
+		const scaleX = maxWidth / naturalWidth;
+		const scaleY = maxHeight / naturalHeight;
+		const scale = Math.min(scaleX, scaleY, 1); // Don't scale up
+
+		// Set the exact dimensions to match aspect ratio
+		img.style.width = `${naturalWidth * scale}px`;
+		img.style.height = `${naturalHeight * scale}px`;
+	}
 </script>
 
 <Title title="pics of me" />
@@ -48,7 +68,7 @@
 	<div class="masonry">
 		{#each images as img, i}
 			<button type="button" style="animation-delay: {i * 0.2}s;" onclick={() => openPopover(img)}>
-				<img src={img.src} alt={img.alt} />
+				<img src={img.src} alt={img.alt} loading="lazy" />
 			</button>
 		{/each}
 	</div>
@@ -57,13 +77,15 @@
 <!-- Popover for enlarged image -->
 <div id="image-popover" popover="auto" class:open={isOpen}>
 	{#if selectedImage}
-		<button
-			type="button"
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+		<img
+			bind:this={popoverImage}
+			src={selectedImage.src}
+			alt={selectedImage.alt}
 			onclick={closePopover}
-			style="padding:0; border:none; background:transparent;"
-		>
-			<img src={selectedImage.src} alt={selectedImage.alt} style="pointer-events:none;" />
-		</button>
+			onload={handleImageLoad}
+		/>
 	{/if}
 </div>
 
@@ -144,18 +166,15 @@
 	#image-popover {
 		padding: 0;
 		background: transparent;
-		max-width: 80vw;
-		max-height: 80vh;
-		width: 100%;
-		overflow: hidden;
-		margin: auto;
 		transform: scale(0.9);
 		opacity: 0;
 		border: none;
-		border-radius: var(--radius);
+		border-radius: 0;
 		transition:
 			transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
 			opacity 0.3s ease-out;
+		margin: auto;
+		inset: 0;
 
 		&.open {
 			transform: scale(1);
@@ -163,11 +182,11 @@
 		}
 
 		& img {
-			max-width: 100%;
-			max-height: 95vh;
-			object-fit: contain;
 			cursor: pointer;
 			box-shadow: 0 0 10px var(--clr-inverted);
+			border: 2px solid var(--clr-main);
+			border-radius: var(--radius);
+			display: block;
 		}
 
 		&::backdrop {
