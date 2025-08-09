@@ -15,7 +15,6 @@
 
 			goto(`${selectedRoute}?${uniqueParam}`);
 
-			// Reset the select value to allow re-selection
 			selectValue = '';
 		}
 	}
@@ -23,8 +22,8 @@
 
 <select onchange={handleSelect} bind:value={selectValue} aria-label="Connect with Gabe">
 	<option value="" disabled selected>Connect</option>
-	<option value={path1}>Hire Me</option>
-	<option value={path2}>Contact Me</option>
+	<option value={path1}>🟢 Hire Me</option>
+	<option value={path2}>🔵 Contact Me</option>
 </select>
 
 <style>
@@ -60,11 +59,15 @@
 		}
 
 		& option {
-			background-color: var(--clr-main);
-			color: var(--clr-inverted);
+			background-color: var(--clr-inverted);
+			color: var(--clr-main);
 			padding: 0.25rem;
 			letter-spacing: 1px;
 			font-weight: 500;
+
+			&:disabled {
+				font-weight: 600;
+			}
 		}
 	}
 </style>
