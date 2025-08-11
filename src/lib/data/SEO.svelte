@@ -12,9 +12,7 @@
 
 	let url = $derived(() => {
 		const { origin, pathname } = $page.url;
-		// Remove trailing slash except for root path, and ensure consistent formatting
 		const normalizedPath = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
-		// Ensure we always use the canonical domain
 		const canonicalOrigin =
 			origin.includes('localhost') || origin.includes('127.0.0.1')
 				? origin
@@ -22,7 +20,7 @@
 		return `${canonicalOrigin}${normalizedPath}`;
 	});
 
-	let siteName = 'Atwell UI';
+	let siteName = 'atwellUI';
 	let baseUrl = $derived(() => {
 		const { origin } = $page.url;
 		return origin.includes('localhost') || origin.includes('127.0.0.1')
@@ -36,9 +34,7 @@
 		}
 		return `${baseUrl}/logos/atwellUI_social-media.webp`;
 	});
-	let fullTitle = $derived(() =>
-		title === 'Gabriel Atwell' ? title : `${title} | Gabriel Atwell`
-	);
+	let fullTitle = title;
 </script>
 
 <svelte:head>
@@ -51,10 +47,16 @@
 	{/if}
 
 	<!-- Essential meta tags -->
-	<meta name="robots" content="index, follow" />
+	<meta
+		name="robots"
+		content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+	/>
+	<meta name="googlebot" content="index, follow" />
 	<meta name="author" content="Gabriel Atwell" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta charset="utf-8" />
+	<meta name="language" content="en-US" />
+	<meta name="revisit-after" content="7 days" />
 
 	<!-- Open Graph -->
 	<meta property="og:locale" content="en_US" />
