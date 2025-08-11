@@ -1,11 +1,13 @@
 <script>
 	import { page } from '$app/stores';
 
-	/** @type {{title: any, description: any, keywords: any}} */
+	/** @type {{title: string, description: string, keywords: string, image?: string, type?: string}} */
 	let {
 		title = 'Gabriel Atwell',
 		description = 'Web developer and web designer',
-		keywords = ''
+		keywords = '',
+		image = '',
+		type = 'website'
 	} = $props();
 
 	let url = $derived(() => {
@@ -19,6 +21,7 @@
 				: 'https://www.gabrielatwell.com';
 		return `${canonicalOrigin}${normalizedPath}`;
 	});
+
 	let siteName = 'Atwell UI';
 	let baseUrl = $derived(() => {
 		const { origin } = $page.url;
@@ -26,41 +29,73 @@
 			? origin
 			: 'https://www.gabrielatwell.com';
 	});
+
+	let ogImage = $derived(() => {
+		if (image) {
+			return image.startsWith('http') ? image : `${baseUrl}${image}`;
+		}
+		return `${baseUrl}/logos/atwellUI_social-media.webp`;
+	});
+	let fullTitle = $derived(() =>
+		title === 'Gabriel Atwell' ? title : `${title} | Gabriel Atwell`
+	);
 </script>
 
 <svelte:head>
-	<title>{title}</title>
+	<title>{fullTitle}</title>
 	<link rel="canonical" href={url} />
 
 	<meta name="description" content={description} />
-	<meta name="keywords" content={keywords} />
+	{#if keywords}
+		<meta name="keywords" content={keywords} />
+	{/if}
 
+	<!-- Essential meta tags -->
 	<meta name="robots" content="index, follow" />
-	<meta property="og:locale" content="en_US" />
+	<meta name="author" content="Gabriel Atwell" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta charset="utf-8" />
 
-	<meta property="og:title" content={title} />
+	<!-- Open Graph -->
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content={fullTitle} />
 	<meta property="og:description" content={description} />
 	<meta property="og:url" content={url} />
-	<meta property="og:type" content="website" />
+	<meta property="og:type" content={type} />
 	<meta property="og:site_name" content={siteName} />
-	<meta property="og:image" content="{baseUrl}/logos/atwellUI.webp" />
+	<meta property="og:image" content={ogImage} />
+	<meta property="og:image:alt" content={`${title} - Gabriel Atwell Portfolio`} />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
 
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content={title} />
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={fullTitle} />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content="{baseUrl}/logos/atwellUI.webp" />
+	<meta name="twitter:image" content={ogImage} />
+	<meta name="twitter:image:alt" content={`${title} - Gabriel Atwell Portfolio`} />
 
+	<!-- Structured Data -->
 	<script type="application/ld+json">
-		{JSON.stringify({
-			"@context": "https://schema.org",
-			"@type": "WebSite",
-			"name": "Gabriel Atwell",
-          	"description": "The portfolio of Gabriel Atwell, a web developer and designer based in Las Vegas, NV.",
-			"url": url,
-			"author": {
-				"@type": "Person",
-				"name": "Gabriel Atwell"
-			}
-		})}
+        {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": type === 'article' ? 'Article' : 'WebSite',
+            "name": fullTitle,
+            "description": description,
+            "url": url,
+            "image": ogImage,
+            "author": {
+                "@type": "Person",
+                "name": "Gabriel Atwell",
+                "url": baseUrl
+            },
+            ...(type === 'website' && {
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": `${baseUrl}/search?q={search_term_string}`,
+                    "query-input": "required name=search_term_string"
+                }
+            })
+        })}
 	</script>
 </svelte:head>
