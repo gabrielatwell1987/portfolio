@@ -32,6 +32,7 @@
 	title="Web Animation Techniques"
 	description="Web techniques"
 	keywords="animation techniques, web techniques for animation"
+	type="article"
 />
 
 <section class="tocLogo" id="top">
