@@ -16,9 +16,9 @@
 </svelte:head>
 
 <SEO
-	title="About Me"
+	title="About Gabe"
 	description="All about Gabriel Atwell"
-	keywords="about gabe, about gabriel, gabe's bio, about me"
+	keywords="about gabe, about gabriel, gabe's bio"
 />
 
 <main aria-label="bio">
