@@ -4,7 +4,6 @@
 
 	let selectedImage = $state(null);
 	let isOpen = $state(false);
-	let popoverImage = $state(null);
 	let popoverElement = $state(null);
 
 	function openPopover(img) {
