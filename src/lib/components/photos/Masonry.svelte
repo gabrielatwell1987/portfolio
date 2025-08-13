@@ -5,6 +5,7 @@
 	let selectedImage = $state(null);
 	let isOpen = $state(false);
 	let popoverElement = $state(null);
+	let popoverImage = $state(null); // Add this missing variable
 
 	function openPopover(img) {
 		if (isOpen) {
