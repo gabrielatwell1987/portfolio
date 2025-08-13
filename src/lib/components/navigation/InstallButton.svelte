@@ -92,11 +92,14 @@
 		font-family: var(--bronova);
 		font-size: clamp(var(--sm), 2vw, var(--h4));
 		font-weight: 700;
-		background-color: var(--dark-pale);
-		color: var(--black);
-		border-radius: 8px;
-		outline: none;
-		border: none;
+		background-color: transparent;
+		color: var(--clr-main);
+		outline: 3px solid var(--clr-main);
+		outline-offset: -7px;
+		border: 1px solid var(--clr-main);
+		border-radius: var(--radius);
+		opacity: 0.75;
+		transition: 500ms;
 		cursor: pointer;
 		pointer-events: auto;
 		z-index: 1000;
@@ -110,21 +113,21 @@
 		left: 1rem;
 		view-transition-name: installbtn;
 
+		&:focus,
+		&:focus-visible {
+			outline: 1px solid var(--clr-main);
+			background: transparent;
+			color: var(--clr-main);
+		}
+
 		&:hover {
-			opacity: 0.9;
-		}
-
-		&:not(:hover) {
-			opacity: 1;
-		}
-
-		&:focus {
-			box-shadow: 0 0 0px var(--white);
+			opacity: 0.95;
+			outline-offset: 0px;
 		}
 
 		& i {
 			font-size: clamp(var(--sm), 1.5vw, var(--h5));
-			color: var(--black);
+			color: var(--clr-main);
 			align-items: center;
 			cursor: pointer;
 		}

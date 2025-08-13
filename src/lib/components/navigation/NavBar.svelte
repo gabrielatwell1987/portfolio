@@ -3,7 +3,7 @@
 	import MainLogo from '$lib/components/navigation/MainLogo.svelte';
 	import ThemeToggle from '$lib/components/layout/ThemeToggle.svelte';
 	import NavLink from '$lib/components/navigation/NavLink.svelte';
-	import InstallBtn from '$lib/components/navigation/InstallBtn.svelte';
+	import InstallButton from '$lib/components/navigation/InstallButton.svelte';
 	import SelectLink from '$lib/components/navigation/SelectLink.svelte';
 
 	let open = $state(false);
@@ -52,7 +52,7 @@
 	</ul>
 </nav>
 
-<InstallBtn />
+<InstallButton />
 
 <style>
 	:root {
