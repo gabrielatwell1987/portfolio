@@ -114,9 +114,9 @@
 					</div>
 
 					<div class="stat-item">
-						<dt class="visually-hidden">Years of experience approach</dt>
-						<dd class="stat-number" aria-label="Three plus">3+</dd>
-						<dt class="stat-label">Years</dt>
+						<dt class="visually-hidden">Project delivery timeframe</dt>
+						<dd class="stat-number" aria-label="Fast">Fast</dd>
+						<dt class="stat-label">Delivery</dt>
 					</div>
 
 					<div class="stat-item">
