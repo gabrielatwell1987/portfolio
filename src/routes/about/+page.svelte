@@ -35,7 +35,8 @@
 					Svelte/Sveltekit, Node.js, GSAP, and a little bit of three.js but I have begun to teach
 					myself the backend of web development on my spare time with backend languages like <a
 						href="https://go.dev"
-						target="_blank">Go</a
+						target="_blank"
+						style="font-weight: 600;">Go</a
 					>
 					to become more of a fullstack developer.
 				</p>
@@ -179,7 +180,7 @@
 					}
 
 					& span {
-						color: var(--clr-link);
+						color: var(--clr-pale);
 						font-weight: 600;
 					}
 				}
