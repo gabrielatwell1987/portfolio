@@ -68,7 +68,9 @@
 		user-select: none;
 		margin-inline: auto;
 		margin-bottom: 1rem;
-		transition: 750ms;
+		transition:
+			outline-offset 300ms ease-out,
+			opacity 300ms ease-out;
 		display: flex;
 		align-items: center;
 		gap: 0.5em;
