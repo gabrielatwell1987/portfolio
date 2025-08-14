@@ -23,7 +23,9 @@
 			cursor: pointer;
 			letter-spacing: 1px;
 			width: fit-content;
-			transition: 500ms;
+			transition:
+				outline-offset 300ms ease-out,
+				opacity 300ms ease-out;
 			padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
 			margin-top: 10%;
 			margin-bottom: 2%;

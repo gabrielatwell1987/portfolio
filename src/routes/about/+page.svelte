@@ -33,7 +33,10 @@
 					My name is Gabriel Atwell and I am a frontend web developer. I started out with the
 					basics: HTML, CSS, and JavaScript. I then moved on to more advanced topics such as
 					Svelte/Sveltekit, Node.js, GSAP, and a little bit of three.js but I have begun to teach
-					myself the backend of web development on my spare time with backend languages like Python
+					myself the backend of web development on my spare time with backend languages like <a
+						href="https://go.dev"
+						target="_blank">Go</a
+					>
 					to become more of a fullstack developer.
 				</p>
 
