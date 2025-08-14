@@ -113,10 +113,6 @@
 				transition: scale 0.25s ease-in-out;
 				border: 1px solid var(--clr-main);
 				padding: 0.2vw;
-
-				&:hover {
-					scale: 1.05;
-				}
 			}
 
 			& .hover-text {
