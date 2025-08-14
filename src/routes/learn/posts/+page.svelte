@@ -7,9 +7,13 @@
 	import TableOfContents from '$lib/components/learn/TableOfContents.svelte';
 	import GabeMorph from '$lib/components/learn/GabeMorph.svelte';
 	import BackToTop from '$lib/components/learn/BackToTop.svelte';
-	import ViewTransitionImage from '$lib/components/layout/ViewTransitionImage.svelte';
 
 	let mounted = $state(false);
+	let isEnlarged = $state(false);
+
+	function enlargeImage() {
+		isEnlarged = !isEnlarged;
+	}
 
 	$effect(() => {
 		console.log(GSAP, CSS);
@@ -44,27 +48,40 @@
 <section class:mounted>
 	<div class="css">
 		<div class="image">
-			<div class="skillImg">
-				<ViewTransitionImage
+			<button
+				type="button"
+				class="skillImg"
+				class:enlarged={isEnlarged}
+				onclick={enlargeImage}
+				style="background: none; border: none; padding: 0;"
+			>
+				<Image
 					src="/skills/CSS-Purple.webp"
 					alt="new css logo"
-					transitionName="css-logo-transition"
+					aspectRatio="1/1"
+					class="css-logo"
 				/>
-			</div>
+			</button>
 
 			<CSS aria-label="css" />
 		</div>
 	</div>
 
 	<div class="gsap">
-		<div class="skillImg">
+		<button
+			type="button"
+			class="skillImg"
+			class:enlarged={isEnlarged}
+			onclick={enlargeImage}
+			style="background: none; border: none; padding: 0;"
+		>
 			<Image
-				src="/skills/GSAP-Dark.svg"
+				src="/skills/GSAP-Dark.webp"
 				alt="greensock animation platform"
 				aspectRatio="1/1"
 				class="gsap-logo"
 			/>
-		</div>
+		</button>
 
 		<GSAP aria-label="greensock" />
 	</div>
@@ -131,9 +148,20 @@
 					width: 25%;
 					margin-inline: auto;
 					margin-block: 7rem;
+					transition: transform 300ms ease-in-out;
+					outline: none;
+					box-shadow: none;
 
 					@media (width <= 768px) {
-						width: 85%;
+						width: 55%;
+					}
+
+					&.enlarged {
+						transform: scale(2);
+
+						@media (width <= 768px) {
+							transform: scale(1.75);
+						}
 					}
 				}
 			}
@@ -146,8 +174,23 @@
 			& .skillImg {
 				margin-inline: auto;
 				margin-block: 7rem;
-				max-width: 15em;
+				max-width: 25em;
 				width: 100%;
+				transition: transform 300ms ease-in-out;
+				outline: none;
+				box-shadow: none;
+
+				@media (width <= 768px) {
+					width: 55%;
+				}
+
+				&.enlarged {
+					transform: scale(2);
+
+					@media (width <= 768px) {
+						transform: scale(1.75);
+					}
+				}
 			}
 		}
 	}
