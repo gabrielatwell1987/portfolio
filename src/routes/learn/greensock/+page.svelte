@@ -15,12 +15,6 @@
 			detailsVisible = true;
 		}, 100);
 	});
-
-	// Debug: Check what data we're receiving
-	$effect(() => {
-		console.log('Page data:', data);
-		console.log('greensockDetails:', data?.greensockDetails);
-	});
 </script>
 
 <SEO

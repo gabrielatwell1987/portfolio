@@ -16,8 +16,6 @@
 	}
 
 	$effect(() => {
-		console.log(GSAP, CSS);
-
 		if (document.startViewTransition) {
 			document.startViewTransition(() => {
 				mounted = true;
