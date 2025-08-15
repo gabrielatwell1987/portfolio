@@ -10,36 +10,40 @@
 		type = 'website'
 	} = $props();
 
-	let url = $derived(() => {
-		const { origin, pathname } = $page.url;
-		const normalizedPath = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
-		const canonicalOrigin =
+	let url = $state('');
+	let baseUrl = $state('');
+	let ogImage = $state('');
+	let siteName = 'atwellUI';
+	let fullTitle = title;
+
+	$effect(() => {
+		const currentPage = $page;
+		const { origin, pathname } = currentPage.url;
+
+		// Set base URL
+		baseUrl =
 			origin.includes('localhost') || origin.includes('127.0.0.1')
 				? origin
 				: 'https://www.gabrielatwell.com';
-		return `${canonicalOrigin}${normalizedPath}`;
-	});
 
-	let siteName = 'atwellUI';
-	let baseUrl = $derived(() => {
-		const { origin } = $page.url;
-		return origin.includes('localhost') || origin.includes('127.0.0.1')
-			? origin
-			: 'https://www.gabrielatwell.com';
-	});
+		// Set canonical URL
+		const normalizedPath = pathname === '/' ? '/' : pathname.replace(/\/$/, '');
+		url = `${baseUrl}${normalizedPath}`;
 
-	let ogImage = $derived(() => {
+		// Set OG image
 		if (image) {
-			return image.startsWith('http') ? image : `${baseUrl}${image}`;
+			ogImage = image.startsWith('http') ? image : `${baseUrl}${image}`;
+		} else {
+			ogImage = `${baseUrl}/logos/atwellUI_social-media.webp`;
 		}
-		return `${baseUrl}/logos/atwellUI_social-media.webp`;
 	});
-	let fullTitle = title;
 </script>
 
 <svelte:head>
 	<title>{fullTitle}</title>
-	<link rel="canonical" href={url} />
+	{#if url}
+		<link rel="canonical" href={url} />
+	{/if}
 
 	<meta name="description" content={description} />
 	{#if keywords}
@@ -62,42 +66,50 @@
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:title" content={fullTitle} />
 	<meta property="og:description" content={description} />
-	<meta property="og:url" content={url} />
+	{#if url}
+		<meta property="og:url" content={url} />
+	{/if}
 	<meta property="og:type" content={type} />
 	<meta property="og:site_name" content={siteName} />
-	<meta property="og:image" content={ogImage} />
-	<meta property="og:image:alt" content={`${title} - Gabriel Atwell Portfolio`} />
-	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="630" />
+	{#if ogImage}
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:alt" content={`${title} - Gabriel Atwell Portfolio`} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+	{/if}
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={fullTitle} />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content={ogImage} />
-	<meta name="twitter:image:alt" content={`${title} - Gabriel Atwell Portfolio`} />
+	{#if ogImage}
+		<meta name="twitter:image" content={ogImage} />
+		<meta name="twitter:image:alt" content={`${title} - Gabriel Atwell Portfolio`} />
+	{/if}
 
 	<!-- Structured Data -->
-	<script type="application/ld+json">
-        {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": type === 'article' ? 'Article' : 'WebSite',
-            "name": fullTitle,
-            "description": description,
-            "url": url,
-            "image": ogImage,
-            "author": {
-                "@type": "Person",
-                "name": "Gabriel Atwell",
-                "url": baseUrl
-            },
-            ...(type === 'website' && {
-                "potentialAction": {
-                    "@type": "SearchAction",
-                    "target": `${baseUrl}/search?q={search_term_string}`,
-                    "query-input": "required name=search_term_string"
-                }
-            })
-        })}
-	</script>
+	{#if url && baseUrl && ogImage}
+		<script type="application/ld+json">
+            {JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": type === 'article' ? 'Article' : 'WebSite',
+                "name": fullTitle,
+                "description": description,
+                "url": url,
+                "image": ogImage,
+                "author": {
+                    "@type": "Person",
+                    "name": "Gabriel Atwell",
+                    "url": baseUrl
+                },
+                ...(type === 'website' && {
+                    "potentialAction": {
+                        "@type": "SearchAction",
+                        "target": `${baseUrl}/search?q={search_term_string}`,
+                        "query-input": "required name=search_term_string"
+                    }
+                })
+            })}
+		</script>
+	{/if}
 </svelte:head>
