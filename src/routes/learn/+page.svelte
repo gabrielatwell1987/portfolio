@@ -4,10 +4,6 @@
 	import AnimatedHeading from '$lib/components/learn/AnimatedHeading.svelte';
 
 	$effect(() => {
-		const main = document.querySelector('main');
-
-		console.log(main);
-
 		document.documentElement.scrollTo(0, 0);
 	});
 </script>
