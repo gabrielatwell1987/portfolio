@@ -6,9 +6,7 @@
 	let submitStatus = $state('');
 </script>
 
-<div class="popover">
-	<Popup title="" text="Please fill out this questionnaire and I'll contact you back 😎" />
-</div>
+<Popup title="" text="Please fill out this questionnaire and I'll contact you back 😎" />
 
 <A11yAnnouncer message={submitStatus} />
 
@@ -147,16 +145,6 @@
 </section>
 
 <style>
-	.popover {
-		position: absolute;
-		top: 20vh;
-		right: 8vw;
-
-		@media (width <= 768px) {
-			display: none;
-		}
-	}
-
 	.hire-form-container {
 		width: 100%;
 		max-width: 1200px;
@@ -165,6 +153,7 @@
 		overflow-y: auto;
 		height: calc(100dvh - 3em);
 		position: relative;
+		margin-top: 3em;
 
 		@media (width <= 768px) {
 			padding: 0.5rem;
