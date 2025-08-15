@@ -14,10 +14,10 @@
 
 	@media (width >= 300px) {
 		main {
-			padding-top: 2em;
+			padding-top: 5em;
 
-			@media (width <=768px) {
-				padding-top: 1em;
+			@media (width <= 768px) {
+				padding-top: 2.5em;
 			}
 		}
 
