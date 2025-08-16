@@ -24,7 +24,7 @@
 			<a class="gs" href="learn/greensock" style="width: clamp(10em, 25vw, 30em);">
 				<Image
 					src="/logos/gsapLogo.svg"
-					alt="greensock animation platform"
+					alt="greensock animation platform logo"
 					width="300"
 					aspectRatio="1/1"
 				/>
@@ -33,7 +33,7 @@
 			<a class="sk" href="learn/sveltekit" style="width: clamp(10em, 25vw, 30em);">
 				<Image
 					src="/logos/svelteLogo.png"
-					alt="sveltekit web framework"
+					alt="sveltekit web framework logo"
 					width="350"
 					aspectRatio="1/1"
 				/>
