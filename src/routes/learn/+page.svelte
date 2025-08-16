@@ -43,7 +43,12 @@
 		<div class="animation-link" aria-label="animation">
 			<a href="/learn/posts">
 				<div class="image" style="width: clamp(15em, 25vw, 30em);">
-					<Image src="logos/animation.webp" alt="A logo that says web animation techniques." />
+					<Image
+						src="logos/animation.webp"
+						alt="A logo that says web animation techniques."
+						width="400"
+						aspectRatio="16/9"
+					/>
 				</div>
 			</a>
 		</div>
@@ -151,6 +156,7 @@
 
 	.animation-link {
 		display: block;
+		position: relative;
 	}
 
 	@keyframes wiggle {
