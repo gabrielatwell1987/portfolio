@@ -159,6 +159,7 @@
 			font-size: clamp(var(--xs), 1vw, var(--h6));
 			border-radius: var(--radius);
 			width: 25vw;
+			height: auto;
 			white-space: normal;
 			box-sizing: border-box;
 			margin-inline: auto;

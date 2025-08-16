@@ -1,4 +1,6 @@
 <script>
+	// import Image from '$lib/components/layout/Image.svelte';
+
 	/** @type {{title: any, img: any, url: any, description: any}} */
 	let { title, img, url, description, summary, index = 0 } = $props();
 </script>
@@ -22,7 +24,7 @@
 			alt="Screenshot of {title} project"
 			width="400px"
 			height="475px"
-			loading="lazy"
+			style="--alt-text: '{title} project'"
 		/>
 
 		<!-- hover text -->
@@ -113,6 +115,25 @@
 				transition: scale 0.25s ease-in-out;
 				border: 1px solid var(--clr-main);
 				padding: 0.2vw;
+				position: relative;
+
+				&::after {
+					content: "We failed to load the image of '" var(--alt-text) "' 😵‍💫";
+					position: absolute;
+					inset: 0;
+					display: grid;
+					place-items: center;
+					text-align: center;
+					background: var(--clr-inverted);
+					color: var(--clr-main);
+					white-space: pre-wrap;
+					padding: 1em;
+					pointer-events: none;
+					z-index: 1;
+					font-style: normal;
+					font-size: clamp(var(--xs), 1vw, var(--h5));
+					border-radius: var(--radius);
+				}
 			}
 
 			& .hover-text {
