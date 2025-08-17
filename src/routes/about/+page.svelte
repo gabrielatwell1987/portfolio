@@ -153,6 +153,15 @@
 					margin: 2rem auto 0;
 					padding: 0;
 					width: fit-content;
+					padding-block: 2rem;
+
+					@media (width <= 500px) {
+						gap: 10vw;
+						width: 100%;
+						margin-inline: auto;
+						margin-left: 0.9em;
+						padding-block: 0;
+					}
 				}
 
 				& .indent {
