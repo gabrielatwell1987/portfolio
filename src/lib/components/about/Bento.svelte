@@ -21,12 +21,14 @@
 			<div class="bento-grid">
 				<div class="item">
 					<a href="/contact">
-						<Image
-							src="/icons/contactIcon.svg"
-							alt="an icon for contact"
-							width="100"
-							aspectRatio="4/3"
-						/>
+						<div class="scale">
+							<Image
+								src="/icons/contactIcon.svg"
+								alt="an icon for contact"
+								width="100"
+								aspectRatio="4/3"
+							/>
+						</div>
 
 						<h2>contact</h2>
 
@@ -36,12 +38,14 @@
 
 				<div class="item">
 					<a href="/learn">
-						<Image
-							src="/icons/learnIcon.svg"
-							alt="an icon for learning"
-							width="100"
-							aspectRatio="1/1"
-						/>
+						<div class="scale">
+							<Image
+								src="/icons/learnIcon.svg"
+								alt="an icon for learning"
+								width="100"
+								aspectRatio="1/1"
+							/>
+						</div>
 
 						<h2>learn</h2>
 
@@ -128,6 +132,10 @@
 					opacity 1s ease,
 					border 1s ease,
 					box-shadow 1s ease;
+
+				& .scale {
+					scale: 0.6;
+				}
 
 				& h2 {
 					font-family: var(--bronova-bold);
