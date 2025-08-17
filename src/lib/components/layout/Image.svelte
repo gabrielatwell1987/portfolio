@@ -127,6 +127,8 @@
 
 <style>
 	.image-container {
+		position: relative;
+
 		& img {
 			max-width: 100%;
 			width: 100%;
@@ -145,8 +147,9 @@
 		& .error-message {
 			position: absolute;
 			inset: 0;
-			display: grid;
-			place-items: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			text-align: center;
 			background: var(--clr-inverted);
 			border: 1px solid var(--clr-main);
@@ -155,14 +158,14 @@
 			padding: 1em;
 			pointer-events: none;
 			z-index: 1;
-			font-style: bold;
+			font-weight: bold;
 			font-size: clamp(var(--xs), 1vw, var(--h6));
 			border-radius: var(--radius);
-			width: 25vw;
-			height: auto;
+			/* width: 25vw; */
+			/* height: auto; */
 			white-space: normal;
 			box-sizing: border-box;
-			margin-inline: auto;
+			/* margin-inline: auto; */
 
 			@media (width <= 500px) {
 				padding: 0.25em;
