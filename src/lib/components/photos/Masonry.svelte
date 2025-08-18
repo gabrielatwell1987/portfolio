@@ -5,7 +5,8 @@
 	let selectedImage = $state(null);
 	let isOpen = $state(false);
 	let popoverElement = $state(null);
-	let popoverImage = $state(null); // Add this missing variable
+	let popoverImage = $state(null);
+	let imageErrors = $state(new Set());
 
 	function openPopover(img) {
 		if (isOpen) {
@@ -53,6 +54,10 @@
 		img.style.width = `${naturalWidth * scale}px`;
 		img.style.height = `${naturalHeight * scale}px`;
 	}
+
+	function handleImageError(event, imgSrc) {
+		imageErrors = new Set([...imageErrors, imgSrc]);
+	}
 </script>
 
 <Title title="pics of me" />
@@ -61,7 +66,14 @@
 	<div class="masonry">
 		{#each images as img, i}
 			<button type="button" style="animation-delay: {i * 0.2}s;" onclick={() => openPopover(img)}>
-				<img src={img.src} alt={img.alt} loading="lazy" />
+				<img
+					src={img.src}
+					alt={img.alt}
+					loading="lazy"
+					style="--alt-text: '{img.alt}'"
+					class:error={imageErrors.has(img.src)}
+					onerror={(e) => handleImageError(e, img.src)}
+				/>
 			</button>
 		{/each}
 	</div>
@@ -78,6 +90,7 @@
 			alt={selectedImage.alt}
 			onclick={closePopover}
 			onload={handleImageLoad}
+			loading="lazy"
 		/>
 	{/if}
 </div>
@@ -151,6 +164,37 @@
 				cursor: pointer;
 				border: none;
 				outline: none;
+				position: relative;
+
+				&::after {
+					content: "We failed to load the image of '" var(--alt-text) "'";
+					position: absolute;
+					inset: 0;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					text-align: center;
+					background: var(--clr-inverted);
+					color: var(--clr-main);
+					white-space: normal;
+					word-wrap: break-word;
+					overflow-wrap: break-word;
+					hyphens: auto;
+					padding: 1em;
+					pointer-events: none;
+					z-index: 1;
+					font-style: normal;
+					font-size: clamp(var(--xs), 1vw, var(--h5));
+					border-radius: var(--radius);
+					box-sizing: border-box;
+					opacity: 1;
+					line-height: 1.4;
+					max-width: 100%;
+				}
+
+				&:not(.error)::after {
+					display: none;
+				}
 			}
 		}
 	}
