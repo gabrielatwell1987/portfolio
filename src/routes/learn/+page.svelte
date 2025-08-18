@@ -25,7 +25,7 @@
 				<Image
 					src="/logos/gsapLogo.svg"
 					alt="greensock animation platform logo"
-					width="300"
+					width="350"
 					aspectRatio="1/1"
 				/>
 			</a>
@@ -34,7 +34,7 @@
 				<Image
 					src="/logos/svelteLogo.png"
 					alt="sveltekit web framework logo"
-					width="350"
+					width="400"
 					aspectRatio="1/1"
 				/>
 			</a>

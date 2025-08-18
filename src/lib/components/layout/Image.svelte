@@ -35,7 +35,14 @@
 </script>
 
 <div class="image-container" style={aspectRatio ? `aspect-ratio: ${aspectRatio};` : ''}>
-	<img use:lazyLoadImg {alt} {width} height={computedHeight} class:hidden={imageError} />
+	<img
+		use:lazyLoadImg
+		{alt}
+		{width}
+		height={computedHeight}
+		class:hidden={imageError}
+		class:has-width={!!width}
+	/>
 
 	{#if imageError}
 		<div class="error-message">
@@ -50,13 +57,17 @@
 
 		& img {
 			max-width: 100%;
-			width: 100%;
+			/* width: 100%; */
 			height: auto;
 			object-fit: contain;
 			border-radius: var(--radius);
 			z-index: 9;
 			margin-inline: auto;
 			display: block;
+
+			&:not(.has-width) {
+				width: 100%;
+			}
 
 			&.hidden {
 				display: none;
