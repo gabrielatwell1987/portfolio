@@ -1,6 +1,4 @@
 <script>
-	// import Image from '$lib/components/layout/Image.svelte';
-
 	/** @type {{title: any, img: any, url: any, description: any}} */
 	let { title, img, url, description, summary, index = 0 } = $props();
 </script>

@@ -25,7 +25,7 @@
 							<Image
 								src="/icons/contactIcon.svg"
 								alt="an icon for contact"
-								width="100"
+								width="500"
 								aspectRatio="4/3"
 							/>
 						</div>
@@ -42,7 +42,7 @@
 							<Image
 								src="/icons/learnIcon.svg"
 								alt="an icon for learning"
-								width="100"
+								width="500"
 								aspectRatio="1/1"
 							/>
 						</div>
@@ -57,7 +57,7 @@
 					<a href="/projects">
 						<h2>projects</h2>
 
-						<Image src="/logos/logoA.webp" alt="atwell logo" width="300" aspectRatio="16/9" />
+						<Image src="/logos/logoA.webp" alt="atwell logo" width="400" aspectRatio="16/9" />
 					</a>
 				</div>
 			</div>
