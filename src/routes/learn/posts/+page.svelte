@@ -9,10 +9,27 @@
 	import BackToTop from '$lib/components/learn/BackToTop.svelte';
 
 	let mounted = $state(false);
-	let isEnlarged = $state(false);
+	let cssEnlarged = $state(false);
+	let gsapEnlarged = $state(false);
 
-	function enlargeImage() {
-		isEnlarged = !isEnlarged;
+	function enlargeCssImage() {
+		if (document.startViewTransition) {
+			document.startViewTransition(() => {
+				cssEnlarged = !cssEnlarged;
+			});
+		} else {
+			cssEnlarged = !cssEnlarged;
+		}
+	}
+
+	function enlargeGsapImage() {
+		if (document.startViewTransition) {
+			document.startViewTransition(() => {
+				gsapEnlarged = !gsapEnlarged;
+			});
+		} else {
+			gsapEnlarged = !gsapEnlarged;
+		}
 	}
 
 	$effect(() => {
@@ -49,16 +66,11 @@
 			<button
 				type="button"
 				class="skillImg"
-				class:enlarged={isEnlarged}
-				onclick={enlargeImage}
+				class:enlarged={cssEnlarged}
+				onclick={enlargeCssImage}
 				style="background: none; border: none; padding: 0;"
 			>
-				<Image
-					src="/skills/CSS-Purple.webp"
-					alt="new css logo"
-					aspectRatio="1/1"
-					class="css-logo"
-				/>
+				<Image src="/skills/CSS-Purple.svg" alt="new css logo" aspectRatio="1/1" class="css-logo" />
 			</button>
 
 			<CSS aria-label="css" />
@@ -69,8 +81,8 @@
 		<button
 			type="button"
 			class="skillImg"
-			class:enlarged={isEnlarged}
-			onclick={enlargeImage}
+			class:enlarged={gsapEnlarged}
+			onclick={enlargeGsapImage}
 			style="background: none; border: none; padding: 0;"
 		>
 			<Image
@@ -145,20 +157,20 @@
 				& .skillImg {
 					width: 25%;
 					margin-inline: auto;
-					margin-block: 7rem;
-					transition: transform 300ms ease-in-out;
+					transition: width 300ms ease-in-out;
 					outline: none;
 					box-shadow: none;
+					view-transition-name: css-image;
 
 					@media (width <= 768px) {
 						width: 55%;
 					}
 
 					&.enlarged {
-						transform: scale(2);
+						transform: scale(5.2);
 
 						@media (width <= 768px) {
-							transform: scale(1.75);
+							transform: scale(2.8);
 						}
 					}
 				}
@@ -171,25 +183,37 @@
 
 			& .skillImg {
 				margin-inline: auto;
-				margin-block: 7rem;
 				max-width: 25em;
 				width: 100%;
 				transition: transform 300ms ease-in-out;
 				outline: none;
 				box-shadow: none;
+				view-transition-name: gsap-image;
 
 				@media (width <= 768px) {
 					width: 55%;
 				}
 
 				&.enlarged {
-					transform: scale(2);
+					transform: scale(4.2);
 
 					@media (width <= 768px) {
-						transform: scale(1.75);
+						transform: scale(2.8);
 					}
 				}
 			}
 		}
+	}
+
+	::view-transition-old(css-image),
+	::view-transition-new(css-image) {
+		animation-duration: 0.5s;
+		animation-timing-function: ease-in-out;
+	}
+
+	::view-transition-old(gsap-image),
+	::view-transition-new(gsap-image) {
+		animation-duration: 0.5s;
+		animation-timing-function: ease-in-out;
 	}
 </style>
