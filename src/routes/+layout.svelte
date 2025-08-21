@@ -31,16 +31,23 @@
 	}
 
 	$effect(async () => {
-		function setErudaPosition() {
-			eruda.position({ x: window.innerWidth - 70, y: window.innerHeight - 120 });
+		// Only load eruda in development
+		if (import.meta.env.DEV) {
+			try {
+				function setErudaPosition() {
+					eruda.position({ x: window.innerWidth - 70, y: window.innerHeight - 120 });
+				}
+
+				const eruda = (await import('eruda')).default;
+				eruda.init();
+
+				setErudaPosition();
+
+				addEventListener('resize', setErudaPosition);
+			} catch (error) {
+				console.warn('Failed to load eruda:', error);
+			}
 		}
-
-		const eruda = (await import('eruda')).default;
-		eruda.init();
-
-		setErudaPosition();
-
-		addEventListener('resize', setErudaPosition);
 
 		isPageLoaded = true;
 		detectSWUpdate();
