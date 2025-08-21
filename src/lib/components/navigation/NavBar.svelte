@@ -108,23 +108,23 @@
 
 	.mobile {
 		position: fixed;
-		right: 1rem;
-		top: 2rem;
+		right: 1em;
+		top: 4em;
 		z-index: 10;
-		translate: 100% 0;
 		overflow: hidden;
+		transform: scale(0);
 		transition:
 			opacity 1s ease-in-out,
-			translate 0.65s ease-in-out;
+			transform 0.4s ease-in-out;
 		opacity: 0;
+		transform-origin: top left;
 
 		&.open {
-			translate: 0 0;
+			transform: scale(1);
 			opacity: 1;
 		}
 
 		&.closing {
-			translate: 100% 0;
 			opacity: 0;
 		}
 
