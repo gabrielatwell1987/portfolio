@@ -19,7 +19,6 @@
 	<div class="bars">
 		<span class="bar bar-1"></span>
 		<span class="bar bar-2"></span>
-		<span class="bar bar-3"></span>
 	</div>
 </button>
 
@@ -43,7 +42,7 @@
 		& .bars {
 			display: flex;
 			flex-direction: column;
-			justify-content: space-between;
+			justify-content: space-around;
 			width: 2.5em;
 			height: 2rem;
 			position: relative;
@@ -54,16 +53,16 @@
 				height: 0.3rem;
 				background-color: var(--clr-main);
 				border-radius: 2px;
-				transition: all 0.5s ease;
+				transition: transform 0.35s ease;
 				transform-origin: center;
 			}
 
 			& .bar-1 {
-				width: 2em;
+				width: 2.8em;
 			}
 
-			& .bar-3 {
-				width: 1.75em;
+			& .bar-2 {
+				width: 2em;
 			}
 		}
 
@@ -72,18 +71,13 @@
 			padding-bottom: 0.5rem;
 
 			.bar-1 {
-				transform: translateY(1.2rem) rotate(45deg);
-				width: 2.5em;
+				transform: translateY(0.75rem) rotate(45deg);
+				width: 2.2em;
 			}
 
 			.bar-2 {
-				opacity: 0;
-				transform: scaleX(0);
-			}
-
-			.bar-3 {
-				transform: translateY(-0.5rem) rotate(-45deg);
-				width: 2.5em;
+				transform: translateY(-0.15rem) rotate(-45deg);
+				width: 2.2em;
 			}
 		}
 
