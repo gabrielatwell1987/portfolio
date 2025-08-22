@@ -33,7 +33,6 @@
 		}
 	}
 
-	// Calculate display dimensions with proper constraint handling
 	let displayDimensions = $derived(() => {
 		if (!naturalDimensions.width || !naturalDimensions.height) {
 			return { width: 300, height: 300 };
@@ -71,13 +70,17 @@
 			{src}
 			{alt}
 			onload={handleImageLoad}
-			style="width: {displayDimensions.width}px; height: {displayDimensions.height}px; view-transition-name: {transitionName}; contain: layout;"
+			style="width: {displayDimensions.width}px; height: {displayDimensions.height}px; view-transition-name: {transitionName};"
 			class:svg={isSVG}
 		/>
 	</button>
 </section>
 
 <style>
+	:global(.expanded) {
+		--view-transition-offset: -20em;
+	}
+
 	section {
 		cursor: pointer;
 		width: fit-content;
@@ -109,7 +112,9 @@
 
 	.expanded {
 		position: fixed;
-		inset: 0;
+		/* top: -17em; */
+		top: var(--view-transition-offset, -17em);
+		left: 0;
 		background: rgb(0 0 0 / 0.9);
 		display: grid;
 		place-items: center;
@@ -138,8 +143,6 @@
 		@media (width <= 768px) {
 			width: 100%;
 			height: 100%;
-			max-width: 100dvw;
-			max-height: 100dvh;
 		}
 	}
 
@@ -147,37 +150,16 @@
 		width: 100vw;
 		height: 100vh;
 		object-fit: contain;
-		margin: 0;
-		padding: 0;
 
 		@media (width <= 768px) {
 			width: 100%;
 			height: 100%;
-			max-width: calc(100dvw - 1em);
-			max-height: calc(100dvh - 1em);
 		}
 	}
 
 	.expanded img.svg {
 		filter: brightness(1.1);
 	}
-
-	/* ::view-transition-old(css-image),
-	::view-transition-new(css-image),
-	::view-transition-old(gsap-image),
-	::view-transition-new(gsap-image) {
-		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	}
-
-	::view-transition-old(css-image),
-	::view-transition-old(gsap-image) {
-		animation: scale-down 0.25s ease forwards;
-	}
-
-	::view-transition-new(css-image),
-	::view-transition-new(gsap-image) {
-		animation: scale-up 0.25s ease forwards;
-	} */
 
 	@keyframes scale-up {
 		from {
