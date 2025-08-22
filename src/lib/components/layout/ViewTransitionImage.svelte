@@ -85,34 +85,33 @@
 		cursor: pointer;
 		width: fit-content;
 		z-index: 500;
-	}
 
-	.img-button {
-		padding: 0;
-		border: none;
-		background: none;
-		cursor: pointer;
-		width: fit-content;
-		display: block;
-	}
+		& .img-button {
+			padding: 0;
+			border: none;
+			background: none;
+			cursor: pointer;
+			width: fit-content;
+			display: block;
 
-	.img-button:focus,
-	.img-button:focus-visible {
-		outline: none;
-		box-shadow: none;
-	}
+			&:focus,
+			&:focus-visible {
+				outline: none;
+				box-shadow: none;
+			}
 
-	img {
-		object-fit: contain;
-	}
+			& img {
+				object-fit: contain;
 
-	img.svg {
-		object-fit: contain;
+				&.svg {
+					object-fit: contain;
+				}
+			}
+		}
 	}
 
 	.expanded {
 		position: fixed;
-		/* top: -17em; */
 		top: var(--view-transition-offset, -17em);
 		left: 0;
 		background: rgb(0 0 0 / 0.9);
@@ -130,35 +129,35 @@
 			height: 100dvh;
 			padding: 0.5em;
 		}
-	}
 
-	.expanded .img-button {
-		width: 100vw;
-		height: 100vh;
-		display: grid;
-		place-items: center;
-		margin: 0;
-		padding: 0;
+		& .img-button {
+			width: 100vw;
+			height: 100vh;
+			display: grid;
+			place-items: center;
+			margin: 0;
+			padding: 0;
 
-		@media (width <= 768px) {
-			width: 100%;
-			height: 100%;
+			@media (width <= 768px) {
+				width: 100%;
+				height: 100%;
+			}
 		}
-	}
 
-	.expanded img {
-		width: 100vw;
-		height: 100vh;
-		object-fit: contain;
+		& img {
+			width: 100vw;
+			height: 100vh;
+			object-fit: contain;
 
-		@media (width <= 768px) {
-			width: 100%;
-			height: 100%;
+			@media (width <= 768px) {
+				width: 100%;
+				height: 100%;
+			}
 		}
-	}
 
-	.expanded img.svg {
-		filter: brightness(1.1);
+		& img.svg {
+			filter: brightness(1.1);
+		}
 	}
 
 	@keyframes scale-up {
