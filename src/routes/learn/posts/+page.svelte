@@ -154,4 +154,21 @@
 			contain: layout;
 		}
 	}
+
+	:global(::view-transition-old(css-image)),
+	:global(::view-transition-new(css-image)),
+	:global(::view-transition-old(gsap-image)),
+	:global(::view-transition-new(gsap-image)) {
+		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	:global(::view-transition-old(css-image)),
+	:global(::view-transition-old(gsap-image)) {
+		animation: scale-down 0.25s ease forwards;
+	}
+
+	:global(::view-transition-new(css-image)),
+	:global(::view-transition-new(gsap-image)) {
+		animation: scale-up 0.25s ease forwards;
+	}
 </style>
