@@ -3,10 +3,11 @@
 	import GSAP from './gsap.md';
 	import SEO from '$lib/data/SEO.svelte';
 	import Card from '$lib/components/layout/Card.svelte';
-	import Image from '$lib/components/layout/Image.svelte';
+	// import Image from '$lib/components/layout/Image.svelte';
 	import TableOfContents from '$lib/components/learn/TableOfContents.svelte';
 	import GabeMorph from '$lib/components/learn/GabeMorph.svelte';
 	import BackToTop from '$lib/components/learn/BackToTop.svelte';
+	import ViewTransitionImage from '$lib/components/layout/ViewTransitionImage.svelte';
 
 	let mounted = $state(false);
 	let cssEnlarged = $state(false);
@@ -63,35 +64,26 @@
 <section class:mounted>
 	<div class="css">
 		<div class="image">
-			<button
-				type="button"
-				class="skillImg"
-				class:enlarged={cssEnlarged}
-				onclick={enlargeCssImage}
-				style="background: none; border: none; padding: 0;"
-			>
-				<Image src="/skills/CSS-Purple.svg" alt="new css logo" aspectRatio="1/1" class="css-logo" />
-			</button>
+			<ViewTransitionImage
+				src="/skills/CSS-Purple.svg"
+				alt="new css logo"
+				aspectRatio="1/1"
+				class="css-logo"
+				transitionName="css-image"
+			/>
 
 			<CSS aria-label="css" />
 		</div>
 	</div>
 
 	<div class="gsap">
-		<button
-			type="button"
-			class="skillImg"
-			class:enlarged={gsapEnlarged}
-			onclick={enlargeGsapImage}
-			style="background: none; border: none; padding: 0;"
-		>
-			<Image
-				src="/skills/GSAP-Dark.webp"
-				alt="greensock animation platform"
-				aspectRatio="1/1"
-				class="gsap-logo"
-			/>
-		</button>
+		<ViewTransitionImage
+			src="/skills/GSAP-Dark.svg"
+			alt="greensock animation platform"
+			aspectRatio="1/1"
+			class="gsap-logo"
+			transitionName="gsap-image"
+		/>
 
 		<GSAP aria-label="greensock" />
 	</div>
@@ -153,67 +145,13 @@
 
 			& .image {
 				margin-top: 5%;
-
-				& .skillImg {
-					width: 25%;
-					margin-inline: auto;
-					transition: width 300ms ease-in-out;
-					outline: none;
-					box-shadow: none;
-					view-transition-name: css-image;
-
-					@media (width <= 768px) {
-						width: 55%;
-					}
-
-					&.enlarged {
-						transform: scale(5.2);
-
-						@media (width <= 768px) {
-							transform: scale(2.8);
-						}
-					}
-				}
 			}
 		}
 
 		& .gsap {
-			margin-top: -5%;
 			margin-bottom: 5%;
-
-			& .skillImg {
-				margin-inline: auto;
-				max-width: 25em;
-				width: 100%;
-				transition: transform 300ms ease-in-out;
-				outline: none;
-				box-shadow: none;
-				view-transition-name: gsap-image;
-
-				@media (width <= 768px) {
-					width: 55%;
-				}
-
-				&.enlarged {
-					transform: scale(4.2);
-
-					@media (width <= 768px) {
-						transform: scale(2.8);
-					}
-				}
-			}
+			position: relative;
+			contain: layout;
 		}
-	}
-
-	::view-transition-old(css-image),
-	::view-transition-new(css-image) {
-		animation-duration: 0.5s;
-		animation-timing-function: ease-in-out;
-	}
-
-	::view-transition-old(gsap-image),
-	::view-transition-new(gsap-image) {
-		animation-duration: 0.5s;
-		animation-timing-function: ease-in-out;
 	}
 </style>
