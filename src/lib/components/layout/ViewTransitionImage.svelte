@@ -114,7 +114,7 @@
 		position: fixed;
 		top: var(--view-transition-offset, -17em);
 		left: 0;
-		background: rgb(0 0 0 / 0.9);
+		background: transparent;
 		display: grid;
 		place-items: center;
 		z-index: 9999;
