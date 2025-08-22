@@ -162,7 +162,7 @@
 		filter: brightness(1.1);
 	}
 
-	::view-transition-old(css-image),
+	/* ::view-transition-old(css-image),
 	::view-transition-new(css-image),
 	::view-transition-old(gsap-image),
 	::view-transition-new(gsap-image) {
@@ -177,7 +177,7 @@
 	::view-transition-new(css-image),
 	::view-transition-new(gsap-image) {
 		animation: scale-up 0.25s ease forwards;
-	}
+	} */
 
 	@keyframes scale-up {
 		from {
