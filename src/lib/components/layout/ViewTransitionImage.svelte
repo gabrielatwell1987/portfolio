@@ -4,28 +4,19 @@
 	let imgElement = $state();
 	let naturalDimensions = $state({ width: 0, height: 0 });
 	let isSVG = $derived(src?.endsWith('.svg'));
+	let isTransitioning = $state(false);
 
 	function toggleExpand() {
-		// Temporarily disable other view transitions during image expansion
-		const existingTransitionElements = document.querySelectorAll('[style*="view-transition-name"]');
-		existingTransitionElements.forEach((el) => {
-			if (el !== imgElement) {
-				el.style.viewTransitionName = 'none';
-			}
-		});
+		if (isTransitioning) return; // Prevent multiple transitions
 
 		if (document.startViewTransition) {
+			isTransitioning = true;
 			document
 				.startViewTransition(() => {
 					expanded = !expanded;
 				})
 				.finished.then(() => {
-					// Re-enable other view transitions after completion
-					existingTransitionElements.forEach((el) => {
-						if (el !== imgElement) {
-							el.style.removeProperty('view-transition-name');
-						}
-					});
+					isTransitioning = false;
 				});
 		} else {
 			expanded = !expanded;
@@ -80,7 +71,7 @@
 			{src}
 			{alt}
 			onload={handleImageLoad}
-			style="width: {displayDimensions.width}px; height: {displayDimensions.height}px; view-transition-name: {transitionName};"
+			style="width: {displayDimensions.width}px; height: {displayDimensions.height}px; view-transition-name: {transitionName}; contain: layout;"
 			class:svg={isSVG}
 		/>
 	</button>
@@ -171,16 +162,20 @@
 		filter: brightness(1.1);
 	}
 
-	::view-transition-old(testing),
-	::view-transition-new(testing) {
+	::view-transition-old(css-image),
+	::view-transition-new(css-image),
+	::view-transition-old(gsap-image),
+	::view-transition-new(gsap-image) {
 		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
-	::view-transition-old(testing) {
+	::view-transition-old(css-image),
+	::view-transition-old(gsap-image) {
 		animation: scale-down 0.25s ease forwards;
 	}
 
-	::view-transition-new(testing) {
+	::view-transition-new(css-image),
+	::view-transition-new(gsap-image) {
 		animation: scale-up 0.25s ease forwards;
 	}
 
