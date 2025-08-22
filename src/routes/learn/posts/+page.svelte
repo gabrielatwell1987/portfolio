@@ -142,10 +142,6 @@
 
 		& .css {
 			margin-bottom: 15%;
-
-			& .image {
-				margin-top: 5%;
-			}
 		}
 
 		& .gsap {
