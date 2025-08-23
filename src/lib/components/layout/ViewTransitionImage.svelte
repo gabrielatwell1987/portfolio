@@ -108,6 +108,19 @@
 				}
 			}
 		}
+
+		&:not(.expanded) .img-button img {
+			object-fit: contain;
+
+			@media (width <= 768px) {
+				width: 60vw;
+				height: auto;
+			}
+
+			&.svg {
+				object-fit: contain;
+			}
+		}
 	}
 
 	.expanded {
