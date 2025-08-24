@@ -25,7 +25,7 @@
 
 <section class="main">
 	<div class="separate">
-		<Title title="GSAP" />
+		<Title img="/skills/GSAP-Dark.svg" width="50vw" />
 
 		<main>
 			<div class="centerDetail">

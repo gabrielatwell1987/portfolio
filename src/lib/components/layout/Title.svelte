@@ -1,10 +1,14 @@
 <script>
-	/** @type {{title: any}} */
-	let { title } = $props();
+	/** @type {{title: any, img?: string, width?: string}} */
+	let { title, img, width } = $props();
 </script>
 
 <main>
-	<h1 class="title exclude-transition" id="title" aria-label={title}>{title}</h1>
+	{#if img}
+		<img class="title exclude-transition" id="title" src={img} alt={title} style:width />
+	{:else}
+		<h1 class="title exclude-transition" id="title" aria-label={title}>{title}</h1>
+	{/if}
 </main>
 
 <style>
@@ -63,6 +67,19 @@
 					0 -1px 0 var(--clr-main),
 					0 1px 0 var(--clr-main);
 			}
+		}
+
+		img.title {
+			display: block;
+			margin-inline: auto;
+			max-width: 100%;
+			height: auto;
+			text-shadow: none;
+			text-transform: none;
+			letter-spacing: normal;
+			font-kerning: auto;
+			color: initial;
+			view-transition-name: page-title;
 		}
 
 		#title {

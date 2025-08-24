@@ -25,7 +25,7 @@
 
 <section class="main">
 	<div class="separate">
-		<Title title="Svelte" />
+		<Title img="/skills/Svelte-Dark.svg" width="50vw" />
 
 		<main>
 			<div class="centerDetail">

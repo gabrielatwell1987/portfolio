@@ -32,7 +32,7 @@
 
 			<a class="sk" href="learn/sveltekit" style="width: clamp(10em, 25vw, 30em);">
 				<Image
-					src="/logos/svelteLogo.png"
+					src="/skills/Svelte-Dark.svg"
 					alt="sveltekit web framework logo"
 					width="400"
 					aspectRatio="1/1"
