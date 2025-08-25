@@ -60,7 +60,7 @@
 	}
 </script>
 
-<Title title="pics of me" />
+<Title title="snapshots" />
 
 <section>
 	<div class="masonry">
