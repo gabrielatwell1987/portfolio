@@ -200,6 +200,8 @@
 			justify-content: center;
 			align-items: center;
 			gap: 0.25rem;
+			border: 1px solid var(--clr-inverted);
+			border-radius: var(--radius);
 		}
 	}
 
