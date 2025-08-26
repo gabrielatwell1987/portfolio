@@ -6,7 +6,7 @@
 <main class="content" style="--stagger-delay: {index * 1.25}s;">
 	<!-- title -->
 	<a href={url} target="_blank">
-		<h3 class="link name">{title}</h3>
+		<h3 class="title">{title}</h3>
 	</a>
 
 	<!-- screenshot -->
@@ -25,11 +25,9 @@
 			style="--alt-text: '{title} project'"
 		/>
 
-		<!-- hover text -->
 		<span class="hover-text" aria-hidden="true">made with {description}</span>
 	</a>
 
-	<!-- summary -->
 	<p class="summary">{summary}</p>
 </main>
 
@@ -43,6 +41,7 @@
 		opacity: 0;
 		animation: fadeIn 0.8s ease-out forwards;
 		animation-delay: var(--stagger-delay, 0s);
+		will-change: opacity, transform;
 
 		& .summary {
 			width: 75%;
@@ -58,11 +57,10 @@
 
 		& a {
 			text-decoration: none;
+			display: block;
 		}
 
 		& .link {
-			text-align: center;
-			color: var(--clr-link);
 			border: none;
 			padding: 1rem;
 			display: flex;
@@ -70,13 +68,7 @@
 			flex-basis: 50%;
 			justify-content: center;
 			align-items: center;
-			font-family: var(--orbitron);
-			font-size: clamp(var(--h5), 2.75vw, var(--h3));
-			font-weight: 600;
 			margin-inline: auto;
-			letter-spacing: 0px;
-			text-transform: uppercase;
-			text-decoration: none;
 			width: fit-content;
 			transition: all 0.35s;
 			background-color: transparent;
@@ -163,12 +155,19 @@
 			}
 		}
 
-		& .name {
-			font-weight: 900;
-			margin-bottom: -1.5rem;
+		& .title {
+			font-family: var(--orbitron);
+			font-size: clamp(var(--h5), 2.75vw, var(--h3));
+			font-weight: 600;
+			text-align: center;
+			color: var(--clr-link);
+			letter-spacing: 0px;
+			text-transform: uppercase;
+			text-decoration: none;
+			margin-bottom: 0.5rem;
 
 			@media (width >= 990px) {
-				margin-bottom: -3.5rem;
+				margin-bottom: 1rem;
 			}
 		}
 	}

@@ -183,7 +183,6 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 		place-items: center;
-		margin: 1em;
 
 		@media (width <= 768px) {
 			margin: 0;
@@ -202,6 +201,10 @@
 			gap: 0.25rem;
 			border: 1px solid var(--clr-inverted);
 			border-radius: var(--radius);
+
+			@media (width <= 768px) {
+				margin: 0.5rem;
+			}
 		}
 	}
 
@@ -211,24 +214,24 @@
 		inset: 0;
 		background: var(--clr-gray);
 		clip-path: polygon(
-			0 80px,
-			80px 0,
-			calc(100% - 80px) 0,
-			100% 80px,
-			100% calc(100% - 80px),
-			calc(100% - 80px) 100%,
-			80px 100%,
-			0 calc(100% - 80px),
-			0 80px,
-			5px calc(80px + 2.07px),
-			5px calc(100% - 80px - 2.07px),
-			calc(80px + 2.07px) calc(100% - 5px),
-			calc(100% - 80px - 2.07px) calc(100% - 5px),
-			calc(100% - 5px) calc(100% - 80px - 2.07px),
-			calc(100% - 5px) calc(80px + 2.07px),
-			calc(100% - 80px - 2.07px) 5px,
-			calc(80px + 2.07px) 5px,
-			5px calc(80px + 2.07px)
+			0 40px,
+			40px 0,
+			calc(100% - 40px) 0,
+			100% 40px,
+			100% calc(100% - 40px),
+			calc(100% - 40px) 100%,
+			40px 100%,
+			0 calc(100% - 40px),
+			0 40px,
+			5px calc(40px + 1.03px),
+			5px calc(100% - 40px - 1.03px),
+			calc(40px + 1.03px) calc(100% - 5px),
+			calc(100% - 40px - 1.03px) calc(100% - 5px),
+			calc(100% - 5px) calc(100% - 40px - 1.03px),
+			calc(100% - 5px) calc(40px + 1.03px),
+			calc(100% - 40px - 1.03px) 5px,
+			calc(40px + 1.03px) 5px,
+			5px calc(40px + 1.03px)
 		);
 	}
 
