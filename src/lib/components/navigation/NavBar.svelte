@@ -15,7 +15,7 @@
 			setTimeout(() => {
 				open = false;
 				isClosing = false;
-			}, 500); // Match this with your transition duration (1s)
+			}, 500);
 		}
 	}
 </script>
@@ -61,7 +61,7 @@
 
 	nav.navigation {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		align-items: center;
 		backdrop-filter: blur(0.15rem);
 		-webkit-backdrop-filter: blur(0.15rem);
@@ -69,31 +69,35 @@
 		view-transition-name: navigation;
 		position: fixed;
 		top: 0.25rem;
-		/* left: 0.25rem; */
-		/* right: 1rem; */
 		width: 100%;
 		min-height: 5em;
-		padding: 0.5rem 1rem;
+		padding: 0.5rem 5em 0 1rem;
 		margin-inline: auto;
 
 		& .nav-main {
 			display: flex;
-			justify-content: space-evenly;
+			justify-content: space-around;
 			align-items: center;
 			gap: 1rem;
+			flex: 1;
+			width: 100%;
+
+			@media (width > 300px) and (width < 750px) {
+				justify-content: space-evenly;
+				width: 100%;
+			}
 		}
 
 		@media (width > 300px) and (width < 750px) {
 			width: 100%;
-			/* left: 1.5%; */
-			/* right: 1.5%; */
 			top: 0.25rem;
 			border-radius: var(--radius);
 			box-shadow: 0 0 5px var(--clr-gray);
-			padding: 1.2rem 0.75rem 0.4rem 0.75rem;
+			padding: 1.2rem 0 0.4rem 0;
 			height: 3.75em;
 			min-height: 3.75em;
 			justify-content: space-between;
+			flex: 1;
 		}
 
 		@media (width >= 750px) {
@@ -122,11 +126,7 @@
 		list-style: none;
 
 		@media (width > 300px) and (width < 750px) {
-			visibility: hidden;
-		}
-
-		@media (width >= 750px) {
-			visibility: visible;
+			display: none;
 		}
 
 		@media (width <= 1100px) {

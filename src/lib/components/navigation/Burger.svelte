@@ -41,6 +41,7 @@
 
 		@media (width >= 755px) {
 			opacity: 0;
+			display: none;
 		}
 
 		& .bars {
