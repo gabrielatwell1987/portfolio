@@ -39,6 +39,10 @@
 		position: relative;
 		padding: 0;
 
+		@media (width >= 755px) {
+			opacity: 0;
+		}
+
 		& .bars {
 			display: flex;
 			flex-direction: column;

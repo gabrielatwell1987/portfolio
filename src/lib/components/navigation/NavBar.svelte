@@ -21,13 +21,13 @@
 </script>
 
 <nav class="navigation">
-	<div class="header-logos">
+	<div class="nav-main">
 		<Burger bind:open ariaLabel="Toggle menu" />
 
 		<MainLogo />
-	</div>
 
-	<ThemeToggle />
+		<ThemeToggle />
+	</div>
 
 	<ul class="desktop" aria-label="Desktop navigation menu">
 		<li><NavLink href="/about" title="About" /></li>
@@ -61,28 +61,56 @@
 
 	nav.navigation {
 		display: flex;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		align-items: center;
 		backdrop-filter: blur(0.15rem);
 		-webkit-backdrop-filter: blur(0.15rem);
 		z-index: 15;
 		view-transition-name: navigation;
 		position: fixed;
-		top: 1rem;
-		left: 1rem;
-		right: 1rem;
-		width: calc(100% - 2rem);
+		top: 0.25rem;
+		/* left: 0.25rem; */
+		/* right: 1rem; */
+		width: 100%;
 		min-height: 5em;
 		padding: 0.5rem 1rem;
 		margin-inline: auto;
+
+		& .nav-main {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		@media (width > 300px) and (width < 750px) {
+			width: 100%;
+			/* left: 1.5%; */
+			/* right: 1.5%; */
+			top: 0.25rem;
+			border-radius: var(--radius);
+			box-shadow: 0 0 5px var(--clr-gray);
+			padding: 1.2rem 0.75rem 0.4rem 0.75rem;
+			height: 3.75em;
+			min-height: 3.75em;
+			justify-content: space-between;
+		}
+
+		@media (width >= 750px) {
+			height: 5em;
+			min-height: 5em;
+		}
+
+		@media (width >= 990px) {
+			box-shadow: none;
+		}
+
+		@media (width < 750px) {
+			justify-content: space-between;
+			padding-inline: 0.75rem;
+		}
 	}
 
-	.header-logos {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-		cursor: pointer;
-	}
 	.desktop {
 		display: flex;
 		justify-content: center;
@@ -151,53 +179,6 @@
 
 		@media (width >= 750px) {
 			visibility: hidden;
-		}
-	}
-
-	.header-logos {
-		display: flex;
-		align-items: center;
-		gap: 1rem;
-		cursor: pointer;
-
-		@media (width > 300px) and (width < 750px) {
-			justify-content: flex-start;
-			height: 100%;
-			gap: 0.5rem;
-			flex: 0 0 auto;
-		}
-
-		@media (width >= 750px) {
-			display: flex;
-		}
-	}
-
-	nav.navigation {
-		@media (width > 300px) and (width < 750px) {
-			width: 97%;
-			left: 1.5%;
-			right: 1.5%;
-			top: 0.25rem;
-			border-radius: var(--radius);
-			box-shadow: 0 0 5px var(--clr-gray);
-			padding: 1.2rem 0.75rem 0.4rem 0.75rem;
-			height: 3.75em;
-			min-height: 3.75em;
-			justify-content: space-between;
-		}
-
-		@media (width >= 750px) {
-			height: 5em;
-			min-height: 5em;
-		}
-
-		@media (width >= 990px) {
-			box-shadow: none;
-		}
-
-		@media (width < 750px) {
-			justify-content: space-between;
-			padding-inline: 0.75rem;
 		}
 	}
 </style>
