@@ -188,7 +188,6 @@
 		display: flex;
 		align-items: center;
 		height: 100%;
-
 		z-index: 10;
 		outline: none;
 

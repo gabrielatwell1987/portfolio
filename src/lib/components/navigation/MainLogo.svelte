@@ -69,6 +69,7 @@
 
 			& svg {
 				opacity: 1;
+				width: clamp(7em, 12vw, 15em);
 
 				&:hover {
 					opacity: 0.75;
@@ -87,11 +88,11 @@
 		}
 
 		display: block;
-		scale: 0.7;
+		/* scale: 0.7; */
 		margin-bottom: 1em;
 
 		@media (width >= 300px) and (width < 750px) {
-			scale: 0.75;
+			/* scale: 0.75; */
 			margin-left: 0.11rem;
 
 			& a svg {
@@ -100,7 +101,7 @@
 		}
 
 		@media (width >= 750px) {
-			scale: 0.8;
+			/* scale: 0.8; */
 			margin-bottom: 0;
 
 			& a {
@@ -115,9 +116,9 @@
 			}
 		}
 
-		@media (width >= 990px) {
+		/* @media (width >= 990px) {
 			scale: 1;
-		}
+		} */
 	}
 
 	@keyframes dash {
