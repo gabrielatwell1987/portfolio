@@ -76,7 +76,7 @@
 
 		& .nav-main {
 			display: flex;
-			justify-content: space-around;
+			justify-content: space-evenly;
 			align-items: center;
 			gap: 1rem;
 			flex: 1;
