@@ -1,11 +1,29 @@
 <script>
-	/** @type {{title: any, img?: string, width?: string}} */
-	let { title, img, width } = $props();
+	/** @type {{title: any, img?: string, width?: string, svg?: string}} */
+	let { title, img, width, svg } = $props();
+
+	let svgElement = $derived.by(() => {
+		if (!svg) return '';
+		// Ensure the SVG root gets class="title"
+		const svgTagMatch = svg.match(/<svg[^>]*>/);
+		if (!svgTagMatch) return svg;
+		const svgTag = svgTagMatch[0];
+		// Merge any existing attributes with our required ones
+		const attrs =
+			'class="title exclude-transition" id="title" view-transition-name="page-title" aria-label="' +
+			title +
+			'"' +
+			(width ? ' style="width:' + (width.match(/^\d+$/) ? width + 'px' : width) + '"' : '');
+		const newSvgTag = svgTag.replace('<svg', `<svg ${attrs}`);
+		return svg.replace(svgTag, newSvgTag);
+	});
 </script>
 
 <main>
 	{#if img}
-		<img class="title exclude-transition" id="title" src={img} alt={title} style:width />
+		<img class="title exclude-transition" id="title" src={img} alt={title} style="width: {width}" />
+	{:else if svg}
+		{@html svgElement}
 	{:else}
 		<h1 class="title exclude-transition" id="title" aria-label={title}>{title}</h1>
 	{/if}

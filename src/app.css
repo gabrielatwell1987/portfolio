@@ -144,6 +144,14 @@
 		font-display: swap;
 	}
 
+	main > svg {
+		display: block;
+		margin-inline: auto;
+		max-width: 75%;
+		height: auto;
+		text-align: center;
+	}
+
 	img {
 		font-style: italic;
 		/* Prevent layout shift for images */
