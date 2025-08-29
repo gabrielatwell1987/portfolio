@@ -78,7 +78,7 @@
 
 <style>
 	:root {
-		/* --clr-bg: var(--blackest);
+		--clr-bg: var(--blackest);
 		--sun: var(--pale);
 		--moon: var(--darkest-blue);
 		--light: var(--white);
@@ -92,27 +92,12 @@
 		--clr-main: var(--white);
 		--clr-inverted: var(--blackest);
 		--clr-button-text: var(--blackest);
-		--clr-button: var(--yellow); */
-		--clr-bg: hsl(0, 15%, 5%);
-		--sun: hsl(44, 94%, 40%);
-		--moon: hsla(203, 96%, 10%, 0.75);
-		--light: hsla(0, 0%, 100%, 0.75);
-		--dark: hsl(0, 15%, 5%);
-		--light-text: hsl(0, 15%, 5%);
-		--dark-text: hsla(0, 0%, 100%, 0.75);
-		--clr-blue: hsla(187, 64%, 73%, 0.5);
-		--clr-gray: hsla(247, 3%, 50%, 0.65);
-		--clr-link: hsla(187, 64%, 73%, 0.5);
-		--clr-pale: hsl(44, 94%, 40%);
-		--clr-main: hsla(0, 0%, 100%, 0.75);
-		--clr-inverted: hsl(0, 15%, 5%);
-		--clr-button-text: hsl(0, 15%, 5%);
-		--clr-button: hsla(46, 93%, 42%, 0.75);
+		--clr-button: var(--yellow);
 		--opacity: 1;
 	}
 
 	:global(body) {
-		/* --dark-text: var(--white);
+		--dark-text: var(--white);
 		--clr-inverted: var(--black);
 		--clr-main: var(--white);
 		--clr-blue: var(--sky);
@@ -124,27 +109,14 @@
 		--clr-inputs: var(--dark-gray);
 		--opacity: 0.15;
 		background-color: var(--dark);
-		color: var(--clr-main); */
-		--dark-text: hsla(0, 0%, 100%, 0.75);
-		--clr-inverted: hsla(205, 4%, 14%, 1);
-		--clr-main: hsla(0, 0%, 100%, 0.75);
-		--clr-blue: hsla(187, 64%, 73%, 0.5);
-		--clr-gray: hsla(247, 3%, 50%, 0.65);
-		--clr-link: hsla(227, 98%, 68%, 0.6);
-		--clr-pale: hsla(46, 93%, 42%, 0.75);
-		--clr-button-text: hsla(205, 4%, 14%, 1);
-		--clr-button: hsla(46, 93%, 42%, 0.75);
-		--clr-inputs: hsl(0, 0%, 27%);
-		--opacity: 0.15;
-		background-color: hsl(0, 15%, 5%);
-		color: hsla(0, 0%, 100%, 0.75);
+		color: var(--clr-main);
 		transition:
 			background-color 0.5s ease-in-out,
 			color 0.5s ease-in-out;
 	}
 
 	:global(body.light) {
-		/* --dark-text: var(--white);
+		--dark-text: var(--white);
 		--clr-main: var(--light-text);
 		--clr-inverted: var(--white);
 		--clr-blue: var(--darkest-blue);
@@ -156,20 +128,7 @@
 		--clr-inputs: var(--clr-inverted);
 		--opacity: 0.35;
 		background-color: var(--light);
-		color: var(--clr-main); */
-		--dark-text: hsla(0, 0%, 100%, 0.75);
-		--clr-main: hsl(0, 15%, 5%);
-		--clr-inverted: hsla(0, 0%, 100%, 0.75);
-		--clr-blue: hsla(203, 96%, 10%, 0.75);
-		--clr-gray: hsl(240, 0%, 19%);
-		--clr-link: hsla(202, 97%, 25%, 0.75);
-		--clr-pale: hsl(39, 87%, 35%);
-		--clr-button-text: hsla(0, 0%, 100%, 0.75);
-		--clr-button: hsla(46, 93%, 42%, 0.75);
-		--clr-inputs: hsla(0, 0%, 100%, 0.75);
-		--opacity: 0.35;
-		background-color: hsla(0, 0%, 100%, 0.75);
-		color: hsl(0, 15%, 5%);
+		color: var(--clr-main);
 		transition:
 			background-color 0.5s ease-in-out,
 			color 0.5s ease-in-out;
@@ -178,7 +137,7 @@
 	/* Respect user's system color scheme preference */
 	@media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {
 		:global(body:not(.light)) {
-			/* --dark-text: var(--white);
+			--dark-text: var(--white);
 			--clr-inverted: var(--black);
 			--clr-main: var(--white);
 			--clr-blue: var(--sky);
@@ -190,20 +149,7 @@
 			--clr-inputs: var(--dark-gray);
 			--opacity: 0.15;
 			background-color: var(--dark);
-			color: var(--clr-main); */
-			--dark-text: hsla(0, 0%, 100%, 0.75);
-			--clr-inverted: hsla(205, 4%, 14%, 1);
-			--clr-main: hsla(0, 0%, 100%, 0.75);
-			--clr-blue: hsla(187, 64%, 73%, 0.5);
-			--clr-gray: hsla(247, 3%, 50%, 0.65);
-			--clr-link: hsla(202, 97%, 55%, 1);
-			--clr-pale: hsla(46, 93%, 42%, 0.75);
-			--clr-button-text: hsla(205, 4%, 14%, 1);
-			--clr-button: hsla(46, 93%, 42%, 0.75);
-			--clr-inputs: hsl(0, 0%, 27%);
-			--opacity: 0.15;
-			background-color: hsl(0, 15%, 5%);
-			color: hsla(0, 0%, 100%, 0.75);
+			color: var(--clr-main);
 			transition:
 				background-color 0.5s ease-in-out,
 				color 0.5s ease-in-out;
@@ -212,7 +158,7 @@
 
 	@media (prefers-color-scheme: light) {
 		:global(body:not(.light)) {
-			/* --dark-text: var(--white);
+			--dark-text: var(--white);
 			--clr-main: var(--light-text);
 			--clr-inverted: var(--white);
 			--clr-blue: var(--darkest-blue);
@@ -224,20 +170,7 @@
 			--clr-inputs: var(--clr-inverted);
 			--opacity: 0.35;
 			background-color: var(--light);
-			color: var(--clr-main); */
-			--dark-text: hsla(0, 0%, 100%, 0.75);
-			--clr-main: hsl(0, 15%, 5%);
-			--clr-inverted: hsla(0, 0%, 100%, 0.75);
-			--clr-blue: hsla(203, 96%, 10%, 0.75);
-			--clr-gray: hsl(240, 0%, 19%);
-			--clr-link: hsla(202, 97%, 25%, 0.75);
-			--clr-pale: hsl(39, 87%, 35%);
-			--clr-button-text: hsla(0, 0%, 100%, 0.75);
-			--clr-button: hsla(46, 93%, 42%, 0.75);
-			--clr-inputs: hsla(0, 0%, 100%, 0.75);
-			--opacity: 0.35;
-			background-color: hsla(0, 0%, 100%, 0.75);
-			color: hsl(0, 15%, 5%);
+			color: var(--clr-main);
 			transition:
 				background-color 0.5s ease-in-out,
 				color 0.5s ease-in-out;
@@ -248,8 +181,7 @@
 		background: transparent;
 		border: none;
 		border-radius: 5px;
-		/* color: var(--clr-main); */
-		color: hsla(0, 0%, 100%, 0.75);
+		color: var(--clr-main);
 		font-size: clamp(1.5rem, 2vw, 2.25rem);
 		letter-spacing: 3px;
 		width: fit-content;
@@ -264,21 +196,18 @@
 		}
 
 		&:hover {
-			text-shadow: 0 0 1px hsla(247, 3%, 50%, 0.65);
-			/* text-shadow: 0 0 1px var(--smoke); */
+			text-shadow: 0 0 1px var(--smoke);
 			transition: all 0.35s ease-in-out;
 		}
 
 		&:active {
 			background: inherit;
-			color: hsla(0, 0%, 100%, 0.75);
-			/* color: var(--clr-main); */
+			color: var(--clr-main);
 		}
 
 		&:focus,
 		&:focus-visible {
-			outline: 1px solid hsla(0, 0%, 100%, 0.75);
-			/* outline: 1px solid var(--clr-main); */
+			outline: 1px solid var(--clr-main);
 			padding: 1em;
 			background: transparent;
 		}
