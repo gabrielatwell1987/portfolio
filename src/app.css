@@ -57,8 +57,6 @@
 		--h6: var(--base-size);
 		--sm: calc(var(--base-size) / var(--scale));
 		--xs: calc(var(--sm) / var(--scale));
-
-		--timing: 0.95s;
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
@@ -80,6 +78,7 @@
 @layer base {
 	html,
 	body {
+		--timing: 0.75s;
 		width: 100%;
 		height: auto;
 		overflow-x: hidden;
@@ -88,6 +87,7 @@
 		transition:
 			background-color var(--timing) ease,
 			color var(--timing) ease;
+		will-change: background-color, color;
 	}
 
 	body {
