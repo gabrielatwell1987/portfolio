@@ -163,7 +163,7 @@
 					font-family: var(--bronova);
 					font-size: clamp(var(--sm), 1.25vw, var(--h6));
 					font-weight: 300;
-					color: var(--dark-text);
+					color: var(--clr-main);
 					text-align: center;
 					margin-bottom: 0;
 					letter-spacing: 0px;
