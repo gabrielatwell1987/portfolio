@@ -69,7 +69,7 @@
 </div>
 
 <section class="github-section">
-	<div class="container">
+	<div class="project-container">
 		{#if showGithub && GithubContributions}
 			<GithubContributions />
 		{:else}
@@ -127,7 +127,7 @@
 			min-height: 250px;
 		}
 
-		& .container {
+		& .project-container {
 			max-width: 1200px;
 			margin: 0 auto;
 			text-align: center;
@@ -190,7 +190,7 @@
 
 		@media (width <= 500px) {
 			padding: 4em 0;
-			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			grid-template-columns: 1fr;
 		}
 
 		& .whole {

@@ -10,7 +10,7 @@
 	keywords="hire gabriel atwell, hire gabe atwell, project questionnaire"
 />
 
-<Title img="/logos/for_hire.svg" width="clamp(300px, 50vw, 600px)" />
+<Title title="grow online" />
 
 <section>
 	<HireForm />
