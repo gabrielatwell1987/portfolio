@@ -86,8 +86,9 @@
 					aria-hidden="true"
 				>
 					<title>Close</title>
-					<line x1="18" y1="12" x2="6" y2="25"></line>
-					<line x1="6" y1="12" x2="18" y2="25"></line>
+					<!-- <line x1="18" y1="12" x2="6" y2="25"></line> -->
+					<!-- <line x1="6" y1="12" x2="18" y2="25"></line> -->
+					<path d="M6 12 L18 25 M18 12 L6 25" />
 				</svg>
 			</button>
 
@@ -231,6 +232,8 @@
 			& svg {
 				cursor: pointer;
 				fill: currentColor;
+				stroke: var(--clr-main);
+				stroke-width: 5;
 
 				&:focus,
 				&:focus-visible {
@@ -284,8 +287,8 @@
 			& svg {
 				width: 3rem;
 				height: 3rem;
-				stroke: currentColor;
 				flex-shrink: 0;
+				stroke: currentColor;
 			}
 		}
 	}
