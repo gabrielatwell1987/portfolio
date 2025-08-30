@@ -58,7 +58,7 @@
 		--sm: calc(var(--base-size) / var(--scale));
 		--xs: calc(var(--sm) / var(--scale));
 
-		--timing: 1s;
+		--timing: 0.65s;
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
@@ -85,6 +85,9 @@
 		overflow-x: hidden;
 		overflow-y: auto;
 		background: var(--clr-bg);
+		transition:
+			background-color var(--timing) ease,
+			color var(--timing) ease;
 	}
 
 	body {
