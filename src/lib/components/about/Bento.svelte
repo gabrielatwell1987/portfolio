@@ -22,12 +22,26 @@
 				<div class="item">
 					<a href="/contact">
 						<div class="scale">
-							<Image
+							<!-- <Image
 								src="/icons/contactIcon.svg"
 								alt="an icon for contact"
 								width="500"
 								aspectRatio="4/3"
-							/>
+							/> -->
+							<svg
+								width="161"
+								height="134"
+								viewBox="0 0 161 134"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									id="contactIcon"
+									d="M5 5H156V101.64H98.4762L40.9524 125.8V101.64H5V5ZM40.9524 53.32H48.1429V59.36H40.9524V53.32ZM76.9048 53.32H84.0952V59.36H76.9048V53.32ZM112.857 53.32H120.048V59.36H112.857V53.32Z"
+									stroke="#666"
+									stroke-width="8"
+								/>
+							</svg>
 						</div>
 
 						<h2>contact</h2>
@@ -39,12 +53,19 @@
 				<div class="item">
 					<a href="/learn">
 						<div class="scale">
-							<Image
-								src="/icons/learnIcon.svg"
-								alt="an icon for learning"
-								width="500"
-								aspectRatio="1/1"
-							/>
+							<svg
+								width="151"
+								height="121"
+								viewBox="0 0 151 121"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									id="learnIcon"
+									d="M75.5 60.4L19.177 37.901L22.65 120.8H7.55L11.174 34.6545L0 30.2L75.5 0L151 30.2L75.5 60.4ZM75.5 22.65C71.3475 22.65 67.95 24.311 67.95 26.425C67.95 28.539 71.3475 30.2 75.5 30.2C79.6525 30.2 83.05 28.539 83.05 26.425C83.05 24.311 79.6525 22.65 75.5 22.65ZM75.5 67.95L117.554 51.1135C122.914 58.2105 126.614 66.742 127.822 76.0285C125.557 75.7265 123.216 75.5 120.8 75.5C101.548 75.5 84.711 85.8435 75.5 101.246C70.8224 93.4012 64.1892 86.9051 56.2489 82.3923C48.3086 77.8796 39.3331 75.5048 30.2 75.5C27.784 75.5 25.4435 75.7265 23.1785 76.0285C24.3865 66.742 28.086 58.2105 33.4465 51.1135L75.5 67.95Z"
+									fill="#666"
+								/>
+							</svg>
 						</div>
 
 						<h2>learn</h2>
@@ -57,7 +78,7 @@
 					<a href="/projects">
 						<h2>projects</h2>
 
-						<Image src="/logos/logoA.webp" alt="atwell logo" width="400" aspectRatio="16/9" />
+						<Image src="/icons/logoA.svg" alt="atwell logo" width="400" aspectRatio="16/9" />
 					</a>
 				</div>
 			</div>
@@ -142,7 +163,7 @@
 					font-size: clamp(var(--h5), 3vw, var(--h3));
 					font-weight: 900;
 					letter-spacing: -1px;
-					color: var(--dark-text);
+					color: var(--clr-blue);
 					margin-bottom: 1rem;
 					text-transform: uppercase;
 					transition: border-bottom 0.5s ease;

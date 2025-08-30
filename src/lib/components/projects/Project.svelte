@@ -160,7 +160,7 @@
 			font-size: clamp(var(--h5), 2.75vw, var(--h3));
 			font-weight: 600;
 			text-align: center;
-			color: var(--clr-link);
+			color: var(--clr-blue);
 			letter-spacing: 0px;
 			text-transform: uppercase;
 			text-decoration: none;
