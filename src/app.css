@@ -1,5 +1,5 @@
 /* layer order */
-@layer root, reset, base, typography, components, utilities;
+@layer root, reset, theming, base, typography, components, utilities;
 
 /* font-faces need global scope */
 @font-face {
@@ -36,29 +36,6 @@
 
 @layer root {
 	:root {
-		/* colors */
-		--blackest: hsl(0, 15%, 5%);
-		--blacker: hsla(205, 4%, 7%, 0.5);
-		--black: hsla(205, 4%, 14%, 1);
-		--lightblack: hsl(240, 0%, 19%);
-		--dark-gray: hsl(0, 0%, 27%);
-		--darksmoke: hsla(247, 3%, 50%, 0.45);
-		--smoke: hsla(247, 3%, 50%, 0.65);
-		--off-white: hsla(0, 0%, 69%, 0.65);
-		--white: hsla(0, 0%, 100%, 0.75);
-		--sky: hsla(187, 64%, 73%, 0.5);
-		--light-blue: hsla(202, 97%, 55%, 1);
-		--blue: hsla(201, 71%, 45%, 0.5);
-		--dark-blue: hsla(202, 97%, 25%, 0.75);
-		--darkest-blue: hsla(203, 96%, 10%, 0.75);
-		--purple: hsla(227, 98%, 68%, 0.6);
-		--yellow: hsla(46, 93%, 42%, 0.75);
-		--pale: hsl(44, 94%, 40%);
-		--dark-pale: hsl(39, 87%, 35%);
-		--success: hsla(120, 95%, 26%, 1);
-		--warning: hsla(56, 93%, 43%, 1);
-		--fail: hsla(0, 96%, 31%, 1);
-
 		/* fonts */
 		--mono: 'Courier Prime', monospace;
 		--orbitron: 'Orbitron-Black', sans-serif;
@@ -107,7 +84,7 @@
 		height: auto;
 		overflow-x: hidden;
 		overflow-y: auto;
-		background-color: #000;
+		background: var(--clr-bg);
 	}
 
 	body {
@@ -218,5 +195,62 @@
 		height: 100%;
 		min-height: 100vh;
 		display: block;
+	}
+}
+
+@layer theming {
+	:root {
+		/* Base custom colors */
+		--blackest: hsl(0, 15%, 5%);
+		--white: hsla(0, 0%, 100%, 0.75);
+		--sky: hsla(187, 64%, 73%, 0.5);
+		--purple: hsla(227, 98%, 68%, 0.6);
+		--yellow: hsla(46, 93%, 42%, 0.75);
+		--darkest-blue: hsla(203, 96%, 10%, 0.75);
+		--pale: hsl(44, 94%, 40%);
+		/* ...and more... */
+
+		/* Theme variables using light-dark() and custom colors */
+		--clr-bg: light-dark(var(--white), var(--blackest));
+		--clr-main: light-dark(var(--blackest), var(--white));
+		--clr-blue: light-dark(var(--darkest-blue), var(--sky));
+		--clr-link: light-dark(var(--purple), var(--sky));
+		--clr-pale: light-dark(var(--yellow), var(--pale));
+		--clr-inverted: light-dark(var(--white), var(--blackest));
+		--clr-button-text: light-dark(var(--blackest), var(--white));
+		--clr-button: light-dark(var(--yellow), var(--purple));
+		--sun: light-dark(var(--yellow), var(--pale));
+		--moon: light-dark(var(--darkest-blue), var(--sky));
+		--opacity: light-dark(1, 0.85);
+	}
+
+	/* Manual override for light mode */
+	:root.light {
+		--clr-bg: var(--white);
+		--clr-main: var(--blackest);
+		--clr-blue: var(--darkest-blue);
+		--clr-link: var(--purple);
+		--clr-pale: var(--yellow);
+		--clr-inverted: var(--white);
+		--clr-button-text: var(--blackest);
+		--clr-button: var(--yellow);
+		--sun: var(--yellow);
+		--moon: var(--darkest-blue);
+		--opacity: 1;
+	}
+
+	/* Manual override for dark mode */
+	:root.dark {
+		--clr-bg: var(--blackest);
+		--clr-main: var(--white);
+		--clr-blue: var(--sky);
+		--clr-link: var(--sky);
+		--clr-pale: var(--pale);
+		--clr-inverted: var(--blackest);
+		--clr-button-text: var(--white);
+		--clr-button: var(--purple);
+		--sun: var(--pale);
+		--moon: var(--sky);
+		--opacity: 0.85;
 	}
 }
