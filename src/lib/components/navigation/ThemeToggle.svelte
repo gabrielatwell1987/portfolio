@@ -33,10 +33,17 @@
 
 		const root = document.documentElement;
 
+		const isAndroid = /android/i.test(navigator.userAgent);
+
 		if (root.classList.contains('light')) {
 			theme = 'light';
 		} else if (root.classList.contains('dark')) {
 			theme = 'dark';
+		} else if (isAndroid) {
+			// Force dark mode on Android if no theme is set
+			theme = 'dark';
+			root.classList.add('dark');
+			root.classList.remove('light');
 		}
 	});
 </script>
