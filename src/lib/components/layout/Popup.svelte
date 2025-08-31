@@ -67,7 +67,8 @@
 			font-size: clamp(var(--xs), 1.25vw, var(--h5));
 			letter-spacing: 2px;
 			padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
-			background-color: rgba(0, 0, 0, 1);
+			background-color: var(--clr-inverted);
+			color: var(--clr-main);
 
 			@media (width < 500px) {
 				letter-spacing: 1px;
