@@ -29,7 +29,7 @@
 				width: imgElement.naturalWidth,
 				height: imgElement.naturalHeight
 			};
-			console.log('Natural dimensions:', naturalDimensions); // Debug log
+			// console.log('Natural dimensions:', naturalDimensions);
 		}
 	}
 

@@ -3,12 +3,15 @@ export async function load() {
 		const { default: greensockDetails } = await import(
 			'$lib/components/learn/greensock-details.json'
 		);
-		console.log('Loaded greensock details:', greensockDetails); // Debug log
+
+		console.log('Loaded greensock details:', greensockDetails);
+
 		return {
 			greensockDetails
 		};
 	} catch (error) {
 		console.error('Error loading greensock data:', error);
+
 		return {
 			greensockDetails: []
 		};
