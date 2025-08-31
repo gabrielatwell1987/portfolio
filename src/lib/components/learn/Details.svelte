@@ -1,10 +1,5 @@
 <script>
 	let { items = [] } = $props();
-
-	// Debug: Check what items we're receiving
-	$effect(() => {
-		console.log('Details component items:', items);
-	});
 </script>
 
 {#if items && items.length > 0}
