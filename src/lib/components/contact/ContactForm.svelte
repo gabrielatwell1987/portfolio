@@ -190,7 +190,7 @@
 			}
 
 			& label {
-				transform: translate(20px, 22px);
+				transform: translate(20px, 5px);
 				background-color: transparent;
 				width: fit-content;
 				padding: 0 0.5rem;
@@ -201,10 +201,10 @@
 				border-radius: var(--radius);
 				align-self: flex-start;
 				position: relative;
-				color: var(--clr-inputs);
+				color: var(--clr-main);
 
 				@media (width <= 500px) {
-					transform: translate(20px, 18px);
+					transform: translate(20px, 7px);
 				}
 
 				&::before {
