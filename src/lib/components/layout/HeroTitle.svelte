@@ -9,7 +9,7 @@
 <style>
 	main {
 		@supports (background-clip: text) or (-webkit-background-clip: text) {
-			h1 {
+			& h1 {
 				--bgSize: 200%;
 				margin: 2rem auto;
 				margin-top: 5%;
@@ -27,9 +27,10 @@
 					var(--clr-blue)
 				);
 				background-clip: text;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
 				background-size: var(--bgSize);
 				animation: animate 5s ease-in-out infinite;
-				-webkit-background-clip: text;
 			}
 		}
 	}
