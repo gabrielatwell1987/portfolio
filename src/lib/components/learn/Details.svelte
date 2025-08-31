@@ -79,7 +79,7 @@
 	}
 
 	.text {
-		color: var(--clr-main);
+		color: var(--clr-main) !important;
 		line-height: 1.6;
 
 		:global(a) {
@@ -105,6 +105,20 @@
 		:global(p) {
 			margin: 0;
 			margin-bottom: 0.2rem;
+		}
+
+		&,
+		& :global(p),
+		& :global(ul),
+		& :global(ol),
+		& :global(pre),
+		& :global(table),
+		& :global(blockquote),
+		& :global(address),
+		& :global(dl),
+		& :global(figure),
+		& :global(form) {
+			color: var(--clr-main);
 		}
 	}
 
