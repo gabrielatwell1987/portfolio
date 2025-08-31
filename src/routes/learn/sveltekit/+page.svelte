@@ -25,7 +25,9 @@
 
 <section class="main">
 	<div class="separate">
-		<Title img="/skills/Svelte-Dark.svg" width="50vw" />
+		<div class="title-spacing">
+			<Title img="/skills/Svelte-Dark.svg" width="50vw" />
+		</div>
 
 		<main>
 			<div class="centerDetail">
@@ -53,7 +55,15 @@
 	}
 
 	section {
-		main {
+		& .title-spacing {
+			margin-bottom: 6em;
+
+			@media (width <= 768px) {
+				margin-bottom: 5em;
+			}
+		}
+
+		& main {
 			& .centerDetail {
 				max-width: 90vw;
 				margin-inline: auto;
