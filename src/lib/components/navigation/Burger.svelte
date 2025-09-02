@@ -47,27 +47,31 @@
 		& .bars {
 			display: flex;
 			flex-direction: column;
-			justify-content: space-around;
 			width: 2.5em;
 			height: 2rem;
 			position: relative;
-			margin-top: 1rem;
+			margin-top: 1.3em;
 
 			& .bar {
 				width: 100%;
 				height: 0.3rem;
 				background-color: var(--clr-main);
 				border-radius: 2px;
-				transition: transform 0.35s ease;
-				transform-origin: center;
+				transition:
+					transform 0.35s ease,
+					width 0.35s ease;
+				transform-origin: center center;
+				position: absolute;
 			}
 
 			& .bar-1 {
 				width: 2.8em;
+				transform: translateY(-0.35rem);
 			}
 
 			& .bar-2 {
 				width: 2em;
+				transform: translateY(0.35rem);
 			}
 		}
 
@@ -76,12 +80,12 @@
 			padding-bottom: 0.5rem;
 
 			.bar-1 {
-				transform: translateY(0.75rem) rotate(45deg);
+				transform: translateY(0) rotate(45deg);
 				width: 2.2em;
 			}
 
 			.bar-2 {
-				transform: translateY(-0.15rem) rotate(-45deg);
+				transform: translateY(0) rotate(-45deg);
 				width: 2.2em;
 			}
 		}
