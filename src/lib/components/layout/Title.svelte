@@ -53,7 +53,6 @@
 			margin-top: 5rem;
 			view-transition-name: page-title;
 			color: var(--clr-inverted);
-			/* Multiple text shadows to create stroke effect */
 			text-shadow:
 				0 0 1px var(--clr-inverted),
 				-5px -5px 0 var(--clr-main),
