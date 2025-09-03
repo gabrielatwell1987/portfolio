@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<button type="submit">Send</button>
+<button type="submit">Submit</button>
 
 <style>
 	button {

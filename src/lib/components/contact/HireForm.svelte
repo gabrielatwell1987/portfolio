@@ -1,6 +1,6 @@
 <script>
 	import Popup from '$lib/components/layout/Popup.svelte';
-	import SendButton from '$lib/components/contact/SendButton.svelte';
+	import SubmitButton from '$lib/components/contact/SubmitButton.svelte';
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 
 	let submitStatus = $state('');
@@ -140,7 +140,7 @@
 			></textarea>
 		</label>
 
-		<SendButton />
+		<SubmitButton />
 	</form>
 </section>
 
