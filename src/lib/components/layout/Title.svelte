@@ -56,14 +56,14 @@
 			/* Multiple text shadows to create stroke effect */
 			text-shadow:
 				0 0 1px var(--clr-inverted),
-				-2px -2px 0 var(--clr-main),
-				2px -2px 0 var(--clr-main),
-				-2px 2px 0 var(--clr-main),
-				2px 2px 0 var(--clr-main),
-				-2px 0 0 var(--clr-main),
-				2px 0 0 var(--clr-main),
-				0 -2px 0 var(--clr-main),
-				0 2px 0 var(--clr-main);
+				-5px -5px 0 var(--clr-main),
+				5px -5px 0 var(--clr-main),
+				-5px 5px 0 var(--clr-main),
+				5px 5px 0 var(--clr-main),
+				-5px 0 0 var(--clr-main),
+				5px 0 0 var(--clr-main),
+				0 -5px 0 var(--clr-main),
+				0 5px 0 var(--clr-main);
 
 			@media (width >= 740px) {
 				margin: 2rem auto;

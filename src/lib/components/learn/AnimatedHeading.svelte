@@ -86,12 +86,21 @@
 		}
 
 		.span {
-			color: var(--clr-link);
 			font-family: var(--orbitron);
 			font-size: clamp(4rem, 10vw, 20rem);
-			-webkit-text-stroke: 1px var(--clr-main);
 			letter-spacing: 0px;
 			z-index: 1;
+			color: var(--clr-inverted);
+			text-shadow:
+				0 0 1px var(--clr-inverted),
+				-2px -2px 0 var(--clr-main),
+				2px -2px 0 var(--clr-main),
+				-2px 2px 0 var(--clr-main),
+				2px 2px 0 var(--clr-main),
+				-2px 0 0 var(--clr-main),
+				2px 0 0 var(--clr-main),
+				0 -2px 0 var(--clr-main),
+				0 2px 0 var(--clr-main);
 		}
 	}
 </style>
