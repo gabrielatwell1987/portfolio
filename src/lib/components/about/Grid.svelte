@@ -44,7 +44,6 @@
 				mix-blend-mode: difference;
 				letter-spacing: -1px;
 				color: var(--clr-inverted);
-				/* Multiple text shadows to create stroke effect */
 				text-shadow:
 					0 0 1px var(--clr-inverted),
 					-2px -2px 0 var(--clr-main),
