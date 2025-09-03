@@ -1,7 +1,7 @@
 <script>
 	import Popup from '$lib/components/layout/Popup.svelte';
 	import Modal from './Modal.svelte';
-	import SendButton from '$lib/components/contact/SendButton.svelte';
+	import SubmitButton from '$lib/components/contact/SubmitButton.svelte';
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 
 	let name = $state('');
@@ -58,7 +58,7 @@
 			aria-describedby="message-error"
 		></textarea>
 
-		<SendButton />
+		<SubmitButton />
 	</fieldset>
 </form>
 
