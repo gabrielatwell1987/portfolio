@@ -160,11 +160,21 @@
 			font-size: clamp(var(--h5), 2.75vw, var(--h3));
 			font-weight: 600;
 			text-align: center;
-			color: var(--clr-blue);
 			letter-spacing: 0px;
 			text-transform: uppercase;
 			text-decoration: none;
 			margin-bottom: 0.5rem;
+			color: var(--clr-inverted);
+			text-shadow:
+				0 0 1px var(--clr-inverted),
+				-2px -2px 0 var(--clr-main),
+				2px -2px 0 var(--clr-main),
+				-2px 2px 0 var(--clr-main),
+				2px 2px 0 var(--clr-main),
+				-2px 0 0 var(--clr-main),
+				2px 0 0 var(--clr-main),
+				0 -2px 0 var(--clr-main),
+				0 2px 0 var(--clr-main);
 
 			@media (width >= 990px) {
 				margin-bottom: 1rem;
