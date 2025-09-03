@@ -38,13 +38,23 @@
 			box-shadow: 0px 0px 12px var(--clr-main);
 
 			.title {
-				color: var(--clr-blue);
 				font-family: var(--orbitron);
 				font-size: clamp(var(--h3), 4.75vw, var(--xxl));
 				text-shadow: 0 0 5px 3px var(--clr-gray);
 				mix-blend-mode: difference;
-				-webkit-text-stroke: 2px var(--clr-main);
 				letter-spacing: -1px;
+				color: var(--clr-inverted);
+				/* Multiple text shadows to create stroke effect */
+				text-shadow:
+					0 0 1px var(--clr-inverted),
+					-2px -2px 0 var(--clr-main),
+					2px -2px 0 var(--clr-main),
+					-2px 2px 0 var(--clr-main),
+					2px 2px 0 var(--clr-main),
+					-2px 0 0 var(--clr-main),
+					2px 0 0 var(--clr-main),
+					0 -2px 0 var(--clr-main),
+					0 2px 0 var(--clr-main);
 
 				@media (width <= 768px) {
 					-webkit-text-stroke: 1px var(--clr-main);

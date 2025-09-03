@@ -50,9 +50,9 @@
 			letter-spacing: -1px;
 			text-transform: uppercase;
 			font-kerning: none;
-			color: var(--clr-blue);
 			margin-top: 5rem;
 			view-transition-name: page-title;
+			color: var(--clr-inverted);
 			/* Multiple text shadows to create stroke effect */
 			text-shadow:
 				0 0 1px var(--clr-inverted),
