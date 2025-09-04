@@ -29,7 +29,6 @@
 
 		button {
 			background-color: transparent;
-			color: var(--clr-gray);
 			width: fit-content;
 			font-family: var(--anta);
 			border-radius: 6px;
@@ -38,6 +37,17 @@
 			border: none;
 			outline: none;
 			text-transform: uppercase;
+			color: var(--clr-inverted);
+			text-shadow:
+				0 0 1px var(--clr-inverted),
+				-5px -5px 0 var(--clr-main),
+				5px -5px 0 var(--clr-main),
+				-5px 5px 0 var(--clr-main),
+				5px 5px 0 var(--clr-main),
+				-5px 0 0 var(--clr-main),
+				5px 0 0 var(--clr-main),
+				0 -5px 0 var(--clr-main),
+				0 5px 0 var(--clr-main);
 
 			& svg {
 				font-size: clamp(var(--h2), 4vw, var(--xxl));
