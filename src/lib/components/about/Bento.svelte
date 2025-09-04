@@ -22,12 +22,6 @@
 				<div class="item">
 					<a href="/contact">
 						<div class="scale">
-							<!-- <Image
-								src="/icons/contactIcon.svg"
-								alt="an icon for contact"
-								width="500"
-								aspectRatio="4/3"
-							/> -->
 							<svg
 								width="161"
 								height="134"
@@ -163,12 +157,35 @@
 					font-size: clamp(var(--h5), 3vw, var(--h3));
 					font-weight: 900;
 					letter-spacing: -1px;
-					color: var(--clr-blue);
 					margin-bottom: 1rem;
 					text-transform: uppercase;
 					transition: border-bottom 0.5s ease;
 					width: fit-content;
 					margin-inline: auto;
+					color: var(--clr-inverted);
+					text-shadow:
+						0 0 1px var(--clr-inverted),
+						-2px -2px 0 var(--clr-main),
+						2px -2px 0 var(--clr-main),
+						-2px 2px 0 var(--clr-main),
+						2px 2px 0 var(--clr-main),
+						-2px 0 0 var(--clr-main),
+						2px 0 0 var(--clr-main),
+						0 -2px 0 var(--clr-main),
+						0 2px 0 var(--clr-main);
+
+					@media (width <= 768px) {
+						text-shadow:
+							0 0 1px var(--clr-inverted),
+							-1px -1px 0 var(--clr-main),
+							1px -1px 0 var(--clr-main),
+							-1px 1px 0 var(--clr-main),
+							1px 1px 0 var(--clr-main),
+							-1px 0 0 var(--clr-main),
+							1px 0 0 var(--clr-main),
+							0 -1px 0 var(--clr-main),
+							0 1px 0 var(--clr-main);
+					}
 
 					&:hover {
 						text-decoration: underline;
