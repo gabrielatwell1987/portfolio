@@ -100,6 +100,16 @@
 
 			@media (width <= 768px) {
 				padding-bottom: 0;
+				text-shadow:
+					0 0 1px var(--clr-inverted),
+					-1px -1px 0 var(--clr-main),
+					1px -1px 0 var(--clr-main),
+					-1px 1px 0 var(--clr-main),
+					1px 1px 0 var(--clr-main),
+					-1px 0 0 var(--clr-main),
+					1px 0 0 var(--clr-main),
+					0 -1px 0 var(--clr-main),
+					0 1px 0 var(--clr-main);
 			}
 		}
 	}
