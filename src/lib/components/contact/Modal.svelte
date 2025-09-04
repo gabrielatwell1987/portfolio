@@ -243,7 +243,11 @@
 				cursor: pointer;
 				fill: currentColor;
 				stroke: var(--clr-main);
-				stroke-width: 5;
+				stroke-width: 8;
+
+				@media (width <= 768px) {
+					stroke-width: 23;
+				}
 
 				&:focus,
 				&:focus-visible {

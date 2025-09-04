@@ -201,7 +201,7 @@
 				border-radius: var(--radius);
 				align-self: flex-start;
 				position: relative;
-				color: var(--clr-main);
+				color: var(--clr-gray);
 
 				@media (width <= 500px) {
 					transform: translate(20px, 7px);

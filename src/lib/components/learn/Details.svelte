@@ -75,8 +75,8 @@
 		padding: 1rem;
 		inline-size: 100ch;
 
-		.summary-custom {
-			color: var(--clr-blue);
+		& .summary-custom {
+			color: var(--clr-main);
 			cursor: pointer;
 			font-weight: 600;
 			background: none;
@@ -86,7 +86,7 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			border: 1px solid var(--clr-main);
+			border: 1px solid var(--clr-gray);
 
 			&:focus {
 				outline: none;
@@ -98,7 +98,7 @@
 				border-color: var(--clr-gray);
 			}
 
-			.arrow {
+			& .arrow {
 				font-size: 0.8em;
 				color: var(--clr-main);
 				transition: transform 0.2s;
@@ -125,7 +125,7 @@
 			}
 		}
 
-		.text {
+		& .text {
 			color: var(--clr-main) !important;
 			line-height: 1.6;
 			opacity: 0;
