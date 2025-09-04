@@ -208,7 +208,6 @@
 			font-weight: 800;
 			background-color: transparent;
 			box-shadow: none;
-			color: var(--clr-gray);
 			width: fit-content;
 			outline: none;
 			border: none;
@@ -219,6 +218,17 @@
 			margin-inline: auto;
 			margin-bottom: 25%;
 			cursor: pointer;
+			color: var(--clr-inverted);
+			text-shadow:
+				0 0 1px var(--clr-inverted),
+				-5px -5px 0 var(--clr-main),
+				5px -5px 0 var(--clr-main),
+				-5px 5px 0 var(--clr-main),
+				5px 5px 0 var(--clr-main),
+				-5px 0 0 var(--clr-main),
+				5px 0 0 var(--clr-main),
+				0 -5px 0 var(--clr-main),
+				0 5px 0 var(--clr-main);
 
 			&:focus,
 			&:focus-visible {
@@ -259,7 +269,6 @@
 			font-weight: 800;
 			background-color: transparent;
 			box-shadow: none;
-			color: var(--clr-gray);
 			width: 4rem;
 			height: 4rem;
 			min-width: 4rem;
@@ -273,6 +282,7 @@
 			margin-top: -1rem;
 			cursor: pointer;
 			padding: 0.75rem;
+			color: var(--clr-main);
 
 			&:hover {
 				animation: wiggle 01s ease-in-out infinite;
