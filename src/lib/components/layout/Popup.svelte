@@ -49,10 +49,27 @@
 				0 -5px 0 var(--clr-main),
 				0 5px 0 var(--clr-main);
 
+			/* @media (width <= 768px) {
+				text-shadow:
+					0 0 1px var(--clr-inverted),
+					-8px -8px 0 var(--clr-main),
+					8px -8px 0 var(--clr-main),
+					-8px 8px 0 var(--clr-main),
+					8px 8px 0 var(--clr-main),
+					-8px 0 0 var(--clr-main),
+					8px 0 0 var(--clr-main),
+					0 -8px 0 var(--clr-main),
+					0 8px 0 var(--clr-main);
+			} */
+
 			& svg {
 				font-size: clamp(var(--h2), 4vw, var(--xxl));
 				stroke: var(--clr-main);
-				stroke-width: 5;
+				stroke-width: 8;
+
+				@media (width <= 768px) {
+					stroke-width: 23;
+				}
 			}
 
 			&:hover {
