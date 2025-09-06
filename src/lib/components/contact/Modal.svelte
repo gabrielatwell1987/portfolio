@@ -81,7 +81,6 @@
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 27 27"
 					fill="none"
-					stroke="currentColor"
 					stroke-width="3"
 					stroke-linecap="round"
 					stroke-linejoin="round"
@@ -284,7 +283,7 @@
 				width: 3rem;
 				height: 3rem;
 				flex-shrink: 0;
-				stroke: currentColor;
+				stroke: var(--light-gray);
 			}
 		}
 	}
