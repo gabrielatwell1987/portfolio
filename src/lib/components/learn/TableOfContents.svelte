@@ -90,7 +90,7 @@
 					text-wrap: balance;
 
 					& a:visited {
-						color: var(--clr-pale);
+						color: var(--clr-main);
 					}
 				}
 			}
