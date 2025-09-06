@@ -212,6 +212,7 @@
 		--dark-blue: hsla(203, 94%, 20%, 0.75);
 		--darkest-blue: hsla(203, 96%, 10%, 0.75);
 		--pale: hsl(44, 94%, 40%);
+		--light-gray: hsl(0, 1%, 50%);
 		--gray: hsl(0, 0%, 40%);
 		--dark-gray: hsl(0, 0%, 25%);
 
@@ -221,7 +222,7 @@
 		--clr-blue: light-dark(var(--darkest-blue), var(--sky));
 		--clr-link: light-dark(var(--purple), var(--sky));
 		--clr-pale: light-dark(var(--yellow), var(--pale));
-		--clr-gray: light-dark(var(--gray), var(--dark-gray));
+		--clr-light-gray: light-dark(var(--light-gray), var(--dark-gray));
 		--clr-inverted: light-dark(var(--white), var(--blackest));
 		--clr-button-text: light-dark(var(--blackest), var(--white));
 		--clr-button: light-dark(var(--yellow), var(--purple));
