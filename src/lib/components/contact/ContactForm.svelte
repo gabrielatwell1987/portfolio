@@ -58,7 +58,9 @@
 			aria-describedby="message-error"
 		></textarea>
 
-		<SubmitButton />
+		<div class="submit-button">
+			<SubmitButton />
+		</div>
 	</fieldset>
 </form>
 
@@ -183,6 +185,10 @@
 
 			& textarea {
 				padding: 0.5rem 1rem;
+			}
+
+			& .submit-button {
+				margin-top: 1em;
 			}
 
 			& legend {
