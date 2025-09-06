@@ -184,8 +184,7 @@
 					}
 
 					& span {
-						color: var(--clr-pale);
-						font-weight: 600;
+						font-weight: 800;
 					}
 				}
 

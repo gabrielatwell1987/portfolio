@@ -6,10 +6,17 @@
 	<button popovertarget="popover"
 		>{title}
 
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 522" style="width: 1em; height: 1em;">
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			viewBox="0 -15 448 552"
+			style="width: 1em; height: 1em;"
+		>
 			<title>Popup Icon</title>
 			<path
 				d="M224 0c-17.7 0-32 14.3-32 32l0 19.2C119 66 64 130.6 64 208l0 18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416l384 0c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8l0-18.8c0-77.4-55-142-128-156.8L256 32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3l-64 0-64 0c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"
+				fill="var(--clr-inverted)"
+				stroke="var(--clr-main)"
+				stroke-width="calc(5px + .75vw)"
 			/>
 		</svg>
 	</button>
@@ -37,39 +44,9 @@
 			border: none;
 			outline: none;
 			text-transform: uppercase;
-			color: var(--clr-inverted);
-			text-shadow:
-				0 0 1px var(--clr-inverted),
-				-5px -5px 0 var(--clr-main),
-				5px -5px 0 var(--clr-main),
-				-5px 5px 0 var(--clr-main),
-				5px 5px 0 var(--clr-main),
-				-5px 0 0 var(--clr-main),
-				5px 0 0 var(--clr-main),
-				0 -5px 0 var(--clr-main),
-				0 5px 0 var(--clr-main);
-
-			/* @media (width <= 768px) {
-				text-shadow:
-					0 0 1px var(--clr-inverted),
-					-8px -8px 0 var(--clr-main),
-					8px -8px 0 var(--clr-main),
-					-8px 8px 0 var(--clr-main),
-					8px 8px 0 var(--clr-main),
-					-8px 0 0 var(--clr-main),
-					8px 0 0 var(--clr-main),
-					0 -8px 0 var(--clr-main),
-					0 8px 0 var(--clr-main);
-			} */
 
 			& svg {
 				font-size: clamp(var(--h2), 4vw, var(--xxl));
-				stroke: var(--clr-main);
-				stroke-width: 8;
-
-				@media (width <= 768px) {
-					stroke-width: 23;
-				}
 			}
 
 			&:hover {
