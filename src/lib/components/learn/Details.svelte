@@ -93,11 +93,6 @@
 				box-shadow: none;
 			}
 
-			@media (width <= 768px) {
-				color: var(--clr-blue);
-				border-color: var(--clr-gray);
-			}
-
 			& .arrow {
 				font-size: 0.8em;
 				color: var(--clr-main);
