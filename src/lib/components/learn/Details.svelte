@@ -80,13 +80,12 @@
 			cursor: pointer;
 			font-weight: 600;
 			background: none;
-			border: none;
 			width: 100%;
 			text-align: left;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			border: 1px solid var(--clr-gray);
+			border: 2px solid var(--clr-gray);
 
 			&:focus {
 				outline: none;
