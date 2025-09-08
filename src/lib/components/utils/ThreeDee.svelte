@@ -1,10 +1,11 @@
 <script>
 	import * as THREE from 'three';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+	import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 
+	let { modelPath = '/models/television.gltf', title, content } = $props();
 	let canvas;
 	let scene, camera, renderer, model;
-	let modelPath = $state('/models/television.gltf');
 	let loading = $state(true);
 	let error = $state(null);
 	let loadingProgress = $state(0);
@@ -12,53 +13,69 @@
 	function createScene() {
 		scene = new THREE.Scene();
 		camera = new THREE.PerspectiveCamera(
-			35, // Even smaller FOV for better framing
+			35,
 			canvas?.clientWidth / canvas?.clientHeight || 1,
 			0.1,
 			1000
 		);
 
 		// Improved lighting
-		const ambientLight = new THREE.AmbientLight(0x404040, 0.8);
+		const ambientLight = new THREE.AmbientLight(0x808080, 2.0);
 		scene.add(ambientLight);
 
-		const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
-		directionalLight.position.set(10, 10, 5);
-		scene.add(directionalLight);
+		const keyLight = new THREE.DirectionalLight(0xffffff, 2.5);
+		keyLight.position.set(10, 10, 5);
+		scene.add(keyLight);
 
-		// Initial camera position - will be adjusted after model loads
+		const fillLight = new THREE.DirectionalLight(0xffffff, 1.5);
+		fillLight.position.set(-10, 5, 5);
+		scene.add(fillLight);
+
+		const rimLight = new THREE.DirectionalLight(0xffffff, 1.0);
+		rimLight.position.set(0, 0, -10);
+		scene.add(rimLight);
+
 		camera.position.set(0, 0, 10);
 		camera.lookAt(0, 0, 0);
 	}
 
 	function loadModel() {
-		// Create loading manager for better progress tracking
 		const manager = new THREE.LoadingManager();
 		manager.onProgress = (url, loaded, total) => {
 			loadingProgress = (loaded / total) * 100;
 		};
 
-		// Pass the loading manager to the GLTFLoader constructor
+		const dracoLoader = new DRACOLoader();
+		dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
+		dracoLoader.setDecoderConfig({ type: 'js' });
+
 		const loader = new GLTFLoader(manager);
+		loader.setDRACOLoader(dracoLoader);
 
 		loader.load(
 			modelPath,
 			(gltf) => {
-				// Remove existing model first
 				if (model) {
 					scene.remove(model);
 				}
 
 				model = gltf.scene;
 
-				// Check if model has any geometry
 				if (model.children.length === 0) {
 					error = 'Model appears to be empty';
 					loading = false;
 					return;
 				}
 
-				// Get model bounds
+				model.traverse((child) => {
+					if (child.isMesh) {
+						child.frustumCulled = true;
+						if (child.material) {
+							child.material.precision = 'mediump';
+						}
+					}
+				});
+
 				const box = new THREE.Box3().setFromObject(model);
 
 				if (box.isEmpty()) {
@@ -70,35 +87,26 @@
 				const size = box.getSize(new THREE.Vector3());
 				const center = box.getCenter(new THREE.Vector3());
 
-				// Center the model at origin
-				model.position.set(-center.x, -center.y, -center.z);
+				model.position.set(-center.x + 2, -center.y, -center.z);
 
-				// Calculate scale to fit model in view with padding
 				const maxDimension = Math.max(size.x, size.y, size.z);
-				const scale = maxDimension > 0 ? 3 / maxDimension : 1;
+				const scale = maxDimension > 0 ? 5 / maxDimension : 1;
 				model.scale.setScalar(scale);
 
-				// Add static rotation to the model for a skewed look
-				model.rotation.set(
-					-0.15, // Slight downward tilt (negative = looking down)
-					0.1, // Skew to the right
-					0 // No roll
-				);
+				model.rotation.set(0.4, -0.4, 0);
 
-				// Position camera to see the entire model with padding
 				const scaledSize = maxDimension * scale;
-				const distance = scaledSize * 2.5; // More distance for better framing
+				const distance = scaledSize * 2.5;
 
-				// Position camera slightly above center and back
-				camera.position.set(0, scaledSize * 0.2, distance);
-				camera.lookAt(0, 0, 0);
-
-				// Ensure camera settings are updated
+				camera.position.set(-1, scaledSize * 0.2, distance);
+				camera.lookAt(2, 0, 0);
 				camera.updateProjectionMatrix();
 
 				scene.add(model);
 				loading = false;
 				error = null;
+
+				dracoLoader.dispose();
 			},
 			(progress) => {
 				if (progress.total > 0) {
@@ -115,17 +123,14 @@
 
 	function animate() {
 		if (!renderer || !scene || !camera) return;
-
 		renderer.render(scene, camera);
 		requestAnimationFrame(animate);
 	}
 
 	function handleResize() {
 		if (!renderer || !camera || !canvas) return;
-
 		const width = canvas.clientWidth;
 		const height = canvas.clientHeight;
-
 		camera.aspect = width / height;
 		camera.updateProjectionMatrix();
 		renderer.setSize(width, height);
@@ -143,6 +148,9 @@
 
 		renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+		renderer.outputColorSpace = THREE.SRGBColorSpace;
+		renderer.toneMapping = THREE.ACESFilmicToneMapping;
+		renderer.toneMappingExposure = 1.0;
 
 		createScene();
 		loadModel();
@@ -167,9 +175,24 @@
 	});
 </script>
 
-<div class="wrapper">
+<div class="container">
+	<!-- 3D model canvas taking full container -->
 	<canvas bind:this={canvas}></canvas>
 
+	<!-- Text content overlapping and centered -->
+	{#if title || content}
+		<div class="text-overlay">
+			{#if title}
+				<h1>{title}</h1>
+			{/if}
+
+			{#if content}
+				<p>{content}</p>
+			{/if}
+		</div>
+	{/if}
+
+	<!-- Loading and error states -->
 	{#if loading}
 		<div class="loading">
 			<p>Loading 3D model...</p>
@@ -184,15 +207,48 @@
 </div>
 
 <style>
-	.wrapper {
+	.container {
 		position: relative;
 		width: 100%;
-		height: 600px; /* Increased height */
+		height: 600px;
+		overflow: hidden;
 
 		& canvas {
 			width: 100%;
 			height: 100%;
 			background: transparent;
+		}
+
+		& .text-overlay {
+			position: absolute;
+			top: 50%;
+			left: 35%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			color: white;
+			z-index: 5;
+			pointer-events: none;
+
+			& h1 {
+				margin: 0 0 1.5rem 0;
+				font-family: var(--orbitron);
+				font-size: clamp(var(--h3), 9vw, var(--xl));
+				line-height: 1.2;
+				background: linear-gradient(135deg, var(--clr-main), var(--clr-light-gray));
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+				filter: drop-shadow(0 0 6px var(--clr-inverted));
+			}
+
+			& p {
+				margin: 0;
+				font-family: var(--bronova);
+				font-size: clamp(var(--sm), 2vw, var(--h5));
+				line-height: 1.6;
+				max-width: 600px;
+				color: var(--clr-main);
+			}
 		}
 
 		& .loading {
@@ -207,6 +263,7 @@
 			font-family: sans-serif;
 			text-align: center;
 			min-width: 200px;
+			z-index: 10;
 
 			& .progress-bar {
 				width: 100%;
@@ -243,6 +300,22 @@
 			font-family: sans-serif;
 			text-align: center;
 			max-width: 80%;
+			z-index: 10;
 		}
+
+		/* @media (max-width: 768px) {
+			height: 500px;
+
+			& .text-overlay {
+				& h1 {
+					font-size: clamp(var(--h5), 8vw, var(--h3));
+				}
+
+				& p {
+					font-size: clamp(var(--xs), 4vw, var(--sm));
+					max-width: 90%;
+				}
+			}
+		} */
 	}
 </style>
