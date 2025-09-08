@@ -71,7 +71,7 @@
 					if (child.isMesh) {
 						child.frustumCulled = true;
 						if (child.material) {
-							child.material.precision = 'mediump';
+							child.material.precision = 'medium';
 						}
 					}
 				});
@@ -87,7 +87,7 @@
 				const size = box.getSize(new THREE.Vector3());
 				const center = box.getCenter(new THREE.Vector3());
 
-				model.position.set(-center.x + 2, -center.y, -center.z);
+				model.position.set(-center.x + 5, -center.y, -center.z);
 
 				const maxDimension = Math.max(size.x, size.y, size.z);
 				const scale = maxDimension > 0 ? 5 / maxDimension : 1;
