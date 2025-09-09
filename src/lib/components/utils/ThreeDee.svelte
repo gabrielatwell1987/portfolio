@@ -3,12 +3,27 @@
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 	import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 
-	let { modelPath = '/models/television.gltf', title, content } = $props();
+	let {
+		modelPath = '/models/television.gltf',
+		title,
+		content,
+		positionX = 5,
+		positionY = 0,
+		positionZ = 0,
+		rotationX = 0.4,
+		rotationY = -0.4,
+		rotationZ = 0
+	} = $props();
 	let canvas;
 	let scene, camera, renderer, model;
 	let loading = $state(true);
 	let error = $state(null);
 	let loadingProgress = $state(0);
+	let isMobile = $state(false);
+
+	function checkMobile() {
+		isMobile = window.innerWidth <= 768;
+	}
 
 	function createScene() {
 		scene = new THREE.Scene();
@@ -87,19 +102,32 @@
 				const size = box.getSize(new THREE.Vector3());
 				const center = box.getCenter(new THREE.Vector3());
 
-				model.position.set(-center.x + 5, -center.y, -center.z);
+				// Responsive positioning
+				const responsivePositionX = isMobile ? positionX * 0.7 : positionX;
+				const responsivePositionY = isMobile ? positionY * 0.8 : positionY;
+
+				model.position.set(
+					-center.x + responsivePositionX,
+					-center.y + responsivePositionY,
+					-center.z + positionZ
+				);
 
 				const maxDimension = Math.max(size.x, size.y, size.z);
 				const scale = maxDimension > 0 ? 5 / maxDimension : 1;
+				const responsiveScale = isMobile ? scale * 0.8 : scale;
 				model.scale.setScalar(scale);
 
-				model.rotation.set(0.4, -0.4, 0);
+				model.rotation.set(rotationX, rotationY, rotationZ);
 
-				const scaledSize = maxDimension * scale;
-				const distance = scaledSize * 2.5;
+				const scaledSize = maxDimension * responsiveScale;
+				const distance = isMobile ? scaledSize * 3.5 : scaledSize * 2.5;
 
-				camera.position.set(-1, scaledSize * 0.2, distance);
-				camera.lookAt(2, 0, 0);
+				const cameraX = isMobile ? -0.5 : -1;
+				const cameraY = isMobile ? scaledSize * 0.1 : scaledSize * 0.2;
+				const lookAtX = isMobile ? 1 : 2;
+
+				camera.position.set(cameraX, cameraY, distance);
+				camera.lookAt(lookAtX, 0, 0);
 				camera.updateProjectionMatrix();
 
 				scene.add(model);
@@ -129,11 +157,21 @@
 
 	function handleResize() {
 		if (!renderer || !camera || !canvas) return;
+
+		checkMobile();
+
 		const width = canvas.clientWidth;
 		const height = canvas.clientHeight;
+
 		camera.aspect = width / height;
+		camera.fov = isMobile ? 45 : 35; // Update FOV on resize
 		camera.updateProjectionMatrix();
 		renderer.setSize(width, height);
+
+		// Reload model with new responsive settings
+		if (model && scene) {
+			loadModel();
+		}
 	}
 
 	$effect(() => {
@@ -141,9 +179,9 @@
 
 		renderer = new THREE.WebGLRenderer({
 			canvas,
-			antialias: true,
+			antialias: !isMobile,
 			alpha: true,
-			powerPreference: 'high-performance'
+			powerPreference: isMobile ? 'default' : 'high-performance'
 		});
 
 		renderer.setSize(canvas.clientWidth, canvas.clientHeight);
@@ -171,6 +209,20 @@
 			error = null;
 			loadingProgress = 0;
 			loadModel();
+		}
+
+		if (model) {
+			const box = new THREE.Box3().setFromObject(model);
+			const center = box.getCenter(new THREE.Vector3());
+			const responsivePositionX = isMobile ? positionX * 0.7 : positionX;
+			const responsivePositionY = isMobile ? positionY * 0.8 : positionY;
+
+			model.position.set(
+				-center.x + responsivePositionX,
+				-center.y + responsivePositionY,
+				-center.z + positionZ
+			);
+			model.rotation.set(rotationX, rotationY, rotationZ);
 		}
 	});
 </script>
@@ -210,7 +262,7 @@
 	.container {
 		position: relative;
 		width: 100%;
-		height: 600px;
+		height: clamp(400px, 60vh, 600px);
 		overflow: hidden;
 
 		& canvas {
@@ -222,32 +274,35 @@
 		& .text-overlay {
 			position: absolute;
 			top: 50%;
-			left: 35%;
+			left: clamp(25%, 35%, 40%);
 			transform: translate(-50%, -50%);
 			text-align: center;
-			color: white;
 			z-index: 5;
 			pointer-events: none;
+			padding: 0 1rem;
+			max-width: 90%;
 
 			& h1 {
-				margin: 0 0 1.5rem 0;
-				font-family: var(--orbitron);
+				margin: 0 0 clamp(0.5rem, 2vw, 1.5rem) 0;
+				background: linear-gradient(135deg, var(--clr-blue), var(--clr-light-gray));
+				font-family: var(--bronova-bold);
 				font-size: clamp(var(--h3), 9vw, var(--xl));
-				line-height: 1.2;
-				background: linear-gradient(135deg, var(--clr-main), var(--clr-light-gray));
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
+				line-height: 1.2;
 				background-clip: text;
-				filter: drop-shadow(0 0 6px var(--clr-inverted));
+				filter: drop-shadow(0 0 3px var(--clr-inverted));
+				letter-spacing: clamp(1px, 0.1em, 2px);
 			}
 
 			& p {
 				margin: 0;
 				font-family: var(--bronova);
-				font-size: clamp(var(--sm), 2vw, var(--h5));
+				font-size: clamp(var(--sm), 1.3vw, var(--h5));
 				line-height: 1.6;
-				max-width: 600px;
+				max-width: min(600px, 90vw);
 				color: var(--clr-main);
+				letter-spacing: clamp(-0.5px, -0.02em, -1px);
 			}
 		}
 
@@ -258,11 +313,11 @@
 			transform: translate(-50%, -50%);
 			background: rgba(0, 0, 0, 0.9);
 			color: white;
-			padding: 20px;
+			padding: clamp(15px, 4vw, 20px);
 			border-radius: 8px;
 			font-family: sans-serif;
 			text-align: center;
-			min-width: 200px;
+			min-width: clamp(180px, 50vw, 200px);
 			z-index: 10;
 
 			& .progress-bar {
@@ -283,7 +338,7 @@
 
 			& .progress-text {
 				margin: 5px 0 0 0;
-				font-size: 0.9em;
+				font-size: clamp(0.8em, 2vw, 0.9em);
 				opacity: 0.8;
 			}
 		}
@@ -295,9 +350,10 @@
 			transform: translate(-50%, -50%);
 			background: rgba(255, 0, 0, 0.9);
 			color: white;
-			padding: 15px;
+			padding: clamp(12px, 3vw, 15px);
 			border-radius: 8px;
 			font-family: sans-serif;
+			font-size: clamp(0.875rem, 2vw, 1rem);
 			text-align: center;
 			max-width: 80%;
 			z-index: 10;
