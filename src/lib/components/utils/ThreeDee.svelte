@@ -7,6 +7,9 @@
 		modelPath = '/models/television.gltf',
 		title,
 		content,
+		ctaText,
+		ctaLink,
+		ctaOnclick,
 		positionX = 5,
 		positionY = 0,
 		positionZ = 0,
@@ -155,27 +158,147 @@
 		requestAnimationFrame(animate);
 	}
 
+	function repositionModel() {
+		if (!model) return;
+
+		const box = new THREE.Box3().setFromObject(model);
+		const size = box.getSize(new THREE.Vector3());
+		const center = box.getCenter(new THREE.Vector3());
+
+		// Enhanced responsive positioning
+		const breakpoints = {
+			mobile: window.innerWidth <= 768,
+			tablet: window.innerWidth <= 1024 && window.innerWidth > 768,
+			laptop: window.innerWidth <= 1440 && window.innerWidth > 1024,
+			desktop: window.innerWidth <= 1920 && window.innerWidth > 1440,
+			ultrawide: window.innerWidth > 1920
+		};
+
+		let scaleMultiplier, positionMultiplierX, positionMultiplierY, cameraDistance, fov;
+
+		if (breakpoints.mobile) {
+			scaleMultiplier = 0.7;
+			positionMultiplierX = 0.6;
+			positionMultiplierY = 0.7;
+			cameraDistance = 3.5;
+			fov = 50;
+		} else if (breakpoints.tablet) {
+			scaleMultiplier = 0.85;
+			positionMultiplierX = 0.75;
+			positionMultiplierY = 0.85;
+			cameraDistance = 3;
+			fov = 40;
+		} else if (breakpoints.laptop) {
+			scaleMultiplier = 1;
+			positionMultiplierX = 1;
+			positionMultiplierY = 1;
+			cameraDistance = 2.5;
+			fov = 35;
+		} else if (breakpoints.desktop) {
+			scaleMultiplier = 1.1;
+			positionMultiplierX = 1.1;
+			positionMultiplierY = 1.1;
+			cameraDistance = 2.2;
+			fov = 32;
+		} else {
+			// ultrawide
+			scaleMultiplier = 1.2;
+			positionMultiplierX = 1.3;
+			positionMultiplierY = 1.2;
+			cameraDistance = 2;
+			fov = 30;
+		}
+
+		// Update camera FOV for better mobile viewing
+		camera.fov = fov;
+		camera.updateProjectionMatrix();
+
+		// Update model position
+		model.position.set(
+			-center.x + positionX * positionMultiplierX,
+			-center.y + positionY * positionMultiplierY,
+			-center.z + positionZ
+		);
+
+		// Update model scale
+		const maxDimension = Math.max(size.x, size.y, size.z);
+		const baseScale = maxDimension > 0 ? 5 / maxDimension : 1;
+		const responsiveScale = baseScale * scaleMultiplier;
+		model.scale.setScalar(responsiveScale);
+
+		// Update camera position
+		const scaledSize = maxDimension * responsiveScale;
+		const distance = scaledSize * cameraDistance;
+
+		// More nuanced camera positioning
+		let cameraX, cameraY, lookAtX;
+
+		if (breakpoints.mobile) {
+			cameraX = -0.5;
+			cameraY = scaledSize * 0.1;
+			lookAtX = 1;
+		} else if (breakpoints.tablet) {
+			cameraX = -0.7;
+			cameraY = scaledSize * 0.15;
+			lookAtX = 1.5;
+		} else if (breakpoints.laptop) {
+			cameraX = -1;
+			cameraY = scaledSize * 0.2;
+			lookAtX = 2;
+		} else if (breakpoints.desktop) {
+			cameraX = -1.2;
+			cameraY = scaledSize * 0.25;
+			lookAtX = 2.2;
+		} else {
+			// ultrawide
+			cameraX = -1.5;
+			cameraY = scaledSize * 0.3;
+			lookAtX = 2.5;
+		}
+
+		camera.position.set(cameraX, cameraY, distance);
+		camera.lookAt(lookAtX, 0, 0);
+	}
+
 	function handleResize() {
 		if (!renderer || !camera || !canvas) return;
 
 		checkMobile();
 
-		const width = canvas.clientWidth;
-		const height = canvas.clientHeight;
+		// Use the canvas container's actual dimensions
+		const rect = canvas.getBoundingClientRect();
+		const width = rect.width;
+		const height = rect.height;
 
+		// Update camera aspect ratio
 		camera.aspect = width / height;
-		camera.fov = isMobile ? 45 : 35; // Update FOV on resize
 		camera.updateProjectionMatrix();
-		renderer.setSize(width, height);
 
-		// Reload model with new responsive settings
+		// Enhanced pixel ratio handling for all screen sizes
+		let pixelRatio;
+		if (window.innerWidth <= 768) {
+			pixelRatio = Math.min(window.devicePixelRatio, 1.5); // Mobile
+		} else if (window.innerWidth <= 1024) {
+			pixelRatio = Math.min(window.devicePixelRatio, 1.8); // Tablet
+		} else if (window.innerWidth <= 1440) {
+			pixelRatio = Math.min(window.devicePixelRatio, 2); // Laptop
+		} else {
+			pixelRatio = Math.min(window.devicePixelRatio, 2.5); // High-res displays
+		}
+
+		renderer.setSize(width, height);
+		renderer.setPixelRatio(pixelRatio);
+
+		// Reposition model for new screen size
 		if (model && scene) {
-			loadModel();
+			repositionModel();
 		}
 	}
 
 	$effect(() => {
 		if (!canvas) return;
+
+		checkMobile();
 
 		renderer = new THREE.WebGLRenderer({
 			canvas,
@@ -194,9 +317,20 @@
 		loadModel();
 		animate();
 
+		// Use ResizeObserver for better performance
+		const resizeObserver = new ResizeObserver((entries) => {
+			for (const entry of entries) {
+				handleResize();
+			}
+		});
+
+		resizeObserver.observe(canvas);
+
+		// window resize fallback
 		window.addEventListener('resize', handleResize);
 
 		return () => {
+			resizeObserver.disconnect();
 			window.removeEventListener('resize', handleResize);
 			renderer?.dispose();
 			scene?.clear();
@@ -241,6 +375,22 @@
 			{#if content}
 				<p>{content}</p>
 			{/if}
+
+			{#if ctaText}
+				{#if ctaLink}
+					<a href={ctaLink} class="cta-button">
+						{ctaText}
+					</a>
+				{:else if ctaOnclick}
+					<button onclick={ctaOnclick} class="cta-button">
+						{ctaText}
+					</button>
+				{:else}
+					<button class="cta-button">
+						{ctaText}
+					</button>
+				{/if}
+			{/if}
 		</div>
 	{/if}
 
@@ -262,7 +412,7 @@
 	.container {
 		position: relative;
 		width: 100%;
-		height: clamp(400px, 60vh, 600px);
+		height: clamp(350px, calc(50vh + 5vw), 700px);
 		overflow: hidden;
 
 		& canvas {
@@ -274,35 +424,113 @@
 		& .text-overlay {
 			position: absolute;
 			top: 50%;
-			left: clamp(25%, 35%, 40%);
+			left: clamp(25%, calc(30% + 2vw), 55%);
 			transform: translate(-50%, -50%);
 			text-align: center;
 			z-index: 5;
 			pointer-events: none;
 			padding: 0 1rem;
-			max-width: 90%;
+			max-width: clamp(250px, calc(80% - 2rem), 650px);
 
 			& h1 {
 				margin: 0 0 clamp(0.5rem, 2vw, 1.5rem) 0;
-				background: linear-gradient(135deg, var(--clr-blue), var(--clr-light-gray));
+				background: linear-gradient(135deg, var(--clr-inverted), var(--clr-light-gray));
 				font-family: var(--bronova-bold);
-				font-size: clamp(var(--h3), 9vw, var(--xl));
+				font-size: clamp(var(--h3), calc(4vw + 0.5rem), var(--xl));
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
-				line-height: 1.2;
+				-webkit-text-stroke: 1px var(--clr-main);
+				line-height: 0.91;
 				background-clip: text;
 				filter: drop-shadow(0 0 3px var(--clr-inverted));
 				letter-spacing: clamp(1px, 0.1em, 2px);
 			}
 
 			& p {
-				margin: 0;
+				margin: 0 0 0 1em;
 				font-family: var(--bronova);
-				font-size: clamp(var(--sm), 1.3vw, var(--h5));
-				line-height: 1.6;
-				max-width: min(600px, 90vw);
+				font-size: clamp(var(--sm), calc(1.2vw + 0.3rem), var(--h5));
+				line-height: clamp(1.3, calc(1.1 + 0.1vw), 1.6);
+				max-width: min(550px, 85vw);
 				color: var(--clr-main);
-				letter-spacing: clamp(-0.5px, -0.02em, -1px);
+				letter-spacing: clamp(-0.3px, -0.01em, -1px);
+			}
+
+			& .cta-button {
+				display: inline-block;
+				text-decoration: none;
+				background-color: transparent;
+				font-family: var(--orbitron);
+				font-size: clamp(var(--h6), 1.5vw, var(--h4));
+				font-weight: 900;
+				color: var(--clr-main);
+				border: 1px solid var(--clr-main);
+				border-radius: var(--radius);
+				outline: 3px solid var(--clr-main);
+				outline-offset: -7px;
+				margin-inline: auto;
+				cursor: pointer;
+				letter-spacing: 1px;
+				width: fit-content;
+				transition:
+					outline-offset 300ms ease-out,
+					opacity 300ms ease-out;
+				padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
+				margin-top: 10%;
+				margin-bottom: 2%;
+				user-select: none;
+				opacity: 0.75;
+				pointer-events: auto;
+
+				&:focus,
+				&:focus-visible {
+					outline: 1px solid var(--clr-main);
+					background: transparent;
+					color: var(--clr-main);
+				}
+
+				&:hover {
+					opacity: 0.95;
+					outline-offset: 0px;
+				}
+			}
+		}
+
+		/* Mobile optimizations */
+		@media (max-width: 768px) {
+			height: clamp(320px, 45vh, 480px);
+
+			& .text-overlay {
+				left: 50%;
+				max-width: 88%;
+			}
+		}
+
+		/* Tablet optimizations */
+		@media (min-width: 769px) and (max-width: 1024px) {
+			height: clamp(400px, 55vh, 580px);
+
+			& .text-overlay {
+				left: clamp(35%, 42%, 48%);
+			}
+		}
+
+		/* Large desktop optimizations */
+		@media (min-width: 1441px) {
+			height: clamp(500px, 65vh, 750px);
+
+			& .text-overlay {
+				left: clamp(30%, 38%, 45%);
+				max-width: clamp(400px, 75%, 700px);
+			}
+		}
+
+		/* Ultra-wide optimizations */
+		@media (min-width: 1921px) {
+			height: clamp(600px, 70vh, 800px);
+
+			& .text-overlay {
+				left: clamp(25%, 35%, 40%);
 			}
 		}
 
@@ -358,20 +586,5 @@
 			max-width: 80%;
 			z-index: 10;
 		}
-
-		/* @media (max-width: 768px) {
-			height: 500px;
-
-			& .text-overlay {
-				& h1 {
-					font-size: clamp(var(--h5), 8vw, var(--h3));
-				}
-
-				& p {
-					font-size: clamp(var(--xs), 4vw, var(--sm));
-					max-width: 90%;
-				}
-			}
-		} */
 	}
 </style>
