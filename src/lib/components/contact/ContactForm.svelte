@@ -81,62 +81,6 @@
 		padding: 0;
 	}
 
-	legend {
-		font-family: var(--bronova);
-		font-size: clamp(var(--h6), 3vw, var(--xxl));
-		font-weight: 800;
-		letter-spacing: 1px;
-		color: var(--clr-blue);
-		padding-inline: 1rem;
-
-		@media screen and (width >= 720px) {
-			margin-bottom: 0;
-		}
-	}
-
-	input,
-	textarea {
-		font-size: clamp(var(--sm), 2vw, var(--h4));
-		outline: none;
-
-		&:user-valid {
-			outline: 2px solid var(--success);
-		}
-
-		&:user-invalid {
-			outline: 2px solid var(--fail);
-		}
-
-		&:focus {
-			outline: none;
-		}
-
-		@media screen and (width >= 1350px) {
-			padding: 2rem;
-		}
-	}
-
-	input {
-		&:placeholder-shown {
-			letter-spacing: 3px;
-		}
-	}
-
-	textarea {
-		&:placeholder-shown {
-			letter-spacing: 0px;
-		}
-	}
-
-	#name,
-	#email,
-	#message {
-		&::-webkit-input-placeholder {
-			color: var(--clr-main);
-			font-weight: 100;
-		}
-	}
-
 	.icons {
 		display: grid;
 		place-content: center;
@@ -155,82 +99,17 @@
 	}
 
 	form {
-		--label-bg: var(--dark); /* Default to dark mode */
+		--label-bg: var(--dark);
 
 		@media screen and (width >= 320px) {
-			width: 95%;
+			width: 85%;
 			margin-inline: auto;
 			display: grid;
 			padding: 0.25rem;
-
-			& fieldset {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				width: var(--100);
-				margin: 0 auto;
-			}
-
-			& input,
-			& textarea {
-				width: 100%;
-				background-color: transparent;
-				box-shadow: none;
-				border: 3px solid var(--dark-gray);
-				border-radius: var(--radius);
-				caret-color: var(--sky);
-				color: var(--white);
-			}
-
-			& textarea {
-				padding: 0.5rem 1rem;
-			}
-
-			& .submit-button {
-				margin-top: 1em;
-			}
-
-			& legend {
-				margin-bottom: 1rem;
-			}
-
-			& label {
-				transform: translate(20px, 5px);
-				background-color: transparent;
-				width: fit-content;
-				padding: 0 0.5rem;
-				font-family: var(--bronova);
-				font-size: clamp(var(--h6), 1.5vw, var(--h3));
-				font-weight: 500;
-				z-index: 5;
-				border-radius: var(--radius);
-				align-self: flex-start;
-				position: relative;
-				color: var(--clr-gray);
-
-				@media (width <= 500px) {
-					transform: translate(20px, 7px);
-				}
-
-				&::before {
-					content: '';
-					position: absolute;
-					top: 50%;
-					left: -4px;
-					right: -4px;
-					height: 2rem;
-					background-color: var(--label-bg);
-					color: var(--clr-inputs);
-					transform: translateY(-50%);
-					z-index: -1;
-					border-radius: var(--radius);
-				}
-			}
 		}
 
 		@media screen and (width >= 1024px) {
-			& fieldset {
+			fieldset {
 				border: 5px solid var(--white);
 				border-image: linear-gradient(75deg, var(--clr-main), var(--clr-inverted)) 1;
 				font-weight: bolder;
@@ -250,25 +129,159 @@
 				}
 			}
 		}
-	}
 
-	::backdrop {
-		@media screen and (width >= 720px) {
-			background: transparent;
+		& fieldset {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: var(--100);
+			margin: 0 auto;
+		}
+
+		& legend {
+			font-family: var(--bronova);
+			font-size: clamp(var(--h6), 3vw, var(--xxl));
+			font-weight: 800;
+			letter-spacing: 1px;
+			color: var(--clr-blue);
+			padding-inline: 1rem;
+			margin-bottom: 1rem;
+
+			@media screen and (width >= 720px) {
+				margin-bottom: 0;
+			}
+		}
+
+		& label {
+			transform: translate(20px, 5px);
+			background-color: transparent;
+			width: fit-content;
+			padding: 0 0.5rem;
+			font-family: var(--bronova);
+			font-size: clamp(var(--h6), 1.5vw, var(--h3));
+			font-weight: 500;
+			z-index: 5;
+			border-radius: var(--radius);
+			align-self: flex-start;
+			position: relative;
+			color: var(--clr-gray);
+			transition: color 0.3s ease;
+
+			@media (width <= 500px) {
+				transform: translate(20px, 7px);
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: -4px;
+				right: -4px;
+				height: 2rem;
+				background-color: var(--label-bg);
+				color: var(--clr-inputs);
+				transform: translateY(-50%);
+				z-index: -1;
+				border-radius: var(--radius);
+			}
+		}
+
+		& input,
+		& textarea {
+			width: 100%;
+			background-color: transparent;
 			box-shadow: none;
+			border: 3px solid var(--dark-gray);
+			border-radius: var(--radius);
+			caret-color: var(--sky);
+			color: var(--white);
+			font-size: clamp(var(--sm), 2vw, var(--h4));
+			outline: none;
+			transition:
+				border-color 0.3s ease,
+				box-shadow 0.3s ease,
+				background-color 0.2s ease;
+
+			@media screen and (width >= 1350px) {
+				padding: 2rem;
+			}
+
+			&:focus {
+				outline: none;
+				border-color: var(--sky);
+				box-shadow: 0 0 0 2px var(--sky);
+			}
+
+			&:user-valid {
+				border-color: var(--success);
+				box-shadow: 0 0 0 2px var(--success);
+				background-color: hsla(120, 60%, 50%, 0.05);
+
+				& + label {
+					color: var(--success);
+				}
+			}
+
+			&:user-invalid {
+				border-color: var(--fail);
+				box-shadow: 0 0 0 2px var(--fail);
+				background-color: hsla(0, 70%, 55%, 0.05);
+				animation: wiggle 0.5s ease-in-out;
+
+				& + label {
+					color: var(--fail);
+				}
+			}
+
+			&:placeholder-shown {
+				&:user-invalid {
+					border-color: var(--dark-gray);
+					box-shadow: none;
+					background-color: transparent;
+					animation: none;
+				}
+			}
+
+			&::placeholder {
+				color: var(--clr-main);
+				font-weight: 100;
+				opacity: 0.7;
+			}
+		}
+
+		& input {
+			&:placeholder-shown {
+				letter-spacing: 3px;
+			}
+		}
+
+		& textarea {
+			padding: 0.5rem 1rem;
+			resize: vertical;
+			min-height: 120px;
+
+			&:placeholder-shown {
+				letter-spacing: 0px;
+			}
+		}
+
+		& .submit-button {
+			margin-top: 1em;
 		}
 	}
 
-	legend {
-		@media screen and (width >= 720px) {
-			margin-bottom: 0;
+	label {
+		&:has(+ input:user-valid),
+		&:has(+ textarea:user-valid) {
+			color: var(--success);
+			font-weight: 600;
 		}
-	}
 
-	input,
-	textarea {
-		@media screen and (width >= 1350px) {
-			padding: 2rem;
+		&:has(+ input:user-invalid:not(:placeholder-shown)),
+		&:has(+ textarea:user-invalid:not(:placeholder-shown)) {
+			color: var(--fail);
+			font-weight: 600;
 		}
 	}
 
@@ -284,6 +297,10 @@
 		80% {
 			rotate: 2deg;
 			translate: 5px 0;
+		}
+		100% {
+			rotate: 0deg;
+			translate: 0 0;
 		}
 	}
 </style>

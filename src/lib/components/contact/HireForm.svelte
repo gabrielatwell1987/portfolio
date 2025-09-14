@@ -159,7 +159,7 @@
 			padding: 0.5rem;
 		}
 
-		& .form-grid {
+		.form-grid {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			gap: 1.5rem;
@@ -189,11 +189,11 @@
 			}
 		}
 
-		& .form-group {
+		.form-group {
 			display: flex;
 			flex-direction: column;
 
-			& select {
+			select {
 				appearance: none;
 				background-color: transparent;
 				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23c69306' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
@@ -207,12 +207,30 @@
 				cursor: pointer;
 				line-height: inherit;
 				outline: none;
+				transition:
+					border-color 0.3s ease,
+					box-shadow 0.3s ease,
+					background-color 0.2s ease;
 
 				&:focus {
 					border-color: var(--clr-main);
-					box-shadow: none;
+					box-shadow: 0 0 0 2px var(--sky);
 				}
-				& option {
+
+				&:user-valid {
+					border-color: var(--success);
+					box-shadow: 0 0 0 2px var(--success);
+					background-color: hsla(120, 60%, 50%, 0.05);
+				}
+
+				&:user-invalid {
+					border-color: var(--fail);
+					box-shadow: 0 0 0 2px var(--fail);
+					background-color: hsla(0, 70%, 55%, 0.05);
+					animation: wiggle 0.5s ease-in-out;
+				}
+
+				option {
 					background-color: var(--clr-inverted);
 					color: var(--clr-main);
 					padding: 0.5rem;
@@ -230,6 +248,21 @@
 		font-size: clamp(var(--sm), 1vw, var(--h4));
 		font-weight: 700;
 		color: var(--clr-blue);
+		transition: color 0.3s ease;
+	}
+
+	.form-group:has(input:user-valid) .label-text,
+	.form-group:has(select:user-valid) .label-text,
+	.form-group:has(textarea:user-valid) .label-text {
+		color: var(--success);
+		font-weight: 700;
+	}
+
+	.form-group:has(input:user-invalid:not(:placeholder-shown)) .label-text,
+	.form-group:has(select:user-invalid) .label-text,
+	.form-group:has(textarea:user-invalid:not(:placeholder-shown)) .label-text {
+		color: var(--fail);
+		font-weight: 700;
 	}
 
 	.tac {
@@ -247,22 +280,41 @@
 		font-size: var(--sm);
 		width: 100%;
 		transition:
-			border-color 0.2s,
-			box-shadow 0.2s;
-	}
+			border-color 0.3s ease,
+			box-shadow 0.3s ease,
+			background-color 0.2s ease;
 
-	input::placeholder,
-	textarea::placeholder {
-		color: var(--clr-main);
-		opacity: 0.7;
-		font-size: clamp(0.8rem, 1vw, 1.75rem);
-	}
+		&::placeholder {
+			color: var(--clr-main);
+			opacity: 0.7;
+			font-size: clamp(0.8rem, 1vw, 1.75rem);
+		}
 
-	input:focus,
-	select:focus,
-	textarea:focus {
-		outline: none;
-		border-color: var(--clr-gray);
+		&:focus {
+			outline: none;
+			border-color: var(--sky);
+			box-shadow: 0 0 0 2px var(--sky);
+		}
+
+		&:user-valid {
+			border-color: var(--success);
+			box-shadow: 0 0 0 2px var(--success);
+			background-color: hsla(120, 60%, 50%, 0.05);
+		}
+
+		&:user-invalid {
+			border-color: var(--fail);
+			box-shadow: 0 0 0 2px var(--fail);
+			background-color: hsla(0, 70%, 55%, 0.05);
+			animation: wiggle 0.5s ease-in-out;
+
+			&:placeholder-shown {
+				border-color: var(--clr-gray);
+				box-shadow: none;
+				background-color: transparent;
+				animation: none;
+			}
+		}
 	}
 
 	@keyframes wiggle {
@@ -277,6 +329,10 @@
 		80% {
 			rotate: 2deg;
 			translate: 5px 0;
+		}
+		100% {
+			rotate: 0deg;
+			translate: 0 0;
 		}
 	}
 </style>
