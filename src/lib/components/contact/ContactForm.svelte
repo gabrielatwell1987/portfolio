@@ -26,37 +26,43 @@
 	<fieldset>
 		<legend>message me</legend>
 
-		<label for="name">name</label>
-		<input
-			type="text"
-			id="name"
-			name="name"
-			bind:value={name}
-			required
-			aria-describedby="name-error"
-			autocomplete="name"
-		/>
+		<div class="form-group">
+			<label for="name">name</label>
+			<input
+				type="text"
+				id="name"
+				name="name"
+				bind:value={name}
+				required
+				aria-describedby="name-error"
+				autocomplete="name"
+			/>
+		</div>
 
-		<label for="email">email</label>
-		<input
-			type="email"
-			id="email"
-			name="email"
-			bind:value={email}
-			required
-			aria-describedby="email-error"
-			autocomplete="email"
-		/>
+		<div class="form-group">
+			<label for="email">email</label>
+			<input
+				type="email"
+				id="email"
+				name="email"
+				bind:value={email}
+				required
+				aria-describedby="email-error"
+				autocomplete="email"
+			/>
+		</div>
 
-		<label for="message">message</label>
-		<textarea
-			id="message"
-			name="message"
-			bind:value={message}
-			rows="5"
-			required
-			aria-describedby="message-error"
-		></textarea>
+		<div class="form-group">
+			<label for="message">message</label>
+			<textarea
+				id="message"
+				name="message"
+				bind:value={message}
+				rows="5"
+				required
+				aria-describedby="message-error"
+			></textarea>
+		</div>
 
 		<div class="submit-button">
 			<SubmitButton />
@@ -117,13 +123,13 @@
 				border-radius: 10px;
 				width: 90%;
 
-				& input {
+				& .form-group input {
 					margin-bottom: 1rem;
 					transform: scale(1.05);
 					width: var(--100);
 				}
 
-				& textarea {
+				& .form-group textarea {
 					margin-bottom: 1rem;
 					width: var(--100);
 				}
@@ -153,135 +159,128 @@
 			}
 		}
 
-		& label {
-			transform: translate(20px, 5px);
-			background-color: transparent;
-			width: fit-content;
-			padding: 0 0.5rem;
-			font-family: var(--bronova);
-			font-size: clamp(var(--h6), 1.5vw, var(--h3));
-			font-weight: 500;
-			z-index: 5;
-			border-radius: var(--radius);
-			align-self: flex-start;
-			position: relative;
-			color: var(--clr-gray);
-			transition: color 0.3s ease;
-
-			@media (width <= 500px) {
-				transform: translate(20px, 7px);
-			}
-
-			&::before {
-				content: '';
-				position: absolute;
-				top: 50%;
-				left: -4px;
-				right: -4px;
-				height: 2rem;
-				background-color: var(--label-bg);
-				color: var(--clr-inputs);
-				transform: translateY(-50%);
-				z-index: -1;
-				border-radius: var(--radius);
-			}
-		}
-
-		& input,
-		& textarea {
+		& .form-group {
+			display: flex;
+			flex-direction: column;
 			width: 100%;
-			background-color: transparent;
-			box-shadow: none;
-			border: 3px solid var(--dark-gray);
-			border-radius: var(--radius);
-			caret-color: var(--sky);
-			color: var(--white);
-			font-size: clamp(var(--sm), 2vw, var(--h4));
-			outline: none;
-			transition:
-				border-color 0.3s ease,
-				box-shadow 0.3s ease,
-				background-color 0.2s ease;
+			position: relative;
 
-			@media screen and (width >= 1350px) {
-				padding: 2rem;
+			& label {
+				transform: translate(20px, 5px);
+				background-color: transparent;
+				width: fit-content;
+				padding: 0 0.5rem;
+				font-family: var(--bronova);
+				font-size: clamp(var(--h6), 1.5vw, var(--h3));
+				font-weight: 500;
+				z-index: 5;
+				border-radius: var(--radius);
+				align-self: flex-start;
+				position: relative;
+				color: var(--clr-gray);
+				transition: color 0.3s ease;
+
+				@media (width <= 500px) {
+					transform: translate(20px, 7px);
+				}
+
+				&::before {
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: -4px;
+					right: -4px;
+					height: 2rem;
+					background-color: var(--label-bg);
+					color: var(--clr-inputs);
+					transform: translateY(-50%);
+					z-index: -1;
+					border-radius: var(--radius);
+				}
 			}
 
-			&:focus {
+			& input,
+			& textarea {
+				width: 100%;
+				background-color: transparent;
+				box-shadow: none;
+				border: 3px solid var(--dark-gray);
+				border-radius: var(--radius);
+				caret-color: var(--sky);
+				color: var(--clr-main);
+				font-size: clamp(var(--sm), 2vw, var(--h4));
 				outline: none;
-				border-color: var(--sky);
-				box-shadow: 0 0 0 2px var(--sky);
-			}
+				transition:
+					border-color 0.3s ease,
+					box-shadow 0.3s ease,
+					background-color 0.2s ease;
 
-			&:user-valid {
-				border-color: var(--success);
-				box-shadow: 0 0 0 2px var(--success);
-				background-color: hsla(120, 60%, 50%, 0.05);
-
-				& + label {
-					color: var(--success);
+				@media screen and (width >= 1350px) {
+					padding: 2rem;
 				}
-			}
 
-			&:user-invalid {
-				border-color: var(--fail);
-				box-shadow: 0 0 0 2px var(--fail);
-				background-color: hsla(0, 70%, 55%, 0.05);
-				animation: wiggle 0.5s ease-in-out;
-
-				& + label {
-					color: var(--fail);
+				&:focus {
+					outline: none;
+					border-color: var(--sky);
+					box-shadow: 0 0 0 2px var(--sky);
 				}
-			}
 
-			&:placeholder-shown {
+				&:user-valid {
+					border-color: var(--success);
+					box-shadow: 0 0 0 2px var(--success);
+					background-color: hsla(120, 60%, 50%, 0.05);
+				}
+
 				&:user-invalid {
+					border-color: var(--fail);
+					box-shadow: 0 0 0 2px var(--fail);
+					background-color: hsla(0, 70%, 55%, 0.05);
+					animation: wiggle 0.5s ease-in-out;
+				}
+
+				&:placeholder-shown:user-invalid {
 					border-color: var(--dark-gray);
 					box-shadow: none;
 					background-color: transparent;
 					animation: none;
 				}
+
+				&::placeholder {
+					color: var(--clr-gray);
+					font-weight: 100;
+					opacity: 0.7;
+				}
 			}
 
-			&::placeholder {
-				color: var(--clr-main);
-				font-weight: 100;
-				opacity: 0.7;
-			}
-		}
-
-		& input {
-			&:placeholder-shown {
+			& input:placeholder-shown {
 				letter-spacing: 3px;
 			}
-		}
 
-		& textarea {
-			padding: 0.5rem 1rem;
-			resize: vertical;
-			min-height: 120px;
+			& textarea {
+				padding: 0.5rem 1rem;
+				resize: vertical;
+				min-height: 120px;
 
-			&:placeholder-shown {
-				letter-spacing: 0px;
+				&:placeholder-shown {
+					letter-spacing: 0px;
+				}
+			}
+
+			&:has(input:user-valid) label,
+			&:has(textarea:user-valid) label {
+				color: var(--success);
+				font-weight: 600;
+			}
+
+			&:has(input:user-invalid:not(:placeholder-shown)) label,
+			&:has(textarea:user-invalid:not(:placeholder-shown)) label {
+				color: var(--fail);
+				font-weight: 600;
 			}
 		}
 
 		& .submit-button {
 			margin-top: 1em;
-		}
-	}
-
-	label {
-		&:has(+ input:user-valid),
-		&:has(+ textarea:user-valid) {
-			color: var(--success);
-			font-weight: 600;
-		}
-
-		&:has(+ input:user-invalid:not(:placeholder-shown)),
-		&:has(+ textarea:user-invalid:not(:placeholder-shown)) {
-			color: var(--fail);
-			font-weight: 600;
 		}
 	}
 
