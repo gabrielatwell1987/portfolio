@@ -1,3 +1,4 @@
+// form state manager
 export function createForm(initialValues = {}) {
 	let values = $state({ ...initialValues });
 	let errors = $state({});
@@ -32,10 +33,6 @@ export function createForm(initialValues = {}) {
 
 		clearError(field) {
 			delete errors[field];
-		},
-
-		setSubmitting(value) {
-			isSubmitting = value;
 		},
 
 		reset() {
