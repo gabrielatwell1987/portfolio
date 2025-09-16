@@ -1,6 +1,3 @@
-// Image optimization script
-// This script can be used to create responsive versions of images
-
 import sharp from 'sharp';
 import { promises as fs } from 'fs';
 import path from 'path';
@@ -15,6 +12,9 @@ const BREAKPOINTS = [
 	{ width: 1200, suffix: '-1200w' }
 ];
 
+// Allowed images for security
+const ALLOWED_IMAGES = ['svelteCode.webp', 'atwellUI.webp'];
+
 async function optimizeImage(inputPath, outputPath, width, quality = 85) {
 	try {
 		await sharp(inputPath)
@@ -26,50 +26,44 @@ async function optimizeImage(inputPath, outputPath, width, quality = 85) {
 			.toFile(outputPath);
 
 		console.log(`✅ Created ${outputPath} (${width}px wide)`);
+		return { success: true, message: `Created ${outputPath}` };
 	} catch (error) {
 		console.error(`❌ Error creating ${outputPath}:`, error.message);
+		return { success: false, error: error.message };
 	}
 }
 
 async function createResponsiveVersions(imageName) {
+	if (!ALLOWED_IMAGES.includes(imageName)) {
+		return { success: false, error: 'Image not allowed' };
+	}
+
 	const inputPath = path.join(LOGOS_DIR, imageName);
 
 	// Check if source file exists
 	try {
 		await fs.access(inputPath);
 	} catch {
-		console.error(`❌ Source file not found: ${inputPath}`);
-		return;
+		return { success: false, error: `Source file not found: ${inputPath}` };
 	}
 
 	console.log(`🔄 Processing ${imageName}...`);
+	const results = [];
 
 	for (const breakpoint of BREAKPOINTS) {
 		const fileName = path.parse(imageName);
 		const outputName = `${fileName.name}${breakpoint.suffix}${fileName.ext}`;
 		const outputPath = path.join(LOGOS_DIR, outputName);
 
-		await optimizeImage(inputPath, outputPath, breakpoint.width);
-	}
-}
-
-// Optimize specific images that cause performance issues
-const IMAGES_TO_OPTIMIZE = ['svelteCode.webp', 'atwellUI.webp'];
-
-async function main() {
-	console.log('📸 Starting image optimization...\n');
-
-	for (const imageName of IMAGES_TO_OPTIMIZE) {
-		await createResponsiveVersions(imageName);
-		console.log(''); // Empty line for readability
+		const result = await optimizeImage(inputPath, outputPath, breakpoint.width);
+		results.push(result);
 	}
 
-	console.log('✨ Image optimization complete!');
+	return { success: true, results };
 }
 
-// Run if this script is executed directly
-if (process.argv[1] === new URL(import.meta.url).pathname) {
-	main().catch(console.error);
+// Remote function for client calls
+export async function optimizeImages(imageName) {
+	const result = await createResponsiveVersions(imageName);
+	return result;
 }
-
-export { createResponsiveVersions, optimizeImage };
