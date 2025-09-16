@@ -7,7 +7,13 @@ const config = {
 	kit: {
 		adapter: adapter()
 	},
-	vitePlugin: { inspector: true },
+	vitePlugin: {
+		inspector: {
+			toggleButtonPos: 'bottom-left',
+			toggleKeyCombo: 'alt-x',
+			showToggleButton: 'always'
+		}
+	},
 	extensions: ['.svelte', '.md', '.svx'],
 	preprocess: [mdsvex({ extensions: ['.md', '.svx'] })],
 	prerender: { entries: ['/photos'] }
