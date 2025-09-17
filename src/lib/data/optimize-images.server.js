@@ -12,9 +12,6 @@ const BREAKPOINTS = [
 	{ width: 1200, suffix: '-1200w' }
 ];
 
-// Allowed images for security
-const ALLOWED_IMAGES = ['svelteCode.webp', 'atwellUI.webp'];
-
 async function optimizeImage(inputPath, outputPath, width, quality = 85) {
 	try {
 		await sharp(inputPath)
@@ -34,8 +31,9 @@ async function optimizeImage(inputPath, outputPath, width, quality = 85) {
 }
 
 async function createResponsiveVersions(imageName) {
-	if (!ALLOWED_IMAGES.includes(imageName)) {
-		return { success: false, error: 'Image not allowed' };
+	// Check if the imageName ends with .webp and exists in LOGOS_DIR
+	if (!imageName.endsWith('.webp')) {
+		return { success: false, error: 'Only .webp images are allowed' };
 	}
 
 	const inputPath = path.join(LOGOS_DIR, imageName);
@@ -60,6 +58,26 @@ async function createResponsiveVersions(imageName) {
 	}
 
 	return { success: true, results };
+}
+
+async function getAllowedImages() {
+	try {
+		const files = await fs.readdir(LOGOS_DIR);
+		return files.filter((file) => file.endsWith('.webp'));
+	} catch {
+		return [];
+	}
+}
+
+// New batch function
+export async function optimizeAllImages() {
+	const images = await getAllowedImages();
+	const allResults = [];
+	for (const image of images) {
+		const result = await createResponsiveVersions(image);
+		allResults.push({ image, ...result });
+	}
+	return { success: true, results: allResults };
 }
 
 // Remote function for client calls
