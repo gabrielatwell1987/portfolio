@@ -3,8 +3,6 @@
 	import HeroTitle from '$lib/components/layout/HeroTitle.svelte';
 	import Button from '$lib/components/layout/Button.svelte';
 
-	let videoElement;
-
 	function proceedToMain() {
 		localStorage.setItem('visitedLanding', 'true');
 		goto('/landing');
