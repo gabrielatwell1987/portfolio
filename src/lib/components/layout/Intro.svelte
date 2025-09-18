@@ -76,7 +76,7 @@
 				margin: -0.5rem 0 2rem 0;
 
 				& a {
-					color: var(--clr-link);
+					color: var(--clr-blue);
 					font-weight: 700;
 				}
 			}
