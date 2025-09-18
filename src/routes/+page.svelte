@@ -1,5 +1,5 @@
 <script>
-	import Intro from '$lib/components/layout/Intro.svelte';
+	import Intro from '$lib/components/landing/Intro.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 </script>
 
