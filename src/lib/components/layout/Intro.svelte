@@ -5,22 +5,6 @@
 
 	let videoElement;
 
-	$effect(() => {
-		document.addEventListener('visibilitychange', handleVisibilityChange);
-
-		return () => {
-			document.removeEventListener('visibilitychange', handleVisibilityChange);
-		};
-	});
-
-	function handleVisibilityChange() {
-		if (document.hidden && videoElement) {
-			videoElement.pause();
-		} else if (videoElement) {
-			videoElement.play();
-		}
-	}
-
 	function proceedToMain() {
 		localStorage.setItem('visitedLanding', 'true');
 		goto('/landing');
@@ -28,22 +12,7 @@
 </script>
 
 <main class="intro">
-	<video
-		autoplay
-		muted
-		loop
-		playsinline
-		class="intro-video"
-		preload="true"
-		bind:this={videoElement}
-		aria-label="intro video"
-	>
-		<source src="/videos/skully.mp4" type="video/mp4" />
-
-		<source src="/videos/skully.webm" type="video/webm" />
-
-		Your browser does not support the video tag.
-	</video>
+	<img src="/logos/skully.webp" alt="a skull" class="intro-video" />
 
 	<div class="intro-content">
 		<HeroTitle title="Welcome!" />
