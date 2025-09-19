@@ -16,9 +16,9 @@
 		"check": "svelte-check"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.3.1",
-		"@sveltejs/adapter-vercel": "^5.3.0",
-		"@sveltejs/kit": "^2.5.27",
+		"@sveltejs/adapter-auto": "^6.1.0",
+		"@sveltejs/adapter-vercel": "^5.10.2",
+		"@sveltejs/kit": "^2.42.2",
 		"@sveltejs/vite-plugin-svelte": "^6.1.0",
 		"@vite-pwa/assets-generator": "^0.2.4",
 		"dotenv": "^16.4.5",
@@ -46,5 +46,8 @@
 		"marked": "^15.0.12",
 		"split-type": "^0.3.4",
 		"svelte": "^5.1.9"
+	},
+	"overrides": {
+		"cookie": "^0.7.0"
 	}
 }
