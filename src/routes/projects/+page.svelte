@@ -3,10 +3,8 @@
 	import Title from '$lib/components/layout/Title.svelte';
 	import Popup from '$lib/components/layout/Popup.svelte';
 	import Testimonial from '$lib/components/projects/Testimonial.svelte';
-	// import adrienne from '$lib/images/adrienne.webp';
 	import projects from '$lib/components/projects/projects.json';
 	import testimonials from '$lib/components/projects/testimonials.json';
-	// import user from '$lib/images/user.webp';
 
 	// State management with $state
 	let ProjectComponent = $state(null);
@@ -92,7 +90,7 @@
 			{@const testimonial = getTestimonialForProject(project.index)}
 
 			{#if testimonial}
-				<div class="whole">
+				<div class="wholeProject">
 					<ProjectComponent {...project} />
 					<Testimonial
 						name={testimonial.name}
@@ -193,14 +191,15 @@
 			grid-template-columns: 1fr;
 		}
 
-		& .whole {
+		& .wholeProject {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			gap: 0.25rem;
-			border: 1px solid var(--clr-inverted);
+			border: 2px solid var(--clr-gray);
 			border-radius: var(--radius);
+			padding-top: 2em;
 
 			@media (width <= 768px) {
 				margin: 0.5rem;
