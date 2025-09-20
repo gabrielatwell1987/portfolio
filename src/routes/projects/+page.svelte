@@ -203,6 +203,7 @@
 
 			@media (width <= 768px) {
 				margin: 0.5rem;
+				margin-bottom: 2em;
 			}
 		}
 	}
