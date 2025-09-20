@@ -33,7 +33,7 @@
 </script>
 
 <section class="morph">
-	<svg id="sourceSVG" viewBox="0 0 400 100" preserveAspectRatio="xMidYMid meet">
+	<svg id="sourceSVG" viewBox="0 0 450 100" preserveAspectRatio="xMidYMid meet">
 		<title>Gabe</title>
 		<rect
 			id="square1"
@@ -41,7 +41,7 @@
 			y="0"
 			width="80"
 			height="80"
-			fill="var(--clr-link)"
+			fill="var(--clr-inverted)"
 			stroke="var(--clr-main)"
 			stroke-width="2"
 		/>
@@ -50,7 +50,7 @@
 			cx="140"
 			cy="40"
 			r="40"
-			fill="var(--clr-blue)"
+			fill="var(--clr-gray)"
 			stroke="var(--clr-main)"
 			stroke-width="2"
 		/>
@@ -67,13 +67,13 @@
 			y="0"
 			width="80"
 			height="80"
-			fill="var(--clr-link)"
+			fill="var(--clr-inverted)"
 			stroke="var(--clr-main)"
 			stroke-width="2"
 		/>
 	</svg>
 
-	<svg id="targetSVG" viewBox="0 0 400 100" preserveAspectRatio="xMidYMid meet">
+	<svg id="targetSVG" viewBox="0 0 450 100" preserveAspectRatio="xMidYMid meet">
 		<title>Gabe</title>
 		<!-- Letter G positioned to match square1 (0-80 area) -->
 		<path
