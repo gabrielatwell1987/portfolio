@@ -60,8 +60,7 @@
 
 	.bigWord {
 		font-family: var(--orbitron);
-		font-size: clamp(3rem, 15vw, 40rem);
-		color: var(--clr-blue);
+		font-size: clamp(2.5rem, 10vw, 35rem);
 		text-wrap: none;
 		display: block;
 		letter-spacing: -1px;
@@ -77,14 +76,14 @@
 	}
 
 	.glow {
-		color: var(--dark-blue);
+		color: var(--clr-inverted);
 		text-shadow:
 			0 0 5px #17262c,
-			0 0 5px #eee,
-			0 0 5px #eee,
-			0 0 10px #eee,
-			0 0 15px #eee,
-			0 0 20px #eee;
+			0 0 5px var(--clr-main),
+			0 0 5px var(--clr-main),
+			0 0 10px var(--clr-main),
+			0 0 15px var(--clr-main),
+			0 0 20px var(--clr-main);
 	}
 
 	.animated-text {

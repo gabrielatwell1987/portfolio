@@ -42,7 +42,7 @@
 		id="mobile-menu"
 		aria-label="Main navigation menu"
 	>
-		<li><NavLink href="/landing" title="Home" onclick={closeMenu} /></li>
+		<li><NavLink href="/" title="Home" onclick={closeMenu} /></li>
 		<li><NavLink href="/about" title="About Gabe" onclick={closeMenu} /></li>
 		<li><NavLink href="/projects" title="Things I've Built" onclick={closeMenu} /></li>
 		<li><NavLink href="/learn" title="Learn the Web" onclick={closeMenu} /></li>
