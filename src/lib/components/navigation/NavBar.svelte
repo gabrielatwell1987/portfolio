@@ -33,7 +33,7 @@
 		<li><NavLink href="/about" title="About" /></li>
 		<li><NavLink href="/projects" title="Builds" /></li>
 		<li><NavLink href="/learn" title="Learn" /></li>
-		<li><NavLink href="/photos" title="Photos" /></li>
+		<!-- <li><NavLink href="/photos" title="Photos" /></li> -->
 		<SelectLink path1="/hire" path2="/contact" />
 	</ul>
 
@@ -46,7 +46,7 @@
 		<li><NavLink href="/about" title="About Gabe" onclick={closeMenu} /></li>
 		<li><NavLink href="/projects" title="Things I've Built" onclick={closeMenu} /></li>
 		<li><NavLink href="/learn" title="Learn the Web" onclick={closeMenu} /></li>
-		<li><NavLink href="/photos" title="Photos of Me" onclick={closeMenu} /></li>
+		<!-- <li><NavLink href="/photos" title="Photos of Me" onclick={closeMenu} /></li> -->
 		<li><NavLink href="/hire" title="Hire Me" onclick={closeMenu} /></li>
 		<li><NavLink href="/contact" title="Contact Me" onclick={closeMenu} /></li>
 	</ul>
@@ -137,7 +137,7 @@
 	.mobile {
 		position: fixed;
 		right: 1em;
-		top: 4em;
+		top: 1em;
 		z-index: 10;
 		overflow: hidden;
 		transform: scale(0);
@@ -146,6 +146,7 @@
 			transform 0.4s ease-in-out;
 		opacity: 0;
 		transform-origin: top left;
+		box-shadow: 0 0 5px 3px var(--clr-gray);
 
 		&.open {
 			transform: scale(1);
@@ -163,7 +164,6 @@
 			justify-content: space-around;
 			align-items: center;
 			gap: 1.25rem;
-			box-shadow: 0 0 10px 7px var(--clr-gray);
 			border-radius: 5px;
 			padding: 0.75rem;
 			background-color: var(--clr-inverted);
