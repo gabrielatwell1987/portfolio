@@ -37,7 +37,7 @@
 	h2 {
 		display: block;
 		margin-top: 2em;
-		color: var(--clr-blue);
+		color: var(--clr-main);
 		font-family: var(--bronova-bold);
 		font-size: clamp(var(--h6), 3vw, var(--h2));
 		font-weight: 800;
@@ -90,7 +90,7 @@
 					text-wrap: balance;
 
 					& a:visited {
-						color: var(--clr-main);
+						color: var(--clr-gray);
 					}
 				}
 			}

@@ -1,5 +1,6 @@
 <script>
 	import HeroButton from './HeroButton.svelte';
+	import DoYouNeed from '$lib/components/landing/DoYouNeed.svelte';
 
 	let mounted = $state(false);
 	let titleText = 'Frontend Crafted Web Experiences';
@@ -126,6 +127,10 @@
 					</div>
 				</dl>
 			</section>
+		</div>
+
+		<div class="do-you-need">
+			<DoYouNeed text="do you need a " span="website?" />
 		</div>
 	</section>
 </main>
@@ -267,7 +272,8 @@
 		padding: 2rem;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: flex-start;
+		align-items: center;
 		min-height: 80vh;
 
 		@media (height <= 700px) {
@@ -277,6 +283,10 @@
 
 		@media (width <= 768px) {
 			padding: 1rem;
+		}
+
+		& .do-you-need {
+			margin-top: -9em;
 		}
 
 		& .title-container {
