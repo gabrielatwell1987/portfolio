@@ -300,7 +300,7 @@
 				font-family: var(--orbitron);
 				font-size: clamp(var(--h4), 5vw, var(--xxl));
 				font-weight: 700;
-				color: var(--clr-blue);
+				color: var(--clr-inverted);
 				text-shadow:
 					0 0 10px rgba(255, 255, 255, 0.3),
 					0 0 20px rgba(255, 255, 255, 0.2),
@@ -316,7 +316,7 @@
 				}
 
 				& .cursor {
-					color: var(--clr-blue);
+					color: var(--clr-inverted);
 					font-weight: 300;
 					animation: none;
 
@@ -418,7 +418,7 @@
 							font-family: var(--orbitron);
 							font-size: clamp(var(--sm), 3vw, var(--h2));
 							font-weight: 700;
-							color: var(--clr-blue);
+							color: var(--clr-inverted);
 							text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 							margin: 0;
 						}
