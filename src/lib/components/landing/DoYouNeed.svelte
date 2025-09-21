@@ -35,6 +35,10 @@
 
 	.animated-text {
 		padding-top: 10em;
+
+		@media (width <= 768px) {
+			margin-top: -15%;
+		}
 	}
 
 	.sentence {
@@ -52,6 +56,11 @@
 			opacity 1.25s ease-in-out;
 		transition-delay: 1s;
 
+		@media (width <= 768px) {
+			margin-top: 7%;
+			opacity: 0.9;
+		}
+
 		&.animate {
 			transform: translateY(0);
 			opacity: 1;
@@ -65,6 +74,11 @@
 		display: block;
 		letter-spacing: -1px;
 		line-height: 1.2;
+
+		@media (width <= 768px) {
+			font-weight: 600;
+			margin-top: 2%;
+		}
 
 		& .char {
 			display: inline-block;
@@ -81,40 +95,18 @@
 			0 0 5px #17262c,
 			0 0 5px var(--clr-main),
 			0 0 5px var(--clr-main),
-			0 0 10px var(--clr-main),
-			0 0 15px var(--clr-main),
-			0 0 20px var(--clr-main);
-	}
+			0 0 5px var(--clr-main),
+			0 0 6px var(--clr-main),
+			0 0 7px var(--clr-main);
 
-	.animated-text {
-		@media (width <= 768px) {
-			margin-top: -15%;
-		}
-	}
-
-	.sentence {
-		@media (width <= 768px) {
-			margin-top: 7%;
-			opacity: 0.9;
-		}
-	}
-
-	.bigWord {
-		@media (width <= 768px) {
-			font-weight: 600;
-			margin-top: 2%;
-		}
-	}
-
-	.glow {
 		@media (width <= 768px) {
 			text-shadow:
 				0 0 3px #17262c,
 				0 0 4px #eee,
-				0 0 5px #eee,
-				0 0 6px #eee,
-				0 0 15px #eee,
-				0 0 5px #eee;
+				0 0 4px #eee,
+				0 0 4px #eee,
+				0 0 4px #eee,
+				0 0 4px #eee;
 		}
 	}
 
