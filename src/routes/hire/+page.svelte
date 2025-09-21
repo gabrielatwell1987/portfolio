@@ -13,16 +13,16 @@
 
 <Title title="grow online" />
 
-<section>
-	<div class="personal-image">
-		<Image
-			src="/images/hire-gabe.webp"
-			alt="Gabriel Atwell"
-			style="width: clamp(200px, 30vw, 750px);"
-			aspectRatio="1/1"
-		/>
-	</div>
+<div class="personal-image">
+	<Image
+		src="/images/hire-gabe.webp"
+		alt="Gabriel Atwell"
+		style="width: clamp(200px, 30vw, 750px);"
+		aspectRatio="1/1"
+	/>
+</div>
 
+<section>
 	<HireForm />
 </section>
 
@@ -31,9 +31,9 @@
 		display: grid;
 		place-items: center;
 		height: 100vh;
+	}
 
-		& .personal-image {
-			margin-bottom: 2.5em;
-		}
+	.personal-image {
+		margin-bottom: 2.5em;
 	}
 </style>
