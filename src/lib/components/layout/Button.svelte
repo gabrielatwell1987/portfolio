@@ -12,7 +12,7 @@
 			text-decoration: none;
 			background-color: transparent;
 			font-family: var(--ultra);
-			font-size: clamp(var(--h6), 1.5vw, var(--h4));
+			font-size: clamp(var(--h6), 2vw, var(--h3));
 			font-weight: 900;
 			color: var(--clr-main);
 			border: 1px solid var(--clr-main);

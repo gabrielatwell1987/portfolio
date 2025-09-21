@@ -416,7 +416,7 @@
 
 						& .stat-number {
 							font-family: var(--ultra);
-							font-size: clamp(var(--sm), 3vw, var(--h2));
+							font-size: clamp(var(--h6), 3vw, var(--h2));
 							font-weight: 700;
 							color: var(--clr-inverted);
 							text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
@@ -425,7 +425,7 @@
 
 						& .stat-label {
 							font-family: var(--bronova);
-							font-size: 0.9rem;
+							font-size: clamp(var(--sm), 3vw, var(--h2));
 							color: var(--clr-main);
 							text-transform: uppercase;
 							letter-spacing: 1px;
