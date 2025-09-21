@@ -107,10 +107,12 @@
 		width: 100%;
 		padding: 1rem;
 		padding-top: 5em;
+		margin-left: 2em;
 
 		@media (width <= 768px) {
 			padding: 0.5rem;
 			scale: 0.8;
+			margin-left: 1em;
 		}
 
 		& svg {
