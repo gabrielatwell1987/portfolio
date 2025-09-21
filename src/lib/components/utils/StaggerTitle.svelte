@@ -23,7 +23,7 @@
 <style>
 	.title {
 		text-align: center;
-		font-family: var(--orbitron);
+		font-family: var(--ultra);
 		font-size: clamp(2.5rem, 10.5vw, 15rem);
 		color: var(--clr-blue);
 		letter-spacing: 5px;

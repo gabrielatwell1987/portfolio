@@ -11,7 +11,7 @@
 			display: inline-block;
 			text-decoration: none;
 			background-color: transparent;
-			font-family: var(--orbitron);
+			font-family: var(--ultra);
 			font-size: clamp(var(--h6), 1.5vw, var(--h4));
 			font-weight: 900;
 			color: var(--clr-main);

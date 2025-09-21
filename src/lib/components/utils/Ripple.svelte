@@ -11,7 +11,7 @@
 		position: relative;
 		overflow: hidden;
 		padding: 0.75rem 1rem;
-		font-family: var(--orbitron);
+		font-family: var(--ultra);
 		font-size: clamp(1.2rem, 1.5vw, 2rem);
 		font-weight: 900;
 		letter-spacing: 1px;

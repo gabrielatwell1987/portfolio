@@ -35,7 +35,7 @@
 			margin-inline: auto;
 			padding: 0.5rem 1rem;
 			border-radius: 12px;
-			font-family: var(--orbitron);
+			font-family: var(--ultra);
 			font-size: clamp(var(--h2), 2vw, var(--xl));
 			font-weight: 600;
 			margin-top: 15%;

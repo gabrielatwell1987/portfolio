@@ -121,7 +121,7 @@
 		align-items: center;
 		flex-wrap: wrap;
 		gap: clamp(0.25rem, 2vw, 1.5rem);
-		font-family: var(--orbitron);
+		font-family: var(--ultra);
 		font-weight: 600;
 		list-style: none;
 

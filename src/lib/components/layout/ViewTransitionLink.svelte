@@ -42,7 +42,7 @@
 		margin: 0;
 
 		& .heading {
-			font-family: var(--orbitron);
+			font-family: var(--ultra);
 			font-size: clamp(3rem, 5vw, 10rem);
 			color: var(--clr-main);
 			text-align: center;
