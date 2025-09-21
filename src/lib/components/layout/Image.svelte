@@ -1,6 +1,6 @@
 <script>
 	/** @type {{src: any, alt: any, width?: any, height?: any, aspectRatio?: string}} */
-	let { src, alt, width, height, aspectRatio } = $props();
+	let { src, alt, width, height, aspectRatio, style } = $props();
 
 	let imageError = $state(false);
 
@@ -14,32 +14,15 @@
 		}
 		return undefined;
 	});
-
-	function lazyLoadImg(node) {
-		const observer = new IntersectionObserver(([entry], observer) => {
-			if (entry.isIntersecting) {
-				node.src = src;
-				node.onerror = () => {
-					imageError = true;
-				};
-				observer.unobserve(node);
-			}
-		});
-		observer.observe(node);
-		return {
-			destroy() {
-				observer.disconnect();
-			}
-		};
-	}
 </script>
 
-<div class="image-container" style={aspectRatio ? `aspect-ratio: ${aspectRatio};` : ''}>
+<div class="image-container">
 	<img
-		use:lazyLoadImg
+		{src}
 		{alt}
 		{width}
 		height={computedHeight}
+		style="{aspectRatio ? `aspect-ratio: ${aspectRatio};` : ''}{style ? ` ${style}` : ''}"
 		class:hidden={imageError}
 		class:has-width={!!width}
 	/>
@@ -54,6 +37,8 @@
 <style>
 	.image-container {
 		position: relative;
+		display: flex;
+		align-items: center;
 
 		& img {
 			max-width: 100%;

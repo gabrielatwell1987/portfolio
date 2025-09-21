@@ -60,7 +60,7 @@
 	}
 
 	.size {
-		font-size: clamp(var(--h2), 4vw, var(--xxl));
+		font-size: clamp(var(--h1), 4vw, var(--xxl));
 		font-weight: 900;
 		transition:
 			color 0.5s ease,

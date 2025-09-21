@@ -13,7 +13,12 @@
 			<a class="skill" href="https://developer.mozilla.org/en-US/docs/Learn/HTML" target="_blank">
 				<li>
 					<div class="icons">
-						<Image src="skills/HTML-Dark.svg" alt="html" aspectRatio="1/1" />
+						<Image
+							src="skills/HTML-Dark.svg"
+							alt="html"
+							aspectRatio="1/1"
+							style="width: clamp(50px, 7vw, 200px);"
+						/>
 					</div>
 				</li>
 			</a>
@@ -21,7 +26,12 @@
 			<a class="skill" href="https://developer.mozilla.org/en-US/docs/Learn/CSS" target="_blank">
 				<li>
 					<div class="icons">
-						<Image src="skills/CSS-Dark.svg" alt="css" aspectRatio="1/1" />
+						<Image
+							src="skills/CSS-Dark.svg"
+							alt="css"
+							aspectRatio="1/1"
+							style="width: clamp(50px, 7vw, 200px);"
+						/>
 					</div>
 				</li>
 			</a>
@@ -33,7 +43,12 @@
 			>
 				<li>
 					<div class="icons">
-						<Image src="skills/JavaScript-Dark.svg" alt="javascript" aspectRatio="1/1" />
+						<Image
+							src="skills/JavaScript-Dark.svg"
+							alt="javascript"
+							aspectRatio="1/1"
+							style="width: clamp(50px, 7vw, 200px);"
+						/>
 					</div>
 				</li>
 			</a>
@@ -41,7 +56,12 @@
 			<a class="skill" href="https://svelte.dev/" target="_blank">
 				<li>
 					<div class="icons">
-						<Image src="skills/Svelte-Dark.svg" alt="svelte kit" aspectRatio="1/1" />
+						<Image
+							src="skills/Svelte-Dark.svg"
+							alt="svelte kit"
+							aspectRatio="1/1"
+							style="width: clamp(50px, 7vw, 200px);"
+						/>
 					</div>
 				</li>
 			</a>
@@ -49,7 +69,12 @@
 			<a class="skill" href="https://gsap.com" target="_blank">
 				<li>
 					<div class="icons">
-						<Image src="skills/GSAP-Dark.svg" alt="greensock" aspectRatio="1/1" />
+						<Image
+							src="skills/GSAP-Dark.svg"
+							alt="greensock"
+							aspectRatio="1/1"
+							style="width: clamp(50px, 7vw, 200px);"
+						/>
 					</div>
 				</li>
 			</a>
@@ -57,7 +82,12 @@
 			<a class="skill" href="https://nodejs.org" target="_blank">
 				<li>
 					<div class="icons">
-						<Image src="skills/NodeJS-Dark.svg" alt="node.js" aspectRatio="1/1" />
+						<Image
+							src="skills/NodeJS-Dark.svg"
+							alt="node.js"
+							aspectRatio="1/1"
+							style="width: clamp(50px, 7vw, 200px);"
+						/>
 					</div>
 				</li>
 			</a>
@@ -65,7 +95,12 @@
 			<a class="skill" href="https://github.com" target="_blank">
 				<li>
 					<div class="icons">
-						<Image src="skills/Github-Dark.svg" alt="git hub" aspectRatio="1/1" />
+						<Image
+							src="skills/Github-Dark.svg"
+							alt="git hub"
+							aspectRatio="1/1"
+							style="width: clamp(50px, 7vw, 200px);"
+						/>
 					</div>
 				</li>
 			</a>
@@ -73,7 +108,12 @@
 			<a class="skill" href="https://markdownguide.org" target="_blank">
 				<li>
 					<div class="icons">
-						<Image src="skills/Markdown-Dark.svg" alt="markdown" aspectRatio="1/1" />
+						<Image
+							src="skills/Markdown-Dark.svg"
+							alt="markdown"
+							aspectRatio="1/1"
+							style="width: clamp(50px, 7vw, 200px);"
+						/>
 					</div>
 				</li>
 			</a>
@@ -81,7 +121,12 @@
 			<a class="skill" href="https://tailwindcss.com" target="_blank">
 				<li>
 					<div class="icons">
-						<Image src="skills/TailwindCSS-Dark.svg" alt="tailwind css" aspectRatio="1/1" />
+						<Image
+							src="skills/TailwindCSS-Dark.svg"
+							alt="tailwind css"
+							aspectRatio="1/1"
+							style="width: clamp(50px, 7vw, 200px);"
+						/>
 					</div>
 				</li>
 			</a>
