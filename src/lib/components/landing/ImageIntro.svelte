@@ -51,7 +51,7 @@
 		& section {
 			& .h1 {
 				color: var(--blue);
-				font-family: var(--orbitron);
+				font-family: var(--ultra);
 				font-size: clamp(3rem, 7vw, 6rem);
 				letter-spacing: -1px;
 				text-align: center;

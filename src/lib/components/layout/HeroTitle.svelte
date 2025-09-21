@@ -14,7 +14,7 @@
 				margin: 2rem auto;
 				margin-top: 5%;
 				color: transparent;
-				font-family: var(--orbitron);
+				font-family: var(--ultra);
 				font-size: clamp(var(--h4), 4vw, var(--xxl));
 				font-weight: 700;
 				letter-spacing: -1px;

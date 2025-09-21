@@ -43,7 +43,7 @@
 
 		.card-title {
 			color: var(--clr-blue);
-			font-family: var(--orbitron);
+			font-family: var(--ultra);
 			font-size: clamp(var(--h3), 2vw, var(--xxl));
 			font-weight: 800;
 			letter-spacing: -1px;
@@ -70,7 +70,7 @@
 			color: var(--clr-blue);
 			border: 1px solid var(--clr-blue);
 			border-radius: 5rem;
-			font-family: var(--orbitron);
+			font-family: var(--ultra);
 			font-size: clamp(var(--sm), 1vw, var(--h6));
 			font-weight: 300;
 			letter-spacing: 1px;

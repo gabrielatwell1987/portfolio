@@ -45,7 +45,7 @@
 				padding: 0;
 				letter-spacing: 2px;
 				color: var(--clr-blue);
-				font-family: var(--orbitron);
+				font-family: var(--ultra);
 				font-size: clamp(var(--sm), 1.5vw, var(--h4));
 				font-weight: 800;
 				white-space: nowrap;

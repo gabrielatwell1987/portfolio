@@ -75,7 +75,7 @@
 			font-size: clamp(var(--h3), 6vw, var(--xxl));
 			font-weight: 700;
 			text-shadow: 0 0 5px var(--smoke);
-			font-family: var(--orbitron);
+			font-family: var(--ultra);
 			letter-spacing: -1px;
 			color: var(--clr-inverted);
 			text-shadow:

@@ -86,7 +86,7 @@
 		}
 
 		.span {
-			font-family: var(--orbitron);
+			font-family: var(--ultra);
 			font-size: clamp(4rem, 10vw, 20rem);
 			letter-spacing: 0px;
 			z-index: 1;

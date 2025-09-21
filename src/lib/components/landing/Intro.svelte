@@ -57,7 +57,7 @@
 			}
 
 			& h2 {
-				font-family: var(--orbitron);
+				font-family: var(--ultra);
 				font-size: clamp(var(--sm), 1.25vw, var(--h5));
 				margin: -1rem 0 1rem 0;
 

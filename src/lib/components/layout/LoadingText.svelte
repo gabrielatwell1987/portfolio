@@ -26,7 +26,7 @@
 	}
 
 	.loading-text {
-		font-family: var(--orbitron);
+		font-family: var(--ultra);
 		font-size: 5vw;
 		line-height: 64px;
 		letter-spacing: 10px;

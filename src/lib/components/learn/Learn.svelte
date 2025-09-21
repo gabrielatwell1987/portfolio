@@ -41,7 +41,7 @@
 			& .link {
 				text-decoration: none;
 				color: var(--clr-link);
-				font-family: var(--orbitron);
+				font-family: var(--ultra);
 				font-size: clamp(var(--sm), 1.25vw, var(--h4));
 				font-weight: 700;
 				margin: 0;

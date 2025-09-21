@@ -38,8 +38,8 @@
 			box-shadow: 0px 0px 12px var(--clr-main);
 
 			.title {
-				font-family: var(--orbitron);
-				font-size: clamp(var(--h3), 4.75vw, var(--xxl));
+				font-family: var(--ultra);
+				font-size: clamp(var(--h3), 4.5vw, var(--xxl));
 				text-shadow: 0 0 5px 3px var(--clr-gray);
 				mix-blend-mode: difference;
 				letter-spacing: -1px;

@@ -59,7 +59,7 @@
 	}
 
 	.bigWord {
-		font-family: var(--orbitron);
+		font-family: var(--ultra);
 		font-size: clamp(2.5rem, 10vw, 35rem);
 		text-wrap: none;
 		display: block;

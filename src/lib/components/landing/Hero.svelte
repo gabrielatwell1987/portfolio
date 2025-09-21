@@ -297,7 +297,7 @@
 			}
 
 			& .hero-title {
-				font-family: var(--orbitron);
+				font-family: var(--ultra);
 				font-size: clamp(var(--h4), 5vw, var(--xxl));
 				font-weight: 700;
 				color: var(--clr-inverted);
@@ -415,7 +415,7 @@
 						}
 
 						& .stat-number {
-							font-family: var(--orbitron);
+							font-family: var(--ultra);
 							font-size: clamp(var(--sm), 3vw, var(--h2));
 							font-weight: 700;
 							color: var(--clr-inverted);

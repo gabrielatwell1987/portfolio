@@ -7,7 +7,7 @@
 
 <style>
 	span {
-		font-family: var(--orbitron);
+		font-family: var(--ultra);
 		font-size: clamp(var(--h6), 1.5vw, var(--h3));
 		line-height: 1.75;
 		color: var(--clr-main);

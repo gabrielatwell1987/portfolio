@@ -49,7 +49,7 @@
 			margin-inline: auto;
 			text-align: center;
 			color: var(--clr-blue);
-			font-family: var(--orbitron);
+			font-family: var(--ultra);
 			letter-spacing: 7px;
 			text-wrap: balance;
 		}
