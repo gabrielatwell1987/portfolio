@@ -2,6 +2,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import HireForm from '$lib/components/contact/HireForm.svelte';
 	import Title from '$lib/components/layout/Title.svelte';
+	import Image from '$lib/components/layout/Image.svelte';
 </script>
 
 <SEO
@@ -13,6 +14,8 @@
 <Title title="grow online" />
 
 <section>
+	<Image src="/images/hire-gabe.webp" alt="Gabriel Atwell" width={300} height={300} />
+
 	<HireForm />
 </section>
 
