@@ -136,19 +136,23 @@
 
 <style>
 	.skills-container {
-		display: grid;
 		min-height: 100vh;
-		place-items: center;
-		padding-block: 6em;
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		margin: 5em 0;
+		/* padding-block: 5em; */
+		/* padding-top: 5em; */
 
-		@media (width >= 768px) and (width <= 990px) {
-			padding-block: 1em;
+		/* @media (width >= 768px) and (width <= 990px) {
+			padding-top: 3em;
 			margin-top: -15em;
 			margin-bottom: -10em;
-		}
+		} */
 
-		@media (width <= 500px) {
-			margin-block: -5em;
+		@media (width <= 768px) {
+			margin-block: -2em;
+			margin-bottom: -5em;
 			padding-inline: 1rem;
 		}
 	}
