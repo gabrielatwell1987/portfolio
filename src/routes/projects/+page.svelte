@@ -12,6 +12,7 @@
 	let showProjects = $state(false);
 	let showGithub = $state(false);
 	let isGithubLoading = $state(true);
+	let { index = 0 } = $props();
 
 	// Helper function to get testimonial for a project
 	function getTestimonialForProject(projectIndex) {
@@ -86,11 +87,11 @@
 
 <section class="bevel">
 	{#if showProjects && ProjectComponent}
-		{#each projects as project}
+		{#each projects as project (project.index)}
 			{@const testimonial = getTestimonialForProject(project.index)}
 
 			{#if testimonial}
-				<div class="wholeProject">
+				<div class="wholeProject" style="--stagger-delay: {project.index * 1.25}s;">
 					<ProjectComponent {...project} />
 					<Testimonial
 						name={testimonial.name}
@@ -98,6 +99,7 @@
 						testimonial={testimonial.testimonial}
 						rating={testimonial.rating}
 						avatar={testimonial.avatar}
+						index={project.index}
 					/>
 				</div>
 			{:else}
@@ -200,6 +202,10 @@
 			border: 2px solid var(--clr-gray);
 			border-radius: var(--radius);
 			padding-top: 2em;
+			opacity: 0;
+			animation: fadeIn 0.8s ease-out forwards;
+			animation-delay: var(--stagger-delay, 0s);
+			will-change: opacity, transform;
 
 			@media (width <= 768px) {
 				margin: 0.5rem;
@@ -262,6 +268,17 @@
 		}
 		100% {
 			opacity: 0.6;
+		}
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 </style>
