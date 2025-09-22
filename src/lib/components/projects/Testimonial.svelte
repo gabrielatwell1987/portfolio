@@ -6,7 +6,8 @@
 		testimonial,
 		avatar = '',
 		rating = 0,
-		highlighted = false
+		highlighted = false,
+		index = 0
 	} = $props();
 
 	let stars = $derived(() => {
@@ -16,7 +17,7 @@
 	});
 </script>
 
-<article class="testimonial" class:highlighted>
+<article class="testimonial" class:highlighted style="--stagger-delay: {index * 1.25}s;">
 	<div class="quote-mark">"</div>
 
 	<blockquote>{testimonial}</blockquote>
@@ -51,7 +52,10 @@
 		width: 95%;
 		margin-inline: auto;
 		padding-bottom: 5em;
-		animation: fade-in 0.8s ease-out forwards;
+		opacity: 0;
+		animation: fadeIn 0.8s ease-out forwards;
+		animation-delay: var(--stagger-delay, 0s);
+		will-change: opacity, transform;
 		scale: 0.75;
 		transition:
 			transform 0.2s,
@@ -155,7 +159,7 @@
 		}
 	}
 
-	@keyframes fade-in {
+	@keyframes fadeIn {
 		0% {
 			opacity: 0;
 			transform: translateY(20px);
