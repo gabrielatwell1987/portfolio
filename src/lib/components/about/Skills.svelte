@@ -139,20 +139,17 @@
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
-		justify-content: start;
-		margin: 5em 0;
-		/* padding-block: 5em; */
-		/* padding-top: 5em; */
+		justify-content: center;
+		margin-bottom: 10em;
 
-		/* @media (width >= 768px) and (width <= 990px) {
+		@media (width >= 768px) and (width <= 990px) {
 			padding-top: 3em;
 			margin-top: -15em;
 			margin-bottom: -10em;
-		} */
+		}
 
 		@media (width <= 768px) {
 			margin-block: -2em;
-			margin-bottom: -5em;
 			padding-inline: 1rem;
 		}
 	}
