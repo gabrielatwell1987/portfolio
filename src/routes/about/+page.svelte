@@ -31,7 +31,7 @@
 					myself the backend of web development on my spare time with backend languages like <a
 						href="https://go.dev"
 						target="_blank"
-						style="font-weight: 600;">Go</a
+						style="font-weight: 900;">Go</a
 					>
 					to become more of a fullstack developer.
 				</p>

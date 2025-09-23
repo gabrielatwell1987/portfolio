@@ -2,13 +2,6 @@
 @layer root, reset, theming, base, typography, components, utilities;
 
 /* font-faces need global scope */
-@font-face {
-	font-family: 'Orbitron-Black';
-	font-style: normal;
-	font-weight: 900;
-	font-display: swap;
-	src: url('/fonts/Orbitron-Black.woff2') format('woff2');
-}
 
 @font-face {
 	font-family: 'Courier Prime';
@@ -46,7 +39,6 @@
 	:root {
 		/* fonts */
 		--mono: 'Courier Prime', monospace;
-		--orbitron: 'Orbitron-Black', sans-serif;
 		--bronova: 'Bronova', sans-serif;
 		--bronova-bold: 'Bronova Bold', sans-serif;
 		--ultra: 'Ultra', sans-serif;
@@ -239,6 +231,7 @@
 		--clr-link: light-dark(var(--purple), var(--sky));
 		--clr-pale: light-dark(var(--yellow), var(--pale));
 		--clr-gray: light-dark(var(--gray), var(--dark-gray));
+		--clr-green: light-dark(var(--success-dark), var(--success-light));
 		--clr-light-gray: light-dark(var(--light-gray), var(--dark-gray));
 		--clr-inverted: light-dark(var(--white), var(--blackest));
 		--clr-button-text: light-dark(var(--blackest), var(--white));
