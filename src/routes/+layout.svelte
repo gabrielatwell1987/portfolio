@@ -1,7 +1,6 @@
 <script>
 	import '../app.css';
 	import '@picocss/pico/css/pico.min.css';
-	import { page } from '$app/stores';
 	import { navigating } from '$app/stores';
 	import Analytics from '$lib/data/Analytics.svelte';
 	import NavBar from '$lib/components/navigation/NavBar.svelte';
@@ -21,7 +20,7 @@
 
 			newSW.addEventListener('statechange', () => {
 				if (newSW.state === 'installed') {
-					if (confirm('Update available.. Install now?')) {
+					if (confirm('Updating to the latest version. Reload now?')) {
 						newSW.postMessage({ type: 'SKIP_WAITING' });
 						location.reload();
 					}
