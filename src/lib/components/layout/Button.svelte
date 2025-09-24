@@ -21,7 +21,7 @@
 			outline-offset: -7px;
 			margin-inline: auto;
 			cursor: pointer;
-			letter-spacing: 1px;
+			letter-spacing: 2px;
 			width: fit-content;
 			transition:
 				outline-offset 300ms ease-out,
