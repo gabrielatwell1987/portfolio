@@ -302,7 +302,7 @@
 
 				if (monthIndex !== currentMonth) {
 					const proposedX = weekIndex * (cellSize + cellGap) + dayLabelWidth;
-					const minSpacing = 40;
+					const minSpacing = 60;
 					const actualX = Math.max(proposedX, lastLabelX + minSpacing);
 
 					months.push({
