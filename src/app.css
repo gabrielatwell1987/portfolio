@@ -141,13 +141,13 @@
 
 	h1 {
 		text-align: center;
-		color: var(--sky);
+		color: var(--clr-main);
 		font-family: var(--ultra);
 	}
 
 	h2 {
 		text-align: center;
-		color: var(--sky);
+		color: var(--clr-blue);
 		font-family: var(--bronova);
 	}
 
@@ -155,7 +155,7 @@
 	h4 {
 		text-align: center;
 		font-family: var(--bronova);
-		color: var(--purple);
+		color: var(--clr-gray);
 	}
 }
 
