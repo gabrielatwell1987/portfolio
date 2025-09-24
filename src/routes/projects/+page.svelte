@@ -128,7 +128,7 @@
 		}
 
 		& .project-container {
-			max-width: 1200px;
+			max-inline-size: 1200px;
 			margin: 0 auto;
 			text-align: center;
 		}

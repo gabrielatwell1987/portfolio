@@ -18,7 +18,7 @@
 		justify-content: center;
 		align-items: center;
 		width: 100%;
-		max-width: 520px;
+		max-inline-size: 520px;
 		text-align: center;
 		color: var(--off-white);
 		position: relative;

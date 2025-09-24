@@ -569,7 +569,7 @@
 
 <style>
 	.github-contributions {
-		max-width: 900px;
+		max-inline-size: 900px;
 		margin: 0 auto;
 		padding: 2rem 1rem;
 		font-family: var(--bronova);
@@ -710,7 +710,7 @@
 				& .contributions-svg {
 					min-width: max-content;
 					font-family: var(--bronova);
-					max-width: 100%;
+					max-inline-size: 100%;
 					height: auto;
 
 					/* Make SVG responsive using container queries */

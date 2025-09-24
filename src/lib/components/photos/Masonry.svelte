@@ -189,7 +189,7 @@
 					box-sizing: border-box;
 					opacity: 1;
 					line-height: 1.4;
-					max-width: 100%;
+					max-inline-size: 100%;
 				}
 
 				&:not(.error)::after {

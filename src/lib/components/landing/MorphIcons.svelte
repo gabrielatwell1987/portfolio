@@ -36,7 +36,7 @@
 
 <style>
 	svg {
-		max-width: 15em;
+		max-inline-size: 15em;
 		width: 100%;
 		margin: 0;
 		padding: 0;

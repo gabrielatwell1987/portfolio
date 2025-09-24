@@ -24,7 +24,7 @@
 
 		img {
 			border-radius: 2.5%;
-			max-width: 100%;
+			max-inline-size: 100%;
 		}
 
 		figcaption {

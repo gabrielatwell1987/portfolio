@@ -118,18 +118,18 @@
 		& svg {
 			width: 100%;
 			height: auto;
-			max-width: min(90vw, 25em);
+			max-inline-size: min(90vw, 25em);
 			min-width: 320px;
 			margin: 0;
 			padding: 0;
 			fill: var(--clr-main);
 
 			@media (width >= 1200px) {
-				max-width: 30em;
+				max-inline-size: 30em;
 			}
 
 			@media (width <= 500px) {
-				max-width: 95vw;
+				max-inline-size: 95vw;
 				min-width: 280px;
 			}
 		}

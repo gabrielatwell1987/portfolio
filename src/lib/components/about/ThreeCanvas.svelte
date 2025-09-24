@@ -310,7 +310,7 @@
 		height: 100vh;
 		z-index: 0;
 		min-height: 100vh;
-		max-width: 100vw;
+		max-inline-size: 100vw;
 		display: block;
 		background: transparent;
 	}

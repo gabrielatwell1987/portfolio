@@ -172,15 +172,15 @@
 				& .atwell_svg {
 					width: 100%;
 					height: auto;
-					max-width: 300px;
+					max-inline-size: 300px;
 					min-width: 120px;
 
 					@media (width <= 768px) {
-						max-width: 200px;
+						max-inline-size: 200px;
 					}
 
 					@media (width >= 1024px) {
-						max-width: 350px;
+						max-inline-size: 350px;
 					}
 				}
 

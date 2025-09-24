@@ -89,7 +89,7 @@
 		img.title {
 			display: block;
 			margin-inline: auto;
-			max-width: 75%;
+			max-inline-size: 75%;
 			height: auto;
 			text-shadow: none;
 			text-transform: none;

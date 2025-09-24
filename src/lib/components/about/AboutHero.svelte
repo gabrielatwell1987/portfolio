@@ -6,7 +6,7 @@
 	<picture>
 		<source
 			srcset="/logos/svelteCode-480.webp 480w, /logos/svelteCode-768.webp 768w, /logos/svelteCode-1200.webp 1200w"
-			sizes="(max-width: 480px) 100vw, (max-width: 768px) 100vw, 1200px"
+			sizes="(max-inline-size: 480px) 100vw, (max-inline-size: 768px) 100vw, 1200px"
 		/>
 		<!-- Fallback for browsers that don't support srcset -->
 		<img
@@ -15,7 +15,7 @@
 			width="1200"
 			height="675"
 			decoding="async"
-			style="aspect-ratio: 16/9; max-width: 100%; height: auto;"
+			style="aspect-ratio: 16/9; max-inline-size: 100%; height: auto;"
 		/>
 	</picture>
 
@@ -60,7 +60,7 @@
 			object-fit: cover;
 			mask: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 60%, transparent);
 			border-radius: var(--radius);
-			max-width: 100%;
+			max-inline-size: 100%;
 			display: block;
 
 			@media (width <= 500px) {

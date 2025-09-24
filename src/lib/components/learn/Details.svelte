@@ -66,7 +66,7 @@
 	}
 
 	.details-custom {
-		max-width: 90vw;
+		max-inline-size: 90vw;
 		margin-inline: auto;
 		position: relative;
 		border: none;

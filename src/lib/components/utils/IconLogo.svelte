@@ -10,7 +10,7 @@
 	:global(.logo-image) {
 		width: 100%;
 		height: auto;
-		max-width: 600px;
+		max-inline-size: 600px;
 	}
 
 	.iconLogo {
@@ -23,12 +23,12 @@
 
 		@media (width <= 768px) {
 			margin-bottom: 10%;
-			max-width: 80%;
+			max-inline-size: 80%;
 		}
 
 		@media (width <= 480px) {
 			margin-bottom: 8%;
-			max-width: 90%;
+			max-inline-size: 90%;
 		}
 	}
 

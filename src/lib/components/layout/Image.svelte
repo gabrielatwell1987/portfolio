@@ -41,7 +41,7 @@
 		align-items: center;
 
 		& img {
-			max-width: 100%;
+			max-inline-size: 100%;
 			height: auto;
 			object-fit: contain;
 			border-radius: var(--radius);

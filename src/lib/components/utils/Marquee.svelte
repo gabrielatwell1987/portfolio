@@ -145,7 +145,7 @@
 			}
 		}
 
-		@media (max-width: 990px) {
+		@media (max-inline-size: 990px) {
 			:root {
 				--marquee-width: 100vw;
 				--marquee-height: 16vh;
@@ -155,7 +155,7 @@
 	}
 
 	.marquee-content {
-		@media (max-width: 990px) {
+		@media (max-inline-size: 990px) {
 			li a {
 				font-size: 12px;
 			}
@@ -172,7 +172,7 @@
 	}
 
 	.marquee {
-		@media (max-width: 990px) {
+		@media (max-inline-size: 990px) {
 			&:before,
 			&:after {
 				width: 5rem;

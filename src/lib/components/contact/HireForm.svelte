@@ -147,7 +147,7 @@
 <style>
 	.hire-form-container {
 		width: 100%;
-		max-width: 1200px;
+		max-inline-size: 1200px;
 		margin-inline: auto;
 		padding: 1rem;
 		overflow-y: auto;

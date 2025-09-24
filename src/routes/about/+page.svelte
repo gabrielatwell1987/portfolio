@@ -169,7 +169,7 @@
 				}
 
 				& .text {
-					max-width: var(--100);
+					max-inline-size: var(--100);
 					margin-inline: auto;
 					font-size: clamp(var(--h6), 1.5vw, var(--h4));
 					font-weight: 500;
@@ -179,7 +179,7 @@
 					color: var(--clr-main);
 
 					@media screen and (width >= 990px) {
-						max-width: 90%;
+						max-inline-size: 90%;
 						line-height: 1.75;
 					}
 
