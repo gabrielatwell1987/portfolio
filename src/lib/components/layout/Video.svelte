@@ -27,22 +27,22 @@
 		video {
 			width: 90%;
 			min-width: 320px;
-			max-width: 1200px;
+			max-inline-size: 1200px;
 			border-radius: 12px;
-			mask-image: linear-gradient(transparent, black 20%),
-				linear-gradient(to top, transparent, black 20%),
+			mask-image:
+				linear-gradient(transparent, black 20%), linear-gradient(to top, transparent, black 20%),
 				linear-gradient(to right, transparent, black 20%),
 				linear-gradient(to left, transparent, black 20%);
 			mask-composite: intersect;
 		}
 	}
 
-	@media (max-width: 700px) {
+	@media (max-inline-size: 700px) {
 		.video {
 			margin: 0 auto 18% auto;
 
 			video {
-				max-width: 85%;
+				max-inline-size: 85%;
 			}
 		}
 	}

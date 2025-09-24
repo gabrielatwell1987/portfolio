@@ -48,7 +48,7 @@
 		box-shadow: 0 0 12px var(--clr-main);
 		margin-top: -6rem;
 		margin-bottom: 2rem;
-		max-width: 50em;
+		max-inline-size: 50em;
 		width: 95%;
 		margin-inline: auto;
 		padding-bottom: 5em;
@@ -121,7 +121,7 @@
 			justify-content: center;
 			align-items: center;
 			gap: 1rem;
-			max-width: 55em;
+			max-inline-size: 55em;
 			padding: 1rem 0;
 			display: flex;
 			align-items: center;
@@ -151,7 +151,7 @@
 		border-left: 3px solid hsl(0, 0%, 16%);
 	}
 
-	@media (max-width: 640px) {
+	@media (max-inline-size: 640px) {
 		.testimonial {
 			padding: 1.5rem;
 			width: 90%;

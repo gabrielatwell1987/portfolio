@@ -26,7 +26,7 @@
 
 		let mm = gsap.matchMedia();
 
-		mm.add('(max-width: 768px)', () => {
+		mm.add('(max-inline-size: 768px)', () => {
 			gsap.set(h1, { yPercent: -50, fontWeight: 900 });
 
 			const handleMobileMouseEnter = () => {
@@ -83,7 +83,7 @@
 		}
 	}
 
-	@media (max-width: 768px) {
+	@media (max-inline-size: 768px) {
 		.image-container {
 			width: 90%;
 			height: 75%;

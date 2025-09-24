@@ -164,6 +164,6 @@ To use the MorphSVG plugin, you can either use npm or use the cdn. Npm makes it 
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
-		max-width: 100%;
+		max-inline-size: 100%;
 	}
 </style>

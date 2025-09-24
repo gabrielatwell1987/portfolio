@@ -1,7 +1,7 @@
 .css,
 .gsap {
 	margin-bottom: 2rem;
-	max-width: 100%;
+	max-inline-size: 100%;
 	margin-inline: auto;
 	padding: 1em;
 	color: var(--clr-main);
@@ -13,9 +13,9 @@
 	hyphens: auto;
 	overflow-wrap: normal;
 
-	@media (max-width: 768px) {
+	@media (max-inline-size: 768px) {
 		padding: 0.1rem;
-		max-width: 95%;
+		max-inline-size: 95%;
 		margin-inline: auto;
 	}
 }
@@ -28,7 +28,7 @@
 	align-items: start;
 	margin-bottom: 4rem;
 
-	@media (max-width: 768px) {
+	@media (max-inline-size: 768px) {
 		grid-template-columns: 1fr;
 		gap: 1rem;
 		margin-bottom: 2rem;
@@ -50,7 +50,7 @@
 	/* Images within grid sections */
 	& .image img {
 		display: block;
-		max-width: 100%;
+		max-inline-size: 100%;
 		width: 100%;
 		height: auto;
 		box-shadow: none;
@@ -62,7 +62,7 @@
 .css img,
 .gsap img {
 	display: block;
-	max-width: 100%;
+	max-inline-size: 100%;
 	width: 100%;
 	height: auto;
 	box-shadow: none;
@@ -84,7 +84,7 @@
 .gsap img:not(.grid-section img) {
 	display: block;
 	margin: 2rem auto;
-	max-width: 100%;
+	max-inline-size: 100%;
 	height: auto;
 	box-shadow: none;
 	text-align: center;
@@ -132,7 +132,7 @@ div[id] {
 }
 
 /* Mobile-specific scroll adjustments */
-@media (max-width: 768px) {
+@media (max-inline-size: 768px) {
 	html {
 		scroll-padding-top: 6rem; /* Smaller offset for mobile */
 	}

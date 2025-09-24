@@ -101,7 +101,7 @@
 
 			& .img {
 				border-radius: var(--radius);
-				max-width: var(--100);
+				max-inline-size: var(--100);
 				transition: scale 0.25s ease-in-out;
 				border: 1px solid var(--clr-main);
 				padding: 0.2vw;

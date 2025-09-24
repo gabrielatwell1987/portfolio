@@ -5,7 +5,7 @@
 <hr
 	class="divider"
 	style="--width: {width}%; --thickness: {thickness}px; --min-width: {width /
-		2}%; --max-width: {width}%;"
+		2}%; --max-inline-size: {width}%;"
 />
 
 <style>
@@ -25,7 +25,7 @@
 
 	@keyframes shrink {
 		0% {
-			width: var(--max-width);
+			width: var(--max-inline-size);
 		}
 
 		50% {
@@ -33,7 +33,7 @@
 		}
 
 		100% {
-			width: var(--max-width);
+			width: var(--max-inline-size);
 		}
 	}
 </style>

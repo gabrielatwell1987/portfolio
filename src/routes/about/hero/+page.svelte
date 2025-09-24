@@ -55,7 +55,7 @@
 		justify-content: center;
 		text-align: center;
 		width: 100%;
-		max-width: 1200px;
+		max-inline-size: 1200px;
 		padding: 2rem;
 		min-height: 60vh;
 		backdrop-filter: blur(1px);
@@ -75,14 +75,14 @@
 		font-weight: 400;
 		line-height: 1.6;
 		letter-spacing: 1px;
-		max-width: 600px;
+		max-inline-size: 600px;
 		margin: 1.5rem auto;
 		text-align: left;
 		min-height: 3rem;
 
 		@media (width >= 990px) {
 			letter-spacing: 2px;
-			max-width: 90%;
+			max-inline-size: 90%;
 		}
 
 		@media (width <= 768px) {

@@ -143,7 +143,7 @@
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;
-			max-width: 400px;
+			max-inline-size: 400px;
 			margin-top: 15em;
 
 			@media (width <= 768px) {

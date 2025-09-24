@@ -268,7 +268,7 @@
 		position: relative;
 		z-index: 1;
 		width: 100%;
-		max-width: 1200px;
+		max-inline-size: 1200px;
 		padding: 2rem;
 		display: flex;
 		flex-direction: column;
@@ -358,7 +358,7 @@
 				letter-spacing: 1px;
 				line-height: 1.6;
 				color: var(--clr-main);
-				max-width: 600px;
+				max-inline-size: 600px;
 				margin: 0 auto 3rem auto;
 				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 

@@ -22,7 +22,7 @@
 		margin-top: 5em;
 		margin-bottom: 15em;
 		width: 100%;
-		max-width: 90vw;
+		max-inline-size: 90vw;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -31,7 +31,7 @@
 		& .responsive-iframe {
 			position: relative;
 			width: 100%;
-			max-width: 1500px;
+			max-inline-size: 1500px;
 			height: 0;
 			padding-bottom: 56.25%;
 			overflow: hidden;

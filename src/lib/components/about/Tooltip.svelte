@@ -62,7 +62,7 @@
 			padding: 0.5rem;
 			box-shadow: 0 0 5px var(--clr-blue);
 			border-radius: 16px;
-			max-width: 200px;
+			max-inline-size: 200px;
 			width: fit-content;
 			z-index: 1;
 			opacity: 0;

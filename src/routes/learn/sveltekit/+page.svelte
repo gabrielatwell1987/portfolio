@@ -65,7 +65,7 @@
 
 		& main {
 			& .centerDetail {
-				max-width: 90vw;
+				max-inline-size: 90vw;
 				margin-inline: auto;
 
 				:global(details) {
@@ -121,7 +121,7 @@
 					box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 					width: 100%;
 					height: auto;
-					max-width: 55%;
+					max-inline-size: 55%;
 					display: block;
 					margin-inline: auto;
 				}

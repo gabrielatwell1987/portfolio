@@ -71,7 +71,7 @@
 			flex-direction: column;
 			gap: 3em;
 			box-shadow: none;
-			max-width: 80vw;
+			max-inline-size: 80vw;
 			min-height: 86vh;
 			background-color: var(--blacker);
 			border-radius: 45em;
