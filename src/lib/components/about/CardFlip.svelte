@@ -40,7 +40,6 @@
 <style>
 	.flip {
 		margin-inline: auto;
-		margin-bottom: 10em;
 		display: flex;
 		align-items: center;
 		justify-content: center;
