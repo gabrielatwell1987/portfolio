@@ -2,6 +2,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import Image from '$lib/components/layout/Image.svelte';
 	import AnimatedHeading from '$lib/components/learn/AnimatedHeading.svelte';
+	import UsefulLinks from '$lib/components/learn/UsefulLinks.svelte';
 
 	$effect(() => {
 		document.documentElement.scrollTo(0, 0);
@@ -52,6 +53,8 @@
 				</div>
 			</a>
 		</div>
+
+		<UsefulLinks />
 	</article>
 </main>
 

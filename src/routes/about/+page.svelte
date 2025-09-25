@@ -6,7 +6,6 @@
 	import Bento from '$lib/components/about/Bento.svelte';
 	import CardFlip from '$lib/components/about/CardFlip.svelte';
 	import Tooltip from '$lib/components/about/Tooltip.svelte';
-	import UsefulLinks from '$lib/components/about/UsefulLinks.svelte';
 	import AboutHero from '$lib/components/about/AboutHero.svelte';
 </script>
 
@@ -89,8 +88,6 @@
 				src2="/logos/skull-glass.webp"
 				alt2="a blue A logo"
 			/>
-
-			<UsefulLinks />
 		</article>
 	</section>
 </main>
