@@ -1,5 +1,5 @@
 <script>
-	import LoadBtn from '$lib/components/about/LoadBtn.svelte';
+	import LoadBtn from '$lib/components/learn/LoadBtn.svelte';
 </script>
 
 <main class="links" id="useful-links">
@@ -71,9 +71,19 @@
 				font-family: var(--bronova);
 				font-size: clamp(var(--h6), 2vw, var(--h4));
 				font-weight: 600;
-				color: var(--clr-blue);
-				letter-spacing: -1px;
-				border-bottom: 2px solid var(--clr-blue);
+				color: var(--clr-inverted);
+				text-shadow:
+					0 0 1px var(--clr-inverted),
+					-1px -1px 0 var(--clr-main),
+					1px -1px 0 var(--clr-main),
+					-1px 1px 0 var(--clr-main),
+					1px 1px 0 var(--clr-main),
+					-1px 0 0 var(--clr-main),
+					1px 0 0 var(--clr-main),
+					0 -1px 0 var(--clr-main),
+					0 1px 0 var(--clr-main);
+				letter-spacing: 1px;
+				border-bottom: 2px solid var(--clr-main);
 				width: fit-content;
 
 				@media (width <= 768px) {
