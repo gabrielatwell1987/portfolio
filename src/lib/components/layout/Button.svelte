@@ -15,6 +15,8 @@
 			font-size: clamp(var(--h6), 2vw, var(--h3));
 			font-weight: 900;
 			color: var(--clr-inverted);
+			border: 1px solid var(--clr-main);
+			outline: 3px solid var(--clr-main);
 			text-shadow:
 				0 0 1px var(--clr-inverted),
 				-1px -1px 0 var(--clr-main),
@@ -25,9 +27,7 @@
 				1px 0 0 var(--clr-main),
 				0 -1px 0 var(--clr-main),
 				0 1px 0 var(--clr-main);
-			border: 1px solid var(--clr-main);
 			border-radius: var(--radius);
-			outline: 3px solid var(--clr-main);
 			outline-offset: -7px;
 			margin-inline: auto;
 			cursor: pointer;
