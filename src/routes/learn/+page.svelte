@@ -102,7 +102,6 @@
 
 				& a {
 					display: block;
-					/* margin: 0 0 2em 0; */
 
 					&:last-child {
 						@media (width <= 500px) {
@@ -129,7 +128,7 @@
 
 					&:not(:hover) {
 						filter: opacity(0.5);
-						scale: 0.95;
+						scale: 0.98;
 					}
 				}
 			}
