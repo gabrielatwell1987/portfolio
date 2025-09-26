@@ -24,14 +24,14 @@
 		<section aria-label="icons">
 			<a class="learn-image" href="learn/greensock" style="width: clamp(10em, 25vw, 30em);">
 				<Image
-					src="/logos/gsapLogo.svg"
+					src="/skills/GSAP-Dark.svg"
 					alt="greensock animation platform logo"
 					width="350"
 					aspectRatio="1/1"
 				/>
 			</a>
 
-			<a class="learn-image" href="learn/sveltekit" style="width: clamp(10em, 25vw, 30em);">
+			<a class="learn-image" href="learn/sveltekit" style="width: clamp(10em, 20vw, 30em);">
 				<Image
 					src="/skills/Svelte-Dark.svg"
 					alt="sveltekit web framework logo"
@@ -79,6 +79,7 @@
 			background-color: var(--blacker);
 			border-radius: 45em;
 			margin-inline: auto;
+			margin-top: 10em;
 
 			@media (width <= 768px) {
 				margin: 0;
@@ -91,17 +92,23 @@
 			& section {
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
-				gap: 10vw;
+				gap: 5vw;
 
 				@media (width <= 500px) {
 					grid-template-columns: 1fr;
-					gap: 2em;
+					gap: 3vw;
 					margin-bottom: -1em;
 				}
 
 				& a {
 					display: block;
-					margin: 0 0 2em 0;
+					/* margin: 0 0 2em 0; */
+
+					&:last-child {
+						@media (width <= 500px) {
+							margin-top: 2.5em;
+						}
+					}
 
 					&:focus,
 					&:focus-visible {
