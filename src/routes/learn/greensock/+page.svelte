@@ -35,7 +35,7 @@
 			</div>
 
 			<Iframe
-				src="https://www.youtube.com/embed/M4GCT-2kaoo?si=yj8-27t052nokvkT"
+				src="https://www.youtube.com/embed/AW1yfBKRMKc?si=Lin0MJK396SD5Rbe"
 				title="YouTube video player"
 			/>
 
