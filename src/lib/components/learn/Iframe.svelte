@@ -22,11 +22,15 @@
 		margin-top: 5em;
 		margin-bottom: 15em;
 		width: 100%;
-		max-inline-size: 90vw;
+		max-inline-size: 60vw;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		height: 100vh;
+
+		@media (width <= 768px) {
+			max-inline-size: 90vw;
+		}
 
 		& .responsive-iframe {
 			position: relative;
