@@ -77,11 +77,11 @@
 		font-family: var(--bronova);
 		font-size: clamp(var(--sm), 2vw, var(--h4));
 		font-weight: 700;
-		background-color: transparent;
-		color: var(--clr-main);
-		outline: 3px solid var(--clr-main);
+		background-color: var(--clr-main);
+		color: var(--clr-inverted);
+		outline: 3px solid var(--clr-inverted);
 		outline-offset: -7px;
-		border: 1px solid var(--clr-main);
+		border: 1px solid var(--clr-inverted);
 		border-radius: var(--radius);
 		opacity: 0.75;
 		transition: 500ms;
@@ -112,7 +112,7 @@
 
 		& i {
 			font-size: clamp(var(--sm), 1.5vw, var(--h5));
-			color: var(--clr-main);
+			color: var(--clr-inverted);
 			align-items: center;
 			cursor: pointer;
 		}
