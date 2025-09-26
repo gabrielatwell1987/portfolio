@@ -58,7 +58,8 @@
 			}
 		}
 
-		if ('serviceWorker' in navigator) {
+		// Register service worker only in production (not dev)
+		if (!import.meta.env.DEV && 'serviceWorker' in navigator) {
 			navigator.serviceWorker
 				.register('/service-worker.js')
 				.then(() => console.log('Service Worker registered'))
