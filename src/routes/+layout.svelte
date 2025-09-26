@@ -85,8 +85,6 @@
 	</div>
 
 	<Footer />
-
-	<h1>test</h1>
 </main>
 
 <style>
