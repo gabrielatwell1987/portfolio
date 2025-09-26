@@ -9,7 +9,10 @@
 
 	// Effect to listen for PWA events
 	$effect(() => {
+		console.log('InstallButton: $effect running, setting up listeners');
+
 		function handleBeforeInstallPrompt(event) {
+			console.log('InstallButton: beforeinstallprompt event fired');
 			event.preventDefault();
 			deferredPrompt = event;
 			isInstallable = true;
@@ -17,6 +20,7 @@
 		}
 
 		function handleAppInstalled() {
+			console.log('InstallButton: appinstalled event fired');
 			isInstallable = false;
 			installStatus = 'App installed successfully';
 		}
@@ -27,6 +31,7 @@
 
 		// Cleanup on destroy
 		return () => {
+			console.log('InstallButton: cleanup running, removing listeners');
 			window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
 			window.removeEventListener('appinstalled', handleAppInstalled);
 		};
