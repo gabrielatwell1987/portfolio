@@ -47,7 +47,6 @@
 			&:focus-visible {
 				outline: 1px solid var(--clr-main);
 				background: transparent;
-				color: var(--clr-main);
 			}
 		}
 	}
