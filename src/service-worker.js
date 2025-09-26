@@ -4,6 +4,8 @@ const CACHE = `cache-${version}`;
 const ASSETS = [...build, ...files];
 
 // Install service worker
+// filepath: c:\Users\Gatwe\Desktop\Projects\portfolio\public\service-worker.js
+// Version 1.1 - Force update
 self.addEventListener('install', (event) => {
 	async function addFilesToCache() {
 		const cache = await caches.open(CACHE);
