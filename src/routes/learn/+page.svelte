@@ -22,7 +22,7 @@
 
 	<article>
 		<section aria-label="icons">
-			<a class="gs" href="learn/greensock" style="width: clamp(10em, 25vw, 30em);">
+			<a class="learn-image" href="learn/greensock" style="width: clamp(10em, 25vw, 30em);">
 				<Image
 					src="/logos/gsapLogo.svg"
 					alt="greensock animation platform logo"
@@ -31,7 +31,7 @@
 				/>
 			</a>
 
-			<a class="sk" href="learn/sveltekit" style="width: clamp(10em, 25vw, 30em);">
+			<a class="learn-image" href="learn/sveltekit" style="width: clamp(10em, 25vw, 30em);">
 				<Image
 					src="/skills/Svelte-Dark.svg"
 					alt="sveltekit web framework logo"
@@ -39,20 +39,20 @@
 					aspectRatio="1/1"
 				/>
 			</a>
-		</section>
 
-		<div class="animation-link" aria-label="animation">
-			<a href="/learn/posts">
-				<div class="image">
-					<Image
-						src="logos/animation.webp"
-						alt="A logo that says web animation techniques."
-						width="600"
-						aspectRatio="16/9"
-					/>
-				</div>
+			<a
+				href="/learn/posts"
+				class="learn-image"
+				style="grid-column: 1/-1; width: clamp(15em, 50vw, 60em); justify-self: center;"
+			>
+				<Image
+					src="logos/animation.webp"
+					alt="A logo that says web animation techniques."
+					width="600"
+					aspectRatio="16/9"
+				/>
 			</a>
-		</div>
+		</section>
 
 		<UsefulLinks />
 	</article>
@@ -89,12 +89,13 @@
 			}
 
 			& section {
-				display: flex;
-				justify-content: center;
-				align-items: center;
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
 				gap: 10vw;
 
 				@media (width <= 500px) {
+					grid-template-columns: 1fr;
+					gap: 2em;
 					margin-bottom: -1em;
 				}
 
@@ -109,71 +110,22 @@
 					}
 				}
 
-				& .gs,
-				& .sk {
+				& .learn-image {
+					margin-inline: auto;
+
+					@media (width >= 720px) {
+						margin-top: 0;
+					}
 					transition:
-						filter 1s ease-in-out,
-						scale 0.25s ease-in-out;
-				}
+						filter 0.5s ease-in-out,
+						scale 0.35s ease-in-out;
 
-				& .gs:not(:hover),
-				& .sk:not(:hover) {
-					filter: opacity(0.5);
-					scale: 0.95;
+					&:not(:hover) {
+						filter: opacity(0.5);
+						scale: 0.95;
+					}
 				}
 			}
-		}
-
-		& a {
-			&:focus,
-			&:focus-visible {
-				outline: 1px solid var(--clr-main);
-				background: transparent;
-			}
-		}
-	}
-
-	.image {
-		background-color: transparent;
-		color: var(--smoke);
-		margin-inline: auto;
-		margin-top: 1em;
-		border-radius: 8px;
-		cursor: pointer;
-		letter-spacing: 1px;
-		transition: opacity 0.75s ease-in-out;
-
-		&:hover {
-			animation: wiggle 0.85s ease-in-out infinite;
-		}
-	}
-
-	.gs,
-	.sk {
-		margin-inline: auto;
-
-		@media (width >= 720px) {
-			margin-top: 0;
-		}
-	}
-
-	.animation-link {
-		display: block;
-		position: relative;
-	}
-
-	@keyframes wiggle {
-		0% {
-			rotate: 0deg;
-			translate: 0 0;
-		}
-		25% {
-			rotate: -2deg;
-			translate: -5px 0;
-		}
-		80% {
-			rotate: 2deg;
-			translate: 5px 0;
 		}
 	}
 </style>

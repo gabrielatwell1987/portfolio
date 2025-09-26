@@ -7,7 +7,7 @@
 		"npm": ">=10.0.0"
 	},
 	"scripts": {
-		"dev": "vite dev --host",
+		"dev": "vite dev --host --open",
 		"build": "vite build",
 		"preview": "vite preview --host",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
