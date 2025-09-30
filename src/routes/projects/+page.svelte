@@ -58,60 +58,69 @@
 
 <main>
 	<Title title="showcase" />
-</main>
 
-<div class="popup">
-	<Popup
-		title=""
-		text="Hover over the project image to reveal the tech stack I used on the project 👍🏻"
-	/>
-</div>
-
-<section class="github-section">
-	<div class="project-container">
-		{#if showGithub && GithubContributions}
-			<GithubContributions />
-		{:else}
-			<!-- Skeleton/placeholder with approximate height -->
-			<div class="github-skeleton" aria-label="Loading GitHub contributions">
-				<div class="skeleton-header">
-					<div class="skeleton-title"></div>
-					<div class="skeleton-subtitle"></div>
-				</div>
-				<div class="skeleton-chart"></div>
-				<div class="skeleton-legend"></div>
-			</div>
-		{/if}
+	<div class="popup">
+		<Popup
+			title=""
+			text="Hover over the project image to reveal the tech stack I used on the project 👍🏻"
+		/>
 	</div>
-</section>
 
-<section class="bevel">
-	{#if showProjects && ProjectComponent}
-		{#each projects as project (project.index)}
-			{@const testimonial = getTestimonialForProject(project.index)}
-
-			{#if testimonial}
-				<div class="wholeProject" style="--stagger-delay: {project.index * 1.25}s;">
-					<ProjectComponent {...project} />
-					<Testimonial
-						name={testimonial.name}
-						title={testimonial.title}
-						testimonial={testimonial.testimonial}
-						rating={testimonial.rating}
-						avatar={testimonial.avatar}
-						index={project.index}
-					/>
-				</div>
+	<section class="github-section">
+		<div class="project-container">
+			{#if showGithub && GithubContributions}
+				<GithubContributions />
 			{:else}
-				<ProjectComponent {...project} />
+				<!-- Skeleton/placeholder with approximate height -->
+				<div class="github-skeleton" aria-label="Loading GitHub contributions">
+					<div class="skeleton-header">
+						<div class="skeleton-title"></div>
+						<div class="skeleton-subtitle"></div>
+					</div>
+					<div class="skeleton-chart"></div>
+					<div class="skeleton-legend"></div>
+				</div>
 			{/if}
-		{/each}
-	{/if}
-</section>
+		</div>
+	</section>
+
+	<section class="bevel">
+		{#if showProjects && ProjectComponent}
+			{#each projects as project (project.index)}
+				{@const testimonial = getTestimonialForProject(project.index)}
+
+				{#if testimonial}
+					<div class="wholeProject" style="--stagger-delay: {project.index * 1.25}s;">
+						<ProjectComponent {...project} />
+						<Testimonial
+							name={testimonial.name}
+							title={testimonial.title}
+							testimonial={testimonial.testimonial}
+							rating={testimonial.rating}
+							avatar={testimonial.avatar}
+							index={project.index}
+						/>
+					</div>
+				{:else}
+					<ProjectComponent {...project} />
+				{/if}
+			{/each}
+		{/if}
+	</section>
+</main>
 
 <style>
 	:root {
 		--100: 100%;
+	}
+
+	main {
+		background: linear-gradient(
+			to bottom,
+			var(--clr-light-gray) 0%,
+			var(--clr-inverted) 25%,
+			var(--clr-inverted) var(--100)
+		);
 	}
 
 	.github-section {
