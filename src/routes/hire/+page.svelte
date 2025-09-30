@@ -11,29 +11,40 @@
 	keywords="hire gabriel atwell, hire gabe atwell, project questionnaire"
 />
 
-<Title title="grow online" />
+<main>
+	<Title title="grow online" />
 
-<div class="personal-image">
-	<Image
-		src="/images/hire-gabe.webp"
-		alt="Gabriel Atwell"
-		style="width: clamp(200px, 30vw, 750px);"
-		aspectRatio="1/1"
-	/>
-</div>
+	<div class="personal-image">
+		<Image
+			src="/images/hire-gabe.webp"
+			alt="Gabriel Atwell"
+			style="width: clamp(200px, 30vw, 750px);"
+			aspectRatio="1/1"
+		/>
+	</div>
 
-<section>
-	<HireForm />
-</section>
+	<section>
+		<HireForm />
+	</section>
+</main>
 
 <style>
-	section {
-		display: grid;
-		place-items: center;
-		height: 100vh;
-	}
+	main {
+		background: linear-gradient(
+			to bottom,
+			var(--clr-light-gray) 0%,
+			var(--clr-inverted) 25%,
+			var(--clr-inverted) var(--100)
+		);
 
-	.personal-image {
-		margin-bottom: 2.5em;
+		& section {
+			display: grid;
+			place-items: center;
+			height: 100vh;
+		}
+
+		& .personal-image {
+			margin-bottom: 2.5em;
+		}
 	}
 </style>

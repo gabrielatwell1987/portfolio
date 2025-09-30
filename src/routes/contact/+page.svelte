@@ -15,3 +15,14 @@
 
 	<ContactForm />
 </main>
+
+<style>
+	main {
+		background: linear-gradient(
+			to bottom,
+			var(--clr-light-gray) 0%,
+			var(--clr-inverted) 25%,
+			var(--clr-inverted) var(--100)
+		);
+	}
+</style>
