@@ -1,5 +1,26 @@
 <script>
+	import gsap from 'gsap';
+	import { SplitText } from 'gsap/SplitText';
+
 	let { src, alt, title } = $props();
+
+	$effect(() => {
+		gsap.registerPlugin(SplitText);
+
+		const split = new SplitText('#title', { type: 'chars' });
+
+		gsap.from(split.chars, {
+			opacity: 0,
+			yPercent: -40,
+			duration: 1,
+			ease: 'power2.out',
+			stagger: {
+				each: 0.2,
+				from: 'random',
+				amount: 0.5
+			}
+		});
+	});
 </script>
 
 <div class="image-hero">
@@ -19,7 +40,7 @@
 		/>
 	</picture>
 
-	<h1>{title}</h1>
+	<h1 id="title">{title}</h1>
 </div>
 
 <style>
