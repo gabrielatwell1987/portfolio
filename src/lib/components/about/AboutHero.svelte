@@ -20,6 +20,11 @@
 				amount: 0.5
 			}
 		});
+
+		return () => {
+			gsap.killTweensOf(split.chars);
+			split.revert();
+		};
 	});
 </script>
 
