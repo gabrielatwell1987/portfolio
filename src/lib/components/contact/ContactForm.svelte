@@ -24,7 +24,7 @@
 
 <form method="POST" action="https://form.taxi/s/xeyymb58" novalidate>
 	<fieldset>
-		<legend>message me</legend>
+		<legend>reach me</legend>
 
 		<div class="form-group">
 			<label for="name">name</label>
@@ -150,7 +150,8 @@
 			font-size: clamp(var(--h6), 3vw, var(--xxl));
 			font-weight: 800;
 			letter-spacing: 1px;
-			color: var(--clr-blue);
+			color: var(--clr-main);
+			text-shadow: 0 0 5px var(--clr-inverted);
 			padding-inline: 1rem;
 			margin-bottom: 1rem;
 

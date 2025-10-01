@@ -1,20 +1,22 @@
 <script>
-	/** @type {{title: any, img?: string, width?: string, svg?: string}} */
-	let { title, img, width, svg } = $props();
+	/** @type {{title: any, title2: any, img?: string, width?: string, svg?: string}} */
+	let { title, title2, img, width, svg } = $props();
 
 	let svgElement = $derived.by(() => {
 		if (!svg) return '';
-		// Ensure the SVG root gets class="title"
+
 		const svgTagMatch = svg.match(/<svg[^>]*>/);
 		if (!svgTagMatch) return svg;
 		const svgTag = svgTagMatch[0];
-		// Merge any existing attributes with our required ones
+
 		const attrs =
 			'class="title exclude-transition" id="title" view-transition-name="page-title" aria-label="' +
 			title +
 			'"' +
 			(width ? ' style="width:' + (width.match(/^\d+$/) ? width + 'px' : width) + '"' : '');
+
 		const newSvgTag = svgTag.replace('<svg', `<svg ${attrs}`);
+
 		return svg.replace(svgTag, newSvgTag);
 	});
 </script>
@@ -25,7 +27,13 @@
 	{:else if svg}
 		{@html svgElement}
 	{:else}
-		<h1 class="title exclude-transition" id="title" aria-label={title}>{title}</h1>
+		<!-- <h1 class="title exclude-transition" id="title" aria-label={title}>{title}</h1> -->
+		<div class="title-container">
+			<h1 class="title title-main exclude-transition" id="title" aria-label={title}>{title}</h1>
+			{#if title2}
+				<h1 class="title title-overlay exclude-transition" aria-label={title2}>{title2}</h1>
+			{/if}
+		</div>
 	{/if}
 </main>
 
@@ -43,16 +51,31 @@
 			}
 		}
 
-		.title {
+		.title-container {
+			position: relative;
 			text-align: center;
+			margin-top: 5rem;
+			view-transition-name: page-title;
+
+			@media (width >= 740px) {
+				margin: 2rem auto;
+			}
+		}
+
+		.title {
 			font-family: var(--ultra);
 			font-size: clamp(2.5rem, 10.5vw, 15rem);
 			letter-spacing: -1px;
 			text-transform: uppercase;
 			font-kerning: none;
-			margin-top: 5rem;
-			view-transition-name: page-title;
-			color: var(--clr-inverted);
+			color: transparent;
+
+			@media (width >= 990px) {
+				font-weight: 800;
+			}
+		}
+
+		.title-main {
 			text-shadow:
 				0 0 1px var(--clr-inverted),
 				-5px -5px 0 var(--clr-main),
@@ -63,13 +86,47 @@
 				5px 0 0 var(--clr-main),
 				0 -5px 0 var(--clr-main),
 				0 5px 0 var(--clr-main);
+			-webkit-text-stroke: 3px var(--clr-main);
+			text-shadow: none;
 
-			@media (width >= 740px) {
-				margin: 2rem auto;
+			@media (width <= 768px) {
+				-webkit-text-stroke: 1px var(--clr-main);
 			}
 
-			@media (width >= 990px) {
-				font-weight: 800;
+			@media (width <= 768px) {
+				text-shadow:
+					0 0 1px var(--clr-inverted),
+					-1px -1px 0 var(--clr-main),
+					1px -1px 0 var(--clr-main),
+					-1px 1px 0 var(--clr-main),
+					1px 1px 0 var(--clr-main),
+					-1px 0 0 var(--clr-main),
+					1px 0 0 var(--clr-main),
+					0 -1px 0 var(--clr-main),
+					0 1px 0 var(--clr-main);
+			}
+		}
+
+		.title-overlay {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -48%);
+			text-shadow:
+				0 0 1px var(--clr-inverted),
+				-3px -3px 0 var(--clr-main),
+				3px -3px 0 var(--clr-main),
+				-3px 3px 0 var(--clr-main),
+				3px 3px 0 var(--clr-main),
+				-3px 0 0 var(--clr-main),
+				3px 0 0 var(--clr-main),
+				0 -3px 0 var(--clr-main),
+				0 3px 0 var(--clr-main);
+			-webkit-text-stroke: 2px var(--clr-main);
+			text-shadow: none;
+
+			@media (width <= 768px) {
+				-webkit-text-stroke: 1px var(--clr-main);
 			}
 
 			@media (width <= 768px) {

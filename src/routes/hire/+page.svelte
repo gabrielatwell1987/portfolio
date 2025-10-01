@@ -12,7 +12,7 @@
 />
 
 <main>
-	<Title title="grow online" />
+	<Title title="connect" title2="connect" />
 
 	<div class="personal-image">
 		<Image
