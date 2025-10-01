@@ -49,6 +49,10 @@
 				opacity: 1;
 				outline-offset: 0px;
 			}
+
+			&:active {
+				scale: 0.97;
+			}
 		}
 	}
 
