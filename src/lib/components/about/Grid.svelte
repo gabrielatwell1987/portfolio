@@ -35,11 +35,16 @@
 			background-color: hsla(0, 0%, 26%, 0.25);
 			backdrop-filter: blur(5px);
 			-webkit-backdrop-filter: blur(4px);
-			box-shadow: 0 2px 0 3px var(--clr-main);
+			box-shadow: 0 1px 0 2px var(--clr-main);
+
+			@media (width >= 768px) {
+				box-shadow: 0 2px 0 3px var(--clr-main);
+			}
 
 			.title {
 				font-family: var(--ultra);
 				font-size: clamp(var(--h3), 4.5vw, var(--xxl));
+				font-weight: 400;
 				text-shadow: 0 0 5px 3px var(--clr-gray);
 				mix-blend-mode: difference;
 				letter-spacing: -1px;
@@ -56,6 +61,7 @@
 					0 2px 0 var(--clr-main);
 
 				@media (width <= 768px) {
+					font-weight: 600;
 					text-shadow:
 						0 0 1px var(--clr-inverted),
 						-1px -1px 0 var(--clr-main),
