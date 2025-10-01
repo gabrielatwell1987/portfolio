@@ -115,7 +115,7 @@
 	}
 
 	::view-transition-new(page-title) {
-		animation: slide-in 0.75s ease-in forwards;
+		animation: slide-in 0.75s ease-out forwards;
 	}
 
 	@keyframes slide-out {

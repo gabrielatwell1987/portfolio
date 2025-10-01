@@ -40,7 +40,7 @@
 		}
 
 		path {
-			transition: all 0.2s ease-in;
+			transition: all 0.2s ease-out;
 		}
 
 		.head {
