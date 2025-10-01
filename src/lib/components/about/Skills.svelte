@@ -245,17 +245,17 @@
 
 			& a:hover {
 				transform: scale(1.1);
-				transition: transform 0.25s ease-in-out;
+				transition: transform 0.25s ease-out;
 			}
 
 			& a:nth-child(odd):hover {
 				rotate: -5deg;
-				transition: rotate 0.15s ease-in-out;
+				transition: rotate 0.15s ease-out;
 			}
 
 			& a:nth-child(even):hover {
 				rotate: 5deg;
-				transition: rotate 0.15s ease-in-out;
+				transition: rotate 0.15s ease-out;
 			}
 
 			& li {
@@ -268,7 +268,7 @@
 				padding: 0.5rem;
 				cursor: pointer;
 				transform: scale(1);
-				transition: transform 0.25s ease-in-out;
+				transition: transform 0.25s ease-out;
 				background-color: transparent;
 				filter: drop-shadow(0 0 0.5rem var(--text-gray));
 				width: 15vw;

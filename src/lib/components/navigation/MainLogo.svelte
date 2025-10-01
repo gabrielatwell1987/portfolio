@@ -93,7 +93,7 @@
 			margin-bottom: 0;
 
 			& a {
-				transition: transform 0.25s ease-in-out;
+				transition: transform 0.25s ease-out;
 				font-weight: 400;
 				cursor: pointer;
 			}

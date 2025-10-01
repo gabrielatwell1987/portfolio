@@ -123,8 +123,8 @@
 						margin-top: 0;
 					}
 					transition:
-						filter 0.5s ease-in-out,
-						scale 0.35s ease-in-out;
+						filter 0.5s ease-out,
+						scale 0.35s ease-out;
 
 					&:not(:hover) {
 						filter: opacity(0.5);

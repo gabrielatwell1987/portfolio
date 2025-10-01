@@ -142,8 +142,8 @@
 		overflow: hidden;
 		transform: scale(0.9);
 		transition:
-			opacity 0.3s ease-in-out,
-			transform 0.3s ease-in-out;
+			opacity 0.3s ease-out,
+			transform 0.3s ease-out;
 		opacity: 0;
 		transform-origin: top left;
 		box-shadow: 0 0 0 1px var(--clr-main);

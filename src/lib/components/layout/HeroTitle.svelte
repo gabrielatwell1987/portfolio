@@ -30,7 +30,7 @@
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 				background-size: var(--bgSize);
-				animation: animate 5s ease-in-out infinite;
+				animation: animate 5s ease-out infinite;
 			}
 		}
 	}

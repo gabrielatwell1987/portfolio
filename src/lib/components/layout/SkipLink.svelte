@@ -35,6 +35,6 @@
 		outline: 3px solid var(--dark-pale);
 		transform: scale(1.05);
 		top: 1.5rem;
-		transition: top 0.2s ease-in-out;
+		transition: top 0.2s ease-out;
 	}
 </style>

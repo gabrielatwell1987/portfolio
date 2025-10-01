@@ -227,7 +227,7 @@
 					border-color: var(--fail);
 					box-shadow: 0 0 0 2px var(--fail);
 					background-color: hsla(0, 70%, 55%, 0.05);
-					animation: wiggle 0.5s ease-in-out;
+					animation: wiggle 0.5s ease-out;
 				}
 
 				option {
@@ -306,7 +306,7 @@
 			border-color: var(--fail);
 			box-shadow: 0 0 0 2px var(--fail);
 			background-color: hsla(0, 70%, 55%, 0.05);
-			animation: wiggle 0.5s ease-in-out;
+			animation: wiggle 0.5s ease-out;
 
 			&:placeholder-shown {
 				border-color: var(--clr-gray);

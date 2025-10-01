@@ -45,8 +45,8 @@
 			transform: translateY(100%);
 			opacity: 0;
 			transition:
-				transform 1.25s ease-in-out,
-				opacity 1.25s ease-in-out;
+				transform 1.25s ease-out,
+				opacity 1.25s ease-out;
 			transition-delay: 1s;
 
 			@media (width <= 768px) {

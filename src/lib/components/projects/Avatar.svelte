@@ -30,7 +30,7 @@
 			width: 60px;
 			height: 60px;
 			object-fit: cover;
-			transition: scale 0.5s ease-in-out;
+			transition: scale 0.5s ease-out;
 
 			&:hover {
 				scale: 1.1;

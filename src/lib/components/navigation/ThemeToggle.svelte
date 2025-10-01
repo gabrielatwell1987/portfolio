@@ -131,7 +131,7 @@
 
 		&:hover {
 			text-shadow: 0 0 1px var(--smoke);
-			transition: all 0.35s ease-in-out;
+			transition: all 0.35s ease-out;
 		}
 
 		&:active {

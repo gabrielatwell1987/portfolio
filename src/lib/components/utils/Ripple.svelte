@@ -28,7 +28,7 @@
 			opacity: 0.8;
 			color: var(--dark-pale);
 			outline-offset: 0px;
-			animation: wiggle 0.5s ease-in-out infinite;
+			animation: wiggle 0.5s ease-out infinite;
 		}
 
 		&::after {

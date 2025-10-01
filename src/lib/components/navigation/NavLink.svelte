@@ -13,7 +13,7 @@
 		letter-spacing: 2px;
 		color: var(--clr-main);
 		background-color: transparent;
-		transition: opacity 0.15s ease-in-out;
+		transition: opacity 0.15s ease-out;
 
 		&:focus,
 		&:focus-visible {
@@ -33,7 +33,7 @@
 				text-shadow: 0px 0px 1px var(--clr-inverted);
 				border-bottom: 4px solid var(--clr-main);
 				height: 2.75rem;
-				transition: all 0.15s ease-in-out;
+				transition: all 0.15s ease-out;
 				border-radius: 1px;
 			}
 

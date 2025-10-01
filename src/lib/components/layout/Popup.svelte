@@ -50,7 +50,7 @@
 			}
 
 			&:hover {
-				animation: wiggle 1s ease-in-out infinite;
+				animation: wiggle 1s ease-out infinite;
 			}
 
 			&:focus,
