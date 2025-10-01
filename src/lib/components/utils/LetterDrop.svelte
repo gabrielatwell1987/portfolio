@@ -24,7 +24,7 @@
 			autoAlpha: 1,
 			duration: 1.5,
 			delay: 0.5,
-			ease: 'sine.inOut',
+			ease: 'sine.out',
 			stagger: {
 				each: 0.25,
 				from: 'edges'
