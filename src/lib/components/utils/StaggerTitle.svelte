@@ -63,7 +63,7 @@
 	}
 
 	::view-transition-new(letter-*)::view-transition-new-data {
-		animation: slide-in 3s ease-in forwards;
+		animation: slide-in 3s ease-out forwards;
 		animation-delay: calc(var(--index) * 0.2s);
 	}
 

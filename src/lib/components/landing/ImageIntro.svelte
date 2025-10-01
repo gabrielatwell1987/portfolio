@@ -97,7 +97,7 @@
 	}
 
 	::view-transition-new(hero-image) {
-		animation: scale-fade-in 0.5s ease-in forwards;
+		animation: scale-fade-in 0.5s ease-out forwards;
 	}
 
 	::view-transition-old(hero-title),

@@ -29,7 +29,7 @@
 	}
 
 	:global(::view-transition-new(hero-image)) {
-		animation: scale-in var(--duration, 0.75s) var(--easing, ease-in) forwards;
+		animation: scale-in var(--duration, 0.75s) var(--easing, ease-out) forwards;
 	}
 
 	@keyframes scale-out {

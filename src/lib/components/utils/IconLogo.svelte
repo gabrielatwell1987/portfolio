@@ -43,7 +43,7 @@
 	}
 
 	::view-transition-new(icon-logo) {
-		animation: slide-up 1.5s ease-in forwards;
+		animation: slide-up 1.5s ease-out forwards;
 	}
 
 	@keyframes slide-down {
