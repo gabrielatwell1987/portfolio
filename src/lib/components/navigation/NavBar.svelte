@@ -140,13 +140,13 @@
 		top: 1em;
 		z-index: 10;
 		overflow: hidden;
-		transform: scale(0);
+		transform: scale(0.9);
 		transition:
-			opacity 1s ease-in-out,
-			transform 0.4s ease-in-out;
+			opacity 0.3s ease-in-out,
+			transform 0.3s ease-in-out;
 		opacity: 0;
 		transform-origin: top left;
-		box-shadow: 0 0 5px 3px var(--clr-gray);
+		box-shadow: 0 0 0 1px var(--clr-main);
 
 		&.open {
 			transform: scale(1);
