@@ -178,7 +178,7 @@
 				rgba(45, 85, 120, 0.85) 60%,
 				rgba(20, 40, 60, 0.95) 100%
 			);
-			animation: gradientShift 50s ease-in-out infinite;
+			animation: gradientShift 50s ease-out infinite;
 		}
 
 		& .particle {
@@ -193,7 +193,7 @@
 			position: absolute;
 			border-radius: 30%;
 			opacity: 0.1;
-			animation: shapeFloat 20s ease-in-out infinite;
+			animation: shapeFloat 20s ease-out infinite;
 
 			&.shape-1 {
 				top: 25%;
@@ -235,7 +235,7 @@
 				width: 12vw;
 				height: 12vw;
 				background: linear-gradient(90deg, var(--clr-blue), transparent);
-				animation: antiShapeFloat 15s ease-in-out infinite;
+				animation: antiShapeFloat 15s ease-out infinite;
 				animation-delay: 3s;
 				clip-path: polygon(
 					50% 0%,

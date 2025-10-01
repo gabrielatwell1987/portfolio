@@ -144,7 +144,7 @@
 
 		& .github-skeleton {
 			opacity: 0.6;
-			animation: pulse 2s ease-in-out infinite alternate;
+			animation: pulse 2s ease-out infinite alternate;
 
 			& .skeleton-header {
 				margin-bottom: 2rem;

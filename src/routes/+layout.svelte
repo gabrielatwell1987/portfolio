@@ -103,7 +103,7 @@
 		justify-content: flex-start;
 		overflow: hidden;
 		opacity: 1;
-		transition: opacity 0.3s ease-in-out;
+		transition: opacity 0.3s ease-out;
 	}
 
 	#main-content {

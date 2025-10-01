@@ -224,7 +224,7 @@
 			}
 
 			&:hover {
-				animation: wiggle 01s ease-in-out infinite;
+				animation: wiggle 01s ease-out infinite;
 			}
 
 			& svg {
@@ -270,7 +270,7 @@
 			color: var(--clr-main);
 
 			&:hover {
-				animation: wiggle 01s ease-in-out infinite;
+				animation: wiggle 01s ease-out infinite;
 			}
 
 			&:focus,

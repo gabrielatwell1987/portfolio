@@ -32,7 +32,7 @@
 			top: 13%;
 			padding: 0.5rem;
 			border-radius: 0.5rem;
-			animation: figcaption 10s ease-in-out forwards;
+			animation: figcaption 10s ease-out forwards;
 			margin-inline: auto;
 		}
 

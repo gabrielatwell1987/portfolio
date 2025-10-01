@@ -22,7 +22,7 @@
 		border: 2px solid var(--clr-main);
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 		overflow: hidden;
-		transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-out;
 		padding-block: 1em;
 		padding-inline: 2em;
 

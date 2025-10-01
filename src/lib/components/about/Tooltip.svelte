@@ -27,7 +27,7 @@
 		&:hover .tooltip {
 			opacity: 1;
 			visibility: visible;
-			animation: fadeIn 0.3s forwards;
+			animation: fadeIn 0.25s forwards;
 		}
 
 		& .tooltip-trigger {
