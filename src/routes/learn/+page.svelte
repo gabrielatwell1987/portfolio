@@ -3,6 +3,7 @@
 	import Image from '$lib/components/layout/Image.svelte';
 	import AnimatedHeading from '$lib/components/learn/AnimatedHeading.svelte';
 	import UsefulLinks from '$lib/components/learn/UsefulLinks.svelte';
+	import BgCircles from '$lib/components/utils/BgCircles.svelte';
 
 	$effect(() => {
 		document.documentElement.scrollTo(0, 0);
@@ -14,6 +15,8 @@
 	description="about learning web techniques and web animation basics"
 	keywords="topics to learn, web animation basics, topics, web techniques"
 />
+
+<BgCircles stroke="var(--clr-gray)" />
 
 <main>
 	<section>
