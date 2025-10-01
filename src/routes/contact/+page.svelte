@@ -11,7 +11,7 @@
 />
 
 <main>
-	<Title title="get in touch" />
+	<Title title="message" title2="message" />
 
 	<ContactForm />
 </main>

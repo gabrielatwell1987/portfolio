@@ -57,7 +57,7 @@
 />
 
 <main>
-	<Title title="showcase" />
+	<Title title="showcase" title2="showcase" />
 
 	<div class="popup">
 		<Popup
