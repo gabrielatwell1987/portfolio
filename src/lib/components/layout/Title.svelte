@@ -91,9 +91,6 @@
 
 			@media (width <= 768px) {
 				-webkit-text-stroke: 1px var(--clr-main);
-			}
-
-			@media (width <= 768px) {
 				text-shadow:
 					0 0 1px var(--clr-inverted),
 					-1px -1px 0 var(--clr-main),
@@ -127,9 +124,7 @@
 
 			@media (width <= 768px) {
 				-webkit-text-stroke: 1px var(--clr-main);
-			}
-
-			@media (width <= 768px) {
+				transform: translate(-50%, -43.5%);
 				text-shadow:
 					0 0 1px var(--clr-inverted),
 					-1px -1px 0 var(--clr-main),
