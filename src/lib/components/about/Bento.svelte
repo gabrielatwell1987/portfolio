@@ -151,7 +151,7 @@
 
 			& .item {
 				width: 100%;
-				box-shadow: 0 0 5px 2px var(--clr-gray);
+				box-shadow: 0 2px 0 3px var(--clr-main);
 				background-color: var(--surface-2);
 				background-image: var(--gradient);
 				padding: var(--space);
@@ -255,7 +255,6 @@
 				}
 
 				&:hover {
-					box-shadow: 0 0 5px 3px var(--clr-gray);
 					opacity: 1;
 				}
 
