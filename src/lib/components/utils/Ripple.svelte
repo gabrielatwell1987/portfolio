@@ -41,7 +41,7 @@
 			background: radial-gradient(circle, var(--smoke) 10%, transparent 50.01%);
 			background-size: 100%;
 			background-repeat: no-repeat;
-			transform: scale(0);
+			transform: scale(0.9);
 			opacity: 0;
 			transition:
 				transform 0.6s,

@@ -52,6 +52,10 @@
 				opacity: 0.95;
 				outline-offset: 0px;
 			}
+
+			&:active {
+				scale: 0.97;
+			}
 		}
 	}
 </style>
