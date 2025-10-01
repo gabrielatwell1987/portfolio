@@ -15,7 +15,7 @@
 		const tl = gsap.timeline({
 			defaults: {
 				duration: 2,
-				ease: 'power2.inOut'
+				ease: 'power2.out'
 			},
 
 			delay: 0.5
