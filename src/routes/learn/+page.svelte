@@ -37,7 +37,7 @@
 					width="350"
 					aspectRatio="1/1"
 				/> -->
-				<svg xmlns="http://www.w3.org/2000/svg" width="450" fill="none" viewBox="0 0 82 50">
+				<svg xmlns="http://www.w3.org/2000/svg" width="450" fill="none" viewBox="-.5 -.25 90 50">
 					<path
 						fill="#025018"
 						stroke="var(--clr-main)"
