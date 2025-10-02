@@ -1,32 +1,56 @@
 <script>
+	import { browser } from '$app/environment';
+	import { navigating } from '$app/stores';
 	import '../app.css';
 	import '@picocss/pico/css/pico.min.css';
-	import { navigating } from '$app/stores';
 	import Analytics from '$lib/data/Analytics.svelte';
 	import NavBar from '$lib/components/navigation/NavBar.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import Loading from '$lib/components/layout/Loading.svelte';
 	import SkipLink from '$lib/components/layout/SkipLink.svelte';
 	import ViewTransition from '$lib/components/layout/ViewTransition.svelte';
+
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
 	let isPageLoaded = $state(false);
 
 	async function detectSWUpdate() {
-		const registration = await navigator.serviceWorker.ready;
+		if (!browser) return;
 
-		registration.addEventListener('updatefound', () => {
-			const newSW = registration.installing;
+		if (import.meta.env.DEV) {
+			return;
+		}
 
-			newSW.addEventListener('statechange', () => {
-				if (newSW.state === 'installed') {
-					if (confirm('Updating to the latest version. Reload now?')) {
-						newSW.postMessage({ type: 'SKIP_WAITING' });
-						location.reload();
+		if (!('serviceWorker' in navigator)) {
+			return;
+		}
+
+		try {
+			const registration = await navigator.serviceWorker.ready;
+
+			if (!registration) {
+				return;
+			}
+
+			registration.addEventListener('updatefound', () => {
+				const newSW = registration.installing;
+
+				if (!newSW) return;
+
+				newSW.addEventListener('statechange', () => {
+					if (newSW.state === 'installed') {
+						if (confirm('Updating to the latest version. Reload now?')) {
+							newSW.postMessage({ type: 'SKIP_WAITING' });
+							location.reload();
+						}
 					}
-				}
+				});
 			});
-		});
+		} catch (error) {
+			if (import.meta.env.DEV) {
+				console.log('Service worker detection failed:', error);
+			}
+		}
 	}
 
 	$effect(async () => {
@@ -49,21 +73,27 @@
 		}
 
 		isPageLoaded = true;
-		detectSWUpdate();
+
+		// Only try to detect SW updates and register SW in production
+		if (!import.meta.env.DEV) {
+			// Register service worker
+			if ('serviceWorker' in navigator) {
+				try {
+					await navigator.serviceWorker.register('/service-worker.js');
+					console.log('Service Worker registered');
+					// Detect updates after registration
+					detectSWUpdate();
+				} catch (err) {
+					console.error('Service Worker registration failed:', err);
+				}
+			}
+		}
 
 		// navigating
 		if ($navigating) {
 			if (document.startViewTransition) {
 				document.startViewTransition();
 			}
-		}
-
-		// Register service worker only in production (not dev)
-		if (!import.meta.env.DEV && 'serviceWorker' in navigator) {
-			navigator.serviceWorker
-				.register('/service-worker.js')
-				.then(() => console.log('Service Worker registered'))
-				.catch((err) => console.error('Service Worker registration failed:', err));
 		}
 	});
 </script>
