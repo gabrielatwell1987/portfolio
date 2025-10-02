@@ -24,5 +24,8 @@
 			var(--clr-inverted) 25%,
 			var(--clr-inverted) var(--100)
 		);
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
 	}
 </style>
