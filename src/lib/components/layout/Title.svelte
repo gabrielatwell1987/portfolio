@@ -27,7 +27,6 @@
 	{:else if svg}
 		{@html svgElement}
 	{:else}
-		<!-- <h1 class="title exclude-transition" id="title" aria-label={title}>{title}</h1> -->
 		<div class="title-container">
 			<h1 class="title title-main exclude-transition" id="title" aria-label={title}>{title}</h1>
 			{#if title2}
@@ -68,73 +67,53 @@
 			letter-spacing: -1px;
 			text-transform: uppercase;
 			font-kerning: none;
-			color: transparent;
+			color: var(--clr-inverted);
 
 			@media (width >= 990px) {
 				font-weight: 800;
 			}
-		}
 
-		.title-main {
-			text-shadow:
-				0 0 1px var(--clr-inverted),
-				-5px -5px 0 var(--clr-main),
-				5px -5px 0 var(--clr-main),
-				-5px 5px 0 var(--clr-main),
-				5px 5px 0 var(--clr-main),
-				-5px 0 0 var(--clr-main),
-				5px 0 0 var(--clr-main),
-				0 -5px 0 var(--clr-main),
-				0 5px 0 var(--clr-main);
-			-webkit-text-stroke: 3px var(--clr-main);
-			text-shadow: none;
+			&.title-main {
+				-webkit-text-stroke: 3px var(--clr-main);
+				text-shadow: none;
 
-			@media (width <= 768px) {
-				-webkit-text-stroke: 1px var(--clr-main);
-				text-shadow:
-					0 0 1px var(--clr-inverted),
-					-1px -1px 0 var(--clr-main),
-					1px -1px 0 var(--clr-main),
-					-1px 1px 0 var(--clr-main),
-					1px 1px 0 var(--clr-main),
-					-1px 0 0 var(--clr-main),
-					1px 0 0 var(--clr-main),
-					0 -1px 0 var(--clr-main),
-					0 1px 0 var(--clr-main);
+				@media (width <= 768px) {
+					-webkit-text-stroke: 2px var(--clr-main);
+					text-shadow:
+						0 0 1px var(--clr-inverted),
+						-1px -1px 0 var(--clr-main),
+						1px -1px 0 var(--clr-main),
+						-1px 1px 0 var(--clr-main),
+						1px 1px 0 var(--clr-main),
+						-1px 0 0 var(--clr-main),
+						1px 0 0 var(--clr-main),
+						0 -1px 0 var(--clr-main),
+						0 1px 0 var(--clr-main);
+				}
 			}
-		}
 
-		.title-overlay {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -48%);
-			text-shadow:
-				0 0 1px var(--clr-inverted),
-				-3px -3px 0 var(--clr-main),
-				3px -3px 0 var(--clr-main),
-				-3px 3px 0 var(--clr-main),
-				3px 3px 0 var(--clr-main),
-				-3px 0 0 var(--clr-main),
-				3px 0 0 var(--clr-main),
-				0 -3px 0 var(--clr-main),
-				0 3px 0 var(--clr-main);
-			-webkit-text-stroke: 2px var(--clr-main);
-			text-shadow: none;
+			&.title-overlay {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -48%);
+				-webkit-text-stroke: 2px var(--clr-main);
+				text-shadow: none;
 
-			@media (width <= 768px) {
-				-webkit-text-stroke: 1px var(--clr-main);
-				transform: translate(-50%, -43.5%);
-				text-shadow:
-					0 0 1px var(--clr-inverted),
-					-1px -1px 0 var(--clr-main),
-					1px -1px 0 var(--clr-main),
-					-1px 1px 0 var(--clr-main),
-					1px 1px 0 var(--clr-main),
-					-1px 0 0 var(--clr-main),
-					1px 0 0 var(--clr-main),
-					0 -1px 0 var(--clr-main),
-					0 1px 0 var(--clr-main);
+				@media (width <= 768px) {
+					-webkit-text-stroke: 1px var(--clr-main);
+					transform: translate(-50%, -43.5%);
+					text-shadow:
+						0 0 1px var(--clr-inverted),
+						-1px -1px 0 var(--clr-main),
+						1px -1px 0 var(--clr-main),
+						-1px 1px 0 var(--clr-main),
+						1px 1px 0 var(--clr-main),
+						-1px 0 0 var(--clr-main),
+						1px 0 0 var(--clr-main),
+						0 -1px 0 var(--clr-main),
+						0 1px 0 var(--clr-main);
+				}
 			}
 		}
 
