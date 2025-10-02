@@ -26,7 +26,7 @@
 <section class="main">
 	<div class="separate">
 		<div class="title-spacing">
-			<Title img="/skills/Svelte-Dark.svg" width="50vw" />
+			<Title img="/skills/Svelte-Dark.svg" width="40vw" />
 		</div>
 
 		<main>

@@ -5,7 +5,6 @@
 	import Skills from '$lib/components/about/Skills.svelte';
 	import Bento from '$lib/components/about/Bento.svelte';
 	import CardFlip from '$lib/components/about/CardFlip.svelte';
-	import Tooltip from '$lib/components/about/Tooltip.svelte';
 	import AboutHero from '$lib/components/about/AboutHero.svelte';
 </script>
 
@@ -56,8 +55,6 @@
 					<div class="hero">
 						<div class="icons">
 							<Button href="/about/hero" title="Hero" />
-
-							<Tooltip title="💡" hover="made with three.js" />
 						</div>
 					</div>
 				</article>
