@@ -33,7 +33,6 @@
 		<li><NavLink href="/about" title="About" /></li>
 		<li><NavLink href="/projects" title="Builds" /></li>
 		<li><NavLink href="/learn" title="Learn" /></li>
-		<!-- <li><NavLink href="/photos" title="Photos" /></li> -->
 		<SelectLink path1="/hire" path2="/contact" />
 	</ul>
 
@@ -46,7 +45,6 @@
 		<li><NavLink href="/about" title="About Gabe" onclick={closeMenu} /></li>
 		<li><NavLink href="/projects" title="Things I've Built" onclick={closeMenu} /></li>
 		<li><NavLink href="/learn" title="Learn the Web" onclick={closeMenu} /></li>
-		<!-- <li><NavLink href="/photos" title="Photos of Me" onclick={closeMenu} /></li> -->
 		<li><NavLink href="/hire" title="Hire Me" onclick={closeMenu} /></li>
 		<li><NavLink href="/contact" title="Contact Me" onclick={closeMenu} /></li>
 	</ul>
@@ -137,7 +135,7 @@
 	.mobile {
 		position: fixed;
 		right: 1em;
-		top: 1em;
+		top: 3em;
 		z-index: 10;
 		overflow: hidden;
 		transform: scale(0.9);
