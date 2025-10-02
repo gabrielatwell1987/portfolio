@@ -41,16 +41,6 @@
 				toggle();
 			}
 		}
-
-		document.addEventListener('pointerdown', handleGlobalClick, { capture: true });
-		document.addEventListener('click', handleGlobalClick, { capture: true });
-		document.addEventListener('touchstart', handleGlobalClick, { capture: true });
-
-		return () => {
-			document.removeEventListener('pointerdown', handleGlobalClick, { capture: true });
-			document.removeEventListener('click', handleGlobalClick, { capture: true });
-			document.removeEventListener('touchstart', handleGlobalClick, { capture: true });
-		};
 	});
 
 	// Initialize theme state
@@ -76,6 +66,7 @@
 
 <button
 	bind:this={buttonElement}
+	onclick={toggle}
 	type="button"
 	role="switch"
 	aria-label="Toggle between light and dark theme"
