@@ -65,7 +65,7 @@
 				</svg>
 			</a>
 
-			<a class="learn-image" href="learn/sveltekit" style="width: clamp(10em, 20vw, 30em);">
+			<a class="learn-image" href="learn/sveltekit" style="width: clamp(8em, 16.5vw, 30em);">
 				<Image
 					src="/skills/Svelte-Dark.svg"
 					alt="sveltekit web framework logo"
@@ -77,7 +77,7 @@
 			<a
 				href="/learn/posts"
 				class="learn-image"
-				style="grid-column: 1/-1; width: clamp(15em, 50vw, 60em); justify-self: center;"
+				style="grid-column: 1/-1; width: clamp(15em, 46vw, 60em); justify-self: center;"
 			>
 				<Image
 					src="logos/animation.webp"
@@ -126,6 +126,7 @@
 			& section {
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
+
 				gap: 5vw;
 
 				@media (width <= 500px) {
@@ -136,6 +137,18 @@
 
 				& a {
 					display: block;
+
+					&:first-child {
+						margin-top: 5em;
+
+						@media (width <= 768px) {
+							margin-top: 2em;
+						}
+
+						@media (width <= 500px) {
+							margin-top: 0;
+						}
+					}
 
 					&:last-child {
 						@media (width <= 500px) {
