@@ -226,6 +226,10 @@
 				animation: wiggle 01s ease-out infinite;
 			}
 
+			&:active {
+				scale: 0.97;
+			}
+
 			& svg {
 				cursor: pointer;
 				stroke-width: calc(5px + 1vw);

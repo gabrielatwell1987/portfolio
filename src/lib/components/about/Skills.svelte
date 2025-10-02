@@ -289,6 +289,10 @@
 					width: clamp(50px, 7vw, 200px);
 					height: auto;
 				}
+
+				&:active {
+					scale: 0.97;
+				}
 			}
 		}
 

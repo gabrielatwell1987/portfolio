@@ -63,6 +63,10 @@
 				background: transparent;
 			}
 
+			&:active {
+				scale: 0.97;
+			}
+
 			@media (width <= 500px) {
 				letter-spacing: 1px;
 			}
