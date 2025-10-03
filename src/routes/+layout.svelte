@@ -14,20 +14,14 @@
 	let { children } = $props();
 	let isPageLoaded = $state(false);
 
-	async function detectSWUpdate() {
+	function detectSWUpdate() {
 		if (!browser) return;
-
-		if (import.meta.env.DEV) {
-			return;
-		}
 
 		if (!('serviceWorker' in navigator)) {
 			return;
 		}
 
-		try {
-			const registration = await navigator.serviceWorker.ready;
-
+		navigator.serviceWorker.ready.then((registration) => {
 			if (!registration) {
 				return;
 			}
@@ -46,48 +40,38 @@
 					}
 				});
 			});
-		} catch (error) {
-			if (import.meta.env.DEV) {
-				console.log('Service worker detection failed:', error);
-			}
-		}
+		});
 	}
 
 	$effect(async () => {
-		// Only load eruda in development
 		if (import.meta.env.DEV) {
-			try {
-				function setErudaPosition() {
-					eruda.position({ x: window.innerWidth - 70, y: window.innerHeight - 120 });
+			// Unregister any existing service workers in development
+			if ('serviceWorker' in navigator) {
+				const registrations = await navigator.serviceWorker.getRegistrations();
+				for (const registration of registrations) {
+					await registration.unregister();
+					console.log('Unregistered service worker in dev mode');
 				}
+			}
 
-				const eruda = (await import('eruda')).default;
-				eruda.init();
+			const eruda = (await import('eruda')).default;
+			eruda.init();
 
-				setErudaPosition();
+			function setErudaPosition() {
+				eruda.position({ x: window.innerWidth - 70, y: window.innerHeight - 120 });
+			}
 
-				addEventListener('resize', setErudaPosition);
-			} catch (error) {
-				console.warn('Failed to load eruda:', error);
+			setErudaPosition();
+			addEventListener('resize', setErudaPosition);
+		} else {
+			// Only register service worker in production
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/service-worker.js');
+				detectSWUpdate();
 			}
 		}
 
 		isPageLoaded = true;
-
-		// Only try to detect SW updates and register SW in production
-		if (!import.meta.env.DEV) {
-			// Register service worker
-			if ('serviceWorker' in navigator) {
-				try {
-					await navigator.serviceWorker.register('/service-worker.js');
-					console.log('Service Worker registered');
-					// Detect updates after registration
-					detectSWUpdate();
-				} catch (err) {
-					console.error('Service Worker registration failed:', err);
-				}
-			}
-		}
 
 		// navigating
 		if ($navigating) {

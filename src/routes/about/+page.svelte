@@ -153,7 +153,6 @@
 						gap: 10vw;
 						width: 100%;
 						margin-inline: auto;
-						margin-left: 0.9em;
 						padding-block: 0;
 					}
 				}
