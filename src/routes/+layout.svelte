@@ -123,7 +123,7 @@
 		padding: 1rem;
 		text-align: center;
 		z-index: 1000;
-		max-width: fit-content;
+		width: fit-content;
 		height: auto;
 		margin-inline: auto;
 		font-size: clamp(var(--sm), 2vw, var(--h5));
@@ -134,7 +134,7 @@
 			color: var(--clr-pale);
 			border: 1px solid var(--clr-pale);
 			cursor: pointer;
-			max-width: 50%;
+			width: fit-content;
 			margin-inline: auto;
 			font-size: clamp(var(--sm), 1.5vw, var(--h6));
 			font-weight: 600;
