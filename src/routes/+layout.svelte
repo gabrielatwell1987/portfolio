@@ -14,9 +14,38 @@
 	let { children } = $props();
 	let isPageLoaded = $state(false);
 
+	function detectSWUpdate() {
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker
+				.register('/service-worker.js')
+				.then((registration) => {
+					registration.addEventListener('updatefound', () => {
+						const newWorker = registration.installing;
+						if (newWorker) {
+							newWorker.addEventListener('statechange', () => {
+								if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+									if (confirm('New update detected.. reload now?')) {
+										window.location.reload();
+									}
+								}
+							});
+						}
+					});
+				})
+				.catch((error) => {
+					console.error('Service Worker registration failed:', error);
+				});
+		}
+	}
+
+	function reloadPage() {
+		window.location.reload();
+	}
+
 	$effect(() => {
 		isPageLoaded = true;
 
+		detectSWUpdate();
 		// navigating
 		if ($navigating) {
 			if (document.startViewTransition) {

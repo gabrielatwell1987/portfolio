@@ -1,0 +1,44 @@
+{
+	"name": "Gabe Atwell",
+	"short_name": "Atwell UI",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#111111",
+	"theme_color": "#111111",
+	"description": "The portfolio of Gabe Atwell, a UI/UX designer and developer.",
+	"screenshots": [
+		{
+			"src": "./icons/screenshot-narrow.png",
+			"type": "image/png",
+			"sizes": "420x320",
+			"form_factor": "narrow",
+			"label": "Narrow screenshot"
+		},
+		{
+			"src": "./icons/screenshot-wide.png",
+			"type": "image/png",
+			"sizes": "800x711",
+			"form_factor": "wide",
+			"label": "Wide screenshot"
+		}
+	],
+	"icons": [
+		{
+			"src": "./icons/pwa-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "./icons/pwa-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "./icons/maskable-icon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		}
+	]
+}

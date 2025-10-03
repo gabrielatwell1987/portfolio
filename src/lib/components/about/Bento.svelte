@@ -1,11 +1,4 @@
 <script>
-	import { goto } from '$app/navigation';
-
-	function handleNavigation(href, event) {
-		console.log('Navigating to:', href);
-		goto(href);
-	}
-
 	$effect(() => {
 		const main = () => {
 			const articles = Array.from(document.querySelectorAll('article'));
@@ -25,12 +18,7 @@
 		<section>
 			<div class="bento-grid">
 				<div class="item">
-					<button
-						type="button"
-						class="bento-link"
-						onclick={(e) => handleNavigation('/contact')}
-						aria-label="Navigate to contact page"
-					>
+					<a href="/contact" class="bento-link" aria-label="Navigate to contact page">
 						<div class="scale">
 							<svg
 								width="161"
@@ -51,16 +39,11 @@
 						<h2>contact</h2>
 
 						<p>Feel free to contact me about anything!</p>
-					</button>
+					</a>
 				</div>
 
 				<div class="item">
-					<button
-						type="button"
-						class="bento-link"
-						onclick={(e) => handleNavigation('/learn')}
-						aria-label="Navigate to learn page"
-					>
+					<a href="/learn" class="bento-link" aria-label="Navigate to learn page">
 						<div class="scale">
 							<svg
 								width="151"
@@ -80,16 +63,11 @@
 						<h2>learn</h2>
 
 						<p>If you'd like to learn about web technologies</p>
-					</button>
+					</a>
 				</div>
 
 				<div class="item">
-					<button
-						type="button"
-						class="bento-link"
-						onclick={(e) => handleNavigation('/projects')}
-						aria-label="Navigate to projects page"
-					>
+					<a href="/projects" class="bento-link" aria-label="Navigate to projects page">
 						<h2>projects</h2>
 
 						<svg
@@ -109,7 +87,7 @@
 								fill="var(--clr-main)"
 							/>
 						</svg>
-					</button>
+					</a>
 				</div>
 			</div>
 		</section>
@@ -129,9 +107,6 @@
 	}
 
 	.bento-link {
-		/* Reset button styles */
-		background: none;
-		border: none;
 		padding: var(--space);
 		margin: 0;
 		cursor: pointer;
