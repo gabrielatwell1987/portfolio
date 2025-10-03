@@ -41,12 +41,12 @@
 	.flip {
 		margin-inline: auto;
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: center;
 
-		@media (width <= 500px) {
+		/* @media (width <= 500px) {
 			margin-bottom: 3em;
-		}
+		} */
 	}
 
 	.card-container {

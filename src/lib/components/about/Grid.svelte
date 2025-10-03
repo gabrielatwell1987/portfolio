@@ -103,7 +103,7 @@
 		@media (width >= 990px) {
 			display: grid;
 			grid-template-rows: repeat(2, 1fr);
-			margin: -10em 0 -50% 0;
+			margin: -10em 0 -20em 0;
 			gap: 3rem;
 
 			.right {
@@ -117,9 +117,9 @@
 			}
 		}
 
-		@media (width >= 1024px) {
+		/* @media (width >= 1024px) {
 			margin-bottom: -10%;
-		}
+		} */
 	}
 
 	.left,
