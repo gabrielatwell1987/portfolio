@@ -24,6 +24,7 @@
 						if (newWorker) {
 							newWorker.addEventListener('statechange', () => {
 								if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+									newWorker.postMessage({ type: 'SKIP_WAITING' });
 									if (confirm('New update detected.. reload now?')) {
 										window.location.reload();
 									}
