@@ -14,30 +14,7 @@
 	let { children } = $props();
 	let isPageLoaded = $state(false);
 
-	function detectSWUpdate() {
-		if (!browser) return;
-
-		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker.register('/service-worker.js');
-		}
-	}
-
-	$effect(async () => {
-		// Load eruda in development
-		if (import.meta.env.DEV) {
-			const eruda = (await import('eruda')).default;
-			eruda.init();
-
-			function setErudaPosition() {
-				eruda.position({ x: window.innerWidth - 70, y: window.innerHeight - 120 });
-			}
-
-			setErudaPosition();
-			addEventListener('resize', setErudaPosition);
-		}
-
-		detectSWUpdate();
-
+	$effect(() => {
 		isPageLoaded = true;
 
 		// navigating

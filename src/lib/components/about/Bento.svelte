@@ -1,5 +1,10 @@
 <script>
-	import Image from '$lib/components/layout/Image.svelte';
+	import { goto } from '$app/navigation';
+
+	function handleNavigation(href, event) {
+		console.log('Navigating to:', href);
+		goto(href);
+	}
 
 	$effect(() => {
 		const main = () => {
@@ -20,7 +25,12 @@
 		<section>
 			<div class="bento-grid">
 				<div class="item">
-					<a href="/contact">
+					<button
+						type="button"
+						class="bento-link"
+						onclick={(e) => handleNavigation('/contact')}
+						aria-label="Navigate to contact page"
+					>
 						<div class="scale">
 							<svg
 								width="161"
@@ -41,11 +51,16 @@
 						<h2>contact</h2>
 
 						<p>Feel free to contact me about anything!</p>
-					</a>
+					</button>
 				</div>
 
 				<div class="item">
-					<a href="/learn">
+					<button
+						type="button"
+						class="bento-link"
+						onclick={(e) => handleNavigation('/learn')}
+						aria-label="Navigate to learn page"
+					>
 						<div class="scale">
 							<svg
 								width="151"
@@ -65,14 +80,18 @@
 						<h2>learn</h2>
 
 						<p>If you'd like to learn about web technologies</p>
-					</a>
+					</button>
 				</div>
 
 				<div class="item">
-					<a href="/projects">
+					<button
+						type="button"
+						class="bento-link"
+						onclick={(e) => handleNavigation('/projects')}
+						aria-label="Navigate to projects page"
+					>
 						<h2>projects</h2>
 
-						<!-- <Image src="/icons/lowgow.svg" alt="atwell logo" width="400" aspectRatio="16/9" /> -->
 						<svg
 							viewBox="0 0 450 451"
 							fill="none"
@@ -90,7 +109,7 @@
 								fill="var(--clr-main)"
 							/>
 						</svg>
-					</a>
+					</button>
 				</div>
 			</div>
 		</section>
@@ -107,6 +126,40 @@
 
 	* {
 		box-sizing: border-box;
+	}
+
+	.bento-link {
+		/* Reset button styles */
+		background: none;
+		border: none;
+		padding: var(--space);
+		margin: 0;
+		cursor: pointer;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		color: inherit;
+		font-family: inherit;
+		border-radius: var(--radius);
+
+		-webkit-user-select: none;
+		user-select: none;
+		-webkit-touch-callout: none;
+		-webkit-tap-highlight-color: transparent;
+
+		&:focus,
+		&:focus-visible {
+			outline: 2px solid var(--clr-link);
+			outline-offset: 2px;
+		}
+
+		&:active {
+			scale: 0.97;
+		}
 	}
 
 	main {
@@ -154,7 +207,6 @@
 				box-shadow: 0 2px 0 3px var(--clr-main);
 				background-color: var(--surface-2);
 				background-image: var(--gradient);
-				padding: var(--space);
 				border-radius: var(--radius);
 				text-decoration: none;
 				display: flex;
@@ -199,6 +251,7 @@
 					width: fit-content;
 					margin-inline: auto;
 					color: var(--clr-inverted);
+					pointer-events: none;
 					text-shadow:
 						0 0 1px var(--clr-inverted),
 						-2px -2px 0 var(--clr-main),
@@ -241,25 +294,15 @@
 					text-align: center;
 					margin-bottom: 0;
 					letter-spacing: 0px;
+					pointer-events: none;
 
 					&:nth-child(2) {
 						line-height: 1.5;
 					}
 				}
 
-				& a {
-					text-decoration: none;
-					letter-spacing: 1px;
-
-					&:focus,
-					&:focus-visible {
-						outline: 1px solid var(--clr-main);
-						background: transparent;
-					}
-
-					&:active {
-						scale: 0.97;
-					}
+				& svg {
+					pointer-events: none;
 				}
 
 				&:hover {
