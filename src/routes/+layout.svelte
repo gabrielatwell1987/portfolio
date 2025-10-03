@@ -133,10 +133,11 @@
 		padding: 0.5rem 1rem;
 		background: var(--clr-inverted);
 		color: var(--clr-pale);
-		border: var(--clr-pale);
+		border: 1px solid var(--clr-pale);
 		cursor: pointer;
-		max-width: 25%;
+		max-width: 85%;
 		margin-inline: auto;
 		font-size: clamp(var(--sm), 1.5vw, var(--h6));
+		font-weight: 600;
 	}
 </style>
