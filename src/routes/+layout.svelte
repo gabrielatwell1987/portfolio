@@ -117,7 +117,7 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		border: 2px solid var(--clr-main);
+		border: 2px solid var(--clr-gray);
 		background: var(--clr-inverted);
 		color: var(--clr-main);
 		padding: 1rem;
@@ -127,17 +127,17 @@
 		height: auto;
 		margin-inline: auto;
 		font-size: clamp(var(--sm), 2vw, var(--h5));
-	}
 
-	.update-banner button {
-		padding: 0.5rem 1rem;
-		background: var(--clr-inverted);
-		color: var(--clr-pale);
-		border: 1px solid var(--clr-pale);
-		cursor: pointer;
-		max-width: 85%;
-		margin-inline: auto;
-		font-size: clamp(var(--sm), 1.5vw, var(--h6));
-		font-weight: 600;
+		& button {
+			padding: 0.5rem 1rem;
+			background: var(--clr-inverted);
+			color: var(--clr-pale);
+			border: 1px solid var(--clr-pale);
+			cursor: pointer;
+			max-width: 50%;
+			margin-inline: auto;
+			font-size: clamp(var(--sm), 1.5vw, var(--h6));
+			font-weight: 600;
+		}
 	}
 </style>
