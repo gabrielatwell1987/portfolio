@@ -28,12 +28,9 @@
 			<a
 				class="learn-image"
 				href="/learn/greensock"
-				onclick={() => (window.location.href = '/learn/greensock')}
-				onkeydown={(e) => {
-					if (e.key === 'Enter' || e.key === ' ') {
-						e.preventDefault();
-						window.location.href = '/learn/greensock';
-					}
+				onclick={(e) => {
+					e.preventDefault();
+					window.location.href = '/learn/greensock';
 				}}
 				style="width: clamp(10em, 25vw, 30em);"
 				aria-label="greensock"
@@ -75,12 +72,9 @@
 			<a
 				class="learn-image"
 				href="/learn/sveltekit"
-				onclick={() => (window.location.href = '/learn/sveltekit')}
-				onkeydown={(e) => {
-					if (e.key === 'Enter' || e.key === ' ') {
-						e.preventDefault();
-						window.location.href = '/learn/sveltekit';
-					}
+				onclick={(e) => {
+					e.preventDefault();
+					window.location.href = '/learn/sveltekit';
 				}}
 				style="width: clamp(8em, 16.5vw, 30em);"
 			>
@@ -94,12 +88,9 @@
 
 			<a
 				href="/learn/posts"
-				onclick={() => (window.location.href = '/learn/posts')}
-				onkeydown={(e) => {
-					if (e.key === 'Enter' || e.key === ' ') {
-						e.preventDefault();
-						window.location.href = '/learn/posts';
-					}
+				onclick={(e) => {
+					e.preventDefault();
+					window.location.href = '/learn/posts';
 				}}
 				class="learn-image"
 				style="grid-column: 1/-1; width: clamp(15em, 46vw, 60em); justify-self: center;"
