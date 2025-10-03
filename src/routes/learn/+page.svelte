@@ -27,7 +27,7 @@
 		<section aria-label="icons">
 			<a
 				class="learn-image"
-				href="learn/greensock"
+				href="/learn/greensock"
 				style="width: clamp(10em, 25vw, 30em);"
 				aria-label="greensock"
 			>
@@ -65,7 +65,7 @@
 				</svg>
 			</a>
 
-			<a class="learn-image" href="learn/sveltekit" style="width: clamp(8em, 16.5vw, 30em);">
+			<a class="learn-image" href="/learn/sveltekit" style="width: clamp(8em, 16.5vw, 30em);">
 				<Image
 					src="/skills/Svelte-Dark.svg"
 					alt="sveltekit web framework logo"
