@@ -1,4 +1,5 @@
 <script>
+	import { asClassComponent } from 'svelte/legacy';
 	import { browser } from '$app/environment';
 	import { navigating } from '$app/stores';
 	import '../app.css';
@@ -125,6 +126,7 @@
 		max-width: fit-content;
 		height: auto;
 		margin-inline: auto;
+		font-size: clamp(var(--sm), 2vw, var(--h5));
 	}
 
 	.update-banner button {
@@ -135,5 +137,6 @@
 		cursor: pointer;
 		max-width: 25%;
 		margin-inline: auto;
+		font-size: clamp(var(--sm), 1.5vw, var(--h6));
 	}
 </style>
