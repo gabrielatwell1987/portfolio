@@ -18,7 +18,12 @@
 		<section>
 			<div class="bento-grid">
 				<div class="item">
-					<a href="/contact" class="bento-link" aria-label="Navigate to contact page">
+					<button
+						href="/contact"
+						onclick={() => (window.location.href = '/contact')}
+						class="bento-link"
+						aria-label="Navigate to contact page"
+					>
 						<div class="scale">
 							<svg
 								width="161"
@@ -39,11 +44,16 @@
 						<h2>contact</h2>
 
 						<p>Feel free to contact me about anything!</p>
-					</a>
+					</button>
 				</div>
 
 				<div class="item">
-					<a href="/learn" class="bento-link" aria-label="Navigate to learn page">
+					<button
+						href="/learn"
+						onclick={() => (window.location.href = '/learn')}
+						class="bento-link"
+						aria-label="Navigate to learn page"
+					>
 						<div class="scale">
 							<svg
 								width="151"
@@ -63,11 +73,16 @@
 						<h2>learn</h2>
 
 						<p>If you'd like to learn about web technologies</p>
-					</a>
+					</button>
 				</div>
 
 				<div class="item">
-					<a href="/projects" class="bento-link" aria-label="Navigate to projects page">
+					<button
+						href="/projects"
+						onclick={() => (window.location.href = '/projects')}
+						class="bento-link"
+						aria-label="Navigate to projects page"
+					>
 						<h2>projects</h2>
 
 						<svg
@@ -87,7 +102,7 @@
 								fill="var(--clr-main)"
 							/>
 						</svg>
-					</a>
+					</button>
 				</div>
 			</div>
 		</section>
@@ -120,6 +135,8 @@
 		color: inherit;
 		font-family: inherit;
 		border-radius: var(--radius);
+		border: none;
+		background: none;
 
 		-webkit-user-select: none;
 		user-select: none;

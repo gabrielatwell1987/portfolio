@@ -17,7 +17,7 @@
 	function detectSWUpdate() {
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker
-				.register('/service-worker.js')
+				.register('/service-worker.js', { type: 'module' })
 				.then((registration) => {
 					registration.addEventListener('updatefound', () => {
 						const newWorker = registration.installing;
