@@ -113,22 +113,23 @@
 
 	.update-banner {
 		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		background: var(--clr-main);
-		color: var(--clr-inverted);
+		inset: 0;
+		background: var(--clr-inverted);
+		color: var(--clr-main);
 		padding: 1rem;
 		text-align: center;
 		z-index: 1000;
+		max-width: fit-content;
+		margin-inline: auto;
 	}
 
 	.update-banner button {
-		margin-left: 1rem;
 		padding: 0.5rem 1rem;
 		background: var(--clr-inverted);
 		color: var(--clr-pale);
-		border: none;
+		border: var(--clr-main);
 		cursor: pointer;
+		max-width: 25%;
+		margin-inline: auto;
 	}
 </style>
