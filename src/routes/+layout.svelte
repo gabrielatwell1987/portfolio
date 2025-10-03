@@ -17,43 +17,14 @@
 	function detectSWUpdate() {
 		if (!browser) return;
 
-		if (!('serviceWorker' in navigator)) {
-			return;
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/service-worker.js');
 		}
-
-		navigator.serviceWorker.ready.then((registration) => {
-			if (!registration) {
-				return;
-			}
-
-			registration.addEventListener('updatefound', () => {
-				const newSW = registration.installing;
-
-				if (!newSW) return;
-
-				newSW.addEventListener('statechange', () => {
-					if (newSW.state === 'installed') {
-						if (confirm('Updating to the latest version. Reload now?')) {
-							newSW.postMessage({ type: 'SKIP_WAITING' });
-							location.reload();
-						}
-					}
-				});
-			});
-		});
 	}
 
 	$effect(async () => {
+		// Load eruda in development
 		if (import.meta.env.DEV) {
-			// Unregister any existing service workers in development
-			if ('serviceWorker' in navigator) {
-				const registrations = await navigator.serviceWorker.getRegistrations();
-				for (const registration of registrations) {
-					await registration.unregister();
-					console.log('Unregistered service worker in dev mode');
-				}
-			}
-
 			const eruda = (await import('eruda')).default;
 			eruda.init();
 
@@ -63,13 +34,9 @@
 
 			setErudaPosition();
 			addEventListener('resize', setErudaPosition);
-		} else {
-			// Only register service worker in production
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('/service-worker.js');
-				detectSWUpdate();
-			}
 		}
+
+		detectSWUpdate();
 
 		isPageLoaded = true;
 
