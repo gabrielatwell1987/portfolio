@@ -56,6 +56,7 @@
 
 	section {
 		& .title-spacing {
+			margin-top: 3em;
 			margin-bottom: 6em;
 
 			@media (width <= 768px) {
