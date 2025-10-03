@@ -1,4 +1,5 @@
 <script>
+	import InstallButton from './InstallButton.svelte';
 	import Burger from '$lib/components/navigation/Burger.svelte';
 	import MainLogo from '$lib/components/navigation/MainLogo.svelte';
 	import ThemeToggle from '$lib/components/navigation/ThemeToggle.svelte';
@@ -18,6 +19,8 @@
 		}
 	}
 </script>
+
+<InstallButton />
 
 <nav class="navigation">
 	<div class="nav-main">
