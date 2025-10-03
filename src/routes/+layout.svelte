@@ -13,6 +13,7 @@
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
 	let isPageLoaded = $state(false);
+	let showUpdateMessage = $state(false);
 
 	function detectSWUpdate() {
 		if ('serviceWorker' in navigator) {
@@ -31,7 +32,7 @@
 								) {
 									sessionStorage.setItem('updateNotified', 'true');
 									newWorker.postMessage({ type: 'SKIP_WAITING' });
-									alert('New update detected. The app will update on next load.');
+									showUpdateMessage = true;
 								}
 							});
 						}
@@ -43,9 +44,9 @@
 		}
 	}
 
-	// function reloadPage() {
-	// 	window.location.reload();
-	// }
+	function reloadPage() {
+		window.location.reload();
+	}
 
 	$effect(() => {
 		isPageLoaded = true;
@@ -67,6 +68,13 @@
 <!-- loading animation -->
 {#if !isPageLoaded}
 	<Loading />
+{/if}
+
+{#if showUpdateMessage}
+	<div class="update-banner">
+		<p>New update detected. Reload to apply?</p>
+		<button onclick={reloadPage}>Reload</button>
+	</div>
 {/if}
 
 <NavBar />
@@ -101,5 +109,26 @@
 	#main-content {
 		min-height: calc(100vh - 120px);
 		will-change: auto;
+	}
+
+	.update-banner {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		background: var(--clr-main);
+		color: var(--clr-inverted);
+		padding: 1rem;
+		text-align: center;
+		z-index: 1000;
+	}
+
+	.update-banner button {
+		margin-left: 1rem;
+		padding: 0.5rem 1rem;
+		background: var(--clr-inverted);
+		color: var(--clr-pale);
+		border: none;
+		cursor: pointer;
 	}
 </style>
