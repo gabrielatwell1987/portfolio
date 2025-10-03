@@ -113,13 +113,17 @@
 
 	.update-banner {
 		position: fixed;
-		inset: 0;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border: 2px solid var(--clr-main);
 		background: var(--clr-inverted);
 		color: var(--clr-main);
 		padding: 1rem;
 		text-align: center;
 		z-index: 1000;
 		max-width: fit-content;
+		height: auto;
 		margin-inline: auto;
 	}
 
@@ -127,7 +131,7 @@
 		padding: 0.5rem 1rem;
 		background: var(--clr-inverted);
 		color: var(--clr-pale);
-		border: var(--clr-main);
+		border: var(--clr-pale);
 		cursor: pointer;
 		max-width: 25%;
 		margin-inline: auto;
