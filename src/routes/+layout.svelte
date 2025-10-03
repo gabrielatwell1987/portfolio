@@ -14,34 +14,37 @@
 	let { children } = $props();
 	let isPageLoaded = $state(false);
 
-	function detectSWUpdate() {
-		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker
-				.register('/service-worker.js', { type: 'module' })
-				.then((registration) => {
-					registration.addEventListener('updatefound', () => {
-						const newWorker = registration.installing;
-						if (newWorker) {
-							newWorker.addEventListener('statechange', () => {
-								if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-									newWorker.postMessage({ type: 'SKIP_WAITING' });
-									if (confirm('New update detected.. reload now?')) {
-										window.location.reload();
-									}
-								}
-							});
-						}
-					});
-				})
-				.catch((error) => {
-					console.error('Service Worker registration failed:', error);
-				});
-		}
-	}
+	// function detectSWUpdate() {
+	// 	if ('serviceWorker' in navigator) {
+	// 		navigator.serviceWorker
+	// 			.register('/service-worker.js', { type: 'module' })
+	// 			.then((registration) => {
+	// 				registration.addEventListener('updatefound', () => {
+	// 					const newWorker = registration.installing;
+	// 					if (newWorker) {
+	// 						newWorker.addEventListener('statechange', () => {
+	// 							if (
+	// 								newWorker.state === 'installed' &&
+	// 								navigator.serviceWorker.controller &&
+	// 								!sessionStorage.getItem('updateNotified')
+	// 							) {
+	// 								sessionStorage.setItem('updateNotified', 'true');
+	// 								newWorker.postMessage({ type: 'SKIP_WAITING' });
+	// 								alert('New update detected. The app will update on next load.');
+	// 							}
+	// 						});
+	// 					}
+	// 				});
+	// 			})
+	// 			.catch((error) => {
+	// 				console.error('Service Worker registration failed:', error);
+	// 			});
+	// 	}
+	// }
 
-	function reloadPage() {
-		window.location.reload();
-	}
+	// function reloadPage() {
+	// 	window.location.reload();
+	// }
 
 	$effect(() => {
 		isPageLoaded = true;
