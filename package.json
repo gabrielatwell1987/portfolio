@@ -8,6 +8,7 @@
 	},
 	"scripts": {
 		"dev": "vite dev --host --open",
+		"prebuild": "node -e \"const fs = require('fs'); const version = Date.now().toString(); fs.writeFileSync('static/version.json', JSON.stringify({version}, null, 2));\"",
 		"build": "vite build",
 		"preview": "vite preview --host",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
