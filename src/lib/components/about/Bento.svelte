@@ -20,35 +20,25 @@
 		<section>
 			<div class="bento-grid">
 				<div class="item">
-					<button
-						href="/contact"
-						onclick={() => (window.location.href = '/contact')}
-						class="bento-link"
-						aria-label="Navigate to contact page"
-					>
-						<div class="scale">
-							<Image
-								src="/icons/contactIcon.svg"
-								alt="contact icon"
-								width="350"
-								aspectRatio="1/1"
-								class="contact_svg"
-							/>
-						</div>
+					<div class="scale">
+						<Image
+							src="/icons/contactIcon.svg"
+							alt="contact icon"
+							width="350"
+							aspectRatio="1/1"
+							class="contact_svg"
+						/>
+					</div>
 
+					<a href="/contact" class="bento-link" aria-label="Navigate to contact page">
 						<h2>contact</h2>
 
 						<p>Feel free to contact me about anything!</p>
-					</button>
+					</a>
 				</div>
 
 				<div class="item">
-					<button
-						href="/learn"
-						onclick={() => (window.location.href = '/learn')}
-						class="bento-link"
-						aria-label="Navigate to learn page"
-					>
+					<div class="center">
 						<div class="scale">
 							<Image
 								src="/icons/learnIcon.svg"
@@ -59,19 +49,16 @@
 							/>
 						</div>
 
-						<h2>learn</h2>
+						<a href="/learn" class="bento-link" aria-label="Navigate to learn page">
+							<h2>learn</h2>
 
-						<p>If you'd like to learn about web technologies</p>
-					</button>
+							<p>If you'd like to learn about web technologies</p>
+						</a>
+					</div>
 				</div>
 
 				<div class="item">
-					<button
-						href="/projects"
-						onclick={() => (window.location.href = '/projects')}
-						class="bento-link"
-						aria-label="Navigate to projects page"
-					>
+					<a href="/projects" class="bento-link" aria-label="Navigate to projects page">
 						<h2>projects</h2>
 
 						<Image
@@ -81,7 +68,7 @@
 							aspectRatio="1/1"
 							class="atwell_svg"
 						/>
-					</button>
+					</a>
 				</div>
 			</div>
 		</section>
@@ -104,23 +91,16 @@
 		padding: var(--space);
 		margin: 0;
 		cursor: pointer;
-		width: 100%;
-		height: 100%;
+		width: fit-content;
+		height: auto;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		justify-content: flex-start;
 		text-decoration: none;
 		color: inherit;
 		font-family: inherit;
 		border-radius: var(--radius);
-		border: none;
-		background: none;
-
-		-webkit-user-select: none;
-		user-select: none;
-		-webkit-touch-callout: none;
-		-webkit-tap-highlight-color: transparent;
 
 		&:focus,
 		&:focus-visible {
@@ -181,8 +161,10 @@
 				border-radius: var(--radius);
 				text-decoration: none;
 				display: flex;
+				flex-direction: column;
 				justify-content: center;
 				align-items: center;
+				padding-bottom: 1em;
 				transition:
 					opacity 1s ease,
 					border 1s ease,
@@ -194,6 +176,14 @@
 
 				& .scale {
 					scale: 0.6;
+				}
+
+				& .center {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
 				}
 
 				& h2 {
