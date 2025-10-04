@@ -16,15 +16,15 @@
 			font-weight: 900;
 			color: var(--clr-inverted);
 			text-shadow:
-				0 0 1px var(--clr-inverted),
-				-1px -1px 0 var(--clr-main),
-				1px -1px 0 var(--clr-main),
-				-1px 1px 0 var(--clr-main),
-				1px 1px 0 var(--clr-main),
-				-1px 0 0 var(--clr-main),
-				1px 0 0 var(--clr-main),
-				0 -1px 0 var(--clr-main),
-				0 1px 0 var(--clr-main);
+				0 0 2px var(--clr-inverted),
+				-2px -2px 0 var(--clr-main),
+				2px -2px 0 var(--clr-main),
+				-2px 2px 0 var(--clr-main),
+				2px 2px 0 var(--clr-main),
+				-2px 0 0 var(--clr-main),
+				2px 0 0 var(--clr-main),
+				0 -2px 0 var(--clr-main),
+				0 2px 0 var(--clr-main);
 			border: 1px solid var(--clr-inverted);
 			outline: 3px solid var(--clr-inverted);
 			margin-inline: auto;
@@ -38,6 +38,19 @@
 			margin-bottom: 2%;
 			user-select: none;
 			opacity: 0.75;
+
+			@media (width <= 768px) {
+				text-shadow:
+					0 0 1px var(--clr-inverted),
+					-1px -1px 0 var(--clr-main),
+					1px -1px 0 var(--clr-main),
+					-1px 1px 0 var(--clr-main),
+					1px 1px 0 var(--clr-main),
+					-1px 0 0 var(--clr-main),
+					1px 0 0 var(--clr-main),
+					0 -1px 0 var(--clr-main),
+					0 1px 0 var(--clr-main);
+			}
 
 			&:focus,
 			&:focus-visible {

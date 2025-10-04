@@ -207,7 +207,7 @@
 	:root {
 		/* Base custom colors */
 		--blackest: hsl(0, 15%, 5%);
-		--white: hsla(0, 0%, 100%, 0.75);
+		--white: hsl(0, 0%, 100%, 0.9);
 		--sky: hsla(187, 39%, 55%, 0.5);
 		--purple: hsla(227, 98%, 68%, 0.6);
 		--yellow: hsla(46, 93%, 42%, 0.75);

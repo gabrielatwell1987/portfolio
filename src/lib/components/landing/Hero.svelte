@@ -425,7 +425,7 @@
 
 						& .stat-label {
 							font-family: var(--bronova);
-							font-size: clamp(var(--sm), 3vw, var(--h2));
+							font-size: clamp(var(--sm), 2.75vw, var(--h3));
 							color: var(--clr-main);
 							text-transform: uppercase;
 							letter-spacing: 1px;
