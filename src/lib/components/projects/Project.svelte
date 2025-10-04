@@ -83,6 +83,8 @@
 			margin-inline: auto;
 			background: none;
 			border: none;
+			cursor: pointer;
+			touch-action: manipulation;
 
 			&:focus,
 			&:focus-visible {
@@ -139,6 +141,7 @@
 				border: 1px solid var(--clr-main);
 				padding: 0.2vw;
 				position: relative;
+				pointer-events: none;
 			}
 
 			& .desc-banner {
