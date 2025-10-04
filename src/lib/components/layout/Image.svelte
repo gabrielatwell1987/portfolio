@@ -48,6 +48,7 @@
 			z-index: 9;
 			margin-inline: auto;
 			display: block;
+			pointer-events: none;
 
 			&:not(.has-width) {
 				width: 100%;

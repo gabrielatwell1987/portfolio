@@ -84,7 +84,6 @@
 		outline-offset: -7px;
 		border: 1px solid var(--clr-inverted);
 		border-radius: var(--radius);
-		opacity: 0.75;
 		transition: 500ms;
 		cursor: pointer;
 		pointer-events: auto;
@@ -97,6 +96,7 @@
 		position: fixed;
 		bottom: 4rem;
 		left: 1rem;
+		opacity: 1;
 		view-transition-name: installbtn;
 
 		&:focus,
