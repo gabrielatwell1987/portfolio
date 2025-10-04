@@ -29,9 +29,9 @@
 									newWorker &&
 									newWorker.state === 'installed' &&
 									navigator.serviceWorker.controller &&
-									!sessionStorage.getItem('updateNotified')
+									!localStorage.getItem('updateNotified')
 								) {
-									sessionStorage.setItem('updateNotified', 'true');
+									localStorage.setItem('updateNotified', 'true');
 									newWorker.postMessage({ type: 'SKIP_WAITING' });
 									showUpdateMessage = true;
 								}
@@ -53,6 +53,7 @@
 		isPageLoaded = true;
 
 		detectSWUpdate();
+
 		// navigating
 		if ($navigating) {
 			if (document.startViewTransition) {
