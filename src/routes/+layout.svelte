@@ -49,10 +49,23 @@
 		window.location.reload();
 	}
 
-	$effect(() => {
+	$effect(async () => {
 		isPageLoaded = true;
 
 		detectSWUpdate();
+
+		// Check for app version updates
+		try {
+			const response = await fetch('/version.json');
+			const data = await response.json();
+			const storedVersion = localStorage.getItem('appVersion');
+			if (data.version !== storedVersion) {
+				localStorage.setItem('appVersion', data.version);
+				showUpdateMessage = true;
+			}
+		} catch (error) {
+			console.error('Version check failed:', error);
+		}
 
 		// navigating
 		if ($navigating) {
@@ -87,8 +100,6 @@
 	</div>
 
 	<Footer />
-
-	<h1>test</h1>
 </main>
 
 <style>
