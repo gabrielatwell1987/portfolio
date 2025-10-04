@@ -3,17 +3,38 @@
 	let { title, img, url, description, summary, index = 0 } = $props();
 </script>
 
-<main class="content" style="--stagger-delay: {index * 1.25}s;">
-	<!-- title -->
-	<a href={url} target="_blank">
+<section class="content" style="--stagger-delay: {index * 1.25}s;">
+	<div
+		role="button"
+		tabindex="0"
+		class="title-link"
+		aria-label="Open {title} project"
+		onclick={() => {
+			window.open(url, '_blank');
+		}}
+		onkeydown={(e) => {
+			if (e.key === 'Enter' || e.key === ' ') {
+				e.preventDefault();
+				window.open(url, '_blank');
+			}
+		}}
+	>
 		<h3 class="title">{title}</h3>
-	</a>
+	</div>
 
-	<!-- screenshot -->
-	<a
+	<div
+		role="button"
+		tabindex="0"
 		class="link"
-		href={url}
-		target="_blank"
+		onclick={() => {
+			window.open(url, '_blank');
+		}}
+		onkeydown={(e) => {
+			if (e.key === 'Enter' || e.key === ' ') {
+				e.preventDefault();
+				window.open(url, '_blank');
+			}
+		}}
 		aria-label="View {title} project - made with {description}"
 	>
 		<img
@@ -25,11 +46,11 @@
 			style="--alt-text: '{title} project'"
 		/>
 
-		<span class="hover-text" aria-hidden="true">made with {description}</span>
-	</a>
+		<span class="desc-banner" aria-hidden="true">made with {description}</span>
+	</div>
 
 	<p class="summary">{summary}</p>
-</main>
+</section>
 
 <style>
 	:root {
@@ -44,7 +65,7 @@
 		will-change: opacity, transform;
 
 		& .summary {
-			width: 75%;
+			width: fit-content;
 			margin-inline: auto;
 			font-size: clamp(var(--sm), 1.15vw, var(--h5));
 			font-weight: 500;
@@ -55,9 +76,19 @@
 			letter-spacing: 0px;
 		}
 
-		& a {
-			text-decoration: none;
+		& .title-link {
+			margin-bottom: 1rem;
 			display: block;
+			width: fit-content;
+			margin-inline: auto;
+			background: none;
+			border: none;
+
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--clr-main);
+				background: transparent;
+			}
 		}
 
 		& .link {
@@ -73,13 +104,15 @@
 			transition: all 0.35s;
 			background-color: transparent;
 			position: relative;
+			cursor: pointer;
+			touch-action: manipulation;
 
 			@media (width >= 740px) {
 				img:hover {
 					transition: scale 0.25s ease;
 				}
 
-				& .hover-text {
+				& .desc-banner {
 					width: 80%;
 				}
 			}
@@ -88,7 +121,7 @@
 				padding: 2rem;
 				flex-basis: var(--100);
 
-				& .hover-text {
+				& .desc-banner {
 					width: 100%;
 				}
 			}
@@ -106,28 +139,10 @@
 				border: 1px solid var(--clr-main);
 				padding: 0.2vw;
 				position: relative;
-
-				&::after {
-					content: "We failed to load the image of '" var(--alt-text) "' 😵‍💫";
-					position: absolute;
-					inset: 0;
-					display: grid;
-					place-items: center;
-					text-align: center;
-					background: var(--clr-inverted);
-					color: var(--clr-main);
-					white-space: pre-wrap;
-					padding: 1em;
-					pointer-events: none;
-					z-index: 1;
-					font-style: normal;
-					font-size: clamp(var(--xs), 1vw, var(--h5));
-					border-radius: var(--radius);
-				}
 			}
 
-			& .hover-text {
-				visibility: hidden;
+			& .desc-banner {
+				visibility: visible;
 				width: 100%;
 				background-color: var(--clr-main);
 				color: var(--clr-inverted);
@@ -137,21 +152,14 @@
 				padding: 5px 3px;
 				font-family: var(--bronova);
 				font-size: clamp(var(--sm), 1.15vw, var(--h5));
-				z-index: 1;
 				margin-inline: auto;
-				opacity: 0;
+				opacity: 1;
 				transition: all 1s;
 				text-transform: lowercase;
 
-				position: absolute;
-				bottom: 1rem;
-				left: 50%;
-				transform: translateX(-50%);
-			}
-
-			&:hover .hover-text {
-				visibility: visible;
-				opacity: 1;
+				pointer-events: none;
+				position: relative;
+				margin-top: 0;
 			}
 		}
 
