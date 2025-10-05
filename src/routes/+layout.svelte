@@ -100,7 +100,6 @@
 	</div>
 
 	<Footer />
-	<h2>testing one two</h2>
 </main>
 
 <style>
