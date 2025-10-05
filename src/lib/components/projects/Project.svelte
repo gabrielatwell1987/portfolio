@@ -4,37 +4,21 @@
 </script>
 
 <section class="content" style="--stagger-delay: {index * 1.25}s;">
-	<div
-		role="button"
-		tabindex="0"
+	<a
+		href={url}
+		target="_blank"
+		rel="external noopener noreferrer"
 		class="title-link"
 		aria-label="Open {title} project"
-		onclick={() => {
-			window.open(url, '_blank');
-		}}
-		onkeydown={(e) => {
-			if (e.key === 'Enter' || e.key === ' ') {
-				e.preventDefault();
-				window.open(url, '_blank');
-			}
-		}}
 	>
 		<h3 class="title">{title}</h3>
-	</div>
+	</a>
 
-	<div
-		role="button"
-		tabindex="0"
+	<a
+		href={url}
+		target="_blank"
+		rel="external noopener noreferrer"
 		class="link"
-		onclick={() => {
-			window.open(url, '_blank');
-		}}
-		onkeydown={(e) => {
-			if (e.key === 'Enter' || e.key === ' ') {
-				e.preventDefault();
-				window.open(url, '_blank');
-			}
-		}}
 		aria-label="View {title} project - made with {description}"
 	>
 		<img
@@ -47,7 +31,7 @@
 		/>
 
 		<span class="desc-banner" aria-hidden="true">made with {description}</span>
-	</div>
+	</a>
 
 	<p class="summary">{summary}</p>
 </section>
@@ -85,6 +69,7 @@
 			border: none;
 			cursor: pointer;
 			touch-action: manipulation;
+			text-decoration: none;
 
 			&:focus,
 			&:focus-visible {
@@ -108,6 +93,7 @@
 			position: relative;
 			cursor: pointer;
 			touch-action: manipulation;
+			text-decoration: none;
 
 			@media (width >= 740px) {
 				img:hover {
