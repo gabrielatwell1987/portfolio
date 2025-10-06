@@ -26,7 +26,6 @@
 	</a>
 
 	<p class="summary">{summary}</p>
-	<p class="debug">Debug: {debugMessage}</p>
 </section>
 
 <style>
