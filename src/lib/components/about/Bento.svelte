@@ -20,17 +20,17 @@
 		<section>
 			<div class="bento-grid">
 				<div class="item">
-					<div class="scale">
-						<Image
-							src="/icons/contactIcon.svg"
-							alt="contact icon"
-							width="350"
-							aspectRatio="1/1"
-							class="contact_svg"
-						/>
-					</div>
-
 					<a href="/contact" class="bento-link" aria-label="Navigate to contact page">
+						<div class="scale">
+							<Image
+								src="/icons/contactIcon.svg"
+								alt="contact icon"
+								width="350"
+								aspectRatio="1/1"
+								class="contact_svg"
+							/>
+						</div>
+
 						<h2>contact</h2>
 
 						<p>Feel free to contact me about anything!</p>
@@ -39,17 +39,17 @@
 
 				<div class="item">
 					<div class="center">
-						<div class="scale">
-							<Image
-								src="/icons/learnIcon.svg"
-								alt="learn icon"
-								width="350"
-								aspectRatio="1/1"
-								class="learn_svg"
-							/>
-						</div>
-
 						<a href="/learn" class="bento-link" aria-label="Navigate to learn page">
+							<div class="scale">
+								<Image
+									src="/icons/learnIcon.svg"
+									alt="learn icon"
+									width="350"
+									aspectRatio="1/1"
+									class="learn_svg"
+								/>
+							</div>
+
 							<h2>learn</h2>
 
 							<p>If you'd like to learn about web technologies</p>
