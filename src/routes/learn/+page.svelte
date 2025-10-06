@@ -27,8 +27,7 @@
 		<section aria-label="icons">
 			<button
 				class="learn-image"
-				onclick={(e) => {
-					e.preventDefault();
+				onclick={() => {
 					window.location.href = '/learn/greensock';
 				}}
 				style="width: clamp(10em, 25vw, 30em);"
@@ -44,8 +43,7 @@
 
 			<button
 				class="learn-image"
-				onclick={(e) => {
-					e.preventDefault();
+				onclick={() => {
 					window.location.href = '/learn/sveltekit';
 				}}
 				style="width: clamp(8em, 16.5vw, 30em);"
@@ -59,8 +57,7 @@
 			</button>
 
 			<button
-				onclick={(e) => {
-					e.preventDefault();
+				onclick={() => {
 					window.location.href = '/learn/posts';
 				}}
 				class="learn-image"

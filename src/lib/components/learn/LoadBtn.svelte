@@ -5,7 +5,7 @@
 	let { loading, submit, href, delay } = $props();
 	let statusMessage = $state('');
 
-	const handleSubmit = async () => {
+	const handleSubmit = async (event) => {
 		event.preventDefault();
 
 		isLoading = true;
@@ -19,12 +19,7 @@
 
 		const screenWidth = window.innerWidth;
 
-		// Navigate to the destination
-		if (screenWidth <= 500) {
-			window.location.href = href;
-		} else {
-			window.open(href, '_blank', 'noopener,noreferrer');
-		}
+		window.open(href, '_blank', 'noopener,noreferrer');
 
 		// Clear status message after navigation
 		setTimeout(() => {
@@ -38,6 +33,7 @@
 <a
 	{href}
 	onclick={handleSubmit}
+	target="_blank"
 	aria-label="Visit {submit} (opens in new tab)"
 	class="btn"
 	class:loading={isLoading}
