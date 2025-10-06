@@ -11,102 +11,132 @@
 
 		<ul class="skills">
 			<li>
-				<div class="icons">
-					<Image
-						src="skills/HTML-Dark.svg"
-						alt="html"
-						aspectRatio="1/1"
-						style="width: clamp(70px, 6vw, 200px);"
-					/>
-				</div>
+				<a
+					href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<div class="icons">
+						<Image
+							src="skills/HTML-Dark.svg"
+							alt="html"
+							aspectRatio="1/1"
+							style="width: clamp(70px, 6vw, 200px);"
+						/>
+					</div></a
+				>
 			</li>
 
 			<li>
-				<div class="icons">
-					<Image
-						src="skills/CSS-Dark.svg"
-						alt="css"
-						aspectRatio="1/1"
-						style="width: clamp(70px, 6vw, 200px);"
-					/>
-				</div>
+				<a
+					href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<div class="icons">
+						<Image
+							src="skills/CSS-Dark.svg"
+							alt="css"
+							aspectRatio="1/1"
+							style="width: clamp(70px, 6vw, 200px);"
+						/>
+					</div></a
+				>
 			</li>
 
 			<li>
-				<div class="icons">
-					<Image
-						src="skills/JavaScript-Dark.svg"
-						alt="javascript"
-						aspectRatio="1/1"
-						style="width: clamp(70px, 6vw, 200px);"
-					/>
-				</div>
+				<a
+					href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<div class="icons">
+						<Image
+							src="skills/JavaScript-Dark.svg"
+							alt="javascript"
+							aspectRatio="1/1"
+							style="width: clamp(70px, 6vw, 200px);"
+						/>
+					</div></a
+				>
 			</li>
 
 			<li>
-				<div class="icons">
-					<Image
-						src="skills/Svelte-Dark.svg"
-						alt="svelte"
-						aspectRatio="1/1"
-						style="width: clamp(70px, 6vw, 200px);"
-					/>
-				</div>
+				<a href="https://svelte.dev" target="_blank" rel="noopener noreferrer">
+					<div class="icons">
+						<Image
+							src="skills/Svelte-Dark.svg"
+							alt="svelte"
+							aspectRatio="1/1"
+							style="width: clamp(70px, 6vw, 200px);"
+						/>
+					</div></a
+				>
 			</li>
 
 			<li>
-				<div class="icons">
-					<Image
-						src="skills/GSAP-Dark.svg"
-						alt="gsap"
-						aspectRatio="1/1"
-						style="width: clamp(70px, 6vw, 200px);"
-					/>
-				</div>
+				<a href="https://gsap.com" target="_blank" rel="noopener noreferrer">
+					<div class="icons">
+						<Image
+							src="skills/GSAP-Dark.svg"
+							alt="gsap"
+							aspectRatio="1/1"
+							style="width: clamp(70px, 6vw, 200px);"
+						/>
+					</div></a
+				>
 			</li>
 
 			<li>
-				<div class="icons">
-					<Image
-						src="skills/NodeJS-Dark.svg"
-						alt="nodejs"
-						aspectRatio="1/1"
-						style="width: clamp(70px, 6vw, 200px);"
-					/>
-				</div>
+				<a href="https://nodejs.org" target="_blank" rel="noopener noreferrer">
+					<div class="icons">
+						<Image
+							src="skills/NodeJS-Dark.svg"
+							alt="nodejs"
+							aspectRatio="1/1"
+							style="width: clamp(70px, 6vw, 200px);"
+						/>
+					</div></a
+				>
 			</li>
 
 			<li>
-				<div class="icons">
-					<Image
-						src="skills/Github-Dark.svg"
-						alt="github"
-						aspectRatio="1/1"
-						style="width: clamp(70px, 6vw, 200px);"
-					/>
-				</div>
+				<a href="https://github.com" target="_blank" rel="noopener noreferrer">
+					<div class="icons">
+						<Image
+							src="skills/Github-Dark.svg"
+							alt="github"
+							aspectRatio="1/1"
+							style="width: clamp(70px, 6vw, 200px);"
+						/>
+					</div></a
+				>
 			</li>
 
 			<li>
-				<div class="icons">
-					<Image
-						src="skills/Markdown-Dark.svg"
-						alt="markdown"
-						aspectRatio="1/1"
-						style="width: clamp(70px, 6vw, 200px);"
-					/>
-				</div>
+				<a href="https://markdownguide.org" target="_blank" rel="noopener noreferrer">
+					<div class="icons">
+						<Image
+							src="skills/Markdown-Dark.svg"
+							alt="markdown"
+							aspectRatio="1/1"
+							style="width: clamp(70px, 6vw, 200px);"
+						/>
+					</div></a
+				>
 			</li>
 
 			<li>
-				<div class="icons">
-					<Image
-						src="skills/TailwindCSS-Dark.svg"
-						alt="tailwindcss"
-						aspectRatio="1/1"
-						style="width: clamp(80px, 6vw, 200px);"
-					/>
-				</div>
+				<a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer">
+					<div class="icons">
+						<Image
+							src="skills/TailwindCSS-Dark.svg"
+							alt="tailwindcss"
+							aspectRatio="1/1"
+							style="width: clamp(80px, 6vw, 200px);"
+						/>
+					</div></a
+				>
 			</li>
 		</ul>
 	</div>
