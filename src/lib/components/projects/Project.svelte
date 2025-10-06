@@ -4,20 +4,12 @@
 </script>
 
 <section class="content" style="--stagger-delay: {index * 1.25}s;">
-	<a
-		href={url}
-		target="_blank"
-		rel="external noopener noreferrer"
-		class="title-link"
-		aria-label="Open {title} project"
-	>
-		<h3 class="title">{title}</h3>
-	</a>
+	<h3 class="title">{title}</h3>
 
 	<a
 		href={url}
 		target="_blank"
-		rel="external noopener noreferrer"
+		rel="noopener noreferrer"
 		class="link"
 		aria-label="View {title} project - made with {description}"
 	>
@@ -34,6 +26,7 @@
 	</a>
 
 	<p class="summary">{summary}</p>
+	<p class="debug">Debug: {debugMessage}</p>
 </section>
 
 <style>
@@ -47,6 +40,7 @@
 		animation: fadeIn 0.8s ease-out forwards;
 		animation-delay: var(--stagger-delay, 0s);
 		will-change: opacity, transform;
+		pointer-events: none;
 
 		& .summary {
 			width: fit-content;
@@ -58,24 +52,6 @@
 			text-align: center;
 			line-height: 1.5;
 			letter-spacing: 0px;
-		}
-
-		& .title-link {
-			margin-bottom: 1rem;
-			display: block;
-			width: fit-content;
-			margin-inline: auto;
-			background: none;
-			border: none;
-			cursor: pointer;
-			touch-action: manipulation;
-			text-decoration: none;
-
-			&:focus,
-			&:focus-visible {
-				outline: 1px solid var(--clr-main);
-				background: transparent;
-			}
 		}
 
 		& .link {
@@ -94,6 +70,10 @@
 			cursor: pointer;
 			touch-action: manipulation;
 			text-decoration: none;
+			pointer-events: auto;
+			user-select: none;
+			touch-action: manipulation;
+			z-index: 200;
 
 			@media (width >= 740px) {
 				img:hover {
@@ -127,7 +107,6 @@
 				border: 1px solid var(--clr-main);
 				padding: 0.2vw;
 				position: relative;
-				pointer-events: none;
 			}
 
 			& .desc-banner {

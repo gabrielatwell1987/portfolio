@@ -68,9 +68,9 @@
 		position: fixed;
 		top: 0.25rem;
 		width: 100%;
-		min-height: 5em;
 		padding: 0.5rem 5em 0 1rem;
 		margin-inline: auto;
+		pointer-events: none;
 
 		& .nav-main {
 			display: flex;
@@ -92,15 +92,10 @@
 			border-radius: var(--radius);
 			box-shadow: 0 0 5px var(--clr-gray);
 			padding: 1.2rem 0 0.4rem 0;
-			height: 3.75em;
-			min-height: 3.75em;
+			height: 3.75rem;
+			min-height: 3.75rem;
 			justify-content: space-between;
 			flex: 1;
-		}
-
-		@media (width >= 750px) {
-			height: 5em;
-			min-height: 5em;
 		}
 
 		@media (width >= 990px) {

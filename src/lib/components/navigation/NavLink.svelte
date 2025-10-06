@@ -14,6 +14,7 @@
 		color: var(--clr-main);
 		background-color: transparent;
 		transition: opacity 0.15s ease-out;
+		pointer-events: auto;
 
 		&:focus,
 		&:focus-visible {
