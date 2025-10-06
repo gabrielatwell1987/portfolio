@@ -19,7 +19,12 @@
 
 		const screenWidth = window.innerWidth;
 
-		window.open(href, '_blank', 'noopener,noreferrer');
+		// Navigate to the destination
+		if (screenWidth <= 500) {
+			window.location.href = href;
+		} else {
+			window.open(href, '_blank', 'noopener,noreferrer');
+		}
 
 		// Clear status message after navigation
 		setTimeout(() => {
