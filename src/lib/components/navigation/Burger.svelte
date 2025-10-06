@@ -38,6 +38,7 @@
 		margin-left: 1em;
 		position: relative;
 		padding: 0;
+		pointer-events: auto;
 
 		@media (width >= 755px) {
 			opacity: 0;
