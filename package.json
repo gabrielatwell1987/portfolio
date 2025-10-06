@@ -41,7 +41,6 @@
 		"@picocss/pico": "^1.5.13",
 		"copy-to-clipboard": "^3.3.3",
 		"dat.gui": "^0.7.9",
-		"eruda": "^3.0.1",
 		"from": "^0.1.7",
 		"highlight.js": "^11.9.0",
 		"marked": "^15.0.12",
