@@ -8,6 +8,7 @@
 
 	let open = $state(false);
 	let isClosing = $state(false);
+	let isDisplay = $state(false);
 
 	function closeMenu() {
 		if (open) {
@@ -15,9 +16,16 @@
 			setTimeout(() => {
 				open = false;
 				isClosing = false;
+				isDisplay = false;
 			}, 500);
 		}
 	}
+
+	$effect(() => {
+		if (open) {
+			isDisplay = true;
+		}
+	});
 </script>
 
 <InstallButton />
@@ -42,6 +50,7 @@
 		class="mobile {open ? 'open' : ''} {isClosing ? 'closing' : ''}"
 		id="mobile-menu"
 		aria-label="Main navigation menu"
+		style="display: {isDisplay ? 'flex' : 'none'};"
 	>
 		<li><NavLink href="/" title="Home" onclick={closeMenu} /></li>
 		<li><NavLink href="/about" title="About Gabe" onclick={closeMenu} /></li>
@@ -140,10 +149,12 @@
 		opacity: 0;
 		transform-origin: top left;
 		box-shadow: 0 0 0 1px var(--clr-main);
+		/* pointer-events: none; */
 
 		&.open {
 			transform: scale(1);
 			opacity: 1;
+			/* pointer-events: auto; */
 		}
 
 		&.closing {
