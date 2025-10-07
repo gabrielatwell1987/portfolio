@@ -79,7 +79,7 @@
 		width: 100%;
 		padding: 0.5rem 5em 0 1rem;
 		margin-inline: auto;
-		pointer-events: none;
+		pointer-events: auto;
 
 		& .nav-main {
 			display: flex;
