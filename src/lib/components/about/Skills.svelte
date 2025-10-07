@@ -21,7 +21,7 @@
 							src="skills/HTML-Dark.svg"
 							alt="html"
 							aspectRatio="1/1"
-							style="width: clamp(70px, 6vw, 200px);"
+							style="width: clamp(70px, 5.5vw, 200px);"
 						/>
 					</div></a
 				>
@@ -38,7 +38,7 @@
 							src="skills/CSS-Dark.svg"
 							alt="css"
 							aspectRatio="1/1"
-							style="width: clamp(70px, 6vw, 200px);"
+							style="width: clamp(70px, 5.5vw, 200px);"
 						/>
 					</div></a
 				>
@@ -55,7 +55,7 @@
 							src="skills/JavaScript-Dark.svg"
 							alt="javascript"
 							aspectRatio="1/1"
-							style="width: clamp(70px, 6vw, 200px);"
+							style="width: clamp(70px, 5.5vw, 200px);"
 						/>
 					</div></a
 				>
@@ -113,7 +113,7 @@
 							height="256"
 							viewBox="0 0 256 256"
 							fill="none"
-							style="width: clamp(70px, 6vw, 200px);"
+							style="width: clamp(70px, 6vw, 200px); height: clamp(70px, 6vw, 200px);"
 							xmlns="http://www.w3.org/2000/svg"
 						>
 							<rect width="256" height="256" rx="60" fill="none" />
@@ -139,7 +139,7 @@
 							width="256"
 							height="256"
 							fill="none"
-							style="width: clamp(70px, 6vw, 200px);"
+							style="width: clamp(70px, 6vw, 200px); height: clamp(70px, 6vw, 200px);"
 							viewBox="0 0 256 256"
 							><rect width="256" height="256" fill="none" /><path
 								stroke="var(--clr-main)"
@@ -167,7 +167,7 @@
 							width="256"
 							height="256"
 							fill="none"
-							style="width: clamp(70px, 6vw, 200px);"
+							style="width: clamp(70px, 6vw, 200px); height: clamp(70px, 6vw, 200px);"
 							viewBox="0 0 256 256"
 							><rect width="256" height="256" fill="none" /><path
 								fill="url(#paint0_linear_2_119)"
@@ -248,6 +248,10 @@
 				&:nth-child(even):hover {
 					rotate: 5deg;
 					transition: rotate 0.15s ease-out;
+				}
+
+				& svg {
+					margin: 0;
 				}
 			}
 
