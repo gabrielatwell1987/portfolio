@@ -114,15 +114,6 @@
 		--100: 100%;
 	}
 
-	main {
-		background: linear-gradient(
-			to bottom,
-			var(--clr-light-gray) 0%,
-			var(--clr-inverted) 25%,
-			var(--clr-inverted) var(--100)
-		);
-	}
-
 	.github-section {
 		padding: 2rem 1rem;
 		margin: 2rem 0;
