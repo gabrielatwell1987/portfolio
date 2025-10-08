@@ -33,7 +33,7 @@
 		background: linear-gradient(
 			to bottom,
 			var(--clr-light-gray) 0%,
-			var(--clr-inverted) 25%,
+			var(--clr-inverted) 30%,
 			var(--clr-inverted) var(--100)
 		);
 
