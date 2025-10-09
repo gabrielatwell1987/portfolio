@@ -162,7 +162,7 @@
 					}
 
 					&:not(:hover) {
-						filter: opacity(0.65);
+						filter: opacity(0.95);
 						scale: 0.98;
 					}
 				}
