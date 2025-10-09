@@ -45,8 +45,8 @@
 			width: fit-content;
 			margin-inline: auto;
 			font-size: clamp(var(--sm), 1.15vw, var(--h5));
-			font-weight: 500;
-			color: var(--clr-blue);
+			font-weight: 600;
+			color: var(--clr-link);
 			margin-top: 1rem;
 			text-align: center;
 			line-height: 1.5;

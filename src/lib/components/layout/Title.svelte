@@ -67,7 +67,8 @@
 			letter-spacing: -1px;
 			text-transform: uppercase;
 			font-kerning: none;
-			color: var(--clr-inverted);
+			color: var(--clr-main);
+			/* color: var(--clr-inverted); */
 
 			@media (width >= 990px) {
 				font-weight: 800;
@@ -78,17 +79,17 @@
 				text-shadow: none;
 
 				@media (width <= 768px) {
-					-webkit-text-stroke: 2px var(--clr-main);
+					-webkit-text-stroke: 1px var(--clr-inverted);
 					text-shadow:
-						0 0 1px var(--clr-inverted),
-						-1px -1px 0 var(--clr-main),
-						1px -1px 0 var(--clr-main),
-						-1px 1px 0 var(--clr-main),
-						1px 1px 0 var(--clr-main),
-						-1px 0 0 var(--clr-main),
-						1px 0 0 var(--clr-main),
-						0 -1px 0 var(--clr-main),
-						0 1px 0 var(--clr-main);
+						0 0 1px var(--clr-main),
+						-1px -1px 0 var(--clr-inverted),
+						1px -1px 0 var(--clr-inverted),
+						-1px 1px 0 var(--clr-inverted),
+						1px 1px 0 var(--clr-inverted),
+						-1px 0 0 var(--clr-inverted),
+						1px 0 0 var(--clr-inverted),
+						0 -1px 0 var(--clr-inverted),
+						0 1px 0 var(--clr-inverted);
 				}
 			}
 
@@ -97,22 +98,23 @@
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -48%);
-				-webkit-text-stroke: 2px var(--clr-main);
+				color: var(--clr-main);
+				-webkit-text-stroke: 5px var(--clr-inverted);
 				text-shadow: none;
 
 				@media (width <= 768px) {
-					-webkit-text-stroke: 1px var(--clr-main);
+					-webkit-text-stroke: 1px var(--clr-inverted);
 					transform: translate(-50%, -43.5%);
 					text-shadow:
-						0 0 1px var(--clr-inverted),
-						-1px -1px 0 var(--clr-main),
-						1px -1px 0 var(--clr-main),
-						-1px 1px 0 var(--clr-main),
-						1px 1px 0 var(--clr-main),
-						-1px 0 0 var(--clr-main),
-						1px 0 0 var(--clr-main),
-						0 -1px 0 var(--clr-main),
-						0 1px 0 var(--clr-main);
+						0 0 1px var(--clr-main),
+						-2px -2px 0 var(--clr-inverted),
+						2px -2px 0 var(--clr-inverted),
+						-2px 2px 0 var(--clr-inverted),
+						2px 2px 0 var(--clr-inverted),
+						-2px 0 0 var(--clr-inverted),
+						2px 0 0 var(--clr-inverted),
+						0 -2px 0 var(--clr-inverted),
+						0 2px 0 var(--clr-inverted);
 				}
 			}
 		}
