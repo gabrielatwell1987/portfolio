@@ -64,23 +64,31 @@
 		background-color: transparent;
 		font-family: var(--bronova);
 		font-size: clamp(var(--h6), 1.5vw, var(--h3));
-		font-weight: 400;
+		font-weight: 600;
 		cursor: pointer;
 		user-select: none;
 		margin-inline: auto;
 		margin-bottom: 1rem;
 		transition:
 			outline-offset 300ms ease-out,
-			opacity 300ms ease-out;
+			opacity 300ms ease-out,
+			filter 300ms ease-out;
 		display: flex;
 		align-items: center;
 		gap: 0.5em;
 		letter-spacing: 1px;
 		text-decoration: none;
-		opacity: 0.75;
+
+		&:not(:hover) {
+			filter: opacity(0.85);
+		}
+
+		@media (width <= 768px) {
+			font-weight: 700;
+		}
 
 		&:hover {
-			opacity: 0.95;
+			opacity: 1;
 			outline-offset: 0px;
 		}
 

@@ -110,7 +110,6 @@
 			& section {
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
-
 				gap: 5vw;
 
 				@media (width <= 500px) {
@@ -154,16 +153,16 @@
 					display: flex;
 					align-items: center;
 					justify-content: center;
-
-					@media (width >= 720px) {
-						margin-top: 0;
-					}
 					transition:
 						filter 0.5s ease-out,
 						scale 0.35s ease-out;
 
+					@media (width >= 720px) {
+						margin-top: 0;
+					}
+
 					&:not(:hover) {
-						filter: opacity(0.5);
+						filter: opacity(0.65);
 						scale: 0.98;
 					}
 				}
