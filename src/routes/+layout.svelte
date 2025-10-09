@@ -24,16 +24,25 @@
 					registration.addEventListener('updatefound', () => {
 						const newWorker = registration.installing;
 						if (newWorker) {
+							// newWorker.addEventListener('statechange', () => {
+							// 	if (
+							// 		newWorker &&
+							// 		newWorker.state === 'installed' &&
+							// 		navigator.serviceWorker.controller &&
+							// 		!localStorage.getItem('updateNotified')
+							// 	) {
+							// 		localStorage.setItem('updateNotified', 'true');
+							// 		newWorker.postMessage({ type: 'SKIP_WAITING' });
+							// 		showUpdateMessage = true;
+							// 	}
+							// });
 							newWorker.addEventListener('statechange', () => {
 								if (
 									newWorker &&
 									newWorker.state === 'installed' &&
-									navigator.serviceWorker.controller &&
-									!localStorage.getItem('updateNotified')
+									navigator.serviceWorker.controller
 								) {
-									localStorage.setItem('updateNotified', 'true');
 									newWorker.postMessage({ type: 'SKIP_WAITING' });
-									showUpdateMessage = true;
 								}
 							});
 						}
@@ -54,18 +63,18 @@
 
 		detectSWUpdate();
 
-		// Check for app version updates
-		try {
-			const response = await fetch('/version.json');
-			const data = await response.json();
-			const storedVersion = localStorage.getItem('appVersion');
-			if (data.version !== storedVersion) {
-				localStorage.setItem('appVersion', data.version);
-				showUpdateMessage = true;
-			}
-		} catch (error) {
-			console.error('Version check failed:', error);
-		}
+		// // Check for app version updates
+		// try {
+		// 	const response = await fetch('/version.json');
+		// 	const data = await response.json();
+		// 	const storedVersion = localStorage.getItem('appVersion');
+		// 	if (data.version !== storedVersion) {
+		// 		localStorage.setItem('appVersion', data.version);
+		// 		showUpdateMessage = true;
+		// 	}
+		// } catch (error) {
+		// 	console.error('Version check failed:', error);
+		// }
 
 		// navigating
 		if ($navigating) {
@@ -85,12 +94,12 @@
 	<Loading />
 {/if}
 
-{#if showUpdateMessage}
+<!-- {#if showUpdateMessage}
 	<div class="update-banner">
 		<p>New update detected. Reload to apply?</p>
 		<button onclick={reloadPage}>Reload</button>
 	</div>
-{/if}
+{/if} -->
 
 <NavBar />
 
@@ -126,7 +135,7 @@
 		will-change: auto;
 	}
 
-	.update-banner {
+	/* .update-banner {
 		position: fixed;
 		top: 50%;
 		left: 50%;
@@ -153,5 +162,5 @@
 			font-size: clamp(var(--sm), 1.5vw, var(--h6));
 			font-weight: 600;
 		}
-	}
+	} */
 </style>
