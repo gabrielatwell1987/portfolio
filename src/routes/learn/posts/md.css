@@ -136,6 +136,50 @@ div[id] {
 	letter-spacing: 0px;
 }
 
+/* one inline code */
+.css code,
+.gsap code {
+	background-color: var(--clr-main);
+	color: var(--clr-inverted);
+	padding: 0.2em 0.4em;
+	border-radius: var(--radius);
+	font-family: var(--mono);
+	font-size: clamp(var(--xs), 1.5vw, var(--h6));
+	font-weight: 600;
+	box-shadow: 0 4px 1px var(--clr-gray);
+
+	@media (max-width: 768px) {
+		box-shadow: 0 2px 1px var(--clr-gray);
+	}
+}
+
+/* multiline code */
+.css pre code,
+.gsap pre code {
+	background-color: var(--clr-main);
+	color: var(--clr-inverted);
+	display: block;
+	padding: 1em;
+	border-radius: var(--radius);
+	overflow-x: auto;
+	font-family: var(--mono);
+	font-size: clamp(var(--xs), 1.5vw, var(--h6));
+	font-weight: 500;
+	line-height: 1.4;
+	box-shadow: 0 4px 1px var(--clr-gray);
+
+	@media (max-width: 768px) {
+		box-shadow: 0 2px 1px var(--clr-gray);
+	}
+}
+
+/* Optional: Style the <pre> wrapper for better spacing */
+.css pre,
+.gsap pre {
+	margin: 1rem 0;
+	padding: 0;
+}
+
 /* Mobile-specific scroll adjustments */
 @media (max-width: 768px) {
 	html {
