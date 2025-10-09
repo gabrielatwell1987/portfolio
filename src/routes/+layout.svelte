@@ -24,18 +24,6 @@
 					registration.addEventListener('updatefound', () => {
 						const newWorker = registration.installing;
 						if (newWorker) {
-							// newWorker.addEventListener('statechange', () => {
-							// 	if (
-							// 		newWorker &&
-							// 		newWorker.state === 'installed' &&
-							// 		navigator.serviceWorker.controller &&
-							// 		!localStorage.getItem('updateNotified')
-							// 	) {
-							// 		localStorage.setItem('updateNotified', 'true');
-							// 		newWorker.postMessage({ type: 'SKIP_WAITING' });
-							// 		showUpdateMessage = true;
-							// 	}
-							// });
 							newWorker.addEventListener('statechange', () => {
 								if (
 									newWorker &&
@@ -63,19 +51,6 @@
 
 		detectSWUpdate();
 
-		// // Check for app version updates
-		// try {
-		// 	const response = await fetch('/version.json');
-		// 	const data = await response.json();
-		// 	const storedVersion = localStorage.getItem('appVersion');
-		// 	if (data.version !== storedVersion) {
-		// 		localStorage.setItem('appVersion', data.version);
-		// 		showUpdateMessage = true;
-		// 	}
-		// } catch (error) {
-		// 	console.error('Version check failed:', error);
-		// }
-
 		// navigating
 		if ($navigating) {
 			if (document.startViewTransition) {
@@ -93,13 +68,6 @@
 {#if !isPageLoaded}
 	<Loading />
 {/if}
-
-<!-- {#if showUpdateMessage}
-	<div class="update-banner">
-		<p>New update detected. Reload to apply?</p>
-		<button onclick={reloadPage}>Reload</button>
-	</div>
-{/if} -->
 
 <NavBar />
 
@@ -134,33 +102,4 @@
 		min-height: calc(100vh - 120px);
 		will-change: auto;
 	}
-
-	/* .update-banner {
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		border: 2px solid var(--clr-gray);
-		background: var(--clr-inverted);
-		color: var(--clr-main);
-		padding: 1rem;
-		text-align: center;
-		z-index: 1000;
-		width: fit-content;
-		height: auto;
-		margin-inline: auto;
-		font-size: clamp(var(--sm), 2vw, var(--h5));
-
-		& button {
-			padding: 0.5rem 1rem;
-			background: var(--clr-inverted);
-			color: var(--clr-pale);
-			border: 1px solid var(--clr-pale);
-			cursor: pointer;
-			width: fit-content;
-			margin-inline: auto;
-			font-size: clamp(var(--sm), 1.5vw, var(--h6));
-			font-weight: 600;
-		}
-	} */
 </style>
