@@ -30,7 +30,7 @@
 				onclick={() => {
 					window.location.href = '/learn/greensock';
 				}}
-				style="width: clamp(10em, 25vw, 30em);"
+				style="width: clamp(15em, 25vw, 30em);"
 				aria-label="greensock"
 			>
 				<Image
@@ -46,7 +46,7 @@
 				onclick={() => {
 					window.location.href = '/learn/sveltekit';
 				}}
-				style="width: clamp(8em, 16.5vw, 30em);"
+				style="width: clamp(10em, 16.5vw, 30em);"
 			>
 				<Image
 					src="/skills/Svelte-Dark.svg"
@@ -61,7 +61,7 @@
 					window.location.href = '/learn/posts';
 				}}
 				class="learn-image"
-				style="grid-column: 1/-1; width: clamp(15em, 46vw, 60em); justify-self: center;"
+				style="grid-column: 1/-1; width: clamp(18em, 46vw, 60em); justify-self: center;"
 			>
 				<Image
 					src="logos/animation.webp"

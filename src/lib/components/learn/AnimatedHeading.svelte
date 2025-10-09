@@ -77,7 +77,7 @@
 		.h1-r {
 			color: var(--clr-main);
 			font-family: var(--bronova);
-			font-size: clamp(1.2rem, 5vw, 5rem);
+			font-size: clamp(var(--h6), 8vw, var(--h1));
 			font-weight: 100;
 			margin-top: 5%;
 			letter-spacing: 1px;
