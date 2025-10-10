@@ -231,9 +231,10 @@
 		--clr-link: light-dark(var(--darker-blue), var(--sky));
 		--clr-blue: light-dark(var(--darkest-blue), var(--sky));
 		--clr-pale: light-dark(var(--yellow), var(--pale));
-		--clr-gray: light-dark(var(--gray), var(--dark-gray));
-		--clr-green: light-dark(var(--success-dark), var(--success-light));
 		--clr-light-gray: light-dark(var(--dark-gray), var(--light-gray));
+		--clr-gray: light-dark(var(--gray), var(--dark-gray));
+		--clr-dark-gray: light-dark(#2e2d2d, #a19e9e);
+		--clr-green: light-dark(var(--success-dark), var(--success-light));
 		--clr-inverted: light-dark(var(--white), var(--blackest));
 		--clr-button-text: light-dark(var(--blackest), var(--white));
 		--clr-button: light-dark(var(--yellow), var(--purple));
