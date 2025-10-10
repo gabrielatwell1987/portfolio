@@ -42,7 +42,8 @@
 		pointer-events: none;
 
 		& .summary {
-			width: fit-content;
+			max-width: 95%;
+			/* width: 100%; */
 			margin-inline: auto;
 			font-size: clamp(var(--sm), 1.15vw, var(--h5));
 			font-weight: 600;
