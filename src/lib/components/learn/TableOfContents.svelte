@@ -42,6 +42,7 @@
 		font-size: clamp(var(--h6), 3vw, var(--h2));
 		font-weight: 800;
 		text-align: center;
+		opacity: 0.65;
 	}
 
 	.toc {
@@ -84,13 +85,16 @@
 				align-items: center;
 
 				& dd {
-					color: var(--clr-link);
 					font-size: clamp(var(--sm), 2vw, var(--h6));
 					font-weight: 600;
 					text-wrap: balance;
 
-					& a:visited {
-						color: var(--clr-gray);
+					& a {
+						color: var(--clr-link);
+
+						&:visited {
+							color: var(--clr-light-gray);
+						}
 					}
 				}
 			}

@@ -23,7 +23,7 @@
 	}
 
 	$effect(() => {
-		if (!browser || !buttonElement) return;
+		if (!browser) return;
 	});
 
 	// Initialize theme state
