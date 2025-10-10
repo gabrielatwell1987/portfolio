@@ -4,22 +4,14 @@
 
 	let theme = $state('dark');
 	let themeStatus = $state('');
-	let buttonElement = $state();
 
 	function toggle() {
 		if (!browser) return false;
 
 		const root = document.documentElement;
 
-		if (theme === 'light') {
-			theme = 'dark';
-			root.classList.add('dark');
-			root.classList.remove('light');
-		} else {
-			theme = 'light';
-			root.classList.add('light');
-			root.classList.remove('dark');
-		}
+		theme = theme === 'light' ? 'dark' : 'light';
+		document.documentElement.style.colorScheme = theme;
 
 		themeStatus = `Switched to ${theme} theme`;
 
@@ -32,15 +24,6 @@
 
 	$effect(() => {
 		if (!browser || !buttonElement) return;
-
-		function handleGlobalClick(event) {
-			if (buttonElement.contains(event.target)) {
-				event.preventDefault();
-				event.stopPropagation();
-				event.stopImmediatePropagation();
-				toggle();
-			}
-		}
 	});
 
 	// Initialize theme state
@@ -65,7 +48,6 @@
 <A11yAnnouncer message={themeStatus} />
 
 <button
-	bind:this={buttonElement}
 	onclick={toggle}
 	type="button"
 	role="switch"
