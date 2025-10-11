@@ -6,6 +6,7 @@
 	import Bento from '$lib/components/about/Bento.svelte';
 	import CardFlip from '$lib/components/about/CardFlip.svelte';
 	import AboutHero from '$lib/components/about/AboutHero.svelte';
+	import TransitionChange from './../../lib/components/layout/TransitionChange.svelte';
 </script>
 
 <SEO
@@ -13,6 +14,8 @@
 	description="All about Gabriel Atwell"
 	keywords="about gabe, about gabriel, gabe's bio"
 />
+
+<TransitionChange fillColor="white" endColor="var(--clr-bg)" />
 
 <main aria-label="bio">
 	<section>
