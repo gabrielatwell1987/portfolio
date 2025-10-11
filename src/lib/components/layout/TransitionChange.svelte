@@ -9,7 +9,7 @@
 
 		const tl = gsap
 			.timeline()
-			.to(['#star-clip', '#visible-star'], {
+			.to(['#star-path', '#visible-star'], {
 				morphSVG: 'M 50 5 L 61 35 L 95 35 L 68 54 L 79 85 L 50 66 L 21 85 L 32 54 L 5 35 L 39 35 Z',
 				duration: 1,
 				scale: 7,
@@ -25,13 +25,13 @@
 
 <svg id="demo" class="overlay overlay--2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 	<defs>
-		<clipPath id="star-clip">
-			<path id="star-path" d="M 50 50 L 50 50 Z" />
-		</clipPath>
+		<mask id="star-mask">
+			<rect width="100" height="100" fill="white" />
+			<path id="star-path" d="M 50 50 L 50 50 Z" fill={fillColor} />
+		</mask>
 	</defs>
+	<rect width="100" height="100" fill="rgb({endColor})" mask="url(#star-mask)" />
 
-	<rect width="100" height="100" fill="#ccc" />
-	<rect width="100" height="100" fill="transparent" clip-path="url(#star-clip)" />
 	<path id="visible-star" d="M 50 50 L 50 50 Z" fill="none" stroke="black" stroke-width="2" />
 </svg>
 
