@@ -17,7 +17,7 @@
 			duration: 0.5,
 			morphSVG: '.shape2',
 			onComplete: () => {
-				gsap.delayedCall(1.25, () => {
+				gsap.delayedCall(1, () => {
 					svgElement.style.display = 'none';
 				});
 			}
