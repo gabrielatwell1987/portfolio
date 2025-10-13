@@ -14,7 +14,6 @@
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
 	let isPageLoaded = $state(false);
-	let showUpdateMessage = $state(false);
 
 	function detectSWUpdate() {
 		if ('serviceWorker' in navigator) {
@@ -42,10 +41,6 @@
 		}
 	}
 
-	function reloadPage() {
-		window.location.reload();
-	}
-
 	$effect(async () => {
 		isPageLoaded = true;
 
@@ -59,6 +54,20 @@
 		}
 	});
 </script>
+
+<svelte:head>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSHZ0S02JN">
+	</script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-RSHZ0S02JN');
+	</script>
+</svelte:head>
 
 <Analytics />
 <SkipLink />
