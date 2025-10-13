@@ -1,6 +1,4 @@
 <script>
-	import { asClassComponent } from 'svelte/legacy';
-	import { browser } from '$app/environment';
 	import { navigating } from '$app/stores';
 	import '../app.css';
 	import '@picocss/pico/css/pico.min.css';
