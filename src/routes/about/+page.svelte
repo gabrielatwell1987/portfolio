@@ -6,7 +6,7 @@
 	import Bento from '$lib/components/about/Bento.svelte';
 	import CardFlip from '$lib/components/about/CardFlip.svelte';
 	import AboutHero from '$lib/components/about/AboutHero.svelte';
-	import StarMorph from '$lib/components/layout/StarMorph.svelte';
+	// import StarMorph from '$lib/components/layout/StarMorph.svelte';
 </script>
 
 <SEO
@@ -15,7 +15,7 @@
 	keywords="about gabe, about gabriel, gabe's bio"
 />
 
-<StarMorph />
+<!-- <StarMorph /> -->
 
 <main aria-label="bio">
 	<section>
