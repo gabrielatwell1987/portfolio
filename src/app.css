@@ -37,6 +37,8 @@
 
 @layer root {
 	:root {
+		color-scheme: light dark;
+
 		/* fonts */
 		--mono: 'Courier Prime', monospace;
 		--bronova: 'Bronova', sans-serif;
