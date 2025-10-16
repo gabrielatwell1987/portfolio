@@ -31,7 +31,7 @@
 			border-radius: 1px;
 
 			&:hover {
-				text-shadow: 0px 0px 1px var(--clr-inverted);
+				text-shadow: 0px 0px 1px var(--clr-invert);
 				border-bottom: 4px solid var(--clr-main);
 				height: 2.75rem;
 				transition: all 0.15s ease-out;

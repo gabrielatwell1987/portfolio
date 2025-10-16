@@ -190,7 +190,7 @@
 
 			& h2,
 			& p {
-				color: var(--clr-inverted);
+				color: var(--clr-invert);
 			}
 
 			& h2 {

@@ -48,9 +48,9 @@
 				text-shadow: 0 0 5px 3px var(--clr-gray);
 				mix-blend-mode: difference;
 				letter-spacing: -1px;
-				color: var(--clr-inverted);
+				color: var(--clr-invert);
 				text-shadow:
-					0 0 1px var(--clr-inverted),
+					0 0 1px var(--clr-invert),
 					-2px -2px 0 var(--clr-main),
 					2px -2px 0 var(--clr-main),
 					-2px 2px 0 var(--clr-main),
@@ -63,7 +63,7 @@
 				@media (width <= 768px) {
 					font-weight: 600;
 					text-shadow:
-						0 0 1px var(--clr-inverted),
+						0 0 1px var(--clr-invert),
 						-1px -1px 0 var(--clr-main),
 						1px -1px 0 var(--clr-main),
 						-1px 1px 0 var(--clr-main),

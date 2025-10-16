@@ -66,7 +66,7 @@
 			justify-content: center;
 			align-items: center;
 			text-align: center;
-			background: var(--clr-inverted);
+			background: var(--clr-invert);
 			border: 1px solid var(--clr-main);
 			color: var(--clr-main);
 			white-space: pre-wrap;

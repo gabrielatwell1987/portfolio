@@ -24,8 +24,8 @@
 		/* background: linear-gradient(
 			to bottom,
 			var(--clr-light-gray) 0%,
-			var(--clr-inverted) 25%,
-			var(--clr-inverted) var(--100)
+			var(--clr-invert) 25%,
+			var(--clr-invert) var(--100)
 		); */
 		display: flex;
 		flex-direction: column;

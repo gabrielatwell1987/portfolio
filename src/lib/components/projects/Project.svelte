@@ -113,9 +113,9 @@
 				visibility: visible;
 				width: 100%;
 				background-color: var(--clr-main);
-				color: var(--clr-inverted);
+				color: var(--clr-invert);
 				text-align: center;
-				border: 1px solid var(--clr-inverted);
+				border: 1px solid var(--clr-invert);
 				border-radius: var(--radius);
 				padding: 5px 3px;
 				font-family: var(--bronova);
@@ -140,9 +140,9 @@
 			text-transform: uppercase;
 			text-decoration: none;
 			margin-bottom: 0.5rem;
-			color: var(--clr-inverted);
+			color: var(--clr-invert);
 			text-shadow:
-				0 0 1px var(--clr-inverted),
+				0 0 1px var(--clr-invert),
 				-2px -2px 0 var(--clr-main),
 				2px -2px 0 var(--clr-main),
 				-2px 2px 0 var(--clr-main),

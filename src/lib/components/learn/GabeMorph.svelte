@@ -41,7 +41,7 @@
 			y="0"
 			width="80"
 			height="80"
-			fill="var(--clr-inverted)"
+			fill="var(--clr-invert)"
 			stroke="var(--clr-main)"
 			stroke-width="2"
 		/>
@@ -57,7 +57,7 @@
 		<polygon
 			id="triangle"
 			points="200,80 280,80 240,0"
-			fill="var(--clr-inverted)"
+			fill="var(--clr-invert)"
 			stroke="var(--clr-main)"
 			stroke-width="2"
 		/>
@@ -67,7 +67,7 @@
 			y="0"
 			width="80"
 			height="80"
-			fill="var(--clr-inverted)"
+			fill="var(--clr-invert)"
 			stroke="var(--clr-main)"
 			stroke-width="2"
 		/>

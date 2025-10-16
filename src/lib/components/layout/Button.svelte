@@ -19,14 +19,14 @@
 			outline: 3px solid var(--clr-main);
 			text-shadow:
 				0 0 2px var(--clr-main),
-				-2px -2px 0 var(--clr-inverted),
-				2px -2px 0 var(--clr-inverted),
-				-2px 2px 0 var(--clr-inverted),
-				2px 2px 0 var(--clr-inverted),
-				-2px 0 0 var(--clr-inverted),
-				2px 0 0 var(--clr-inverted),
-				0 -2px 0 var(--clr-inverted),
-				0 2px 0 var(--clr-inverted);
+				-2px -2px 0 var(--clr-invert),
+				2px -2px 0 var(--clr-invert),
+				-2px 2px 0 var(--clr-invert),
+				2px 2px 0 var(--clr-invert),
+				-2px 0 0 var(--clr-invert),
+				2px 0 0 var(--clr-invert),
+				0 -2px 0 var(--clr-invert),
+				0 2px 0 var(--clr-invert);
 			border-radius: var(--radius);
 			outline-offset: -7px;
 			margin-inline: auto;

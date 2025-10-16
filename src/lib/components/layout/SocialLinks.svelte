@@ -87,7 +87,7 @@
 			cursor: pointer;
 
 			& path {
-				fill: var(--clr-inverted);
+				fill: var(--clr-invert);
 				stroke: var(--clr-main);
 				stroke-width: 20;
 			}
