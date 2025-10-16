@@ -12,21 +12,21 @@
 			text-decoration: none;
 			background-color: transparent;
 			font-family: var(--ultra);
-			font-size: clamp(var(--h6), 2vw, var(--h3));
+			font-size: clamp(var(--h5), 2vw, var(--h3));
 			font-weight: 900;
-			color: var(--clr-inverted);
+			color: var(--clr-main);
 			border: 1px solid var(--clr-main);
 			outline: 3px solid var(--clr-main);
 			text-shadow:
-				0 0 2px var(--clr-inverted),
-				-2px -2px 0 var(--clr-main),
-				2px -2px 0 var(--clr-main),
-				-2px 2px 0 var(--clr-main),
-				2px 2px 0 var(--clr-main),
-				-2px 0 0 var(--clr-main),
-				2px 0 0 var(--clr-main),
-				0 -2px 0 var(--clr-main),
-				0 2px 0 var(--clr-main);
+				0 0 2px var(--clr-main),
+				-2px -2px 0 var(--clr-inverted),
+				2px -2px 0 var(--clr-inverted),
+				-2px 2px 0 var(--clr-inverted),
+				2px 2px 0 var(--clr-inverted),
+				-2px 0 0 var(--clr-inverted),
+				2px 0 0 var(--clr-inverted),
+				0 -2px 0 var(--clr-inverted),
+				0 2px 0 var(--clr-inverted);
 			border-radius: var(--radius);
 			outline-offset: -7px;
 			margin-inline: auto;
@@ -40,19 +40,9 @@
 			margin-top: 10%;
 			margin-bottom: 2%;
 			user-select: none;
-			opacity: 0.75;
 
-			@media (width <= 768px) {
-				text-shadow:
-					0 0 1px var(--clr-inverted),
-					-1px -1px 0 var(--clr-main),
-					1px -1px 0 var(--clr-main),
-					-1px 1px 0 var(--clr-main),
-					1px 1px 0 var(--clr-main),
-					-1px 0 0 var(--clr-main),
-					1px 0 0 var(--clr-main),
-					0 -1px 0 var(--clr-main),
-					0 1px 0 var(--clr-main);
+			&:not(:hover) {
+				opacity: 0.85;
 			}
 
 			&:focus,
@@ -62,7 +52,6 @@
 			}
 
 			&:hover {
-				opacity: 0.95;
 				outline-offset: 0px;
 			}
 

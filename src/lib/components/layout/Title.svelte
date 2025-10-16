@@ -68,7 +68,6 @@
 			text-transform: uppercase;
 			font-kerning: none;
 			color: var(--clr-main);
-			/* color: var(--clr-inverted); */
 
 			@media (width >= 990px) {
 				font-weight: 800;
