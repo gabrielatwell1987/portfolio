@@ -81,7 +81,7 @@
 
 		& .tooltip {
 			position: absolute;
-			background-color: var(--clr-inverted);
+			background-color: var(--clr-invert);
 			color: var(-clr-main);
 			font-size: clamp(var(--sm), 1.5vw, var(--h6));
 			padding: 0.5rem;

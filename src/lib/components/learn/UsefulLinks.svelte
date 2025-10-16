@@ -74,14 +74,14 @@
 				color: var(--clr-main);
 				text-shadow:
 					0 0 1px var(--clr-main),
-					-1px -1px 0 var(--clr-inverted),
-					1px -1px 0 var(--clr-inverted),
-					-1px 1px 0 var(--clr-inverted),
-					1px 1px 0 var(--clr-inverted),
-					-1px 0 0 var(--clr-inverted),
-					1px 0 0 var(--clr-inverted),
-					0 -1px 0 var(--clr-inverted),
-					0 1px 0 var(--clr-inverted);
+					-1px -1px 0 var(--clr-invert),
+					1px -1px 0 var(--clr-invert),
+					-1px 1px 0 var(--clr-invert),
+					1px 1px 0 var(--clr-invert),
+					-1px 0 0 var(--clr-invert),
+					1px 0 0 var(--clr-invert),
+					0 -1px 0 var(--clr-invert),
+					0 1px 0 var(--clr-invert);
 				letter-spacing: 1px;
 				border-bottom: 2px solid var(--clr-main);
 				width: fit-content;

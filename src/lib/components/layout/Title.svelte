@@ -78,17 +78,17 @@
 				text-shadow: none;
 
 				@media (width <= 768px) {
-					-webkit-text-stroke: 1px var(--clr-inverted);
+					-webkit-text-stroke: 1px var(--clr-invert);
 					text-shadow:
 						0 0 1px var(--clr-main),
-						-1px -1px 0 var(--clr-inverted),
-						1px -1px 0 var(--clr-inverted),
-						-1px 1px 0 var(--clr-inverted),
-						1px 1px 0 var(--clr-inverted),
-						-1px 0 0 var(--clr-inverted),
-						1px 0 0 var(--clr-inverted),
-						0 -1px 0 var(--clr-inverted),
-						0 1px 0 var(--clr-inverted);
+						-1px -1px 0 var(--clr-invert),
+						1px -1px 0 var(--clr-invert),
+						-1px 1px 0 var(--clr-invert),
+						1px 1px 0 var(--clr-invert),
+						-1px 0 0 var(--clr-invert),
+						1px 0 0 var(--clr-invert),
+						0 -1px 0 var(--clr-invert),
+						0 1px 0 var(--clr-invert);
 				}
 			}
 
@@ -98,22 +98,22 @@
 				left: 50%;
 				transform: translate(-50%, -48%);
 				color: var(--clr-main);
-				-webkit-text-stroke: 5px var(--clr-inverted);
+				-webkit-text-stroke: 5px var(--clr-invert);
 				text-shadow: none;
 
 				@media (width <= 768px) {
-					-webkit-text-stroke: 1px var(--clr-inverted);
+					-webkit-text-stroke: 1px var(--clr-invert);
 					transform: translate(-50%, -43.5%);
 					text-shadow:
 						0 0 1px var(--clr-main),
-						-2px -2px 0 var(--clr-inverted),
-						2px -2px 0 var(--clr-inverted),
-						-2px 2px 0 var(--clr-inverted),
-						2px 2px 0 var(--clr-inverted),
-						-2px 0 0 var(--clr-inverted),
-						2px 0 0 var(--clr-inverted),
-						0 -2px 0 var(--clr-inverted),
-						0 2px 0 var(--clr-inverted);
+						-2px -2px 0 var(--clr-invert),
+						2px -2px 0 var(--clr-invert),
+						-2px 2px 0 var(--clr-invert),
+						2px 2px 0 var(--clr-invert),
+						-2px 0 0 var(--clr-invert),
+						2px 0 0 var(--clr-invert),
+						0 -2px 0 var(--clr-invert),
+						0 2px 0 var(--clr-invert);
 				}
 			}
 		}

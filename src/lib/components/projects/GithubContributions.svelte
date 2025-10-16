@@ -863,11 +863,11 @@
 
 	/* Dark theme adjustments */
 	:global(body.dark) .contribution-day.none {
-		fill: var(--clr-inverted);
+		fill: var(--clr-invert);
 	}
 
 	:global(body.dark) .legend-square.none {
-		background-color: var(--clr-inverted);
+		background-color: var(--clr-invert);
 	}
 
 	/* Hover effects - enhanced focus on larger containers */

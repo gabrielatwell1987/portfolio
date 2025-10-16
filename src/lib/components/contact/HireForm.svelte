@@ -231,7 +231,7 @@
 				}
 
 				option {
-					background-color: var(--clr-inverted);
+					background-color: var(--clr-invert);
 					color: var(--clr-main);
 					padding: 0.5rem;
 				}

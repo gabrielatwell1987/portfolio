@@ -156,7 +156,7 @@
 		font-family: var(--bronova);
 		font-size: clamp(var(--xs), 1.1vw, var(--sm));
 		font-weight: 200;
-		color: var(--clr-inverted);
+		color: var(--clr-invert);
 		pointer-events: none;
 		transition: opacity 0.3s ease;
 		text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);

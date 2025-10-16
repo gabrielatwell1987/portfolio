@@ -82,7 +82,7 @@
 			}
 
 			.glow {
-				color: var(--clr-inverted);
+				color: var(--clr-invert);
 				text-shadow:
 					0 0 5px #17262c,
 					0 0 5px var(--clr-main),

@@ -79,10 +79,10 @@
 		font-size: clamp(var(--sm), 2vw, var(--h4));
 		font-weight: 700;
 		background-color: var(--clr-main);
-		color: var(--clr-inverted);
-		outline: 3px solid var(--clr-inverted);
+		color: var(--clr-invert);
+		outline: 3px solid var(--clr-invert);
 		outline-offset: -7px;
-		border: 1px solid var(--clr-inverted);
+		border: 1px solid var(--clr-invert);
 		border-radius: var(--radius);
 		transition: 500ms;
 		cursor: pointer;
@@ -113,7 +113,7 @@
 
 		& i {
 			font-size: clamp(var(--sm), 1.5vw, var(--h5));
-			color: var(--clr-inverted);
+			color: var(--clr-invert);
 			align-items: center;
 			cursor: pointer;
 		}

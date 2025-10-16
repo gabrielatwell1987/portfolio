@@ -14,9 +14,9 @@
 			font-family: var(--ultra);
 			font-size: clamp(var(--h6), 2vw, var(--h3));
 			font-weight: 900;
-			color: var(--clr-inverted);
+			color: var(--clr-invert);
 			text-shadow:
-				0 0 2px var(--clr-inverted),
+				0 0 2px var(--clr-invert),
 				-2px -2px 0 var(--clr-main),
 				2px -2px 0 var(--clr-main),
 				-2px 2px 0 var(--clr-main),
@@ -25,8 +25,8 @@
 				2px 0 0 var(--clr-main),
 				0 -2px 0 var(--clr-main),
 				0 2px 0 var(--clr-main);
-			border: 1px solid var(--clr-inverted);
-			outline: 3px solid var(--clr-inverted);
+			border: 1px solid var(--clr-invert);
+			outline: 3px solid var(--clr-invert);
 			margin-inline: auto;
 			cursor: pointer;
 			letter-spacing: 1px;
@@ -41,7 +41,7 @@
 
 			@media (width <= 768px) {
 				text-shadow:
-					0 0 1px var(--clr-inverted),
+					0 0 1px var(--clr-invert),
 					-1px -1px 0 var(--clr-main),
 					1px -1px 0 var(--clr-main),
 					-1px 1px 0 var(--clr-main),

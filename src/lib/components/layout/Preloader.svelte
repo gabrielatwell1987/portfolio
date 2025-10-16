@@ -59,7 +59,7 @@
 		& .preloader-line {
 			flex: 1;
 			height: 100vh;
-			background-color: var(--clr-inverted);
+			background-color: var(--clr-invert);
 			transform-origin: right;
 		}
 	}

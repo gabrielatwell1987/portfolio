@@ -40,7 +40,7 @@
 <style>
 	.testimonial {
 		--dark-bg-rgb: var(--clr-main);
-		--light-bg-rgb: var(--clr-inverted);
+		--light-bg-rgb: var(--clr-invert);
 		background-color: hsla(var(--light-bg-rgb), 0.25);
 		border-radius: var(--radius);
 		padding: 2rem;

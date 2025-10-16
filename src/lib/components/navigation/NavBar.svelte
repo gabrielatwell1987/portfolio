@@ -170,7 +170,7 @@
 			gap: 1.25rem;
 			border-radius: 5px;
 			padding: 0.75rem;
-			background-color: var(--clr-inverted);
+			background-color: var(--clr-invert);
 			backdrop-filter: blur(125px);
 			list-style: none;
 			min-width: 150px;

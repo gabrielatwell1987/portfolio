@@ -140,7 +140,7 @@ div[id] {
 .css code,
 .gsap code {
 	background-color: var(--clr-main);
-	color: var(--clr-inverted);
+	color: var(--clr-invert);
 	padding: 0.2em 0.4em;
 	border-radius: var(--radius);
 	font-family: var(--mono);
@@ -157,7 +157,7 @@ div[id] {
 .css pre code,
 .gsap pre code {
 	background-color: var(--clr-main);
-	color: var(--clr-inverted);
+	color: var(--clr-invert);
 	display: block;
 	padding: 1em;
 	border-radius: var(--radius);

@@ -174,7 +174,7 @@
 					justify-content: center;
 					align-items: center;
 					text-align: center;
-					background: var(--clr-inverted);
+					background: var(--clr-invert);
 					color: var(--clr-main);
 					white-space: normal;
 					word-wrap: break-word;
@@ -220,7 +220,7 @@
 
 		& img {
 			cursor: pointer;
-			box-shadow: 0 0 10px var(--clr-inverted);
+			box-shadow: 0 0 10px var(--clr-invert);
 			border: 2px solid var(--clr-main);
 			border-radius: var(--radius);
 			display: block;
