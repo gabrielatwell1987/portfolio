@@ -3,6 +3,7 @@
 	import HireForm from '$lib/components/contact/HireForm.svelte';
 	import Title from '$lib/components/layout/Title.svelte';
 	import Image from '$lib/components/layout/Image.svelte';
+	// import MotifPhoto from '$lib/components/contact/MotifPhoto.svelte';
 </script>
 
 <SEO
@@ -21,6 +22,7 @@
 			style="width: clamp(200px, 30vw, 750px);"
 			aspectRatio="1/1"
 		/>
+		<!-- <MotifPhoto /> -->
 	</div>
 
 	<section>
