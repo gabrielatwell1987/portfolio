@@ -244,11 +244,11 @@
 	}
 
 	.label-text {
-		font-family: var(--bronova);
+		font-family: var(--bronova-bold);
 		font-size: clamp(var(--sm), 1vw, var(--h4));
-		font-weight: 700;
+		/* font-weight: 800; */
 		color: var(--clr-blue);
-		transition: color 0.3s ease;
+		transition: color 0.1s ease;
 	}
 
 	.form-group:has(input:user-valid) .label-text,
