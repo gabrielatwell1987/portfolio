@@ -2,8 +2,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import HireForm from '$lib/components/contact/HireForm.svelte';
 	import Title from '$lib/components/layout/Title.svelte';
-	import Image from '$lib/components/layout/Image.svelte';
-	// import MotifPhoto from '$lib/components/contact/MotifPhoto.svelte';
+	import MotifPhoto from '$lib/components/contact/MotifPhoto.svelte';
 </script>
 
 <SEO
@@ -16,13 +15,7 @@
 	<Title title="connect" title2="connect" />
 
 	<div class="personal-image">
-		<Image
-			src="/images/hire-gabe.webp"
-			alt="Gabriel Atwell"
-			style="width: clamp(200px, 30vw, 750px);"
-			aspectRatio="1/1"
-		/>
-		<!-- <MotifPhoto /> -->
+		<MotifPhoto />
 	</div>
 
 	<section>
