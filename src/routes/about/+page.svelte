@@ -2,11 +2,28 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import Button from '$lib/components/layout/Button.svelte';
 	import Grid from '$lib/components/about/Grid.svelte';
-	import Skills from '$lib/components/about/Skills.svelte';
 	import Bento from '$lib/components/about/Bento.svelte';
 	import CardFlip from '$lib/components/about/CardFlip.svelte';
 	import AboutHero from '$lib/components/about/AboutHero.svelte';
 	import Preloader from '$lib/components/layout/Preloader.svelte';
+	import Skills from '$lib/components/about/Skills.svelte';
+	import Slider from '$lib/components/about/Slider.svelte';
+
+	let isDesktop = $state(false);
+
+	$effect(() => {
+		const mediaQuery = window.matchMedia('(min-width: 768px)');
+
+		isDesktop = mediaQuery.matches;
+
+		const handler = (e) => {
+			isDesktop = e.matches;
+		};
+
+		mediaQuery.addEventListener('change', handler);
+
+		return () => mediaQuery.removeEventListener('change', handler);
+	});
 </script>
 
 <SEO
@@ -76,7 +93,11 @@
 				</p>
 			</div>
 
-			<Skills />
+			{#if isDesktop}
+				<Slider />
+			{:else}
+				<Skills />
+			{/if}
 
 			<Grid leftTitle="Frontend" rightTitle="Design Based" />
 
