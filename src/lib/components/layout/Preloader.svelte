@@ -6,10 +6,13 @@
 	let lines = $state([]);
 
 	$effect(() => {
+		const validLines = lines.filter((line) => line !== undefined && line !== null);
+		if (validLines.length !== 10) return;
+
 		const tl = gsap.timeline();
 
 		// Animate each line from right to left (revealing content)
-		tl.to(lines, {
+		tl.to(validLines, {
 			duration: 1.3,
 			scaleX: 0,
 			transformOrigin: 'right',
