@@ -61,6 +61,8 @@
 		--sm: calc(var(--base-size) / var(--scale));
 		--xs: calc(var(--sm) / var(--scale));
 		--xxs: calc(var(--xs) / var(--scale));
+
+		--image-filter: grayscale(80%) brightness(80%);
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
