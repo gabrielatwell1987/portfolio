@@ -8,7 +8,6 @@
 		const selectedRoute = event.target.value;
 
 		if (selectedRoute) {
-			// Append a unique query parameter to force navigation
 			const uniqueParam = `t=${Date.now()}`;
 
 			selectValue = '';
@@ -47,6 +46,7 @@
 		min-width: auto;
 		width: max-content;
 		margin-top: 1rem;
+		transition: none;
 
 		@media (width <= 1085px) {
 			margin-top: 0;
