@@ -20,7 +20,7 @@
 
 <main>
 	<section>
-		<AnimatedHeading title1="seeing" span="is" title2="believing" />
+		<AnimatedHeading title1="learn" span="by" title2="doing" />
 	</section>
 
 	<article>
