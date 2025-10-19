@@ -2,7 +2,6 @@
 	import { navigating } from '$app/stores';
 	import '../app.css';
 	import '@picocss/pico/css/pico.min.css';
-	import Analytics from '$lib/data/Analytics.svelte';
 	import NavBar from '$lib/components/navigation/NavBar.svelte';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import Loading from '$lib/components/layout/Loading.svelte';
@@ -67,7 +66,6 @@
 	</script>
 </svelte:head>
 
-<Analytics />
 <SkipLink />
 <ViewTransition />
 
