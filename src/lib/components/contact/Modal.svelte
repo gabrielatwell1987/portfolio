@@ -90,7 +90,7 @@
 				</svg>
 			</button>
 
-			<h4 id="modal-title">Please contact me for any work!</h4>
+			<h4>Please contact me for any work!</h4>
 		</header>
 
 		<div class="image">
@@ -174,11 +174,11 @@
 					border-bottom: none;
 
 					& h4 {
-						font-family: var(--anta);
+						font-family: var(--bronova-bold);
 						font-size: clamp(var(--h5), 1.75vw, var(--h2));
 						font-weight: 600;
 						line-height: 1;
-						color: var(--clr-link);
+						color: var(--sky);
 						margin: -0.5rem 0 -2rem 0;
 						letter-spacing: -1px;
 					}
