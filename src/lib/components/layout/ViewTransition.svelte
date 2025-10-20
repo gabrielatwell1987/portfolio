@@ -25,13 +25,12 @@
 	}
 
 	::view-transition-group(builds) {
-		animation-duration: 0.1s;
+		animation-duration: 0.3s;
 		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
 	::view-transition-old(builds),
 	::view-transition-new(builds) {
-		/* Smooth cross-fade between NavLink and Title */
 		animation-duration: 0.095s;
 		mix-blend-mode: normal;
 	}
