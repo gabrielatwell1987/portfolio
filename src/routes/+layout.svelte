@@ -42,13 +42,6 @@
 		isPageLoaded = true;
 
 		detectSWUpdate();
-
-		// navigating
-		if ($navigating) {
-			if (document.startViewTransition) {
-				document.startViewTransition();
-			}
-		}
 	});
 </script>
 

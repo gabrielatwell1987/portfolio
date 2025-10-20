@@ -1,6 +1,13 @@
 <script>
-	/** @type {{title: any, title2: any, img?: string, width?: string, svg?: string}} */
-	let { title, title2, img, width, svg } = $props();
+	import { page } from '$app/stores';
+
+	/** @type {{title: any, title2: any, img?: string, width?: string, svg?: string, viewTransitionName?: string}} */
+	let { title, title2, img, width, svg, viewTransitionName } = $props();
+
+	// Correctly derive the transition state based on current page
+	let shouldTransition = $derived(viewTransitionName && $page.url.pathname === '/projects');
+	// Determine which transition name to use
+	let transitionName = $derived(shouldTransition ? viewTransitionName : 'page-title');
 
 	let svgElement = $derived.by(() => {
 		if (!svg) return '';
@@ -10,10 +17,12 @@
 		const svgTag = svgTagMatch[0];
 
 		const attrs =
-			'class="title exclude-transition" id="title" view-transition-name="page-title" aria-label="' +
+			'class="title exclude-transition" id="title"' +
+			` style="view-transition-name: ${transitionName};"` +
+			' aria-label="' +
 			title +
 			'"' +
-			(width ? ' style="width:' + (width.match(/^\d+$/) ? width + 'px' : width) + '"' : '');
+			(width ? ' width="' + (width.match(/^\d+$/) ? width + 'px' : width) + '"' : '');
 
 		const newSvgTag = svgTag.replace('<svg', `<svg ${attrs}`);
 
@@ -23,12 +32,20 @@
 
 <main>
 	{#if img}
-		<img class="title exclude-transition" id="title" src={img} alt={title} style="width: {width}" />
+		<img
+			class="title exclude-transition"
+			id="title"
+			src={img}
+			alt={title}
+			style="width: {width}; view-transition-name: {transitionName};"
+		/>
 	{:else if svg}
 		{@html svgElement}
 	{:else}
-		<div class="title-container">
-			<h1 class="title title-main exclude-transition" id="title" aria-label={title}>{title}</h1>
+		<div class="title-container" style="view-transition-name: {transitionName};">
+			<h1 class="title title-main exclude-transition" id="title" aria-label={title}>
+				{title}
+			</h1>
 			{#if title2}
 				<h1 class="title title-overlay exclude-transition" aria-label={title2}>{title2}</h1>
 			{/if}
@@ -54,7 +71,7 @@
 			position: relative;
 			text-align: center;
 			margin-top: 5rem;
-			view-transition-name: page-title;
+			view-timeline-name: page-title;
 
 			@media (width >= 740px) {
 				margin: 2rem auto;
@@ -143,11 +160,11 @@
 	}
 
 	::view-transition-old(page-title) {
-		animation: slide-out 0.5s ease-out forwards;
+		animation: slide-out 0.25s ease-out forwards;
 	}
 
 	::view-transition-new(page-title) {
-		animation: slide-in 0.75s ease-out forwards;
+		animation: slide-in 0.5s ease-out forwards;
 	}
 
 	@keyframes slide-out {

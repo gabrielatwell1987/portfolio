@@ -57,7 +57,7 @@
 />
 
 <main>
-	<Title title="showcase" title2="showcase" />
+	<Title title="builds" title2="builds" viewTransitionName="builds" />
 
 	<div class="popup">
 		<Popup

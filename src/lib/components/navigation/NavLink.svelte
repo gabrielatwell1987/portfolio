@@ -1,9 +1,19 @@
 <script>
-	/** @type {{href: any, title: any}} */
-	let { href, title, onclick } = $props();
+	import { page } from '$app/stores';
+
+	/** @type {{href: any, title: any, viewTransitionName: any}} */
+	let { href, title, onclick = undefined, viewTransitionName = undefined } = $props();
+
+	// Only apply view-transition-name when NOT on the target page
+	let shouldTransition = $derived(viewTransitionName && $page.url.pathname !== href);
 </script>
 
-<a class="nav-link" {href} {onclick}>{title}</a>
+<a
+	class="nav-link"
+	{href}
+	{onclick}
+	style={shouldTransition ? `view-transition-name: ${viewTransitionName};` : ''}>{title}</a
+>
 
 <style>
 	.nav-link {
@@ -18,7 +28,7 @@
 
 		&:focus,
 		&:focus-visible {
-			outline: 1px solid var(--clr-main);
+			outline: none;
 			background: transparent;
 		}
 
