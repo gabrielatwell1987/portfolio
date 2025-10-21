@@ -5,7 +5,7 @@
 	import Bento from '$lib/components/about/Bento.svelte';
 	import CardFlip from '$lib/components/about/CardFlip.svelte';
 	import AboutHero from '$lib/components/about/AboutHero.svelte';
-	import Preloader from '$lib/components/layout/Preloader.svelte';
+	import Preloader from '$lib/components/about/Preloader.svelte';
 	import Skills from '$lib/components/about/Skills.svelte';
 	import Slider from '$lib/components/about/Slider.svelte';
 

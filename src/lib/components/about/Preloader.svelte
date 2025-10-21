@@ -16,6 +16,7 @@
 			duration: 1.3,
 			scaleX: 0,
 			transformOrigin: 'right',
+			stagger: 0.1,
 			ease: 'power3.inOut'
 		});
 
