@@ -1,7 +1,7 @@
 <script>
 	import SEO from '$lib/data/SEO.svelte';
 	import Image from '$lib/components/layout/Image.svelte';
-	import AnimatedHeading from '$lib/components/learn/AnimatedHeading.svelte';
+	import LearnHeading from '$lib/components/learn/LearnHeading.svelte';
 	import UsefulLinks from '$lib/components/learn/UsefulLinks.svelte';
 	import BgCircles from '$lib/components/utils/BgCircles.svelte';
 
@@ -20,7 +20,13 @@
 
 <main>
 	<section>
-		<AnimatedHeading title1="learn" span="by" title2="doing" />
+		<LearnHeading
+			title1="learn"
+			span="by"
+			title2="doing"
+			viewTransitionName="learn-heading"
+			transitionPath="/learn"
+		/>
 	</section>
 
 	<article>
