@@ -178,6 +178,7 @@
 				rgba(45, 85, 120, 0.85) 60%,
 				rgba(20, 40, 60, 0.95) 100%
 			);
+			opacity: 0.75;
 			animation: gradientShift 50s ease-out infinite;
 		}
 
