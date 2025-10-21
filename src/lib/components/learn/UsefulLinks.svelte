@@ -37,6 +37,12 @@
 			submit="Frontend Masters"
 			href="https://frontendmasters.com"
 		/>
+		<LoadBtn
+			loading="loading..."
+			delay={1500}
+			submit="View Transitions"
+			href="https://view-transitions.chrome.dev/"
+		/>
 	</div>
 
 	<p>
