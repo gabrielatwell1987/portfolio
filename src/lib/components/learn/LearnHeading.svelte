@@ -1,8 +1,17 @@
 <script>
 	import gsap from 'gsap';
+	import { page } from '$app/stores';
 
-	/** @type {{title1: any, title2: any, span: any}} */
-	let { title1, title2, span } = $props();
+	/** @type {{title1: any, title2: any, span: any, viewTransitionName: any, transitionPath: any}} */
+	let { title1, title2, span, viewTransitionName, transitionPath } = $props();
+
+	// Check if we're on the target path for view transition
+	let shouldTransition = $derived(
+		viewTransitionName && transitionPath && $page.url.pathname === transitionPath
+	);
+
+	// Determine which transition name to use
+	let transitionName = $derived(shouldTransition ? viewTransitionName : '');
 
 	$effect(() => {
 		const h1L = document.querySelector('.h1-l');
@@ -52,7 +61,7 @@
 </script>
 
 <section class="simpleHeading">
-	<h1 class="h1-l">{title1}</h1>
+	<h1 class="h1-l" style="view-transition-name: {transitionName};">{title1}</h1>
 	<span class="span">{span}</span>
 	<h2 class="h1-r">{title2}</h2>
 </section>
