@@ -36,6 +36,17 @@
 		<path d={blobPath} fill="var(--warning)" />
 	</svg>
 
+	<svg viewBox="0 0 100 100" class="triangle-border">
+		<!-- Triangle outline -->
+		<polygon
+			points="50,100 0,0 100,0"
+			fill="none"
+			stroke="var(--clr-gray)"
+			stroke-width="5"
+			vector-effect="non-scaling-stroke"
+		/>
+	</svg>
+
 	<div class="image-wrapper">
 		<Image
 			src="/images/hire-gabe.webp"
@@ -62,16 +73,27 @@
 			height: 100%;
 		}
 
+		& .triangle-border {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+			pointer-events: none;
+		}
+
 		& .image-wrapper {
 			position: relative;
 			width: 100%;
 			height: 100%;
-			border-radius: 50%;
 			overflow: hidden;
-			box-shadow: 0 5px 0 rgba(0, 0, 0, 0.8);
-			border: 1px solid rgba(0, 0, 0, 0.8);
+			clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+			box-shadow:
+				0 8px 0 rgba(0, 0, 0, 0.6),
+				0 0 30px var(--clr-gray),
+				inset 0 0 20px rgba(0, 0, 0, 0.2);
 			z-index: 1;
-			/* background-color: var(--clr-invert); */
 		}
 	}
 </style>
