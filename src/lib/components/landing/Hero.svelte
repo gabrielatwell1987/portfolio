@@ -180,6 +180,10 @@
 			);
 			opacity: 0.75;
 			animation: gradientShift 50s ease-out infinite;
+
+			@media (width <= 768px) {
+				opacity: 0.5;
+			}
 		}
 
 		& .particle {
@@ -303,16 +307,16 @@
 				font-weight: 700;
 				color: var(--clr-invert);
 				text-shadow:
-					0 0 10px rgba(255, 255, 255, 0.3),
-					0 0 20px rgba(255, 255, 255, 0.2),
-					0 0 30px rgba(255, 255, 255, 0.1);
+					0 0 5px var(--clr-main),
+					0 0 10px var(--clr-main),
+					0 0 15px var(--clr-main);
 				line-height: 1;
 				margin: 0;
 				word-wrap: normal;
 				overflow-wrap: break-word;
 				hyphens: none;
 
-				@media (height <= 700px) {
+				@media (height <= 768px) {
 					line-height: 1.1;
 				}
 
@@ -362,7 +366,7 @@
 				color: var(--clr-main);
 				max-inline-size: 600px;
 				margin: 0 auto 3rem auto;
-				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+				text-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
 
 				@media screen and (width >= 990px) {
 					letter-spacing: 2px;
