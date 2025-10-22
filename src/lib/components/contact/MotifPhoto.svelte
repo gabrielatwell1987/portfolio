@@ -25,7 +25,7 @@
 				path += `Q ${cpx},${cpy} ${x},${y} `;
 			}
 		}
-		path + 'Z';
+		return path + 'Z';
 	}
 
 	let blobPath = $state(generateBlobPath());
@@ -43,6 +43,7 @@
 			fill="none"
 			stroke="var(--clr-gray)"
 			stroke-width="5"
+			stroke-linejoin="round"
 			vector-effect="non-scaling-stroke"
 		/>
 	</svg>
@@ -90,7 +91,7 @@
 			overflow: hidden;
 			clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
 			box-shadow:
-				0 8px 0 rgba(0, 0, 0, 0.6),
+				0 5px 0 rgba(0, 0, 0, 0.6),
 				0 0 30px var(--clr-gray),
 				inset 0 0 20px rgba(0, 0, 0, 0.2);
 			z-index: 1;
