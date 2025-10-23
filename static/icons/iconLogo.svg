@@ -1,0 +1,37 @@
+<svg
+    width="70"
+    height="60"
+    viewBox="-5 0 60 60"
+    fill="none"
+    stroke="hsla(0, 0%, 85%, 0.9)"
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon"
+    role="img"
+    aria-labelledby="icon-title"
+>
+    <title id="icon-title">Atwell Icon</title>
+    <!-- Circle -->
+    <circle
+        cx="28"
+        cy="30"
+        r="28"
+        stroke="hsla(0, 0%, 85%, 0.9)"
+        stroke-width="3"
+        fill="none"
+        class="circle"
+    />
+    <text
+        x="28"
+        y="25"
+        font-family="var(--ultra)"
+        font-size="32"
+        font-weight="bold"
+        text-anchor="middle"
+        dominant-baseline="central"
+        fill="hsl(0, 0%, 11%)"
+        stroke="hsla(0, 0%, 85%, 0.9)"
+        class="a-text"
+    >
+        a
+    </text>
+</svg>

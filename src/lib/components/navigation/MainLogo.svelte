@@ -3,6 +3,44 @@
 <main class="gabe-logo">
 	<a class="home" href="/">
 		<svg
+			width="70"
+			height="60"
+			viewBox="-5 0 60 60"
+			fill="none"
+			stroke="var(--clr-main)"
+			xmlns="http://www.w3.org/2000/svg"
+			class="icon"
+			role="img"
+			aria-labelledby="icon-title"
+		>
+			<title id="icon-title">Atwell Icon</title>
+			<!-- Circle -->
+			<circle
+				cx="18"
+				cy="30"
+				r="18"
+				stroke="var(--clr-main)"
+				stroke-width="3"
+				fill="none"
+				class="circle"
+			/>
+			<text
+				x="18"
+				y="25"
+				font-family="var(--ultra)"
+				font-size="32"
+				font-weight="bold"
+				text-anchor="middle"
+				dominant-baseline="central"
+				fill="var(--clr-invert)"
+				stroke="var(--clr-main)"
+				class="a-text"
+			>
+				a
+			</text>
+		</svg>
+
+		<svg
 			width="202"
 			height="60"
 			viewBox="0 0 202 60"
@@ -11,6 +49,7 @@
 			xmlns="http://www.w3.org/2000/svg"
 			role="img"
 			aria-labelledby="logo-title"
+			class="main-logo"
 		>
 			<title id="logo-title">Gabe Atwell Logo</title>
 			<path
@@ -43,12 +82,17 @@
 
 <style>
 	.gabe-logo {
+		display: block;
+		margin-bottom: 1em;
+
 		& .home {
 			user-select: none;
 			outline: none;
 			background-color: transparent;
 			box-shadow: none;
 			margin: 0;
+			display: flex;
+			align-items: center;
 
 			&:focus,
 			&:focus-visible {
@@ -56,7 +100,25 @@
 				background: transparent;
 			}
 
-			& svg {
+			& svg.icon {
+				width: clamp(2.5rem, 4vw, 3.5rem);
+				height: clamp(2.5rem, 4vw, 3.5rem);
+				flex-shrink: 0;
+				overflow: visible;
+
+				@media (width <= 768px) {
+					display: none;
+				}
+
+				& .circle {
+					stroke-dasharray: 300;
+					stroke-dashoffset: 0;
+					animation: dash 5s linear;
+					animation-delay: 0s;
+				}
+			}
+
+			& svg.main-logo {
 				opacity: 1;
 				width: clamp(8em, 12vw, 15em);
 
@@ -84,7 +146,12 @@
 		@media (width >= 300px) and (width < 750px) {
 			margin-left: 0.11rem;
 
-			& a svg {
+			& svg.icon {
+				width: 2em;
+				height: 2em;
+			}
+
+			& svg.main-logo {
 				width: 150px;
 			}
 		}
