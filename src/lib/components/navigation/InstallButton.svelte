@@ -10,7 +10,6 @@
 	// Effect to listen for PWA events
 	$effect(() => {
 		function handleBeforeInstallPrompt(event) {
-			console.log('InstallButton: beforeinstallprompt event fired');
 			event.preventDefault();
 			deferredPrompt = event;
 			isInstallable = true;
@@ -36,7 +35,6 @@
 	// Install button click handler
 	const installApp = async () => {
 		if (!deferredPrompt) {
-			console.log('❌ InstallButton: No deferredPrompt available, cannot install');
 			return;
 		}
 
