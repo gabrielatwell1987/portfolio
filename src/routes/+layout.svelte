@@ -1,5 +1,5 @@
 <script>
-	import { navigating } from '$app/stores';
+	import { onMount } from 'svelte';
 	import '../app.css';
 	import '@picocss/pico/css/pico.min.css';
 	import NavBar from '$lib/components/navigation/NavBar.svelte';
@@ -38,26 +38,11 @@
 		}
 	}
 
-	$effect(async () => {
+	onMount(() => {
 		isPageLoaded = true;
-
 		detectSWUpdate();
 	});
 </script>
-
-<svelte:head>
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSHZ0S02JN">
-	</script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'G-RSHZ0S02JN');
-	</script>
-</svelte:head>
 
 <SkipLink />
 <ViewTransition />
