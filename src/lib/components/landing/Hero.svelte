@@ -425,7 +425,10 @@
 							font-size: clamp(var(--h6), 3vw, var(--h2));
 							font-weight: 700;
 							color: var(--clr-invert);
-							text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+							text-shadow:
+								0 0 5px var(--clr-main),
+								0 0 10px var(--clr-main),
+								0 0 15px var(--clr-main);
 							margin: 0;
 						}
 
