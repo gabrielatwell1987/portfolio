@@ -95,7 +95,7 @@
 	.slider-wrapper {
 		width: 85%;
 		overflow: hidden;
-		background-color: var(--clr-bg);
+		background-color: transparent;
 		padding: 2em 0;
 		position: relative;
 		margin-inline: auto;
@@ -122,12 +122,10 @@
 
 		&::before {
 			left: 0;
-			background: linear-gradient(to right, var(--clr-bg), transparent);
 		}
 
 		&::after {
 			right: 0;
-			background: linear-gradient(to left, var(--clr-bg), transparent);
 		}
 
 		& .slider {
