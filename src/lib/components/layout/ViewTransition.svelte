@@ -24,14 +24,15 @@
 		mix-blend-mode: normal;
 	}
 
-	::view-transition-group(builds) {
-		animation-duration: 0.5s;
-		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	::view-transition-old(builds) {
+		animation-duration: 0.25s;
+		opacity: 0;
+		mix-blend-mode: normal;
 	}
 
-	::view-transition-old(builds),
 	::view-transition-new(builds) {
-		animation-duration: 0.095s;
+		animation-duration: 0.5s;
+		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		mix-blend-mode: normal;
 	}
 
