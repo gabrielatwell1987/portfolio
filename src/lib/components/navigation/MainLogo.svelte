@@ -75,6 +75,10 @@
 				width: clamp(8em, 12vw, 15em);
 				overflow: visible;
 
+				@media (width <= 500px) {
+					margin-top: 1em;
+				}
+
 				&:hover {
 					opacity: 0.75;
 				}
@@ -86,6 +90,10 @@
 					stroke-width: 2;
 					animation: dash 5s linear;
 					scale: 1.3;
+
+					@media (width <= 500px) {
+						scale: 1;
+					}
 				}
 
 				& #w {
