@@ -1,14 +1,17 @@
 <script>
 	import gsap from 'gsap';
 	import { SplitText } from 'gsap/SplitText';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 	let { src, alt, title } = $props();
 
 	$effect(() => {
-		gsap.registerPlugin(SplitText);
+		gsap.registerPlugin(SplitText, ScrollTrigger);
 
 		const split = new SplitText('#title', { type: 'chars' });
+		const titleElement = document.getElementById('title');
 
+		// initial animation
 		gsap.from(split.chars, {
 			opacity: 0,
 			yPercent: -40,
@@ -21,8 +24,25 @@
 			}
 		});
 
+		// 3d rotation on scroll
+		split.chars.forEach((char) => {
+			gsap.to(char, {
+				scrollTrigger: {
+					trigger: titleElement,
+					start: 'top 70%',
+					end: 'bottom 60%',
+					scrub: 1
+				},
+				rotationX: 360,
+				transformOrigin: 'center center',
+				ease: 'none'
+			});
+		});
+
 		return () => {
 			gsap.killTweensOf(split.chars);
+			gsap.killTweensOf(titleElement);
+			ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 			split.revert();
 		};
 	});
@@ -114,6 +134,12 @@
 				2px 0 0 var(--clr-main),
 				0 -2px 0 var(--clr-main),
 				0 2px 0 var(--clr-main);
+
+			:global(& .char) {
+				display: inline-block;
+				transform-style: preserve-3d;
+				perspective: 1000px;
+			}
 
 			@media (width <= 1300px) {
 				padding-bottom: 2rem;
