@@ -52,7 +52,7 @@
 		aria-label="Main navigation menu"
 		style="display: {isDisplay ? 'flex' : 'none'};"
 	>
-		<li><NavLink href="/" title="Home" onclick={closeMenu} /></li>
+		<!-- <li><NavLink href="/" title="Home" onclick={closeMenu} /></li> -->
 		<li><NavLink href="/about" title="About Gabe" onclick={closeMenu} /></li>
 		<li><NavLink href="/projects" title="Things I've Built" onclick={closeMenu} /></li>
 		<li><NavLink href="/learn" title="Learn the Web" onclick={closeMenu} /></li>
