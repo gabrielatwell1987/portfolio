@@ -10,6 +10,7 @@
 
 		const split = new SplitText('#title', { type: 'chars' });
 		const titleElement = document.getElementById('title');
+		const isMobile = window.innerWidth <= 768;
 
 		// initial animation
 		gsap.from(split.chars, {
@@ -25,19 +26,21 @@
 		});
 
 		// 3d rotation on scroll
-		split.chars.forEach((char) => {
-			gsap.to(char, {
-				scrollTrigger: {
-					trigger: titleElement,
-					start: 'top 70%',
-					end: 'bottom 60%',
-					scrub: 1
-				},
-				rotationX: 360,
-				transformOrigin: 'center center',
-				ease: 'none'
+		if (!isMobile) {
+			split.chars.forEach((char, index) => {
+				gsap.to(char, {
+					scrollTrigger: {
+						trigger: titleElement,
+						start: `top ${70 - index * 2}%`,
+						end: `bottom ${60 - index * 2}%`,
+						scrub: 1
+					},
+					rotationX: 360,
+					transformOrigin: 'center center',
+					ease: 'none'
+				});
 			});
-		});
+		}
 
 		return () => {
 			gsap.killTweensOf(split.chars);
@@ -135,10 +138,12 @@
 				0 -2px 0 var(--clr-main),
 				0 2px 0 var(--clr-main);
 
-			:global(& .char) {
-				display: inline-block;
-				transform-style: preserve-3d;
-				perspective: 1000px;
+			@media (width >= 768px) {
+				:global(& .char) {
+					display: inline-block;
+					transform-style: preserve-3d;
+					perspective: 1000px;
+				}
 			}
 
 			@media (width <= 1300px) {
