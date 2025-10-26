@@ -7,7 +7,6 @@ export async function load() {
 			svelteKitDetails
 		};
 	} catch (error) {
-		console.error('Error loading SvelteKit data:', error);
 		return {
 			svelteKitDetails: []
 		};
