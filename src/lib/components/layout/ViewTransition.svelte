@@ -25,7 +25,7 @@
 	}
 
 	::view-transition-old(builds) {
-		animation-duration: 0.9s;
+		animation-duration: 0.6s;
 		opacity: 0;
 		mix-blend-mode: normal;
 	}
