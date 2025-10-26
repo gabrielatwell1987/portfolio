@@ -1,19 +1,17 @@
 <script>
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 	import { browser } from '$app/environment';
+	import { theme } from '$lib/data/stores/themeStore.js';
 
-	let theme = $state('dark');
+	// let theme = $state('dark');
 	let themeStatus = $state('');
+	let currentTheme = $state('dark');
 
 	function toggle() {
 		if (!browser) return false;
 
-		const root = document.documentElement;
-
-		theme = theme === 'light' ? 'dark' : 'light';
-		document.documentElement.style.colorScheme = theme;
-
-		themeStatus = `Switched to ${theme} theme`;
+		theme.update((current) => (current === 'light' ? 'dark' : 'light'));
+		themeStatus = `Switched to ${currentTheme === 'light' ? 'dark' : 'light'} theme`;
 
 		setTimeout(() => {
 			themeStatus = '';
@@ -23,25 +21,10 @@
 	}
 
 	$effect(() => {
-		if (!browser) return;
-	});
-
-	// Initialize theme state
-	$effect(() => {
-		if (!browser) return;
-
-		const root = document.documentElement;
-		const isAndroid = /android/i.test(navigator.userAgent);
-
-		if (root.classList.contains('light')) {
-			theme = 'light';
-		} else if (root.classList.contains('dark')) {
-			theme = 'dark';
-		} else if (isAndroid) {
-			theme = 'dark';
-			root.classList.add('dark');
-			root.classList.remove('light');
-		}
+		const unsubscribe = theme.subscribe((value) => {
+			currentTheme = value;
+		});
+		return unsubscribe;
 	});
 </script>
 
@@ -56,7 +39,7 @@
 	style="position: relative; touch-action: manipulation; pointer-events: auto;"
 	data-debug="theme-toggle"
 >
-	{#if theme === 'light'}
+	{#if currentTheme === 'light'}
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			viewBox="-20 0 414 512"
