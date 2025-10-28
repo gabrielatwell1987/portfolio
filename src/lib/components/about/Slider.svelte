@@ -2,6 +2,7 @@
 	import Image from '$lib/components/layout/Image.svelte';
 
 	let isPaused = $state(false);
+	let position = $state(0);
 
 	const skills = [
 		{
@@ -49,8 +50,20 @@
             </svg>`
 		}
 	];
-
 	const duplicatedSkills = [...skills, ...skills];
+
+	$effect(() => {
+		if (isPaused) return;
+
+		const interval = setInterval(() => {
+			position += 0.011;
+			if (position >= 50) {
+				position = 0;
+			}
+		}, 16);
+
+		return () => clearInterval(interval);
+	});
 </script>
 
 <div class="slider-wrapper">
@@ -62,7 +75,7 @@
 		role="region"
 		aria-label="skills-carousel"
 	>
-		<div class="slider-track">
+		<div class="slider-track" style="transform: translateX(-{position}%);">
 			{#each duplicatedSkills as skill, i (i)}
 				<a
 					href={skill.href}
@@ -139,12 +152,12 @@
 			& .slider-track {
 				display: flex;
 				gap: 3em;
-				animation: scroll 30s linear infinite;
+				/* animation: scroll 120s linear infinite; */
 				will-change: transform;
 
-				@media (prefers-reduced-motion: reduce) {
+				/* @media (prefers-reduced-motion: reduce) {
 					animation: none;
-				}
+				} */
 
 				& .slide {
 					flex-shrink: 0;
