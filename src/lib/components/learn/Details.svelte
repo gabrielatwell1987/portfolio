@@ -11,7 +11,11 @@
 	});
 
 	function toggle(index) {
-		openStates[index] = !openStates[index];
+		if (openStates[index]) {
+			openStates[index] = false;
+		} else {
+			openStates = openStates.map((_, i) => i === index);
+		}
 	}
 
 	function handleKeydown(event, index) {
@@ -172,6 +176,19 @@
 			& :global(form) {
 				color: var(--clr-main);
 			}
+		}
+	}
+
+	:global(.image-container-code) {
+		transform: scale(0.85);
+	}
+
+	@media (width <= 500px) {
+		:global(.image-container-code) {
+			transform: scale(1.3);
+			transform-origin: center;
+			margin-top: 2rem;
+			margin-bottom: 2rem;
 		}
 	}
 
