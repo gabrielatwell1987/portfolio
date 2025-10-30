@@ -179,12 +179,12 @@
 		}
 	}
 
-	:global(.image-container-code) {
+	:global(.responsive-image) {
 		transform: scale(0.85);
 	}
 
 	@media (width <= 500px) {
-		:global(.image-container-code) {
+		:global(.responsive-image) {
 			transform: scale(1.3);
 			transform-origin: center;
 			margin-top: 2rem;
