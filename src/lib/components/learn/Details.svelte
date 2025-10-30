@@ -1,4 +1,6 @@
 <script>
+	import './details-globals.css';
+
 	let { items = [] } = $props();
 
 	let openStates = $state(items.map(() => false));
@@ -137,58 +139,6 @@
 				opacity: 1;
 				block-size: auto;
 			}
-
-			:global(a) {
-				color: var(--clr-link);
-			}
-
-			:global(code) {
-				background-color: #f1f5f9;
-				padding: 0.125rem 0.25rem;
-				border-radius: 0.25rem;
-				font-family: 'Courier New', monospace;
-			}
-
-			:global(pre) {
-				background-color: #1e293b;
-				color: #e2e8f0;
-				padding: 1rem;
-				border-radius: 0.5rem;
-				overflow-x: auto;
-				margin: 1rem 0;
-			}
-
-			:global(p) {
-				margin: 0;
-				margin-bottom: 0.2rem;
-			}
-
-			&,
-			& :global(p),
-			& :global(ul),
-			& :global(ol),
-			& :global(pre),
-			& :global(table),
-			& :global(blockquote),
-			& :global(address),
-			& :global(dl),
-			& :global(figure),
-			& :global(form) {
-				color: var(--clr-main);
-			}
-		}
-	}
-
-	:global(.responsive-image) {
-		transform: scale(0.85);
-	}
-
-	@media (width <= 500px) {
-		:global(.responsive-image) {
-			transform: scale(1.3);
-			transform-origin: center;
-			margin-top: 2rem;
-			margin-bottom: 2rem;
 		}
 	}
 
