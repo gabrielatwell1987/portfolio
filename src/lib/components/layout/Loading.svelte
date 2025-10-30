@@ -1,9 +1,11 @@
 <script>
 	import LoadingSkeleton from './LoadingSkeleton.svelte';
+	// import LoadingText from './LoadingText.svelte';
 </script>
 
 <main class="container">
 	<LoadingSkeleton />
+	<!-- <LoadingText /> -->
 </main>
 
 <style>
@@ -15,6 +17,7 @@
 		width: 100%;
 		height: 100vh;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		z-index: 9999;
