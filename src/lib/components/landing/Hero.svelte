@@ -1,6 +1,7 @@
 <script>
 	import HeroButton from './HeroButton.svelte';
 	import DoYouNeed from '$lib/components/landing/DoYouNeed.svelte';
+	import StarLogo from '$lib/components/layout/StarLogo.svelte';
 
 	let mounted = $state(false);
 	let titleText = 'Frontend Crafted Web Experiences';
@@ -77,7 +78,8 @@
 		<!-- Geometric Shapes -->
 		<div class="shape shape-1" aria-hidden="true"></div>
 		<div class="shape shape-2" aria-hidden="true"></div>
-		<div class="shape shape-3" aria-hidden="true"></div>
+		<!-- <div class="shape shape-3" aria-hidden="true"></div> -->
+		<StarLogo />
 		<div class="shape shape-4" aria-hidden="true"></div>
 	</div>
 
@@ -234,7 +236,7 @@
 			}
 
 			/* star */
-			&.shape-3 {
+			/* &.shape-3 {
 				bottom: 20%;
 				left: 20%;
 				width: 12vw;
@@ -255,7 +257,7 @@
 					39% 35%
 				);
 				border-radius: 0;
-			}
+			} */
 
 			&.shape-4 {
 				top: 70%;
@@ -470,7 +472,7 @@
 			& .shape {
 				&.shape-1,
 				&.shape-2,
-				&.shape-3,
+				/* &.shape-3, */
 				&.shape-4 {
 					display: none;
 				}
