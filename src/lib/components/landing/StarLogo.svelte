@@ -42,10 +42,11 @@
 		left: -25%;
 		max-width: 100%;
 		scale: 0.75;
-		/* opacity: 0.1; */
 
 		@media (width <= 768px) {
 			top: 30%;
+			scale: 1;
+			left: -20%;
 		}
 	}
 </style>
