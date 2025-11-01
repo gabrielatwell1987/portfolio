@@ -1,7 +1,7 @@
 <script>
 	import HeroButton from './HeroButton.svelte';
-	import DoYouNeed from '$lib/components/landing/DoYouNeed.svelte';
-	import StarLogo from '$lib/components/layout/StarLogo.svelte';
+	import DoYouNeed from './DoYouNeed.svelte';
+	import StarLogo from './StarLogo.svelte';
 
 	let mounted = $state(false);
 	let titleText = 'Frontend Crafted Web Experiences';
