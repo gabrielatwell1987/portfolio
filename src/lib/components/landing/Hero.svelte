@@ -75,10 +75,9 @@
 			{/each}
 		{/if}
 
-		<!-- Geometric Shapes -->
+		<!-- shapes -->
 		<div class="shape shape-1" aria-hidden="true"></div>
 		<div class="shape shape-2" aria-hidden="true"></div>
-		<!-- <div class="shape shape-3" aria-hidden="true"></div> -->
 		<StarLogo />
 		<div class="shape shape-4" aria-hidden="true"></div>
 	</div>
@@ -93,7 +92,7 @@
 			</h1>
 		</header>
 
-		<!-- Animated Content -->
+		<!-- content -->
 		<div class="content-wrapper" class:show={showContent} aria-live="polite">
 			<p class="summary">
 				I am a frontend developer who loves to create beautiful and functional websites. This
@@ -234,30 +233,6 @@
 				);
 				border-radius: 0;
 			}
-
-			/* star */
-			/* &.shape-3 {
-				bottom: 20%;
-				left: 20%;
-				width: 12vw;
-				height: 12vw;
-				background: linear-gradient(90deg, var(--clr-blue), transparent);
-				animation: antiShapeFloat 15s ease-out infinite;
-				animation-delay: 3s;
-				clip-path: polygon(
-					50% 0%,
-					61% 35%,
-					98% 35%,
-					68% 57%,
-					79% 91%,
-					50% 70%,
-					21% 91%,
-					32% 57%,
-					2% 35%,
-					39% 35%
-				);
-				border-radius: 0;
-			} */
 
 			&.shape-4 {
 				top: 70%;
