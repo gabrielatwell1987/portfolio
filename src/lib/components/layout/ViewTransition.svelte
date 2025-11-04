@@ -37,7 +37,7 @@
 	}
 
 	::view-transition-group(learn-heading) {
-		animation-duration: 0.5s;
+		animation-duration: 0.75s;
 		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	}
 </style>
