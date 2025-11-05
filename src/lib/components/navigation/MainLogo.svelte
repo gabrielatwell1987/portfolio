@@ -1,4 +1,5 @@
-<script></script>
+<script>
+</script>
 
 <main class="gabe-logo">
 	<a class="home" href="/">
