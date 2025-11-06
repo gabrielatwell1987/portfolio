@@ -1,10 +1,11 @@
 <script>
 	import InstallButton from './InstallButton.svelte';
 	import Burger from '$lib/components/navigation/Burger.svelte';
-	import MainLogo from '$lib/components/navigation/MainLogo.svelte';
+	// import Atwell from '$lib/components/navigation/Atwell.svelte';
 	import ThemeToggle from '$lib/components/navigation/ThemeToggle.svelte';
 	import NavLink from '$lib/components/navigation/NavLink.svelte';
 	import SelectLink from '$lib/components/navigation/SelectLink.svelte';
+	import AtwellUnderline from './AtwellUnderline.svelte';
 
 	let open = $state(false);
 	let isClosing = $state(false);
@@ -34,7 +35,8 @@
 	<div class="nav-main">
 		<Burger bind:open ariaLabel="Toggle menu" />
 
-		<MainLogo />
+		<!-- <Atwell /> -->
+		<AtwellUnderline />
 
 		<ThemeToggle />
 	</div>
