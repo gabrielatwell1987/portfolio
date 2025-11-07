@@ -1,7 +1,8 @@
 <script>
 	import HeroButton from './HeroButton.svelte';
 	import DoYouNeed from './DoYouNeed.svelte';
-	import StarLogo from './StarLogo.svelte';
+	// import StarLogo from './StarLogo.svelte';
+	import A_logo from './A_logo.svelte';
 
 	let mounted = $state(false);
 	let titleText = 'Frontend Crafted Web Experiences';
@@ -78,7 +79,8 @@
 		<!-- shapes -->
 		<div class="shape shape-1" aria-hidden="true"></div>
 		<div class="shape shape-2" aria-hidden="true"></div>
-		<StarLogo />
+		<!-- <StarLogo /> -->
+		<A_logo />
 		<div class="shape shape-4" aria-hidden="true"></div>
 	</div>
 
