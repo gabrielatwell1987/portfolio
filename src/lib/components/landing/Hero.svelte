@@ -218,7 +218,7 @@
 			animation: shapeFloat 20s ease-out infinite;
 
 			&.circle {
-				top: 25%;
+				top: 7.5%;
 				left: 10%;
 				width: 10vw;
 				height: 10vw;
