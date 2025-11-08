@@ -77,17 +77,17 @@
 				font-family: var(--bronova);
 				font-size: clamp(var(--h6), 2vw, var(--h4));
 				/* font-weight: 900; */
-				color: var(--clr-blue);
+				color: var(--clr-invert);
 				text-shadow:
-					0 0 1px var(--clr-invert),
-					-1px -1px 0 var(--clr-blue),
-					1px -1px 0 var(--clr-blue),
-					-1px 1px 0 var(--clr-blue),
-					1px 1px 0 var(--clr-blue),
-					-1px 0 0 var(--clr-blue),
-					1px 0 0 var(--clr-blue),
-					0 -1px 0 var(--clr-blue),
-					0 1px 0 var(--clr-blue);
+					0 0 2px var(--clr-invert),
+					-2px -2px 0 var(--clr-blue),
+					2px -2px 0 var(--clr-blue),
+					-2px 2px 0 var(--clr-blue),
+					2px 2px 0 var(--clr-blue),
+					-2px 0 0 var(--clr-blue),
+					2px 0 0 var(--clr-blue),
+					0 -2px 0 var(--clr-blue),
+					0 2px 0 var(--clr-blue);
 				letter-spacing: 1px;
 				border-bottom: 2px solid var(--clr-blue);
 				width: fit-content;
@@ -98,10 +98,11 @@
 			}
 
 			& p {
-				color: var(--clr-gray);
+				color: var(--clr-main);
 				font-family: var(--bronova);
 				font-size: clamp(var(--sm), 1.25rem, var(--h4));
 				font-style: italic;
+				opacity: 0.5;
 				text-align: center;
 				margin-top: 2rem;
 				line-height: 1.5;
