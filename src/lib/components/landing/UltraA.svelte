@@ -1,7 +1,8 @@
 <script>
 	let {
 		class: className = '',
-		opacity,
+		opacity = '0.2',
+		mobileOpacity = '0.3',
 		top = '20%',
 		left = '-20%',
 		scale = '0.65',
@@ -12,6 +13,7 @@
 </script>
 
 <svg
+	class={className}
 	width="100%"
 	height="100%"
 	viewBox="0 0 842 596"
@@ -20,8 +22,9 @@
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	xml:space="preserve"
 	xmlns:serif="http://www.serif.com/"
-	style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;opacity:{opacity ||
-		0.1};--top:{top};--left:{left};--scale:{scale};--mobile-top:{mobileTop};--mobile-left:{mobileLeft};--mobile-scale:{mobileScale};"
+	style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;--opacity:{opacity ||
+		0.1};--mobile-opacity:{mobileOpacity ||
+		0.3};--top:{top};--left:{left};--scale:{scale};--mobile-top:{mobileTop};--mobile-left:{mobileLeft};--mobile-scale:{mobileScale};"
 	><g id="ultraA"
 		><g transform="matrix(633.799184,0,0,633.799184,611.650524,444.756675)"></g><text
 			x="138.158px"
@@ -47,6 +50,7 @@
 		top: var(--top);
 		left: max(var(--left), -40vw);
 		scale: var(--scale);
+		opacity: var(--opacity);
 		max-width: 100%;
 		overflow: visible;
 
@@ -60,8 +64,13 @@
 		}
 
 		@media (width <= 500px) {
+			opacity: var(--mobile-opacity);
 			top: calc(var(--mobile-top) + 7vh);
 			left: 25vw;
+
+			& g {
+				stroke-width: 10px;
+			}
 		}
 	}
 </style>
