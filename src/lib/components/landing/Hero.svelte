@@ -303,7 +303,7 @@
 					animation: none;
 
 					&.blink {
-						animation: blink 1s infinite;
+						animation: cursor-blink 1s infinite;
 
 						@media (prefers-reduced-motion: reduce) {
 							animation: none;
@@ -567,6 +567,17 @@
 		0%,
 		50% {
 			opacity: 0.1;
+		}
+		51%,
+		100% {
+			opacity: 0;
+		}
+	}
+
+	@keyframes cursor-blink {
+		0%,
+		50% {
+			opacity: 1;
 		}
 		51%,
 		100% {
