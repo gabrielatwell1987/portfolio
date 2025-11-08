@@ -57,7 +57,6 @@
 		anchor-name: --logo;
 
 		@media (width <= 768px) {
-			position: absolute;
 			top: var(--mobile-top);
 			left: max(var(--mobile-left), -30vw);
 			scale: var(--mobile-scale);

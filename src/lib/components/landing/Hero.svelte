@@ -1,7 +1,6 @@
 <script>
 	import HeroButton from './HeroButton.svelte';
 	import DoYouNeed from './DoYouNeed.svelte';
-	// import StarLogo from './StarLogo.svelte';
 	import UltraA from './UltraA.svelte';
 
 	let mounted = $state(false);
@@ -49,7 +48,6 @@
 				delay: Math.random() * 5
 			}));
 		}
-		// If reduced motion is preferred, particles array stays empty
 	});
 </script>
 
@@ -77,11 +75,31 @@
 		{/if}
 
 		<!-- shapes -->
-		<div class="shape shape-1" aria-hidden="true"></div>
-		<div class="shape shape-2" aria-hidden="true"></div>
-		<!-- <StarLogo /> -->
+		<svg class="shape circle" aria-hidden="true" viewBox="0 0 100 100">
+			<circle
+				cx="50"
+				cy="50"
+				r="45"
+				fill="transparent"
+				stroke="var(--clr-main)"
+				stroke-width="2"
+				opacity="0.3"
+			/>
+		</svg>
+
+		<svg class="shape star" aria-hidden="true" viewBox="0 0 100 100">
+			<polygon
+				points="50,5 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35"
+				fill="transparent"
+				stroke="var(--clr-main)"
+				stroke-width="2"
+				opacity="0.3"
+			/>
+		</svg>
+
 		<UltraA />
-		<div class="shape shape-4" aria-hidden="true"></div>
+
+		<div class="shape big-circle" aria-hidden="true"></div>
 	</div>
 
 	<section aria-label="Introduction and portfolio overview" class="hero-content">
@@ -181,12 +199,8 @@
 				rgba(45, 85, 120, 0.85) 60%,
 				rgba(20, 40, 60, 0.95) 100%
 			);
-			opacity: 0.75;
+			opacity: 0.85;
 			animation: gradientShift 50s ease-out infinite;
-
-			@media (width <= 768px) {
-				opacity: 0.5;
-			}
 		}
 
 		& .particle {
@@ -203,40 +217,24 @@
 			opacity: 0.1;
 			animation: shapeFloat 20s ease-out infinite;
 
-			&.shape-1 {
+			&.circle {
 				top: 25%;
 				left: 10%;
 				width: 10vw;
 				height: 10vw;
-				background: linear-gradient(45deg, var(--clr-blue), transparent);
+				animation: blink 5s ease-in-out infinite;
 				animation-delay: 0s;
-				border-radius: 50%;
 			}
 
-			/* star */
-			&.shape-2 {
+			&.star {
 				top: 15%;
 				right: 5%;
 				width: 30vw;
 				height: 30vw;
-				background: linear-gradient(-45deg, var(--clr-main), transparent);
 				animation-delay: 2s;
-				clip-path: polygon(
-					50% 0%,
-					61% 35%,
-					98% 35%,
-					68% 57%,
-					79% 91%,
-					50% 70%,
-					21% 91%,
-					32% 57%,
-					2% 35%,
-					39% 35%
-				);
-				border-radius: 0;
 			}
 
-			&.shape-4 {
+			&.big-circle {
 				top: 70%;
 				right: 12%;
 				width: 50vw;
@@ -447,10 +445,9 @@
 
 		.background-container {
 			& .shape {
-				&.shape-1,
-				&.shape-2,
-				/* &.shape-3, */
-				&.shape-4 {
+				&.circle,
+				&.star,
+				&.big-circle {
 					display: none;
 				}
 			}
@@ -569,7 +566,7 @@
 	@keyframes blink {
 		0%,
 		50% {
-			opacity: 1;
+			opacity: 0.1;
 		}
 		51%,
 		100% {
