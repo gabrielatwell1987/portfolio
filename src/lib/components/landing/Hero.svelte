@@ -97,7 +97,7 @@
 			/>
 		</svg>
 
-		<UltraA />
+		<UltraA class="ultra-gradient" />
 
 		<div class="shape big-circle" aria-hidden="true"></div>
 	</div>
@@ -214,8 +214,12 @@
 		& .shape {
 			position: absolute;
 			border-radius: 30%;
-			opacity: 0.1;
+			opacity: 0.2;
 			animation: shapeFloat 20s ease-out infinite;
+
+			@media (width <= 500px) {
+				opacity: 0.3;
+			}
 
 			&.circle {
 				top: 7.5%;
@@ -224,6 +228,15 @@
 				height: 10vw;
 				animation: blink 5s ease-in-out infinite;
 				animation-delay: 0s;
+
+				@media (width <= 500px) {
+					top: 5%;
+					left: 5%;
+					width: 15vw;
+					height: 15vw;
+					stroke-width: 8;
+					opacity: 0.4;
+				}
 			}
 
 			&.star {
@@ -239,9 +252,14 @@
 				right: 12%;
 				width: 50vw;
 				height: 50vw;
-				background: linear-gradient(45deg, var(--clr-blue), transparent);
+				background: linear-gradient(90deg, var(--clr-blue) 40%, transparent 60%);
 				animation-delay: 0s;
 				border-radius: 50%;
+
+				@media (width <= 500px) {
+					top: 71.5%;
+					right: 5%;
+				}
 			}
 		}
 	}
@@ -425,7 +443,7 @@
 		}
 	}
 
-	/* Mobile Responsiveness */
+	/* tablet & mobile */
 	@media (width <= 768px) {
 		.hero-content {
 			& .content-wrapper {
@@ -439,16 +457,6 @@
 					& .stat-item {
 						padding: 0.75rem;
 					}
-				}
-			}
-		}
-
-		.background-container {
-			& .shape {
-				&.circle,
-				&.star,
-				&.big-circle {
-					display: none;
 				}
 			}
 		}
@@ -471,7 +479,6 @@
 		}
 	}
 
-	/* Keyframes */
 	@keyframes gradientShift {
 		0% {
 			background: linear-gradient(
