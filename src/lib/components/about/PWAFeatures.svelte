@@ -63,15 +63,17 @@
 			margin-inline: auto;
 			margin-block: 5em;
 			font-family: var(--bronova);
-			font-size: clamp(var(--sm), 1.5vw, var(--h4));
+			font-size: clamp(var(--sm), 5vw, var(--h3));
 			letter-spacing: 2px;
 			padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
 			background-color: var(--clr-invert);
 			color: var(--clr-main);
 			width: 80%;
+			overflow-y: auto;
 
 			@media (width < 500px) {
 				letter-spacing: 1px;
+				max-height: 70vh;
 			}
 		}
 	}
@@ -81,7 +83,6 @@
 		border-radius: 0.5rem;
 		box-shadow: var(--blackest) 0px 20px 25px -5px;
 		padding: 1rem 1.5rem;
-
 		display: none;
 		opacity: 0;
 		transform: translateY(-5rem);
