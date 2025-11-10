@@ -17,6 +17,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		margin-block: 2em;
 
 		&:focus,
 		&:focus-visible {
@@ -61,6 +62,10 @@
 					1px 0 0 var(--clr-main),
 					0 -1px 0 var(--clr-main),
 					0 1px 0 var(--clr-main);
+			}
+
+			&:not(:hover) {
+				opacity: 0.85;
 			}
 
 			&:hover {
