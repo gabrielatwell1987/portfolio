@@ -36,7 +36,7 @@
 		button {
 			background-color: transparent;
 			width: fit-content;
-			font-family: var(--anta);
+			font-family: var(--bronova);
 			border-radius: 6px;
 			letter-spacing: 3px;
 			padding: 0.75rem 1.15rem;
