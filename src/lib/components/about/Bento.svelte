@@ -199,19 +199,6 @@
 					pointer-events: none;
 					color: var(--clr-main);
 
-					@media (width <= 768px) {
-						text-shadow:
-							0 0 1px var(--clr-invert),
-							-1px -1px 0 var(--clr-main),
-							1px -1px 0 var(--clr-main),
-							-1px 1px 0 var(--clr-main),
-							1px 1px 0 var(--clr-main),
-							-1px 0 0 var(--clr-main),
-							1px 0 0 var(--clr-main),
-							0 -1px 0 var(--clr-main),
-							0 1px 0 var(--clr-main);
-					}
-
 					&:hover {
 						text-decoration: underline;
 						text-underline-offset: 0.5rem;

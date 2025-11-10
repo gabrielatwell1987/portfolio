@@ -5,7 +5,7 @@
 
 <style>
 	button {
-		@media (min-width: 300px) {
+		@media (width >= 300px) {
 			background-color: transparent;
 			font-family: var(--ultra);
 			font-size: clamp(var(--h5), 1.5vw, var(--h4));
@@ -15,14 +15,14 @@
 			color: var(--clr-invert);
 			text-shadow:
 				0 0 1px var(--clr-main),
-				-2px -2px 0 var(--clr-main),
-				2px -2px 0 var(--clr-main),
-				-2px 2px 0 var(--clr-main),
-				2px 2px 0 var(--clr-main),
-				-2px 0 0 var(--clr-main),
-				2px 0 0 var(--clr-main),
-				0 -2px 0 var(--clr-main),
-				0 2px 0 var(--clr-main);
+				-1px -1px 0 var(--clr-main),
+				1px -1px 0 var(--clr-main),
+				-1px 1px 0 var(--clr-main),
+				1px 1px 0 var(--clr-main),
+				-1px 0 0 var(--clr-main),
+				1px 0 0 var(--clr-main),
+				0 -1px 0 var(--clr-main),
+				0 1px 0 var(--clr-main);
 			border-radius: var(--radius);
 			outline-offset: -7px;
 			margin-inline: auto;
@@ -54,6 +54,19 @@
 			&:active {
 				scale: 0.97;
 			}
+		}
+
+		@media (width >= 500px) {
+			text-shadow:
+				0 0 1px var(--clr-main),
+				-2px -2px 0 var(--clr-main),
+				2px -2px 0 var(--clr-main),
+				-2px 2px 0 var(--clr-main),
+				2px 2px 0 var(--clr-main),
+				-2px 0 0 var(--clr-main),
+				2px 0 0 var(--clr-main),
+				0 -2px 0 var(--clr-main),
+				0 2px 0 var(--clr-main);
 		}
 	}
 

@@ -50,6 +50,19 @@
 				outline-offset 300ms ease-out,
 				opacity 300ms ease-out;
 
+			@media (width <= 500px) {
+				text-shadow:
+					0 0 1px var(--clr-main),
+					-1px -1px 0 var(--clr-main),
+					1px -1px 0 var(--clr-main),
+					-1px 1px 0 var(--clr-main),
+					1px 1px 0 var(--clr-main),
+					-1px 0 0 var(--clr-main),
+					1px 0 0 var(--clr-main),
+					0 -1px 0 var(--clr-main),
+					0 1px 0 var(--clr-main);
+			}
+
 			&:hover {
 				outline-offset: 0px;
 			}
