@@ -196,18 +196,8 @@
 					transition: border-bottom 0.5s ease;
 					width: fit-content;
 					margin-inline: auto;
-					color: var(--clr-invert);
 					pointer-events: none;
-					text-shadow:
-						0 0 1px var(--clr-invert),
-						-2px -2px 0 var(--clr-main),
-						2px -2px 0 var(--clr-main),
-						-2px 2px 0 var(--clr-main),
-						2px 2px 0 var(--clr-main),
-						-2px 0 0 var(--clr-main),
-						2px 0 0 var(--clr-main),
-						0 -2px 0 var(--clr-main),
-						0 2px 0 var(--clr-main);
+					color: var(--clr-main);
 
 					@media (width <= 768px) {
 						text-shadow:

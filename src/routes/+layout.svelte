@@ -3,7 +3,7 @@
 	import '../app.css';
 	import '@picocss/pico/css/pico.min.css';
 	import NavBar from '$lib/components/navigation/NavBar.svelte';
-	import Footer from '$lib/components/layout/Footer.svelte';
+	import Footer from '$lib/components/navigation/Footer.svelte';
 	import Loading from '$lib/components/layout/Loading.svelte';
 	import SkipLink from '$lib/components/layout/SkipLink.svelte';
 	import ViewTransition from '$lib/components/layout/ViewTransition.svelte';

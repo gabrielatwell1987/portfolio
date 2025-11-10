@@ -87,9 +87,13 @@
 			cursor: pointer;
 
 			& path {
-				fill: var(--clr-invert);
-				stroke: var(--clr-main);
-				stroke-width: 20;
+				fill: var(--clr-main);
+				/* stroke: var(--clr-main); */
+				/* stroke-width: 20; */
+
+				&:hover {
+					opacity: 0.95;
+				}
 			}
 		}
 	}
