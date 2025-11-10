@@ -26,17 +26,17 @@
 
 		button {
 			background-color: transparent;
-			color: var(--clr-main);
+			color: var(--clr-invert);
 			text-shadow:
-				0 0 2px var(--clr-main),
-				-2px -2px 0 var(--clr-invert),
-				2px -2px 0 var(--clr-invert),
-				-2px 2px 0 var(--clr-invert),
-				2px 2px 0 var(--clr-invert),
-				-2px 0 0 var(--clr-invert),
-				2px 0 0 var(--clr-invert),
-				0 -2px 0 var(--clr-invert),
-				0 2px 0 var(--clr-invert);
+				0 0 1px var(--clr-main),
+				-2px -2px 0 var(--clr-main),
+				2px -2px 0 var(--clr-main),
+				-2px 2px 0 var(--clr-main),
+				2px 2px 0 var(--clr-main),
+				-2px 0 0 var(--clr-main),
+				2px 0 0 var(--clr-main),
+				0 -2px 0 var(--clr-main),
+				0 2px 0 var(--clr-main);
 			width: fit-content;
 			font-family: var(--ultra);
 			font-size: clamp(var(--h5), 2vw, var(--h3));
