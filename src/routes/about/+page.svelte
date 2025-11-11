@@ -87,8 +87,9 @@
 					native technologies! There is also offline capabilities, so if your internet goes out, you
 					can still access the site because your device downloads and caches the whole site!
 					<PWAFeatures
-						title="How install the PWA"
-						text="It works on Android and iPhone. If you're using an iPhone device, you have to tap the
+						title="How to install the PWA"
+						popoverTitle="How to install the PWA:"
+						text="This is how to install the PWA: It works on Android and iPhone. If you're using an iPhone device, you have to tap the
 						share icon in the Safari browser and choose the 'Add to Home Screen' option.. that's the
 						only way to save a pwa on an iOS device."
 						text2="If you're on an Android device you should see an install button on the bottom-left of the

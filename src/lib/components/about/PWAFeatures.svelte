@@ -1,11 +1,26 @@
 <script>
-	let { title, text, text2, text3 } = $props();
+	let { popoverTitle, title, text, text2, text3 } = $props();
+
+	const id = `popover-${Math.random().toString(36).substr(2, 9)}`;
+
+	function handleClick() {
+		const popover = document.getElementById(id);
+		if (!document.startViewTransition) {
+			popover.showPopover();
+			return;
+		}
+
+		document.startViewTransition(() => {
+			popover.showPopover();
+		});
+	}
 </script>
 
 <main class="instruction-popup" aria-label="pwa instructions">
-	<button popovertarget="popover">{title}</button>
+	<button type="button" onclick={handleClick}><span class="pwa-title">{title}</span></button>
 
-	<div id="popover" popover="auto">
+	<div {id} popover="auto">
+		<p><span class="pwa-title">{popoverTitle}</span></p>
 		<p>{text}</p>
 		<p>{text2}</p>
 		<p>{text3}</p>
@@ -32,6 +47,8 @@
 			font-weight: 500;
 			margin: 0;
 			padding: 0;
+			border: none;
+			cursor: pointer;
 
 			&:not(:hover) {
 				opacity: 0.85;
@@ -42,7 +59,19 @@
 			}
 		}
 
-		#popover {
+		& button .pwa-title {
+			view-transition-name: pwa-title;
+		}
+
+		&:has([popover]:popover-open) button .pwa-title {
+			view-transition-name: none;
+		}
+
+		[popover]:popover-open .pwa-title {
+			view-transition-name: pwa-title;
+		}
+
+		& [popover] {
 			margin-inline: auto;
 			margin-block: 5em;
 			font-family: var(--bronova);
@@ -103,5 +132,15 @@
 		[popover]:popover-open::backdrop {
 			background-color: rgb(0 0 0 / 0%);
 		}
+	}
+
+	::view-transition-group(pwa-title) {
+		animation-duration: 0.5s;
+		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	::view-transition-old(pwa-title),
+	::view-transition-new(pwa-title) {
+		mix-blend-mode: normal;
 	}
 </style>
