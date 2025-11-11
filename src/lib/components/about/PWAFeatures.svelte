@@ -3,7 +3,7 @@
 </script>
 
 <main class="instruction-popup" aria-label="pwa instructions">
-	<button popovertarget="popover">PWA Features</button>
+	<button popovertarget="popover">How install a PWA</button>
 
 	<div id="popover" popover="auto">
 		<p>{text}</p>
@@ -27,49 +27,22 @@
 
 		button {
 			background-color: transparent;
-			color: var(--clr-invert);
-			text-shadow:
-				0 0 1px var(--clr-main),
-				-2px -2px 0 var(--clr-main),
-				2px -2px 0 var(--clr-main),
-				-2px 2px 0 var(--clr-main),
-				2px 2px 0 var(--clr-main),
-				-2px 0 0 var(--clr-main),
-				2px 0 0 var(--clr-main),
-				0 -2px 0 var(--clr-main),
-				0 2px 0 var(--clr-main);
+			filter: brightness(1);
+			color: var(--success);
 			width: fit-content;
-			font-family: var(--ultra);
+			font-family: var(--bronova);
 			font-size: clamp(var(--h5), 2vw, var(--h3));
+			font-weight: 300;
 			border-radius: var(--radius);
-			letter-spacing: 3px;
 			padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
-			border: 1px solid var(--clr-main);
-			outline: 3px solid var(--clr-main);
-			outline-offset: -7px;
+			border: none;
+			outline: none;
 			transition:
 				outline-offset 300ms ease-out,
 				opacity 300ms ease-out;
 
-			@media (width <= 500px) {
-				text-shadow:
-					0 0 1px var(--clr-main),
-					-1px -1px 0 var(--clr-main),
-					1px -1px 0 var(--clr-main),
-					-1px 1px 0 var(--clr-main),
-					1px 1px 0 var(--clr-main),
-					-1px 0 0 var(--clr-main),
-					1px 0 0 var(--clr-main),
-					0 -1px 0 var(--clr-main),
-					0 1px 0 var(--clr-main);
-			}
-
 			&:not(:hover) {
 				opacity: 0.85;
-			}
-
-			&:hover {
-				outline-offset: 0px;
 			}
 
 			&:active {
