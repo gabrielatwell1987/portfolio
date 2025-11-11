@@ -124,11 +124,6 @@
 
 			& .back {
 				text-align: center;
-				margin-top: -5em;
-
-				@media (width <= 768px) {
-					margin-top: -1em;
-				}
 			}
 		}
 	}

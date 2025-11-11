@@ -19,7 +19,6 @@
 		background-color: transparent;
 		box-shadow: none;
 		padding: 0;
-		margin: 0;
 
 		& .learn {
 			text-align: center;

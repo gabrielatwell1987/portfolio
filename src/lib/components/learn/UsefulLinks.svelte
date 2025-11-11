@@ -95,6 +95,19 @@
 				@media (width <= 768px) {
 					border-bottom: 1px solid var(--clr-blue);
 				}
+
+				@media (width <= 500px) {
+					text-shadow:
+						0 0 1px var(--clr-invert),
+						-1px -1px 0 var(--clr-blue),
+						1px -1px 0 var(--clr-blue),
+						-1px 1px 0 var(--clr-blue),
+						1px 1px 0 var(--clr-blue),
+						-1px 0 0 var(--clr-blue),
+						1px 0 0 var(--clr-blue),
+						0 -1px 0 var(--clr-blue),
+						0 1px 0 var(--clr-blue);
+				}
 			}
 
 			& p {
