@@ -89,7 +89,7 @@
 					<PWAFeatures
 						title="How to install the PWA"
 						popoverTitle="How to install the PWA:"
-						text="This is how to install the PWA: It works on Android and iPhone. If you're using an iPhone device, you have to tap the
+						text="It works on Android and iPhone. If you're using an iPhone device, you have to tap the
 						share icon in the Safari browser and choose the 'Add to Home Screen' option.. that's the
 						only way to save a pwa on an iOS device."
 						text2="If you're on an Android device you should see an install button on the bottom-left of the
