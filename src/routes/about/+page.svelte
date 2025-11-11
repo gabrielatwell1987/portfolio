@@ -81,23 +81,23 @@
 				</article>
 
 				<p class="text indent">
-					Please note: This is a <span>pwa</span> (progressive web app) so you can install it on your
-					device if you want to! This makes your website able to be used on any device.. mobile, tablet,
-					laptop, and desktop. It's like having a mobile app that is not made with native technologies!
-					There is also offline capabilities, so if your internet goes out, you can still access the
-					site because your device downloads and caches the whole site!
+					Please note: This is a <span>pwa</span> (progressive web app) so you can install it on
+					your device if you want to! This makes your website able to be used on any device..
+					mobile, tablet, laptop, and desktop. It's like having a mobile app that is not made with
+					native technologies! There is also offline capabilities, so if your internet goes out, you
+					can still access the site because your device downloads and caches the whole site!
+					<PWAFeatures
+						title="How install the PWA"
+						text="It works on Android and iPhone. If you're using an iPhone device, you have to tap the
+						share icon in the Safari browser and choose the 'Add to Home Screen' option.. that's the
+						only way to save a pwa on an iOS device."
+						text2="If you're on an Android device you should see an install button on the bottom-left of the
+						screen. If you press it, an installation prompt should appear. The prompt will only appear
+						after some user interactions (clicks)."
+						text3="Other than mobile devices, you should see the install button (on tablet, laptop, desktop). If you are having any issues or you have any
+						questions, please feel free to contact me!"
+					/>
 				</p>
-
-				<PWAFeatures
-					text="It works on Android and iPhone. If you're using an iPhone device, you have to tap the
-					share icon in the Safari browser and choose the 'Add to Home Screen' option.. that's the
-					only way to save a pwa on an iOS device."
-					text2="If you're on an Android device you should see an install button on the bottom-left of the
-					screen. If you press it, an installation prompt should appear. The prompt will only appear
-					after some user interactions (clicks)."
-					text3="Other than mobile devices, you should see the install button (on tablet, laptop, desktop). If you are having any issues or you have any
-					questions, please feel free to contact me!"
-				/>
 			</div>
 
 			{#if isDesktop}

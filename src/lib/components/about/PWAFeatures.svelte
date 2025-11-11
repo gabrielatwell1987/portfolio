@@ -1,9 +1,9 @@
 <script>
-	let { text, text2, text3 } = $props();
+	let { title, text, text2, text3 } = $props();
 </script>
 
 <main class="instruction-popup" aria-label="pwa instructions">
-	<button popovertarget="popover">How install a PWA</button>
+	<button popovertarget="popover">{title}</button>
 
 	<div id="popover" popover="auto">
 		<p>{text}</p>
@@ -14,10 +14,7 @@
 
 <style>
 	.instruction-popup {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-block: 2em;
+		display: inline-block;
 
 		&:focus,
 		&:focus-visible {
@@ -31,15 +28,10 @@
 			color: var(--success);
 			width: fit-content;
 			font-family: var(--bronova);
-			font-size: clamp(var(--h5), 2vw, var(--h3));
-			font-weight: 300;
-			border-radius: var(--radius);
-			padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
-			border: none;
-			outline: none;
-			transition:
-				outline-offset 300ms ease-out,
-				opacity 300ms ease-out;
+			font-size: clamp(var(--h6), 1.5vw, var(--h4));
+			font-weight: 500;
+			margin: 0;
+			padding: 0;
 
 			&:not(:hover) {
 				opacity: 0.85;
