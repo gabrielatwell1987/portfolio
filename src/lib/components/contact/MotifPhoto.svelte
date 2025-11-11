@@ -2,7 +2,7 @@
 </script>
 
 <div class="hire-wrapper">
-	<img src="/images/gabe.webp" alt="gabe atwell" />
+	<img src="/images/gabe-sketch.webp" alt="gabe atwell" />
 </div>
 
 <style>
