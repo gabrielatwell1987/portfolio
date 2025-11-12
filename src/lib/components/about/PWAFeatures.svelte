@@ -2,6 +2,7 @@
 	let { popoverTitle, title, text, text2, text3 } = $props();
 
 	const id = `popover-${Math.random().toString(36).substr(2, 9)}`;
+	let popoverElement = $state(null);
 
 	function handleClick() {
 		const popover = document.getElementById(id);
@@ -14,12 +15,31 @@
 			popover.showPopover();
 		});
 	}
+
+	function closePopover() {
+		if (!popoverElement) return;
+
+		if (!document.startViewTransition) {
+			popoverElement.hidePopover();
+			return;
+		}
+
+		// Start the view transition first
+		document.startViewTransition(() => {
+			// Small delay to let the browser capture the current state
+			setTimeout(() => {
+				popoverElement.hidePopover();
+			}, 0);
+		});
+	}
 </script>
 
 <main class="instruction-popup" aria-label="pwa instructions">
 	<button type="button" onclick={handleClick}><span class="pwa-title">{title}</span></button>
 
-	<div {id} popover="auto">
+	<div {id} popover="auto" bind:this={popoverElement}>
+		<button type="button" onclick={closePopover} class="close-btn" aria-label="Close">×</button>
+
 		<p><span class="pwa-title">{popoverTitle}</span></p>
 		<p>{text}</p>
 		<p>{text2}</p>
@@ -35,6 +55,34 @@
 		&:focus-visible {
 			outline: 1px solid var(--clr-main);
 			background: transparent;
+		}
+
+		& .close-btn {
+			position: absolute;
+			top: 0.5rem;
+			right: 1rem;
+			background: transparent;
+			border: none;
+			color: var(--clr-blue);
+			font-family: var(--bronova);
+			font-size: clamp(var(--h4), 3vw, var(--h2));
+			cursor: pointer;
+			padding: 0;
+			margin: 0;
+			line-height: 1;
+
+			@media (width < 500px) {
+				top: 0.2rem;
+				right: 0.5rem;
+			}
+
+			&:hover {
+				color: var(--success);
+			}
+
+			&:active {
+				scale: 0.97;
+			}
 		}
 
 		button {
