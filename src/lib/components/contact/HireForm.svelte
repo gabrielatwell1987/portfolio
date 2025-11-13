@@ -271,7 +271,7 @@
 	input,
 	select,
 	textarea {
-		padding: 0.75rem;
+		padding: 0.5rem;
 		border: 2px solid var(--clr-gray);
 		border-radius: 4px;
 		background: transparent;

@@ -218,10 +218,6 @@
 					box-shadow 0.3s ease,
 					background-color 0.2s ease;
 
-				@media screen and (width >= 1350px) {
-					padding: 2rem;
-				}
-
 				&:focus {
 					outline: none;
 					border-color: var(--sky);
