@@ -27,7 +27,7 @@
 		"title": "e-commerce product page",
 		"img": "/projects/ecommerce.webp",
 		"url": "https://fake-store-products.vercel.app",
-		"description": "html/css/js",
+		"description": "vanilla html/css/js",
 		"summary": "My version of an e-commerce product page that features a product image, title, price, and description. I used the fake store API to populate the product data.",
 		"index": 3
 	},

@@ -4,7 +4,9 @@
 </script>
 
 <section class="content" style="--stagger-delay: {index * 1.25}s;">
-	<h3 class="title">{title}</h3>
+	<a href={url} target="_blank" class="title-link">
+		<h3 class="title">{title}</h3>
+	</a>
 
 	<a
 		href={url}
@@ -43,7 +45,6 @@
 
 		& .summary {
 			max-width: 95%;
-			/* width: 100%; */
 			margin-inline: auto;
 			font-size: clamp(var(--sm), 1.15vw, var(--h5));
 			font-weight: 600;
@@ -52,6 +53,11 @@
 			text-align: center;
 			line-height: 1.5;
 			letter-spacing: 0px;
+		}
+
+		& .title-link {
+			pointer-events: auto;
+			text-decoration: none;
 		}
 
 		& .link {
@@ -107,10 +113,20 @@
 				border: 1px solid var(--clr-main);
 				padding: 0.2vw;
 				position: relative;
+
+				&:hover + .desc-banner {
+					visibility: visible;
+					opacity: 1;
+					transition: all 0.25s;
+					pointer-events: auto;
+				}
 			}
 
 			& .desc-banner {
-				visibility: visible;
+				visibility: hidden;
+				opacity: 0;
+				position: absolute;
+				bottom: 1em;
 				width: 100%;
 				background-color: var(--clr-main);
 				color: var(--clr-invert);
@@ -120,11 +136,10 @@
 				padding: 5px 3px;
 				font-family: var(--bronova);
 				font-size: clamp(var(--sm), 1.15vw, var(--h5));
+				font-weight: 600;
 				margin-inline: auto;
-				opacity: 1;
 				transition: all 1s;
 				text-transform: lowercase;
-
 				pointer-events: none;
 				position: relative;
 				margin-top: 0;
@@ -139,7 +154,8 @@
 			letter-spacing: 0px;
 			text-transform: uppercase;
 			text-decoration: none;
-			margin-bottom: 0.5rem;
+			padding: 0;
+			margin: 0;
 			color: var(--clr-invert);
 			text-shadow:
 				0 0 1px var(--clr-invert),
@@ -151,10 +167,6 @@
 				2px 0 0 var(--clr-main),
 				0 -2px 0 var(--clr-main),
 				0 2px 0 var(--clr-main);
-
-			@media (width >= 990px) {
-				margin-bottom: 1rem;
-			}
 		}
 	}
 

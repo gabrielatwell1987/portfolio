@@ -63,7 +63,7 @@
 			right: 1rem;
 			background: transparent;
 			border: none;
-			color: var(--clr-blue);
+			color: var(--fail);
 			font-family: var(--bronova);
 			font-size: clamp(var(--h4), 3vw, var(--h2));
 			cursor: pointer;
@@ -77,7 +77,7 @@
 			}
 
 			&:hover {
-				color: var(--success);
+				opacity: 0.9;
 			}
 
 			&:active {
