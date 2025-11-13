@@ -8,7 +8,6 @@
 	let email = $state('');
 	let message = $state('');
 	let submitStatus = $state('');
-	// let isSubmitting = $state(false);
 </script>
 
 <div class="icons">
@@ -36,6 +35,7 @@
 				required
 				aria-describedby="name-error"
 				autocomplete="name"
+				placeholder="Your Name"
 			/>
 		</div>
 
@@ -49,6 +49,7 @@
 				required
 				aria-describedby="email-error"
 				autocomplete="email"
+				placeholder="Your Email"
 			/>
 		</div>
 
@@ -61,6 +62,7 @@
 				rows="5"
 				required
 				aria-describedby="message-error"
+				placeholder="Your Message"
 			></textarea>
 		</div>
 
@@ -178,7 +180,7 @@
 				border-radius: var(--radius);
 				align-self: flex-start;
 				position: relative;
-				color: var(--clr-gray);
+				color: var(--clr-blue);
 				transition: color 0.3s ease;
 
 				@media (width <= 500px) {
@@ -209,7 +211,7 @@
 				border-radius: var(--radius);
 				caret-color: var(--sky);
 				color: var(--clr-main);
-				font-size: clamp(var(--sm), 2vw, var(--h4));
+				font-size: clamp(var(--sm), 1.75vw, var(--h5));
 				outline: none;
 				transition:
 					border-color 0.3s ease,
@@ -247,7 +249,8 @@
 				}
 
 				&::placeholder {
-					color: var(--clr-gray);
+					color: var(--clr-main);
+					font-size: clamp(var(--sm), 1vw, var(--h5));
 					font-weight: 100;
 					opacity: 0.7;
 				}
