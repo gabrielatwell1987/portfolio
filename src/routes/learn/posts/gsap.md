@@ -24,9 +24,11 @@ In web animation, a tween stands for "in-betweening". Basically, it is the found
 
 A value of stagger: 0.1 would cause there to be 0.1 seconds between the start times of each tween. You can even stagger items that are laid out in a grid just by telling GSAP how many columns and rows your grid has. A negative value would do the same but backwards so that the last element begins first. All tweens recognize a stagger property which can be a number, an object, or a function. To get more control, wrap things in a configuration object which can have any of the following properties (in addition to most of the special properties that tweens have.
 
-### functions
+<DetailsElement summary="functions">
 
-Only use this if you need to run custom logic for distributing the staggers. The function gets called once for each target/element in the Array and should return the total delay from the starting position (not the amount of delay from the previous tween's start time). The function receives the following parameters: index [Integer] - The index value from the list, target [Object] - The target in the list at that index value, list [Array | NodeList] - The targets array (or NodeList).
+    Only use this if you need to run custom logic for distributing the staggers. The function gets called once for each target/element in the Array and should return the total delay from the starting position (not the amount of delay from the previous tween's start time). The function receives the following parameters: index [Integer] - The index value from the list, target [Object] - The target in the list at that index value, list [Array | NodeList] - The targets array (or NodeList).
+
+</DetailsElement>
 
 </div>
 <div class="image">
@@ -100,9 +102,11 @@ Notice that the position parameter comes after the vars parameter:
 
 Have you ever noticed an annoying "flash of unstyled content" (FOUC) when a web page first loads? This looks like a weird jump or lag.. That happens because browsers render things as quickly as possible, often BEFORE your JavaScript executes the first time. So what if some of your initial styles are set via JavaScript...like with GSAP?
 
-### solution
+<DetailsElement summary="solution">
 
-apply `visibility: hidden;`to your elements in CSS and then use GSAP's autoAlpha property to show it (or animate it in) when the page loads. autoAlpha affects opacity and visibility, changing it to visible when the opacity is greater than 0.
+    apply `visibility: hidden;` to your elements in CSS and then use GSAP's autoAlpha property to show it (or animate it in) when the page loads. autoAlpha affects opacity and visibility, changing it to visible when the opacity is greater than 0.
+
+</DetailsElement>
 
 </div>
 <div class="image">
@@ -157,6 +161,7 @@ To use the MorphSVG plugin, you can either use npm or use the cdn. Npm makes it 
 <script>
 	import './md.css';
 	import Subheading from './Subheading.svelte';
+	import DetailsElement from './DetailsElement.svelte'
 </script>
 
 <style>
