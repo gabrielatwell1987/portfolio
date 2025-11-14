@@ -1,7 +1,7 @@
 <script>
 	let {
 		class: className = '',
-		opacity = '0.2',
+		opacity = '0.1',
 		mobileOpacity = '0.3',
 		top = '20%',
 		left = '-20%',
