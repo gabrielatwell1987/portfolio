@@ -152,12 +152,7 @@
 			& .slider-track {
 				display: flex;
 				gap: 3em;
-				/* animation: scroll 120s linear infinite; */
 				will-change: transform;
-
-				/* @media (prefers-reduced-motion: reduce) {
-					animation: none;
-				} */
 
 				& .slide {
 					flex-shrink: 0;
@@ -167,6 +162,13 @@
 					align-items: center;
 					justify-content: center;
 					transition: transform 0.3s ease;
+
+					&:focus,
+					&:focus-visible {
+						outline: none;
+						box-shadow: none;
+						background-color: transparent;
+					}
 
 					&:hover {
 						transform: scale(1.15);

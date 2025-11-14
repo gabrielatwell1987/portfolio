@@ -235,6 +235,13 @@
 			& .icons {
 				padding: 0.5rem;
 
+				&:focus,
+				&:focus-visible {
+					outline: none;
+					box-shadow: none;
+					background-color: transparent;
+				}
+
 				&:hover {
 					transform: scale(1.1);
 					transition: transform 0.25s ease-out;
