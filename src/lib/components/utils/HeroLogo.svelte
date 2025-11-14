@@ -2,7 +2,7 @@
 	import Image from '$lib/components/layout/Image.svelte';
 </script>
 
-<main>
+<article>
 	<section class="hero-logo">
 		<a href="/about/hero">
 			<Image
@@ -13,7 +13,7 @@
 			/>
 		</a>
 	</section>
-</main>
+</article>
 
 <style>
 	* {
@@ -22,7 +22,7 @@
 		box-sizing: border-box;
 	}
 
-	main {
+	article {
 		display: flex;
 		justify-content: center;
 		align-items: center;

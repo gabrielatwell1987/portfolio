@@ -35,7 +35,7 @@
 
 <Preloader />
 
-<main aria-label="bio">
+<div class="about-me" aria-label="bio">
 	<section>
 		<article id="bio">
 			<div class="hero-section">
@@ -119,14 +119,14 @@
 			/>
 		</article>
 	</section>
-</main>
+</div>
 
 <style>
 	:root {
 		--100: 100%;
 	}
 
-	main {
+	.about-me {
 		width: var(--100);
 		margin-inline: auto;
 		padding-top: 0;

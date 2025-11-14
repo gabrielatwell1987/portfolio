@@ -9,7 +9,7 @@
 
 <SEO title="Message Sent!" description="Successfully Sent" keywords="success, contact success" />
 
-<main>
+<article>
 	<section>
 		<img src="/logos/success.webp" alt="Atwell" width="500" />
 
@@ -19,7 +19,7 @@
 			<p>Thank you for reaching out!</p>
 		</div>
 	</section>
-</main>
+</article>
 
 <style>
 	@media (width >=18.75rem) {
@@ -28,7 +28,7 @@
 			--5: 5em;
 		}
 
-		main {
+		article {
 			min-height: 70vh;
 			padding-top: 7em;
 
@@ -68,7 +68,7 @@
 	}
 
 	@media (width <= 500px) {
-		main {
+		article {
 			min-height: 70vh;
 		}
 	}

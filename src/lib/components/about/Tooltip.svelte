@@ -9,7 +9,7 @@
 	}
 </script>
 
-<main class="tooltip-container" aria-label="tooltip container">
+<section class="tooltip-container" aria-label="tooltip container">
 	<button
 		type="button"
 		class="tooltip-trigger"
@@ -26,7 +26,7 @@
 	</button>
 
 	<div class="tooltip tooltip-top">{hover}</div>
-</main>
+</section>
 
 <style>
 	.tooltip-container {

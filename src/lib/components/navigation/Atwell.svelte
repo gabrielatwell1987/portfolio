@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<main class="gabe-logo">
+<section class="gabe-logo">
 	<a class="home" href="/">
 		<svg
 			width="202"
@@ -49,7 +49,7 @@
 			/>
 		</svg>
 	</a>
-</main>
+</section>
 
 <style>
 	.gabe-logo {

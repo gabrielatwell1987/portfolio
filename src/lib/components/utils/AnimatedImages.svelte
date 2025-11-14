@@ -20,14 +20,14 @@
 	});
 </script>
 
-<main>
+<section>
 	<div class="imgClass">
 		<Image {src} {alt} {width} aspectRatio="16/9" />
 	</div>
-</main>
+</section>
 
 <style>
-	main {
+	section {
 		position: relative;
 	}
 </style>

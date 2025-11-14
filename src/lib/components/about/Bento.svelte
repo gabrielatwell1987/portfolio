@@ -16,7 +16,7 @@
 </script>
 
 <div class="bento">
-	<main>
+	<article>
 		<section>
 			<div class="bento-grid">
 				<div class="item">
@@ -72,7 +72,7 @@
 				</div>
 			</div>
 		</section>
-	</main>
+	</article>
 </div>
 
 <style>
@@ -113,7 +113,7 @@
 		}
 	}
 
-	main {
+	article {
 		line-height: 1.4;
 		background-color: var(--surface-1);
 		margin-bottom: 2rem;

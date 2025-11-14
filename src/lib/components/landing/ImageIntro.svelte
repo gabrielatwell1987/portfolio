@@ -27,7 +27,7 @@
 	}
 </script>
 
-<main aria-label="go to the hero page">
+<article aria-label="go to the hero page">
 	<section>
 		<h1 class="h1">{title}</h1>
 
@@ -39,10 +39,10 @@
 
 		<p class="p">{text}</p>
 	</section>
-</main>
+</article>
 
 <style>
-	main {
+	article {
 		width: fit-content;
 		margin-inline: auto;
 		margin-top: 7em;

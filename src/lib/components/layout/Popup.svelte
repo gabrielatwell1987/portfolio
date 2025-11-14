@@ -2,7 +2,7 @@
 	let { title, text } = $props();
 </script>
 
-<main class="popup" aria-label="popup button">
+<section class="popup" aria-label="popup button">
 	<button popovertarget="popover"
 		>{title}
 
@@ -21,7 +21,7 @@
 	</button>
 
 	<div popover="auto" id="popover">{text}</div>
-</main>
+</section>
 
 <style>
 	.popup {

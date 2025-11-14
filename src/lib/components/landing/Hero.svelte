@@ -51,7 +51,7 @@
 	});
 </script>
 
-<main role="banner" aria-label="Hero section">
+<article role="banner" aria-label="Hero section">
 	<!-- Animated Background -->
 	<div class="background-container" aria-hidden="true">
 		<div class="gradient-bg"></div>
@@ -154,10 +154,10 @@
 			<DoYouNeed text="do you need a " span="website?" />
 		</div>
 	</section>
-</main>
+</article>
 
 <style>
-	main {
+	article {
 		position: relative;
 		min-height: 100vh;
 		height: auto;

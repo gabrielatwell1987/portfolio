@@ -13,14 +13,14 @@
 
 <SkullBg />
 
-<main>
+<article>
 	<Title title="message" title2="message" />
 
 	<ContactForm />
-</main>
+</article>
 
 <style>
-	main {
+	article {
 		/* background: linear-gradient(
 			to bottom,
 			var(--clr-light-gray) 0%,

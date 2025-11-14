@@ -34,7 +34,7 @@
 	}
 </script>
 
-<main class="instruction-popup" aria-label="pwa instructions">
+<section class="instruction-popup" aria-label="pwa instructions">
 	<button type="button" onclick={handleClick}><span class="pwa-title">{title}</span></button>
 
 	<div {id} popover="auto" bind:this={popoverElement}>
@@ -45,7 +45,7 @@
 		<p>{text2}</p>
 		<p>{text3}</p>
 	</div>
-</main>
+</section>
 
 <style>
 	.instruction-popup {

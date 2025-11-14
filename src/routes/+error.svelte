@@ -16,7 +16,7 @@
 	keywords="error, gabe's error page"
 />
 
-<main aria-label="error" transition:fade={{ getDuration, getDelay }}>
+<article aria-label="error" transition:fade={{ getDuration, getDelay }}>
 	<div class="image">
 		<Image src="/logos/error.webp" alt="an error has occurred" width="300" aspectRatio="1/1" />
 	</div>
@@ -30,10 +30,10 @@
 	<div class="error">
 		<p>{$page.error.message}</p>
 	</div>
-</main>
+</article>
 
 <style>
-	main {
+	article {
 		padding: 1rem 1.5rem;
 		height: 80vh;
 

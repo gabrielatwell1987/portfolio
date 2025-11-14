@@ -2,12 +2,12 @@
 	let { title } = $props();
 </script>
 
-<main>
+<section>
 	<h1>{title}</h1>
-</main>
+</section>
 
 <style>
-	main {
+	section {
 		@supports (background-clip: text) or (-webkit-background-clip: text) {
 			& h1 {
 				--bgSize: 200%;

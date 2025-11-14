@@ -9,6 +9,6 @@
 	keywords="photos of gabe, photos of gabriel, images"
 />
 
-<main>
+<article>
 	<Masonry />
-</main>
+</article>

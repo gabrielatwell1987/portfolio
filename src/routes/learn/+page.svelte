@@ -18,7 +18,7 @@
 
 <BgCircles stroke="var(--clr-gray)" />
 
-<main>
+<div class="learn">
 	<section>
 		<LearnHeading
 			title1="learn"
@@ -80,10 +80,10 @@
 
 		<UsefulLinks />
 	</article>
-</main>
+</div>
 
 <style>
-	main {
+	.learn {
 		padding-top: 7em;
 		min-height: 100vh;
 

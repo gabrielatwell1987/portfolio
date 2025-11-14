@@ -7,7 +7,7 @@
 	let videoHeight = $state();
 </script>
 
-<main class="video">
+<section class="video">
 	<video bind:duration bind:videoWidth bind:videoHeight autoplay muted playsinline loop>
 		<source {src} type="video/mp4" />
 
@@ -15,7 +15,7 @@
 
 		<p>Your browser does not support this video..</p>
 	</video>
-</main>
+</section>
 
 <style>
 	.video {

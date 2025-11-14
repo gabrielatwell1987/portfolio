@@ -6,7 +6,7 @@
 	let totalLetters = $derived(letters.length - 1);
 </script>
 
-<main>
+<section>
 	<h1 class="title" id="title" aria-label={title}>
 		{#each letters as letter, i}
 			<span
@@ -18,7 +18,7 @@
 			</span>
 		{/each}
 	</h1>
-</main>
+</section>
 
 <style>
 	.title {

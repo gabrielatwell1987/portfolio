@@ -3,7 +3,7 @@
 	let { title, desc, button, src, alt, href } = $props();
 </script>
 
-<main class="card">
+<section class="card">
 	<img class="card-image" {src} {alt} />
 
 	<h2 class="card-title">{title}</h2>
@@ -11,7 +11,7 @@
 	<p class="card-description">{desc}</p>
 
 	<a {href} class="card-button">{button}</a>
-</main>
+</section>
 
 <style>
 	.card {

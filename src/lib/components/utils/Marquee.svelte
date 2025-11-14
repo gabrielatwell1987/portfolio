@@ -14,7 +14,7 @@
 	});
 </script>
 
-<main class="marquee" aria-hidden="true">
+<article class="marquee" aria-hidden="true">
 	<ul class="marquee-content">
 		<li>
 			<a
@@ -66,7 +66,7 @@
 			</a>
 		</li>
 	</ul>
-</main>
+</article>
 
 <style>
 	:root {

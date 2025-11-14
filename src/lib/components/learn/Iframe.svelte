@@ -3,7 +3,7 @@
 	let { src, title } = $props();
 </script>
 
-<main class="iframe-container">
+<section class="iframe-container">
 	<div class="responsive-iframe">
 		<iframe
 			{src}
@@ -14,7 +14,7 @@
 			aria-label={title}
 		></iframe>
 	</div>
-</main>
+</section>
 
 <style>
 	.iframe-container {

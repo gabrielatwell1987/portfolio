@@ -2,7 +2,7 @@
 	import LoadBtn from '$lib/components/learn/LoadBtn.svelte';
 </script>
 
-<main class="links" id="useful-links">
+<section class="links" id="useful-links">
 	<h2>Useful Links:</h2>
 
 	<div class="buttons">
@@ -50,7 +50,7 @@
 			>🛠️</span
 		>
 	</p>
-</main>
+</section>
 
 <style>
 	.links {

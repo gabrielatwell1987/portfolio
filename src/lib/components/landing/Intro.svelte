@@ -9,7 +9,7 @@
 	}
 </script>
 
-<main class="intro">
+<section class="intro">
 	<img src="/logos/skully.webp" alt="a skull" class="intro-video" />
 
 	<div class="intro-content">
@@ -25,7 +25,7 @@
 
 		<Button title="Enter site" href="/landing" onclick={proceedToMain} />
 	</div>
-</main>
+</section>
 
 <style>
 	.intro {

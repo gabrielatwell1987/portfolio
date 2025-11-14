@@ -17,7 +17,7 @@
 </script>
 
 <div class="flip">
-	<main class="card-container">
+	<article class="card-container">
 		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 		<section
 			class="card"
@@ -34,7 +34,7 @@
 				<img src={src2} alt={alt2} loading="lazy" />
 			</article>
 		</section>
-	</main>
+	</article>
 </div>
 
 <style>
@@ -89,8 +89,8 @@
 				& .card-front,
 				& .card-back {
 					position: absolute;
-					width: 100%;
-					height: 100%;
+					inline-size: 100%;
+					block-size: 100%;
 					-webkit-backface-visibility: hidden;
 					backface-visibility: hidden;
 					display: flex;
@@ -101,7 +101,7 @@
 					& img {
 						object-fit: cover;
 						width: 100%;
-						height: 100%;
+						height: auto;
 						position: absolute;
 						top: 0;
 						left: 0;
