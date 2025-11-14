@@ -20,5 +20,12 @@
 		align-items: center;
 		gap: 0.5em;
 		justify-content: center;
+
+		&:focus,
+		&:focus-visible {
+			outline: none;
+			box-shadow: none;
+			background: transparent;
+		}
 	}
 </style>

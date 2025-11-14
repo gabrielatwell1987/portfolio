@@ -13,20 +13,14 @@
 
 <SkullBg />
 
-<article>
+<div>
 	<Title title="message" title2="message" />
 
 	<ContactForm />
-</article>
+</div>
 
 <style>
-	article {
-		/* background: linear-gradient(
-			to bottom,
-			var(--clr-light-gray) 0%,
-			var(--clr-invert) 25%,
-			var(--clr-invert) var(--100)
-		); */
+	div {
 		display: flex;
 		flex-direction: column;
 		gap: 2em;

@@ -11,7 +11,7 @@
 	keywords="hire gabriel atwell, hire gabe atwell, project questionnaire"
 />
 
-<article>
+<div class="hire-form">
 	<Title title="connect" title2="connect" />
 
 	<div class="personal-image">
@@ -21,10 +21,10 @@
 	<section>
 		<HireForm />
 	</section>
-</article>
+</div>
 
 <style>
-	article {
+	.hire-form {
 		background: linear-gradient(
 			to bottom,
 			var(--clr-light-gray) 0%,

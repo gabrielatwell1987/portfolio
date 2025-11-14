@@ -3,10 +3,10 @@
 	// import LoadingText from './LoadingText.svelte';
 </script>
 
-<article class="container">
+<div class="container">
 	<LoadingSkeleton />
 	<!-- <LoadingText /> -->
-</article>
+</div>
 
 <style>
 	.container {

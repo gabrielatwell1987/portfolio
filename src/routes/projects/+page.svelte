@@ -56,7 +56,7 @@
 	keywords="gabe atwell's projects, gabriel atwell's projects, gabe's work, gabriel's work, projects"
 />
 
-<article>
+<div class="projects">
 	<Title title="builds" title2="builds" viewTransitionName="builds" />
 
 	<div class="popup">
@@ -107,7 +107,7 @@
 			{/each}
 		{/if}
 	</section>
-</article>
+</div>
 
 <style>
 	:root {
