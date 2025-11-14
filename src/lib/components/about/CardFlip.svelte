@@ -17,7 +17,7 @@
 </script>
 
 <div class="flip">
-	<article class="card-container">
+	<div class="card-container">
 		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 		<section
 			class="card"
@@ -34,7 +34,7 @@
 				<img src={src2} alt={alt2} loading="lazy" />
 			</article>
 		</section>
-	</article>
+	</div>
 </div>
 
 <style>
