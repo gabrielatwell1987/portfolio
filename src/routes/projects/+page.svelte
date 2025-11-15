@@ -1,4 +1,5 @@
 <script>
+	import { fade, scale } from 'svelte/transition';
 	import SEO from '$lib/data/SEO.svelte';
 	import Title from '$lib/components/layout/Title.svelte';
 	import Popup from '$lib/components/layout/Popup.svelte';
@@ -14,14 +15,11 @@
 	let isGithubLoading = $state(true);
 	let { index = 0 } = $props();
 
-	// Helper function to get testimonial for a project
 	function getTestimonialForProject(projectIndex) {
 		return testimonials.find((t) => t.projectIndex === projectIndex);
 	}
 
-	// Lazy load components using $effect
 	$effect(() => {
-		// Load Project component after initial render
 		const loadProject = async () => {
 			const module = await import('$lib/components/projects/Project.svelte');
 			ProjectComponent = module.default;
@@ -280,5 +278,14 @@
 			opacity: 1;
 			transform: translateY(0);
 		}
+	}
+
+	::view-transition-old(builds) {
+		opacity: 0;
+	}
+
+	::view-transition-group(builds) {
+		animation-duration: 0.5s;
+		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	}
 </style>
