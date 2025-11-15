@@ -24,9 +24,7 @@
 			return;
 		}
 
-		// Start the view transition first
 		document.startViewTransition(() => {
-			// Small delay to let the browser capture the current state
 			setTimeout(() => {
 				popoverElement.hidePopover();
 			}, 0);
@@ -173,7 +171,6 @@
 
 	[popover]:popover-open::backdrop {
 		background-color: transparent;
-		box-shadow: none;
 	}
 
 	@starting-style {
