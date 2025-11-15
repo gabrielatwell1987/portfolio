@@ -1,6 +1,7 @@
 <script>
 	import SEO from '$lib/data/SEO.svelte';
 	import Hero from '$lib/components/landing/Hero.svelte';
+	import VideoPlayer from '$lib/components/utils/video/VideoPlayer.svelte';
 </script>
 
 <SEO
@@ -10,3 +11,5 @@
 />
 
 <Hero />
+
+<VideoPlayer src="https://www.w3schools.com/tags/mov_bbb.mp4" captions="caca" />
