@@ -30,7 +30,7 @@
 	});
 </script>
 
-<main>
+<div class="title-wrapper">
 	{#if img}
 		<img
 			class="title exclude-transition"
@@ -51,7 +51,7 @@
 			{/if}
 		</div>
 	{/if}
-</main>
+</div>
 
 <style>
 	* {
@@ -59,7 +59,7 @@
 	}
 
 	@media (width >= 300px) {
-		main {
+		.title-wrapper {
 			padding-top: 5em;
 
 			@media (width <= 768px) {
