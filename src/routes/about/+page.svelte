@@ -9,6 +9,7 @@
 	import Skills from '$lib/components/about/Skills.svelte';
 	import Slider from '$lib/components/about/Slider.svelte';
 	import PWAFeatures from '$lib/components/about/PWAFeatures.svelte';
+	import PWAVideo from '$lib/components/about/PWAVideo.svelte';
 
 	let isDesktop = $state(false);
 
@@ -81,11 +82,14 @@
 				</article>
 
 				<p class="text indent">
-					Please note: This is a <span>pwa</span> (progressive web app) so you can install it on
-					your device if you want to! This makes your website able to be used on any device..
-					mobile, tablet, laptop, and desktop. It's like having a mobile app that is not made with
-					native technologies! There is also offline capabilities, so if your internet goes out, you
-					can still access the site because your device downloads and caches the whole site!
+					Please note: This is a <span>pwa</span> (progressive web app) so you can install it on your
+					device if you want to! This makes your website able to be used on any device.. mobile, tablet,
+					laptop, and desktop. It's like having a mobile app that is not made with native technologies!
+					There is also offline capabilities, so if your internet goes out, you can still access the
+					site because your device downloads and caches the whole site!
+				</p>
+
+				<p class="flex-item">
 					<PWAFeatures
 						title="How to install the PWA"
 						popoverTitle="How to install the PWA:"
@@ -97,6 +101,10 @@
 						after some user interactions (clicks)."
 						text3="Other than mobile devices, you should see the install button (on tablet, laptop, desktop). If you are having any issues or you have any
 						questions, please feel free to contact me!"
+					/> <span>and</span>
+					<PWAVideo
+						title="Watch: Building a PWA with SvelteKit"
+						videoSrc="https://www.youtube.com/embed/_wiOcdEVgks?si=hJdrXH9vH_ENofpF"
 					/>
 				</p>
 			</div>
@@ -227,6 +235,23 @@
 					@media screen and (width >= 990px) {
 						width: 75%;
 						margin: 0 auto;
+					}
+				}
+
+				& .flex-item {
+					display: flex;
+					gap: 0.75em;
+
+					& span {
+						padding-top: 0.25rem;
+
+						@media (width <= 768px) {
+							padding-top: 0.5rem;
+						}
+
+						@media (width <= 500px) {
+							padding-top: 2rem;
+						}
 					}
 				}
 			}

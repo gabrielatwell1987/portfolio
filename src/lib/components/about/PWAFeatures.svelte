@@ -63,7 +63,7 @@
 			border: none;
 			color: var(--fail);
 			font-family: var(--bronova);
-			font-size: clamp(var(--h4), 3vw, var(--h2));
+			font-size: clamp(var(--h2), 3vw, var(--h2));
 			cursor: pointer;
 			padding: 0;
 			margin: 0;
@@ -95,9 +95,11 @@
 			padding: 0;
 			border: none;
 			cursor: pointer;
+			text-decoration: underline;
 
 			&:not(:hover) {
 				opacity: 0.85;
+				text-decoration: none;
 			}
 
 			&:active {

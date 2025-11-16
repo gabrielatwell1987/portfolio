@@ -1,5 +1,5 @@
 <script>
-	let { title = 'Watch Tutorial' } = $props();
+	let { title, videoSrc } = $props();
 
 	const videoId = `video-popover-${Math.random().toString(36).substr(2, 9)}`;
 	let videoPopoverElement = $state(null);
@@ -41,22 +41,20 @@
 			}
 
 			document.startViewTransition(() => {
-				setTimeout(() => {
-					videoPopoverElement.hidePopover();
-				}, 0);
+				videoPopoverElement.hidePopover();
 			});
 		} else {
 			// Fallback: manually hide
-			videoPopoverElement.style.display = 'none';
 			videoPopoverElement.style.opacity = '0';
 			videoPopoverElement.style.transform = 'translateY(-5rem)';
+			videoPopoverElement.style.display = 'none';
 		}
 	}
 </script>
 
 <section class="video-popup" aria-label="pwa video tutorial">
 	<button type="button" onclick={openVideoPopover}>
-		<span class="video-title">{title}</span>
+		{title}
 	</button>
 
 	<div id={videoId} popover="auto" bind:this={videoPopoverElement} data-video-popover>
@@ -67,12 +65,12 @@
 		<div class="video-wrapper">
 			<div class="responsive-iframe">
 				<iframe
-					src="https://www.youtube.com/embed/_wiOcdEVgks?si=hJdrXH9vH_ENofpF"
-					title="PWA in SvelteKit - Step by Step Tutorial"
+					src={videoSrc}
+					{title}
 					frameborder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
 					allowfullscreen
-					aria-label="PWA in SvelteKit - Step by Step Tutorial"
+					aria-label={title}
 				></iframe>
 			</div>
 		</div>
@@ -97,7 +95,7 @@
 			border: none;
 			color: var(--fail);
 			font-family: var(--bronova);
-			font-size: clamp(var(--h4), 3vw, var(--h2));
+			font-size: clamp(var(--h2), 3vw, var(--h2));
 			cursor: pointer;
 			padding: 0;
 			margin: 0;
@@ -125,9 +123,13 @@
 			padding: 0;
 			border: none;
 			cursor: pointer;
+			min-height: 44px;
+			min-width: 44px;
+			text-decoration: underline;
 
 			&:not(:hover) {
 				opacity: 0.85;
+				text-decoration: none;
 			}
 
 			&:active {
@@ -135,29 +137,15 @@
 			}
 		}
 
-		& button .video-title {
-			view-transition-name: video-title;
-		}
-
-		&:has([popover]:popover-open) button .video-title {
-			view-transition-name: none;
-		}
-
-		/* [popover]:popover-open .video-title {
-            view-transition-name: video-title;
-        } */
-
 		& [popover][data-video-popover] {
 			inline-size: min(95%, 900px);
-			block-size: auto;
+			block-size: clamp(40vh, 65%, 90vh);
 			max-block-size: 90vh;
 			padding: 3.5rem 1.5rem 1.5rem;
 			margin-inline: auto;
 			margin-block: auto;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
+			position: fixed;
+			inset: 0;
 			overflow: auto;
 			background-color: var(--clr-invert);
 			color: var(--clr-main);
@@ -165,13 +153,12 @@
 			@media (width <= 768px) {
 				inline-size: 95%;
 				padding: 3rem 1rem 1rem;
-				max-block-size: 85vh;
+				max-block-size: 50vh;
 			}
 
 			@media (width <= 500px) {
 				inline-size: 98%;
-				padding: 3rem 0.5rem 0.5rem;
-				max-block-size: 80vh;
+				max-block-size: 40vh;
 			}
 		}
 	}
@@ -202,6 +189,7 @@
 	}
 
 	[popover] {
+		position: relative;
 		border: 3px solid var(--dark-blue);
 		border-radius: 0.5rem;
 		box-shadow: var(--blackest) 0px 20px 25px -5px;
