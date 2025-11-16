@@ -240,7 +240,14 @@
 
 				& .flex-item {
 					display: flex;
+					justify-content: flex-start;
 					gap: 0.75em;
+					padding-left: calc(5em - 1rem);
+
+					@media (width <= 768px) {
+						padding-left: 0;
+						justify-content: center;
+					}
 
 					& span {
 						padding-top: 0.25rem;
