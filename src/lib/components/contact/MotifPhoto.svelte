@@ -1,8 +1,9 @@
 <script>
+	let { img } = $props();
 </script>
 
 <div class="hire-wrapper">
-	<img src="/images/gabe-sketch.webp" alt="gabe atwell" />
+	<img src={img} alt="gabe atwell" />
 </div>
 
 <style>

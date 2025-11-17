@@ -20,7 +20,7 @@
 </div>
 
 <div class="personal-image">
-	<MotifPhoto />
+	<MotifPhoto img="/images/gabe-sketch.webp" />
 </div>
 
 <!-- Live region for form status announcements -->
