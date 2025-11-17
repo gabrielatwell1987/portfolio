@@ -100,8 +100,7 @@
 			box-shadow: none;
 			max-inline-size: 80vw;
 			min-height: 86vh;
-			background-color: var(--blacker);
-			border-radius: 45em;
+			background-color: transparent;
 			margin-inline: auto;
 			margin-top: 10em;
 
