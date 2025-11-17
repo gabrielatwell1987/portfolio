@@ -125,11 +125,9 @@
 			cursor: pointer;
 			min-height: 44px;
 			min-width: 44px;
-			text-decoration: underline;
 
 			&:not(:hover) {
 				opacity: 0.85;
-				text-decoration: none;
 			}
 
 			&:active {

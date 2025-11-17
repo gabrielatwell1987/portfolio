@@ -8,7 +8,7 @@
 	import Preloader from '$lib/components/about/Preloader.svelte';
 	import Skills from '$lib/components/about/Skills.svelte';
 	import Slider from '$lib/components/about/Slider.svelte';
-	import PWAFeatures from '$lib/components/about/PWAFeatures.svelte';
+	import PWAInstall from '$lib/components/about/PWAInstall.svelte';
 	import PWAVideo from '$lib/components/about/PWAVideo.svelte';
 
 	let isDesktop = $state(false);
@@ -90,7 +90,7 @@
 				</p>
 
 				<p class="flex-item">
-					<PWAFeatures
+					<PWAInstall
 						title="How to install the PWA"
 						popoverTitle="How to install the PWA:"
 						text="It works on Android and iPhone. If you're using an iPhone device, you have to tap the

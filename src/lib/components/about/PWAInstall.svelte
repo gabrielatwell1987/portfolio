@@ -95,11 +95,9 @@
 			padding: 0;
 			border: none;
 			cursor: pointer;
-			text-decoration: underline;
 
 			&:not(:hover) {
 				opacity: 0.85;
-				text-decoration: none;
 			}
 
 			&:active {
