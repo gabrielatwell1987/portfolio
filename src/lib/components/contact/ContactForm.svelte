@@ -3,6 +3,7 @@
 	import Modal from './Modal.svelte';
 	import SubmitButton from '$lib/components/contact/SubmitButton.svelte';
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
+	import MotifPhoto from './MotifPhoto.svelte';
 
 	let name = $state('');
 	let email = $state('');
@@ -16,6 +17,10 @@
 	</div>
 
 	<Modal />
+</div>
+
+<div class="personal-image">
+	<MotifPhoto />
 </div>
 
 <!-- Live region for form status announcements -->
@@ -89,6 +94,10 @@
 		padding: 0;
 	}
 
+	.personal-image {
+		margin-bottom: 2.5em;
+	}
+
 	.icons {
 		display: grid;
 		place-content: center;
@@ -119,7 +128,7 @@
 		@media screen and (width >= 1024px) {
 			fieldset {
 				border: 5px solid var(--white);
-				border-image: linear-gradient(75deg, var(--clr-main), var(--clr-invert)) 1;
+				border-image: linear-gradient(75deg, var(--clr-gray), var(--clr-invert)) 1;
 				font-weight: bolder;
 				padding: 2rem 5rem;
 				border-radius: 10px;

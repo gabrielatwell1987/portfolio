@@ -1,12 +1,9 @@
 <script>
-	import Popup from '$lib/components/layout/Popup.svelte';
 	import SubmitButton from '$lib/components/contact/SubmitButton.svelte';
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 
 	let submitStatus = $state('');
 </script>
-
-<Popup title="" text="Please fill out this questionnaire and I'll contact you back 😎" />
 
 <A11yAnnouncer message={submitStatus} />
 

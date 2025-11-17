@@ -2,7 +2,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import HireForm from '$lib/components/contact/HireForm.svelte';
 	import Title from '$lib/components/layout/Title.svelte';
-	import MotifPhoto from '$lib/components/contact/MotifPhoto.svelte';
+	import Popup from '$lib/components/layout/Popup.svelte';
 </script>
 
 <SEO
@@ -14,8 +14,8 @@
 <div class="hire-form">
 	<Title title="connect" title2="connect" />
 
-	<div class="personal-image">
-		<MotifPhoto />
+	<div class="margin-inline">
+		<Popup title="" text="Please fill out this questionnaire and I'll contact you back 😎" />
 	</div>
 
 	<section>
@@ -38,8 +38,10 @@
 			height: 100vh;
 		}
 
-		& .personal-image {
-			margin-bottom: 2.5em;
+		& .margin-inline {
+			margin-inline: auto;
+			max-inline-size: fit-content;
+			/* padding: 0 1rem; */
 		}
 	}
 </style>
