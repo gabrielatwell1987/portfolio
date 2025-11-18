@@ -1,55 +1,41 @@
 <script>
-	let { src, captions } = $props();
+	import {
+		playVid,
+		pauseVid,
+		stopVid,
+		changeVol,
+		togglePlay,
+		handleKeydown,
+		handleLoadedMetadata,
+		handleTimeUpdate,
+		handleSeek
+	} from './videoPlayerLogic.js';
+
+	let { src, captions, noControls = false, isFaded = false, width = '650px' } = $props();
 	let video;
 	let duration = $state(0);
 	let currentTime = $state(0);
-
-	function playVid() {
-		video?.play();
-	}
-	function pauseVid() {
-		video?.pause();
-	}
-	function stopVid() {
-		if (!video) return;
-		video.pause();
-		video.currentTime = 0;
-		currentTime = 0;
-	}
-	function changeVol() {
-		if (!video) return;
-		video.volume = Number(event.target.value);
-	}
-	function togglePlay() {
-		if (!video) return;
-		if (video.paused) {
-			video.play();
-		} else {
-			video.pause();
-		}
-	}
-	function handleKeydown(event) {
-		if (event.code === 'Space' || event.key === ' ') {
-			event.preventDefault();
-			togglePlay();
-		}
-	}
-	function handleLoadedMetadata() {
-		if (!video) return;
-		duration = video.duration || 0;
-	}
-
-	function handleTimeUpdate() {
-		if (!video) return;
-		currentTime = video.currentTime;
-	}
-
-	function handleSeek(event) {
-		if (!video) return;
-		const value = Number(event.target.value);
-		video.currentTime = value;
-		currentTime = value;
-	}
+	let maskStyle = $derived(
+		isFaded
+			? '-webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 100%); mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 100%);'
+			: ''
+	);
+	let playVidHandler = () => playVid(video);
+	let pauseVidHandler = () => pauseVid(video);
+	let stopVidHandler = () => {
+		currentTime = stopVid(video, currentTime);
+	};
+	let changeVolHandler = (event) => changeVol(video, event);
+	let handleKeydownHandler = (event) => handleKeydown(event, video);
+	let handleLoadedMetadataHandler = () => {
+		duration = handleLoadedMetadata(video, duration);
+	};
+	let handleTimeUpdateHandler = () => {
+		currentTime = handleTimeUpdate(video, currentTime);
+	};
+	let handleSeekHandler = (event) => {
+		currentTime = handleSeek(video, event, currentTime);
+	};
 </script>
 
 <!-- svelte-ignore a11y_no_noninteractive_tabindex -->
@@ -57,7 +43,7 @@
 <div
 	class="video-wrapper"
 	tabindex="0"
-	onkeydown={handleKeydown}
+	onkeydown={handleKeydownHandler}
 	aria-label="Press space to play or pause."
 	role="application"
 >
@@ -66,8 +52,12 @@
 		<video
 			bind:this={video}
 			class="video-element"
-			onloadedmetadata={handleLoadedMetadata}
-			ontimeupdate={handleTimeUpdate}
+			autoplay
+			loop
+			muted
+			onloadedmetadata={handleLoadedMetadataHandler}
+			ontimeupdate={handleTimeUpdateHandler}
+			style={maskStyle}
 		>
 			<source {src} type="video/mp4" />
 
@@ -78,27 +68,27 @@
 
 		<!-- seek bar -->
 		{#if duration > 0}
-			<div class="seek-bar">
+			<div class="seek-bar" class:no-controls={noControls}>
 				<input
 					type="range"
 					min="0"
 					max={duration}
 					step="0.1"
 					value={currentTime}
-					oninput={handleSeek}
+					oninput={handleSeekHandler}
 					aria-label="Seek video"
 				/>
 			</div>
 		{/if}
 
-		<div class="controls">
-			<button type="button" class="control-btn" aria-label="Play" onclick={playVid}>
+		<div class="controls" class:no-controls={noControls}>
+			<button type="button" class="control-btn" aria-label="Play" onclick={playVidHandler}>
 				<img src="/video/play.webp" alt="" />
 			</button>
-			<button type="button" class="control-btn" aria-label="Pause" onclick={pauseVid}>
+			<button type="button" class="control-btn" aria-label="Pause" onclick={pauseVidHandler}>
 				<img src="/video/pause.webp" alt="" />
 			</button>
-			<button type="button" class="control-btn" aria-label="Stop" onclick={stopVid}>
+			<button type="button" class="control-btn" aria-label="Stop" onclick={stopVidHandler}>
 				<img src="/video/stop.webp" alt="" />
 			</button>
 
@@ -111,7 +101,7 @@
 					min="0"
 					max="1"
 					value="1"
-					oninput={changeVol}
+					oninput={changeVolHandler}
 					aria-label="Volume"
 				/>
 			</div>
@@ -147,6 +137,10 @@
 				padding: 0.4rem 0.9rem 0.2rem;
 				background: rgba(0, 0, 0, 0.7);
 
+				&.no-controls {
+					display: none;
+				}
+
 				& input[type='range'] {
 					inline-size: 100%;
 				}
@@ -159,6 +153,10 @@
 			gap: 0.75rem;
 			padding: 0.6rem 0.9rem;
 			background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
+
+			&.no-controls {
+				display: none;
+			}
 
 			& .control-btn {
 				background: none;
