@@ -1,5 +1,4 @@
 <script>
-	import VideoPlayer from './../utils/video/VideoPlayer.svelte';
 	import HeroButton from './HeroButton.svelte';
 	import DoYouNeed from './DoYouNeed.svelte';
 	import UltraA from './UltraA.svelte';
@@ -150,13 +149,6 @@
 				</dl>
 			</section>
 		</div>
-
-		<VideoPlayer
-			noControls={true}
-			src="/video/frames.mp4"
-			captions="a monochrome design"
-			isFaded={true}
-		/>
 
 		<div class="do-you-need">
 			<DoYouNeed text="do you need a " span="website?" />
