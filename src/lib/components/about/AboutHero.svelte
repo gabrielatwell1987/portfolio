@@ -31,8 +31,8 @@
 				gsap.to(char, {
 					scrollTrigger: {
 						trigger: titleElement,
-						start: `top ${80 - index * 2}%`,
-						end: `bottom ${80 - index * 2}%`,
+						start: `top ${70 - index * 2.75}%`,
+						end: `bottom ${70 - index * 2.75}%`,
 						scrub: 1
 					},
 					rotationX: 360,
