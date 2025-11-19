@@ -2,12 +2,14 @@
 	import HeroButton from './HeroButton.svelte';
 	import DoYouNeed from './DoYouNeed.svelte';
 	import UltraA from './UltraA.svelte';
+	import Star3d from './Star3d.svelte';
 
 	let mounted = $state(false);
 	let titleText = 'Frontend Crafted Web Experiences';
 	let displayedTitle = $state('');
 	let showContent = $state(false);
 	let particles = $state([]);
+	let { cssBg } = $props();
 
 	$effect(() => {
 		mounted = true;
@@ -54,15 +56,16 @@
 <article role="banner" aria-label="Hero section">
 	<!-- Animated Background -->
 	<div class="background-container" aria-hidden="true">
-		<div class="gradient-bg"></div>
+		{#if cssBg}
+			<div class="gradient-bg"></div>
 
-		<!-- Floating Particles -->
-		{#if mounted}
-			{#each particles as particle (particle.id)}
-				<div
-					class="particle"
-					aria-hidden="true"
-					style="
+			<!-- Floating Particles -->
+			{#if mounted}
+				{#each particles as particle (particle.id)}
+					<div
+						class="particle"
+						aria-hidden="true"
+						style="
 						left: {particle.x}%;
 						top: {particle.y}%;
 						width: {particle.size}px;
@@ -70,36 +73,39 @@
 						animation-duration: {particle.duration}s;
 						animation-delay: {particle.delay}s;
 					"
-				></div>
-			{/each}
+					></div>
+				{/each}
+			{/if}
+
+			<!-- shapes -->
+			<svg class="shape circle" aria-hidden="true" viewBox="0 0 100 100">
+				<circle
+					cx="50"
+					cy="50"
+					r="45"
+					fill="transparent"
+					stroke="var(--clr-main)"
+					stroke-width="2"
+					opacity="0.3"
+				/>
+			</svg>
+
+			<svg class="shape star" aria-hidden="true" viewBox="0 0 100 100">
+				<polygon
+					points="50,5 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35"
+					fill="transparent"
+					stroke="var(--clr-main)"
+					stroke-width="2"
+					opacity="0.3"
+				/>
+			</svg>
+
+			<UltraA class="ultra-gradient" />
+
+			<div class="shape big-circle" aria-hidden="true"></div>
+		{:else}
+			<Star3d />
 		{/if}
-
-		<!-- shapes -->
-		<svg class="shape circle" aria-hidden="true" viewBox="0 0 100 100">
-			<circle
-				cx="50"
-				cy="50"
-				r="45"
-				fill="transparent"
-				stroke="var(--clr-main)"
-				stroke-width="2"
-				opacity="0.3"
-			/>
-		</svg>
-
-		<svg class="shape star" aria-hidden="true" viewBox="0 0 100 100">
-			<polygon
-				points="50,5 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35"
-				fill="transparent"
-				stroke="var(--clr-main)"
-				stroke-width="2"
-				opacity="0.3"
-			/>
-		</svg>
-
-		<UltraA class="ultra-gradient" />
-
-		<div class="shape big-circle" aria-hidden="true"></div>
 	</div>
 
 	<section aria-label="Introduction and portfolio overview" class="hero-content">
@@ -397,7 +403,7 @@
 						background: rgba(255, 255, 255, 0.1);
 						border-radius: 12px;
 						backdrop-filter: blur(10px);
-						border: 1px solid rgba(255, 255, 255, 0.2);
+						border: 2px solid var(--clr-gray);
 						transition: all 0.3s ease;
 
 						@media (prefers-reduced-motion: reduce) {
