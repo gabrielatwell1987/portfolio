@@ -40,7 +40,7 @@
 	<section>
 		<article id="bio">
 			<div class="hero-section">
-				<AboutHero src="/logos/svelteCode.webp" alt="svelte code" title="About Me" />
+				<AboutHero alt="svelte code" title="About Me" />
 			</div>
 
 			<div class="bio" aria-label="bio">

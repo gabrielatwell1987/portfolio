@@ -5,7 +5,7 @@
 
 	let { src, alt, title } = $props();
 
-	$effect(() => {
+	function titleRotate() {
 		gsap.registerPlugin(SplitText, ScrollTrigger);
 
 		const split = new SplitText('#title', { type: 'chars' });
@@ -48,6 +48,10 @@
 			ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 			split.revert();
 		};
+	}
+
+	$effect(() => {
+		titleRotate();
 	});
 </script>
 
