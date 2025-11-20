@@ -26,74 +26,67 @@
 		directionalLight.position.set(1, 1, 1);
 		scene.add(directionalLight);
 
-		// shapes
-		const shapes = [];
+		function createRibbon(ribbonLength, ribbonWidth, color, offsetX = 0) {
+			const geometry = new THREE.BufferGeometry();
+			const positions = [];
+			const indices = [];
+			const uvs = [];
 
-		// star
-		const starShape = new THREE.Shape();
-		const outerRadius = 1;
-		const innerRadius = 0.5;
-		const points = 5;
-		const starPoints = [];
-		for (let i = 0; i < points * 2; i++) {
-			const angle = (i * Math.PI) / points;
-			const radius = i % 2 === 0 ? outerRadius : innerRadius;
-			const x = Math.cos(angle) * radius;
-			const y = Math.sin(angle) * radius;
-			starPoints.push({ x, y });
-		}
-		starShape.moveTo(starPoints[0].x, starPoints[0].y);
-		for (let i = 0; i < starPoints.length; i++) {
-			const current = starPoints[i];
-			const next = starPoints[(i + 1) % starPoints.length];
-			const cpX = (current.x + next.x) / 2;
-			const cpY = (current.y + next.y) / 2;
-			starShape.quadraticCurveTo(cpX, cpY, next.x, next.y);
-		}
-		starShape.closePath();
-
-		const materials = [
-			new THREE.MeshBasicMaterial({ color: 0x242424 }),
-			new THREE.MeshBasicMaterial({ color: 0x2c2c2c }),
-			new THREE.MeshBasicMaterial({ color: 0x0a0a0a })
-		];
-
-		for (let i = 0; i < 10; i++) {
-			let geometry;
-			const isStar = Math.random() < 0.5; // 50% chance for star or sphere
-			if (isStar) {
-				// Random depth between 0.2 and 1 for each star
-				const randomDepth = 0.2 + Math.random() * 0.8;
-				geometry = new THREE.ExtrudeGeometry(starShape, {
-					depth: randomDepth,
-					bevelEnabled: false
-				});
-			} else {
-				geometry = new THREE.SphereGeometry(0.5, 16, 16);
+			// Generate initial positions for the ribbon (a wavy line)
+			const spinePoints = [];
+			for (let i = 0; i <= ribbonLength; i++) {
+				const x = (i - ribbonLength / 2) * 0.2 + offsetX;
+				const y = Math.sin(i * 0.1) * 2;
+				const z = Math.cos(i * 0.1) * 2;
+				spinePoints.push(new THREE.Vector3(x, y, z));
 			}
-			const material = materials[Math.floor(Math.random() * materials.length)];
-			const mesh = new THREE.Mesh(geometry, material);
-			if (isStar) {
-				const edges = new THREE.EdgesGeometry(geometry);
-				const lineMaterial = new THREE.LineBasicMaterial({ color: 0x111111 });
-				const wireframe = new THREE.LineSegments(edges, lineMaterial);
-				mesh.add(wireframe);
+
+			// Create vertices for the ribbon (two rows per segment)
+			for (let i = 0; i < spinePoints.length; i++) {
+				const point = spinePoints[i];
+				const nextPoint = spinePoints[i + 1] || point; // Handle last point
+				const direction = new THREE.Vector3().subVectors(nextPoint, point).normalize();
+				const perpendicular = new THREE.Vector3(-direction.z, 0, direction.x).normalize();
+				const widthFactor = Math.sin((i / ribbonLength) * Math.PI);
+
+				positions.push(
+					point.x + perpendicular.x * ribbonWidth * widthFactor,
+					point.y + perpendicular.y * ribbonWidth * widthFactor,
+					point.z + perpendicular.z * ribbonWidth * widthFactor, // Top vertex
+					point.x - perpendicular.x * ribbonWidth * widthFactor,
+					point.y - perpendicular.y * ribbonWidth * widthFactor,
+					point.z - perpendicular.z * ribbonWidth * widthFactor // Bottom vertex
+				);
+				uvs.push(i / ribbonLength, 0, i / ribbonLength, 1);
 			}
-			mesh.position.set(
-				(Math.random() - 0.5) * 20,
-				(Math.random() - 0.5) * 20,
-				(Math.random() - 0.5) * 20
-			);
-			mesh.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI);
-			mesh.userData = {
-				initialX: mesh.position.x,
-				initialY: mesh.position.y,
-				initialZ: mesh.position.z,
-				offset: Math.random() * Math.PI * 2
-			};
-			shapes.push(mesh);
-			scene.add(mesh);
+
+			// Create indices for triangles
+			for (let i = 0; i < ribbonLength; i++) {
+				const a = i * 2;
+				const b = a + 1;
+				const c = a + 2;
+				const d = a + 3;
+				indices.push(a, b, c, b, d, c);
+			}
+
+			geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+			geometry.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+			geometry.setIndex(indices);
+			geometry.computeVertexNormals();
+
+			// Material and mesh
+			const material = new THREE.MeshBasicMaterial({ color, side: THREE.DoubleSide });
+			const ribbon = new THREE.Mesh(geometry, material);
+			ribbon.position.set(0, 0, 0);
+			ribbon.userData = { spinePoints, ribbonWidth, ribbonLength };
+			return ribbon;
 		}
+
+		const ribbon1 = createRibbon(100, 1.5, '#808080');
+		const ribbon2 = createRibbon(50, 0.5, '#444444', 5);
+		const ribbon3 = createRibbon(75, 0.75, '#333333', -5);
+		scene.add(ribbon1, ribbon2, ribbon3);
+		const ribbons = [ribbon1, ribbon2, ribbon3];
 
 		camera.position.z = 10;
 
@@ -105,15 +98,46 @@
 				return;
 			}
 			const time = clock.getElapsedTime();
-			shapes.forEach((shape, index) => {
-				shape.rotation.x += 0.001;
-				shape.rotation.y += 0.001;
-				// Smooth floating motion using sine waves
-				const offset = shape.userData.offset;
-				shape.position.x = shape.userData.initialX + Math.sin(time + offset) * 0.2;
-				shape.position.y = shape.userData.initialY + Math.cos(time + offset) * 0.2;
-				shape.position.z = shape.userData.initialZ + Math.sin(time * 0.5 + offset) * 0.2;
+			ribbons.forEach((ribbon) => {
+				ribbon.rotation.x += 0.001;
+				ribbon.rotation.y += 0.001;
+
+				// Animate ribbon positions randomly
+				const geometry = ribbon.geometry;
+				const spinePoints = ribbon.userData.spinePoints;
+				const ribbonWidth = ribbon.userData.ribbonWidth;
+				const ribbonLength = ribbon.userData.ribbonLength;
+				const positionsArray = geometry.attributes.position.array;
+				for (let i = 0; i < spinePoints.length; i++) {
+					const offset = i * 0.1;
+					const randomX = Math.sin(time + offset) * 0.5;
+					const randomY = Math.cos(time + offset) * 0.5;
+					const randomZ = Math.sin(time * 0.5 + offset) * 0.5;
+					spinePoints[i].x += randomX * 0.01;
+					spinePoints[i].y += randomY * 0.01;
+					spinePoints[i].z += randomZ * 0.01;
+
+					// Recalculate perpendicular for updated spine
+					const point = spinePoints[i];
+					const nextPoint = spinePoints[i + 1] || point;
+					const direction = new THREE.Vector3().subVectors(nextPoint, point).normalize();
+					const perpendicular = new THREE.Vector3(-direction.z, 0, direction.x).normalize();
+					const widthFactor = Math.sin((i / ribbonLength) * Math.PI);
+
+					// Update geometry vertices with taper
+					const baseIndex = i * 6;
+					const effectiveWidth = ribbonWidth * widthFactor;
+					positionsArray[baseIndex] = point.x + perpendicular.x * effectiveWidth;
+					positionsArray[baseIndex + 1] = point.y + perpendicular.y * effectiveWidth;
+					positionsArray[baseIndex + 2] = point.z + perpendicular.z * effectiveWidth;
+					positionsArray[baseIndex + 3] = point.x - perpendicular.x * effectiveWidth;
+					positionsArray[baseIndex + 4] = point.y - perpendicular.y * effectiveWidth;
+					positionsArray[baseIndex + 5] = point.z - perpendicular.z * effectiveWidth;
+				}
+				geometry.attributes.position.needsUpdate = true;
+				geometry.computeVertexNormals();
 			});
+
 			renderer.render(scene, camera);
 			requestAnimationFrame(animate);
 		}
@@ -121,15 +145,9 @@
 
 		return () => {
 			renderer.dispose();
-			shapes.forEach((shape) => {
-				shape.geometry.dispose();
-				shape.material.dispose();
-				if (shape.children.length > 0) {
-					shape.children.forEach((child) => {
-						child.geometry.dispose();
-						child.material.dispose();
-					});
-				}
+			ribbons.forEach((ribbon) => {
+				ribbon.geometry.dispose();
+				ribbon.material.dispose();
 			});
 		};
 	});
