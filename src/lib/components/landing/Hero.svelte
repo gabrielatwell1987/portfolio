@@ -2,7 +2,7 @@
 	import HeroButton from './HeroButton.svelte';
 	import DoYouNeed from './DoYouNeed.svelte';
 	import UltraA from './UltraA.svelte';
-	import Star3d from './Star3d.svelte';
+	import HeroBackground from './HeroBackground.svelte';
 
 	let mounted = $state(false);
 	let titleText = 'Frontend Crafted Web Experiences';
@@ -104,7 +104,7 @@
 
 			<div class="shape big-circle" aria-hidden="true"></div>
 		{:else}
-			<Star3d />
+			<HeroBackground />
 		{/if}
 	</div>
 
