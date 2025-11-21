@@ -280,6 +280,28 @@
 		}
 	}
 
+	@keyframes slide-out {
+		from {
+			opacity: 1;
+			transform: translateX(0);
+		}
+		to {
+			opacity: 0;
+			transform: translateX(-100px);
+		}
+	}
+
+	@keyframes slide-in {
+		from {
+			opacity: 0;
+			transform: translateX(100px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
 	::view-transition-old(builds) {
 		opacity: 0;
 	}
@@ -287,5 +309,16 @@
 	::view-transition-group(builds) {
 		animation-duration: 0.5s;
 		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	@media (width <= 768px) {
+		::view-transition-old(builds) {
+			animation: slide-out 0.3s ease-out forwards;
+			opacity: 1;
+		}
+
+		::view-transition-new(builds) {
+			animation: slide-in 0.5s ease-out forwards;
+		}
 	}
 </style>
