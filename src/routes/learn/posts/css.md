@@ -98,7 +98,7 @@ The `view transitions` api is used to transition your website between pages for 
 The example: `::view-transition-old(root), ::view-transition-new(root)` examples are to customize the transitions. Old is the state that the page is leaving from and new means the state the page is going to. (root) means the root of the file.. if you want the animate the transition of a specific DOM element, you would have to create a `view-transition-name = "example"` in css on the element and change root into the name `::view-transition-group(example)`. To select both of these at once you use `::view-transition-group`.
 
 </div>
-<div class="image">
+<div class="image long">
 
 ![view transitions](/code/view-transitions.webp)
 
