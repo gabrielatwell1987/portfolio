@@ -157,7 +157,6 @@
 
 			& .item {
 				width: 100%;
-				box-shadow: 0 2px 0 3px var(--clr-main);
 				background-color: var(--surface-2);
 				background-image: var(--gradient);
 				border-radius: var(--radius);
@@ -171,9 +170,10 @@
 					opacity 1s ease,
 					border 1s ease,
 					box-shadow 1s ease;
+				box-shadow: 0 2px 0 3px var(--clr-main);
 
 				@media (width <= 768px) {
-					box-shadow: 0 1px 0 2px var(--clr-main);
+					box-shadow: 0 4px 0 5px var(--clr-main);
 				}
 
 				& .scale {

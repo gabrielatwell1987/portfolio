@@ -35,10 +35,10 @@
 			background-color: hsla(0, 0%, 26%, 0.25);
 			backdrop-filter: blur(5px);
 			-webkit-backdrop-filter: blur(4px);
-			box-shadow: 0 1px 0 2px var(--clr-main);
+			box-shadow: 0 2px 0 3px var(--clr-main);
 
 			@media (width >= 768px) {
-				box-shadow: 0 2px 0 3px var(--clr-main);
+				box-shadow: 0 4px 0 5px var(--clr-main);
 			}
 
 			.title {
@@ -103,7 +103,6 @@
 		@media (width >= 990px) {
 			display: grid;
 			grid-template-rows: repeat(2, 1fr);
-			/* margin: -10em 0 -20em 0; */
 			gap: 3rem;
 
 			.right {
@@ -116,10 +115,6 @@
 				line-height: 1.5;
 			}
 		}
-
-		/* @media (width >= 1024px) {
-			margin-bottom: -10%;
-		} */
 	}
 
 	.left,
