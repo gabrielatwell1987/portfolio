@@ -5,7 +5,7 @@
 	import HeroBackground from './HeroBackground.svelte';
 
 	let mounted = $state(false);
-	let titleText = 'Frontend Crafted Web Experiences';
+	let titleText = 'Handcrafted Frontend Interfaces';
 	let displayedTitle = $state('');
 	let showContent = $state(false);
 	let particles = $state([]);
@@ -29,7 +29,7 @@
 				if (i < titleText.length) {
 					displayedTitle += titleText.charAt(i);
 					i++;
-					setTimeout(typeWriter, 100);
+					setTimeout(typeWriter, 65);
 				} else {
 					setTimeout(() => {
 						showContent = true;
@@ -341,7 +341,7 @@
 		& .content-wrapper {
 			opacity: 0;
 			transform: translateY(30px);
-			transition: all 0.5s ease-out;
+			transition: all 0.25s ease-out;
 
 			@media (prefers-reduced-motion: reduce) {
 				transform: none;
