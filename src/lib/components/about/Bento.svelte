@@ -170,7 +170,7 @@
 					opacity 1s ease,
 					border 1s ease,
 					box-shadow 1s ease;
-				box-shadow: 0 2px 0 3px var(--clr-main);
+				box-shadow: 0 3px 0 5px var(--clr-main);
 
 				@media (width <= 768px) {
 					box-shadow: 0 4px 0 5px var(--clr-main);
