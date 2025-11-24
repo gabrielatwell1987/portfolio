@@ -56,7 +56,7 @@
 		if (isPaused) return;
 
 		const interval = setInterval(() => {
-			position += 0.011;
+			position += 0.03;
 			if (position >= 50) {
 				position = 0;
 			}
