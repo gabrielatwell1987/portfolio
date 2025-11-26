@@ -19,7 +19,7 @@
 	<article>
 		<section>
 			<div class="bento-grid">
-				<div class="item">
+				<div class="item left">
 					<a href="/contact" class="bento-link" aria-label="Navigate to contact page">
 						<div class="scale">
 							<Image
@@ -37,7 +37,7 @@
 					</a>
 				</div>
 
-				<div class="item">
+				<div class="item right">
 					<div class="center">
 						<a href="/learn" class="bento-link" aria-label="Navigate to learn page">
 							<div class="scale">
@@ -57,7 +57,7 @@
 					</div>
 				</div>
 
-				<div class="item">
+				<div class="item left">
 					<a href="/projects" class="bento-link" aria-label="Navigate to projects page">
 						<h2>projects</h2>
 
@@ -167,13 +167,29 @@
 				align-items: center;
 				padding-bottom: 1em;
 				transition:
-					opacity 1s ease,
-					border 1s ease,
-					box-shadow 1s ease;
-				box-shadow: 0 3px 0 5px var(--clr-main);
+					opacity 1s ease-out,
+					border 1s ease-out,
+					box-shadow 1s ease-out,
+					transform 0.25s ease-out;
 
-				@media (width <= 768px) {
-					box-shadow: 0 4px 0 5px var(--clr-main);
+				&.left {
+					@media (width >= 768px) {
+						box-shadow: -3px 3px 0 5px var(--clr-main);
+					}
+
+					@media (width <= 768px) {
+						box-shadow: 0 0 0 5px var(--clr-main);
+					}
+				}
+
+				&.right {
+					@media (width >= 768px) {
+						box-shadow: 3px 3px 0 5px var(--clr-main);
+					}
+
+					@media (width <= 768px) {
+						box-shadow: 0 0 0 5px var(--clr-main);
+					}
 				}
 
 				& .scale {
@@ -227,15 +243,15 @@
 				}
 
 				&:hover {
-					opacity: 1;
+					transform: scale(0.98);
 				}
 
 				&:not(:hover) {
-					opacity: 0.75;
 					transition:
-						opacity 1s ease,
-						border 1s ease,
-						box-shadow 1s ease;
+						opacity 1s ease-out,
+						border 1s ease-out,
+						box-shadow 1s ease-out,
+						transform 0.25s ease-out;
 				}
 
 				&:nth-child(1) {

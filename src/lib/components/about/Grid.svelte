@@ -38,7 +38,7 @@
 			box-shadow: 0 2px 0 3px var(--clr-main);
 
 			@media (width >= 768px) {
-				box-shadow: 0 4px 0 5px var(--clr-main);
+				box-shadow: 3px 3px 0 5px var(--clr-main);
 			}
 
 			.title {
@@ -90,6 +90,18 @@
 		@media (width >= 990px) {
 			margin: 0 auto;
 			padding: 1rem 2rem;
+		}
+	}
+
+	.inline.left {
+		@media (width >= 768px) {
+			box-shadow: -2px 2px 0 5px var(--clr-main);
+		}
+	}
+
+	.inline.right {
+		@media (width >= 768px) {
+			box-shadow: 2px 2px 0 5px var(--clr-main);
 		}
 	}
 
