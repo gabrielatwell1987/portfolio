@@ -13,7 +13,14 @@
 			<label class="form-group">
 				<span class="label-text">Name</span>
 
-				<input type="text" name="name" placeholder="Your name" required autocomplete="name" />
+				<input
+					type="text"
+					name="name"
+					placeholder="Your name"
+					required
+					autocomplete="name"
+					spellcheck="true"
+				/>
 			</label>
 
 			<label class="form-group">
@@ -25,6 +32,7 @@
 					placeholder="your.email@example.com"
 					required
 					autocomplete="email"
+					spellcheck="true"
 				/>
 			</label>
 
@@ -64,7 +72,7 @@
 			<label class="form-group">
 				<span class="label-text">Website</span>
 
-				<input type="text" name="text" placeholder="(e.g: if-applicable.com)" />
+				<input type="text" name="text" placeholder="(e.g: if-applicable.com)" spellcheck="true" />
 			</label>
 
 			<label class="form-group">
@@ -133,7 +141,12 @@
 		<label class="form-group full-width">
 			<span class="label-text tac">Message</span>
 
-			<textarea name="message" required placeholder="Tell me about your project..." rows="5"
+			<textarea
+				name="message"
+				required
+				placeholder="Tell me about your project..."
+				rows="5"
+				spellcheck="true"
 			></textarea>
 		</label>
 
@@ -284,6 +297,7 @@
 			color: var(--clr-main);
 			opacity: 0.7;
 			font-size: clamp(0.8rem, 1vw, 1.75rem);
+			font-weight: 300;
 		}
 
 		&:focus {
