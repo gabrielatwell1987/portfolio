@@ -1,5 +1,6 @@
 <script>
 	import SEO from '$lib/data/SEO.svelte';
+	import bio from '$lib/components/about/bio.json';
 	import Button from '$lib/components/layout/Button.svelte';
 	import Grid from '$lib/components/about/Grid.svelte';
 	import Bento from '$lib/components/about/Bento.svelte';
@@ -44,28 +45,9 @@
 			</div>
 
 			<div class="bio" aria-label="bio">
-				<p class="text indent">
-					My name is Gabriel Atwell and I am a frontend web developer. I started out with the
-					basics: HTML, CSS, and JavaScript. I then moved on to more advanced topics such as
-					Svelte/Sveltekit, Node.js, GSAP, and a little bit of three.js but I have begun to teach
-					myself the backend of web development on my spare time with backend languages like <a
-						href="https://go.dev"
-						target="_blank"
-						style="font-weight: 900;">Go</a
-					>
-					to become more of a fullstack developer.
-				</p>
-
-				<p class="text">
-					I have a passion for creating websites that are clean, crisp, and completely functional. I
-					enjoy seeing a physical change when I edit or create code. I also enjoy creating
-					animations for the web! I mainly enjoy animating the web because I believe that it makes
-					the website look more professional and more appealing to the eye. In the world of web
-					development, creating engaging and visually appealing animations is essential to grab the
-					attention of users. I'm a natural problem-solver who thrives on turning complex problems
-					into simple, beautiful solutions. I believe in the power of collaboration and continuous
-					learning.
-				</p>
+				{#each bio as paragraph}
+					<p class="text indent">{@html paragraph.text}</p>
+				{/each}
 
 				<article class="hero text-hero text__w" aria-label="bio">
 					<p class="text content_width">
