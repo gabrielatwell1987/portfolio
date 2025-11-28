@@ -45,7 +45,7 @@
 			spanMiddle,
 			{ opacity: 0, scale: 0 },
 			{
-				opacity: 0.5,
+				opacity: 0.65,
 				scale: 2,
 				duration: 1,
 				ease: 'circ',
@@ -87,7 +87,7 @@
 			color: var(--clr-main);
 			font-family: var(--bronova);
 			font-size: clamp(var(--h6), 8vw, var(--xl));
-			font-weight: 100;
+			font-weight: 900;
 			margin-top: 5%;
 			letter-spacing: 1px;
 			text-transform: lowercase;

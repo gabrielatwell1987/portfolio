@@ -71,6 +71,7 @@
 		z-index: 200;
 		pointer-events: all;
 		background-color: transparent;
+		opacity: 1;
 
 		&:focus,
 		&:focus-visible {
@@ -80,7 +81,10 @@
 
 		&:hover {
 			color: var(--dark-pale);
-			opacity: 0.8;
+		}
+
+		&:not(:hover) {
+			opacity: 0.95;
 		}
 
 		& svg {
@@ -88,10 +92,8 @@
 
 			& path {
 				fill: var(--clr-main);
-				/* stroke: var(--clr-main); */
-				/* stroke-width: 20; */
 
-				&:hover {
+				&:not(:hover) {
 					opacity: 0.95;
 				}
 			}
