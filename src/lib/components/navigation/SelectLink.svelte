@@ -6,8 +6,16 @@
 	let selectedLabel = $state('Connect');
 
 	const options = [
-		{ label: 'Hire Me', value: path1, icon: '/icons/connect-plus.svg' },
-		{ label: 'Contact', value: path2, icon: '/icons/connect-exclamation.svg' }
+		{
+			label: 'Hire Me',
+			value: path1,
+			svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 12H16M12 8V16M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="var(--clr-main)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+		},
+		{
+			label: 'Contact',
+			value: path2,
+			svg: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 9V12M12 15H12.01M21.0039 12C21.0039 16.9706 16.9745 21 12.0039 21C9.9675 21 3.00463 21 3.00463 21C3.00463 21 4.56382 17.2561 3.93982 16.0008C3.34076 14.7956 3.00391 13.4372 3.00391 12C3.00391 7.02944 7.03334 3 12.0039 3C16.9745 3 21.0039 7.02944 21.0039 12Z" stroke="var(--clr-main)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+		}
 	];
 
 	function toggleDropdown() {
@@ -57,7 +65,7 @@
 			{#each options as option}
 				<li>
 					<button type="button" class="option-item" onclick={() => selectOption(option)}>
-						<img src={option.icon} alt="" class="option-icon" />
+						<span class="option-icon">{@html option.svg}</span>
 						{option.label}
 					</button>
 				</li>
@@ -157,9 +165,11 @@
 		}
 
 		& .option-icon {
-			width: clamp(0.75rem, 1.5vw, 1.2rem);
-			height: clamp(0.75rem, 1.5vw, 1.2rem);
+			width: clamp(1rem, 1.75vw, 1.5rem);
+			height: clamp(1rem, 1.75vw, 1.5rem);
 			margin-right: 0.5rem;
+			margin-bottom: 0.5rem;
+			display: inline-block;
 		}
 	}
 </style>
