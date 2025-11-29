@@ -41,7 +41,7 @@
 	<section>
 		<article id="bio">
 			<div class="hero-section">
-				<AboutHero alt="svelte code" title="About Me" />
+				<AboutHero alt="svelte code" title="About Gabe" />
 			</div>
 
 			<div class="bio" aria-label="bio">
