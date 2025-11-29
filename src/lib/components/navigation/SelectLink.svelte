@@ -6,8 +6,8 @@
 	let selectedLabel = $state('Connect');
 
 	const options = [
-		{ label: 'Hire Me', value: path1, icon: '/icons/contactIcon.svg' },
-		{ label: 'Contact', value: path2, icon: '/icons/contactIcon.svg' }
+		{ label: 'Hire Me', value: path1, icon: '/icons/connect-plus.svg' },
+		{ label: 'Contact', value: path2, icon: '/icons/connect-exclamation.svg' }
 	];
 
 	function toggleDropdown() {
