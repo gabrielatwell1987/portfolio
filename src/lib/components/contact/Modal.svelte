@@ -35,7 +35,6 @@
 		}, 350);
 	}
 
-	// Handle escape key to close modal
 	function handleKeydown(event) {
 		if (event.key === 'Escape') {
 			closeModal();
@@ -47,15 +46,19 @@
 
 <button class="open-button" aria-label="Open contact information modal" onclick={openModal}>
 	<svg
+		width="800px"
+		height="800px"
+		viewBox="0 0 24 24"
+		fill="none"
 		xmlns="http://www.w3.org/2000/svg"
-		viewBox="-15 0 606 512"
-		style="width: 1.25em; height: 1.25em;"
 	>
-		<title>Open</title>
 		<path
-			d="M384 480l48 0c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224l-400 0c-11.4 0-21.9 6-27.6 15.9L48 357.1 48 96c0-8.8 7.2-16 16-16l117.5 0c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8L416 144c8.8 0 16 7.2 16 16l0 32 48 0 0-32c0-35.3-28.7-64-64-64L298.5 96c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7L64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l23.7 0L384 480z"
-			fill="var(--clr-invert)"
+			d="M12 10V13M12 16H12.01M12.0627 6.06274L11.9373 5.93726C11.5914 5.59135 11.4184 5.4184 11.2166 5.29472C11.0376 5.18506 10.8425 5.10425 10.6385 5.05526C10.4083 5 10.1637 5 9.67452 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V15.8C3 16.9201 3 17.4802 3.21799 17.908C3.40973 18.2843 3.71569 18.5903 4.09202 18.782C4.51984 19 5.07989 19 6.2 19H17.8C18.9201 19 19.4802 19 19.908 18.782C20.2843 18.5903 20.5903 18.2843 20.782 17.908C21 17.4802 21 16.9201 21 15.8V10.2C21 9.0799 21 8.51984 20.782 8.09202C20.5903 7.71569 20.2843 7.40973 19.908 7.21799C19.4802 7 18.9201 7 17.8 7H14.3255C13.8363 7 13.5917 7 13.3615 6.94474C13.1575 6.89575 12.9624 6.81494 12.7834 6.70528C12.5816 6.5816 12.4086 6.40865 12.0627 6.06274Z"
 			stroke="var(--clr-main)"
+			fill="var(--clr-invert)"
+			stroke-width="2"
+			stroke-linecap="round"
+			stroke-linejoin="round"
 		/>
 	</svg>
 </button>
@@ -77,16 +80,20 @@
 				onclick={closeModal}
 			>
 				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 27 27"
+					width="800px"
+					height="800px"
+					viewBox="0 0 24 24"
 					fill="none"
-					stroke-width="3"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					aria-hidden="true"
+					xmlns="http://www.w3.org/2000/svg"
 				>
-					<title>Close</title>
-					<path d="M6 12 L18 25 M18 12 L6 25" />
+					<path
+						d="M4.58579 4.58579C4.73329 4.43829 4.90386 4.31386 5.09202 4.21799C5.51984 4 6.0799 4 7.2 4H16.8C17.9201 4 18.4802 4 18.908 4.21799C19.0961 4.31386 19.2667 4.43829 19.4142 4.58579M4.58579 4.58579C4.43829 4.73329 4.31386 4.90386 4.21799 5.09202C4 5.51984 4 6.07989 4 7.2V16.8C4 17.9201 4 18.4802 4.21799 18.908C4.31386 19.0961 4.43829 19.2667 4.58579 19.4142M4.58579 4.58579L19.4142 19.4142M19.4142 4.58579C19.5617 4.73329 19.6861 4.90386 19.782 5.09202C20 5.51984 20 6.0799 20 7.2V16.8C20 17.9201 20 18.4802 19.782 18.908C19.6861 19.0961 19.5617 19.2667 19.4142 19.4142M19.4142 4.58579L4.58579 19.4142M4.58579 19.4142C4.73329 19.5617 4.90386 19.6861 5.09202 19.782C5.51984 20 6.07989 20 7.2 20H16.8C17.9201 20 18.4802 20 18.908 19.782C19.0961 19.6861 19.2667 19.5617 19.4142 19.4142"
+						fill="none"
+						stroke="var(--clr-main)"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/>
 				</svg>
 			</button>
 
@@ -233,6 +240,8 @@
 			& svg {
 				cursor: pointer;
 				stroke-width: calc(5px + 1vw);
+				width: clamp(1.5em, 4vw, 5em);
+				height: clamp(1.5em, 4vw, 5em);
 
 				&:focus,
 				&:focus-visible {
@@ -242,6 +251,7 @@
 
 				@media (width <= 768px) {
 					stroke-width: calc(5px + 5vw);
+					margin-bottom: 0.8rem;
 				}
 			}
 		}
@@ -281,6 +291,10 @@
 				animation: wiggle 01s ease-out infinite;
 			}
 
+			&:active {
+				scale: 0.97;
+			}
+
 			&:focus,
 			&:focus-visible {
 				outline: 1px solid var(--clr-main);
@@ -291,7 +305,6 @@
 				width: 3rem;
 				height: 3rem;
 				flex-shrink: 0;
-				stroke: var(--light-gray);
 			}
 		}
 	}
