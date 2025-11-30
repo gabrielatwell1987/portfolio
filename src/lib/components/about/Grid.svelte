@@ -30,12 +30,12 @@
 		@media (width >= 300px) {
 			display: inline-block;
 			margin: 0;
-			border-radius: var(--radius);
 			padding: 0.5rem;
 			background-color: hsla(0, 0%, 26%, 0.25);
 			backdrop-filter: blur(5px);
 			-webkit-backdrop-filter: blur(4px);
 			box-shadow: 0 2px 0 3px var(--clr-main);
+			border-radius: none;
 
 			@media (width >= 768px) {
 				box-shadow: 3px 3px 0 5px var(--clr-main);
@@ -84,6 +84,7 @@
 				margin-top: -1rem;
 				hyphens: auto;
 				letter-spacing: 0px;
+				border-radius: none;
 			}
 		}
 

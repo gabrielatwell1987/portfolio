@@ -100,7 +100,6 @@
 		text-decoration: none;
 		color: inherit;
 		font-family: inherit;
-		border-radius: var(--radius);
 
 		&:focus,
 		&:focus-visible {
@@ -159,7 +158,6 @@
 				width: 100%;
 				background-color: var(--surface-2);
 				background-image: var(--gradient);
-				border-radius: var(--radius);
 				text-decoration: none;
 				display: flex;
 				flex-direction: column;
@@ -174,7 +172,7 @@
 
 				&.left {
 					@media (width >= 768px) {
-						box-shadow: -3px 3px 0 5px var(--clr-main);
+						box-shadow: 2px 3px 0 5px var(--clr-main);
 					}
 
 					@media (width <= 768px) {
@@ -184,7 +182,7 @@
 
 				&.right {
 					@media (width >= 768px) {
-						box-shadow: 3px 3px 0 5px var(--clr-main);
+						box-shadow: 2px 3px 0 5px var(--clr-main);
 					}
 
 					@media (width <= 768px) {
