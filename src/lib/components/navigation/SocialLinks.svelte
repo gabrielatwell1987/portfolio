@@ -1,6 +1,6 @@
-<nav class="dev-links" aria-label="Social media links">
+<nav class="footer" aria-label="Social media links">
 	<a
-		class="size yellow"
+		class="social-link yellow"
 		href="https://www.github.com/gabrielatwell1987/portfolio"
 		target="_blank"
 		aria-label="Visit Gabriel's GitHub profile (opens in new tab)"
@@ -14,7 +14,7 @@
 	</a>
 
 	<a
-		class="size"
+		class="social-link"
 		href="https://codepen.io/gabrielatwell"
 		target="_blank"
 		aria-label="Visit Gabriel's CodePen profile (opens in new tab)"
@@ -28,7 +28,7 @@
 	</a>
 
 	<a
-		class="size"
+		class="social-link"
 		href="https://www.linkedin.com/in/gabrielatwell/"
 		target="_blank"
 		aria-label="linkedin link"
@@ -43,7 +43,7 @@
 </nav>
 
 <style>
-	.dev-links {
+	.footer {
 		margin-top: 6rem;
 		display: flex;
 		justify-content: space-evenly;
@@ -59,7 +59,7 @@
 		}
 	}
 
-	.size {
+	.social-link {
 		font-size: clamp(var(--h1), 4vw, var(--xxl));
 		font-weight: 900;
 		transition:
