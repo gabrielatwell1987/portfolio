@@ -23,7 +23,7 @@
 					<a href="/contact" class="bento-link" aria-label="Navigate to contact page">
 						<div class="scale">
 							<Image
-								src="/icons/contactIcon.svg"
+								src="/icons/speech-bubble.svg"
 								alt="contact icon"
 								width="350"
 								aspectRatio="1/1"
@@ -42,7 +42,7 @@
 						<a href="/learn" class="bento-link" aria-label="Navigate to learn page">
 							<div class="scale">
 								<Image
-									src="/icons/learnIcon.svg"
+									src="/icons/learn-icon.svg"
 									alt="learn icon"
 									width="350"
 									aspectRatio="1/1"
