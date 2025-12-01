@@ -90,7 +90,7 @@
 			width: fit-content;
 			font-family: var(--bronova);
 			font-size: clamp(var(--h6), 1.5vw, var(--h4));
-			font-weight: 500;
+			font-weight: 600;
 			margin: 0;
 			padding: 0;
 			border: none;
@@ -103,10 +103,10 @@
 			&:active {
 				scale: 0.97;
 			}
-		}
 
-		& button .pwa-title {
-			view-transition-name: pwa-title;
+			& .pwa-title {
+				view-transition-name: pwa-title;
+			}
 		}
 
 		&:has([popover]:popover-open) button .pwa-title {

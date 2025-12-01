@@ -118,7 +118,7 @@
 			width: fit-content;
 			font-family: var(--bronova);
 			font-size: clamp(var(--h6), 1.5vw, var(--h4));
-			font-weight: 500;
+			font-weight: 600;
 			margin: 0;
 			padding: 0;
 			border: none;
