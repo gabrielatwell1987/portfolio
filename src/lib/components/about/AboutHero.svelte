@@ -133,14 +133,14 @@
 			color: var(--clr-invert);
 			text-shadow:
 				0 0 1px var(--clr-invert),
-				-2px -2px 0 var(--clr-main),
-				2px -2px 0 var(--clr-main),
-				-2px 2px 0 var(--clr-main),
-				2px 2px 0 var(--clr-main),
-				-2px 0 0 var(--clr-main),
-				2px 0 0 var(--clr-main),
-				0 -2px 0 var(--clr-main),
-				0 2px 0 var(--clr-main);
+				-5px -5px 0 var(--clr-main),
+				5px -5px 0 var(--clr-main),
+				-5px 5px 0 var(--clr-main),
+				5px 5px 0 var(--clr-main),
+				-5px 0 0 var(--clr-main),
+				5px 0 0 var(--clr-main),
+				0 -5px 0 var(--clr-main),
+				0 5px 0 var(--clr-main);
 
 			@media (width >= 768px) {
 				:global(& .char) {
@@ -148,17 +148,6 @@
 					transform-style: preserve-3d;
 					perspective: 1000px;
 				}
-
-				text-shadow:
-					0 0 1px var(--clr-invert),
-					-5px -5px 0 var(--clr-main),
-					5px -5px 0 var(--clr-main),
-					-5px 5px 0 var(--clr-main),
-					5px 5px 0 var(--clr-main),
-					-5px 0 0 var(--clr-main),
-					5px 0 0 var(--clr-main),
-					0 -5px 0 var(--clr-main),
-					0 5px 0 var(--clr-main);
 			}
 
 			@media (width <= 1300px) {
@@ -174,14 +163,14 @@
 				padding-bottom: 0;
 				text-shadow:
 					0 0 1px var(--clr-invert),
-					-1px -1px 0 var(--clr-main),
-					1px -1px 0 var(--clr-main),
-					-1px 1px 0 var(--clr-main),
-					1px 1px 0 var(--clr-main),
-					-1px 0 0 var(--clr-main),
-					1px 0 0 var(--clr-main),
-					0 -1px 0 var(--clr-main),
-					0 1px 0 var(--clr-main);
+					-2px -2px 0 var(--clr-main),
+					2px -2px 0 var(--clr-main),
+					-2px 2px 0 var(--clr-main),
+					2px 2px 0 var(--clr-main),
+					-2px 0 0 var(--clr-main),
+					2px 0 0 var(--clr-main),
+					0 -2px 0 var(--clr-main),
+					0 2px 0 var(--clr-main);
 			}
 		}
 	}
