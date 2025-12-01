@@ -19,7 +19,7 @@
 	<article>
 		<section>
 			<div class="bento-grid">
-				<div class="item left">
+				<div class="bento-item left">
 					<a href="/contact" class="bento-link" aria-label="Navigate to contact page">
 						<div class="scale">
 							<Image
@@ -37,7 +37,7 @@
 					</a>
 				</div>
 
-				<div class="item right">
+				<div class="bento-item right">
 					<div class="center">
 						<a href="/learn" class="bento-link" aria-label="Navigate to learn page">
 							<div class="scale">
@@ -57,7 +57,7 @@
 					</div>
 				</div>
 
-				<div class="item left">
+				<div class="bento-item left">
 					<a href="/projects" class="bento-link" aria-label="Navigate to projects page">
 						<h2>projects</h2>
 
@@ -118,7 +118,6 @@
 		margin-bottom: 2rem;
 		padding-inline: var(--space);
 		background-color: transparent;
-		box-shadow: none;
 
 		& section {
 			margin-inline: auto;
@@ -154,7 +153,7 @@
 				margin-top: 5em;
 			}
 
-			& .item {
+			& .bento-item {
 				width: 100%;
 				background-color: var(--surface-2);
 				background-image: var(--gradient);
@@ -172,21 +171,21 @@
 
 				&.left {
 					@media (width >= 768px) {
-						box-shadow: 2px 3px 0 5px var(--clr-main);
+						box-shadow: 2px 3px 0 4px var(--clr-main);
 					}
 
 					@media (width <= 768px) {
-						box-shadow: 0 0 0 5px var(--clr-main);
+						box-shadow: 0 0 0 3px var(--clr-main);
 					}
 				}
 
 				&.right {
 					@media (width >= 768px) {
-						box-shadow: 2px 3px 0 5px var(--clr-main);
+						box-shadow: -2px 3px 0 4px var(--clr-main);
 					}
 
 					@media (width <= 768px) {
-						box-shadow: 0 0 0 5px var(--clr-main);
+						box-shadow: 0 0 0 3px var(--clr-main);
 					}
 				}
 

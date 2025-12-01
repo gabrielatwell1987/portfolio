@@ -34,12 +34,7 @@
 			background-color: hsla(0, 0%, 26%, 0.25);
 			backdrop-filter: blur(5px);
 			-webkit-backdrop-filter: blur(4px);
-			box-shadow: 0 2px 0 3px var(--clr-main);
-			border-radius: none;
-
-			@media (width >= 768px) {
-				box-shadow: 3px 3px 0 5px var(--clr-main);
-			}
+			border-radius: 0;
 
 			.title {
 				font-family: var(--ultra);
@@ -84,7 +79,6 @@
 				margin-top: -1rem;
 				hyphens: auto;
 				letter-spacing: 0px;
-				border-radius: none;
 			}
 		}
 
@@ -96,13 +90,13 @@
 
 	.inline.left {
 		@media (width >= 768px) {
-			box-shadow: -2px 2px 0 5px var(--clr-main);
+			box-shadow: -2px 2px 0 3px var(--clr-main);
 		}
 	}
 
 	.inline.right {
 		@media (width >= 768px) {
-			box-shadow: 2px 2px 0 5px var(--clr-main);
+			box-shadow: 2px 2px 0 3px var(--clr-main);
 		}
 	}
 
