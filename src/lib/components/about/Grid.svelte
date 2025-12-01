@@ -46,27 +46,27 @@
 				color: var(--clr-invert);
 				text-shadow:
 					0 0 1px var(--clr-invert),
-					-2px -2px 0 var(--clr-main),
-					2px -2px 0 var(--clr-main),
-					-2px 2px 0 var(--clr-main),
-					2px 2px 0 var(--clr-main),
-					-2px 0 0 var(--clr-main),
-					2px 0 0 var(--clr-main),
-					0 -2px 0 var(--clr-main),
-					0 2px 0 var(--clr-main);
+					-3px -3px 0 var(--clr-main),
+					3px -3px 0 var(--clr-main),
+					-3px 3px 0 var(--clr-main),
+					3px 3px 0 var(--clr-main),
+					-3px 0 0 var(--clr-main),
+					3px 0 0 var(--clr-main),
+					0 -3px 0 var(--clr-main),
+					0 3px 0 var(--clr-main);
 
 				@media (width <= 768px) {
 					font-weight: 600;
 					text-shadow:
 						0 0 1px var(--clr-invert),
-						-1px -1px 0 var(--clr-main),
-						1px -1px 0 var(--clr-main),
-						-1px 1px 0 var(--clr-main),
-						1px 1px 0 var(--clr-main),
-						-1px 0 0 var(--clr-main),
-						1px 0 0 var(--clr-main),
-						0 -1px 0 var(--clr-main),
-						0 1px 0 var(--clr-main);
+						-2px -2px 0 var(--clr-main),
+						2px -2px 0 var(--clr-main),
+						-2px 2px 0 var(--clr-main),
+						2px 2px 0 var(--clr-main),
+						-2px 0 0 var(--clr-main),
+						2px 0 0 var(--clr-main),
+						0 -2px 0 var(--clr-main),
+						0 2px 0 var(--clr-main);
 				}
 			}
 
