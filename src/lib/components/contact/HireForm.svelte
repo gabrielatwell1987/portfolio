@@ -203,7 +203,7 @@
 			display: flex;
 			flex-direction: column;
 
-			select {
+			& select {
 				appearance: none;
 				background-color: transparent;
 
@@ -240,11 +240,25 @@
 					animation: wiggle 0.5s ease-out;
 				}
 
-				option {
+				& option {
 					background-color: var(--clr-invert);
 					color: var(--clr-main);
 					padding: 0.5rem;
 				}
+			}
+
+			&:has(input:user-valid) .label-text,
+			&:has(select:user-valid) .label-text,
+			&:has(textarea:user-valid) .label-text {
+				color: var(--success);
+				font-weight: 700;
+			}
+
+			&:has(input:user-invalid:not(:placeholder-shown)) .label-text,
+			&:has(select:user-invalid) .label-text,
+			&:has(textarea:user-invalid:not(:placeholder-shown)) .label-text {
+				color: var(--fail);
+				font-weight: 700;
 			}
 		}
 	}
@@ -258,20 +272,6 @@
 		font-size: clamp(var(--sm), 1vw, var(--h4));
 		color: var(--clr-blue);
 		transition: color 0.1s ease;
-	}
-
-	.form-group:has(input:user-valid) .label-text,
-	.form-group:has(select:user-valid) .label-text,
-	.form-group:has(textarea:user-valid) .label-text {
-		color: var(--success);
-		font-weight: 700;
-	}
-
-	.form-group:has(input:user-invalid:not(:placeholder-shown)) .label-text,
-	.form-group:has(select:user-invalid) .label-text,
-	.form-group:has(textarea:user-invalid:not(:placeholder-shown)) .label-text {
-		color: var(--fail);
-		font-weight: 700;
 	}
 
 	.tac {

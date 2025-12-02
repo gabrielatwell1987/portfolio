@@ -11,7 +11,7 @@
 	let submitStatus = $state('');
 </script>
 
-<div class="icons">
+<div class="contact-icons">
 	<div class="popover">
 		<Popup title="" text="Please provide a working email so I can message you back!" />
 	</div>
@@ -101,7 +101,7 @@
 		margin-bottom: 2.5em;
 	}
 
-	.icons {
+	.contact-icons {
 		display: grid;
 		place-content: center;
 		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -114,7 +114,6 @@
 		& .popover {
 			display: flex;
 			justify-content: space-evenly;
-			/* margin-bottom: 15%; */
 		}
 	}
 
