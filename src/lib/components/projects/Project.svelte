@@ -3,20 +3,20 @@
 	let { title, img, url, description, summary, index = 0 } = $props();
 </script>
 
-<section class="content" style="--stagger-delay: {index * 1.25}s;">
+<section class="project-content" style="--stagger-delay: {index * 1.25}s;">
 	<a href={url} target="_blank" class="title-link">
-		<h3 class="title">{title}</h3>
+		<h3 class="project-title">{title}</h3>
 	</a>
 
 	<a
 		href={url}
 		target="_blank"
 		rel="noopener noreferrer"
-		class="link"
+		class="project-link"
 		aria-label="View {title} project - made with {description}"
 	>
 		<img
-			class="img"
+			class="project-image"
 			src={img}
 			alt="Screenshot of {title} project"
 			width="400px"
@@ -27,7 +27,7 @@
 		<span class="desc-banner" aria-hidden="true">made with {description}</span>
 	</a>
 
-	<p class="summary">{summary}</p>
+	<p class="project-summary">{summary}</p>
 </section>
 
 <style>
@@ -35,7 +35,7 @@
 		--100: 100%;
 	}
 
-	.content {
+	.project-content {
 		margin-bottom: 3rem;
 		opacity: 0;
 		animation: fadeIn 0.8s ease-out forwards;
@@ -43,7 +43,7 @@
 		will-change: opacity, transform;
 		pointer-events: none;
 
-		& .summary {
+		& .project-summary {
 			max-width: 95%;
 			margin-inline: auto;
 			font-size: clamp(var(--sm), 1.15vw, var(--h5));
@@ -60,7 +60,7 @@
 			text-decoration: none;
 		}
 
-		& .link {
+		& .project-link {
 			border: none;
 			padding: 1rem;
 			display: flex;
@@ -106,7 +106,7 @@
 				background: transparent;
 			}
 
-			& .img {
+			& .project-image {
 				border-radius: var(--radius);
 				max-inline-size: var(--100);
 				transition: scale 0.25s ease-out;
@@ -146,7 +146,7 @@
 			}
 		}
 
-		& .title {
+		& .project-title {
 			font-family: var(--ultra);
 			font-size: clamp(var(--h5), 2.75vw, var(--h3));
 			font-weight: 600;
@@ -159,14 +159,27 @@
 			color: var(--clr-invert);
 			text-shadow:
 				0 0 1px var(--clr-invert),
-				-2px -2px 0 var(--clr-main),
-				2px -2px 0 var(--clr-main),
-				-2px 2px 0 var(--clr-main),
-				2px 2px 0 var(--clr-main),
-				-2px 0 0 var(--clr-main),
-				2px 0 0 var(--clr-main),
-				0 -2px 0 var(--clr-main),
-				0 2px 0 var(--clr-main);
+				-3px -3px 0 var(--clr-main),
+				3px -3px 0 var(--clr-main),
+				-3px 3px 0 var(--clr-main),
+				3px 3px 0 var(--clr-main),
+				-3px 0 0 var(--clr-main),
+				3px 0 0 var(--clr-main),
+				0 -3px 0 var(--clr-main),
+				0 3px 0 var(--clr-main);
+
+			@media (width <= 768px) {
+				text-shadow:
+					0 0 1px var(--clr-invert),
+					-2px -2px 0 var(--clr-main),
+					2px -2px 0 var(--clr-main),
+					-2px 2px 0 var(--clr-main),
+					2px 2px 0 var(--clr-main),
+					-2px 0 0 var(--clr-main),
+					2px 0 0 var(--clr-main),
+					0 -2px 0 var(--clr-main),
+					0 2px 0 var(--clr-main);
+			}
 		}
 	}
 
