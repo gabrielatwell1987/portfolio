@@ -2,7 +2,7 @@
 	import * as THREE from 'three';
 
 	$effect(() => {
-		// Helper function to convert CSS colors to RGB
+		// Helper function to convert CSS colors to RGB (strip alpha if present)
 		const convertToRGB = (colorValue) => {
 			if (!colorValue) return null;
 			try {
@@ -26,11 +26,30 @@
 					return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
 				}
 
+				// Strip alpha from rgba to rgb for THREE.js compatibility
+				const rgbaMatch = computedColor.match(/rgba\((\d+),\s*(\d+),\s*(\d+),\s*[\d.]+\)/);
+				if (rgbaMatch) {
+					return `rgb(${rgbaMatch[1]}, ${rgbaMatch[2]}, ${rgbaMatch[3]})`;
+				}
+
 				return computedColor;
 			} catch (error) {
 				console.error('Error converting color:', colorValue, error);
 				return null;
 			}
+		};
+
+		// Helper function to check if a color is light based on luminance
+		const isLightColor = (color) => {
+			const match = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+			if (match) {
+				const r = parseInt(match[1]);
+				const g = parseInt(match[2]);
+				const b = parseInt(match[3]);
+				const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+				return luminance > 0.5; // Threshold for light/dark
+			}
+			return false;
 		};
 
 		// Get CSS custom properties from body element (where ThemeToggle sets them)
@@ -40,18 +59,9 @@
 		const accentColorRaw = bodyStyles.getPropertyValue('--clr-pale').trim();
 
 		// Convert colors to RGB format
-		const primaryColor = convertToRGB(primaryColorRaw) || '#ffffff';
-		const secondaryColor = convertToRGB(secondaryColorRaw) || '#000000';
-		const accentColor = convertToRGB(accentColorRaw) || '#ffff00';
-
-		console.log('Initial color conversion:', {
-			primaryColorRaw,
-			primaryColor,
-			secondaryColorRaw,
-			secondaryColor,
-			accentColorRaw,
-			accentColor
-		});
+		const primaryColor = convertToRGB(primaryColorRaw);
+		const secondaryColor = convertToRGB(secondaryColorRaw);
+		const accentColor = convertToRGB(accentColorRaw);
 
 		// Texture Loader
 		const textureLoader = new THREE.TextureLoader();
@@ -98,74 +108,46 @@
 			const newSecondaryColor = bodyStyles.getPropertyValue('--clr-inverted').trim();
 			const newAccentColor = bodyStyles.getPropertyValue('--clr-pale').trim();
 
-			console.log('Raw CSS values:', { newPrimaryColor, newSecondaryColor, newAccentColor });
-			console.log('Body classes:', document.body.classList.toString());
-
 			// Convert oklab/complex colors to RGB
-			const convertToRGB = (colorValue) => {
-				if (!colorValue) return null;
-				try {
-					const tempDiv = document.createElement('div');
-					tempDiv.style.backgroundColor = colorValue; // Use background color instead
-					document.body.appendChild(tempDiv);
-					const computedStyle = getComputedStyle(tempDiv);
-					const computedColor = computedStyle.backgroundColor;
-					document.body.removeChild(tempDiv);
-
-					// If still not RGB, try with a canvas for better conversion
-					if (computedColor.startsWith('oklab') || computedColor === colorValue) {
-						const canvas = document.createElement('canvas');
-						canvas.width = 1;
-						canvas.height = 1;
-						const ctx = canvas.getContext('2d');
-						ctx.fillStyle = colorValue;
-						ctx.fillRect(0, 0, 1, 1);
-						const imageData = ctx.getImageData(0, 0, 1, 1);
-						const rgb = imageData.data;
-						return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-					}
-
-					return computedColor;
-				} catch (error) {
-					console.error('Error converting color:', colorValue, error);
-					return null;
-				}
-			};
-
-			// Use CSS variables with conversion - with fallbacks
 			let primaryConverted = null;
 			let accentConverted = null;
 			let secondaryConverted = null;
 
 			if (newPrimaryColor && newPrimaryColor.length > 0) {
 				primaryConverted = convertToRGB(newPrimaryColor);
-				console.log('Converting primary:', newPrimaryColor, '->', primaryConverted);
 			}
 			if (newAccentColor && newAccentColor.length > 0) {
 				accentConverted = convertToRGB(newAccentColor);
-				console.log('Converting accent:', newAccentColor, '->', accentConverted);
 			}
 			if (newSecondaryColor && newSecondaryColor.length > 0) {
 				secondaryConverted = convertToRGB(newSecondaryColor);
-				console.log('Converting secondary:', newSecondaryColor, '->', secondaryConverted);
 			}
+
+			// Detect theme based on resolved primary color luminance
+			const isLight = primaryConverted ? isLightColor(primaryConverted) : false;
 
 			// Apply colors with fallbacks
-			if (primaryConverted) {
-				material.color.set(primaryConverted);
+			if (isLight) {
+				if (secondaryConverted) {
+					material.color.set('#707070');
+				} else {
+					material.color.set('#707070');
+				}
 			} else {
-				// Fallback based on theme
-				const isLight = document.body.classList.contains('light');
-				material.color.set(isLight ? '#333333' : '#ffffff');
+				if (primaryConverted) {
+					material.color.set('#ffffff');
+				} else {
+					material.color.set('#ffffff');
+				}
 			}
 
+			// Keep --clr-pale for stars, with fallbacks
 			if (accentConverted) {
 				particlesMaterial.color.set(accentConverted);
 			} else if (secondaryConverted) {
 				particlesMaterial.color.set(secondaryConverted);
 			} else {
 				// Fallback based on theme
-				const isLight = document.body.classList.contains('light');
 				particlesMaterial.color.set(isLight ? '#b8860b' : '#ffd700');
 			}
 		}
@@ -181,7 +163,6 @@
 		document.addEventListener('theme-change', updateColors);
 
 		// Test initial color values
-		console.log('Initial colors check:');
 		updateColors();
 
 		// Mesh

@@ -34,7 +34,6 @@
 	.hero-container {
 		position: relative;
 		width: 100vw;
-		height: 100vh;
 		min-height: 100vh;
 		overflow: hidden;
 		display: flex;
@@ -43,7 +42,7 @@
 		padding-top: 2rem;
 		background: transparent;
 		contain: layout;
-		background: rgba(0, 0, 0, 0.95);
+		background: var(--clr-invert);
 	}
 
 	.hero-content {
@@ -59,7 +58,7 @@
 		padding: 2rem;
 		min-height: 60vh;
 		backdrop-filter: blur(1px);
-		background: rgba(0, 0, 0, 0.1);
+		/* background: rgba(0, 0, 0, 0.1); */
 		border-radius: 12px;
 
 		@media (width <= 768px) {
