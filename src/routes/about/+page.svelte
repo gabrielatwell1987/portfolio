@@ -38,32 +38,32 @@
 <Preloader />
 
 <div class="about-me" aria-label="bio">
-	<section>
+	<section class="about-section">
 		<article id="bio">
 			<div class="hero-section">
 				<AboutHero alt="svelte code" title="About Gabe" />
 			</div>
 
-			<div class="bio" aria-label="bio">
+			<div class="biography" aria-label="bio">
 				{#each bio as paragraph}
-					<p class="text indent">{@html paragraph.text}</p>
+					<p class="bio-paragraph indent">{@html paragraph.text}</p>
 				{/each}
 
-				<article class="hero text-hero text__w" aria-label="bio">
-					<p class="text content_width">
+				<article class="hero-text" aria-label="bio" data-hero-mobile>
+					<p class="bio-paragraph" data-content-width>
 						Here is another hero section that I created but I like the current hero section that
 						shows when you first come to the website. This hero section was built with three.js..
 						Check out it out!
 					</p>
 
-					<div class="hero">
-						<div class="icons">
+					<div class="hero-text">
+						<div class="hero-button">
 							<Button href="/about/hero" title="Hero" />
 						</div>
 					</div>
 				</article>
 
-				<p class="text indent">
+				<p class="bio-paragraph indent">
 					Please note: This is a <span>pwa</span> (progressive web app) so you can install it on your
 					device if you want to! This makes your website able to be used on any device.. mobile, tablet,
 					laptop, and desktop. It's like having a mobile app that is not made with native technologies!
@@ -71,7 +71,7 @@
 					site because your device downloads and caches the whole site!
 				</p>
 
-				<p class="flex-item">
+				<p data-flex-container>
 					<PWAInstall
 						title="How to install the PWA"
 						popoverTitle="How to install the PWA:"
@@ -125,7 +125,7 @@
 			margin-top: clamp(-9.75em, -12vw, -3em);
 		}
 
-		& section {
+		& .about-section {
 			display: block;
 			margin-inline: auto;
 			text-align: center;
@@ -153,7 +153,7 @@
 				}
 			}
 
-			& .bio {
+			& .biography {
 				color: var(--white);
 				position: relative;
 
@@ -161,7 +161,7 @@
 					margin-bottom: -5rem;
 				}
 
-				& .icons {
+				& .hero-button {
 					display: flex;
 					justify-content: center;
 					align-items: center;
@@ -183,7 +183,7 @@
 					text-indent: 2em;
 				}
 
-				& .text {
+				& .bio-paragraph {
 					max-inline-size: var(--100);
 					margin-inline: auto;
 					font-size: clamp(var(--h6), 1.5vw, var(--h4));
@@ -203,24 +203,20 @@
 					}
 				}
 
-				& .text-hero {
-					font-size: var(--h5);
-				}
-
-				& .content_width {
+				& [data-content-width] {
 					@media screen and (width >= 990px) {
 						margin-bottom: -2rem;
 					}
 				}
 
-				& .text__w {
+				& [data-hero-mobile] {
 					@media screen and (width >= 990px) {
 						width: 75%;
 						margin: 0 auto;
 					}
 				}
 
-				& .flex-item {
+				& [data-flex-container] {
 					display: flex;
 					justify-content: flex-start;
 					gap: 0.75em;
@@ -251,10 +247,11 @@
 			color: var(--clr-main);
 		}
 
-		& .hero {
+		& .hero-text {
 			width: var(--100);
 			margin-inline: auto;
 			color: var(--clr-main);
+			font-size: var(--h5);
 
 			@media (width >= 600px) {
 				width: 90%;

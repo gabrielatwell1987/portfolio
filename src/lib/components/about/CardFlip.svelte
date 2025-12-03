@@ -16,11 +16,11 @@
 	}
 </script>
 
-<div class="flip">
+<div class="flip-wrapper">
 	<div class="card-container">
 		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 		<section
-			class="card"
+			class="flip-card"
 			class:flipped={isFlipped}
 			onclick={toggleFlip}
 			onkeydown={handleKeydown}
@@ -38,7 +38,7 @@
 </div>
 
 <style>
-	.flip {
+	.flip-wrapper {
 		margin-inline: auto;
 		display: flex;
 		align-items: flex-start;
@@ -57,12 +57,12 @@
 			}
 
 			@media (hover: hover) {
-				&:hover .card {
+				&:hover .flip-card {
 					transform: rotateY(180deg);
 				}
 			}
 
-			& .card {
+			& .flip-card {
 				position: relative;
 				width: 100%;
 				height: 100%;

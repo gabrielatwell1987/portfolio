@@ -15,13 +15,13 @@
 	});
 </script>
 
-<div class="bento">
-	<article>
+<div class="bento-wrapper">
+	<article data-bento-article>
 		<section>
 			<div class="bento-grid">
-				<div class="bento-item left">
+				<div class="bento-item" data-position-left>
 					<a href="/contact" class="bento-link" aria-label="Navigate to contact page">
-						<div class="scale">
+						<div class="bento-icons">
 							<Image
 								src="/icons/speech-bubble.svg"
 								alt="contact icon"
@@ -37,10 +37,10 @@
 					</a>
 				</div>
 
-				<div class="bento-item right">
-					<div class="center">
+				<div class="bento-item" data-position-right>
+					<div data-position-center>
 						<a href="/learn" class="bento-link" aria-label="Navigate to learn page">
-							<div class="scale">
+							<div class="bento-icons">
 								<Image
 									src="/icons/learn-icon.svg"
 									alt="learn icon"
@@ -57,7 +57,7 @@
 					</div>
 				</div>
 
-				<div class="bento-item left">
+				<div class="bento-item" data-position-left>
 					<a href="/projects" class="bento-link" aria-label="Navigate to projects page">
 						<h2>projects</h2>
 
@@ -87,207 +87,203 @@
 		box-sizing: border-box;
 	}
 
-	.bento-link {
-		padding: var(--space);
-		margin: 0;
-		cursor: pointer;
-		width: fit-content;
-		height: auto;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: flex-start;
-		text-decoration: none;
-		color: inherit;
-		font-family: inherit;
+	.bento-wrapper {
+		position: relative;
+		margin-top: 2rem;
 
-		&:focus,
-		&:focus-visible {
-			outline: 2px solid var(--clr-link);
-			outline-offset: 2px;
+		@media (width >= 768px) and (width < 1024px) {
+			margin-top: 3rem;
 		}
 
-		&:active {
-			scale: 0.97;
-		}
-	}
-
-	article {
-		line-height: 1.4;
-		background-color: var(--surface-1);
-		margin-bottom: 2rem;
-		padding-inline: var(--space);
-		background-color: transparent;
-
-		& section {
-			margin-inline: auto;
-			width: min(1000px, 100%);
+		@media (width >= 1024px) and (width < 2000px) {
+			margin-top: -20em;
 		}
 
-		& .bento-grid {
-			display: grid;
-			gap: var(--space);
-			grid-template-columns: 1fr;
-			grid-template-areas:
-				'item-one'
-				'item-two'
-				'item-three';
+		& .bento-link {
+			padding: var(--space);
+			margin: 0;
+			cursor: pointer;
+			width: fit-content;
+			height: auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			text-decoration: none;
+			color: inherit;
+			font-family: inherit;
+
+			&:focus,
+			&:focus-visible {
+				outline: 2px solid var(--clr-link);
+				outline-offset: 2px;
+			}
+
+			&:active {
+				scale: 0.97;
+			}
+		}
+
+		& article[data-bento-article] {
+			line-height: 1.4;
+			background-color: var(--surface-1);
 			margin-bottom: 2rem;
-			position: relative;
+			padding-inline: var(--space);
+			background-color: transparent;
 
-			@media (width >= 768px) {
-				grid-template-columns: repeat(2, 1fr);
+			& section {
+				margin-inline: auto;
+				width: min(1000px, 100%);
+			}
+
+			& .bento-grid {
+				display: grid;
+				gap: var(--space);
+				grid-template-columns: 1fr;
 				grid-template-areas:
-					'item-one item-two'
-					'item-three item-three';
-			}
+					'item-one'
+					'item-two'
+					'item-three';
+				margin-bottom: 2rem;
+				position: relative;
 
-			@media (width >= 50rem) {
-				grid-template-columns: repeat(3, 1fr);
-				grid-template-areas:
-					'item-one item-one item-two'
-					'item-three item-three item-two';
-			}
-
-			@media (width <= 500px) {
-				margin-top: 5em;
-			}
-
-			& .bento-item {
-				width: 100%;
-				background-color: var(--surface-2);
-				background-image: var(--gradient);
-				text-decoration: none;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				padding-bottom: 1em;
-				transition:
-					opacity 1s ease-out,
-					border 1s ease-out,
-					box-shadow 1s ease-out,
-					transform 0.25s ease-out;
-
-				&.left {
-					@media (width >= 768px) {
-						box-shadow: 2px 3px 0 4px var(--clr-main);
-					}
-
-					@media (width <= 768px) {
-						box-shadow: 0 0 0 3px var(--clr-main);
-					}
+				@media (width >= 768px) {
+					grid-template-columns: repeat(2, 1fr);
+					grid-template-areas:
+						'item-one item-two'
+						'item-three item-three';
 				}
 
-				&.right {
-					@media (width >= 768px) {
-						box-shadow: -2px 3px 0 4px var(--clr-main);
-					}
-
-					@media (width <= 768px) {
-						box-shadow: 0 0 0 3px var(--clr-main);
-					}
+				@media (width >= 50rem) {
+					grid-template-columns: repeat(3, 1fr);
+					grid-template-areas:
+						'item-one item-one item-two'
+						'item-three item-three item-two';
 				}
 
-				& .scale {
-					scale: 0.6;
+				@media (width <= 500px) {
+					margin-top: 5em;
 				}
 
-				& .center {
+				& .bento-item {
+					width: 100%;
+					background-color: var(--surface-2);
+					background-image: var(--gradient);
+					text-decoration: none;
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
 					align-items: center;
-					width: 100%;
-				}
-
-				& h2 {
-					font-family: var(--bronova-bold);
-					font-size: clamp(var(--h5), 3vw, var(--h3));
-					font-weight: 900;
-					letter-spacing: -1px;
-					margin-bottom: 1rem;
-					text-transform: uppercase;
-					transition: border-bottom 0.5s ease;
-					width: fit-content;
-					margin-inline: auto;
-					pointer-events: none;
-					color: var(--clr-main);
-
-					&:hover {
-						text-decoration: underline;
-						text-underline-offset: 0.5rem;
-					}
-
-					&:nth-child(2) {
-						margin-top: 0.5em;
-					}
-				}
-
-				& p {
-					font-family: var(--bronova);
-					font-size: clamp(var(--sm), 1.25vw, var(--h6));
-					font-weight: 300;
-					color: var(--clr-main);
-					text-align: center;
-					margin-bottom: 0;
-					letter-spacing: 0px;
-					pointer-events: none;
-
-					&:nth-child(2) {
-						line-height: 1.5;
-					}
-				}
-
-				&:hover {
-					transform: scale(0.98);
-				}
-
-				&:not(:hover) {
+					padding-bottom: 1em;
 					transition:
 						opacity 1s ease-out,
 						border 1s ease-out,
 						box-shadow 1s ease-out,
 						transform 0.25s ease-out;
-				}
 
-				&:nth-child(1) {
-					grid-area: item-one;
-				}
+					&[data-position-left] {
+						@media (width >= 768px) {
+							box-shadow: 2px 3px 0 4px var(--clr-main);
+						}
 
-				&:nth-child(2) {
-					grid-area: item-two;
-				}
+						@media (width <= 768px) {
+							box-shadow: 0 0 0 3px var(--clr-main);
+						}
+					}
 
-				&:nth-child(3) {
-					grid-area: item-three;
+					&[data-position-right] {
+						@media (width >= 768px) {
+							box-shadow: -2px 3px 0 4px var(--clr-main);
+						}
+
+						@media (width <= 768px) {
+							box-shadow: 0 0 0 3px var(--clr-main);
+						}
+					}
+
+					& .bento-icons {
+						scale: 0.6;
+					}
+
+					& [data-position-center] {
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+						width: 100%;
+					}
+
+					& h2 {
+						font-family: var(--bronova-bold);
+						font-size: clamp(var(--h5), 3vw, var(--h3));
+						font-weight: 900;
+						letter-spacing: -1px;
+						margin-bottom: 1rem;
+						text-transform: uppercase;
+						transition: border-bottom 0.5s ease;
+						width: fit-content;
+						margin-inline: auto;
+						pointer-events: none;
+						color: var(--clr-main);
+
+						&:hover {
+							text-decoration: underline;
+							text-underline-offset: 0.5rem;
+						}
+
+						&:nth-child(2) {
+							margin-top: 0.5em;
+						}
+					}
+
+					& p {
+						font-family: var(--bronova);
+						font-size: clamp(var(--sm), 1.25vw, var(--h6));
+						font-weight: 300;
+						color: var(--clr-main);
+						text-align: center;
+						margin-bottom: 0;
+						letter-spacing: 0px;
+						pointer-events: none;
+
+						&:nth-child(2) {
+							line-height: 1.5;
+						}
+					}
+
+					&:hover {
+						transform: scale(0.98);
+					}
+
+					&:not(:hover) {
+						transition:
+							opacity 1s ease-out,
+							border 1s ease-out,
+							box-shadow 1s ease-out,
+							transform 0.25s ease-out;
+					}
+
+					&:nth-child(1) {
+						grid-area: item-one;
+					}
+
+					&:nth-child(2) {
+						grid-area: item-two;
+					}
+
+					&:nth-child(3) {
+						grid-area: item-three;
+					}
+
+					&:last-child {
+						margin-bottom: 2.3rem;
+					}
 				}
 
 				&:last-child {
-					margin-bottom: 2.3rem;
+					margin-bottom: 11%;
 				}
 			}
-
-			&:last-child {
-				margin-bottom: 11%;
-			}
-		}
-	}
-
-	.bento {
-		position: relative;
-		margin-top: 2rem;
-	}
-
-	@media (width >= 768px) and (width < 1024px) {
-		.bento {
-			margin-top: 3rem;
-		}
-	}
-
-	@media (width >= 1024px) and (width < 2000px) {
-		.bento {
-			margin-top: -20em;
 		}
 	}
 </style>

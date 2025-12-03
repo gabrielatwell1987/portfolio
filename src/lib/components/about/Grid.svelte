@@ -3,21 +3,21 @@
 	let { leftTitle, rightTitle } = $props();
 </script>
 
-<section class="grid" aria-label="bio">
-	<article class="inline right">
-		<h2 class="title titleLeft">{leftTitle}</h2>
+<section class="grid" data-grid-wrapper aria-label="bio">
+	<article class="grid-card right">
+		<h2 class="card-title" data-title-left>{leftTitle}</h2>
 
-		<p class="right">
+		<p data-description-right>
 			The path that Gabe has chosen is the frontend path. One of his main interests is animations,
 			especially animations on the web. Turning a website from being a static site to a dynamic site
 			is what he thinks makes your website look a million times better, if you do it right.
 		</p>
 	</article>
 
-	<article class="inline left">
-		<h2 class="title titleRight">{rightTitle}</h2>
+	<article class="grid-card left">
+		<h2 class="card-title" data-title-right>{rightTitle}</h2>
 
-		<p class="left">
+		<p data-description-left>
 			A clean, crisp design is what Gabe tries to excel at. Visual hierarchy, whitespace, colors,
 			typography, scaling, and contrast is what he knows best. These topics are the main key to make
 			your website designs look professional and appealing to the eye.
@@ -26,7 +26,7 @@
 </section>
 
 <style>
-	.inline {
+	.grid-card {
 		@media (width >= 300px) {
 			display: inline-block;
 			margin: 0;
@@ -36,7 +36,7 @@
 			-webkit-backdrop-filter: blur(4px);
 			border-radius: 0;
 
-			.title {
+			& .card-title {
 				font-family: var(--ultra);
 				font-size: clamp(var(--h3), 4.5vw, var(--xxl));
 				font-weight: 400;
@@ -70,8 +70,8 @@
 				}
 			}
 
-			.left,
-			.right {
+			& [data-description-left],
+			& [data-description-right] {
 				line-height: 1.35;
 				text-align: left;
 				font-size: clamp(var(--h6), 1.75vw, var(--h3));
@@ -79,6 +79,22 @@
 				margin-top: -1rem;
 				hyphens: auto;
 				letter-spacing: 0px;
+			}
+
+			& [data-description-right] {
+				text-align: right;
+			}
+
+			&.left {
+				@media (width >= 768px) {
+					box-shadow: -2px 2px 0 3px var(--clr-main);
+				}
+			}
+
+			&.right {
+				@media (width >= 768px) {
+					box-shadow: 2px 2px 0 3px var(--clr-main);
+				}
 			}
 		}
 
@@ -88,19 +104,7 @@
 		}
 	}
 
-	.inline.left {
-		@media (width >= 768px) {
-			box-shadow: -2px 2px 0 3px var(--clr-main);
-		}
-	}
-
-	.inline.right {
-		@media (width >= 768px) {
-			box-shadow: 2px 2px 0 3px var(--clr-main);
-		}
-	}
-
-	.grid {
+	.grid[data-grid-wrapper] {
 		@media (width >= 300px) {
 			display: flex;
 			flex-direction: column;
@@ -129,11 +133,11 @@
 		@media (width >= 990px) {
 			line-height: 1.5;
 
-			.titleLeft {
+			[data-title-left] {
 				text-align: right;
 			}
 
-			.titleRight {
+			[data-title-right] {
 				text-align: left;
 			}
 		}

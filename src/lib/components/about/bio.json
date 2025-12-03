@@ -6,9 +6,5 @@
 	{
 		"type": "paragraph",
 		"text": "I have a passion for creating websites that are clean, crisp, and completely functional. I enjoy seeing a physical change when I edit or create code. I also enjoy creating animations for the web! I mainly enjoy animating the web because I believe that it makes the website look more professional and more appealing to the eye. In the world of web development, creating engaging and visually appealing animations is essential to grab the attention of users. I'm a natural problem-solver who thrives on turning complex problems into simple, beautiful solutions. I believe in the power of collaboration and continuous learning."
-	},
-	{
-		"type": "paragraph",
-		"text": "Please note: This is a <span>pwa</span> (progressive web app) so you can install it on your device if you want to! This makes your website able to be used on any device.. mobile, tablet, laptop, and desktop. It's like having a mobile app that is not made with native technologies! There is also offline capabilities, so if your internet goes out, you can still access the site because your device downloads and caches the whole site!"
 	}
 ]
