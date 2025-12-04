@@ -14,16 +14,15 @@
 	let transitionName = $derived(shouldTransition ? viewTransitionName : '');
 
 	$effect(() => {
-		const h1L = document.querySelector('.h1-l');
-		const h1R = document.querySelector('.h1-r');
-		const spanMiddle = document.querySelector('.span');
+		const left = document.querySelector('.left-word');
+		const right = document.querySelector('.right-word');
+		const middle = document.querySelector('.middle-word');
 
 		const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
 
-		gsap.set(['.h1-l', 'h1-r'], { y: 40 });
-
+		gsap.set(['.left-word', '.right-word'], { y: 40 });
 		tl.from(
-			h1L,
+			left,
 			{
 				opacity: 0,
 				x: -100,
@@ -33,7 +32,7 @@
 			0
 		);
 		tl.from(
-			h1R,
+			right,
 			{
 				opacity: 0,
 				x: 100,
@@ -42,7 +41,7 @@
 			},
 			'<'
 		).fromTo(
-			spanMiddle,
+			middle,
 			{ opacity: 0, scale: 0 },
 			{
 				opacity: 0.65,
@@ -60,14 +59,14 @@
 	});
 </script>
 
-<section class="simpleHeading">
-	<h1 class="h1-l" style="view-transition-name: {transitionName};">{title1}</h1>
-	<span class="span">{span}</span>
-	<h2 class="h1-r">{title2}</h2>
+<section class="animated-title">
+	<h1 class="left-word" style="view-transition-name: {transitionName};">{title1}</h1>
+	<span class="middle-word">{span}</span>
+	<h2 class="right-word">{title2}</h2>
 </section>
 
 <style>
-	.simpleHeading {
+	.animated-title {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -82,8 +81,8 @@
 			padding-block: 1em;
 		}
 
-		.h1-l,
-		.h1-r {
+		.left-word,
+		.right-word {
 			color: var(--clr-main);
 			font-family: var(--bronova);
 			font-size: clamp(var(--h6), 8vw, var(--xl));
@@ -94,7 +93,7 @@
 			z-index: 2;
 		}
 
-		.span {
+		.middle-word {
 			font-family: var(--ultra);
 			font-size: clamp(4rem, 10vw, 15rem);
 			letter-spacing: 0px;

@@ -32,7 +32,7 @@
 	});
 </script>
 
-<section class="morph">
+<section class="morph-title">
 	<svg id="sourceSVG" viewBox="0 0 450 100" preserveAspectRatio="xMidYMid meet">
 		<title>Gabe</title>
 		<rect
@@ -100,7 +100,7 @@
 </section>
 
 <style>
-	.morph {
+	.morph-title {
 		display: flex;
 		justify-content: center;
 		align-items: center;

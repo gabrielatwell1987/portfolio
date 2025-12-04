@@ -2,8 +2,8 @@
 	import LoadBtn from '$lib/components/learn/LoadBtn.svelte';
 </script>
 
-<section class="links" id="useful-links">
-	<h2>Useful Links:</h2>
+<section class="useful-links" id="useful-links">
+	<h2 class="useful-links-title">Useful Links:</h2>
 
 	<div class="buttons">
 		<LoadBtn
@@ -45,15 +45,14 @@
 		/>
 	</div>
 
-	<p>
-		All of these links are resources that I used to learn frontend and design for the web <span
-			>🛠️</span
-		>
+	<p class="explanation">
+		<span>🛠️</span> All of these links are resources that I used to learn frontend and design for
+		the web <span>🛠️</span>
 	</p>
 </section>
 
 <style>
-	.links {
+	.useful-links {
 		& .buttons {
 			display: grid;
 			grid-template-columns: repeat(2, minmax(200px, 1fr));
@@ -70,13 +69,12 @@
 			margin-top: 1.5rem;
 			text-align: center;
 
-			& h2 {
+			& .useful-links-title {
 				margin-top: 2rem;
 				margin-bottom: 1.2em;
 				margin-inline: auto;
 				font-family: var(--bronova);
 				font-size: clamp(var(--h6), 2vw, var(--h4));
-				/* font-weight: 900; */
 				color: var(--clr-invert);
 				text-shadow:
 					0 0 2px var(--clr-invert),
@@ -110,7 +108,7 @@
 				}
 			}
 
-			& p {
+			& .explanation {
 				color: var(--clr-main);
 				font-family: var(--bronova);
 				font-size: clamp(var(--sm), 1.25rem, var(--h4));

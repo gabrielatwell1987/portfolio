@@ -23,14 +23,14 @@
 	keywords="GSAP, greensock animation platform, web animation, greensock how to"
 />
 
-<section class="main">
-	<div class="separate">
+<section class="learn-gsap">
+	<div class="content">
 		<div class="title-spacing">
 			<Title img="/skills/GSAP-Dark.svg" width="50vw" />
 		</div>
 
-		<main>
-			<div class="centerDetail">
+		<main class="gsap-details">
+			<div class="center-detail">
 				<Details items={data.greensockDetails} />
 			</div>
 
@@ -41,7 +41,7 @@
 
 			<Learn href="https://greensock.com" title="greensock" />
 
-			<div class="back">
+			<div class="back-button">
 				<Button href="/learn" title="Back" />
 			</div>
 		</main>
@@ -54,7 +54,7 @@
 		interpolate-size: allow-keywords;
 	}
 
-	section {
+	.learn-gsap {
 		& .title-spacing {
 			margin-top: 3em;
 			margin-bottom: 6em;
@@ -64,8 +64,8 @@
 			}
 		}
 
-		& main {
-			& .centerDetail {
+		& .gsap-details {
+			& .center-detail {
 				max-inline-size: 90vw;
 				margin-inline: auto;
 
@@ -122,7 +122,7 @@
 				}
 			}
 
-			& .back {
+			& .back-button {
 				text-align: center;
 			}
 		}

@@ -1,9 +1,9 @@
 <script>
 </script>
 
-<h2>Table of Contents</h2>
+<h2 class="table-title">Table of Contents</h2>
 
-<article class="toc">
+<article class="table-of-contents">
 	<div class="css">
 		<dl>
 			<dt>CSS</dt>
@@ -34,7 +34,7 @@
 </article>
 
 <style>
-	h2 {
+	.table-title {
 		display: block;
 		margin-top: 2em;
 		color: var(--clr-main);
@@ -45,7 +45,7 @@
 		opacity: 0.65;
 	}
 
-	.toc {
+	.table-of-contents {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		background: transparent;

@@ -18,8 +18,8 @@
 
 <BgCircles stroke="var(--clr-gray)" />
 
-<div class="learn">
-	<section>
+<div class="learn-wrapper">
+	<section class="learn-header">
 		<LearnHeading
 			title1="learn"
 			span="by"
@@ -29,8 +29,8 @@
 		/>
 	</section>
 
-	<article>
-		<section aria-label="icons">
+	<article class="topic-links">
+		<section aria-label="icons" class="learn-icons">
 			<button
 				class="learn-image"
 				onclick={() => {
@@ -83,7 +83,7 @@
 </div>
 
 <style>
-	.learn {
+	.learn-wrapper {
 		padding-top: 7em;
 		min-height: 100vh;
 
@@ -91,7 +91,7 @@
 			padding-top: 5em;
 		}
 
-		& article {
+		& .topic-links {
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -112,7 +112,7 @@
 				margin-inline: auto;
 			}
 
-			& section {
+			& .learn-icons {
 				display: grid;
 				grid-template-columns: repeat(2, 1fr);
 				gap: 5vw;
@@ -123,7 +123,7 @@
 					margin-bottom: -1em;
 				}
 
-				& button {
+				& .learn-image {
 					display: block;
 					background: none;
 					border: none;

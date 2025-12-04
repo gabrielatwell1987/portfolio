@@ -2,13 +2,13 @@
 	let { summary, children } = $props();
 </script>
 
-<details>
+<details class="details-element">
 	<summary>{summary}</summary>
 	<p>{@render children()}</p>
 </details>
 
 <style>
-	details {
+	.details-element {
 		margin-block: 2em;
 
 		& summary {

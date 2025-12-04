@@ -2,10 +2,10 @@
 	let { subheading } = $props();
 </script>
 
-<p>{subheading}</p>
+<p class="subheading">{subheading}</p>
 
 <style>
-	p {
+	p.subheading {
 		font-size: clamp(var(--h6), 1.5vw, var(--h3));
 		font-weight: 800;
 		font-family: var(--bronova);

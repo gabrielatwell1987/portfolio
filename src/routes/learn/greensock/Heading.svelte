@@ -3,10 +3,10 @@
 	let { title } = $props();
 </script>
 
-<span>{title}:</span>
+<span class="heading-title">{title}:</span>
 
 <style>
-	span {
+	span.heading-title {
 		font-family: var(--ultra);
 		font-size: clamp(var(--h6), 1.5vw, var(--h3));
 		line-height: 1.75;

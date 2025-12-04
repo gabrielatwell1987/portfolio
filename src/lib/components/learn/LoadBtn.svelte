@@ -40,11 +40,11 @@
 	onclick={handleSubmit}
 	target="_blank"
 	aria-label="Visit {submit} (opens in new tab)"
-	class="btn"
+	class="loading-button"
 	class:loading={isLoading}
 	aria-live="polite"
 >
-	<span class="btn-text">{isLoading ? loading : submit}</span>
+	<span class="loading-text">{isLoading ? loading : submit}</span>
 
 	{#if isLoading}
 		<div class="spinner"></div>
@@ -52,7 +52,7 @@
 </a>
 
 <style>
-	a.btn {
+	a.loading-button {
 		position: relative;
 		width: fit-content;
 		border: 1px solid var(--clr-main);
@@ -102,7 +102,7 @@
 			opacity: 0.75;
 		}
 
-		& .btn-text {
+		& .loading-text {
 			grid-area: stack;
 		}
 

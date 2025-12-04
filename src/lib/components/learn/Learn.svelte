@@ -3,9 +3,9 @@
 </script>
 
 <article class="learn-article">
-	<h3 class="learn">Learn more about {title}</h3>
+	<h3 class="learn-title">Learn more about {title}</h3>
 
-	<p class="center">
+	<p class="learn-summary">
 		If you would like to know more about <a class="link" {href} aria-label="greensock">{title}</a>,
 		click the link!
 	</p>
@@ -20,7 +20,7 @@
 		box-shadow: none;
 		padding: 0;
 
-		& .learn {
+		& .learn-title {
 			text-align: center;
 			font-family: var(--anta);
 			color: var(--clr-blue);
@@ -29,7 +29,7 @@
 			margin: 0;
 		}
 
-		& .center {
+		& .learn-summary {
 			text-align: center;
 			font-size: clamp(var(--xs), 1.5vw, var(--h4));
 			line-height: 1.5;

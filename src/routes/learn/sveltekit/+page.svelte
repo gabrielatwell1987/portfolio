@@ -23,14 +23,14 @@
 	keywords="svelte, sveltekit, svelte how to, sveltekit how to"
 />
 
-<section class="main">
-	<div class="separate">
+<section class="learn-svelte">
+	<div class="content">
 		<div class="title-spacing">
 			<Title img="/skills/Svelte-Dark.svg" width="40vw" />
 		</div>
 
-		<main>
-			<div class="centerDetail">
+		<main class="svelte-details">
+			<div class="center-detail">
 				<Details items={data.svelteKitDetails} />
 			</div>
 
@@ -41,7 +41,7 @@
 
 			<Learn href="https://svelte.dev" title="svelte" />
 
-			<div class="back">
+			<div class="back-button">
 				<Button href="/learn" title="Back" />
 			</div>
 		</main>
@@ -54,7 +54,7 @@
 		interpolate-size: allow-keywords;
 	}
 
-	section {
+	.learn-svelte {
 		& .title-spacing {
 			margin-top: 3em;
 			margin-bottom: 6em;
@@ -64,8 +64,8 @@
 			}
 		}
 
-		& main {
-			& .centerDetail {
+		& .svelte-details {
+			& .center-detail {
 				max-inline-size: 90vw;
 				margin-inline: auto;
 
@@ -133,7 +133,7 @@
 				}
 			}
 
-			& .back {
+			& .back-button {
 				text-align: center;
 			}
 		}

@@ -54,15 +54,15 @@
 	type="article"
 />
 
-<section class="tocLogo" id="top">
+<section class="table-and-logo" id="top">
 	<GabeMorph />
 
 	<TableOfContents />
 </section>
 
-<section class:mounted>
+<section class="topics" class:mounted>
 	<div class="css">
-		<div class="image">
+		<div class="tech-stack-logo">
 			<ViewTransitionImage
 				src="/skills/CSS-Purple.svg"
 				alt="new css logo"
@@ -87,7 +87,7 @@
 		<GSAP aria-label="greensock" />
 	</div>
 
-	<article class="card">
+	<article class="developer-card">
 		<Card
 			src="/logos/a-dev.webp"
 			alt="a logo that says atwell developer"
@@ -98,23 +98,23 @@
 		/>
 	</article>
 
-	<div class="back">
+	<div class="top-button">
 		<BackToTop />
 	</div>
 </section>
 
 <style>
-	.tocLogo {
+	.table-and-logo {
 		padding-top: 5em;
 	}
 
-	section {
+	.topics {
 		&.mounted {
 			opacity: 1;
 			scale: 1;
 		}
 
-		& .back {
+		& .top-button {
 			text-align: center;
 			display: flex;
 			flex-direction: column;
@@ -132,7 +132,7 @@
 			}
 		}
 
-		& .card {
+		& .developer-card {
 			display: flex;
 			justify-content: center;
 			background: transparent;

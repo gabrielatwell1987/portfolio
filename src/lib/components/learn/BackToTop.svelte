@@ -14,8 +14,9 @@
 	.to-top {
 		position: relative;
 		text-decoration: none;
-		color: var(--clr-gray);
+		color: var(--clr-main);
 		font-size: clamp(var(--sm), 1.5vw, var(--h6));
+		font-weight: 600;
 		display: flex;
 		align-items: center;
 		gap: 0.5em;
