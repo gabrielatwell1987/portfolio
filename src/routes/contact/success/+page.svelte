@@ -9,14 +9,14 @@
 
 <SEO title="Message Sent!" description="Successfully Sent" keywords="success, contact success" />
 
-<article>
-	<section>
+<article class="success-wrapper">
+	<section class="success-content">
 		<img src="/logos/success.webp" alt="Atwell" width="500" />
 
-		<div class="text-content">
-			<p class="small"><i>Your message has been sent.</i></p>
+		<div class="success-results">
+			<p class="subheading"><i>Your message has been sent.</i></p>
 
-			<p>Thank you for reaching out!</p>
+			<p class="thank-you">Thank you for reaching out!</p>
 		</div>
 	</section>
 </article>
@@ -28,11 +28,12 @@
 			--5: 5em;
 		}
 
-		article {
+		.success-wrapper {
 			min-height: 70vh;
 			padding-top: 7em;
+			background-color: transparent;
 
-			& section {
+			& .success-content {
 				width: var(--100);
 				padding: clamp(2rem, 5vw, 5em);
 				margin-inline: auto;
@@ -40,17 +41,17 @@
 				text-align: center;
 			}
 
-			& .text-content {
+			& .success-results {
 				padding-top: 3em;
 
-				& p {
+				& .thank-you {
 					font-size: clamp(var(--sm), 1.5vw, var(--h4));
 					font-weight: 500;
 					margin: 0.5em 0;
 					color: var(--clr-blue);
 				}
 
-				& .small {
+				& .subheading {
 					font-size: clamp(var(--xs), 1.2vw, var(--h6));
 					font-weight: 200;
 					margin: 0.5em 0 -0.5rem 0;

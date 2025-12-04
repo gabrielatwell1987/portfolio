@@ -3,26 +3,26 @@
 	let { content } = $props();
 </script>
 
-<div class="hire-wrapper">
+<div class="motif-photo">
 	<!-- <img src={img} alt="gabe atwell" /> -->
 	{#if content.startsWith('<svg')}
-		<div class="svg-container">
+		<div class="svg-content">
 			{@html content}
 		</div>
 	{:else}
-		<img src={content} alt="decorative motif" />
+		<img class="image" src={content} alt="decorative motif" />
 	{/if}
 </div>
 
 <style>
-	.hire-wrapper {
+	.motif-photo {
 		position: relative;
 		width: fit-content;
 		margin: 0;
 		padding: 0;
 		margin-inline: auto;
 
-		& .svg-container {
+		& .svg-content {
 			width: clamp(200px, 30vw, 750px);
 			height: clamp(200px, 30vw, 750px);
 			display: flex;
@@ -38,7 +38,7 @@
 			}
 		}
 
-		& img {
+		& .image {
 			width: clamp(200px, 30vw, 750px);
 			height: clamp(200px, 30vw, 750px);
 			border-radius: 10% var(--radius);

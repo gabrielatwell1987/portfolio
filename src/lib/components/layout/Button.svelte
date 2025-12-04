@@ -3,11 +3,11 @@
 	let { href, title, class: className = '' } = $props();
 </script>
 
-<a {href} class={className}>{title}</a>
+<a class="button {className}" {href}>{title}</a>
 
 <style>
 	@media (width >= 300px) {
-		a {
+		.button {
 			display: inline-block;
 			text-decoration: none;
 			background-color: transparent;

@@ -13,14 +13,14 @@
 
 <SkullBg />
 
-<div>
+<section class="contact-wrapper">
 	<Title title="message" title2="message" />
 
 	<ContactForm />
-</div>
+</section>
 
 <style>
-	div {
+	.contact-wrapper {
 		display: flex;
 		flex-direction: column;
 		gap: 2em;

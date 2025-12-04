@@ -5,6 +5,7 @@
 	aria-labelledby="loading-aria"
 	viewBox="0 0 400 160"
 	preserveAspectRatio="none"
+	class="loading-skeleton"
 >
 	<title id="loading-aria">Loading...</title>
 
@@ -70,7 +71,7 @@
 </svg>
 
 <style>
-	svg {
+	svg.loading-skeleton {
 		display: block;
 		margin-block: auto;
 		margin-inline: auto;

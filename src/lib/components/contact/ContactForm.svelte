@@ -12,7 +12,7 @@
 </script>
 
 <div class="contact-icons">
-	<div class="popover">
+	<div class="popover-icon">
 		<Popup title="" text="Please provide a working email so I can message you back!" />
 	</div>
 
@@ -111,7 +111,7 @@
 			margin-top: -15vw;
 		}
 
-		& .popover {
+		& .popover-icon {
 			display: flex;
 			justify-content: space-evenly;
 		}

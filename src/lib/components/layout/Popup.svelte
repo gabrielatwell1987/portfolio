@@ -2,8 +2,8 @@
 	let { title, text } = $props();
 </script>
 
-<section class="popup" aria-label="popup button">
-	<button popovertarget="popover"
+<section class="popover-button" aria-label="popup button">
+	<button class="popover-icon" popovertarget="popover"
 		>{title}
 
 		<svg
@@ -28,7 +28,7 @@
 </section>
 
 <style>
-	.popup {
+	.popover-button {
 		align-content: center;
 
 		&:focus,
@@ -37,7 +37,7 @@
 			background: transparent;
 		}
 
-		button {
+		.popover-icon {
 			background-color: transparent;
 			width: fit-content;
 			font-family: var(--bronova);

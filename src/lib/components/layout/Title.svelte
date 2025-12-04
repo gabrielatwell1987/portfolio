@@ -33,8 +33,8 @@
 <div class="title-wrapper">
 	{#if img}
 		<img
-			class="title exclude-transition"
-			id="title"
+			class="image-title exclude-transition"
+			id="image-title"
 			src={img}
 			alt={title}
 			style="width: {width}; view-transition-name: {transitionName};"
@@ -43,11 +43,11 @@
 		{@html svgElement}
 	{:else}
 		<div class="title-container" style="view-transition-name: {transitionName};">
-			<h1 class="title title-main exclude-transition" id="title" aria-label={title}>
+			<h1 class="text-title title-main exclude-transition" id="title" aria-label={title}>
 				{title}
 			</h1>
 			{#if title2}
-				<h1 class="title title-overlay exclude-transition" aria-label={title2}>{title2}</h1>
+				<h1 class="text-title title-overlay exclude-transition" aria-label={title2}>{title2}</h1>
 			{/if}
 		</div>
 	{/if}
@@ -78,7 +78,7 @@
 			}
 		}
 
-		.title {
+		.text-title {
 			font-family: var(--ultra);
 			font-size: clamp(2.5rem, 10.5vw, 15rem);
 			letter-spacing: -1px;
@@ -135,7 +135,7 @@
 			}
 		}
 
-		img.title {
+		.image-title {
 			display: block;
 			margin-inline: auto;
 			max-inline-size: 75%;

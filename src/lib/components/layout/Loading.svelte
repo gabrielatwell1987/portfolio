@@ -3,13 +3,13 @@
 	// import LoadingText from './LoadingText.svelte';
 </script>
 
-<div class="container">
+<div class="loading-wrapper">
 	<LoadingSkeleton />
 	<!-- <LoadingText /> -->
 </div>
 
 <style>
-	.container {
+	.loading-wrapper {
 		position: fixed;
 		top: 50%;
 		left: 50%;

@@ -139,7 +139,7 @@
 		</div>
 
 		<label class="form-group full-width">
-			<span class="label-text tac">Message</span>
+			<span class="label-text center-text">Message</span>
 
 			<textarea
 				name="message"
@@ -274,7 +274,7 @@
 		transition: color 0.1s ease;
 	}
 
-	.tac {
+	.center-text {
 		text-align: center;
 	}
 

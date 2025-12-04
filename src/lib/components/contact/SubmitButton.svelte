@@ -1,10 +1,10 @@
 <script>
 </script>
 
-<button type="submit">Submit</button>
+<button class="submit-button" type="submit">Submit</button>
 
 <style>
-	button {
+	.submit-button {
 		@media (width >= 300px) {
 			background-color: transparent;
 			font-family: var(--ultra);

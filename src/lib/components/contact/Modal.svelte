@@ -66,12 +66,13 @@
 <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <dialog
 	id="modal"
+	class="contact-modal"
 	aria-labelledby="modal-title"
 	bind:this={modal}
 	class:open={isOpen}
 	onkeydown={handleKeydown}
 >
-	<article>
+	<article class="modal-inner">
 		<header>
 			<button
 				rel="prev"
@@ -97,10 +98,10 @@
 				</svg>
 			</button>
 
-			<h4>Please contact me for any work!</h4>
+			<h4 class="modal-title">Please contact me for any work!</h4>
 		</header>
 
-		<div class="image">
+		<div class="modal-image">
 			<Image
 				src="/logos/newspaper.webp"
 				alt="newspaper clipping for a frontend developer"
@@ -109,7 +110,7 @@
 			/>
 		</div>
 
-		<p>
+		<p class="modal-description">
 			If you need help with a website or if you have any questions, please feel free to contact me.
 			I am always happy to help!
 		</p>
@@ -117,7 +118,7 @@
 </dialog>
 
 <style>
-	dialog {
+	.contact-modal {
 		opacity: 0;
 		visibility: hidden;
 		transform: scale(0.99);
@@ -164,7 +165,7 @@
 			}
 		}
 
-		& article {
+		& .modal-inner {
 			@media (width >= 320px) {
 				width: 100%;
 				border: 2px solid var(--clr-main);
@@ -180,7 +181,7 @@
 					background: transparent;
 					border-bottom: none;
 
-					& h4 {
+					& .modal-title {
 						font-family: var(--bronova-bold);
 						font-size: clamp(var(--h5), 1.75vw, var(--h2));
 						font-weight: 600;
@@ -191,7 +192,7 @@
 					}
 				}
 
-				& p {
+				& .modal-description {
 					font-family: var(--bronova);
 					font-size: clamp(var(--h6), 1.25vw, var(--h4));
 					font-weight: 100;
@@ -309,7 +310,7 @@
 		}
 	}
 
-	h4 {
+	.modal-title {
 		@media screen and (width >= 1024px) {
 			line-height: 0.95;
 		}
@@ -319,7 +320,7 @@
 		}
 	}
 
-	p {
+	.modal-description {
 		@media screen and (width >= 1024px) {
 			line-height: 1.75;
 			margin-inline: auto;
@@ -327,7 +328,7 @@
 		}
 	}
 
-	.image {
+	.modal-image {
 		@media screen and (width >= 1024px) {
 			margin-block: 1rem;
 		}

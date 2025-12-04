@@ -14,11 +14,11 @@
 <div class="hire-form">
 	<Title title="connect" title2="connect" />
 
-	<div class="margin-inline">
+	<div class="center-positioning">
 		<Popup title="" text="Please fill out this questionnaire and I'll contact you back 😎" />
 	</div>
 
-	<section>
+	<section class="hire-form-wrapper">
 		<HireForm />
 	</section>
 </div>
@@ -32,16 +32,15 @@
 			var(--clr-invert) var(--100)
 		);
 
-		& section {
+		& .hire-form-wrapper {
 			display: grid;
 			place-items: center;
 			height: 100vh;
 		}
 
-		& .margin-inline {
+		& .center-positioning {
 			margin-inline: auto;
 			max-inline-size: fit-content;
-			/* padding: 0 1rem; */
 		}
 	}
 </style>
