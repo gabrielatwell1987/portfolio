@@ -1,50 +1,50 @@
 [
 	{
-		"title": "busy little bat sewing",
+		"description": "sveltekit",
 		"img": "/projects/busybatleopard.webp",
-		"url": "https://busybat.vercel.app",
-		"description": "sveltekit",
+		"index": 0,
 		"summary": "A custom website for a local business that sells handmade items. The site features a product page, a contact form, and I even created the brand.",
-		"index": 0
+		"title": "busy little bat sewing",
+		"url": "https://busybat.vercel.app"
 	},
 	{
-		"title": "pixipalette",
+		"description": "sveltekit",
 		"img": "/projects/pixipalette.webp",
-		"url": "https://pixipalette.vercel.app",
-		"description": "sveltekit",
+		"index": 1,
 		"summary": "A color palette generator that tells users the hex, rgb, and hsl colors of images. I tried making the app as user-friendly as possible.",
-		"index": 1
+		"title": "pixipalette",
+		"url": "https://pixipalette.vercel.app"
 	},
 	{
-		"title": "grocery list",
-		"img": "/projects/groceries.webp",
-		"url": "https://legit-shopping-list.vercel.app/",
 		"description": "react",
+		"img": "/projects/groceries.webp",
+		"index": 2,
 		"summary": "A grocery list app that allows users to add, remove, and edit items. The app is built with React and features a simple and intuitive interface.",
-		"index": 2
+		"title": "grocery list",
+		"url": "https://legit-shopping-list.vercel.app/"
 	},
 	{
-		"title": "e-commerce product page",
-		"img": "/projects/ecommerce.webp",
-		"url": "https://fake-store-products.vercel.app",
 		"description": "vanilla html/css/js",
+		"img": "/projects/ecommerce.webp",
+		"index": 3,
 		"summary": "My version of an e-commerce product page that features a product image, title, price, and description. I used the fake store API to populate the product data.",
-		"index": 3
+		"title": "e-commerce product page",
+		"url": "https://fake-store-products.vercel.app"
 	},
 	{
-		"title": "passcraft",
+		"description": "sveltekit",
 		"img": "/projects/passcraft.webp",
-		"url": "https://make-a-password.vercel.app/",
-		"description": "sveltekit",
+		"index": 4,
 		"summary": "If you're like me and have a hard time creating passwords, PassCraft is for you! It generates random passwords based on user input.",
-		"index": 4
+		"title": "passcraft",
+		"url": "https://make-a-password.vercel.app/"
 	},
 	{
-		"title": "think.flow",
-		"img": "/projects/thinkflow.webp",
-		"url": "https://thinkdotflow.vercel.app",
 		"description": "sveltekit",
+		"img": "/projects/thinkflow.webp",
+		"index": 5,
 		"summary": "Custom blog page where you can add, edit, and remove posts. It uses localStorage to save the posts, so they persist even after refreshing the page.",
-		"index": 5
+		"title": "think.flow",
+		"url": "https://thinkdotflow.vercel.app"
 	}
 ]
