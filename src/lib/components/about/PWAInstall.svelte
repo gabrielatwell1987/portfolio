@@ -86,7 +86,7 @@
 		button {
 			background-color: transparent;
 			filter: brightness(1);
-			color: var(--success);
+			color: var(--clr-green);
 			width: fit-content;
 			font-family: var(--bronova);
 			font-size: clamp(var(--h6), 1.5vw, var(--h4));
