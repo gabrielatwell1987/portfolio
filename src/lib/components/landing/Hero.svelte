@@ -1,8 +1,8 @@
 <script>
-	import HeroButton from './HeroButton.svelte';
 	import DoYouNeed from './DoYouNeed.svelte';
-	import UltraA from './UltraA.svelte';
 	import HeroBackground from './HeroBackground.svelte';
+	import HeroButton from './HeroButton.svelte';
+	import UltraA from './UltraA.svelte';
 
 	let mounted = $state(false);
 	let titleText = 'Handcrafted Frontend Interfaces';
@@ -175,6 +175,8 @@
 		padding: 5rem 0 0 0;
 		margin-top: 1.75em;
 		font-size: clamp(var(--h6), 4vw, var(--h1));
+		background-color: transparent;
+		box-shadow: none;
 
 		@media (height <= 768px) {
 			min-height: auto;
