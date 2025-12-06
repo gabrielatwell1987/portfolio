@@ -79,6 +79,68 @@
 		padding: 0;
 		scrollbar-color: var(--off-white) var(--blacker);
 	}
+
+	ul,
+	ol {
+		list-style: none;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	button,
+	input,
+	optgroup,
+	select,
+	textarea {
+		font-family: inherit;
+		font-size: 100%;
+		line-height: 1.15;
+		margin: 0;
+	}
+
+	button,
+	input {
+		overflow: visible;
+	}
+
+	button,
+	select {
+		text-transform: none;
+	}
+
+	button,
+	[type='button'],
+	[type='reset'],
+	[type='submit'] {
+		-webkit-appearance: button;
+	}
+
+	button::-moz-focus-inner,
+	[type='button']::-moz-focus-inner,
+	[type='reset']::-moz-focus-inner,
+	[type='submit']::-moz-focus-inner {
+		border-style: none;
+		padding: 0;
+	}
+
+	fieldset {
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	textarea {
+		overflow: auto;
+		resize: vertical;
+	}
 }
 
 @layer base {
@@ -173,7 +235,7 @@
 		white-space: nowrap;
 	}
 
-	/* CLS Prevention Utilities */
+	/* CLS prevention */
 	.cls-container {
 		/* Reserve space to prevent layout shifts */
 		min-height: var(--min-content-height, 200px);
@@ -187,14 +249,14 @@
 	}
 
 	.cls-image {
-		/* For images without explicit dimensions */
+		/* images without explicit dimensions */
 		aspect-ratio: 16 / 9;
 		width: 100%;
 		height: auto;
 	}
 
 	.cls-canvas {
-		/* For canvas elements (Three.js, etc.) */
+		/* canvas elements (Three.js, etc.) */
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -207,7 +269,7 @@
 
 @layer theming {
 	:root {
-		/* Base custom colors */
+		/* base colors */
 		--blackest: hsl(0, 0%, 11%);
 		--blacker: hsl(0, 0%, 16%);
 		--white: hsla(0, 0%, 85%, 0.9);
@@ -228,7 +290,7 @@
 		--warning-light: hsl(45, 51%, 35%);
 		--warning-dark: hsl(45, 77%, 26%);
 
-		/* Theme variables using light-dark() and custom colors */
+		/* light-dark() */
 		--clr-bg: light-dark(var(--white), var(--blackest));
 		--clr-main: light-dark(var(--blackest), var(--white));
 		--clr-link: light-dark(var(--darker-blue), var(--sky));
