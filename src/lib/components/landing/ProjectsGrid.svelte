@@ -53,7 +53,7 @@
 				padding: 1rem;
 
 				& p {
-					color: var(--clr-blue);
+					color: var(--clr-sky);
 					font-size: clamp(var(--sm), 1.2vw, var(--h5));
 					font-weight: 800;
 					text-align: center;

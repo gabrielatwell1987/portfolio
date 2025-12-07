@@ -295,6 +295,7 @@
 		--clr-main: light-dark(var(--blackest), var(--white));
 		--clr-link: light-dark(var(--darker-blue), var(--sky));
 		--clr-blue: light-dark(var(--darkest-blue), var(--sky));
+		--clr-sky: light-dark(var(--sky), var(--sky));
 		--clr-pale: light-dark(var(--yellow), var(--pale));
 		--clr-light-gray: light-dark(var(--dark-gray), var(--light-gray));
 		--clr-gray: light-dark(var(--gray), var(--dark-gray));
