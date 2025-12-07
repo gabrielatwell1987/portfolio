@@ -1,7 +1,9 @@
 <script>
+	import projects from '$lib/components/projects/projects.json';
 	import DoYouNeed from './DoYouNeed.svelte';
 	import HeroBackground from './HeroBackground.svelte';
 	import HeroButton from './HeroButton.svelte';
+	import ProjectsGrid from './ProjectsGrid.svelte';
 	import UltraA from './UltraA.svelte';
 
 	let mounted = $state(false);
@@ -125,6 +127,8 @@
 				website showcases my skills with some projects that I created. I look forward to hearing
 				from you so we can discuss your goals for your online needs!
 			</p>
+
+			<ProjectsGrid {projects} />
 
 			<nav class="button-container" aria-label="Primary navigation">
 				<HeroButton href="/projects" title="Creations" />

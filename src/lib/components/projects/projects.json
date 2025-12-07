@@ -1,5 +1,6 @@
 [
 	{
+		"id": "busy-bat",
 		"description": "sveltekit",
 		"img": "/projects/busybatleopard.webp",
 		"index": 0,
@@ -8,6 +9,7 @@
 		"url": "https://busybat.vercel.app"
 	},
 	{
+		"id": "pixipalette",
 		"description": "sveltekit",
 		"img": "/projects/pixipalette.webp",
 		"index": 1,
@@ -16,6 +18,7 @@
 		"url": "https://pixipalette.vercel.app"
 	},
 	{
+		"id": "grocery-list",
 		"description": "react",
 		"img": "/projects/groceries.webp",
 		"index": 2,
@@ -24,6 +27,7 @@
 		"url": "https://legit-shopping-list.vercel.app/"
 	},
 	{
+		"id": "ecommerce",
 		"description": "vanilla html/css/js",
 		"img": "/projects/ecommerce.webp",
 		"index": 3,
@@ -32,6 +36,7 @@
 		"url": "https://fake-store-products.vercel.app"
 	},
 	{
+		"id": "passcraft",
 		"description": "sveltekit",
 		"img": "/projects/passcraft.webp",
 		"index": 4,
@@ -40,6 +45,7 @@
 		"url": "https://make-a-password.vercel.app/"
 	},
 	{
+		"id": "thinkflow",
 		"description": "sveltekit",
 		"img": "/projects/thinkflow.webp",
 		"index": 5,

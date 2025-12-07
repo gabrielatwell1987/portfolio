@@ -1,11 +1,10 @@
 <script>
-	import { fade, scale } from 'svelte/transition';
-	import SEO from '$lib/data/SEO.svelte';
-	import Title from '$lib/components/layout/Title.svelte';
 	import Popup from '$lib/components/layout/Popup.svelte';
+	import Title from '$lib/components/layout/Title.svelte';
 	import Testimonial from '$lib/components/projects/Testimonial.svelte';
 	import projects from '$lib/components/projects/projects.json';
 	import testimonials from '$lib/components/projects/testimonials.json';
+	import SEO from '$lib/data/SEO.svelte';
 
 	// State management with $state
 	let ProjectComponent = $state(null);
