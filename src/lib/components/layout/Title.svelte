@@ -85,6 +85,7 @@
 			text-transform: uppercase;
 			font-kerning: none;
 			color: var(--clr-main);
+			padding: 0 1em;
 
 			@media (width >= 990px) {
 				font-weight: 800;

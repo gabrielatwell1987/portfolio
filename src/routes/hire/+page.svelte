@@ -1,8 +1,8 @@
 <script>
-	import SEO from '$lib/data/SEO.svelte';
 	import HireForm from '$lib/components/contact/HireForm.svelte';
-	import Title from '$lib/components/layout/Title.svelte';
 	import Popup from '$lib/components/layout/Popup.svelte';
+	import Title from '$lib/components/layout/Title.svelte';
+	import SEO from '$lib/data/SEO.svelte';
 </script>
 
 <SEO
@@ -12,10 +12,12 @@
 />
 
 <div class="hire-form">
-	<Title title="connect" title2="connect" />
+	<div class="header">
+		<Title title="connect" title2="connect" />
 
-	<div class="center-positioning">
-		<Popup title="" text="Please fill out this questionnaire and I'll contact you back 😎" />
+		<div class="center-positioning">
+			<Popup title="" text="Please fill out this questionnaire and I'll contact you back 😎" />
+		</div>
 	</div>
 
 	<section class="hire-form-wrapper">
@@ -32,15 +34,30 @@
 			var(--clr-invert) var(--100)
 		);
 
+		& .header {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 5em;
+
+			@media (width <= 768px) {
+				gap: 1rem;
+			}
+
+			& .center-positioning {
+				margin-inline: auto;
+				max-inline-size: fit-content;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				margin-top: 5em;
+			}
+		}
+
 		& .hire-form-wrapper {
 			display: grid;
 			place-items: center;
 			height: 100vh;
-		}
-
-		& .center-positioning {
-			margin-inline: auto;
-			max-inline-size: fit-content;
 		}
 	}
 </style>

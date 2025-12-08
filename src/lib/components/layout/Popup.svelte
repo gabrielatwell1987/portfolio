@@ -30,6 +30,7 @@
 <style>
 	.popover-button {
 		align-content: center;
+		margin: 0;
 
 		&:focus,
 		&:focus-visible {

@@ -570,7 +570,8 @@
 <style>
 	.github-contributions {
 		max-inline-size: 900px;
-		margin: 0 auto;
+		margin: 0;
+		margin-inline: auto;
 		padding: 2rem 1rem;
 		font-family: var(--bronova);
 		display: flex;

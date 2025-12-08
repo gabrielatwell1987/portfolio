@@ -54,13 +54,15 @@
 />
 
 <div class="projects">
-	<Title title="builds" title2="builds" viewTransitionName="builds" />
+	<div class="header">
+		<Title title="builds" title2="builds" viewTransitionName="builds" />
 
-	<div class="popup">
-		<Popup
-			title=""
-			text="Hover over the project image to reveal the tech stack I used on the project 👍🏻"
-		/>
+		<div class="popup">
+			<Popup
+				title=""
+				text="Hover over the project image to reveal the tech stack I used on the project 👍🏻"
+			/>
+		</div>
 	</div>
 
 	<section class="github-section">
@@ -175,67 +177,87 @@
 		}
 	}
 
-	.bevel {
-		position: relative;
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-		place-items: center;
-
-		@media (width <= 768px) {
-			margin: 0;
-		}
-
-		@media (width <= 500px) {
-			padding: 4em 0;
-			grid-template-columns: 1fr;
-		}
-
-		& .wholeProject {
+	.projects {
+		& .header {
 			display: flex;
-			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			gap: 0.25rem;
-			border: 2px solid var(--clr-gray);
-			border-radius: var(--radius);
-			padding-top: 2em;
-			opacity: 0;
-			animation: fadeIn 0.8s ease-out forwards;
-			animation-delay: var(--stagger-delay, 0s);
-			will-change: opacity, transform;
+			gap: 5em;
 
 			@media (width <= 768px) {
-				margin: 0.5rem;
-				margin-bottom: 2em;
+				gap: 1rem;
+			}
+
+			& .popup {
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				margin-top: 5em;
 			}
 		}
-	}
 
-	.bevel:before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		background: var(--clr-gray);
-		clip-path: polygon(
-			0 40px,
-			40px 0,
-			calc(100% - 40px) 0,
-			100% 40px,
-			100% calc(100% - 40px),
-			calc(100% - 40px) 100%,
-			40px 100%,
-			0 calc(100% - 40px),
-			0 40px,
-			5px calc(40px + 1.03px),
-			5px calc(100% - 40px - 1.03px),
-			calc(40px + 1.03px) calc(100% - 5px),
-			calc(100% - 40px - 1.03px) calc(100% - 5px),
-			calc(100% - 5px) calc(100% - 40px - 1.03px),
-			calc(100% - 5px) calc(40px + 1.03px),
-			calc(100% - 40px - 1.03px) 5px,
-			calc(40px + 1.03px) 5px,
-			5px calc(40px + 1.03px)
-		);
+		& .bevel {
+			position: relative;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+			place-items: center;
+
+			@media (width <= 768px) {
+				margin: 0;
+			}
+
+			@media (width <= 500px) {
+				padding: 4em 0;
+				grid-template-columns: 1fr;
+			}
+
+			& .wholeProject {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				gap: 0.25rem;
+				border: 2px solid var(--clr-gray);
+				border-radius: var(--radius);
+				padding-top: 2em;
+				opacity: 0;
+				animation: fadeIn 0.8s ease-out forwards;
+				animation-delay: var(--stagger-delay, 0s);
+				will-change: opacity, transform;
+
+				@media (width <= 768px) {
+					margin: 0.5rem;
+					margin-bottom: 2em;
+				}
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				background: var(--clr-gray);
+				clip-path: polygon(
+					0 40px,
+					40px 0,
+					calc(100% - 40px) 0,
+					100% 40px,
+					100% calc(100% - 40px),
+					calc(100% - 40px) 100%,
+					40px 100%,
+					0 calc(100% - 40px),
+					0 40px,
+					5px calc(40px + 1.03px),
+					5px calc(100% - 40px - 1.03px),
+					calc(40px + 1.03px) calc(100% - 5px),
+					calc(100% - 40px - 1.03px) calc(100% - 5px),
+					calc(100% - 5px) calc(100% - 40px - 1.03px),
+					calc(100% - 5px) calc(40px + 1.03px),
+					calc(100% - 40px - 1.03px) 5px,
+					calc(40px + 1.03px) 5px,
+					5px calc(40px + 1.03px)
+				);
+			}
+		}
 	}
 
 	section {
@@ -250,13 +272,6 @@
 			margin-bottom: -5%;
 			padding-top: 5rem;
 		}
-	}
-
-	.popup {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-bottom: 5%;
 	}
 
 	@keyframes pulse {
