@@ -1,13 +1,11 @@
 <script>
+	import ProjectSummary from './ProjectSummary.svelte';
+
 	/** @type {{title: any, img: any, url: any, description: any}} */
 	let { title, img, url, description, summary, index = 0 } = $props();
 </script>
 
-<section class="project-content" style="--stagger-delay: {index * 1.25}s;">
-	<a href={url} target="_blank" class="title-link">
-		<h3 class="project-title">{title}</h3>
-	</a>
-
+<section class="project-card" style="--stagger-delay: {index * 1.25}s;">
 	<a
 		href={url}
 		target="_blank"
@@ -27,7 +25,13 @@
 		<span class="desc-banner" aria-hidden="true">made with {description}</span>
 	</a>
 
-	<p class="project-summary">{summary}</p>
+	<a href={url} target="_blank" class="title-link">
+		<h3 class="project-title">{title}</h3>
+	</a>
+
+	<div class="summary-wrapper">
+		<ProjectSummary popoverTitle={title} title="About {title}" {summary} />
+	</div>
 </section>
 
 <style>
@@ -35,24 +39,19 @@
 		--100: 100%;
 	}
 
-	.project-content {
+	.project-card {
 		margin-bottom: 3rem;
 		opacity: 0;
 		animation: fadeIn 0.8s ease-out forwards;
 		animation-delay: var(--stagger-delay, 0s);
 		will-change: opacity, transform;
-		pointer-events: none;
 
-		& .project-summary {
-			max-width: 95%;
-			margin-inline: auto;
-			font-size: clamp(var(--sm), 1.15vw, var(--h5));
-			font-weight: 600;
-			color: var(--clr-link);
-			margin-top: 1rem;
-			text-align: center;
-			line-height: 1.5;
-			letter-spacing: 0px;
+		& .summary-wrapper {
+			display: flex;
+			justify-content: center;
+			inline-size: 100%;
+			pointer-events: auto;
+			margin-top: 2em;
 		}
 
 		& .title-link {
@@ -62,13 +61,13 @@
 
 		& .project-link {
 			border: none;
-			padding: 1rem;
 			display: flex;
 			flex-direction: column;
 			flex-basis: 50%;
 			justify-content: center;
 			align-items: center;
 			margin-inline: auto;
+			margin-bottom: -3em;
 			width: fit-content;
 			transition: all 0.35s;
 			background-color: transparent;
@@ -81,7 +80,7 @@
 			touch-action: manipulation;
 			z-index: 200;
 
-			@media (width >= 740px) {
+			@media (width >= 768px) {
 				img:hover {
 					transition: scale 0.25s ease;
 				}
@@ -100,6 +99,18 @@
 				}
 			}
 
+			@media (width <= 990px) {
+				margin-bottom: -2em;
+			}
+
+			@media (width <= 768px) {
+				margin-bottom: -1em;
+			}
+
+			@media (width <= 500px) {
+				margin-bottom: 0;
+			}
+
 			&:focus,
 			&:focus-visible {
 				outline: 1px solid var(--clr-main);
@@ -113,6 +124,11 @@
 				border: 1px solid var(--clr-main);
 				padding: 0.2vw;
 				position: relative;
+				margin: 0;
+
+				&:hover {
+					filter: blur(1px) brightness(0.75);
+				}
 
 				&:hover + .desc-banner {
 					visibility: visible;
