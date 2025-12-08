@@ -28,9 +28,7 @@
 		& .project-card {
 			display: block;
 			position: relative;
-			transition:
-				scale 0.2s ease,
-				opacity 0.2s ease;
+			overflow: hidden;
 
 			& img {
 				width: 100%;
@@ -38,34 +36,42 @@
 				object-fit: cover;
 				display: block;
 				border: 1px solid var(--clr-main);
+				transition:
+					filter 0.3s ease,
+					scale 0.3s ease;
 			}
 
 			& .overlay {
 				position: absolute;
 				inset: 0;
 				background: rgba(0, 0, 0, 0.7);
+				overflow: hidden;
 
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				opacity: 0;
-				transition: opacity 0.3s ease;
 				padding: 1rem;
+
+				opacity: 0;
+				transform: translateX(-100%);
+				transition:
+					transform 0.4s ease,
+					opacity 0.4s ease;
 
 				& p {
 					color: var(--clr-sky);
-					font-size: clamp(var(--sm), 1.2vw, var(--h5));
+					font-size: clamp(var(--sm), 1.1vw, var(--h6));
 					font-weight: 800;
 					text-align: center;
 					line-height: 1.1;
-					margin-top: 1em;
+					margin-top: 1.5em;
 				}
 			}
 
 			&:hover .overlay,
 			&:focus .overlay {
 				opacity: 1;
-				padding: 1rem 0;
+				transform: translateX(0);
 			}
 
 			&:hover img,

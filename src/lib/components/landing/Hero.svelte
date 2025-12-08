@@ -16,10 +16,8 @@
 	$effect(() => {
 		mounted = true;
 
-		// Check for reduced motion preference once
 		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-		// Typewriter effect with reduced motion support
 		if (prefersReducedMotion) {
 			// Show content immediately without typewriter effect
 			displayedTitle = titleText;
@@ -35,13 +33,13 @@
 				} else {
 					setTimeout(() => {
 						showContent = true;
-					}, 500);
+					}, 250);
 				}
 			};
-			setTimeout(typeWriter, 1000);
+			setTimeout(typeWriter, 250);
 		}
 
-		// Particle system with reduced motion check
+		// particle
 		if (!prefersReducedMotion) {
 			particles = Array.from({ length: 50 }, (_, i) => ({
 				id: i,
@@ -347,7 +345,7 @@
 		& .content-wrapper {
 			opacity: 0;
 			transform: translateY(30px);
-			transition: all 0.25s ease-out;
+			transition: all 0.15s ease-out;
 
 			@media (prefers-reduced-motion: reduce) {
 				transform: none;
