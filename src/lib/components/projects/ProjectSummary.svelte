@@ -125,7 +125,7 @@
 			font-size: clamp(var(--sm), 5vw, var(--h3));
 			letter-spacing: 2px;
 			padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
-			background-color: rgb(0 0 0 / 350%);
+			background-color: var(--clr-light-invert);
 			color: var(--clr-main);
 			max-inline-size: 60%;
 			overflow-y: auto;
@@ -140,7 +140,7 @@
 
 	[popover] {
 		border-radius: var(--radius);
-		box-shadow: var(--blackest) 0px 20px 25px -5px;
+		/* box-shadow: 0px 5px 0px 0px var(--clr-main); */
 		padding: 1rem 1.5rem;
 		display: none;
 		opacity: 0;

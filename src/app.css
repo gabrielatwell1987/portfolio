@@ -272,6 +272,7 @@
 		/* base colors */
 		--blackest: hsl(0, 0%, 11%);
 		--blacker: hsl(0, 0%, 16%);
+		--white-gray: hsla(0, 0%, 78%, 0.9);
 		--white: hsla(0, 0%, 85%, 0.9);
 		--sky: hsla(187, 56%, 52%, 0.5);
 		--purple: hsla(227, 98%, 68%, 0.6);
@@ -301,7 +302,7 @@
 		--clr-gray: light-dark(var(--gray), var(--dark-gray));
 		--clr-dark-gray: light-dark(#2e2d2d, #a19e9e);
 		--clr-green: light-dark(var(--success-dark), var(--success-light));
-		--clr-light-invert: light-dark(var(--white), var(--blacker));
+		--clr-light-invert: light-dark(var(--white-gray), var(--blacker));
 		--clr-invert: light-dark(var(--white), var(--blackest));
 		--clr-button-text: light-dark(var(--blackest), var(--white));
 		--clr-button: light-dark(var(--yellow), var(--purple));
