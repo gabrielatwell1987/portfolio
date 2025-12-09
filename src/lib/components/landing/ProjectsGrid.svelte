@@ -17,11 +17,11 @@
 <style>
 	.projects-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-		gap: 0.2rem 0.5rem;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 0.2rem 0.1rem;
 
 		@media (width <= 500px) {
-			grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+			gap: 0.1rem;
 			margin-bottom: 3em;
 		}
 
@@ -60,7 +60,8 @@
 
 				& p {
 					color: var(--clr-sky);
-					font-size: clamp(var(--sm), 1.1vw, var(--h6));
+					font-family: var(--bronova-bold);
+					font-size: clamp(var(--h6), 1.1vw, var(--h4));
 					font-weight: 800;
 					text-align: center;
 					line-height: 1.1;
