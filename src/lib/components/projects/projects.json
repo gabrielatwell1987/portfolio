@@ -47,7 +47,7 @@
 	{
 		"id": "thinkflow",
 		"description": "sveltekit",
-		"img": "/projects/thinkflow.webp",
+		"img": "/projects/think.flow.webp",
 		"index": 5,
 		"summary": "Custom blog page where you can add, edit, and remove posts. It uses localStorage to save the posts, so they persist even after refreshing the page.",
 		"title": "think.flow",
