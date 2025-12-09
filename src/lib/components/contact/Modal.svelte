@@ -1,7 +1,7 @@
 <script>
-	import '@fortawesome/fontawesome-free/css/all.css';
-	import Image from '$lib/components/layout/Image.svelte';
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
+	import Image from '$lib/components/layout/Image.svelte';
+	import '@fortawesome/fontawesome-free/css/all.css';
 
 	let isOpen = $state(false);
 	let modal;
@@ -222,7 +222,6 @@
 			justify-content: center;
 			align-items: center;
 			margin-inline: auto;
-			margin-bottom: 25%;
 			cursor: pointer;
 
 			&:focus,
@@ -255,14 +254,6 @@
 					margin-bottom: 0.8rem;
 				}
 			}
-		}
-
-		@media screen and (width >= 720px) {
-			margin-bottom: 15%;
-		}
-
-		@media screen and (width >= 1024px) {
-			margin-bottom: 15%;
 		}
 	}
 

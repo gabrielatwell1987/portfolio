@@ -1,8 +1,8 @@
 <script>
-	import Popup from '$lib/components/layout/Popup.svelte';
-	import Modal from './Modal.svelte';
 	import SubmitButton from '$lib/components/contact/SubmitButton.svelte';
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
+	import Popup from '$lib/components/layout/Popup.svelte';
+	import Modal from './Modal.svelte';
 	import MotifPhoto from './MotifPhoto.svelte';
 
 	let name = $state('');
@@ -106,6 +106,7 @@
 		place-content: center;
 		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 		align-items: center;
+		margin-bottom: 1em;
 
 		@media (width <= 768px) {
 			margin-top: -15vw;
