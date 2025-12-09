@@ -300,7 +300,7 @@
 		--clr-pale: light-dark(var(--yellow), var(--pale));
 		--clr-light-gray: light-dark(var(--dark-gray), var(--light-gray));
 		--clr-gray: light-dark(var(--gray), var(--dark-gray));
-		--clr-dark-gray: light-dark(#2e2d2d, #a19e9e);
+		--clr-dark-gray: light-dark(#a19e9e, #2e2d2d);
 		--clr-green: light-dark(var(--success-dark), var(--success-light));
 		--clr-light-invert: light-dark(var(--white-gray), var(--blacker));
 		--clr-invert: light-dark(var(--white), var(--blackest));

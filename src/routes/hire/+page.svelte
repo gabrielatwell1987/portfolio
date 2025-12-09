@@ -12,7 +12,7 @@
 />
 
 <div class="hire-form">
-	<div class="header">
+	<div class="header-icons">
 		<Title title="connect" title2="connect" />
 
 		<div class="center-positioning">
@@ -34,14 +34,15 @@
 			var(--clr-invert) var(--100)
 		);
 
-		& .header {
+		& .header-icons {
 			display: flex;
-			justify-content: center;
+			justify-content: flex-start;
 			align-items: center;
-			gap: 5em;
+			gap: 1em;
 
 			@media (width <= 768px) {
-				gap: 1rem;
+				flex-direction: column;
+				gap: 2px;
 			}
 
 			& .center-positioning {
@@ -51,6 +52,10 @@
 				justify-content: center;
 				align-items: center;
 				margin-top: 5em;
+
+				@media (width <= 768px) {
+					margin-top: 0;
+				}
 			}
 		}
 

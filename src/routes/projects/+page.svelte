@@ -54,7 +54,7 @@
 />
 
 <div class="projects">
-	<div class="header">
+	<div class="header-icons">
 		<Title title="builds" title2="builds" viewTransitionName="builds" />
 
 		<div class="popup">
@@ -178,7 +178,7 @@
 	}
 
 	.projects {
-		& .header {
+		& .header-icons {
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -193,6 +193,10 @@
 				justify-content: center;
 				align-items: center;
 				margin-top: 5em;
+
+				@media (width <= 768px) {
+					margin-right: 0.75rem;
+				}
 			}
 		}
 
