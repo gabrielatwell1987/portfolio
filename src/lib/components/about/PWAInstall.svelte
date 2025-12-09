@@ -137,7 +137,7 @@
 	}
 
 	[popover] {
-		border: 3px solid var(--dark-blue);
+		border: 3px solid var(--clr-gray);
 		border-radius: 0.5rem;
 		box-shadow: var(--blackest) 0px 20px 25px -5px;
 		padding: 1rem 1.5rem;

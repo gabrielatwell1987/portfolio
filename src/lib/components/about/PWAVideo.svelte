@@ -162,15 +162,15 @@
 	}
 
 	.video-wrapper {
-		width: 100%;
-		max-width: 800px;
-		margin: 0 auto;
+		inline-size: 100%;
+		max-inline-size: 800px;
+		margin-inline: auto;
 
 		& .responsive-iframe {
 			position: relative;
-			width: 100%;
+			inline-size: 100%;
 			max-inline-size: 100%;
-			height: 0;
+			block-size: 0;
 			padding-bottom: 56.25%;
 			overflow: hidden;
 			border: 2px solid var(--dark-gray);
@@ -188,7 +188,7 @@
 
 	[popover] {
 		position: relative;
-		border: 3px solid var(--dark-blue);
+		border: 3px solid var(--clr-gray);
 		border-radius: 0.5rem;
 		box-shadow: var(--blackest) 0px 20px 25px -5px;
 		display: none;

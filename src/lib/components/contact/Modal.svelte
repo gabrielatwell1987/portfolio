@@ -170,10 +170,10 @@
 		& .modal-inner {
 			@media (width >= 320px) {
 				width: 100%;
-				border: 2px solid var(--clr-main);
+				border: 2px solid var(--clr-gray);
 				border-radius: 1rem;
 				background: var(--blackest);
-				box-shadow: 0 0 5px 3px var(--dark-blue);
+				/* box-shadow: 0 0 5px 3px var(--dark-blue); */
 
 				@media (width <= 500px) {
 					padding: 3em 1em;
