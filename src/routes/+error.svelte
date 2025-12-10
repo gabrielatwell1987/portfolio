@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
-	import { DEFAULT_DURATION, DEFAULT_DELAY } from '$lib/data/animationTimings.svelte.js';
+	import { DEFAULT_DURATION, DEFAULT_DELAY } from '$lib/data/context/animationTimings.svelte.js';
 	import SEO from '$lib/data/SEO.svelte';
 	import Image from '$lib/components/layout/Image.svelte';
 

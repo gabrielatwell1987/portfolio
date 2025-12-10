@@ -1,31 +1,18 @@
 <script>
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
-	import { browser } from '$app/environment';
-	import { theme } from '$lib/data/stores/themeStore.js';
+	import { useTheme } from '$lib/data/context/theme.svelte.js';
 
-	// let theme = $state('dark');
+	const theme = useTheme();
 	let themeStatus = $state('');
-	let currentTheme = $state('dark');
 
 	function toggle() {
-		if (!browser) return false;
-
-		theme.update((current) => (current === 'light' ? 'dark' : 'light'));
-		themeStatus = `Switched to ${currentTheme === 'light' ? 'dark' : 'light'} theme`;
+		const newTheme = theme.toggle();
+		themeStatus = `Switched to ${newTheme} theme`;
 
 		setTimeout(() => {
 			themeStatus = '';
 		}, 2000);
-
-		return false;
 	}
-
-	$effect(() => {
-		const unsubscribe = theme.subscribe((value) => {
-			currentTheme = value;
-		});
-		return unsubscribe;
-	});
 </script>
 
 <A11yAnnouncer message={themeStatus} />
@@ -35,11 +22,11 @@
 	type="button"
 	role="switch"
 	aria-label="Toggle between light and dark theme"
-	aria-checked={theme === 'light'}
+	aria-checked={theme.isLight}
 	style="position: relative; touch-action: manipulation; pointer-events: auto;"
 	data-debug="theme-toggle"
 >
-	{#if currentTheme === 'light'}
+	{#if theme.isLight}
 		<svg
 			width="800px"
 			height="800px"

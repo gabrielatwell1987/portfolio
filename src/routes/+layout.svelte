@@ -7,11 +7,13 @@
 	import Loading from '$lib/components/layout/Loading.svelte';
 	import SkipLink from '$lib/components/layout/SkipLink.svelte';
 	import ViewTransition from '$lib/components/layout/ViewTransition.svelte';
-	import { createLoadingContext } from '$lib/data/loading.svelte.js';
+	import { createLoadingContext } from '$lib/data/context/loading.svelte.js';
+	import { createThemeContext } from '$lib/data/context/theme.svelte.js';
 
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
 	const loading = createLoadingContext();
+	const theme = createThemeContext();
 
 	function detectSWUpdate() {
 		if ('serviceWorker' in navigator) {
