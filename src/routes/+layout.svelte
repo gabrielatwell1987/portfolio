@@ -7,10 +7,11 @@
 	import Loading from '$lib/components/layout/Loading.svelte';
 	import SkipLink from '$lib/components/layout/SkipLink.svelte';
 	import ViewTransition from '$lib/components/layout/ViewTransition.svelte';
+	import { createLoadingContext } from '$lib/data/loading.svelte.js';
 
 	/** @type {{children?: import('svelte').Snippet}} */
 	let { children } = $props();
-	let isPageLoaded = $state(false);
+	const loading = createLoadingContext();
 
 	function detectSWUpdate() {
 		if ('serviceWorker' in navigator) {
@@ -39,7 +40,7 @@
 	}
 
 	onMount(() => {
-		isPageLoaded = true;
+		loading.isLoaded = true;
 		detectSWUpdate();
 	});
 </script>
@@ -48,13 +49,13 @@
 <ViewTransition />
 
 <!-- loading animation -->
-{#if !isPageLoaded}
+{#if !loading.isLoaded}
 	<Loading />
 {/if}
 
 <NavBar />
 
-<main style="visibility: {isPageLoaded ? 'visible' : 'hidden'};">
+<main style="visibility: {loading.isLoaded ? 'visible' : 'hidden'};">
 	<div id="main-content" tabindex="-1">
 		{@render children()}
 	</div>

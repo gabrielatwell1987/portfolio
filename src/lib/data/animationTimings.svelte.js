@@ -1,46 +1,61 @@
-// Create internal state
-let _duration = $state(500);
-let _delay = $state(0);
-let _inOut = $state('cubic-bezier(0.4, 0, 0.2, 1)');
+import { getContext, setContext } from 'svelte';
 
-// Export getters for reading the state
-export function getDuration() {
-	return _duration;
+const ANIMATION_KEY = Symbol('animation');
+
+export const DEFAULT_DURATION = 300;
+export const DEFAULT_DELAY = 0;
+
+/**
+ * @param {number} initialDuration
+ * @param {number} initialDelay
+ */
+
+export function createAnimationContext(initialDuration = 300, initialDelay = 0) {
+	let duration = $state(initialDuration);
+	let delay = $state(initialDelay);
+	let isEnabled = $state(true);
+
+	const context = {
+		get duration() {
+			return duration;
+		},
+		set duration(v) {
+			duration = v;
+		},
+		get delay() {
+			return delay;
+		},
+		set delay(v) {
+			delay = v;
+		},
+		get isEnabled() {
+			return isEnabled;
+		},
+		set isEnabled(v) {
+			isEnabled = v;
+		},
+		get css() {
+			return {
+				duration: `${duration}ms`,
+				delay: `${delay}ms`
+			};
+		}
+	};
+
+	setContext(ANIMATION_KEY, context);
+	return context;
 }
 
-export function getDelay() {
-	return _delay;
+export function getAnimationContext() {
+	return getContext(ANIMATION_KEY);
 }
 
-export function getInOut() {
-	return _inOut;
-}
-
-// Export setters for updating the state
-export function setDuration(ms) {
-	_duration = ms;
-}
-
-export function setDelay(ms) {
-	_delay = ms;
-}
-
-export function setInOut(easing) {
-	_inOut = easing;
-}
-
-// Testing helpers
-export function quickTest() {
-	_duration = 300;
-	_delay = 0;
-}
-
-export function slowTest() {
-	_duration = 1000;
-	_delay = 500;
-}
-
-// Auto-reset for development
-if (typeof window !== 'undefined') {
-	quickTest();
+export function useAnimation() {
+	const ctx = getContext(ANIMATION_KEY);
+	if (!ctx) {
+		throw new Error(
+			'No animation context found. Make sure to call createAnimationContext() in a parent component.'
+		);
+	}
+	return ctx;
 }

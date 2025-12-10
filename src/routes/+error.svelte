@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
-	import { getDuration, getDelay } from '$lib/data/animationTimings.svelte.js';
+	import { DEFAULT_DURATION, DEFAULT_DELAY } from '$lib/data/animationTimings.svelte.js';
 	import SEO from '$lib/data/SEO.svelte';
 	import Image from '$lib/components/layout/Image.svelte';
 
@@ -16,7 +16,7 @@
 	keywords="error, gabe's error page"
 />
 
-<div aria-label="error" transition:fade={{ getDuration, getDelay }}>
+<div aria-label="error" transition:fade={{ delay: DEFAULT_DELAY, duration: DEFAULT_DURATION }}>
 	<div class="image">
 		<Image src="/logos/error.webp" alt="an error has occurred" width="300" aspectRatio="1/1" />
 	</div>
@@ -28,7 +28,7 @@
 	</div>
 
 	<div class="error">
-		<p>{$page.error.message}</p>
+		<p>{$page.error?.message}</p>
 	</div>
 </div>
 
