@@ -4,10 +4,7 @@
 	/** @type {{title: any, title2: any, img?: string, width?: string, svg?: string, viewTransitionName?: string}} */
 	let { title, title2, img, width, svg, viewTransitionName } = $props();
 
-	// Correctly derive the transition state based on current page
-	let shouldTransition = $derived(viewTransitionName && $page.url.pathname === '/projects');
-	// Determine which transition name to use
-	let transitionName = $derived(shouldTransition ? viewTransitionName : 'page-title');
+	let transitionName = $derived(viewTransitionName || 'page-title');
 
 	let svgElement = $derived.by(() => {
 		if (!svg) return '';
