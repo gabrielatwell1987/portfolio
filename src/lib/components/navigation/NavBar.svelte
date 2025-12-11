@@ -41,7 +41,7 @@
 
 	<ul class="desktop" aria-label="Desktop navigation menu">
 		<li><NavLink href="/about" title="About" viewTransitionName="about-heading" /></li>
-		<li><NavLink href="/projects" title="Builds" viewTransitionName="builds" /></li>
+		<li><NavLink href="/projects" title="Builds" viewTransitionName="build-heading" /></li>
 		<li><NavLink href="/learn" title="Learn" viewTransitionName="learn-heading" /></li>
 		<SelectLink path1="/hire" path2="/contact" />
 	</ul>
@@ -73,7 +73,7 @@
 		backdrop-filter: blur(0.15rem);
 		-webkit-backdrop-filter: blur(0.15rem);
 		z-index: 15;
-		view-transition-name: navigation;
+		/* view-transition-name: navigation; */
 		position: fixed;
 		top: 0.25rem;
 		width: 100%;

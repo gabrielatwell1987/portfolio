@@ -55,7 +55,7 @@
 
 <div class="projects">
 	<div class="header-icons">
-		<Title title="builds" title2="builds" viewTransitionName="builds" />
+		<Title title="builds" title2="builds" viewTransitionName="build-heading" />
 
 		<div class="Popover">
 			<Popover
@@ -320,22 +320,22 @@
 		}
 	}
 
-	::view-transition-old(builds) {
+	::view-transition-old(build-heading) {
 		opacity: 0;
 	}
 
-	::view-transition-group(builds) {
+	::view-transition-group(build-heading) {
 		animation-duration: 0.5s;
 		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
 	@media (width <= 768px) {
-		::view-transition-old(builds) {
+		::view-transition-old(build-heading) {
 			animation: slide-out 0.3s ease-out forwards;
 			opacity: 1;
 		}
 
-		::view-transition-new(builds) {
+		::view-transition-new(build-heading) {
 			animation: slide-in 0.5s ease-out forwards;
 		}
 	}
