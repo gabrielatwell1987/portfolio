@@ -40,7 +40,7 @@
 	</div>
 
 	<ul class="desktop" aria-label="Desktop navigation menu">
-		<li><NavLink href="/about" title="About" /></li>
+		<li><NavLink href="/about" title="About" viewTransitionName="about-heading" /></li>
 		<li><NavLink href="/projects" title="Builds" viewTransitionName="builds" /></li>
 		<li><NavLink href="/learn" title="Learn" viewTransitionName="learn-heading" /></li>
 		<SelectLink path1="/hire" path2="/contact" />
@@ -149,12 +149,10 @@
 		opacity: 0;
 		transform-origin: top left;
 		box-shadow: 0 0 0 1px var(--clr-main);
-		/* pointer-events: none; */
 
 		&.open {
 			transform: scale(1);
 			opacity: 1;
-			/* pointer-events: auto; */
 		}
 
 		&.closing {

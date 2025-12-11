@@ -3,7 +3,7 @@
 	import { SplitText } from 'gsap/SplitText';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-	let { src, alt, title } = $props();
+	let { src, alt, title, viewTransitionName } = $props();
 
 	function titleRotate() {
 		gsap.registerPlugin(SplitText, ScrollTrigger);
@@ -72,7 +72,10 @@
 		/>
 	</picture>
 
-	<h1 id="title">{title}</h1>
+	<h1 id="title">
+		<span style="view-transition-name: {viewTransitionName || ''};">About</span>
+		{title}
+	</h1>
 </div>
 
 <style>
@@ -186,6 +189,26 @@
 		100% {
 			opacity: 1;
 			translate: 0 0;
+		}
+	}
+
+	::view-transition-old(about-heading) {
+		opacity: 0;
+	}
+
+	::view-transition-group(about-heading) {
+		animation-duration: 0.5s;
+		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	@media (width <= 768px) {
+		::view-transition-old(about-heading) {
+			animation: none;
+			opacity: 1;
+		}
+
+		::view-transition-new(about-heading) {
+			animation: none;
 		}
 	}
 </style>

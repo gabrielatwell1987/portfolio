@@ -5,13 +5,10 @@
 	/** @type {{title1: any, title2: any, span: any, viewTransitionName: any, transitionPath: any}} */
 	let { title1, title2, span, viewTransitionName, transitionPath } = $props();
 
-	// Check if we're on the target path for view transition
-	let shouldTransition = $derived(
-		viewTransitionName && transitionPath && $page.url.pathname === transitionPath
-	);
+	let transitionName = $derived(viewTransitionName || '');
 
 	// Determine which transition name to use
-	let transitionName = $derived(shouldTransition ? viewTransitionName : '');
+	// let transitionName = $derived(shouldTransition ? viewTransitionName : '');
 
 	$effect(() => {
 		const left = document.querySelector('.left-word');
@@ -109,6 +106,26 @@
 				2px 0 0 var(--clr-main),
 				0 -2px 0 var(--clr-main),
 				0 2px 0 var(--clr-main);
+		}
+	}
+
+	::view-transition-old(learn-heading) {
+		opacity: 0;
+	}
+
+	::view-transition-group(learn-heading) {
+		animation-duration: 0.5s;
+		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	@media (width <= 768px) {
+		::view-transition-old(learn-heading) {
+			animation: none;
+			opacity: 1;
+		}
+
+		::view-transition-new(learn-heading) {
+			animation: none;
 		}
 	}
 </style>
