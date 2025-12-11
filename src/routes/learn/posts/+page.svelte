@@ -6,7 +6,7 @@
 	import TableOfContents from '$lib/components/learn/TableOfContents.svelte';
 	import GabeMorph from '$lib/components/learn/GabeMorph.svelte';
 	import BackToTop from '$lib/components/learn/BackToTop.svelte';
-	import ViewTransitionImage from '$lib/components/layout/ViewTransitionImage.svelte';
+	import ViewTransitionImage from '$lib/components/layout/view-transitions/ViewTransitionImage.svelte';
 
 	let mounted = $state(false);
 	let cssEnlarged = $state(false);
