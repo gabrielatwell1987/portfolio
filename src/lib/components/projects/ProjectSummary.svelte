@@ -32,7 +32,7 @@
 	}
 </script>
 
-<section class="summary-popup" aria-label="pwa summary">
+<section class="summary-Popover" aria-label="pwa summary">
 	<button type="button" onclick={handleClick}>
 		<span class="pwa-title">{title}</span>
 	</button>
@@ -67,7 +67,7 @@
 </section>
 
 <style>
-	.summary-popup {
+	.summary-Popover {
 		display: inline-block;
 		margin-inline: auto;
 		pointer-events: auto;
@@ -136,8 +136,7 @@
 
 		& button {
 			background-color: transparent;
-			background-color: var(--clr-dark-gray);
-			color: var(--clr-main);
+			color: var(--clr-blue);
 			filter: brightness(1);
 			width: fit-content;
 			font-family: var(--bronova);
@@ -145,8 +144,6 @@
 			font-weight: 600;
 			margin: 0;
 			padding: 0.25rem 1rem;
-			border: 2px solid var(--clr-main);
-			border-radius: 100vmax;
 			cursor: pointer;
 
 			&:not(:hover) {
@@ -169,11 +166,10 @@
 			font-size: clamp(var(--sm), 5vw, var(--h3));
 			letter-spacing: 2px;
 			padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
-			background-color: var(--clr-light-invert);
 			color: var(--clr-main);
 			max-inline-size: 60%;
 			overflow-y: auto;
-			border: none;
+			border: 1px solid var(--clr-gray);
 
 			@media (width < 500px) {
 				letter-spacing: 1px;
@@ -214,7 +210,8 @@
 	}
 
 	[popover]:popover-open::backdrop {
-		background-color: transparent;
+		background-color: rgb(0 0 0 / 50%);
+		/* background-color: transparent; */
 	}
 
 	@starting-style {

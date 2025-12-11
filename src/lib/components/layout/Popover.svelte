@@ -2,7 +2,7 @@
 	let { title, text } = $props();
 </script>
 
-<section class="popover-button" aria-label="popup button">
+<section class="popover-button" aria-label="Popover button">
 	<button class="popover-icon" popovertarget="popover"
 		>{title}
 
@@ -86,7 +86,6 @@
 			font-size: clamp(var(--xs), 1.25vw, var(--h5));
 			letter-spacing: 2px;
 			padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
-			background-color: var(--clr-invert);
 			color: var(--clr-main);
 
 			@media (width < 500px) {
@@ -130,7 +129,7 @@
 	}
 
 	[popover]:popover-open::backdrop {
-		background-color: transparent;
+		background-color: rgb(0 0 0 / 50%);
 		box-shadow: none;
 	}
 

@@ -1,5 +1,5 @@
 <script>
-	import Popup from '$lib/components/layout/Popup.svelte';
+	import Popover from '$lib/components/layout/Popover.svelte';
 	import Title from '$lib/components/layout/Title.svelte';
 	import Testimonial from '$lib/components/projects/Testimonial.svelte';
 	import projects from '$lib/components/projects/projects.json';
@@ -57,8 +57,8 @@
 	<div class="header-icons">
 		<Title title="builds" title2="builds" viewTransitionName="builds" />
 
-		<div class="popup">
-			<Popup
+		<div class="Popover">
+			<Popover
 				title=""
 				text="Hover over the project image to reveal the tech stack I used on the project 👍🏻"
 			/>
@@ -188,7 +188,7 @@
 				gap: 1rem;
 			}
 
-			& .popup {
+			& .Popover {
 				display: inline-flex;
 				justify-content: center;
 				align-items: center;

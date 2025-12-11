@@ -1,7 +1,7 @@
 <script>
 	import SubmitButton from '$lib/components/contact/SubmitButton.svelte';
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
-	import Popup from '$lib/components/layout/Popup.svelte';
+	import Popover from '$lib/components/layout/Popover.svelte';
 	import Modal from './Modal.svelte';
 	import MotifPhoto from './MotifPhoto.svelte';
 
@@ -13,7 +13,7 @@
 
 <div class="contact-icons">
 	<div class="popover-icon">
-		<Popup title="" text="Please provide a working email so I can message you back!" />
+		<Popover title="" text="Please provide a working email so I can message you back!" />
 	</div>
 
 	<Modal />

@@ -32,7 +32,7 @@
 	}
 </script>
 
-<section class="instruction-popup" aria-label="pwa instructions">
+<section class="instruction-Popover" aria-label="pwa instructions">
 	<button type="button" onclick={handleClick}><span class="pwa-title">{title}</span></button>
 
 	<div {id} popover="auto" bind:this={popoverElement}>
@@ -65,7 +65,7 @@
 </section>
 
 <style>
-	.instruction-popup {
+	.instruction-Popover {
 		display: inline-block;
 		position: relative;
 
@@ -149,7 +149,6 @@
 			font-size: clamp(var(--sm), 5vw, var(--h3));
 			letter-spacing: 2px;
 			padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
-			background-color: var(--clr-invert);
 			color: var(--clr-main);
 			width: 80%;
 			overflow-y: auto;
@@ -195,7 +194,7 @@
 	}
 
 	[popover]:popover-open::backdrop {
-		background-color: transparent;
+		background-color: rgb(0 0 0 / 50%);
 	}
 
 	@starting-style {

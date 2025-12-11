@@ -1,6 +1,6 @@
 <script>
 	import HireForm from '$lib/components/contact/HireForm.svelte';
-	import Popup from '$lib/components/layout/Popup.svelte';
+	import Popover from '$lib/components/layout/Popover.svelte';
 	import Title from '$lib/components/layout/Title.svelte';
 	import SEO from '$lib/data/SEO.svelte';
 </script>
@@ -16,7 +16,7 @@
 		<Title title="connect" title2="connect" />
 
 		<div class="center-positioning">
-			<Popup title="" text="Please fill out this questionnaire and I'll contact you back 😎" />
+			<Popover title="" text="Please fill out this questionnaire and I'll contact you back 😎" />
 		</div>
 	</div>
 

@@ -52,7 +52,7 @@
 	}
 </script>
 
-<section class="video-popup" aria-label="pwa video tutorial">
+<section class="video-Popover" aria-label="pwa video tutorial">
 	<button type="button" onclick={openVideoPopover}>
 		{title}
 	</button>
@@ -95,7 +95,7 @@
 </section>
 
 <style>
-	.video-popup {
+	.video-Popover {
 		display: inline-block;
 
 		&:focus,
@@ -167,7 +167,6 @@
 			position: fixed;
 			inset: 0;
 			overflow: auto;
-			background-color: var(--clr-invert);
 			color: var(--clr-main);
 
 			@media (width <= 768px) {
