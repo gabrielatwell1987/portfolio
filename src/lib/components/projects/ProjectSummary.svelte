@@ -145,6 +145,7 @@
 			margin: 0;
 			padding: 0.25rem 1rem;
 			cursor: pointer;
+			border: none;
 
 			&:not(:hover) {
 				opacity: 0.85;
@@ -211,7 +212,6 @@
 
 	[popover]:popover-open::backdrop {
 		background-color: rgb(0 0 0 / 50%);
-		/* background-color: transparent; */
 	}
 
 	@starting-style {
