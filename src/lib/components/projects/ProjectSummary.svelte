@@ -1,5 +1,5 @@
 <script>
-	let { popoverTitle, title, summary } = $props();
+	let { popoverTitle, title, summary, index = 0 } = $props();
 
 	let popoverElement = $state(null);
 
@@ -32,9 +32,9 @@
 	}
 </script>
 
-<section class="summary-Popover" aria-label="pwa summary">
+<section class="summary-popover" aria-label="pwa summary">
 	<button type="button" onclick={handleClick}>
-		<span class="pwa-title">{title}</span>
+		<span class="pwa-title" style="view-transition-name: pwa-title-{index};">{title}</span>
 	</button>
 
 	<div popover="hint" bind:this={popoverElement} data-summary-content>
@@ -67,7 +67,7 @@
 </section>
 
 <style>
-	.summary-Popover {
+	.summary-popover {
 		display: inline-block;
 		margin-inline: auto;
 		pointer-events: auto;
@@ -153,10 +153,6 @@
 
 			&:active {
 				scale: 0.97;
-			}
-
-			& .pwa-title {
-				view-transition-name: pwa-title;
 			}
 		}
 

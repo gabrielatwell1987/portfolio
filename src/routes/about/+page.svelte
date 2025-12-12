@@ -6,7 +6,7 @@
 	import Bento from '$lib/components/about/Bento.svelte';
 	import CardFlip from '$lib/components/about/CardFlip.svelte';
 	import AboutHero from '$lib/components/about/AboutHero.svelte';
-	import Preloader from '$lib/components/about/Preloader.svelte';
+	// import Preloader from '$lib/components/about/Preloader.svelte';
 	import Skills from '$lib/components/about/Skills.svelte';
 	import Slider from '$lib/components/about/Slider.svelte';
 	import PWAInstall from '$lib/components/about/PWAInstall.svelte';
@@ -35,7 +35,7 @@
 	keywords="about gabe, about gabriel, gabe's bio"
 />
 
-<Preloader />
+<!-- <Preloader /> -->
 
 <div class="about-me" aria-label="bio">
 	<section class="about-section">

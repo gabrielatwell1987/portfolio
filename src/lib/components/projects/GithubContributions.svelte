@@ -1,5 +1,4 @@
 <script>
-	// Svelte 5 state
 	let contributionsData = $state({ weeks: [] });
 	let totalContributions = $state(0);
 	let isLoading = $state(true);
@@ -8,13 +7,15 @@
 	let isUsingFallback = $state(false);
 
 	// Fetch real GitHub contributions data
-	async function fetchContributionsData() {
+	async function fetchContributionsData(signal) {
 		try {
 			isLoading = true;
 			isError = false;
 
-			const response = await fetch('/api/github-contributions');
+			const response = await fetch('/api/github-contributions', { signal });
 			const data = await response.json();
+
+			if (signal?.aborted) return;
 
 			if (data.success) {
 				contributionsData = { weeks: data.weeks };
@@ -29,6 +30,8 @@
 				console.warn('Using fallback data:', errorMessage);
 			}
 		} catch (error) {
+			if (signal?.aborted) return;
+
 			console.error('Error fetching contributions:', error);
 			isError = true;
 			errorMessage = 'Failed to load contributions data';
@@ -45,7 +48,9 @@
 			}, 0);
 			isUsingFallback = true;
 		} finally {
-			isLoading = false;
+			if (!signal?.aborted) {
+				isLoading = false;
+			}
 		}
 	}
 
@@ -105,7 +110,7 @@
 		return '#216e39';
 	}
 
-	// Function to get contribution level for styling
+	// get contribution level for styling
 	function getContributionLevel(count) {
 		if (count === 0) return 'none';
 		if (count <= 3) return 'low';
@@ -114,7 +119,7 @@
 		return 'very-high';
 	}
 
-	// Function to format date for tooltip
+	// format date for tooltip
 	function formatDate(dateString) {
 		// Parse the date string (YYYY-MM-DD) to avoid timezone issues
 		const [year, month, day] = dateString.split('-').map(Number);
@@ -127,12 +132,11 @@
 		});
 	}
 
-	// Function to get plural form for contributions
+	// get plural form for contributions
 	function getContributionText(count) {
 		return count === 1 ? 'contribution' : 'contributions';
 	}
 
-	// Constants for SVG layout
 	const CELL_SIZE = 17;
 	const CELL_GAP = 5;
 	const DAYS_IN_WEEK = 7;
@@ -140,7 +144,6 @@
 	const MONTH_LABEL_HEIGHT = 20;
 	const DAY_LABEL_WIDTH = 50;
 
-	// Month names
 	const MONTHS = [
 		'Jan',
 		'Feb',
@@ -158,7 +161,7 @@
 
 	// Day labels
 	const DAYS = ['Mon', 'Wed', 'Fri'];
-	const DAY_INDICES = [1, 3, 5]; // Monday, Wednesday, Friday
+	const DAY_INDICES = [1, 3, 5];
 
 	// Mobile constants
 	const MOBILE_CELL_SIZE = 12;
@@ -326,50 +329,60 @@
 		return dayLabelWidth + contributionsData.weeks.length * (cellSize + cellGap);
 	}
 
+	//  fetch data
 	$effect(() => {
-		// Fetch contributions data on mount
-		fetchContributionsData();
+		const abortController = new AbortController();
+		fetchContributionsData(abortController.signal);
 
-		// Update container-based responsive state using ResizeObserver
-		if (typeof window !== 'undefined' && containerElement) {
-			const resizeObserver = new ResizeObserver((entries) => {
-				for (const entry of entries) {
-					const containerWidth = entry.contentRect.width;
-					isSmallContainer = containerWidth <= 600;
-				}
-			});
+		return () => {
+			abortController.abort();
+		};
+	});
 
-			resizeObserver.observe(containerElement);
-			return () => resizeObserver.disconnect();
-		}
+	// ResizeObserver
+	$effect(() => {
+		if (typeof window === 'undefined' || !containerElement) return;
 
-		// Add click listener to document for tooltip hiding on small containers
-		if (typeof window !== 'undefined' && isSmallContainer) {
-			const handleDocumentClick = (event) => {
-				if (mobileTooltip.visible) {
-					// Hide if clicking outside tooltip and contribution days
-					if (
-						!event.target.closest('.mobile-tooltip') &&
-						!event.target.classList.contains('contribution-day')
-					) {
-						mobileTooltip.visible = false;
-					}
-				}
-			};
-
-			document.addEventListener('click', handleDocumentClick);
-			return () => document.removeEventListener('click', handleDocumentClick);
-		}
-
-		// Scroll to beginning on mount for small containers
-		if (typeof window !== 'undefined') {
-			const wrapper = document.querySelector('.calendar-svg-wrapper');
-			if (wrapper && isSmallContainer) {
-				// Small delay to ensure DOM is ready
-				setTimeout(() => {
-					wrapper.scrollLeft = 0;
-				}, 100);
+		const resizeObserver = new ResizeObserver((entries) => {
+			for (const entry of entries) {
+				const containerWidth = entry.contentRect.width;
+				isSmallContainer = containerWidth <= 600;
 			}
+		});
+
+		resizeObserver.observe(containerElement);
+		return () => resizeObserver.disconnect();
+	});
+
+	// click listener
+	$effect(() => {
+		if (typeof window === 'undefined' || !isSmallContainer) return;
+
+		const handleDocumentClick = (event) => {
+			if (mobileTooltip.visible) {
+				if (
+					!event.target.closest('.mobile-tooltip') &&
+					!event.target.classList.contains('contribution-day')
+				) {
+					mobileTooltip.visible = false;
+				}
+			}
+		};
+
+		document.addEventListener('click', handleDocumentClick);
+		return () => document.removeEventListener('click', handleDocumentClick);
+	});
+
+	// scroll position
+	$effect(() => {
+		if (typeof window === 'undefined' || !isSmallContainer) return;
+
+		const wrapper = document.querySelector('.calendar-svg-wrapper');
+		if (wrapper) {
+			const timer = setTimeout(() => {
+				wrapper.scrollLeft = 0;
+			}, 100);
+			return () => clearTimeout(timer);
 		}
 	});
 </script>

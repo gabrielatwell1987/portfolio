@@ -6,43 +6,81 @@
 	import testimonials from '$lib/components/projects/testimonials.json';
 	import SEO from '$lib/data/SEO.svelte';
 
-	// State management with $state
+	import { onDestroy } from 'svelte';
+	import { beforeNavigate } from '$app/navigation';
+
 	let ProjectComponent = $state(null);
 	let GithubContributions = $state(null);
 	let showProjects = $state(false);
 	let showGithub = $state(false);
 	let isGithubLoading = $state(true);
-	let { index = 0 } = $props();
+
+	let isNavigating = $state(false);
 
 	function getTestimonialForProject(projectIndex) {
 		return testimonials.find((t) => t.projectIndex === projectIndex);
 	}
 
-	$effect(() => {
-		const loadProject = async () => {
-			const module = await import('$lib/components/projects/Project.svelte');
-			ProjectComponent = module.default;
-			showProjects = true;
-		};
+	// Debug: Track when navigation starts
+	beforeNavigate((navigation) => {
+		console.log('beforeNavigate from /projects:', navigation);
+		console.log('Current state:', {
+			showProjects,
+			showGithub,
+			isGithubLoading,
+			hasProjectComponent: !!ProjectComponent,
+			hasGithubComponent: !!GithubContributions
+		});
 
-		// Small delay to ensure initial page render is complete
-		const timer = setTimeout(loadProject, 100);
-		return () => clearTimeout(timer);
+		// Set navigating flag to prevent any more state updates
+		isNavigating = true;
+
+		// Clean up components before navigation
+		GithubContributions = null;
+		showGithub = false;
 	});
 
-	// Separate effect for GitHub contributions (heavier component)
 	$effect(() => {
+		if (isNavigating) return;
+
+		let cancelled = false;
+
+		const loadProject = async () => {
+			const module = await import('$lib/components/projects/Project.svelte');
+			if (!cancelled && !isNavigating) {
+				ProjectComponent = module.default;
+				showProjects = true;
+			}
+		};
+
+		const timer = setTimeout(loadProject, 100);
+		return () => {
+			cancelled = true;
+			clearTimeout(timer);
+		};
+	});
+
+	// gitHub contributions
+	$effect(() => {
+		if (!showProjects || isNavigating) return;
+
+		let cancelled = false;
+
 		if (showProjects) {
 			const loadGithub = async () => {
 				const module = await import('$lib/components/projects/GithubContributions.svelte');
-				GithubContributions = module.default;
-				showGithub = true;
-				isGithubLoading = false;
+				if (!cancelled && !isNavigating) {
+					GithubContributions = module.default;
+					showGithub = true;
+					isGithubLoading = false;
+				}
 			};
 
-			// Load GitHub after projects are ready
 			const timer = setTimeout(loadGithub, 200);
-			return () => clearTimeout(timer);
+			return () => {
+				cancelled = true;
+				clearTimeout(timer);
+			};
 		}
 	});
 </script>
@@ -266,7 +304,7 @@
 
 	section {
 		padding-top: 2rem;
-		overflow: hidden;
+		/* overflow: hidden; */
 
 		@media screen and (width >= 740px) {
 			padding: 2rem;

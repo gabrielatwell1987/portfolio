@@ -30,7 +30,7 @@
 	</a>
 
 	<div class="summary-wrapper">
-		<ProjectSummary popoverTitle={title} title="About {title}" {summary} />
+		<ProjectSummary popoverTitle={title} title="About {title}" {summary} {index} />
 	</div>
 </section>
 
