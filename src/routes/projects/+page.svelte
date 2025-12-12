@@ -5,8 +5,6 @@
 	import projects from '$lib/components/projects/projects.json';
 	import testimonials from '$lib/components/projects/testimonials.json';
 	import SEO from '$lib/data/SEO.svelte';
-
-	import { onDestroy } from 'svelte';
 	import { beforeNavigate } from '$app/navigation';
 
 	let ProjectComponent = $state(null);
@@ -21,21 +19,9 @@
 		return testimonials.find((t) => t.projectIndex === projectIndex);
 	}
 
-	// Debug: Track when navigation starts
 	beforeNavigate((navigation) => {
-		console.log('beforeNavigate from /projects:', navigation);
-		console.log('Current state:', {
-			showProjects,
-			showGithub,
-			isGithubLoading,
-			hasProjectComponent: !!ProjectComponent,
-			hasGithubComponent: !!GithubContributions
-		});
-
-		// Set navigating flag to prevent any more state updates
 		isNavigating = true;
 
-		// Clean up components before navigation
 		GithubContributions = null;
 		showGithub = false;
 	});
