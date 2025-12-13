@@ -11,7 +11,6 @@
 	keywords="hero section, three.js hero section, gabe's hero section"
 />
 
-<!-- Three.js Background -->
 <div class="hero-container">
 	<ThreeCanvas />
 
@@ -43,59 +42,71 @@
 		background: transparent;
 		contain: layout;
 		background: var(--clr-invert);
-	}
 
-	.hero-content {
-		position: relative;
-		z-index: 1;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-		width: 100%;
-		max-inline-size: 1200px;
-		padding: 2rem;
-		min-height: 60vh;
-		backdrop-filter: blur(1px);
-		/* background: rgba(0, 0, 0, 0.1); */
-		border-radius: 12px;
-
-		@media (width <= 768px) {
-			padding: 1rem;
-			min-height: 50vh;
-		}
-	}
-
-	.summary {
-		color: var(--clr-main);
-		font-family: var(--bronova);
-		font-size: clamp(var(--sm), 2vw, var(--h4));
-		font-weight: 400;
-		line-height: 1.6;
-		letter-spacing: 1px;
-		max-inline-size: 600px;
-		margin: 1.5rem auto;
-		text-align: left;
-		min-height: 3rem;
-
-		@media (width >= 990px) {
-			letter-spacing: 2px;
-			max-inline-size: 90%;
-		}
-
-		@media (width <= 768px) {
+		& .hero-content {
+			position: relative;
+			z-index: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 			text-align: center;
-			font-size: clamp(var(--xs), 4vw, var(--sm));
-		}
-	}
+			width: 100%;
+			max-inline-size: 1200px;
+			padding: 2rem;
+			min-height: 60vh;
+			backdrop-filter: blur(1px);
+			border-radius: 12px;
 
-	.button-wrapper {
-		margin-top: 2rem;
-		min-height: 3rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+			@media (width <= 768px) {
+				padding: 1rem;
+				min-height: 50vh;
+			}
+
+			& > * {
+				contain: layout;
+			}
+
+			& :global(h1) {
+				min-height: 3rem;
+			}
+
+			& :global(button) {
+				min-height: 2.5rem;
+				min-width: 8rem;
+			}
+
+			& .summary {
+				color: var(--clr-main);
+				font-family: var(--bronova);
+				font-size: clamp(var(--sm), 2vw, var(--h5));
+				font-weight: 400;
+				line-height: 1.6;
+				letter-spacing: 1px;
+				max-inline-size: 600px;
+				margin: 1.5rem auto;
+				text-align: left;
+				min-height: 3rem;
+
+				@media (width >= 990px) {
+					letter-spacing: 2px;
+					max-inline-size: 90%;
+				}
+
+				@media (width <= 768px) {
+					text-align: center;
+					font-size: clamp(var(--xs), 4vw, var(--sm));
+				}
+			}
+
+			& .button-wrapper {
+				margin-top: 2rem;
+				min-height: 3rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
@@ -103,18 +114,5 @@
 			backdrop-filter: none;
 			transition: none;
 		}
-	}
-
-	.hero-content > * {
-		contain: layout;
-	}
-
-	.hero-content :global(h1) {
-		min-height: 3rem;
-	}
-
-	.hero-content :global(button) {
-		min-height: 2.5rem;
-		min-width: 8rem;
 	}
 </style>
