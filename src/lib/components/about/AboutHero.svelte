@@ -197,7 +197,7 @@
 	}
 
 	::view-transition-group(about-heading) {
-		animation-duration: 0.5s;
+		animation-duration: var(--link-transition-duration);
 		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	}
 

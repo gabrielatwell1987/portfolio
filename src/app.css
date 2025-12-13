@@ -62,7 +62,12 @@
 		--xs: calc(var(--sm) / var(--scale));
 		--xxs: calc(var(--xs) / var(--scale));
 
+		/* filters */
 		--image-filter: grayscale(80%) brightness(80%);
+
+		/* timings */
+		--link-transition-duration: 0.75s;
+		--title-transition-duration: 0.3s;
 	}
 
 	@media (prefers-reduced-motion: no-preference) {

@@ -349,18 +349,18 @@
 	}
 
 	::view-transition-group(build-heading) {
-		animation-duration: 0.5s;
+		animation-duration: var(--link-transition-duration);
 		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
 	@media (width <= 768px) {
 		::view-transition-old(build-heading) {
-			animation: slide-out 0.3s ease-out forwards;
+			animation: slide-out var(--title-transition-duration) ease-out forwards;
 			opacity: 1;
 		}
 
 		::view-transition-new(build-heading) {
-			animation: slide-in 0.5s ease-out forwards;
+			animation: slide-in var(--title-transition-duration) ease-out forwards;
 		}
 	}
 </style>

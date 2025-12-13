@@ -158,11 +158,11 @@
 	}
 
 	::view-transition-old(page-title) {
-		animation: slide-out 0.3s ease-out forwards;
+		animation: slide-out var(--title-transition-duration) ease-out forwards;
 	}
 
 	::view-transition-new(page-title) {
-		animation: slide-in 0.5s ease-out forwards;
+		animation: slide-in var(--title-transition-duration) ease-out forwards;
 	}
 
 	@keyframes slide-out {
