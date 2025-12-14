@@ -2,42 +2,56 @@
 	let { popoverTitle, title, summary, index = 0 } = $props();
 
 	let popoverElement = $state(null);
+	let hoverTimeout = $state(null);
 
-	function handleClick() {
+	function showPopover() {
+		if (!popoverElement) return;
+		if (hoverTimeout) clearTimeout(hoverTimeout);
+		popoverElement.showPopover();
+	}
+
+	function hidePopover() {
 		if (!popoverElement) return;
 
-		if (!document.startViewTransition) {
-			popoverElement.showPopover();
-			return;
-		}
+		hoverTimeout = setTimeout(() => {
+			popoverElement.hidePopover();
+		}, 150);
+	}
 
-		document.startViewTransition(() => {
-			popoverElement.showPopover();
-		});
+	function cancelHide() {
+		if (hoverTimeout) {
+			clearTimeout(hoverTimeout);
+			hoverTimeout = null;
+		}
 	}
 
 	function closePopover() {
-		if (!popoverElement) return;
-
-		if (!document.startViewTransition) {
-			popoverElement.hidePopover();
-			return;
-		}
-
-		document.startViewTransition(() => {
-			setTimeout(() => {
-				popoverElement.hidePopover();
-			}, 0);
-		});
+		cancelHide();
+		popoverElement.hidePopover();
 	}
 </script>
 
 <section class="summary-popover" aria-label="pwa summary">
-	<button type="button" onclick={handleClick}>
+	<button
+		type="button"
+		onmouseenter={showPopover}
+		onmouseleave={hidePopover}
+		onfocus={showPopover}
+		onblur={hidePopover}
+		class="pwa-button"
+	>
 		<span class="pwa-title" style="view-transition-name: pwa-title-{index};">{title}</span>
 	</button>
 
-	<div popover="hint" bind:this={popoverElement} data-summary-content>
+	<div
+		popover="manual"
+		bind:this={popoverElement}
+		data-summary-content
+		onmouseenter={cancelHide}
+		onmouseleave={hidePopover}
+		role="dialog"
+		tabindex="0"
+	>
 		<button data-close onclick={closePopover} aria-label="close popover">
 			<svg
 				width="800px"
