@@ -6,7 +6,7 @@
 	import ProjectsGrid from './ProjectsGrid.svelte';
 	import UltraA from './UltraA.svelte';
 
-	const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&*';
+	const chars = 'Handcrafted Frontend Interfaces';
 
 	function getRandomChar() {
 		return chars[Math.floor(Math.random() * chars.length)];
@@ -14,12 +14,24 @@
 
 	let mounted = $state(false);
 	let titleText = 'Handcrafted Frontend Interfaces';
+	let titleWords = $derived(titleText.split(' '));
 	let displayedTitle = $state(
 		titleText.split('').map((char) => (char === ' ' ? ' ' : getRandomChar()))
 	);
 	let showContent = $state(false);
 	let particles = $state([]);
 	let { cssBg } = $props();
+
+	function getWordChars(wordIndex) {
+		let charIndex = 0;
+		for (let i = 0; i < wordIndex; i++) {
+			charIndex += titleWords[i].length + 1; // +1 for space
+		}
+		return {
+			start: charIndex,
+			chars: displayedTitle.slice(charIndex, charIndex + titleWords[wordIndex].length)
+		};
+	}
 
 	$effect(() => {
 		mounted = true;
@@ -33,7 +45,6 @@
 				if (targetChar === ' ') return;
 
 				let iterations = 0;
-				const maxIterations = 8;
 				const interval = setInterval(
 					() => {
 						displayedTitle[index] = iterations >= 3 ? targetChar : getRandomChar();
@@ -119,8 +130,13 @@
 	<section aria-label="Introduction and portfolio overview" class="hero-content">
 		<header class="title-container">
 			<h1 class="hero-title glitch">
-				{#each displayedTitle as char, i}
-					<span class="char" style="--i: {i}">{char}</span>
+				{#each titleWords as word, wordIndex}
+					{@const wordData = getWordChars(wordIndex)}
+					<span class="word">
+						{#each wordData.chars as char, charIndex}
+							<span class="char" style="--i: {wordData.start + charIndex}">{char}</span>
+						{/each}
+					</span>
 				{/each}
 			</h1>
 		</header>
@@ -327,9 +343,20 @@
 				word-wrap: normal;
 				overflow-wrap: break-word;
 				hyphens: none;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
 
 				@media (height <= 768px) {
 					line-height: 1.1;
+				}
+
+				& .word {
+					display: block;
+				}
+
+				& .char {
+					display: inline-block;
 				}
 			}
 		}
