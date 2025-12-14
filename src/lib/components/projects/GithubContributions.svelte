@@ -1,10 +1,40 @@
 <script>
+	import {
+		CELL_SIZE,
+		CELL_GAP,
+		GRID_HEIGHT,
+		MONTH_LABEL_HEIGHT,
+		DAY_LABEL_WIDTH,
+		MONTHS,
+		DAYS,
+		DAY_INDICES,
+		MOBILE_CELL_SIZE,
+		MOBILE_CELL_GAP,
+		MOBILE_GRID_HEIGHT,
+		MOBILE_MONTH_LABEL_HEIGHT,
+		MOBILE_DAY_LABEL_WIDTH,
+		getContributionLevel,
+		formatDate,
+		getContributionText,
+		generateFallbackData
+	} from './githubContributions.js';
+
 	let contributionsData = $state({ weeks: [] });
 	let totalContributions = $state(0);
 	let isLoading = $state(true);
 	let isError = $state(false);
 	let errorMessage = $state('');
 	let isUsingFallback = $state(false);
+	let isSmallContainer = $state(false);
+	let containerElement = $state(null);
+	let mobileTooltip = $state({
+		visible: false,
+		x: 0,
+		y: 0,
+		content: '',
+		date: ''
+	});
+	let announcement = $state('');
 
 	// Fetch real GitHub contributions data
 	async function fetchContributionsData(signal) {
@@ -54,139 +84,7 @@
 		}
 	}
 
-	// Fallback data generator (kept as backup)
-	function generateFallbackData() {
-		const weeks = [];
-		const today = new Date();
-		const oneYearAgo = new Date(today);
-		oneYearAgo.setFullYear(today.getFullYear() - 1);
-
-		const startDate = new Date(oneYearAgo);
-		startDate.setDate(startDate.getDate() - startDate.getDay());
-
-		let currentDate = new Date(startDate);
-
-		while (currentDate <= today) {
-			const week = { contributionDays: [] };
-
-			for (let i = 0; i < 7; i++) {
-				if (currentDate <= today) {
-					let contributionCount = 0;
-					const dayOfWeek = currentDate.getDay();
-					const random = Math.random();
-
-					if (dayOfWeek >= 1 && dayOfWeek <= 5) {
-						if (random < 0.7) contributionCount = Math.floor(Math.random() * 8) + 1;
-					} else {
-						if (random < 0.4) contributionCount = Math.floor(Math.random() * 4) + 1;
-					}
-
-					if (random > 0.95) contributionCount = Math.floor(Math.random() * 15) + 10;
-
-					week.contributionDays.push({
-						date: `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(currentDate.getDate()).padStart(2, '0')}`,
-						contributionCount,
-						color: getContributionColor(contributionCount)
-					});
-				}
-
-				currentDate.setDate(currentDate.getDate() + 1);
-			}
-
-			if (week.contributionDays.length > 0) {
-				weeks.push(week);
-			}
-		}
-
-		return { weeks };
-	}
-
-	// Get color based on contribution count (GitHub style)
-	function getContributionColor(count) {
-		if (count === 0) return '#ebedf0';
-		if (count <= 3) return '#9be9a8';
-		if (count <= 6) return '#40c463';
-		if (count <= 9) return '#30a14e';
-		return '#216e39';
-	}
-
-	// get contribution level for styling
-	function getContributionLevel(count) {
-		if (count === 0) return 'none';
-		if (count <= 3) return 'low';
-		if (count <= 6) return 'medium';
-		if (count <= 9) return 'high';
-		return 'very-high';
-	}
-
-	// format date for tooltip
-	function formatDate(dateString) {
-		// Parse the date string (YYYY-MM-DD) to avoid timezone issues
-		const [year, month, day] = dateString.split('-').map(Number);
-		const date = new Date(year, month - 1, day); // month is 0-indexed
-		return date.toLocaleDateString('en-US', {
-			weekday: 'long',
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric'
-		});
-	}
-
-	// get plural form for contributions
-	function getContributionText(count) {
-		return count === 1 ? 'contribution' : 'contributions';
-	}
-
-	const CELL_SIZE = 17;
-	const CELL_GAP = 5;
-	const DAYS_IN_WEEK = 7;
-	const GRID_HEIGHT = DAYS_IN_WEEK * (CELL_SIZE + CELL_GAP) - CELL_GAP;
-	const MONTH_LABEL_HEIGHT = 20;
-	const DAY_LABEL_WIDTH = 50;
-
-	const MONTHS = [
-		'Jan',
-		'Feb',
-		'Mar',
-		'Apr',
-		'May',
-		'Jun',
-		'Jul',
-		'Aug',
-		'Sep',
-		'Oct',
-		'Nov',
-		'Dec'
-	];
-
-	// Day labels
-	const DAYS = ['Mon', 'Wed', 'Fri'];
-	const DAY_INDICES = [1, 3, 5];
-
-	// Mobile constants
-	const MOBILE_CELL_SIZE = 12;
-	const MOBILE_CELL_GAP = 5;
-	const MOBILE_GRID_HEIGHT = DAYS_IN_WEEK * (MOBILE_CELL_SIZE + MOBILE_CELL_GAP) - MOBILE_CELL_GAP;
-	const MOBILE_MONTH_LABEL_HEIGHT = 16;
-	const MOBILE_DAY_LABEL_WIDTH = 30;
-
-	// Reactive dimensions based on container size
-	let isSmallContainer = $state(false);
-	let containerElement = $state(null);
-
-	// Mobile tooltip state
-	let mobileTooltip = $state({
-		visible: false,
-		x: 0,
-		y: 0,
-		content: '',
-		date: ''
-	});
-
-	// Screen reader announcement
-	let announcement = $state('');
-
-	// Handle mobile touch events for tooltips
+	// mobile touch events for tooltips
 	function handleDayTouch(event, day) {
 		// Announce to screen readers
 		announcement = `${day.contributionCount} ${getContributionText(day.contributionCount)} on ${formatDate(day.date)}`;
@@ -221,7 +119,7 @@
 		// On larger containers, don't prevent default to allow native title tooltips
 	}
 
-	// Enhanced keyboard navigation
+	// keyboard navigation
 	function handleDayKeydown(event, day, weekIndex, dayIndex) {
 		const { key } = event;
 
@@ -263,7 +161,7 @@
 		}
 	}
 
-	// Hide mobile tooltip when touching elsewhere
+	// hide mobile tooltip when touching elsewhere
 	function hideMobileTooltip(event) {
 		if (isSmallContainer && mobileTooltip.visible) {
 			// Don't hide if touching the tooltip itself or a contribution day
@@ -276,7 +174,7 @@
 		}
 	}
 
-	// Get current dimensions based on container size
+	// current dimensions based on container size
 	function getCurrentDimensions() {
 		return {
 			cellSize: isSmallContainer ? MOBILE_CELL_SIZE : CELL_SIZE,
@@ -287,7 +185,7 @@
 		};
 	}
 
-	// Calculate month positions
+	// month positions
 	function getMonthPositions() {
 		const months = [];
 		const { cellSize, cellGap, dayLabelWidth } = getCurrentDimensions();
@@ -323,13 +221,13 @@
 		return months;
 	}
 
-	// Calculate total width
+	// total width
 	function getTotalWidth() {
 		const { cellSize, cellGap, dayLabelWidth } = getCurrentDimensions();
 		return dayLabelWidth + contributionsData.weeks.length * (cellSize + cellGap);
 	}
 
-	//  fetch data
+	// fetch data
 	$effect(() => {
 		const abortController = new AbortController();
 		fetchContributionsData(abortController.signal);
@@ -339,7 +237,7 @@
 		};
 	});
 
-	// ResizeObserver
+	// resize observer
 	$effect(() => {
 		if (typeof window === 'undefined' || !containerElement) return;
 
