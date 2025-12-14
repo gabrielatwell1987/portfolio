@@ -6,37 +6,46 @@
 	import ProjectsGrid from './ProjectsGrid.svelte';
 	import UltraA from './UltraA.svelte';
 
+	const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&*';
+
+	function getRandomChar() {
+		return chars[Math.floor(Math.random() * chars.length)];
+	}
+
 	let mounted = $state(false);
 	let titleText = 'Handcrafted Frontend Interfaces';
-	let displayedTitle = $state('');
+	let displayedTitle = $state(
+		titleText.split('').map((char) => (char === ' ' ? ' ' : getRandomChar()))
+	);
 	let showContent = $state(false);
 	let particles = $state([]);
 	let { cssBg } = $props();
 
 	$effect(() => {
 		mounted = true;
-
 		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 		if (prefersReducedMotion) {
-			// Show content immediately without typewriter effect
-			displayedTitle = titleText;
+			displayedTitle = titleText.split('');
 			showContent = true;
 		} else {
-			// Normal typewriter effect
-			let i = 0;
-			const typeWriter = () => {
-				if (i < titleText.length) {
-					displayedTitle += titleText.charAt(i);
-					i++;
-					setTimeout(typeWriter, 65);
-				} else {
-					setTimeout(() => {
-						showContent = true;
-					}, 250);
-				}
-			};
-			setTimeout(typeWriter, 250);
+			titleText.split('').forEach((targetChar, index) => {
+				if (targetChar === ' ') return;
+
+				let iterations = 0;
+				const maxIterations = 8;
+				const interval = setInterval(
+					() => {
+						displayedTitle[index] = iterations >= 3 ? targetChar : getRandomChar();
+						displayedTitle = [...displayedTitle];
+						iterations++;
+						if (iterations > 3) clearInterval(interval);
+					},
+					50 + index * 23.5
+				);
+			});
+
+			setTimeout(() => (showContent = true), 1200);
 		}
 
 		// particle
@@ -54,7 +63,6 @@
 </script>
 
 <article role="banner" aria-label="Hero section">
-	<!-- Animated Background -->
 	<div class="background-container" aria-hidden="true">
 		{#if cssBg}
 			<div class="gradient-bg"></div>
@@ -109,12 +117,11 @@
 	</div>
 
 	<section aria-label="Introduction and portfolio overview" class="hero-content">
-		<!-- Typewriter Title -->
 		<header class="title-container">
-			<h1 class="hero-title" aria-live="polite" aria-atomic="true">
-				<span class="visually-hidden">Loading title:</span>
-
-				{displayedTitle}<span class="cursor" class:blink={mounted} aria-hidden="true">|</span>
+			<h1 class="hero-title glitch">
+				{#each displayedTitle as char, i}
+					<span class="char" style="--i: {i}">{char}</span>
+				{/each}
 			</h1>
 		</header>
 
@@ -323,21 +330,6 @@
 
 				@media (height <= 768px) {
 					line-height: 1.1;
-				}
-
-				& .cursor {
-					color: var(--clr-invert);
-					font-weight: 300;
-					animation: none;
-
-					&.blink {
-						animation: cursor-blink 1s infinite;
-
-						@media (prefers-reduced-motion: reduce) {
-							animation: none;
-							opacity: 1;
-						}
-					}
 				}
 			}
 		}
@@ -567,19 +559,6 @@
 		}
 	}
 
-	@keyframes antiShapeFloat {
-		0%,
-		100% {
-			transform: translateY(0) rotate(0deg);
-		}
-		33% {
-			transform: translateY(20px) rotate(-120deg);
-		}
-		66% {
-			transform: translateY(-10px) rotate(240deg);
-		}
-	}
-
 	@keyframes blink {
 		0%,
 		50% {
@@ -588,33 +567,6 @@
 		51%,
 		100% {
 			opacity: 0;
-		}
-	}
-
-	@keyframes cursor-blink {
-		0%,
-		50% {
-			opacity: 1;
-		}
-		51%,
-		100% {
-			opacity: 0;
-		}
-	}
-
-	@keyframes bounce {
-		0%,
-		20%,
-		50%,
-		80%,
-		100% {
-			transform: translateX(-50%) translateY(0);
-		}
-		40% {
-			transform: translateX(-50%) translateY(-10px);
-		}
-		60% {
-			transform: translateX(-50%) translateY(-5px);
 		}
 	}
 </style>
