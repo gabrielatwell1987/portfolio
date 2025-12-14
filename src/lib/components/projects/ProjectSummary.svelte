@@ -1,43 +1,17 @@
 <script>
+	import { createPopoverState } from './summaryFunctions.svelte.js';
 	let { popoverTitle, title, summary, index = 0 } = $props();
 
-	let popoverElement = $state(null);
-	let hoverTimeout = $state(null);
-
-	function showPopover() {
-		if (!popoverElement) return;
-		if (hoverTimeout) clearTimeout(hoverTimeout);
-		popoverElement.showPopover();
-	}
-
-	function hidePopover() {
-		if (!popoverElement) return;
-
-		hoverTimeout = setTimeout(() => {
-			popoverElement.hidePopover();
-		}, 150);
-	}
-
-	function cancelHide() {
-		if (hoverTimeout) {
-			clearTimeout(hoverTimeout);
-			hoverTimeout = null;
-		}
-	}
-
-	function closePopover() {
-		cancelHide();
-		popoverElement.hidePopover();
-	}
+	const popover = createPopoverState();
 </script>
 
 <section class="summary-popover" aria-label="pwa summary">
 	<button
 		type="button"
-		onmouseenter={showPopover}
-		onmouseleave={hidePopover}
-		onfocus={showPopover}
-		onblur={hidePopover}
+		onmouseenter={popover.showPopover}
+		onmouseleave={popover.hidePopover}
+		onfocus={popover.showPopover}
+		onblur={popover.hidePopover}
 		class="pwa-button"
 	>
 		<span class="pwa-title" style="view-transition-name: pwa-title-{index};">{title}</span>
@@ -45,14 +19,14 @@
 
 	<div
 		popover="manual"
-		bind:this={popoverElement}
+		bind:this={popover.popoverElement}
 		data-summary-content
-		onmouseenter={cancelHide}
-		onmouseleave={hidePopover}
+		onmouseenter={popover.cancelHide}
+		onmouseleave={popover.hidePopover}
 		role="dialog"
 		tabindex="0"
 	>
-		<button data-close onclick={closePopover} aria-label="close popover">
+		<button data-close onclick={popover.closePopover} aria-label="close popover">
 			<svg
 				width="800px"
 				height="800px"
@@ -131,6 +105,7 @@
 
 			& .pwa-title {
 				color: var(--clr-blue);
+				font-family: var(--bronova-bold);
 				font-size: clamp(var(--h6), 2.5vw, var(--h3));
 
 				font-weight: 900;
