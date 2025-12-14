@@ -1,5 +1,5 @@
 <script>
-	import { createPopoverState } from './summaryFunctions.svelte.js';
+	import { createPopoverState } from './projectSummaryFunctions.svelte.js';
 	let { popoverTitle, title, summary, index = 0 } = $props();
 
 	const popover = createPopoverState();
