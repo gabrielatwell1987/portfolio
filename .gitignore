@@ -11,3 +11,5 @@ vite.config.ts.timestamp-*
 background.mp4
 .vercel
 .vscode
+docs
+.github
