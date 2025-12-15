@@ -114,7 +114,7 @@
 
 				{#if testimonial}
 					<div class="wholeProject" style="--stagger-delay: {project.index * 1.25}s;">
-						<ProjectComponent {...project} />
+						<ProjectComponent {...project} hasBorder={false} />
 						<Testimonial
 							name={testimonial.name}
 							title={testimonial.title}
@@ -246,12 +246,13 @@
 				align-items: center;
 				gap: 0.25rem;
 				border: 2px solid var(--clr-gray);
-				border-radius: var(--radius);
+				border-radius: 1em 1em var(--radius) var(--radius);
 				padding-top: 2em;
 				opacity: 0;
 				animation: fadeIn 0.8s ease-out forwards;
 				animation-delay: var(--stagger-delay, 0s);
 				will-change: opacity, transform;
+				margin-bottom: 1em;
 
 				@media (width <= 768px) {
 					margin: 0.5rem;

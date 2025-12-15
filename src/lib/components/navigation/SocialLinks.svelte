@@ -57,44 +57,37 @@
 			gap: 1.65rem;
 			margin-top: 2rem;
 		}
-	}
 
-	.social-link {
-		font-size: clamp(var(--h1), 4vw, var(--xxl));
-		font-weight: 900;
-		transition:
-			color 0.5s ease,
-			opacity 0.5s ease;
-		cursor: pointer;
-		opacity: 1;
-		position: relative;
-		z-index: 200;
-		pointer-events: all;
-		background-color: transparent;
-		opacity: 1;
-
-		&:focus,
-		&:focus-visible {
-			outline: 1px solid var(--clr-main);
-			background: transparent;
-		}
-
-		&:hover {
-			color: var(--dark-pale);
-		}
-
-		&:not(:hover) {
-			opacity: 0.95;
-		}
-
-		& svg {
+		& .social-link {
+			font-size: clamp(var(--h1), 4vw, var(--xxl));
+			font-weight: 900;
+			transition:
+				color 0.5s ease,
+				opacity 0.5s ease;
 			cursor: pointer;
+			opacity: 1;
+			position: relative;
+			z-index: 200;
+			pointer-events: all;
+			background-color: transparent;
+			opacity: 1;
 
-			& path {
-				fill: var(--clr-main);
+			&:focus,
+			&:focus-visible {
+				outline: 1px solid var(--clr-main);
+				background: transparent;
+			}
 
-				&:not(:hover) {
-					opacity: 0.95;
+			& svg {
+				cursor: pointer;
+
+				& path {
+					fill: var(--clr-main);
+					opacity: 0.9;
+
+					&:not(:hover) {
+						opacity: 1;
+					}
 				}
 			}
 		}

@@ -1,11 +1,16 @@
 <script>
+	import Divider from '$lib/components/learn/Divider.svelte';
 	import ProjectSummary from './ProjectSummary.svelte';
 
 	/** @type {{title: any, img: any, url: any, description: any}} */
-	let { title, img, url, description, summary, index = 0 } = $props();
+	let { title, img, url, description, summary, index = 0, hasBorder = true } = $props();
 </script>
 
-<section class="project-card" style="--stagger-delay: {index * 1.25}s;">
+<section
+	class="project-card"
+	style="--stagger-delay: {index * 1.25}s;"
+	class:no-border={!hasBorder}
+>
 	<a
 		href={url}
 		target="_blank"
@@ -39,10 +44,27 @@
 
 	.project-card {
 		margin-bottom: 3rem;
+		padding: 0;
+		height: auto;
 		opacity: 0;
+		border: 2px solid var(--clr-gray);
+		border-radius: 1em 1em var(--radius) var(--radius);
 		animation: fadeIn 0.8s ease-out forwards;
 		animation-delay: var(--stagger-delay, 0s);
 		will-change: opacity, transform;
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+
+		@media (width <= 768px) {
+			/* padding: 2em 0.05em; */
+			/* margin: 0.35em; */
+			border: none;
+		}
+
+		&.no-border {
+			border: none;
+		}
 
 		& .summary-wrapper {
 			display: flex;
@@ -55,6 +77,7 @@
 		& .title-link {
 			pointer-events: auto;
 			text-decoration: none;
+			margin-top: -1em;
 		}
 
 		& .project-link {
@@ -65,7 +88,6 @@
 			justify-content: center;
 			align-items: center;
 			margin-inline: auto;
-			margin-bottom: -3em;
 			width: fit-content;
 			transition: all 0.35s;
 			background-color: transparent;
@@ -116,7 +138,7 @@
 			}
 
 			& .project-image {
-				width: clamp(300px, 40vw, 400px);
+				width: clamp(300px, 20vw, 400px);
 				height: auto;
 				border-radius: var(--radius);
 				max-inline-size: var(--100);
