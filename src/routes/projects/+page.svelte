@@ -290,7 +290,6 @@
 
 	section {
 		padding-top: 2rem;
-		/* overflow: hidden; */
 
 		@media screen and (width >= 740px) {
 			padding: 2rem;

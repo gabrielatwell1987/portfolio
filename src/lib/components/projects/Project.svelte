@@ -17,9 +17,7 @@
 			class="project-image"
 			src={img}
 			alt="Screenshot of {title} project"
-			width="400px"
-			height="475px"
-			style="--alt-text: '{title} project'"
+			style="--alt-text: '{title} project';"
 		/>
 
 		<span class="desc-banner" aria-hidden="true">made with {description}</span>
@@ -118,6 +116,8 @@
 			}
 
 			& .project-image {
+				width: clamp(300px, 40vw, 400px);
+				height: auto;
 				border-radius: var(--radius);
 				max-inline-size: var(--100);
 				transition: scale 0.25s ease-out;
