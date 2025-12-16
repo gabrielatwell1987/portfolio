@@ -2,6 +2,7 @@
 	import gsap from 'gsap';
 	import { SplitText } from 'gsap/SplitText';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import Parallax from './Parallax.svelte';
 
 	let { src, alt, title, viewTransitionName } = $props();
 
@@ -56,12 +57,11 @@
 </script>
 
 <div class="image-hero">
-	<picture>
+	<!-- <picture>
 		<source
 			srcset="/logos/svelteCode-480.webp 480w, /logos/svelteCode-768.webp 768w, /logos/svelteCode-1200.webp 1200w"
 			sizes="(max-inline-size: 480px) 100vw, (max-inline-size: 768px) 100vw, 1200px"
 		/>
-		<!-- Fallback for browsers that don't support srcset -->
 		<img
 			src="/logos/svelteCode-768.webp"
 			{alt}
@@ -70,7 +70,9 @@
 			decoding="async"
 			style="aspect-ratio: 16/9; max-inline-size: 100%; height: auto;"
 		/>
-	</picture>
+	</picture> -->
+
+	<Parallax alt="v4 svelte code" />
 
 	<h1 id="title">
 		<span style="view-transition-name: {viewTransitionName || ''};">About</span>
@@ -103,7 +105,7 @@
 			margin-bottom: 2.5em;
 		}
 
-		& picture {
+		/* & picture {
 			width: 100%;
 			display: block;
 			aspect-ratio: 16 / 9;
@@ -123,7 +125,7 @@
 				width: 100%;
 				height: 80vw;
 			}
-		}
+		} */
 
 		& h1 {
 			margin-block: -0.9em;
