@@ -29,7 +29,6 @@
 				width: imgElement.naturalWidth,
 				height: imgElement.naturalHeight
 			};
-			// console.log('Natural dimensions:', naturalDimensions);
 		}
 	}
 
@@ -38,7 +37,6 @@
 			return { width: 300, height: 300 };
 		}
 
-		// If no constraints provided, use natural dimensions
 		if (!maxWidth && !maxHeight) {
 			return {
 				width: naturalDimensions.width,
@@ -46,14 +44,11 @@
 			};
 		}
 
-		// Calculate scaling factors
 		let scaleX = maxWidth ? maxWidth / naturalDimensions.width : 1;
 		let scaleY = maxHeight ? maxHeight / naturalDimensions.height : 1;
 
-		// Use the smaller scale to maintain aspect ratio
 		let scale = Math.min(scaleX, scaleY);
 
-		// Only scale down, never scale up beyond natural dimensions
 		scale = Math.min(scale, 1);
 
 		return {

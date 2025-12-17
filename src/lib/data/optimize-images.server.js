@@ -31,14 +31,12 @@ async function optimizeImage(inputPath, outputPath, width, quality = 85) {
 }
 
 async function createResponsiveVersions(imageName) {
-	// Check if the imageName ends with .webp and exists in LOGOS_DIR
 	if (!imageName.endsWith('.webp')) {
 		return { success: false, error: 'Only .webp images are allowed' };
 	}
 
 	const inputPath = path.join(LOGOS_DIR, imageName);
 
-	// Check if source file exists
 	try {
 		await fs.access(inputPath);
 	} catch {
@@ -69,7 +67,6 @@ async function getAllowedImages() {
 	}
 }
 
-// New batch function
 export async function optimizeAllImages() {
 	const images = await getAllowedImages();
 	const allResults = [];
