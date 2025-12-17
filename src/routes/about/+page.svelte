@@ -11,6 +11,7 @@
 	import Slider from '$lib/components/about/Slider.svelte';
 	import PWAInstall from '$lib/components/about/PWAInstall.svelte';
 	import PWAVideo from '$lib/components/about/PWAVideo.svelte';
+	import AtwellSkull from '$lib/components/about/AtwellSkull.svelte';
 
 	let isDesktop = $state(false);
 
@@ -42,6 +43,7 @@
 		<article id="bio">
 			<div class="hero-section">
 				<AboutHero alt="svelte code" title="Gabe" viewTransitionName="about-heading" />
+				<AtwellSkull />
 			</div>
 
 			<div class="biography" aria-label="bio">
@@ -76,13 +78,13 @@
 						title="How to install the PWA"
 						popoverTitle="How to install the PWA:"
 						text="It works on Android and iPhone. If you're using an iPhone device, you have to tap the
-						share icon in the Safari browser and choose the 'Add to Home Screen' option.. that's the
-						only way to save a pwa on an iOS device."
+					share icon in the Safari browser and choose the 'Add to Home Screen' option.. that's the
+					only way to save a pwa on an iOS device."
 						text2="If you're on an Android device you should see an install button on the bottom-left of the
-						screen. If you press it, an installation prompt should appear. The prompt will only appear
-						after some user interactions (clicks)."
+					screen. If you press it, an installation prompt should appear. The prompt will only appear
+					after some user interactions (clicks)."
 						text3="Other than mobile devices, you should see the install button (on tablet, laptop, desktop). If you are having any issues or you have any
-						questions, please feel free to contact me!"
+					questions, please feel free to contact me!"
 					/> <span>and</span>
 					<PWAVideo
 						title="Watch: Building a PWA with Svelte"

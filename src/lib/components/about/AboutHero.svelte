@@ -83,7 +83,6 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin-bottom: 5.5rem;
 		margin-left: calc(-50vw + 50%);
 		width: 100vw;
 		position: relative;
@@ -94,12 +93,7 @@
 
 		@media (width <= 768px) {
 			padding-top: 3em;
-			margin-bottom: 7em;
 			min-height: 40vh;
-		}
-
-		@media (width <= 500px) {
-			margin-bottom: 2.5em;
 		}
 
 		& picture {
