@@ -202,6 +202,13 @@
 	}
 
 	.projects {
+		background: linear-gradient(
+			to bottom,
+			var(--clr-gray) 0%,
+			var(--clr-invert) 12%,
+			var(--clr-invert) 100%
+		);
+
 		& .header-icons {
 			display: flex;
 			justify-content: center;

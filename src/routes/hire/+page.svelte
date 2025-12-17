@@ -29,7 +29,7 @@
 	.hire-form {
 		background: linear-gradient(
 			to bottom,
-			var(--clr-light-gray) 0%,
+			var(--clr-gray) 0%,
 			var(--clr-invert) 30%,
 			var(--clr-invert) var(--100)
 		);

@@ -4,7 +4,7 @@
 		"description": "sveltekit",
 		"img": "/projects/busybatleopard.webp",
 		"index": 0,
-		"summary": "A custom website for a local business that sells handmade items. The site features a product page, a contact form, and I even created the brand.",
+		"summary": "A custom website for a local business that sells unique handmade items. The site features a product page, a contact form, and I even created the brand. To reach a wider audience, I made the site responsive for mobile devices.",
 		"title": "busy little bat sewing",
 		"url": "https://busybat.vercel.app"
 	},
@@ -13,7 +13,7 @@
 		"description": "sveltekit",
 		"img": "/projects/pixipalette.webp",
 		"index": 1,
-		"summary": "A color palette generator that tells users the hex, rgb, and hsl colors of images. I tried making the app as user-friendly as possible.",
+		"summary": "A color palette generator that tells users the hex, rgb, and hsl colors of images.. so if you want to know the colors an image is using, use this tool! I tried making the app as user-friendly as possible.",
 		"title": "pixipalette",
 		"url": "https://pixipalette.vercel.app"
 	},
@@ -22,7 +22,7 @@
 		"description": "react",
 		"img": "/projects/groceries.webp",
 		"index": 2,
-		"summary": "A grocery list app that allows users to add, remove, and edit items. The app is built with React and features a simple and intuitive interface.",
+		"summary": "A grocery list app that allows users to add, remove, and edit items. I used react to build this and it features a simple and intuitive interface.",
 		"title": "grocery list",
 		"url": "https://legit-shopping-list.vercel.app/"
 	},
