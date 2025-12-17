@@ -43,8 +43,8 @@
 	}
 
 	.project-card {
-		margin-bottom: 3rem;
-		padding: 0;
+		margin-bottom: clamp(0.5rem, 1.5vw, 0.25rem);
+		padding: clamp(0.5em, 1.5vw, 1.5em) clamp(1em, 2vw, 2em);
 		height: auto;
 		opacity: 0;
 		border: 2px solid var(--clr-gray);
@@ -57,8 +57,6 @@
 		gap: 0;
 
 		@media (width <= 768px) {
-			/* padding: 2em 0.05em; */
-			/* margin: 0.35em; */
 			border: none;
 		}
 
@@ -71,13 +69,11 @@
 			justify-content: center;
 			inline-size: 100%;
 			pointer-events: auto;
-			margin-top: 2em;
 		}
 
 		& .title-link {
 			pointer-events: auto;
 			text-decoration: none;
-			margin-top: -1em;
 		}
 
 		& .project-link {
@@ -117,18 +113,6 @@
 				& .desc-banner {
 					width: 100%;
 				}
-			}
-
-			@media (width <= 990px) {
-				margin-bottom: -2em;
-			}
-
-			@media (width <= 768px) {
-				margin-bottom: -1em;
-			}
-
-			@media (width <= 500px) {
-				margin-bottom: 0;
 			}
 
 			&:focus,

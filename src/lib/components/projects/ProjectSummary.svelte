@@ -67,6 +67,11 @@
 			background: transparent;
 		}
 
+		& .pwa-button {
+			margin: 0;
+			padding: 0;
+		}
+
 		& [data-close] {
 			position: absolute;
 			top: 0.5rem;
