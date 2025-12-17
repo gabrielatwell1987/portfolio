@@ -44,7 +44,7 @@
 
 	.project-card {
 		margin-bottom: clamp(0.5rem, 1.5vw, 0.25rem);
-		padding: clamp(0.5em, 1.5vw, 1.5em) clamp(1em, 2vw, 2em);
+		padding: clamp(0.5em, 1.5vw, 1.5em) clamp(1em, 1.5vw, 2em);
 		height: auto;
 		opacity: 0;
 		border: 2px solid var(--clr-gray);
