@@ -1,4 +1,6 @@
 <script>
+	import gsap from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import projects from '$lib/components/projects/projects.json';
 	import DoYouNeed from './DoYouNeed.svelte';
 	import HeroBackground from './HeroBackground.svelte';
@@ -70,6 +72,57 @@
 				delay: Math.random() * 5
 			}));
 		}
+	});
+
+	$effect(() => {
+		// .stat-item scroll animation
+		gsap.registerPlugin(ScrollTrigger);
+
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.stats-section',
+				start: 'top center',
+				end: 'bottom center',
+				scrub: 1
+			}
+		});
+
+		tl.fromTo(
+			'.stat-item.a',
+			{ x: -50, opacity: 0 },
+			{
+				x: 0,
+				opacity: 1,
+				duration: 1
+			},
+			0
+		);
+
+		tl.fromTo(
+			'.stat-item.b',
+			{ scale: 1.5, opacity: 0 },
+			{
+				scale: 1,
+				opacity: 1,
+				duration: 1
+			},
+			0
+		);
+
+		tl.fromTo(
+			'.stat-item.c',
+			{ x: 50, opacity: 0 },
+			{
+				x: 0,
+				opacity: 1,
+				duration: 1
+			},
+			0
+		);
+
+		return () => {
+			tl.kill();
+		};
 	});
 </script>
 
@@ -160,19 +213,19 @@
 				<h2 id="stats-heading" class="visually-hidden">Portfolio Statistics</h2>
 
 				<dl class="stats-container">
-					<div class="stat-item">
+					<div class="stat-item a">
 						<dt class="visually-hidden">Work approach</dt>
 						<dd class="stat-number" aria-label="One hundred percent">100%</dd>
 						<dt class="stat-label">Custom</dt>
 					</div>
 
-					<div class="stat-item">
+					<div class="stat-item b">
 						<dt class="visually-hidden">Project delivery timeframe</dt>
 						<dd class="stat-number" aria-label="Fast">Fast</dd>
 						<dt class="stat-label">Delivery</dt>
 					</div>
 
-					<div class="stat-item">
+					<div class="stat-item c">
 						<dt class="visually-hidden">Responsive design approach</dt>
 						<dd class="stat-number" aria-label="Fully responsive">Fully</dd>
 						<dt class="stat-label">Responsive</dt>
@@ -428,6 +481,19 @@
 						backdrop-filter: blur(10px);
 						border: 2px solid var(--clr-gray);
 						transition: all 0.3s ease;
+
+						&.a {
+							opacity: 0;
+							transform: translateX(-50px);
+						}
+						&.b {
+							opacity: 0;
+							transform: scale(1.5);
+						}
+						&.c {
+							opacity: 0;
+							transform: translateX(50px);
+						}
 
 						@media (prefers-reduced-motion: reduce) {
 							transition: none;
