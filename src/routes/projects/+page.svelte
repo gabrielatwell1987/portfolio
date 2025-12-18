@@ -81,7 +81,7 @@
 
 		const tl = gsap.timeline({
 			scrollTrigger: {
-				trigger: '.wholeProject',
+				trigger: '.bevel',
 				start: 'top bottom',
 				end: 'bottom top',
 				scrub: 1,
