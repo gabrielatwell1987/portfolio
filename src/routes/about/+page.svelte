@@ -11,7 +11,7 @@
 	import Slider from '$lib/components/about/Slider.svelte';
 	import PWAInstall from '$lib/components/about/PWAInstall.svelte';
 	import PWAVideo from '$lib/components/about/PWAVideo.svelte';
-	import AtwellSkull from '$lib/components/about/AtwellSkull.svelte';
+	// import AtwellSkull from '$lib/components/about/AtwellSkull.svelte';
 
 	let isDesktop = $state(false);
 
@@ -43,7 +43,7 @@
 		<article id="bio">
 			<div class="hero-section">
 				<AboutHero alt="svelte code" title="Gabe" viewTransitionName="about-heading" />
-				<AtwellSkull />
+				<!-- <AtwellSkull /> -->
 			</div>
 
 			<div class="biography" aria-label="bio">
@@ -124,7 +124,12 @@
 		padding-top: 0;
 
 		& .hero-section {
-			margin-top: clamp(-9.75em, -12vw, -3em);
+			/* margin-top: clamp(-9.75em, -12vw, -3em); */
+			margin-bottom: 4em;
+
+			@media (width <= 768px) {
+				margin-bottom: 2em;
+			}
 		}
 
 		& .about-section {
