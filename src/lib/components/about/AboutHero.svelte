@@ -120,7 +120,6 @@
 
 		& h1 {
 			margin-block: -0.9em;
-			padding-bottom: 4em;
 			font-size: clamp(var(--h3), 6vw, var(--xxl));
 			font-weight: 700;
 			text-shadow: 0 0 5px var(--smoke);
@@ -147,16 +146,10 @@
 			}
 
 			@media (width <= 1300px) {
-				padding-bottom: 3em;
 				mix-blend-mode: normal;
 			}
 
-			@media (width <= 1050px) {
-				padding-bottom: 2em;
-			}
-
 			@media (width <= 768px) {
-				padding-bottom: 3em;
 				text-shadow:
 					0 0 1px var(--clr-invert),
 					-2px -2px 0 var(--clr-main),
