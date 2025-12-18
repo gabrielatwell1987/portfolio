@@ -170,7 +170,7 @@
 
 		& .project-title {
 			font-family: var(--ultra);
-			font-size: clamp(var(--h5), 2.75vw, var(--h3));
+			font-size: clamp(var(--h4), 2.75vw, var(--h3));
 			font-weight: 600;
 			text-align: center;
 			letter-spacing: 0px;

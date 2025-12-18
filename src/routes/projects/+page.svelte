@@ -1,4 +1,6 @@
 <script>
+	import gsap from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Popover from '$lib/components/layout/Popover.svelte';
 	import Title from '$lib/components/layout/Title.svelte';
 	import Testimonial from '$lib/components/projects/Testimonial.svelte';
@@ -12,7 +14,6 @@
 	let showProjects = $state(false);
 	let showGithub = $state(false);
 	let isGithubLoading = $state(true);
-
 	let isNavigating = $state(false);
 
 	function getTestimonialForProject(projectIndex) {
@@ -69,6 +70,46 @@
 			};
 		}
 	});
+
+	// gsap scroll
+	$effect(() => {
+		if (!showProjects) return;
+
+		gsap.registerPlugin(ScrollTrigger);
+
+		const projects = document.querySelectorAll('.wholeProject');
+
+		const tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.bevel',
+				start: 'top bottom',
+				end: 'bottom center',
+				scrub: 1,
+				toggleActions: 'play none none reverse'
+			}
+		});
+
+		tl.fromTo(
+			projects,
+			{ opacity: 0, y: 30 },
+			{
+				opacity: 1,
+				y: 0,
+				duration: 0.8,
+				stagger: 0.18,
+				ease: 'power2.out',
+				stagger: {
+					each: 0.18,
+					ease: 'power2.out'
+				}
+			}
+		);
+
+		return () => {
+			tl.kill();
+			ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+		};
+	});
 </script>
 
 <SEO
@@ -112,9 +153,9 @@
 			{#each projects as project (project.index)}
 				{@const testimonial = getTestimonialForProject(project.index)}
 
-				{#if testimonial}
-					<div class="wholeProject" style="--stagger-delay: {project.index * 1.25}s;">
-						<ProjectComponent {...project} hasBorder={false} />
+				<div class="wholeProject">
+					<ProjectComponent {...project} hasBorder={false} />
+					{#if testimonial}
 						<Testimonial
 							name={testimonial.name}
 							title={testimonial.title}
@@ -123,10 +164,8 @@
 							avatar={testimonial.avatar}
 							index={project.index}
 						/>
-					</div>
-				{:else}
-					<ProjectComponent {...project} />
-				{/if}
+					{/if}
+				</div>
 			{/each}
 		{/if}
 	</section>
@@ -255,9 +294,6 @@
 				border: 2px solid var(--clr-gray);
 				border-radius: 1em 1em var(--radius) var(--radius);
 				padding-top: 2em;
-				opacity: 0;
-				animation: fadeIn 0.8s ease-out forwards;
-				animation-delay: var(--stagger-delay, 0s);
 				will-change: opacity, transform;
 				margin-bottom: 1em;
 
