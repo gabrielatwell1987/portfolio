@@ -275,26 +275,26 @@
 @layer theming {
 	:root {
 		/* base colors */
-		--blackest: hsl(0, 0%, 11%);
-		--blacker: hsl(0, 0%, 16%);
-		--white-gray: hsla(0, 0%, 78%, 0.9);
-		--white: hsla(0, 0%, 85%, 0.9);
-		--sky: hsla(187, 56%, 52%, 0.5);
-		--purple: hsla(227, 98%, 68%, 0.6);
-		--yellow: hsla(46, 93%, 42%, 0.75);
-		--dark-blue: hsla(203, 94%, 20%, 0.75);
-		--darker-blue: hsla(203, 84%, 15%, 0.75);
-		--darkest-blue: hsla(203, 96%, 10%, 0.75);
-		--pale: hsl(44, 94%, 40%);
-		--light-gray: hsl(0, 1%, 50%);
-		--gray: hsl(0, 0%, 40%);
-		--dark-gray: hsl(0, 0%, 25%);
-		--success-light: hsl(120, 49%, 26%);
-		--success-dark: hsl(120, 97%, 25%);
-		--fail-light: hsl(0, 51%, 33%);
-		--fail-dark: hsl(0, 73%, 34%);
-		--warning-light: hsl(45, 51%, 35%);
-		--warning-dark: hsl(45, 77%, 26%);
+		--blackest: hsl(0 0% 11%);
+		--blacker: hsl(0 0% 16%);
+		--white-gray: hsla(0 0% 78% 0.9);
+		--white: hsla(0 0% 85% / 0.9);
+		--sky: hsl(187 56% 52% / 0.5);
+		--purple: hsl(227 98% 68% / 0.6);
+		--yellow: hsl(46 93% 42% / 0.75);
+		--dark-blue: hsl(203 94% 20% / 0.75);
+		--darker-blue: hsl(203 84% 15% / 0.75);
+		--darkest-blue: hsl(203 96% 10% / 0.75);
+		--pale: hsl(44 94% 40%);
+		--light-gray: hsl(0 1% 50%);
+		--gray: hsl(0 0% 40%);
+		--dark-gray: hsl(0 0% 25%);
+		--success-light: hsl(120 49% 26%);
+		--success-dark: hsl(120 97% 25%);
+		--fail-light: hsl(0 51% 33%);
+		--fail-dark: hsl(0 73% 34%);
+		--warning-light: hsl(45 51% 35%);
+		--warning-dark: hsl(45 77% 26%);
 
 		/* light-dark() */
 		--clr-bg: light-dark(var(--white), var(--blackest));
