@@ -81,9 +81,9 @@
 
 		const tl = gsap.timeline({
 			scrollTrigger: {
-				trigger: '.bevel',
+				trigger: '.wholeProject',
 				start: 'top bottom',
-				end: 'bottom center',
+				end: 'bottom top',
 				scrub: 1,
 				toggleActions: 'play none none reverse'
 			}
