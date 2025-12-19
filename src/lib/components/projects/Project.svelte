@@ -1,16 +1,11 @@
 <script>
-	import Divider from '$lib/components/learn/Divider.svelte';
 	import ProjectSummary from './ProjectSummary.svelte';
 
 	/** @type {{title: any, img: any, url: any, description: any}} */
 	let { title, img, url, description, summary, index = 0, hasBorder = true } = $props();
 </script>
 
-<section
-	class="project-card"
-	style="--stagger-delay: {index * 1.25}s;"
-	class:no-border={!hasBorder}
->
+<section class="project-card" class:no-border={!hasBorder}>
 	<a
 		href={url}
 		target="_blank"
@@ -46,11 +41,8 @@
 		margin-bottom: clamp(0.5rem, 1.5vw, 0.25rem);
 		padding: clamp(0.5em, 1.5vw, 1.5em) clamp(1em, 1.5vw, 2em);
 		height: auto;
-		opacity: 0;
 		border: 2px solid var(--clr-gray);
 		border-radius: 1em 1em var(--radius) var(--radius);
-		animation: fadeIn 0.8s ease-out forwards;
-		animation-delay: var(--stagger-delay, 0s);
 		will-change: opacity, transform;
 		display: flex;
 		flex-direction: column;

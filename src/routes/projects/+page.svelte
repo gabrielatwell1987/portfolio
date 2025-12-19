@@ -77,36 +77,21 @@
 
 		gsap.registerPlugin(ScrollTrigger);
 
-		const projects = document.querySelectorAll('.wholeProject');
+		ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.bevel',
-				start: 'top bottom',
-				end: 'bottom top',
-				scrub: 1,
-				toggleActions: 'play none none reverse'
-			}
+		ScrollTrigger.batch('.wholeProject', {
+			onEnter: (batch) => {
+				gsap.fromTo(
+					batch,
+					{ opacity: 0, y: 30 },
+					{ opacity: 1, y: 0, duration: 0.8, stagger: 0.3, ease: 'power2.out' }
+				);
+			},
+			start: 'top 70%',
+			once: true
 		});
 
-		tl.fromTo(
-			projects,
-			{ opacity: 0, y: 30 },
-			{
-				opacity: 1,
-				y: 0,
-				duration: 0.8,
-				stagger: 0.18,
-				ease: 'power2.out',
-				stagger: {
-					each: 0.18,
-					ease: 'power2.out'
-				}
-			}
-		);
-
 		return () => {
-			tl.kill();
 			ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 		};
 	});
@@ -122,7 +107,7 @@
 	<div class="header-icons">
 		<Title title="builds" title2="builds" viewTransitionName="build-heading" />
 
-		<div class="Popover">
+		<div class="popover">
 			<Popover
 				title=""
 				text="Hover over the project image to reveal the tech stack I used on the project 👍🏻"
@@ -258,7 +243,7 @@
 				gap: 1rem;
 			}
 
-			& .Popover {
+			& .popover {
 				display: inline-flex;
 				justify-content: center;
 				align-items: center;
@@ -351,17 +336,6 @@
 		}
 		100% {
 			opacity: 0.6;
-		}
-	}
-
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-			transform: translateY(20px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
 		}
 	}
 
