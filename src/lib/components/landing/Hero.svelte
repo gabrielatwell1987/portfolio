@@ -27,7 +27,7 @@
 	function getWordChars(wordIndex) {
 		let charIndex = 0;
 		for (let i = 0; i < wordIndex; i++) {
-			charIndex += titleWords[i].length + 1; // +1 for space
+			charIndex += titleWords[i].length + 1;
 		}
 		return {
 			start: charIndex,
@@ -54,11 +54,11 @@
 						iterations++;
 						if (iterations > 3) clearInterval(interval);
 					},
-					50 + index * 23.5
+					250 + index * 10
 				);
 			});
 
-			setTimeout(() => (showContent = true), 1200);
+			setTimeout(() => (showContent = true), 1300);
 		}
 
 		// particle
