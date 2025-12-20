@@ -43,7 +43,7 @@
 			submit="View Transitions"
 			href="https://view-transitions.chrome.dev/"
 		/>
-		<LoadBtn loading="loading..." delay={1500} submit="Mobbin" href="https://mobbin.com/" />
+		<LoadBtn loading="loading..." delay={1500} submit="MDN" href="https://developer.mozilla.org/" />
 	</div>
 
 	<p class="explanation">
