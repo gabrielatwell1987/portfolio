@@ -5,6 +5,7 @@
 <section class="popover-button" aria-label="Popover button">
 	<button class="popover-icon" popovertarget="popover"
 		>{title}
+		<span class="visually-hidden">Open popover</span>
 
 		<svg
 			width="800px"
@@ -24,7 +25,9 @@
 		</svg>
 	</button>
 
-	<div popover="auto" id="popover">{text}</div>
+	<div popover id="popover" aria-labelledby="popover">
+		{text}
+	</div>
 </section>
 
 <style>

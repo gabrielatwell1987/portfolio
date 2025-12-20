@@ -15,6 +15,8 @@
 	popovertarget="modal"
 	popovertargetaction="show"
 >
+	<span class="visually-hidden">Open contact information modal</span>
+
 	<svg
 		width="800px"
 		height="800px"
@@ -33,7 +35,6 @@
 	</svg>
 </button>
 
-<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <div id="modal" class="contact-modal" aria-labelledby="modal-title" popover>
 	<article class="modal-inner">
 		<header>
@@ -64,7 +65,7 @@
 				</svg>
 			</button>
 
-			<h4 class="modal-title">Please contact me for any work!</h4>
+			<h4 class="modal-title" id="modal-title">Please contact me for any work!</h4>
 		</header>
 
 		<div class="modal-image">
