@@ -124,14 +124,9 @@
 
 		@media (width <= 768px) {
 			max-width: 95vw;
-			max-height: auto;
 			display: block;
-			vertical-align: auto;
 			width: 100%;
 			padding: 1rem;
-		}
-
-		@media (width <= 768px) {
 			transition:
 				opacity 0.5s ease-out,
 				visibility 0.5s ease-out,
@@ -146,52 +141,50 @@
 		}
 
 		& .modal-inner {
-			@media (width >= 320px) {
-				width: 100%;
-				border: 2px solid var(--clr-gray);
-				border-radius: 1rem;
-				background: var(--blackest);
-				margin-top: 15vw;
+			width: 100%;
+			border: 2px solid var(--clr-gray);
+			border-radius: 1rem;
+			background: var(--blackest);
+			margin-top: 15vw;
 
-				@media (width <= 768px) {
-					max-height: 90vh;
-					overflow-y: auto;
-					padding: 2em 1em;
-					margin-top: 0;
+			@media (width <= 768px) {
+				max-height: 90vh;
+				overflow-y: auto;
+				padding: 2em 1em;
+				margin-top: 0;
+			}
+
+			@media (width <= 500px) {
+				padding: 3em 1em;
+				margin-top: 0;
+			}
+
+			& header {
+				background: transparent;
+				border-bottom: none;
+
+				& .modal-title {
+					font-family: var(--bronova-bold);
+					font-size: clamp(var(--h5), 1.75vw, var(--h2));
+					font-weight: 600;
+					line-height: 1;
+					color: var(--sky);
+					margin: -0.5rem 0 -2rem 0;
+					letter-spacing: -1px;
 				}
+			}
 
-				@media (width <= 500px) {
-					padding: 3em 1em;
-					margin-top: 0;
-				}
-
-				& header {
-					background: transparent;
-					border-bottom: none;
-
-					& .modal-title {
-						font-family: var(--bronova-bold);
-						font-size: clamp(var(--h5), 1.75vw, var(--h2));
-						font-weight: 600;
-						line-height: 1;
-						color: var(--sky);
-						margin: -0.5rem 0 -2rem 0;
-						letter-spacing: -1px;
-					}
-				}
-
-				& .modal-description {
-					font-family: var(--bronova);
-					font-size: clamp(var(--h6), 1.25vw, var(--h4));
-					font-weight: 100;
-					color: var(--white);
-					background: transparent;
-					padding: 0.2rem;
-					hyphens: auto;
-					text-wrap: no-wrap;
-					letter-spacing: 0px;
-					margin-top: 1em;
-				}
+			& .modal-description {
+				font-family: var(--bronova);
+				font-size: clamp(var(--h6), 1.25vw, var(--h4));
+				font-weight: 100;
+				color: var(--white);
+				background: transparent;
+				padding: 0.2rem;
+				hyphens: auto;
+				text-wrap: no-wrap;
+				letter-spacing: 0px;
+				margin-top: 1em;
 			}
 		}
 	}
