@@ -2,7 +2,7 @@
 	import SubmitButton from '$lib/components/contact/SubmitButton.svelte';
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 	import Popover from '$lib/components/layout/Popover.svelte';
-	import Modal from './Modal.svelte';
+	import ModalPopover from '$lib/components/contact/ModalPopover.svelte';
 	import MotifPhoto from './MotifPhoto.svelte';
 
 	let name = $state('');
@@ -16,7 +16,7 @@
 		<Popover title="" text="Please provide a working email so I can message you back!" />
 	</div>
 
-	<Modal />
+	<ModalPopover />
 </div>
 
 <div class="personal-image">

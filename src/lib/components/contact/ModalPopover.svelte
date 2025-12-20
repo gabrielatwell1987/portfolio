@@ -1,4 +1,5 @@
 <script>
+	import { blur } from 'svelte/transition';
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 	import Image from '$lib/components/layout/Image.svelte';
 	import '@fortawesome/fontawesome-free/css/all.css';
@@ -33,7 +34,7 @@
 </button>
 
 <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-<dialog id="modal" class="contact-modal" aria-labelledby="modal-title" popover>
+<div id="modal" class="contact-modal" aria-labelledby="modal-title" popover>
 	<article class="modal-inner">
 		<header>
 			<button
@@ -80,40 +81,54 @@
 			I am always happy to help!
 		</p>
 	</article>
-</dialog>
+</div>
 
 <style>
 	.contact-modal {
 		opacity: 0;
 		visibility: hidden;
+		position: fixed;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		transform: scale(0.99);
 		transition:
 			opacity 0.3s ease-out,
 			visibility 0.3s ease-out,
 			transform 0.3s ease-out;
 		background: none;
-		-webkit-transition:
-			opacity 0.3s ease-out,
-			visibility 0.3s ease-out,
-			transform 0.3s ease-out;
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		-webkit-perspective: 1000;
-		perspective: 1000;
-		will-change: opacity, transform;
+		z-index: 50;
+		max-width: 60vw;
+		max-height: 70vh;
+		overflow: visible;
+		border: none;
 
-		/* &.open {
+		&:popover-open {
 			opacity: 1;
 			visibility: visible;
-			width: 100%;
 			transform: scale(1);
-		} */
+		}
 
-		@media screen and (width >= 720px) {
+		&::backdrop {
+			background-color: rgba(0 0 0 / 0.5);
+			backdrop-filter: blur(2px);
+		}
+
+		@media screen and (width >= 320px) {
 			padding: 2rem;
 			width: 93%;
 			height: 83%;
 			margin: 0 auto;
+		}
+
+		@media (width <= 768px) {
+			max-width: 95vw;
+			max-height: auto;
+			display: block;
+			vertical-align: auto;
+			width: 100%;
+			padding: 1rem;
 		}
 
 		@media (width <= 768px) {
@@ -136,10 +151,18 @@
 				border: 2px solid var(--clr-gray);
 				border-radius: 1rem;
 				background: var(--blackest);
-				/* box-shadow: 0 0 5px 3px var(--dark-blue); */
+				margin-top: 15vw;
+
+				@media (width <= 768px) {
+					max-height: 90vh;
+					overflow-y: auto;
+					padding: 2em 1em;
+					margin-top: 0;
+				}
 
 				@media (width <= 500px) {
 					padding: 3em 1em;
+					margin-top: 0;
 				}
 
 				& header {
@@ -167,6 +190,7 @@
 					hyphens: auto;
 					text-wrap: no-wrap;
 					letter-spacing: 0px;
+					margin-top: 1em;
 				}
 			}
 		}
@@ -222,7 +246,7 @@
 		}
 	}
 
-	/* .close-button {
+	.close-button {
 		@media (width >= 320px) {
 			display: flex;
 			font-size: clamp(var(--h2), 4vw, var(--xl));
@@ -264,7 +288,7 @@
 				flex-shrink: 0;
 			}
 		}
-	} */
+	}
 
 	.modal-title {
 		@media screen and (width >= 1024px) {
