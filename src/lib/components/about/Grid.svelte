@@ -34,7 +34,8 @@
 			background-color: hsla(0, 0%, 26%, 0.25);
 			backdrop-filter: blur(5px);
 			-webkit-backdrop-filter: blur(4px);
-			border-radius: 0;
+			border: 2px solid var(--clr-main);
+			border-radius: var(--radius);
 
 			& .card-title {
 				font-family: var(--ultra);
@@ -87,13 +88,13 @@
 
 			&.left {
 				@media (width >= 768px) {
-					box-shadow: -2px 2px 0 3px var(--clr-main);
+					box-shadow: -4px 4px 0 var(--clr-main);
 				}
 			}
 
 			&.right {
 				@media (width >= 768px) {
-					box-shadow: 2px 2px 0 3px var(--clr-main);
+					box-shadow: 4px 4px 0 var(--clr-main);
 				}
 			}
 		}
