@@ -86,13 +86,15 @@
 
 <style>
 	.contact-modal {
-		opacity: 0;
-		visibility: hidden;
+		inline-size: 100vw;
+		block-size: 100vh;
 		position: fixed;
 		inset: 0;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		opacity: 0;
+		visibility: hidden;
 		transform: scale(0.99);
 		transition:
 			opacity 0.3s ease-out,
@@ -100,8 +102,6 @@
 			transform 0.3s ease-out;
 		background: none;
 		z-index: 50;
-		max-width: 60vw;
-		max-height: 70vh;
 		overflow: visible;
 		border: none;
 
@@ -118,15 +118,15 @@
 
 		@media screen and (width >= 320px) {
 			padding: 2rem;
-			width: 93%;
-			height: 83%;
-			margin: 0 auto;
+			inline-size: 93%;
+			block-size: 83%;
+			margin-inline: auto;
 		}
 
 		@media (width <= 768px) {
-			max-width: 95vw;
+			max-inline-size: 95vw;
 			display: block;
-			width: 100%;
+			inline-size: 100%;
 			padding: 1rem;
 			transition:
 				opacity 0.5s ease-out,
@@ -142,21 +142,24 @@
 		}
 
 		& .modal-inner {
-			width: 100%;
+			inline-size: 100%;
+			max-inline-size: 50vw;
 			border: 2px solid var(--clr-gray);
 			border-radius: 1rem;
 			background: var(--blackest);
-			margin-top: 15vw;
+			margin-top: 16em;
 
 			@media (width <= 768px) {
-				max-height: 90vh;
+				overflow: auto;
+				max-inline-size: 90vh;
+				min-block-size: 40vh;
 				overflow-y: auto;
 				padding: 2em 1em;
-				margin-top: 0;
+				margin-top: 5em;
 			}
 
 			@media (width <= 500px) {
-				padding: 3em 1em;
+				padding: 3em 1em 0 1rem;
 				margin-top: 0;
 			}
 
@@ -186,6 +189,11 @@
 				text-wrap: no-wrap;
 				letter-spacing: 0px;
 				margin-top: 1em;
+				max-inline-size: 100%;
+				inline-size: 100%;
+				word-break: break-word;
+				overflow-wrap: break-word;
+				white-space: normal;
 			}
 		}
 	}
