@@ -88,6 +88,11 @@
 			letter-spacing: 1px;
 			text-transform: lowercase;
 			z-index: 2;
+
+			@media (width <= 500px) {
+				margin-top: 0;
+				margin-bottom: 15%;
+			}
 		}
 
 		.middle-word {
