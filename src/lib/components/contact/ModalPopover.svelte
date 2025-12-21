@@ -148,9 +148,9 @@
 			border-radius: 1rem;
 			background: var(--blackest);
 			margin-top: 16em;
+			overflow: auto;
 
 			@media (width <= 768px) {
-				overflow: auto;
 				max-inline-size: 90vh;
 				min-block-size: 40vh;
 				overflow-y: auto;
