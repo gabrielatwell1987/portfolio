@@ -20,56 +20,6 @@
 	}
 }
 
-/* Grid layout for sections */
-.grid-section {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 2rem;
-	align-items: start;
-	margin-bottom: 4rem;
-
-	@media (max-width: 768px) {
-		grid-template-columns: 1fr;
-		gap: 1rem;
-		margin-bottom: 2rem;
-	}
-
-	& .content {
-		display: flex;
-		flex-direction: column;
-	}
-
-	& .image {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: center;
-		gap: 1rem;
-
-		&.long {
-			@media (max-width: 768px) {
-				scale: 1.05 1.5;
-			}
-		}
-	}
-
-	/* Images within grid sections */
-	& .image img {
-		display: block;
-		max-inline-size: 100%;
-		width: 100;
-		height: auto;
-		box-shadow: none;
-		border-radius: var(--radius);
-		margin: 0;
-		scale: 1;
-
-		@media (max-width: 768px) {
-			scale: 1.1 1;
-		}
-	}
-}
-
 .css img,
 .gsap img {
 	display: block;
@@ -90,7 +40,7 @@
 	color: var(--clr-main);
 }
 
-/* Standalone images (not in grid sections) */
+/* images (not in grid sections) */
 .css img:not(.grid-section img),
 .gsap img:not(.grid-section img) {
 	display: block;
@@ -137,7 +87,56 @@
 	scroll-margin-top: 8rem; /* Account for fixed navigation */
 }
 
-/* Target the div elements with IDs used for anchor links */
+/* layout for sections */
+.grid-section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+	align-items: start;
+	margin-bottom: 4rem;
+
+	@media (max-width: 768px) {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	& .content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	& .image {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 1rem;
+
+		&.long {
+			@media (max-width: 768px) {
+				scale: 1.05 1.5;
+			}
+		}
+	}
+
+	/* images within grid sections */
+	& .image img {
+		display: block;
+		max-inline-size: 100%;
+		width: 100;
+		height: auto;
+		box-shadow: none;
+		border-radius: var(--radius);
+		margin: 0;
+		scale: 1;
+
+		@media (max-width: 768px) {
+			scale: 1.1 1;
+		}
+	}
+}
+
 div[id] {
 	scroll-margin-top: 8rem;
 }
@@ -162,10 +161,10 @@ div[id] {
 	font-family: var(--mono);
 	font-size: clamp(var(--xs), 1.5vw, var(--h6));
 	font-weight: 600;
-	box-shadow: 0 4px 0 var(--clr-light-gray);
+	box-shadow: 4px 4px 0 var(--clr-gray);
 
 	@media (max-width: 768px) {
-		box-shadow: 0 2px 0 var(--clr-light-gray);
+		box-shadow: 2px 2px 0 var(--clr-gray);
 	}
 }
 
@@ -189,14 +188,12 @@ div[id] {
 	}
 }
 
-/* Optional: Style the <pre> wrapper for better spacing */
 .css pre,
 .gsap pre {
 	margin: 1rem 0;
 	padding: 0;
 }
 
-/* Mobile-specific scroll adjustments */
 @media (max-width: 768px) {
 	html {
 		scroll-padding-top: 6rem;
