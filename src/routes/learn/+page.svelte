@@ -21,9 +21,9 @@
 <div class="learn-wrapper">
 	<section class="learn-header">
 		<LearnHeading
-			title1="learn"
-			span="by"
-			title2="doing"
+			title1="make"
+			span="&"
+			title2="learn"
 			viewTransitionName="learn-heading"
 			transitionPath="/learn"
 		/>

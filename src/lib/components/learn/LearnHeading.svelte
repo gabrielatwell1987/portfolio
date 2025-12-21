@@ -57,9 +57,9 @@
 </script>
 
 <section class="animated-title">
-	<h1 class="left-word" style="view-transition-name: {transitionName};">{title1}</h1>
+	<h1 class="left-word">{title1}</h1>
 	<span class="middle-word">{span}</span>
-	<h2 class="right-word">{title2}</h2>
+	<h2 class="right-word" style="view-transition-name: {transitionName};">{title2}</h2>
 </section>
 
 <style>
@@ -68,15 +68,7 @@
 		justify-content: center;
 		align-items: center;
 		overflow-x: clip;
-		padding-top: 1em;
-
-		@media (width <= 1150px) {
-			padding-top: 2em;
-		}
-
-		@media (width <= 768px) {
-			padding-block: 1em;
-		}
+		padding-top: clamp(1em, 3vw, 3em);
 
 		.left-word,
 		.right-word {
@@ -84,14 +76,13 @@
 			font-family: var(--bronova);
 			font-size: clamp(var(--h6), 8vw, var(--xl));
 			font-weight: 900;
-			margin-top: 5%;
+			margin-top: 2.5%;
 			letter-spacing: 1px;
 			text-transform: lowercase;
 			z-index: 2;
 
-			@media (width <= 500px) {
+			@media (width <= 768px) {
 				margin-top: 0;
-				margin-bottom: 15%;
 			}
 		}
 
