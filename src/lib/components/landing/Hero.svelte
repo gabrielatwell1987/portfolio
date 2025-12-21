@@ -440,7 +440,7 @@
 				text-align: left;
 				letter-spacing: 1px;
 				line-height: 1.6;
-				color: var(--clr-main);
+				color: var(--clr-hero-text);
 				max-inline-size: 800px;
 				margin: 0 auto 3rem auto;
 				text-shadow: 0 0 2px rgba(0, 0, 0, 0.15);

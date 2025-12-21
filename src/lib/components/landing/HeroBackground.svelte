@@ -26,13 +26,12 @@
 		directionalLight.position.set(1, 1, 1);
 		scene.add(directionalLight);
 
-		function createRibbon(ribbonLength, ribbonWidth, color, offsetX = 0) {
+		function createRibbon(ribbonLength, ribbonWidth, offsetX = 0) {
 			const geometry = new THREE.BufferGeometry();
 			const positions = [];
 			const indices = [];
 			const uvs = [];
 
-			// Generate initial positions for the ribbon (a wavy line)
 			const spinePoints = [];
 			for (let i = 0; i <= ribbonLength; i++) {
 				const x = (i - ribbonLength / 2) * 0.2 + offsetX;
@@ -41,10 +40,9 @@
 				spinePoints.push(new THREE.Vector3(x, y, z));
 			}
 
-			// Create vertices for the ribbon (two rows per segment)
 			for (let i = 0; i < spinePoints.length; i++) {
 				const point = spinePoints[i];
-				const nextPoint = spinePoints[i + 1] || point; // Handle last point
+				const nextPoint = spinePoints[i + 1] || point;
 				const direction = new THREE.Vector3().subVectors(nextPoint, point).normalize();
 				const perpendicular = new THREE.Vector3(-direction.z, 0, direction.x).normalize();
 				const widthFactor = Math.sin((i / ribbonLength) * Math.PI);
@@ -52,15 +50,14 @@
 				positions.push(
 					point.x + perpendicular.x * ribbonWidth * widthFactor,
 					point.y + perpendicular.y * ribbonWidth * widthFactor,
-					point.z + perpendicular.z * ribbonWidth * widthFactor, // Top vertex
+					point.z + perpendicular.z * ribbonWidth * widthFactor,
 					point.x - perpendicular.x * ribbonWidth * widthFactor,
 					point.y - perpendicular.y * ribbonWidth * widthFactor,
-					point.z - perpendicular.z * ribbonWidth * widthFactor // Bottom vertex
+					point.z - perpendicular.z * ribbonWidth * widthFactor
 				);
 				uvs.push(i / ribbonLength, 0, i / ribbonLength, 1);
 			}
 
-			// Create indices for triangles
 			for (let i = 0; i < ribbonLength; i++) {
 				const a = i * 2;
 				const b = a + 1;
@@ -74,17 +71,48 @@
 			geometry.setIndex(indices);
 			geometry.computeVertexNormals();
 
-			// Material and mesh
-			const material = new THREE.MeshBasicMaterial({ color, side: THREE.DoubleSide });
-			const ribbon = new THREE.Mesh(geometry, material);
+			const ribbon = new THREE.Mesh(geometry);
 			ribbon.position.set(0, 0, 0);
 			ribbon.userData = { spinePoints, ribbonWidth, ribbonLength };
 			return ribbon;
 		}
 
-		const ribbon1 = createRibbon(100, 1.5, '#808080');
-		const ribbon2 = createRibbon(50, 0.5, '#444444', 5);
-		const ribbon3 = createRibbon(75, 0.75, '#333333', -5);
+		const ribbonShaderMaterial = new THREE.ShaderMaterial({
+			uniforms: {
+				colorA: { value: new THREE.Color('#909090') },
+				colorB: { value: new THREE.Color('#444444') },
+				time: { value: 0 }
+			},
+			vertexShader: `
+                varying vec2 vUv;
+                void main() {
+                    vUv = uv;
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                }
+            `,
+			fragmentShader: `
+                uniform vec3 colorA;
+                uniform vec3 colorB;
+                uniform float time;
+                varying vec2 vUv;
+                void main() {
+                    float mixValue = sin(vUv.x * 10.0 - time * 2.0) * 0.5 + 0.5;
+                    vec3 color = mix(colorA, colorB, mixValue);
+                    gl_FragColor = vec4(color, 1.0);
+                }
+            `,
+			side: THREE.DoubleSide
+		});
+
+		// add ribbons
+		const ribbon1 = createRibbon(100, 1.5, 0);
+		const ribbon2 = createRibbon(50, 0.5, 5);
+		const ribbon3 = createRibbon(75, 0.75, -5);
+
+		ribbon1.material = ribbonShaderMaterial;
+		ribbon2.material = ribbonShaderMaterial;
+		ribbon3.material = ribbonShaderMaterial;
+
 		scene.add(ribbon1, ribbon2, ribbon3);
 		const ribbons = [ribbon1, ribbon2, ribbon3];
 
@@ -98,11 +126,12 @@
 				return;
 			}
 			const time = clock.getElapsedTime();
+			ribbonShaderMaterial.uniforms.time.value = time;
+
 			ribbons.forEach((ribbon) => {
 				ribbon.rotation.x += 0.001;
 				ribbon.rotation.y += 0.001;
 
-				// Animate ribbon positions randomly
 				const geometry = ribbon.geometry;
 				const spinePoints = ribbon.userData.spinePoints;
 				const ribbonWidth = ribbon.userData.ribbonWidth;
@@ -117,14 +146,12 @@
 					spinePoints[i].y += randomY * 0.01;
 					spinePoints[i].z += randomZ * 0.01;
 
-					// Recalculate perpendicular for updated spine
 					const point = spinePoints[i];
 					const nextPoint = spinePoints[i + 1] || point;
 					const direction = new THREE.Vector3().subVectors(nextPoint, point).normalize();
 					const perpendicular = new THREE.Vector3(-direction.z, 0, direction.x).normalize();
 					const widthFactor = Math.sin((i / ribbonLength) * Math.PI);
 
-					// Update geometry vertices with taper
 					const baseIndex = i * 6;
 					const effectiveWidth = ribbonWidth * widthFactor;
 					positionsArray[baseIndex] = point.x + perpendicular.x * effectiveWidth;
@@ -158,6 +185,3 @@
 	style="position: fixed; top: 0; left: 0; z-index: 0; width: 100vw; height: 100vh; background: var(--clr-invert);"
 	aria-hidden="true"
 ></canvas>
-
-<style>
-</style>
