@@ -106,15 +106,19 @@
 
 		// add ribbons
 		const ribbon1 = createRibbon(100, 1.5, 0);
-		const ribbon2 = createRibbon(50, 0.5, 5);
-		const ribbon3 = createRibbon(75, 0.75, -5);
+		const ribbon2 = createRibbon(95, 0.5, 2);
+		const ribbon3 = createRibbon(75, 0.75, 4);
+		const ribbon4 = createRibbon(175, 1, -6);
+		const ribbon5 = createRibbon(120, 0.25, -4);
 
 		ribbon1.material = ribbonShaderMaterial;
 		ribbon2.material = ribbonShaderMaterial;
 		ribbon3.material = ribbonShaderMaterial;
+		ribbon4.material = ribbonShaderMaterial;
+		ribbon5.material = ribbonShaderMaterial;
 
-		scene.add(ribbon1, ribbon2, ribbon3);
-		const ribbons = [ribbon1, ribbon2, ribbon3];
+		scene.add(ribbon1, ribbon2, ribbon3, ribbon4, ribbon5);
+		const ribbons = [ribbon1, ribbon2, ribbon3, ribbon4, ribbon5];
 
 		camera.position.z = 10;
 
