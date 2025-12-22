@@ -56,20 +56,7 @@
 </script>
 
 <div class="image-hero">
-	<picture>
-		<source
-			srcset="/logos/svelteCode-480.webp 480w, /logos/svelteCode-768.webp 768w, /logos/svelteCode-1200.webp 1200w"
-			sizes="(max-inline-size: 480px) 100vw, (max-inline-size: 768px) 100vw, 1200px"
-		/>
-		<img
-			src="/logos/svelteCode-768.webp"
-			{alt}
-			width="1200"
-			height="675"
-			decoding="async"
-			style="aspect-ratio: 16/9; max-inline-size: 100%; height: auto;"
-		/>
-	</picture>
+	<img src="/logos/svelte-magick.webp" {alt} decoding="async" />
 
 	<h1 id="title">
 		<span style="view-transition-name: {viewTransitionName || ''};">About</span>
@@ -96,26 +83,14 @@
 			min-height: 40vh;
 		}
 
-		& picture {
-			width: 100%;
-			display: block;
-			aspect-ratio: 16 / 9;
-		}
-
 		& img {
-			width: 100%;
-			height: auto;
+			max-inline-size: 100%;
+			block-size: auto;
 			aspect-ratio: 16 / 9;
 			object-fit: cover;
 			mask: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 60%, transparent);
 			border-radius: var(--radius);
-			max-inline-size: 100%;
 			display: block;
-
-			@media (width <= 500px) {
-				width: 100%;
-				height: 80vw;
-			}
 		}
 
 		& h1 {
