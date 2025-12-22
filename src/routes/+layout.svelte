@@ -1,5 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
+	import { injectAnalytics } from '@vercel/analytics/sveltekit';
+	import { dev } from '$app/environment';
 	import '../app.css';
 	import '@picocss/pico/css/pico.min.css';
 	import NavBar from '$lib/components/navigation/NavBar.svelte';
@@ -42,6 +44,7 @@
 	}
 
 	onMount(() => {
+		injectAnalytics({ mode: dev ? 'development' : 'production' });
 		loading.isLoaded = true;
 		detectSWUpdate();
 	});
