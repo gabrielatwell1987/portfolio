@@ -289,8 +289,8 @@
 		--light-gray: hsl(0 1% 50%);
 		--gray: hsl(0 0% 40%);
 		--dark-gray: hsl(0 0% 25%);
-		--success-light: hsl(120 49% 26%);
-		--success-dark: hsl(120 97% 25%);
+		--success-light: hsl(120, 49%, 38%);
+		--success-dark: hsl(120, 98%, 20%);
 		--fail-light: hsl(0 51% 33%);
 		--fail-dark: hsl(0 73% 34%);
 		--warning-light: hsl(45 51% 35%);
