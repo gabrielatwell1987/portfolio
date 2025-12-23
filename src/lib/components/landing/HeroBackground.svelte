@@ -28,7 +28,7 @@
 		directionalLight.position.set(1, 1, 1);
 		scene.add(directionalLight);
 
-		function createRibbon(ribbonLength, ribbonWidth, offsetX = 0) {
+		function createRibbon(ribbonLength, ribbonWidth, offsetX = 0, phase = 0) {
 			const geometry = new THREE.BufferGeometry();
 			const positions = [];
 			const indices = [];
@@ -75,7 +75,14 @@
 
 			const ribbon = new THREE.Mesh(geometry);
 			ribbon.position.set(0, 0, 0);
-			ribbon.userData = { spinePoints, ribbonWidth, ribbonLength };
+			ribbon.userData = {
+				spinePoints,
+				ribbonWidth,
+				ribbonLength,
+				phase,
+				rotationSpeedX: 0.001 + Math.random() * 0.004,
+				rotationSpeedY: 0.001 + Math.random() * 0.004
+			};
 			return ribbon;
 		}
 
@@ -91,11 +98,11 @@
 		});
 
 		// add ribbons
-		const ribbon1 = createRibbon(100, 1.5, 0);
-		const ribbon2 = createRibbon(95, 0.5, 2);
-		const ribbon3 = createRibbon(75, 0.75, 4);
-		const ribbon4 = createRibbon(175, 1, -6);
-		const ribbon5 = createRibbon(120, 0.25, -4);
+		const ribbon1 = createRibbon(100, 1.5, 0, Math.random() * Math.PI * 2);
+		const ribbon2 = createRibbon(95, 0.5, 2, Math.random() * Math.PI * 2);
+		const ribbon3 = createRibbon(75, 0.75, 4, Math.random() * Math.PI * 2);
+		const ribbon4 = createRibbon(175, 1, -6, Math.random() * Math.PI * 2);
+		const ribbon5 = createRibbon(120, 0.25, -4, Math.random() * Math.PI * 2);
 
 		ribbon1.material = ribbonShaderMaterial;
 		ribbon2.material = ribbonShaderMaterial;
@@ -119,19 +126,21 @@
 			ribbonShaderMaterial.uniforms.time.value = time;
 
 			ribbons.forEach((ribbon) => {
-				ribbon.rotation.x += 0.001;
-				ribbon.rotation.y += 0.001;
+				ribbon.rotation.x += ribbon.userData.rotationSpeedX;
+				ribbon.rotation.y += ribbon.userData.rotationSpeedY;
 
 				const geometry = ribbon.geometry;
 				const spinePoints = ribbon.userData.spinePoints;
 				const ribbonWidth = ribbon.userData.ribbonWidth;
 				const ribbonLength = ribbon.userData.ribbonLength;
 				const positionsArray = geometry.attributes.position.array;
+				const phase = ribbon.userData.phase;
+
 				for (let i = 0; i < spinePoints.length; i++) {
 					const offset = i * 0.1;
-					const randomX = Math.sin(time + offset) * 0.5;
-					const randomY = Math.cos(time + offset) * 0.5;
-					const randomZ = Math.sin(time * 0.5 + offset) * 0.5;
+					const randomX = Math.sin(time + offset + phase) * 0.5;
+					const randomY = Math.cos(time + offset + phase) * 0.5;
+					const randomZ = Math.sin(time * 0.5 + offset + phase) * 0.5;
 					spinePoints[i].x += randomX * 0.01;
 					spinePoints[i].y += randomY * 0.01;
 					spinePoints[i].z += randomZ * 0.01;
