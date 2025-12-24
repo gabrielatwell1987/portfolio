@@ -193,6 +193,10 @@
 		align-items: center;
 		block-size: clamp(40vh, 75vh, 80vh);
 
+		@media (width <= 768px) {
+			align-items: start;
+		}
+
 		& .responsive-iframe {
 			position: relative;
 			inline-size: 100%;
