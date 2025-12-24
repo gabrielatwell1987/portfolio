@@ -12,9 +12,9 @@
 		onmouseleave={popover.hidePopover}
 		onfocus={popover.showPopover}
 		onblur={popover.hidePopover}
-		class="pwa-button"
+		class="summary-button"
 	>
-		<span class="pwa-title" style="view-transition-name: pwa-title-{index};">{title}</span>
+		<span class="summary-title" style="view-transition-name: summary-title-{index};">{title}</span>
 	</button>
 
 	<div
@@ -67,7 +67,7 @@
 			background: transparent;
 		}
 
-		& .pwa-button {
+		& .summary-button {
 			margin: 0;
 			padding: 0;
 		}
