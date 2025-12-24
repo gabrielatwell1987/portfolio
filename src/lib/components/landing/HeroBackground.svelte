@@ -80,8 +80,8 @@
 				ribbonWidth,
 				ribbonLength,
 				phase,
-				rotationSpeedX: 0.001 + Math.random() * 0.004,
-				rotationSpeedY: 0.001 + Math.random() * 0.004
+				rotationSpeedX: 0.001 + Math.random() * 0.002,
+				rotationSpeedY: 0.001 + Math.random() * 0.002
 			};
 			return ribbon;
 		}
