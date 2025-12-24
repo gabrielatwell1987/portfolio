@@ -52,13 +52,13 @@
 	}
 </script>
 
-<section class="video-Popover" aria-label="pwa video tutorial">
-	<button type="button" onclick={openVideoPopover}>
+<section class="video-popover" aria-label="pwa video tutorial">
+	<button class="open-popover" type="button" onclick={openVideoPopover}>
 		{title}
 	</button>
 
 	<div id={videoId} popover="auto" bind:this={videoPopoverElement} data-video-popover>
-		<button type="button" onclick={closeVideoPopover} class="close-btn" aria-label="Close">
+		<button type="button" onclick={closeVideoPopover} class="close-button" aria-label="Close">
 			<svg
 				width="800px"
 				height="800px"
@@ -95,7 +95,7 @@
 </section>
 
 <style>
-	.video-Popover {
+	.video-popover {
 		display: inline-block;
 
 		&:focus,
@@ -104,8 +104,8 @@
 			background: transparent;
 		}
 
-		& .close-btn {
-			position: absolute;
+		& .close-button {
+			position: fixed;
 			top: 0.5rem;
 			right: 1rem;
 			background: transparent;
@@ -118,6 +118,9 @@
 			margin: 0;
 			line-height: 1;
 			z-index: 10;
+			display: flex;
+			justify-content: flex-end;
+			inline-size: fit-content;
 
 			&:hover {
 				opacity: 0.9;
@@ -128,16 +131,16 @@
 			}
 
 			& svg {
-				width: clamp(1.75rem, 3vw, 2.5rem);
-				height: clamp(1.75rem, 3vw, 2.5rem);
+				inline-size: clamp(1.75rem, 3vw, 2.5rem);
+				block-size: clamp(1.75rem, 3vw, 2.5rem);
 			}
 		}
 
-		button {
+		.open-popover {
 			background-color: transparent;
 			filter: brightness(1);
 			color: var(--clr-green);
-			width: fit-content;
+			inline-size: fit-content;
 			font-family: var(--bronova);
 			font-size: clamp(var(--h6), 1.5vw, var(--h4));
 			font-weight: 600;
@@ -145,8 +148,8 @@
 			padding: 0;
 			border: none;
 			cursor: pointer;
-			min-height: 44px;
-			min-width: 44px;
+			min-block-size: 44px;
+			min-inline-size: 44px;
 
 			&:not(:hover) {
 				opacity: 0.85;
@@ -159,25 +162,24 @@
 
 		& [popover][data-video-popover] {
 			inline-size: min(95%, 900px);
-			block-size: clamp(40vh, 65%, 90vh);
 			max-block-size: 90vh;
-			padding: 3.5rem 1.5rem 1.5rem;
+			padding: 1rem 0;
 			margin-inline: auto;
 			margin-block: auto;
 			position: fixed;
 			inset: 0;
-			overflow: auto;
+			overflow: hidden;
 			color: var(--clr-main);
 
 			@media (width <= 768px) {
 				inline-size: 95%;
-				padding: 3rem 1rem 1rem;
 				max-block-size: 50vh;
 			}
 
 			@media (width <= 500px) {
 				inline-size: 98%;
 				max-block-size: 40vh;
+				padding-top: 3rem;
 			}
 		}
 	}
@@ -186,6 +188,10 @@
 		inline-size: 100%;
 		max-inline-size: 800px;
 		margin-inline: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		block-size: clamp(40vh, 75vh, 80vh);
 
 		& .responsive-iframe {
 			position: relative;

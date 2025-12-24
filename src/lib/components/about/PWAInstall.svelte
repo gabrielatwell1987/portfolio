@@ -2,41 +2,21 @@
 	let { popoverTitle, title, text, text2, text3 } = $props();
 
 	const id = `popover-${Math.random().toString(36).substr(2, 9)}`;
-	let popoverElement = $state(null);
-
-	function handleClick() {
-		const popover = document.getElementById(id);
-		if (!document.startViewTransition) {
-			popover.showPopover();
-			return;
-		}
-
-		document.startViewTransition(() => {
-			popover.showPopover();
-		});
-	}
-
-	function closePopover() {
-		if (!popoverElement) return;
-
-		if (!document.startViewTransition) {
-			popoverElement.hidePopover();
-			return;
-		}
-
-		document.startViewTransition(() => {
-			setTimeout(() => {
-				popoverElement.hidePopover();
-			}, 0);
-		});
-	}
 </script>
 
 <section class="instruction-popover" aria-label="pwa instructions">
-	<button type="button" onclick={handleClick}><span class="pwa-title">{title}</span></button>
+	<button type="button" popovertarget={id} popovertargetaction="show">
+		<span class="pwa-title">{title}</span>
+	</button>
 
-	<div {id} popover="auto" bind:this={popoverElement}>
-		<button type="button" onclick={closePopover} class="close-btn" aria-label="Close">
+	<div {id} popover="auto">
+		<button
+			type="button"
+			class="close-btn"
+			aria-label="Close"
+			popovertarget={id}
+			popovertargetaction="hide"
+		>
 			<svg
 				width="800px"
 				height="800px"
@@ -128,14 +108,6 @@
 			&:active {
 				scale: 0.97;
 			}
-
-			& .pwa-title {
-				view-transition-name: pwa-title;
-			}
-		}
-
-		&:has([popover]:popover-open) button .pwa-title {
-			view-transition-name: none;
 		}
 
 		[popover]:popover-open .pwa-title {
@@ -203,15 +175,5 @@
 		[popover]:popover-open::backdrop {
 			background-color: rgb(0 0 0 / 0%);
 		}
-	}
-
-	::view-transition-group(pwa-title) {
-		animation-duration: 0.5s;
-		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	}
-
-	::view-transition-old(pwa-title),
-	::view-transition-new(pwa-title) {
-		mix-blend-mode: normal;
 	}
 </style>
