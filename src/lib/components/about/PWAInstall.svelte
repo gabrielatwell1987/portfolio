@@ -32,7 +32,7 @@
 	}
 </script>
 
-<section class="instruction-Popover" aria-label="pwa instructions">
+<section class="instruction-popover" aria-label="pwa instructions">
 	<button type="button" onclick={handleClick}><span class="pwa-title">{title}</span></button>
 
 	<div {id} popover="auto" bind:this={popoverElement}>
@@ -65,7 +65,7 @@
 </section>
 
 <style>
-	.instruction-Popover {
+	.instruction-popover {
 		display: inline-block;
 		position: relative;
 
@@ -140,6 +140,8 @@
 
 		[popover]:popover-open .pwa-title {
 			view-transition-name: pwa-title;
+			color: var(--clr-green);
+			font-size: clamp(var(--h5), 1.5vw, var(--h3));
 		}
 
 		& [popover] {
