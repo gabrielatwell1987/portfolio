@@ -100,8 +100,8 @@
 
 					& img {
 						object-fit: cover;
-						width: 100%;
-						height: auto;
+						inline-size: 100%;
+						block-size: 100%;
 						position: absolute;
 						top: 0;
 						left: 0;
@@ -110,8 +110,8 @@
 						aspect-ratio: 3 / 4;
 
 						@media (width <= 500px) {
-							width: 85vw;
-							height: auto;
+							inline-size: 85vw;
+							block-size: auto;
 							object-fit: contain;
 						}
 					}
