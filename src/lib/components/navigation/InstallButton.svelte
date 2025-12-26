@@ -2,13 +2,26 @@
 	import '@fortawesome/fontawesome-free/css/all.css';
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 
-	// Reactive variables
 	let deferredPrompt = $state(null);
 	let isInstallable = $state(false);
 	let installStatus = $state('');
+	let isIOS = $state(false);
 
-	// Effect to listen for PWA events
+	let shareFallback = $state(false);
+
+	// Detect iOS
 	$effect(() => {
+		const ua = window.navigator.userAgent;
+		isIOS =
+			/iphone|ipad|ipod/i.test(ua) &&
+			!window.MSStream &&
+			!window.matchMedia('(display-mode: standalone)').matches;
+	});
+
+	// PWA install prompt for non-iOS
+	$effect(() => {
+		if (isIOS) return;
+
 		function handleBeforeInstallPrompt(event) {
 			event.preventDefault();
 			deferredPrompt = event;
@@ -21,53 +34,75 @@
 			installStatus = 'App installed successfully';
 		}
 
-		// Add event listeners
 		window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
 		window.addEventListener('appinstalled', handleAppInstalled);
 
-		// Cleanup on destroy
 		return () => {
 			window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
 			window.removeEventListener('appinstalled', handleAppInstalled);
 		};
 	});
 
-	// Install button click handler
 	const installApp = async () => {
-		if (!deferredPrompt) {
-			return;
-		}
-
+		if (!deferredPrompt) return;
 		installStatus = 'Installing app...';
-
 		deferredPrompt.prompt();
-
 		const choiceResult = await deferredPrompt.userChoice;
-
-		if (choiceResult.outcome === 'accepted') {
-			installStatus = 'Installation accepted';
-		} else {
-			installStatus = 'Installation declined';
-		}
-
-		// Reset after interaction
+		installStatus =
+			choiceResult.outcome === 'accepted' ? 'Installation accepted' : 'Installation declined';
 		deferredPrompt = null;
 		isInstallable = false;
+		setTimeout(() => (installStatus = ''), 3000);
+	};
 
-		// Clear status after a delay
-		setTimeout(() => {
-			installStatus = '';
-		}, 3000);
+	// iOS share handler
+	const shareApp = async () => {
+		if (navigator.share) {
+			try {
+				await navigator.share({
+					title: document.title,
+					text: 'Check out this app!',
+					url: window.location.href
+				});
+			} catch (e) {
+				installStatus = 'Share cancelled';
+				setTimeout(() => (installStatus = ''), 2000);
+			}
+		} else {
+			// installStatus = 'Sharing not supported';
+			// setTimeout(() => (installStatus = ''), 2000);
+			shareFallback = true;
+		}
+	};
+
+	const closeFallback = () => {
+		shareFallback = false;
 	};
 </script>
 
 <A11yAnnouncer message={installStatus} />
 
-<button aria-label="Install this app as a PWA" onclick={installApp} hidden={!isInstallable}>
-	<i class="fa-solid fa-download"></i>
-
-	<span class="desc">install</span>
-</button>
+{#if isIOS}
+	<button aria-label="Share this app" onclick={shareApp}>
+		<i class="fa-solid fa-share-from-square"></i>
+		<span class="desc">share</span>
+	</button>
+	{#if shareFallback}
+		<div class="share-fallback">
+			<p>
+				Sharing is not supported in this browser.<br />
+				On iOS, tap the <b>Share</b> icon <span style="font-size:1.2em;">&#x1f5d2;</span> in
+				Safari's toolbar and choose <b>Add to Home Screen</b> to install this app.
+			</p>
+			<button onclick={closeFallback}>Close</button>
+		</div>
+	{/if}
+{:else}
+	<button aria-label="Install this app as a PWA" onclick={installApp} hidden={!isInstallable}>
+		<i class="fa-solid fa-download"></i>
+		<span class="desc">install</span>
+	</button>
+{/if}
 
 <style>
 	button {
@@ -92,8 +127,8 @@
 		align-items: center;
 		gap: 1rem;
 		position: fixed;
-		bottom: 4rem;
-		left: 1rem;
+		bottom: 1em;
+		left: 1em;
 		opacity: 1;
 		view-transition-name: installbtn;
 
@@ -129,6 +164,29 @@
 
 		@media (width <= 500px) {
 			margin: 1rem;
+		}
+	}
+
+	.share-fallback {
+		position: fixed;
+		bottom: 5em;
+		left: 1em;
+		right: 1em;
+		background: var(--clr-main, #222);
+		color: var(--clr-invert, #fff);
+		padding: 1em;
+		border-radius: var(--radius, 8px);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+		z-index: 2000;
+
+		& button {
+			margin-top: 0.5em;
+			background: var(--clr-invert, #fff);
+			color: var(--clr-main, #222);
+			border: none;
+			padding: 0.5em 1em;
+			border-radius: 4px;
+			cursor: pointer;
 		}
 	}
 </style>
