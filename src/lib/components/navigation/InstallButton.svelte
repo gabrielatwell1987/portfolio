@@ -91,8 +91,9 @@
 		<div class="share-fallback">
 			<p>
 				Sharing is not supported in this browser.<br />
-				On iOS, tap the <b>Share</b> icon <span style="font-size:1.2em;">&#x1f5d2;</span> in
-				Safari's toolbar and choose <b>Add to Home Screen</b> to install this app.
+				On iOS, tap the <b>Share</b> icon
+				<span style="font-size:1.2em;"><i class="fa-solid fa-share-from-square"></i></span>
+				in Safari's toolbar and choose <b>Add to Home Screen</b> to install this app.
 			</p>
 			<button onclick={closeFallback}>Close</button>
 		</div>
@@ -172,17 +173,18 @@
 		bottom: 5em;
 		left: 1em;
 		right: 1em;
-		background: var(--clr-main, #222);
-		color: var(--clr-invert, #fff);
+		background: var(--clr-invert);
+		color: var(--clr-main);
 		padding: 1em;
-		border-radius: var(--radius, 8px);
+		border: 1px solid var(--clr-main);
+		border-radius: var(--radius);
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 		z-index: 2000;
 
 		& button {
 			margin-top: 0.5em;
-			background: var(--clr-invert, #fff);
-			color: var(--clr-main, #222);
+			background: var(--clr-invert);
+			color: var(--clr-main);
 			border: none;
 			padding: 0.5em 1em;
 			border-radius: 4px;
