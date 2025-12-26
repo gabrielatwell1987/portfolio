@@ -84,7 +84,7 @@
 
 {#if isIOS}
 	<button aria-label="Share this app" onclick={shareApp}>
-		<i class="fa-solid fa-share-from-square"></i>
+		<i class="fa-solid fa-share-nodes"></i>
 		<span class="desc">share</span>
 	</button>
 	{#if shareFallback}
@@ -145,13 +145,13 @@
 		}
 
 		& i {
-			font-size: clamp(var(--sm), 1.5vw, var(--h5));
+			font-size: clamp(var(--h6), 1.5vw, var(--h4));
 			color: var(--clr-invert);
 			align-items: center;
 			cursor: pointer;
 		}
 		& .desc {
-			font-size: clamp(var(--sm), 1.5vw, var(--h5));
+			font-size: clamp(var(--h6), 1.5vw, var(--h4));
 			font-weight: 900;
 			margin-top: 0.5rem;
 			cursor: pointer;
