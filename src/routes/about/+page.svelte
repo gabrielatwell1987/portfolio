@@ -71,7 +71,7 @@
 					site because your device downloads and caches the whole site!
 				</p>
 
-				<p data-flex-container>
+				<div data-flex-container>
 					<PWAInstall
 						title="How to install the PWA"
 						popoverTitle="How to install the PWA:"
@@ -88,7 +88,7 @@
 						title="Watch: Building a PWA with Svelte"
 						videoSrc="https://www.youtube.com/embed/_wiOcdEVgks?si=hJdrXH9vH_ENofpF"
 					/>
-				</p>
+				</div>
 			</div>
 
 			{#if isDesktop}
