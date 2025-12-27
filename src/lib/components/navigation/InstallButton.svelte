@@ -90,12 +90,28 @@
 	{#if shareFallback}
 		<div class="share-fallback">
 			<p>
-				Sharing is not supported in this browser.<br />
-				On iOS, tap the <b>Share</b> icon
-				<span style="font-size:1.2em;"><i class="fa-solid fa-share-from-square"></i></span>
-				in Safari's toolbar and choose <b>Add to Home Screen</b> to install this app.
+				Sharing is not supported in this browser.<br /><br />
+				On iOS in Safari, tap the <b>Share</b> icon
+				<span style="font-size:1.2em;">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						id="Ios-Share--Streamline-Outlined-Material"
+						height="24"
+						width="24"
+					>
+						<title>iOS Share Icon</title>
+						<path
+							fill="var(--clr-main)"
+							d="M5.5 23c-0.4 0 -0.75 -0.15 -1.05 -0.45 -0.3 -0.3 -0.45 -0.65 -0.45 -1.05V8.775c0 -0.4 0.15 -0.75 0.45 -1.05 0.3 -0.3 0.65 -0.45 1.05 -0.45h4.225v1.5H5.5V21.5h13V8.775h-4.275v-1.5H18.5c0.4 0 0.75 0.15 1.05 0.45 0.3 0.3 0.45 0.65 0.45 1.05V21.5c0 0.4 -0.15 0.75 -0.45 1.05 -0.3 0.3 -0.65 0.45 -1.05 0.45H5.5Zm5.725 -7.675V3.9l-2.2 2.2 -1.075 -1.075L11.975 1 16 5.025l-1.075 1.075 -2.2 -2.2v11.425h-1.5Z"
+							stroke-width="0.5"
+						></path>
+					</svg>
+				</span>
+				in Safari's toolbar and choose <b>'Add to Home Screen'</b> to install this app.
 			</p>
-			<button onclick={closeFallback}>Close</button>
+			<button class="close-button" onclick={closeFallback}>Close</button>
 		</div>
 	{/if}
 {:else}
@@ -189,6 +205,10 @@
 			padding: 0.5em 1em;
 			border-radius: 4px;
 			cursor: pointer;
+		}
+
+		& .close-button {
+			border: 2px solid var(--clr-gray);
 		}
 	}
 </style>
