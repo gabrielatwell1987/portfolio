@@ -12,10 +12,14 @@
 	// Detect iOS
 	$effect(() => {
 		const ua = window.navigator.userAgent;
+		const isAppleMobile = /iphone|ipad|ipod/i.test(ua);
+		const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
+		const isMacSafari = /macintosh/i.test(ua) && isSafari;
 		isIOS =
-			/iphone|ipad|ipod/i.test(ua) &&
-			!window.MSStream &&
-			!window.matchMedia('(display-mode: standalone)').matches;
+			(isAppleMobile &&
+				!window.MSStream &&
+				!window.matchMedia('(display-mode: standalone)').matches) ||
+			isMacSafari;
 	});
 
 	// PWA install prompt for non-iOS
@@ -187,6 +191,7 @@
 		border-radius: var(--radius);
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 		z-index: 2000;
+		animation: slideUp 0.5s ease-out forwards;
 
 		& button {
 			margin-top: 0.5em;
@@ -201,6 +206,21 @@
 		& [data-close-button] {
 			bottom: 2em;
 			border: 1px solid var(--clr-main);
+
+			@media (width <= 500px) {
+				bottom: -1.5em;
+			}
+		}
+	}
+
+	@keyframes slideUp {
+		from {
+			transform: translateY(50%);
+			opacity: 0;
+		}
+		to {
+			transform: translateY(0);
+			opacity: 1;
 		}
 	}
 </style>
