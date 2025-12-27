@@ -1,14 +1,16 @@
 <script>
-	import InstallButton from './InstallButton.svelte';
+	// import InstallButton from './InstallButton.svelte';
 	import Burger from '$lib/components/navigation/Burger.svelte';
 	import ThemeToggle from '$lib/components/navigation/ThemeToggle.svelte';
 	import NavLink from '$lib/components/navigation/NavLink.svelte';
 	import SelectLink from '$lib/components/navigation/SelectLink.svelte';
 	import AtwellUnderline from './AtwellUnderline.svelte';
+	import '@khmyznikov/pwa-install';
 
 	let open = $state(false);
 	let isClosing = $state(false);
 	let isDisplay = $state(false);
+	let pwaInstallComponent;
 
 	function closeMenu() {
 		if (open) {
@@ -25,10 +27,15 @@
 		if (open) {
 			isDisplay = true;
 		}
+
+		if (pwaInstallComponent && typeof pwaInstallComponent.showDialog === 'function') {
+			pwaInstallComponent.showDialog(true);
+		}
 	});
 </script>
 
-<InstallButton />
+<!-- <InstallButton /> -->
+<pwa-install bind:this={pwaInstallComponent}></pwa-install>
 
 <nav class="navigation">
 	<div class="nav-main">

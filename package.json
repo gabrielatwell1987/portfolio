@@ -37,6 +37,7 @@
 	"dependencies": {
 		"@analytics/google-analytics": "^1.0.7",
 		"@fortawesome/fontawesome-free": "^6.6.0",
+		"@khmyznikov/pwa-install": "^0.6.1",
 		"@picocss/pico": "^1.5.13",
 		"@vercel/analytics": "^1.6.1",
 		"copy-to-clipboard": "^3.3.3",
