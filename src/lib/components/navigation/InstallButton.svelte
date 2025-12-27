@@ -6,8 +6,8 @@
 	let isInstallable = $state(false);
 	let installStatus = $state('');
 	let isIOS = $state(false);
-
 	let shareFallback = $state(false);
+	let shareClicked = $state(false);
 
 	// Detect iOS
 	$effect(() => {
@@ -56,23 +56,9 @@
 	};
 
 	// iOS share handler
-	const shareApp = async () => {
-		if (navigator.share) {
-			try {
-				await navigator.share({
-					title: document.title,
-					text: 'Check out this app!',
-					url: window.location.href
-				});
-			} catch (e) {
-				installStatus = 'Share cancelled';
-				setTimeout(() => (installStatus = ''), 2000);
-			}
-		} else {
-			// installStatus = 'Sharing not supported';
-			// setTimeout(() => (installStatus = ''), 2000);
-			shareFallback = true;
-		}
+	const shareApp = () => {
+		shareFallback = true;
+		shareClicked = true;
 	};
 
 	const closeFallback = () => {
@@ -83,35 +69,36 @@
 <A11yAnnouncer message={installStatus} />
 
 {#if isIOS}
-	<button aria-label="Share this app" onclick={shareApp}>
-		<i class="fa-solid fa-share-nodes"></i>
-		<span class="desc">share</span>
-	</button>
+	{#if !shareClicked}
+		<button aria-label="Share this app" onclick={shareApp}>
+			<i class="fa-solid fa-share-nodes"></i>
+			<span class="desc">iOS</span>
+		</button>
+	{/if}
 	{#if shareFallback}
 		<div class="share-fallback">
 			<p>
-				Sharing is not supported in this browser.<br /><br />
-				On iOS in Safari, tap the <b>Share</b> icon
-				<span style="font-size:1.2em;">
+				On iOS, open the Safari browser. Tap the <b>Share</b> icon
+				<span style="font-size:1em;">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
 						viewBox="0 0 24 24"
 						id="Ios-Share--Streamline-Outlined-Material"
-						height="24"
-						width="24"
+						height="21"
+						width="21"
 					>
 						<title>iOS Share Icon</title>
 						<path
 							fill="var(--clr-main)"
 							d="M5.5 23c-0.4 0 -0.75 -0.15 -1.05 -0.45 -0.3 -0.3 -0.45 -0.65 -0.45 -1.05V8.775c0 -0.4 0.15 -0.75 0.45 -1.05 0.3 -0.3 0.65 -0.45 1.05 -0.45h4.225v1.5H5.5V21.5h13V8.775h-4.275v-1.5H18.5c0.4 0 0.75 0.15 1.05 0.45 0.3 0.3 0.45 0.65 0.45 1.05V21.5c0 0.4 -0.15 0.75 -0.45 1.05 -0.3 0.3 -0.65 0.45 -1.05 0.45H5.5Zm5.725 -7.675V3.9l-2.2 2.2 -1.075 -1.075L11.975 1 16 5.025l-1.075 1.075 -2.2 -2.2v11.425h-1.5Z"
-							stroke-width="0.5"
+							stroke-width="0.75"
 						></path>
 					</svg>
 				</span>
 				in Safari's toolbar and choose <b>'Add to Home Screen'</b> to install this app.
 			</p>
-			<button class="close-button" onclick={closeFallback}>Close</button>
+			<button data-close-button onclick={closeFallback}>Close</button>
 		</div>
 	{/if}
 {:else}
@@ -145,9 +132,13 @@
 		gap: 1rem;
 		position: fixed;
 		bottom: 1em;
-		left: 1em;
+		right: 1em;
 		opacity: 1;
 		view-transition-name: installbtn;
+
+		@media (width <= 768px) {
+			bottom: 2.5em;
+		}
 
 		&:focus,
 		&:focus-visible {
@@ -175,12 +166,12 @@
 		}
 
 		@media (width >= 750px) {
-			bottom: 3rem;
-			left: 2rem;
+			bottom: 1em;
+			right: 2em;
 		}
 
 		@media (width <= 500px) {
-			margin: 1rem;
+			margin: 1em;
 		}
 	}
 
@@ -207,8 +198,9 @@
 			cursor: pointer;
 		}
 
-		& .close-button {
-			border: 2px solid var(--clr-gray);
+		& [data-close-button] {
+			bottom: 2em;
+			border: 1px solid var(--clr-main);
 		}
 	}
 </style>
