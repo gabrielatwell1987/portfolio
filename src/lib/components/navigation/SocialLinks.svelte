@@ -70,7 +70,6 @@
 			z-index: 200;
 			pointer-events: all;
 			background-color: transparent;
-			opacity: 1;
 
 			&:focus,
 			&:focus-visible {
@@ -83,10 +82,9 @@
 
 				& path {
 					fill: var(--clr-main);
-					opacity: 0.9;
 
 					&:not(:hover) {
-						opacity: 1;
+						opacity: 0.9;
 					}
 				}
 			}

@@ -179,7 +179,6 @@
 					border: 2px solid var(--clr-main);
 					border-radius: var(--radius);
 					transition:
-						opacity 1s ease-out,
 						border 1s ease-out,
 						box-shadow 1s ease-out,
 						transform 0.25s ease-out;
@@ -204,8 +203,12 @@
 						}
 					}
 
+					&:not(:hover) {
+						opacity: 0.9;
+					}
+
 					& .bento-icons {
-						scale: 0.6;
+						scale: 0.7;
 					}
 
 					& [data-position-center] {
@@ -229,11 +232,6 @@
 						pointer-events: none;
 						color: var(--clr-main);
 
-						&:hover {
-							text-decoration: underline;
-							text-underline-offset: 0.5rem;
-						}
-
 						&:nth-child(2) {
 							margin-top: 0.5em;
 						}
@@ -255,12 +253,11 @@
 					}
 
 					&:hover {
-						transform: scale(0.98);
+						transform: scale(0.99);
 					}
 
 					&:not(:hover) {
 						transition:
-							opacity 1s ease-out,
 							border 1s ease-out,
 							box-shadow 1s ease-out,
 							transform 0.25s ease-out;

@@ -42,17 +42,27 @@
 		}
 
 		.card-title {
-			color: var(--clr-blue);
 			font-family: var(--ultra);
 			font-size: clamp(var(--h3), 2vw, var(--xxl));
 			font-weight: 800;
 			letter-spacing: -1px;
 			margin-bottom: 0.5rem;
 			text-transform: uppercase;
+			color: var(--clr-invert);
+			text-shadow:
+				0 0 1px var(--clr-invert),
+				-2px -2px 0 var(--clr-main),
+				2px -2px 0 var(--clr-main),
+				-2px 2px 0 var(--clr-main),
+				2px 2px 0 var(--clr-main),
+				-2px 0 0 var(--clr-main),
+				2px 0 0 var(--clr-main),
+				0 -2px 0 var(--clr-main),
+				0 2px 0 var(--clr-main);
 		}
 
 		.card-description {
-			color: var(--clr-main);
+			color: var(--clr-light-gray);
 			font-size: clamp(var(--xs), 1.5vw, var(--h4));
 			font-weight: 300;
 			margin-bottom: 1rem;
@@ -67,11 +77,11 @@
 			justify-content: center;
 			align-items: center;
 			background-color: transparent;
-			color: var(--clr-blue);
-			border: 1px solid var(--clr-blue);
-			border-radius: 5rem;
+			color: var(--clr-main);
+			border: 1px solid var(--clr-main);
+			border-radius: var(--radius);
 			font-family: var(--ultra);
-			font-size: clamp(var(--sm), 1vw, var(--h6));
+			font-size: clamp(var(--sm), 1.2vw, var(--h5));
 			font-weight: 300;
 			letter-spacing: 1px;
 			width: fit-content;
@@ -79,15 +89,15 @@
 			outline: none;
 			margin: 1rem auto;
 			filter: drop-shadow(0 0 0.75rem var(--clr-gray));
-			transition: 750ms;
+			transition: 500ms;
 			outline: 3px solid currentColor;
 			outline-offset: -7px;
 			padding: 1rem 1.75rem;
 			user-select: none;
 
 			&:hover {
-				color: var(--clr-main);
-				border-color: var(--clr-main);
+				outline-offset: 0px;
+				text-decoration: none;
 			}
 
 			&:focus,
