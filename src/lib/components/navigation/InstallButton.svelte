@@ -102,6 +102,9 @@
 				</span>
 				in Safari's toolbar and choose <b>'Add to Home Screen'</b> to install this app.
 			</p>
+			<p>
+				Do the same thing on iMac but choose <b>'Add to Dock'</b> to install this app.
+			</p>
 			<button data-close-button onclick={closeFallback}>Close</button>
 		</div>
 	{/if}
