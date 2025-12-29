@@ -61,7 +61,8 @@
 
 <style>
 	.slider-wrapper {
-		width: 85%;
+		max-inline-size: 90vw;
+		inline-size: 100%;
 		overflow: hidden;
 		background-color: transparent;
 		padding: 2em 0;
@@ -72,7 +73,7 @@
 		z-index: 5;
 
 		@media (width <= 768px) {
-			width: 90%;
+			inline-size: 90%;
 			padding: 3em 0;
 			margin-block: 3em;
 		}
@@ -82,8 +83,8 @@
 			content: '';
 			position: absolute;
 			top: 0;
-			width: 100px;
-			height: 100%;
+			inline-size: 100px;
+			block-size: 100%;
 			z-index: 2;
 			pointer-events: none;
 		}
@@ -111,8 +112,8 @@
 
 				& .slide {
 					flex-shrink: 0;
-					width: 100px;
-					height: 100px;
+					inline-size: 100px;
+					block-size: 100px;
 					display: flex;
 					align-items: center;
 					justify-content: center;

@@ -160,8 +160,7 @@
 		max-inline-size: 1200px;
 		margin-inline: auto;
 		padding: 1rem;
-		overflow-y: auto;
-		height: calc(100dvh - 3em);
+		height: 100dvh;
 		position: relative;
 		margin-top: 3em;
 
