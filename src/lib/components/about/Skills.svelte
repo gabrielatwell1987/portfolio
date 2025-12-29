@@ -40,7 +40,7 @@
 
 <style>
 	.skills-container {
-		min-height: 100vh;
+		min-height: 50vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -98,10 +98,6 @@
 					rotate: 5deg;
 					transition: rotate 0.15s ease-out;
 				}
-
-				/* & svg {
-					margin: 0;
-				} */
 			}
 
 			& li {
@@ -131,7 +127,7 @@
 			}
 		}
 
-		@media (width <= 400px) {
+		@media (width <= 500px) {
 			.skills {
 				grid-template-columns: repeat(2, 1fr);
 				gap: 0.5rem;

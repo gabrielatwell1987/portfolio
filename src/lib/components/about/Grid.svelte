@@ -87,15 +87,11 @@
 			}
 
 			&.left {
-				@media (width >= 768px) {
-					box-shadow: -4px 4px 0 var(--clr-main);
-				}
+				box-shadow: -5px 5px 0 var(--clr-main);
 			}
 
 			&.right {
-				@media (width >= 768px) {
-					box-shadow: 4px 4px 0 var(--clr-main);
-				}
+				box-shadow: 5px 5px 0 var(--clr-main);
 			}
 		}
 

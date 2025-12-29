@@ -60,9 +60,9 @@
 		</button>
 
 		<p><span class="pwa-title">{title}</span></p>
-		<p>{text}</p>
-		<p>{text2}</p>
-		<p>{text3}</p>
+		<p data-content>{text}</p>
+		<p data-content>{text2}</p>
+		<p data-content>{text3}</p>
 	</div>
 </section>
 
@@ -75,6 +75,10 @@
 		&:focus-visible {
 			outline: 1px solid var(--clr-main);
 			background: transparent;
+		}
+
+		& [data-content] {
+			text-align: left;
 		}
 
 		& .close-btn {
@@ -110,7 +114,7 @@
 			}
 		}
 
-		button {
+		& button {
 			background-color: transparent;
 			filter: brightness(1);
 			color: var(--clr-green);

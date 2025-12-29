@@ -130,7 +130,6 @@
 			margin-bottom: 2rem;
 			padding-inline: var(--space);
 			background-color: transparent;
-			box-shadow: none;
 
 			& section {
 				margin-inline: auto;
@@ -184,23 +183,11 @@
 						transform 0.25s ease-out;
 
 					&[data-position-left] {
-						@media (width >= 768px) {
-							box-shadow: 4px 4px 0 var(--clr-main);
-						}
-
-						@media (width <= 768px) {
-							box-shadow: 0 0 1px var(--clr-main);
-						}
+						box-shadow: 5px 5px 0 var(--clr-main);
 					}
 
 					&[data-position-right] {
-						@media (width >= 768px) {
-							box-shadow: -4px 4px 0 var(--clr-main);
-						}
-
-						@media (width <= 768px) {
-							box-shadow: 0 0 1px var(--clr-main);
-						}
+						box-shadow: -5px 5px 0 var(--clr-main);
 					}
 
 					&:not(:hover) {
