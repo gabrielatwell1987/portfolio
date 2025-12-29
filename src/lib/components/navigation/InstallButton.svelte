@@ -75,8 +75,8 @@
 {#if isIOS}
 	{#if !shareClicked}
 		<button aria-label="Share this app" onclick={shareApp}>
-			<i class="fa-solid fa-share-nodes"></i>
-			<span class="desc">iOS</span>
+			<i class="fa-solid fa-share-from-square"></i>
+			<span class="desc">share</span>
 		</button>
 	{/if}
 	{#if shareFallback}
@@ -110,7 +110,7 @@
 	{/if}
 {:else}
 	<button aria-label="Install this app as a PWA" onclick={installApp} hidden={!isInstallable}>
-		<i class="fa-solid fa-download"></i>
+		<i class="fa-solid fa-file-arrow-down"></i>
 		<span class="desc">install</span>
 	</button>
 {/if}
@@ -134,7 +134,6 @@
 		z-index: 1000;
 		display: flex;
 		justify-content: center;
-		align-items: center;
 		align-items: center;
 		gap: 1rem;
 		position: fixed;
