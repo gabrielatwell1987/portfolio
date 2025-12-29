@@ -130,6 +130,7 @@
 			margin-bottom: 2rem;
 			padding-inline: var(--space);
 			background-color: transparent;
+			box-shadow: none;
 
 			& section {
 				margin-inline: auto;
