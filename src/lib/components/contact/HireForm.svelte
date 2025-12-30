@@ -168,6 +168,10 @@
 			padding: 0.5rem;
 		}
 
+		@media (width <= 500px) {
+			overflow-y: auto;
+		}
+
 		.form-grid {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
