@@ -72,14 +72,16 @@
 		justify-content: center;
 		margin-left: calc(-50vw + 50%);
 		width: 100vw;
-		position: relative;
 		padding-top: 0;
 		aspect-ratio: 21 / 9;
 		contain: layout;
+		margin-top: -12vh;
 
 		@media (width <= 768px) {
-			padding-top: 3em;
-			min-height: 45vh;
+			min-height: 30vh;
+		}
+		@media (width <= 500px) {
+			min-height: 50vh;
 		}
 
 		& img[data-hero-bg] {
