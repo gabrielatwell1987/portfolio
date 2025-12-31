@@ -76,7 +76,7 @@
 	{#if !shareClicked}
 		<button aria-label="Share this app" onclick={shareApp}>
 			<i class="fa-solid fa-share-from-square"></i>
-			<span class="desc">share</span>
+			<span class="desc">install</span>
 		</button>
 	{/if}
 	{#if shareFallback}
@@ -203,6 +203,11 @@
 			padding: 0.5em 1em;
 			border-radius: 4px;
 			cursor: pointer;
+		}
+
+		& p {
+			font-size: clamp(var(--sm), 1.2vw, var(--h6));
+			margin-bottom: 0.5em;
 		}
 
 		& [data-close-button] {
