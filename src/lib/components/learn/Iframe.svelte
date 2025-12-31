@@ -26,7 +26,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
 
 		@media (width <= 768px) {
 			max-inline-size: 90vw;
