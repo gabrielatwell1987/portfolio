@@ -80,30 +80,34 @@
 		</button>
 	{/if}
 	{#if shareFallback}
-		<div class="share-fallback">
+		<div class="apple-instructions">
+			<p><u>On iOS:</u></p>
 			<p>
-				On iOS, open the Safari browser. Tap the <b>Share</b> icon
-				<span style="font-size:1em;">
-					<svg
+				open the Safari browser. Tap the Share icon
+				<span>
+					(<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
 						viewBox="0 0 24 24"
-						id="Ios-Share--Streamline-Outlined-Material"
+						id="Apple-Share-Icon"
 						height="21"
 						width="21"
+						class="share-icon"
 					>
 						<title>iOS Share Icon</title>
 						<path
 							fill="var(--clr-main)"
 							d="M5.5 23c-0.4 0 -0.75 -0.15 -1.05 -0.45 -0.3 -0.3 -0.45 -0.65 -0.45 -1.05V8.775c0 -0.4 0.15 -0.75 0.45 -1.05 0.3 -0.3 0.65 -0.45 1.05 -0.45h4.225v1.5H5.5V21.5h13V8.775h-4.275v-1.5H18.5c0.4 0 0.75 0.15 1.05 0.45 0.3 0.3 0.45 0.65 0.45 1.05V21.5c0 0.4 -0.15 0.75 -0.45 1.05 -0.3 0.3 -0.65 0.45 -1.05 0.45H5.5Zm5.725 -7.675V3.9l-2.2 2.2 -1.075 -1.075L11.975 1 16 5.025l-1.075 1.075 -2.2 -2.2v11.425h-1.5Z"
-							stroke-width="0.75"
+							stroke="var(--clr-link)"
+							stroke-width=".8"
 						></path>
-					</svg>
+					</svg>)
 				</span>
 				in Safari's toolbar and choose <b>'Add to Home Screen'</b> to install this app.
 			</p>
+			<p><u>On iMac:</u></p>
 			<p>
-				Do the same thing on iMac but choose <b>'Add to Dock'</b> to install this app.
+				Do the same process but choose <b>'Add to Dock'</b> to install this app.
 			</p>
 			<button data-close-button onclick={closeFallback}>Close</button>
 		</div>
@@ -181,7 +185,7 @@
 		}
 	}
 
-	.share-fallback {
+	.apple-instructions {
 		position: fixed;
 		bottom: 5em;
 		left: 1em;
@@ -208,6 +212,25 @@
 		& p {
 			font-size: clamp(var(--sm), 1.2vw, var(--h6));
 			margin-bottom: 0.5em;
+
+			&:nth-of-type(1),
+			&:nth-of-type(3) {
+				font-family: var(--bronova-bold);
+			}
+
+			& b {
+				font-weight: 900;
+				color: var(--clr-link);
+			}
+
+			& .share-icon {
+				display: inline-block;
+				width: clamp(var(--h6), 1.2vw, var(--h4));
+				height: auto;
+				vertical-align: middle;
+				max-width: 100%;
+				max-height: 100%;
+			}
 		}
 
 		& [data-close-button] {
