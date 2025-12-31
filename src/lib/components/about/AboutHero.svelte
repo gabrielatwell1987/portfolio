@@ -3,7 +3,7 @@
 	import { SplitText } from 'gsap/SplitText';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-	let { src, alt, title, viewTransitionName } = $props();
+	let { alt, title, viewTransitionName } = $props();
 
 	function titleRotate() {
 		gsap.registerPlugin(SplitText, ScrollTrigger);
@@ -55,8 +55,8 @@
 	});
 </script>
 
-<div class="image-hero">
-	<img src="/logos/svelte-magick.webp" {alt} decoding="async" />
+<div class="about-hero-image">
+	<img src="/logos/svelte-magick.webp" {alt} decoding="async" data-hero-bg />
 
 	<h1 id="title">
 		<span style="view-transition-name: {viewTransitionName || ''};">About</span>
@@ -65,7 +65,7 @@
 </div>
 
 <style>
-	.image-hero {
+	.about-hero-image {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -76,14 +76,13 @@
 		padding-top: 0;
 		aspect-ratio: 21 / 9;
 		contain: layout;
-		min-height: 50vh;
 
 		@media (width <= 768px) {
 			padding-top: 3em;
-			min-height: 40vh;
+			min-height: 45vh;
 		}
 
-		& img {
+		& img[data-hero-bg] {
 			max-inline-size: 100%;
 			block-size: auto;
 			aspect-ratio: 16 / 9;
@@ -91,10 +90,14 @@
 			mask: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 60%, transparent);
 			border-radius: var(--radius);
 			display: block;
+
+			@media (width <= 500px) {
+				min-inline-size: 110vw;
+			}
 		}
 
-		& h1 {
-			margin-block: -0.9em;
+		& #title {
+			margin-top: -0.9em;
 			font-size: clamp(var(--h3), 6vw, var(--xxl));
 			font-weight: 700;
 			text-shadow: 0 0 5px var(--smoke);

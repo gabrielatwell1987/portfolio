@@ -116,15 +116,6 @@
 		margin-inline: auto;
 		padding-top: 0;
 
-		& .hero-section {
-			margin-top: clamp(-9.75em, -12vw, -3em);
-			margin-bottom: 4em;
-
-			@media (width <= 768px) {
-				margin-bottom: 2em;
-			}
-		}
-
 		& .about-section {
 			display: block;
 			margin-inline: auto;
@@ -156,7 +147,6 @@
 			& .biography {
 				color: var(--white);
 				position: relative;
-				padding-top: clamp(1em, 8vw, 6em);
 
 				@media screen and (width >= 990px) {
 					margin-bottom: -5rem;
