@@ -37,12 +37,12 @@
 	.table-title {
 		display: block;
 		margin-top: 2em;
+		margin-bottom: -2.5em;
 		color: var(--clr-main);
 		font-family: var(--bronova-bold);
-		font-size: clamp(var(--h6), 3vw, var(--h2));
+		font-size: clamp(var(--h6), 5vw, var(--h1));
 		font-weight: 800;
 		text-align: center;
-		opacity: 0.65;
 	}
 
 	.table-of-contents {
@@ -67,9 +67,9 @@
 
 		& dt {
 			display: block;
-			color: var(--clr-main);
+			color: var(--clr-light-gray);
+			font-family: var(--bronova-bold);
 			font-size: clamp(var(--h6), 3vw, var(--h4));
-			font-weight: 900;
 			letter-spacing: 3px;
 			margin-bottom: 1rem;
 		}
@@ -93,7 +93,7 @@
 						color: var(--clr-link);
 
 						&:visited {
-							color: var(--clr-light-gray);
+							color: var(--clr-gray);
 						}
 					}
 				}

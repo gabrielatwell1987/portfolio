@@ -67,7 +67,7 @@
 					window.location.href = '/learn/posts';
 				}}
 				class="learn-image"
-				style="grid-column: 1/-1; width: clamp(18em, 46vw, 60em); justify-self: center;"
+				style="grid-column: 1/-1; width: clamp(18em, 40vw, 60em); justify-self: center;"
 			>
 				<Image
 					src="logos/animation.webp"
