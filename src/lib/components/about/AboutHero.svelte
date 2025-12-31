@@ -75,7 +75,7 @@
 		padding-top: 0;
 		aspect-ratio: 21 / 9;
 		contain: layout;
-		margin-top: -12vh;
+		margin-top: clamp(-5vh, -18vh, -15vh);
 
 		@media (width <= 768px) {
 			min-height: 30vh;
