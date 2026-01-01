@@ -71,17 +71,18 @@
 		align-items: center;
 		justify-content: center;
 		margin-left: calc(-50vw + 50%);
-		width: 100vw;
+		inline-size: 100vw;
 		padding-top: 0;
 		aspect-ratio: 21 / 9;
 		contain: layout;
 		margin-top: clamp(-5vh, -18vh, -15vh);
 
 		@media (width <= 768px) {
-			min-height: 30vh;
+			min-block-size: 30vh;
 		}
 		@media (width <= 500px) {
-			min-height: 50vh;
+			min-block-size: 50vh;
+			margin-top: 4em;
 		}
 
 		& img[data-hero-bg] {
