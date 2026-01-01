@@ -242,13 +242,13 @@
 
 	/* CLS prevention */
 	.cls-container {
-		/* Reserve space to prevent layout shifts */
+		/* reserve space to prevent layout shifts */
 		min-height: var(--min-content-height, 200px);
 		contain: layout;
 	}
 
 	.cls-hero {
-		/* For hero sections - reserve full viewport */
+		/* hero sections - reserve full viewport */
 		min-height: 100vh;
 		contain: layout;
 	}
@@ -261,7 +261,7 @@
 	}
 
 	.cls-canvas {
-		/* canvas elements (Three.js, etc.) */
+		/* canvas elements */
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -269,6 +269,11 @@
 		height: 100%;
 		min-height: 100vh;
 		display: block;
+	}
+
+	/* content-visibility */
+	.cv-auto {
+		content-visibility: auto;
 	}
 }
 

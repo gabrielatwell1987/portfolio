@@ -65,7 +65,12 @@
 <section>
 	<div class="masonry">
 		{#each images as img, i}
-			<button type="button" style="animation-delay: {i * 0.2}s;" onclick={() => openPopover(img)}>
+			<button
+				type="button"
+				class="cv-auto"
+				style="animation-delay: {i * 0.2}s;"
+				onclick={() => openPopover(img)}
+			>
 				<img
 					src={img.src}
 					alt={img.alt}
@@ -79,7 +84,7 @@
 	</div>
 </section>
 
-<!-- Popover for enlarged image -->
+<!-- enlarged image -->
 <div id="image-popover" bind:this={popoverElement} popover="auto" class:open={isOpen}>
 	{#if selectedImage}
 		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
