@@ -157,7 +157,7 @@
 <style>
 	.hire-form-container {
 		width: 100%;
-		max-inline-size: 1200px;
+		max-inline-size: 1600px;
 		margin-inline: auto;
 		padding: 1rem;
 		height: 100dvh;
