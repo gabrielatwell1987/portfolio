@@ -79,15 +79,13 @@
 
 		ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
+		gsap.set('.wholeProject', { opacity: 0, y: 30 });
+
 		ScrollTrigger.batch('.wholeProject', {
 			onEnter: (batch) => {
-				gsap.fromTo(
-					batch,
-					{ opacity: 0, y: 30 },
-					{ opacity: 1, y: 0, duration: 0.8, stagger: 0.3, ease: 'power2.out' }
-				);
+				gsap.to(batch, { opacity: 1, y: 0, duration: 0.8, stagger: 0.3, ease: 'power2.out' });
 			},
-			start: 'top 70%',
+			start: 'top 80%',
 			once: true
 		});
 
@@ -281,6 +279,7 @@
 				padding-top: 2em;
 				will-change: opacity, transform;
 				margin-bottom: 1em;
+				/* opacity: 0; */
 
 				@media (width <= 768px) {
 					margin: 0.5rem;
