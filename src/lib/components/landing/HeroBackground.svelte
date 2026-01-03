@@ -50,9 +50,8 @@
 				const normal = new THREE.Vector3().crossVectors(direction, perpendicular).normalize();
 				const widthFactor = Math.sin((i / ribbonLength) * Math.PI);
 
-				// Create 4 vertices per segment for thickness (top-left, top-right, bottom-left, bottom-right)
-				const hw = ribbonWidth * widthFactor; // half width
-				const ht = ribbonThickness / 2; // half thickness
+				const hw = ribbonWidth * widthFactor;
+				const ht = ribbonThickness / 2;
 
 				// Top surface
 				positions.push(
@@ -129,6 +128,8 @@
 			uniforms: {
 				colorA: { value: new THREE.Color('#909090') },
 				colorB: { value: new THREE.Color('#444444') },
+				edgeColor: { value: new THREE.Color('#777777') },
+				edgeWidth: { value: 0.05 },
 				time: { value: 0 }
 			},
 			vertexShader,
@@ -140,14 +141,10 @@
 		const ribbon1 = createRibbon(100, 1.5, 0.3, 0, Math.random() * Math.PI * 2);
 		const ribbon2 = createRibbon(195, 0.5, 0.15, 2, Math.random() * Math.PI * 2);
 		const ribbon3 = createRibbon(275, 2, 0.4, 4, Math.random() * Math.PI * 2);
-		// const ribbon4 = createRibbon(75, 1, -6, Math.random() * Math.PI * 2);
-		// const ribbon5 = createRibbon(50, 0.25, -4, Math.random() * Math.PI * 2);
 
 		ribbon1.material = ribbonShaderMaterial;
 		ribbon2.material = ribbonShaderMaterial;
 		ribbon3.material = ribbonShaderMaterial;
-		// ribbon4.material = ribbonShaderMaterial;
-		// ribbon5.material = ribbonShaderMaterial;
 
 		scene.add(ribbon1, ribbon2, ribbon3);
 		const ribbons = [ribbon1, ribbon2, ribbon3];
