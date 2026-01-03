@@ -100,9 +100,9 @@
 		// add ribbons
 		const ribbon1 = createRibbon(100, 1.5, 0, Math.random() * Math.PI * 2);
 		const ribbon2 = createRibbon(195, 0.5, 2, Math.random() * Math.PI * 2);
-		const ribbon3 = createRibbon(75, 0.75, 4, Math.random() * Math.PI * 2);
-		// const ribbon4 = createRibbon(175, 1, -6, Math.random() * Math.PI * 2);
-		// const ribbon5 = createRibbon(120, 0.25, -4, Math.random() * Math.PI * 2);
+		const ribbon3 = createRibbon(275, 2, 4, Math.random() * Math.PI * 2);
+		// const ribbon4 = createRibbon(75, 1, -6, Math.random() * Math.PI * 2);
+		// const ribbon5 = createRibbon(50, 0.25, -4, Math.random() * Math.PI * 2);
 
 		ribbon1.material = ribbonShaderMaterial;
 		ribbon2.material = ribbonShaderMaterial;
