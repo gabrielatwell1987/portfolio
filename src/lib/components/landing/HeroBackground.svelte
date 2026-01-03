@@ -28,7 +28,7 @@
 		directionalLight.position.set(1, 1, 1);
 		scene.add(directionalLight);
 
-		function createRibbon(ribbonLength, ribbonWidth, offsetX = 0, phase = 0) {
+		function createRibbon(ribbonLength, ribbonWidth, ribbonThickness, offsetX = 0, phase = 0) {
 			const geometry = new THREE.BufferGeometry();
 			const positions = [];
 			const indices = [];
@@ -47,25 +47,62 @@
 				const nextPoint = spinePoints[i + 1] || point;
 				const direction = new THREE.Vector3().subVectors(nextPoint, point).normalize();
 				const perpendicular = new THREE.Vector3(-direction.z, 0, direction.x).normalize();
+				const normal = new THREE.Vector3().crossVectors(direction, perpendicular).normalize();
 				const widthFactor = Math.sin((i / ribbonLength) * Math.PI);
 
+				// Create 4 vertices per segment for thickness (top-left, top-right, bottom-left, bottom-right)
+				const hw = ribbonWidth * widthFactor; // half width
+				const ht = ribbonThickness / 2; // half thickness
+
+				// Top surface
 				positions.push(
-					point.x + perpendicular.x * ribbonWidth * widthFactor,
-					point.y + perpendicular.y * ribbonWidth * widthFactor,
-					point.z + perpendicular.z * ribbonWidth * widthFactor,
-					point.x - perpendicular.x * ribbonWidth * widthFactor,
-					point.y - perpendicular.y * ribbonWidth * widthFactor,
-					point.z - perpendicular.z * ribbonWidth * widthFactor
+					point.x + perpendicular.x * hw + normal.x * ht,
+					point.y + perpendicular.y * hw + normal.y * ht,
+					point.z + perpendicular.z * hw + normal.z * ht,
+					point.x - perpendicular.x * hw + normal.x * ht,
+					point.y - perpendicular.y * hw + normal.y * ht,
+					point.z - perpendicular.z * hw + normal.z * ht
 				);
-				uvs.push(i / ribbonLength, 0, i / ribbonLength, 1);
+
+				// Bottom surface
+				positions.push(
+					point.x + perpendicular.x * hw - normal.x * ht,
+					point.y + perpendicular.y * hw - normal.y * ht,
+					point.z + perpendicular.z * hw - normal.z * ht,
+					point.x - perpendicular.x * hw - normal.x * ht,
+					point.y - perpendicular.y * hw - normal.y * ht,
+					point.z - perpendicular.z * hw - normal.z * ht
+				);
+
+				uvs.push(
+					i / ribbonLength,
+					0,
+					i / ribbonLength,
+					1,
+					i / ribbonLength,
+					0,
+					i / ribbonLength,
+					1
+				);
 			}
 
 			for (let i = 0; i < ribbonLength; i++) {
-				const a = i * 2;
-				const b = a + 1;
-				const c = a + 2;
-				const d = a + 3;
-				indices.push(a, b, c, b, d, c);
+				const base = i * 4;
+
+				// Top surface
+				indices.push(base, base + 1, base + 4);
+				indices.push(base + 1, base + 5, base + 4);
+
+				// Bottom surface
+				indices.push(base + 2, base + 6, base + 3);
+				indices.push(base + 3, base + 6, base + 7);
+
+				// Side edges
+				indices.push(base, base + 4, base + 2);
+				indices.push(base + 2, base + 4, base + 6);
+
+				indices.push(base + 1, base + 3, base + 5);
+				indices.push(base + 3, base + 7, base + 5);
 			}
 
 			geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
@@ -75,10 +112,12 @@
 
 			const ribbon = new THREE.Mesh(geometry);
 			ribbon.position.set(0, 0, 0);
+
 			ribbon.userData = {
 				spinePoints,
 				ribbonWidth,
 				ribbonLength,
+				ribbonThickness,
 				phase,
 				rotationSpeedX: 0.001 + Math.random() * 0.002,
 				rotationSpeedY: 0.001 + Math.random() * 0.002
@@ -98,9 +137,9 @@
 		});
 
 		// add ribbons
-		const ribbon1 = createRibbon(100, 1.5, 0, Math.random() * Math.PI * 2);
-		const ribbon2 = createRibbon(195, 0.5, 2, Math.random() * Math.PI * 2);
-		const ribbon3 = createRibbon(275, 2, 4, Math.random() * Math.PI * 2);
+		const ribbon1 = createRibbon(100, 1.5, 0.3, 0, Math.random() * Math.PI * 2);
+		const ribbon2 = createRibbon(195, 0.5, 0.15, 2, Math.random() * Math.PI * 2);
+		const ribbon3 = createRibbon(275, 2, 0.4, 4, Math.random() * Math.PI * 2);
 		// const ribbon4 = createRibbon(75, 1, -6, Math.random() * Math.PI * 2);
 		// const ribbon5 = createRibbon(50, 0.25, -4, Math.random() * Math.PI * 2);
 
@@ -132,6 +171,7 @@
 				const geometry = ribbon.geometry;
 				const spinePoints = ribbon.userData.spinePoints;
 				const ribbonWidth = ribbon.userData.ribbonWidth;
+				const ribbonThickness = ribbon.userData.ribbonThickness;
 				const ribbonLength = ribbon.userData.ribbonLength;
 				const positionsArray = geometry.attributes.position.array;
 				const phase = ribbon.userData.phase;
@@ -149,16 +189,30 @@
 					const nextPoint = spinePoints[i + 1] || point;
 					const direction = new THREE.Vector3().subVectors(nextPoint, point).normalize();
 					const perpendicular = new THREE.Vector3(-direction.z, 0, direction.x).normalize();
+					const normal = new THREE.Vector3().crossVectors(direction, perpendicular).normalize();
 					const widthFactor = Math.sin((i / ribbonLength) * Math.PI);
 
-					const baseIndex = i * 6;
-					const effectiveWidth = ribbonWidth * widthFactor;
-					positionsArray[baseIndex] = point.x + perpendicular.x * effectiveWidth;
-					positionsArray[baseIndex + 1] = point.y + perpendicular.y * effectiveWidth;
-					positionsArray[baseIndex + 2] = point.z + perpendicular.z * effectiveWidth;
-					positionsArray[baseIndex + 3] = point.x - perpendicular.x * effectiveWidth;
-					positionsArray[baseIndex + 4] = point.y - perpendicular.y * effectiveWidth;
-					positionsArray[baseIndex + 5] = point.z - perpendicular.z * effectiveWidth;
+					const hw = ribbonWidth * widthFactor;
+					const ht = ribbonThickness / 2;
+					const baseIndex = i * 12;
+
+					// Top surface vertices
+					positionsArray[baseIndex] = point.x + perpendicular.x * hw + normal.x * ht;
+					positionsArray[baseIndex + 1] = point.y + perpendicular.y * hw + normal.y * ht;
+					positionsArray[baseIndex + 2] = point.z + perpendicular.z * hw + normal.z * ht;
+
+					positionsArray[baseIndex + 3] = point.x - perpendicular.x * hw + normal.x * ht;
+					positionsArray[baseIndex + 4] = point.y - perpendicular.y * hw + normal.y * ht;
+					positionsArray[baseIndex + 5] = point.z - perpendicular.z * hw + normal.z * ht;
+
+					// Bottom surface vertices
+					positionsArray[baseIndex + 6] = point.x + perpendicular.x * hw - normal.x * ht;
+					positionsArray[baseIndex + 7] = point.y + perpendicular.y * hw - normal.y * ht;
+					positionsArray[baseIndex + 8] = point.z + perpendicular.z * hw - normal.z * ht;
+
+					positionsArray[baseIndex + 9] = point.x - perpendicular.x * hw - normal.x * ht;
+					positionsArray[baseIndex + 10] = point.y - perpendicular.y * hw - normal.y * ht;
+					positionsArray[baseIndex + 11] = point.z - perpendicular.z * hw - normal.z * ht;
 				}
 				geometry.attributes.position.needsUpdate = true;
 				geometry.computeVertexNormals();
