@@ -3,7 +3,7 @@
 	import vertexShader from '$lib/shaders/ribbon.vert?raw';
 	import fragmentShader from '$lib/shaders/ribbon.frag?raw';
 
-	let canvas;
+	let canvas = $state();
 
 	$effect(() => {
 		if (!canvas) return;
@@ -16,7 +16,12 @@
 			0.1,
 			1000
 		);
-		const renderer = new THREE.WebGLRenderer({ antialias: true, canvas });
+		const renderer = new THREE.WebGLRenderer({
+			antialias: true,
+			canvas,
+			alpha: true,
+			powerPreference: 'high-performance'
+		});
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		renderer.setClearColor(0x000000, 0);
@@ -134,13 +139,37 @@
 			},
 			vertexShader,
 			fragmentShader,
-			side: THREE.DoubleSide
+			side: THREE.DoubleSide,
+			depthWrite: true,
+			depthTest: true,
+			flatShading: true
 		});
 
+		const isMobile = window.matchMedia('(max-width: 768px)').matches;
+		const complexity = isMobile ? 0.5 : 1;
+
 		// add ribbons
-		const ribbon1 = createRibbon(100, 1.5, 0.3, 0, Math.random() * Math.PI * 2);
-		const ribbon2 = createRibbon(195, 0.5, 0.15, 2, Math.random() * Math.PI * 2);
-		const ribbon3 = createRibbon(275, 2, 0.4, 4, Math.random() * Math.PI * 2);
+		const ribbon1 = createRibbon(
+			Math.floor(100 * complexity),
+			1.5,
+			0.3,
+			0,
+			Math.random() * Math.PI * 2
+		);
+		const ribbon2 = createRibbon(
+			Math.floor(195 * complexity),
+			0.5,
+			0.15,
+			2,
+			Math.random() * Math.PI * 2
+		);
+		const ribbon3 = createRibbon(
+			Math.floor(275 * complexity),
+			2,
+			0.4,
+			4,
+			Math.random() * Math.PI * 2
+		);
 
 		ribbon1.material = ribbonShaderMaterial;
 		ribbon2.material = ribbonShaderMaterial;
@@ -152,6 +181,7 @@
 		camera.position.z = 10;
 
 		const clock = new THREE.Clock();
+		let frameCount = 0;
 
 		function animate() {
 			if (prefersReducedMotion) {
@@ -161,9 +191,14 @@
 			const time = clock.getElapsedTime();
 			ribbonShaderMaterial.uniforms.time.value = time;
 
+			frameCount++;
+			const shouldUpdateGeometry = frameCount % 2 === 0;
+
 			ribbons.forEach((ribbon) => {
 				ribbon.rotation.x += ribbon.userData.rotationSpeedX;
 				ribbon.rotation.y += ribbon.userData.rotationSpeedY;
+
+				if (!shouldUpdateGeometry) return;
 
 				const geometry = ribbon.geometry;
 				const spinePoints = ribbon.userData.spinePoints;
@@ -178,9 +213,9 @@
 					const randomX = Math.sin(time + offset + phase) * 0.5;
 					const randomY = Math.cos(time + offset + phase) * 0.5;
 					const randomZ = Math.sin(time * 0.5 + offset + phase) * 0.5;
-					spinePoints[i].x += randomX * 0.01;
-					spinePoints[i].y += randomY * 0.01;
-					spinePoints[i].z += randomZ * 0.01;
+					spinePoints[i].x += randomX * 0.005;
+					spinePoints[i].y += randomY * 0.005;
+					spinePoints[i].z += randomZ * 0.005;
 
 					const point = spinePoints[i];
 					const nextPoint = spinePoints[i + 1] || point;
@@ -212,7 +247,6 @@
 					positionsArray[baseIndex + 11] = point.z - perpendicular.z * hw - normal.z * ht;
 				}
 				geometry.attributes.position.needsUpdate = true;
-				geometry.computeVertexNormals();
 			});
 
 			renderer.render(scene, camera);
@@ -220,7 +254,16 @@
 		}
 		animate();
 
+		//  camera resize
+		function handleResize() {
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+		}
+		window.addEventListener('resize', handleResize);
+
 		return () => {
+			window.removeEventListener('resize', handleResize);
 			renderer.dispose();
 			ribbons.forEach((ribbon) => {
 				ribbon.geometry.dispose();
