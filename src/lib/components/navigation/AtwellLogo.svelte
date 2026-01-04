@@ -1,13 +1,15 @@
 <script>
 </script>
 
-<div class="atwell-logo">
-	<div class="atwell">
-		<div class="atwell-top">atwell</div>
-		<div class="atwell-middle">atwell</div>
-		<div class="atwell-bottom">atwell</div>
+<a href="/">
+	<div class="atwell-logo">
+		<div class="atwell">
+			<div class="atwell-top">atwell</div>
+			<div class="atwell-middle">atwell</div>
+			<div class="atwell-bottom">atwell</div>
+		</div>
 	</div>
-</div>
+</a>
 
 <style>
 	.atwell-logo {
