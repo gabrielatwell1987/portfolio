@@ -18,7 +18,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		line-height: 1;
 
 		@media (width <= 500px) {
 			margin-left: 1em;
@@ -36,7 +35,6 @@
 				-2px -2px 0 var(--clr-light-gray),
 				2px px 0 var(--clr-gray);
 			display: grid;
-			line-height: 1;
 
 			& .atwell-top {
 				grid-column: 1 / 1;
@@ -56,8 +54,6 @@
 					100% calc(var(--bottom-right) - 1%),
 					0 calc(var(--bottom-left) - 1%)
 				);
-				/* color: var(--clr-light-gray); */
-				opacity: 0.9;
 
 				&:hover {
 					translate: 10px 0;
