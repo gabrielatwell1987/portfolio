@@ -17,7 +17,10 @@
 		justify-content: center;
 		align-items: center;
 		line-height: 1;
-		scale: 1.5;
+
+		@media (width <= 500px) {
+			margin-left: 1em;
+		}
 
 		& .atwell {
 			--top-left: 65%;
@@ -25,7 +28,7 @@
 			--bottom-left: 70%;
 			--bottom-right: 65%;
 			font-family: var(--bronova-bold);
-			font-size: clamp(var(--h6), 4vw, var(--h2));
+			font-size: clamp(var(--h2), 10vw, var(--lg));
 			color: var(--clr-main);
 			text-shadow:
 				-2px -2px 0 var(--clr-light-gray),
