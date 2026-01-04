@@ -4,7 +4,8 @@
 	import ThemeToggle from '$lib/components/navigation/ThemeToggle.svelte';
 	import NavLink from '$lib/components/navigation/NavLink.svelte';
 	import SelectLink from '$lib/components/navigation/SelectLink.svelte';
-	import AtwellUnderline from './AtwellUnderline.svelte';
+	// import AtwellUnderline from './AtwellUnderline.svelte';
+	import AtwellLogo from './AtwellLogo.svelte';
 
 	let open = $state(false);
 	let isClosing = $state(false);
@@ -34,7 +35,8 @@
 	<div class="nav-main">
 		<Burger bind:open ariaLabel="Toggle menu" />
 
-		<AtwellUnderline />
+		<!-- <AtwellUnderline /> -->
+		<AtwellLogo />
 
 		<ThemeToggle />
 	</div>
@@ -73,11 +75,10 @@
 		backdrop-filter: blur(0.15rem);
 		-webkit-backdrop-filter: blur(0.15rem);
 		z-index: 15;
-		/* view-transition-name: navigation; */
 		position: fixed;
 		top: 0.25rem;
 		width: 100%;
-		padding: 0.5rem 5em 0 1rem;
+		padding: 0.5rem 5em 0.5rem 1rem;
 		margin-inline: auto;
 		pointer-events: auto;
 
