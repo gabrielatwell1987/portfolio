@@ -51,7 +51,7 @@
 		aria-label="Connect with Gabe"
 	>
 		{selectedLabel}
-		<!-- Custom arrow icon -->
+		<!-- arrow icon -->
 		<svg class="arrow-icon" width="12" height="12" viewBox="0 0 12 12">
 			<path
 				fill="var(--clr-main)"
@@ -159,6 +159,12 @@
 
 					&:hover {
 						background-color: var(--clr-gray);
+					}
+
+					&:focus,
+					&:focus-visible {
+						outline: 1px solid var(--clr-main);
+						background: transparent;
 					}
 				}
 			}

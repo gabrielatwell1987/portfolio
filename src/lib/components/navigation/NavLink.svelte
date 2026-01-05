@@ -28,7 +28,7 @@
 
 		&:focus,
 		&:focus-visible {
-			outline: none;
+			outline: 1px solid var(--clr-main);
 			background: transparent;
 		}
 

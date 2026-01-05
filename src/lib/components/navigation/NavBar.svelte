@@ -36,7 +36,7 @@
 		<Burger bind:open ariaLabel="Toggle menu" />
 
 		<!-- <AtwellUnderline /> -->
-		<AtwellLogo />
+		<AtwellLogo title="atwell" />
 
 		<ThemeToggle />
 	</div>
