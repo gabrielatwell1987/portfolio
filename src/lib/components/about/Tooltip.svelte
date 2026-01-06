@@ -54,7 +54,7 @@
 			font-size: clamp(var(--h2), 2vw, var(--xl));
 			font-weight: 600;
 			margin-top: 15%;
-			transition: 750ms ease;
+			transition: 300ms ease;
 			user-select: none;
 			-webkit-user-select: none;
 			-webkit-touch-callout: none;

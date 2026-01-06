@@ -132,7 +132,7 @@
 		outline-offset: -7px;
 		border: 1px solid var(--clr-invert);
 		border-radius: var(--radius);
-		transition: 250ms;
+		transition: 300ms;
 		cursor: pointer;
 		pointer-events: auto;
 		z-index: 1000;

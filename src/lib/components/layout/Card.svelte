@@ -89,7 +89,7 @@
 			outline: none;
 			margin: 1rem auto;
 			filter: drop-shadow(0 0 0.75rem var(--clr-gray));
-			transition: 500ms;
+			transition: 300ms;
 			outline: 3px solid currentColor;
 			outline-offset: -7px;
 			padding: 1rem 1.75rem;
