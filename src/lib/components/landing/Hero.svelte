@@ -198,8 +198,9 @@
 		<div class="content-wrapper" class:show={showContent} aria-live="polite">
 			<p class="summary">
 				I am a frontend developer who loves to create beautiful and functional websites. This
-				website showcases my skills with some projects that I created. I look forward to hearing
-				from you so we can discuss your goals for your online needs!
+				website showcases my skills with some projects that I created. If you have any questions,
+				feel free to contact me.. <br /><br /> I look forward to hearing from you so we can discuss your
+				goals for your online needs!
 			</p>
 
 			<ProjectsGrid {projects} />
