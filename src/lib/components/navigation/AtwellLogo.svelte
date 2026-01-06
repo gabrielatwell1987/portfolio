@@ -37,11 +37,31 @@
 				--bottom-right: 42%;
 				font-family: var(--bronova-bold);
 				font-size: clamp(var(--h2), 10vw, var(--lg));
-				color: var(--clr-main);
+				color: var(--clr-invert);
 				text-shadow:
-					-2px -2px 0 var(--clr-light-gray),
-					2px px 0 var(--clr-gray);
+					0 0 1px var(--clr-invert),
+					-2px -2px 0 var(--clr-main),
+					2px -2px 0 var(--clr-main),
+					-2px 2px 0 var(--clr-main),
+					2px 2px 0 var(--clr-main),
+					-2px 0 0 var(--clr-main),
+					2px 0 0 var(--clr-main),
+					0 -2px 0 var(--clr-main),
+					0 2px 0 var(--clr-main);
 				display: grid;
+
+				@media (width <= 500px) {
+					text-shadow:
+						0 0 1px var(--clr-invert),
+						-1px -1px 0 var(--clr-main),
+						1px -1px 0 var(--clr-main),
+						-1px 1px 0 var(--clr-main),
+						1px 1px 0 var(--clr-main),
+						-1px 0 0 var(--clr-main),
+						1px 0 0 var(--clr-main),
+						0 -1px 0 var(--clr-main),
+						0 1px 0 var(--clr-main);
+				}
 
 				& .atwell-top {
 					grid-column: 1 / 1;
