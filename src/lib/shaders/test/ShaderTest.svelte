@@ -1,8 +1,8 @@
 <script>
 	import * as THREE from 'three';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-	import testVertexShader from './test.vert?raw';
-	import testFragmentShader from './test.frag?raw';
+	import testVertexShader from './patterns.vert?raw';
+	import testFragmentShader from './patterns.frag?raw';
 
 	let canvas = $state(null);
 
@@ -48,6 +48,7 @@
 		renderer.setSize(sizes.width, sizes.height);
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
+		//  camera resize
 		const handleResize = () => {
 			// Update sizes
 			sizes.width = window.innerWidth;
