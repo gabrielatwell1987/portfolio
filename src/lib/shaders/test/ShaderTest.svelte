@@ -1,8 +1,10 @@
 <script>
 	import * as THREE from 'three';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-	import testVertexShader from './patterns.vert?raw';
-	import testFragmentShader from './patterns.frag?raw';
+	// import testVertexShader from './patterns.vert?raw';
+	// import testFragmentShader from './patterns.frag?raw';
+	import testVertexShader from './cursor.vert?raw';
+	import testFragmentShader from './cursor.frag?raw';
 
 	let canvas = $state(null);
 
