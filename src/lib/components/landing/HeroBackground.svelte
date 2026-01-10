@@ -1,7 +1,7 @@
 <script>
 	import * as THREE from 'three';
-	import vertexShader from '$lib/shaders/ribbon.vert?raw';
-	import fragmentShader from '$lib/shaders/ribbon.frag?raw';
+	import vertexShader from '$lib/shaders/ribbon/ribbon.vert?raw';
+	import fragmentShader from '$lib/shaders/ribbon/ribbon.frag?raw';
 
 	let canvas = $state();
 	let animationFrameId;
