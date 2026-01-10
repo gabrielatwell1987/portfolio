@@ -4,6 +4,15 @@
 	import cursorVert from './cursor.vert?raw';
 	import cursorFrag from './cursor.frag?raw';
 
+	let renderer;
+	let controls;
+	let displacement = {};
+	let particlesGeometry;
+	let particlesMaterial;
+	let resizeListener;
+	let pointerMoveListener;
+	let animationFrameId;
+
 	$effect(() => {
 		/**
 		 * Base
@@ -26,7 +35,7 @@
 			pixelRatio: Math.min(window.devicePixelRatio, 2)
 		};
 
-		window.addEventListener('resize', () => {
+		resizeListener = () => {
 			// Update sizes
 			sizes.width = window.innerWidth;
 			sizes.height = window.innerHeight;
@@ -39,13 +48,17 @@
 			);
 
 			// Update camera
-			camera.aspect = sizes.width / sizes.height;
-			camera.updateProjectionMatrix();
+			const camera = scene.children.find((child) => child.isCamera); // Assuming camera is added to scene
+			if (camera) {
+				camera.aspect = sizes.width / sizes.height;
+				camera.updateProjectionMatrix();
+			}
 
 			// Update renderer
 			renderer.setSize(sizes.width, sizes.height);
 			renderer.setPixelRatio(sizes.pixelRatio);
-		});
+		};
+		window.addEventListener('resize', resizeListener);
 
 		/**
 		 * Camera
@@ -56,13 +69,13 @@
 		scene.add(camera);
 
 		// Controls
-		const controls = new OrbitControls(camera, canvas);
+		controls = new OrbitControls(camera, canvas);
 		controls.enableDamping = true;
 
 		/**
 		 * Renderer
 		 */
-		const renderer = new THREE.WebGLRenderer({
+		renderer = new THREE.WebGLRenderer({
 			canvas: canvas,
 			antialias: true
 		});
@@ -73,7 +86,7 @@
 		/**
 		 * Displacement
 		 */
-		const displacement = {};
+		displacement = {};
 		// canvas
 		displacement.canvas = document.createElement('canvas');
 		displacement.canvas.width = 128;
@@ -111,18 +124,19 @@
 		displacement.canvasCursor = new THREE.Vector2(9999, 9999);
 		displacement.canvasCursorPrevious = new THREE.Vector2(9999, 9999);
 
-		window.addEventListener('pointermove', (event) => {
+		pointerMoveListener = (event) => {
 			// update the mouse variable
 			displacement.screenCursor.x = (event.clientX / sizes.width) * 2 - 1;
 			displacement.screenCursor.y = -(event.clientY / sizes.height) * 2 + 1;
-		});
+		};
+		window.addEventListener('pointermove', pointerMoveListener);
 
 		displacement.texture = new THREE.CanvasTexture(displacement.canvas);
 
 		/**
 		 * Particles
 		 */
-		const particlesGeometry = new THREE.PlaneGeometry(10, 10, 128, 128);
+		particlesGeometry = new THREE.PlaneGeometry(10, 10, 128, 128);
 		particlesGeometry.setIndex(null);
 		particlesGeometry.deleteAttribute('normal');
 		const intensitiesArray = new Float32Array(particlesGeometry.attributes.position.count);
@@ -135,7 +149,7 @@
 		particlesGeometry.setAttribute('aIntensity', new THREE.BufferAttribute(intensitiesArray, 1));
 		particlesGeometry.setAttribute('aAngle', new THREE.BufferAttribute(anglesArray, 1));
 
-		const particlesMaterial = new THREE.ShaderMaterial({
+		particlesMaterial = new THREE.ShaderMaterial({
 			vertexShader: cursorVert,
 			fragmentShader: cursorFrag,
 			uniforms: {
@@ -182,6 +196,7 @@
 				displacement.canvasCursor
 			);
 			displacement.canvasCursorPrevious.copy(displacement.canvasCursor);
+
 			const alpha = Math.min(cursorDistance * 0.1, 1);
 
 			// draw glow
@@ -203,10 +218,43 @@
 			renderer.render(scene, camera);
 
 			// Call tick again on the next frame
-			window.requestAnimationFrame(tick);
+			animationFrameId = window.requestAnimationFrame(tick);
 		};
 
 		tick();
+
+		return () => {
+			if (animationFrameId) {
+				window.cancelAnimationFrame(animationFrameId);
+			}
+
+			if (resizeListener) {
+				window.removeEventListener('resize', resizeListener);
+			}
+			if (pointerMoveListener) {
+				window.removeEventListener('pointermove', pointerMoveListener);
+			}
+
+			if (renderer) {
+				renderer.dispose();
+			}
+			if (controls) {
+				controls.dispose();
+			}
+			if (particlesGeometry) {
+				particlesGeometry.dispose();
+			}
+			if (particlesMaterial) {
+				particlesMaterial.dispose();
+			}
+			if (displacement.texture) {
+				displacement.texture.dispose();
+			}
+
+			if (displacement.canvas && displacement.canvas.parentNode) {
+				displacement.canvas.parentNode.removeChild(displacement.canvas);
+			}
+		};
 	});
 </script>
 
