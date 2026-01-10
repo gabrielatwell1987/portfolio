@@ -1,6 +1,19 @@
 <script>
 	import * as THREE from 'three';
 
+	let animationFrameId;
+	let renderer;
+	let geometry;
+	let particlesGeometry;
+	let material;
+	let particlesMaterial;
+	let star;
+	let themeObserver;
+	let resizeListener;
+	let mousemoveListener;
+	let visibilityListener;
+	let themeChangeListener;
+
 	$effect(() => {
 		// Helper function to convert CSS colors to RGB (strip alpha if present)
 		const convertToRGB = (colorValue) => {
@@ -65,7 +78,7 @@
 
 		// Texture Loader
 		const textureLoader = new THREE.TextureLoader();
-		const star = textureLoader.load('/textures/star.webp');
+		star = textureLoader.load('/textures/star.webp');
 
 		// Canvas
 		const canvas = document.querySelector('canvas.webgl');
@@ -74,9 +87,9 @@
 		const scene = new THREE.Scene();
 
 		// Objects
-		const geometry = new THREE.CapsuleGeometry(2, 0, 9, 20);
+		geometry = new THREE.CapsuleGeometry(2, 0, 9, 20);
 
-		const particlesGeometry = new THREE.BufferGeometry();
+		particlesGeometry = new THREE.BufferGeometry();
 		const particlesCount = 1000;
 		const positionArray = new Float32Array(particlesCount * 3);
 
@@ -87,12 +100,12 @@
 		particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positionArray, 3));
 
 		// Materials - using CSS custom properties
-		const material = new THREE.PointsMaterial({
+		material = new THREE.PointsMaterial({
 			size: 0.015,
 			color: primaryColor || '#ffffff' // fallback to white
 		});
 
-		const particlesMaterial = new THREE.PointsMaterial({
+		particlesMaterial = new THREE.PointsMaterial({
 			size: 0.04,
 			transparent: true,
 			alphaMap: star,
@@ -153,14 +166,15 @@
 		}
 
 		// Listen for theme changes
-		const themeObserver = new MutationObserver(updateColors);
+		themeObserver = new MutationObserver(updateColors);
 		themeObserver.observe(document.body, {
 			attributes: true,
 			attributeFilter: ['class', 'style']
 		});
 
 		// Also listen for custom theme change events if your ThemeToggle dispatches them
-		document.addEventListener('theme-change', updateColors);
+		themeChangeListener = updateColors;
+		document.addEventListener('theme-change', themeChangeListener);
 
 		// Test initial color values
 		updateColors();
@@ -183,19 +197,23 @@
 			height: window.innerHeight
 		};
 
-		window.addEventListener('resize', () => {
+		resizeListener = () => {
 			// Update sizes
 			sizes.width = window.innerWidth;
 			sizes.height = window.innerHeight;
 
 			// Update camera
-			camera.aspect = sizes.width / sizes.height;
-			camera.updateProjectionMatrix();
+			const camera = scene.children.find((child) => child.isCamera); // Assuming camera is added to scene
+			if (camera) {
+				camera.aspect = sizes.width / sizes.height;
+				camera.updateProjectionMatrix();
+			}
 
 			// Update renderer
 			renderer.setSize(sizes.width, sizes.height);
 			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-		});
+		};
+		window.addEventListener('resize', resizeListener);
 
 		/**
 		 * Camera
@@ -210,7 +228,7 @@
 		/**
 		 * Renderer
 		 */
-		const renderer = new THREE.WebGLRenderer({
+		renderer = new THREE.WebGLRenderer({
 			canvas: canvas,
 			alpha: true,
 			antialias: true
@@ -219,7 +237,8 @@
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 		// Mouse
-		document.addEventListener('mousemove', animateParticles);
+		mousemoveListener = animateParticles;
+		document.addEventListener('mousemove', mousemoveListener);
 
 		let mouseX = 0;
 		let mouseY = 0;
@@ -253,29 +272,62 @@
 			renderer.render(scene, camera);
 
 			// Call tick again on the next frame
-			window.requestAnimationFrame(tick);
+			animationFrameId = window.requestAnimationFrame(tick);
 		};
 
 		// Visibility change handler
-		function handleVisibilityChange() {
+		visibilityListener = () => {
 			if (document.hidden) {
 				isAnimating = false;
 			} else {
 				isAnimating = true;
 				tick();
 			}
-		}
+		};
 
 		// Listen for visibility changes
-		document.addEventListener('visibilitychange', handleVisibilityChange);
+		document.addEventListener('visibilitychange', visibilityListener);
 
 		tick();
 
 		return () => {
-			document.removeEventListener('visibilitychange', handleVisibilityChange);
-			document.removeEventListener('mousemove', animateParticles);
-			document.removeEventListener('theme-change', updateColors);
-			themeObserver.disconnect();
+			// Cancel animation frame
+			if (animationFrameId) {
+				window.cancelAnimationFrame(animationFrameId);
+			}
+
+			// Remove event listeners
+			window.removeEventListener('resize', resizeListener);
+			document.removeEventListener('mousemove', mousemoveListener);
+			document.removeEventListener('visibilitychange', visibilityListener);
+			document.removeEventListener('theme-change', themeChangeListener);
+
+			// Disconnect observer
+			if (themeObserver) {
+				themeObserver.disconnect();
+			}
+
+			// Dispose three.js resources
+			if (renderer) {
+				renderer.dispose();
+			}
+			if (geometry) {
+				geometry.dispose();
+			}
+			if (particlesGeometry) {
+				particlesGeometry.dispose();
+			}
+			if (material) {
+				material.dispose();
+			}
+			if (particlesMaterial) {
+				particlesMaterial.dispose();
+			}
+			if (star) {
+				star.dispose();
+			}
+			// Dispose scene children if needed (e.g., lights, meshes)
+			// scene.traverse((obj) => { if (obj.dispose) obj.dispose(); });
 		};
 	});
 </script>

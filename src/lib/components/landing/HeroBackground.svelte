@@ -4,6 +4,7 @@
 	import fragmentShader from '$lib/shaders/ribbon.frag?raw';
 
 	let canvas = $state();
+	let animationFrameId;
 
 	$effect(() => {
 		if (!canvas) return;
@@ -250,7 +251,7 @@
 			});
 
 			renderer.render(scene, camera);
-			requestAnimationFrame(animate);
+			animationFrameId = window.requestAnimationFrame(animate);
 		}
 		animate();
 
@@ -263,6 +264,9 @@
 		window.addEventListener('resize', handleResize);
 
 		return () => {
+			if (animationFrameId) {
+				window.cancelAnimationFrame(animationFrameId);
+			}
 			window.removeEventListener('resize', handleResize);
 			renderer.dispose();
 			ribbons.forEach((ribbon) => {
