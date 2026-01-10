@@ -98,7 +98,7 @@
 		// interactive plane
 		displacement.interactivePlane = new THREE.Mesh(
 			new THREE.PlaneGeometry(10, 10),
-			new THREE.MeshBasicMaterial({ color: 'red' })
+			new THREE.MeshBasicMaterial({ color: 'red', side: THREE.DoubleSide })
 		);
 		displacement.interactivePlane.visible = false;
 		scene.add(displacement.interactivePlane);
@@ -109,6 +109,7 @@
 		// coordinates
 		displacement.screenCursor = new THREE.Vector2(9999, 9999);
 		displacement.canvasCursor = new THREE.Vector2(9999, 9999);
+		displacement.canvasCursorPrevious = new THREE.Vector2(9999, 9999);
 
 		window.addEventListener('pointermove', (event) => {
 			// update the mouse variable
@@ -116,10 +117,23 @@
 			displacement.screenCursor.y = -(event.clientY / sizes.height) * 2 + 1;
 		});
 
+		displacement.texture = new THREE.CanvasTexture(displacement.canvas);
+
 		/**
 		 * Particles
 		 */
 		const particlesGeometry = new THREE.PlaneGeometry(10, 10, 128, 128);
+		particlesGeometry.setIndex(null);
+		particlesGeometry.deleteAttribute('normal');
+		const intensitiesArray = new Float32Array(particlesGeometry.attributes.position.count);
+		const anglesArray = new Float32Array(particlesGeometry.attributes.position.count);
+
+		for (let i = 0; i < particlesGeometry.attributes.position.count; i++) {
+			intensitiesArray[i] = Math.random();
+			anglesArray[i] = Math.random() * Math.PI * 2;
+		}
+		particlesGeometry.setAttribute('aIntensity', new THREE.BufferAttribute(intensitiesArray, 1));
+		particlesGeometry.setAttribute('aAngle', new THREE.BufferAttribute(anglesArray, 1));
 
 		const particlesMaterial = new THREE.ShaderMaterial({
 			vertexShader: cursorVert,
@@ -128,8 +142,10 @@
 				uResolution: new THREE.Uniform(
 					new THREE.Vector2(sizes.width * sizes.pixelRatio, sizes.height * sizes.pixelRatio)
 				),
-				uPictureTexture: new THREE.Uniform(textureLoader.load('/threejayess/space.png'))
+				uPictureTexture: new THREE.Uniform(textureLoader.load('/threejayess/hand.png')),
+				uDisplacementTexture: new THREE.Uniform(displacement.texture)
 			}
+			// blending: THREE.AdditiveBlending
 		});
 		const particles = new THREE.Points(particlesGeometry, particlesMaterial);
 		scene.add(particles);
@@ -161,10 +177,17 @@
 			displacement.context.globalAlpha = 0.02;
 			displacement.context.fillRect(0, 0, displacement.canvas.width, displacement.canvas.height);
 
+			// speed alpha
+			const cursorDistance = displacement.canvasCursorPrevious.distanceTo(
+				displacement.canvasCursor
+			);
+			displacement.canvasCursorPrevious.copy(displacement.canvasCursor);
+			const alpha = Math.min(cursorDistance * 0.1, 1);
+
 			// draw glow
 			const glowSize = displacement.canvas.width * 0.25;
 			displacement.context.globalCompositeOperation = 'lighten';
-			displacement.context.globalAlpha = 1;
+			displacement.context.globalAlpha = alpha;
 			displacement.context.drawImage(
 				displacement.glowImage,
 				displacement.canvasCursor.x - glowSize * 0.5,
@@ -172,6 +195,9 @@
 				glowSize,
 				glowSize
 			);
+
+			// textures
+			displacement.texture.needsUpdate = true;
 
 			// Render
 			renderer.render(scene, camera);

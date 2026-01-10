@@ -1,10 +1,8 @@
 <script>
-	// import ShaderTest from '$lib/shaders/test/ShaderTest.svelte';
 	import CursorImage from '$lib/shaders/cursor/CursorImage.svelte';
 </script>
 
 <div class="content">
-	<!-- <ShaderTest /> -->
 	<CursorImage />
 </div>
 
