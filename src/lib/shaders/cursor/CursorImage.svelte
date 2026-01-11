@@ -97,6 +97,7 @@
 		displacement.canvas.style.top = 0;
 		displacement.canvas.style.left = 0;
 		displacement.canvas.style.zIndex = 10;
+		displacement.canvas.style.display = 'none';
 		document.body.append(displacement.canvas);
 
 		// context
@@ -159,7 +160,6 @@
 				uPictureTexture: new THREE.Uniform(textureLoader.load('/threejayess/hand.png')),
 				uDisplacementTexture: new THREE.Uniform(displacement.texture)
 			}
-			// blending: THREE.AdditiveBlending
 		});
 		const particles = new THREE.Points(particlesGeometry, particlesMaterial);
 		scene.add(particles);
