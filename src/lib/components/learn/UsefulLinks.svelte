@@ -28,8 +28,8 @@
 		<LoadBtn
 			loading="loading..."
 			delay={1500}
-			submit="Traversy Media"
-			href="https://traversymedia.com"
+			submit="Three.js Journey"
+			href="https://threejs-journey.com"
 		/>
 		<LoadBtn
 			loading="loading..."
