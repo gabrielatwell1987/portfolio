@@ -196,7 +196,7 @@
 
 		<!-- content -->
 		<div class="content-wrapper" class:show={showContent} aria-live="polite">
-			<p class="summary">
+			<p class="summary indent">
 				I am a frontend developer who loves to create beautiful and functional websites. This
 				website showcases my skills with some projects that I created. If you have any questions,
 				feel free to contact me.. <br /><br /> I look forward to hearing from you so we can discuss your
@@ -442,12 +442,20 @@
 				letter-spacing: 1px;
 				line-height: 1.6;
 				color: var(--clr-hero-text);
-				max-inline-size: 800px;
+				max-inline-size: 1200px;
 				margin: 0 auto 3rem auto;
 				text-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
 
 				@media screen and (width >= 990px) {
 					letter-spacing: 2px;
+				}
+
+				@media (width <= 500px) {
+					min-inline-size: 315px;
+				}
+
+				&.indent {
+					text-indent: 1em;
 				}
 			}
 
