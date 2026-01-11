@@ -31,8 +31,8 @@
 		position: relative;
 
 		& select {
-			max-inline-size: 15vw;
-			position: absolute;
+			inline-size: clamp(200px, 20vw, 300px);
+			position: fixed;
 			bottom: 0;
 			left: 50%;
 			transform: translateX(-50%);
@@ -49,8 +49,8 @@
 			color: var(--fail);
 			font-family: var(--bronova-bold);
 			font-size: clamp(var(--h6), 3vw, var(--h1));
-			-webkit-text-stroke: 1px var(--clr-main);
 			text-align: center;
+			text-shadow: 2px 2px 4px var(--clr-light-gray);
 		}
 	}
 </style>

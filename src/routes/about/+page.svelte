@@ -50,15 +50,15 @@
 				{/each}
 
 				<article class="hero-text" aria-label="bio" data-hero-mobile>
-					<p class="bio-paragraph" data-content-width>
-						Here is another hero section that I created but I like the current hero section that
-						shows when you first come to the website. This hero section was built with three.js..
-						Check out it out!
+					<p class="bio-paragraph" style="text-align: center;" data-content-width>
+						I built this page to show off my three.js skills... Feel free to check them out!
 					</p>
 
-					<div class="hero-text">
-						<div class="hero-button">
-							<Button href="/about/hero" title="Hero" />
+					<p class="bio-paragraph" style="text-align: center; margin-top: 1em;">👇🏻</p>
+
+					<div class="three-text">
+						<div class="three-button">
+							<Button href="/three.js" title="three.js" />
 						</div>
 					</div>
 				</article>
@@ -156,19 +156,15 @@
 					margin-bottom: -5rem;
 				}
 
-				& .hero-button {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					gap: 15vw;
-					margin: 2rem auto 0;
+				& .three-button {
+					margin-inline: auto;
+					margin-top: -2em;
 					padding: 0;
-					width: fit-content;
+					inline-size: fit-content;
 					padding-block: 2rem;
 
 					@media (width <= 500px) {
-						gap: 10vw;
-						width: 100%;
+						inline-size: 100%;
 						margin-inline: auto;
 						padding-block: 0;
 					}
@@ -187,6 +183,7 @@
 					text-wrap: none;
 					z-index: 7;
 					color: var(--clr-main);
+					text-align: left;
 
 					@media screen and (width >= 990px) {
 						max-inline-size: 90%;
