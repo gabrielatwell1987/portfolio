@@ -17,13 +17,13 @@
 		/**
 		 * Base
 		 */
-		// Canvas
+		// canvas
 		const canvas = document.querySelector('canvas.webgl');
 
-		// Scene
+		// scene
 		const scene = new THREE.Scene();
 
-		// Loaders
+		// loaders
 		const textureLoader = new THREE.TextureLoader();
 
 		/**
@@ -36,25 +36,25 @@
 		};
 
 		resizeListener = () => {
-			// Update sizes
+			// update sizes
 			sizes.width = window.innerWidth;
 			sizes.height = window.innerHeight;
 			sizes.pixelRatio = Math.min(window.devicePixelRatio, 2);
 
-			// Materials
+			// materials
 			particlesMaterial.uniforms.uResolution.value.set(
 				sizes.width * sizes.pixelRatio,
 				sizes.height * sizes.pixelRatio
 			);
 
-			// Update camera
+			// update camera
 			const camera = scene.children.find((child) => child.isCamera); // Assuming camera is added to scene
 			if (camera) {
 				camera.aspect = sizes.width / sizes.height;
 				camera.updateProjectionMatrix();
 			}
 
-			// Update renderer
+			// update renderer
 			renderer.setSize(sizes.width, sizes.height);
 			renderer.setPixelRatio(sizes.pixelRatio);
 		};
@@ -63,12 +63,12 @@
 		/**
 		 * Camera
 		 */
-		// Base camera
+		// base camera
 		const camera = new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.1, 100);
 		camera.position.set(0, 0, 25);
 		scene.add(camera);
 
-		// Controls
+		// controls
 		controls = new OrbitControls(camera, canvas);
 		controls.enableDamping = true;
 
@@ -168,7 +168,6 @@
 		 * Animate
 		 */
 		const tick = () => {
-			// Update controls
 			controls.update();
 
 			/**
@@ -214,10 +213,8 @@
 			// textures
 			displacement.texture.needsUpdate = true;
 
-			// Render
 			renderer.render(scene, camera);
 
-			// Call tick again on the next frame
 			animationFrameId = window.requestAnimationFrame(tick);
 		};
 

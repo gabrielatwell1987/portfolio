@@ -17,7 +17,7 @@
 	let themeChangeListener;
 
 	$effect(() => {
-		// Helper function to convert CSS colors to RGB (strip alpha if present)
+		// helper function to convert CSS colors to RGB (strip alpha if present)
 		const convertToRGB = (colorValue) => {
 			if (!colorValue) return null;
 			try {
@@ -28,7 +28,7 @@
 				const computedColor = computedStyle.backgroundColor;
 				document.body.removeChild(tempDiv);
 
-				// If still not RGB, try with a canvas for better conversion
+				// if still not RGB, try with a canvas for better conversion
 				if (computedColor.startsWith('oklab') || computedColor === colorValue) {
 					const canvas = document.createElement('canvas');
 					canvas.width = 1;
@@ -41,7 +41,7 @@
 					return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
 				}
 
-				// Strip alpha from rgba to rgb for THREE.js compatibility
+				// strip alpha from rgba to rgb for THREE.js compatibility
 				const rgbaMatch = computedColor.match(/rgba\((\d+),\s*(\d+),\s*(\d+),\s*[\d.]+\)/);
 				if (rgbaMatch) {
 					return `rgb(${rgbaMatch[1]}, ${rgbaMatch[2]}, ${rgbaMatch[3]})`;
@@ -54,7 +54,7 @@
 			}
 		};
 
-		// Helper function to check if a color is light based on luminance
+		// color helper function
 		const isLightColor = (color) => {
 			const match = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
 			if (match) {
@@ -62,33 +62,30 @@
 				const g = parseInt(match[2]);
 				const b = parseInt(match[3]);
 				const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-				return luminance > 0.5; // Threshold for light/dark
+				return luminance > 0.5;
 			}
 			return false;
 		};
 
-		// Get CSS custom properties from body element (where ThemeToggle sets them)
 		const bodyStyles = getComputedStyle(document.body);
 		const primaryColorRaw = bodyStyles.getPropertyValue('--clr-main').trim();
 		const secondaryColorRaw = bodyStyles.getPropertyValue('--clr-inverted').trim();
 		const accentColorRaw = bodyStyles.getPropertyValue('--clr-pale').trim();
 
-		// Convert colors to RGB format
 		const primaryColor = convertToRGB(primaryColorRaw);
 		const secondaryColor = convertToRGB(secondaryColorRaw);
 		const accentColor = convertToRGB(accentColorRaw);
 
-		// Texture Loader
 		const textureLoader = new THREE.TextureLoader();
 		star = textureLoader.load('/textures/star.webp');
 
-		// Canvas
+		// canvas
 		const canvas = document.querySelector('canvas.webgl');
 
-		// Scene
+		// scene
 		const scene = new THREE.Scene();
 
-		// Objects
+		// objects
 		geometry = new THREE.CapsuleGeometry(2, 0, 9, 20);
 
 		particlesGeometry = new THREE.BufferGeometry();
@@ -101,7 +98,6 @@
 
 		particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positionArray, 3));
 
-		// Materials - using CSS custom properties
 		material = new THREE.PointsMaterial({
 			size: 0.015,
 			color: primaryColor || '#ffffff' // fallback to white
@@ -116,7 +112,6 @@
 			blending: THREE.AdditiveBlending
 		});
 
-		// Function to update colors when theme changes
 		function updateColors() {
 			const bodyStyles = getComputedStyle(document.body);
 			const newPrimaryColor = bodyStyles.getPropertyValue('--clr-main').trim();
@@ -138,10 +133,9 @@
 				secondaryConverted = convertToRGB(newSecondaryColor);
 			}
 
-			// Detect theme based on resolved primary color luminance
+			// detect theme
 			const isLight = primaryConverted ? isLightColor(primaryConverted) : false;
 
-			// Apply colors with fallbacks
 			if (isLight) {
 				if (secondaryConverted) {
 					material.color.set('#707070');
@@ -156,13 +150,12 @@
 				}
 			}
 
-			// Keep --clr-pale for stars, with fallbacks
 			if (accentConverted) {
 				particlesMaterial.color.set(accentConverted);
 			} else if (secondaryConverted) {
 				particlesMaterial.color.set(secondaryConverted);
 			} else {
-				// Fallback based on theme
+				// fallback
 				particlesMaterial.color.set(isLight ? '#b8860b' : '#ffd700');
 			}
 		}
@@ -200,18 +193,15 @@
 		};
 
 		resizeListener = () => {
-			// Update sizes
 			sizes.width = window.innerWidth;
 			sizes.height = window.innerHeight;
 
-			// Update camera
 			const camera = scene.children.find((child) => child.isCamera); // Assuming camera is added to scene
 			if (camera) {
 				camera.aspect = sizes.width / sizes.height;
 				camera.updateProjectionMatrix();
 			}
 
-			// Update renderer
 			renderer.setSize(sizes.width, sizes.height);
 			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 		};
@@ -261,7 +251,6 @@
 
 			const elapsedTime = clock.getElapsedTime();
 
-			// Update objects
 			sphere.rotation.y = -0.2 * elapsedTime;
 			particlesMesh.rotation.y = -0.01 * elapsedTime;
 
@@ -270,10 +259,8 @@
 				particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.0000008);
 			}
 
-			// Render
 			renderer.render(scene, camera);
 
-			// Call tick again on the next frame
 			animationFrameId = window.requestAnimationFrame(tick);
 		};
 
@@ -287,29 +274,24 @@
 			}
 		};
 
-		// Listen for visibility changes
 		document.addEventListener('visibilitychange', visibilityListener);
 
 		tick();
 
 		return () => {
-			// Cancel animation frame
 			if (animationFrameId) {
 				window.cancelAnimationFrame(animationFrameId);
 			}
 
-			// Remove event listeners
 			window.removeEventListener('resize', resizeListener);
 			document.removeEventListener('mousemove', mousemoveListener);
 			document.removeEventListener('visibilitychange', visibilityListener);
 			document.removeEventListener('theme-change', themeChangeListener);
 
-			// Disconnect observer
 			if (themeObserver) {
 				themeObserver.disconnect();
 			}
 
-			// Dispose three.js resources
 			if (renderer) {
 				renderer.dispose();
 			}
@@ -328,8 +310,6 @@
 			if (star) {
 				star.dispose();
 			}
-			// Dispose scene children if needed (e.g., lights, meshes)
-			// scene.traverse((obj) => { if (obj.dispose) obj.dispose(); });
 		};
 	});
 </script>
