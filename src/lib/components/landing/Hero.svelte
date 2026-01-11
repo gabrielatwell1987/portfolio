@@ -3,7 +3,7 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import projects from '$lib/components/projects/projects.json';
 	import DoYouNeed from './DoYouNeed.svelte';
-	import HeroBackground from '$lib/shaders/ribbon/HeroBackground.svelte';
+	import Ribbons from '$lib/shaders/ribbon/Ribbons.svelte';
 	import HeroButton from './HeroButton.svelte';
 	import ProjectsGrid from './ProjectsGrid.svelte';
 	import UltraA from './UltraA.svelte';
@@ -176,7 +176,7 @@
 
 			<div class="shape big-circle" aria-hidden="true"></div>
 		{:else}
-			<HeroBackground />
+			<Ribbons />
 		{/if}
 	</div>
 
