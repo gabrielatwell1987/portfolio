@@ -1,24 +1,24 @@
-<script>
+<script lang="ts">
 	import * as THREE from 'three';
 	import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 	import cursorVert from './cursor.vert?raw';
 	import cursorFrag from './cursor.frag?raw';
 
-	let renderer;
-	let controls;
-	let displacement = {};
-	let particlesGeometry;
-	let particlesMaterial;
-	let resizeListener;
-	let pointerMoveListener;
-	let animationFrameId;
+	let renderer: THREE.WebGLRenderer;
+	let controls: OrbitControls;
+	let displacement: any = {};
+	let particlesGeometry: THREE.PlaneGeometry;
+	let particlesMaterial: THREE.ShaderMaterial;
+	let resizeListener: (() => void) | undefined;
+	let pointerMoveListener: ((event: PointerEvent) => void) | undefined;
+	let animationFrameId: number | undefined;
 
 	$effect(() => {
 		/**
 		 * Base
 		 */
 		// canvas
-		const canvas = document.querySelector('canvas.webgl');
+		const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;
 
 		// scene
 		const scene = new THREE.Scene();
@@ -48,11 +48,8 @@
 			);
 
 			// update camera
-			const camera = scene.children.find((child) => child.isCamera); // Assuming camera is added to scene
-			if (camera) {
-				camera.aspect = sizes.width / sizes.height;
-				camera.updateProjectionMatrix();
-			}
+			camera.aspect = sizes.width / sizes.height;
+			camera.updateProjectionMatrix();
 
 			// update renderer
 			renderer.setSize(sizes.width, sizes.height);
@@ -64,7 +61,7 @@
 		 * Camera
 		 */
 		// base camera
-		const camera = new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.1, 100);
+		let camera = $state(new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.1, 100));
 		camera.position.set(0, 0, 25);
 		scene.add(camera);
 

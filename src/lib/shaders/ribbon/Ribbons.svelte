@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
 	import * as THREE from 'three';
 	import vertexShader from '$lib/shaders/ribbon/ribbon.vert?raw';
 	import fragmentShader from '$lib/shaders/ribbon/ribbon.frag?raw';
 
-	let canvas = $state();
-	let animationFrameId;
+	let canvas = $state<HTMLCanvasElement>();
+	let animationFrameId: number | undefined;
 
 	$effect(() => {
 		if (!canvas) return;
@@ -34,7 +34,7 @@
 		directionalLight.position.set(1, 1, 1);
 		scene.add(directionalLight);
 
-		function createRibbon(ribbonLength, ribbonWidth, ribbonThickness, offsetX = 0, phase = 0) {
+		function createRibbon(ribbonLength: number, ribbonWidth: number, ribbonThickness: number, offsetX = 0, phase = 0) {
 			const geometry = new THREE.BufferGeometry();
 			const positions = [];
 			const indices = [];
@@ -142,8 +142,7 @@
 			fragmentShader,
 			side: THREE.DoubleSide,
 			depthWrite: true,
-			depthTest: true,
-			flatShading: true
+			depthTest: true
 		});
 
 		const isMobile = window.matchMedia('(max-width: 768px)').matches;
@@ -271,7 +270,11 @@
 			renderer.dispose();
 			ribbons.forEach((ribbon) => {
 				ribbon.geometry.dispose();
-				ribbon.material.dispose();
+				if (Array.isArray(ribbon.material)) {
+					ribbon.material.forEach((mat) => mat.dispose());
+				} else {
+					ribbon.material.dispose();
+				}
 			});
 		};
 	});

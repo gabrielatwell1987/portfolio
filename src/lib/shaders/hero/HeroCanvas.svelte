@@ -1,24 +1,25 @@
-<script>
+<script lang="ts">
 	import HeroTitle from '$lib/components/landing/HeroTitle.svelte';
 	import Button from '$lib/components/layout/Button.svelte';
 	import * as THREE from 'three';
 
-	let animationFrameId;
-	let renderer;
-	let geometry;
-	let particlesGeometry;
-	let material;
-	let particlesMaterial;
-	let star;
-	let themeObserver;
-	let resizeListener;
-	let mousemoveListener;
-	let visibilityListener;
-	let themeChangeListener;
+	let animationFrameId: number | undefined;
+	let renderer: THREE.WebGLRenderer | undefined;
+	let geometry: THREE.CapsuleGeometry | undefined;
+	let particlesGeometry: THREE.BufferGeometry | undefined;
+	let material: THREE.PointsMaterial | undefined;
+	let particlesMaterial: THREE.PointsMaterial | undefined;
+	let star: THREE.Texture | undefined;
+	let camera: THREE.PerspectiveCamera | undefined;
+	let themeObserver: MutationObserver | undefined;
+	let resizeListener: (() => void) | undefined;
+	let mousemoveListener: ((event: MouseEvent) => void) | undefined;
+	let visibilityListener: ((event: Event) => void) | undefined;
+	let themeChangeListener: ((event: Event) => void) | undefined;
 
 	$effect(() => {
 		// helper function to convert CSS colors to RGB (strip alpha if present)
-		const convertToRGB = (colorValue) => {
+		const convertToRGB = (colorValue: string | null): string | null => {
 			if (!colorValue) return null;
 			try {
 				const tempDiv = document.createElement('div');
@@ -34,6 +35,7 @@
 					canvas.width = 1;
 					canvas.height = 1;
 					const ctx = canvas.getContext('2d');
+					if (!ctx) return null;
 					ctx.fillStyle = colorValue;
 					ctx.fillRect(0, 0, 1, 1);
 					const imageData = ctx.getImageData(0, 0, 1, 1);
@@ -55,7 +57,7 @@
 		};
 
 		// color helper function
-		const isLightColor = (color) => {
+		const isLightColor = (color: string) => {
 			const match = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
 			if (match) {
 				const r = parseInt(match[1]);
@@ -80,7 +82,8 @@
 		star = textureLoader.load('/textures/star.webp');
 
 		// canvas
-		const canvas = document.querySelector('canvas.webgl');
+		const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;
+		if (!canvas) return;
 
 		// scene
 		const scene = new THREE.Scene();
@@ -113,6 +116,8 @@
 		});
 
 		function updateColors() {
+			if (!material || !particlesMaterial) return;
+
 			const bodyStyles = getComputedStyle(document.body);
 			const newPrimaryColor = bodyStyles.getPropertyValue('--clr-main').trim();
 			const newSecondaryColor = bodyStyles.getPropertyValue('--clr-inverted').trim();
@@ -196,14 +201,15 @@
 			sizes.width = window.innerWidth;
 			sizes.height = window.innerHeight;
 
-			const camera = scene.children.find((child) => child.isCamera); // Assuming camera is added to scene
 			if (camera) {
 				camera.aspect = sizes.width / sizes.height;
 				camera.updateProjectionMatrix();
 			}
 
-			renderer.setSize(sizes.width, sizes.height);
-			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+			if (renderer) {
+				renderer.setSize(sizes.width, sizes.height);
+				renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+			}
 		};
 		window.addEventListener('resize', resizeListener);
 
@@ -211,7 +217,7 @@
 		 * Camera
 		 */
 		// Base camera
-		const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
+		camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
 		camera.position.x = 0;
 		camera.position.y = 0;
 		camera.position.z = 2;
@@ -235,7 +241,7 @@
 		let mouseX = 0;
 		let mouseY = 0;
 
-		function animateParticles(event) {
+		function animateParticles(event: MouseEvent) {
 			mouseX = event.clientX;
 			mouseY = event.clientY;
 		}
@@ -259,7 +265,9 @@
 				particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.0000008);
 			}
 
-			renderer.render(scene, camera);
+			if (renderer && camera) {
+				renderer.render(scene, camera);
+			}
 
 			animationFrameId = window.requestAnimationFrame(tick);
 		};
@@ -283,10 +291,18 @@
 				window.cancelAnimationFrame(animationFrameId);
 			}
 
-			window.removeEventListener('resize', resizeListener);
-			document.removeEventListener('mousemove', mousemoveListener);
-			document.removeEventListener('visibilitychange', visibilityListener);
-			document.removeEventListener('theme-change', themeChangeListener);
+			if (resizeListener) {
+				window.removeEventListener('resize', resizeListener);
+			}
+			if (mousemoveListener) {
+				document.removeEventListener('mousemove', mousemoveListener);
+			}
+			if (visibilityListener) {
+				document.removeEventListener('visibilitychange', visibilityListener);
+			}
+			if (themeChangeListener) {
+				document.removeEventListener('theme-change', themeChangeListener);
+			}
 
 			if (themeObserver) {
 				themeObserver.disconnect();
