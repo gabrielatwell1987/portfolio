@@ -25,7 +25,7 @@
 	let isTransitioning = $state(false);
 
 	function toggleExpand() {
-		if (isTransitioning) return; // Prevent multiple transitions
+		if (isTransitioning) return;
 
 		if (document.startViewTransition) {
 			isTransitioning = true;
@@ -172,13 +172,13 @@
 		}
 
 		& img {
-			width: 100vw;
-			height: 100vh;
-			object-fit: contain;
+			width: auto;
+			height: auto;
+			scale: 2.5;
 
 			@media (width <= 768px) {
-				width: 100%;
-				height: 100%;
+				width: auto;
+				height: auto;
 			}
 		}
 
