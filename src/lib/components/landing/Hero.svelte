@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import projects from '$lib/components/projects/projects.json';
@@ -7,6 +7,15 @@
 	import HeroButton from './HeroButton.svelte';
 	import ProjectsGrid from './ProjectsGrid.svelte';
 	import UltraA from './UltraA.svelte';
+
+	interface Particle {
+		id: number;
+		x: number;
+		y: number;
+		size: number;
+		duration: number;
+		delay: number;
+	}
 
 	const chars = 'Handcrafted Frontend Interfaces';
 
@@ -21,10 +30,10 @@
 		titleText.split('').map((char) => (char === ' ' ? ' ' : getRandomChar()))
 	);
 	let showContent = $state(false);
-	let particles = $state([]);
+	let particles = $state<Particle[]>([]);
 	let { cssBg } = $props();
 
-	function getWordChars(wordIndex) {
+	function getWordChars(wordIndex: number) {
 		let charIndex = 0;
 		for (let i = 0; i < wordIndex; i++) {
 			charIndex += titleWords[i].length + 1;

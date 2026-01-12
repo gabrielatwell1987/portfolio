@@ -1,6 +1,10 @@
-<script>
-	/** @type {{src: any, title: any}} */
-	let { src, title } = $props();
+<script lang="ts">
+	interface Props {
+		src: string;
+		title: string;
+	}
+
+	let { src, title }: Props = $props();
 </script>
 
 <section class="iframe-container">

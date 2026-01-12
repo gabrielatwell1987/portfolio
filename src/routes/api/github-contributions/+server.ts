@@ -1,6 +1,16 @@
 import { VITE_GITHUB_TOKEN, VITE_GITHUB_USERNAME } from '$env/static/private';
 import { json } from '@sveltejs/kit';
 
+interface ContributionDay {
+	date: string;
+	contributionCount: number;
+	color: string;
+}
+
+interface Week {
+	contributionDays: ContributionDay[];
+}
+
 /** @type {import('./$types').RequestHandler} */
 export async function GET() {
 	try {
@@ -72,7 +82,7 @@ export async function GET() {
 		// Return mock data as fallback
 		return json({
 			success: false,
-			error: error.message,
+			error: error instanceof Error ? error.message : 'An unknown error occurred',
 			fallback: true,
 			...generateFallbackData()
 		});
@@ -81,7 +91,7 @@ export async function GET() {
 
 // Fallback data generator (simplified version of your current mock data)
 function generateFallbackData() {
-	const weeks = [];
+	const weeks: Week[] = [];
 	const today = new Date();
 	const oneYearAgo = new Date(today);
 	oneYearAgo.setFullYear(today.getFullYear() - 1);
@@ -92,7 +102,7 @@ function generateFallbackData() {
 	let currentDate = new Date(startDate);
 
 	while (currentDate <= today) {
-		const week = { contributionDays: [] };
+		const week: Week = { contributionDays: [] };
 
 		for (let i = 0; i < 7; i++) {
 			if (currentDate <= today) {
@@ -134,7 +144,7 @@ function generateFallbackData() {
 	};
 }
 
-function getContributionColor(count) {
+function getContributionColor(count: number): string {
 	if (count === 0) return '#ebedf0';
 	if (count <= 3) return '#9be9a8';
 	if (count <= 6) return '#40c463';

@@ -1,5 +1,10 @@
-<script>
-	let { title, text } = $props();
+<script lang="ts">
+	interface Props {
+		title: string;
+		text: string;
+	}
+
+	let { title, text }: Props = $props();
 </script>
 
 <section class="popover-button" aria-label="Popover button">

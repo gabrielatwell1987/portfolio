@@ -1,12 +1,6 @@
-<script>
-	import { goto } from '$app/navigation';
-	import HeroTitle from '$lib/components/layout/HeroTitle.svelte';
+<script lang="ts">
+	import HeroTitle from '$lib/components/landing/HeroTitle.svelte';
 	import Button from '$lib/components/layout/Button.svelte';
-
-	function proceedToMain() {
-		localStorage.setItem('visitedLanding', 'true');
-		goto('/landing');
-	}
 </script>
 
 <section class="intro">
@@ -23,7 +17,7 @@
 			If you have any questions, you can <a href="/contact">contact</a> me and I will get back to you.
 		</p>
 
-		<Button title="Enter site" href="/landing" onclick={proceedToMain} />
+		<Button title="Enter site" href="/landing" />
 	</div>
 </section>
 

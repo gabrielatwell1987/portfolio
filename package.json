@@ -3,7 +3,7 @@
 	"version": "1.1.0",
 	"private": true,
 	"engines": {
-		"node": ">=24.0.0",
+		"node": ">=22.0.0",
 		"npm": ">=10.0.0"
 	},
 	"scripts": {
@@ -20,6 +20,7 @@
 		"@sveltejs/adapter-vercel": "^5.10.2",
 		"@sveltejs/kit": "^2.42.2",
 		"@sveltejs/vite-plugin-svelte": "^6.1.0",
+		"@types/node": "^25.0.6",
 		"@vite-pwa/assets-generator": "^0.2.4",
 		"dotenv": "^16.4.5",
 		"eslint": "^8.57.0",
@@ -31,6 +32,7 @@
 		"prettier-plugin-svelte": "^3.2.6",
 		"svelte-check": "^4.0.4",
 		"three": "^0.167.1",
+		"typescript": "^5.9.3",
 		"vite": "^7.0.5"
 	},
 	"type": "module",

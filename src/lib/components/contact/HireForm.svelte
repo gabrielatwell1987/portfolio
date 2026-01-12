@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import SubmitButton from '$lib/components/contact/SubmitButton.svelte';
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 

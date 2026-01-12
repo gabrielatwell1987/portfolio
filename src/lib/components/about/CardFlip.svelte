@@ -1,6 +1,12 @@
-<script>
-	/** @type {{src: any, alt: any, src2: any, alt2: any}} */
-	let { src, alt, src2, alt2 } = $props();
+<script lang="ts">
+	interface Props {
+		src: string;
+		alt: string;
+		src2: string;
+		alt2: string;
+	}
+
+	let { src, alt, src2, alt2 }: Props = $props();
 
 	let isFlipped = $state(false);
 
@@ -8,7 +14,7 @@
 		isFlipped = !isFlipped;
 	}
 
-	function handleKeydown(event) {
+	function handleKeydown(event: KeyboardEvent) {
 		if (event.key === 'Enter' || event.key === ' ') {
 			event.preventDefault();
 			toggleFlip();

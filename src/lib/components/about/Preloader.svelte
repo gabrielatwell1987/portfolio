@@ -1,13 +1,13 @@
-<script>
+<script lang="ts">
 	import gsap from 'gsap';
 
-	let preloaderVisible = $state(true);
-	let preloaderElement = $state();
-	let lines = $state([]);
+	let preloaderVisible: boolean = $state(true);
+	let preloaderElement = $state<HTMLElement>();
+	let lines = $state<HTMLElement[]>([]);
 
 	$effect(() => {
 		const validLines = lines.filter((line) => line !== undefined && line !== null);
-		if (validLines.length !== 10) return;
+		if (validLines.length !== 10 || !preloaderElement) return;
 
 		const tl = gsap.timeline();
 

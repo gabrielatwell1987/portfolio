@@ -1,53 +1,60 @@
-<script>
-	let { title, videoSrc } = $props();
+<script lang="ts">
+	interface Props {
+		title: string;
+		videoSrc: string;
+	}
+
+	let { title, videoSrc }: Props = $props();
 
 	const videoId = `video-popover-${Math.random().toString(36).substr(2, 9)}`;
-	let videoPopoverElement = $state(null);
+	let videoPopoverElement: HTMLElement | null = $state(null);
 
 	function openVideoPopover() {
 		setTimeout(() => {
-			if (!videoPopoverElement) {
+			const el = videoPopoverElement;
+			if (!el) {
 				console.error('Popover element not found!');
 				return;
 			}
 
 			// Check if Popover API is supported
-			if (typeof videoPopoverElement.showPopover === 'function') {
+			if (typeof el.showPopover === 'function') {
 				if (!document.startViewTransition) {
-					videoPopoverElement.showPopover();
+					el.showPopover();
 					return;
 				}
 
 				document.startViewTransition(() => {
-					videoPopoverElement.showPopover();
+					el.showPopover();
 				});
 			} else {
 				// Fallback for unsupported browsers: manually show/hide via CSS classes
 				console.warn('Popover API not supported. Using fallback.');
-				videoPopoverElement.style.display = 'block';
-				videoPopoverElement.style.opacity = '1';
-				videoPopoverElement.style.transform = 'translateY(0)';
+				el.style.display = 'block';
+				el.style.opacity = '1';
+				el.style.transform = 'translateY(0)';
 			}
 		}, 0);
 	}
 
 	function closeVideoPopover() {
-		if (!videoPopoverElement) return;
+		const el = videoPopoverElement;
+		if (!el) return;
 
-		if (typeof videoPopoverElement.hidePopover === 'function') {
+		if (typeof el.hidePopover === 'function') {
 			if (!document.startViewTransition) {
-				videoPopoverElement.hidePopover();
+				el.hidePopover();
 				return;
 			}
 
 			document.startViewTransition(() => {
-				videoPopoverElement.hidePopover();
+				el.hidePopover();
 			});
 		} else {
 			// Fallback: manually hide
-			videoPopoverElement.style.opacity = '0';
-			videoPopoverElement.style.transform = 'translateY(-5rem)';
-			videoPopoverElement.style.display = 'none';
+			el.style.opacity = '0';
+			el.style.transform = 'translateY(-5rem)';
+			el.style.display = 'none';
 		}
 	}
 </script>

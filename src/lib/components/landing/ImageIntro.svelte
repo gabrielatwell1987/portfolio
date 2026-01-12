@@ -1,10 +1,18 @@
-<script>
+<script lang="ts">
 	import Image from '$lib/components/layout/Image.svelte';
 	import { goto } from '$app/navigation';
 
-	let { src, alt, title, text, width } = $props();
+	interface Props {
+		src: string;
+		alt: string;
+		title: string;
+		text: string;
+		width?: string;
+	}
 
-	async function handleTransitionClick(event) {
+	let { src, alt, title, text, width }: Props = $props();
+
+	async function handleTransitionClick(event: MouseEvent) {
 		event.preventDefault();
 
 		if (!document.startViewTransition) {
@@ -32,7 +40,7 @@
 		<h1 class="h1">{title}</h1>
 
 		<div class="img">
-			<a href="/about/hero" onclick={handleTransitionClick}>
+			<a href="/three.js" onclick={handleTransitionClick}>
 				<Image {src} {alt} {width} aspectRatio="16/9" />
 			</a>
 		</div>

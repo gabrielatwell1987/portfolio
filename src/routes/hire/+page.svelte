@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import HireForm from '$lib/components/contact/HireForm.svelte';
 	import Popover from '$lib/components/layout/Popover.svelte';
 	import Title from '$lib/components/layout/Title.svelte';

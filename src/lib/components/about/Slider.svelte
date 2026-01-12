@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Image from '$lib/components/layout/Image.svelte';
 	import skills from '$lib/components/about/skills.json';
 

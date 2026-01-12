@@ -1,6 +1,15 @@
-<script>
-	/** @type {{src: any, alt: any, width?: any, height?: any, aspectRatio?: string}} */
-	let { src, alt, width, height, aspectRatio, style } = $props();
+<script lang="ts">
+	interface Props {
+		src: string;
+		alt: string;
+		width?: string;
+		height?: string;
+		aspectRatio?: string;
+		style?: string;
+		class?: string;
+	}
+
+	let { src, alt, width, height, aspectRatio, style, class: className }: Props = $props();
 
 	let imageError = $state(false);
 
@@ -21,6 +30,7 @@
 		{src}
 		{alt}
 		{width}
+		class={className}
 		height={computedHeight}
 		style="{aspectRatio ? `aspect-ratio: ${aspectRatio};` : ''}{style ? ` ${style}` : ''}"
 		class:hidden={imageError}

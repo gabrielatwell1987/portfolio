@@ -1,22 +1,22 @@
-<script>
+<script lang="ts">
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 	import Image from '$lib/components/layout/Image.svelte';
 	import '@fortawesome/fontawesome-free/css/all.css';
 
 	let isOpen = $state(false);
-	let modal;
-	let previousActiveElement;
+	let modal: HTMLDialogElement;
+	let previousActiveElement: HTMLElement | null = null;
 	let statusMessage = $state('');
 
 	function openModal() {
-		previousActiveElement = document.activeElement;
+		previousActiveElement = document.activeElement as HTMLElement | null;
 		modal.showModal();
 		statusMessage = 'Contact information modal opened';
 		// Small delay to ensure CSS transition starts from initial state
 		setTimeout(() => {
 			isOpen = true;
 			// Focus the close button for keyboard accessibility
-			const closeButton = modal.querySelector('.close-button');
+			const closeButton = modal.querySelector('.close-button') as HTMLElement | null;
 			if (closeButton) closeButton.focus();
 		}, 20);
 	}
@@ -35,7 +35,7 @@
 		}, 350);
 	}
 
-	function handleKeydown(event) {
+	function handleKeydown(event: KeyboardEvent) {
 		if (event.key === 'Escape') {
 			closeModal();
 		}
@@ -75,7 +75,6 @@
 	<article class="modal-inner">
 		<header>
 			<button
-				rel="prev"
 				class="close-button"
 				aria-label="Close contact information modal"
 				onclick={closeModal}

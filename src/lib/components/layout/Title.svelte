@@ -1,8 +1,14 @@
-<script>
-	import { page } from '$app/stores';
+<script lang="ts">
+	interface Props {
+		title: string;
+		title2?: string;
+		img?: string;
+		width?: string;
+		svg?: string;
+		viewTransitionName?: string;
+	}
 
-	/** @type {{title: any, title2: any, img?: string, width?: string, svg?: string, viewTransitionName?: string}} */
-	let { title, title2, img, width, svg, viewTransitionName } = $props();
+	let { title, title2, img, width, svg, viewTransitionName }: Props = $props();
 
 	let transitionName = $derived(viewTransitionName || 'page-title');
 

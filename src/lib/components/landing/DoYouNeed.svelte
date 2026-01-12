@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	/** @type {{text: any, span: any}} */
 	let { text, span } = $props();
 
@@ -16,7 +16,7 @@
 	<h1 class="sentence" class:animate={mounted}>
 		{text}
 
-		<a href="/about/hero"
+		<a href="/three.js"
 			><span class="bigWord glow">
 				{#each chars as char, i}
 					<span class="char" style="--delay: {0.05 + i * 0.05}s">{char}</span>

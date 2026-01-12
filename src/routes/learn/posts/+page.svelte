@@ -64,7 +64,7 @@
 	<div class="css">
 		<div class="tech-stack-logo">
 			<ViewTransitionImage
-				src="/skills/CSS-Purple.svg"
+				src="/skills/CSS-Purple.webp"
 				alt="new css logo"
 				aspectRatio="1/1"
 				class="css-logo"

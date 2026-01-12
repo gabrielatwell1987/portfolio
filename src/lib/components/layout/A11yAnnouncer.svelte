@@ -1,9 +1,11 @@
-<script>
-	/**
-	 * A11yAnnouncer - Accessibility announcer component
-	 * Provides a live region for screen reader announcements
-	 */
-	let { message = '', politeness = 'polite' } = $props();
+<script lang="ts">
+	interface Props {
+		message?: string;
+		politeness?: 'off' | 'polite' | 'assertive';
+		submitStatus?: string;
+	}
+
+	let { message = '', politeness = 'polite', submitStatus = '' }: Props = $props();
 </script>
 
 <div aria-live={politeness} aria-atomic="true" class="sr-only" role="status">

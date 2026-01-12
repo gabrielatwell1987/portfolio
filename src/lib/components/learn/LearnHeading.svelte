@@ -1,9 +1,15 @@
-<script>
+<script lang="ts">
 	import gsap from 'gsap';
-	import { page } from '$app/stores';
 
-	/** @type {{title1: any, title2: any, span: any, viewTransitionName: any, transitionPath: any}} */
-	let { title1, title2, span, viewTransitionName, transitionPath } = $props();
+	interface Props {
+		title1: string;
+		title2: string;
+		span: string;
+		viewTransitionName?: string;
+		transitionPath?: string;
+	}
+
+	let { title1, title2, span, viewTransitionName, transitionPath }: Props = $props();
 
 	let transitionName = $derived(viewTransitionName || '');
 

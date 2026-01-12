@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import SEO from '$lib/data/SEO.svelte';
 	import bio from '$lib/components/about/bio.json';
 	import Button from '$lib/components/layout/Button.svelte';
@@ -19,7 +19,7 @@
 
 		isDesktop = mediaQuery.matches;
 
-		const handler = (e) => {
+		const handler = (e: MediaQueryListEvent) => {
 			isDesktop = e.matches;
 		};
 

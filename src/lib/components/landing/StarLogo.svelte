@@ -1,4 +1,15 @@
-<script>
+<script lang="ts">
+	interface Props {
+		class?: string;
+		opacity?: number;
+		top?: string;
+		left?: string;
+		scale?: string;
+		mobileTop?: string;
+		mobileLeft?: string;
+		mobileScale?: string;
+	}
+
 	let {
 		class: className = '',
 		opacity,
@@ -8,7 +19,7 @@
 		mobileTop = '30%',
 		mobileLeft = '-20%',
 		mobileScale = '1'
-	} = $props();
+	}: Props = $props();
 </script>
 
 <svg
@@ -20,7 +31,6 @@
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	xml:space="preserve"
-	xmlns:serif="http://www.serif.com/"
 	style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;opacity:{opacity ||
 		0.1};--top:{top};--left:{left};--scale:{scale};--mobile-top:{mobileTop};--mobile-left:{mobileLeft};--mobile-scale:{mobileScale};"
 >

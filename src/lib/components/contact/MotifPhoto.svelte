@@ -1,6 +1,9 @@
-<script>
-	// let { img } = $props();
-	let { content } = $props();
+<script lang="ts">
+	interface Props {
+		content: string;
+	}
+
+	let { content }: Props = $props();
 </script>
 
 <div class="motif-photo">

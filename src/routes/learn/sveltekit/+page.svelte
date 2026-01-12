@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import SEO from '$lib/data/SEO.svelte';
 	import Button from '$lib/components/layout/Button.svelte';
 	import Iframe from '$lib/components/learn/Iframe.svelte';
@@ -6,7 +6,13 @@
 	import Title from '$lib/components/layout/Title.svelte';
 	import Details from '$lib/components/learn/Details.svelte';
 
-	let { data } = $props();
+	interface Props {
+		data: {
+			svelteKitDetails: Array<any>;
+		};
+	}
+
+	let { data }: Props = $props();
 	let detailsVisible = $state(false);
 
 	// animations
@@ -26,7 +32,7 @@
 <section class="learn-svelte">
 	<div class="content">
 		<div class="title-spacing">
-			<Title img="/skills/Svelte-Dark.svg" width="40vw" />
+			<Title img="/skills/Svelte-Dark.svg" width="40vw" title="SvelteKit Framework" />
 		</div>
 
 		<main class="svelte-details">

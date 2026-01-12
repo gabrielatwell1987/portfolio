@@ -1,9 +1,15 @@
-<script>
+<script lang="ts">
 	import gsap from 'gsap';
 	import { SplitText } from 'gsap/SplitText';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-	let { alt, title, viewTransitionName } = $props();
+	interface Props {
+		alt: string;
+		title: string;
+		viewTransitionName?: string;
+	}
+
+	let { alt, title, viewTransitionName }: Props = $props();
 
 	function titleRotate() {
 		gsap.registerPlugin(SplitText, ScrollTrigger);

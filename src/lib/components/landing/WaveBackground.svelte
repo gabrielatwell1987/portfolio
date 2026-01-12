@@ -1,5 +1,13 @@
-<script>
-	let { position, opacity, color, height, className = '' } = $props();
+<script lang="ts">
+	interface Props {
+		position: 'top' | 'bottom';
+		opacity: number;
+		color: string;
+		height: string;
+		className?: string;
+	}
+
+	let { position, opacity, color, height, className = '' }: Props = $props();
 </script>
 
 <div

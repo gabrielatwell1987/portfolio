@@ -1,8 +1,11 @@
-<script>
-	/** @type {{title: any, hover: any}} */
-	let { title, hover } = $props();
+<script lang="ts">
+	interface Props {
+		title: string;
+		hover: string;
+	}
+	let { title, hover }: Props = $props();
 
-	function handleTooltipClick(event) {
+	function handleTooltipClick(event: Event) {
 		event.preventDefault();
 		event.stopPropagation();
 		return false;

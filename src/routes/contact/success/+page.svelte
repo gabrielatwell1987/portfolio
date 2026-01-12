@@ -1,6 +1,5 @@
-<script>
+<script lang="ts">
 	import SEO from '$lib/data/SEO.svelte';
-	import Image from '$lib/components/layout/Image.svelte';
 
 	$effect(() => {
 		console.log('Success! Your message was sent.');

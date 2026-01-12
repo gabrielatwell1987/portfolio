@@ -1,22 +1,32 @@
-<script>
-	let { title, text, text2, text3 } = $props();
+<script lang="ts">
+	interface Props {
+		title: string;
+		popoverTitle: string;
+		text: string;
+		text2: string;
+		text3: string;
+	}
+
+	let { title, popoverTitle, text, text2, text3 }: Props = $props();
 
 	const id = `popover-${Math.random().toString(36).substr(2, 9)}`;
-	let popoverElement = $state(null);
 
-	function openPopover() {
-		const popover = document.getElementById(id);
+	let popoverElement: HTMLElement | null = $state(null);
+
+	function openPopover(): void {
+		if (!popoverElement) return;
+
 		if (!document.startViewTransition) {
-			popover.showPopover();
+			popoverElement.showPopover();
 			return;
 		}
 
 		document.startViewTransition(() => {
-			popover.showPopover();
+			popoverElement!.showPopover();
 		});
 	}
 
-	function closePopover() {
+	function closePopover(): void {
 		if (!popoverElement) return;
 
 		if (!document.startViewTransition) {
@@ -26,7 +36,7 @@
 
 		document.startViewTransition(() => {
 			setTimeout(() => {
-				popoverElement.hidePopover();
+				popoverElement!.hidePopover();
 			}, 0);
 		});
 	}

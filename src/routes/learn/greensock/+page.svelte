@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import SEO from '$lib/data/SEO.svelte';
 	import Title from '$lib/components/layout/Title.svelte';
 	import Button from '$lib/components/layout/Button.svelte';
@@ -6,7 +6,13 @@
 	import Learn from '$lib/components/learn/Learn.svelte';
 	import Details from '$lib/components/learn/Details.svelte';
 
-	let { data } = $props();
+	interface Props {
+		data: {
+			greensockDetails: Array<any>;
+		};
+	}
+
+	let { data }: Props = $props();
 	let detailsVisible = $state(false);
 
 	// animations
@@ -26,7 +32,7 @@
 <section class="learn-gsap">
 	<div class="content">
 		<div class="title-spacing">
-			<Title img="/skills/GSAP-Dark.svg" width="50vw" />
+			<Title img="/skills/GSAP-Dark.svg" width="50vw" title="Greensock Animation Platform" />
 		</div>
 
 		<main class="gsap-details">

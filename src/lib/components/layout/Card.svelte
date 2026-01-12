@@ -1,6 +1,14 @@
-<script>
-	/** @type {{title: any, desc: any, button: any, src: any, alt: any, href: any}} */
-	let { title, desc, button, src, alt, href } = $props();
+<script lang="ts">
+	interface Props {
+		title: string;
+		desc: string;
+		button: string;
+		src: string;
+		alt: string;
+		href: string;
+	}
+
+	let { title, desc, button, src, alt, href }: Props = $props();
 </script>
 
 <section class="card">

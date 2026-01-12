@@ -1,5 +1,9 @@
-<script>
-	let { projects = [] } = $props();
+<script lang="ts">
+	interface Props {
+		projects?: { url: string; img: string; title: string }[];
+	}
+
+	let { projects = [] }: Props = $props();
 </script>
 
 <section class="projects-grid">

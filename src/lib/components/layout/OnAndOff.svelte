@@ -1,11 +1,19 @@
-<script>
+<script lang="ts">
+	interface Props {
+		checked?: boolean;
+		disabled?: boolean;
+		size?: 'small' | 'medium' | 'large';
+		label?: string;
+		onToggle?: (checked: boolean) => void;
+	}
+
 	let {
 		checked = $bindable(false),
 		disabled = false,
 		size = 'medium',
 		label = '',
 		onToggle = () => {}
-	} = $props();
+	}: Props = $props();
 
 	function handleToggle() {
 		if (!disabled) {

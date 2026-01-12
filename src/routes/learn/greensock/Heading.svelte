@@ -1,6 +1,9 @@
-<script>
-	/** @type {{title: any}} */
-	let { title } = $props();
+<script lang="ts">
+	interface Props {
+		title: string;
+	}
+
+	let { title }: Props = $props();
 </script>
 
 <span class="heading-title">{title}:</span>

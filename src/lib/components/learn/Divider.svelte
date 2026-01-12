@@ -1,5 +1,10 @@
-<script>
-	let { width, thickness } = $props();
+<script lang="ts">
+	interface Props {
+		width: number;
+		thickness: number;
+	}
+
+	let { width, thickness }: Props = $props();
 </script>
 
 <hr

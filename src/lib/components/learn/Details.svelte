@@ -1,7 +1,16 @@
-<script>
+<script lang="ts">
 	import './details-globals.css';
 
-	let { items = [] } = $props();
+	interface Item {
+		summary: string;
+		content: string;
+	}
+
+	interface Props {
+		items: Item[];
+	}
+
+	let { items = [] }: Props = $props();
 
 	let openStates = $state(items.map(() => false));
 
@@ -12,7 +21,7 @@
 		}
 	});
 
-	function toggle(index) {
+	function toggle(index: number) {
 		if (openStates[index]) {
 			openStates[index] = false;
 		} else {
@@ -20,7 +29,7 @@
 		}
 	}
 
-	function handleKeydown(event, index) {
+	function handleKeydown(event: KeyboardEvent, index: number) {
 		if (event.key === 'Enter' || event.key === ' ') {
 			event.preventDefault();
 			toggle(index);

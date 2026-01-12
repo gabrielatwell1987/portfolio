@@ -1,7 +1,25 @@
-<script>
-	let { src, alt, maxWidth, maxHeight, transitionName = 'expandable-image' } = $props();
+<script lang="ts">
+	interface Props {
+		src: string;
+		alt: string;
+		maxWidth?: number;
+		maxHeight?: number;
+		transitionName?: string;
+		aspectRatio?: string;
+		class?: string;
+	}
+
+	let {
+		src,
+		alt,
+		maxWidth,
+		maxHeight,
+		transitionName = 'expandable-image',
+		aspectRatio,
+		class: className
+	}: Props = $props();
 	let expanded = $state(false);
-	let imgElement = $state();
+	let imgElement = $state<HTMLImageElement>();
 	let naturalDimensions = $state({ width: 0, height: 0 });
 	let isSVG = $derived(src?.endsWith('.svg'));
 	let isTransitioning = $state(false);
@@ -65,7 +83,8 @@
 			{src}
 			{alt}
 			onload={handleImageLoad}
-			style="width: {displayDimensions.width}px; height: {displayDimensions.height}px; view-transition-name: {transitionName};"
+			style="width: {displayDimensions().width}px; height: {displayDimensions()
+				.height}px; view-transition-name: {transitionName};"
 			class:svg={isSVG}
 		/>
 	</button>

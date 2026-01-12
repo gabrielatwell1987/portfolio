@@ -1,15 +1,10 @@
-<script>
+<script lang="ts">
 	import Image from '$lib/components/layout/Image.svelte';
 	import skills from '$lib/components/about/skills.json';
-
-	/** @type {{title: any}} */
-	let { title } = $props();
 </script>
 
 <section class="skills-container">
 	<div class="skills-inner" aria-label="skills">
-		<h3 class="skills-title">{title}</h3>
-
 		<ul class="skills">
 			{#each skills as skill}
 				<li>
@@ -73,6 +68,7 @@
 			justify-content: center;
 			width: min(40%, 800px);
 			margin-inline: auto;
+			margin-block: 4em;
 
 			& .icons {
 				padding: 0.5rem;
@@ -107,14 +103,6 @@
 			}
 		}
 
-		.skills-title {
-			font-family: var(--anta);
-			font-size: clamp(1.75rem, 3vw, 5rem);
-			color: var(--off-white);
-			letter-spacing: -1px;
-			text-align: center;
-		}
-
 		@media (width <= 768px) {
 			.skills {
 				grid-template-columns: repeat(2, 1fr);
@@ -142,11 +130,6 @@
 				& .icons {
 					scale: 1.2;
 				}
-			}
-
-			.skills-title {
-				margin-left: 0;
-				text-align: center;
 			}
 		}
 	}

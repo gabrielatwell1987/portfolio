@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import gsap from 'gsap';
 
 	/** @type {{src: any, alt: any, text: any}} */
@@ -7,9 +7,11 @@
 	let imageContainer = $state();
 
 	$effect(() => {
-		const imageContainer = document.querySelector('.image-container');
+		const imageContainer: HTMLElement | null = document.querySelector('.image-container');
 		const img = document.querySelector('.image-container img');
 		const h1 = document.querySelector('h1');
+
+		if (!imageContainer || !img) return;
 
 		gsap.set(img, { y: -50 });
 

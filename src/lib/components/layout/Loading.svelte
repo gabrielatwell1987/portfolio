@@ -1,11 +1,9 @@
-<script>
+<script lang="ts">
 	import LoadingSkeleton from './LoadingSkeleton.svelte';
-	// import LoadingText from './LoadingText.svelte';
 </script>
 
 <div class="loading-wrapper">
 	<LoadingSkeleton />
-	<!-- <LoadingText /> -->
 </div>
 
 <style>

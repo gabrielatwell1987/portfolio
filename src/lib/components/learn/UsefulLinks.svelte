@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import LoadBtn from '$lib/components/learn/LoadBtn.svelte';
 </script>
 

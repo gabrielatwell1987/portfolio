@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import gsap from 'gsap';
 	import { MorphSVGPlugin } from 'gsap/dist/MorphSVGPlugin';
 

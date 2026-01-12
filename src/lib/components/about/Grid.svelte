@@ -1,6 +1,10 @@
-<script>
-	/** @type {{leftTitle: any, rightTitle: any}} */
-	let { leftTitle, rightTitle } = $props();
+<script lang="ts">
+	interface Props {
+		leftTitle: string;
+		rightTitle: string;
+	}
+
+	let { leftTitle, rightTitle }: Props = $props();
 </script>
 
 <section class="grid" data-grid-wrapper aria-label="bio">

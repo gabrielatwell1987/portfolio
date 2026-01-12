@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 	let { heading, headingFontSize, link, linkFontSize } = $props();
 	let isHeading = $state(false);
 
-	function handleClick(e) {
+	function handleClick(e: MouseEvent) {
 		e.preventDefault();
 
 		if (!document.startViewTransition) {

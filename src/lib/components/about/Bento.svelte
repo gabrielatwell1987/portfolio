@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Image from '$lib/components/layout/Image.svelte';
 
 	$effect(() => {

@@ -1,6 +1,11 @@
-<script>
-	/** @type {{title: any}} */
-	let { href, title, class: className = '' } = $props();
+<script lang="ts">
+	interface Props {
+		href?: string;
+		title: string;
+		class?: string;
+	}
+
+	let { href, title, class: className = '' }: Props = $props();
 </script>
 
 <a {href} class={className}>{title}</a>

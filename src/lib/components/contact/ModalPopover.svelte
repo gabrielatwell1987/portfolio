@@ -1,10 +1,9 @@
-<script>
-	import { blur } from 'svelte/transition';
+<script lang="ts">
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 	import Image from '$lib/components/layout/Image.svelte';
 	import '@fortawesome/fontawesome-free/css/all.css';
 
-	let statusMessage = $state('');
+	let statusMessage: string = $state('');
 </script>
 
 <A11yAnnouncer message={statusMessage} />
@@ -39,7 +38,6 @@
 	<article class="modal-inner">
 		<header>
 			<button
-				rel="prev"
 				class="close-button"
 				aria-label="Close contact information modal"
 				popovertarget="modal"
