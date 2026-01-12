@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import InstallButton from './InstallButton.svelte';
 	import Burger from '$lib/components/navigation/Burger.svelte';
 	import ThemeToggle from '$lib/components/navigation/ThemeToggle.svelte';

@@ -1,8 +1,17 @@
-<script>
+<script lang="ts">
 	import ProjectSummary from './ProjectSummary.svelte';
 
-	/** @type {{title: any, img: any, url: any, description: any}} */
-	let { title, img, url, description, summary, index = 0, hasBorder = true } = $props();
+	interface Props {
+		title: string;
+		img: string;
+		url: string;
+		description: string;
+		summary: string;
+		index?: number;
+		hasBorder?: boolean;
+	}
+
+	let { title, img, url, description, summary, index = 0, hasBorder = true }: Props = $props();
 </script>
 
 <section class="project-card" class:no-border={!hasBorder}>

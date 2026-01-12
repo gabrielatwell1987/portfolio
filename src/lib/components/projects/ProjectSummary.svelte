@@ -1,8 +1,24 @@
-<script>
+<script lang="ts">
 	import { createPopoverState } from './projectSummaryFunctions.svelte.js';
-	let { popoverTitle, title, summary, index = 0 } = $props();
 
-	const popover = createPopoverState();
+	interface Props {
+		popoverTitle: string;
+		title: string;
+		summary: string;
+		index?: number;
+	}
+
+	interface PopoverState {
+		popoverElement: HTMLElement | null;
+		showPopover: () => void;
+		hidePopover: () => void;
+		cancelHide: () => void;
+		closePopover: () => void;
+	}
+
+	let { popoverTitle, title, summary, index = 0 }: Props = $props();
+
+	const popover: PopoverState = createPopoverState();
 </script>
 
 <section class="summary-popover" aria-label="pwa summary">

@@ -1,3 +1,5 @@
+
+
 export const CELL_SIZE = 17;
 export const CELL_GAP = 5;
 export const DAYS_IN_WEEK = 7;
@@ -27,7 +29,7 @@ export const MOBILE_GRID_HEIGHT =
 export const MOBILE_MONTH_LABEL_HEIGHT = 16;
 export const MOBILE_DAY_LABEL_WIDTH = 30;
 
-export function getContributionColor(count) {
+export function getContributionColor(count: number): string {
 	if (count === 0) return '#ebedf0';
 	if (count <= 3) return '#9be9a8';
 	if (count <= 6) return '#40c463';
@@ -35,7 +37,7 @@ export function getContributionColor(count) {
 	return '#216e39';
 }
 
-export function getContributionLevel(count) {
+export function getContributionLevel(count: number): string {
 	if (count === 0) return 'none';
 	if (count <= 3) return 'low';
 	if (count <= 6) return 'medium';
@@ -43,7 +45,7 @@ export function getContributionLevel(count) {
 	return 'very-high';
 }
 
-export function formatDate(dateString) {
+export function formatDate(dateString: string): string {
 	const [year, month, day] = dateString.split('-').map(Number);
 	const date = new Date(year, month - 1, day); // month is 0-indexed
 	return date.toLocaleDateString('en-US', {
@@ -54,12 +56,22 @@ export function formatDate(dateString) {
 	});
 }
 
-export function getContributionText(count) {
+export function getContributionText(count: number): string {
 	return count === 1 ? 'contribution' : 'contributions';
 }
 
+interface ContributionDay {
+	date: string;
+	contributionCount: number;
+	color: string;
+}
+
+interface Week {
+	contributionDays: ContributionDay[];
+}
+
 export function generateFallbackData() {
-	const weeks = [];
+	const weeks: Week[] = [];
 	const today = new Date();
 	const oneYearAgo = new Date(today);
 	oneYearAgo.setFullYear(today.getFullYear() - 1);
@@ -70,7 +82,7 @@ export function generateFallbackData() {
 	let currentDate = new Date(startDate);
 
 	while (currentDate <= today) {
-		const week = { contributionDays: [] };
+		const week: Week = { contributionDays: [] };
 
 		for (let i = 0; i < 7; i++) {
 			if (currentDate <= today) {

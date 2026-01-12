@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 	import '@fortawesome/fontawesome-free/css/all.css';
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 
-	let deferredPrompt = $state(null);
+	let deferredPrompt = $state<any>(null);
 	let isInstallable = $state(false);
 	let installStatus = $state('');
 	let isIOS = $state(false);
@@ -17,7 +17,7 @@
 		const isMacSafari = /macintosh/i.test(ua) && isSafari;
 		isIOS =
 			(isAppleMobile &&
-				!window.MSStream &&
+				!('MSStream' in window) &&
 				!window.matchMedia('(display-mode: standalone)').matches) ||
 			isMacSafari;
 	});
@@ -26,7 +26,7 @@
 	$effect(() => {
 		if (isIOS) return;
 
-		function handleBeforeInstallPrompt(event) {
+		function handleBeforeInstallPrompt(event: Event) {
 			event.preventDefault();
 			deferredPrompt = event;
 			isInstallable = true;

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import HeroCanvas from '$lib/shaders/hero/HeroCanvas.svelte';
 	import CursorImage from '$lib/shaders/cursor/CursorImage.svelte';
 

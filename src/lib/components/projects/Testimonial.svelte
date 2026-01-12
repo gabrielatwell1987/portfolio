@@ -1,4 +1,15 @@
-<script>
+<script lang="ts">
+	interface Props {
+		name: string;
+		title: string;
+		company?: string;
+		testimonial: string;
+		avatar?: string;
+		rating?: number;
+		highlighted?: boolean;
+		index?: number;
+	}
+
 	let {
 		name,
 		title,
@@ -8,7 +19,7 @@
 		rating = 0,
 		highlighted = false,
 		index = 0
-	} = $props();
+	}: Props = $props();
 
 	let stars = $derived(() => {
 		return Array(5)

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { goto } from '$app/navigation';
 
 	let { path1, path2 } = $props();
@@ -22,7 +22,7 @@
 		isOpen = !isOpen;
 	}
 
-	function selectOption(option) {
+	function selectOption(option: { label: string; value: string; svg: string }) {
 		selectedLabel = option.label;
 		isOpen = false;
 		const uniqueParam = `t=${Date.now()}`;
@@ -31,8 +31,8 @@
 
 	$effect(() => {
 		if (isOpen) {
-			const handleClickOutside = (event) => {
-				if (!event.target.closest('.custom-select')) {
+			const handleClickOutside = (event: MouseEvent) => {
+				if (event.target instanceof Element && !event.target.closest('.custom-select')) {
 					isOpen = false;
 				}
 			};

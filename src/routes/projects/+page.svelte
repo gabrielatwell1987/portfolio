@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import Popover from '$lib/components/layout/Popover.svelte';
@@ -9,14 +9,14 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import { beforeNavigate } from '$app/navigation';
 
-	let ProjectComponent = $state(null);
-	let GithubContributions = $state(null);
+	let ProjectComponent: typeof import('$lib/components/projects/Project.svelte').default | null = $state(null);
+	let GithubContributions: typeof import('$lib/components/projects/GithubContributions.svelte').default | null = $state(null);
 	let showProjects = $state(false);
 	let showGithub = $state(false);
 	let isGithubLoading = $state(true);
 	let isNavigating = $state(false);
 
-	function getTestimonialForProject(projectIndex) {
+	function getTestimonialForProject(projectIndex: number) {
 		return testimonials.find((t) => t.projectIndex === projectIndex);
 	}
 
@@ -143,7 +143,7 @@
 							name={testimonial.name}
 							title={testimonial.title}
 							testimonial={testimonial.testimonial}
-							rating={testimonial.rating}
+							rating={Number(testimonial.rating)}
 							avatar={testimonial.avatar}
 							index={project.index}
 						/>

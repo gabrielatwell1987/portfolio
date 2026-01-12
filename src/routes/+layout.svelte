@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import { injectAnalytics } from '@vercel/analytics/sveltekit';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
@@ -12,9 +12,13 @@
 	import ViewTransition from '$lib/components/layout/view-transitions/ViewTransition.svelte';
 	import { createLoadingContext } from '$lib/data/context/loading.svelte.js';
 	import { createThemeContext } from '$lib/data/context/theme.svelte.js';
+	import type { Snippet } from 'svelte';
 
-	/** @type {{children?: import('svelte').Snippet}} */
-	let { children } = $props();
+	interface Props {
+		children: Snippet;
+	}
+
+	let { children }: Props = $props();
 	const loading = createLoadingContext();
 	const theme = createThemeContext();
 

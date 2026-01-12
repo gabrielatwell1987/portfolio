@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 	import { useTheme } from '$lib/data/context/theme.svelte.js';
 

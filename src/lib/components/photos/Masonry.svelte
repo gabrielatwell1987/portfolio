@@ -1,14 +1,19 @@
-<script>
+<script lang="ts">
 	import Title from '$lib/components/layout/Title.svelte';
 	import images from '$lib/components/photos/images.json';
 
-	let selectedImage = $state(null);
-	let isOpen = $state(false);
-	let popoverElement = $state(null);
-	let popoverImage = $state(null);
-	let imageErrors = $state(new Set());
+	interface Image {
+		src: string;
+		alt: string;
+	}
 
-	function openPopover(img) {
+	let selectedImage: Image | null = $state(null);
+	let isOpen = $state(false);
+	let popoverElement: HTMLElement | null = $state(null);
+	let popoverImage: HTMLImageElement | null = $state(null);
+	let imageErrors = $state(new Set<string>());
+
+	function openPopover(img: { src: string; alt: string }) {
 		if (isOpen) {
 			isOpen = false;
 
@@ -39,8 +44,8 @@
 		}, 1000);
 	}
 
-	function handleImageLoad(event) {
-		const img = event.target;
+	function handleImageLoad(event: Event) {
+		const img = event.target as HTMLImageElement;
 		const naturalWidth = img.naturalWidth;
 		const naturalHeight = img.naturalHeight;
 
@@ -55,7 +60,7 @@
 		img.style.height = `${naturalHeight * scale}px`;
 	}
 
-	function handleImageError(event, imgSrc) {
+	function handleImageError(event: Event, imgSrc: string) {
 		imageErrors = new Set([...imageErrors, imgSrc]);
 	}
 </script>

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	let { open = $bindable(false), ariaLabel = 'menu' } = $props();
 
 	function toggleMenu() {

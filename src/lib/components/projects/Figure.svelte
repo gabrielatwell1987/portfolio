@@ -1,6 +1,11 @@
-<script>
-	/** @type {{src: any, alt: any, text: any}} */
-	let { src, alt, text } = $props();
+<script lang="ts">
+	interface Props {
+		src: string;
+		alt: string;
+		text: string;
+	}
+
+	let { src, alt, text }: Props = $props();
 </script>
 
 <div class="logo">

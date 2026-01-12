@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import {
 		CELL_SIZE,
 		CELL_GAP,
@@ -17,27 +17,48 @@
 		formatDate,
 		getContributionText,
 		generateFallbackData
-	} from './githubContributions.js';
+	} from './githubContributions';
 
-	let contributionsData = $state({ weeks: [] });
-	let totalContributions = $state(0);
-	let isLoading = $state(true);
-	let isError = $state(false);
-	let errorMessage = $state('');
-	let isUsingFallback = $state(false);
-	let isSmallContainer = $state(false);
-	let containerElement = $state(null);
-	let mobileTooltip = $state({
+	interface ContributionDay {
+		contributionCount: number;
+		date: string;
+	}
+
+	interface Week {
+		contributionDays: ContributionDay[];
+	}
+
+	interface ContributionsData {
+		weeks: Week[];
+	}
+
+	interface MobileTooltip {
+		visible: boolean;
+		x: number;
+		y: number;
+		content: string;
+		date: string;
+	}
+
+	let contributionsData = $state<ContributionsData>({ weeks: [] });
+	let totalContributions = $state<number>(0);
+	let isLoading = $state<boolean>(true);
+	let isError = $state<boolean>(false);
+	let errorMessage = $state<string>('');
+	let isUsingFallback = $state<boolean>(false);
+	let isSmallContainer = $state<boolean>(false);
+	let containerElement = $state<HTMLElement | null>(null);
+	let mobileTooltip = $state<MobileTooltip>({
 		visible: false,
 		x: 0,
 		y: 0,
 		content: '',
 		date: ''
 	});
-	let announcement = $state('');
+	let announcement = $state<string>('');
 
 	// Fetch real GitHub contributions data
-	async function fetchContributionsData(signal) {
+	async function fetchContributionsData(signal: AbortSignal): Promise<void> {
 		try {
 			isLoading = true;
 			isError = false;
@@ -45,7 +66,7 @@
 			const response = await fetch('/api/github-contributions', { signal });
 			const data = await response.json();
 
-			if (signal?.aborted) return;
+			if (signal.aborted) return;
 
 			if (data.success) {
 				contributionsData = { weeks: data.weeks };
@@ -60,7 +81,7 @@
 				console.warn('Using fallback data:', errorMessage);
 			}
 		} catch (error) {
-			if (signal?.aborted) return;
+			if (signal.aborted) return;
 
 			console.error('Error fetching contributions:', error);
 			isError = true;
@@ -78,14 +99,14 @@
 			}, 0);
 			isUsingFallback = true;
 		} finally {
-			if (!signal?.aborted) {
+			if (!signal.aborted) {
 				isLoading = false;
 			}
 		}
 	}
 
 	// mobile touch events for tooltips
-	function handleDayTouch(event, day) {
+	function handleDayTouch(event: Event, day: ContributionDay): void {
 		// Announce to screen readers
 		announcement = `${day.contributionCount} ${getContributionText(day.contributionCount)} on ${formatDate(day.date)}`;
 
@@ -94,8 +115,8 @@
 			event.preventDefault();
 			event.stopPropagation();
 
-			const rect = event.target.getBoundingClientRect();
-			const containerRect = event.target.closest('.calendar-container').getBoundingClientRect();
+			const rect = (event.target as HTMLElement).getBoundingClientRect();
+			const containerRect = containerElement!.getBoundingClientRect();
 
 			// Calculate position relative to the container
 			const x = rect.left + rect.width / 2 - containerRect.left;
@@ -120,7 +141,12 @@
 	}
 
 	// keyboard navigation
-	function handleDayKeydown(event, day, weekIndex, dayIndex) {
+	function handleDayKeydown(
+		event: KeyboardEvent,
+		day: ContributionDay,
+		weekIndex: number,
+		dayIndex: number
+	): void {
 		const { key } = event;
 
 		// Handle activation keys
@@ -154,7 +180,7 @@
 
 			// Find and focus the target element
 			const targetSelector = `[data-week="${newWeekIndex}"][data-day="${newDayIndex}"]`;
-			const targetElement = document.querySelector(targetSelector);
+			const targetElement = document.querySelector(targetSelector) as HTMLElement;
 			if (targetElement) {
 				targetElement.focus();
 			}
@@ -162,12 +188,12 @@
 	}
 
 	// hide mobile tooltip when touching elsewhere
-	function hideMobileTooltip(event) {
-		if (isSmallContainer && mobileTooltip.visible) {
+	function hideMobileTooltip(event: Event): void {
+		if (isSmallContainer && mobileTooltip.visible && event.target) {
 			// Don't hide if touching the tooltip itself or a contribution day
 			if (
-				!event.target.closest('.mobile-tooltip') &&
-				!event.target.classList.contains('contribution-day')
+				!(event.target as HTMLElement).closest('.mobile-tooltip') &&
+				!(event.target as HTMLElement).classList.contains('contribution-day')
 			) {
 				mobileTooltip.visible = false;
 			}
@@ -175,7 +201,13 @@
 	}
 
 	// current dimensions based on container size
-	function getCurrentDimensions() {
+	function getCurrentDimensions(): {
+		cellSize: number;
+		cellGap: number;
+		gridHeight: number;
+		monthLabelHeight: number;
+		dayLabelWidth: number;
+	} {
 		return {
 			cellSize: isSmallContainer ? MOBILE_CELL_SIZE : CELL_SIZE,
 			cellGap: isSmallContainer ? MOBILE_CELL_GAP : CELL_GAP,
@@ -186,8 +218,8 @@
 	}
 
 	// month positions
-	function getMonthPositions() {
-		const months = [];
+	function getMonthPositions(): { name: string; x: number }[] {
+		const months: { name: string; x: number }[] = [];
 		const { cellSize, cellGap, dayLabelWidth } = getCurrentDimensions();
 		let currentMonth = -1;
 		let weekIndex = 0;
@@ -222,7 +254,7 @@
 	}
 
 	// total width
-	function getTotalWidth() {
+	function getTotalWidth(): number {
 		const { cellSize, cellGap, dayLabelWidth } = getCurrentDimensions();
 		return dayLabelWidth + contributionsData.weeks.length * (cellSize + cellGap);
 	}
@@ -256,11 +288,11 @@
 	$effect(() => {
 		if (typeof window === 'undefined' || !isSmallContainer) return;
 
-		const handleDocumentClick = (event) => {
+		const handleDocumentClick = (event: Event) => {
 			if (mobileTooltip.visible) {
 				if (
-					!event.target.closest('.mobile-tooltip') &&
-					!event.target.classList.contains('contribution-day')
+					!(event.target as HTMLElement).closest('.mobile-tooltip') &&
+					!(event.target as HTMLElement).classList.contains('contribution-day')
 				) {
 					mobileTooltip.visible = false;
 				}
@@ -275,7 +307,7 @@
 	$effect(() => {
 		if (typeof window === 'undefined' || !isSmallContainer) return;
 
-		const wrapper = document.querySelector('.calendar-svg-wrapper');
+		const wrapper = document.querySelector('.calendar-svg-wrapper') as HTMLElement;
 		if (wrapper) {
 			const timer = setTimeout(() => {
 				wrapper.scrollLeft = 0;

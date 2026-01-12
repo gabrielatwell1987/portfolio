@@ -1,8 +1,13 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 
-	/** @type {{href: any, title: any, viewTransitionName: any}} */
-	let { href, title, onclick = undefined, viewTransitionName = undefined } = $props();
+	interface Props {
+		href: string;
+		title: string;
+		onclick?: () => void;
+		viewTransitionName?: string;
+	}
+	let { href, title, onclick = undefined, viewTransitionName = undefined }: Props = $props();
 
 	// Only apply view-transition-name when NOT on the target page
 	let shouldTransition = $derived(viewTransitionName && $page.url.pathname !== href);

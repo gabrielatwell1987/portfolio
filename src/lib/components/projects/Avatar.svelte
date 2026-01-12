@@ -1,6 +1,11 @@
-<script>
-	/** @type {{src: any, alt: any, name: any}} */
-	let { src, alt, name } = $props();
+<script lang="ts">
+	interface Props {
+		src: string;
+		alt: string;
+		name: string;
+	}
+
+	let { src, alt, name }: Props = $props();
 </script>
 
 <article>
