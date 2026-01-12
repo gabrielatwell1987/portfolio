@@ -1,8 +1,15 @@
-<script>
+<script lang="ts">
 	import Image from '$lib/components/layout/Image.svelte';
 	import gsap from 'gsap';
 
-	let { src, alt, width, scale } = $props();
+	interface Props {
+		src: string;
+		alt: string;
+		width?: number;
+		scale?: number;
+	}
+
+	let { src, alt, width, scale }: Props = $props();
 
 	$effect(() => {
 		const tween = gsap.from('.imgClass', {
@@ -22,7 +29,7 @@
 
 <section>
 	<div class="imgClass">
-		<Image {src} {alt} {width} aspectRatio="16/9" />
+		<Image {src} {alt} width={width?.toString()} aspectRatio="16/9" />
 	</div>
 </section>
 

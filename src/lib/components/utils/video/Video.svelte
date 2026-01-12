@@ -1,10 +1,12 @@
-<script>
-	/** @type {{src: any}} */
-	let { src } = $props();
+<script lang="ts">
+	interface Props {
+		src: string;
+	}
+	let { src }: Props = $props();
 
-	let duration = $state();
-	let videoWidth = $state();
-	let videoHeight = $state();
+	let duration = $state<number>();
+	let videoWidth = $state<number>();
+	let videoHeight = $state<number>();
 </script>
 
 <section class="video">

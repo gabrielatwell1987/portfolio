@@ -2,7 +2,7 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import ContactForm from '$lib/components/contact/ContactForm.svelte';
 	import Title from '$lib/components/layout/Title.svelte';
-	import SkullBg from '$lib/components/utils/SkullBg.svelte';
+	import SkullBg from '$lib/components/contact/SkullBg.svelte';
 </script>
 
 <SEO

@@ -12,7 +12,7 @@ const BREAKPOINTS = [
 	{ width: 1200, suffix: '-1200w' }
 ];
 
-async function optimizeImage(inputPath, outputPath, width, quality = 85) {
+async function optimizeImage(inputPath: string, outputPath: string, width: number, quality = 85) {
 	try {
 		await sharp(inputPath)
 			.resize(width, null, {
@@ -25,12 +25,13 @@ async function optimizeImage(inputPath, outputPath, width, quality = 85) {
 		console.log(`✅ Created ${outputPath} (${width}px wide)`);
 		return { success: true, message: `Created ${outputPath}` };
 	} catch (error) {
-		console.error(`❌ Error creating ${outputPath}:`, error.message);
-		return { success: false, error: error.message };
+		const message = error instanceof Error ? error.message : String(error);
+		console.error(`❌ Error creating ${outputPath}:`, message);
+		return { success: false, error: message };
 	}
 }
 
-async function createResponsiveVersions(imageName) {
+async function createResponsiveVersions(imageName: string) {
 	if (!imageName.endsWith('.webp')) {
 		return { success: false, error: 'Only .webp images are allowed' };
 	}
@@ -78,7 +79,7 @@ export async function optimizeAllImages() {
 }
 
 // Remote function for client calls
-export async function optimizeImages(imageName) {
+export async function optimizeImages(imageName: string) {
 	const result = await createResponsiveVersions(imageName);
 	return result;
 }

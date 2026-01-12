@@ -1,6 +1,6 @@
 // local storage with reactive state
-export function createLocalStorage(key, defaultValue = null) {
-	let value = $state(defaultValue);
+export function createLocalStorage<T>(key: string, defaultValue: T | null = null) {
+	let value = $state<T | string | null>(defaultValue);
 
 	// Initialize from localStorage
 	if (typeof window !== 'undefined') {

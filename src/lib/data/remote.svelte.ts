@@ -3,14 +3,14 @@
 const users = new Map();
 const messages = [];
 
-export async function greet(name) {
+export async function greet(name: string) {
 	const timestamp = new Date().toLocaleString();
 	const greetings = `Hello, ${name}! (at ${timestamp})`;
 	messages.push({ type: 'greet', name, timestamp });
 	return greetings;
 }
 
-export async function registerUser(username, email) {
+export async function registerUser(username: string, email: string) {
 	await new Promise((resolve) => setTimeout(resolve, 500));
 
 	if (users.has(username)) {
@@ -28,7 +28,7 @@ export async function registerUser(username, email) {
 	return { success: true, user };
 }
 
-export async function trackVisit(username) {
+export async function trackVisit(username: string) {
 	const user = users.get(username);
 	if (!user) {
 		return { success: false, message: 'User not found' };
@@ -50,7 +50,7 @@ export async function fetchServerStats() {
 	};
 }
 
-export async function searchUsers(query) {
+export async function searchUsers(query: string) {
 	await new Promise((resolve) => setTimeout(resolve, 200));
 
 	const results = [];

@@ -1,6 +1,9 @@
-<script>
-	/** @type {{title: any}} */
-	let { title } = $props();
+<script lang="ts">
+	interface Props {
+		title: string;
+	}
+
+	let { title }: Props = $props();
 
 	let letters = $derived(title.split(''));
 	let totalLetters = $derived(letters.length - 1);

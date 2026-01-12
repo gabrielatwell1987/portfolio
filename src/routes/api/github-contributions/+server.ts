@@ -1,4 +1,4 @@
-import { VITE_GITHUB_TOKEN, VITE_GITHUB_USERNAME } from '$env/static/private';
+import { GITHUB_TOKEN, GITHUB_USERNAME } from '$env/static/private';
 import { json } from '@sveltejs/kit';
 
 interface ContributionDay {
@@ -40,7 +40,7 @@ export async function GET() {
 		from.setFullYear(to.getFullYear() - 1);
 
 		const variables = {
-			username: VITE_GITHUB_USERNAME,
+			username: GITHUB_USERNAME,
 			from: from.toISOString(),
 			to: to.toISOString()
 		};
@@ -48,7 +48,7 @@ export async function GET() {
 		const response = await fetch('https://api.github.com/graphql', {
 			method: 'POST',
 			headers: {
-				Authorization: `Bearer ${VITE_GITHUB_TOKEN}`,
+				Authorization: `Bearer ${GITHUB_TOKEN}`,
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({

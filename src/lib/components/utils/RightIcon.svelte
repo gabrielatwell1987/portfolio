@@ -1,5 +1,11 @@
-<script>
-	let { color = 'currentColor', isHovered = false, classes = '' } = $props();
+<script lang="ts">
+	interface Props {
+		color?: string;
+		isHovered?: boolean;
+		classes?: string;
+	}
+
+	let { color = 'currentColor', isHovered = false, classes = '' }: Props = $props();
 
 	function handleMouseEnter() {
 		isHovered = true;

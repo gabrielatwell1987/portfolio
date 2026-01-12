@@ -21,6 +21,7 @@
 		"@sveltejs/kit": "^2.42.2",
 		"@sveltejs/vite-plugin-svelte": "^6.1.0",
 		"@types/node": "^25.0.6",
+		"@types/three": "^0.182.0",
 		"@vite-pwa/assets-generator": "^0.2.4",
 		"dotenv": "^16.4.5",
 		"eslint": "^8.57.0",

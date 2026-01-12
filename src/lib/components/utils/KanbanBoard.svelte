@@ -1,5 +1,19 @@
-<script>
-	let columns = $state([
+<script lang="ts">
+	type ColumnId = 'todo' | 'inProgress' | 'done';
+
+	interface Card {
+		id: number;
+		title: string;
+		description: string;
+	}
+
+	interface Column {
+		id: ColumnId;
+		title: string;
+		cards: Card[];
+	}
+
+	let columns = $state<Column[]>([
 		{
 			id: 'todo',
 			title: 'To Do',
@@ -17,13 +31,13 @@
 		}
 	]);
 
-	let newCards = $state({
+	let newCards = $state<Record<ColumnId, { title: string; description: string }>>({
 		todo: { title: '', description: '' },
 		inProgress: { title: '', description: '' },
 		done: { title: '', description: '' }
 	});
 
-	let editingCard = $state(null);
+	let editingCard = $state<Card | null>(null);
 
 	// Load data from localStorage
 	$effect(() => {
@@ -38,7 +52,7 @@
 		localStorage.setItem('kanbanData', JSON.stringify(columns));
 	});
 
-	function addCard(columnId) {
+	function addCard(columnId: ColumnId) {
 		if (!newCards[columnId].title.trim()) return;
 
 		const newCard = {
@@ -54,7 +68,7 @@
 		newCards[columnId] = { title: '', description: '' };
 	}
 
-	function deleteCard(columnId, cardId) {
+	function deleteCard(columnId: ColumnId, cardId: number) {
 		const columnIndex = columns.findIndex((col) => col.id === columnId);
 		columns[columnIndex].cards = columns[columnIndex].cards.filter((card) => card.id !== cardId);
 	}

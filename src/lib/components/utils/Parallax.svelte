@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-	let imageElement = $state(null);
+	let imageElement = $state<HTMLDivElement | null>(null);
 
 	$effect(() => {
 		gsap.registerPlugin(ScrollTrigger);

@@ -1,18 +1,12 @@
-<script>
+<script lang="ts">
 	import { fade, fly, scale, blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
-	import {
-		getDuration,
-		getDelay,
-		setDuration,
-		setDelay
-	} from '$lib/data/animationTimings.svelte.js';
 
 	let show = $state(true);
 	let currentTransition = $state('fade');
 
-	let duration = $derived(getDuration());
-	let delay = $derived(getDelay());
+	let duration = $state(300);
+	let delay = $state(0);
 
 	function toggle() {
 		show = !show;
@@ -38,7 +32,7 @@
 				max="2000"
 				step="100"
 				value={duration}
-				oninput={(e) => setDuration(Number(e.target.value))}
+				oninput={(e) => duration = Number((e.target as HTMLInputElement).value)}
 			/>
 		</label>
 
@@ -50,7 +44,7 @@
 				max="1000"
 				step="100"
 				value={delay}
-				oninput={(e) => setDelay(Number(e.target.value))}
+				oninput={(e) => delay = Number((e.target as HTMLInputElement).value)}
 			/>
 		</label>
 
@@ -67,20 +61,20 @@
 		<div class="presets">
 			<button
 				onclick={() => {
-					setDuration(300);
-					setDelay(0);
+					duration = 300;
+					delay = 0;
 				}}>Quick</button
 			>
 			<button
 				onclick={() => {
-					setDuration(800);
-					setDelay(100);
+					duration = 800;
+					delay = 100;
 				}}>Slow</button
 			>
 			<button
 				onclick={() => {
-					setDuration(1500);
-					setDelay(300);
+					duration = 1500;
+					delay = 300;
 				}}>Very Slow</button
 			>
 		</div>

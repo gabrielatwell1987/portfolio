@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import {
 		playVid,
 		pauseVid,
@@ -9,10 +9,10 @@
 		handleLoadedMetadata,
 		handleTimeUpdate,
 		handleSeek
-	} from './videoPlayerLogic.js';
+	} from './VideoPlayerLogic';
 
 	let { src, captions, noControls = false, isFaded = false, width = '650px' } = $props();
-	let video;
+	let video: HTMLVideoElement;
 	let duration = $state(0);
 	let currentTime = $state(0);
 	let maskStyle = $derived(
@@ -25,15 +25,15 @@
 	let stopVidHandler = () => {
 		currentTime = stopVid(video, currentTime);
 	};
-	let changeVolHandler = (event) => changeVol(video, event);
-	let handleKeydownHandler = (event) => handleKeydown(event, video);
+	let changeVolHandler = (event: Event) => changeVol(event, video);
+	let handleKeydownHandler = (event: KeyboardEvent) => handleKeydown(event, video);
 	let handleLoadedMetadataHandler = () => {
 		duration = handleLoadedMetadata(video, duration);
 	};
 	let handleTimeUpdateHandler = () => {
 		currentTime = handleTimeUpdate(video, currentTime);
 	};
-	let handleSeekHandler = (event) => {
+	let handleSeekHandler = (event: Event) => {
 		currentTime = handleSeek(video, event, currentTime);
 	};
 </script>

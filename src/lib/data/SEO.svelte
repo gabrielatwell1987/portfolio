@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 
 	/** @type {{title: string, description: string, keywords: string, image?: string, type?: string}} */

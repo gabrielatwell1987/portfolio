@@ -1,5 +1,10 @@
-<script>
-	let { title, href } = $props();
+<script lang="ts">
+	interface Props {
+		title: string;
+		href: string;
+	}
+
+	let { title, href }: Props = $props();
 </script>
 
 <a {href}>

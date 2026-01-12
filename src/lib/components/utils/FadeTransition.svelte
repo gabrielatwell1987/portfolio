@@ -1,11 +1,19 @@
-<script>
+<script lang="ts">
+	interface Props {
+		name?: string;
+		duration?: string;
+		easing?: string;
+		blendMode?: string;
+		children: () => any;
+	}
+
 	let {
 		name = 'hero-image',
 		duration = '0.75s',
 		easing = 'ease',
 		blendMode = 'normal',
 		children
-	} = $props();
+	}: Props = $props();
 </script>
 
 <div

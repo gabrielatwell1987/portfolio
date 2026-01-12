@@ -1,24 +1,51 @@
 // Performance monitoring utility
 // Add this to your app to track Core Web Vitals including CLS
 
+interface LayoutShiftAttribution {
+	node?: Element;
+	previousRect?: DOMRectReadOnly;
+	currentRect?: DOMRectReadOnly;
+}
+
+interface LayoutShift extends PerformanceEntry {
+	value: number;
+	hadRecentInput: boolean;
+	sources?: LayoutShiftAttribution[];
+}
+
+interface LargestContentfulPaint extends PerformanceEntry {
+	renderTime: number;
+	loadTime: number;
+	size: number;
+	element?: Element;
+}
+
+interface PerformanceEventTiming extends PerformanceEntry {
+	processingStart: number;
+	processingEnd: number;
+	cancelable: boolean;
+	target?: Node;
+}
+
 export function initPerformanceMonitoring() {
 	if (typeof window === 'undefined') return;
 
 	// Track Cumulative Layout Shift (CLS)
-	let clsValue = 0;
-	let clsEntries = [];
+	let clsValue: number = 0;
+	let clsEntries: PerformanceEntry[] = [];
 
 	const observer = new PerformanceObserver((list) => {
 		for (const entry of list.getEntries()) {
+			const layoutShift = entry as LayoutShift;
 			// Only count layout shifts without recent user input
-			if (!entry.hadRecentInput) {
-				clsValue += entry.value;
+			if (!layoutShift.hadRecentInput) {
+				clsValue += layoutShift.value;
 				clsEntries.push(entry);
 
 				console.log('🔄 Layout shift detected:', {
-					value: entry.value,
+					value: layoutShift.value,
 					totalCLS: clsValue,
-					sources: entry.sources?.map((source) => ({
+					sources: layoutShift.sources?.map((source: LayoutShiftAttribution) => ({
 						element: source.node?.tagName || 'unknown',
 						className: source.node?.className || '',
 						id: source.node?.id || ''
@@ -37,7 +64,7 @@ export function initPerformanceMonitoring() {
 	// Track Largest Contentful Paint (LCP)
 	const lcpObserver = new PerformanceObserver((list) => {
 		const entries = list.getEntries();
-		const lastEntry = entries[entries.length - 1];
+		const lastEntry = entries[entries.length - 1] as LargestContentfulPaint;
 		console.log('🖼️ LCP:', lastEntry.startTime, 'ms', lastEntry.element);
 	});
 
@@ -50,7 +77,8 @@ export function initPerformanceMonitoring() {
 	// Track First Input Delay (FID)
 	const fidObserver = new PerformanceObserver((list) => {
 		for (const entry of list.getEntries()) {
-			console.log('⚡ FID:', entry.processingStart - entry.startTime, 'ms');
+			const eventEntry = entry as PerformanceEventTiming;
+			console.log('⚡ FID:', eventEntry.processingStart - eventEntry.startTime, 'ms');
 		}
 	});
 

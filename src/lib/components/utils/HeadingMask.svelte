@@ -1,5 +1,9 @@
-<script>
-	let { text, src } = $props();
+<script lang="ts">
+	interface Props {
+		text: string;
+		src: string;
+	}
+	let { text, src }: Props = $props();
 </script>
 
 <header>
