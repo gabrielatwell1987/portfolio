@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { scale } from 'svelte/transition';
 	interface Props {
 		src: string;
 		alt: string;
@@ -117,6 +118,10 @@
 			& img {
 				object-fit: contain;
 
+				@media (width <= 768px) {
+					scale: 0.75;
+				}
+
 				&.svg {
 					object-fit: contain;
 				}
@@ -179,6 +184,7 @@
 			@media (width <= 768px) {
 				width: auto;
 				height: auto;
+				scale: 1.1;
 			}
 		}
 
