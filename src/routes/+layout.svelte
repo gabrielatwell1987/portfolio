@@ -10,8 +10,8 @@
 	import Loading from '$lib/components/layout/Loading.svelte';
 	import SkipLink from '$lib/components/layout/SkipLink.svelte';
 	import ViewTransition from '$lib/components/layout/view-transitions/ViewTransition.svelte';
-	import { createLoadingContext } from '$lib/data/context/loading.svelte.js';
-	import { createThemeContext } from '$lib/data/context/theme.svelte.js';
+	import { createLoadingContext } from '$lib/data/context/loading.svelte';
+	import { createThemeContext } from '$lib/data/context/theme.svelte';
 	import type { Snippet } from 'svelte';
 
 	interface Props {

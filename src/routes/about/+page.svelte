@@ -12,7 +12,7 @@
 	import PWAInstall from '$lib/components/about/PWAInstall.svelte';
 	import PWAVideo from '$lib/components/about/PWAVideo.svelte';
 
-	let isDesktop = $state(false);
+	let isDesktop = $state<boolean>(false);
 
 	$effect(() => {
 		const mediaQuery = window.matchMedia('(min-width: 768px)');

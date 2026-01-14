@@ -19,11 +19,11 @@
 		aspectRatio,
 		class: className
 	}: Props = $props();
-	let expanded = $state(false);
+	let expanded = $state<boolean>(false);
 	let imgElement = $state<HTMLImageElement>();
-	let naturalDimensions = $state({ width: 0, height: 0 });
+	let naturalDimensions = $state<{ width: number; height: number }>({ width: 0, height: 0 });
 	let isSVG = $derived(src?.endsWith('.svg'));
-	let isTransitioning = $state(false);
+	let isTransitioning = $state<boolean>(false);
 
 	function toggleExpand() {
 		if (isTransitioning) return;

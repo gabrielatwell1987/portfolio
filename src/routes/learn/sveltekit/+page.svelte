@@ -13,7 +13,7 @@
 	}
 
 	let { data }: Props = $props();
-	let detailsVisible = $state(false);
+	let detailsVisible = $state<boolean>(false);
 
 	// animations
 	$effect(() => {

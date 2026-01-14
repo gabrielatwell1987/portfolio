@@ -1,9 +1,14 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 
-	let { path1, path2 } = $props();
-	let isOpen = $state(false);
-	let selectedLabel = $state('Connect');
+	interface Props {
+		path1: string;
+		path2: string;
+	}
+
+	let { path1, path2 }: Props = $props();
+	let isOpen = $state<boolean>(false);
+	let selectedLabel = $state<string>('Connect');
 
 	const options = [
 		{

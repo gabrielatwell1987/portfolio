@@ -1,10 +1,15 @@
 <script lang="ts">
 	import gsap from 'gsap';
 
-	/** @type {{src: any, alt: any, text: any}} */
-	let { src, alt, text } = $props();
+	interface Props {
+		src: string;
+		alt: string;
+		text: string;
+	}
 
-	let imageContainer = $state();
+	let { src, alt, text }: Props = $props();
+
+	let imageContainer = $state<HTMLDivElement>();
 
 	$effect(() => {
 		const imageContainer: HTMLElement | null = document.querySelector('.image-container');

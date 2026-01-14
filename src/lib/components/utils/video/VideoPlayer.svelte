@@ -11,10 +11,18 @@
 		handleSeek
 	} from './VideoPlayerLogic';
 
-	let { src, captions, noControls = false, isFaded = false, width = '650px' } = $props();
+	interface Props {
+		src: string;
+		captions?: string;
+		noControls?: boolean;
+		isFaded?: boolean;
+		width?: string;
+	}
+
+	let { src, captions, noControls = false, isFaded = false, width = '650px' }: Props = $props();
 	let video: HTMLVideoElement;
-	let duration = $state(0);
-	let currentTime = $state(0);
+	let duration = $state<number>(0);
+	let currentTime = $state<number>(0);
 	let maskStyle = $derived(
 		isFaded
 			? '-webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 100%); mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 100%);'

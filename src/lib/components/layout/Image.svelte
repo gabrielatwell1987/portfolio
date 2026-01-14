@@ -11,7 +11,7 @@
 
 	let { src, alt, width, height, aspectRatio, style, class: className }: Props = $props();
 
-	let imageError = $state(false);
+	let imageError = $state<boolean>(false);
 
 	let computedHeight = $derived.by(() => {
 		if (height) return height;

@@ -2,12 +2,17 @@
 	import '@fortawesome/fontawesome-free/css/all.css';
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 
-	let deferredPrompt = $state<any>(null);
-	let isInstallable = $state(false);
-	let installStatus = $state('');
-	let isIOS = $state(false);
-	let shareFallback = $state(false);
-	let shareClicked = $state(false);
+	interface BeforeInstallPromptEvent extends Event {
+		prompt(): Promise<void>;
+		userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
+	}
+
+	let deferredPrompt = $state<BeforeInstallPromptEvent | null>(null);
+	let isInstallable = $state<boolean>(false);
+	let installStatus = $state<string>('');
+	let isIOS = $state<boolean>(false);
+	let shareFallback = $state<boolean>(false);
+	let shareClicked = $state<boolean>(false);
 
 	// Detect iOS
 	$effect(() => {
@@ -28,7 +33,7 @@
 
 		function handleBeforeInstallPrompt(event: Event) {
 			event.preventDefault();
-			deferredPrompt = event;
+			deferredPrompt = event as BeforeInstallPromptEvent;
 			isInstallable = true;
 			installStatus = 'App can now be installed';
 		}

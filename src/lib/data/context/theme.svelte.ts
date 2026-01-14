@@ -3,16 +3,26 @@ import { browser } from '$app/environment';
 
 const THEME_KEY = Symbol('theme');
 
-export function createThemeContext() {
-	const initialTheme = browser ? localStorage.getItem('theme') || 'dark' : 'dark';
-	let theme = $state(initialTheme);
+type Theme = 'dark' | 'light';
+
+export interface ThemeContext {
+	readonly current: Theme;
+	readonly isDark: boolean;
+	readonly isLight: boolean;
+	toggle(): Theme;
+	set(value: Theme): void;
+}
+
+export function createThemeContext(): ThemeContext {
+	const initialTheme: Theme = browser ? (localStorage.getItem('theme') as Theme) || 'dark' : 'dark';
+	let theme = $state<Theme>(initialTheme);
 
 	if (browser) {
 		document.documentElement.setAttribute('data-theme', theme);
 		document.documentElement.style.colorScheme = theme;
 	}
 
-	const context = {
+	const context: ThemeContext = {
 		get current() {
 			return theme;
 		},
@@ -31,7 +41,7 @@ export function createThemeContext() {
 			}
 			return theme;
 		},
-		set(value) {
+		set(value: Theme) {
 			theme = value;
 			if (browser) {
 				localStorage.setItem('theme', theme);
@@ -45,8 +55,8 @@ export function createThemeContext() {
 	return context;
 }
 
-export function useTheme() {
-	const ctx = getContext(THEME_KEY);
+export function useTheme(): ThemeContext {
+	const ctx = getContext<ThemeContext>(THEME_KEY);
 	if (!ctx) {
 		throw new Error('useTheme must be used within a ThemeProvider');
 	}

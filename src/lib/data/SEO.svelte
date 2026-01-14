@@ -1,18 +1,25 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 
-	/** @type {{title: string, description: string, keywords: string, image?: string, type?: string}} */
+	interface Props {
+		title?: string;
+		description?: string;
+		keywords?: string;
+		image?: string;
+		type?: string;
+	}
+
 	let {
 		title = 'Gabriel Atwell',
 		description = 'Web developer and web designer',
 		keywords = '',
 		image = '',
 		type = 'website'
-	} = $props();
+	}: Props = $props();
 
-	let url = $state('');
-	let baseUrl = $state('');
-	let ogImage = $state('');
+	let url = $state<string>('');
+	let baseUrl = $state<string>('');
+	let ogImage = $state<string>('');
 	let siteName = 'atwellUI';
 	let fullTitle = title;
 

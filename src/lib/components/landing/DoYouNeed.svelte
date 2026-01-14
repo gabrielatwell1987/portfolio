@@ -1,9 +1,13 @@
 <script lang="ts">
-	/** @type {{text: any, span: any}} */
-	let { text, span } = $props();
+	interface Props {
+		text: string;
+		span: string;
+	}
 
-	let mounted = $state(false);
-	let chars = $state([]);
+	let { text, span }: Props = $props();
+
+	let mounted = $state<boolean>(false);
+	let chars = $state<string[]>([]);
 	let dynamicAriaLabel = $derived(`${text} ${span}`);
 
 	$effect(() => {

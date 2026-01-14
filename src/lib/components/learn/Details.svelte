@@ -12,7 +12,7 @@
 
 	let { items = [] }: Props = $props();
 
-	let openStates = $state(items.map(() => false));
+	let openStates = $state<boolean[]>(items.map(() => false));
 
 	$effect(() => {
 		openStates.length = items.length;

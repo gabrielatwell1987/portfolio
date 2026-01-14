@@ -1,6 +1,13 @@
 <script lang="ts">
-	let { heading, headingFontSize, link, linkFontSize } = $props();
-	let isHeading = $state(false);
+	interface Props {
+		heading: string;
+		headingFontSize: string;
+		link: string;
+		linkFontSize: string;
+	}
+
+	let { heading, headingFontSize, link, linkFontSize }: Props = $props();
+	let isHeading = $state<boolean>(false);
 
 	function handleClick(e: MouseEvent) {
 		e.preventDefault();

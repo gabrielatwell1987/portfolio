@@ -2,11 +2,11 @@
 	import { fade, fly, scale, blur } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 
-	let show = $state(true);
-	let currentTransition = $state('fade');
+	let show = $state<boolean>(true);
+	let currentTransition = $state<string>('fade');
 
-	let duration = $state(300);
-	let delay = $state(0);
+	let duration = $state<number>(300);
+	let delay = $state<number>(0);
 
 	function toggle() {
 		show = !show;
@@ -32,7 +32,7 @@
 				max="2000"
 				step="100"
 				value={duration}
-				oninput={(e) => duration = Number((e.target as HTMLInputElement).value)}
+				oninput={(e) => (duration = Number((e.target as HTMLInputElement).value))}
 			/>
 		</label>
 
@@ -44,7 +44,7 @@
 				max="1000"
 				step="100"
 				value={delay}
-				oninput={(e) => delay = Number((e.target as HTMLInputElement).value)}
+				oninput={(e) => (delay = Number((e.target as HTMLInputElement).value))}
 			/>
 		</label>
 

@@ -2,7 +2,7 @@
 	import gsap from 'gsap';
 	import { fade } from 'svelte/transition';
 
-	let duration = $state(300);
+	let duration = $state<number>(300);
 
 	$effect(() => {
 		const letters = gsap.utils.toArray('.animated-letter');

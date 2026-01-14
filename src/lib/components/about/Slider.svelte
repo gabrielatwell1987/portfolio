@@ -2,8 +2,8 @@
 	import Image from '$lib/components/layout/Image.svelte';
 	import skills from '$lib/components/about/skills.json';
 
-	let isPaused = $state(false);
-	let position = $state(0);
+	let isPaused = $state<boolean>(false);
+	let position = $state<number>(0);
 
 	const duplicatedSkills = [...skills, ...skills];
 

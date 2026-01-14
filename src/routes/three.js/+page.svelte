@@ -2,7 +2,7 @@
 	import HeroCanvas from '$lib/shaders/hero/HeroCanvas.svelte';
 	import CursorImage from '$lib/shaders/cursor/CursorImage.svelte';
 
-	let selectedComponent = $state('ComingSoon');
+	let selectedComponent = $state<string>('ComingSoon');
 </script>
 
 <div class="content">

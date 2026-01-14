@@ -5,10 +5,10 @@
 	import ModalPopover from '$lib/components/contact/ModalPopover.svelte';
 	import MotifPhoto from './MotifPhoto.svelte';
 
-	let name = $state('');
-	let email = $state('');
-	let message = $state('');
-	let submitStatus = $state('');
+	let name = $state<string>('');
+	let email = $state<string>('');
+	let message = $state<string>('');
+	let submitStatus = $state<string>('');
 </script>
 
 <div class="contact-icons">

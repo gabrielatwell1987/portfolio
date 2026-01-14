@@ -3,10 +3,10 @@
 	import Image from '$lib/components/layout/Image.svelte';
 	import '@fortawesome/fontawesome-free/css/all.css';
 
-	let isOpen = $state(false);
+	let isOpen = $state<boolean>(false);
 	let modal: HTMLDialogElement;
 	let previousActiveElement: HTMLElement | null = null;
-	let statusMessage = $state('');
+	let statusMessage = $state<string>('');
 
 	function openModal() {
 		previousActiveElement = document.activeElement as HTMLElement | null;

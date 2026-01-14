@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import CSS from './css.md';
 	import GSAP from './gsap.md';
 	import SEO from '$lib/data/SEO.svelte';
@@ -8,9 +8,9 @@
 	import BackToTop from '$lib/components/learn/BackToTop.svelte';
 	import ViewTransitionImage from '$lib/components/layout/view-transitions/ViewTransitionImage.svelte';
 
-	let mounted = $state(false);
-	let cssEnlarged = $state(false);
-	let gsapEnlarged = $state(false);
+	let mounted = $state<boolean>(false);
+	let cssEnlarged = $state<boolean>(false);
+	let gsapEnlarged = $state<boolean>(false);
 
 	function enlargeCssImage() {
 		if (document.startViewTransition) {

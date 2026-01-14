@@ -1,7 +1,7 @@
 <script lang="ts">
 	import gsap from 'gsap';
 
-	let preloaderVisible: boolean = $state(true);
+	let preloaderVisible: boolean = $state<boolean>(true);
 	let preloaderElement = $state<HTMLElement>();
 	let lines = $state<HTMLElement[]>([]);
 

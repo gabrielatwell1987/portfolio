@@ -9,12 +9,17 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import { beforeNavigate } from '$app/navigation';
 
-	let ProjectComponent: typeof import('$lib/components/projects/Project.svelte').default | null = $state(null);
-	let GithubContributions: typeof import('$lib/components/projects/GithubContributions.svelte').default | null = $state(null);
-	let showProjects = $state(false);
-	let showGithub = $state(false);
-	let isGithubLoading = $state(true);
-	let isNavigating = $state(false);
+	let ProjectComponent: typeof import('$lib/components/projects/Project.svelte').default | null =
+		$state<typeof import('$lib/components/projects/Project.svelte').default | null>(null);
+	let GithubContributions:
+		| typeof import('$lib/components/projects/GithubContributions.svelte').default
+		| null = $state<
+		typeof import('$lib/components/projects/GithubContributions.svelte').default | null
+	>(null);
+	let showProjects = $state<boolean>(false);
+	let showGithub = $state<boolean>(false);
+	let isGithubLoading = $state<boolean>(true);
+	let isNavigating = $state<boolean>(false);
 
 	function getTestimonialForProject(projectIndex: number) {
 		return testimonials.find((t) => t.projectIndex === projectIndex);

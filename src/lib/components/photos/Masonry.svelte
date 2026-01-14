@@ -7,11 +7,11 @@
 		alt: string;
 	}
 
-	let selectedImage: Image | null = $state(null);
-	let isOpen = $state(false);
-	let popoverElement: HTMLElement | null = $state(null);
-	let popoverImage: HTMLImageElement | null = $state(null);
-	let imageErrors = $state(new Set<string>());
+	let selectedImage: Image | null = $state<Image | null>(null);
+	let isOpen = $state<boolean>(false);
+	let popoverElement: HTMLElement | null = $state<HTMLElement | null>(null);
+	let popoverImage: HTMLImageElement | null = $state<HTMLImageElement | null>(null);
+	let imageErrors = $state<Set<string>>(new Set<string>());
 
 	function openPopover(img: { src: string; alt: string }) {
 		if (isOpen) {

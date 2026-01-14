@@ -1,9 +1,9 @@
 <script lang="ts">
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
-	import { useTheme } from '$lib/data/context/theme.svelte.js';
+	import { useTheme } from '$lib/data/context/theme.svelte';
 
 	const theme = useTheme();
-	let themeStatus = $state('');
+	let themeStatus = $state<string>('');
 
 	function toggle() {
 		const newTheme = theme.toggle();

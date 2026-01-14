@@ -23,15 +23,18 @@
 		return chars[Math.floor(Math.random() * chars.length)];
 	}
 
-	let mounted = $state(false);
+	let mounted = $state<boolean>(false);
 	let titleText = 'Handcrafted Frontend Interfaces';
 	let titleWords = $derived(titleText.split(' '));
-	let displayedTitle = $state(
+	let displayedTitle = $state<string[]>(
 		titleText.split('').map((char) => (char === ' ' ? ' ' : getRandomChar()))
 	);
-	let showContent = $state(false);
+	let showContent = $state<boolean>(false);
 	let particles = $state<Particle[]>([]);
-	let { cssBg } = $props();
+	interface Props {
+		cssBg?: boolean;
+	}
+	let { cssBg }: Props = $props();
 
 	function getWordChars(wordIndex: number) {
 		let charIndex = 0;

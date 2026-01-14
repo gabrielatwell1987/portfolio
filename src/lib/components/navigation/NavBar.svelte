@@ -7,9 +7,9 @@
 	// import AtwellUnderline from './AtwellUnderline.svelte';
 	import AtwellLogo from './AtwellLogo.svelte';
 
-	let open = $state(false);
-	let isClosing = $state(false);
-	let isDisplay = $state(false);
+	let open = $state<boolean>(false);
+	let isClosing = $state<boolean>(false);
+	let isDisplay = $state<boolean>(false);
 
 	function closeMenu() {
 		if (open) {

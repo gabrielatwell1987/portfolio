@@ -8,7 +8,7 @@
 
 	let { src, alt, src2, alt2 }: Props = $props();
 
-	let isFlipped = $state(false);
+	let isFlipped = $state<boolean>(false);
 
 	function toggleFlip() {
 		isFlipped = !isFlipped;

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createPopoverState } from './projectSummaryFunctions.svelte.js';
+	import { createPopoverState } from './projectSummaryFunctions.svelte';
 
 	interface Props {
 		popoverTitle: string;

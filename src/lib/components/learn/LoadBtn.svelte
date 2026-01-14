@@ -1,9 +1,16 @@
 <script lang="ts">
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 
-	let isLoading = $state(false);
-	let { loading, submit, href, delay } = $props();
-	let statusMessage = $state('');
+	interface Props {
+		loading: string;
+		submit: string;
+		href: string;
+		delay: number;
+	}
+
+	let isLoading = $state<boolean>(false);
+	let { loading, submit, href, delay }: Props = $props();
+	let statusMessage = $state<string>('');
 
 	const handleSubmit = async (event: Event) => {
 		event.preventDefault();

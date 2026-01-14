@@ -2,26 +2,27 @@ import { getContext, setContext } from 'svelte';
 
 const PAGE_KEY = Symbol('loading');
 
-export function createLoadingContext() {
-	let isLoaded = $state(false);
-	let announcement = $state('');
+export interface LoadingContext {
+	isLoaded: boolean;
+	readonly announcement: string;
+	announce(message: string, duration?: number): void;
+}
 
-	const context = {
+export function createLoadingContext(): LoadingContext {
+	let isLoaded = $state<boolean>(false);
+	let announcement = $state<string>('');
+
+	const context: LoadingContext = {
 		get isLoaded() {
 			return isLoaded;
 		},
-		set isLoaded(v) {
+		set isLoaded(v: boolean) {
 			isLoaded = v;
 		},
 		get announcement() {
 			return announcement;
 		},
-		/**
-		 * Announce a message for screen readers
-		 * @param {string} message
-		 * @param {number} duration - ms before clearing
-		 */
-		announce(message, duration = 2000) {
+		announce(message: string, duration: number = 2000) {
 			announcement = message;
 			if (duration > 0) {
 				setTimeout(() => {
@@ -34,8 +35,8 @@ export function createLoadingContext() {
 	return context;
 }
 
-export function useLoading() {
-	const ctx = getContext(PAGE_KEY);
+export function useLoading(): LoadingContext {
+	const ctx = getContext<LoadingContext>(PAGE_KEY);
 	if (!ctx) {
 		throw new Error(
 			'No loading context found. Make sure to call createLoadingContext() in a parent component.'
