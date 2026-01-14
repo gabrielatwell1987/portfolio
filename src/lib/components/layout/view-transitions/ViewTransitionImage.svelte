@@ -65,9 +65,7 @@
 
 		let scaleX = maxWidth ? maxWidth / naturalDimensions.width : 1;
 		let scaleY = maxHeight ? maxHeight / naturalDimensions.height : 1;
-
 		let scale = Math.min(scaleX, scaleY);
-
 		scale = Math.min(scale, 1);
 
 		return {
@@ -78,14 +76,12 @@
 
 	let inlineStyle = $derived(() => {
 		const dims = displayDimensions();
-		if (expanded && !isTransitioning) {
-			return `view-transition-name: ${transitionName};`;
-		}
-		return `view-transition-name: ${transitionName}; width: ${dims.width}px; height: ${dims.height}px;`;
+		if (expanded) return `view-transition-name: ${transitionName};`;
+		return `view-transition-name: ${transitionName};`;
 	});
 </script>
 
-<section class={expanded ? 'expanded' : ''} class:transitioning={isTransitioning}>
+<section class={expanded ? 'expanded' : ''}>
 	<button type="button" onclick={toggleExpand} class="img-button">
 		<img
 			bind:this={imgElement}
@@ -101,6 +97,7 @@
 <style>
 	:global(.expanded) {
 		--view-transition-offset: -20em;
+		--view-transition-offset-mobile: -18em;
 	}
 
 	section {
@@ -124,10 +121,7 @@
 
 			& img {
 				object-fit: contain;
-
-				@media (width <= 768px) {
-					scale: 0.75;
-				}
+				width: 500px;
 
 				&.svg {
 					object-fit: contain;
@@ -151,7 +145,7 @@
 
 	.expanded {
 		position: fixed;
-		top: var(--view-transition-offset, -17em);
+		top: var(--view-transition-offset);
 		left: 0;
 		background: transparent;
 		display: grid;
@@ -164,6 +158,7 @@
 		box-sizing: border-box;
 
 		@media (width <= 768px) {
+			top: var(--view-transition-offset-mobile);
 			width: 100dvw;
 			height: 100dvh;
 			padding: 0.5em;
