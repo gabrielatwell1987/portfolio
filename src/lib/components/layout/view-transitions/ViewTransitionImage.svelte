@@ -75,17 +75,24 @@
 			height: Math.round(naturalDimensions.height * scale)
 		};
 	});
+
+	let inlineStyle = $derived(() => {
+		const dims = displayDimensions();
+		if (expanded && !isTransitioning) {
+			return `view-transition-name: ${transitionName};`;
+		}
+		return `view-transition-name: ${transitionName}; width: ${dims.width}px; height: ${dims.height}px;`;
+	});
 </script>
 
-<section class={expanded ? 'expanded' : ''}>
+<section class={expanded ? 'expanded' : ''} class:transitioning={isTransitioning}>
 	<button type="button" onclick={toggleExpand} class="img-button">
 		<img
 			bind:this={imgElement}
 			{src}
 			{alt}
 			onload={handleImageLoad}
-			style="width: {displayDimensions().width}px; height: {displayDimensions()
-				.height}px; view-transition-name: {transitionName};"
+			style={inlineStyle()}
 			class:svg={isSVG}
 		/>
 	</button>
@@ -176,42 +183,19 @@
 			}
 		}
 
-		& img {
-			width: auto;
+		&:not(.transitioning) img {
+			width: clamp(300px, 80vw, 1200px);
 			height: auto;
-			scale: 2.5;
+			max-height: 80vh;
 
 			@media (width <= 768px) {
-				width: auto;
-				height: auto;
-				scale: 1.1;
+				width: clamp(200px, 90vw, 100%);
+				max-height: 70vh;
 			}
 		}
 
 		& img.svg {
 			filter: brightness(1.1);
-		}
-	}
-
-	@keyframes scale-up {
-		from {
-			transform: scale(0.8);
-			opacity: 0;
-		}
-		to {
-			transform: scale(1);
-			opacity: 1;
-		}
-	}
-
-	@keyframes scale-down {
-		from {
-			transform: scale(1.2);
-			opacity: 1;
-		}
-		to {
-			transform: scale(1);
-			opacity: 0;
 		}
 	}
 </style>

@@ -4,7 +4,7 @@
 
 <details class="details-element">
 	<summary>{summary}</summary>
-	<p>{@render children()}</p>
+	{@render children()}
 </details>
 
 <style>
