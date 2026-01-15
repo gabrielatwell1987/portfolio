@@ -93,8 +93,9 @@
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.stats-section',
-				start: 'top center',
+				start: 'top center+=250',
 				end: 'bottom center',
+				toggleActions: 'play none none reverse',
 				scrub: 1
 			}
 		});
@@ -139,6 +140,7 @@
 </script>
 
 <article role="banner" aria-label="Hero section">
+	<!-- css bg -->
 	<div class="background-container" aria-hidden="true">
 		{#if cssBg}
 			<div class="gradient-bg"></div>
@@ -188,10 +190,12 @@
 
 			<div class="shape big-circle" aria-hidden="true"></div>
 		{:else}
+			<!-- three.js ribbons bg -->
 			<Ribbons />
 		{/if}
 	</div>
 
+	<!-- content -->
 	<section aria-label="Introduction and portfolio overview" class="hero-content">
 		<header class="title-container">
 			<h1 class="hero-title glitch">
@@ -206,7 +210,6 @@
 			</h1>
 		</header>
 
-		<!-- content -->
 		<div class="content-wrapper" class:show={showContent} aria-live="polite">
 			<p class="summary indent">
 				I am a frontend developer who loves to create beautiful and functional websites. This
@@ -221,7 +224,7 @@
 				<HeroButton href="/projects" title="Creations" />
 			</nav>
 
-			<!-- Portfolio Stats -->
+			<!-- stats -->
 			<section aria-labelledby="stats-heading" class="stats-section">
 				<h2 id="stats-heading" class="visually-hidden">Portfolio Statistics</h2>
 
@@ -406,6 +409,7 @@
 					0 0 15px var(--clr-main);
 				line-height: 1;
 				margin: 0;
+				margin-bottom: 0.2em;
 				word-wrap: normal;
 				overflow-wrap: break-word;
 				hyphens: none;
@@ -415,6 +419,7 @@
 
 				@media (height <= 768px) {
 					line-height: 1.1;
+					margin-bottom: 1em;
 				}
 
 				& .word {
@@ -454,16 +459,12 @@
 				letter-spacing: 1px;
 				line-height: 1.6;
 				color: var(--clr-hero-text);
-				max-inline-size: 1200px;
+				inline-size: clamp(300px, 65vw, 1300px);
 				margin: 0 auto 3rem auto;
 				text-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
 
 				@media screen and (width >= 990px) {
 					letter-spacing: 2px;
-				}
-
-				@media (width <= 500px) {
-					min-inline-size: 315px;
 				}
 
 				&.indent {
@@ -486,7 +487,7 @@
 				& .stats-container {
 					display: flex;
 					justify-content: center;
-					gap: 3rem;
+					gap: 1rem;
 					flex-wrap: wrap;
 					list-style: none;
 					margin: 0;
