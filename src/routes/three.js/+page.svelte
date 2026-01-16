@@ -1,7 +1,6 @@
 <script lang="ts">
 	import HeroCanvas from '$lib/shaders/hero/HeroCanvas.svelte';
 	import CursorImage from '$lib/shaders/cursor/CursorImage.svelte';
-	// import FlowField from '$lib/shaders/flowfield/FlowField.svelte';
 
 	let selectedComponent = $state<string>('ComingSoon');
 </script>
@@ -10,7 +9,6 @@
 	<select bind:value={selectedComponent}>
 		<option value="HandParticles">Hand Particles</option>
 		<option value="HeroCanvas">Hero Canvas</option>
-		<!-- <option value="FlowField">Flow Field</option> -->
 		<option value="ComingSoon">Coming Soon</option>
 	</select>
 
@@ -18,8 +16,6 @@
 		<CursorImage />
 	{:else if selectedComponent === 'HeroCanvas'}
 		<HeroCanvas />
-		<!-- {:else if selectedComponent === 'FlowField'}
-		<FlowField /> -->
 	{:else if selectedComponent === 'ComingSoon'}
 		<h2>A new three.js component coming soon!</h2>
 	{/if}
