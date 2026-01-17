@@ -1,6 +1,6 @@
-export async function load() {
+export async function load(event) {
 	try {
-		const response = await fetch('/api/github-contributions');
+		const response = await event.fetch('/api/github-contributions');
 		if (!response.ok) throw new Error(`API error: ${response.status}`);
 		const data = await response.json();
 		return { contributions: data };
