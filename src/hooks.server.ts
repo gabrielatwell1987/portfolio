@@ -46,10 +46,7 @@ export async function handle({ event, resolve }) {
 	}
 
 	const response = await resolve(event, {
-		transformPageChunk: ({ html }) => {
-			// Add security headers via meta tags if not already present
-			return html;
-		}
+		transformPageChunk: ({ html }) => html
 	});
 
 	// Add SEO-friendly headers
@@ -58,12 +55,17 @@ export async function handle({ event, resolve }) {
 		'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
 	);
 
-	// Cache control for static assets
+	// Consolidated cache control for static assets
 	if (
 		event.url.pathname.startsWith('/static/') ||
 		event.url.pathname.match(/\.(js|css|png|jpg|jpeg|gif|webp|svg|woff|woff2)$/)
 	) {
 		response.headers.set('Cache-Control', 'public, max-age=31536000, immutable');
+	}
+
+	// Cache API routes aggressively
+	if (event.url.pathname.startsWith('/api/')) {
+		response.headers.set('Cache-Control', 'public, max-age=3600, s-maxage=3600'); // 1 hour
 	}
 
 	return response;

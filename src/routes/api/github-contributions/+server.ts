@@ -16,23 +16,23 @@ export async function GET() {
 	try {
 		// GitHub GraphQL query to get contribution data
 		const query = `
-			query($username: String!, $from: DateTime!, $to: DateTime!) {
-				user(login: $username) {
-					contributionsCollection(from: $from, to: $to) {
-						contributionCalendar {
-							totalContributions
-							weeks {
-								contributionDays {
-									date
-									contributionCount
-									color
-								}
-							}
-						}
-					}
-				}
-			}
-		`;
+            query($username: String!, $from: DateTime!, $to: DateTime!) {
+                user(login: $username) {
+                    contributionsCollection(from: $from, to: $to) {
+                        contributionCalendar {
+                            totalContributions
+                            weeks {
+                                contributionDays {
+                                    date
+                                    contributionCount
+                                    color
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        `;
 
 		// Calculate date range (last year)
 		const to = new Date();
@@ -71,21 +71,38 @@ export async function GET() {
 
 		const contributionCalendar = data.data.user.contributionsCollection.contributionCalendar;
 
-		return json({
-			success: true,
-			totalContributions: contributionCalendar.totalContributions,
-			weeks: contributionCalendar.weeks
-		});
+		return json(
+			{
+				success: true,
+				totalContributions: contributionCalendar.totalContributions,
+				weeks: contributionCalendar.weeks
+			},
+			{
+				headers: {
+					'Cache-Control': 'public, max-age=3600, s-maxage=3600' // Cache for 1 hour to reduce edge requests
+				}
+			}
+		);
 	} catch (error) {
 		console.error('Error fetching GitHub contributions:', error);
 
-		// Return mock data as fallback
-		return json({
-			success: false,
-			error: error instanceof Error ? error.message : 'An unknown error occurred',
-			fallback: true,
-			...generateFallbackData()
-		});
+		// Use fallback data on error
+		const fallback = generateFallbackData();
+		return json(
+			{
+				success: false,
+				error: error instanceof Error ? error.message : 'An unknown error occurred',
+				fallback: true,
+				totalContributions: fallback.totalContributions,
+				weeks: fallback.weeks
+			},
+			{
+				status: 500, // Explicit error status
+				headers: {
+					'Cache-Control': 'public, max-age=3600, s-maxage=3600' // Still cache fallback to avoid repeated failures
+				}
+			}
+		);
 	}
 }
 
