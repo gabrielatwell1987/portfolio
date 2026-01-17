@@ -30,6 +30,7 @@
 
 	interface ContributionsData {
 		weeks: Week[];
+		totalContributions: number;
 	}
 
 	interface MobileTooltip {
@@ -40,9 +41,17 @@
 		date: string;
 	}
 
-	let contributionsData = $state<ContributionsData>({ weeks: [] });
-	let totalContributions = $state<number>(0);
-	let isLoading = $state<boolean>(true);
+	interface ContributionWeek {
+		contributionDays: ContributionDay[];
+	}
+
+	// Accept contributions as a prop (prerendered data)
+	let { contributions = $bindable<ContributionsData | null>(null) } = $props();
+
+	// Reactive state for UI (no longer fetching)
+	let contributionsData = $derived(contributions ? { weeks: contributions.weeks } : { weeks: [] });
+	let totalContributions = $derived(contributions?.totalContributions || 0);
+	let isLoading = $state<boolean>(false); // Always false since data is prerendered
 	let isError = $state<boolean>(false);
 	let errorMessage = $state<string>('');
 	let isUsingFallback = $state<boolean>(false);
@@ -57,55 +66,7 @@
 	});
 	let announcement = $state<string>('');
 
-	// Fetch real GitHub contributions data
-	async function fetchContributionsData(signal: AbortSignal): Promise<void> {
-		try {
-			isLoading = true;
-			isError = false;
-
-			const response = await fetch('/api/github-contributions', { signal });
-			const data = await response.json();
-
-			if (signal.aborted) return;
-
-			if (data.success) {
-				contributionsData = { weeks: data.weeks };
-				totalContributions = data.totalContributions;
-				isUsingFallback = false;
-			} else {
-				// Use fallback data if API fails
-				contributionsData = { weeks: data.weeks };
-				totalContributions = data.totalContributions;
-				isUsingFallback = true;
-				errorMessage = data.error || 'Failed to fetch GitHub data';
-				console.warn('Using fallback data:', errorMessage);
-			}
-		} catch (error) {
-			if (signal.aborted) return;
-
-			console.error('Error fetching contributions:', error);
-			isError = true;
-			errorMessage = 'Failed to load contributions data';
-
-			// Generate fallback data
-			contributionsData = generateFallbackData();
-			totalContributions = contributionsData.weeks.reduce((total, week) => {
-				return (
-					total +
-					week.contributionDays.reduce((weekTotal, day) => {
-						return weekTotal + day.contributionCount;
-					}, 0)
-				);
-			}, 0);
-			isUsingFallback = true;
-		} finally {
-			if (!signal.aborted) {
-				isLoading = false;
-			}
-		}
-	}
-
-	// mobile touch events for tooltips
+	// Mobile touch events for tooltips
 	function handleDayTouch(event: Event, day: ContributionDay): void {
 		// Announce to screen readers
 		announcement = `${day.contributionCount} ${getContributionText(day.contributionCount)} on ${formatDate(day.date)}`;
@@ -140,7 +101,7 @@
 		// On larger containers, don't prevent default to allow native title tooltips
 	}
 
-	// keyboard navigation
+	// Keyboard navigation
 	function handleDayKeydown(
 		event: KeyboardEvent,
 		day: ContributionDay,
@@ -187,7 +148,7 @@
 		}
 	}
 
-	// hide mobile tooltip when touching elsewhere
+	// Hide mobile tooltip when touching elsewhere
 	function hideMobileTooltip(event: Event): void {
 		if (isSmallContainer && mobileTooltip.visible && event.target) {
 			// Don't hide if touching the tooltip itself or a contribution day
@@ -200,7 +161,7 @@
 		}
 	}
 
-	// current dimensions based on container size
+	// Current dimensions based on container size
 	function getCurrentDimensions(): {
 		cellSize: number;
 		cellGap: number;
@@ -217,7 +178,7 @@
 		};
 	}
 
-	// month positions
+	// Month positions
 	function getMonthPositions(): { name: string; x: number }[] {
 		const months: { name: string; x: number }[] = [];
 		const { cellSize, cellGap, dayLabelWidth } = getCurrentDimensions();
@@ -225,7 +186,7 @@
 		let weekIndex = 0;
 		let lastLabelX = -100;
 
-		contributionsData.weeks.forEach((week, index) => {
+		contributionsData.weeks.forEach((week: ContributionWeek, index: number) => {
 			if (week.contributionDays.length > 0) {
 				// Parse the date string (YYYY-MM-DD) to avoid timezone issues
 				const dateString = week.contributionDays[0].date;
@@ -253,23 +214,13 @@
 		return months;
 	}
 
-	// total width
+	// Total width
 	function getTotalWidth(): number {
 		const { cellSize, cellGap, dayLabelWidth } = getCurrentDimensions();
 		return dayLabelWidth + contributionsData.weeks.length * (cellSize + cellGap);
 	}
 
-	// fetch data
-	$effect(() => {
-		const abortController = new AbortController();
-		fetchContributionsData(abortController.signal);
-
-		return () => {
-			abortController.abort();
-		};
-	});
-
-	// resize observer
+	// Resize observer
 	$effect(() => {
 		if (typeof window === 'undefined' || !containerElement) return;
 
@@ -284,7 +235,7 @@
 		return () => resizeObserver.disconnect();
 	});
 
-	// click listener
+	// Click listener
 	$effect(() => {
 		if (typeof window === 'undefined' || !isSmallContainer) return;
 
@@ -303,7 +254,7 @@
 		return () => document.removeEventListener('click', handleDocumentClick);
 	});
 
-	// scroll position
+	// Scroll position
 	$effect(() => {
 		if (typeof window === 'undefined' || !isSmallContainer) return;
 
@@ -337,31 +288,13 @@
 			day.
 		</div>
 
-		{#if isLoading}
-			<p class="total-contributions loading">Loading contributions...</p>
-		{:else if isError}
-			<p class="total-contributions error">
-				Failed to load GitHub data
-				{#if isUsingFallback}
-					- showing sample data
-				{/if}
-			</p>
-		{:else}
-			<p class="total-contributions">
-				{totalContributions}
-				{getContributionText(totalContributions)} this year
-				{#if isUsingFallback}
-					<span class="fallback-notice">(using fallback data)</span>
-				{/if}
-			</p>
-		{/if}
+		<p class="total-contributions">
+			{totalContributions}
+			{getContributionText(totalContributions)} this year
+		</p>
 	</header>
 
-	{#if isLoading}
-		<div class="loading-container">
-			<div class="loading-spinner"></div>
-		</div>
-	{:else}
+	{#if contributionsData.weeks.length > 0}
 		<div class="calendar-container">
 			<!-- Custom tooltip for smaller containers -->
 			{#if mobileTooltip.visible && isSmallContainer}
@@ -507,6 +440,8 @@
 				<span class="legend-text" aria-hidden="true">More</span>
 			</div>
 		</div>
+	{:else}
+		<p>No contributions data available.</p>
 	{/if}
 </section>
 
@@ -555,11 +490,11 @@
 				opacity: 0.8;
 			}
 
-			& .fallback-notice {
+			/* & .fallback-notice {
 				font-size: 0.8em;
 				opacity: 0.6;
 				font-style: italic;
-			}
+			} */
 		}
 
 		& .loading-container {
@@ -569,7 +504,7 @@
 			min-height: 200px;
 			width: 100%;
 
-			& .loading-spinner {
+			/* & .loading-spinner {
 				width: 40px;
 				height: 40px;
 				border: 3px solid var(--clr-main);
@@ -577,7 +512,7 @@
 				border-radius: 50%;
 				animation: spin 1s linear infinite;
 				opacity: 0.7;
-			}
+			} */
 		}
 
 		& .calendar-container {
@@ -619,12 +554,12 @@
 			}
 
 			/* Responsive padding using container queries */
-			@container github-contributions (wth <= 767px) {
+			@container github-contributions (width <= 767px) {
 				padding: 1rem;
 				gap: 0.75rem;
 			}
 
-			@container github-contributions (wth <= 500px) {
+			@container github-contributions (width <= 500px) {
 				min-width: 99%;
 				padding: 0.5rem;
 			}

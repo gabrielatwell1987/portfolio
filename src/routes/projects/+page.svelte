@@ -8,17 +8,14 @@
 	import testimonials from '$lib/components/projects/testimonials.json';
 	import SEO from '$lib/data/SEO.svelte';
 	import { beforeNavigate } from '$app/navigation';
+	import GithubContributions from '$lib/components/projects/GithubContributions.svelte';
+
+	let { data } = $props();
+	let contributions = $derived(data.contributions);
 
 	let ProjectComponent: typeof import('$lib/components/projects/Project.svelte').default | null =
 		$state<typeof import('$lib/components/projects/Project.svelte').default | null>(null);
-	let GithubContributions:
-		| typeof import('$lib/components/projects/GithubContributions.svelte').default
-		| null = $state<
-		typeof import('$lib/components/projects/GithubContributions.svelte').default | null
-	>(null);
 	let showProjects = $state<boolean>(false);
-	let showGithub = $state<boolean>(false);
-	let isGithubLoading = $state<boolean>(true);
 	let isNavigating = $state<boolean>(false);
 
 	function getTestimonialForProject(projectIndex: number) {
@@ -27,9 +24,6 @@
 
 	beforeNavigate((navigation) => {
 		isNavigating = true;
-
-		GithubContributions = null;
-		showGithub = false;
 	});
 
 	$effect(() => {
@@ -52,31 +46,7 @@
 		};
 	});
 
-	// gitHub contributions
-	$effect(() => {
-		if (!showProjects || isNavigating) return;
-
-		let cancelled = false;
-
-		if (showProjects) {
-			const loadGithub = async () => {
-				const module = await import('$lib/components/projects/GithubContributions.svelte');
-				if (!cancelled && !isNavigating) {
-					GithubContributions = module.default;
-					showGithub = true;
-					isGithubLoading = false;
-				}
-			};
-
-			const timer = setTimeout(loadGithub, 200);
-			return () => {
-				cancelled = true;
-				clearTimeout(timer);
-			};
-		}
-	});
-
-	// gsap scroll
+	// GSAP scroll effect
 	$effect(() => {
 		if (!showProjects) return;
 
@@ -120,10 +90,10 @@
 
 	<section class="github-section">
 		<div class="project-container">
-			{#if showGithub && GithubContributions}
-				<GithubContributions />
+			{#if contributions}
+				<GithubContributions {contributions} />
 			{:else}
-				<!-- Skeleton/placeholder with approximate height -->
+				<!-- Skeleton/placeholder -->
 				<div class="github-skeleton" aria-label="Loading GitHub contributions">
 					<div class="skeleton-header">
 						<div class="skeleton-title"></div>
