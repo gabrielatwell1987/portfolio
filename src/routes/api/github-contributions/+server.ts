@@ -79,7 +79,7 @@ export async function GET() {
 			},
 			{
 				headers: {
-					'Cache-Control': 'public, max-age=3600, s-maxage=3600' // Cache for 1 hour to reduce edge requests
+					'Cache-Control': 'public, max-age=86400, s-maxage=86400' // 24 hours
 				}
 			}
 		);
