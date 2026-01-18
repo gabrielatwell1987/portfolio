@@ -41,6 +41,7 @@
 			src={img}
 			alt={title}
 			style="width: {width}; view-transition-name: {transitionName};"
+			loading="lazy"
 		/>
 	{:else if svg}
 		{@html svgElement}

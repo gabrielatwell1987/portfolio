@@ -91,13 +91,13 @@
 
 		<div class="controls" class:no-controls={noControls}>
 			<button type="button" class="control-btn" aria-label="Play" onclick={playVidHandler}>
-				<img src="/video/play.webp" alt="" />
+				<img src="/video/play.webp" alt="" loading="lazy" />
 			</button>
 			<button type="button" class="control-btn" aria-label="Pause" onclick={pauseVidHandler}>
-				<img src="/video/pause.webp" alt="" />
+				<img src="/video/pause.webp" alt="" loading="lazy" />
 			</button>
 			<button type="button" class="control-btn" aria-label="Stop" onclick={stopVidHandler}>
-				<img src="/video/stop.webp" alt="" />
+				<img src="/video/stop.webp" alt="" loading="lazy" />
 			</button>
 
 			<div class="volume">

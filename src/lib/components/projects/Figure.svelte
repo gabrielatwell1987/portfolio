@@ -14,7 +14,7 @@
 			<p>{text}</p>
 		</figcaption>
 
-		<img {src} {alt} />
+		<img {src} {alt} loading="lazy" />
 	</figure>
 </div>
 

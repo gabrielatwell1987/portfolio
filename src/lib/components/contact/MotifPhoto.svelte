@@ -13,7 +13,7 @@
 			{@html content}
 		</div>
 	{:else}
-		<img class="image" src={content} alt="decorative motif" />
+		<img class="image" src={content} alt="decorative motif" loading="lazy" />
 	{/if}
 </div>
 

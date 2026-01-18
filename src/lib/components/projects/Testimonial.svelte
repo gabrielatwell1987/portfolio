@@ -36,7 +36,7 @@
 	<footer class="testimonial-footer">
 		{#if avatar}
 			<div class="avatar">
-				<img src={avatar} alt={`Photo of ${name}`} />
+				<img src={avatar} alt={`Photo of ${name}`} loading="lazy" />
 			</div>
 		{/if}
 

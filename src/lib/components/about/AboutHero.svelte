@@ -62,7 +62,7 @@
 </script>
 
 <div class="about-hero-image">
-	<img src="/logos/svelte-magick.webp" {alt} decoding="async" data-hero-bg />
+	<img src="/logos/svelte-magick.webp" {alt} loading="lazy" decoding="async" data-hero-bg />
 
 	<h1 id="title">
 		<span style="view-transition-name: {viewTransitionName || ''};">About</span>

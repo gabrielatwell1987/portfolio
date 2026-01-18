@@ -12,7 +12,7 @@
 </script>
 
 <section class="card">
-	<img class="card-image" {src} {alt} />
+	<img class="card-image" {src} {alt} loading="lazy" />
 
 	<h2 class="card-title">{title}</h2>
 

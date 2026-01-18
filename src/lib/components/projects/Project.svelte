@@ -27,6 +27,7 @@
 			src={img}
 			alt="Screenshot of {title} project"
 			style="--alt-text: '{title} project';"
+			loading="lazy"
 		/>
 
 		<span class="desc-banner" aria-hidden="true">made with {description}</span>

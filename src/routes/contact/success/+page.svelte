@@ -10,7 +10,7 @@
 
 <article class="success-wrapper">
 	<section class="success-content">
-		<img src="/logos/success.webp" alt="Atwell" width="500" />
+		<img src="/logos/success.webp" alt="Atwell" width="500" loading="lazy" />
 
 		<div class="success-results">
 			<p class="subheading"><i>Your message has been sent.</i></p>

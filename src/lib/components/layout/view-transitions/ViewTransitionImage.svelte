@@ -90,6 +90,7 @@
 			onload={handleImageLoad}
 			style={inlineStyle()}
 			class:svg={isSVG}
+			loading="lazy"
 		/>
 	</button>
 </section>

@@ -9,7 +9,7 @@
 <section class="projects-grid">
 	{#each projects as project}
 		<a href={project.url} class="project-card">
-			<img src={project.img} alt={project.title} />
+			<img src={project.img} alt={project.title} loading="lazy" />
 
 			<div class="overlay">
 				<p>{project.title}</p>

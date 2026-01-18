@@ -35,6 +35,7 @@
 		style="{aspectRatio ? `aspect-ratio: ${aspectRatio};` : ''}{style ? ` ${style}` : ''}"
 		class:hidden={imageError}
 		class:has-width={!!width}
+		loading="lazy"
 	/>
 
 	{#if imageError}

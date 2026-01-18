@@ -4,7 +4,7 @@
 </script>
 
 <section class="intro">
-	<img src="/logos/skully.webp" alt="a skull" class="intro-video" />
+	<img src="/logos/skully.webp" alt="a skull" class="intro-video" loading="lazy" />
 
 	<div class="intro-content">
 		<HeroTitle title="Welcome!" />

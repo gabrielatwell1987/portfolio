@@ -9,7 +9,7 @@
 </script>
 
 <article>
-	<img {src} {alt} />
+	<img {src} {alt} loading="lazy" />
 
 	<a href="/contact">
 		<h3>{name}</h3>
