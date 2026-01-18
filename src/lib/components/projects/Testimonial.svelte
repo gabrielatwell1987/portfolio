@@ -20,12 +20,6 @@
 		highlighted = false,
 		index = 0
 	}: Props = $props();
-
-	let stars = $derived(() => {
-		return Array(5)
-			.fill(0)
-			.map((_, i) => i < rating);
-	});
 </script>
 
 <article class="testimonial" class:highlighted style="--stagger-delay: {index * 1.25}s;">
@@ -138,8 +132,8 @@
 			align-items: center;
 
 			& .avatar {
-				width: clamp(4em, 5vw, 5em);
-				height: clamp(4em, 5vw, 5em);
+				width: clamp(6em, 5vw, 6em);
+				height: clamp(6em, 5vw, 6em);
 				border-radius: 50%;
 				overflow: hidden;
 				flex-shrink: 0;
@@ -148,7 +142,8 @@
 				& img {
 					width: 100%;
 					height: 100%;
-					object-fit: cover;
+					object-fit: contain;
+					object-position: top;
 				}
 			}
 		}
