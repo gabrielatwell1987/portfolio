@@ -25,7 +25,6 @@
 	/>
 </div>
 
-<!-- Live region for form status announcements -->
 <A11yAnnouncer message={submitStatus} />
 
 <form method="POST" action="https://form.taxi/s/xeyymb58" novalidate>
@@ -81,8 +80,6 @@
 		</div>
 	</fieldset>
 </form>
-
-<A11yAnnouncer {submitStatus} />
 
 <style>
 	:root {

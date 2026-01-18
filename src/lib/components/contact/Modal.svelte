@@ -1,6 +1,5 @@
 <script lang="ts">
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
-	import Image from '$lib/components/layout/Image.svelte';
 	import '@fortawesome/fontawesome-free/css/all.css';
 
 	let isOpen = $state<boolean>(false);
@@ -103,11 +102,10 @@
 		</header>
 
 		<div class="modal-image">
-			<Image
+			<img
 				src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/newspaper.webp"
 				alt="newspaper clipping for a frontend developer"
-				width="500"
-				aspectRatio="16/9"
+				width="500px"
 			/>
 		</div>
 
