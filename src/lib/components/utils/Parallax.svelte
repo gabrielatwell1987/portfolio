@@ -39,7 +39,7 @@
 	.sticky-wrapper {
 		height: 100vh;
 		position: relative;
-		background-image: url('/logos/skullLaptop.svg');
+		background-image: url('https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/skullLaptop.svg');
 		background-size: contain;
 		background-position: center;
 		background-repeat: no-repeat;

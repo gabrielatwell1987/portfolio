@@ -24,7 +24,7 @@
 		-webkit-text-stroke: 10px var(--smoke);
 		background-color: var(--white);
 		background-repeat: no-repeat;
-		background-image: url('/logos/textMask.webp');
+		background-image: url('https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/textMask.webp');
 		background-position: 50% 50%;
 		background-size: 100%;
 		-webkit-background-clip: text;

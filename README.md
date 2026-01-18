@@ -1,6 +1,6 @@
-<img src="http://gabrielatwell.com/logos/shieldy.webp" width="300" height="auto" />
-
 # Gabriel Atwell's Portfolio
+
+<img src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/shieldy.webp" width="300" height="auto" alt="Shieldy logo" />
 
 [https://gabrielatwell.com](https://gabrielatwell.com)
 
@@ -8,4 +8,4 @@
 This is a portfolio website that I built to showcase my projects and skills. It is built with sveltekit and GSAP. I coded this from scratch, it's completely custom. I also added markdown for my blog posts, and I try to update the site regularly.
 </article>
 
-## Please contact me if you have any questions!
+## Please contact me if you have any questions
