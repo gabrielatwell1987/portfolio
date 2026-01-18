@@ -91,17 +91,32 @@
 
 		<div class="controls" class:no-controls={noControls}>
 			<button type="button" class="control-btn" aria-label="Play" onclick={playVidHandler}>
-				<img src="/video/play.webp" alt="" loading="lazy" />
+				<img
+					src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/play.webp"
+					alt=""
+					loading="lazy"
+				/>
 			</button>
 			<button type="button" class="control-btn" aria-label="Pause" onclick={pauseVidHandler}>
-				<img src="/video/pause.webp" alt="" loading="lazy" />
+				<img
+					src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/pause.webp"
+					alt=""
+					loading="lazy"
+				/>
 			</button>
 			<button type="button" class="control-btn" aria-label="Stop" onclick={stopVidHandler}>
-				<img src="/video/stop.webp" alt="" loading="lazy" />
+				<img
+					src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/stop.webp"
+					alt=""
+					loading="lazy"
+				/>
 			</button>
 
 			<div class="volume">
-				<img src="/video/volume.webp" alt="volume" />
+				<img
+					src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/volume.webp"
+					alt="volume"
+				/>
 
 				<input
 					type="range"

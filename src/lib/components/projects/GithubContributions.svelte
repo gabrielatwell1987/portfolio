@@ -489,12 +489,6 @@
 				color: #ff6b6b;
 				opacity: 0.8;
 			}
-
-			/* & .fallback-notice {
-				font-size: 0.8em;
-				opacity: 0.6;
-				font-style: italic;
-			} */
 		}
 
 		& .loading-container {
@@ -503,16 +497,6 @@
 			align-items: center;
 			min-height: 200px;
 			width: 100%;
-
-			/* & .loading-spinner {
-				width: 40px;
-				height: 40px;
-				border: 3px solid var(--clr-main);
-				border-top: 3px solid transparent;
-				border-radius: 50%;
-				animation: spin 1s linear infinite;
-				opacity: 0.7;
-			} */
 		}
 
 		& .calendar-container {

@@ -20,7 +20,9 @@
 </div>
 
 <div class="personal-image">
-	<MotifPhoto content="/images/gabe-sketch.webp" />
+	<MotifPhoto
+		content="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/gabe-sketch.webp"
+	/>
 </div>
 
 <!-- Live region for form status announcements -->

@@ -6,7 +6,6 @@
 	import Bento from '$lib/components/about/Bento.svelte';
 	import CardFlip from '$lib/components/about/CardFlip.svelte';
 	import AboutHero from '$lib/components/about/AboutHero.svelte';
-	// import Preloader from '$lib/components/about/Preloader.svelte';
 	import Skills from '$lib/components/about/Skills.svelte';
 	import Slider from '$lib/components/about/Slider.svelte';
 	import PWAInstall from '$lib/components/about/PWAInstall.svelte';
@@ -34,8 +33,6 @@
 	description="All about Gabriel Atwell"
 	keywords="about gabe, about gabriel, gabe's bio"
 />
-
-<!-- <Preloader /> -->
 
 <div class="about-me" aria-label="bio">
 	<section class="about-section">
@@ -97,9 +94,9 @@
 			<Bento />
 
 			<CardFlip
-				src="/logos/heart-skull.webp"
+				src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/heart-skull.webp"
 				alt="Atwell sparrow logo"
-				src2="/logos/skull-glass.webp"
+				src2="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/skull-glass.webp"
 				alt2="a blue A logo"
 			/>
 		</article>

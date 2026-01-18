@@ -18,7 +18,12 @@
 
 <div aria-label="error" transition:fade={{ delay: DEFAULT_DELAY, duration: DEFAULT_DURATION }}>
 	<div class="image">
-		<Image src="/logos/error.webp" alt="an error has occurred" width="300" aspectRatio="1/1" />
+		<Image
+			src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/error.webp"
+			alt="an error has occurred"
+			width="300"
+			aspectRatio="1/1"
+		/>
 	</div>
 
 	<div class="error">

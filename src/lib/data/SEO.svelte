@@ -21,7 +21,7 @@
 	let baseUrl = $state<string>('');
 	let ogImage = $state<string>('');
 	let siteName = 'atwellUI';
-	let fullTitle = title;
+	let fullTitle = $derived(title);
 
 	$effect(() => {
 		const currentPage = $page;
@@ -41,7 +41,7 @@
 		if (image) {
 			ogImage = image.startsWith('http') ? image : `${baseUrl}${image}`;
 		} else {
-			ogImage = `${baseUrl}/logos/atwellUI_social-media.webp`;
+			ogImage = `${baseUrl}https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/atwellUI_social-media.webp`;
 		}
 	});
 </script>

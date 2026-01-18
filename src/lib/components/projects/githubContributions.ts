@@ -1,5 +1,3 @@
-
-
 export const CELL_SIZE = 17;
 export const CELL_GAP = 5;
 export const DAYS_IN_WEEK = 7;

@@ -1,31 +1,31 @@
 [
     {
-        "src": "skills/HTML-Dark.svg",
+        "src": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/HTML-Dark.svg",
         "alt": "html",
         "href": "https://developer.mozilla.org/en-US/docs/Web/HTML"
     },
     {
-        "src": "skills/CSS-Dark.svg",
+        "src": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/CSS-Dark.svg",
         "alt": "css",
         "href": "https://developer.mozilla.org/en-US/docs/Web/CSS"
     },
     {
-        "src": "skills/JavaScript-Dark.svg",
+        "src": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/JavaScript-Dark.svg",
         "alt": "javascript",
         "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
     },
     {
-        "src": "skills/Svelte-Dark.svg",
+        "src": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/Svelte-Dark.svg",
         "alt": "svelte",
         "href": "https://svelte.dev"
     },
     {
-        "src": "skills/GSAP-Dark.svg",
+        "src": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/GSAP-Dark.svg",
         "alt": "gsap",
         "href": "https://gsap.com"
     },
     {
-        "src": "skills/NodeJS-Dark.svg",
+        "src": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/NodeJS-Dark.svg",
         "alt": "nodejs",
         "href": "https://nodejs.org"
     },

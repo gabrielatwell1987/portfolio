@@ -23,7 +23,7 @@
 					<a href="/contact" class="bento-link" aria-label="Navigate to contact page">
 						<div class="bento-icons">
 							<Image
-								src="/icons/speech-bubble.svg"
+								src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/speech-bubble.svg"
 								alt="contact icon"
 								width="350"
 								aspectRatio="1/1"
@@ -42,7 +42,7 @@
 						<a href="/learn" class="bento-link" aria-label="Navigate to learn page">
 							<div class="bento-icons">
 								<Image
-									src="/icons/learn-icon.svg"
+									src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/learn-icon.svg"
 									alt="learn icon"
 									width="350"
 									aspectRatio="1/1"
@@ -62,7 +62,7 @@
 						<h2>projects</h2>
 
 						<Image
-							src="/icons/lowgow.svg"
+							src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/lowgow.svg"
 							alt="atwell logo"
 							width="350"
 							aspectRatio="1/1"

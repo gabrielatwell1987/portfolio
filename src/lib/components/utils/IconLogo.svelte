@@ -3,7 +3,12 @@
 </script>
 
 <div class="iconLogo">
-	<Image src="/logos/shieldy.webp" alt="atwell logo" width="600" class="logo-image" />
+	<Image
+		src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/shieldy.webp"
+		alt="atwell logo"
+		width="600"
+		class="logo-image"
+	/>
 </div>
 
 <style>
