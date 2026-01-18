@@ -10,7 +10,7 @@ In web animation, a tween stands for "in-betweening". Basically, it is the found
 </div>
 <div class="image">
 
-![gsap tweens](/code/tweens.webp)
+![gsap tweens](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/tweens.webp)
 
 </div>
 </div>
@@ -33,7 +33,7 @@ A value of stagger: 0.1 would cause there to be 0.1 seconds between the start ti
 </div>
 <div class="image">
 
-![gsap staggers](/code/staggers.webp)
+![gsap staggers](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/staggers.webp)
 
 </div>
 </div>
@@ -52,7 +52,7 @@ Timelines makes sequencing multiple tweens really easy and faster to code, in th
 </div>
 <div class="image">
 
-![gsap timelines](/code/timelines.webp)
+![gsap timelines](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/timelines.webp)
 
 </div>
 </div>
@@ -69,7 +69,7 @@ This familiar syntax makes porting animations over from CSS really easy. Instead
 </div>
 <div class="image">
 
-![gsap percentage keyframes](/code/keyframes.webp)
+![gsap percentage keyframes](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/keyframes.webp)
 
 </div>
 </div>
@@ -88,7 +88,7 @@ Notice that the position parameter comes after the vars parameter:
 </div>
 <div class="image">
 
-![gsap position parameter](/code/position.webp)
+![gsap position parameter](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/position.webp)
 
 </div>
 </div>
@@ -111,7 +111,7 @@ Have you ever noticed an annoying "flash of unstyled content" (FOUC) when a web 
 </div>
 <div class="image">
 
-![flash of unstyled content](/code/fouc.webp)
+![flash of unstyled content](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/fouc.webp)
 
 </div>
 </div>
@@ -130,7 +130,7 @@ You don't need to put ScrollTriggers directly into animations (though that's pro
 </div>
 <div class="image">
 
-![gsap scrolltrigger](/code/scrolltrigger.webp)
+![gsap scrolltrigger](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/scrolltrigger.webp)
 
 </div>
 </div>
@@ -151,9 +151,9 @@ To use the MorphSVG plugin, you can either use npm or use the cdn. Npm makes it 
 </div>
 <div class="image">
 
-![gsap morphsvg](/code/morphsvg.webp)
+![gsap morphsvg](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/morphsvg.webp)
 
-![install morphsvg](/code/morphsvg-install.webp)
+![install morphsvg](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/morphsvg-install.webp)
 
 </div>
 </div>

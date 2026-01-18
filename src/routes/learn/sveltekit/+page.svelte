@@ -32,7 +32,11 @@
 <section class="learn-svelte">
 	<div class="content">
 		<div class="title-spacing">
-			<Title img="/skills/Svelte-Dark.svg" width="40vw" title="SvelteKit Framework" />
+			<Title
+				img="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/Svelte-Dark.svg"
+				width="40vw"
+				title="SvelteKit Framework"
+			/>
 		</div>
 
 		<main class="svelte-details">

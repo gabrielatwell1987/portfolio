@@ -32,7 +32,11 @@
 <section class="learn-gsap">
 	<div class="content">
 		<div class="title-spacing">
-			<Title img="/skills/GSAP-Dark.svg" width="50vw" title="Greensock Animation Platform" />
+			<Title
+				img="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/GSAP-Dark.svg"
+				width="50vw"
+				title="Greensock Animation Platform"
+			/>
 		</div>
 
 		<main class="gsap-details">

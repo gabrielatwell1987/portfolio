@@ -64,7 +64,7 @@
 	<div class="css">
 		<div class="tech-stack-logo">
 			<ViewTransitionImage
-				src="/skills/CSS-Purple.webp"
+				src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/CSS-Purple.webp"
 				alt="new css logo"
 				aspectRatio="1/1"
 				class="css-logo"
@@ -77,7 +77,7 @@
 
 	<div class="gsap">
 		<ViewTransitionImage
-			src="/skills/GSAP-Dark.svg"
+			src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/GSAP-Dark.svg"
 			alt="greensock animation platform"
 			aspectRatio="1/1"
 			class="gsap-logo"
@@ -89,7 +89,7 @@
 
 	<article class="developer-card">
 		<Card
-			src="/logos/a-dev.webp"
+			src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/a-dev.webp"
 			alt="a logo that says atwell developer"
 			href="/projects"
 			title="web design + development"

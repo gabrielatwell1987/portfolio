@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Image from '$lib/components/layout/Image.svelte';
 	import skills from '$lib/components/about/skills.json';
 </script>
 
@@ -17,13 +16,6 @@
 						<div class="icons">
 							{#if skill.svg}
 								{@html skill.svg}
-							{:else}
-								<Image
-									src={skill.src}
-									alt={skill.alt}
-									aspectRatio="1/1"
-									style="width: clamp(70px, 5.5vw, 200px);"
-								/>
 							{/if}
 						</div>
 					</a>
@@ -39,6 +31,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		align-items: center;
 		margin-bottom: 10em;
 
 		@media (width >= 768px) and (width <= 990px) {
@@ -72,6 +65,14 @@
 
 			& .icons {
 				padding: 0.5rem;
+				width: clamp(70px, 5.5vw, 200px);
+				height: clamp(70px, 5.5vw, 200px);
+
+				@media (width <= 768px) {
+					grid-template-columns: repeat(2, 1fr);
+					gap: 1rem;
+					width: min(80%, 600px);
+				}
 
 				&:focus,
 				&:focus-visible {
@@ -100,6 +101,13 @@
 				list-style: none;
 				width: 75%;
 				margin-inline: auto;
+
+				@media (width <= 768px) {
+					width: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
 			}
 		}
 

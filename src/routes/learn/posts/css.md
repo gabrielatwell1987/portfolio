@@ -12,7 +12,7 @@ CSS transitions let you decide which properties to animate (by listing them expl
 </div>
 <div class="image">
 
-![css transitions](/code/transitions.webp)
+![css transitions](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/transitions.webp)
 
 </div>
 </div>
@@ -29,7 +29,7 @@ In order to create the animations we need to use the `@keyframes` rule. This rul
 </div>
 <div class="image">
 
-![css animations](/code/animations.webp)
+![css animations](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/animations.webp)
 
 </div>
 </div>
@@ -46,7 +46,7 @@ The CSS interpolate-size property allows a page to opt in to animations and tran
 </div>
 <div class="image">
 
-![interpolate size](/code/interpolate.webp)
+![interpolate size](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/interpolate.webp)
 
 </div>
 </div>
@@ -63,7 +63,7 @@ The calc-size() function is a new addition to CSS that allows for the calculatio
 </div>
 <div class="image">
 
-![calc-size](/code/calc.webp)
+![calc-size](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/calc.webp)
 
 </div>
 </div>
@@ -81,7 +81,7 @@ Apply specific styles to the `&lt;details&gt;` element and its pseudo-element `:
 </div>
 <div class="image">
 
-![details element](/code/details.webp)
+![details element](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/details.webp)
 
 </div>
 </div>
@@ -100,7 +100,7 @@ The example: `::view-transition-old(root), ::view-transition-new(root)` examples
 </div>
 <div class="image long">
 
-![view transitions](/code/view-transitions.webp)
+![view transitions](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/view-transitions.webp)
 
 </div>
 </div>
