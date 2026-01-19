@@ -103,15 +103,7 @@
 	</section>
 </div>
 
-<h1>test</h1>
-
 <style>
-	h1 {
-		font-size: 7rem;
-		color: #f0f0f0;
-		z-index: 50;
-	}
-
 	:root {
 		--100: 100%;
 	}

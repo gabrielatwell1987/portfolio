@@ -5,7 +5,7 @@ import { mdsvex } from 'mdsvex';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter({ out: 'dist' }),
+		adapter: adapter(),
 		experimental: {
 			remoteFunctions: true
 		}
