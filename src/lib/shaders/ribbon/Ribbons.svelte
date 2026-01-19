@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 	import * as THREE from 'three';
 	import vertexShader from '$lib/shaders/ribbon/ribbon.vert?raw';
 	import fragmentShader from '$lib/shaders/ribbon/ribbon.frag?raw';
@@ -27,6 +28,15 @@
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		renderer.setClearColor(0x000000, 0);
 
+		// orbit controls
+		const controls = new OrbitControls(camera, renderer.domElement);
+		controls.enableDamping = true;
+		controls.dampingFactor = 0.05;
+		controls.enableZoom = true;
+		controls.enablePan = true;
+		controls.minDistance = 5;
+		controls.maxDistance = 50;
+
 		// lights
 		const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
 		scene.add(ambientLight);
@@ -34,7 +44,13 @@
 		directionalLight.position.set(1, 1, 1);
 		scene.add(directionalLight);
 
-		function createRibbon(ribbonLength: number, ribbonWidth: number, ribbonThickness: number, offsetX = 0, phase = 0) {
+		function createRibbon(
+			ribbonLength: number,
+			ribbonWidth: number,
+			ribbonThickness: number,
+			offsetX = 0,
+			phase = 0
+		) {
 			const geometry = new THREE.BufferGeometry();
 			const positions = [];
 			const indices = [];
@@ -185,6 +201,7 @@
 
 		function animate() {
 			if (prefersReducedMotion) {
+				controls.update();
 				renderer.render(scene, camera);
 				return;
 			}
@@ -249,6 +266,7 @@
 				geometry.attributes.position.needsUpdate = true;
 			});
 
+			controls.update();
 			renderer.render(scene, camera);
 			animationFrameId = window.requestAnimationFrame(animate);
 		}
@@ -267,6 +285,7 @@
 				window.cancelAnimationFrame(animationFrameId);
 			}
 			window.removeEventListener('resize', handleResize);
+			controls.dispose();
 			renderer.dispose();
 			ribbons.forEach((ribbon) => {
 				ribbon.geometry.dispose();

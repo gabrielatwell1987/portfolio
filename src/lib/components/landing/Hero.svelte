@@ -416,6 +416,7 @@
 				display: flex;
 				flex-direction: column;
 				align-items: center;
+				user-select: none;
 
 				@media (height <= 768px) {
 					line-height: 1.1;
@@ -462,6 +463,7 @@
 				inline-size: clamp(300px, 65vw, 1300px);
 				margin: 0 auto 3rem auto;
 				text-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+				user-select: none;
 
 				@media screen and (width >= 990px) {
 					letter-spacing: 2px;
