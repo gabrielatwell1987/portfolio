@@ -1,12 +1,11 @@
 import adapter from '@sveltejs/adapter-cloudflare';
-// import adapter from '@sveltejs/adapter-vercel';
 // import adapter from '@sveltejs/adapter-auto';
 import { mdsvex } from 'mdsvex';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({ out: 'dist' }),
 		experimental: {
 			remoteFunctions: true
 		}
