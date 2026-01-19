@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { injectAnalytics } from '@vercel/analytics/sveltekit';
-	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 	import { dev } from '$app/environment';
 	import '../app.css';
 	import '@picocss/pico/css/pico.min.css';
@@ -49,8 +47,6 @@
 	}
 
 	onMount(() => {
-		injectAnalytics({ mode: dev ? 'development' : 'production' });
-		injectSpeedInsights();
 		loading.isLoaded = true;
 		detectSWUpdate();
 	});

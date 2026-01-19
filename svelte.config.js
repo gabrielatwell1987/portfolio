@@ -1,4 +1,5 @@
-import adapter from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-cloudflare';
+// import adapter from '@sveltejs/adapter-vercel';
 // import adapter from '@sveltejs/adapter-auto';
 import { mdsvex } from 'mdsvex';
 
