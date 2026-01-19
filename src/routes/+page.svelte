@@ -10,4 +10,3 @@
 />
 
 <Hero cssBg={false} />
-<h1>test</h1>
