@@ -51,16 +51,24 @@
 
 			& select {
 				inline-size: clamp(200px, 20vw, 300px);
-				position: fixed;
-				bottom: 0;
+				position: absolute;
+				bottom: 1.5em;
 				left: 50%;
 				transform: translateX(-50%);
 				color: var(--clr-light-gray);
+				font-weight: 700;
 				z-index: 10;
+
+				@media (width <= 768px) {
+					top: 5em;
+					bottom: auto;
+					left: 50%;
+				}
 
 				& option {
 					font-family: var(--bronova);
 					font-size: clamp(var(--sm), 1.2vw, var(--h4));
+					font-weight: 500;
 				}
 			}
 
