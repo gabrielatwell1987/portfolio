@@ -1,6 +1,6 @@
 <script lang="ts">
-	import HeroCanvas from '$lib/shaders/hero/HeroCanvas.svelte';
-	import CursorImage from '$lib/shaders/cursor/CursorImage.svelte';
+	import HeroCanvas from '$lib/threejs/hero/HeroCanvas.svelte';
+	import CursorImage from '$lib/threejs/cursor/CursorImage.svelte';
 
 	let selectedComponent = $state<string>('ComingSoon');
 	let backgroundImage = $derived(
