@@ -5,7 +5,22 @@ import { mdsvex } from 'mdsvex';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			routes: {
+				include: ['/three.js'],
+				exclude: [
+					'/_app/*',
+					'/.well-known/*',
+					'/favicon.*',
+					'/fonts/*',
+					'/manifest.json',
+					'/robots.txt',
+					'/service-worker.js',
+					'/sitemap.xml',
+					'/threejayess/*'
+				]
+			}
+		}),
 		experimental: {
 			remoteFunctions: true
 		}
