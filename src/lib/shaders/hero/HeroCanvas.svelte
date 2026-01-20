@@ -78,8 +78,36 @@
 		const secondaryColor = convertToRGB(secondaryColorRaw);
 		const accentColor = convertToRGB(accentColorRaw);
 
-		const textureLoader = new THREE.TextureLoader();
-		star = textureLoader.load('/textures/star.webp');
+		const canvasElement = document.createElement('canvas');
+		canvasElement.width = 64;
+		canvasElement.height = 64;
+		const ctx = canvasElement.getContext('2d');
+		if (ctx) {
+			ctx.fillStyle = 'rgba(255, 255, 255, 1)'; // White star
+			ctx.beginPath();
+			const spikes = 5;
+			const outerRadius = 30;
+			const innerRadius = 15;
+			const centerX = 32;
+			const centerY = 32;
+			for (let i = 0; i < spikes * 2; i++) {
+				const angle = (i * Math.PI) / spikes;
+				const radius = i % 2 === 0 ? outerRadius : innerRadius;
+				const x = centerX + Math.cos(angle) * radius;
+				const y = centerY + Math.sin(angle) * radius;
+				if (i === 0) ctx.moveTo(x, y);
+				else ctx.lineTo(x, y);
+			}
+			ctx.closePath();
+			ctx.fill();
+			star = new THREE.CanvasTexture(canvasElement);
+		} else {
+			// Fallback to the original texture if canvas context fails
+			const textureLoader = new THREE.TextureLoader();
+			star = textureLoader.load(
+				'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/star.webp'
+			);
+		}
 
 		// canvas
 		const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;
@@ -111,7 +139,7 @@
 			transparent: true,
 			alphaMap: star,
 			alphaTest: 0.001,
-			color: accentColor || secondaryColor || 'hsla(60, 64%, 33%, 0.75)',
+			color: accentColor || secondaryColor || '#ffffff',
 			blending: THREE.AdditiveBlending
 		});
 

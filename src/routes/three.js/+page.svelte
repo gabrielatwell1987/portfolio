@@ -3,57 +3,72 @@
 	import CursorImage from '$lib/shaders/cursor/CursorImage.svelte';
 
 	let selectedComponent = $state<string>('ComingSoon');
+	let backgroundImage = $derived(
+		selectedComponent === 'ComingSoon'
+			? 'repeating-linear-gradient(0deg, transparent, transparent 98px, rgba(255, 255, 255, 0.1) 98px, rgba(255, 255, 255, 0.1) 100px), repeating-linear-gradient(90deg, transparent, transparent 98px, rgba(255, 255, 255, 0.1) 98px, rgba(255, 255, 255, 0.1) 100px)'
+			: 'none'
+	);
 </script>
 
-<div class="content">
-	<select bind:value={selectedComponent}>
-		<option value="HandParticles">Hand Particles</option>
-		<option value="HeroCanvas">Hero Canvas</option>
-		<option value="ComingSoon">Coming Soon</option>
-	</select>
+<div class="wholeScreen" style:background-image={backgroundImage}>
+	<div class="content">
+		<select bind:value={selectedComponent}>
+			<option value="HandParticles">Hand Particles</option>
+			<option value="HeroCanvas">Hero Canvas</option>
+			<option value="ComingSoon">Coming Soon</option>
+		</select>
 
-	{#if selectedComponent === 'HandParticles'}
-		<CursorImage />
-	{:else if selectedComponent === 'HeroCanvas'}
-		<HeroCanvas />
-	{:else if selectedComponent === 'ComingSoon'}
-		<h2>A new three.js component coming soon!</h2>
-	{/if}
+		{#if selectedComponent === 'HandParticles'}
+			<CursorImage />
+		{:else if selectedComponent === 'HeroCanvas'}
+			<HeroCanvas />
+		{:else if selectedComponent === 'ComingSoon'}
+			<h2>A new three.js component coming soon!</h2>
+		{/if}
+	</div>
 </div>
 
 <style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		min-height: 100vh;
-		position: relative;
+	.wholeScreen {
+		inline-size: 100vw;
+		block-size: 100vh;
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: var(--clr-invert);
 
-		& select {
-			inline-size: clamp(200px, 20vw, 300px);
-			position: fixed;
-			bottom: 0;
-			left: 50%;
-			transform: translateX(-50%);
-			color: var(--clr-light-gray);
-			z-index: 10;
+		& .content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			position: relative;
 
-			& option {
-				font-family: var(--bronova);
-				font-size: clamp(var(--sm), 1.2vw, var(--h4));
+			& select {
+				inline-size: clamp(200px, 20vw, 300px);
+				position: fixed;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				color: var(--clr-light-gray);
+				z-index: 10;
+
+				& option {
+					font-family: var(--bronova);
+					font-size: clamp(var(--sm), 1.2vw, var(--h4));
+				}
 			}
-		}
 
-		& h2 {
-			color: var(--fail);
-			font-family: var(--bronova-bold);
-			font-size: clamp(var(--h6), 3vw, var(--h1));
-			text-align: center;
-			text-shadow: 2px 2px 0 var(--clr-main);
+			& h2 {
+				color: var(--clr-link);
+				font-family: var(--bronova-bold);
+				font-size: clamp(var(--h6), 5vw, var(--lg));
+				text-align: center;
 
-			@media (width <= 768px) {
-				text-shadow: 1px 1px 0 var(--clr-main);
+				@media (width <= 768px) {
+					text-shadow: 1px 1px 0 var(--clr-main);
+				}
 			}
 		}
 	}
