@@ -12,6 +12,7 @@
 	let resizeListener: (() => void) | undefined;
 	let pointerMoveListener: ((event: PointerEvent) => void) | undefined;
 	let animationFrameId: number | undefined;
+	const abortController = new AbortController();
 
 	$effect(() => {
 		/**
@@ -222,13 +223,10 @@
 				window.cancelAnimationFrame(animationFrameId);
 			}
 
-			if (resizeListener) {
-				window.removeEventListener('resize', resizeListener);
-			}
-			if (pointerMoveListener) {
-				window.removeEventListener('pointermove', pointerMoveListener);
-			}
+			// Abort all event listeners
+			abortController.abort();
 
+			// Dispose Three.js resources
 			if (renderer) {
 				renderer.dispose();
 			}
@@ -245,6 +243,7 @@
 				displacement.texture.dispose();
 			}
 
+			// Remove displacement canvas from DOM
 			if (displacement.canvas && displacement.canvas.parentNode) {
 				displacement.canvas.parentNode.removeChild(displacement.canvas);
 			}

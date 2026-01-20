@@ -3,7 +3,7 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import projects from '$lib/components/projects/projects.json';
 	import DoYouNeed from './DoYouNeed.svelte';
-	import Ribbons from '$lib/shaders/ribbon/Ribbons.svelte';
+	import Ribbons from '$lib/threejs/ribbon/Ribbons.svelte';
 	import HeroButton from './HeroButton.svelte';
 	import ProjectsGrid from './ProjectsGrid.svelte';
 	import UltraA from './UltraA.svelte';

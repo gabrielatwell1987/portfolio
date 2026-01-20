@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 	import * as THREE from 'three';
-	import vertexShader from '$lib/shaders/ribbon/ribbon.vert?raw';
-	import fragmentShader from '$lib/shaders/ribbon/ribbon.frag?raw';
+	import vertexShader from '$lib/threejs/ribbon/ribbon.vert?raw';
+	import fragmentShader from '$lib/threejs/ribbon/ribbon.frag?raw';
 
 	let canvas = $state<HTMLCanvasElement>();
 	let animationFrameId: number | undefined;
@@ -280,13 +280,29 @@
 		}
 		window.addEventListener('resize', handleResize);
 
+		const abortController = new AbortController();
+
 		return () => {
-			if (animationFrameId) {
-				window.cancelAnimationFrame(animationFrameId);
-			}
-			window.removeEventListener('resize', handleResize);
+			// Cancel animation loop
+			if (animationFrameId) window.cancelAnimationFrame(animationFrameId);
+
+			// Abort event listeners
+			abortController.abort();
+
+			// Dispose controls
 			controls.dispose();
+
+			// Dispose renderer
 			renderer.dispose();
+
+			// Dispose lights (if not shared)
+			ambientLight.dispose();
+			directionalLight.dispose();
+
+			// Dispose shader material
+			ribbonShaderMaterial.dispose();
+
+			// Dispose ribbons
 			ribbons.forEach((ribbon) => {
 				ribbon.geometry.dispose();
 				if (Array.isArray(ribbon.material)) {

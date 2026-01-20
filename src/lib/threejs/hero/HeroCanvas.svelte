@@ -16,6 +16,7 @@
 	let mousemoveListener: ((event: MouseEvent) => void) | undefined;
 	let visibilityListener: ((event: Event) => void) | undefined;
 	let themeChangeListener: ((event: Event) => void) | undefined;
+	const abortController = new AbortController();
 
 	$effect(() => {
 		// helper function to convert CSS colors to RGB (strip alpha if present)
@@ -319,23 +320,14 @@
 				window.cancelAnimationFrame(animationFrameId);
 			}
 
-			if (resizeListener) {
-				window.removeEventListener('resize', resizeListener);
-			}
-			if (mousemoveListener) {
-				document.removeEventListener('mousemove', mousemoveListener);
-			}
-			if (visibilityListener) {
-				document.removeEventListener('visibilitychange', visibilityListener);
-			}
-			if (themeChangeListener) {
-				document.removeEventListener('theme-change', themeChangeListener);
-			}
+			// Abort all event listeners
+			abortController.abort();
 
 			if (themeObserver) {
 				themeObserver.disconnect();
 			}
 
+			// Dispose Three.js resources
 			if (renderer) {
 				renderer.dispose();
 			}

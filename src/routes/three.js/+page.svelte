@@ -1,6 +1,7 @@
 <script lang="ts">
 	import HeroCanvas from '$lib/threejs/hero/HeroCanvas.svelte';
 	import CursorImage from '$lib/threejs/cursor/CursorImage.svelte';
+	import Environment from '$lib/threejs/environment/Environment.svelte';
 
 	let selectedComponent = $state<string>('ComingSoon');
 	let backgroundImage = $derived(
@@ -15,6 +16,7 @@
 		<select bind:value={selectedComponent}>
 			<option value="HandParticles">Hand Particles</option>
 			<option value="HeroCanvas">Hero Canvas</option>
+			<option value="Environment">Environment</option>
 			<option value="ComingSoon">Coming Soon</option>
 		</select>
 
@@ -22,6 +24,8 @@
 			<CursorImage />
 		{:else if selectedComponent === 'HeroCanvas'}
 			<HeroCanvas />
+		{:else if selectedComponent === 'Environment'}
+			<Environment />
 		{:else if selectedComponent === 'ComingSoon'}
 			<h2>A new three.js component coming soon!</h2>
 		{/if}
