@@ -23,8 +23,6 @@
 		/*
 		 * environment maps
 		 */
-		scene.environmentIntensity = 3;
-
 		// ldr cube textures
 		const environmentMap = cubeTextureLoader.load([
 			'/threejayess/environmentMaps/0/px.png',
@@ -36,45 +34,15 @@
 		]);
 		scene.environment = environmentMap;
 		scene.background = environmentMap;
-
-		/**
-		 * Models
-		 */
-		let gltfScene: THREE.Group | null = null;
-		gltfLoader.load('/threejayess/models/waternoose.glb', (gltf) => {
-			gltf.scene.scale.set(3, 3, 3);
-			gltf.scene.position.set(0, 1.5, 0);
-			gltfScene = gltf.scene;
-			scene.add(gltf.scene);
-		});
+		scene.environmentIntensity = 3;
 
 		/**
 		 * Sizes
 		 */
-		const sizes = {
+		let sizes = $state({
 			width: window.innerWidth,
 			height: window.innerHeight
-		};
-
-		// Use AbortController for event listener management
-		const abortController = new AbortController();
-		window.addEventListener(
-			'resize',
-			() => {
-				// Update sizes
-				sizes.width = window.innerWidth;
-				sizes.height = window.innerHeight;
-
-				// Update camera
-				camera.aspect = sizes.width / sizes.height;
-				camera.updateProjectionMatrix();
-
-				// Update renderer
-				renderer.setSize(sizes.width, sizes.height);
-				renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-			},
-			{ signal: abortController.signal }
-		);
+		});
 
 		/**
 		 * Camera
@@ -97,6 +65,37 @@
 		});
 		renderer.setSize(sizes.width, sizes.height);
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+		// Use AbortController for event listener management
+		const abortController = new AbortController();
+		window.addEventListener(
+			'resize',
+			() => {
+				// Update sizes
+				sizes.width = window.innerWidth;
+				sizes.height = window.innerHeight;
+
+				// Update camera
+				camera.aspect = sizes.width / sizes.height;
+				camera.updateProjectionMatrix();
+
+				// Update renderer
+				renderer.setSize(sizes.width, sizes.height);
+				renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+			},
+			{ signal: abortController.signal }
+		);
+
+		/**
+		 * Models
+		 */
+		let gltfScene: THREE.Group | null = null;
+		gltfLoader.load('/threejayess/models/waternoose.glb', (gltf) => {
+			gltf.scene.scale.set(3, 3, 3);
+			gltf.scene.position.set(0, 1.5, 0);
+			gltfScene = gltf.scene;
+			scene.add(gltf.scene);
+		});
 
 		/**
 		 * Animate
