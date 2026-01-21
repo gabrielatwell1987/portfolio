@@ -28,12 +28,12 @@
 		 */
 		// ldr cube textures
 		const environmentMap = cubeTextureLoader.load([
-			'/threejayess/environmentMaps/0/px.png',
-			'/threejayess/environmentMaps/0/nx.png',
-			'/threejayess/environmentMaps/0/py.png',
-			'/threejayess/environmentMaps/0/ny.png',
-			'/threejayess/environmentMaps/0/pz.png',
-			'/threejayess/environmentMaps/0/nz.png'
+			'/threejayess/environmentMaps/0/px.webp',
+			'/threejayess/environmentMaps/0/nx.webp',
+			'/threejayess/environmentMaps/0/py.webp',
+			'/threejayess/environmentMaps/0/ny.webp',
+			'/threejayess/environmentMaps/0/pz.webp',
+			'/threejayess/environmentMaps/0/nz.webp'
 		]);
 		scene.environment = environmentMap;
 		scene.background = environmentMap;
@@ -46,6 +46,7 @@
 			width: window.innerWidth,
 			height: window.innerHeight
 		});
+		let isMobile = $derived(sizes.width < 768);
 
 		/**
 		 * Camera
@@ -82,6 +83,17 @@
 		window.addEventListener(
 			'mousemove',
 			(event) => {
+				if (isMobile) return;
+				mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+				mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+				mouseVector.set(mouse.x, mouse.y);
+			},
+			{ signal: abortController.signal }
+		);
+		window.addEventListener(
+			'click',
+			(event) => {
+				if (!isMobile) return;
 				mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
 				mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 				mouseVector.set(mouse.x, mouse.y);
@@ -110,18 +122,58 @@
 		 * Models
 		 */
 		let gltfScene: THREE.Group | null = null;
+
 		gltfLoader.load('/threejayess/models/waternoose.glb', (gltf) => {
 			gltf.scene.scale.set(1.5, 1.5, 1.5);
 			gltf.scene.position.set(0, 1.5, 0);
 			gltfScene = gltf.scene;
 			scene.add(gltf.scene);
+
+			/*
+			 * Top hat
+			 */
+			const hatGroup = new THREE.Group();
+
+			// hat brim
+			const brimGeometry = new THREE.CylinderGeometry(0.15, 0.15, 0.02, 16);
+			const brimMaterial = new THREE.MeshStandardMaterial({ color: 0x000000 });
+			const brim = new THREE.Mesh(brimGeometry, brimMaterial);
+			brim.position.y = -0.05;
+			hatGroup.add(brim);
+
+			// white stripe
+			const stripeGeometry = new THREE.CylinderGeometry(0.117, 0.11, 0.05, 16);
+			const stripeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
+			const stripe = new THREE.Mesh(stripeGeometry, stripeMaterial);
+			stripe.position.y = 0;
+			hatGroup.add(stripe);
+
+			// hat crown
+			const crownGeometry = new THREE.CylinderGeometry(0.1, 0.12, 0.2, 16);
+			const crownMaterial = new THREE.MeshStandardMaterial({ color: 0x000000 });
+			const crown = new THREE.Mesh(crownGeometry, crownMaterial);
+			crown.position.y = 0.05;
+			hatGroup.add(crown);
+
+			// rotate hat to match hand angle
+			hatGroup.position.set(0.05, 0.1, 0); // Adjust based on hand position
+			hatGroup.rotation.z = Math.PI / 6;
+
+			// add hat to hand
+			const rightHand = gltf.scene.getObjectByName('Bip01_R_Hand_065');
+			if (rightHand) {
+				rightHand.add(hatGroup);
+
+				hatGroup.position.set(-0.2, 1.5, 0);
+				gltf.scene.add(hatGroup);
+			}
 		});
 
 		/**
 		 * Animate
 		 */
 		const clock = new THREE.Clock();
-		let animationId: number; // Declare here for cleanup access
+		let animationId: number;
 		const tick = () => {
 			// Time
 			const elapsedTime = clock.getElapsedTime();
@@ -136,7 +188,7 @@
 				if (intersection) {
 					gltfScene.position.copy(intersection);
 
-					// model rotation to face the camera horizontally
+					// model rotation to face the camera
 					const direction = new THREE.Vector3(
 						camera.position.x - gltfScene.position.x,
 						0,
