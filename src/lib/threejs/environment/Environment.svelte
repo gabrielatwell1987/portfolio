@@ -3,9 +3,18 @@
 	import * as THREE from 'three';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+	import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
+
+	let gui: GUI | undefined;
 
 	$effect(() => {
 		if (!browser) return;
+
+		gui = new GUI();
+		gui.domElement.style.position = 'absolute';
+		gui.domElement.style.top = 'auto';
+		gui.domElement.style.bottom = '0';
+		gui.domElement.style.left = '0';
 
 		/*
 		 * Loaders
@@ -38,6 +47,9 @@
 		scene.environment = environmentMap;
 		scene.background = environmentMap;
 		(scene as any).environmentIntensity = 3;
+
+		gui.add(scene, 'backgroundBlurriness').min(0).max(1).step(0.001);
+		gui.add(scene, 'backgroundIntensity').min(0).max(10).step(0.001);
 
 		/**
 		 * Sizes
