@@ -3,9 +3,9 @@
 	import CursorImage from '$lib/threejs/cursor/CursorImage.svelte';
 	import Environment from '$lib/threejs/environment/Environment.svelte';
 
-	let selectedComponent = $state<string>('ComingSoon');
+	let selectedComponent = $state<string>('Select');
 	let backgroundImage = $derived(
-		selectedComponent === 'ComingSoon'
+		selectedComponent === 'Select'
 			? 'repeating-linear-gradient(0deg, transparent, transparent 98px, rgba(255, 255, 255, 0.1) 98px, rgba(255, 255, 255, 0.1) 100px), repeating-linear-gradient(90deg, transparent, transparent 98px, rgba(255, 255, 255, 0.1) 98px, rgba(255, 255, 255, 0.1) 100px)'
 			: 'none'
 	);
@@ -14,10 +14,10 @@
 <div class="wholeScreen" style:background-image={backgroundImage}>
 	<div class="content">
 		<select bind:value={selectedComponent}>
+			<option value="Environment">Environments</option>
 			<option value="HandParticles">Hand Particles</option>
-			<option value="HeroCanvas">Hero Canvas</option>
-			<option value="Environment">Environment</option>
-			<option value="ComingSoon">Coming Soon</option>
+			<option value="HeroCanvas">Hero Section</option>
+			<option value="Select">Please Select</option>
 		</select>
 
 		{#if selectedComponent === 'HandParticles'}
@@ -26,8 +26,8 @@
 			<HeroCanvas />
 		{:else if selectedComponent === 'Environment'}
 			<Environment />
-		{:else if selectedComponent === 'ComingSoon'}
-			<h2>A new three.js component coming soon!</h2>
+		{:else if selectedComponent === 'Select'}
+			<h2>Select a component from the dropdown</h2>
 		{/if}
 	</div>
 </div>
@@ -40,6 +40,12 @@
 		top: 0;
 		left: 0;
 		background-color: var(--clr-invert);
+
+		@media (width <= 500px) {
+			position: relative;
+			block-size: auto;
+			min-block-size: 110vh;
+		}
 
 		& .content {
 			display: flex;
