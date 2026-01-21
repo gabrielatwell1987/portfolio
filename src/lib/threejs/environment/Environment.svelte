@@ -1,9 +1,12 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import * as THREE from 'three';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 	$effect(() => {
+		if (!browser) return;
+
 		/*
 		 * Loaders
 		 */
@@ -34,7 +37,7 @@
 		]);
 		scene.environment = environmentMap;
 		scene.background = environmentMap;
-		scene.environmentIntensity = 3;
+		(scene as any).environmentIntensity = 3;
 
 		/**
 		 * Sizes
@@ -66,8 +69,25 @@
 		renderer.setSize(sizes.width, sizes.height);
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-		// Use AbortController for event listener management
+		// mouse tracking
+		let mouse = $state({ x: 0, y: 0 });
+		const raycaster = new THREE.Raycaster();
+		const mouseVector = new THREE.Vector2();
+		const plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), -1.5);
+		const intersection = new THREE.Vector3();
+
+		// event listener management
 		const abortController = new AbortController();
+
+		window.addEventListener(
+			'mousemove',
+			(event) => {
+				mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+				mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+				mouseVector.set(mouse.x, mouse.y);
+			},
+			{ signal: abortController.signal }
+		);
 		window.addEventListener(
 			'resize',
 			() => {
@@ -91,7 +111,7 @@
 		 */
 		let gltfScene: THREE.Group | null = null;
 		gltfLoader.load('/threejayess/models/waternoose.glb', (gltf) => {
-			gltf.scene.scale.set(3, 3, 3);
+			gltf.scene.scale.set(1.5, 1.5, 1.5);
 			gltf.scene.position.set(0, 1.5, 0);
 			gltfScene = gltf.scene;
 			scene.add(gltf.scene);
@@ -108,6 +128,24 @@
 
 			// Update controls
 			controls.update();
+
+			// follow cursor
+			if (gltfScene) {
+				raycaster.setFromCamera(mouseVector, camera);
+				raycaster.ray.intersectPlane(plane, intersection);
+				if (intersection) {
+					gltfScene.position.copy(intersection);
+
+					// model rotation to face the camera horizontally
+					const direction = new THREE.Vector3(
+						camera.position.x - gltfScene.position.x,
+						0,
+						camera.position.z - gltfScene.position.z
+					).normalize();
+					const angle = Math.atan2(direction.x, direction.z);
+					gltfScene.rotation.y = angle;
+				}
+			}
 
 			// Render
 			renderer.render(scene, camera);
