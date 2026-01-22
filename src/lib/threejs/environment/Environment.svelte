@@ -233,6 +233,9 @@
 			// Dispose renderer
 			renderer.dispose();
 
+			// gui dispose
+			if (gui) gui.destroy();
+
 			// Dispose environment map
 			if (environmentMap) environmentMap.dispose();
 
