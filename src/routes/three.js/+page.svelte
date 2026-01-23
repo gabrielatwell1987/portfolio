@@ -2,11 +2,12 @@
 	import HeroCanvas from '$lib/threejs/hero/HeroCanvas.svelte';
 	import CursorImage from '$lib/threejs/cursor/CursorImage.svelte';
 	import Environment from '$lib/threejs/environment/Environment.svelte';
+	import PostProcess from '$lib/threejs/post-processing/PostProcess.svelte';
 
 	let selectedComponent = $state<string>('Select');
 	let backgroundImage = $derived(
 		selectedComponent === 'Select'
-			? 'repeating-linear-gradient(0deg, transparent, transparent 98px, rgba(255, 255, 255, 0.1) 98px, rgba(255, 255, 255, 0.1) 100px), repeating-linear-gradient(90deg, transparent, transparent 98px, rgba(255, 255, 255, 0.1) 98px, rgba(255, 255, 255, 0.1) 100px)'
+			? 'repeating-linear-gradient(0deg, transparent, transparent 98px, var(--clr-faint-gray) 98px, var(--clr-faint-gray) 100px), repeating-linear-gradient(90deg, transparent, transparent 98px, var(--clr-faint-gray) 98px, var(--clr-faint-gray) 100px)'
 			: 'none'
 	);
 </script>
@@ -14,10 +15,11 @@
 <div class="wholeScreen" style:background-image={backgroundImage}>
 	<div class="content">
 		<select bind:value={selectedComponent}>
-			<option value="Environment">Environments</option>
-			<option value="HandParticles">Hand Particles</option>
-			<option value="HeroCanvas">Hero Section</option>
-			<option value="Select">Please Select</option>
+			<option value="Environment">environment mapping</option>
+			<option value="HandParticles">hand particles</option>
+			<option value="HeroCanvas">hero section</option>
+			<option value="PostProcess">post-processing</option>
+			<option value="Select">please select</option>
 		</select>
 
 		{#if selectedComponent === 'HandParticles'}
@@ -26,8 +28,10 @@
 			<HeroCanvas />
 		{:else if selectedComponent === 'Environment'}
 			<Environment />
+		{:else if selectedComponent === 'PostProcess'}
+			<PostProcess />
 		{:else if selectedComponent === 'Select'}
-			<h2>Select a component from the dropdown</h2>
+			<h2>use the dropdown to select</h2>
 		{/if}
 	</div>
 </div>
@@ -81,7 +85,7 @@
 			& h2 {
 				color: var(--clr-link);
 				font-family: var(--bronova-bold);
-				font-size: clamp(var(--h6), 5vw, var(--lg));
+				font-size: clamp(var(--h6), 3.25vw, var(--lg));
 				text-align: center;
 
 				@media (width <= 768px) {

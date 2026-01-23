@@ -105,7 +105,7 @@
 
 		// glow image
 		displacement.glowImage = new Image();
-		displacement.glowImage.src = '/threejayess/glow.png';
+		displacement.glowImage.src = '/threejayess/glow.webp';
 
 		// interactive plane
 		displacement.interactivePlane = new THREE.Mesh(
@@ -155,7 +155,7 @@
 				uResolution: new THREE.Uniform(
 					new THREE.Vector2(sizes.width * sizes.pixelRatio, sizes.height * sizes.pixelRatio)
 				),
-				uPictureTexture: new THREE.Uniform(textureLoader.load('/threejayess/hand.png')),
+				uPictureTexture: new THREE.Uniform(textureLoader.load('/threejayess/hand.webp')),
 				uDisplacementTexture: new THREE.Uniform(displacement.texture)
 			}
 		});

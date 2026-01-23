@@ -279,7 +279,7 @@
 @layer theming {
 	:root {
 		/* base colors */
-		--blackest: oklch(11% 0 0);  
+		--blackest: oklch(11% 0 0);
 		--blacker: oklch(0.2809 0 0);
 		--white-gray: oklch(0.8297 0 0 / 90.2%);
 		--white: oklch(0.8853 0 0 / 90.2%);
@@ -292,14 +292,15 @@
 		--pale: oklch(0.6936 0.1414 83.49);
 		--light-gray: oklch(0.5957 0.0036 17.26);
 		--gray: oklch(0.5103 0 0);
+		--faint-gray: oklch(0.5103 0 0 / 0.1);
 		--dark-gray: oklch(0.3715 0 0);
+		--dark-faint-gray: oklch(0.3715 0 0 / 0.1);
 		--success-light: oklch(0.5771 0.1593 143.16);
 		--success-dark: oklch(0.4898 0.1434 141.2);
 		--fail-light: oklch(0.5189 0.175 25.76);
 		--fail-dark: oklch(0.2931 0.151 24.57);
 		--warning-light: oklch(0.7126 0.1451 94.89);
 		--warning-dark: oklch(0.4869 0.0938 88.85);
-	
 
 		/* light-dark() */
 		--clr-bg: light-dark(var(--white), var(--blackest));
@@ -311,7 +312,8 @@
 		--clr-pale: light-dark(var(--yellow), var(--pale));
 		--clr-light-gray: light-dark(var(--dark-gray), var(--light-gray));
 		--clr-gray: light-dark(var(--gray), var(--dark-gray));
-		--clr-dark-gray: light-dark(#a19e9e, #2e2d2d);
+		--clr-faint-gray: light-dark(var(--dark-faint-gray), var(--faint-gray));
+		--clr-dark-gray: light-dark(oklch(0.7018 0.0035 17.24), oklch(0.2982 0.0014 17.24));
 		--clr-green: light-dark(var(--success-dark), var(--success-light));
 		--clr-light-invert: light-dark(var(--white-gray), var(--blacker));
 		--clr-invert: light-dark(var(--white), var(--blackest));
