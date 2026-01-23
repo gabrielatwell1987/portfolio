@@ -70,44 +70,85 @@
 			return false;
 		};
 
-		const bodyStyles = getComputedStyle(document.body);
-		const primaryColorRaw = bodyStyles.getPropertyValue('--clr-main').trim();
-		const secondaryColorRaw = bodyStyles.getPropertyValue('--clr-inverted').trim();
-		const accentColorRaw = bodyStyles.getPropertyValue('--clr-pale').trim();
+		// color function
+		function updateColors() {
+			if (!material || !particlesMaterial) return;
 
-		const primaryColor = convertToRGB(primaryColorRaw);
-		const secondaryColor = convertToRGB(secondaryColorRaw);
-		const accentColor = convertToRGB(accentColorRaw);
+			const bodyStyles = getComputedStyle(document.body);
+			const newPrimaryColor = bodyStyles.getPropertyValue('--clr-main').trim();
+			const newSecondaryColor = bodyStyles.getPropertyValue('--clr-inverted').trim();
+			const newStarColor = bodyStyles.getPropertyValue('--clr-pale').trim();
 
-		const canvasElement = document.createElement('canvas');
-		canvasElement.width = 64;
-		canvasElement.height = 64;
-		const ctx = canvasElement.getContext('2d');
-		if (ctx) {
-			ctx.fillStyle = 'rgba(255, 255, 255, 1)'; // White star
-			ctx.beginPath();
-			const spikes = 5;
-			const outerRadius = 30;
-			const innerRadius = 15;
-			const centerX = 32;
-			const centerY = 32;
-			for (let i = 0; i < spikes * 2; i++) {
-				const angle = (i * Math.PI) / spikes;
-				const radius = i % 2 === 0 ? outerRadius : innerRadius;
-				const x = centerX + Math.cos(angle) * radius;
-				const y = centerY + Math.sin(angle) * radius;
-				if (i === 0) ctx.moveTo(x, y);
-				else ctx.lineTo(x, y);
+			// Convert oklab/complex colors to RGB
+			let primaryConverted = null;
+			let starConverted = null;
+			let secondaryConverted = null;
+
+			if (newPrimaryColor && newPrimaryColor.length > 0) {
+				primaryConverted = convertToRGB(newPrimaryColor);
 			}
-			ctx.closePath();
-			ctx.fill();
-			star = new THREE.CanvasTexture(canvasElement);
-		} else {
-			// Fallback to the original texture if canvas context fails
-			const textureLoader = new THREE.TextureLoader();
-			star = textureLoader.load(
-				'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/star.webp'
-			);
+			if (newStarColor && newStarColor.length > 0) {
+				starConverted = convertToRGB(newStarColor);
+				console.log('starConverted:', starConverted);
+			}
+			if (newSecondaryColor && newSecondaryColor.length > 0) {
+				secondaryConverted = convertToRGB(newSecondaryColor);
+			}
+
+			const canvasElement = document.createElement('canvas');
+			canvasElement.width = 64;
+			canvasElement.height = 64;
+			const ctx = canvasElement.getContext('2d');
+			if (ctx) {
+				ctx.fillStyle = starConverted || '#ff0000';
+				ctx.beginPath();
+				const spikes = 5;
+				const outerRadius = 30;
+				const innerRadius = 15;
+				const centerX = 32;
+				const centerY = 32;
+				for (let i = 0; i < spikes * 2; i++) {
+					const angle = (i * Math.PI) / spikes;
+					const radius = i % 2 === 0 ? outerRadius : innerRadius;
+					const x = centerX + Math.cos(angle) * radius;
+					const y = centerY + Math.sin(angle) * radius;
+					if (i === 0) ctx.moveTo(x, y);
+					else ctx.lineTo(x, y);
+				}
+				ctx.closePath();
+				ctx.fill();
+				star = new THREE.CanvasTexture(canvasElement);
+				particlesMaterial.map = star;
+				particlesMaterial.alphaMap = null;
+			} else {
+				// Fallback to the original texture if canvas context fails
+				const textureLoader = new THREE.TextureLoader();
+				star = textureLoader.load(
+					'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/star.webp'
+				);
+				particlesMaterial.map = star;
+				particlesMaterial.alphaMap = null;
+			}
+
+			// detect theme
+			const isLight = primaryConverted ? isLightColor(primaryConverted) : false;
+
+			if (isLight) {
+				if (secondaryConverted) {
+					material.color.set('#707070');
+				} else {
+					material.color.set('#707070');
+				}
+			} else {
+				if (primaryConverted) {
+					material.color.set('#ffffff');
+				} else {
+					material.color.set('#ffffff');
+				}
+			}
+
+			// particlesMaterial color remains white since the texture is now colored
+			particlesMaterial.color.set('#ffffff');
 		}
 
 		// canvas
@@ -132,67 +173,18 @@
 
 		material = new THREE.PointsMaterial({
 			size: 0.015,
-			color: primaryColor || '#ffffff' // fallback to white
+			color: '#ffffff'
 		});
 
 		particlesMaterial = new THREE.PointsMaterial({
 			size: 0.04,
 			transparent: true,
-			alphaMap: star,
 			alphaTest: 0.001,
-			color: accentColor || secondaryColor || '#ffffff',
+			color: '#ffffff',
 			blending: THREE.AdditiveBlending
 		});
 
-		function updateColors() {
-			if (!material || !particlesMaterial) return;
-
-			const bodyStyles = getComputedStyle(document.body);
-			const newPrimaryColor = bodyStyles.getPropertyValue('--clr-main').trim();
-			const newSecondaryColor = bodyStyles.getPropertyValue('--clr-inverted').trim();
-			const newAccentColor = bodyStyles.getPropertyValue('--clr-pale').trim();
-
-			// Convert oklab/complex colors to RGB
-			let primaryConverted = null;
-			let accentConverted = null;
-			let secondaryConverted = null;
-
-			if (newPrimaryColor && newPrimaryColor.length > 0) {
-				primaryConverted = convertToRGB(newPrimaryColor);
-			}
-			if (newAccentColor && newAccentColor.length > 0) {
-				accentConverted = convertToRGB(newAccentColor);
-			}
-			if (newSecondaryColor && newSecondaryColor.length > 0) {
-				secondaryConverted = convertToRGB(newSecondaryColor);
-			}
-
-			// detect theme
-			const isLight = primaryConverted ? isLightColor(primaryConverted) : false;
-
-			if (isLight) {
-				if (secondaryConverted) {
-					material.color.set('#707070');
-				} else {
-					material.color.set('#707070');
-				}
-			} else {
-				if (primaryConverted) {
-					material.color.set('#ffffff');
-				} else {
-					material.color.set('#ffffff');
-				}
-			}
-
-			if (accentConverted) {
-				particlesMaterial.color.set(accentConverted);
-			} else if (secondaryConverted) {
-				particlesMaterial.color.set(secondaryConverted);
-			} else {
-				// fallback
-				particlesMaterial.color.set(isLight ? '#b8860b' : '#ffd700');
-			}
-		}
+		updateColors();
 
 		// Listen for theme changes
 		themeObserver = new MutationObserver(updateColors);

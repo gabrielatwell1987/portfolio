@@ -19,7 +19,6 @@
 			<option value="HandParticles">hand particles</option>
 			<option value="HeroCanvas">hero section</option>
 			<option value="PostProcess">post-processing</option>
-			<option value="Select">please select</option>
 		</select>
 
 		{#if selectedComponent === 'HandParticles'}
@@ -31,7 +30,7 @@
 		{:else if selectedComponent === 'PostProcess'}
 			<PostProcess />
 		{:else if selectedComponent === 'Select'}
-			<h2>use the dropdown to select</h2>
+			<h2><b>use the dropdown to select</b></h2>
 		{/if}
 	</div>
 </div>
