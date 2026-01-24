@@ -65,7 +65,7 @@
 		 */
 		// Base camera
 		const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
-		camera.position.set(4, 5, 4);
+		camera.position.set(5, 6, 5);
 		scene.add(camera);
 
 		// Controls
@@ -186,6 +186,7 @@
 		 */
 		const clock = new THREE.Clock();
 		let animationId: number;
+
 		const tick = () => {
 			// Time
 			const elapsedTime = clock.getElapsedTime();
@@ -196,19 +197,21 @@
 			// follow cursor
 			if (gltfScene) {
 				raycaster.setFromCamera(mouseVector, camera);
-				raycaster.ray.intersectPlane(plane, intersection);
-				if (intersection) {
-					gltfScene.position.copy(intersection);
+				const intersects = raycaster.ray.intersectPlane(plane, intersection);
 
-					// model rotation to face the camera
-					const direction = new THREE.Vector3(
-						camera.position.x - gltfScene.position.x,
-						0,
-						camera.position.z - gltfScene.position.z
-					).normalize();
-					const angle = Math.atan2(direction.x, direction.z);
-					gltfScene.rotation.y = angle;
+				if (intersects) {
+					gltfScene.position.x = THREE.MathUtils.lerp(gltfScene.position.x, intersection.x, 0.1);
+					gltfScene.position.z = THREE.MathUtils.lerp(gltfScene.position.z, intersection.z, 0.1);
 				}
+
+				// model rotation to face the camera
+				const direction = new THREE.Vector3(
+					camera.position.x - gltfScene.position.x,
+					0,
+					camera.position.z - gltfScene.position.z
+				).normalize();
+				const angle = Math.atan2(direction.x, direction.z);
+				gltfScene.rotation.y = angle;
 			}
 
 			// Render

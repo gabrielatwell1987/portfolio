@@ -48,6 +48,7 @@
 		"highlight.js": "^11.9.0",
 		"marked": "^15.0.12",
 		"split-type": "^0.3.4",
+		"stats.js": "^0.17.0",
 		"svelte": "^5.46.4"
 	},
 	"overrides": {
