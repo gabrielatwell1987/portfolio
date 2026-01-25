@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Image from '$lib/components/layout/Image.svelte';
+	import gsap from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 	$effect(() => {
 		const main = () => {
@@ -12,6 +14,37 @@
 			});
 		};
 		document.addEventListener('DOMContentLoaded', main);
+	});
+
+	// gsap
+	$effect(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
+		const bentoWrapper = document.querySelector('.bento-wrapper');
+		const bentoItems = document.querySelectorAll('.bento-item');
+
+		if (bentoWrapper && bentoItems.length > 0) {
+			bentoItems.forEach((item) => {
+				const isRight = item.hasAttribute('data-position-right');
+				const initialX = isRight ? 50 : -50;
+
+				gsap.fromTo(
+					item,
+					{ opacity: 0, x: initialX },
+					{
+						opacity: 1,
+						x: 0,
+						duration: 1,
+						ease: 'power2.out',
+						scrollTrigger: {
+							trigger: bentoWrapper,
+							start: 'top center',
+							toggleActions: 'play none none reverse'
+						}
+					}
+				);
+			});
+		}
 	});
 </script>
 
@@ -184,11 +217,11 @@
 						transform 0.25s ease-out;
 
 					&[data-position-left] {
-						box-shadow: 5px 5px 0 var(--clr-main);
+						box-shadow: 7px 7px 0 var(--clr-main);
 					}
 
 					&[data-position-right] {
-						box-shadow: -5px 5px 0 var(--clr-main);
+						box-shadow: -7px 7px 0 var(--clr-main);
 					}
 
 					&:not(:hover) {

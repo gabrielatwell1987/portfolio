@@ -86,6 +86,7 @@
 		}
 	});
 
+	// gsap
 	$effect(() => {
 		// .stat-item scroll animation
 		gsap.registerPlugin(ScrollTrigger);
@@ -93,10 +94,7 @@
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.stats-section',
-				start: 'top center+=250',
-				end: 'bottom center',
-				toggleActions: 'play none none reverse',
-				scrub: 1
+				start: 'top center+=250'
 			}
 		});
 
@@ -106,7 +104,7 @@
 			{
 				x: 0,
 				opacity: 1,
-				duration: 1
+				duration: 0.5
 			},
 			0
 		);
@@ -117,7 +115,7 @@
 			{
 				scale: 1,
 				opacity: 1,
-				duration: 1
+				duration: 0.5
 			},
 			0
 		);
@@ -128,7 +126,7 @@
 			{
 				x: 0,
 				opacity: 1,
-				duration: 1
+				duration: 0.5
 			},
 			0
 		);

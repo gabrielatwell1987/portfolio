@@ -91,11 +91,11 @@
 			}
 
 			&.left {
-				box-shadow: -5px 5px 0 var(--clr-main);
+				box-shadow: -7px 7px 0 var(--clr-main);
 			}
 
 			&.right {
-				box-shadow: 5px 5px 0 var(--clr-main);
+				box-shadow: 7px 7px 0 var(--clr-main);
 			}
 		}
 
