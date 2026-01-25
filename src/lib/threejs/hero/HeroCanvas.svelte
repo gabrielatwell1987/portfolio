@@ -65,43 +65,31 @@
 			}
 		};
 
-		// color helper function
-		const isLightColor = (color: string) => {
-			const match = color.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
-			if (match) {
-				const r = parseInt(match[1]);
-				const g = parseInt(match[2]);
-				const b = parseInt(match[3]);
-				const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-				return luminance > 0.5;
-			}
-			return false;
-		};
-
 		// color function
 		function updateColors() {
 			if (!material || !particlesMaterial) return;
 
 			const bodyStyles = getComputedStyle(document.body);
-			const newPrimaryColor = bodyStyles.getPropertyValue('--clr-main').trim();
-			const newSecondaryColor = bodyStyles.getPropertyValue('--clr-inverted').trim();
-			const newStarColor = bodyStyles.getPropertyValue('--clr-pale').trim();
+			const htmlStyles = getComputedStyle(document.documentElement);
+			const newStarColor = bodyStyles.getPropertyValue('--clr-dark-pale').trim();
+			const grayColor = bodyStyles.getPropertyValue('--clr-gray').trim();
 
-			// Convert oklab/complex colors to RGB
-			let primaryConverted = null;
+			// detect light mode
+			const colorScheme =
+				htmlStyles.colorScheme || htmlStyles.getPropertyValue('color-scheme').trim();
+			const isLightMode = colorScheme === 'light' || colorScheme.startsWith('light');
+
 			let starConverted = null;
-			let secondaryConverted = null;
+			let grayConverted = null;
 
-			if (newPrimaryColor && newPrimaryColor.length > 0) {
-				primaryConverted = convertToRGB(newPrimaryColor);
-			}
 			if (newStarColor && newStarColor.length > 0) {
 				starConverted = convertToRGB(newStarColor);
-				console.log('starConverted:', starConverted);
 			}
-			if (newSecondaryColor && newSecondaryColor.length > 0) {
-				secondaryConverted = convertToRGB(newSecondaryColor);
+			if (grayColor && grayColor.length > 0) {
+				grayConverted = convertToRGB(grayColor);
 			}
+
+			console.log('theme update', { isLightMode, grayColor, grayConverted, colorScheme });
 
 			const canvasElement = document.createElement('canvas');
 			canvasElement.width = 64;
@@ -129,7 +117,6 @@
 				particlesMaterial.map = star;
 				particlesMaterial.alphaMap = null;
 			} else {
-				// Fallback to the original texture if canvas context fails
 				const textureLoader = new THREE.TextureLoader();
 				star = textureLoader.load(
 					'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/star.webp'
@@ -138,25 +125,18 @@
 				particlesMaterial.alphaMap = null;
 			}
 
-			// detect theme
-			const isLight = primaryConverted ? isLightColor(primaryConverted) : false;
-
-			if (isLight) {
-				if (secondaryConverted) {
-					material.color.set('#707070');
-				} else {
-					material.color.set('#707070');
-				}
+			if (isLightMode) {
+				material.color.set('#1a1a1a');
+				material.size = 0.015;
 			} else {
-				if (primaryConverted) {
-					material.color.set('#ffffff');
-				} else {
-					material.color.set('#ffffff');
-				}
+				const darkModeColor = '#f0f0f0';
+				material.color.set(darkModeColor);
+				material.size = 0.015;
 			}
 
-			// particlesMaterial color remains white since the texture is now colored
 			particlesMaterial.color.set('#ffffff');
+			material.needsUpdate = true;
+			particlesMaterial.needsUpdate = true;
 		}
 
 		// canvas
@@ -181,18 +161,16 @@
 
 		material = new THREE.PointsMaterial({
 			size: 0.015,
-			color: '#ffffff'
+			color: '#c0c0c0'
 		});
 
 		particlesMaterial = new THREE.PointsMaterial({
 			size: 0.04,
 			transparent: true,
 			alphaTest: 0.001,
-			color: '#ffffff',
+			color: '#c0c0c0',
 			blending: THREE.AdditiveBlending
 		});
-
-		updateColors();
 
 		// Listen for theme changes
 		themeObserver = new MutationObserver(updateColors);
@@ -200,12 +178,22 @@
 			attributes: true,
 			attributeFilter: ['class', 'style']
 		});
+		themeObserver.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['class', 'style', 'color-scheme']
+		});
 
-		// Also listen for custom theme change events if your ThemeToggle dispatches them
+		// listen for custom theme change events if your ThemeToggle dispatches them
 		themeChangeListener = updateColors;
-		document.addEventListener('theme-change', themeChangeListener);
+		document.addEventListener('theme-change', themeChangeListener, {
+			signal: abortController.signal
+		});
 
-		// Test initial color values
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+		mediaQuery.addEventListener('change', updateColors, {
+			signal: abortController.signal
+		});
+
 		updateColors();
 
 		// Mesh
@@ -240,7 +228,7 @@
 				renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 			}
 		};
-		window.addEventListener('resize', resizeListener);
+		window.addEventListener('resize', resizeListener, { signal: abortController.signal });
 
 		/**
 		 * Camera
@@ -265,7 +253,7 @@
 
 		// Mouse
 		mousemoveListener = animateParticles;
-		document.addEventListener('mousemove', mousemoveListener);
+		document.addEventListener('mousemove', mousemoveListener, { signal: abortController.signal });
 
 		let mouseX = 0;
 		let mouseY = 0;
@@ -313,7 +301,9 @@
 			}
 		};
 
-		document.addEventListener('visibilitychange', visibilityListener);
+		document.addEventListener('visibilitychange', visibilityListener, {
+			signal: abortController.signal
+		});
 
 		tick();
 
