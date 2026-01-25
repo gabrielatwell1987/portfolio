@@ -35,8 +35,6 @@
 	</div>
 </div>
 
-<h1>test</h1>
-
 <style>
 	.wholeScreen {
 		inline-size: 100vw;
