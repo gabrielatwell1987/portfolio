@@ -95,6 +95,10 @@
 					rotate: 5deg;
 					transition: rotate 0.15s ease-out;
 				}
+
+				&:active {
+					scale: 0.97;
+				}
 			}
 
 			& li {

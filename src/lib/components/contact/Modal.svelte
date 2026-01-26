@@ -11,7 +11,6 @@
 		previousActiveElement = document.activeElement as HTMLElement | null;
 		modal.showModal();
 		statusMessage = 'Contact information modal opened';
-		// Small delay to ensure CSS transition starts from initial state
 		setTimeout(() => {
 			isOpen = true;
 			// Focus the close button for keyboard accessibility
@@ -68,7 +67,7 @@
 	class="contact-modal"
 	aria-labelledby="modal-title"
 	bind:this={modal}
-	class:open={isOpen}
+	data-open={isOpen}
 	onkeydown={handleKeydown}
 >
 	<article class="modal-inner">
@@ -117,37 +116,48 @@
 </dialog>
 
 <style>
+	#modal {
+		inline-size: 75vw;
+		block-size: auto;
+
+		@media (width <= 500px) {
+			max-inline-size: 100vw;
+			inline-size: 100vw;
+			block-size: 100vh;
+			margin: 0;
+			padding: 0;
+		}
+	}
+
 	.contact-modal {
 		opacity: 0;
 		visibility: hidden;
 		transform: scale(0.99);
 		transition:
-			opacity 0.3s ease-out,
-			visibility 0.3s ease-out,
-			transform 0.3s ease-out;
+			opacity 0.3s ease,
+			visibility 0.3s ease,
+			transform 0.3s ease;
 		background: none;
 		-webkit-transition:
-			opacity 0.3s ease-out,
-			visibility 0.3s ease-out,
-			transform 0.3s ease-out;
+			opacity 0.3s ease,
+			visibility 0.3s ease,
+			transform 0.3s ease;
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 		-webkit-perspective: 1000;
 		perspective: 1000;
 		will-change: opacity, transform;
 
-		&.open {
+		&[data-open='true'] {
 			opacity: 1;
 			visibility: visible;
 			width: 100%;
 			transform: scale(1);
 		}
 
-		@media screen and (width >= 720px) {
+		@media (width >= 720px) {
 			padding: 2rem;
-			width: 93%;
-			height: 83%;
-			margin: 0 auto;
+			margin-inline: auto;
 		}
 
 		@media (width <= 768px) {
@@ -170,10 +180,10 @@
 				border: 2px solid var(--clr-gray);
 				border-radius: 1rem;
 				background: var(--blackest);
-				/* box-shadow: 0 0 5px 3px var(--dark-blue); */
 
 				@media (width <= 500px) {
-					padding: 3em 1em;
+					padding: 3em 0;
+					max-inline-size: 100vw;
 				}
 
 				& header {
@@ -301,17 +311,17 @@
 	}
 
 	.modal-title {
-		@media screen and (width >= 1024px) {
+		@media (width >= 1024px) {
 			line-height: 0.95;
 		}
 
-		@media screen and (width >= 1100px) {
+		@media (width >= 1100px) {
 			padding: 0.5rem;
 		}
 	}
 
 	.modal-description {
-		@media screen and (width >= 1024px) {
+		@media (width >= 1024px) {
 			line-height: 1.75;
 			margin-inline: auto;
 			padding: 1rem;
@@ -319,7 +329,7 @@
 	}
 
 	.modal-image {
-		@media screen and (width >= 1024px) {
+		@media (width >= 1024px) {
 			margin-block: 1rem;
 		}
 	}

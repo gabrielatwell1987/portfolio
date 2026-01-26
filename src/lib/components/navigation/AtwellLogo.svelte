@@ -30,6 +30,10 @@
 				margin-left: 1em;
 			}
 
+			&:active {
+				scale: 0.97;
+			}
+
 			& .atwell {
 				--top-left: 55%;
 				--top-right: 40%;

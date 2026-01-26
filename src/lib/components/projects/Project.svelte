@@ -144,6 +144,10 @@
 					transition: all 0.25s;
 					pointer-events: auto;
 				}
+
+				&:active {
+					scale: 0.97;
+				}
 			}
 
 			& .desc-banner {
@@ -203,6 +207,10 @@
 					2px 0 0 var(--clr-main),
 					0 -2px 0 var(--clr-main),
 					0 2px 0 var(--clr-main);
+			}
+
+			&:active {
+				scale: 0.97;
 			}
 		}
 	}

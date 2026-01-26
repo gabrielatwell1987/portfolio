@@ -151,6 +151,10 @@
 						outline: 1px solid var(--clr-main);
 						background: transparent;
 					}
+
+					&:active {
+						scale: 0.97;
+					}
 				}
 
 				& .learn-image {

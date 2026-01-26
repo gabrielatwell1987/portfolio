@@ -2,10 +2,18 @@
 	import Image from '$lib/components/layout/Image.svelte';
 	import skills from '$lib/components/about/skills.json';
 
+	type Skill = {
+		alt: string;
+		href: string;
+		svg?: string;
+		src?: string;
+	};
+	const typedSkills: Skill[] = skills;
+
 	let isPaused = $state<boolean>(false);
 	let position = $state<number>(0);
 
-	const duplicatedSkills = [...skills, ...skills];
+	const duplicatedSkills = [...typedSkills, ...typedSkills];
 
 	$effect(() => {
 		if (isPaused) return;
@@ -43,7 +51,7 @@
 						<div class="icon">
 							{@html skill.svg}
 						</div>
-					{:else}
+					{:else if skill.src}
 						<div class="icon">
 							<Image
 								src={skill.src}
@@ -154,6 +162,10 @@
 
 						&:hover {
 							filter: grayscale(0%);
+						}
+
+						&:active {
+							scale: 0.97;
 						}
 					}
 				}
