@@ -3,6 +3,7 @@
 	import CursorImage from '$lib/threejs/cursor/CursorImage.svelte';
 	import Environment from '$lib/threejs/environment/Environment.svelte';
 	import PostProcess from '$lib/threejs/post-processing/PostProcess.svelte';
+	import Loader from '$lib/threejs/loader/Loader.svelte';
 
 	let selectedComponent = $state<string>('Select');
 	let backgroundImage = $derived(
@@ -19,6 +20,7 @@
 			<option value="HandParticles">hand particles</option>
 			<option value="HeroCanvas">hero section</option>
 			<option value="PostProcess">post-processing</option>
+			<option value="Loader">loader</option>
 		</select>
 
 		{#if selectedComponent === 'HandParticles'}
@@ -29,6 +31,8 @@
 			<Environment />
 		{:else if selectedComponent === 'PostProcess'}
 			<PostProcess />
+		{:else if selectedComponent === 'Loader'}
+			<Loader />
 		{:else if selectedComponent === 'Select'}
 			<h2><b>use the dropdown to select</b></h2>
 		{/if}
