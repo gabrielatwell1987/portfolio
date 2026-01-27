@@ -94,6 +94,10 @@
 			font-weight: 700;
 		}
 
+		&:active {
+			scale: 0.97;
+		}
+
 		&:hover {
 			opacity: 1;
 			outline-offset: 0px;

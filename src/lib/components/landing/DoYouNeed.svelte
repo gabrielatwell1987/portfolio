@@ -33,6 +33,7 @@
 <style>
 	.animated-text {
 		padding-top: 10em;
+		user-select: none;
 
 		@media (width <= 768px) {
 			margin-top: -15%;

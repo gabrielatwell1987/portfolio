@@ -2,7 +2,7 @@
 	import CSS from './css.md';
 	import GSAP from './gsap.md';
 	import SEO from '$lib/data/SEO.svelte';
-	import Card from '$lib/components/layout/Card.svelte';
+	import Card from '$lib/components/learn/Card.svelte';
 	import TableOfContents from '$lib/components/learn/TableOfContents.svelte';
 	import GabeMorph from '$lib/components/learn/GabeMorph.svelte';
 	import BackToTop from '$lib/components/learn/BackToTop.svelte';
