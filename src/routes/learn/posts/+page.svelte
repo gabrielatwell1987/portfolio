@@ -7,30 +7,10 @@
 	import GabeMorph from '$lib/components/learn/GabeMorph.svelte';
 	import BackToTop from '$lib/components/learn/BackToTop.svelte';
 	import ViewTransitionImage from '$lib/components/layout/view-transitions/ViewTransitionImage.svelte';
+	import gsap from 'gsap';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 	let mounted = $state<boolean>(false);
-	let cssEnlarged = $state<boolean>(false);
-	let gsapEnlarged = $state<boolean>(false);
-
-	function enlargeCssImage() {
-		if (document.startViewTransition) {
-			document.startViewTransition(() => {
-				cssEnlarged = !cssEnlarged;
-			});
-		} else {
-			cssEnlarged = !cssEnlarged;
-		}
-	}
-
-	function enlargeGsapImage() {
-		if (document.startViewTransition) {
-			document.startViewTransition(() => {
-				gsapEnlarged = !gsapEnlarged;
-			});
-		} else {
-			gsapEnlarged = !gsapEnlarged;
-		}
-	}
 
 	$effect(() => {
 		if (document.startViewTransition) {
@@ -40,6 +20,41 @@
 		} else {
 			mounted = true;
 		}
+	});
+
+	// gsap
+	$effect(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
+		let tlCSS = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.css',
+				start: 'top bottom',
+				toggleActions: 'play none none reverse'
+			}
+		});
+
+		tlCSS.from('.css .content p', {
+			opacity: 0,
+			x: -100,
+			stagger: 0.5,
+			duration: 0.5
+		});
+
+		let tlGSAP = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.gsap',
+				start: 'top bottom',
+				toggleActions: 'play none none reverse'
+			}
+		});
+
+		tlGSAP.from('.gsap .content p', {
+			opacity: 0,
+			x: 100,
+			stagger: 0.5,
+			duration: 0.5
+		});
 	});
 </script>
 
