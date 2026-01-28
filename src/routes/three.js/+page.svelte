@@ -20,7 +20,7 @@
 			<option value="HandParticles">hand particles</option>
 			<option value="HeroCanvas">hero section</option>
 			<option value="PostProcess">post-processing</option>
-			<option value="Loader">loader</option>
+			<option value="Loader">loading bar</option>
 		</select>
 
 		{#if selectedComponent === 'HandParticles'}
