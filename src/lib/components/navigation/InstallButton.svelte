@@ -203,6 +203,7 @@
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 		z-index: 2000;
 		animation: slideUp 0.5s ease-out forwards;
+		anchor-name: --instructions;
 
 		& button {
 			margin-top: 0.5em;
@@ -239,12 +240,15 @@
 		}
 
 		& [data-close-button] {
-			bottom: 2em;
 			border: 1px solid var(--clr-main);
-
-			@media (width <= 500px) {
-				bottom: -1.5em;
-			}
+			position: absolute;
+			position-anchor: --instructions;
+			bottom: anchor(bottom);
+			right: anchor(right);
+			margin-top: 0;
+			cursor: pointer;
+			font-family: var(--bronova-bold);
+			font-size: clamp(var(--sm), 1.2vw, var(--h6));
 		}
 	}
 
