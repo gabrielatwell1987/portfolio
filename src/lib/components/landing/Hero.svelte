@@ -88,13 +88,17 @@
 
 	// gsap
 	$effect(() => {
+		if (!mounted) return;
+
 		// .stat-item scroll animation
 		gsap.registerPlugin(ScrollTrigger);
 
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.stats-section',
-				start: 'top center+=250'
+				start: 'top center',
+				end: 'bottom center',
+				toggleActions: 'play none none reverse'
 			}
 		});
 

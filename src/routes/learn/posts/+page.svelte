@@ -24,36 +24,55 @@
 
 	// gsap
 	$effect(() => {
+		if (!mounted) return;
+
 		gsap.registerPlugin(ScrollTrigger);
 
-		let tlCSS = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.css',
-				start: 'top bottom',
-				toggleActions: 'play none none reverse'
-			}
+		const paragraphs = document.querySelectorAll('.content p');
+		const images = document.querySelectorAll('.image img');
+
+		images.forEach((img) => {
+			gsap.fromTo(
+				img,
+				{
+					scale: 0.8,
+					opacity: 0
+				},
+				{
+					scale: 1,
+					opacity: 1,
+					duration: 1,
+					ease: 'power2.out',
+					scrollTrigger: {
+						trigger: img,
+						start: 'top center',
+						end: 'bottom center',
+						toggleActions: 'play none none reverse'
+					}
+				}
+			);
 		});
 
-		tlCSS.from('.css .content p', {
-			opacity: 0,
-			x: -100,
-			stagger: 0.5,
-			duration: 0.5
-		});
-
-		let tlGSAP = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.gsap',
-				start: 'top bottom',
-				toggleActions: 'play none none reverse'
-			}
-		});
-
-		tlGSAP.from('.gsap .content p', {
-			opacity: 0,
-			x: 100,
-			stagger: 0.5,
-			duration: 0.5
+		paragraphs.forEach((para) => {
+			gsap.fromTo(
+				para,
+				{
+					x: -100,
+					opacity: 0
+				},
+				{
+					x: 0,
+					opacity: 1,
+					duration: 1,
+					ease: 'power2.out',
+					scrollTrigger: {
+						trigger: para,
+						start: 'top center',
+						end: 'bottom center',
+						toggleActions: 'play none none reverse'
+					}
+				}
+			);
 		});
 	});
 </script>
