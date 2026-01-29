@@ -45,7 +45,7 @@
 					ease: 'power2.out',
 					scrollTrigger: {
 						trigger: img,
-						start: 'top center',
+						start: 'top center+=50',
 						end: 'bottom center',
 						toggleActions: 'play none none reverse'
 					}
@@ -68,7 +68,7 @@
 					scrollTrigger: {
 						trigger: para,
 						start: 'top center',
-						end: 'bottom center',
+						end: 'bottom center+=100',
 						toggleActions: 'play none none reverse'
 					}
 				}
