@@ -3,7 +3,7 @@
 	import Image from '$lib/components/layout/Image.svelte';
 	import '@fortawesome/fontawesome-free/css/all.css';
 
-	let statusMessage: string = $state('');
+	let statusMessage = $state<string>('');
 </script>
 
 <A11yAnnouncer message={statusMessage} />
@@ -37,32 +37,6 @@
 <div id="modal" class="contact-modal" aria-labelledby="modal-title" popover>
 	<article class="modal-inner">
 		<header>
-			<button
-				class="close-button"
-				aria-label="Close contact information modal"
-				popovertarget="modal"
-				popovertargetaction="hide"
-			>
-				<svg
-					width="800px"
-					height="800px"
-					viewBox="0 0 24 24"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M8.00191 9.41621C7.61138 9.02569 7.61138 8.39252 8.00191 8.002C8.39243 7.61147 9.0256 7.61147 9.41612 8.002L12.0057 10.5916L14.5896 8.00771C14.9801 7.61719 15.6133 7.61719 16.0038 8.00771C16.3943 8.39824 16.3943 9.0314 16.0038 9.42193L13.4199 12.0058L16.0039 14.5897C16.3944 14.9803 16.3944 15.6134 16.0039 16.004C15.6133 16.3945 14.9802 16.3945 14.5896 16.004L12.0057 13.42L9.42192 16.0038C9.03139 16.3943 8.39823 16.3943 8.00771 16.0038C7.61718 15.6133 7.61718 14.9801 8.00771 14.5896L10.5915 12.0058L8.00191 9.41621Z"
-						fill="var(--fail)"
-					/>
-					<path
-						fill-rule="evenodd"
-						clip-rule="evenodd"
-						d="M23 4C23 2.34315 21.6569 1 20 1H4C2.34315 1 1 2.34315 1 4V20C1 21.6569 2.34315 23 4 23H20C21.6569 23 23 21.6569 23 20V4ZM21 4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4Z"
-						fill="var(--fail)"
-					/>
-				</svg>
-			</button>
-
 			<h4 class="modal-title" id="modal-title">Please contact me for any work!</h4>
 		</header>
 
@@ -80,9 +54,41 @@
 			I am always happy to help!
 		</p>
 	</article>
+
+	<button
+		class="close-button"
+		aria-label="Close contact information modal"
+		popovertarget="modal"
+		popovertargetaction="hide"
+	>
+		<svg
+			width="800px"
+			height="800px"
+			viewBox="0 0 24 24"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<path
+				d="M8.00191 9.41621C7.61138 9.02569 7.61138 8.39252 8.00191 8.002C8.39243 7.61147 9.0256 7.61147 9.41612 8.002L12.0057 10.5916L14.5896 8.00771C14.9801 7.61719 15.6133 7.61719 16.0038 8.00771C16.3943 8.39824 16.3943 9.0314 16.0038 9.42193L13.4199 12.0058L16.0039 14.5897C16.3944 14.9803 16.3944 15.6134 16.0039 16.004C15.6133 16.3945 14.9802 16.3945 14.5896 16.004L12.0057 13.42L9.42192 16.0038C9.03139 16.3943 8.39823 16.3943 8.00771 16.0038C7.61718 15.6133 7.61718 14.9801 8.00771 14.5896L10.5915 12.0058L8.00191 9.41621Z"
+				fill="var(--fail)"
+			/>
+			<path
+				fill-rule="evenodd"
+				clip-rule="evenodd"
+				d="M23 4C23 2.34315 21.6569 1 20 1H4C2.34315 1 1 2.34315 1 4V20C1 21.6569 2.34315 23 4 23H20C21.6569 23 23 21.6569 23 20V4ZM21 4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4Z"
+				fill="var(--fail)"
+			/>
+		</svg>
+	</button>
 </div>
 
 <style>
+	:root {
+		--modal-transition: opacity 0.3s ease-out, visibility 0.3s ease-out, transform 0.3s ease-out;
+		--modal-transition-mobile:
+			opacity 0.5s ease-out, visibility 0.5s ease-out, transform 0.5s ease-out;
+	}
+
 	.contact-modal {
 		inline-size: 100vw;
 		block-size: 100vh;
@@ -94,10 +100,7 @@
 		opacity: 0;
 		visibility: hidden;
 		transform: scale(0.99);
-		transition:
-			opacity 0.3s ease-out,
-			visibility 0.3s ease-out,
-			transform 0.3s ease-out;
+		transition: var(--modal-transition);
 		background: none;
 		z-index: 50;
 		overflow: visible;
@@ -114,7 +117,7 @@
 			backdrop-filter: blur(2px);
 		}
 
-		@media screen and (width >= 320px) {
+		@media (width >= 320px) {
 			padding: 2rem;
 			inline-size: 93%;
 			block-size: 83%;
@@ -126,10 +129,7 @@
 			display: block;
 			inline-size: 100%;
 			padding: 1rem;
-			transition:
-				opacity 0.5s ease-out,
-				visibility 0.5s ease-out,
-				transform 0.5s ease-out;
+			transition: var(--modal-transition-mobile);
 		}
 
 		&::backdrop {
@@ -147,6 +147,7 @@
 			background: var(--blackest);
 			margin-top: 16em;
 			overflow: auto;
+			anchor-name: --inner-anchor;
 
 			@media (width <= 768px) {
 				max-inline-size: 90vh;
@@ -173,6 +174,14 @@
 					color: var(--sky);
 					margin: -0.5rem 0 -2rem 0;
 					letter-spacing: -1px;
+
+					@media (width >= 1024px) {
+						line-height: 0.95;
+					}
+
+					@media (width >= 1100px) {
+						padding: 0.5rem;
+					}
 				}
 			}
 
@@ -192,89 +201,101 @@
 				word-break: break-word;
 				overflow-wrap: break-word;
 				white-space: normal;
+
+				@media (width >= 1024px) {
+					line-height: 1.75;
+					margin-inline: auto;
+					padding: 1rem;
+				}
 			}
 		}
-	}
 
-	.open-button {
-		@media (width >= 320px) {
-			display: block;
-			font-size: clamp(var(--h2), 4vw, var(--xl));
-			font-weight: 800;
-			background-color: transparent;
-			box-shadow: none;
-			width: fit-content;
-			outline: none;
-			border: none;
-			border-radius: 15px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			margin-inline: auto;
-			cursor: pointer;
-
-			&:focus,
-			&:focus-visible {
-				outline: 1px solid var(--clr-main);
-			}
-
-			&:hover {
-				animation: wiggle 01s ease-out infinite;
-			}
-
-			&:active {
-				scale: 0.97;
-			}
-
-			& svg {
-				cursor: pointer;
-				stroke-width: calc(5px + 1vw);
-				width: clamp(1.5em, 4vw, 5em);
-				height: clamp(1.5em, 4vw, 5em);
-
-				&:focus,
-				&:focus-visible {
-					outline: 1px solid var(--clr-main);
-					background: transparent;
-				}
-
-				@media (width <= 768px) {
-					stroke-width: calc(5px + 5vw);
-					margin-bottom: 0.8rem;
-				}
+		& .modal-image {
+			@media (width >= 1024px) {
+				margin-block: 1rem;
 			}
 		}
 	}
 
 	.close-button {
-		@media (width >= 320px) {
-			display: flex;
-			font-size: clamp(var(--h2), 4vw, var(--xl));
-			font-weight: 800;
-			background-color: transparent;
-			box-shadow: none;
-			width: 4rem;
-			height: 4rem;
-			min-width: 4rem;
-			min-height: 4rem;
-			outline: none;
-			border: none;
-			border-radius: 15px;
-			justify-content: center;
-			align-items: center;
-			margin-inline: auto;
-			margin-top: -1rem;
+		position: absolute;
+		position-anchor: --inner-anchor;
+		inset-block-start: anchor(top);
+		inset-inline-end: anchor(end);
+
+		display: flex;
+		width: 4rem;
+		height: 4rem;
+		min-width: 4rem;
+		min-height: 4rem;
+		font-size: clamp(var(--h2), 4vw, var(--xl));
+		font-weight: 800;
+		background-color: transparent;
+		box-shadow: none;
+		outline: none;
+		border: none;
+		border-radius: 15px;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		padding: 0.75rem;
+		color: var(--clr-main);
+
+		&:hover {
+			animation: wiggle 1s ease-out infinite;
+		}
+
+		&:active {
+			scale: 0.95;
+		}
+
+		&:focus,
+		&:focus-visible {
+			outline: 1px solid var(--clr-main);
+			background: transparent;
+		}
+
+		& svg {
+			width: 3rem;
+			height: 3rem;
+			flex-shrink: 0;
+		}
+	}
+
+	.open-button {
+		display: block;
+		font-size: clamp(var(--h2), 4vw, var(--xl));
+		font-weight: 800;
+		background-color: transparent;
+		box-shadow: none;
+		width: fit-content;
+		outline: none;
+		border: none;
+		border-radius: 15px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-inline: auto;
+		cursor: pointer;
+
+		&:focus,
+		&:focus-visible {
+			outline: 1px solid var(--clr-main);
+		}
+
+		&:hover {
+			animation: wiggle 1s ease-out infinite;
+		}
+
+		&:active {
+			scale: 0.97;
+		}
+
+		& svg {
 			cursor: pointer;
-			padding: 0.75rem;
-			color: var(--clr-main);
-
-			&:hover {
-				animation: wiggle 01s ease-out infinite;
-			}
-
-			&:active {
-				scale: 0.97;
-			}
+			stroke-width: calc(5px + 1vw);
+			width: clamp(1.5em, 4vw, 5em);
+			height: clamp(1.5em, 4vw, 5em);
 
 			&:focus,
 			&:focus-visible {
@@ -282,35 +303,10 @@
 				background: transparent;
 			}
 
-			& svg {
-				width: 3rem;
-				height: 3rem;
-				flex-shrink: 0;
+			@media (width <= 768px) {
+				stroke-width: calc(5px + 5vw);
+				margin-bottom: 0.8rem;
 			}
-		}
-	}
-
-	.modal-title {
-		@media screen and (width >= 1024px) {
-			line-height: 0.95;
-		}
-
-		@media screen and (width >= 1100px) {
-			padding: 0.5rem;
-		}
-	}
-
-	.modal-description {
-		@media screen and (width >= 1024px) {
-			line-height: 1.75;
-			margin-inline: auto;
-			padding: 1rem;
-		}
-	}
-
-	.modal-image {
-		@media screen and (width >= 1024px) {
-			margin-block: 1rem;
 		}
 	}
 
