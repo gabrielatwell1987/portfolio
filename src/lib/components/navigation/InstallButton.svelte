@@ -87,6 +87,7 @@
 	{#if shareFallback}
 		<div class="apple-instructions">
 			<p><u>On iOS:</u></p>
+
 			<p>
 				open the Safari browser. Tap the Share icon
 				<span>
@@ -110,10 +111,13 @@
 				</span>
 				in Safari's toolbar and choose <b>'Add to Home Screen'</b> to install this app.
 			</p>
+
 			<p><u>On iMac:</u></p>
+
 			<p>
 				Do the same process but choose <b>'Add to Dock'</b> to install this app.
 			</p>
+
 			<button data-close-button onclick={closeFallback}>Close</button>
 		</div>
 	{/if}
@@ -192,9 +196,14 @@
 
 	.apple-instructions {
 		position: fixed;
-		bottom: 5em;
-		left: 1em;
-		right: 1em;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		anchor-name: --instructions;
+		inline-size: fit-content;
+		min-inline-size: 75vw;
+
 		background: var(--clr-invert);
 		color: var(--clr-main);
 		padding: 1em;
@@ -203,17 +212,6 @@
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 		z-index: 2000;
 		animation: slideUp 0.5s ease-out forwards;
-		anchor-name: --instructions;
-
-		& button {
-			margin-top: 0.5em;
-			background: var(--clr-invert);
-			color: var(--clr-main);
-			border: none;
-			padding: 0.5em 1em;
-			border-radius: 4px;
-			cursor: pointer;
-		}
 
 		& p {
 			font-size: clamp(var(--sm), 1.2vw, var(--h6));
@@ -238,27 +236,31 @@
 				max-height: 100%;
 			}
 		}
+	}
 
-		& [data-close-button] {
-			border: 1px solid var(--clr-main);
-			position: absolute;
-			position-anchor: --instructions;
-			bottom: anchor(bottom);
-			right: anchor(right);
-			margin-top: 0;
-			cursor: pointer;
-			font-family: var(--bronova-bold);
-			font-size: clamp(var(--sm), 1.2vw, var(--h6));
-		}
+	[data-close-button] {
+		position: absolute;
+		position-anchor: --instructions;
+		bottom: anchor(bottom);
+		left: anchor(right);
+		margin-left: 1em;
+
+		background-color: var(--clr-invert);
+		color: var(--clr-main);
+		padding: 0.5em 1em;
+
+		border: 1px solid var(--clr-main);
+		margin-top: 0;
+		cursor: pointer;
+		font-family: var(--bronova-bold);
+		font-size: clamp(var(--sm), 1.2vw, var(--h6));
 	}
 
 	@keyframes slideUp {
 		from {
-			transform: translateY(50%);
 			opacity: 0;
 		}
 		to {
-			transform: translateY(0);
 			opacity: 1;
 		}
 	}
