@@ -1,8 +1,7 @@
 <script lang="ts">
 	import HireForm from '$lib/components/contact/HireForm.svelte';
-	import Popover from '$lib/components/layout/Popover.svelte';
-	import Title from '$lib/components/layout/Title.svelte';
 	import SEO from '$lib/data/SEO.svelte';
+	import Heading from '$lib/components/layout/Heading.svelte';
 </script>
 
 <SEO
@@ -12,13 +11,12 @@
 />
 
 <div class="hire-form">
-	<div class="header-icons">
-		<Title title="connect" title2="connect" />
-
-		<div class="center-positioning">
-			<Popover title="" text="Please fill out this questionnaire and I'll contact you back 😎" />
-		</div>
-	</div>
+	<Heading
+		title="connect"
+		title2="connect"
+		viewTransitionName="connect-heading"
+		popoverText="Please fill out this questionnaire and I'll contact you back 😎"
+	/>
 
 	<section class="hire-form-wrapper">
 		<HireForm />
@@ -33,31 +31,6 @@
 			var(--clr-invert) 30%,
 			var(--clr-invert) var(--100)
 		);
-
-		& .header-icons {
-			display: flex;
-			justify-content: flex-start;
-			align-items: center;
-			gap: 1em;
-
-			@media (width <= 768px) {
-				flex-direction: column;
-				gap: 2px;
-			}
-
-			& .center-positioning {
-				margin-inline: auto;
-				max-inline-size: fit-content;
-				display: inline-flex;
-				justify-content: center;
-				align-items: center;
-				margin-top: 5em;
-
-				@media (width <= 768px) {
-					margin-top: 0;
-				}
-			}
-		}
 
 		& .hire-form-wrapper {
 			display: grid;

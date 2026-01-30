@@ -1,14 +1,15 @@
 <script lang="ts">
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	import Popover from '$lib/components/layout/Popover.svelte';
-	import Title from '$lib/components/layout/Title.svelte';
+	// import Popover from '$lib/components/layout/Popover.svelte';
+	// import Title from '$lib/components/layout/Title.svelte';
 	import Testimonial from '$lib/components/projects/Testimonial.svelte';
 	import projects from '$lib/components/projects/projects.json';
 	import testimonials from '$lib/components/projects/testimonials.json';
 	import SEO from '$lib/data/SEO.svelte';
 	import { beforeNavigate } from '$app/navigation';
 	import GithubContributions from '$lib/components/projects/GithubContributions.svelte';
+	import Heading from '$lib/components/layout/Heading.svelte';
 
 	let { data } = $props();
 	let contributions = $derived(data.contributions);
@@ -77,16 +78,12 @@
 />
 
 <div class="projects">
-	<div class="header-icons">
-		<Title title="builds" title2="builds" viewTransitionName="build-heading" />
-
-		<div class="popover">
-			<Popover
-				title=""
-				text="Hover over the project image to reveal the tech stack I used on the project 👍🏻"
-			/>
-		</div>
-	</div>
+	<Heading
+		title="builds"
+		title2="builds"
+		viewTransitionName="build-heading"
+		popoverText="Hover over the project image to reveal the tech stack I used on the project 👍🏻"
+	/>
 
 	<section class="github-section">
 		<div class="project-container">
@@ -205,28 +202,6 @@
 			var(--clr-invert) 12%,
 			var(--clr-invert) 100%
 		);
-
-		& .header-icons {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 5em;
-
-			@media (width <= 768px) {
-				gap: 1rem;
-			}
-
-			& .popover {
-				display: inline-flex;
-				justify-content: center;
-				align-items: center;
-				margin-top: 5em;
-
-				@media (width <= 768px) {
-					margin-right: 0.75rem;
-				}
-			}
-		}
 
 		& .bevel {
 			position: relative;
