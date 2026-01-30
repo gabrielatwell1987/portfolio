@@ -165,6 +165,7 @@
 			& header {
 				background: transparent;
 				border-bottom: none;
+				margin-top: 1em;
 
 				& .modal-title {
 					font-family: var(--bronova-bold);
