@@ -165,7 +165,11 @@
 			& header {
 				background: transparent;
 				border-bottom: none;
-				margin-top: 1em;
+				padding-top: 1em;
+
+				@media (width <= 768px) {
+					padding-top: 3em;
+				}
 
 				& .modal-title {
 					font-family: var(--bronova-bold);
