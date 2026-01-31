@@ -1,5 +1,4 @@
-// Performance monitoring utility
-// Add this to your app to track Core Web Vitals including CLS
+// performance utility.. track Core Web Vitals including CLS
 
 interface LayoutShiftAttribution {
 	node?: Element;
@@ -28,6 +27,8 @@ interface PerformanceEventTiming extends PerformanceEntry {
 }
 
 export function initPerformanceMonitoring() {
+	const abortController = new AbortController();
+
 	if (typeof window === 'undefined') return;
 
 	// Track Cumulative Layout Shift (CLS)
@@ -89,14 +90,25 @@ export function initPerformanceMonitoring() {
 	}
 
 	// Report final scores when page is hidden
-	document.addEventListener('visibilitychange', () => {
-		if (document.visibilityState === 'hidden') {
-			console.log('📊 Final Performance Scores:', {
-				CLS: clsValue,
-				layoutShifts: clsEntries.length
-			});
-		}
-	});
+	document.addEventListener(
+		'visibilitychange',
+		() => {
+			if (document.visibilityState === 'hidden') {
+				console.log('📊 Final Performance Scores:', {
+					CLS: clsValue,
+					layoutShifts: clsEntries.length
+				});
+			}
+		},
+		{ signal: abortController.signal }
+	);
+
+	return () => {
+		abortController.abort();
+		observer.disconnect();
+		lcpObserver.disconnect();
+		fidObserver.disconnect();
+	};
 }
 
 // Helper function to check if element is causing layout shift

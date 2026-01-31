@@ -10,6 +10,7 @@
 	$effect(() => {
 		if (!canvas) return;
 
+		const abortController = new AbortController();
 		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera(
@@ -278,31 +279,19 @@
 			camera.updateProjectionMatrix();
 			renderer.setSize(window.innerWidth, window.innerHeight);
 		}
-		window.addEventListener('resize', handleResize);
-
-		const abortController = new AbortController();
+		window.addEventListener('resize', handleResize, { signal: abortController.signal });
 
 		return () => {
-			// Cancel animation loop
 			if (animationFrameId) window.cancelAnimationFrame(animationFrameId);
 
-			// Abort event listeners
 			abortController.abort();
-
-			// Dispose controls
 			controls.dispose();
-
-			// Dispose renderer
 			renderer.dispose();
-
-			// Dispose lights (if not shared)
 			ambientLight.dispose();
 			directionalLight.dispose();
-
-			// Dispose shader material
 			ribbonShaderMaterial.dispose();
 
-			// Dispose ribbons
+			// dispose ribbons
 			ribbons.forEach((ribbon) => {
 				ribbon.geometry.dispose();
 				if (Array.isArray(ribbon.material)) {

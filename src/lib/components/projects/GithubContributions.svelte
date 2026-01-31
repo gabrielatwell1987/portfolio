@@ -232,11 +232,14 @@
 		});
 
 		resizeObserver.observe(containerElement);
+
 		return () => resizeObserver.disconnect();
 	});
 
 	// Click listener
 	$effect(() => {
+		const abortController = new AbortController();
+
 		if (typeof window === 'undefined' || !isSmallContainer) return;
 
 		const handleDocumentClick = (event: Event) => {
@@ -250,8 +253,11 @@
 			}
 		};
 
-		document.addEventListener('click', handleDocumentClick);
-		return () => document.removeEventListener('click', handleDocumentClick);
+		document.addEventListener('click', handleDocumentClick, {
+			signal: abortController.signal
+		});
+
+		return () => abortController.abort();
 	});
 
 	// Scroll position

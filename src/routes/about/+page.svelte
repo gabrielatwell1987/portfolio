@@ -15,6 +15,7 @@
 
 	$effect(() => {
 		const mediaQuery = window.matchMedia('(min-width: 768px)');
+		const abortController = new AbortController();
 
 		isDesktop = mediaQuery.matches;
 
@@ -22,9 +23,11 @@
 			isDesktop = e.matches;
 		};
 
-		mediaQuery.addEventListener('change', handler);
+		mediaQuery.addEventListener('change', handler, {
+			signal: abortController.signal
+		});
 
-		return () => mediaQuery.removeEventListener('change', handler);
+		return () => abortController.abort();
 	});
 </script>
 

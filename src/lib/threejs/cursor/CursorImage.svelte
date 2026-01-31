@@ -12,9 +12,10 @@
 	let resizeListener: (() => void) | undefined;
 	let pointerMoveListener: ((event: PointerEvent) => void) | undefined;
 	let animationFrameId: number | undefined;
-	const abortController = new AbortController();
 
 	$effect(() => {
+		const abortController = new AbortController();
+
 		/**
 		 * Base
 		 */
@@ -56,7 +57,7 @@
 			renderer.setSize(sizes.width, sizes.height);
 			renderer.setPixelRatio(sizes.pixelRatio);
 		};
-		window.addEventListener('resize', resizeListener);
+		window.addEventListener('resize', resizeListener, { signal: abortController.signal });
 
 		/**
 		 * Camera
@@ -128,7 +129,7 @@
 			displacement.screenCursor.x = (event.clientX / sizes.width) * 2 - 1;
 			displacement.screenCursor.y = -(event.clientY / sizes.height) * 2 + 1;
 		};
-		window.addEventListener('pointermove', pointerMoveListener);
+		window.addEventListener('pointermove', pointerMoveListener, { signal: abortController.signal });
 
 		displacement.texture = new THREE.CanvasTexture(displacement.canvas);
 
@@ -223,10 +224,8 @@
 				window.cancelAnimationFrame(animationFrameId);
 			}
 
-			// Abort all event listeners
 			abortController.abort();
 
-			// Dispose Three.js resources
 			if (renderer) {
 				renderer.dispose();
 			}
@@ -243,7 +242,7 @@
 				displacement.texture.dispose();
 			}
 
-			// Remove displacement canvas from DOM
+			// remove displacement canvas from DOM
 			if (displacement.canvas && displacement.canvas.parentNode) {
 				displacement.canvas.parentNode.removeChild(displacement.canvas);
 			}

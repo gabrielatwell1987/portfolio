@@ -29,6 +29,8 @@
 
 	// PWA install prompt for non-iOS
 	$effect(() => {
+		const abortController = new AbortController();
+
 		if (isIOS) return;
 
 		function handleBeforeInstallPrompt(event: Event) {
@@ -43,12 +45,15 @@
 			installStatus = 'App installed successfully';
 		}
 
-		window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-		window.addEventListener('appinstalled', handleAppInstalled);
+		window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt, {
+			signal: abortController.signal
+		});
+		window.addEventListener('appinstalled', handleAppInstalled, {
+			signal: abortController.signal
+		});
 
 		return () => {
-			window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-			window.removeEventListener('appinstalled', handleAppInstalled);
+			abortController.abort();
 		};
 	});
 

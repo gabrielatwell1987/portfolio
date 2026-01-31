@@ -35,15 +35,19 @@
 	}
 
 	$effect(() => {
+		const abortController = new AbortController();
+
 		if (isOpen) {
 			const handleClickOutside = (event: MouseEvent) => {
 				if (event.target instanceof Element && !event.target.closest('.custom-select')) {
 					isOpen = false;
 				}
 			};
-			document.addEventListener('click', handleClickOutside);
+			document.addEventListener('click', handleClickOutside, {
+				signal: abortController.signal
+			});
 
-			return () => document.removeEventListener('click', handleClickOutside);
+			return () => abortController.abort();
 		}
 	});
 </script>

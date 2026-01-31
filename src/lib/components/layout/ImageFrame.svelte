@@ -15,6 +15,7 @@
 		const imageContainer: HTMLElement | null = document.querySelector('.image-container');
 		const img = document.querySelector('.image-container img');
 		const h1 = document.querySelector('h1');
+		const abortController = new AbortController();
 
 		if (!imageContainer || !img) return;
 
@@ -28,8 +29,12 @@
 			gsap.to(img, { y: -50, duration: 0.75, borderTop: 0, ease: 'none' });
 		};
 
-		imageContainer.addEventListener('mouseenter', handleMouseEnter);
-		imageContainer.addEventListener('mouseleave', handleMouseLeave);
+		imageContainer.addEventListener('mouseenter', handleMouseEnter, {
+			signal: abortController.signal
+		});
+		imageContainer.addEventListener('mouseleave', handleMouseLeave, {
+			signal: abortController.signal
+		});
 
 		let mm = gsap.matchMedia();
 
@@ -40,12 +45,13 @@
 				gsap.to(img, { y: -10, duration: 0.75, ease: 'none' });
 			};
 
-			imageContainer.addEventListener('mouseenter', handleMobileMouseEnter);
+			imageContainer.addEventListener('mouseenter', handleMobileMouseEnter, {
+				signal: abortController.signal
+			});
 		});
 
 		return () => {
-			imageContainer.removeEventListener('mouseenter', handleMouseEnter);
-			imageContainer.removeEventListener('mouseleave', handleMouseLeave);
+			abortController.abort();
 			mm.kill();
 			gsap.killTweensOf([img, h1]);
 		};

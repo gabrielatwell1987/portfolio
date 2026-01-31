@@ -4,6 +4,8 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 	$effect(() => {
+		const abortController = new AbortController();
+
 		const main = () => {
 			const articles = Array.from(document.querySelectorAll('article'));
 
@@ -13,7 +15,12 @@
 				}, index * 250);
 			});
 		};
-		document.addEventListener('DOMContentLoaded', main);
+
+		document.addEventListener('DOMContentLoaded', main, {
+			signal: abortController.signal
+		});
+
+		return () => abortController.abort();
 	});
 
 	// gsap

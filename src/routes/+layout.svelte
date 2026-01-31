@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { dev } from '$app/environment';
 	import '../app.css';
 	import '@picocss/pico/css/pico.min.css';
 	import NavBar from '$lib/components/navigation/NavBar.svelte';
@@ -20,35 +18,48 @@
 	const loading = createLoadingContext();
 	const theme = createThemeContext();
 
-	function detectSWUpdate() {
+	$effect(() => {
+		if (typeof window === 'undefined') return;
+
+		const abortController = new AbortController();
+
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker
 				.register('/service-worker.js', { type: 'module' })
 				.then((registration) => {
-					registration.addEventListener('updatefound', () => {
-						const newWorker = registration.installing;
-						if (newWorker) {
-							newWorker.addEventListener('statechange', () => {
-								if (
-									newWorker &&
-									newWorker.state === 'installed' &&
-									navigator.serviceWorker.controller
-								) {
-									newWorker.postMessage({ type: 'SKIP_WAITING' });
-								}
-							});
-						}
-					});
+					registration.addEventListener(
+						'updatefound',
+						() => {
+							const newWorker = registration.installing;
+							if (newWorker) {
+								newWorker.addEventListener(
+									'statechange',
+									() => {
+										if (
+											newWorker &&
+											newWorker.state === 'installed' &&
+											navigator.serviceWorker.controller
+										) {
+											newWorker.postMessage({ type: 'SKIP_WAITING' });
+										}
+									},
+									{ signal: abortController.signal }
+								);
+							}
+						},
+						{ signal: abortController.signal }
+					);
 				})
 				.catch((error) => {
 					console.error('Service Worker registration failed:', error);
 				});
 		}
-	}
 
-	onMount(() => {
+		return () => abortController.abort();
+	});
+
+	$effect(() => {
 		loading.isLoaded = true;
-		detectSWUpdate();
 	});
 </script>
 
