@@ -246,8 +246,8 @@
 	[data-close-button] {
 		position: absolute;
 		position-anchor: --instructions;
-		bottom: anchor(bottom);
-		left: anchor(right);
+		bottom: calc(anchor(bottom) + 0.05em);
+		left: calc(anchor(right) + 0.05em);
 		margin-left: 1em;
 
 		background-color: var(--clr-invert);

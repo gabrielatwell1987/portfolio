@@ -42,6 +42,13 @@
 		role="dialog"
 		tabindex="0"
 	>
+		<div class="popover-inner">
+			<div data-summary-text>
+				<p>About <span class="pwa-title">{popoverTitle}</span></p>
+				<p>{summary}</p>
+			</div>
+		</div>
+
 		<button data-close onclick={popover.closePopover} aria-label="close popover">
 			<svg
 				width="800px"
@@ -75,7 +82,6 @@
 		display: inline-block;
 		margin-inline: auto;
 		pointer-events: auto;
-		position: relative;
 
 		&:focus,
 		&:focus-visible {
@@ -90,8 +96,10 @@
 
 		& [data-close] {
 			position: absolute;
-			top: 0.5rem;
-			right: 1rem;
+			position-anchor: --close;
+			inset-block-start: calc(anchor(top) - 2.25em);
+			inset-inline-end: calc(anchor(end) - 1em);
+
 			background: transparent;
 			border: none;
 			color: var(--fail);
@@ -100,18 +108,20 @@
 			font-weight: 700;
 			cursor: pointer;
 
-			@media (width <= 768px) {
-				right: 0;
-			}
-
 			& svg {
-				width: clamp(1.5rem, 3vw, 2.5rem);
-				height: clamp(1.5rem, 3vw, 2.5rem);
+				inline-size: clamp(1.5em, 3vw, 2.5rem);
+				block-size: clamp(1.5em, 3vw, 2.5rem);
 			}
 		}
 
 		& [data-summary-content] {
 			min-inline-size: 85%;
+
+			& .popover-inner {
+				position: relative;
+
+				anchor-name: --close;
+			}
 
 			& [data-summary-text] {
 				margin-top: 2.5rem;
@@ -148,7 +158,7 @@
 			background-color: transparent;
 			color: var(--clr-blue);
 			filter: brightness(1);
-			width: fit-content;
+			inline-size: fit-content;
 			font-family: var(--bronova);
 			font-size: clamp(var(--h6), 1.5vw, var(--h4));
 			font-weight: 600;

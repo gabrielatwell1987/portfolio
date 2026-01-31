@@ -225,8 +225,8 @@
 	.close-button {
 		position: absolute;
 		position-anchor: --inner-anchor;
-		inset-block-start: anchor(top);
-		inset-inline-end: anchor(end);
+		inset-block-start: calc(anchor(top) + 0.05em);
+		inset-inline-end: calc(anchor(end) + 0.05em);
 
 		display: flex;
 		width: 4rem;

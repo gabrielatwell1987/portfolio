@@ -1,13 +1,11 @@
 <script lang="ts">
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	// import Popover from '$lib/components/layout/Popover.svelte';
-	// import Title from '$lib/components/layout/Title.svelte';
+	import { beforeNavigate } from '$app/navigation';
 	import Testimonial from '$lib/components/projects/Testimonial.svelte';
 	import projects from '$lib/components/projects/projects.json';
 	import testimonials from '$lib/components/projects/testimonials.json';
 	import SEO from '$lib/data/SEO.svelte';
-	import { beforeNavigate } from '$app/navigation';
 	import GithubContributions from '$lib/components/projects/GithubContributions.svelte';
 	import Heading from '$lib/components/layout/Heading.svelte';
 
@@ -90,7 +88,6 @@
 			{#if contributions}
 				<GithubContributions {contributions} />
 			{:else}
-				<!-- Skeleton/placeholder -->
 				<div class="github-skeleton" aria-label="Loading GitHub contributions">
 					<div class="skeleton-header">
 						<div class="skeleton-title"></div>
