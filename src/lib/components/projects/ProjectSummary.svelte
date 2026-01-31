@@ -69,11 +69,6 @@
 				/>
 			</svg>
 		</button>
-
-		<div data-summary-text>
-			<p>About <span class="pwa-title">{popoverTitle}</span></p>
-			<p>{summary}</p>
-		</div>
 	</div>
 </section>
 
