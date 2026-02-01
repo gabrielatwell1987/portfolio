@@ -74,14 +74,14 @@
 	color: var(--clr-invert);
 	text-shadow:
 		0 0 1px var(--clr-main),
-		-2px -2px 0 var(--clr-blue),
-		2px -2px 0 var(--clr-blue),
-		-2px 2px 0 var(--clr-blue),
-		2px 2px 0 var(--clr-blue),
-		-2px 0 0 var(--clr-blue),
-		2px 0 0 var(--clr-blue),
-		0 -2px 0 var(--clr-blue),
-		0 2px 0 var(--clr-blue);
+		-2px -2px 0 oklch(from var(--clr-blue) 0.5 c h),
+		2px -2px 0 oklch(from var(--clr-blue) 0.5 c h),
+		-2px 2px 0 oklch(from var(--clr-blue) 0.5 c h),
+		2px 2px 0 oklch(from var(--clr-blue) 0.5 c h),
+		-2px 0 0 oklch(from var(--clr-blue) 0.5 c h),
+		2px 0 0 oklch(from var(--clr-blue) 0.5 c h),
+		0 -2px 0 oklch(from var(--clr-blue) 0.5 c h),
+		0 2px 0 oklch(from var(--clr-blue) 0.5 c h);
 	letter-spacing: 0px;
 	margin-block: 1.5rem;
 	scroll-margin-top: 8rem; /* Account for fixed navigation */

@@ -121,14 +121,14 @@
 			color: var(--clr-invert);
 			text-shadow:
 				0 0 1px var(--clr-invert),
-				-5px -5px 0 var(--clr-main),
-				5px -5px 0 var(--clr-main),
-				-5px 5px 0 var(--clr-main),
-				5px 5px 0 var(--clr-main),
-				-5px 0 0 var(--clr-main),
-				5px 0 0 var(--clr-main),
-				0 -5px 0 var(--clr-main),
-				0 5px 0 var(--clr-main);
+				-5px -5px 0 oklch(from var(--clr-main) 0.7 c h),
+				5px -5px 0 oklch(from var(--clr-main) 0.7 c h),
+				-5px 5px 0 oklch(from var(--clr-main) 0.7 c h),
+				5px 5px 0 oklch(from var(--clr-main) 0.7 c h),
+				-5px 0 0 oklch(from var(--clr-main) 0.7 c h),
+				5px 0 0 oklch(from var(--clr-main) 0.7 c h),
+				0 -5px 0 oklch(from var(--clr-main) 0.7 c h),
+				0 5px 0 oklch(from var(--clr-main) 0.7 c h);
 
 			@media (width >= 768px) {
 				:global(& .char) {

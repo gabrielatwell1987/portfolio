@@ -35,13 +35,13 @@
 		padding-inline: 2em;
 
 		&:hover {
-			box-shadow: 0 0 5em var(--clr-gray);
+			box-shadow: 0 0 5em oklch(from var(--clr-gray) 0.4 c h);
 		}
 
 		.card-image {
 			width: fit-content;
 			height: fit-content;
-			object-fit: cover;
+			object-fit: contain;
 			border-radius: 0 0 8px 8px;
 			display: grid;
 			place-self: center;
@@ -59,18 +59,18 @@
 			color: var(--clr-invert);
 			text-shadow:
 				0 0 1px var(--clr-invert),
-				-2px -2px 0 var(--clr-main),
-				2px -2px 0 var(--clr-main),
-				-2px 2px 0 var(--clr-main),
-				2px 2px 0 var(--clr-main),
-				-2px 0 0 var(--clr-main),
-				2px 0 0 var(--clr-main),
-				0 -2px 0 var(--clr-main),
-				0 2px 0 var(--clr-main);
+				-2px -2px 0 oklch(from var(--clr-gray) 0.6 c h),
+				2px -2px 0 oklch(from var(--clr-gray) 0.6 c h),
+				-2px 2px 0 oklch(from var(--clr-gray) 0.6 c h),
+				2px 2px 0 oklch(from var(--clr-gray) 0.6 c h),
+				-2px 0 0 oklch(from var(--clr-gray) 0.6 c h),
+				2px 0 0 oklch(from var(--clr-gray) 0.6 c h),
+				0 -2px 0 oklch(from var(--clr-gray) 0.6 c h),
+				0 2px 0 oklch(from var(--clr-gray) 0.6 c h);
 		}
 
 		.card-description {
-			color: var(--clr-light-gray);
+			color: oklch(from var(--clr-main) 0.75 c h);
 			font-size: clamp(var(--xs), 1.5vw, var(--h4));
 			font-weight: 300;
 			margin-bottom: 1rem;

@@ -163,7 +163,7 @@
 			font-size: clamp(var(--h6), 3vw, var(--xxl));
 			font-weight: 800;
 			letter-spacing: 1px;
-			color: var(--clr-main);
+			color: oklch(from var(--clr-main) 0.7 c h);
 			text-shadow: 0 0 5px var(--clr-invert);
 			padding-inline: 1rem;
 			margin-bottom: 1rem;
@@ -218,7 +218,7 @@
 				width: 100%;
 				background-color: transparent;
 				box-shadow: none;
-				border: 3px solid var(--dark-gray);
+				border: 3px solid oklch(from var(--gray) 0.6 c h);
 				border-radius: var(--radius);
 				caret-color: var(--sky);
 				color: var(--clr-main);

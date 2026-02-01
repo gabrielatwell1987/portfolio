@@ -45,9 +45,7 @@
 					ease: 'power2.out',
 					scrollTrigger: {
 						trigger: img,
-						start: 'top center+=50',
-						end: 'bottom center',
-						toggleActions: 'play none none reverse'
+						start: 'top center+=450'
 					}
 				}
 			);
@@ -67,9 +65,7 @@
 					ease: 'power2.out',
 					scrollTrigger: {
 						trigger: para,
-						start: 'top center',
-						end: 'bottom center+=100',
-						toggleActions: 'play none none reverse'
+						start: 'top center+=450'
 					}
 				}
 			);
@@ -123,7 +119,7 @@
 
 	<article class="developer-card">
 		<Card
-			src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/a-dev.webp"
+			src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/atwellUI.webp"
 			alt="a logo that says atwell developer"
 			href="/projects"
 			title="web design + development"
