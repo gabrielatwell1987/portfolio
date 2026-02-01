@@ -96,9 +96,9 @@
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.stats-section',
-				start: 'top center',
-				end: 'bottom center',
-				toggleActions: 'play none none reverse'
+				start: 'top center+=375'
+				// end: 'bottom center',
+				// toggleActions: 'play none none reverse'
 			}
 		});
 
@@ -108,7 +108,7 @@
 			{
 				x: 0,
 				opacity: 1,
-				duration: 0.5
+				duration: 0.35
 			},
 			0
 		);

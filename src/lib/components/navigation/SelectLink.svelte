@@ -60,7 +60,6 @@
 		aria-label="Connect with Gabe"
 	>
 		{selectedLabel}
-		<!-- arrow icon -->
 		<svg class="arrow-icon" width="12" height="12" viewBox="0 0 12 12">
 			<path
 				fill="var(--clr-main)"
@@ -82,6 +81,67 @@
 		</ul>
 	{/if}
 </div>
+
+<!-- <script lang="ts">
+	import { goto } from '$app/navigation';
+
+	interface Props {
+		path1: string;
+		path2: string;
+	}
+
+	let { path1, path2 }: Props = $props();
+	let selected = $state<string>('');
+
+	$effect(() => {
+		if (selected === 'hire') {
+			const uniqueParam = `t=${Date.now()}`;
+			goto(`${path1}?${uniqueParam}`);
+		} else if (selected === 'contact') {
+			const uniqueParam = `t=${Date.now()}`;
+			goto(`${path2}?${uniqueParam}`);
+		}
+	});
+</script>
+
+<div class="select-link">
+	<select name="selectLinks" id="selectLinks" bind:value={selected}>
+		<option value="" disabled>Connect</option>
+		<option value="hire"> Hire Me </option>
+		<option value="contact"> Contact </option>
+	</select>
+</div>
+
+<style>
+	.select-link {
+		inline-size: clamp(7em, 20vw, 10em);
+
+		& select {
+			inline-size: 100%;
+			color: var(--clr-main);
+			font-weight: 700;
+			font-family: var(--bronova-bold);
+			font-size: clamp(var(--sm), 1.2vw, var(--h4));
+			background-color: var(--clr-invert);
+			border: 2px solid var(--clr-main);
+			border-radius: var(--radius);
+			padding: 0.5em;
+			cursor: pointer;
+
+			&,
+			&::picker(select) {
+				appearance: base-select;
+			}
+
+			& option {
+				font-family: var(--bronova);
+				font-size: clamp(var(--sm), 1.2vw, var(--h4));
+				font-weight: 500;
+			}
+		}
+	}
+</style>
+-->
 
 <style>
 	.custom-select {
@@ -122,12 +182,12 @@
 			}
 
 			&.open .arrow-icon {
-				transform: rotate(0);
+				transform: rotate(0deg);
 			}
 		}
 
 		& .arrow-icon {
-			transform: rotate(-180deg);
+			transform: rotate(-90deg);
 			transition: transform 0.15s ease-out;
 		}
 
