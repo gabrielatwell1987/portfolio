@@ -4,20 +4,30 @@
 
 	const theme = useTheme();
 	let themeStatus = $state<string>('');
+	let buttonElement: HTMLButtonElement;
 
 	function toggle() {
-		const newTheme = theme.toggle();
-		themeStatus = `Switched to ${newTheme} theme`;
+		const rect = buttonElement.getBoundingClientRect();
+		const x = rect.left + rect.width / 2;
+		const y = rect.top + rect.height / 2;
 
-		setTimeout(() => {
-			themeStatus = '';
-		}, 2000);
+		document.documentElement.style.viewTransitionName = 'changing-theme';
+		document.documentElement.style.setProperty('--x', `${x}px`);
+		document.documentElement.style.setProperty('--y', `${y}px`);
+		document.startViewTransition(() => {
+			const newTheme = theme.toggle();
+			themeStatus = `Switched to ${newTheme} theme`;
+			setTimeout(() => {
+				themeStatus = '';
+			}, 2000);
+		});
 	}
 </script>
 
 <A11yAnnouncer message={themeStatus} />
 
 <button
+	bind:this={buttonElement}
 	onclick={toggle}
 	type="button"
 	role="switch"
@@ -116,6 +126,21 @@
 			@media (width >= 990px) {
 				padding-top: 1rem;
 			}
+		}
+	}
+
+	::view-transition-old(changing-theme) {
+		animation: none;
+	}
+
+	::view-transition-new(changing-theme) {
+		animation: reveal 0.35s ease-out forwards;
+		clip-path: circle(0% at var(--x) var(--y));
+	}
+
+	@keyframes reveal {
+		to {
+			clip-path: circle(100% at var(--x) var(--y));
 		}
 	}
 </style>
