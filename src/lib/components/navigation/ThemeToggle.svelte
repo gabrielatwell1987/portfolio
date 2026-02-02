@@ -7,13 +7,10 @@
 	let buttonElement: HTMLButtonElement;
 
 	function toggle() {
-		const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-			navigator.userAgent
-		);
+		const isMobile = window.innerWidth <= 768;
 		let x: number, y: number;
 
 		if (isMobile) {
-			// mobile
 			x = window.innerWidth / 2;
 			y = window.innerHeight / 5;
 		} else {
