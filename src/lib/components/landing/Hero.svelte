@@ -90,15 +90,12 @@
 	$effect(() => {
 		if (!mounted) return;
 
-		// .stat-item scroll animation
 		gsap.registerPlugin(ScrollTrigger);
 
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.stats-section',
 				start: 'top center+=375'
-				// end: 'bottom center',
-				// toggleActions: 'play none none reverse'
 			}
 		});
 
@@ -464,7 +461,7 @@
 				color: var(--clr-hero-text);
 				inline-size: clamp(300px, 65vw, 1300px);
 				margin: 0 auto 3rem auto;
-				text-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+				text-shadow: 0 0 1px oklch(from var(--clr-light-gray) 0.95 c h);
 				user-select: none;
 
 				@media screen and (width >= 990px) {

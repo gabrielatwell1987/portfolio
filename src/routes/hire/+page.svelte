@@ -27,7 +27,7 @@
 	.hire-form {
 		background: linear-gradient(
 			to bottom,
-			var(--clr-gray) 0%,
+			oklch(from var(--clr-gray) 0.35 c h) 0%,
 			var(--clr-invert) 30%,
 			var(--clr-invert) var(--100)
 		);

@@ -306,7 +306,7 @@
 		/* light-dark() */
 		--clr-bg: light-dark(var(--white), var(--blackest));
 		--clr-main: light-dark(var(--blackest), oklch(from var(--white) 0.8 c h));
-		--clr-hero-text: light-dark(var(--gray), var(--white));
+		--clr-hero-text: light-dark(oklch(from var(--gray) 0.45 c h), var(--white));
 		--clr-link: light-dark(var(--darker-blue), var(--sky));
 		--clr-blue: light-dark(var(--darkest-blue), var(--sky));
 		--clr-sky: light-dark(var(--sky), var(--sky));

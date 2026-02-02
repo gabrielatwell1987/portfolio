@@ -86,6 +86,12 @@
 	.learn-wrapper {
 		padding-top: 7em;
 		min-height: 100vh;
+		background: linear-gradient(
+			to bottom,
+			oklch(from var(--clr-gray) 0.35 c h) 0%,
+			var(--clr-invert) 30%,
+			var(--clr-invert) var(--100)
+		);
 
 		@media (width <= 768px) {
 			padding-top: 5em;
