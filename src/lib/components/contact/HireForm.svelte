@@ -285,7 +285,7 @@
 	select,
 	textarea {
 		padding: 0.5rem;
-		border: 2px solid oklch(from var(--gray) 0.6 c h);
+		border: 2px solid var(--gray);
 		border-radius: 4px;
 		background: transparent;
 		color: var(--clr-main);

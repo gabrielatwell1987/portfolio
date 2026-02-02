@@ -305,7 +305,7 @@
 
 		/* light-dark() */
 		--clr-bg: light-dark(var(--white), var(--blackest));
-		--clr-main: light-dark(var(--blackest), var(--white));
+		--clr-main: light-dark(var(--blackest), oklch(from var(--white) 0.8 c h));
 		--clr-hero-text: light-dark(var(--gray), var(--white));
 		--clr-link: light-dark(var(--darker-blue), var(--sky));
 		--clr-blue: light-dark(var(--darkest-blue), var(--sky));
@@ -318,7 +318,7 @@
 		--clr-dark-gray: light-dark(oklch(0.7018 0.0035 17.24), oklch(0.2982 0.0014 17.24));
 		--clr-green: light-dark(var(--success-dark), var(--success-light));
 		--clr-light-invert: light-dark(var(--white-gray), var(--blacker));
-		--clr-invert: light-dark(var(--white), var(--blackest));
+		--clr-invert: light-dark(oklch(from var(--white) 0.9 c h), var(--blackest));
 		--clr-button-text: light-dark(var(--blackest), var(--white));
 		--clr-button: light-dark(var(--yellow), var(--purple));
 		--sun: light-dark(var(--yellow), var(--pale));
