@@ -7,13 +7,28 @@
 	let buttonElement: HTMLButtonElement;
 
 	function toggle() {
-		const rect = buttonElement.getBoundingClientRect();
-		const x = rect.left + rect.width / 2;
-		const y = rect.top + rect.height / 2;
+		const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+			navigator.userAgent
+		);
+		let x: number, y: number;
+
+		if (isMobile) {
+			// mobile
+			x = window.innerWidth / 2;
+			y = window.innerHeight / 5;
+		} else {
+			// desktop
+			const rect = buttonElement.getBoundingClientRect();
+			x = rect.left + rect.width / 2;
+			y = rect.top + rect.height / 2;
+		}
 
 		document.documentElement.style.viewTransitionName = 'changing-theme';
+
 		document.documentElement.style.setProperty('--x', `${x}px`);
+
 		document.documentElement.style.setProperty('--y', `${y}px`);
+
 		document.startViewTransition(() => {
 			const newTheme = theme.toggle();
 			themeStatus = `Switched to ${newTheme} theme`;
@@ -96,6 +111,7 @@
 		padding: 0.75rem;
 		min-width: 3rem;
 		min-height: 3rem;
+		will-change: transform, opacity;
 
 		&:hover {
 			text-shadow: 0 0 1px var(--smoke);
@@ -134,8 +150,9 @@
 	}
 
 	::view-transition-new(changing-theme) {
-		animation: reveal 0.35s ease-out forwards;
+		animation: reveal 0.35s linear forwards;
 		clip-path: circle(0% at var(--x) var(--y));
+		will-change: clip-path;
 	}
 
 	@keyframes reveal {

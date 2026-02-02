@@ -26,11 +26,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 5em;
-
-		@media (width <= 768px) {
-			gap: 1rem;
-		}
 
 		& .popover {
 			display: inline-flex;
