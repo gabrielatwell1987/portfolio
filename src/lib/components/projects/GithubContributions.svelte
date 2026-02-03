@@ -450,7 +450,7 @@
 				font-family: var(--bronova);
 				font-size: clamp(var(--sm), 1.25vw, var(--h5));
 				font-weight: 600;
-				color: oklch(from var(--clr-main) 0.7 c h);
+				color: var(--clr-light-gray);
 				margin-bottom: 0.5rem;
 				text-transform: lowercase;
 				letter-spacing: 0.5px;
@@ -459,7 +459,7 @@
 
 		& .total-contributions {
 			font-size: clamp(var(--xs), 1.25vw, var(--sm));
-			color: var(--clr-main);
+			color: var(--clr-gray);
 			opacity: 0.7;
 			margin: 0;
 			font-weight: 400;

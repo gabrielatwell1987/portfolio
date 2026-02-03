@@ -108,13 +108,23 @@
 		 * Models
 		 */
 		gltfLoader.load('/threejayess/models/shark.glb', (gltf) => {
-			gltf.scene.scale.set(0.5, 0.5, 0.15);
-			gltf.scene.position.set(0, -1, 0);
-			gltf.scene.rotation.y = Math.PI * 0.5;
+			gltf.scene.scale.set(0.5, 0.5, 0.25);
+			gltf.scene.position.set(0, 0.1, 0);
+			gltf.scene.rotation.y = Math.PI * -0.3;
 			scene.add(gltf.scene);
 
 			updateAllMaterials();
 		});
+
+		/**
+		 * Points of interest
+		 */
+		const points = [
+			{
+				position: new THREE.Vector3(1.55, 0.3, -0.9),
+				element: document.querySelector('.point-0') as HTMLElement
+			}
+		];
 
 		/**
 		 * Lights
@@ -185,15 +195,25 @@
 		/**
 		 * Animate
 		 */
+		let animationId: number;
+
 		const tick = () => {
-			// Update controls
 			controls.update();
 
-			// Render
+			// go through each point
+			for (const point of points) {
+				const screenPosition = point.position.clone();
+				screenPosition.project(camera);
+
+				let translateX = screenPosition.x * sizes.width * 0.5;
+				let translateY = -screenPosition.y * sizes.height * 0.5;
+
+				point.element.style.transform = `translate(${translateX}px, ${translateY}px)`;
+			}
+
 			renderer.render(scene, camera);
 
-			// Call tick again on the next frame
-			window.requestAnimationFrame(tick);
+			animationId = window.requestAnimationFrame(tick);
 		};
 
 		tick();
@@ -202,6 +222,10 @@
 			abortController.abort();
 
 			gsap.killTweensOf('*');
+
+			if (animationId) {
+				cancelAnimationFrame(animationId);
+			}
 
 			if (model) {
 				model.traverse((child) => {
@@ -228,7 +252,16 @@
 </script>
 
 <canvas class="webgl"></canvas>
+
 <section class="loading-bar"></section>
+
+<div class="point point-0">
+	<div class="content">
+		<h2 class="label">What am I?</h2>
+
+		<p class="text">A mechanical shark on a movie set for the moon.</p>
+	</div>
+</div>
 
 <style>
 	.webgl {
@@ -249,5 +282,62 @@
 		transform-origin: top left;
 		border-radius: 1vw;
 		will-change: transform;
+	}
+
+	.point {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		@media (width >= 768px) {
+			top: 35%;
+		}
+
+		@media (width <= 768px) {
+			top: 70%;
+		}
+
+		& .content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			& .label {
+				inline-size: clamp(150px, 15vw, 300px);
+				block-size: fit-content;
+				border-radius: var(--radius);
+				background-color: var(--clr-invert);
+				border: 1px solid var(--clr-main);
+				color: var(--clr-light-gray);
+				font-family: var(--bronova-bold);
+				font-size: clamp(var(--sm), 2vw, var(--h2));
+				text-align: center;
+				line-height: 1.2;
+				cursor: help;
+				user-select: none;
+
+				&:hover + .text {
+					opacity: 1;
+				}
+			}
+
+			& .text {
+				inline-size: clamp(150px, 15vw, 300px);
+				block-size: fit-content;
+				border-radius: var(--radius);
+				background-color: var(--clr-invert);
+				color: var(--clr-gray);
+				font-family: var(--bronova);
+				font-size: clamp(var(--xs), 1.2vw, var(--h4));
+				font-weight: 100;
+				text-align: center;
+				padding: 1em;
+				line-height: 1;
+				margin-top: -2em;
+				opacity: 0;
+				transition: opacity 0.4s ease-in-out;
+			}
+		}
 	}
 </style>
