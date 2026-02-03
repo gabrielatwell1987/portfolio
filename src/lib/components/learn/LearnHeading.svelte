@@ -13,9 +13,6 @@
 
 	let transitionName = $derived(viewTransitionName || '');
 
-	// Determine which transition name to use
-	// let transitionName = $derived(shouldTransition ? viewTransitionName : '');
-
 	$effect(() => {
 		const left = document.querySelector('.left-word');
 		const right = document.querySelector('.right-word');

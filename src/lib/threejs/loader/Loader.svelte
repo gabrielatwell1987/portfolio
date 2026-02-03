@@ -201,6 +201,8 @@
 		return () => {
 			abortController.abort();
 
+			gsap.killTweensOf('*');
+
 			if (model) {
 				model.traverse((child) => {
 					if (child instanceof THREE.Mesh) {

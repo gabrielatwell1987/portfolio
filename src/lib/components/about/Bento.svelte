@@ -52,6 +52,10 @@
 				);
 			});
 		}
+
+		return () => {
+			ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+		};
 	});
 </script>
 
