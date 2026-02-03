@@ -15,8 +15,7 @@
 		MOBILE_DAY_LABEL_WIDTH,
 		getContributionLevel,
 		formatDate,
-		getContributionText,
-		generateFallbackData
+		getContributionText
 	} from './githubContributions';
 
 	interface ContributionDay {
@@ -45,16 +44,9 @@
 		contributionDays: ContributionDay[];
 	}
 
-	// Accept contributions as a prop (prerendered data)
 	let { contributions = $bindable<ContributionsData | null>(null) } = $props();
-
-	// Reactive state for UI (no longer fetching)
 	let contributionsData = $derived(contributions ? { weeks: contributions.weeks } : { weeks: [] });
 	let totalContributions = $derived(contributions?.totalContributions || 0);
-	let isLoading = $state<boolean>(false); // Always false since data is prerendered
-	let isError = $state<boolean>(false);
-	let errorMessage = $state<string>('');
-	let isUsingFallback = $state<boolean>(false);
 	let isSmallContainer = $state<boolean>(false);
 	let containerElement = $state<HTMLElement | null>(null);
 	let mobileTooltip = $state<MobileTooltip>({
@@ -66,7 +58,6 @@
 	});
 	let announcement = $state<string>('');
 
-	// Mobile touch events for tooltips
 	function handleDayTouch(event: Event, day: ContributionDay): void {
 		// Announce to screen readers
 		announcement = `${day.contributionCount} ${getContributionText(day.contributionCount)} on ${formatDate(day.date)}`;
@@ -101,7 +92,6 @@
 		// On larger containers, don't prevent default to allow native title tooltips
 	}
 
-	// Keyboard navigation
 	function handleDayKeydown(
 		event: KeyboardEvent,
 		day: ContributionDay,
@@ -148,20 +138,6 @@
 		}
 	}
 
-	// Hide mobile tooltip when touching elsewhere
-	function hideMobileTooltip(event: Event): void {
-		if (isSmallContainer && mobileTooltip.visible && event.target) {
-			// Don't hide if touching the tooltip itself or a contribution day
-			if (
-				!(event.target as HTMLElement).closest('.mobile-tooltip') &&
-				!(event.target as HTMLElement).classList.contains('contribution-day')
-			) {
-				mobileTooltip.visible = false;
-			}
-		}
-	}
-
-	// Current dimensions based on container size
 	function getCurrentDimensions(): {
 		cellSize: number;
 		cellGap: number;
@@ -178,7 +154,6 @@
 		};
 	}
 
-	// Month positions
 	function getMonthPositions(): { name: string; x: number }[] {
 		const months: { name: string; x: number }[] = [];
 		const { cellSize, cellGap, dayLabelWidth } = getCurrentDimensions();
@@ -214,13 +189,11 @@
 		return months;
 	}
 
-	// Total width
 	function getTotalWidth(): number {
 		const { cellSize, cellGap, dayLabelWidth } = getCurrentDimensions();
 		return dayLabelWidth + contributionsData.weeks.length * (cellSize + cellGap);
 	}
 
-	// Resize observer
 	$effect(() => {
 		if (typeof window === 'undefined' || !containerElement) return;
 
@@ -236,7 +209,6 @@
 		return () => resizeObserver.disconnect();
 	});
 
-	// Click listener
 	$effect(() => {
 		const abortController = new AbortController();
 
@@ -260,7 +232,6 @@
 		return () => abortController.abort();
 	});
 
-	// Scroll position
 	$effect(() => {
 		if (typeof window === 'undefined' || !isSmallContainer) return;
 
@@ -279,15 +250,14 @@
 	aria-label="GitHub Contributions Calendar"
 	bind:this={containerElement}
 >
-	<!-- Screen reader announcements -->
 	<div class="visually-hidden" aria-live="polite" aria-atomic="true">
 		{announcement}
 	</div>
 
 	<header class="contributions-header">
 		<h2>GitHub Contributions</h2>
+		<h3>2025-2026</h3>
 
-		<!-- Instructions for screen reader users -->
 		<div class="visually-hidden">
 			Navigate through the contribution calendar using tab to move through days. Use arrow keys for
 			more precise navigation. Press Enter or Space to get detailed information about a specific
@@ -302,7 +272,6 @@
 
 	{#if contributionsData.weeks.length > 0}
 		<div class="calendar-container">
-			<!-- Custom tooltip for smaller containers -->
 			{#if mobileTooltip.visible && isSmallContainer}
 				<div
 					class="mobile-tooltip"
@@ -336,7 +305,7 @@
 						a day, with darker colors indicating more contributions. Navigate with tab and enter
 						keys to explore individual days.
 					</desc>
-					<!-- Month labels -->
+					<!-- month -->
 					<g role="group" aria-label="Month labels">
 						{#each getMonthPositions() as month}
 							<text
@@ -350,7 +319,7 @@
 						{/each}
 					</g>
 
-					<!-- Day labels -->
+					<!-- day -->
 					<g role="group" aria-label="Day labels">
 						{#each DAYS as day, i}
 							<text
@@ -368,7 +337,7 @@
 						{/each}
 					</g>
 
-					<!-- Contribution grid -->
+					<!-- contribution -->
 					<g role="group" aria-label="Daily contributions grid">
 						{#each contributionsData.weeks as week, weekIndex}
 							{#each week.contributionDays as day, dayIndex}
@@ -403,7 +372,6 @@
 				</svg>
 			</div>
 
-			<!-- Legend -->
 			<div class="legend" role="img" aria-labelledby="legend-title" aria-describedby="legend-desc">
 				<div id="legend-title" class="visually-hidden">Contribution levels legend</div>
 				<div id="legend-desc" class="visually-hidden">
@@ -462,7 +430,6 @@
 		flex-direction: column;
 		align-items: center;
 
-		/* Enable container queries */
 		container-type: inline-size;
 		container-name: github-contributions;
 
@@ -474,6 +441,16 @@
 				font-size: clamp(var(--sm), 2vw, var(--h4));
 				font-weight: 700;
 				color: var(--clr-main);
+				margin-bottom: -0.2em;
+				text-transform: lowercase;
+				letter-spacing: 0.5px;
+			}
+
+			& h3 {
+				font-family: var(--bronova);
+				font-size: clamp(var(--sm), 1.25vw, var(--h5));
+				font-weight: 600;
+				color: oklch(from var(--clr-main) 0.7 c h);
 				margin-bottom: 0.5rem;
 				text-transform: lowercase;
 				letter-spacing: 0.5px;
@@ -481,7 +458,7 @@
 		}
 
 		& .total-contributions {
-			font-size: clamp(var(--xs), 2vw, var(--sm));
+			font-size: clamp(var(--xs), 1.25vw, var(--sm));
 			color: var(--clr-main);
 			opacity: 0.7;
 			margin: 0;
@@ -516,7 +493,6 @@
 			border-radius: 8px;
 			position: relative;
 
-			/* Mobile tooltip */
 			& .mobile-tooltip {
 				position: absolute;
 				background: var(--clr-main);
@@ -543,7 +519,6 @@
 				}
 			}
 
-			/* Responsive padding using container queries */
 			@container github-contributions (width <= 767px) {
 				padding: 1rem;
 				gap: 0.75rem;
@@ -582,7 +557,6 @@
 					max-inline-size: 100%;
 					height: auto;
 
-					/* Make SVG responsive using container queries */
 					@container github-contributions (width <= 800px) {
 						transform: scale(0.9);
 						transform-origin: center;
@@ -631,21 +605,18 @@
 						transition: all 0.2s ease;
 						cursor: pointer;
 
-						/* Ensure title tooltips work on desktop */
 						&:hover {
 							stroke: var(--clr-main);
 							stroke-width: 1px;
 							opacity: 0.8;
 						}
 
-						/* Hide native tooltips on smaller containers to avoid conflicts */
 						@container github-contributions (width <= 600px) {
 							& title {
 								display: none;
 							}
 						}
 
-						/* Contribution levels */
 						&.none {
 							fill: var(--clr-gray);
 						}
@@ -666,7 +637,6 @@
 							fill: #39d353;
 						}
 
-						/* Focus styles for accessibility */
 						&:focus {
 							outline: 3px solid var(--clr-main);
 							outline-offset: 2px;
@@ -674,7 +644,6 @@
 							stroke-width: 2px;
 						}
 
-						/* Keyboard navigation enhancement */
 						&:focus-visible {
 							outline: 3px solid var(--clr-main);
 							outline-offset: 2px;
@@ -730,7 +699,6 @@
 		}
 	}
 
-	/* Dark theme adjustments */
 	:global(body.dark) .contribution-day.none {
 		fill: var(--clr-invert);
 	}
@@ -739,14 +707,12 @@
 		background-color: var(--clr-invert);
 	}
 
-	/* Hover effects - enhanced focus on larger containers */
 	@container github-contributions (width >= 600px) {
 		.contribution-day:hover {
 			stroke-width: 2px;
 		}
 	}
 
-	/* Loading spinner animation */
 	@keyframes spin {
 		0% {
 			transform: rotate(0deg);
@@ -756,7 +722,6 @@
 		}
 	}
 
-	/* Mobile tooltip animation */
 	@keyframes tooltipFadeIn {
 		0% {
 			opacity: 0;
@@ -768,7 +733,6 @@
 		}
 	}
 
-	/* Container query for smaller layouts */
 	@container github-contributions (width <= 600px) {
 		.github-contributions {
 			padding: 1rem 0.5rem;
@@ -776,7 +740,6 @@
 			& .calendar-container {
 				& .calendar-svg-wrapper {
 					& .contributions-svg {
-						/* Override scaling for smaller containers to use smaller cells instead */
 						transform: none !important;
 
 						& .month-label {
@@ -814,7 +777,6 @@
 		}
 	}
 
-	/* Very small container adjustments */
 	@container github-contributions (width <= 400px) {
 		.github-contributions {
 			& .calendar-container {
