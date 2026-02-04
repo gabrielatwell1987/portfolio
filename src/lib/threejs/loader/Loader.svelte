@@ -128,7 +128,7 @@
 		 */
 		const points = [
 			{
-				position: new THREE.Vector3(1.55, 0.3, -0.9),
+				position: new THREE.Vector3(1.05, 0.3, -0.195),
 				element: document.querySelector('.point-0') as HTMLElement
 			}
 		];
