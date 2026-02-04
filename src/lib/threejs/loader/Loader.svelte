@@ -4,6 +4,8 @@
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 	import gsap from 'gsap';
 
+	let loadingComplete = $state<boolean>(false);
+
 	$effect(() => {
 		/**
 		 * Loaders
@@ -15,6 +17,11 @@
 				gsap.delayedCall(0.5, () => {
 					gsap.to(overlayMaterial.uniforms.uAlpha, { duration: 3, value: 0 });
 					loadingBarElement.style.transform = 'translateX(100%)';
+
+					gsap.delayedCall(0.5, () => {
+						loadingBarElement.style.display = 'none';
+						loadingComplete = true;
+					});
 				});
 			},
 			// progress
@@ -257,7 +264,7 @@
 
 <div class="point point-0">
 	<div class="content">
-		<h2 class="label">What am I?</h2>
+		<h2 class="label" class:visible={loadingComplete}>What am I?</h2>
 
 		<p class="text">A mechanical shark on a movie set for the moon.</p>
 	</div>
@@ -316,6 +323,12 @@
 				line-height: 1.2;
 				cursor: help;
 				user-select: none;
+
+				visibility: hidden;
+
+				&.visible {
+					visibility: visible;
+				}
 
 				&:hover + .text {
 					opacity: 1;
