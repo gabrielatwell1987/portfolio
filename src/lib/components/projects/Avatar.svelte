@@ -25,15 +25,15 @@
 		box-shadow: none;
 		gap: 2rem;
 		padding: 1.5rem;
-		width: fit-content;
+		inline-size: fit-content;
 		margin-inline: auto;
 		position: relative;
 		z-index: 1;
 
 		img {
 			border-radius: 50%;
-			width: 60px;
-			height: 60px;
+			inline-size: 60px;
+			aspect-ratio: 1;
 			object-fit: cover;
 			transition: scale 0.5s ease-out;
 
@@ -73,8 +73,8 @@
 			padding: 2rem;
 
 			img {
-				width: 80px;
-				height: 80px;
+				inline-size: 80px;
+				aspect-ratio: 1;
 			}
 		}
 	}
