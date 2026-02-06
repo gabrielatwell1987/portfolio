@@ -23,6 +23,17 @@ const config = {
 		}),
 		experimental: {
 			remoteFunctions: true
+		},
+		prerender: {
+			handleHttpError: ({ status, path, referrer, message }) => {
+				// Suppress 404 errors
+				if (status === 404) {
+					console.warn(`Prerendering warning: ${status} ${path} (linked from ${referrer})`);
+					return;
+				}
+				// for other errors, throw to fail the build
+				throw new Error(message);
+			}
 		}
 	},
 	vitePlugin: {

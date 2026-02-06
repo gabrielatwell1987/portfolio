@@ -1,6 +1,10 @@
 <script lang="ts">
 	interface Props {
-		projects?: { url: string; img: string; title: string }[];
+		projects?: {
+			url: string;
+			img: { src: string; srcset: string; sizes: string };
+			title: string;
+		}[];
 	}
 
 	let { projects = [] }: Props = $props();
@@ -9,7 +13,13 @@
 <section class="projects-grid">
 	{#each projects as project}
 		<a href={project.url} class="project-card">
-			<img src={project.img} alt={project.title} loading="lazy" />
+			<img
+				src={project.img.src}
+				srcset={project.img.srcset}
+				sizes={project.img.sizes}
+				alt={project.title}
+				loading="lazy"
+			/>
 
 			<div class="overlay">
 				<p>{project.title}</p>

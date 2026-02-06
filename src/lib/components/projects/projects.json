@@ -2,7 +2,11 @@
 	{
 		"id": "busy-bat",
 		"description": "sveltekit",
-		"img": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/busybatleopard.webp",
+		"img": {
+			"src": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/busybatleopard.webp",
+			"srcset": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/busybatleopard-400w.webp 400w, https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/busybatleopard-800w.webp 800w, https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/busybatleopard.webp 470w",
+			"sizes": "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 403px"
+		},
 		"index": 0,
 		"summary": "A custom website for a local business that sells unique handmade items. The site features a product page, a contact form, and I even created the brand. To reach a wider audience, I made the site responsive for mobile devices.",
 		"title": "busy little bat sewing",
@@ -11,7 +15,11 @@
 	{
 		"id": "pixipalette",
 		"description": "sveltekit",
-		"img": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/pixipalette.webp",
+		"img": {
+			"src": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/pixipalette.webp",
+			"srcset": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/pixipalette-400w.webp 400w, https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/pixipalette-800w.webp 800w, https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/pixipalette.webp 470w",
+			"sizes": "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 403px"
+		},
 		"index": 1,
 		"summary": "A color palette generator that tells users the hex, rgb, and hsl colors of images.. so if you want to know the colors an image is using, use this tool! I tried making the app as user-friendly as possible.",
 		"title": "pixipalette",
@@ -20,7 +28,11 @@
 	{
 		"id": "grocery-list",
 		"description": "react",
-		"img": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/groceries.webp",
+		"img": {
+			"src": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/groceries.webp",
+			"srcset": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/groceries-400w.webp 400w, https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/groceries-800w.webp 800w, https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/groceries.webp 470w",
+			"sizes": "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 403px"
+		},
 		"index": 2,
 		"summary": "A grocery list app that allows users to add, remove, and edit items. I used react to build this and it features a simple and intuitive interface.",
 		"title": "grocery list",
@@ -29,7 +41,11 @@
 	{
 		"id": "ecommerce",
 		"description": "vanilla html/css/js",
-		"img": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/ecommerce.webp",
+		"img": {
+			"src": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/ecommerce.webp",
+			"srcset": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/ecommerce-400w.webp 400w, https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/ecommerce-800w.webp 800w, https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/ecommerce.webp 667w",
+			"sizes": "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 455px"
+		},
 		"index": 3,
 		"summary": "My version of an e-commerce product page that features a product image, title, price, and description. I used the fake store API to populate the product data.",
 		"title": "e-commerce product page",
@@ -38,7 +54,11 @@
 	{
 		"id": "thinkflow",
 		"description": "sveltekit",
-		"img": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/think.flow.webp",
+		"img": {
+			"src": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/think.flow.webp",
+			"srcset": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/think.flow-400w.webp 400w, https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/think.flow-800w.webp 800w, https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/think.flow.webp 470w",
+			"sizes": "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 403px"
+		},
 		"index": 5,
 		"summary": "Custom blog page where you can add, edit, and remove posts. It uses localStorage to save the posts, so they persist even after refreshing the page.",
 		"title": "think.flow",
@@ -47,7 +67,11 @@
 	{
 		"id": "passcraft",
 		"description": "sveltekit",
-		"img": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/passcraft.webp",
+		"img": {
+			"src": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/passcraft.webp",
+			"srcset": "https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/passcraft-400w.webp 400w, https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/passcraft-800w.webp 800w, https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/passcraft.webp 470w",
+			"sizes": "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 403px"
+		},
 		"index": 4,
 		"summary": "If you're like me and have a hard time creating passwords, PassCraft is for you! It generates random passwords based on user input.",
 		"title": "passcraft",

@@ -1,9 +1,15 @@
 <script lang="ts">
 	import ProjectSummary from './ProjectSummary.svelte';
 
+	export const prerender = false;
+
 	interface Props {
 		title: string;
-		img: string;
+		img: {
+			src: string;
+			srcset: string;
+			sizes: string;
+		};
 		url: string;
 		description: string;
 		summary: string;
@@ -24,7 +30,9 @@
 	>
 		<img
 			class="project-image"
-			src={img}
+			src={img.src}
+			srcset={img.srcset}
+			sizes={img.sizes}
 			alt="Screenshot of {title} project"
 			style="--alt-text: '{title} project';"
 			loading="lazy"
