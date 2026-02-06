@@ -7,5 +7,11 @@ export default defineConfig({
 		https: false,
 		port: 5173,
 		host: 'localhost'
+	},
+	build: {
+		sourcemap: true,
+		rollupOptions: {
+			treeshake: true
+		}
 	}
 });

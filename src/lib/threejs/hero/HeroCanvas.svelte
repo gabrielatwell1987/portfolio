@@ -139,187 +139,194 @@
 			particlesMaterial.needsUpdate = true;
 		}
 
-		// canvas
-		const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;
-		if (!canvas) return;
+		const deferInit = () => {
+			// canvas
+			const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;
+			if (!canvas) return;
 
-		// scene
-		const scene = new THREE.Scene();
+			// scene
+			const scene = new THREE.Scene();
 
-		// objects
-		geometry = new THREE.CapsuleGeometry(2, 0, 9, 20);
+			// objects
+			geometry = new THREE.CapsuleGeometry(2, 0, 9, 20);
 
-		particlesGeometry = new THREE.BufferGeometry();
-		const particlesCount = 1000;
-		const positionArray = new Float32Array(particlesCount * 3);
+			particlesGeometry = new THREE.BufferGeometry();
+			const isMobile = window.innerWidth <= 768;
+			const particlesCount = isMobile ? 500 : 1000;
+			const positionArray = new Float32Array(particlesCount * 3);
 
-		for (let i = 0; i < particlesCount * 3; i++) {
-			positionArray[i] = (Math.random() - 0.5) * 5;
+			for (let i = 0; i < particlesCount * 3; i++) {
+				positionArray[i] = (Math.random() - 0.5) * 5;
+			}
+
+			particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positionArray, 3));
+
+			material = new THREE.PointsMaterial({
+				size: 0.015,
+				color: '#c0c0c0'
+			});
+
+			particlesMaterial = new THREE.PointsMaterial({
+				size: 0.04,
+				transparent: true,
+				alphaTest: 0.001,
+				color: '#c0c0c0',
+				blending: THREE.AdditiveBlending
+			});
+
+			// Listen for theme changes
+			themeObserver = new MutationObserver(updateColors);
+			themeObserver.observe(document.body, {
+				attributes: true,
+				attributeFilter: ['class', 'style']
+			});
+			themeObserver.observe(document.documentElement, {
+				attributes: true,
+				attributeFilter: ['class', 'style', 'color-scheme']
+			});
+
+			// listen for custom theme change events if your ThemeToggle dispatches them
+			themeChangeListener = updateColors;
+			document.addEventListener('theme-change', themeChangeListener, {
+				signal: abortController.signal
+			});
+
+			const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+			mediaQuery.addEventListener('change', updateColors, {
+				signal: abortController.signal
+			});
+
+			updateColors();
+
+			// Mesh
+			const sphere = new THREE.Points(geometry, material);
+			const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+			scene.add(sphere, particlesMesh);
+
+			// Lights
+			const pointLight = new THREE.PointLight(0xffffff, 0.1);
+			pointLight.position.set(2, 3, 4);
+			scene.add(pointLight);
+
+			/**
+			 * Sizes
+			 */
+			const sizes = {
+				width: window.innerWidth,
+				height: window.innerHeight
+			};
+
+			resizeListener = () => {
+				sizes.width = window.innerWidth;
+				sizes.height = window.innerHeight;
+
+				if (camera) {
+					camera.aspect = sizes.width / sizes.height;
+					camera.updateProjectionMatrix();
+				}
+
+				if (renderer) {
+					renderer.setSize(sizes.width, sizes.height);
+					renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+				}
+			};
+			window.addEventListener('resize', resizeListener, { signal: abortController.signal });
+
+			/**
+			 * Camera
+			 */
+			// Base camera
+			camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
+			camera.position.x = 0;
+			camera.position.y = 0;
+			camera.position.z = 2;
+			scene.add(camera);
+
+			/**
+			 * Renderer
+			 */
+			renderer = new THREE.WebGLRenderer({
+				canvas: canvas,
+				alpha: true,
+				antialias: !isMobile
+			});
+			renderer.setSize(sizes.width, sizes.height);
+			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+			// Mouse
+			mousemoveListener = animateParticles;
+			document.addEventListener('mousemove', mousemoveListener, { signal: abortController.signal });
+
+			let mouseX = 0;
+			let mouseY = 0;
+
+			function animateParticles(event: MouseEvent) {
+				mouseX = event.clientX;
+				mouseY = event.clientY;
+			}
+
+			/**
+			 * Animate
+			 */
+			const clock = new THREE.Clock();
+			let isAnimating = true;
+
+			const tick = () => {
+				stats.begin();
+				if (!isAnimating) return;
+
+				const elapsedTime = clock.getElapsedTime();
+
+				sphere.rotation.y = -0.2 * elapsedTime;
+				particlesMesh.rotation.y = -0.01 * elapsedTime;
+
+				if (mouseX > 0) {
+					particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.0000008);
+					particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.0000008);
+				}
+
+				if (renderer && camera) {
+					renderer.render(scene, camera);
+				}
+
+				animationFrameId = window.requestAnimationFrame(tick);
+				stats.end();
+			};
+
+			visibilityListener = () => {
+				if (document.hidden) {
+					isAnimating = false;
+				} else {
+					isAnimating = true;
+					tick();
+				}
+			};
+
+			document.addEventListener('visibilitychange', visibilityListener, {
+				signal: abortController.signal
+			});
+
+			tick();
+		};
+
+		// defer initialization
+		if ('requestIdleCallback' in window) {
+			requestIdleCallback(deferInit);
+		} else {
+			setTimeout(deferInit, 100);
 		}
-
-		particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positionArray, 3));
-
-		material = new THREE.PointsMaterial({
-			size: 0.015,
-			color: '#c0c0c0'
-		});
-
-		particlesMaterial = new THREE.PointsMaterial({
-			size: 0.04,
-			transparent: true,
-			alphaTest: 0.001,
-			color: '#c0c0c0',
-			blending: THREE.AdditiveBlending
-		});
-
-		// Listen for theme changes
-		themeObserver = new MutationObserver(updateColors);
-		themeObserver.observe(document.body, {
-			attributes: true,
-			attributeFilter: ['class', 'style']
-		});
-		themeObserver.observe(document.documentElement, {
-			attributes: true,
-			attributeFilter: ['class', 'style', 'color-scheme']
-		});
-
-		// listen for custom theme change events if your ThemeToggle dispatches them
-		themeChangeListener = updateColors;
-		document.addEventListener('theme-change', themeChangeListener, {
-			signal: abortController.signal
-		});
-
-		const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
-		mediaQuery.addEventListener('change', updateColors, {
-			signal: abortController.signal
-		});
-
-		updateColors();
-
-		// Mesh
-		const sphere = new THREE.Points(geometry, material);
-		const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-		scene.add(sphere, particlesMesh);
-
-		// Lights
-		const pointLight = new THREE.PointLight(0xffffff, 0.1);
-		pointLight.position.set(2, 3, 4);
-		scene.add(pointLight);
-
-		/**
-		 * Sizes
-		 */
-		const sizes = {
-			width: window.innerWidth,
-			height: window.innerHeight
-		};
-
-		resizeListener = () => {
-			sizes.width = window.innerWidth;
-			sizes.height = window.innerHeight;
-
-			if (camera) {
-				camera.aspect = sizes.width / sizes.height;
-				camera.updateProjectionMatrix();
-			}
-
-			if (renderer) {
-				renderer.setSize(sizes.width, sizes.height);
-				renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-			}
-		};
-		window.addEventListener('resize', resizeListener, { signal: abortController.signal });
-
-		/**
-		 * Camera
-		 */
-		// Base camera
-		camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
-		camera.position.x = 0;
-		camera.position.y = 0;
-		camera.position.z = 2;
-		scene.add(camera);
-
-		/**
-		 * Renderer
-		 */
-		renderer = new THREE.WebGLRenderer({
-			canvas: canvas,
-			alpha: true,
-			antialias: true
-		});
-		renderer.setSize(sizes.width, sizes.height);
-		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-		// Mouse
-		mousemoveListener = animateParticles;
-		document.addEventListener('mousemove', mousemoveListener, { signal: abortController.signal });
-
-		let mouseX = 0;
-		let mouseY = 0;
-
-		function animateParticles(event: MouseEvent) {
-			mouseX = event.clientX;
-			mouseY = event.clientY;
-		}
-
-		/**
-		 * Animate
-		 */
-		const clock = new THREE.Clock();
-		let isAnimating = true;
-
-		const tick = () => {
-			stats.begin();
-			if (!isAnimating) return;
-
-			const elapsedTime = clock.getElapsedTime();
-
-			sphere.rotation.y = -0.2 * elapsedTime;
-			particlesMesh.rotation.y = -0.01 * elapsedTime;
-
-			if (mouseX > 0) {
-				particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.0000008);
-				particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.0000008);
-			}
-
-			if (renderer && camera) {
-				renderer.render(scene, camera);
-			}
-
-			animationFrameId = window.requestAnimationFrame(tick);
-			stats.end();
-		};
-
-		// Visibility change handler
-		visibilityListener = () => {
-			if (document.hidden) {
-				isAnimating = false;
-			} else {
-				isAnimating = true;
-				tick();
-			}
-		};
-
-		document.addEventListener('visibilitychange', visibilityListener, {
-			signal: abortController.signal
-		});
-
-		tick();
 
 		return () => {
 			if (animationFrameId) {
 				window.cancelAnimationFrame(animationFrameId);
 			}
 
-			// Abort all event listeners
 			abortController.abort();
 
 			if (themeObserver) {
 				themeObserver.disconnect();
 			}
 
-			// Dispose Three.js resources
 			if (renderer) {
 				renderer.dispose();
 			}
