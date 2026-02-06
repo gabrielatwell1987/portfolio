@@ -1,6 +1,21 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import * as THREE from 'three';
+	import {
+		CubeTextureLoader,
+		Scene,
+		PerspectiveCamera,
+		WebGLRenderer,
+		Vector2,
+		Vector3,
+		Plane,
+		Raycaster,
+		Group,
+		CylinderGeometry,
+		MeshStandardMaterial,
+		Mesh,
+		MathUtils,
+		Clock
+	} from 'three';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 	import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
@@ -20,7 +35,7 @@
 		 * Loaders
 		 */
 		const gltfLoader = new GLTFLoader();
-		const cubeTextureLoader = new THREE.CubeTextureLoader();
+		const cubeTextureLoader = new CubeTextureLoader();
 
 		/**
 		 * Base
@@ -30,7 +45,7 @@
 		const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;
 
 		// Scene
-		const scene = new THREE.Scene();
+		const scene = new Scene();
 
 		/*
 		 * environment maps
@@ -64,7 +79,7 @@
 		 * Camera
 		 */
 		// Base camera
-		const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
+		const camera = new PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
 		camera.position.set(5, 6, 5);
 		scene.add(camera);
 
@@ -76,7 +91,7 @@
 		/**
 		 * Renderer
 		 */
-		const renderer = new THREE.WebGLRenderer({
+		const renderer = new WebGLRenderer({
 			canvas: canvas
 		});
 		renderer.setSize(sizes.width, sizes.height);
@@ -84,10 +99,10 @@
 
 		// mouse tracking
 		let mouse = $state({ x: 0, y: 0 });
-		const raycaster = new THREE.Raycaster();
-		const mouseVector = new THREE.Vector2();
-		const plane = new THREE.Plane(new THREE.Vector3(0, 1, 0), -1.5);
-		const intersection = new THREE.Vector3();
+		const raycaster = new Raycaster();
+		const mouseVector = new Vector2();
+		const plane = new Plane(new Vector3(0, 1, 0), -1.5);
+		const intersection = new Vector3();
 
 		// event listener management
 		const abortController = new AbortController();
@@ -133,7 +148,7 @@
 		/**
 		 * Models
 		 */
-		let gltfScene: THREE.Group | null = null;
+		let gltfScene: Group | null = null;
 
 		gltfLoader.load('/threejayess/models/waternoose.glb', (gltf) => {
 			gltf.scene.scale.set(1.5, 1.5, 1.5);
@@ -144,26 +159,26 @@
 			/*
 			 * Top hat
 			 */
-			const hatGroup = new THREE.Group();
+			const hatGroup = new Group();
 
 			// hat brim
-			const brimGeometry = new THREE.CylinderGeometry(0.15, 0.15, 0.02, 16);
-			const brimMaterial = new THREE.MeshStandardMaterial({ color: 0x000000 });
-			const brim = new THREE.Mesh(brimGeometry, brimMaterial);
+			const brimGeometry = new CylinderGeometry(0.15, 0.15, 0.02, 16);
+			const brimMaterial = new MeshStandardMaterial({ color: 0x000000 });
+			const brim = new Mesh(brimGeometry, brimMaterial);
 			brim.position.y = -0.05;
 			hatGroup.add(brim);
 
 			// white stripe
-			const stripeGeometry = new THREE.CylinderGeometry(0.117, 0.11, 0.05, 16);
-			const stripeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
-			const stripe = new THREE.Mesh(stripeGeometry, stripeMaterial);
+			const stripeGeometry = new CylinderGeometry(0.117, 0.11, 0.05, 16);
+			const stripeMaterial = new MeshStandardMaterial({ color: 0xffffff });
+			const stripe = new Mesh(stripeGeometry, stripeMaterial);
 			stripe.position.y = 0;
 			hatGroup.add(stripe);
 
 			// hat crown
-			const crownGeometry = new THREE.CylinderGeometry(0.1, 0.12, 0.2, 16);
-			const crownMaterial = new THREE.MeshStandardMaterial({ color: 0x000000 });
-			const crown = new THREE.Mesh(crownGeometry, crownMaterial);
+			const crownGeometry = new CylinderGeometry(0.1, 0.12, 0.2, 16);
+			const crownMaterial = new MeshStandardMaterial({ color: 0x000000 });
+			const crown = new Mesh(crownGeometry, crownMaterial);
 			crown.position.y = 0.05;
 			hatGroup.add(crown);
 
@@ -184,7 +199,7 @@
 		/**
 		 * Animate
 		 */
-		const clock = new THREE.Clock();
+		const clock = new Clock();
 		let animationId: number;
 
 		const tick = () => {
@@ -200,12 +215,12 @@
 				const intersects = raycaster.ray.intersectPlane(plane, intersection);
 
 				if (intersects) {
-					gltfScene.position.x = THREE.MathUtils.lerp(gltfScene.position.x, intersection.x, 0.1);
-					gltfScene.position.z = THREE.MathUtils.lerp(gltfScene.position.z, intersection.z, 0.1);
+					gltfScene.position.x = MathUtils.lerp(gltfScene.position.x, intersection.x, 0.1);
+					gltfScene.position.z = MathUtils.lerp(gltfScene.position.z, intersection.z, 0.1);
 				}
 
 				// model rotation to face the camera
-				const direction = new THREE.Vector3(
+				const direction = new Vector3(
 					camera.position.x - gltfScene.position.x,
 					0,
 					camera.position.z - gltfScene.position.z
@@ -245,7 +260,7 @@
 			// Dispose GLTF scene and its children (geometries, materials)
 			if (gltfScene) {
 				gltfScene.traverse((child) => {
-					if (child instanceof THREE.Mesh) {
+					if (child instanceof Mesh) {
 						child.geometry.dispose();
 						if (Array.isArray(child.material)) {
 							child.material.forEach((mat) => mat.dispose());
@@ -260,7 +275,7 @@
 			// Clear scene
 			while (scene.children.length > 0) {
 				const child = scene.children[0];
-				if (child instanceof THREE.Mesh) {
+				if (child instanceof Mesh) {
 					child.geometry.dispose();
 					if (Array.isArray(child.material)) {
 						child.material.forEach((mat) => mat.dispose());

@@ -1,14 +1,31 @@
 <script lang="ts">
-	import * as THREE from 'three';
+	import {
+		WebGLRenderer,
+		Scene,
+		PerspectiveCamera,
+		PlaneGeometry,
+		Mesh,
+		MeshBasicMaterial,
+		DoubleSide,
+		Vector2,
+		Vector3,
+		Raycaster,
+		BufferAttribute,
+		ShaderMaterial,
+		Uniform,
+		Points,
+		TextureLoader,
+		CanvasTexture
+	} from 'three';
 	import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 	import cursorVert from './cursor.vert?raw';
 	import cursorFrag from './cursor.frag?raw';
 
-	let renderer: THREE.WebGLRenderer;
+	let renderer: WebGLRenderer;
 	let controls: OrbitControls;
 	let displacement: any = {};
-	let particlesGeometry: THREE.PlaneGeometry;
-	let particlesMaterial: THREE.ShaderMaterial;
+	let particlesGeometry: PlaneGeometry;
+	let particlesMaterial: ShaderMaterial;
 	let resizeListener: (() => void) | undefined;
 	let pointerMoveListener: ((event: PointerEvent) => void) | undefined;
 	let animationFrameId: number | undefined;
@@ -23,10 +40,10 @@
 		const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;
 
 		// scene
-		const scene = new THREE.Scene();
+		const scene = new Scene();
 
 		// loaders
-		const textureLoader = new THREE.TextureLoader();
+		const textureLoader = new TextureLoader();
 
 		/**
 		 * Sizes
@@ -63,7 +80,7 @@
 		 * Camera
 		 */
 		// base camera
-		const camera = new THREE.PerspectiveCamera(35, sizes.width / sizes.height, 0.1, 100);
+		const camera = new PerspectiveCamera(35, sizes.width / sizes.height, 0.1, 100);
 		camera.position.set(0, 0, 25);
 		scene.add(camera);
 
@@ -74,7 +91,7 @@
 		/**
 		 * Renderer
 		 */
-		renderer = new THREE.WebGLRenderer({
+		renderer = new WebGLRenderer({
 			canvas: canvas,
 			antialias: true
 		});
@@ -109,20 +126,20 @@
 		displacement.glowImage.src = '/threejayess/glow.webp';
 
 		// interactive plane
-		displacement.interactivePlane = new THREE.Mesh(
-			new THREE.PlaneGeometry(10, 10),
-			new THREE.MeshBasicMaterial({ color: 'red', side: THREE.DoubleSide })
+		displacement.interactivePlane = new Mesh(
+			new PlaneGeometry(10, 10),
+			new MeshBasicMaterial({ color: 'red', side: DoubleSide })
 		);
 		displacement.interactivePlane.visible = false;
 		scene.add(displacement.interactivePlane);
 
 		// raycaster
-		displacement.raycaster = new THREE.Raycaster();
+		displacement.raycaster = new Raycaster();
 
 		// coordinates
-		displacement.screenCursor = new THREE.Vector2(9999, 9999);
-		displacement.canvasCursor = new THREE.Vector2(9999, 9999);
-		displacement.canvasCursorPrevious = new THREE.Vector2(9999, 9999);
+		displacement.screenCursor = new Vector2(9999, 9999);
+		displacement.canvasCursor = new Vector2(9999, 9999);
+		displacement.canvasCursorPrevious = new Vector2(9999, 9999);
 
 		pointerMoveListener = (event) => {
 			// update the mouse variable
@@ -131,12 +148,12 @@
 		};
 		window.addEventListener('pointermove', pointerMoveListener, { signal: abortController.signal });
 
-		displacement.texture = new THREE.CanvasTexture(displacement.canvas);
+		displacement.texture = new CanvasTexture(displacement.canvas);
 
 		/**
 		 * Particles
 		 */
-		particlesGeometry = new THREE.PlaneGeometry(10, 10, 128, 128);
+		particlesGeometry = new PlaneGeometry(10, 10, 128, 128);
 		particlesGeometry.setIndex(null);
 		particlesGeometry.deleteAttribute('normal');
 		const intensitiesArray = new Float32Array(particlesGeometry.attributes.position.count);
@@ -146,21 +163,21 @@
 			intensitiesArray[i] = Math.random();
 			anglesArray[i] = Math.random() * Math.PI * 2;
 		}
-		particlesGeometry.setAttribute('aIntensity', new THREE.BufferAttribute(intensitiesArray, 1));
-		particlesGeometry.setAttribute('aAngle', new THREE.BufferAttribute(anglesArray, 1));
+		particlesGeometry.setAttribute('aIntensity', new BufferAttribute(intensitiesArray, 1));
+		particlesGeometry.setAttribute('aAngle', new BufferAttribute(anglesArray, 1));
 
-		particlesMaterial = new THREE.ShaderMaterial({
+		particlesMaterial = new ShaderMaterial({
 			vertexShader: cursorVert,
 			fragmentShader: cursorFrag,
 			uniforms: {
-				uResolution: new THREE.Uniform(
-					new THREE.Vector2(sizes.width * sizes.pixelRatio, sizes.height * sizes.pixelRatio)
+				uResolution: new Uniform(
+					new Vector2(sizes.width * sizes.pixelRatio, sizes.height * sizes.pixelRatio)
 				),
-				uPictureTexture: new THREE.Uniform(textureLoader.load('/threejayess/hand.webp')),
-				uDisplacementTexture: new THREE.Uniform(displacement.texture)
+				uPictureTexture: new Uniform(textureLoader.load('/threejayess/hand.webp')),
+				uDisplacementTexture: new Uniform(displacement.texture)
 			}
 		});
-		const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+		const particles = new Points(particlesGeometry, particlesMaterial);
 		scene.add(particles);
 
 		/**

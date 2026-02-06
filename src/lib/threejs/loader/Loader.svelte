@@ -1,5 +1,22 @@
 <script lang="ts">
-	import * as THREE from 'three';
+	import {
+		LoadingManager,
+		PlaneGeometry,
+		ShaderMaterial,
+		Group,
+		CubeTexture,
+		CubeTextureLoader,
+		Scene,
+		PerspectiveCamera,
+		WebGLRenderer,
+		DirectionalLight,
+		Vector3,
+		ReinhardToneMapping,
+		PCFSoftShadowMap,
+		Mesh,
+		MeshStandardMaterial,
+		SRGBColorSpace
+	} from 'three';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 	import gsap from 'gsap';
@@ -11,7 +28,7 @@
 		 * Loaders
 		 */
 		const loadingBarElement = document.querySelector('.loading-bar') as HTMLElement;
-		const loadingManager = new THREE.LoadingManager(
+		const loadingManager = new LoadingManager(
 			// loaded
 			() => {
 				gsap.delayedCall(0.5, () => {
@@ -31,7 +48,7 @@
 			}
 		);
 		const gltfLoader = new GLTFLoader(loadingManager);
-		const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager);
+		const cubeTextureLoader = new CubeTextureLoader(loadingManager);
 
 		/**
 		 * Base
@@ -48,13 +65,13 @@
 		}
 
 		// Scene
-		const scene = new THREE.Scene();
+		const scene = new Scene();
 
 		/**
 		 * Overlay
 		 */
-		const overlayGeometry = new THREE.PlaneGeometry(2, 2, 1, 1);
-		const overlayMaterial = new THREE.ShaderMaterial({
+		const overlayGeometry = new PlaneGeometry(2, 2, 1, 1);
+		const overlayMaterial = new ShaderMaterial({
 			transparent: true,
 			uniforms: { uAlpha: { value: 1.0 } },
 			vertexShader: `
@@ -70,19 +87,19 @@
                 }
             `
 		});
-		const overlay = new THREE.Mesh(overlayGeometry, overlayMaterial);
+		const overlay = new Mesh(overlayGeometry, overlayMaterial);
 		scene.add(overlay);
 
 		// cleanup references
-		let model = $state<THREE.Group | null>(null);
-		let environmentMap = $state<THREE.CubeTexture | null>(null);
+		let model = $state<Group | null>(null);
+		let environmentMap = $state<CubeTexture | null>(null);
 
 		/**
 		 * Update all materials
 		 */
 		const updateAllMaterials = () => {
 			scene.traverse((child) => {
-				if (child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial) {
+				if (child instanceof Mesh && child.material instanceof MeshStandardMaterial) {
 					// child.material.envMap = environmentMap;
 					child.material.envMapIntensity = debugObject.envMapIntensity;
 					child.material.needsUpdate = true;
@@ -105,7 +122,7 @@
 		]);
 
 		// svelte-ignore state_referenced_locally
-		environmentMap.colorSpace = THREE.SRGBColorSpace;
+		environmentMap.colorSpace = SRGBColorSpace;
 		// svelte-ignore state_referenced_locally
 		scene.background = environmentMap;
 		// svelte-ignore state_referenced_locally
@@ -128,7 +145,7 @@
 		 */
 		const points = [
 			{
-				position: new THREE.Vector3(1.05, 0.3, -0.195),
+				position: new Vector3(1.05, 0.3, -0.195),
 				element: document.querySelector('.point-0') as HTMLElement
 			}
 		];
@@ -136,7 +153,7 @@
 		/**
 		 * Lights
 		 */
-		const directionalLight = new THREE.DirectionalLight('#ffffff', 3);
+		const directionalLight = new DirectionalLight('#ffffff', 3);
 		directionalLight.castShadow = true;
 		directionalLight.shadow.camera.far = 15;
 		directionalLight.shadow.mapSize.set(1024, 1024);
@@ -177,7 +194,7 @@
 		 * Camera
 		 */
 		// Base camera
-		const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
+		const camera = new PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
 		camera.position.set(4, 1, -4);
 		scene.add(camera);
 
@@ -188,14 +205,14 @@
 		/**
 		 * Renderer
 		 */
-		const renderer = new THREE.WebGLRenderer({
+		const renderer = new WebGLRenderer({
 			canvas: canvas,
 			antialias: true
 		});
-		renderer.toneMapping = THREE.ReinhardToneMapping;
+		renderer.toneMapping = ReinhardToneMapping;
 		renderer.toneMappingExposure = 3;
 		renderer.shadowMap.enabled = true;
-		renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+		renderer.shadowMap.type = PCFSoftShadowMap;
 		renderer.setSize(sizes.width, sizes.height);
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
@@ -236,7 +253,7 @@
 
 			if (model) {
 				model.traverse((child) => {
-					if (child instanceof THREE.Mesh) {
+					if (child instanceof Mesh) {
 						child.geometry.dispose();
 						if (Array.isArray(child.material)) {
 							child.material.forEach((mat) => mat.dispose());

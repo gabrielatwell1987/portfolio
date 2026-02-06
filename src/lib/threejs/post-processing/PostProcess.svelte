@@ -1,5 +1,19 @@
 <script lang="ts">
-	import * as THREE from 'three';
+	import {
+		Scene,
+		PerspectiveCamera,
+		WebGLRenderer,
+		DirectionalLight,
+		CubeTextureLoader,
+		TextureLoader,
+		Mesh,
+		MeshStandardMaterial,
+		WebGLRenderTarget,
+		Vector3,
+		Clock,
+		ReinhardToneMapping,
+		PCFShadowMap
+	} from 'three';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 	import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 	import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
@@ -23,21 +37,21 @@
 		const canvas = document.querySelector('canvas.webgl') as HTMLCanvasElement;
 
 		// Scene
-		const scene = new THREE.Scene();
+		const scene = new Scene();
 
 		/**
 		 * Loaders
 		 */
 		const gltfLoader = new GLTFLoader();
-		const cubeTextureLoader = new THREE.CubeTextureLoader();
-		const textureLoader = new THREE.TextureLoader();
+		const cubeTextureLoader = new CubeTextureLoader();
+		const textureLoader = new TextureLoader();
 
 		/**
 		 * Update all materials
 		 */
 		const updateAllMaterials = () => {
 			scene.traverse((child) => {
-				if (child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial) {
+				if (child instanceof Mesh && child.material instanceof MeshStandardMaterial) {
 					child.material.envMapIntensity = 2.5;
 					child.material.needsUpdate = true;
 					child.castShadow = true;
@@ -76,7 +90,7 @@
 		/**
 		 * Lights
 		 */
-		const directionalLight = new THREE.DirectionalLight('#ffffff', 3);
+		const directionalLight = new DirectionalLight('#ffffff', 3);
 		directionalLight.castShadow = true;
 		directionalLight.shadow.mapSize.set(1024, 1024);
 		directionalLight.shadow.camera.far = 15;
@@ -120,7 +134,7 @@
 		 * Camera
 		 */
 		// Base camera
-		const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
+		const camera = new PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
 		camera.position.set(4, 1, -4);
 		scene.add(camera);
 
@@ -131,13 +145,13 @@
 		/**
 		 * Renderer
 		 */
-		const renderer = new THREE.WebGLRenderer({
+		const renderer = new WebGLRenderer({
 			canvas: canvas,
 			antialias: true
 		});
 		renderer.shadowMap.enabled = true;
-		renderer.shadowMap.type = THREE.PCFShadowMap;
-		renderer.toneMapping = THREE.ReinhardToneMapping;
+		renderer.shadowMap.type = PCFShadowMap;
+		renderer.toneMapping = ReinhardToneMapping;
 		renderer.toneMappingExposure = 1.5;
 		renderer.setSize(sizes.width, sizes.height);
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -146,7 +160,7 @@
 		 * Post Processing
 		 */
 		// custom render target
-		const renderTarget = new THREE.WebGLRenderTarget(800, 600, {
+		const renderTarget = new WebGLRenderTarget(800, 600, {
 			samples: renderer.getPixelRatio() === 1 ? 2 : 0
 		});
 
@@ -208,7 +222,7 @@
 			`
 		};
 		const tintPass = new ShaderPass(TintShader);
-		tintPass.material.uniforms.uTint.value = new THREE.Vector3();
+		tintPass.material.uniforms.uTint.value = new Vector3();
 		tintPass.enabled = false;
 		effectComposer.addPass(tintPass);
 
@@ -293,7 +307,7 @@
 		/**
 		 * Animate
 		 */
-		const clock = new THREE.Clock();
+		const clock = new Clock();
 		let animationId: number;
 
 		const tick = () => {

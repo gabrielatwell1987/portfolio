@@ -1,17 +1,32 @@
 <script lang="ts">
 	import HeroTitle from '$lib/components/landing/HeroTitle.svelte';
 	import Button from '$lib/components/layout/Button.svelte';
-	import * as THREE from 'three';
+	import {
+		CapsuleGeometry,
+		BufferGeometry,
+		PointsMaterial,
+		Points,
+		Scene,
+		PerspectiveCamera,
+		WebGLRenderer,
+		CanvasTexture,
+		BufferAttribute,
+		AdditiveBlending,
+		PointLight,
+		Clock,
+		TextureLoader,
+		Texture
+	} from 'three';
 	import Stats from 'stats.js';
 
 	let animationFrameId: number | undefined;
-	let renderer: THREE.WebGLRenderer | undefined;
-	let geometry: THREE.CapsuleGeometry | undefined;
-	let particlesGeometry: THREE.BufferGeometry | undefined;
-	let material: THREE.PointsMaterial | undefined;
-	let particlesMaterial: THREE.PointsMaterial | undefined;
-	let star: THREE.Texture | undefined;
-	let camera: THREE.PerspectiveCamera | undefined;
+	let renderer: WebGLRenderer | undefined;
+	let geometry: CapsuleGeometry | undefined;
+	let particlesGeometry: BufferGeometry | undefined;
+	let material: PointsMaterial | undefined;
+	let particlesMaterial: PointsMaterial | undefined;
+	let star: Texture | undefined;
+	let camera: PerspectiveCamera | undefined;
 	let themeObserver: MutationObserver | undefined;
 	let resizeListener: (() => void) | undefined;
 	let mousemoveListener: ((event: MouseEvent) => void) | undefined;
@@ -113,15 +128,15 @@
 				}
 				ctx.closePath();
 				ctx.fill();
-				star = new THREE.CanvasTexture(canvasElement);
-				particlesMaterial.map = star;
+				star = new CanvasTexture(canvasElement);
+				particlesMaterial.map = star!;
 				particlesMaterial.alphaMap = null;
 			} else {
-				const textureLoader = new THREE.TextureLoader();
+				const textureLoader = new TextureLoader();
 				star = textureLoader.load(
 					'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/star.webp'
 				);
-				particlesMaterial.map = star;
+				particlesMaterial.map = star!;
 				particlesMaterial.alphaMap = null;
 			}
 
@@ -145,12 +160,12 @@
 			if (!canvas) return;
 
 			// scene
-			const scene = new THREE.Scene();
+			const scene = new Scene();
 
 			// objects
-			geometry = new THREE.CapsuleGeometry(2, 0, 9, 20);
+			geometry = new CapsuleGeometry(2, 0, 9, 20);
 
-			particlesGeometry = new THREE.BufferGeometry();
+			particlesGeometry = new BufferGeometry();
 			const isMobile = window.innerWidth <= 768;
 			const particlesCount = isMobile ? 500 : 1000;
 			const positionArray = new Float32Array(particlesCount * 3);
@@ -159,19 +174,19 @@
 				positionArray[i] = (Math.random() - 0.5) * 5;
 			}
 
-			particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positionArray, 3));
+			particlesGeometry.setAttribute('position', new BufferAttribute(positionArray, 3));
 
-			material = new THREE.PointsMaterial({
+			material = new PointsMaterial({
 				size: 0.015,
 				color: '#c0c0c0'
 			});
 
-			particlesMaterial = new THREE.PointsMaterial({
+			particlesMaterial = new PointsMaterial({
 				size: 0.04,
 				transparent: true,
 				alphaTest: 0.001,
 				color: '#c0c0c0',
-				blending: THREE.AdditiveBlending
+				blending: AdditiveBlending
 			});
 
 			// Listen for theme changes
@@ -199,12 +214,12 @@
 			updateColors();
 
 			// Mesh
-			const sphere = new THREE.Points(geometry, material);
-			const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+			const sphere = new Points(geometry, material);
+			const particlesMesh = new Points(particlesGeometry, particlesMaterial);
 			scene.add(sphere, particlesMesh);
 
 			// Lights
-			const pointLight = new THREE.PointLight(0xffffff, 0.1);
+			const pointLight = new PointLight(0xffffff, 0.1);
 			pointLight.position.set(2, 3, 4);
 			scene.add(pointLight);
 
@@ -236,7 +251,7 @@
 			 * Camera
 			 */
 			// Base camera
-			camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
+			camera = new PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
 			camera.position.x = 0;
 			camera.position.y = 0;
 			camera.position.z = 2;
@@ -245,7 +260,7 @@
 			/**
 			 * Renderer
 			 */
-			renderer = new THREE.WebGLRenderer({
+			renderer = new WebGLRenderer({
 				canvas: canvas,
 				alpha: true,
 				antialias: !isMobile
@@ -268,7 +283,7 @@
 			/**
 			 * Animate
 			 */
-			const clock = new THREE.Clock();
+			const clock = new Clock();
 			let isAnimating = true;
 
 			const tick = () => {

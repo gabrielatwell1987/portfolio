@@ -1,6 +1,20 @@
 <script lang="ts">
 	import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-	import * as THREE from 'three';
+	import {
+		Scene,
+		PerspectiveCamera,
+		WebGLRenderer,
+		AmbientLight,
+		DirectionalLight,
+		BufferGeometry,
+		Float32BufferAttribute,
+		Mesh,
+		ShaderMaterial,
+		Color,
+		Vector3,
+		Clock,
+		DoubleSide
+	} from 'three';
 	import vertexShader from '$lib/threejs/ribbon/ribbon.vert?raw';
 	import fragmentShader from '$lib/threejs/ribbon/ribbon.frag?raw';
 
@@ -12,14 +26,9 @@
 
 		const abortController = new AbortController();
 		const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		const scene = new THREE.Scene();
-		const camera = new THREE.PerspectiveCamera(
-			75,
-			window.innerWidth / window.innerHeight,
-			0.1,
-			1000
-		);
-		const renderer = new THREE.WebGLRenderer({
+		const scene = new Scene();
+		const camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+		const renderer = new WebGLRenderer({
 			antialias: true,
 			canvas,
 			alpha: true,
@@ -39,9 +48,9 @@
 		controls.maxDistance = 50;
 
 		// lights
-		const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
+		const ambientLight = new AmbientLight(0x404040, 0.5);
 		scene.add(ambientLight);
-		const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+		const directionalLight = new DirectionalLight(0xffffff, 0.5);
 		directionalLight.position.set(1, 1, 1);
 		scene.add(directionalLight);
 
@@ -52,7 +61,7 @@
 			offsetX = 0,
 			phase = 0
 		) {
-			const geometry = new THREE.BufferGeometry();
+			const geometry = new BufferGeometry();
 			const positions = [];
 			const indices = [];
 			const uvs = [];
@@ -62,15 +71,15 @@
 				const x = (i - ribbonLength / 2) * 0.2 + offsetX;
 				const y = Math.sin(i * 0.1) * 2;
 				const z = Math.cos(i * 0.1) * 2;
-				spinePoints.push(new THREE.Vector3(x, y, z));
+				spinePoints.push(new Vector3(x, y, z));
 			}
 
 			for (let i = 0; i < spinePoints.length; i++) {
 				const point = spinePoints[i];
 				const nextPoint = spinePoints[i + 1] || point;
-				const direction = new THREE.Vector3().subVectors(nextPoint, point).normalize();
-				const perpendicular = new THREE.Vector3(-direction.z, 0, direction.x).normalize();
-				const normal = new THREE.Vector3().crossVectors(direction, perpendicular).normalize();
+				const direction = new Vector3().subVectors(nextPoint, point).normalize();
+				const perpendicular = new Vector3(-direction.z, 0, direction.x).normalize();
+				const normal = new Vector3().crossVectors(direction, perpendicular).normalize();
 				const widthFactor = Math.sin((i / ribbonLength) * Math.PI);
 
 				const hw = ribbonWidth * widthFactor;
@@ -127,12 +136,12 @@
 				indices.push(base + 3, base + 7, base + 5);
 			}
 
-			geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-			geometry.setAttribute('uv', new THREE.Float32BufferAttribute(uvs, 2));
+			geometry.setAttribute('position', new Float32BufferAttribute(positions, 3));
+			geometry.setAttribute('uv', new Float32BufferAttribute(uvs, 2));
 			geometry.setIndex(indices);
 			geometry.computeVertexNormals();
 
-			const ribbon = new THREE.Mesh(geometry);
+			const ribbon = new Mesh(geometry);
 			ribbon.position.set(0, 0, 0);
 
 			ribbon.userData = {
@@ -147,17 +156,17 @@
 			return ribbon;
 		}
 
-		const ribbonShaderMaterial = new THREE.ShaderMaterial({
+		const ribbonShaderMaterial = new ShaderMaterial({
 			uniforms: {
-				colorA: { value: new THREE.Color('#909090') },
-				colorB: { value: new THREE.Color('#444444') },
-				edgeColor: { value: new THREE.Color('#777777') },
+				colorA: { value: new Color('#909090') },
+				colorB: { value: new Color('#444444') },
+				edgeColor: { value: new Color('#777777') },
 				edgeWidth: { value: 0.05 },
 				time: { value: 0 }
 			},
 			vertexShader,
 			fragmentShader,
-			side: THREE.DoubleSide,
+			side: DoubleSide,
 			depthWrite: true,
 			depthTest: true
 		});
@@ -197,7 +206,7 @@
 
 		camera.position.z = 10;
 
-		const clock = new THREE.Clock();
+		const clock = new Clock();
 		let frameCount = 0;
 
 		function animate() {
@@ -237,9 +246,9 @@
 
 					const point = spinePoints[i];
 					const nextPoint = spinePoints[i + 1] || point;
-					const direction = new THREE.Vector3().subVectors(nextPoint, point).normalize();
-					const perpendicular = new THREE.Vector3(-direction.z, 0, direction.x).normalize();
-					const normal = new THREE.Vector3().crossVectors(direction, perpendicular).normalize();
+					const direction = new Vector3().subVectors(nextPoint, point).normalize();
+					const perpendicular = new Vector3(-direction.z, 0, direction.x).normalize();
+					const normal = new Vector3().crossVectors(direction, perpendicular).normalize();
 					const widthFactor = Math.sin((i / ribbonLength) * Math.PI);
 
 					const hw = ribbonWidth * widthFactor;
