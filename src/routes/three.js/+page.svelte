@@ -1,9 +1,5 @@
 <script lang="ts">
-	import HeroCanvas from '$lib/threejs/hero/HeroCanvas.svelte';
-	import CursorImage from '$lib/threejs/cursor/CursorImage.svelte';
-	import Environment from '$lib/threejs/environment/Environment.svelte';
-	import PostProcess from '$lib/threejs/post-processing/PostProcess.svelte';
-	import Loader from '$lib/threejs/loader/Loader.svelte';
+	import type { Component } from 'svelte';
 
 	let selectedComponent = $state<string>('Select');
 	let backgroundImage = $derived(
@@ -11,11 +7,37 @@
 			? 'repeating-linear-gradient(0deg, transparent, transparent 98px, var(--clr-faint-gray) 98px, var(--clr-faint-gray) 100px), repeating-linear-gradient(90deg, transparent, transparent 98px, var(--clr-faint-gray) 98px, var(--clr-faint-gray) 100px)'
 			: 'none'
 	);
+	let SelectedComponent: Component<any, any, any> | null = $state(null);
+
+	$effect(() => {
+		if (selectedComponent === 'HandParticles') {
+			import('$lib/threejs/cursor/CursorImage.svelte').then(
+				(mod) => (SelectedComponent = mod.default)
+			);
+		} else if (selectedComponent === 'HeroCanvas') {
+			import('$lib/threejs/hero/HeroCanvas.svelte').then(
+				(mod) => (SelectedComponent = mod.default)
+			);
+		} else if (selectedComponent === 'Environment') {
+			import('$lib/threejs/environment/Environment.svelte').then(
+				(mod) => (SelectedComponent = mod.default)
+			);
+		} else if (selectedComponent === 'PostProcess') {
+			import('$lib/threejs/post-processing/PostProcess.svelte').then(
+				(mod) => (SelectedComponent = mod.default)
+			);
+		} else if (selectedComponent === 'Loader') {
+			import('$lib/threejs/loader/Loader.svelte').then((mod) => (SelectedComponent = mod.default));
+		} else {
+			SelectedComponent = null;
+		}
+	});
 </script>
 
 <div class="wholeScreen" style:background-image={backgroundImage}>
 	<div class="content">
 		<select bind:value={selectedComponent}>
+			<option value="Select" disabled>select a component</option>
 			<option value="Environment">environment mapping</option>
 			<option value="HandParticles">hand particles</option>
 			<option value="HeroCanvas">hero section</option>
@@ -23,18 +45,10 @@
 			<option value="Loader">loading bar</option>
 		</select>
 
-		{#if selectedComponent === 'HandParticles'}
-			<CursorImage />
-		{:else if selectedComponent === 'HeroCanvas'}
-			<HeroCanvas />
-		{:else if selectedComponent === 'Environment'}
-			<Environment />
-		{:else if selectedComponent === 'PostProcess'}
-			<PostProcess />
-		{:else if selectedComponent === 'Loader'}
-			<Loader />
+		{#if SelectedComponent}
+			<SelectedComponent />
 		{:else if selectedComponent === 'Select'}
-			<h2><b>use the dropdown to select</b></h2>
+			<h2>select a component to view</h2>
 		{/if}
 	</div>
 </div>
