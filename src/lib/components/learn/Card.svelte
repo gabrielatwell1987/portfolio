@@ -25,7 +25,7 @@
 	.card {
 		width: fit-content;
 		height: fit-content;
-		background-color: transparent;
+		background-color: var(--clr-invert-fade);
 		border-radius: 8px;
 		border: 2px solid var(--clr-main);
 		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

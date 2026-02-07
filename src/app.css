@@ -319,6 +319,10 @@
 		--clr-green: light-dark(var(--success-dark), var(--success-light));
 		--clr-light-invert: light-dark(var(--white-gray), var(--blacker));
 		--clr-invert: light-dark(oklch(from var(--white) 0.9 c h), var(--blackest));
+		--clr-invert-fade: light-dark(
+			oklch(from var(--white) 0.5 c h),
+			oklch(from var(--blackest) 0.2 c h)
+		);
 		--clr-button-text: light-dark(var(--blackest), var(--white));
 		--clr-button: light-dark(var(--yellow), var(--purple));
 		--sun: light-dark(var(--yellow), var(--pale));

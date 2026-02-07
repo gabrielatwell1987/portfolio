@@ -71,12 +71,16 @@
 			<path
 				d="M8.00191 9.41621C7.61138 9.02569 7.61138 8.39252 8.00191 8.002C8.39243 7.61147 9.0256 7.61147 9.41612 8.002L12.0057 10.5916L14.5896 8.00771C14.9801 7.61719 15.6133 7.61719 16.0038 8.00771C16.3943 8.39824 16.3943 9.0314 16.0038 9.42193L13.4199 12.0058L16.0039 14.5897C16.3944 14.9803 16.3944 15.6134 16.0039 16.004C15.6133 16.3945 14.9802 16.3945 14.5896 16.004L12.0057 13.42L9.42192 16.0038C9.03139 16.3943 8.39823 16.3943 8.00771 16.0038C7.61718 15.6133 7.61718 14.9801 8.00771 14.5896L10.5915 12.0058L8.00191 9.41621Z"
 				fill="var(--fail)"
+				stroke="var(--fail)"
+				stroke-width="1.15"
 			/>
 			<path
 				fill-rule="evenodd"
 				clip-rule="evenodd"
 				d="M23 4C23 2.34315 21.6569 1 20 1H4C2.34315 1 1 2.34315 1 4V20C1 21.6569 2.34315 23 4 23H20C21.6569 23 23 21.6569 23 20V4ZM21 4C21 3.44772 20.5523 3 20 3H4C3.44772 3 3 3.44772 3 4V20C3 20.5523 3.44772 21 4 21H20C20.5523 21 21 20.5523 21 20V4Z"
 				fill="var(--fail)"
+				stroke="var(--fail)"
+				stroke-width="1.15"
 			/>
 		</svg>
 	</button>
@@ -144,7 +148,7 @@
 			max-inline-size: 50vw;
 			border: 2px solid var(--clr-gray);
 			border-radius: 1rem;
-			background: var(--blackest);
+			background: var(--clr-invert-fade);
 			margin-top: 16em;
 			overflow: auto;
 			anchor-name: --inner-anchor;
@@ -165,7 +169,7 @@
 			& header {
 				background: transparent;
 				border-bottom: none;
-				padding-top: 1em;
+				padding-top: 5em;
 
 				@media (width <= 768px) {
 					padding-top: 3em;
@@ -173,10 +177,10 @@
 
 				& .modal-title {
 					font-family: var(--bronova-bold);
-					font-size: clamp(var(--h5), 1.75vw, var(--h2));
-					font-weight: 600;
+					font-size: clamp(var(--h5), 3vw, var(--h2));
+					font-weight: 800;
 					line-height: 1;
-					color: var(--sky);
+					color: var(--clr-blue);
 					margin: -0.5rem 0 -2rem 0;
 					letter-spacing: -1px;
 
@@ -216,6 +220,9 @@
 		}
 
 		& .modal-image {
+			inline-size: fit-content;
+			margin-inline: auto;
+
 			@media (width >= 1024px) {
 				margin-block: 1rem;
 			}
@@ -229,10 +236,14 @@
 		inset-inline-end: calc(anchor(end) + 0.05em);
 
 		display: flex;
-		width: 4rem;
-		height: 4rem;
-		min-width: 4rem;
-		min-height: 4rem;
+
+		max-inline-size: 3.75rem;
+		max-block-size: 3.75rem;
+		inline-size: 100%;
+		block-size: 100%;
+		min-inline-size: 2rem;
+		min-block-size: 2rem;
+
 		font-size: clamp(var(--h2), 4vw, var(--xl));
 		font-weight: 800;
 		background-color: transparent;

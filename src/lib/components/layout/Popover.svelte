@@ -48,7 +48,7 @@
 
 		.popover-icon {
 			background-color: transparent;
-			width: fit-content;
+			inline-size: fit-content;
 			font-family: var(--bronova);
 			border-radius: 6px;
 			letter-spacing: 3px;
@@ -60,8 +60,8 @@
 			& svg {
 				font-size: clamp(var(--h2), 4vw, var(--xxl));
 				stroke-width: calc(5px + 1vw);
-				width: clamp(1.5em, 4vw, 5em);
-				height: clamp(1.5em, 4vw, 5em);
+				inline-size: clamp(1.5em, 4vw, 5em);
+				block-size: clamp(1.5em, 4vw, 5em);
 
 				@media (width <= 768px) {
 					stroke-width: calc(5px + 5vw);
@@ -92,9 +92,11 @@
 			margin-block: 5em;
 			font-family: var(--bronova);
 			font-size: clamp(var(--xs), 1.25vw, var(--h5));
+			font-weight: 700;
 			letter-spacing: 2px;
 			padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
 			color: var(--clr-main);
+			background-color: var(--clr-invert-fade);
 
 			@media (width < 500px) {
 				letter-spacing: 1px;
