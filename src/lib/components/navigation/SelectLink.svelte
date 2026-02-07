@@ -19,6 +19,7 @@
 <style>
 	.custom-select {
 		font-family: var(--bronova-bold);
+		font-size: clamp(var(--sm), 1.25vw, var(--h4));
 		max-inline-size: fit-content;
 		inline-size: 100%;
 		font-variant-emoji: text;
@@ -36,7 +37,8 @@
 		}
 
 		& option {
-			font-family: var(--bronova-bold);
+			font-family: var(--bronova);
+			font-weight: 600;
 			color: var(--clr-main);
 		}
 	}
