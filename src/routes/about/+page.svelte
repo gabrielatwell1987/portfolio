@@ -51,10 +51,12 @@
 
 				<article class="hero-text" aria-label="bio" data-hero-mobile>
 					<p class="bio-paragraph" style="text-align: center;" data-content-width>
-						The components on this page were built with three.js... Feel free to check them out!
+						The components on this page were built with three.js...
 					</p>
 
-					<p class="bio-paragraph" style="text-align: center; margin-top: 1em;">👇🏻</p>
+					<p class="bio-paragraph" style="text-align: center; margin-top: 1em;">
+						Feel free to check them out!
+					</p>
 
 					<div class="three-text">
 						<div class="three-button">
