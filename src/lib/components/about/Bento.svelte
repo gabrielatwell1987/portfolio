@@ -45,7 +45,7 @@
 						ease: 'power2.out',
 						scrollTrigger: {
 							trigger: bentoWrapper,
-							start: 'top center',
+							start: 'top center+=500',
 							toggleActions: 'play none none reverse'
 						}
 					}
@@ -134,6 +134,7 @@
 	.bento-wrapper {
 		position: relative;
 		margin-top: 2rem;
+		margin-bottom: 0;
 
 		@media (width >= 768px) and (width < 1024px) {
 			margin-top: 3rem;
@@ -171,7 +172,7 @@
 		& article[data-bento-article] {
 			line-height: 1.4;
 			background-color: var(--surface-1);
-			margin-bottom: 2rem;
+			margin-bottom: 0;
 			padding-inline: var(--space);
 			background-color: transparent;
 			box-shadow: none;

@@ -4,7 +4,7 @@
 	import Button from '$lib/components/layout/Button.svelte';
 	import Grid from '$lib/components/about/Grid.svelte';
 	import Bento from '$lib/components/about/Bento.svelte';
-	import CardFlip from '$lib/components/about/CardFlip.svelte';
+	// import CardFlip from '$lib/components/about/CardFlip.svelte';
 	import AboutHero from '$lib/components/about/AboutHero.svelte';
 	import Skills from '$lib/components/about/Skills.svelte';
 	import Slider from '$lib/components/about/Slider.svelte';
@@ -98,12 +98,12 @@
 
 			<Bento />
 
-			<CardFlip
+			<!-- <CardFlip
 				src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/heart-skull.webp"
 				alt="Atwell sparrow logo"
 				src2="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/skull-glass.webp"
 				alt2="a blue A logo"
-			/>
+			/> -->
 		</article>
 	</section>
 </div>
@@ -114,7 +114,7 @@
 	}
 
 	.about-me {
-		width: var(--100);
+		inline-size: var(--100);
 		margin-inline: auto;
 		padding-top: 0;
 
@@ -122,26 +122,26 @@
 			display: block;
 			margin-inline: auto;
 			text-align: center;
-			width: var(--100);
+			inline-size: var(--100);
 			color: var(--clr-main);
 			margin-top: 0;
 
 			@media screen and (width >= 990px) {
 				display: block;
-				width: var(--100);
-				margin: 0 auto;
+				inline-size: var(--100);
+				margin-inline: auto;
 			}
 
 			& article {
 				font-size: clamp(var(--xs), 2vw, var(--sm));
-				width: var(--100);
+				inline-size: var(--100);
 				margin-inline: auto;
 				background-color: transparent;
 				box-shadow: none;
 				color: var(--clr-main);
 
 				@media screen and (width >= 990px) {
-					width: var(--100);
+					inline-size: var(--100);
 					margin-inline: auto;
 				}
 

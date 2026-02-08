@@ -44,7 +44,6 @@
 
 <style>
 	.footer {
-		margin-top: 6rem;
 		display: flex;
 		justify-content: space-evenly;
 		gap: 5rem;
