@@ -8,6 +8,12 @@
 <A11yAnnouncer message={submitStatus} />
 
 <section class="hire-form-container">
+	<div class="button-positioning">
+		<SubmitButton />
+	</div>
+
+	<div class="anchor"></div>
+
 	<form action="https://formspree.io/f/xwpoqdno" method="POST" novalidate>
 		<div class="form-grid">
 			<label class="form-group">
@@ -149,14 +155,12 @@
 				spellcheck="true"
 			></textarea>
 		</label>
-
-		<SubmitButton />
 	</form>
 </section>
 
 <style>
 	.hire-form-container {
-		width: 100%;
+		inline-size: 100%;
 		max-inline-size: 1600px;
 		margin-inline: auto;
 		padding: 1rem;
@@ -172,7 +176,24 @@
 			overflow-y: auto;
 		}
 
-		.form-grid {
+		& .anchor {
+			anchor-name: --form-container;
+		}
+
+		& .button-positioning {
+			position: absolute;
+			position-anchor: --form-container;
+			inset-block-start: calc(anchor(top) - 4.15em);
+			inset-inline-end: calc(anchor(right) + 1em);
+
+			@media (width <= 768px) {
+				position: static;
+				display: flex;
+				justify-content: flex-end;
+			}
+		}
+
+		& .form-grid {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			gap: 1.5rem;
@@ -202,7 +223,7 @@
 			}
 		}
 
-		.form-group {
+		& .form-group {
 			display: flex;
 			flex-direction: column;
 
