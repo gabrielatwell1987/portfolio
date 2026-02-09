@@ -100,7 +100,7 @@
 		</div>
 	</section>
 
-	<section class="bevel">
+	<section class="bevel-border">
 		{#if showProjects && ProjectComponent}
 			{#each projects as project (project.index)}
 				{@const testimonial = getTestimonialForProject(project.index)}
@@ -200,11 +200,13 @@
 			var(--clr-invert) 100%
 		);
 
-		& .bevel {
+		& .bevel-border {
 			position: relative;
 			display: grid;
 			grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 			place-items: center;
+			padding: 2rem;
+			margin-bottom: 0;
 
 			@media (width <= 768px) {
 				margin: 0;
@@ -223,10 +225,8 @@
 				gap: 0.25rem;
 				border: 2px solid var(--clr-gray);
 				border-radius: 1em 1em var(--radius) var(--radius);
-				padding-top: 2em;
 				will-change: opacity, transform;
 				margin-bottom: 1em;
-				/* opacity: 0; */
 
 				@media (width <= 768px) {
 					margin: 0.5rem;
@@ -260,19 +260,6 @@
 					5px calc(40px + 1.03px)
 				);
 			}
-		}
-	}
-
-	section {
-		padding-top: 2rem;
-
-		@media screen and (width >= 740px) {
-			padding: 2rem;
-		}
-
-		@media screen and (width >= 990px) {
-			margin-bottom: -5%;
-			padding-top: 5rem;
 		}
 	}
 

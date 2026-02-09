@@ -48,13 +48,14 @@
 		justify-content: space-evenly;
 		gap: 5rem;
 		padding: 1rem;
+		margin-top: 2.65rem;
 
 		@media (width <= 990px) {
 			display: flex;
 			justify-content: space-evenly;
 			align-items: center;
 			gap: 1.65rem;
-			margin-top: 2rem;
+			margin-top: 0;
 		}
 
 		& .social-link {

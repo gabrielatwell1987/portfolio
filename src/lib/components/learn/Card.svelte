@@ -33,6 +33,7 @@
 		transition: all 0.3s ease-out;
 		padding-block: 1em;
 		padding-inline: 2em;
+		margin: 0;
 
 		&:hover {
 			box-shadow: 0 0 5em var(--clr-gray);

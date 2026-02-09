@@ -139,6 +139,7 @@
 				background-color: transparent;
 				box-shadow: none;
 				color: var(--clr-main);
+				margin-bottom: 0;
 
 				@media screen and (width >= 990px) {
 					inline-size: var(--100);
@@ -186,6 +187,7 @@
 					z-index: 7;
 					color: var(--clr-main);
 					text-align: left;
+					margin-bottom: 0;
 
 					@media screen and (width >= 990px) {
 						max-inline-size: 90%;

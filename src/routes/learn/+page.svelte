@@ -108,6 +108,7 @@
 			min-height: 86vh;
 			background-color: transparent;
 			margin-inline: auto;
+			margin-bottom: 0;
 			margin-top: 10em;
 
 			@media (width <= 768px) {

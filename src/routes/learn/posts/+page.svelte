@@ -143,6 +143,8 @@
 	}
 
 	.topics {
+		margin: 0;
+
 		&.mounted {
 			opacity: 1;
 			scale: 1;
@@ -173,12 +175,7 @@
 			box-shadow: none;
 		}
 
-		& .css {
-			margin-bottom: 15%;
-		}
-
 		& .gsap {
-			margin-bottom: 5%;
 			position: relative;
 			contain: layout;
 		}
