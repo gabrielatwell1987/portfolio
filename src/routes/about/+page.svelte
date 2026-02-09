@@ -4,12 +4,13 @@
 	import Button from '$lib/components/layout/Button.svelte';
 	import Grid from '$lib/components/about/Grid.svelte';
 	import Bento from '$lib/components/about/Bento.svelte';
-	// import CardFlip from '$lib/components/about/CardFlip.svelte';
 	import AboutHero from '$lib/components/about/AboutHero.svelte';
 	import Skills from '$lib/components/about/Skills.svelte';
 	import Slider from '$lib/components/about/Slider.svelte';
 	import PWAInstall from '$lib/components/about/PWAInstall.svelte';
 	import PWAVideo from '$lib/components/about/PWAVideo.svelte';
+	import gsap from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 	let isDesktop = $state<boolean>(false);
 
@@ -28,6 +29,30 @@
 		});
 
 		return () => abortController.abort();
+	});
+
+	// gsap scroll
+	$effect(() => {
+		gsap.registerPlugin(ScrollTrigger);
+
+		const scrollFade = gsap.fromTo(
+			'.biography',
+			{ opacity: 0 },
+			{
+				opacity: 1,
+				ease: 'power2.out',
+				duration: 1,
+				scrollTrigger: {
+					trigger: '.biography',
+					start: 'top 70%',
+					toggleActions: 'play none none none'
+				}
+			}
+		);
+
+		return () => {
+			scrollFade?.kill();
+		};
 	});
 </script>
 
@@ -97,13 +122,6 @@
 			<Grid leftTitle="Frontend" rightTitle="Design Based" />
 
 			<Bento />
-
-			<!-- <CardFlip
-				src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/heart-skull.webp"
-				alt="Atwell sparrow logo"
-				src2="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/skull-glass.webp"
-				alt2="a blue A logo"
-			/> -->
 		</article>
 	</section>
 </div>
@@ -154,6 +172,7 @@
 			& .biography {
 				color: var(--white);
 				position: relative;
+				opacity: 0;
 
 				@media screen and (width >= 990px) {
 					margin-bottom: -5rem;

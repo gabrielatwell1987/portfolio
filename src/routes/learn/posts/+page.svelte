@@ -8,7 +8,7 @@
 	import BackToTop from '$lib/components/learn/BackToTop.svelte';
 	import ViewTransitionImage from '$lib/components/layout/view-transitions/ViewTransitionImage.svelte';
 	import gsap from 'gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+	import { ScrollTrigger } from 'gsap//ScrollTrigger';
 
 	let mounted = $state<boolean>(false);
 
