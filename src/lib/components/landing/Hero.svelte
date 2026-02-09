@@ -1,6 +1,6 @@
 <script lang="ts">
 	import gsap from 'gsap';
-	import { ScrollTrigger } from 'gsap//ScrollTrigger';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import projects from '$lib/components/projects/projects.json';
 	import DoYouNeed from './DoYouNeed.svelte';
 	import Ribbons from '$lib/threejs/ribbon/Ribbons.svelte';
@@ -281,16 +281,14 @@
 
 	.background-container {
 		position: absolute;
-		top: 0;
-		left: 0;
+		inset: 0;
 		width: 100%;
 		height: 100%;
 		z-index: 0;
 
 		& .gradient-bg {
 			position: absolute;
-			top: 0;
-			left: 0;
+			inset: 0;
 			width: 100%;
 			height: 100%;
 			background: linear-gradient(
