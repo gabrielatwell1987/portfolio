@@ -7,8 +7,9 @@
 	import GabeMorph from '$lib/components/learn/GabeMorph.svelte';
 	import BackToTop from '$lib/components/learn/BackToTop.svelte';
 	import ViewTransitionImage from '$lib/components/layout/view-transitions/ViewTransitionImage.svelte';
+	import Avatar from '$lib/components/learn/Avatar.svelte';
 	import gsap from 'gsap';
-	import { ScrollTrigger } from 'gsap//ScrollTrigger';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 	let mounted = $state<boolean>(false);
 
@@ -131,6 +132,14 @@
 			button="Projects"
 		/>
 	</article>
+
+	<Avatar
+		src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/wtf2.webp"
+		alt="An avatar of Gabriel Atwell, a frontend developer and web designer based in Las Vegas."
+		radius="3vw"
+		name="Gabriel Atwell"
+		center={true}
+	/>
 
 	<div class="top-button">
 		<BackToTop />
