@@ -136,7 +136,7 @@
 	<Avatar
 		src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/wtf2.webp"
 		alt="An avatar of Gabriel Atwell, a frontend developer and web designer based in Las Vegas."
-		radius="3vw"
+		radius="0 3vw 0 0"
 		name="Gabriel Atwell"
 		center={true}
 	/>

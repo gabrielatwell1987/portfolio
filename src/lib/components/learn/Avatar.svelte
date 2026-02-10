@@ -7,7 +7,7 @@
 		center?: boolean;
 	}
 
-	let { src, alt, radius = '1vw', name = '', center = false }: Props = $props();
+	let { src, alt, radius = '0 1vw 0 0', name = '', center = false }: Props = $props();
 </script>
 
 <section class="avatar" class:center>
