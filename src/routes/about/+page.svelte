@@ -79,7 +79,7 @@
 						The components on this page were built with three.js...
 					</p>
 
-					<p class="bio-paragraph" style="text-align: center; margin-top: 1em;">
+					<p class="bio-paragraph" style="text-align: center; margin-top: 1em;" data-left>
 						Feel free to check them out!
 					</p>
 
@@ -215,6 +215,14 @@
 
 					& span {
 						font-weight: 800;
+					}
+
+					&[data-left] {
+						text-wrap: pretty;
+
+						@media (width <= 768px) {
+							margin-bottom: 1.5em;
+						}
 					}
 				}
 
