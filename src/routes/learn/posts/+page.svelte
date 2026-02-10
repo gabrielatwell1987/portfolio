@@ -174,6 +174,7 @@
 
 			@media (width <= 500px) {
 				gap: 1em;
+				margin-top: 3em;
 			}
 		}
 
