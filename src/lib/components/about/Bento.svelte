@@ -132,17 +132,7 @@
 	}
 
 	.bento-wrapper {
-		position: relative;
-		margin-top: 2rem;
-		margin-bottom: 0;
-
-		@media (width >= 768px) and (width < 1024px) {
-			margin-top: 3rem;
-		}
-
-		@media (width >= 1024px) and (width < 2000px) {
-			margin-top: -20em;
-		}
+		margin: 0;
 
 		& .bento-link {
 			padding: var(--space);
@@ -171,15 +161,14 @@
 
 		& article[data-bento-article] {
 			line-height: 1.4;
-			background-color: var(--surface-1);
-			margin-bottom: 0;
+			margin: 0;
 			padding-inline: var(--space);
 			background-color: transparent;
 			box-shadow: none;
 
 			& section {
 				margin-inline: auto;
-				width: min(1000px, 100%);
+				inline-size: min(1000px, 100%);
 			}
 
 			& .bento-grid {
@@ -190,7 +179,6 @@
 					'item-one'
 					'item-two'
 					'item-three';
-				margin-bottom: 2rem;
 				position: relative;
 
 				@media (width >= 768px) {
@@ -260,7 +248,7 @@
 						margin-bottom: 1rem;
 						text-transform: uppercase;
 						transition: border-bottom 0.5s ease;
-						width: fit-content;
+						inline-size: fit-content;
 						margin-inline: auto;
 						pointer-events: none;
 						color: var(--clr-main);
@@ -311,10 +299,6 @@
 					&:last-child {
 						margin-bottom: 2.3rem;
 					}
-				}
-
-				&:last-child {
-					margin-bottom: 11%;
 				}
 			}
 		}

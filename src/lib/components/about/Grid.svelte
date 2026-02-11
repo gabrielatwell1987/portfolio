@@ -31,116 +31,110 @@
 
 <style>
 	.grid-card {
-		@media (width >= 300px) {
-			display: inline-block;
-			margin: 0;
-			padding: 0.5rem;
-			background-color: hsla(0, 0%, 26%, 0.25);
-			backdrop-filter: blur(5px);
-			-webkit-backdrop-filter: blur(4px);
-			border: 2px solid var(--clr-main);
-			border-radius: var(--radius);
+		display: inline-block;
+		margin: 0;
+		padding: 1rem 2rem;
+		background-color: hsla(0, 0%, 26%, 0.25);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(4px);
+		border: 2px solid var(--clr-main);
+		border-radius: var(--radius);
 
-			& .card-title {
-				font-family: var(--ultra);
-				font-size: clamp(var(--h3), 4.5vw, var(--xxl));
-				font-weight: 400;
-				text-shadow: 0 0 5px 3px var(--clr-gray);
-				mix-blend-mode: difference;
-				letter-spacing: -1px;
-				color: var(--clr-invert);
+		@media (max-width: 989px) {
+			padding: 0.5rem;
+		}
+
+		& .card-title {
+			font-family: var(--ultra);
+			font-size: clamp(var(--h3), 4.5vw, var(--xxl));
+			font-weight: 400;
+			text-shadow: 0 0 5px 3px var(--clr-gray);
+			mix-blend-mode: difference;
+			letter-spacing: -1px;
+			color: var(--clr-invert);
+			text-shadow:
+				0 0 1px var(--clr-invert),
+				-3px -3px 0 var(--clr-main),
+				3px -3px 0 var(--clr-main),
+				-3px 3px 0 var(--clr-main),
+				3px 3px 0 var(--clr-main),
+				-3px 0 0 var(--clr-main),
+				3px 0 0 var(--clr-main),
+				0 -3px 0 var(--clr-main),
+				0 3px 0 var(--clr-main);
+
+			@media (max-width: 768px) {
+				font-weight: 600;
 				text-shadow:
 					0 0 1px var(--clr-invert),
-					-3px -3px 0 var(--clr-main),
-					3px -3px 0 var(--clr-main),
-					-3px 3px 0 var(--clr-main),
-					3px 3px 0 var(--clr-main),
-					-3px 0 0 var(--clr-main),
-					3px 0 0 var(--clr-main),
-					0 -3px 0 var(--clr-main),
-					0 3px 0 var(--clr-main);
-
-				@media (width <= 768px) {
-					font-weight: 600;
-					text-shadow:
-						0 0 1px var(--clr-invert),
-						-2px -2px 0 var(--clr-main),
-						2px -2px 0 var(--clr-main),
-						-2px 2px 0 var(--clr-main),
-						2px 2px 0 var(--clr-main),
-						-2px 0 0 var(--clr-main),
-						2px 0 0 var(--clr-main),
-						0 -2px 0 var(--clr-main),
-						0 2px 0 var(--clr-main);
-				}
-			}
-
-			& [data-description-left],
-			& [data-description-right] {
-				line-height: 1.35;
-				text-align: left;
-				font-size: clamp(var(--h6), 1.75vw, var(--h3));
-				color: var(--clr-main);
-				margin-top: -1rem;
-				hyphens: auto;
-				letter-spacing: 0px;
-			}
-
-			& [data-description-right] {
-				text-align: right;
-			}
-
-			&.left {
-				box-shadow: -7px 7px 0 var(--clr-main);
-			}
-
-			&.right {
-				box-shadow: 7px 7px 0 var(--clr-main);
+					-2px -2px 0 var(--clr-main),
+					2px -2px 0 var(--clr-main),
+					-2px 2px 0 var(--clr-main),
+					2px 2px 0 var(--clr-main),
+					-2px 0 0 var(--clr-main),
+					2px 0 0 var(--clr-main),
+					0 -2px 0 var(--clr-main),
+					0 2px 0 var(--clr-main);
 			}
 		}
 
-		@media (width >= 990px) {
-			margin: 0 auto;
-			padding: 1rem 2rem;
+		& [data-description-left],
+		& [data-description-right] {
+			line-height: 1.35;
+			text-align: left;
+			font-size: clamp(var(--h6), 1.75vw, var(--h3));
+			color: var(--clr-main);
+			margin-top: -1rem;
+			hyphens: auto;
+			letter-spacing: 0px;
+		}
+
+		& [data-description-right] {
+			text-align: right;
+		}
+
+		&.left {
+			box-shadow: -7px 7px 0 var(--clr-main);
+		}
+
+		&.right {
+			box-shadow: 7px 7px 0 var(--clr-main);
 		}
 	}
 
 	.grid[data-grid-wrapper] {
-		@media (width >= 300px) {
+		display: grid;
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-rows: auto;
+		gap: 3rem;
+
+		@media (max-width: 989px) {
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;
 		}
 
-		@media (width >= 990px) {
-			display: grid;
-			grid-template-rows: repeat(2, 1fr);
-			gap: 3rem;
+		.right {
+			text-align: right;
+			line-height: 1.5;
+		}
 
-			.right {
-				text-align: right;
-				line-height: 1.5;
-			}
-
-			.left {
-				text-align: left;
-				line-height: 1.5;
-			}
+		.left {
+			text-align: left;
+			line-height: 1.5;
 		}
 	}
 
 	.left,
 	.right {
-		@media (width >= 990px) {
-			line-height: 1.5;
+		line-height: 1.5;
 
-			[data-title-left] {
-				text-align: right;
-			}
+		[data-title-left] {
+			text-align: right;
+		}
 
-			[data-title-right] {
-				text-align: left;
-			}
+		[data-title-right] {
+			text-align: left;
 		}
 	}
 </style>
