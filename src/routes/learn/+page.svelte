@@ -102,20 +102,18 @@
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
-			gap: 3em;
 			box-shadow: none;
 			max-inline-size: 80vw;
 			min-height: 86vh;
 			background-color: transparent;
 			margin-inline: auto;
 			margin-bottom: 0;
-			margin-top: 10em;
 
 			@media (width <= 768px) {
 				margin: 0;
 				padding: 3em;
-				min-width: 100vw;
-				min-height: auto;
+				min-inline-size: 100vw;
+				min-block-size: auto;
 				margin-inline: auto;
 			}
 
@@ -126,31 +124,24 @@
 
 				@media (width <= 500px) {
 					grid-template-columns: 1fr;
-					gap: 3vw;
-					margin-bottom: -1em;
+					gap: 0;
 				}
 
 				& .learn-image {
 					display: block;
 					background: none;
 					border: none;
+					margin-inline: auto;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					margin-top: 0;
+					transition:
+						filter 0.5s ease-out,
+						scale 0.35s ease-out;
 
-					&:first-child {
-						margin-top: 5em;
-
-						@media (width <= 768px) {
-							margin-top: 2em;
-						}
-
-						@media (width <= 500px) {
-							margin-top: 0;
-						}
-					}
-
-					&:last-child {
-						@media (width <= 500px) {
-							margin-top: 2.5em;
-						}
+					&:not(:hover) {
+						filter: opacity(0.95);
 					}
 
 					&:focus,
@@ -161,25 +152,6 @@
 
 					&:active {
 						scale: 0.97;
-					}
-				}
-
-				& .learn-image {
-					margin-inline: auto;
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					transition:
-						filter 0.5s ease-out,
-						scale 0.35s ease-out;
-
-					@media (width >= 720px) {
-						margin-top: 0;
-					}
-
-					&:not(:hover) {
-						filter: opacity(0.95);
-						scale: 0.98;
 					}
 				}
 			}

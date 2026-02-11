@@ -86,6 +86,7 @@
 	{#if !shareClicked}
 		<button aria-label="Share this app" onclick={shareApp}>
 			<i class="fa-solid fa-share-from-square"></i>
+
 			<span class="desc">install</span>
 		</button>
 	{/if}

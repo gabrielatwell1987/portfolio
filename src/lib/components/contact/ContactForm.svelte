@@ -91,24 +91,22 @@
 	}
 
 	* {
-		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
-	}
-
-	.personal-image {
-		margin-bottom: 2.5em;
 	}
 
 	.contact-icons {
 		display: grid;
 		place-content: center;
 		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+		grid-template-rows: auto;
 		align-items: center;
 		margin-bottom: 1em;
+		margin: 0;
+		margin-top: -3em;
 
 		@media (width <= 768px) {
-			margin-top: -15vw;
+			margin-top: -4em;
 		}
 
 		& .popover-icon {
@@ -121,7 +119,7 @@
 		--label-bg: var(--dark);
 
 		@media screen and (width >= 320px) {
-			width: 85%;
+			inline-size: 85%;
 			margin-inline: auto;
 			display: grid;
 			padding: 0.25rem;
@@ -134,17 +132,17 @@
 				font-weight: bolder;
 				padding: 2rem 5rem;
 				border-radius: 10px;
-				width: 90%;
+				inline-size: 90%;
 
 				& .form-group input {
 					margin-bottom: 1rem;
 					transform: scale(1.05);
-					width: var(--100);
+					inline-size: var(--100);
 				}
 
 				& .form-group textarea {
 					margin-bottom: 1rem;
-					width: var(--100);
+					inline-size: var(--100);
 				}
 			}
 		}
@@ -154,7 +152,7 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			width: var(--100);
+			inline-size: var(--100);
 			margin: 0 auto;
 		}
 
@@ -177,7 +175,7 @@
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			position: relative;
+			/* position: relative; */
 
 			& label {
 				transform: translate(20px, 5px);
@@ -200,11 +198,11 @@
 
 				&::before {
 					content: '';
-					position: absolute;
-					top: 50%;
-					left: -4px;
-					right: -4px;
-					height: 2rem;
+					/* position: absolute; */
+					/* top: 50%; */
+					/* left: -4px; */
+					/* right: -4px; */
+					block-size: 2rem;
 					background-color: var(--label-bg);
 					color: var(--clr-inputs);
 					transform: translateY(-50%);
@@ -215,7 +213,7 @@
 
 			& input,
 			& textarea {
-				width: 100%;
+				inline-size: 100%;
 				background-color: transparent;
 				box-shadow: none;
 				border: 3px solid var(--gray);

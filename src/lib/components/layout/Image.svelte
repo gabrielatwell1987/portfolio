@@ -53,7 +53,7 @@
 
 		& img {
 			max-inline-size: 100%;
-			height: auto;
+			block-size: auto;
 			object-fit: contain;
 			border-radius: var(--radius);
 			z-index: 9;
@@ -62,7 +62,7 @@
 			pointer-events: none;
 
 			&:not(.has-width) {
-				width: 100%;
+				inline-size: 100%;
 			}
 
 			&.hidden {
@@ -92,7 +92,7 @@
 
 			@media (width <= 500px) {
 				padding: 0.25em;
-				width: 40vw;
+				inline-size: 40vw;
 			}
 		}
 	}

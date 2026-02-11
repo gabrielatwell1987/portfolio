@@ -1,6 +1,6 @@
 <script lang="ts">
 	import gsap from 'gsap';
-	import { MorphSVGPlugin } from 'gsap//MorphSVGPlugin';
+	import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin';
 
 	$effect(() => {
 		gsap.registerPlugin(MorphSVGPlugin);

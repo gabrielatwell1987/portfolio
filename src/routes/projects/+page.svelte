@@ -1,6 +1,6 @@
 <script lang="ts">
 	import gsap from 'gsap';
-	import { ScrollTrigger } from 'gsap//ScrollTrigger';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { beforeNavigate } from '$app/navigation';
 	import Testimonial from '$lib/components/projects/Testimonial.svelte';
 	import projects from '$lib/components/projects/projects.json';

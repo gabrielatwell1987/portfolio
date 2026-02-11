@@ -151,6 +151,7 @@
 			background: var(--clr-invert-fade);
 			margin-top: 16em;
 			overflow: auto;
+
 			anchor-name: --inner-anchor;
 
 			@media (width <= 768px) {
