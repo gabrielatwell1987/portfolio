@@ -20,8 +20,8 @@
 
 <style>
 	.avatar {
-		--size: 250px;
-		--head: calc(var(--size) * 0.15);
+		--size: clamp(2rem, 250px, 8rem);
+		--head: calc(var(--size) * 0.25);
 		--height-with-head: calc(var(--size) + var(--head));
 		--border-width: calc(var(--size) * 0.015);
 		--mask-size: calc(var(--size) / 2 - var(--border-width));
