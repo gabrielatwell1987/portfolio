@@ -160,6 +160,7 @@
 	}
 
 	body {
+		background-color: var(--clr-invert);
 		cursor:
 			url('https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/pointer.svg'),
 			auto;
