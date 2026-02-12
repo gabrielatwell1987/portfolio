@@ -127,10 +127,10 @@
 					justify-content: center;
 					transition: transform 0.3s ease;
 
-					&:focus-visible {
-						outline: none;
+					&:focus {
+						outline: 1px solid var(--clr-main);
+						background: transparent;
 						box-shadow: none;
-						background-color: transparent;
 					}
 
 					&:hover {

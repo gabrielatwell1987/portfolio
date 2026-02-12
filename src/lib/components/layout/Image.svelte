@@ -51,6 +51,12 @@
 		display: flex;
 		align-items: center;
 
+		&:focus {
+			outline: 1px solid var(--clr-main);
+			background: transparent;
+			box-shadow: none;
+		}
+
 		& img {
 			max-inline-size: 100%;
 			block-size: auto;

@@ -71,9 +71,14 @@
 			pointer-events: all;
 			background-color: transparent;
 
-			&:focus-visible {
+			&:focus {
 				outline: 1px solid var(--clr-main);
 				background: transparent;
+				box-shadow: none;
+			}
+
+			&:active {
+				scale: 0.97;
 			}
 
 			& svg {

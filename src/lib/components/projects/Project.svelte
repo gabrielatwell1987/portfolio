@@ -84,6 +84,12 @@
 		& .title-link {
 			pointer-events: auto;
 			text-decoration: none;
+
+			&:focus-within {
+				outline: 1px solid var(--clr-main);
+				outline-offset: 2px;
+				box-shadow: none;
+			}
 		}
 
 		& .project-link {
@@ -125,9 +131,10 @@
 				}
 			}
 
-			&:focus-visible {
+			&:focus {
 				outline: 1px solid var(--clr-main);
 				background: transparent;
+				box-shadow: none;
 			}
 
 			& .project-image {

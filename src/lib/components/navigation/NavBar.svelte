@@ -45,7 +45,7 @@
 		<li><NavLink href="/about" title="About" viewTransitionName="about-heading" /></li>
 		<li><NavLink href="/projects" title="Builds" viewTransitionName="build-heading" /></li>
 		<li><NavLink href="/learn" title="Learn" viewTransitionName="learn-heading" /></li>
-		<SelectLink path1="/hire" path2="/contact" />
+		<SelectLink />
 	</ul>
 
 	<ul

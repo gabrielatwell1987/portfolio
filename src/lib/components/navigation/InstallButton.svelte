@@ -176,6 +176,10 @@
 			outline-offset: 0px;
 		}
 
+		&:active {
+			scale: 0.97;
+		}
+
 		& i {
 			font-size: clamp(var(--h6), 1.5vw, var(--h4));
 			color: var(--clr-invert);

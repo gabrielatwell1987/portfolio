@@ -122,10 +122,11 @@
 			scale: 0.97;
 		}
 
-		&:focus-visible {
+		&:focus {
 			outline: 1px solid var(--clr-main);
 			outline-offset: 1px;
 			background: transparent;
+			box-shadow: none;
 		}
 
 		& svg {

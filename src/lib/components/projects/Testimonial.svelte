@@ -62,6 +62,7 @@
 		animation-delay: var(--stagger-delay, 0s);
 		will-change: opacity, transform;
 		scale: 0.75;
+		user-select: none;
 		transition:
 			transform 0.2s,
 			box-shadow 0.2s;

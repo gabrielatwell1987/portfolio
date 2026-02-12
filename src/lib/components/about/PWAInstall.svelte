@@ -61,11 +61,6 @@
 		position: relative;
 		anchor-name: --instruction-popover;
 
-		&:focus-visible {
-			outline: 1px solid var(--clr-main);
-			background: transparent;
-		}
-
 		& [data-content] {
 			text-align: start;
 		}
@@ -89,6 +84,11 @@
 
 			&:active {
 				scale: 0.97;
+			}
+
+			&:focus {
+				outline: 1px solid var(--clr-main);
+				background: transparent;
 			}
 
 			& .pwa-title {

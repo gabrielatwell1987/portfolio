@@ -68,6 +68,7 @@
 			&:focus-visible {
 				outline: 1px solid var(--clr-main);
 				background: transparent;
+				box-shadow: none;
 			}
 
 			& svg.main-logo {

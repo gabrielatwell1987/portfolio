@@ -144,9 +144,10 @@
 						filter: opacity(0.95);
 					}
 
-					&:focus-visible {
+					&:focus {
 						outline: 1px solid var(--clr-main);
 						background: transparent;
+						box-shadow: none;
 					}
 
 					&:active {

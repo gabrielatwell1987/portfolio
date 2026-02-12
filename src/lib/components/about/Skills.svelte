@@ -74,10 +74,10 @@
 					width: min(80%, 600px);
 				}
 
-				&:focus-visible {
-					outline: none;
+				&:focus {
+					outline: 1px solid var(--clr-main);
+					background: transparent;
 					box-shadow: none;
-					background-color: transparent;
 				}
 
 				&:hover {

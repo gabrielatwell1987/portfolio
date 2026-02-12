@@ -84,11 +84,6 @@
 	.video-popover {
 		display: inline-block;
 
-		&:focus-visible {
-			outline: 1px solid var(--clr-main);
-			background: transparent;
-		}
-
 		.open-popover {
 			background-color: transparent;
 			filter: brightness(1);
@@ -110,6 +105,11 @@
 
 			&:active {
 				transform: scale(0.97);
+			}
+
+			&:focus {
+				outline: 1px solid var(--clr-main);
+				background: transparent;
 			}
 		}
 
