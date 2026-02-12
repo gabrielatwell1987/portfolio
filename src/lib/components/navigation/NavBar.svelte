@@ -77,7 +77,7 @@
 		z-index: 15;
 		position: fixed;
 		top: 0;
-		width: 100%;
+		inline-size: 100%;
 		padding: 0 5em 0.5rem 1rem;
 		margin-inline: auto;
 		pointer-events: auto;
@@ -96,18 +96,18 @@
 
 			@media (width > 300px) and (width < 750px) {
 				justify-content: space-evenly;
-				width: 100%;
+				inline-size: 100%;
 			}
 		}
 
 		@media (width > 300px) and (width < 750px) {
-			width: 100%;
+			inline-size: 100%;
 			top: 0.25rem;
 			border-radius: var(--radius);
 			box-shadow: 0 0 5px var(--clr-gray);
 			padding: 1.2rem 0 0.4rem 0;
-			height: 3.75rem;
-			min-height: 3.75rem;
+			block-size: 3.75rem;
+			min-block-size: 3.75rem;
 			justify-content: space-between;
 			flex: 1;
 		}
