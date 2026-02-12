@@ -76,11 +76,15 @@
 		-webkit-backdrop-filter: blur(0.15rem);
 		z-index: 15;
 		position: fixed;
-		top: 0.25rem;
+		top: 0;
 		width: 100%;
-		padding: 0.5rem 5em 0.5rem 1rem;
+		padding: 0 5em 0.5rem 1rem;
 		margin-inline: auto;
 		pointer-events: auto;
+
+		@media (width <= 1100px) {
+			top: 0.1rem;
+		}
 
 		& .nav-main {
 			display: flex;
@@ -130,10 +134,6 @@
 
 		@media (width > 300px) and (width < 750px) {
 			display: none;
-		}
-
-		@media (width <= 1100px) {
-			padding-top: 2rem;
 		}
 	}
 
