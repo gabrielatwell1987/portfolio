@@ -147,12 +147,14 @@
 	}
 
 	::view-transition-new(changing-theme) {
-		animation: reveal 0.35s linear forwards;
+		animation: circle-theme-transition 0.35s linear forwards;
+
 		clip-path: circle(0% at var(--x) var(--y));
+
 		will-change: clip-path;
 	}
 
-	@keyframes reveal {
+	@keyframes circle-theme-transition {
 		to {
 			clip-path: circle(100% at var(--x) var(--y));
 		}
