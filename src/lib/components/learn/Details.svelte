@@ -102,7 +102,7 @@
 			align-items: center;
 			border: 2px solid var(--clr-gray);
 
-			&:focus {
+			&:focus-visible {
 				outline: none;
 				box-shadow: none;
 			}

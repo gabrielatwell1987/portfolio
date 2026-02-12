@@ -127,7 +127,6 @@
 					justify-content: center;
 					transition: transform 0.3s ease;
 
-					&:focus,
 					&:focus-visible {
 						outline: none;
 						box-shadow: none;

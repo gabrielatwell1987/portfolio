@@ -148,7 +148,6 @@
 			color: inherit;
 			font-family: inherit;
 
-			&:focus,
 			&:focus-visible {
 				outline: 2px solid var(--clr-link);
 				outline-offset: 2px;

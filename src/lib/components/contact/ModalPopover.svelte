@@ -266,7 +266,6 @@
 			scale: 0.95;
 		}
 
-		&:focus,
 		&:focus-visible {
 			outline: 1px solid var(--clr-main);
 			background: transparent;
@@ -295,7 +294,6 @@
 		margin-inline: auto;
 		cursor: pointer;
 
-		&:focus,
 		&:focus-visible {
 			outline: 1px solid var(--clr-main);
 		}
@@ -314,7 +312,6 @@
 			width: clamp(1.5em, 4vw, 5em);
 			height: clamp(1.5em, 4vw, 5em);
 
-			&:focus,
 			&:focus-visible {
 				outline: 1px solid var(--clr-main);
 				background: transparent;

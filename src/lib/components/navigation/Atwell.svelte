@@ -65,7 +65,6 @@
 			display: flex;
 			align-items: center;
 
-			&:focus,
 			&:focus-visible {
 				outline: 1px solid var(--clr-main);
 				background: transparent;

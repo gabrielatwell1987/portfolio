@@ -122,7 +122,6 @@
 			scale: 0.97;
 		}
 
-		&:focus,
 		&:focus-visible {
 			outline: 1px solid var(--clr-main);
 			outline-offset: 1px;

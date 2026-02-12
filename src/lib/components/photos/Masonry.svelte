@@ -155,7 +155,7 @@
 				opacity: 0;
 				overflow: hidden;
 
-				&:focus {
+				&:focus-visible {
 					border: none;
 					outline: none;
 					box-shadow: none;

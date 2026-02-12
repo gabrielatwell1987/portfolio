@@ -637,16 +637,11 @@
 							fill: #39d353;
 						}
 
-						&:focus {
+						&:focus-visible {
 							outline: 3px solid var(--clr-main);
 							outline-offset: 2px;
 							stroke: var(--clr-main);
 							stroke-width: 2px;
-						}
-
-						&:focus-visible {
-							outline: 3px solid var(--clr-main);
-							outline-offset: 2px;
 						}
 					}
 				}

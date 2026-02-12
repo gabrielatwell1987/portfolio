@@ -61,7 +61,6 @@
 		position: relative;
 		anchor-name: --instruction-popover;
 
-		&:focus,
 		&:focus-visible {
 			outline: 1px solid var(--clr-main);
 			background: transparent;

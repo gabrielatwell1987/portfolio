@@ -144,7 +144,6 @@
 						filter: opacity(0.95);
 					}
 
-					&:focus,
 					&:focus-visible {
 						outline: 1px solid var(--clr-main);
 						background: transparent;

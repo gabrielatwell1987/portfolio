@@ -66,8 +66,7 @@
 			padding: 0;
 			cursor: pointer;
 
-			&:focus-visible,
-			&:focus {
+			&:focus-visible {
 				outline: none;
 				box-shadow: none;
 				border: none;

@@ -165,7 +165,6 @@
 			bottom: 2.5em;
 		}
 
-		&:focus,
 		&:focus-visible {
 			outline: 1px solid var(--clr-main);
 			background: transparent;

@@ -29,7 +29,6 @@
 		transition: color 0s linear;
 		border: 2px solid var(--clr-main);
 
-		&:focus,
 		&:focus-within {
 			outline: none;
 			box-shadow: none;

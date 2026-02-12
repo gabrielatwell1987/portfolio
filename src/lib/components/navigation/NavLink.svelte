@@ -31,7 +31,6 @@
 		transition: opacity 0.15s ease-out;
 		pointer-events: auto;
 
-		&:focus,
 		&:focus-visible {
 			outline: 1px solid var(--clr-main);
 			background: transparent;

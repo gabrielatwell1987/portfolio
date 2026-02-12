@@ -74,7 +74,6 @@
 					width: min(80%, 600px);
 				}
 
-				&:focus,
 				&:focus-visible {
 					outline: none;
 					box-shadow: none;

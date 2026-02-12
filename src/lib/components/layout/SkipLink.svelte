@@ -22,7 +22,7 @@
 		letter-spacing: 1px;
 	}
 
-	.skip-link:not(:focus) {
+	.skip-link:not(:focus-visible) {
 		clip: rect(0 0 0 0);
 		clip-path: inset(50%);
 		overflow: hidden;
@@ -31,7 +31,7 @@
 		white-space: nowrap;
 	}
 
-	.skip-link:focus {
+	.skip-link:focus-visible {
 		outline: 3px solid var(--dark-pale);
 		transform: scale(1.05);
 		top: 1.5rem;

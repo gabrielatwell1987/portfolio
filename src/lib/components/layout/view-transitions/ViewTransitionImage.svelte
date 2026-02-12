@@ -114,7 +114,6 @@
 			width: fit-content;
 			display: block;
 
-			&:focus,
 			&:focus-visible {
 				outline: none;
 				box-shadow: none;
