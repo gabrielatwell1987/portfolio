@@ -440,7 +440,7 @@
 			letter-spacing: 1px;
 			max-inline-size: 600px;
 			margin: 1.5rem auto;
-			text-align: left;
+			text-align: start;
 			min-height: 3rem;
 
 			@media (width >= 990px) {

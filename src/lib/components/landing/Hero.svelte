@@ -453,7 +453,7 @@
 				font-family: var(--bronova);
 				font-size: clamp(var(--sm), 1.25vw, var(--h3));
 				font-weight: 600;
-				text-align: left;
+				text-align: start;
 				letter-spacing: 1px;
 				line-height: 1.6;
 				color: var(--clr-hero-text);

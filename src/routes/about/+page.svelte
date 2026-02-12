@@ -206,7 +206,7 @@
 					text-wrap: none;
 					z-index: 7;
 					color: var(--clr-main);
-					text-align: left;
+					text-align: start;
 					margin-bottom: 0;
 
 					@media screen and (width >= 990px) {
@@ -267,7 +267,7 @@
 		}
 
 		& p {
-			text-align: left;
+			text-align: start;
 			color: var(--clr-main);
 		}
 

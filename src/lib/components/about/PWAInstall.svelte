@@ -68,7 +68,7 @@
 		}
 
 		& [data-content] {
-			text-align: left;
+			text-align: start;
 		}
 
 		& button {

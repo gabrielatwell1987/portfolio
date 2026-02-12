@@ -77,7 +77,7 @@
 			font-weight: 500;
 			letter-spacing: 5px;
 			line-height: 1.25;
-			text-align: left;
+			text-align: start;
 			padding: 2rem 4rem;
 			color: var(--clr-gray);
 			text-align: center;

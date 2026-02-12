@@ -81,16 +81,17 @@
 		& [data-description-left],
 		& [data-description-right] {
 			line-height: 1.35;
-			text-align: left;
+			text-align: start;
 			font-size: clamp(var(--h6), 1.75vw, var(--h3));
 			color: var(--clr-main);
 			margin-top: -1rem;
 			hyphens: auto;
 			letter-spacing: 0px;
+			text-wrap: pretty;
 		}
 
 		& [data-description-right] {
-			text-align: right;
+			text-align: end;
 		}
 
 		&.left {
@@ -115,12 +116,12 @@
 		}
 
 		.right {
-			text-align: right;
+			text-align: end;
 			line-height: 1.5;
 		}
 
 		.left {
-			text-align: left;
+			text-align: start;
 			line-height: 1.5;
 		}
 	}
@@ -130,11 +131,11 @@
 		line-height: 1.5;
 
 		[data-title-left] {
-			text-align: right;
+			text-align: end;
 		}
 
 		[data-title-right] {
-			text-align: left;
+			text-align: start;
 		}
 	}
 </style>

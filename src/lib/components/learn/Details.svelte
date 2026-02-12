@@ -96,7 +96,7 @@
 			font-weight: 600;
 			background: none;
 			width: 100%;
-			text-align: left;
+			text-align: start;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
