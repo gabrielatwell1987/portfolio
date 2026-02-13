@@ -85,10 +85,52 @@
 			pointer-events: auto;
 			text-decoration: none;
 
-			&:focus-within {
+			&:focus,
+			&:focus-visible {
 				outline: 1px solid var(--clr-main);
 				outline-offset: 2px;
 				box-shadow: none;
+				background-color: transparent;
+			}
+
+			& .project-title {
+				font-family: var(--ultra);
+				font-size: clamp(var(--h4), 2.75vw, var(--h3));
+				font-weight: 600;
+				text-align: center;
+				letter-spacing: 0px;
+				text-transform: uppercase;
+				text-decoration: none;
+				padding: 0;
+				margin: 0;
+				color: var(--clr-invert);
+				text-shadow:
+					0 0 1px var(--clr-invert),
+					-3px -3px 0 var(--clr-main),
+					3px -3px 0 var(--clr-main),
+					-3px 3px 0 var(--clr-main),
+					3px 3px 0 var(--clr-main),
+					-3px 0 0 var(--clr-main),
+					3px 0 0 var(--clr-main),
+					0 -3px 0 var(--clr-main),
+					0 3px 0 var(--clr-main);
+
+				@media (width <= 768px) {
+					text-shadow:
+						0 0 1px var(--clr-invert),
+						-2px -2px 0 var(--clr-main),
+						2px -2px 0 var(--clr-main),
+						-2px 2px 0 var(--clr-main),
+						2px 2px 0 var(--clr-main),
+						-2px 0 0 var(--clr-main),
+						2px 0 0 var(--clr-main),
+						0 -2px 0 var(--clr-main),
+						0 2px 0 var(--clr-main);
+				}
+
+				&:active {
+					scale: 0.97;
+				}
 			}
 		}
 
@@ -185,46 +227,6 @@
 				pointer-events: none;
 				position: relative;
 				margin-top: 0;
-			}
-		}
-
-		& .project-title {
-			font-family: var(--ultra);
-			font-size: clamp(var(--h4), 2.75vw, var(--h3));
-			font-weight: 600;
-			text-align: center;
-			letter-spacing: 0px;
-			text-transform: uppercase;
-			text-decoration: none;
-			padding: 0;
-			margin: 0;
-			color: var(--clr-invert);
-			text-shadow:
-				0 0 1px var(--clr-invert),
-				-3px -3px 0 var(--clr-main),
-				3px -3px 0 var(--clr-main),
-				-3px 3px 0 var(--clr-main),
-				3px 3px 0 var(--clr-main),
-				-3px 0 0 var(--clr-main),
-				3px 0 0 var(--clr-main),
-				0 -3px 0 var(--clr-main),
-				0 3px 0 var(--clr-main);
-
-			@media (width <= 768px) {
-				text-shadow:
-					0 0 1px var(--clr-invert),
-					-2px -2px 0 var(--clr-main),
-					2px -2px 0 var(--clr-main),
-					-2px 2px 0 var(--clr-main),
-					2px 2px 0 var(--clr-main),
-					-2px 0 0 var(--clr-main),
-					2px 0 0 var(--clr-main),
-					0 -2px 0 var(--clr-main),
-					0 2px 0 var(--clr-main);
-			}
-
-			&:active {
-				scale: 0.97;
 			}
 		}
 	}
