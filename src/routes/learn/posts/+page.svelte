@@ -123,7 +123,7 @@
 
 	<article class="developer-card">
 		<Card
-			src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/atwellUI.webp"
+			src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/blueTriangle.webp"
 			alt="a logo that says atwell developer"
 			href="/projects"
 			title="web design + development"

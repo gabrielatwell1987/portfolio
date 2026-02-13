@@ -23,8 +23,8 @@
 
 <style>
 	.card {
-		width: fit-content;
-		height: fit-content;
+		inline-size: fit-content;
+		block-size: fit-content;
 		background-color: var(--clr-invert-fade);
 		border-radius: 8px;
 		border: 2px solid var(--clr-main);
@@ -36,18 +36,22 @@
 		margin: 0;
 
 		&:hover {
-			box-shadow: 0 0 5em var(--clr-gray);
+			box-shadow: 0 0 2em var(--clr-gray);
 		}
 
 		.card-image {
-			width: fit-content;
-			height: fit-content;
+			inline-size: fit-content;
+			block-size: fit-content;
 			object-fit: contain;
 			border-radius: 0 0 8px 8px;
 			display: grid;
 			place-self: center;
 			margin-inline: auto;
 			padding: 1rem;
+
+			@media (width <= 768px) {
+				padding: 0;
+			}
 		}
 
 		.card-title {
@@ -93,8 +97,8 @@
 			font-size: clamp(var(--sm), 1.2vw, var(--h5));
 			font-weight: 300;
 			letter-spacing: 1px;
-			width: fit-content;
-			height: 10%;
+			inline-size: fit-content;
+			block-size: 10%;
 			outline: none;
 			margin: 1rem auto;
 			filter: drop-shadow(0 0 0.75rem var(--clr-gray));
