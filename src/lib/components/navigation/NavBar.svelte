@@ -75,16 +75,14 @@
 		backdrop-filter: blur(0.15rem);
 		-webkit-backdrop-filter: blur(0.15rem);
 		z-index: 15;
-		position: fixed;
-		top: 0;
 		inline-size: 100%;
-		padding: 0 5em 0.5rem 1rem;
+		block-size: fit-content;
+		padding: 0 9em 0 1rem;
 		margin-inline: auto;
 		pointer-events: auto;
-
-		@media (width <= 1100px) {
-			top: 0.1rem;
-		}
+		position: fixed;
+		box-shadow: 0 0 2px var(--clr-light-gray);
+		top: 0;
 
 		& .nav-main {
 			display: flex;
@@ -92,28 +90,17 @@
 			align-items: center;
 			gap: 1rem;
 			flex: 1;
-			width: 100%;
-
-			@media (width > 300px) and (width < 750px) {
-				justify-content: space-evenly;
-				inline-size: 100%;
-			}
+			inline-size: 100%;
 		}
 
 		@media (width > 300px) and (width < 750px) {
 			inline-size: 100%;
-			top: 0.25rem;
 			border-radius: var(--radius);
-			box-shadow: 0 0 5px var(--clr-gray);
 			padding: 1.2rem 0 0.4rem 0;
 			block-size: 3.75rem;
 			min-block-size: 3.75rem;
 			justify-content: space-between;
 			flex: 1;
-		}
-
-		@media (width >= 990px) {
-			box-shadow: none;
 		}
 
 		@media (width < 750px) {

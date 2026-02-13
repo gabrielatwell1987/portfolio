@@ -28,6 +28,7 @@
 		appearance: none;
 		transition: color 0s linear;
 		border: 2px solid var(--clr-main);
+		margin-top: 0.75em;
 
 		&:focus-within {
 			outline: none;
