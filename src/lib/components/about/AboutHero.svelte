@@ -2,14 +2,15 @@
 	import gsap from 'gsap';
 	import { SplitText } from 'gsap/SplitText';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	import AboutHeroParallax from './AboutHeroParallax.svelte';
 
 	interface Props {
-		alt: string;
+		alt?: string;
 		title: string;
 		viewTransitionName?: string;
 	}
 
-	let { alt, title, viewTransitionName }: Props = $props();
+	let { title, viewTransitionName }: Props = $props();
 
 	function titleRotate() {
 		gsap.registerPlugin(SplitText, ScrollTrigger);
@@ -62,13 +63,7 @@
 </script>
 
 <div class="about-hero-image">
-	<img
-		src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/svelte-magick.webp"
-		{alt}
-		loading="lazy"
-		decoding="async"
-		data-hero-bg
-	/>
+	<AboutHeroParallax />
 
 	<h1 id="title">
 		<span style="view-transition-name: {viewTransitionName || ''};">About</span>
@@ -97,22 +92,8 @@
 			margin-top: 4em;
 		}
 
-		& img[data-hero-bg] {
-			max-inline-size: 100%;
-			block-size: auto;
-			aspect-ratio: 16 / 9;
-			object-fit: cover;
-			mask: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 60%, transparent);
-			border-radius: var(--radius);
-			display: block;
-
-			@media (width <= 500px) {
-				min-inline-size: 110vw;
-			}
-		}
-
 		& #title {
-			margin-top: -0.9em;
+			margin-top: -1.2em;
 			font-size: clamp(var(--h3), 6vw, var(--xxl));
 			font-weight: 700;
 			text-shadow: 0 0 5px var(--smoke);
