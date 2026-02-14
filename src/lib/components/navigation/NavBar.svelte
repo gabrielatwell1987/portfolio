@@ -81,8 +81,9 @@
 		margin-inline: auto;
 		pointer-events: auto;
 		position: fixed;
-		box-shadow: 0 0 2px var(--clr-light-gray);
 		top: 0;
+		border-radius: var(--radius);
+		box-shadow: 0 0 5px oklch(from var(--clr-main) 0.5 c h);
 
 		& .nav-main {
 			display: flex;
@@ -103,9 +104,13 @@
 			flex: 1;
 		}
 
-		@media (width < 750px) {
+		@media (width <= 768px) {
 			justify-content: space-between;
 			padding-inline: 0.75rem;
+		}
+
+		@media (width <= 500px) {
+			box-shadow: 0 0 8px oklch(from var(--clr-main) 0.65 c h);
 		}
 	}
 
@@ -119,7 +124,7 @@
 		font-weight: 600;
 		list-style: none;
 
-		@media (width > 300px) and (width < 750px) {
+		@media (width >= 300px) and (width <= 750px) {
 			display: none;
 		}
 	}
@@ -147,7 +152,7 @@
 			opacity: 0;
 		}
 
-		@media (width > 300px) and (width < 750px) {
+		@media (width >= 300px) and (width <= 750px) {
 			visibility: visible;
 			display: flex;
 			flex-direction: column;
