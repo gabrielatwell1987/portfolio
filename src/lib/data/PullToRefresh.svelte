@@ -47,6 +47,7 @@
 		border-radius: 50%;
 		animation: ptr-spin 0.65s linear infinite;
 		will-change: transform;
+		z-index: 55;
 	}
 
 	@media (prefers-reduced-motion: reduce) {
