@@ -9,6 +9,7 @@
 	import { createLoadingContext } from '$lib/data/context/loading.svelte';
 	import { createThemeContext } from '$lib/data/context/theme.svelte';
 	import type { Snippet } from 'svelte';
+	import PullToRefresh from '$lib/data/PullToRefresh.svelte';
 
 	interface Props {
 		children: Snippet;
@@ -63,6 +64,7 @@
 	});
 </script>
 
+<PullToRefresh />
 <SkipLink />
 <ViewTransition />
 
@@ -72,7 +74,6 @@
 {/if}
 
 <NavBar />
-
 <main style="visibility: {loading.isLoaded ? 'visible' : 'hidden'};">
 	<div id="main-content" tabindex="-1">
 		{@render children()}
@@ -95,7 +96,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
-		overflow: hidden;
+		overflow-x: clip;
 		opacity: 1;
 		transition: opacity 0.3s ease-out;
 	}
