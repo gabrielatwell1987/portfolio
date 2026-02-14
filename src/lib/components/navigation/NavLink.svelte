@@ -47,7 +47,7 @@
 			&:hover {
 				text-shadow: 0px 0px 1px var(--clr-invert);
 				border-bottom: 4px solid var(--clr-main);
-				height: 2.75rem;
+				block-size: 2.5rem;
 				transition: all 0.15s ease-out;
 				border-radius: 1px;
 			}

@@ -106,8 +106,8 @@
 		outline: none;
 		cursor: pointer;
 		padding: 0.75rem;
-		min-width: 3rem;
-		min-height: 3rem;
+		max-inline-size: 3em;
+		max-block-size: 2em;
 		will-change: transform, opacity;
 
 		&:hover {
@@ -124,7 +124,7 @@
 
 		&:focus {
 			outline: 1px solid var(--clr-main);
-			outline-offset: 1px;
+			outline-offset: 0 1px;
 			background: transparent;
 			box-shadow: none;
 		}
