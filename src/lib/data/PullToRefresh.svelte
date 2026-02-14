@@ -42,8 +42,8 @@
 		margin-inline: auto;
 		width: 1.2em;
 		height: 1.2em;
-		border: 2px solid color-mix(in oklab, currentColor 28%, transparent);
-		border-top-color: currentColor;
+		border: 2px solid var(--clr-gray);
+		border-top-color: var(--clr-light-gray);
 		border-radius: 50%;
 		animation: ptr-spin 0.65s linear infinite;
 		will-change: transform;
