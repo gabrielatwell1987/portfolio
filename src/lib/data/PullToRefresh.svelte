@@ -19,10 +19,13 @@
 			ptr = mod.default;
 			ptr.init({
 				mainElement: 'body',
-				onRefresh() {
+				iconRefreshing: '<span class="ptr-spinner" aria-hidden="true"></span>',
+				instructionsRefreshing: 'Refreshing...',
+				shouldPullToRefresh: () => (document.scrollingElement?.scrollTop ?? window.scrollY) <= 0,
+				onRefresh: async () => {
+					await new Promise((resolve) => setTimeout(resolve, 250));
 					window.location.reload();
-				},
-				shouldPullToRefresh: () => (document.scrollingElement?.scrollTop ?? window.scrollY) <= 0
+				}
 			});
 		})();
 
@@ -34,4 +37,27 @@
 </script>
 
 <style>
+	:global(.ptr-spinner) {
+		display: block;
+		margin-inline: auto;
+		width: 1.2em;
+		height: 1.2em;
+		border: 2px solid color-mix(in oklab, currentColor 28%, transparent);
+		border-top-color: currentColor;
+		border-radius: 50%;
+		animation: ptr-spin 0.65s linear infinite;
+		will-change: transform;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		:global(.ptr-spinner) {
+			animation-duration: 1.2s;
+		}
+	}
+
+	@keyframes ptr-spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
 </style>
