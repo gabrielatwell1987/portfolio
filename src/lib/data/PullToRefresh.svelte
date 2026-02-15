@@ -36,11 +36,13 @@
 	});
 </script>
 
+<span class="ptr-spinner"></span>
+
 <style>
 	:global(.ptr-spinner) {
 		display: block;
 		margin-inline: auto;
-		margin-top: 3.5em;
+		margin-top: 7em;
 		width: 0.75em;
 		height: 0.75em;
 		position: relative;
