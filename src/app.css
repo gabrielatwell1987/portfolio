@@ -301,27 +301,31 @@
 		--warning-light: oklch(0.7126 0.1451 94.89);
 		--warning-dark: oklch(0.4869 0.0938 88.85);
 
-		/* light-dark() */
 		--clr-bg: light-dark(var(--white), var(--blackest));
-		--clr-main: light-dark(var(--blackest), oklch(from var(--white) 0.8 c h));
-		--clr-main-fade: light-dark(var(--blackest), oklch(from var(--white) 0.6 c h));
+		--clr-main: light-dark(oklch(from var(--blackest) 0.1 c h), oklch(from var(--white) 0.8 c h));
+		--clr-main-fade: light-dark(
+			oklch(from var(--blackest) 0.1 c h),
+			oklch(from var(--white) 0.6 c h)
+		);
+		--clr-invert: light-dark(oklch(from var(--white) 0.9 c h), oklch(from var(--blackest) 0.1 c h));
+		--clr-invert-fade: light-dark(
+			oklch(from var(--white) 0.5 c h),
+			oklch(from oklch(from var(--blackest) 0.1 c h) 0.2 c h)
+		);
+
+		--clr-light-invert: light-dark(var(--white-gray), var(--blacker));
+		--clr-light-gray: light-dark(var(--dark-gray), var(--light-gray));
+		--clr-gray: light-dark(var(--dark-gray), var(--gray));
+		--clr-faint-gray: light-dark(var(--dark-faint-gray), var(--faint-gray));
+		--clr-dark-gray: light-dark(oklch(0.7018 0.0035 17.24), oklch(0.2982 0.0014 17.24));
+
 		--clr-hero-text: light-dark(oklch(from var(--gray) 0.45 c h), var(--white));
 		--clr-link: light-dark(var(--darker-blue), var(--sky));
 		--clr-blue: light-dark(var(--darkest-blue), var(--sky));
 		--clr-sky: light-dark(var(--sky), var(--sky));
 		--clr-pale: light-dark(var(--yellow), var(--pale));
 		--clr-dark-pale: light-dark(var(--pale), var(--dark-pale));
-		--clr-light-gray: light-dark(var(--dark-gray), var(--light-gray));
-		--clr-gray: light-dark(var(--dark-gray), var(--gray));
-		--clr-faint-gray: light-dark(var(--dark-faint-gray), var(--faint-gray));
-		--clr-dark-gray: light-dark(oklch(0.7018 0.0035 17.24), oklch(0.2982 0.0014 17.24));
 		--clr-green: light-dark(var(--success-dark), var(--success-light));
-		--clr-light-invert: light-dark(var(--white-gray), var(--blacker));
-		--clr-invert: light-dark(oklch(from var(--white) 0.9 c h), var(--blackest));
-		--clr-invert-fade: light-dark(
-			oklch(from var(--white) 0.5 c h),
-			oklch(from var(--blackest) 0.2 c h)
-		);
 		--clr-button-text: light-dark(var(--blackest), var(--white));
 		--clr-button: light-dark(var(--yellow), var(--purple));
 		--sun: light-dark(var(--yellow), var(--pale));
