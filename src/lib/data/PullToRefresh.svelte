@@ -36,8 +36,6 @@
 	});
 </script>
 
-<span class="ptr-spinner"></span>
-
 <style>
 	:global(.ptr-spinner) {
 		display: block;
