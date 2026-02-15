@@ -1,4 +1,6 @@
-export async function load(event) {
+import type { PageServerLoad } from './$types';
+
+export const load: PageServerLoad = async (event) => {
 	try {
 		const response = await event.fetch('/api/github-contributions');
 		if (!response.ok) throw new Error(`API error: ${response.status}`);
@@ -9,7 +11,7 @@ export async function load(event) {
 		// Fallback to generated data
 		return { contributions: generateFallbackData() };
 	}
-}
+};
 
 export const config = {
 	isr: {
