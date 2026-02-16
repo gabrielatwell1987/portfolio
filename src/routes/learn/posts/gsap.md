@@ -10,7 +10,11 @@ In web animation, a tween stands for "in-betweening". Basically, it is the found
 </div>
 <div class="image">
 
-![gsap tweens](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/tweens.webp)
+```js
+gsap.to(<element>, { <variables> }, <position parameter>);
+
+gsap.to('.example', { x: 500 }, '<');
+```
 
 </div>
 </div>
@@ -26,14 +30,32 @@ A value of stagger: 0.1 would cause there to be 0.1 seconds between the start ti
 
 <DetailsElement summary="functions">
 
-    Only use this if you need to run custom logic for distributing the staggers. The function gets called once for each target/element in the Array and should return the total delay from the starting position (not the amount of delay from the previous tween's start time). The function receives the following parameters: index [Integer] - The index value from the list, target [Object] - The target in the list at that index value, list [Array | NodeList] - The targets array (or NodeList).
+Only use this if you need to run custom logic for distributing the staggers. The function gets called once for each target/element in the Array and should return the total delay from the starting position (not the amount of delay from the previous tween's start time). The function receives the following parameters: index [Integer] - The index value from the list, target [Object] - The target in the list at that index value, list [Array | NodeList] - The targets array (or NodeList).
 
 </DetailsElement>
 
 </div>
 <div class="image">
 
-![gsap staggers](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/staggers.webp)
+```js
+gsap.to('.example', { yPercent: 100, stagger: 0.1 });
+
+gsap.to('.example', {
+	y: 50,
+	stagger: {
+		each: 0.2,
+		from: 'edges'
+	}
+});
+
+gsap.to('.example', {
+	y: 50,
+	stagger: function (index) {
+		// logic goes here
+		return index * 0.2;
+	}
+});
+```
 
 </div>
 </div>
@@ -52,7 +74,11 @@ Timelines makes sequencing multiple tweens really easy and faster to code, in th
 </div>
 <div class="image">
 
-![gsap timelines](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/timelines.webp)
+```js
+const tl = gsap.timeline();
+
+tl.to('.red', { x: 100, duration: 2 }).to('.blue', { y: 300, duration: 1 });
+```
 
 </div>
 </div>
@@ -69,7 +95,17 @@ This familiar syntax makes porting animations over from CSS really easy. Instead
 </div>
 <div class="image">
 
-![gsap percentage keyframes](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/keyframes.webp)
+```js
+gsap.to('.example', {
+	keyframes: {
+		'0%': { x: 50 },
+		'50%': { y: 500 },
+		'100%': { x: -50 },
+		easeEach: 'power2.out'
+	},
+	duration: 3
+});
+```
 
 </div>
 </div>
@@ -88,7 +124,10 @@ Notice that the position parameter comes after the vars parameter:
 </div>
 <div class="image">
 
-![gsap position parameter](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/position.webp)
+```js
+gsap.to(<element>, { <variables> }, <position parameter>)
+gsap.to('.example', { y: 200 }, '+=200')
+```
 
 </div>
 </div>
@@ -104,14 +143,24 @@ Have you ever noticed an annoying "flash of unstyled content" (FOUC) when a web 
 
 <DetailsElement summary="solution">
 
-    apply `visibility: hidden;` to your elements in CSS and then use GSAP's autoAlpha property to show it (or animate it in) when the page loads. autoAlpha affects opacity and visibility, changing it to visible when the opacity is greater than 0.
+apply `visibility: hidden;` to your elements in CSS and then use GSAP's autoAlpha property to show it (or animate it in) when the page loads. autoAlpha affects opacity and visibility, changing it to visible when the opacity is greater than 0.
 
 </DetailsElement>
 
 </div>
 <div class="image">
 
-![flash of unstyled content](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/fouc.webp)
+```css
+/* first hide element in css */
+.example {
+	visibility: hidden;
+}
+```
+
+```js
+// then use autoAlpha in gsap
+gsap.to('.example', { autoAlpha: 1 });
+```
 
 </div>
 </div>
@@ -130,7 +179,24 @@ You don't need to put ScrollTriggers directly into animations (though that's pro
 </div>
 <div class="image">
 
-![gsap scrolltrigger](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/scrolltrigger.webp)
+```js
+// install with a package manager
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+```
+
+```js
+gsap.registerPlugin(ScrollTrigger);
+
+ScrollTrigger.create({
+	trigger: '.example',
+	start: 'top bottom',
+	end: 'bottom center',
+	onUpdate: (self) => {
+		console.log('Updated!');
+	}
+});
+```
 
 </div>
 </div>
@@ -151,9 +217,17 @@ To use the MorphSVG plugin, you can either use npm or use the cdn. Npm makes it 
 </div>
 <div class="image">
 
-![gsap morphsvg](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/morphsvg.webp)
+```js
+// install with a package manager
+import gsap from 'gsap';
+import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin';
 
-![install morphsvg](https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/morphsvg-install.webp)
+// converts a <rect> from the id original into a <path>
+MorphSVGPlugin.convertToPath('#original rect');
+
+// #new is what you want the shape to morph into
+gsap.to('#original', { morphSVG: '#new' });
+```
 
 </div>
 </div>

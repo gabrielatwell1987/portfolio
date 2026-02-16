@@ -1,6 +1,7 @@
 import adapter from '@sveltejs/adapter-cloudflare';
 // import adapter from '@sveltejs/adapter-auto';
 import { mdsvex } from 'mdsvex';
+import rehypePrettyCode from 'rehype-pretty-code';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -44,7 +45,26 @@ const config = {
 		}
 	},
 	extensions: ['.svelte', '.md', '.svx'],
-	preprocess: [mdsvex({ extensions: ['.md', '.svx'] })],
+	preprocess: [
+		mdsvex({
+			extensions: ['.md', '.svx'],
+			rehypePlugins: [
+				[
+					rehypePrettyCode,
+					{
+						theme: {
+							dark: 'github-dark',
+							light: 'github-light'
+						},
+						defaultLang: {
+							block: 'plaintext',
+							inline: 'plaintext'
+						}
+					}
+				]
+			]
+		})
+	],
 	prerender: { entries: ['/photos'] }
 };
 

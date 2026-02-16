@@ -120,7 +120,6 @@
 		}
 	}
 
-	/* images within grid sections */
 	& .image img {
 		display: block;
 		max-inline-size: 100%;
@@ -160,7 +159,7 @@ div[id] {
 	border-radius: var(--radius);
 	font-family: var(--mono);
 	font-size: clamp(var(--xs), 1.5vw, var(--h6));
-	font-weight: 600;
+	font-weight: 700;
 	box-shadow: 4px 4px 0 var(--clr-gray);
 
 	@media (max-width: 768px) {
@@ -168,30 +167,59 @@ div[id] {
 	}
 }
 
-/* multiline code */
-.css pre code,
-.gsap pre code {
-	background-color: var(--clr-main);
-	color: var(--clr-invert);
-	display: block;
-	padding: 1em;
-	border-radius: var(--radius);
-	overflow-x: auto;
-	font-family: var(--mono);
-	font-size: clamp(var(--xs), 1.5vw, var(--h6));
-	font-weight: 500;
-	line-height: 1.4;
-	box-shadow: 0 4px 1px var(--clr-gray);
-
-	@media (max-width: 768px) {
-		box-shadow: 0 2px 1px var(--clr-gray);
-	}
-}
-
 .css pre,
 .gsap pre {
 	margin: 1rem 0;
 	padding: 0;
+	max-inline-size: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+	margin: 1rem 0;
+	padding: 0;
+}
+
+.css :not(pre) > code,
+.gsap :not(pre) > code {
+	background-color: var(--clr-main);
+	color: var(--clr-invert);
+}
+
+.css pre code,
+.gsap pre code {
+	background-color: transparent;
+	color: inherit;
+	display: block;
+	padding: 1em;
+	border: 3px solid var(--clr-main);
+	border-radius: var(--radius);
+	overflow-x: auto;
+	font-family: var(--mono);
+	font-size: clamp(var(--xs), 1.5vw, var(--h6));
+	font-weight: 700;
+	line-height: 1.4;
+	box-shadow: 0 4px 1px var(--clr-gray);
+
+	box-sizing: border-box;
+	max-inline-size: 100%;
+	white-space: pre;
+	word-break: normal;
+	overflow-wrap: normal;
+
+	@media (max-width: 768px) {
+		box-shadow: 0 2px 1px var(--clr-gray);
+		white-space: pre-wrap;
+		word-break: break-word;
+		padding: 0.75rem;
+	}
+}
+
+.css .shiki,
+.css .shiki span,
+.gsap .shiki,
+.gsap .shiki span {
+	color: var(--shiki-light) !important;
+	background-color: var(--shiki-light-bg) !important;
 }
 
 @media (max-width: 768px) {
@@ -203,5 +231,15 @@ div[id] {
 	html body h2,
 	div[id] {
 		scroll-margin-top: 1rem;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.css .shiki,
+	.css .shiki span,
+	.gsap .shiki,
+	.gsap .shiki span {
+		color: var(--shiki-dark) !important;
+		background-color: var(--shiki-dark-bg) !important;
 	}
 }
