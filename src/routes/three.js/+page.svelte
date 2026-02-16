@@ -11,7 +11,7 @@
 	let SelectedComponent: Component<any, any, any> | null = $state(null);
 
 	$effect(() => {
-		if (selectedComponent === 'HandParticles') {
+		if (selectedComponent === 'PictureParticles') {
 			import('$lib/threejs/cursor/CursorImage.svelte').then(
 				(mod) => (SelectedComponent = mod.default)
 			);
@@ -46,7 +46,7 @@
 		<select bind:value={selectedComponent}>
 			<option value="Select" disabled>select a component</option>
 			<option value="Environment">environment mapping</option>
-			<option value="HandParticles">hand particles</option>
+			<option value="PictureParticles">picture particles</option>
 			<option value="HeroCanvas">hero section</option>
 			<option value="PostProcess">post-processing</option>
 			<option value="Loader">loading bar</option>

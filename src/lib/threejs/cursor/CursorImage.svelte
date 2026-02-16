@@ -123,7 +123,8 @@
 
 		// glow image
 		displacement.glowImage = new Image();
-		displacement.glowImage.src = '/threejayess/glow.webp';
+		displacement.glowImage.src =
+			'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/glow.webp';
 
 		// interactive plane
 		displacement.interactivePlane = new Mesh(
@@ -173,7 +174,12 @@
 				uResolution: new Uniform(
 					new Vector2(sizes.width * sizes.pixelRatio, sizes.height * sizes.pixelRatio)
 				),
-				uPictureTexture: new Uniform(textureLoader.load('/threejayess/hand.webp')),
+				uPictureTexture: new Uniform(
+					textureLoader.load(
+						'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/gabe2.webp'
+					)
+				),
+				// uPictureTexture: new Uniform(textureLoader.load('/threejayess/hand.webp')),
 				uDisplacementTexture: new Uniform(displacement.texture)
 			}
 		});

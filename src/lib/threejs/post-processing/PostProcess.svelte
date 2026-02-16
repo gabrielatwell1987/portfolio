@@ -268,7 +268,7 @@
 		};
 		const displacementPass = new ShaderPass(DisplacementShader);
 		displacementPass.material.uniforms.uNormalMap.value = textureLoader.load(
-			'/threejayess/interfaceNormalMap.webp'
+			'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/interfaceNormalMap.webp'
 		);
 		effectComposer.addPass(displacementPass);
 		displacementPass.enabled = false;
