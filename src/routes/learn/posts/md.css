@@ -87,6 +87,19 @@
 	scroll-margin-top: 8rem; /* Account for fixed navigation */
 }
 
+.css h3,
+.gsap h3 {
+	font-family: var(--bronova);
+	font-size: clamp(1.25rem, 1.75vw, 2rem);
+	font-weight: 900;
+	color: oklch(from var(--clr-green) 0.35 c h);
+	letter-spacing: -1px;
+	margin-block: 2rem;
+	text-shadow: 0 0 3px var(--dark-gray);
+	text-transform: lowercase;
+	scroll-margin-top: 8rem;
+}
+
 /* layout for sections */
 .grid-section {
 	display: grid;
@@ -156,15 +169,11 @@ div[id] {
 	background-color: var(--clr-main);
 	color: var(--clr-invert);
 	padding: 0.2em 0.4em;
+	border: 1px solid var(--clr-light-gray);
 	border-radius: var(--radius);
 	font-family: var(--mono);
 	font-size: clamp(var(--xs), 1.5vw, var(--h6));
 	font-weight: 700;
-	box-shadow: 4px 4px 0 var(--clr-gray);
-
-	@media (max-width: 768px) {
-		box-shadow: 2px 2px 0 var(--clr-gray);
-	}
 }
 
 .css pre,

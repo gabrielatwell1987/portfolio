@@ -14,6 +14,7 @@
 			<dd><a href="#calc">Calc</a></dd>
 			<dd><a href="#details">Details</a></dd>
 			<dd><a href="#view">View Transitions</a></dd>
+			<dd><a href="#anchor">Anchor Positioning</a></dd>
 		</dl>
 	</div>
 

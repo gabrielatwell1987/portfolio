@@ -168,6 +168,84 @@ The example: `::view-transition-old(root), ::view-transition-new(root)` examples
 </div>
 </div>
 
+---
+
+<div class="grid-section" id="anchor">
+<div class="content">
+
+## anchor positioning
+
+CSS anchor positioning provides a way to position an element relative to another element. Here are the steps to use anchor positioning:
+Step one: Make an anchor that another element can position to.. and step two: position an element to that anchor.
+
+### make an anchor
+
+To make an element an anchor, you give it an anchor-name value of any string that starts with two dashes. This is the identifier that the positioned element will use to find its anchor. The more descriptive the name is, the better. You can even give an element multiple anchor names, if it will be used as an anchor in different ways.
+
+```css
+#anchor {
+	anchor-name: --example-anchor;
+}
+```
+
+### position an element to the anchor
+
+You will need to set a few properties on the positioned element.. You need to pull the element out of the document's flow by setting position: absolute or position: fixed to it. Next, you need to set which anchor you want to tether to, by setting position-anchor to the anchor name you set on the anchor. Finally, you'll need to set how to position the anchor. You'll learn more about position-area later in this module.
+
+```css
+#positioned-element {
+	position: absolute;
+	position-anchor: --example-anchor;
+	top: anchor(bottom);
+}
+```
+
+### scoping the anchors
+
+The anchor-scope property sets which anchor names will be matched only among an element and its descendants. It accepts a list of one or more anchor names or the keyword all to limit the scope of all defined anchor names.
+
+An anchor-scope is ideally added to an ancestor of both the positioned element and anchor element that does not contain other anchor elements with the same name. Often, this is on the reusable component's root.
+
+If you’re using anchor-scope, verify that both the anchor and positioned element are descendants of the element with the anchor-scope rule, or if the anchor itself has the anchor-scope rule, that the positioned element is a descendant of the anchor.
+
+### certain debugging tips
+
+If it seems like the anchor positioning isn't working (if your positioned element is in the top left corner of the anchor), what I've learned is the anchor and positioned element have to be siblings, there should be no parent/child relationship. If the anchor element is a parent to the positioned element anchor positioning will not work.
+
+### valid pseudo-elements
+
+The valid pseudo-elements are `::before`, `::after` and `::file-selector-button`.
+
+</div>
+<div class="image long">
+
+```html
+<section>
+	<div id="anchor"></div>
+	<div id="positionedElement"></div>
+</section>
+```
+
+```css
+section {
+	position: relative;
+	anchor-scope: --anchor;
+
+	& #anchor {
+		anchor-name: --anchor;
+	}
+
+	& #positionedElement {
+		position: absolute;
+		position-anchor: --anchor;
+		bottom: anchor(top);
+	}
+}
+```
+
+</div>
+</div>
+
 <script>
 	import './md.css';
 </script>
