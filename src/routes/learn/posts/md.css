@@ -166,7 +166,7 @@ div[id] {
 /* one inline code */
 .css code,
 .gsap code {
-	background-color: var(--clr-main);
+	background-color: var(--clr-light-invert);
 	color: var(--clr-invert);
 	padding: 0.2em 0.4em;
 	border: 1px solid var(--clr-light-gray);
