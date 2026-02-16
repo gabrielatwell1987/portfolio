@@ -173,7 +173,7 @@ The example: `::view-transition-old(root), ::view-transition-new(root)` examples
 <div class="grid-section" id="anchor">
 <div class="content">
 
-## anchor positioning
+## anchor positions
 
 CSS anchor positioning provides a way to position an element relative to another element. Here are the steps to use anchor positioning:
 Step one: Make an anchor that another element can position to.. and step two: position an element to that anchor.
