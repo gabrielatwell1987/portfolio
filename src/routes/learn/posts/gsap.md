@@ -77,7 +77,8 @@ Timelines makes sequencing multiple tweens really easy and faster to code, in th
 ```js
 const tl = gsap.timeline();
 
-tl.to('.red', { x: 100, duration: 2 }).to('.blue', { y: 300, duration: 1 });
+tl.to('.red', { x: 100, duration: 2 });
+tl.to('.blue', { y: 300, duration: 1 }, '+=300');
 ```
 
 </div>
