@@ -397,7 +397,7 @@
 
 			& .hero-title {
 				font-family: var(--ultra);
-				font-size: clamp(var(--h4), 5vw, var(--xxl));
+				font-size: clamp(var(--h3), 7vw, var(--xxl));
 				font-weight: 700;
 				color: var(--clr-invert);
 				text-shadow:
