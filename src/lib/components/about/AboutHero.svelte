@@ -94,10 +94,10 @@
 
 		& #title {
 			margin-top: -1.2em;
-			font-size: clamp(var(--h3), 6vw, var(--xxl));
-			font-weight: 700;
 			text-shadow: 0 0 5px var(--smoke);
 			font-family: var(--ultra);
+			font-size: clamp(var(--h2), 8vw, var(--xxxl));
+			font-weight: 700;
 			letter-spacing: -1px;
 			color: var(--clr-invert);
 			text-shadow:

@@ -46,6 +46,7 @@
 		--base-size: 1.2rem;
 		--scale: 1.2;
 		--radius: 5px;
+		--xxxl: calc(var(--xxl) * var(--scale) * var(--scale));
 		--xxl: calc(var(--xl) * var(--scale) * var(--scale));
 		--xl: calc(var(--h1) * var(--scale) * var(--scale));
 		--lg: calc(var(--h1) * var(--scale));
