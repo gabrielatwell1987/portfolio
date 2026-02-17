@@ -84,7 +84,7 @@
 
 		.text-title {
 			font-family: var(--ultra);
-			font-size: clamp(var(--h3), 10.5vw, 15rem);
+			font-size: clamp(var(--h2), 11vw, 18rem);
 			letter-spacing: -1px;
 			text-transform: uppercase;
 			font-kerning: none;

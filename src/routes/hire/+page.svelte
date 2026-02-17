@@ -12,9 +12,9 @@
 
 <div class="hire-form">
 	<Heading
-		title="connect"
-		title2="connect"
-		viewTransitionName="connect-heading"
+		title="employ"
+		title2="employ"
+		viewTransitionName="employ-heading"
 		popoverText="Please fill out this questionnaire and I'll contact you back 😎"
 	/>
 
