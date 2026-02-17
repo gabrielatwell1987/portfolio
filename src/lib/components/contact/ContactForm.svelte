@@ -33,6 +33,7 @@
 
 		<div class="form-group">
 			<label for="name">name</label>
+
 			<input
 				type="text"
 				id="name"
@@ -48,6 +49,7 @@
 
 		<div class="form-group">
 			<label for="email">email</label>
+
 			<input
 				type="email"
 				id="email"
@@ -63,6 +65,7 @@
 
 		<div class="form-group">
 			<label for="message">message</label>
+
 			<textarea
 				id="message"
 				name="message"
@@ -127,8 +130,8 @@
 
 		@media screen and (width >= 1024px) {
 			fieldset {
-				border: 5px solid var(--white);
-				border-image: linear-gradient(75deg, var(--clr-gray), var(--clr-invert)) 1;
+				border: 5px solid oklch(from var(--clr-main) 0.35 c h);
+
 				font-weight: bolder;
 				padding: 2rem 5rem;
 				border-radius: 10px;
@@ -158,7 +161,7 @@
 
 		& legend {
 			font-family: var(--bronova);
-			font-size: clamp(var(--h6), 3vw, var(--xxl));
+			font-size: clamp(var(--h6), 3.75vw, var(--xl));
 			font-weight: 800;
 			letter-spacing: 1px;
 			color: var(--clr-main);
@@ -174,16 +177,15 @@
 		& .form-group {
 			display: flex;
 			flex-direction: column;
-			width: 100%;
-			/* position: relative; */
+			inline-size: 100%;
 
 			& label {
 				transform: translate(20px, 5px);
 				background-color: transparent;
-				width: fit-content;
-				padding: 0 0.5rem;
+				inline-size: fit-content;
+				padding: 0;
 				font-family: var(--bronova);
-				font-size: clamp(var(--h6), 1.5vw, var(--h3));
+				font-size: clamp(var(--h6), 1.75vw, var(--h3));
 				font-weight: 500;
 				z-index: 5;
 				border-radius: var(--radius);
@@ -198,10 +200,6 @@
 
 				&::before {
 					content: '';
-					/* position: absolute; */
-					/* top: 50%; */
-					/* left: -4px; */
-					/* right: -4px; */
 					block-size: 2rem;
 					background-color: var(--label-bg);
 					color: var(--clr-inputs);
@@ -268,7 +266,7 @@
 			& textarea {
 				padding: 0.5rem 1rem;
 				resize: vertical;
-				min-height: 120px;
+				min-block-size: 120px;
 
 				&:placeholder-shown {
 					letter-spacing: 0px;

@@ -138,8 +138,8 @@
 			padding: var(--space);
 			margin: 0;
 			cursor: pointer;
-			width: fit-content;
-			height: auto;
+			inline-size: fit-content;
+			block-size: auto;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -201,7 +201,7 @@
 				}
 
 				& .bento-item {
-					width: 100%;
+					inline-size: 100%;
 					background-color: var(--surface-2);
 					background-image: var(--gradient);
 					text-decoration: none;
@@ -209,7 +209,7 @@
 					flex-direction: column;
 					justify-content: center;
 					align-items: center;
-					padding-bottom: 1em;
+					padding-block-end: 1em;
 					border: 2px solid var(--clr-main);
 					border-radius: var(--radius);
 					transition:
@@ -238,12 +238,12 @@
 						flex-direction: column;
 						justify-content: center;
 						align-items: center;
-						width: 100%;
+						inline-size: 100%;
 					}
 
 					& h2 {
 						font-family: var(--bronova-bold);
-						font-size: clamp(var(--h5), 3vw, var(--h3));
+						font-size: clamp(var(--h4), 3vw, var(--h2));
 						font-weight: 900;
 						letter-spacing: -1px;
 						margin-bottom: 1rem;
