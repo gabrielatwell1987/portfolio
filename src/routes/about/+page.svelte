@@ -208,6 +208,7 @@
 					color: var(--clr-main);
 					text-align: start;
 					margin-bottom: 0;
+					text-wrap: pretty;
 
 					@media screen and (width >= 990px) {
 						max-inline-size: 90%;
@@ -219,8 +220,6 @@
 					}
 
 					&[data-left] {
-						text-wrap: pretty;
-
 						@media (width <= 768px) {
 							margin-bottom: 1.5em;
 						}

@@ -241,6 +241,10 @@ div[id] {
 	div[id] {
 		scroll-margin-top: 1rem;
 	}
+
+	#anchor {
+		margin-top: 1em;
+	}
 }
 
 @media (prefers-color-scheme: dark) {
