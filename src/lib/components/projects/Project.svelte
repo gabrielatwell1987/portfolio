@@ -38,7 +38,7 @@
 			loading="lazy"
 		/>
 
-		<span class="desc-banner" aria-hidden="true">made with {description}</span>
+		<span class="description" aria-hidden="true">made with {description}</span>
 	</a>
 
 	<a href={url} target="_blank" class="title-link">
@@ -56,9 +56,7 @@
 	}
 
 	.project-card {
-		margin-bottom: clamp(0.5rem, 1.5vw, 0.25rem);
-		padding: clamp(0.5em, 1.5vw, 1.5em) clamp(1em, 1.5vw, 2em);
-		height: auto;
+		block-size: auto;
 		border: 2px solid var(--clr-gray);
 		border-radius: 1em 1em var(--radius) var(--radius);
 		will-change: opacity, transform;
@@ -116,6 +114,8 @@
 					0 3px 0 var(--clr-main);
 
 				@media (width <= 768px) {
+					margin-top: 1em;
+
 					text-shadow:
 						0 0 1px var(--clr-invert),
 						-2px -2px 0 var(--clr-main),
@@ -142,10 +142,9 @@
 			justify-content: center;
 			align-items: center;
 			margin-inline: auto;
-			width: fit-content;
+			inline-size: fit-content;
 			transition: all 0.35s;
 			background-color: transparent;
-			position: relative;
 			cursor: pointer;
 			touch-action: manipulation;
 			text-decoration: none;
@@ -154,13 +153,15 @@
 			touch-action: manipulation;
 			z-index: 200;
 
+			position: relative;
+
 			@media (width >= 768px) {
-				img:hover {
+				& img:hover {
 					transition: scale 0.25s ease;
 				}
 
-				& .desc-banner {
-					width: 80%;
+				& .description {
+					inline-size: 80%;
 				}
 			}
 
@@ -168,8 +169,8 @@
 				padding: 2rem;
 				flex-basis: var(--100);
 
-				& .desc-banner {
-					width: 100%;
+				& .description {
+					inline-size: 100%;
 				}
 			}
 
@@ -180,8 +181,8 @@
 			}
 
 			& .project-image {
-				width: clamp(300px, 20vw, 400px);
-				height: auto;
+				inline-size: 100vw;
+				block-size: auto;
 				border-radius: var(--radius);
 				max-inline-size: var(--100);
 				transition: scale 0.25s ease-out;
@@ -189,16 +190,18 @@
 				padding: 0.2vw;
 				position: relative;
 				margin: 0;
+				object-fit: cover;
+
+				anchor-name: --project-image;
+
+				&:hover ~ .description {
+					visibility: visible;
+					opacity: 1;
+					pointer-events: auto;
+				}
 
 				&:hover {
 					filter: blur(1px) brightness(0.75);
-				}
-
-				&:hover + .desc-banner {
-					visibility: visible;
-					opacity: 1;
-					transition: all 0.25s;
-					pointer-events: auto;
 				}
 
 				&:active {
@@ -206,12 +209,9 @@
 				}
 			}
 
-			& .desc-banner {
+			& .description {
 				visibility: hidden;
 				opacity: 0;
-				position: absolute;
-				bottom: 1em;
-				width: 100%;
 				background-color: var(--clr-main);
 				color: var(--clr-invert);
 				text-align: center;
@@ -222,12 +222,28 @@
 				font-size: clamp(var(--sm), 1.15vw, var(--h5));
 				font-weight: 600;
 				margin-inline: auto;
-				transition: all 1s;
+				transition: all 0.25s ease-out;
 				text-transform: lowercase;
 				pointer-events: none;
-				position: relative;
-				margin-top: 0;
+				z-index: 10;
+
+				position: absolute;
+				position-anchor: --project-image;
+				top: anchor(bottom);
+				left: anchor(center);
+				transform: translateX(-50%);
 			}
+		}
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
 		}
 	}
 

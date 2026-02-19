@@ -159,6 +159,7 @@
 			margin: 0;
 			padding: 0.25rem 1rem;
 			cursor: pointer;
+			text-wrap: pretty;
 			border: none;
 
 			&:not(:hover) {

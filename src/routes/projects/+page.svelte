@@ -25,6 +25,7 @@
 		isNavigating = true;
 	});
 
+	// load project component with a slight delayaway
 	$effect(() => {
 		if (isNavigating) return;
 
@@ -84,7 +85,7 @@
 	/>
 
 	<section class="github-section">
-		<div class="project-container">
+		<div class="contribution-container">
 			{#if contributions}
 				<GithubContributions {contributions} />
 			{:else}
@@ -107,6 +108,7 @@
 
 				<div class="wholeProject">
 					<ProjectComponent {...project} hasBorder={false} />
+
 					{#if testimonial}
 						<Testimonial
 							name={testimonial.name}
@@ -141,7 +143,7 @@
 			min-height: 250px;
 		}
 
-		& .project-container {
+		& .contribution-container {
 			max-inline-size: 1200px;
 			margin: 0 auto;
 			text-align: center;
@@ -206,14 +208,10 @@
 			grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 			place-items: center;
 			padding: 2rem;
-			margin-bottom: 0;
-
-			@media (width <= 768px) {
-				margin: 0;
-			}
+			margin: 0;
 
 			@media (width <= 500px) {
-				padding: 4em 0;
+				padding: 2em 0;
 				grid-template-columns: 1fr;
 			}
 
@@ -224,13 +222,15 @@
 				align-items: center;
 				gap: 0.25rem;
 				border: 2px solid var(--clr-gray);
-				border-radius: 1em 1em var(--radius) var(--radius);
+				border-radius: var(--radius);
 				will-change: opacity, transform;
 				margin-bottom: 1em;
+				padding: 1em 0 0.5em 0;
 
 				@media (width <= 768px) {
 					margin: 0.5rem;
-					margin-bottom: 2em;
+					margin-bottom: 1.5em;
+					padding: 0.25 0;
 				}
 			}
 
