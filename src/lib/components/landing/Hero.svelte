@@ -31,10 +31,12 @@
 	);
 	let showContent = $state<boolean>(false);
 	let particles = $state<Particle[]>([]);
+
 	interface Props {
 		cssBg?: boolean;
 	}
-	let { cssBg }: Props = $props();
+
+	let { cssBg = false }: Props = $props();
 
 	function getWordChars(wordIndex: number) {
 		let charIndex = 0;
