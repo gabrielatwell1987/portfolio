@@ -1,3 +1,13 @@
+interface ContributionDay {
+	date: string;
+	contributionCount: number;
+	color: string;
+}
+
+interface Week {
+	contributionDays: ContributionDay[];
+}
+
 export const CELL_SIZE = 17;
 export const CELL_GAP = 5;
 export const DAYS_IN_WEEK = 7;
@@ -56,16 +66,6 @@ export function formatDate(dateString: string): string {
 
 export function getContributionText(count: number): string {
 	return count === 1 ? 'contribution' : 'contributions';
-}
-
-interface ContributionDay {
-	date: string;
-	contributionCount: number;
-	color: string;
-}
-
-interface Week {
-	contributionDays: ContributionDay[];
 }
 
 export function generateFallbackData() {

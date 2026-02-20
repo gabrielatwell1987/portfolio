@@ -1,48 +1,22 @@
 <script lang="ts">
 	import {
-		CELL_SIZE,
-		CELL_GAP,
-		GRID_HEIGHT,
-		MONTH_LABEL_HEIGHT,
-		DAY_LABEL_WIDTH,
-		MONTHS,
 		DAYS,
 		DAY_INDICES,
-		MOBILE_CELL_SIZE,
-		MOBILE_CELL_GAP,
-		MOBILE_GRID_HEIGHT,
-		MOBILE_MONTH_LABEL_HEIGHT,
-		MOBILE_DAY_LABEL_WIDTH,
 		getContributionLevel,
 		formatDate,
 		getContributionText
 	} from './githubContributions';
 
-	interface ContributionDay {
-		contributionCount: number;
-		date: string;
-	}
-
-	interface Week {
-		contributionDays: ContributionDay[];
-	}
-
-	interface ContributionsData {
-		weeks: Week[];
-		totalContributions: number;
-	}
-
-	interface MobileTooltip {
-		visible: boolean;
-		x: number;
-		y: number;
-		content: string;
-		date: string;
-	}
-
-	interface ContributionWeek {
-		contributionDays: ContributionDay[];
-	}
+	import {
+		type ContributionDay,
+		type ContributionsData,
+		handleDayTouch as touchDay,
+		handleDayKeydown as keydownDay,
+		getCurrentDimensions,
+		getMonthPositions,
+		getTotalWidth,
+		type MobileTooltip
+	} from './contributions.svelte';
 
 	let { contributions = $bindable<ContributionsData | null>(null) } = $props();
 	let contributionsData = $derived(contributions ? { weeks: contributions.weeks } : { weeks: [] });
@@ -57,39 +31,23 @@
 		date: ''
 	});
 	let announcement = $state<string>('');
+	let dimensions = $derived(getCurrentDimensions(isSmallContainer));
+	let monthPositions = $derived(getMonthPositions(contributionsData, isSmallContainer));
+	let totalWidth = $derived(getTotalWidth(contributionsData, isSmallContainer));
+
+	const setMobileTooltip = (tooltip: typeof mobileTooltip) => (mobileTooltip = tooltip);
+	const setAnnouncement = (text: string) => (announcement = text);
 
 	function handleDayTouch(event: Event, day: ContributionDay): void {
-		// Announce to screen readers
-		announcement = `${day.contributionCount} ${getContributionText(day.contributionCount)} on ${formatDate(day.date)}`;
-
-		// On smaller containers, show custom tooltip; on larger containers, let native title work
-		if (isSmallContainer) {
-			event.preventDefault();
-			event.stopPropagation();
-
-			const rect = (event.target as HTMLElement).getBoundingClientRect();
-			const containerRect = containerElement!.getBoundingClientRect();
-
-			// Calculate position relative to the container
-			const x = rect.left + rect.width / 2 - containerRect.left;
-			const y = rect.top - containerRect.top - 40; // Move tooltip higher
-
-			mobileTooltip = {
-				visible: true,
-				x: Math.max(50, Math.min(x, containerRect.width - 50)), // Keep within bounds
-				y: Math.max(10, y), // Keep above minimum
-				content: `${day.contributionCount} ${getContributionText(day.contributionCount)}`,
-				date: formatDate(day.date)
-			};
-
-			// Hide tooltip after 3 seconds
-			setTimeout(() => {
-				if (mobileTooltip.visible) {
-					mobileTooltip.visible = false;
-				}
-			}, 3000);
-		}
-		// On larger containers, don't prevent default to allow native title tooltips
+		touchDay(
+			event,
+			day,
+			isSmallContainer,
+			containerElement,
+			mobileTooltip,
+			setMobileTooltip,
+			setAnnouncement
+		);
 	}
 
 	function handleDayKeydown(
@@ -98,100 +56,12 @@
 		weekIndex: number,
 		dayIndex: number
 	): void {
-		const { key } = event;
-
-		// Handle activation keys
-		if (key === 'Enter' || key === ' ') {
+		if (event.key === 'Enter' || event.key === ' ') {
 			event.preventDefault();
 			handleDayTouch(event, day);
 			return;
 		}
-
-		// Handle arrow key navigation
-		if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(key)) {
-			event.preventDefault();
-
-			let newWeekIndex = weekIndex;
-			let newDayIndex = dayIndex;
-
-			switch (key) {
-				case 'ArrowLeft':
-					newWeekIndex = Math.max(0, weekIndex - 1);
-					break;
-				case 'ArrowRight':
-					newWeekIndex = Math.min(contributionsData.weeks.length - 1, weekIndex + 1);
-					break;
-				case 'ArrowUp':
-					newDayIndex = Math.max(0, dayIndex - 1);
-					break;
-				case 'ArrowDown':
-					newDayIndex = Math.min(6, dayIndex + 1);
-					break;
-			}
-
-			// Find and focus the target element
-			const targetSelector = `[data-week="${newWeekIndex}"][data-day="${newDayIndex}"]`;
-			const targetElement = document.querySelector(targetSelector) as HTMLElement;
-			if (targetElement) {
-				targetElement.focus();
-			}
-		}
-	}
-
-	function getCurrentDimensions(): {
-		cellSize: number;
-		cellGap: number;
-		gridHeight: number;
-		monthLabelHeight: number;
-		dayLabelWidth: number;
-	} {
-		return {
-			cellSize: isSmallContainer ? MOBILE_CELL_SIZE : CELL_SIZE,
-			cellGap: isSmallContainer ? MOBILE_CELL_GAP : CELL_GAP,
-			gridHeight: isSmallContainer ? MOBILE_GRID_HEIGHT : GRID_HEIGHT,
-			monthLabelHeight: isSmallContainer ? MOBILE_MONTH_LABEL_HEIGHT : MONTH_LABEL_HEIGHT,
-			dayLabelWidth: isSmallContainer ? MOBILE_DAY_LABEL_WIDTH : DAY_LABEL_WIDTH
-		};
-	}
-
-	function getMonthPositions(): { name: string; x: number }[] {
-		const months: { name: string; x: number }[] = [];
-		const { cellSize, cellGap, dayLabelWidth } = getCurrentDimensions();
-		let currentMonth = -1;
-		let weekIndex = 0;
-		let lastLabelX = -100;
-
-		contributionsData.weeks.forEach((week: ContributionWeek, index: number) => {
-			if (week.contributionDays.length > 0) {
-				// Parse the date string (YYYY-MM-DD) to avoid timezone issues
-				const dateString = week.contributionDays[0].date;
-				const [year, month, day] = dateString.split('-').map(Number);
-				const firstDay = new Date(year, month - 1, day); // month is 0-indexed
-				const monthIndex = firstDay.getMonth();
-
-				if (monthIndex !== currentMonth) {
-					const proposedX = weekIndex * (cellSize + cellGap) + dayLabelWidth;
-					const minSpacing = 60;
-					const actualX = Math.max(proposedX, lastLabelX + minSpacing);
-
-					months.push({
-						name: MONTHS[monthIndex],
-						x: actualX
-					});
-
-					currentMonth = monthIndex;
-					lastLabelX = actualX;
-				}
-				weekIndex++;
-			}
-		});
-
-		return months;
-	}
-
-	function getTotalWidth(): number {
-		const { cellSize, cellGap, dayLabelWidth } = getCurrentDimensions();
-		return dayLabelWidth + contributionsData.weeks.length * (cellSize + cellGap);
+		keydownDay(event, day, weekIndex, dayIndex, contributionsData);
 	}
 
 	$effect(() => {
@@ -292,8 +162,8 @@
 
 			<div class="calendar-svg-wrapper">
 				<svg
-					width={getTotalWidth()}
-					height={getCurrentDimensions().monthLabelHeight + getCurrentDimensions().gridHeight}
+					width={totalWidth}
+					height={dimensions.monthLabelHeight + dimensions.gridHeight}
 					class="contributions-svg"
 					role="img"
 					aria-labelledby="contributions-title"
@@ -307,7 +177,7 @@
 					</desc>
 					<!-- month -->
 					<g role="group" aria-label="Month labels">
-						{#each getMonthPositions() as month}
+						{#each monthPositions as month}
 							<text
 								x={month.x}
 								y={isSmallContainer ? 12 : 15}
@@ -323,11 +193,10 @@
 					<g role="group" aria-label="Day labels">
 						{#each DAYS as day, i}
 							<text
-								x={getCurrentDimensions().dayLabelWidth - 5}
-								y={getCurrentDimensions().monthLabelHeight +
-									DAY_INDICES[i] *
-										(getCurrentDimensions().cellSize + getCurrentDimensions().cellGap) +
-									getCurrentDimensions().cellSize / 2 +
+								x={dimensions.dayLabelWidth - 5}
+								y={dimensions.monthLabelHeight +
+									DAY_INDICES[i] * (dimensions.cellSize + dimensions.cellGap) +
+									dimensions.cellSize / 2 +
 									4}
 								class="day-label"
 								text-anchor="end"
@@ -342,12 +211,12 @@
 						{#each contributionsData.weeks as week, weekIndex}
 							{#each week.contributionDays as day, dayIndex}
 								<rect
-									x={getCurrentDimensions().dayLabelWidth +
-										weekIndex * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap)}
-									y={getCurrentDimensions().monthLabelHeight +
-										dayIndex * (getCurrentDimensions().cellSize + getCurrentDimensions().cellGap)}
-									width={getCurrentDimensions().cellSize}
-									height={getCurrentDimensions().cellSize}
+									x={dimensions.dayLabelWidth +
+										weekIndex * (dimensions.cellSize + dimensions.cellGap)}
+									y={dimensions.monthLabelHeight +
+										dayIndex * (dimensions.cellSize + dimensions.cellGap)}
+									width={dimensions.cellSize}
+									height={dimensions.cellSize}
 									rx={isSmallContainer ? '1' : '2'}
 									class="contribution-day {getContributionLevel(day.contributionCount)}"
 									data-count={day.contributionCount}
