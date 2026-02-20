@@ -77,6 +77,7 @@
 		display: inline-block;
 		margin-inline: auto;
 		pointer-events: auto;
+		margin-bottom: 0;
 
 		&:focus-visible {
 			outline: 1px solid var(--clr-main);

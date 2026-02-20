@@ -221,7 +221,6 @@
 				justify-content: center;
 				align-items: center;
 				gap: 0.25rem;
-				border: 2px solid var(--clr-gray);
 				border-radius: var(--radius);
 				will-change: opacity, transform;
 				margin-bottom: 1em;

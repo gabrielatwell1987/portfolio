@@ -38,7 +38,9 @@
 			loading="lazy"
 		/>
 
-		<span class="description" aria-hidden="true">made with {description}</span>
+		<span class="description" aria-hidden="true"
+			>made with <span class="description-title">{description}</span></span
+		>
 	</a>
 
 	<a href={url} target="_blank" class="title-link">
@@ -210,6 +212,7 @@
 			}
 
 			& .description {
+				inline-size: fit-content;
 				visibility: hidden;
 				opacity: 0;
 				background-color: var(--clr-main);
@@ -217,10 +220,10 @@
 				text-align: center;
 				border: 1px solid var(--clr-invert);
 				border-radius: var(--radius);
-				padding: 5px 3px;
+				padding: 5px 1em;
 				font-family: var(--bronova);
 				font-size: clamp(var(--sm), 1.15vw, var(--h5));
-				font-weight: 600;
+				font-weight: 400;
 				margin-inline: auto;
 				transition: all 0.25s ease-out;
 				text-transform: lowercase;
@@ -232,6 +235,11 @@
 				top: anchor(bottom);
 				left: anchor(center);
 				transform: translateX(-50%);
+
+				& .description-title {
+					font-family: var(--bronova-bold);
+					/* text-transform: uppercase; */
+				}
 			}
 		}
 	}
