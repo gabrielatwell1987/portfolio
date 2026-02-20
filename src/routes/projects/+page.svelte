@@ -6,7 +6,7 @@
 	import projects from '$lib/components/projects/projects.json';
 	import testimonials from '$lib/components/projects/testimonials.json';
 	import SEO from '$lib/data/SEO.svelte';
-	import GithubContributions from '$lib/components/projects/GithubContributions.svelte';
+	import GithubContributions from '$lib/components/projects/contributions/GithubContributions.svelte';
 	import Heading from '$lib/components/layout/Heading.svelte';
 
 	let { data } = $props();
@@ -25,7 +25,7 @@
 		isNavigating = true;
 	});
 
-	// load project component with a slight delayaway
+	// load project component with a slight delay
 	$effect(() => {
 		if (isNavigating) return;
 
