@@ -208,7 +208,7 @@ An anchor-scope is ideally added to an ancestor of both the positioned element a
 
 If you’re using anchor-scope, verify that both the anchor and positioned element are descendants of the element with the anchor-scope rule, or if the anchor itself has the anchor-scope rule, that the positioned element is a descendant of the anchor.
 
-### certain debugging tips
+### debugging tips
 
 If it seems like the anchor positioning isn't working (if your positioned element is in the top left corner of the anchor), what I've learned is the anchor and positioned element have to be siblings, there should be no parent/child relationship. If the anchor element is a parent to the positioned element anchor positioning will not work.
 
