@@ -36,13 +36,13 @@ sw.addEventListener('fetch', (event: FetchEvent) => {
 
 	const url = new URL(event.request.url);
 
-	// bypass cloudflare analytics
-	const isCloudflareAnalytics =
-		url.hostname.endsWith('cloudflareinsights.com') ||
-		url.pathname.includes('beacon.min.js') ||
-		url.pathname.startsWith('/cdn-cgi/');
+	// // bypass cloudflare analytics
+	// const isCloudflareAnalytics =
+	// 	url.hostname.endsWith('cloudflareinsights.com') ||
+	// 	url.pathname.includes('beacon.min.js') ||
+	// 	url.pathname.startsWith('/cdn-cgi/');
 
-	if (isCloudflareAnalytics) return;
+	// if (isCloudflareAnalytics) return;
 
 	async function respond(): Promise<Response> {
 		const cache = await caches.open(CACHE);
