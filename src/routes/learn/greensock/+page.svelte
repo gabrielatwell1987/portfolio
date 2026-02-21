@@ -85,7 +85,7 @@
 					outline: none;
 					-webkit-appearance: none;
 					appearance: none;
-					overflow: hidden;
+					overflow: clip;
 					padding: 1rem;
 					inline-size: 100ch;
 

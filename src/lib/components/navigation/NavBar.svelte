@@ -134,7 +134,7 @@
 		right: 1em;
 		top: 3em;
 		z-index: 10;
-		overflow: hidden;
+		overflow: clip;
 		transform: scale(0.9);
 		transition:
 			opacity 0.3s ease-out,

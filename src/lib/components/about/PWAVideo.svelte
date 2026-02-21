@@ -121,7 +121,7 @@
 			margin-block: auto;
 			position: fixed;
 			inset: 0;
-			overflow: hidden;
+			overflow: clip;
 			color: var(--clr-main);
 
 			@media (width <= 768px) {
@@ -156,7 +156,7 @@
 			max-inline-size: 100%;
 			block-size: 0;
 			padding-bottom: 56.25%;
-			overflow: hidden;
+			overflow: clip;
 			border: 2px solid var(--dark-gray);
 			border-radius: var(--radius);
 

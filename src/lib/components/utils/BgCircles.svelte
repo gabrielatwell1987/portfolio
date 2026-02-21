@@ -54,7 +54,7 @@
 		height: 100vh;
 		pointer-events: none;
 		z-index: 1;
-		overflow: hidden;
+		overflow: clip;
 
 		& svg {
 			width: 100%;

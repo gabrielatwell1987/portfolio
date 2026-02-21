@@ -71,7 +71,7 @@
 	.slider-wrapper {
 		max-inline-size: 90vw;
 		inline-size: 100%;
-		overflow: hidden;
+		overflow: clip;
 		background-color: transparent;
 		padding: 2em 0;
 		position: relative;

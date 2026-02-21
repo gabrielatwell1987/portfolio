@@ -86,7 +86,7 @@
 		position: relative;
 		border: none;
 		outline: none;
-		overflow: hidden;
+		overflow: clip;
 		padding: 1rem;
 		inline-size: 100ch;
 

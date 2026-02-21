@@ -153,7 +153,7 @@
 				font-size: 0;
 				animation: fadeIn var(--animation-duration) ease-out forwards;
 				opacity: 0;
-				overflow: hidden;
+				overflow: clip;
 
 				&:focus-visible {
 					border: none;

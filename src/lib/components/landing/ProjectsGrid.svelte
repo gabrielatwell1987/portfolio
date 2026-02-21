@@ -42,7 +42,7 @@
 		& .project-card {
 			display: block;
 			position: relative;
-			overflow: hidden;
+			overflow: clip;
 
 			& img {
 				width: 100%;
@@ -59,7 +59,7 @@
 				position: absolute;
 				inset: 0;
 				background: rgba(0, 0, 0, 0.7);
-				overflow: hidden;
+				overflow: clip;
 
 				display: flex;
 				align-items: center;

@@ -41,7 +41,7 @@
 			max-inline-size: 1500px;
 			height: 0;
 			padding-bottom: 56.25%;
-			overflow: hidden;
+			overflow: clip;
 			border: 2px solid var(--dark-gray);
 			border-radius: var(--radius);
 

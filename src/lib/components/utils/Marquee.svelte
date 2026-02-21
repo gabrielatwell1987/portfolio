@@ -84,7 +84,7 @@
 		height: var(--marquee-height);
 		background-color: transparent;
 		color: var(--white);
-		overflow: hidden;
+		overflow: clip;
 		position: relative;
 		margin-inline: auto;
 

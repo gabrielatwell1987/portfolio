@@ -136,7 +136,7 @@
 				width: clamp(6em, 5vw, 6em);
 				height: clamp(6em, 5vw, 6em);
 				border-radius: 50%;
-				overflow: hidden;
+				overflow: clip;
 				flex-shrink: 0;
 				margin-bottom: 1em;
 

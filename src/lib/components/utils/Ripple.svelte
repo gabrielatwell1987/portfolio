@@ -14,7 +14,7 @@
 <style>
 	.rippleBtn {
 		position: relative;
-		overflow: hidden;
+		overflow: clip;
 		padding: 0.75rem 1rem;
 		font-family: var(--ultra);
 		font-size: clamp(1.2rem, 1.5vw, 2rem);

@@ -54,7 +54,7 @@
 		width: fit-content;
 		margin-inline: auto;
 		margin-top: 7em;
-		overflow: hidden;
+		overflow: clip;
 
 		& section {
 			& .h1 {

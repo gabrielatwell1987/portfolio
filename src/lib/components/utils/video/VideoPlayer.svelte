@@ -147,7 +147,7 @@
 			max-inline-size: 640px;
 			background-color: #242424;
 			border-radius: var(--radius);
-			overflow: hidden;
+			overflow: clip;
 			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 
 			& .video-element {

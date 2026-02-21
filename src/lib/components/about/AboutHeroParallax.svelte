@@ -42,7 +42,7 @@
 		position: relative;
 		inline-size: 100%;
 		block-size: 100vh;
-		overflow: hidden;
+		overflow: clip;
 		mask: linear-gradient(to bottom, rgba(0, 0, 0, 0.75) 60%, transparent);
 
 		& .layer {
