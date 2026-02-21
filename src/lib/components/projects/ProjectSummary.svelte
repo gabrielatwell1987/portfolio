@@ -151,7 +151,7 @@
 
 		& button {
 			background-color: transparent;
-			color: var(--clr-blue);
+			color: var(--clr-blue-fade);
 			filter: brightness(1);
 			inline-size: fit-content;
 			font-family: var(--bronova);

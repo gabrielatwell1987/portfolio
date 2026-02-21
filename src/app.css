@@ -94,8 +94,8 @@
 	}
 
 	img {
-		max-width: 100%;
-		height: auto;
+		max-inline-size: 100%;
+		block-size: auto;
 	}
 
 	button,
@@ -150,8 +150,8 @@
 	html,
 	body {
 		--timing: 0.75s;
-		width: 100%;
-		height: auto;
+		inline-size: 100%;
+		block-size: auto;
 		background-color: var(--clr-invert);
 		transition:
 			background-color var(--timing) ease,
@@ -169,8 +169,8 @@
 		line-height: 1.5;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
-		width: 100%;
-		height: 100%;
+		inline-size: 100%;
+		block-size: 100%;
 		font-display: swap;
 	}
 
@@ -178,26 +178,26 @@
 		display: block;
 		margin-inline: auto;
 		max-inline-size: 75%;
-		height: auto;
+		block-size: auto;
 		text-align: center;
 	}
 
 	img {
 		font-style: italic;
-		height: auto;
+		block-size: auto;
 		max-inline-size: 100%;
-		aspect-ratio: attr(width) / attr(height);
+		aspect-ratio: attr(inline-size) / attr(block-size);
 	}
 
 	/* CLS prevention for images without explicit dimensions */
-	img:not([width]):not([height]) {
+	img:not([inline-size]):not([block-size]) {
 		aspect-ratio: 16 / 9;
-		width: 100%;
-		height: auto;
+		inline-size: 100%;
+		block-size: auto;
 	}
 
 	[loading='lazy'] {
-		min-height: 200px;
+		min-block-size: 200px;
 	}
 }
 
@@ -233,29 +233,29 @@
 		clip: rect(0 0 0 0);
 		clip-path: inset(50%);
 		overflow: hidden;
-		width: 1px;
-		height: 1px;
+		inline-size: 1px;
+		block-size: 1px;
 		white-space: nowrap;
 	}
 
 	/* CLS prevention */
 	.cls-container {
 		/* reserve space to prevent layout shifts */
-		min-height: var(--min-content-height, 200px);
+		min-block-size: var(--min-content-block-size, 200px);
 		contain: layout;
 	}
 
 	.cls-hero {
 		/* hero sections - reserve full viewport */
-		min-height: 100vh;
+		min-block-size: 100vh;
 		contain: layout;
 	}
 
 	.cls-image {
 		/* images without explicit dimensions */
 		aspect-ratio: 16 / 9;
-		width: 100%;
-		height: auto;
+		inline-size: 100%;
+		block-size: auto;
 	}
 
 	.cls-canvas {
@@ -263,9 +263,9 @@
 		position: absolute;
 		top: 0;
 		left: 0;
-		width: 100%;
-		height: 100%;
-		min-height: 100vh;
+		inline-size: 100%;
+		block-size: 100%;
+		min-block-size: 100vh;
 		display: block;
 	}
 
@@ -322,6 +322,10 @@
 
 		--clr-hero-text: light-dark(oklch(from var(--gray) 0.45 c h), var(--white));
 		--clr-link: light-dark(var(--darker-blue), var(--sky));
+		--clr-blue-fade: light-dark(
+			oklch(from var(--darkest-blue) 0.45 c h),
+			oklch(from var(--sky) 0.7 c h)
+		);
 		--clr-blue: light-dark(var(--darkest-blue), var(--sky));
 		--clr-sky: light-dark(var(--sky), var(--sky));
 		--clr-pale: light-dark(var(--yellow), var(--pale));

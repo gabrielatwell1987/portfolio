@@ -75,13 +75,9 @@
 					<p class="bio-paragraph indent">{@html paragraph.text}</p>
 				{/each}
 
-				<article class="hero-text" aria-label="bio" data-hero-mobile>
-					<p class="bio-paragraph" style="text-align: center;" data-content-width>
-						The components on this page were built with three.js...
-					</p>
-
-					<p class="bio-paragraph" style="text-align: center; margin-top: 1em;" data-left>
-						Feel free to check them out!
+				<article class="three-article" aria-label="bio" data-three-section>
+					<p class="bio-paragraph" data-three-desc>
+						The components on this page were built with three.js... Feel free to check them out!
 					</p>
 
 					<div class="three-text">
@@ -179,22 +175,58 @@
 					margin-bottom: -5rem;
 				}
 
-				& .three-button {
-					margin-inline: auto;
-					margin-top: -2em;
-					padding: 0;
-					inline-size: fit-content;
-					padding-block: 2rem;
+				& .indent {
+					text-indent: 2em;
+				}
 
-					@media (width <= 500px) {
-						inline-size: 100%;
-						margin-inline: auto;
-						padding-block: 0;
+				& .three-article {
+					margin-inline: auto;
+					margin-block: 2em;
+
+					inline-size: var(--100);
+					color: var(--clr-main);
+					font-size: var(--h5);
+
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: 1em;
+
+					@media (width <= 768px) {
+						margin-block: 1em;
 					}
 				}
 
-				& .indent {
-					text-indent: 2em;
+				& [data-three-section] {
+					inline-size: 80vw;
+
+					@media screen and (width >= 990px) {
+						margin-inline: auto;
+					}
+
+					& [data-three-desc] {
+						text-align: center;
+						text-wrap: pretty;
+						margin-bottom: 0;
+
+						@media screen and (width <= 768px) {
+							margin-bottom: 1.2em;
+						}
+					}
+
+					& .three-button {
+						margin-inline: auto;
+						margin-top: -2em;
+						padding: 0;
+						inline-size: fit-content;
+						padding-block: 2rem;
+
+						@media (width <= 500px) {
+							inline-size: 100%;
+							margin-inline: auto;
+							padding-block: 0;
+						}
+					}
 				}
 
 				& .bio-paragraph {
@@ -203,39 +235,25 @@
 					font-size: clamp(var(--h6), 1.5vw, var(--h4));
 					font-weight: 500;
 					line-height: 1.5;
-					text-wrap: none;
 					z-index: 7;
 					color: var(--clr-main);
 					text-align: start;
 					margin-bottom: 0;
-					text-wrap: pretty;
+					/* text-wrap: pretty; */
 
 					@media screen and (width >= 990px) {
-						max-inline-size: 90%;
+						max-inline-size: 98%;
 						line-height: 1.75;
+					}
+
+					&:not([data-three-desc]) {
+						@media (width <= 768px) {
+							inline-size: 100vw;
+						}
 					}
 
 					& span {
 						font-weight: 800;
-					}
-
-					&[data-left] {
-						@media (width <= 768px) {
-							margin-bottom: 1.5em;
-						}
-					}
-				}
-
-				& [data-content-width] {
-					@media screen and (width >= 990px) {
-						margin-bottom: -2rem;
-					}
-				}
-
-				& [data-hero-mobile] {
-					@media screen and (width >= 990px) {
-						width: 75%;
-						margin: 0 auto;
 					}
 				}
 
@@ -268,25 +286,6 @@
 		& p {
 			text-align: start;
 			color: var(--clr-main);
-		}
-
-		& .hero-text {
-			width: var(--100);
-			margin-inline: auto;
-			color: var(--clr-main);
-			font-size: var(--h5);
-
-			@media (width >= 600px) {
-				width: 90%;
-			}
-
-			@media (width >= 1024px) {
-				width: 70%;
-			}
-
-			@media (width >= 1400px) {
-				width: 70%;
-			}
 		}
 	}
 </style>
