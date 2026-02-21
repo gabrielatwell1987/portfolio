@@ -177,11 +177,11 @@
 				}
 
 				& .modal-title {
-					font-family: var(--bronova-bold);
+					font-family: var(--mono);
 					font-size: clamp(var(--h5), 3vw, var(--h2));
 					font-weight: 800;
 					line-height: 1;
-					color: var(--clr-blue);
+					color: oklch(from var(--clr-blue) 0.65 c h);
 					margin: -0.5rem 0 -2rem 0;
 					letter-spacing: -1px;
 
@@ -198,8 +198,8 @@
 			& .modal-description {
 				font-family: var(--bronova);
 				font-size: clamp(var(--h6), 1.25vw, var(--h4));
-				font-weight: 100;
-				color: var(--white);
+				font-weight: 300;
+				color: oklch(from var(--clr-main) 0.65 c h);
 				background: transparent;
 				padding: 0.2rem;
 				hyphens: auto;
@@ -223,6 +223,8 @@
 		& .modal-image {
 			inline-size: fit-content;
 			margin-inline: auto;
+			filter: drop-shadow(-3px -3px 0px oklch(from var(--clr-gray) 0.45 c h))
+				drop-shadow(3px 3px 0px oklch(from var(--clr-gray) 0.45 c h));
 
 			@media (width >= 1024px) {
 				margin-block: 1rem;
