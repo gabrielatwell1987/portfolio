@@ -162,13 +162,14 @@
 			cursor: pointer;
 			text-wrap: pretty;
 			border: none;
+			transition: scale 0.15s ease-out;
 
 			&:not(:hover) {
 				opacity: 0.85;
 			}
 
 			&:active {
-				scale: 0.97;
+				scale: 0.95;
 			}
 		}
 

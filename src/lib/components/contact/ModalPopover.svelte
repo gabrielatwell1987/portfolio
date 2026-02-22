@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { scale } from 'svelte/transition';
 	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 	import Image from '$lib/components/layout/Image.svelte';
 	import '@fortawesome/fontawesome-free/css/all.css';
@@ -256,13 +257,14 @@
 		cursor: pointer;
 		padding: 0.75rem;
 		color: var(--clr-main);
+		transition: scale 0.15s ease-out;
 
 		&:hover {
 			animation: wiggle 1s ease-out infinite;
 		}
 
 		&:active {
-			scale: 0.95;
+			scale: 0.955;
 		}
 
 		&:focus-visible {
@@ -292,6 +294,7 @@
 		align-items: center;
 		margin-inline: auto;
 		cursor: pointer;
+		transition: scale 0.15s ease-out;
 
 		&:focus-visible {
 			outline: 1px solid var(--clr-main);
@@ -302,7 +305,7 @@
 		}
 
 		&:active {
-			scale: 0.97;
+			scale: 0.95;
 		}
 
 		& svg {

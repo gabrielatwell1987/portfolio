@@ -96,7 +96,7 @@
 				}
 
 				&:active {
-					scale: 0.97;
+					scale: 0.95;
 				}
 			}
 

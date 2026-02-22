@@ -109,17 +109,17 @@
 		max-inline-size: 3em;
 		max-block-size: 2em;
 		will-change: transform, opacity;
+		transition: all 0.15s ease-out;
 
 		&:hover {
 			text-shadow: 0 0 1px var(--smoke);
-			transition: all 0.35s ease-out;
 		}
 
 		&:active {
 			background: inherit;
 			color: var(--clr-main);
 			filter: blur(2px);
-			scale: 0.97;
+			scale: 0.95;
 		}
 
 		&:focus {

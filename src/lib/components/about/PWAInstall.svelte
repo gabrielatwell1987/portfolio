@@ -77,13 +77,14 @@
 			padding: 0;
 			border: none;
 			cursor: pointer;
+			transition: scale 0.15s ease-out;
 
 			&:not(:hover) {
 				opacity: 0.85;
 			}
 
 			&:active {
-				scale: 0.97;
+				scale: 0.95;
 			}
 
 			&:focus {

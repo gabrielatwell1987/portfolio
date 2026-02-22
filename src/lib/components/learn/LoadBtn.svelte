@@ -79,7 +79,8 @@
 		transition:
 			outline-offset 300ms ease-out,
 			opacity 300ms ease-out,
-			filter 300ms ease-out;
+			filter 300ms ease-out,
+			scale 0.15s ease-out;
 		display: flex;
 		align-items: center;
 		gap: 0.5em;
@@ -95,7 +96,7 @@
 		}
 
 		&:active {
-			scale: 0.97;
+			scale: 0.95;
 		}
 
 		&:hover {

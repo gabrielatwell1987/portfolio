@@ -107,6 +107,7 @@
 			outline-offset: -7px;
 			padding: 1rem 1.75rem;
 			user-select: none;
+			transition: scale 0.15s ease-out;
 
 			&:hover {
 				outline-offset: 0px;
@@ -119,7 +120,7 @@
 			}
 
 			&:active {
-				scale: 0.97;
+				scale: 0.95;
 			}
 		}
 

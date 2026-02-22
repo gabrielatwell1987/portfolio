@@ -55,6 +55,7 @@
 			border: none;
 			outline: none;
 			text-transform: uppercase;
+			transition: scale 0.15s ease-out;
 
 			& svg {
 				font-size: clamp(var(--h2), 4vw, var(--xxl));
@@ -78,7 +79,7 @@
 			}
 
 			&:active {
-				scale: 0.97;
+				scale: 0.95;
 			}
 
 			@media (width <= 500px) {

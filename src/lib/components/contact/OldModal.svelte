@@ -232,6 +232,7 @@
 			align-items: center;
 			margin-inline: auto;
 			cursor: pointer;
+			transition: scale 0.15s ease-out;
 
 			&:focus-visible {
 				outline: 1px solid var(--clr-main);
@@ -242,7 +243,7 @@
 			}
 
 			&:active {
-				scale: 0.97;
+				scale: 0.95;
 			}
 
 			& svg {
@@ -291,7 +292,7 @@
 			}
 
 			&:active {
-				scale: 0.97;
+				scale: 0.95;
 			}
 
 			&:focus-visible {

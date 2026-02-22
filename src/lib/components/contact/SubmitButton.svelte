@@ -34,6 +34,7 @@
 				opacity 300ms ease-out;
 			padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
 			user-select: none;
+			transition: scale 0.15s ease-out;
 
 			&:not(:hover) {
 				opacity: 0.85;
@@ -49,7 +50,7 @@
 			}
 
 			&:active {
-				scale: 0.97;
+				scale: 0.95;
 			}
 		}
 

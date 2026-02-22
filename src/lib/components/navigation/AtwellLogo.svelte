@@ -27,13 +27,14 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			transition: scale 0.15s ease-out;
 
 			@media (width <= 500px) {
 				margin-left: 1em;
 			}
 
 			&:active {
-				scale: 0.97;
+				scale: 0.95;
 			}
 
 			& .atwell {

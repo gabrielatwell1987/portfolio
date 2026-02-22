@@ -37,7 +37,9 @@
 			letter-spacing: 1px;
 			width: fit-content;
 			border-radius: var(--button-radius);
-			transition: all 0.5s ease-out;
+			transition:
+				all 0.5s ease-out,
+				scale 0.15s ease-out;
 			outline-offset: -7px;
 			padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
 			margin-bottom: 2%;
@@ -70,7 +72,7 @@
 			}
 
 			&:active {
-				scale: 0.97;
+				scale: 0.95;
 			}
 		}
 	}

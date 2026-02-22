@@ -138,7 +138,7 @@
 					margin-top: 0;
 					transition:
 						filter 0.5s ease-out,
-						scale 0.35s ease-out;
+						scale 0.15s ease-out;
 
 					&:not(:hover) {
 						filter: opacity(0.95);
@@ -151,7 +151,7 @@
 					}
 
 					&:active {
-						scale: 0.97;
+						scale: 0.95;
 					}
 				}
 			}

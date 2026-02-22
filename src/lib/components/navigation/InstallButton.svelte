@@ -146,7 +146,9 @@
 		outline-offset: -7px;
 		border: 1px solid var(--clr-invert);
 		border-radius: var(--radius);
-		transition: 300ms;
+		transition:
+			300ms,
+			scale 0.15s ease-out;
 		cursor: pointer;
 		pointer-events: auto;
 		z-index: 1000;
@@ -176,7 +178,7 @@
 		}
 
 		&:active {
-			scale: 0.97;
+			scale: 0.95;
 		}
 
 		& i {

@@ -40,7 +40,8 @@
 			width: fit-content;
 			transition:
 				outline-offset 300ms ease-out,
-				opacity 300ms ease-out;
+				opacity 300ms ease-out,
+				scale 0.15s ease-out;
 			padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
 			user-select: none;
 
@@ -58,7 +59,7 @@
 			}
 
 			&:active {
-				scale: 0.97;
+				scale: 0.95;
 			}
 		}
 

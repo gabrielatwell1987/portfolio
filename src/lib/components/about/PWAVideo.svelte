@@ -98,13 +98,14 @@
 			cursor: pointer;
 			min-block-size: 44px;
 			min-inline-size: 44px;
+			transition: scale 0.15s ease-out;
 
 			&:not(:hover) {
 				opacity: 0.85;
 			}
 
 			&:active {
-				transform: scale(0.97);
+				scale: 0.925;
 			}
 
 			&:focus {

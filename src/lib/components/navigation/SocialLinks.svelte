@@ -63,7 +63,8 @@
 			font-weight: 900;
 			transition:
 				color 0.5s ease,
-				opacity 0.5s ease;
+				opacity 0.5s ease,
+				scale 0.15s ease-out;
 			cursor: pointer;
 			opacity: 1;
 			position: relative;
@@ -78,7 +79,7 @@
 			}
 
 			&:active {
-				scale: 0.97;
+				scale: 0.95;
 			}
 
 			& svg {
