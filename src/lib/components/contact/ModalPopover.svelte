@@ -95,7 +95,7 @@
 
 	.contact-modal {
 		inline-size: 100vw;
-		block-size: 100vh;
+		block-size: 70vh;
 		position: fixed;
 		inset: 0;
 		display: flex;
@@ -107,7 +107,7 @@
 		transition: var(--modal-transition);
 		background: none;
 		z-index: 50;
-		overflow: visible;
+		overflow: clip;
 		border: none;
 
 		&:popover-open {
@@ -117,14 +117,15 @@
 		}
 
 		&::backdrop {
-			background-color: rgba(0 0 0 / 0.5);
-			backdrop-filter: blur(2px);
+			background-color: var(--clr-invert);
+			background: transparent;
+			backdrop-filter: blur(10px);
+			box-shadow: none;
 		}
 
 		@media (width >= 320px) {
-			padding: 2rem;
 			inline-size: 93%;
-			block-size: 83%;
+			block-size: 85%;
 			margin-inline: auto;
 		}
 
@@ -134,32 +135,29 @@
 			inline-size: 100%;
 			padding: 1rem;
 			transition: var(--modal-transition-mobile);
-		}
-
-		&::backdrop {
-			@media (width >= 320px) {
-				background: transparent;
-				box-shadow: none;
-			}
+			margin-top: 2em;
 		}
 
 		& .modal-inner {
 			inline-size: 100%;
 			max-inline-size: 50vw;
+			block-size: 76vh;
 			border: 2px solid var(--clr-gray);
 			border-radius: 1rem;
 			background: var(--clr-invert-fade);
-			margin-top: 16em;
-			overflow: auto;
+			margin-top: 10em;
+			overflow: clip;
 
 			anchor-name: --inner-anchor;
+
+			@media (width <= 1500px) {
+				overflow-y: auto;
+			}
 
 			@media (width <= 768px) {
 				max-inline-size: 90vh;
 				min-block-size: 40vh;
-				overflow-y: auto;
 				padding: 2em 1em;
-				margin-top: 5em;
 			}
 
 			@media (width <= 500px) {
@@ -170,11 +168,7 @@
 			& header {
 				background: transparent;
 				border-bottom: none;
-				padding-top: 5em;
-
-				@media (width <= 768px) {
-					padding-top: 3em;
-				}
+				padding-bottom: 0;
 
 				& .modal-title {
 					font-family: var(--mono);
@@ -184,6 +178,7 @@
 					color: oklch(from var(--clr-blue) 0.65 c h);
 					margin: -0.5rem 0 -2rem 0;
 					letter-spacing: -1px;
+					text-wrap: pretty;
 
 					@media (width >= 1024px) {
 						line-height: 0.95;
@@ -191,6 +186,10 @@
 
 					@media (width >= 1100px) {
 						padding: 0.5rem;
+					}
+
+					@media (width <= 768px) {
+						margin-top: 1.5em;
 					}
 				}
 			}
@@ -201,21 +200,19 @@
 				font-weight: 300;
 				color: oklch(from var(--clr-main) 0.65 c h);
 				background: transparent;
-				padding: 0.2rem;
 				hyphens: auto;
 				text-wrap: no-wrap;
 				letter-spacing: 0px;
 				margin-top: 1em;
 				max-inline-size: 100%;
-				inline-size: 100%;
 				word-break: break-word;
 				overflow-wrap: break-word;
 				white-space: normal;
+				padding-bottom: 0;
 
 				@media (width >= 1024px) {
 					line-height: 1.75;
 					margin-inline: auto;
-					padding: 1rem;
 				}
 			}
 		}
@@ -236,7 +233,7 @@
 		position: absolute;
 		position-anchor: --inner-anchor;
 		inset-block-start: calc(anchor(top) + 0.05em);
-		inset-inline-end: calc(anchor(end) + 0.05em);
+		inset-inline-end: calc(anchor(end) + 0.2em);
 
 		display: flex;
 
