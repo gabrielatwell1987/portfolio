@@ -4,6 +4,9 @@ import { build, files, version } from '$service-worker';
 
 const CACHE = `cache-${version}`;
 const ASSETS = [...build, ...files];
+const CACHEABLE_ASSETS = ASSETS.filter(
+	(asset) => !asset.endsWith('/.gitkeep') && !asset.endsWith('/.DS_Store')
+);
 
 const sw = self as unknown as ServiceWorkerGlobalScope;
 
@@ -11,7 +14,15 @@ const sw = self as unknown as ServiceWorkerGlobalScope;
 sw.addEventListener('install', (event: ExtendableEvent) => {
 	async function addFilesToCache() {
 		const cache = await caches.open(CACHE);
-		await cache.addAll(ASSETS);
+		await Promise.allSettled(
+			CACHEABLE_ASSETS.map(async (asset) => {
+				try {
+					await cache.add(asset);
+				} catch (error) {
+					console.warn('[service-worker] failed to cache asset', asset, error);
+				}
+			})
+		);
 	}
 
 	event.waitUntil(addFilesToCache());
@@ -35,14 +46,15 @@ sw.addEventListener('fetch', (event: FetchEvent) => {
 	if (event.request.method !== 'GET') return;
 
 	const url = new URL(event.request.url);
+	const isCrossOrigin = url.origin !== sw.location.origin;
+	const isCloudflareAnalytics =
+		url.hostname.endsWith('cloudflareinsights.com') ||
+		url.pathname.includes('beacon.min.js') ||
+		url.pathname.startsWith('/cdn-cgi/');
 
-	// // bypass cloudflare analytics
-	// const isCloudflareAnalytics =
-	// 	url.hostname.endsWith('cloudflareinsights.com') ||
-	// 	url.pathname.includes('beacon.min.js') ||
-	// 	url.pathname.startsWith('/cdn-cgi/');
-
-	// if (isCloudflareAnalytics) return;
+	if (isCrossOrigin || isCloudflareAnalytics) {
+		return;
+	}
 
 	async function respond(): Promise<Response> {
 		const cache = await caches.open(CACHE);

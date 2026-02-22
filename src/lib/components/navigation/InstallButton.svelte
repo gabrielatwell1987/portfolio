@@ -34,7 +34,6 @@
 		if (isIOS) return;
 
 		function handleBeforeInstallPrompt(event: Event) {
-			event.preventDefault();
 			deferredPrompt = event as BeforeInstallPromptEvent;
 			isInstallable = true;
 			installStatus = 'App can now be installed';
