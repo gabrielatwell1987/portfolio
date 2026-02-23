@@ -65,8 +65,8 @@
 
 			& .icons {
 				padding: 0.5rem;
-				width: clamp(70px, 5.5vw, 200px);
-				height: clamp(70px, 5.5vw, 200px);
+				width: clamp(25vw, 5.5vw, 200px);
+				height: clamp(25vw, 5.5vw, 200px);
 
 				@media (width <= 768px) {
 					grid-template-columns: repeat(2, 1fr);
