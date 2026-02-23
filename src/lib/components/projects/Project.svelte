@@ -115,6 +115,11 @@
 					0 -3px 0 var(--clr-main),
 					0 3px 0 var(--clr-main);
 				transition: scale 0.15s ease-out;
+				text-wrap: pretty;
+
+				@media (width >= 990px) {
+					text-wrap: balance;
+				}
 
 				@media (width <= 768px) {
 					margin-top: 1em;
