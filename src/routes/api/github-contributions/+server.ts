@@ -12,7 +12,7 @@ interface Week {
 }
 
 /** @type {import('./$types').RequestHandler} */
-export async function GET() {
+export async function GET({ fetch }) {
 	try {
 		// GitHub GraphQL query to get contribution data
 		const query = `

@@ -17,10 +17,12 @@ export function createThemeContext(): ThemeContext {
 	const initialTheme: Theme = browser ? (localStorage.getItem('theme') as Theme) || 'dark' : 'dark';
 	let theme = $state<Theme>(initialTheme);
 
-	if (browser) {
-		document.documentElement.setAttribute('data-theme', theme);
-		document.documentElement.style.colorScheme = theme;
-	}
+	$effect(() => {
+		if (browser) {
+			document.documentElement.setAttribute('data-theme', theme);
+			document.documentElement.style.colorScheme = theme;
+		}
+	});
 
 	const context: ThemeContext = {
 		get current() {
