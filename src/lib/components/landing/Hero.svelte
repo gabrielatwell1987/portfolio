@@ -3,7 +3,8 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import projects from '$lib/components/projects/projects.json';
 	import DoYouNeed from './DoYouNeed.svelte';
-	import Ribbons from '$lib/threejs/ribbon/Ribbons.svelte';
+	// import Ribbons from '$lib/threejs/ribbon/Ribbons.svelte';
+	import Tunnel from '$lib/threejs/tunnel/Tunnel.svelte';
 	import HeroButton from './HeroButton.svelte';
 	import ProjectsGrid from './ProjectsGrid.svelte';
 	import UltraA from './UltraA.svelte';
@@ -191,8 +192,8 @@
 
 			<div class="shape big-circle" aria-hidden="true"></div>
 		{:else}
-			<!-- three.js ribbons bg -->
-			<Ribbons />
+			<!-- <Ribbons /> -->
+			<Tunnel />
 		{/if}
 	</div>
 

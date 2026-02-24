@@ -303,11 +303,11 @@
 		--warning-dark: oklch(0.4869 0.0938 88.85);
 
 		--clr-bg: light-dark(var(--white), var(--blackest));
-		--clr-main: light-dark(oklch(from var(--blackest) 0.1 c h), oklch(from var(--white) 0.8 c h));
 		--clr-main-fade: light-dark(
 			oklch(from var(--blackest) 0.1 c h),
 			oklch(from var(--white) 0.6 c h)
 		);
+		--clr-main: light-dark(oklch(from var(--blackest) 0.1 c h), oklch(from var(--white) 0.8 c h));
 		--clr-invert: light-dark(oklch(from var(--white) 0.9 c h), oklch(from var(--blackest) 0.1 c h));
 		--clr-invert-fade: light-dark(
 			oklch(from var(--white) 0.5 c h),
