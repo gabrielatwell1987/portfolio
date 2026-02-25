@@ -3,6 +3,7 @@
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
 		return new Promise((resolve) => {
 			document.startViewTransition(async () => {

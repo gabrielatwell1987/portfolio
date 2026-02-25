@@ -73,6 +73,25 @@
 			scroll-behavior: smooth;
 		}
 	}
+
+	@media (prefers-reduced-motion: reduce) {
+		*,
+		*::before,
+		*::after {
+			animation: none;
+			transition: none;
+		}
+
+		html {
+			scroll-behavior: auto;
+		}
+
+		::view-transition-group(*),
+		::view-transition-old(*),
+		::view-transition-new(*) {
+			animation: none;
+		}
+	}
 }
 
 @layer reset {

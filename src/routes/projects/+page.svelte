@@ -16,6 +16,7 @@
 		$state<typeof import('$lib/components/projects/Project.svelte').default | null>(null);
 	let showProjects = $state<boolean>(false);
 	let isNavigating = $state<boolean>(false);
+	let prefersReducedMotion = $state<boolean>(false);
 
 	function getTestimonialForProject(projectIndex: number) {
 		return testimonials.find((t) => t.projectIndex === projectIndex);
@@ -46,13 +47,28 @@
 		};
 	});
 
+	// prefers-reduced-motion check
+	$effect(() => {
+		const abortController = new AbortController();
+		const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+		const update = () => (prefersReducedMotion = media.matches);
+		update();
+		media.addEventListener('change', update, { signal: abortController.signal });
+
+		return () => abortController.abort();
+	});
+
 	// GSAP scroll effect
 	$effect(() => {
 		if (!showProjects) return;
 
 		gsap.registerPlugin(ScrollTrigger);
-
 		ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+
+		if (prefersReducedMotion) {
+			gsap.set('.wholeProject', { opacity: 1, y: 0, clearProps: 'transform' });
+			return;
+		}
 
 		gsap.set('.wholeProject', { opacity: 0, y: 30 });
 
@@ -310,6 +326,18 @@
 
 		::view-transition-new(build-heading) {
 			animation: slide-in var(--title-transition-duration) ease-out forwards;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.github-skeleton {
+			animation: none;
+		}
+
+		::view-transition-group(build-heading),
+		::view-transition-old(build-heading),
+		::view-transition-new(build-heading) {
+			animation: none;
 		}
 	}
 </style>

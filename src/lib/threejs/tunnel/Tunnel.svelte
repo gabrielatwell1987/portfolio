@@ -97,7 +97,7 @@
 		tunnelGeometry.setAttribute('color', new BufferAttribute(tunnelColors, 3));
 		tunnelMaterial.vertexColors = true;
 
-		let speed = prefersReducedMotion ? -0.002 : -0.005;
+		let speed = prefersReducedMotion ? 0 : -0.005;
 
 		function onResize() {
 			camera.aspect = window.innerWidth / window.innerHeight;

@@ -11,6 +11,7 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 	let mounted = $state<boolean>(false);
+	let prefersReducedMotion = $state<boolean>(false);
 
 	$effect(() => {
 		if (document.startViewTransition) {
@@ -22,9 +23,21 @@
 		}
 	});
 
+	// prefers-reduced-motion check
+	$effect(() => {
+		const abortController = new AbortController();
+		const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+		const update = () => (prefersReducedMotion = media.matches);
+		update();
+		media.addEventListener('change', update, { signal: abortController.signal });
+
+		return () => abortController.abort();
+	});
+
 	// gsap
 	$effect(() => {
 		if (!mounted) return;
+		if (prefersReducedMotion) return;
 
 		gsap.registerPlugin(ScrollTrigger);
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { scale } from 'svelte/transition';
+	import { browser } from '$app/environment';
 	interface Props {
 		src: string;
 		alt: string;
@@ -24,6 +24,20 @@
 	let naturalDimensions = $state<{ width: number; height: number }>({ width: 0, height: 0 });
 	let isSVG = $derived(src?.endsWith('.svg'));
 	let isTransitioning = $state<boolean>(false);
+	let prefersReducedMedia = $state<boolean>(false);
+
+	// prefers-reduced-motion check
+	$effect(() => {
+		if (!browser) return;
+
+		const abortController = new AbortController();
+		const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+		const update = () => (prefersReducedMedia = media.matches);
+		update();
+		media.addEventListener('change', update, { signal: abortController.signal });
+
+		return () => abortController.abort();
+	});
 
 	function toggleExpand() {
 		if (isTransitioning) return;
@@ -114,7 +128,9 @@
 			width: fit-content;
 			display: block;
 
-			&:focus-visible {
+			&:focus,
+			&:focus-visible,
+			&:active {
 				outline: none;
 				box-shadow: none;
 			}
@@ -122,6 +138,9 @@
 			& img {
 				object-fit: contain;
 				width: 500px;
+				outline: none;
+				-webkit-user-drag: none;
+				user-select: none;
 
 				&.svg {
 					object-fit: contain;
