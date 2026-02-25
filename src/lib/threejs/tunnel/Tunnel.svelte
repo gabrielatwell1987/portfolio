@@ -75,8 +75,8 @@
 		const clock = new Clock();
 
 		// color controls
-		const BASE_HUR = 0.56;
-		const HUR_SPREAD = 0.02;
+		const BASE_HUE = 0.56;
+		const HUE_SPREAD = 0.02;
 		const SATURATION = 0;
 		const LIGHTNESS = 0.086;
 
@@ -87,7 +87,7 @@
 			vertex.applyQuaternion(q);
 			positionAttribute.setXYZ(i, vertex.x, vertex.y, vertex.z);
 
-			const hue = (BASE_HUR + vertex.z * HUR_SPREAD) % 1;
+			const hue = (BASE_HUE + vertex.z * HUE_SPREAD) % 1;
 			color.setHSL(hue, SATURATION, LIGHTNESS);
 			tunnelColors[i * 3 + 0] = color.r;
 			tunnelColors[i * 3 + 1] = color.g;
@@ -97,7 +97,7 @@
 		tunnelGeometry.setAttribute('color', new BufferAttribute(tunnelColors, 3));
 		tunnelMaterial.vertexColors = true;
 
-		let speed = prefersReducedMotion ? 0.001 : 0.004;
+		let speed = prefersReducedMotion ? -0.002 : -0.005;
 
 		function onResize() {
 			camera.aspect = window.innerWidth / window.innerHeight;
