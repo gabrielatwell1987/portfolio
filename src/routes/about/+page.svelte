@@ -183,9 +183,10 @@
 					margin-inline: auto;
 					margin-block: 2em;
 
-					inline-size: var(--100);
+					padding: 0;
+					inline-size: fit-content;
 					color: var(--clr-main);
-					font-size: var(--h5);
+					font-size: clamp(var(--xs), 2vw, var(--sm));
 
 					display: flex;
 					flex-direction: column;
@@ -219,7 +220,7 @@
 						margin-top: -2em;
 						padding: 0;
 						inline-size: fit-content;
-						padding-block: 2rem;
+						padding-block: 1em;
 
 						@media (width <= 500px) {
 							inline-size: 100%;

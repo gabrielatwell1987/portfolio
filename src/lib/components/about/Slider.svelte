@@ -14,12 +14,14 @@
 	let position = $state<number>(0);
 
 	const duplicatedSkills = [...typedSkills, ...typedSkills];
+	const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	let speed = prefersReducedMotion ? 0.008 : 0.02;
 
 	$effect(() => {
 		if (isPaused) return;
 
 		const interval = setInterval(() => {
-			position += 0.03;
+			position += speed;
 			if (position >= 50) {
 				position = 0;
 			}
