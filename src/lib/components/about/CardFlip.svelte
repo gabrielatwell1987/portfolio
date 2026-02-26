@@ -58,7 +58,7 @@
 			justify-content: center;
 			align-items: center;
 
-			@media screen and (width <= 600px) {
+			@media (width <= 600px) {
 				object-fit: contain;
 			}
 

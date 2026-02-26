@@ -121,14 +121,14 @@
 	form {
 		--label-bg: var(--dark);
 
-		@media screen and (width >= 320px) {
+		@media (width >= 320px) {
 			inline-size: 85%;
 			margin-inline: auto;
 			display: grid;
 			padding: 0.25rem;
 		}
 
-		@media screen and (width >= 1024px) {
+		@media (width >= 1024px) {
 			fieldset {
 				border: 5px solid oklch(from var(--clr-main) 0.35 c h);
 
@@ -169,7 +169,7 @@
 			padding-inline: 1rem;
 			margin-bottom: 1rem;
 
-			@media screen and (width >= 720px) {
+			@media (width >= 720px) {
 				margin-bottom: 0;
 			}
 		}

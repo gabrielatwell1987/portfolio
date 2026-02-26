@@ -465,7 +465,7 @@
 				text-shadow: 0 0 1px oklch(from var(--clr-light-gray) 0.95 c h);
 				user-select: none;
 
-				@media screen and (width >= 990px) {
+				@media (width >= 990px) {
 					letter-spacing: 2px;
 				}
 
