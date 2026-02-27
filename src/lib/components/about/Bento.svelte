@@ -45,7 +45,7 @@
 						ease: 'power2.out',
 						scrollTrigger: {
 							trigger: bentoWrapper,
-							start: 'top center+=500',
+							start: 'top center-=250',
 							toggleActions: 'play none none reverse'
 						}
 					}
