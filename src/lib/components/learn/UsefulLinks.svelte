@@ -47,8 +47,8 @@
 	</div>
 
 	<p class="explanation">
-		<span>🛠️</span> All of these links are resources that I used to learn frontend and design for
-		the web <span>🛠️</span>
+		<span>🛠️</span> All of these links are resources that I used to learn frontend and design for the
+		web
 	</p>
 </section>
 
@@ -110,11 +110,10 @@
 			}
 
 			& .explanation {
-				color: var(--clr-main);
+				color: var(--clr-main-fade);
 				font-family: var(--bronova);
 				font-size: clamp(var(--sm), 1.25rem, var(--h4));
 				font-style: italic;
-				opacity: 0.5;
 				text-align: center;
 				margin-top: 2rem;
 				line-height: 1.5;
@@ -122,6 +121,7 @@
 
 				& span {
 					font-style: normal;
+					font-size: clamp(var(--sm), 3vw, var(--h5));
 				}
 			}
 		}

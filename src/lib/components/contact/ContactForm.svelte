@@ -21,7 +21,7 @@
 
 <div class="personal-image">
 	<MotifPhoto
-		content="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/gabe-sketch.webp"
+		content="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/retro-gabe.webp"
 	/>
 </div>
 

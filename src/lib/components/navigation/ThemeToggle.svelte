@@ -118,7 +118,6 @@
 		&:active {
 			background: inherit;
 			color: var(--clr-main);
-			filter: blur(2px);
 			scale: 0.95;
 		}
 
