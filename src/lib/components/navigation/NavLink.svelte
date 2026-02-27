@@ -30,30 +30,60 @@
 		background-color: transparent;
 		transition: opacity 0.15s ease-out;
 		pointer-events: auto;
+		mix-blend-mode: difference;
+
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		padding: 0.25rem 0.55rem;
+		border-radius: var(--radius);
+		isolation: isolate;
+		overflow: clip;
+		transition:
+			opacity 0.15s ease-out,
+			color 0.15s ease-out;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			background: color-mix(in oklch, var(--clr-main) 18%, transparent);
+			transform: translateY(110%) skewY(-2deg);
+			transform-origin: bottom;
+			transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+			will-change: transform;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0.55rem;
+			right: 0.55rem;
+			bottom: 0.4rem;
+			height: 1px;
+			background: currentColor;
+			transform: scaleX(0);
+			transform-origin: left center;
+			transition: transform 0.28s ease-out;
+			will-change: transform;
+		}
 
 		&:focus-visible {
-			outline: 1px solid var(--clr-main);
 			background: transparent;
+			outline: 1px solid var(--clr-main);
+			outline-offset: 1px 2px;
 		}
 
-		&:is(:hover) {
-			opacity: 0.75;
-		}
-
-		@media (width >= 750px) {
-			text-decoration: none;
-			border-radius: 1px;
-
-			&:hover {
-				text-shadow: 0px 0px 1px var(--clr-invert);
-				border-bottom: 4px solid var(--clr-main);
-				block-size: 2.5rem;
-				transition: all 0.15s ease-out;
-				border-radius: 1px;
+		@media (hover: hover) and (pointer: fine) {
+			&:hover::before,
+			&:focus-visible::before {
+				transform: translateY(0) skewY(0deg);
 			}
 
-			&:not(:hover) {
-				opacity: 1;
+			&:hover::after,
+			&:focus-visible::after {
+				transform: scaleX(1);
 			}
 		}
 	}
