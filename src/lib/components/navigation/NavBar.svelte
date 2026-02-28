@@ -43,7 +43,14 @@
 
 	<ul class="desktop" aria-label="Desktop navigation menu">
 		<li><NavLink href="/about" title="About" viewTransitionName="about-heading" /></li>
-		<li><NavLink href="/projects" title="Builds" viewTransitionName="build-heading" /></li>
+		<li>
+			<NavLink
+				href="/projects"
+				title="Builds"
+				viewTransitionName="build-heading"
+				reverseUnderline
+			/>
+		</li>
 		<li><NavLink href="/learn" title="Learn" viewTransitionName="learn-heading" /></li>
 		<SelectLink />
 	</ul>

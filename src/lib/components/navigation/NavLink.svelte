@@ -6,15 +6,22 @@
 		title: string;
 		onclick?: () => void;
 		viewTransitionName?: string;
+		reverseUnderline?: boolean;
 	}
-	let { href, title, onclick = undefined, viewTransitionName = undefined }: Props = $props();
+	let {
+		href,
+		title,
+		onclick = undefined,
+		viewTransitionName = undefined,
+		reverseUnderline = false
+	}: Props = $props();
 
 	// Only apply view-transition-name when NOT on the target page
 	let shouldTransition = $derived(viewTransitionName && $page.url.pathname !== href);
 </script>
 
 <a
-	class="nav-link"
+	class={`nav-link ${reverseUnderline ? 'reverse-underline' : ''}`}
 	{href}
 	{onclick}
 	style={shouldTransition ? `view-transition-name: ${viewTransitionName};` : ''}>{title}</a
@@ -49,7 +56,7 @@
 			inset: 0;
 			z-index: -1;
 			background: color-mix(in oklch, var(--clr-main) 18%, transparent);
-			transform: translateY(110%) skewY(-2deg);
+			transform: translateY(-110%) skewY(2deg);
 			transform-origin: bottom;
 			transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
 			will-change: transform;
@@ -60,13 +67,17 @@
 			position: absolute;
 			left: 0.55rem;
 			right: 0.55rem;
-			bottom: 0.4rem;
-			height: 1px;
+			bottom: 0.3rem;
+			height: 0.1em;
 			background: currentColor;
 			transform: scaleX(0);
 			transform-origin: left center;
 			transition: transform 0.28s ease-out;
 			will-change: transform;
+		}
+
+		&.reverse-underline::after {
+			transform-origin: right center;
 		}
 
 		&:focus-visible {
