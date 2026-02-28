@@ -45,8 +45,7 @@
 						ease: 'power2.out',
 						scrollTrigger: {
 							trigger: bentoWrapper,
-							start: 'top center',
-							toggleActions: 'play none none reverse'
+							start: 'top center'
 						}
 					}
 				);
