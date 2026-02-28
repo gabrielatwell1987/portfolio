@@ -122,7 +122,7 @@
 		& .testimonial-footer {
 			background-color: transparent;
 			border-top: 1px solid var(--clr-main);
-			margin-top: 1.5rem;
+			margin-top: 1rem;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -131,20 +131,24 @@
 			padding: 1rem 0;
 			display: flex;
 			align-items: center;
+			padding: 2em;
+
+			@media (width <= 500px) {
+				padding-bottom: 0.15rem;
+			}
 
 			& .avatar {
-				width: clamp(6em, 5vw, 6em);
-				height: clamp(6em, 5vw, 6em);
-				border-radius: 50%;
 				overflow: clip;
 				flex-shrink: 0;
-				margin-bottom: 1em;
 
 				& img {
-					width: 100%;
-					height: 100%;
-					object-fit: contain;
-					object-position: top;
+					inline-size: 150px;
+					vertical-align: middle;
+					border-radius: 50%;
+
+					@media (width <= 500px) {
+						inline-size: 145px;
+					}
 				}
 			}
 		}
