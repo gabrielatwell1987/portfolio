@@ -55,7 +55,7 @@
 			position: absolute;
 			inset: 0;
 			z-index: -1;
-			background: color-mix(in oklch, var(--clr-main) 18%, transparent);
+			background: color-mix(in oklch, var(--clr-main) 15%, transparent);
 			transform: translateY(-110%) skewY(2deg);
 			transform-origin: bottom;
 			transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);

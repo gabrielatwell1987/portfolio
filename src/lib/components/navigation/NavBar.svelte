@@ -61,7 +61,6 @@
 		aria-label="Main navigation menu"
 		style="display: {isDisplay ? 'flex' : 'none'};"
 	>
-		<!-- <li><NavLink href="/" title="Home" onclick={closeMenu} /></li> -->
 		<li><NavLink href="/about" title="About Gabe" onclick={closeMenu} /></li>
 		<li><NavLink href="/projects" title="Things I've Built" onclick={closeMenu} /></li>
 		<li><NavLink href="/learn" title="Learn the Web" onclick={closeMenu} /></li>
@@ -150,12 +149,43 @@
 		transform-origin: top left;
 		box-shadow: 0 0 0 1px var(--clr-main);
 
+		& li {
+			transform: translateX(100%);
+			opacity: 0;
+			transition:
+				transform 0.35s ease-out,
+				opacity 0.35s ease-out;
+			will-change: transform, opacity;
+		}
+
 		&.open {
 			transform: scale(1);
 			opacity: 1;
+
+			& li {
+				transform: translateX(0);
+				opacity: 1;
+
+				&:nth-child(1) {
+					transition-delay: 40ms;
+				}
+				&:nth-child(2) {
+					transition-delay: 90ms;
+				}
+				&:nth-child(3) {
+					transition-delay: 140ms;
+				}
+				&:nth-child(4) {
+					transition-delay: 190ms;
+				}
+				&:nth-child(5) {
+					transition-delay: 240ms;
+				}
+			}
 		}
 
 		&.closing {
+			transition-delay: 0ms;
 			opacity: 0;
 		}
 
