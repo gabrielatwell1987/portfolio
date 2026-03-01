@@ -11,6 +11,7 @@
 	} from 'three';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 	import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
+	import { Terrain } from './terrain';
 	import Stats from 'three/addons/libs/stats.module.js';
 
 	let scene: Scene;
@@ -21,6 +22,7 @@
 	let sun: DirectionalLight;
 	let ambient: AmbientLight;
 	let stats: Stats;
+	let terrain: Terrain;
 
 	$effect(() => {
 		const abortController = new AbortController();
@@ -33,7 +35,7 @@
 		gui.domElement.style.top = '10em';
 		gui.domElement.style.zIndex = '10';
 
-		// renderer, scene, camera, controls, lights
+		// renderer, scene, camera, controls, lights, terrain
 		renderer = new WebGLRenderer({
 			canvas: document.querySelector('.webgl') as HTMLCanvasElement,
 			antialias: true
@@ -43,23 +45,22 @@
 		camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 		controls = new OrbitControls(camera, document.querySelector('.webgl') as HTMLCanvasElement);
 
+		terrain = new Terrain(10, 10);
+		scene.add(terrain);
+
 		sun = new DirectionalLight();
+		sun.intensity = 3;
 		sun.position.set(1, 2, 3);
 		scene.add(sun);
+
 		ambient = new AmbientLight(0xffffff, 0.5);
 		scene.add(ambient);
-
-		// cube
-		const geometry = new BoxGeometry(1, 1, 1);
-		const material = new MeshStandardMaterial({ color: 0x00ff00 });
-		cube = new Mesh(geometry, material);
-		scene.add(cube);
 
 		// stats
 		stats = new Stats();
 		document.body.appendChild(stats.dom);
 
-		camera.position.z = 5;
+		camera.position.set(10, 3, 10);
 		controls.update();
 
 		// handle resizing
@@ -77,18 +78,20 @@
 
 		// animation loop
 		renderer.setAnimationLoop(() => {
-			cube.rotation.x += 0.01;
-			cube.rotation.y += 0.01;
-
 			controls.update();
 			stats.update();
 			renderer.render(scene, camera);
 		});
 
 		// gui
-		const cubeFolder = gui.addFolder('Cube');
-		cubeFolder.add(cube.position, 'x', -2, 2, 0.1).name('Position X');
-		cubeFolder.addColor(cube.material as MeshStandardMaterial, 'color').name('Color');
+		const terrainFolder = gui.addFolder('Terrain');
+		terrainFolder.add(terrain, 'width', 1, 20, 1).name('Width');
+		terrainFolder.add(terrain, 'height', 1, 20, 1).name('Height');
+		terrainFolder.addColor(terrain.material as MeshStandardMaterial, 'color').name('Color');
+		terrainFolder.onChange(() => {
+			terrain.createTerrain();
+			terrain.createTrees();
+		});
 
 		// cleanup
 		return () => {
@@ -100,8 +103,8 @@
 			controls.dispose();
 			sun.dispose();
 			ambient.dispose();
-			geometry.dispose();
-			material.dispose();
+			terrain.geometry.dispose();
+			(terrain.material as MeshStandardMaterial).dispose();
 		};
 	});
 </script>
