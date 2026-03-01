@@ -18,12 +18,12 @@
 
 <section class="animated-text" aria-label={dynamicAriaLabel}>
 	<h1 class="sentence" class:animate={mounted}>
-		{text}
+		<span class="subtitle">{text}</span>
 
 		<a href="/three.js"
 			><span class="bigWord glow">
 				{#each chars as char, i}
-					<span class="char" style="--delay: {0.05 + i * 0.05}s">{char}</span>
+					<span class="char" style="--delay: {0.05 + i * 0.5}s">{char}</span>
 				{/each}
 			</span></a
 		>
@@ -56,7 +56,7 @@
 
 			@media (width <= 768px) {
 				margin-top: 7%;
-				opacity: 0.9;
+				opacity: 0.8;
 			}
 
 			&.animate {
@@ -66,7 +66,7 @@
 
 			.bigWord {
 				font-family: var(--ultra);
-				font-size: clamp(2.5rem, 8vw, 35rem);
+				font-size: clamp(var(--h6), 8vw + 0.82em, 35rem);
 				text-wrap: none;
 				display: block;
 				letter-spacing: -1px;
@@ -102,6 +102,13 @@
 						0 0 4px #eee,
 						0 0 4px #eee;
 				}
+			}
+
+			& .subtitle {
+				opacity: 0.8;
+				font-family: var(--bronova-bold);
+				font-weight: 500;
+				color: var(--clr-main);
 			}
 		}
 	}
