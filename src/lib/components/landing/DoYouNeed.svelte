@@ -66,7 +66,7 @@
 
 			.bigWord {
 				font-family: var(--ultra);
-				font-size: clamp(var(--h6), 8vw + 0.82em, 35rem);
+				font-size: clamp(var(--h2), 8vw + 0.1em, 35rem);
 				text-wrap: none;
 				display: block;
 				letter-spacing: -1px;
