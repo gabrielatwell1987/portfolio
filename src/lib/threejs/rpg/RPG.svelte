@@ -11,18 +11,17 @@
 	} from 'three';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 	import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
-	import { Terrain } from './terrain';
+	import { World } from './world';
 	import Stats from 'three/addons/libs/stats.module.js';
 
 	let scene: Scene;
 	let camera: PerspectiveCamera;
 	let renderer: WebGLRenderer;
-	let cube: Mesh;
 	let controls: OrbitControls;
 	let sun: DirectionalLight;
 	let ambient: AmbientLight;
 	let stats: Stats;
-	let terrain: Terrain;
+	let world: World;
 
 	$effect(() => {
 		const abortController = new AbortController();
@@ -45,8 +44,8 @@
 		camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 		controls = new OrbitControls(camera, document.querySelector('.webgl') as HTMLCanvasElement);
 
-		terrain = new Terrain(10, 10);
-		scene.add(terrain);
+		world = new World(10, 10);
+		scene.add(world);
 
 		sun = new DirectionalLight();
 		sun.intensity = 3;
@@ -84,14 +83,22 @@
 		});
 
 		// gui
-		const terrainFolder = gui.addFolder('Terrain');
-		terrainFolder.add(terrain, 'width', 1, 20, 1).name('Width');
-		terrainFolder.add(terrain, 'height', 1, 20, 1).name('Height');
-		terrainFolder.addColor(terrain.material as MeshStandardMaterial, 'color').name('Color');
-		terrainFolder.onChange(() => {
-			terrain.createTerrain();
-			terrain.createTrees();
-		});
+		const worldFolder = gui.addFolder('World');
+		const rebuildFromSize = () => {
+			world.generate(true);
+		};
+		const rebuildFromCounts = () => {
+			world.generate(false);
+		};
+
+		worldFolder.add(world, 'width', 1, 20, 1).name('Width').onChange(rebuildFromSize);
+		worldFolder.add(world, 'height', 1, 20, 1).name('Height').onChange(rebuildFromSize);
+		worldFolder.addColor(world.material as MeshStandardMaterial, 'color').name('Color');
+		worldFolder.add(world, 'treeCount', 1, 100, 1).name('Tree Count').onChange(rebuildFromCounts);
+		worldFolder.add(world, 'rockCount', 1, 100, 1).name('Rock Count').onChange(rebuildFromCounts);
+		worldFolder.add(world, 'bushCount', 1, 100, 1).name('Bush Count').onChange(rebuildFromCounts);
+
+		worldFolder.add(world, 'generate').name('Generate');
 
 		// cleanup
 		return () => {
@@ -103,8 +110,8 @@
 			controls.dispose();
 			sun.dispose();
 			ambient.dispose();
-			terrain.geometry.dispose();
-			(terrain.material as MeshStandardMaterial).dispose();
+			world.geometry.dispose();
+			(world.material as MeshStandardMaterial).dispose();
 		};
 	});
 </script>
