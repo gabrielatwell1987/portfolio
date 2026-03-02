@@ -4,8 +4,26 @@ import {
 	Mesh,
 	MeshStandardMaterial,
 	PlaneGeometry,
-	SphereGeometry
+	RepeatWrapping,
+	SphereGeometry,
+	SRGBColorSpace,
+	Texture,
+	TextureLoader,
+	Vector2
 } from 'three';
+
+const grassUrl =
+	'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/grass.webp';
+
+function loadGrassTexture(): Texture | null {
+	if (typeof document === 'undefined') return null;
+
+	const texture = new TextureLoader().load(grassUrl);
+	texture.wrapS = RepeatWrapping;
+	texture.wrapT = RepeatWrapping;
+	texture.colorSpace = SRGBColorSpace;
+	return texture;
+}
 
 export class World extends Mesh {
 	width: number;
@@ -21,6 +39,8 @@ export class World extends Mesh {
 	treeDensity: number;
 	rockDensity: number;
 	bushDensity: number;
+
+	private grassTexture: Texture | null = null;
 
 	constructor(width: number, height: number) {
 		super();
@@ -39,6 +59,7 @@ export class World extends Mesh {
 		this.treeCells = new Set<string>();
 		this.rockCells = new Set<string>();
 
+		this.grassTexture = loadGrassTexture();
 		this.generate();
 	}
 
@@ -95,8 +116,20 @@ export class World extends Mesh {
 	}
 
 	createTerrain() {
-		this.geometry = new PlaneGeometry(this.width, this.height, this.width, this.height);
-		this.material = new MeshStandardMaterial({ color: 0x106400 });
+		if (!this.grassTexture) this.grassTexture = loadGrassTexture();
+
+		const cols = Math.max(1, Math.floor(this.width));
+		const rows = Math.max(1, Math.floor(this.height));
+
+		if (this.grassTexture) {
+			this.grassTexture.wrapS = RepeatWrapping;
+			this.grassTexture.wrapT = RepeatWrapping;
+			this.grassTexture.repeat.set(cols, rows);
+			this.grassTexture.needsUpdate = true;
+		}
+
+		this.geometry = new PlaneGeometry(this.width, this.height, cols, rows);
+		this.material = new MeshStandardMaterial({ map: this.grassTexture ?? null });
 
 		this.rotation.x = -Math.PI / 2;
 		this.position.set(this.width / 2, 0, this.height / 2);

@@ -1,9 +1,7 @@
 <script lang="ts">
 	import {
 		AmbientLight,
-		BoxGeometry,
 		DirectionalLight,
-		Mesh,
 		MeshStandardMaterial,
 		PerspectiveCamera,
 		Scene,
@@ -12,6 +10,7 @@
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 	import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 	import { World } from './world';
+	import { Player } from './player';
 	import Stats from 'three/addons/libs/stats.module.js';
 
 	let scene: Scene;
@@ -22,6 +21,7 @@
 	let ambient: AmbientLight;
 	let stats: Stats;
 	let world: World;
+	let player: Player;
 
 	$effect(() => {
 		const abortController = new AbortController();
@@ -34,7 +34,7 @@
 		gui.domElement.style.top = '10em';
 		gui.domElement.style.zIndex = '10';
 
-		// renderer, scene, camera, controls, lights, terrain
+		// renderer, scene, camera, player, controls, lights, terrain
 		renderer = new WebGLRenderer({
 			canvas: document.querySelector('.webgl') as HTMLCanvasElement,
 			antialias: true
@@ -43,9 +43,15 @@
 		scene = new Scene();
 		camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 		controls = new OrbitControls(camera, document.querySelector('.webgl') as HTMLCanvasElement);
+		controls.target.set(5, 0, 5);
+		camera.position.set(0, 2, 0);
+		controls.update();
 
 		world = new World(10, 10);
 		scene.add(world);
+
+		player = new Player(camera, world);
+		scene.add(player);
 
 		sun = new DirectionalLight();
 		sun.intensity = 3;
@@ -58,9 +64,6 @@
 		// stats
 		stats = new Stats();
 		document.body.appendChild(stats.dom);
-
-		camera.position.set(10, 3, 10);
-		controls.update();
 
 		// handle resizing
 		function onResize() {
@@ -104,14 +107,17 @@
 		return () => {
 			abortController.abort();
 			gui.destroy();
+
+			renderer.setAnimationLoop(null);
+			world.clear();
+
+			player?.dispose();
 			renderer.dispose();
 			stats.dom.remove();
 			scene.clear();
 			controls.dispose();
 			sun.dispose();
 			ambient.dispose();
-			world.geometry.dispose();
-			(world.material as MeshStandardMaterial).dispose();
 		};
 	});
 </script>
