@@ -29,6 +29,8 @@
 			);
 		} else if (selectedComponent === 'Loader') {
 			import('$lib/threejs/loader/Loader.svelte').then((mod) => (SelectedComponent = mod.default));
+		} else if (selectedComponent === 'RPG') {
+			import('$lib/threejs/rpg/RPG.svelte').then((mod) => (SelectedComponent = mod.default));
 		} else {
 			SelectedComponent = null;
 		}
@@ -50,6 +52,7 @@
 			<option value="HeroCanvas">hero section</option>
 			<option value="PostProcess">post-processing</option>
 			<option value="Loader">loading bar</option>
+			<option value="RPG">RPG</option>
 		</select>
 
 		{#if SelectedComponent}
