@@ -25,14 +25,34 @@
 
 	$effect(() => {
 		const abortController = new AbortController();
-		const gui = new GUI();
+		const isMobile = window.matchMedia('(max-width: 768px)').matches;
+		const gui = isMobile ? null : new GUI();
 
-		// place lil-gui bottom-right
-		gui.domElement.style.position = 'fixed';
-		gui.domElement.style.right = '0';
-		gui.domElement.style.bottom = 'auto';
-		gui.domElement.style.top = '10em';
-		gui.domElement.style.zIndex = '10';
+		// lil-gui
+		if (gui) {
+			gui.domElement.style.position = 'fixed';
+			gui.domElement.style.right = '0';
+			gui.domElement.style.bottom = 'auto';
+			gui.domElement.style.top = '10em';
+			gui.domElement.style.zIndex = '10';
+			gui.domElement.style.touchAction = 'none';
+
+			const swallowEvent = (event: Event) => {
+				event.stopPropagation();
+				if ('cancelable' in event && (event as Event).cancelable) event.preventDefault();
+			};
+			gui.domElement.addEventListener('touchstart', swallowEvent, {
+				passive: false,
+				signal: abortController.signal
+			});
+			gui.domElement.addEventListener('touchmove', swallowEvent, {
+				passive: false,
+				signal: abortController.signal
+			});
+			gui.domElement.addEventListener('click', swallowEvent, {
+				signal: abortController.signal
+			});
+		}
 
 		// renderer, scene, camera, player, controls, lights, terrain
 		renderer = new WebGLRenderer({
@@ -42,15 +62,22 @@
 
 		scene = new Scene();
 		camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-		controls = new OrbitControls(camera, document.querySelector('.webgl') as HTMLCanvasElement);
+
+		// orbit controls
+		const canvas = document.querySelector('.webgl') as HTMLCanvasElement;
+		controls = new OrbitControls(camera, canvas);
+		controls.enableRotate = false;
+		controls.enableZoom = false;
+		controls.enablePan = false;
 		controls.target.set(5, 0, 5);
+
 		camera.position.set(0, 2, 0);
 		controls.update();
 
 		world = new World(10, 10);
 		scene.add(world);
 
-		player = new Player(camera, world);
+		player = new Player(camera, world, canvas, controls);
 		scene.add(player);
 
 		sun = new DirectionalLight();
@@ -86,27 +113,35 @@
 		});
 
 		// gui
-		const worldFolder = gui.addFolder('World');
-		const rebuildFromSize = () => {
-			world.generate(true);
-		};
-		const rebuildFromCounts = () => {
-			world.generate(false);
-		};
+		if (gui) {
+			const worldFolder = gui.addFolder('World');
 
-		worldFolder.add(world, 'width', 1, 20, 1).name('Width').onChange(rebuildFromSize);
-		worldFolder.add(world, 'height', 1, 20, 1).name('Height').onChange(rebuildFromSize);
-		worldFolder.addColor(world.material as MeshStandardMaterial, 'color').name('Color');
-		worldFolder.add(world, 'treeCount', 1, 100, 1).name('Tree Count').onChange(rebuildFromCounts);
-		worldFolder.add(world, 'rockCount', 1, 100, 1).name('Rock Count').onChange(rebuildFromCounts);
-		worldFolder.add(world, 'bushCount', 1, 100, 1).name('Bush Count').onChange(rebuildFromCounts);
+			if (isMobile) {
+				gui.close();
+				worldFolder.close();
+			}
 
-		worldFolder.add(world, 'generate').name('Generate');
+			const rebuildFromSize = () => {
+				world.generate(true);
+			};
+			const rebuildFromCounts = () => {
+				world.generate(false);
+			};
+
+			worldFolder.add(world, 'width', 1, 20, 1).name('Width').onChange(rebuildFromSize);
+			worldFolder.add(world, 'height', 1, 20, 1).name('Height').onChange(rebuildFromSize);
+			worldFolder.addColor(world.material as MeshStandardMaterial, 'color').name('Color');
+			worldFolder.add(world, 'treeCount', 1, 100, 1).name('Tree Count').onChange(rebuildFromCounts);
+			worldFolder.add(world, 'rockCount', 1, 100, 1).name('Rock Count').onChange(rebuildFromCounts);
+			worldFolder.add(world, 'bushCount', 1, 100, 1).name('Bush Count').onChange(rebuildFromCounts);
+
+			worldFolder.add(world, 'generate').name('Generate');
+		}
 
 		// cleanup
 		return () => {
 			abortController.abort();
-			gui.destroy();
+			gui?.destroy();
 
 			renderer.setAnimationLoop(null);
 			world.clear();

@@ -7,6 +7,7 @@ import {
 	Raycaster,
 	Vector2
 } from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 export class Player extends Mesh {
 	private raycaster = new Raycaster();
@@ -14,8 +15,15 @@ export class Player extends Mesh {
 	private camera: PerspectiveCamera;
 	private terrain: Object3D;
 	private handleMouseDown: (event: MouseEvent) => void;
+	private controls: OrbitControls;
+	private dom: HTMLElement;
 
-	constructor(camera: PerspectiveCamera, terrain: Object3D) {
+	constructor(
+		camera: PerspectiveCamera,
+		terrain: Object3D,
+		dom: HTMLElement,
+		controls: OrbitControls
+	) {
 		super();
 
 		this.geometry = new CapsuleGeometry(0.25, 0.5);
@@ -24,6 +32,8 @@ export class Player extends Mesh {
 
 		this.camera = camera;
 		this.terrain = terrain;
+		this.dom = dom;
+		this.controls = controls;
 
 		this.handleMouseDown = this.onMouseDown.bind(this);
 		window.addEventListener('mousedown', this.handleMouseDown);
@@ -31,6 +41,7 @@ export class Player extends Mesh {
 
 	onMouseDown(event: MouseEvent) {
 		if (!this.camera) return;
+		if (event.button !== 0) return; // Only respond to left-click
 
 		this.pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
 		this.pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -46,6 +57,9 @@ export class Player extends Mesh {
 			);
 			this.camera.position.set(this.position.x, this.position.y + 5, this.position.z + 5);
 			this.camera.lookAt(this.position);
+
+			this.controls.target.copy(this.position);
+			this.controls.update();
 		}
 	}
 
