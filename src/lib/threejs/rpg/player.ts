@@ -76,12 +76,14 @@ export class Player extends Mesh {
 	}
 
 	private onPointerDown(event: PointerEvent) {
+		if (event.target !== this.dom) return;
 		// handle mouse + pen + touch here
 		if (event.button !== undefined && event.button !== 0) return;
 		this.moveToClientPoint(event.clientX, event.clientY);
 	}
 
 	private onTouchStart(event: TouchEvent) {
+		if (event.target !== this.dom) return;
 		const touch = event.changedTouches[0];
 		if (!touch) return;
 		event.preventDefault();

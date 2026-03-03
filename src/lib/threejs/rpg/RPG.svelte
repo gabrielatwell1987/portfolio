@@ -23,7 +23,11 @@
 	let world: World;
 	let player: Player;
 
+	let canvas = $state<HTMLCanvasElement | null>(null);
+
 	$effect(() => {
+		if (!canvas) return;
+
 		const abortController = new AbortController();
 		const isMobile = window.matchMedia('(max-width: 768px)').matches;
 		const gui = isMobile ? null : new GUI();
@@ -56,7 +60,7 @@
 
 		// renderer, scene, camera, player, controls, lights, terrain
 		renderer = new WebGLRenderer({
-			canvas: document.querySelector('.webgl') as HTMLCanvasElement,
+			canvas,
 			antialias: true
 		});
 
@@ -64,7 +68,6 @@
 		camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 		// orbit controls
-		const canvas = document.querySelector('.webgl') as HTMLCanvasElement;
 		controls = new OrbitControls(camera, canvas);
 		controls.enableRotate = false;
 		controls.target.set(5, 0, 5);
@@ -156,7 +159,7 @@
 	});
 </script>
 
-<canvas class="webgl"></canvas>
+<canvas class="webgl" bind:this={canvas}></canvas>
 
 <style>
 	.webgl {
@@ -170,5 +173,6 @@
 		max-inline-size: 100vw;
 		display: block;
 		background: transparent;
+		touch-action: none;
 	}
 </style>

@@ -144,19 +144,21 @@
 		opacity: 0;
 		transform-origin: top left;
 		box-shadow: 0 0 0 1px var(--clr-main);
+		visibility: hidden;
 
 		&.open {
 			transform: scale(1);
 			opacity: 1;
+			visibility: visible;
 		}
 
 		&.closing {
 			transition-delay: 0ms;
 			opacity: 0;
+			visibility: hidden;
 		}
 
 		@media (width >= 300px) and (width <= 750px) {
-			visibility: visible;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
@@ -176,7 +178,7 @@
 		}
 
 		@media (width >= 750px) {
-			visibility: hidden;
+			display: none;
 		}
 	}
 </style>
