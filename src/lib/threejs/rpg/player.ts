@@ -18,7 +18,8 @@ export class Player extends Mesh {
 	private camera: PerspectiveCamera;
 	private terrain: Object3D;
 	private world: World;
-	private handleMouseDown: (event: MouseEvent) => void;
+	private handlePointerDown: (event: PointerEvent) => void;
+	private handleTouchStart: (event: TouchEvent) => void;
 	private controls: OrbitControls;
 	private dom: HTMLElement;
 
@@ -45,17 +46,17 @@ export class Player extends Mesh {
 		this.dom = dom;
 		this.controls = controls;
 
-		this.handleMouseDown = this.onMouseDown.bind(this);
-		this.dom.addEventListener('mousedown', this.handleMouseDown);
+		this.handlePointerDown = this.onPointerDown.bind(this);
+		this.handleTouchStart = this.onTouchStart.bind(this);
+
+		this.dom.addEventListener('pointerdown', this.handlePointerDown);
+		this.dom.addEventListener('touchstart', this.handleTouchStart, { passive: false });
 	}
 
-	onMouseDown(event: MouseEvent) {
-		if (!this.camera) return;
-		if (event.button !== 0) return; // Only respond to left-click
-
+	private moveToClientPoint(clientX: number, clientY: number) {
 		const rect = this.dom.getBoundingClientRect();
-		this.pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-		this.pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+		this.pointer.x = ((clientX - rect.left) / rect.width) * 2 - 1;
+		this.pointer.y = -((clientY - rect.top) / rect.height) * 2 + 1;
 
 		this.raycaster.setFromCamera(this.pointer, this.camera);
 
@@ -72,6 +73,19 @@ export class Player extends Mesh {
 		});
 
 		this.lastTick = performance.now();
+	}
+
+	private onPointerDown(event: PointerEvent) {
+		// handle mouse + pen + touch here
+		if (event.button !== undefined && event.button !== 0) return;
+		this.moveToClientPoint(event.clientX, event.clientY);
+	}
+
+	private onTouchStart(event: TouchEvent) {
+		const touch = event.changedTouches[0];
+		if (!touch) return;
+		event.preventDefault();
+		this.moveToClientPoint(touch.clientX, touch.clientY);
 	}
 
 	private isBlockedPosition(x: number, z: number): boolean {
@@ -118,7 +132,8 @@ export class Player extends Mesh {
 	}
 
 	dispose() {
-		this.dom.removeEventListener('mousedown', this.handleMouseDown);
+		this.dom.removeEventListener('pointerdown', this.handlePointerDown);
+		this.dom.removeEventListener('touchstart', this.handleTouchStart);
 		this.geometry.dispose();
 		(this.material as MeshStandardMaterial).dispose();
 	}
