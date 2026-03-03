@@ -67,17 +67,15 @@
 		const canvas = document.querySelector('.webgl') as HTMLCanvasElement;
 		controls = new OrbitControls(camera, canvas);
 		controls.enableRotate = false;
-		controls.enableZoom = false;
-		controls.enablePan = false;
 		controls.target.set(5, 0, 5);
 
-		camera.position.set(0, 2, 0);
-		controls.update();
+		camera.position.set(1, 4, 3);
+		// controls.update();
 
 		world = new World(10, 10);
 		scene.add(world);
 
-		player = new Player(camera, world, canvas, controls);
+		player = new Player(camera, world, world, canvas, controls);
 		scene.add(player);
 
 		sun = new DirectionalLight();
@@ -107,6 +105,7 @@
 
 		// animation loop
 		renderer.setAnimationLoop(() => {
+			player.update();
 			controls.update();
 			stats.update();
 			renderer.render(scene, camera);

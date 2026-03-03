@@ -28,14 +28,19 @@ function loadGrassTexture(): Texture | null {
 export class World extends Mesh {
 	width: number;
 	height: number;
-	treeCount: number;
+
 	trees!: Group;
-	treeCells: Set<string>;
 	rocks!: Group;
-	rockCount: number;
-	rockCells: Set<string>;
 	bushes!: Group;
+
+	rockCount: number;
 	bushCount: number;
+	treeCount: number;
+
+	treeCells: Set<string>;
+	rockCells: Set<string>;
+	bushCells: Set<string>;
+
 	treeDensity: number;
 	rockDensity: number;
 	bushDensity: number;
@@ -58,6 +63,7 @@ export class World extends Mesh {
 
 		this.treeCells = new Set<string>();
 		this.rockCells = new Set<string>();
+		this.bushCells = new Set<string>();
 
 		this.grassTexture = loadGrassTexture();
 		this.generate();
@@ -111,6 +117,10 @@ export class World extends Mesh {
 			});
 			this.bushes.clear();
 		}
+
+		this.treeCells.clear();
+		this.rockCells.clear();
+		this.bushCells.clear();
 
 		return this;
 	}
@@ -258,6 +268,8 @@ export class World extends Mesh {
 			this.add(this.bushes);
 		}
 
+		this.bushCells.clear();
+
 		const cols = Math.max(1, Math.floor(this.width));
 		const rows = Math.max(1, Math.floor(this.height));
 		const freeCells: string[] = [];
@@ -274,6 +286,9 @@ export class World extends Mesh {
 		for (let i = 0; i < count; i++) {
 			const pick = Math.floor(Math.random() * freeCells.length);
 			const key = freeCells.splice(pick, 1)[0];
+
+			this.bushCells.add(key);
+
 			const [cxStr, czStr] = key.split(',');
 			const cx = Number(cxStr);
 			const cz = Number(czStr);
