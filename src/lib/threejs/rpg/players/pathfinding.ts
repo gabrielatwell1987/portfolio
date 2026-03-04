@@ -1,4 +1,4 @@
-import type { World } from './world';
+import type { World } from '../world';
 
 export type Cell = { x: number; z: number };
 

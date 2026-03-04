@@ -10,7 +10,7 @@
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 	import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 	import { World } from './world';
-	import { Player } from './player';
+	import { HumanPlayer } from './players/HumanPlayer';
 	import Stats from 'three/addons/libs/stats.module.js';
 
 	let scene: Scene;
@@ -21,7 +21,7 @@
 	let ambient: AmbientLight;
 	let stats: Stats;
 	let world: World;
-	let player: Player;
+	let player: HumanPlayer;
 
 	let canvas = $state<HTMLCanvasElement | null>(null);
 
@@ -73,12 +73,11 @@
 		controls.target.set(5, 0, 5);
 
 		camera.position.set(1, 4, 3);
-		// controls.update();
 
-		world = new World(10, 10);
+		world = new World(30, 30);
 		scene.add(world);
 
-		player = new Player(camera, world, world, canvas, controls);
+		player = new HumanPlayer(camera, world, world, canvas, controls);
 		scene.add(player);
 
 		sun = new DirectionalLight();
@@ -109,7 +108,18 @@
 		// animation loop
 		renderer.setAnimationLoop(() => {
 			player.update();
+
+			// camera movement
+			const cameraOffsetX = 1;
+			const cameraOffsetY = 4;
+			const cameraOffsetZ = 3;
+			camera.position.x = player.position.x + cameraOffsetX;
+			camera.position.y = player.position.y + cameraOffsetY;
+			camera.position.z = player.position.z + cameraOffsetZ;
+
+			controls.target.copy(player.position);
 			controls.update();
+
 			stats.update();
 			renderer.render(scene, camera);
 		});
