@@ -53,13 +53,13 @@ export class World extends Mesh {
 		this.width = width;
 		this.height = height;
 
-		this.treeDensity = 15 / 100;
-		this.rockDensity = 11 / 100;
-		this.bushDensity = 8 / 100;
+		this.treeDensity = 8 / 100;
+		this.rockDensity = 5 / 100;
+		this.bushDensity = 4 / 100;
 
-		this.treeCount = 15;
-		this.rockCount = 11;
-		this.bushCount = 8;
+		this.treeCount = 8;
+		this.rockCount = 5;
+		this.bushCount = 4;
 
 		this.treeCells = new Set<string>();
 		this.rockCells = new Set<string>();
