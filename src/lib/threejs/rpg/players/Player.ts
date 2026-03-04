@@ -1,21 +1,21 @@
-import { CapsuleGeometry, Mesh, MeshStandardMaterial, Vector3 } from 'three';
+import { CapsuleGeometry, MeshStandardMaterial, Vector3 } from 'three';
 import type { World } from '../world';
+import { GameObject } from '../objects/GameObject';
 import { cellToWorld, worldToCell } from './pathfinding';
 
-export class Player extends Mesh {
+export class Player extends GameObject {
 	protected path: Vector3[] = [];
 	protected moveSpeed = 3;
 	protected lastTick = performance.now();
 	protected world: World;
 
 	constructor(world: World) {
-		super();
-
-		this.geometry = new CapsuleGeometry(0.25, 0.5);
-		this.material = new MeshStandardMaterial({ color: 0x4040c0 });
-		this.position.set(5.5, 0.5, 5.5);
+		const geometry = new CapsuleGeometry(0.25, 0.5);
+		const material = new MeshStandardMaterial({ color: 0x4040c0 });
+		super(new Vector3(5.5, 0.5, 5.5), geometry, material);
 
 		this.world = world;
+		this.position.set(5.5, 0.5, 5.5);
 	}
 
 	protected isBlockedPosition(x: number, z: number): boolean {
@@ -72,8 +72,7 @@ export class Player extends Mesh {
 		this.lastTick = performance.now();
 	}
 
-	dispose(): void {
-		this.geometry.dispose();
-		(this.material as MeshStandardMaterial).dispose();
+	override dispose(): void {
+		super.dispose();
 	}
 }

@@ -1,16 +1,15 @@
 import { Group, Mesh, MeshStandardMaterial, SphereGeometry, Vector3 } from 'three';
 import { GameObject } from './GameObject';
 
-const minRockRadius = 0.1;
-const maxRockRadius = 0.3;
-const minRockHeight = 0.5;
-const maxRockHeight = 0.8;
-
+// Constants - created once, reused many times
+const MIN_ROCK_RADIUS = 0.1;
+const MAX_ROCK_RADIUS = 0.3;
+const MIN_ROCK_HEIGHT = 0.5;
+const MAX_ROCK_HEIGHT = 0.8;
+const BURIED_CHANCE = 0.55;
+const MIN_BURIED_CHANCE = 0.25;
+const MAX_BURIED_RATIO = 0.75;
 const rockMaterial = new MeshStandardMaterial({ color: 0xb0b0b0, flatShading: true });
-
-const buriedChance = 0.55;
-const minBuriedChance = 0.25;
-const maxBuriedRatio = 0.75;
 
 export class Rock extends GameObject {
 	static createRocks(
@@ -46,8 +45,8 @@ export class Rock extends GameObject {
 			const cx = Number(cxStr);
 			const cz = Number(czStr);
 
-			const radius = minRockRadius + Math.random() * (maxRockRadius - minRockRadius);
-			const height = minRockHeight + Math.random() * (maxRockHeight - minRockHeight);
+			const radius = MIN_ROCK_RADIUS + Math.random() * (MAX_ROCK_RADIUS - MIN_ROCK_RADIUS);
+			const height = MIN_ROCK_HEIGHT + Math.random() * (MAX_ROCK_HEIGHT - MIN_ROCK_HEIGHT);
 			const rockGeometry = new SphereGeometry(radius, 6, 5);
 			const rockMesh = new Mesh(rockGeometry, rockMaterial);
 			rockMesh.scale.y = height;
@@ -56,9 +55,9 @@ export class Rock extends GameObject {
 			const x = -width / 2 + (cx + 0.5) * (width / cols);
 			const z = -height / 2 + (cz + 0.5) * (height / rows);
 
-			const isBuried = Math.random() < buriedChance;
+			const isBuried = Math.random() < BURIED_CHANCE;
 			const buryRatio = isBuried
-				? minBuriedChance + Math.random() * (maxBuriedRatio - minBuriedChance)
+				? MIN_BURIED_CHANCE + Math.random() * (MAX_BURIED_RATIO - MIN_BURIED_CHANCE)
 				: 0;
 			const buryDepth = scaledVerticalRadius * buryRatio;
 

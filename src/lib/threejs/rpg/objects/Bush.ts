@@ -1,9 +1,9 @@
 import { Group, Mesh, MeshStandardMaterial, SphereGeometry, Vector3 } from 'three';
 import { GameObject } from './GameObject';
 
-const minBushRadius = 0.1;
-const maxBushRadius = 0.3;
-
+// Constants - created once, reused many times
+const MIN_BUSH_RADIUS = 0.1;
+const MAX_BUSH_RADIUS = 0.3;
 const bushMaterial = new MeshStandardMaterial({ color: 0x80a040, flatShading: true });
 
 export class Bush extends GameObject {
@@ -43,7 +43,7 @@ export class Bush extends GameObject {
 			const cx = Number(cxStr);
 			const cz = Number(czStr);
 
-			const radius = minBushRadius + Math.random() * (maxBushRadius - minBushRadius);
+			const radius = MIN_BUSH_RADIUS + Math.random() * (MAX_BUSH_RADIUS - MIN_BUSH_RADIUS);
 			const bushGeometry = new SphereGeometry(radius, 6, 5);
 			const bushMesh = new Mesh(bushGeometry, bushMaterial);
 
@@ -58,6 +58,6 @@ export class Bush extends GameObject {
 	}
 
 	constructor(coords: Vector3, geometry?: SphereGeometry) {
-		super(coords, geometry, new MeshStandardMaterial({ color: 0x80a040, flatShading: true }));
+		super(coords, geometry, bushMaterial);
 	}
 }

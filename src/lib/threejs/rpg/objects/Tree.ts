@@ -1,9 +1,10 @@
 import { ConeGeometry, Group, Mesh, MeshStandardMaterial, Vector3 } from 'three';
 import { GameObject } from './GameObject';
 
-const treeHeight = 1;
-const treeRadius = 0.2;
-const treeGeometry = new ConeGeometry(treeRadius, treeHeight, 8);
+// Constants - created once, reused many times
+const TREE_HEIGHT = 1;
+const TREE_RADIUS = 0.2;
+const treeGeometry = new ConeGeometry(TREE_RADIUS, TREE_HEIGHT, 8);
 const treeMaterial = new MeshStandardMaterial({ color: 0x305010, flatShading: true });
 
 export class Tree extends GameObject {
@@ -44,7 +45,7 @@ export class Tree extends GameObject {
 			const x = -width / 2 + (cx + 0.5) * (width / cols);
 			const z = -height / 2 + (cz + 0.5) * (height / rows);
 
-			treeMesh.position.set(x, treeHeight / 2, z);
+			treeMesh.position.set(x, TREE_HEIGHT / 2, z);
 			trees.add(treeMesh);
 		}
 

@@ -8,7 +8,6 @@
 		WebGLRenderer
 	} from 'three';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-	import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 	import { World } from './world';
 	import { HumanPlayer } from './players/HumanPlayer';
 	import Stats from 'three/addons/libs/stats.module.js';
@@ -30,33 +29,6 @@
 
 		const abortController = new AbortController();
 		const isMobile = window.matchMedia('(max-width: 768px)').matches;
-		const gui = isMobile ? null : new GUI();
-
-		// lil-gui
-		if (gui) {
-			gui.domElement.style.position = 'fixed';
-			gui.domElement.style.right = '0';
-			gui.domElement.style.bottom = 'auto';
-			gui.domElement.style.top = '10em';
-			gui.domElement.style.zIndex = '10';
-			gui.domElement.style.touchAction = 'none';
-
-			const swallowEvent = (event: Event) => {
-				event.stopPropagation();
-				if ('cancelable' in event && (event as Event).cancelable) event.preventDefault();
-			};
-			gui.domElement.addEventListener('touchstart', swallowEvent, {
-				passive: false,
-				signal: abortController.signal
-			});
-			gui.domElement.addEventListener('touchmove', swallowEvent, {
-				passive: false,
-				signal: abortController.signal
-			});
-			gui.domElement.addEventListener('click', swallowEvent, {
-				signal: abortController.signal
-			});
-		}
 
 		// renderer, scene, camera, player, controls, lights, terrain
 		renderer = new WebGLRenderer({
@@ -124,36 +96,9 @@
 			renderer.render(scene, camera);
 		});
 
-		// gui
-		if (gui) {
-			const worldFolder = gui.addFolder('World');
-
-			if (isMobile) {
-				gui.close();
-				worldFolder.close();
-			}
-
-			const rebuildFromSize = () => {
-				world.generate(true);
-			};
-			const rebuildFromCounts = () => {
-				world.generate(false);
-			};
-
-			worldFolder.add(world, 'width', 1, 20, 1).name('Width').onChange(rebuildFromSize);
-			worldFolder.add(world, 'height', 1, 20, 1).name('Height').onChange(rebuildFromSize);
-			worldFolder.addColor(world.material as MeshStandardMaterial, 'color').name('Color');
-			worldFolder.add(world, 'treeCount', 1, 100, 1).name('Tree Count').onChange(rebuildFromCounts);
-			worldFolder.add(world, 'rockCount', 1, 100, 1).name('Rock Count').onChange(rebuildFromCounts);
-			worldFolder.add(world, 'bushCount', 1, 100, 1).name('Bush Count').onChange(rebuildFromCounts);
-
-			worldFolder.add(world, 'generate').name('Generate');
-		}
-
 		// cleanup
 		return () => {
 			abortController.abort();
-			gui?.destroy();
 
 			renderer.setAnimationLoop(null);
 			world.clear();
