@@ -14,9 +14,8 @@ export class HumanPlayer extends Player {
 
 		this.dom = dom;
 		this.movementAction = new MovementAction(this, camera, terrain, world, dom);
-
-		this.handlePointerDown = this.movementAction.handlePointerDown.bind(this.movementAction);
-		this.handleTouchStart = this.movementAction.handleTouchStart.bind(this.movementAction);
+		this.handlePointerDown = (event: PointerEvent) => this.movementAction.handlePointerDown(event);
+		this.handleTouchStart = (event: TouchEvent) => this.movementAction.handleTouchStart(event);
 
 		this.dom.addEventListener('pointerdown', this.handlePointerDown);
 		this.dom.addEventListener('touchstart', this.handleTouchStart, { passive: false });
