@@ -1,5 +1,4 @@
 import adapter from '@sveltejs/adapter-cloudflare';
-// import adapter from '@sveltejs/adapter-auto';
 import { mdsvex } from 'mdsvex';
 import rehypePrettyCode from 'rehype-pretty-code';
 

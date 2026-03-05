@@ -15,8 +15,8 @@
 		Clock,
 		DoubleSide
 	} from 'three';
-	import vertexShader from '$lib/threejs/ribbon/ribbon.vert?raw';
-	import fragmentShader from '$lib/threejs/ribbon/ribbon.frag?raw';
+	import vertexShader from '$lib/threejs/ribbon/shaders/ribbon.vert?raw';
+	import fragmentShader from '$lib/threejs/ribbon/shaders/ribbon.frag?raw';
 
 	let canvas = $state<HTMLCanvasElement>();
 	let animationFrameId: number | undefined;

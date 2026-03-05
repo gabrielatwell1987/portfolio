@@ -8,7 +8,6 @@
 		MeshBasicMaterial,
 		DoubleSide,
 		Vector2,
-		Vector3,
 		Raycaster,
 		BufferAttribute,
 		ShaderMaterial,
@@ -18,8 +17,8 @@
 		CanvasTexture
 	} from 'three';
 	import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-	import cursorVert from './cursor.vert?raw';
-	import cursorFrag from './cursor.frag?raw';
+	import cursorVert from './shaders/cursor.vert?raw';
+	import cursorFrag from './shaders/cursor.frag?raw';
 
 	let renderer: WebGLRenderer;
 	let controls: OrbitControls;
@@ -27,6 +26,7 @@
 	let particlesGeometry: PlaneGeometry;
 	let particlesMaterial: ShaderMaterial;
 	let resizeListener: (() => void) | undefined;
+	// eslint-disable-next-line no-unused-vars
 	let pointerMoveListener: ((event: PointerEvent) => void) | undefined;
 	let animationFrameId: number | undefined;
 
