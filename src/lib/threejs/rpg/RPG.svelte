@@ -1,12 +1,7 @@
+<svelte:options runes={true} />
+
 <script lang="ts">
-	import {
-		AmbientLight,
-		DirectionalLight,
-		MeshStandardMaterial,
-		PerspectiveCamera,
-		Scene,
-		WebGLRenderer
-	} from 'three';
+	import { AmbientLight, DirectionalLight, PerspectiveCamera, Scene, WebGLRenderer } from 'three';
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 	import { World } from './world';
 	import { HumanPlayer } from './players/HumanPlayer';
@@ -28,7 +23,7 @@
 		if (!canvas) return;
 
 		const abortController = new AbortController();
-		const isMobile = window.matchMedia('(max-width: 768px)').matches;
+		// const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
 		// renderer, scene, camera, player, controls, lights, terrain
 		renderer = new WebGLRenderer({
@@ -49,7 +44,7 @@
 		world = new World(30, 30);
 		scene.add(world);
 
-		player = new HumanPlayer(camera, world, world, canvas, controls);
+		player = new HumanPlayer(camera, world, world, canvas);
 		scene.add(player);
 
 		sun = new DirectionalLight();

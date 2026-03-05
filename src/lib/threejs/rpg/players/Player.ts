@@ -1,7 +1,7 @@
 import { CapsuleGeometry, MeshStandardMaterial, Vector3 } from 'three';
 import type { World } from '../world';
 import { GameObject } from '../objects/GameObject';
-import { cellToWorld, worldToCell } from './pathfinding';
+import { worldToCell } from './pathfinding';
 
 export class Player extends GameObject {
 	protected path: Vector3[] = [];
