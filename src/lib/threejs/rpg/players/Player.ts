@@ -8,6 +8,7 @@ export class Player extends GameObject {
 	protected moveSpeed = 3;
 	protected lastTick = performance.now();
 	protected world: World;
+	protected facingDirection: Vector3 = new Vector3(0, 0, 1); // Default forward direction
 
 	constructor(world: World) {
 		const geometry = new CapsuleGeometry(0.25, 0.5);
@@ -49,6 +50,9 @@ export class Player extends GameObject {
 				return false;
 			}
 
+			// Update facing direction based on movement
+			this.facingDirection.set(dx, 0, dz).normalize();
+
 			this.position.x = nextX;
 			this.position.z = nextZ;
 			this.position.y = 0.5;
@@ -70,6 +74,10 @@ export class Player extends GameObject {
 	setPath(newPath: Vector3[]): void {
 		this.path = newPath;
 		this.lastTick = performance.now();
+	}
+
+	getFacingDirection(): Vector3 {
+		return this.facingDirection.clone();
 	}
 
 	override dispose(): void {

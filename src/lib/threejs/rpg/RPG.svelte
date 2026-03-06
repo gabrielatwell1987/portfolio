@@ -42,7 +42,7 @@
 		world = new World(30, 30);
 		scene.add(world);
 
-		player = new HumanPlayer(camera, world, world, canvas);
+		player = new HumanPlayer(camera, world, world, canvas, scene);
 		scene.add(player);
 
 		sun = new DirectionalLight();
@@ -109,6 +109,16 @@
 
 <canvas class="webgl" bind:this={canvas}></canvas>
 
+<!-- Mobile shoot button -->
+<button 
+	class="shoot-button"
+	onpointerdown={() => player?.shoot()}
+	ontouchstart={() => player?.shoot()}
+	aria-label="Shoot"
+>
+	🎯
+</button>
+
 <style>
 	.webgl {
 		position: fixed;
@@ -122,5 +132,40 @@
 		display: block;
 		background: transparent;
 		touch-action: none;
+	}
+
+	.shoot-button {
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		width: 4rem;
+		height: 4rem;
+		border-radius: 50%;
+		background: rgba(255, 107, 53, 0.9);
+		color: white;
+		border: 2px solid rgba(255, 107, 53, 1);
+		font-size: 1.5rem;
+		cursor: pointer;
+		z-index: 100;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+		transition: all 0.2s ease;
+	}
+
+	.shoot-button:hover {
+		transform: scale(1.1);
+		box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+	}
+
+	.shoot-button:active {
+		transform: scale(0.95);
+	}
+
+	@media (max-width: 768px) {
+		.shoot-button {
+			display: flex;
+		}
 	}
 </style>
