@@ -2,12 +2,14 @@ import { PerspectiveCamera, Object3D, Vector3, Scene } from 'three';
 import type { World } from '../world';
 import { Player } from './Player';
 import { MovementAction } from '../actions/MovementAction';
+import { KeyboardMovement } from '../actions/KeyboardMovement';
 import { PlayerInputHandler } from './PlayerInputHandler';
 import { CombatManager } from '../combat/CombatManager';
 import { ShootingSystem } from '../combat/ShootingSystem';
 
 export class HumanPlayer extends Player {
 	private movementAction: MovementAction;
+	private keyboardMovement: KeyboardMovement;
 	private inputHandler: PlayerInputHandler;
 	private dom: HTMLElement;
 	private camera: PerspectiveCamera;
@@ -29,6 +31,7 @@ export class HumanPlayer extends Player {
 		this.camera = camera;
 		this.inputHandler = new PlayerInputHandler(camera, terrain, world, dom);
 		this.movementAction = new MovementAction(this, this.inputHandler, world);
+		this.keyboardMovement = new KeyboardMovement(this, world, dom);
 		this.handlePointerDown = (event: PointerEvent) => this.movementAction.handlePointerDown(event);
 		this.handleTouchStart = (event: TouchEvent) => this.movementAction.handleTouchStart(event);
 
@@ -43,6 +46,7 @@ export class HumanPlayer extends Player {
 	override dispose(): void {
 		this.dom.removeEventListener('pointerdown', this.handlePointerDown);
 		this.dom.removeEventListener('touchstart', this.handleTouchStart);
+		this.keyboardMovement.dispose();
 		this.shootingSystem.dispose();
 		this.combatManager.dispose();
 		super.dispose();
@@ -50,16 +54,23 @@ export class HumanPlayer extends Player {
 
 	override update(): void {
 		super.update();
-		
+
+		// Update keyboard movement
+		this.keyboardMovement.update();
+
 		// Update combat system
 		const now = performance.now();
-		const dt = Math.min(0.016, (now - this.lastTick) / 1000);
-		this.lastTick = now;
+		const dt = Math.min(0.016, (now - (this as any).lastTick) / 1000);
+		(this as any).lastTick = now;
 		this.combatManager.update(dt);
 	}
 
 	shoot(): void {
 		this.shootingSystem.shoot();
+	}
+
+	getCombatManager(): CombatManager {
+		return this.combatManager;
 	}
 
 	// Use the input handler for player choices

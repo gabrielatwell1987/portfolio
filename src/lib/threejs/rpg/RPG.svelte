@@ -3,6 +3,7 @@
 	import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 	import { World } from './world';
 	import { HumanPlayer } from './players/HumanPlayer';
+	import { EnemyManager } from './enemies/EnemyManager';
 	import Stats from 'three/addons/libs/stats.module.js';
 
 	let scene: Scene;
@@ -14,13 +15,28 @@
 	let stats: Stats;
 	let world: World;
 	let player: HumanPlayer;
+	let enemyManager: EnemyManager;
 
 	let canvas = $state<HTMLCanvasElement | null>(null);
+	let playerHealth = $state(10);
+	let maxPlayerHealth = $state(10);
+	let isGameOver = $state(false);
+	let restartTrigger = $state(0);
+
+	function handleRestart(): void {
+		isGameOver = false;
+		playerHealth = 10;
+		maxPlayerHealth = 10;
+		restartTrigger += 1;
+	}
 
 	$effect(() => {
 		if (!canvas) return;
+		// Re-run when restart is triggered
+		void restartTrigger;
 
 		const abortController = new AbortController();
+		let lastFrameTime = performance.now();
 		// const isMobile = window.matchMedia('(max-width: 768px)').matches;
 
 		// renderer, scene, camera, player, controls, lights, terrain
@@ -44,6 +60,13 @@
 
 		player = new HumanPlayer(camera, world, world, canvas, scene);
 		scene.add(player);
+
+		// Initialize enemy manager
+		enemyManager = new EnemyManager(player, world, scene);
+		scene.add(enemyManager);
+
+		// Set enemy manager in combat system
+		player.getCombatManager().setEnemyManager(enemyManager);
 
 		sun = new DirectionalLight();
 		sun.intensity = 3;
@@ -74,6 +97,22 @@
 		renderer.setAnimationLoop(() => {
 			player.update();
 
+			// Update enemies
+			const now = performance.now();
+			const dt = Math.min(0.05, (now - lastFrameTime) / 1000);
+			lastFrameTime = now;
+			enemyManager.update(dt);
+
+			// Update health display
+			const combatManager = player.getCombatManager();
+			playerHealth = combatManager.getPlayerHealth();
+			maxPlayerHealth = combatManager.getMaxPlayerHealth();
+
+			// Check if player died
+			if (playerHealth <= 0 && !isGameOver) {
+				isGameOver = true;
+			}
+
 			// camera movement
 			const cameraOffsetX = 1;
 			const cameraOffsetY = 4;
@@ -97,6 +136,7 @@
 			world.clear();
 
 			player?.dispose();
+			enemyManager?.dispose();
 			renderer.dispose();
 			stats.dom.remove();
 			scene.clear();
@@ -109,7 +149,27 @@
 
 <canvas class="webgl" bind:this={canvas}></canvas>
 
-<!-- Mobile shoot button -->
+<!-- health display -->
+<div class="health-container">
+	<h3 class="health-label">Health</h3>
+
+	<div class="health-bar">
+		<div class="health-fill" style="width: {(playerHealth / maxPlayerHealth) * 100}%"></div>
+	</div>
+
+	<div class="health-text">{Math.max(0, playerHealth)} / {maxPlayerHealth}</div>
+</div>
+
+<!-- directions -->
+<div class="game-directions">
+	<h2>directions</h2>
+
+	<p>
+		Use WASD or click/tap to move. Shoot enemies by clicking the shoot button or pressing space.
+	</p>
+</div>
+
+<!-- mobile shoot button -->
 <button
 	class="shoot-button"
 	onpointerdown={() => player?.shoot()}
@@ -122,6 +182,24 @@
 		/></svg
 	>
 </button>
+
+<!-- game over screen -->
+{#if isGameOver}
+	<div class="game-over-overlay">
+		<div class="game-over-container">
+			<h1>GAME OVER</h1>
+			<p>You were defeated...</p>
+			<button
+				class="restart-button"
+				onclick={() => {
+					handleRestart();
+				}}
+			>
+				Restart
+			</button>
+		</div>
+	</div>
+{/if}
 
 <style>
 	.webgl {
@@ -136,6 +214,80 @@
 		display: block;
 		background: transparent;
 		touch-action: none;
+	}
+
+	.health-container {
+		position: fixed;
+		bottom: 2rem;
+		left: 2rem;
+		z-index: 100;
+		background: rgba(0, 0, 0, 0.7);
+		padding: 1rem;
+		border-radius: 0.5rem;
+		min-width: 200px;
+		opacity: 0.75;
+
+		& .health-label {
+			color: white;
+			font-size: 0.875rem;
+			font-weight: bold;
+			margin-bottom: 0.5rem;
+		}
+
+		& .health-bar {
+			width: 100%;
+			height: 1.5rem;
+			background: rgba(255, 255, 255, 0.2);
+			border: 2px solid rgba(255, 255, 255, 0.4);
+			border-radius: 0.25rem;
+			overflow: hidden;
+		}
+
+		& .health-fill {
+			height: 100%;
+			background: linear-gradient(90deg, var(--clr-invert-fade), var(--fail));
+			transition: width 0.1s ease;
+		}
+
+		& .health-text {
+			color: rgba(255, 255, 255, 0.8);
+			font-size: 0.75rem;
+			margin-top: 0.5rem;
+			text-align: center;
+		}
+	}
+
+	.game-directions {
+		position: fixed;
+		bottom: 1em;
+		right: 1em;
+		background: var(--clr-invert-fade);
+		padding: 1rem 2rem;
+		border: 1px solid var(--clr-invert);
+		border-radius: var(--radius);
+		z-index: 100;
+		max-width: 30vw;
+		opacity: 0.75;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		& h2 {
+			color: var(--clr-main);
+			font-size: clamp(var(--sm), 1.25rem, var(--h5));
+			font-weight: bold;
+			margin: 0;
+			text-transform: uppercase;
+			text-align: center;
+		}
+
+		& p {
+			color: rgba(255, 255, 255, 0.8);
+			font-size: clamp(var(--xs), 0.875rem, var(--sm));
+			margin: 0;
+			text-align: center;
+		}
 	}
 
 	.shoot-button {
@@ -171,6 +323,66 @@
 	@media (max-width: 768px) {
 		.shoot-button {
 			display: flex;
+		}
+	}
+
+	.game-over-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.8);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 200;
+		backdrop-filter: blur(4px);
+
+		& .game-over-container {
+			background: transparent;
+			border: 3px solid var(--fail);
+			border-radius: 1rem;
+			padding: 3rem;
+			text-align: center;
+			max-width: 500px;
+
+			& h1 {
+				color: var(--fail);
+				font-size: 3rem;
+				margin: 0 0 1rem 0;
+				text-transform: uppercase;
+				letter-spacing: 0.2em;
+				font-weight: 900;
+			}
+
+			& p {
+				color: rgba(255, 255, 255, 0.8);
+				font-size: 1.25rem;
+				margin: 0 0 2rem 0;
+			}
+		}
+
+		& .restart-button {
+			background: transparent;
+			color: white;
+			border: 2px solid var(--fail);
+			border-radius: 0.5rem;
+			padding: 1rem 2rem;
+			font-size: 1.1rem;
+			font-weight: bold;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			text-transform: uppercase;
+			letter-spacing: 0.1em;
+
+			&:hover {
+				transform: scale(1.05);
+			}
+
+			&:active {
+				transform: scale(0.98);
+			}
 		}
 	}
 </style>
