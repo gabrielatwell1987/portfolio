@@ -70,11 +70,33 @@ export class KeyboardMovement {
 	private isBlockedPosition(x: number, z: number): boolean {
 		const cell = { x: Math.floor(x), z: Math.floor(z) };
 		const key = `${cell.x},${cell.z}`;
-		return (
-			this.world.treeCells.has(key) ||
-			this.world.rockCells.has(key) ||
-			this.world.bushCells.has(key)
-		);
+
+		// Check the main cell and surrounding cells for collision buffer
+		const cellsToCheck = [
+			`${cell.x},${cell.z}`,
+			`${cell.x + 1},${cell.z}`,
+			`${cell.x - 1},${cell.z}`,
+			`${cell.x},${cell.z + 1}`,
+			`${cell.x},${cell.z - 1}`
+		];
+
+		for (const checkKey of cellsToCheck) {
+			if (
+				this.world.treeCells.has(checkKey) ||
+				this.world.rockCells.has(checkKey) ||
+				this.world.bushCells.has(checkKey)
+			) {
+				// Only block if player would be within 0.3 units of obstacle
+				const cell = checkKey.split(',').map(Number);
+				const cellX = cell[0];
+				const cellZ = cell[1];
+				const distToCell = Math.hypot(x - (cellX + 0.5), z - (cellZ + 0.5));
+				if (distToCell < 0.4) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	update(): void {

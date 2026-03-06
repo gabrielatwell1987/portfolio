@@ -60,8 +60,8 @@ export class HumanPlayer extends Player {
 
 		// Update combat system
 		const now = performance.now();
-		const dt = Math.min(0.016, (now - (this as any).lastTick) / 1000);
-		(this as any).lastTick = now;
+		const dt = Math.min(0.016, (now - this.lastTick) / 1000);
+		this.lastTick = now;
 		this.combatManager.update(dt);
 	}
 

@@ -21,11 +21,16 @@ export class EnemyManager extends Object3D {
 	}
 
 	private getRandomSpawnPosition(): Vector3 {
-		// Spawn enemies around the player at a distance
+		// Spawn enemies around the player at a distance, but keep them on the map
 		const angle = Math.random() * Math.PI * 2;
-		const distance = 8 + Math.random() * 5;
-		const x = this.player.position.x + Math.cos(angle) * distance;
-		const z = this.player.position.z + Math.sin(angle) * distance;
+		const distance = 6 + Math.random() * 4; // Reduced from 8-13 to 6-10
+		let x = this.player.position.x + Math.cos(angle) * distance;
+		let z = this.player.position.z + Math.sin(angle) * distance;
+
+		// Clamp to world bounds (2-28 for 30x30 world with safety margin)
+		x = Math.max(2, Math.min(28, x));
+		z = Math.max(2, Math.min(28, z));
+
 		return new Vector3(x, 0.5, z);
 	}
 

@@ -1,7 +1,11 @@
-import { CapsuleGeometry, MeshStandardMaterial, Vector3 } from 'three';
+import { Vector3, Mesh } from 'three';
 import { GameObject } from '../objects/GameObject';
 import type { World } from '../world';
 import type { Player } from '../players/Player';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
+const loader = new GLTFLoader();
 
 export class Enemy extends GameObject {
 	protected world: World;
@@ -17,13 +21,37 @@ export class Enemy extends GameObject {
 	protected targetDirection: Vector3 = new Vector3();
 
 	constructor(position: Vector3, world: World, player: Player) {
-		const geometry = new CapsuleGeometry(0.25, 0.5);
-		const material = new MeshStandardMaterial({ color: 0xff4444 }); // Red for enemies
-		super(position, geometry, material);
+		super(new Vector3(5.5, 0.5, 5.5));
 
 		this.world = world;
 		this.player = player;
 		this.position.copy(position);
+
+		loader.load(
+			'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/glb/character-zombie.glb',
+			(gltf: GLTF) => {
+				const model = gltf.scene;
+				// Apply dark green color to enemy
+				model.traverse((child) => {
+					if (child instanceof Mesh) {
+						if (Array.isArray(child.material)) {
+							child.material.forEach((mat) => {
+								mat.color.setHex(0x4a90e2);
+								mat.emissive.setHex(0x2e5ac8);
+								mat.metalness = 0.3;
+								mat.roughness = 0.7;
+							});
+						} else {
+							child.material.color.setHex(0x4a90e2);
+							child.material.emissive.setHex(0x2e5ac8);
+							child.material.metalness = 0.3;
+							child.material.roughness = 0.7;
+						}
+					}
+				});
+				this.add(model);
+			}
+		);
 	}
 
 	takeDamage(amount: number = 1): void {

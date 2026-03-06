@@ -57,6 +57,20 @@ export class CombatManager extends Object3D {
 			const dist = this.player.position.distanceTo(projectile.position);
 
 			if (dist < playerRadius) {
+				// Apply knockback away from projectile
+				const knockbackDirection = this.player.position
+					.clone()
+					.sub(projectile.position)
+					.normalize();
+				const knockbackDistance = 0.5;
+				const newX = this.player.position.x + knockbackDirection.x * knockbackDistance;
+				const newZ = this.player.position.z + knockbackDirection.z * knockbackDistance;
+
+				// Clamp to world bounds
+				this.player.position.x = Math.max(0.5, Math.min(29.5, newX));
+				this.player.position.z = Math.max(0.5, Math.min(29.5, newZ));
+				this.player.position.y = 0.5;
+
 				this.takeDamage(1);
 				this.enemyProjectiles.splice(i, 1);
 			}
