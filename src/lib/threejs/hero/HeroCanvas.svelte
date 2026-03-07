@@ -17,7 +17,6 @@
 		TextureLoader,
 		Texture
 	} from 'three';
-	import Stats from 'stats.js';
 
 	let animationFrameId: number | undefined;
 	let renderer: WebGLRenderer | undefined;
@@ -35,13 +34,6 @@
 	const abortController = new AbortController();
 
 	$effect(() => {
-		/**
-		 * stats monitoring
-		 */
-		const stats = new Stats();
-		stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
-		document.body.appendChild(stats.dom);
-
 		// helper function to convert CSS colors to RGB (strip alpha if present)
 		const convertToRGB = (colorValue: string | null): string | null => {
 			if (!colorValue) return null;
@@ -287,7 +279,6 @@
 			let isAnimating = true;
 
 			const tick = () => {
-				stats.begin();
 				if (!isAnimating) return;
 
 				const elapsedTime = clock.getElapsedTime();
@@ -305,7 +296,6 @@
 				}
 
 				animationFrameId = window.requestAnimationFrame(tick);
-				stats.end();
 			};
 
 			visibilityListener = () => {
@@ -360,8 +350,6 @@
 			if (star) {
 				star.dispose();
 			}
-
-			document.body.removeChild(stats.dom);
 		};
 	});
 </script>
