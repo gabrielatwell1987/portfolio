@@ -1,4 +1,4 @@
-import { Vector3 } from 'three';
+import { Vector3, Mesh, Material, Object3D } from 'three';
 import type { World } from '../world';
 import { GameObject } from '../objects/GameObject';
 import { worldToCell } from './pathfinding';
@@ -13,6 +13,7 @@ export class Player extends GameObject {
 	protected lastTick = performance.now();
 	protected world: World;
 	protected facingDirection: Vector3 = new Vector3(0, 0, 1);
+	protected model: Object3D | null = null;
 
 	constructor(world: World) {
 		// create an empty container
@@ -21,8 +22,23 @@ export class Player extends GameObject {
 		this.world = world;
 		this.position.set(5.5, 0.5, 5.5);
 
-		loader.load('/threejayess/models/character-skeleton.glb', (gltf: GLTF) => {
+		loader.load('/threejayess/models/gunner.glb', (gltf: GLTF) => {
 			const model = gltf.scene;
+			this.model = model;
+
+			model.traverse((child) => {
+				if (child instanceof Mesh && child instanceof Material) {
+					child.material.map = null;
+					child.material.normalMap = null;
+					child.material.roughnessMap = null;
+					child.material.metalnessMap = null;
+					child.material.emissiveMap = null;
+					child.material.aoMap = null;
+
+					child.material.vertexColors = true;
+					child.material.needsUpdate = true;
+				}
+			});
 
 			this.add(model);
 		});
@@ -78,11 +94,39 @@ export class Player extends GameObject {
 
 		const target = this.path[0];
 		this.movePath(target, dt);
+
+		if (this.model) {
+			this.model.rotation.y = Math.atan2(this.facingDirection.x, this.facingDirection.z);
+		}
+	}
+
+	private updateFacingDirection(target: Vector3): void {
+		const dx = target.x - this.position.x;
+		const dz = target.z - this.position.z;
+		const dist = Math.hypot(dx, dz);
+
+		if (dist > 0) {
+			this.facingDirection.set(dx, 0, dz).normalize();
+
+			// rotate model immediately
+			if (this.model) {
+				this.model.rotation.y = Math.atan2(this.facingDirection.x, this.facingDirection.z);
+			}
+		}
 	}
 
 	setPath(newPath: Vector3[]): void {
 		this.path = newPath;
 		this.lastTick = performance.now();
+
+		if (newPath.length > 0) {
+			this.updateFacingDirection(newPath[0]);
+		}
+	}
+
+	moveInDirection(direction: Vector3): void {
+		// call this from keyboard input handlers
+		this.updateFacingDirection(this.position.clone().add(direction));
 	}
 
 	getFacingDirection(): Vector3 {

@@ -1,4 +1,4 @@
-import { Vector3 } from 'three';
+import { Vector3, Object3D } from 'three';
 import type { Player } from '../players/Player';
 import type { World } from '../world';
 
@@ -69,7 +69,6 @@ export class KeyboardMovement {
 
 	private isBlockedPosition(x: number, z: number): boolean {
 		const cell = { x: Math.floor(x), z: Math.floor(z) };
-		const key = `${cell.x},${cell.z}`;
 
 		// Check the main cell and surrounding cells for collision buffer
 		const cellsToCheck = [
@@ -118,8 +117,19 @@ export class KeyboardMovement {
 				this.player.position.y = 0.5;
 
 				// Update facing direction
-				const playerWithFacing = this.player as unknown as { facingDirection: Vector3 };
+				const playerWithFacing = this.player as unknown as {
+					facingDirection: Vector3;
+					model: Object3D | null;
+				};
 				playerWithFacing.facingDirection.copy(this.moveDirection);
+
+				// Rotate model to face direction
+				if (playerWithFacing.model) {
+					playerWithFacing.model.rotation.y = Math.atan2(
+						this.moveDirection.x,
+						this.moveDirection.z
+					);
+				}
 			}
 		}
 	}

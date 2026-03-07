@@ -1,4 +1,4 @@
-import { Vector3 } from 'three';
+import { Object3D, Vector3 } from 'three';
 import { GameObject } from '../objects/GameObject';
 import type { World } from '../world';
 import type { Player } from '../players/Player';
@@ -22,6 +22,7 @@ export class Enemy extends GameObject {
 	protected lastTick: number = performance.now();
 	protected facingDirection: Vector3 = new Vector3(0, 0, 1);
 	protected targetDirection: Vector3 = new Vector3();
+	protected model: Object3D | null = null;
 
 	constructor(position: Vector3, world: World, player: Player) {
 		super(new Vector3(5.5, 0.5, 5.5));
@@ -31,9 +32,11 @@ export class Enemy extends GameObject {
 		this.position.copy(position);
 
 		loader.load(
-			'/threejayess/models/character-zombie.glb',
+			'/threejayess/models/computerman.glb',
 			(gltf: GLTF) => {
 				const model = gltf.scene;
+				this.model = model;
+				model.scale.multiplyScalar(0.15);
 
 				this.add(model);
 			},
@@ -106,6 +109,10 @@ export class Enemy extends GameObject {
 		// Update shoot cooldown
 		if (this.shootCooldown > 0) {
 			this.shootCooldown -= dt;
+		}
+
+		if (this.model) {
+			this.model.rotation.y = Math.atan2(this.facingDirection.x, this.facingDirection.z);
 		}
 	}
 

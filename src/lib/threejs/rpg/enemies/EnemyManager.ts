@@ -11,7 +11,7 @@ export class EnemyManager extends Object3D {
 	private scene: Scene;
 	private spawnCooldown: number = 0;
 	private spawnCooldownMax: number = 3; // seconds between spawns
-	private maxEnemies: number = 5;
+	private maxEnemies: number = 3;
 
 	constructor(player: Player, world: World, scene: Scene) {
 		super();
