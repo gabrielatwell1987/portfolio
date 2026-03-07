@@ -22,6 +22,7 @@
 	let maxPlayerHealth = $state(10);
 	let isGameOver = $state(false);
 	let restartTrigger = $state(0);
+	let showDirections = $state(false);
 
 	function handleRestart(): void {
 		isGameOver = false;
@@ -149,6 +150,34 @@
 
 <canvas class="webgl" bind:this={canvas}></canvas>
 
+<!-- direction toggle button -->
+<button
+	class="directions-toggle"
+	onclick={() => (showDirections = !showDirections)}
+	aria-label="Toggle directions"
+	aria-expanded={showDirections}
+>
+	directions
+</button>
+
+{#if showDirections}
+	<div class="game-directions">
+		<button
+			class="close-directions"
+			onclick={() => (showDirections = false)}
+			aria-label="Close directions"
+		>
+			×
+		</button>
+
+		<h2>directions</h2>
+
+		<p>
+			Use WASD or click/tap to move. Shoot enemies by clicking the shoot button or pressing space.
+		</p>
+	</div>
+{/if}
+
 <!-- health display -->
 <div class="health-container">
 	<h3 class="health-label">Health</h3>
@@ -158,15 +187,6 @@
 	</div>
 
 	<div class="health-text">{Math.max(0, playerHealth)} / {maxPlayerHealth}</div>
-</div>
-
-<!-- directions -->
-<div class="game-directions">
-	<h2>directions</h2>
-
-	<p>
-		Use WASD or click/tap to move. Shoot enemies by clicking the shoot button or pressing space.
-	</p>
 </div>
 
 <!-- mobile shoot button -->
@@ -218,14 +238,19 @@
 
 	.health-container {
 		position: fixed;
-		bottom: 2rem;
-		left: 2rem;
+		bottom: 2em;
+		left: 2em;
 		z-index: 100;
-		background: rgba(0, 0, 0, 0.7);
+		background: transparent;
 		padding: 1rem;
 		border-radius: 0.5rem;
 		min-width: 200px;
 		opacity: 0.75;
+
+		@media (width <= 768px) {
+			bottom: 0;
+			left: 0;
+		}
 
 		& .health-label {
 			color: white;
@@ -257,43 +282,132 @@
 		}
 	}
 
+	.directions-toggle {
+		position: fixed;
+		bottom: 0;
+		right: 1rem;
+		inline-size: fit-content;
+		block-size: fit-content;
+		border-radius: var(--radius);
+		background: var(--clr-invert-fade);
+		color: var(--clr-main);
+		border: 2px solid var(--clr-invert);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		z-index: 100;
+
+		@media (width <= 768px) {
+			display: flex;
+		}
+
+		&:hover {
+			transform: scale(1.1);
+		}
+
+		&:active {
+			transform: scale(0.95);
+		}
+	}
+
 	.game-directions {
 		position: fixed;
 		bottom: 1em;
 		right: 1em;
 		background: var(--clr-invert-fade);
-		padding: 1rem 2rem;
+		padding: 0.5rem 1rem;
 		border: 1px solid var(--clr-invert);
 		border-radius: var(--radius);
 		z-index: 100;
-		max-width: 30vw;
+		max-inline-size: 30vw;
 		opacity: 0.75;
 
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		flex-wrap: wrap;
+
+		@media (width <= 768px) {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: var(--clr-invert-fade);
+			border: 1px solid var(--clr-invert);
+			border-radius: var(--radius);
+			padding: 0.2rem 0.75rem;
+			z-index: 150;
+			min-inline-size: 85vw;
+			max-height: 60vh;
+			overflow-y: auto;
+
+			& h2 {
+				color: var(--clr-main);
+				font-size: var(--h5);
+				font-weight: bold;
+				margin: 0 0 1rem 0;
+				text-transform: uppercase;
+				text-align: center;
+			}
+
+			& p {
+				color: rgba(255, 255, 255, 0.8);
+				font-size: var(--sm);
+				margin: 0;
+				text-align: center;
+			}
+		}
 
 		& h2 {
 			color: var(--clr-main);
-			font-size: clamp(var(--sm), 1.25rem, var(--h5));
+			font-size: clamp(var(--xs), 1.2vw, var(--h5));
 			font-weight: bold;
 			margin: 0;
 			text-transform: uppercase;
 			text-align: center;
+
+			@media (width <= 768px) {
+			}
 		}
 
 		& p {
 			color: rgba(255, 255, 255, 0.8);
-			font-size: clamp(var(--xs), 0.875rem, var(--sm));
+			font-size: clamp(var(--xxs), 1.1vw, var(--sm));
 			margin: 0;
 			text-align: center;
+
+			@media (width <= 768px) {
+			}
+		}
+	}
+
+	.close-directions {
+		position: absolute;
+		top: 0.5rem;
+		right: 0.5rem;
+		background: transparent;
+		border: none;
+		color: rgba(255, 255, 255, 0.8);
+		font-size: 2rem;
+		cursor: pointer;
+		padding: 0;
+		width: 2rem;
+		height: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: color 0.2s ease;
+
+		&:hover {
+			color: white;
 		}
 	}
 
 	.shoot-button {
 		position: fixed;
-		bottom: 2rem;
-		right: 2rem;
+		bottom: 3em;
+		right: 3em;
 		width: 4rem;
 		height: 4rem;
 		border-radius: 50%;
@@ -318,11 +432,10 @@
 		&:active {
 			transform: scale(0.95);
 		}
-	}
 
-	@media (max-width: 768px) {
-		.shoot-button {
+		@media (max-width: 768px) {
 			display: flex;
+			right: 1em;
 		}
 	}
 

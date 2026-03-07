@@ -1,4 +1,4 @@
-import { Vector3, Mesh, Material } from 'three';
+import { Vector3 } from 'three';
 import type { World } from '../world';
 import { GameObject } from '../objects/GameObject';
 import { worldToCell } from './pathfinding';
@@ -21,72 +21,11 @@ export class Player extends GameObject {
 		this.world = world;
 		this.position.set(5.5, 0.5, 5.5);
 
-		loader.load(
-			'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/glb/character-skeleton.glb',
-			(gltf: GLTF) => {
-				const model = gltf.scene;
-				// Apply skeleton styling
-				model.traverse((child) => {
-					if (child instanceof Mesh) {
-						// Log for debugging
-						console.log(
-							'Mesh:',
-							child.name,
-							'Material:',
-							Array.isArray(child.material)
-								? child.material.map((m: Material) => m.name)
-								: (child.material as Material).name
-						);
+		loader.load('/threejayess/models/character-skeleton.glb', (gltf: GLTF) => {
+			const model = gltf.scene;
 
-						if (Array.isArray(child.material)) {
-							child.material.forEach((mat) => {
-								if (
-									mat.name &&
-									(mat.name.toLowerCase().includes('eye') ||
-										mat.name.toLowerCase().includes('pupil') ||
-										mat.name.toLowerCase().includes('iris'))
-								) {
-									mat.color.setHex(0x242424);
-									mat.emissive.setHex(0x000000);
-								} else {
-									mat.color.setHex(0xf5f5dc); // Bone white
-									mat.emissive.setHex(0x808080);
-								}
-								mat.metalness = 0.2;
-								mat.roughness = 0.6;
-							});
-						} else {
-							if (
-								child.material.name &&
-								(child.material.name.toLowerCase().includes('eye') ||
-									child.material.name.toLowerCase().includes('pupil') ||
-									child.material.name.toLowerCase().includes('iris'))
-							) {
-								child.material.color.setHex(0x242424);
-								child.material.emissive.setHex(0x000000);
-							} else {
-								child.material.color.setHex(0xf5f5dc); // Bone white
-								child.material.emissive.setHex(0x808080);
-							}
-							child.material.metalness = 0.2;
-							child.material.roughness = 0.6;
-						}
-					}
-					// Also check mesh names for eyes
-					if (
-						child.name &&
-						(child.name.toLowerCase().includes('eye') || child.name.toLowerCase().includes('pupil'))
-					) {
-						console.log('Found eye mesh:', child.name);
-						if (child instanceof Mesh && !Array.isArray(child.material)) {
-							child.material.color.setHex(0x242424);
-							child.material.emissive.setHex(0x000000);
-						}
-					}
-				});
-				this.add(model);
-			}
-		);
+			this.add(model);
+		});
 	}
 
 	protected isBlockedPosition(x: number, z: number): boolean {
