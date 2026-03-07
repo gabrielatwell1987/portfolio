@@ -92,7 +92,9 @@ export class EnemyManager extends Object3D {
 
 				if (dist < hitRadius) {
 					enemy.takeDamage(1);
-					// Remove projectile after hit (will be cleaned up by combat manager)
+					// Properly clean up projectile from scene
+					this.scene.remove(projectile);
+					projectile.dispose();
 					projectiles.splice(i, 1);
 					break; // Only one hit per projectile
 				}

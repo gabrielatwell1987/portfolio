@@ -2,8 +2,8 @@ import { ConeGeometry, Group, Mesh, MeshStandardMaterial, Vector3 } from 'three'
 import { GameObject } from './GameObject';
 
 // Constants - created once, reused many times
-const TREE_HEIGHT = 1;
-const TREE_RADIUS = 0.2;
+const TREE_HEIGHT = 2;
+const TREE_RADIUS = 0.3;
 const treeGeometry = new ConeGeometry(TREE_RADIUS, TREE_HEIGHT, 8);
 const treeMaterial = new MeshStandardMaterial({ color: 0x305010, flatShading: true });
 
@@ -12,9 +12,9 @@ export class Tree extends GameObject {
 		width: number,
 		height: number,
 		treeCount: number,
-		treeCells: Set<string>,
-		rockCells: Set<string>,
-		bushCells: Set<string>
+		treeCells: Set<string>
+		// rockCells: Set<string>,
+		// bushCells: Set<string>
 	): Group {
 		const trees = new Group();
 		trees.rotation.x = Math.PI / 2;

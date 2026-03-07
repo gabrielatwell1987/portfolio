@@ -2,13 +2,13 @@ import { Group, Mesh, MeshStandardMaterial, SphereGeometry, Vector3 } from 'thre
 import { GameObject } from './GameObject';
 
 // Constants - created once, reused many times
-const MIN_ROCK_RADIUS = 0.1;
-const MAX_ROCK_RADIUS = 0.3;
+const MIN_ROCK_RADIUS = 0.2;
+const MAX_ROCK_RADIUS = 0.5;
 const MIN_ROCK_HEIGHT = 0.5;
 const MAX_ROCK_HEIGHT = 0.8;
-const BURIED_CHANCE = 0.55;
-const MIN_BURIED_CHANCE = 0.25;
-const MAX_BURIED_RATIO = 0.75;
+const BURIED_CHANCE = 0.65;
+const MIN_BURIED_CHANCE = 0.35;
+const MAX_BURIED_RATIO = 0.85;
 const rockMaterial = new MeshStandardMaterial({ color: 0xb0b0b0, flatShading: true });
 
 export class Rock extends GameObject {
@@ -47,7 +47,7 @@ export class Rock extends GameObject {
 
 			const radius = MIN_ROCK_RADIUS + Math.random() * (MAX_ROCK_RADIUS - MIN_ROCK_RADIUS);
 			const height = MIN_ROCK_HEIGHT + Math.random() * (MAX_ROCK_HEIGHT - MIN_ROCK_HEIGHT);
-			const rockGeometry = new SphereGeometry(radius, 6, 5);
+			const rockGeometry = new SphereGeometry(radius, 9, 5);
 			const rockMesh = new Mesh(rockGeometry, rockMaterial);
 			rockMesh.scale.y = height;
 			const scaledVerticalRadius = radius * height;

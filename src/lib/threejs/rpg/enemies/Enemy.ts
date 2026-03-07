@@ -77,6 +77,12 @@ export class Enemy extends GameObject {
 		);
 	}
 
+	private clampToWorldBounds(): void {
+		// Keep enemy within world bounds (0-30), with buffer for collision radius
+		this.position.x = Math.max(0.5, Math.min(29.5, this.position.x));
+		this.position.z = Math.max(0.5, Math.min(29.5, this.position.z));
+	}
+
 	update(): void {
 		const now = performance.now();
 		const dt = Math.min(0.05, (now - this.lastTick) / 1000);
@@ -105,6 +111,9 @@ export class Enemy extends GameObject {
 				this.position.y = 0.5;
 			}
 		}
+
+		// Clamp to world bounds
+		this.clampToWorldBounds();
 
 		// Update shoot cooldown
 		if (this.shootCooldown > 0) {

@@ -116,6 +116,10 @@ export class KeyboardMovement {
 				this.player.position.z = nextZ;
 				this.player.position.y = 0.5;
 
+				// Clamp to world bounds
+				this.player.position.x = Math.max(0.5, Math.min(29.5, this.player.position.x));
+				this.player.position.z = Math.max(0.5, Math.min(29.5, this.player.position.z));
+
 				// Update facing direction
 				const playerWithFacing = this.player as unknown as {
 					facingDirection: Vector3;

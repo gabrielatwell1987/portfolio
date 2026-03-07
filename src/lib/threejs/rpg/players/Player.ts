@@ -1,4 +1,4 @@
-import { Vector3, Mesh, Material, Object3D } from 'three';
+import { Vector3, Object3D } from 'three';
 import type { World } from '../world';
 import { GameObject } from '../objects/GameObject';
 import { worldToCell } from './pathfinding';
@@ -25,20 +25,8 @@ export class Player extends GameObject {
 		loader.load('/threejayess/models/gunner.glb', (gltf: GLTF) => {
 			const model = gltf.scene;
 			this.model = model;
-
-			model.traverse((child) => {
-				if (child instanceof Mesh && child instanceof Material) {
-					child.material.map = null;
-					child.material.normalMap = null;
-					child.material.roughnessMap = null;
-					child.material.metalnessMap = null;
-					child.material.emissiveMap = null;
-					child.material.aoMap = null;
-
-					child.material.vertexColors = true;
-					child.material.needsUpdate = true;
-				}
-			});
+			model.position.set(0, 0.5, 0);
+			model.scale.multiplyScalar(0.7);
 
 			this.add(model);
 		});
@@ -54,6 +42,12 @@ export class Player extends GameObject {
 		);
 	}
 
+	protected clampToWorldBounds(): void {
+		// Keep player within world bounds (0-30), with buffer for collision radius
+		this.position.x = Math.max(0.5, Math.min(29.5, this.position.x));
+		this.position.z = Math.max(0.5, Math.min(29.5, this.position.z));
+	}
+
 	protected movePath(target: Vector3, dt: number): boolean {
 		const dx = target.x - this.position.x;
 		const dz = target.z - this.position.z;
@@ -64,6 +58,7 @@ export class Player extends GameObject {
 			if (!this.isBlockedPosition(target.x, target.z)) {
 				this.position.set(target.x, 0.5, target.z);
 			}
+			this.clampToWorldBounds();
 			this.path.shift();
 			return true;
 		} else {
@@ -81,6 +76,7 @@ export class Player extends GameObject {
 			this.position.x = nextX;
 			this.position.z = nextZ;
 			this.position.y = 0.5;
+			this.clampToWorldBounds();
 			return false;
 		}
 	}

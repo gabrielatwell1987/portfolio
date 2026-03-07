@@ -6,15 +6,17 @@ export class Projectile extends Object3D {
 	private speed: number = 10; // Units per second
 	private maxDistance: number = 5; // Travel exactly 5 spaces
 	private distanceTraveled: number = 0;
+	private createdAt: number = performance.now();
+	private maxLifetime: number = 5000; // 5 seconds in milliseconds
 
 	constructor(startPosition: Vector3, direction: Vector3) {
 		super();
 
 		// Create projectile mesh
-		const geometry = new SphereGeometry(0.15, 8, 8);
+		const geometry = new SphereGeometry(0.05, 8, 8);
 		const material = new MeshStandardMaterial({
-			color: 0xff6b35,
-			emissive: 0xff6b35,
+			color: 0xff2222,
+			emissive: 0xff6666,
 			emissiveIntensity: 0.5
 		});
 		this.mesh = new Mesh(geometry, material);
@@ -26,6 +28,12 @@ export class Projectile extends Object3D {
 	}
 
 	update(dt: number): boolean {
+		// Check if projectile has expired
+		const age = performance.now() - this.createdAt;
+		if (age >= this.maxLifetime) {
+			return false; // indicates this projectile should be removed
+		}
+
 		// Move projectile
 		const displacement = this.velocity.clone().multiplyScalar(dt);
 		this.position.add(displacement);

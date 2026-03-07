@@ -72,6 +72,9 @@ export class CombatManager extends Object3D {
 				this.player.position.y = 0.5;
 
 				this.takeDamage(1);
+				// Properly clean up projectile from scene
+				this.scene.remove(projectile);
+				projectile.dispose();
 				this.enemyProjectiles.splice(i, 1);
 			}
 		}
