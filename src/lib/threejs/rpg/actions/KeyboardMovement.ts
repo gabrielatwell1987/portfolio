@@ -70,13 +70,19 @@ export class KeyboardMovement {
 	private isBlockedPosition(x: number, z: number): boolean {
 		const cell = { x: Math.floor(x), z: Math.floor(z) };
 
-		// Check the main cell and surrounding cells for collision buffer
+		// Check all 9 surrounding cells (3x3 grid) for collision
 		const cellsToCheck = [
+			// Center and orthogonal neighbors
 			`${cell.x},${cell.z}`,
 			`${cell.x + 1},${cell.z}`,
 			`${cell.x - 1},${cell.z}`,
 			`${cell.x},${cell.z + 1}`,
-			`${cell.x},${cell.z - 1}`
+			`${cell.x},${cell.z - 1}`,
+			// Diagonal neighbors
+			`${cell.x + 1},${cell.z + 1}`,
+			`${cell.x + 1},${cell.z - 1}`,
+			`${cell.x - 1},${cell.z + 1}`,
+			`${cell.x - 1},${cell.z - 1}`
 		];
 
 		for (const checkKey of cellsToCheck) {
@@ -85,17 +91,46 @@ export class KeyboardMovement {
 				this.world.rockCells.has(checkKey) ||
 				this.world.bushCells.has(checkKey)
 			) {
-				// Only block if player would be within 0.3 units of obstacle
+				// Only block if player would be within 0.1 units of obstacle
 				const cell = checkKey.split(',').map(Number);
 				const cellX = cell[0];
 				const cellZ = cell[1];
 				const distToCell = Math.hypot(x - (cellX + 0.5), z - (cellZ + 0.5));
-				if (distToCell < 0.4) {
+				if (distToCell < 0.1) {
 					return true;
 				}
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Slide-style collision detection: allows sliding along surfaces
+	 * Tries full diagonal movement first, then slides along individual axes
+	 */
+	private getValidPosition(
+		currentX: number,
+		currentZ: number,
+		desiredX: number,
+		desiredZ: number
+	): { x: number; z: number } {
+		// Try full diagonal movement
+		if (!this.isBlockedPosition(desiredX, desiredZ)) {
+			return { x: desiredX, z: desiredZ };
+		}
+
+		// Try sliding along X axis only
+		if (!this.isBlockedPosition(desiredX, currentZ)) {
+			return { x: desiredX, z: currentZ };
+		}
+
+		// Try sliding along Z axis only
+		if (!this.isBlockedPosition(currentX, desiredZ)) {
+			return { x: currentX, z: desiredZ };
+		}
+
+		// Cannot move - stay in place
+		return { x: currentX, z: currentZ };
 	}
 
 	update(): void {
@@ -108,32 +143,35 @@ export class KeyboardMovement {
 		// Only move if there's a direction and keys are pressed
 		if (this.moveDirection.length() > 0) {
 			const step = this.moveSpeed * dt;
-			const nextX = this.player.position.x + this.moveDirection.x * step;
-			const nextZ = this.player.position.z + this.moveDirection.z * step;
+			const desiredX = this.player.position.x + this.moveDirection.x * step;
+			const desiredZ = this.player.position.z + this.moveDirection.z * step;
 
-			if (!this.isBlockedPosition(nextX, nextZ)) {
-				this.player.position.x = nextX;
-				this.player.position.z = nextZ;
-				this.player.position.y = 0.5;
+			// Use slide-style collision detection
+			const validPos = this.getValidPosition(
+				this.player.position.x,
+				this.player.position.z,
+				desiredX,
+				desiredZ
+			);
 
-				// Clamp to world bounds
-				this.player.position.x = Math.max(0.5, Math.min(29.5, this.player.position.x));
-				this.player.position.z = Math.max(0.5, Math.min(29.5, this.player.position.z));
+			this.player.position.x = validPos.x;
+			this.player.position.z = validPos.z;
+			this.player.position.y = 0.5;
 
-				// Update facing direction
-				const playerWithFacing = this.player as unknown as {
-					facingDirection: Vector3;
-					model: Object3D | null;
-				};
-				playerWithFacing.facingDirection.copy(this.moveDirection);
+			// Clamp to world bounds
+			this.player.position.x = Math.max(0.5, Math.min(29.5, this.player.position.x));
+			this.player.position.z = Math.max(0.5, Math.min(29.5, this.player.position.z));
 
-				// Rotate model to face direction
-				if (playerWithFacing.model) {
-					playerWithFacing.model.rotation.y = Math.atan2(
-						this.moveDirection.x,
-						this.moveDirection.z
-					);
-				}
+			// Update facing direction
+			const playerWithFacing = this.player as unknown as {
+				facingDirection: Vector3;
+				model: Object3D | null;
+			};
+			playerWithFacing.facingDirection.copy(this.moveDirection);
+
+			// Rotate model to face direction
+			if (playerWithFacing.model) {
+				playerWithFacing.model.rotation.y = Math.atan2(this.moveDirection.x, this.moveDirection.z);
 			}
 		}
 	}

@@ -100,37 +100,49 @@ export class MobileJoystick {
 				playerWithFacing.model.rotation.y = Math.atan2(direction.x, direction.z);
 			}
 
-			// Move player with collision detection
+			// Move player with slide-style collision detection
 			const now = performance.now();
 			const dt = Math.min(0.05, (now - this.lastFrameTime) / 1000);
 			this.lastFrameTime = now;
 
 			const step = this.moveSpeed * dt;
-			const nextX = playerWithFacing.position.x + direction.x * step;
-			const nextZ = playerWithFacing.position.z + direction.z * step;
+			const desiredX = playerWithFacing.position.x + direction.x * step;
+			const desiredZ = playerWithFacing.position.z + direction.z * step;
 
-			if (!this.isBlockedPosition(nextX, nextZ)) {
-				playerWithFacing.position.x = nextX;
-				playerWithFacing.position.z = nextZ;
-				playerWithFacing.position.y = 0.5;
+			// Get valid position with sliding collision
+			const validPos = this.getValidPosition(
+				playerWithFacing.position.x,
+				playerWithFacing.position.z,
+				desiredX,
+				desiredZ
+			);
 
-				// Clamp to world bounds
-				playerWithFacing.position.x = Math.max(0.5, Math.min(29.5, playerWithFacing.position.x));
-				playerWithFacing.position.z = Math.max(0.5, Math.min(29.5, playerWithFacing.position.z));
-			}
+			playerWithFacing.position.x = validPos.x;
+			playerWithFacing.position.z = validPos.z;
+			playerWithFacing.position.y = 0.5;
+
+			// Clamp to world bounds
+			playerWithFacing.position.x = Math.max(0.5, Math.min(29.5, playerWithFacing.position.x));
+			playerWithFacing.position.z = Math.max(0.5, Math.min(29.5, playerWithFacing.position.z));
 		}
 	}
 
 	private isBlockedPosition(x: number, z: number): boolean {
 		const cell = { x: Math.floor(x), z: Math.floor(z) };
 
-		// Check the main cell and surrounding cells for collision buffer
+		// Check all 9 surrounding cells (3x3 grid) for collision
 		const cellsToCheck = [
+			// Center and orthogonal neighbors
 			`${cell.x},${cell.z}`,
 			`${cell.x + 1},${cell.z}`,
 			`${cell.x - 1},${cell.z}`,
 			`${cell.x},${cell.z + 1}`,
-			`${cell.x},${cell.z - 1}`
+			`${cell.x},${cell.z - 1}`,
+			// Diagonal neighbors
+			`${cell.x + 1},${cell.z + 1}`,
+			`${cell.x + 1},${cell.z - 1}`,
+			`${cell.x - 1},${cell.z + 1}`,
+			`${cell.x - 1},${cell.z - 1}`
 		];
 
 		for (const checkKey of cellsToCheck) {
@@ -139,17 +151,46 @@ export class MobileJoystick {
 				this.world.rockCells.has(checkKey) ||
 				this.world.bushCells.has(checkKey)
 			) {
-				// Only block if player would be within 0.3 units of obstacle
+				// Only block if player would be within 0.1 units of obstacle
 				const cellParts = checkKey.split(',').map(Number);
 				const cellX = cellParts[0];
 				const cellZ = cellParts[1];
 				const distToCell = Math.hypot(x - (cellX + 0.5), z - (cellZ + 0.5));
-				if (distToCell < 0.4) {
+				if (distToCell < 0.1) {
 					return true;
 				}
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * slide-style collision detection: allows sliding along surfaces
+	 * tries full diagonal movement first, then slides along individual axes
+	 */
+	private getValidPosition(
+		currentX: number,
+		currentZ: number,
+		desiredX: number,
+		desiredZ: number
+	): { x: number; z: number } {
+		// Try full diagonal movement
+		if (!this.isBlockedPosition(desiredX, desiredZ)) {
+			return { x: desiredX, z: desiredZ };
+		}
+
+		// Try sliding along X axis only
+		if (!this.isBlockedPosition(desiredX, currentZ)) {
+			return { x: desiredX, z: currentZ };
+		}
+
+		// Try sliding along Z axis only
+		if (!this.isBlockedPosition(currentX, desiredZ)) {
+			return { x: currentX, z: desiredZ };
+		}
+
+		// Cannot move - stay in place
+		return { x: currentX, z: currentZ };
 	}
 
 	getJoystickX(): number {

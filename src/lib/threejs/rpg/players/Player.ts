@@ -42,6 +42,35 @@ export class Player extends GameObject {
 		);
 	}
 
+	/**
+	 * Slide-style collision detection: allows sliding along surfaces
+	 * Tries full diagonal movement first, then slides along individual axes
+	 */
+	protected getValidPosition(
+		currentX: number,
+		currentZ: number,
+		desiredX: number,
+		desiredZ: number
+	): { x: number; z: number } {
+		// Try full diagonal movement
+		if (!this.isBlockedPosition(desiredX, desiredZ)) {
+			return { x: desiredX, z: desiredZ };
+		}
+
+		// Try sliding along X axis only
+		if (!this.isBlockedPosition(desiredX, currentZ)) {
+			return { x: desiredX, z: currentZ };
+		}
+
+		// Try sliding along Z axis only
+		if (!this.isBlockedPosition(currentX, desiredZ)) {
+			return { x: currentX, z: desiredZ };
+		}
+
+		// Cannot move - stay in place
+		return { x: currentX, z: currentZ };
+	}
+
 	protected clampToWorldBounds(): void {
 		// Keep player within world bounds (0-30), with buffer for collision radius
 		this.position.x = Math.max(0.5, Math.min(29.5, this.position.x));
@@ -65,16 +94,14 @@ export class Player extends GameObject {
 			const nextX = this.position.x + (dx / dist) * step;
 			const nextZ = this.position.z + (dz / dist) * step;
 
-			if (this.isBlockedPosition(nextX, nextZ)) {
-				this.path = [];
-				return false;
-			}
+			// Use slide-style collision detection
+			const validPos = this.getValidPosition(this.position.x, this.position.z, nextX, nextZ);
 
 			// Update facing direction based on movement
 			this.facingDirection.set(dx, 0, dz).normalize();
 
-			this.position.x = nextX;
-			this.position.z = nextZ;
+			this.position.x = validPos.x;
+			this.position.z = validPos.z;
 			this.position.y = 0.5;
 			this.clampToWorldBounds();
 			return false;
