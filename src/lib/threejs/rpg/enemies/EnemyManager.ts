@@ -12,6 +12,8 @@ export class EnemyManager extends Object3D {
 	private spawnCooldown: number = 0;
 	private spawnCooldownMax: number = 3; // seconds between spawns
 	private maxEnemies: number = 3;
+	private totalEnemiesSpawned: number = 0;
+	private onEnemyKilled: (() => void) | null = null;
 
 	constructor(player: Player, world: World, scene: Scene) {
 		super();
@@ -49,15 +51,18 @@ export class EnemyManager extends Object3D {
 	}
 
 	update(dt: number): void {
-		// Update existing enemies
+		// update existing enemies
 		for (let i = this.enemies.length - 1; i >= 0; i--) {
 			const enemy = this.enemies[i];
 
 			if (!enemy.isAlive()) {
-				// Remove dead enemies
+				// remove dead enemies
 				this.scene.remove(enemy);
 				enemy.dispose();
 				this.enemies.splice(i, 1);
+
+				this.onEnemyKilled?.();
+				console.log('Enemy killed, callback triggered');
 			} else {
 				enemy.update();
 			}
@@ -74,6 +79,7 @@ export class EnemyManager extends Object3D {
 						const enemy = new Enemy(spawnPos, this.world, this.player);
 						this.enemies.push(enemy);
 						this.scene.add(enemy);
+						this.totalEnemiesSpawned++;
 						break;
 					}
 				}
@@ -121,6 +127,22 @@ export class EnemyManager extends Object3D {
 
 	getEnemies(): Enemy[] {
 		return this.enemies;
+	}
+
+	setOnEnemyKilled(callback: () => void): void {
+		this.onEnemyKilled = callback;
+	}
+
+	getKillCount(): number {
+		return this.totalEnemiesSpawned - this.enemies.length;
+	}
+
+	getTotalEnemiesSpawned(): number {
+		return this.totalEnemiesSpawned;
+	}
+
+	getEnemyCount(): number {
+		return this.enemies.length;
 	}
 
 	dispose(): void {

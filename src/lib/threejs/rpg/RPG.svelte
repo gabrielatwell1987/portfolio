@@ -7,7 +7,6 @@
 	let canvas = $state<HTMLCanvasElement | null>(null);
 	let playerHealth = $state(10);
 	let maxPlayerHealth = $state(10);
-	let isGameOver = $state(false);
 	let restartTrigger = $state(0);
 	let showDirections = $state(false);
 
@@ -16,11 +15,19 @@
 	let joystickElement: HTMLElement | null = null;
 	let gameState: GameState | null = null;
 
+	let enemyKillCount = $state(0);
+	let isGameOver = $state(false);
+	let won = $derived(enemyKillCount >= 3);
+	let enemiesDisposed = $state(false);
+
 	function handleRestart(): void {
 		isGameOver = false;
 		playerHealth = 10;
 		maxPlayerHealth = 10;
 		restartTrigger += 1;
+		enemyKillCount = 0;
+		enemiesDisposed = false;
+		isGameOver = false;
 	}
 
 	$effect(() => {
@@ -30,12 +37,22 @@
 		const abortController = new AbortController();
 		let lastFrameTime = performance.now();
 
-		// Initialize game
+		// initialize game
 		gameState = initializeGame(canvas, joystickElement);
 		const { renderer, scene, camera, controls, player, enemyManager, mobileJoystick, stats } =
 			gameState;
 
-		// Handle resizing
+		// kill tracking
+		enemyManager.setOnEnemyKilled(() => {
+			enemyKillCount = enemyManager.getKillCount();
+
+			if (enemyKillCount >= 3) {
+				console.log('Win condition met!');
+				isGameOver = true;
+			}
+		});
+
+		// screen resizing
 		function onResize() {
 			const w = window.innerWidth;
 			const h = window.innerHeight;
@@ -48,16 +65,23 @@
 		onResize();
 		window.addEventListener('resize', onResize, { signal: abortController.signal });
 
-		// Animation loop
+		// animation loop
 		renderer.setAnimationLoop(() => {
 			player.update();
 
 			const now = performance.now();
 			const dt = Math.min(0.05, (now - lastFrameTime) / 1000);
 			lastFrameTime = now;
-			enemyManager.update(dt);
 
-			// Update UI
+			// only update enemies if game is not over
+			if (isGameOver && !enemiesDisposed) {
+				enemyManager.dispose();
+				enemiesDisposed = true;
+			} else if (!isGameOver) {
+				enemyManager.update(dt);
+			}
+
+			// update UI
 			if (mobileJoystick) {
 				joystickX = mobileJoystick.getJoystickX();
 				joystickY = mobileJoystick.getJoystickY();
@@ -71,7 +95,7 @@
 				isGameOver = true;
 			}
 
-			// Camera follow
+			// camera follow
 			camera.position.set(player.position.x + 1, player.position.y + 4, player.position.z + 3);
 			controls.target.copy(player.position);
 			controls.update();
@@ -80,7 +104,6 @@
 			renderer.render(scene, camera);
 		});
 
-		// Cleanup
 		return () => {
 			if (gameState) {
 				cleanupGame(gameState, abortController);
@@ -93,7 +116,7 @@
 <canvas class="webgl" bind:this={canvas}></canvas>
 
 <HealthBar {playerHealth} {maxPlayerHealth} />
-<GameOver {isGameOver} onRestart={handleRestart} />
+<GameOver {isGameOver} {won} onRestart={handleRestart} />
 <Directions bind:showDirections />
 
 <!-- mobile joystick -->

@@ -1,13 +1,29 @@
 <script lang="ts">
-	let { isGameOver = false, onRestart } = $props();
+	interface Props {
+		isGameOver?: boolean;
+		onRestart: () => void;
+		won?: boolean;
+	}
+
+	let { isGameOver = false, onRestart, won = false }: Props = $props();
 </script>
 
 {#if isGameOver}
 	<div class="game-over-overlay">
 		<div class="game-over-container">
-			<h1>GAME OVER</h1>
-			<p>You were defeated...</p>
-			<button class="restart-button" onclick={onRestart}>Restart</button>
+			{#if won}
+				<div class="won">
+					<h1>VICTORY!</h1>
+					<p>You have killed the computer men!</p>
+					<button class="restart-button" onclick={onRestart}>Play Again</button>
+				</div>
+			{:else}
+				<div class="lost">
+					<h1>GAME OVER</h1>
+					<p>You were defeated...</p>
+					<button class="restart-button" onclick={onRestart}>Restart</button>
+				</div>
+			{/if}
 		</div>
 	</div>
 {/if}
@@ -24,37 +40,50 @@
 		align-items: center;
 		justify-content: center;
 		z-index: 200;
-		backdrop-filter: blur(4px);
-	}
+		backdrop-filter: blur(7px);
 
-	.game-over-container {
-		background: transparent;
-		border: 3px solid var(--fail);
-		border-radius: 1rem;
-		padding: 3rem;
-		text-align: center;
-		max-width: 500px;
-	}
+		& .game-over-container {
+			background: var(--clr-invert);
+			border: 3px solid var(--clr-invert-fade);
+			border-radius: 1rem;
+			padding: 3rem;
+			text-align: center;
+			max-width: 500px;
 
-	h1 {
-		color: var(--fail);
-		font-size: 3rem;
-		margin: 0 0 1rem 0;
-		text-transform: uppercase;
-		letter-spacing: 0.2em;
-		font-weight: 900;
+			& .won {
+				h1 {
+					color: var(--success);
+					font-size: clamp(var(--h4), 5vw, var(--h2));
+					margin: 0 0 1rem 0;
+					text-transform: uppercase;
+					letter-spacing: 0.2em;
+					font-weight: 900;
+				}
+			}
+
+			& .lost {
+				& h1 {
+					color: var(--fail);
+					font-size: clamp(var(--h4), 5vw, var(--h2));
+					margin: 0 0 1rem 0;
+					text-transform: uppercase;
+					letter-spacing: 0.2em;
+					font-weight: 900;
+				}
+			}
+		}
 	}
 
 	p {
-		color: rgba(255, 255, 255, 0.8);
-		font-size: 1.25rem;
+		color: var(--clr-main);
+		font-size: clamp(var(--sm), 3vw, var(--h5));
 		margin: 0 0 2rem 0;
 	}
 
 	.restart-button {
 		background: transparent;
-		color: white;
-		border: 2px solid var(--fail);
+		color: var(--clr-main-fade);
+		border: 2px solid var(--clr-main-fade);
 		border-radius: 0.5rem;
 		padding: 1rem 2rem;
 		font-size: 1.1rem;
@@ -63,13 +92,13 @@
 		transition: all 0.3s ease;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
-	}
 
-	.restart-button:hover {
-		transform: scale(1.05);
-	}
+		&:hover {
+			transform: scale(1.05);
+		}
 
-	.restart-button:active {
-		transform: scale(0.98);
+		&:active {
+			transform: scale(0.98);
+		}
 	}
 </style>
