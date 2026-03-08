@@ -2,13 +2,15 @@
 	import SEO from '$lib/data/SEO.svelte';
 	import type { Component } from 'svelte';
 
+	type ComponentType = Component<Record<string, never>>;
+
 	let selectedComponent = $state<string>('Select');
 	let backgroundImage = $derived(
 		selectedComponent === 'Select'
 			? 'repeating-linear-gradient(0deg, transparent, transparent 98px, var(--clr-faint-gray) 98px, var(--clr-faint-gray) 100px), repeating-linear-gradient(90deg, transparent, transparent 98px, var(--clr-faint-gray) 98px, var(--clr-faint-gray) 100px)'
 			: 'none'
 	);
-	let SelectedComponent: Component<any, any, any> | null = $state(null);
+	let SelectedComponent: ComponentType | null = $state(null);
 
 	$effect(() => {
 		if (selectedComponent === 'PictureParticles') {
@@ -30,7 +32,7 @@
 		} else if (selectedComponent === 'Loader') {
 			import('$lib/threejs/loader/Loader.svelte').then((mod) => (SelectedComponent = mod.default));
 		} else if (selectedComponent === 'Game Scene') {
-			import('$lib/threejs/rpg/RPG.svelte').then((mod) => (SelectedComponent = mod.default));
+			import('$lib/threejs/rpg/GameScene.svelte').then((mod) => (SelectedComponent = mod.default));
 		} else {
 			SelectedComponent = null;
 		}
