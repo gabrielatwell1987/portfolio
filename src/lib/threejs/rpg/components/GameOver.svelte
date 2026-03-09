@@ -49,6 +49,7 @@
 			padding: 3rem;
 			text-align: center;
 			max-width: 500px;
+			animation: slide-up 0.5s ease-out;
 
 			& .won {
 				h1 {
@@ -99,6 +100,17 @@
 
 		&:active {
 			transform: scale(0.98);
+		}
+	}
+
+	@keyframes slide-up {
+		from {
+			transform: translateY(-4em);
+			opacity: 0;
+		}
+		to {
+			transform: translateY(0);
+			opacity: 1;
 		}
 	}
 </style>

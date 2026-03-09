@@ -1,4 +1,5 @@
 import { Object3D, Vector3, Scene } from 'three';
+import gsap from 'gsap';
 import { Projectile } from './Projectile';
 import type { Player } from '../players/Player';
 import type { EnemyManager } from '../enemies/EnemyManager';
@@ -14,6 +15,7 @@ export class CombatManager extends Object3D {
 	private lastShotTime: number = 0;
 	private playerHealth: number = 10;
 	private maxPlayerHealth: number = 10;
+	private knockbackTimeline: gsap.core.Timeline | null = null;
 
 	constructor(player: Player, scene: Scene) {
 		super();
@@ -33,7 +35,6 @@ export class CombatManager extends Object3D {
 	shoot(shootDirection: Vector3): void {
 		if (!this.canShoot()) return;
 
-		// Create projectile from player position
 		const playerPos = this.player.position.clone();
 		const shootPos = playerPos.clone().add(shootDirection.clone().normalize().multiplyScalar(0.5));
 
@@ -45,34 +46,60 @@ export class CombatManager extends Object3D {
 	}
 
 	private checkCollisions(): void {
-		// Check player projectiles hitting enemies
+		// hitting enemies
 		if (this.enemyManager) {
 			this.enemyManager.checkProjectileCollisions(this.projectiles);
 		}
 
-		// Check enemy projectiles hitting player
+		// hitting player
 		const playerRadius = 0.3;
+
 		for (let i = this.enemyProjectiles.length - 1; i >= 0; i--) {
 			const projectile = this.enemyProjectiles[i];
 			const dist = this.player.position.distanceTo(projectile.position);
 
 			if (dist < playerRadius) {
-				// Apply knockback away from projectile
+				// knockback direction
 				const knockbackDirection = this.player.position
 					.clone()
 					.sub(projectile.position)
 					.normalize();
 				const knockbackDistance = 0.5;
-				const newX = this.player.position.x + knockbackDirection.x * knockbackDistance;
-				const newZ = this.player.position.z + knockbackDirection.z * knockbackDistance;
+				const targetX = this.player.position.x + knockbackDirection.x * knockbackDistance;
+				const targetZ = this.player.position.z + knockbackDirection.z * knockbackDistance;
 
-				// Clamp to world bounds
-				this.player.position.x = Math.max(0.5, Math.min(29.5, newX));
-				this.player.position.z = Math.max(0.5, Math.min(29.5, newZ));
-				this.player.position.y = 0.5;
+				// clamp to world bounds
+				const clampedX = Math.max(0.5, Math.min(29.5, targetX));
+				const clampedZ = Math.max(0.5, Math.min(29.5, targetZ));
+				// this.player.position.x = clampedX;
+				// this.player.position.z = clampedZ;
+				// this.player.position.y = 0.5;
+
+				if (this.knockbackTimeline) {
+					this.knockbackTimeline.kill();
+				}
+
+				// initial position for animation
+				const startPos = { x: this.player.position.x, z: this.player.position.z };
+
+				this.knockbackTimeline = gsap.timeline();
+				this.knockbackTimeline.to(
+					startPos,
+					{
+						x: clampedX,
+						z: clampedZ,
+						duration: 0.3,
+						ease: 'back.out',
+						onUpdate: () => {
+							this.player.position.x = startPos.x;
+							this.player.position.z = startPos.z;
+							this.player.position.y = 0.5;
+						}
+					},
+					0
+				);
 
 				this.takeDamage(1);
-				// Properly clean up projectile from scene
 				this.scene.remove(projectile);
 				projectile.dispose();
 				this.enemyProjectiles.splice(i, 1);
@@ -81,7 +108,7 @@ export class CombatManager extends Object3D {
 	}
 
 	update(dt: number): void {
-		// Update player projectiles
+		// update player projectiles
 		for (let i = this.projectiles.length - 1; i >= 0; i--) {
 			const projectile = this.projectiles[i];
 			const isAlive = projectile.update(dt);
@@ -94,20 +121,20 @@ export class CombatManager extends Object3D {
 			}
 		}
 
-		// Update enemy projectiles
+		// update enemy projectiles
 		for (let i = this.enemyProjectiles.length - 1; i >= 0; i--) {
 			const projectile = this.enemyProjectiles[i];
 			const isAlive = projectile.update(dt);
 
 			if (!isAlive) {
-				// Remove dead projectile
+				// remove dead projectile
 				this.scene.remove(projectile);
 				projectile.dispose();
 				this.enemyProjectiles.splice(i, 1);
 			}
 		}
 
-		// Get new enemy projectiles
+		// get new enemy projectiles
 		if (this.enemyManager) {
 			const newEnemyProjectiles = this.enemyManager.getEnemyProjectiles();
 			for (const proj of newEnemyProjectiles) {
@@ -117,7 +144,6 @@ export class CombatManager extends Object3D {
 			}
 		}
 
-		// Check collisions
 		this.checkCollisions();
 	}
 
@@ -142,11 +168,15 @@ export class CombatManager extends Object3D {
 	}
 
 	dispose(): void {
-		// Clean up all remaining projectiles
+		if (this.knockbackTimeline) {
+			this.knockbackTimeline.kill();
+		}
+
 		for (const projectile of this.projectiles) {
 			this.scene.remove(projectile);
 			projectile.dispose();
 		}
+
 		this.projectiles = [];
 	}
 }
