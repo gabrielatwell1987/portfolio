@@ -24,7 +24,8 @@
 		<h2>directions</h2>
 
 		<p>
-			Use WASD or click/tap to move. Shoot enemies by clicking the shoot button or pressing space.
+			Use W A S D or click/tap to move. Shoot enemies by clicking the shoot button or pressing
+			space.
 		</p>
 	</div>
 {/if}
@@ -39,6 +40,9 @@
 		border-radius: var(--radius);
 		background: var(--clr-invert-fade);
 		color: var(--clr-main);
+		font-family: var(--bronova-bold);
+		font-size: clamp(var(--xs), 1.2vw, var(--h5));
+		opacity: 0.8;
 		border: 2px solid var(--clr-invert);
 		display: flex;
 		align-items: center;
@@ -49,14 +53,14 @@
 		@media (width <= 768px) {
 			display: flex;
 		}
-	}
 
-	.directions-toggle:hover {
-		transform: scale(1.1);
-	}
+		&:hover {
+			transform: scale(1.1);
+		}
 
-	.directions-toggle:active {
-		transform: scale(0.95);
+		&:active {
+			transform: scale(0.95);
+		}
 	}
 
 	.game-directions {
@@ -69,7 +73,7 @@
 		border-radius: var(--radius);
 		z-index: 100;
 		max-inline-size: 30vw;
-		opacity: 0.75;
+		opacity: 1;
 
 		display: flex;
 		justify-content: space-between;
@@ -90,30 +94,33 @@
 			max-height: 60vh;
 			overflow-y: auto;
 		}
-	}
 
-	.game-directions h2 {
-		color: var(--clr-main);
-		font-size: clamp(var(--xs), 1.2vw, var(--h5));
-		font-weight: bold;
-		margin: 0;
-		text-transform: uppercase;
-		text-align: center;
+		& h2 {
+			color: var(--clr-main);
+			font-family: var(--bronova);
+			font-size: clamp(var(--xs), 1.2vw, var(--h5));
+			font-weight: 500;
+			margin: 0;
+			text-transform: uppercase;
+			text-align: center;
 
-		@media (width <= 768px) {
-			font-size: var(--h5);
-			margin: 0 0 1rem 0;
+			@media (width <= 768px) {
+				font-size: var(--h5);
+				margin: 0 0 1rem 0;
+			}
 		}
-	}
 
-	.game-directions p {
-		color: rgba(255, 255, 255, 0.8);
-		font-size: clamp(var(--xxs), 1.1vw, var(--sm));
-		margin: 0;
-		text-align: center;
+		& p {
+			color: var(--clr-main);
+			font-family: var(--bronova);
+			font-size: clamp(var(--xxs), 1.1vw, var(--sm));
+			font-weight: 400;
+			margin: 0;
+			text-align: center;
 
-		@media (width <= 768px) {
-			font-size: var(--sm);
+			@media (width <= 768px) {
+				font-size: var(--sm);
+			}
 		}
 	}
 

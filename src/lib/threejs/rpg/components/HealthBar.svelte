@@ -17,7 +17,7 @@
 		background: transparent;
 		padding: 1rem;
 		border-radius: 0.5rem;
-		min-width: 200px;
+		min-inline-size: 200px;
 		opacity: 0.75;
 
 		@media (width <= 768px) {
@@ -27,8 +27,8 @@
 	}
 
 	.health-bar {
-		width: 100%;
-		height: 0.75rem;
+		inline-size: 100%;
+		block-size: clamp(0.75rem, 1.5vw, 1.25rem);
 		background: rgba(255, 255, 255, 0.2);
 		border: 2px solid rgba(255, 255, 255, 0.4);
 		border-radius: 0.25rem;
@@ -36,8 +36,8 @@
 	}
 
 	.health-fill {
-		height: 100%;
+		block-size: 100%;
 		background: linear-gradient(90deg, var(--clr-invert-fade), var(--fail));
-		transition: width 0.1s ease;
+		transition: inline-size 0.1s ease;
 	}
 </style>
