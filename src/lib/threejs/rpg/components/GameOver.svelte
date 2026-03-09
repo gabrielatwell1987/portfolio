@@ -53,23 +53,45 @@
 
 			& .won {
 				h1 {
-					color: var(--success);
+					font-family: var(--bronova-bold);
 					font-size: clamp(var(--h4), 5vw, var(--h2));
 					margin: 0 0 1rem 0;
 					text-transform: uppercase;
 					letter-spacing: 0.2em;
 					font-weight: 900;
+					color: var(--clr-invert);
+					text-shadow:
+						0 0 1px var(--clr-invert),
+						-2px -2px 0 var(--success),
+						2px -2px 0 var(--success),
+						-2px 2px 0 var(--success),
+						2px 2px 0 var(--success),
+						-2px 0 0 var(--success),
+						2px 0 0 var(--success),
+						0 -2px 0 var(--success),
+						0 2px 0 var(--success);
 				}
 			}
 
 			& .lost {
 				& h1 {
-					color: var(--fail);
+					font-family: var(--bronova-bold);
 					font-size: clamp(var(--h4), 5vw, var(--h2));
 					margin: 0 0 1rem 0;
 					text-transform: uppercase;
 					letter-spacing: 0.2em;
 					font-weight: 900;
+					color: var(--clr-invert);
+					text-shadow:
+						0 0 1px var(--clr-invert),
+						-2px -2px 0 var(--fail),
+						2px -2px 0 var(--fail),
+						-2px 2px 0 var(--fail),
+						2px 2px 0 var(--fail),
+						-2px 0 0 var(--fail),
+						2px 0 0 var(--fail),
+						0 -2px 0 var(--fail),
+						0 2px 0 var(--fail);
 				}
 			}
 		}
@@ -77,26 +99,25 @@
 
 	p {
 		color: var(--clr-main);
-		font-size: clamp(var(--sm), 3vw, var(--h5));
+		font-family: var(--bronova);
+		font-size: clamp(var(--sm), 2.5vw, var(--h5));
+		font-weight: 500;
 		margin: 0 0 2rem 0;
 	}
 
 	.restart-button {
 		background: transparent;
-		color: var(--clr-main-fade);
+		color: var(--clr-main);
 		border: 2px solid var(--clr-main-fade);
 		border-radius: 0.5rem;
 		padding: 1rem 2rem;
-		font-size: 1.1rem;
-		font-weight: bold;
+		font-family: var(--bronova);
+		font-size: clamp(var(--sm), 3vw, var(--h5));
+		font-weight: 700;
 		cursor: pointer;
 		transition: all 0.3s ease;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
-
-		&:hover {
-			transform: scale(1.05);
-		}
 
 		&:active {
 			transform: scale(0.98);
