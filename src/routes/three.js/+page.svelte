@@ -31,8 +31,8 @@
 			);
 		} else if (selectedComponent === 'Loader') {
 			import('$lib/threejs/loader/Loader.svelte').then((mod) => (SelectedComponent = mod.default));
-		} else if (selectedComponent === 'Game Scene') {
-			import('$lib/threejs/rpg/GameScene.svelte').then((mod) => (SelectedComponent = mod.default));
+		} else if (selectedComponent === 'Shooting Game') {
+			import('$lib/threejs/game/GameScene.svelte').then((mod) => (SelectedComponent = mod.default));
 		} else {
 			SelectedComponent = null;
 		}
@@ -54,7 +54,7 @@
 			<option value="HeroCanvas">hero section</option>
 			<option value="PostProcess">post-processing</option>
 			<option value="Loader">loading bar</option>
-			<option value="Game Scene">game scene</option>
+			<option value="Shooting Game">shooting game</option>
 		</select>
 
 		{#if SelectedComponent}
