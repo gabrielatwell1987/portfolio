@@ -104,7 +104,7 @@
 <section class="table-and-logo" id="top">
 	<GabeMorph />
 
-	<TableOfContents />
+	<TableOfContents sideBar={true} />
 </section>
 
 <section class="topics" class:mounted>
