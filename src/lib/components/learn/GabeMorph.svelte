@@ -104,22 +104,22 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 100%;
+		inline-size: fit-content;
 		padding: 1rem;
 		padding-top: 5em;
-		margin-left: 2em;
+		margin-inline-start: 2em;
 
 		@media (width <= 768px) {
 			padding: 0.5rem;
 			scale: 0.8;
-			margin-left: 1em;
+			margin-inline-start: 1em;
 		}
 
 		& svg {
-			width: 100%;
-			height: auto;
+			inline-size: 100%;
+			block-size: auto;
 			max-inline-size: min(90vw, 25em);
-			min-width: 320px;
+			min-inline-size: 320px;
 			margin: 0;
 			padding: 0;
 			fill: var(--clr-main);
@@ -130,7 +130,7 @@
 
 			@media (width <= 500px) {
 				max-inline-size: 95vw;
-				min-width: 280px;
+				min-inline-size: 280px;
 			}
 		}
 

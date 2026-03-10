@@ -9,9 +9,28 @@
 	import ViewTransitionImage from '$lib/components/layout/view-transitions/ViewTransitionImage.svelte';
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	import Popover from '$lib/components/layout/Popover.svelte';
 
 	let mounted = $state<boolean>(false);
 	let prefersReducedMotion = $state<boolean>(false);
+	let isMobile = $state<boolean>(false);
+
+	// mobile check
+	$effect(() => {
+		const abortController = new AbortController();
+		const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+		const handleChange = (e: MediaQueryListEvent) => {
+			isMobile = e.matches;
+		};
+
+		isMobile = mediaQuery.matches;
+		mediaQuery.addEventListener('change', handleChange, { signal: abortController.signal });
+
+		return () => {
+			abortController.abort();
+		};
+	});
 
 	$effect(() => {
 		if (document.startViewTransition) {
@@ -102,7 +121,13 @@
 />
 
 <section class="table-and-logo" id="top">
-	<GabeMorph />
+	<div class="popover-morph">
+		<GabeMorph />
+
+		{#if !isMobile}
+			<Popover title="" text="click the arrow button on the left to open the table of contents." />
+		{/if}
+	</div>
 
 	<TableOfContents sideBar={true} />
 </section>
@@ -153,6 +178,18 @@
 <style>
 	.table-and-logo {
 		padding-top: 5em;
+
+		& .popover-morph {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 2em;
+
+			@media (width <= 768px) {
+				flex-direction: column;
+				gap: 0;
+			}
+		}
 	}
 
 	.topics {
