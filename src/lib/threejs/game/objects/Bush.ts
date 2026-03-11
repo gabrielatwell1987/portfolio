@@ -1,24 +1,48 @@
-import { Group, Mesh, MeshStandardMaterial, SphereGeometry, Vector3 } from 'three';
+import { Group, Vector3 } from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { GameObject } from './GameObject';
 
-// Constants - created once, reused many times
-const MIN_BUSH_RADIUS = 0.2;
-const MAX_BUSH_RADIUS = 0.4;
-const bushMaterial = new MeshStandardMaterial({ color: 0x80a040, flatShading: true });
+// Constants and loader
+const BUSH_MODEL_PATH = '/threejayess/models/bush.glb';
+let bushModelCache: Group | null = null;
+const gltfLoader = new GLTFLoader();
 
 export class Bush extends GameObject {
-	static createBushes(
+	static async loadBushModel(): Promise<Group> {
+		if (bushModelCache) {
+			return bushModelCache;
+		}
+
+		return new Promise((resolve, reject) => {
+			gltfLoader.load(
+				BUSH_MODEL_PATH,
+				(gltf: GLTF) => {
+					bushModelCache = gltf.scene;
+					bushModelCache.scale.set(0.005, 0.005, 0.005);
+					resolve(bushModelCache);
+				},
+				undefined,
+				reject
+			);
+		});
+	}
+
+	static async createBushes(
 		width: number,
 		height: number,
 		bushCount: number,
 		bushCells: Set<string>,
 		treeCells: Set<string>,
 		rockCells: Set<string>
-	): Group {
+	): Promise<Group> {
 		const bushes = new Group();
 		bushes.rotation.x = Math.PI / 2;
 
 		bushCells.clear();
+
+		// Load the bush model
+		const bushModel = await this.loadBushModel();
 
 		const cols = Math.max(1, Math.floor(width));
 		const rows = Math.max(1, Math.floor(height));
@@ -43,21 +67,20 @@ export class Bush extends GameObject {
 			const cx = Number(cxStr);
 			const cz = Number(czStr);
 
-			const radius = MIN_BUSH_RADIUS + Math.random() * (MAX_BUSH_RADIUS - MIN_BUSH_RADIUS);
-			const bushGeometry = new SphereGeometry(radius, 45, 5);
-			const bushMesh = new Mesh(bushGeometry, bushMaterial);
+			// Clone the bush model
+			const bushMesh = bushModel.clone();
 
 			const x = -width / 2 + (cx + 0.5) * (width / cols);
 			const z = -height / 2 + (cz + 0.5) * (height / rows);
 
-			bushMesh.position.set(x, radius, z);
+			bushMesh.position.set(x, 0, z);
 			bushes.add(bushMesh);
 		}
 
 		return bushes;
 	}
 
-	constructor(coords: Vector3, geometry?: SphereGeometry) {
-		super(coords, geometry, bushMaterial);
+	constructor(coords: Vector3) {
+		super(coords);
 	}
 }

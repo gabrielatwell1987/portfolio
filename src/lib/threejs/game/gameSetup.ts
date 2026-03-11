@@ -36,6 +36,9 @@ export function initializeGame(
 	const world = new World(30, 30);
 	scene.add(world);
 
+	// Initialize world asynchronously
+	world.generate();
+
 	const player = new HumanPlayer(camera, world, world, canvas, scene);
 	scene.add(player);
 

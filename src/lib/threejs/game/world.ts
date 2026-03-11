@@ -66,7 +66,6 @@ export class World extends Mesh {
 		this.bushCells = new Set<string>();
 
 		this.grassTexture = loadGrassTexture();
-		this.generate();
 	}
 
 	private updateCountFromSize() {
@@ -79,13 +78,13 @@ export class World extends Mesh {
 		this.bushCount = Math.min(totalCells, Math.round(totalCells * this.bushDensity));
 	}
 
-	generate(recalculateFromDensity = true) {
+	async generate(recalculateFromDensity = true) {
 		this.clear();
 		if (recalculateFromDensity) this.updateCountFromSize();
 		this.createTerrain();
 		this.createTrees();
 		this.createRocks();
-		this.createBushes();
+		await this.createBushes();
 	}
 
 	clear() {
@@ -151,9 +150,7 @@ export class World extends Mesh {
 				this.width,
 				this.height,
 				this.treeCount,
-				this.treeCells,
-				this.rockCells,
-				this.bushCells
+				this.treeCells
 			);
 			this.add(this.trees);
 		} else {
@@ -162,9 +159,7 @@ export class World extends Mesh {
 				this.width,
 				this.height,
 				this.treeCount,
-				this.treeCells,
-				this.rockCells,
-				this.bushCells
+				this.treeCells
 			);
 			this.add(this.trees);
 		}
@@ -193,9 +188,9 @@ export class World extends Mesh {
 		}
 	}
 
-	createBushes() {
+	async createBushes() {
 		if (!this.bushes) {
-			this.bushes = Bush.createBushes(
+			this.bushes = await Bush.createBushes(
 				this.width,
 				this.height,
 				this.bushCount,
@@ -206,7 +201,7 @@ export class World extends Mesh {
 			this.add(this.bushes);
 		} else {
 			this.remove(this.bushes);
-			this.bushes = Bush.createBushes(
+			this.bushes = await Bush.createBushes(
 				this.width,
 				this.height,
 				this.bushCount,
