@@ -53,11 +53,11 @@ export class World extends Mesh {
 		this.width = width;
 		this.height = height;
 
-		this.treeDensity = 8 / 100;
+		this.treeDensity = 3 / 100;
 		this.rockDensity = 5 / 100;
 		this.bushDensity = 4 / 100;
 
-		this.treeCount = 8;
+		this.treeCount = 3;
 		this.rockCount = 5;
 		this.bushCount = 4;
 
@@ -82,8 +82,8 @@ export class World extends Mesh {
 		this.clear();
 		if (recalculateFromDensity) this.updateCountFromSize();
 		this.createTerrain();
-		this.createTrees();
-		this.createRocks();
+		await this.createTrees();
+		await this.createRocks();
 		await this.createBushes();
 	}
 
@@ -144,30 +144,20 @@ export class World extends Mesh {
 		this.position.set(this.width / 2, 0, this.height / 2);
 	}
 
-	createTrees() {
+	async createTrees() {
 		if (!this.trees) {
-			this.trees = Tree.createTrees(
-				this.width,
-				this.height,
-				this.treeCount,
-				this.treeCells
-			);
+			this.trees = await Tree.createTrees(this.width, this.height, this.treeCount, this.treeCells);
 			this.add(this.trees);
 		} else {
 			this.remove(this.trees);
-			this.trees = Tree.createTrees(
-				this.width,
-				this.height,
-				this.treeCount,
-				this.treeCells
-			);
+			this.trees = await Tree.createTrees(this.width, this.height, this.treeCount, this.treeCells);
 			this.add(this.trees);
 		}
 	}
 
-	createRocks() {
+	async createRocks() {
 		if (!this.rocks) {
-			this.rocks = Rock.createRocks(
+			this.rocks = await Rock.createRocks(
 				this.width,
 				this.height,
 				this.rockCount,
@@ -177,7 +167,7 @@ export class World extends Mesh {
 			this.add(this.rocks);
 		} else {
 			this.remove(this.rocks);
-			this.rocks = Rock.createRocks(
+			this.rocks = await Rock.createRocks(
 				this.width,
 				this.height,
 				this.rockCount,

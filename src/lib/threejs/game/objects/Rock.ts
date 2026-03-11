@@ -1,28 +1,48 @@
-import { Group, Mesh, MeshStandardMaterial, SphereGeometry, Vector3 } from 'three';
+import { Group, Vector3 } from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { GameObject } from './GameObject';
 
-// Constants - created once, reused many times
-const MIN_ROCK_RADIUS = 0.2;
-const MAX_ROCK_RADIUS = 0.5;
-const MIN_ROCK_HEIGHT = 0.5;
-const MAX_ROCK_HEIGHT = 0.8;
-const BURIED_CHANCE = 0.65;
-const MIN_BURIED_CHANCE = 0.35;
-const MAX_BURIED_RATIO = 0.85;
-const rockMaterial = new MeshStandardMaterial({ color: 0xb0b0b0, flatShading: true });
+// Constants and loader
+const ROCK_MODEL_PATH = '/threejayess/models/rock.glb';
+const MIN_ROCK_SCALE = 0.003;
+const MAX_ROCK_SCALE = 0.008;
+let rockModelCache: Group | null = null;
+const gltfLoader = new GLTFLoader();
 
 export class Rock extends GameObject {
-	static createRocks(
+	static async loadRockModel(): Promise<Group> {
+		if (rockModelCache) {
+			return rockModelCache;
+		}
+
+		return new Promise((resolve, reject) => {
+			gltfLoader.load(
+				ROCK_MODEL_PATH,
+				(gltf: GLTF) => {
+					rockModelCache = gltf.scene;
+					resolve(rockModelCache);
+				},
+				undefined,
+				reject
+			);
+		});
+	}
+
+	static async createRocks(
 		width: number,
 		height: number,
 		rockCount: number,
 		rockCells: Set<string>,
 		treeCells: Set<string>
-	): Group {
+	): Promise<Group> {
 		const rocks = new Group();
 		rocks.rotation.x = Math.PI / 2;
 
 		rockCells.clear();
+
+		// Load the rock model
+		const rockModel = await this.loadRockModel();
 
 		const cols = Math.max(1, Math.floor(width));
 		const rows = Math.max(1, Math.floor(height));
@@ -45,35 +65,24 @@ export class Rock extends GameObject {
 			const cx = Number(cxStr);
 			const cz = Number(czStr);
 
-			const radius = MIN_ROCK_RADIUS + Math.random() * (MAX_ROCK_RADIUS - MIN_ROCK_RADIUS);
-			const height = MIN_ROCK_HEIGHT + Math.random() * (MAX_ROCK_HEIGHT - MIN_ROCK_HEIGHT);
-			const rockGeometry = new SphereGeometry(radius, 9, 5);
-			const rockMesh = new Mesh(rockGeometry, rockMaterial);
-			rockMesh.scale.y = height;
-			const scaledVerticalRadius = radius * height;
+			// Clone the rock model
+			const rockMesh = rockModel.clone();
+
+			// Apply random scale
+			const randomScale = MIN_ROCK_SCALE + Math.random() * (MAX_ROCK_SCALE - MIN_ROCK_SCALE);
+			rockMesh.scale.set(randomScale, randomScale, randomScale);
 
 			const x = -width / 2 + (cx + 0.5) * (width / cols);
 			const z = -height / 2 + (cz + 0.5) * (height / rows);
 
-			const isBuried = Math.random() < BURIED_CHANCE;
-			const buryRatio = isBuried
-				? MIN_BURIED_CHANCE + Math.random() * (MAX_BURIED_RATIO - MIN_BURIED_CHANCE)
-				: 0;
-			const buryDepth = scaledVerticalRadius * buryRatio;
-
-			const rockShade = 1 - buryRatio * 0.8;
-			const rockInstanceMaterial = rockMaterial.clone();
-			rockInstanceMaterial.color.multiplyScalar(rockShade);
-			rockMesh.material = rockInstanceMaterial;
-
-			rockMesh.position.set(x, scaledVerticalRadius - buryDepth, z);
+			rockMesh.position.set(x, 0, z);
 			rocks.add(rockMesh);
 		}
 
 		return rocks;
 	}
 
-	constructor(coords: Vector3, geometry?: SphereGeometry, material?: MeshStandardMaterial) {
-		super(coords, geometry, material);
+	constructor(coords: Vector3) {
+		super(coords);
 	}
 }

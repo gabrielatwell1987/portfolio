@@ -1,25 +1,48 @@
-import { ConeGeometry, Group, Mesh, MeshStandardMaterial, Vector3 } from 'three';
+import { Group, Vector3 } from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { GameObject } from './GameObject';
 
-// Constants - created once, reused many times
-const TREE_HEIGHT = 2;
-const TREE_RADIUS = 0.3;
-const treeGeometry = new ConeGeometry(TREE_RADIUS, TREE_HEIGHT, 8);
-const treeMaterial = new MeshStandardMaterial({ color: 0x305010, flatShading: true });
+// Constants and loader
+const TREE_MODEL_PATH = '/threejayess/models/low_poly_dead_tree.glb';
+const MIN_TREE_SCALE = 0.02;
+const MAX_TREE_SCALE = 0.045;
+let treeModelCache: Group | null = null;
+const gltfLoader = new GLTFLoader();
 
 export class Tree extends GameObject {
-	static createTrees(
+	static async loadTreeModel(): Promise<Group> {
+		if (treeModelCache) {
+			return treeModelCache;
+		}
+
+		return new Promise((resolve, reject) => {
+			gltfLoader.load(
+				TREE_MODEL_PATH,
+				(gltf: GLTF) => {
+					treeModelCache = gltf.scene;
+
+					resolve(treeModelCache);
+				},
+				undefined,
+				reject
+			);
+		});
+	}
+
+	static async createTrees(
 		width: number,
 		height: number,
 		treeCount: number,
 		treeCells: Set<string>
-		// rockCells: Set<string>,
-		// bushCells: Set<string>
-	): Group {
+	): Promise<Group> {
 		const trees = new Group();
 		trees.rotation.x = Math.PI / 2;
 
 		treeCells.clear();
+
+		// Load the tree model
+		const treeModel = await this.loadTreeModel();
 
 		const cols = Math.max(1, Math.floor(width));
 		const rows = Math.max(1, Math.floor(height));
@@ -40,19 +63,24 @@ export class Tree extends GameObject {
 			used.add(key);
 			treeCells.add(key);
 
-			const treeMesh = new Mesh(treeGeometry, treeMaterial);
+			// Clone the tree model
+			const treeMesh = treeModel.clone();
+
+			// random scale
+			const randomScale = MIN_TREE_SCALE + Math.random() * (MAX_TREE_SCALE - MIN_TREE_SCALE);
+			treeMesh.scale.set(randomScale, randomScale, randomScale);
 
 			const x = -width / 2 + (cx + 0.5) * (width / cols);
 			const z = -height / 2 + (cz + 0.5) * (height / rows);
 
-			treeMesh.position.set(x, TREE_HEIGHT / 2, z);
+			treeMesh.position.set(x, 0, z);
 			trees.add(treeMesh);
 		}
 
 		return trees;
 	}
 
-	constructor(coords: Vector3, geometry?: ConeGeometry, material?: MeshStandardMaterial) {
-		super(coords, geometry, material);
+	constructor(coords: Vector3) {
+		super(coords);
 	}
 }
