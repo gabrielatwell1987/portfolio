@@ -180,9 +180,13 @@
 		inline-size: 2em;
 		block-size: 2em;
 		color: var(--clr-main-fade);
-		font-size: clamp(var(--sm), 2.5vw, var(--h2));
+		font-size: clamp(var(--h5), 4.5vw, var(--h1));
 		transition: transform 0.3s ease-out;
-		rotate: 90deg;
+		rotate: 180deg;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-shrink: 0;
 
 		@media (width <= 1080px) {
 			top: 3em;
@@ -197,8 +201,8 @@
 		}
 
 		& svg {
-			inline-size: clamp(1.2em, 5vw, 2em);
-			block-size: clamp(1.2em, 5vw, 2em);
+			inline-size: clamp(2em, 5vw, 4em);
+			block-size: clamp(2em, 5vw, 4em);
 		}
 
 		&:active {
@@ -210,7 +214,6 @@
 		inline-size: 100%;
 		block-size: 100%;
 		transition: rotate 0.3s ease-out;
-		rotate: -180deg;
 	}
 
 	.toggle-button.open .arrow {
@@ -253,6 +256,28 @@
 			& .css,
 			& .gsap {
 				margin: 0;
+
+				& dt {
+					color: var(--clr-invert);
+					font-size: clamp(var(--h6), 1.5vw, var(--h4));
+					font-weight: 200;
+					margin: 0 0 0.2em 0;
+					text-align: center;
+				}
+
+				& dd {
+					text-align: center;
+					font-size: clamp(var(--xs), 1.2vw, var(--sm));
+
+					& a {
+						font-family: var(--bronova);
+						font-weight: 200;
+
+						&:visited {
+							color: var(--clr-main);
+						}
+					}
+				}
 			}
 
 			& dl {
@@ -261,18 +286,6 @@
 				justify-content: center;
 				align-items: center;
 			}
-		}
-
-		& dt {
-			font-size: clamp(var(--h6), 1.5vw, var(--h4));
-			margin: 0;
-			text-align: center;
-		}
-
-		& dd {
-			font-size: clamp(var(--xs), 0.75vw, var(--sm));
-			font-weight: 500;
-			text-align: center;
 		}
 	}
 </style>
