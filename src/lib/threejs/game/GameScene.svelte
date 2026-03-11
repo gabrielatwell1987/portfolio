@@ -181,6 +181,23 @@
 		display: block;
 		background: transparent;
 		touch-action: none;
+
+		mask-image: radial-gradient(
+			ellipse at center,
+			var(--clr-invert) 0%,
+			transparent 80%,
+			transparent 100%
+		);
+		box-shadow: inset 0 0 10px 20px var(--clr-invert);
+
+		@media (width <= 768px) {
+			mask-image: radial-gradient(
+				ellipse at center,
+				var(--clr-invert) 0%,
+				transparent 95%,
+				transparent 100%
+			);
+		}
 	}
 
 	.shoot-button {
