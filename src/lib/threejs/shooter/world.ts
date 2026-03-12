@@ -13,7 +13,7 @@ import { Rock } from './objects/Rock';
 import { Bush } from './objects/Bush';
 
 const grassUrl =
-	'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/grass.webp';
+	'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/grassy-dirt.webp';
 
 function loadGrassTexture(): Texture | null {
 	if (typeof document === 'undefined') return null;
@@ -137,7 +137,29 @@ export class World extends Mesh {
 			this.grassTexture.needsUpdate = true;
 		}
 
-		this.geometry = new PlaneGeometry(this.width, this.height, cols, rows);
+		// geometry with more segments for deformation
+		this.geometry = new PlaneGeometry(this.width, this.height, cols * 2, rows * 2);
+
+		// random height displacement
+		const positionAttribute = this.geometry.getAttribute('position');
+		const positions = positionAttribute.array as Float32Array;
+
+		for (let i = 0; i < positions.length; i += 3) {
+			const x = positions[i];
+			const z = positions[i + 2];
+
+			const hillHeight =
+				Math.sin(x * 0.3) * 1.5 +
+				Math.sin(z * 0.3) * 1.5 +
+				Math.sin((x + z) * 0.2) * 1.0 +
+				(Math.random() - 0.5) * 0.5;
+
+			positions[i + 1] += hillHeight;
+		}
+
+		positionAttribute.needsUpdate = true;
+		this.geometry.computeVertexNormals();
+
 		this.material = new MeshStandardMaterial({ map: this.grassTexture ?? null });
 
 		this.rotation.x = -Math.PI / 2;
