@@ -5,6 +5,8 @@ import { GameObject } from './GameObject';
 
 // Constants and loader
 const BUSH_MODEL_PATH = '/threejayess/models/bush.glb';
+const MIN_BUSH_SCALE = 0.003;
+const MAX_BUSH_SCALE = 0.01;
 let bushModelCache: Group | null = null;
 const gltfLoader = new GLTFLoader();
 
@@ -69,6 +71,10 @@ export class Bush extends GameObject {
 
 			// Clone the bush model
 			const bushMesh = bushModel.clone();
+
+			// random scale
+			const randomScale = MIN_BUSH_SCALE + Math.random() * (MAX_BUSH_SCALE - MIN_BUSH_SCALE);
+			bushMesh.scale.set(randomScale, randomScale, randomScale);
 
 			const x = -width / 2 + (cx + 0.5) * (width / cols);
 			const z = -height / 2 + (cz + 0.5) * (height / rows);

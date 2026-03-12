@@ -6,7 +6,7 @@ import { GameObject } from './GameObject';
 // Constants and loader
 const TREE_MODEL_PATH = '/threejayess/models/low_poly_dead_tree.glb';
 const MIN_TREE_SCALE = 0.02;
-const MAX_TREE_SCALE = 0.045;
+const MAX_TREE_SCALE = 0.05;
 let treeModelCache: Group | null = null;
 const gltfLoader = new GLTFLoader();
 
