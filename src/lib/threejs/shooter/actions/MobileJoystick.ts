@@ -44,11 +44,15 @@ export class MobileJoystick {
 		});
 
 		// prevent touch events
-		document.addEventListener('touchmove', (e: TouchEvent) => {
-			if (this.joystickActive) {
-				e.preventDefault();
-			}
-		}, { passive: false, signal: this.abortController.signal });
+		document.addEventListener(
+			'touchmove',
+			(e: TouchEvent) => {
+				if (this.joystickActive) {
+					e.preventDefault();
+				}
+			},
+			{ passive: false, signal: this.abortController.signal }
+		);
 	}
 
 	private onTouchStart(e: TouchEvent): void {
@@ -132,12 +136,22 @@ export class MobileJoystick {
 			playerWithFacing.position.y = 0.5;
 
 			// Clamp to world bounds
-			playerWithFacing.position.x = Math.max(0.5, Math.min(29.5, playerWithFacing.position.x));
-			playerWithFacing.position.z = Math.max(0.5, Math.min(29.5, playerWithFacing.position.z));
+			playerWithFacing.position.x = Math.max(
+				0.5,
+				Math.min(this.world.width, playerWithFacing.position.x)
+			);
+			playerWithFacing.position.z = Math.max(
+				0.5,
+				Math.min(this.world.height, playerWithFacing.position.z)
+			);
 		}
 	}
 
 	private isBlockedPosition(x: number, z: number): boolean {
+		// check world bounds
+		if (x < 0 || x > this.world.width || z < 0 || z > this.world.height) {
+			return true;
+		}
 		const cell = { x: Math.floor(x), z: Math.floor(z) };
 
 		// Check all 9 surrounding cells (3x3 grid) for collision

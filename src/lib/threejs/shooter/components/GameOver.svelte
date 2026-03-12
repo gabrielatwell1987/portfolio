@@ -6,22 +6,31 @@
 	}
 
 	let { isGameOver = false, onRestart, won = false }: Props = $props();
+	let isClosing = $state(false);
+
+	function handleRestart(): void {
+		isClosing = true;
+		setTimeout(() => {
+			isClosing = false;
+			onRestart();
+		}, 600);
+	}
 </script>
 
-{#if isGameOver}
+{#if isGameOver && !isClosing}
 	<div class="game-over-overlay">
-		<div class="game-over-container">
+		<div class="game-over-container" class:closing={isClosing}>
 			{#if won}
 				<div class="won">
 					<h1>VICTORY!</h1>
 					<p>You have killed the computer men!</p>
-					<button class="restart-button" onclick={onRestart}>Play Again</button>
+					<button class="restart-button" onclick={handleRestart}>Play Again</button>
 				</div>
 			{:else}
 				<div class="lost">
 					<h1>GAME OVER</h1>
 					<p>You were defeated...</p>
-					<button class="restart-button" onclick={onRestart}>Restart</button>
+					<button class="restart-button" onclick={handleRestart}>Restart</button>
 				</div>
 			{/if}
 		</div>
@@ -49,7 +58,48 @@
 			padding: 3rem;
 			text-align: center;
 			max-width: 500px;
-			animation: slide-up 0.5s ease-out;
+			animation: scale-up 0.5s
+				linear(
+					0,
+					0.577 4.9%,
+					1.001 10.3%,
+					1.273 16.2%,
+					1.359 19.5%,
+					1.411 23%,
+					1.428 25.4%,
+					1.433 27.9%,
+					1.407 33.6%,
+					1.353 38.9%,
+					1.144 56.3%,
+					1.088 62.4%,
+					1.048 68.5%,
+					1.023 74.4%,
+					1.008 80.9%,
+					1
+				);
+
+			&.closing {
+				animation: scale-up 0.5s
+					linear(
+						0,
+						0.577 4.9%,
+						1.001 10.3%,
+						1.273 16.2%,
+						1.359 19.5%,
+						1.411 23%,
+						1.428 25.4%,
+						1.433 27.9%,
+						1.407 33.6%,
+						1.353 38.9%,
+						1.144 56.3%,
+						1.088 62.4%,
+						1.048 68.5%,
+						1.023 74.4%,
+						1.008 80.9%,
+						1
+					)
+					reverse;
+			}
 
 			& .won {
 				h1 {
@@ -124,13 +174,13 @@
 		}
 	}
 
-	@keyframes slide-up {
+	@keyframes scale-up {
 		from {
-			transform: translateY(-4em);
+			transform: scale(0);
 			opacity: 0;
 		}
 		to {
-			transform: translateY(0);
+			transform: scale(1);
 			opacity: 1;
 		}
 	}

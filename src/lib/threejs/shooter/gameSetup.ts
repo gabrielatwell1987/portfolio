@@ -33,7 +33,7 @@ export function initializeGame(
 	controls.target.set(5, 0, 5);
 	camera.position.set(1, 4, 3);
 
-	const world = new World(30, 30);
+	const world = new World(50, 50);
 	scene.add(world);
 
 	// Initialize world asynchronously
