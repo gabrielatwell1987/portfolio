@@ -53,9 +53,9 @@ export class World extends Mesh {
 		this.width = width;
 		this.height = height;
 
-		this.treeDensity = 3 / 100;
-		this.rockDensity = 5 / 100;
-		this.bushDensity = 4 / 100;
+		this.treeDensity = 3 / 250;
+		this.rockDensity = 5 / 250;
+		this.bushDensity = 4 / 175;
 
 		this.treeCount = 3;
 		this.rockCount = 5;
