@@ -99,6 +99,7 @@
 				color: var(--clr-light-gray);
 				font-weight: 700;
 				z-index: 10;
+				touch-action: none;
 
 				@media (width <= 768px) {
 					top: 5em;

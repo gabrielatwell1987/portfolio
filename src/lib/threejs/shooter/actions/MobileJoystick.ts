@@ -42,22 +42,32 @@ export class MobileJoystick {
 			passive: false,
 			signal: this.abortController.signal
 		});
+
+		// prevent touch events
+		document.addEventListener('touchmove', (e: TouchEvent) => {
+			if (this.joystickActive) {
+				e.preventDefault();
+			}
+		}, { passive: false, signal: this.abortController.signal });
 	}
 
 	private onTouchStart(e: TouchEvent): void {
 		e.preventDefault();
+		e.stopPropagation();
 		this.joystickActive = true;
 		this.updateJoystick(e);
 	}
 
 	private onTouchMove(e: TouchEvent): void {
 		e.preventDefault();
+		e.stopPropagation();
 		if (!this.joystickActive) return;
 		this.updateJoystick(e);
 	}
 
 	private onTouchEnd(e: TouchEvent): void {
 		e.preventDefault();
+		e.stopPropagation();
 		this.joystickActive = false;
 		this.joystickX = 0;
 		this.joystickY = 0;
