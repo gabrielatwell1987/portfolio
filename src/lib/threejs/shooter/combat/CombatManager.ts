@@ -177,6 +177,12 @@ export class CombatManager extends Object3D {
 			projectile.dispose();
 		}
 
+		for (const projectile of this.enemyProjectiles) {
+			this.scene.remove(projectile);
+			projectile.dispose();
+		}
+
 		this.projectiles = [];
+		this.enemyProjectiles = [];
 	}
 }

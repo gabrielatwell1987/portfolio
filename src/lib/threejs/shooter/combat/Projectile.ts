@@ -1,4 +1,4 @@
-import { Object3D, SphereGeometry, MeshStandardMaterial, Vector3, Mesh } from 'three';
+import { Object3D, MeshStandardMaterial, Vector3, Mesh, CapsuleGeometry } from 'three';
 
 export class Projectile extends Object3D {
 	private mesh: Mesh;
@@ -13,18 +13,22 @@ export class Projectile extends Object3D {
 		super();
 
 		// Create projectile mesh
-		const geometry = new SphereGeometry(0.05, 8, 8);
+		const geometry = new CapsuleGeometry(0.02, 0.15, 8, 8);
 		const material = new MeshStandardMaterial({
-			color: 0xff2222,
-			emissive: 0xff6666,
+			color: 0x626262,
+			emissive: 0xaaaaaa,
 			emissiveIntensity: 0.5
 		});
 		this.mesh = new Mesh(geometry, material);
+		this.mesh.rotation.x = Math.PI / 2;
 		this.add(this.mesh);
 
 		this.position.copy(startPosition);
-		// Normalize and set velocity
+		// set velocity
 		this.velocity = direction.normalize().multiplyScalar(this.speed);
+
+		// projectiles face the player
+		this.lookAt(startPosition.clone().add(direction));
 	}
 
 	update(dt: number): boolean {
