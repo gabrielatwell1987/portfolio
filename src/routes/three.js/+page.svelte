@@ -32,7 +32,9 @@
 		} else if (selectedComponent === 'Loader') {
 			import('$lib/threejs/loader/Loader.svelte').then((mod) => (SelectedComponent = mod.default));
 		} else if (selectedComponent === 'Shooting Game') {
-			import('$lib/threejs/game/GameScene.svelte').then((mod) => (SelectedComponent = mod.default));
+			import('$lib/threejs/shooter/GameScene.svelte').then(
+				(mod) => (SelectedComponent = mod.default)
+			);
 		} else {
 			SelectedComponent = null;
 		}
