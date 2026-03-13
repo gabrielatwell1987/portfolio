@@ -39,6 +39,7 @@
 		"shiki": "^3.22.0",
 		"svelte-check": "^4.0.4",
 		"svelte-eslint-parser": "^1.6.0",
+		"terser": "^5.46.0",
 		"three": "^0.167.1",
 		"typescript": "^5.9.3",
 		"vite": "^8.0.0",
