@@ -6,21 +6,26 @@
 	import Learn from '$lib/components/learn/Learn.svelte';
 	import Details from '$lib/components/learn/Details.svelte';
 
+	interface DetailsItem {
+		summary: string;
+		content: string;
+	}
+
 	interface Props {
 		data: {
-			greensockDetails: Array<any>;
+			greensockDetails: DetailsItem[];
 		};
 	}
 
 	let { data }: Props = $props();
-	let detailsVisible = $state<boolean>(false);
+	// let detailsVisible = $state<boolean>(false);
 
-	// animations
-	$effect(() => {
-		setTimeout(() => {
-			detailsVisible = true;
-		}, 100);
-	});
+	// // animations
+	// $effect(() => {
+	// 	setTimeout(() => {
+	// 		detailsVisible = true;
+	// 	}, 100);
+	// });
 </script>
 
 <SEO

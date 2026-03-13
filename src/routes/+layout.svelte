@@ -17,6 +17,7 @@
 
 	let { children }: Props = $props();
 	const loading = createLoadingContext();
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const theme = createThemeContext();
 
 	$effect(() => {
@@ -83,7 +84,7 @@
 </main>
 
 <style>
-	:global(body) {
+	::global(body) {
 		width: 100%;
 		height: 100%;
 		min-height: 100vh;

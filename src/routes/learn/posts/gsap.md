@@ -240,7 +240,7 @@ gsap.to('#original', { morphSVG: '#new' });
 </script>
 
 <style>
-	:global(img) {
+	::global(img) {
 		display: block;
 		margin-left: auto;
 		margin-right: auto;

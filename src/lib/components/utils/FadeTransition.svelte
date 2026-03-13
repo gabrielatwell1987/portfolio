@@ -1,10 +1,12 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
+
 	interface Props {
 		name?: string;
 		duration?: string;
 		easing?: string;
 		blendMode?: string;
-		children: () => any;
+		children: Snippet;
 	}
 
 	let {
@@ -26,17 +28,17 @@
 </div>
 
 <style>
-	:global(::view-transition-old(hero-image)),
-	:global(::view-transition-new(hero-image)) {
+	::global(::view-transition-old(hero-image)),
+	::global(::view-transition-new(hero-image)) {
 		animation: none;
 		mix-blend-mode: var(--blend-mode, normal);
 	}
 
-	:global(::view-transition-old(hero-image)) {
+	::global(::view-transition-old(hero-image)) {
 		animation: scale-out var(--duration, 0.75s) var(--easing, ease-ou) t forwards;
 	}
 
-	:global(::view-transition-new(hero-image)) {
+	::global(::view-transition-new(hero-image)) {
 		animation: scale-in var(--duration, 0.75s) var(--easing, ease-out) forwards;
 	}
 

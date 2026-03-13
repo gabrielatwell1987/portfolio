@@ -12,7 +12,7 @@
 </div>
 
 <style>
-	:global(.logo-image) {
+	::global(.logo-image) {
 		width: 100%;
 		height: auto;
 		max-inline-size: 600px;

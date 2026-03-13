@@ -1,4 +1,9 @@
 <script lang="ts">
+	interface PullToRefreshModule {
+		init: (opts: Record<string, unknown>) => void;
+		destroyAll?: () => void;
+	}
+
 	$effect(() => {
 		if (typeof window === 'undefined') return;
 
@@ -10,7 +15,7 @@
 		if (!isIOS || !isStandalone) return;
 
 		let disposed = false;
-		let ptr: { init: (opts: any) => void; destroyAll?: () => void } | null = null;
+		let ptr: PullToRefreshModule | null = null;
 
 		(async () => {
 			const mod = await import('pulltorefreshjs');

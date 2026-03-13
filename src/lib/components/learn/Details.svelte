@@ -61,6 +61,7 @@
 				</span>
 			</button>
 			<div id="content-{index}" class="text" class:open={openStates[index]}>
+				<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 				{@html item.content}
 			</div>
 		</div>

@@ -1,30 +1,22 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
+
 	interface Props {
 		src: string;
 		alt: string;
-		maxWidth?: number;
-		maxHeight?: number;
 		transitionName?: string;
-		aspectRatio?: string;
-		class?: string;
 	}
 
-	let {
-		src,
-		alt,
-		maxWidth,
-		maxHeight,
-		transitionName = 'expandable-image',
-		aspectRatio,
-		class: className
-	}: Props = $props();
-	let expanded = $state<boolean>(false);
+	let { src, alt, transitionName = 'expandable-image' }: Props = $props();
+
+	let expanded = $state(false);
 	let imgElement = $state<HTMLImageElement>();
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	let naturalDimensions = $state<{ width: number; height: number }>({ width: 0, height: 0 });
 	let isSVG = $derived(src?.endsWith('.svg'));
-	let isTransitioning = $state<boolean>(false);
-	let prefersReducedMedia = $state<boolean>(false);
+	let isTransitioning = $state(false);
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	let prefersReducedMedia = $state(false);
 
 	// prefers-reduced-motion check
 	$effect(() => {
@@ -65,34 +57,7 @@
 		}
 	}
 
-	let displayDimensions = $derived(() => {
-		if (!naturalDimensions.width || !naturalDimensions.height) {
-			return { width: 300, height: 300 };
-		}
-
-		if (!maxWidth && !maxHeight) {
-			return {
-				width: naturalDimensions.width,
-				height: naturalDimensions.height
-			};
-		}
-
-		let scaleX = maxWidth ? maxWidth / naturalDimensions.width : 1;
-		let scaleY = maxHeight ? maxHeight / naturalDimensions.height : 1;
-		let scale = Math.min(scaleX, scaleY);
-		scale = Math.min(scale, 1);
-
-		return {
-			width: Math.round(naturalDimensions.width * scale),
-			height: Math.round(naturalDimensions.height * scale)
-		};
-	});
-
-	let inlineStyle = $derived(() => {
-		const dims = displayDimensions();
-		if (expanded) return `view-transition-name: ${transitionName};`;
-		return `view-transition-name: ${transitionName};`;
-	});
+	let inlineStyle = $derived(`view-transition-name: ${transitionName};`);
 </script>
 
 <section class={expanded ? 'expanded' : ''}>
@@ -102,7 +67,7 @@
 			{src}
 			{alt}
 			onload={handleImageLoad}
-			style={inlineStyle()}
+			style={inlineStyle}
 			class:svg={isSVG}
 			loading="lazy"
 		/>
@@ -110,7 +75,7 @@
 </section>
 
 <style>
-	:global(.expanded) {
+	::global(.expanded) {
 		--view-transition-offset: -20em;
 		--view-transition-offset-mobile: -18em;
 	}
