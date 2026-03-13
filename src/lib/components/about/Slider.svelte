@@ -10,12 +10,17 @@
 	};
 	const typedSkills: Skill[] = skills;
 
-	let isPaused = $state<boolean>(false);
-	let position = $state<number>(0);
+	let isPaused = $state(false);
+	let position = $state(0);
 
 	const duplicatedSkills = [...typedSkills, ...typedSkills];
 	const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-	let speed = prefersReducedMotion ? 0.008 : 0.02;
+	const isMobile = window.matchMedia('(width <= 768px)').matches;
+
+	let speed = $derived.by(() => {
+		if (prefersReducedMotion) return 0.008;
+		return isMobile ? 0.035 : 0.02;
+	});
 
 	$effect(() => {
 		if (isPaused) return;
@@ -51,6 +56,7 @@
 				>
 					{#if skill.svg}
 						<div class="icon">
+							<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 							{@html skill.svg}
 						</div>
 					{:else if skill.src}

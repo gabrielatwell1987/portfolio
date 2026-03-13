@@ -72,6 +72,7 @@
 
 			<div class="biography" aria-label="bio">
 				{#each bio as paragraph}
+					<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 					<p class="bio-paragraph indent">{@html paragraph.text}</p>
 				{/each}
 
@@ -91,8 +92,8 @@
 					Please note: This is a <span>pwa</span> (progressive web app) so you can install it on your
 					device if you want to! This makes your website able to be used on any device.. mobile, tablet,
 					laptop, and desktop. It's like having a mobile app that is not made with native technologies!
-					There is also offline capabilities, so if your internet goes out, you can still access the
-					site because your device downloads and caches the whole site!
+					There is also offline capabilities, so if your internet goes out, you can still access the site
+					because your device downloads and caches the whole site!
 				</p>
 
 				<div data-flex-container>
