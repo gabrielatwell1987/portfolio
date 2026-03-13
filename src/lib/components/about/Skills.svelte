@@ -78,13 +78,16 @@
 
 			& .icons {
 				padding: 0.5rem;
-				width: clamp(25vw, 5.5vw, 200px);
-				height: clamp(25vw, 5.5vw, 200px);
+				inline-size: clamp(27vw, 6.5vw, 200px);
+				block-size: clamp(27vw, 6.5vw, 200px);
 
 				@media (width <= 768px) {
 					grid-template-columns: repeat(2, 1fr);
 					gap: 1rem;
-					width: min(80%, 600px);
+				}
+
+				@media (width <= 500px) {
+					scale: 2;
 				}
 
 				&:focus {
