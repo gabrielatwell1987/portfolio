@@ -143,14 +143,14 @@
 	});
 </script>
 
-<canvas class="webgl" bind:this={canvas}></canvas>
+<canvas class="webgl" bind:this={canvas} data-testing="scene-canvas"></canvas>
 
 <HealthBar {playerHealth} {maxPlayerHealth} />
 <GameOver {isGameOver} {won} onRestart={handleRestart} />
 <Directions bind:showDirections />
 
 <!-- mobile joystick -->
-<div class="mobile-joystick" bind:this={joystickElement}>
+<div class="mobile-joystick" bind:this={joystickElement} data-testing="interaction-state">
 	<div class="joystick-base">
 		<div
 			class="joystick-stick"
@@ -160,7 +160,12 @@
 </div>
 
 <!-- shoot button -->
-<button class="shoot-button" onclick={() => gameState?.player?.shoot()} aria-label="Shoot">
+<button
+	class="shoot-button"
+	onclick={() => gameState?.player?.shoot()}
+	aria-label="Shoot"
+	data-testing="interaction-state"
+>
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
 		<path
 			d="M560 120C560 106.7 549.3 96 536 96C522.7 96 512 106.7 512 120L512 128L64 128C46.3 128 32 142.3 32 160L32 272C32 289.7 46.3 304 64 304L74 304C94.8 304 110.1 323.6 105 343.8L65 504.2C62.6 513.8 64.8 523.9 70.8 531.7C76.8 539.5 86.1 544 96 544L192 544C206.7 544 219.5 534 223 519.8L249 416L353.4 416C377.1 416 398.2 401.1 406.1 378.8L432.8 304L463.9 304C472.4 304 480.5 300.6 486.5 294.6L509.1 272L575.8 272C593.5 272 607.8 257.7 607.8 240L607.8 160C607.8 142.3 593.5 128 575.8 128L559.8 128L559.8 120zM353.4 368L260.9 368L276.9 304L381.9 304L360.9 362.7C359.8 365.9 356.7 368 353.4 368zM112 192L496 192C504.8 192 512 199.2 512 208C512 216.8 504.8 224 496 224L112 224C103.2 224 96 216.8 96 208C96 199.2 103.2 192 112 192z"

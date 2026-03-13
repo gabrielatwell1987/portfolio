@@ -22,7 +22,7 @@
 		return testimonials.find((t) => t.projectIndex === projectIndex);
 	}
 
-	beforeNavigate((navigation) => {
+	beforeNavigate(() => {
 		isNavigating = true;
 	});
 
