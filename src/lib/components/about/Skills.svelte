@@ -15,6 +15,7 @@
 					>
 						<div class="icons">
 							{#if skill.svg}
+								<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 								{@html skill.svg}
 							{/if}
 						</div>
@@ -62,6 +63,18 @@
 			width: min(40%, 800px);
 			margin-inline: auto;
 			margin-block: 4em;
+
+			@media (width <= 768px) {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 1.5rem;
+				width: min(90%, 600px);
+				margin-block: 2em;
+			}
+
+			@media (width <= 500px) {
+				gap: 1rem;
+				width: 90%;
+			}
 
 			& .icons {
 				padding: 0.5rem;

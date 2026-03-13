@@ -39,7 +39,7 @@ function generateFallbackData(): { totalContributions: number; weeks: Week[] } {
 	const startDate = new Date(oneYearAgo);
 	startDate.setDate(startDate.getDate() - startDate.getDay());
 
-	let currentDate = new Date(startDate);
+	const currentDate = new Date(startDate);
 
 	while (currentDate <= today) {
 		const week: Week = { contributionDays: [] };
