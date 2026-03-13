@@ -9,9 +9,16 @@ export default defineConfig({
 		host: 'localhost'
 	},
 	build: {
-		sourcemap: true,
+		sourcemap: process.env.NODE_ENV === 'development' ? true : false,
 		rollupOptions: {
-			treeshake: true
-		}
+			treeshake: true,
+			output: {
+				manualChunks: {
+					vendor: ['svelte', 'three']
+				}
+			}
+		},
+		minify: 'terser',
+		cssCodeSplit: true
 	}
 });

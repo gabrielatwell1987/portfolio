@@ -33,7 +33,8 @@ const config = {
 				}
 				// for other errors, throw to fail the build
 				throw new Error(message);
-			}
+			},
+			concurrency: 10
 		}
 	},
 	vitePlugin: {
