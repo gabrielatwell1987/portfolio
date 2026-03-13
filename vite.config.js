@@ -13,8 +13,13 @@ export default defineConfig({
 		rollupOptions: {
 			treeshake: true,
 			output: {
-				manualChunks: {
-					vendor: ['svelte', 'three']
+				manualChunks: (id) => {
+					if (id.includes('node_modules/svelte')) {
+						return 'svelte';
+					}
+					if (id.includes('node_modules/three')) {
+						return 'three';
+					}
 				}
 			}
 		},
