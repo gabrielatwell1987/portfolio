@@ -11,16 +11,22 @@ export default defineConfig({
 	},
 	build: {
 		sourcemap: process.env.NODE_ENV === 'development' ? true : false,
-		rollupOptions: {
+		rolldownOptions: {
 			treeshake: true,
 			output: {
-				manualChunks: (id) => {
-					if (id.includes('node_modules/svelte')) {
-						return 'svelte';
-					}
-					if (id.includes('node_modules/three')) {
-						return 'three';
-					}
+				codeSplitting: {
+					groups: [
+						{
+							test: /[\\/]node_modules[\\/](svelte|@sveltejs)[\\/]/,
+							name: 'svelte',
+							enforce: true
+						},
+						{
+							test: /[\\/]node_modules[\\/]three[\\/]/,
+							name: 'three',
+							enforce: true
+						},
+					],
 				}
 			}
 		},

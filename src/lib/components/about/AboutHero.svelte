@@ -112,7 +112,7 @@
 				0 5px 0 var(--clr-main);
 
 			@media (width >= 768px) {
-				::global(& .char) {
+				:global(& .char) {
 					display: inline-block;
 					transform-style: preserve-3d;
 					perspective: 1000px;

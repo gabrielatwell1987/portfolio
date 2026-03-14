@@ -75,7 +75,7 @@
 </section>
 
 <style>
-	::global(.expanded) {
+	:global(.expanded) {
 		--view-transition-offset: -20em;
 		--view-transition-offset-mobile: -18em;
 	}

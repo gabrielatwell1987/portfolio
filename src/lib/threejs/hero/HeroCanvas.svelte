@@ -410,11 +410,11 @@
 			contain: layout;
 		}
 
-		& ::global(h1) {
+		& :global(h1) {
 			min-height: 3rem;
 		}
 
-		& ::global(button) {
+		& :global(button) {
 			min-height: 2.5rem;
 			min-width: 8rem;
 		}
