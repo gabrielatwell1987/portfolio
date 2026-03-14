@@ -4,13 +4,21 @@
 	}
 
 	let { content }: Props = $props();
+
+	function sanitizeSVG(svg: string): string {
+		return svg
+			.replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
+			.replace(/on\w+="[^"]*"/gi, '')
+			.replace(/on\w+='[^']*'/gi, '');
+	}
 </script>
 
 <div class="motif-photo">
 	<!-- <img src={img} alt="gabe atwell" /> -->
 	{#if content.startsWith('<svg')}
 		<div class="svg-content">
-			{@html content}
+			<!-- eslint-disable-next-line svelte/no-at-html-tags -->
+			{@html sanitizeSVG(content)}
 		</div>
 	{:else}
 		<img class="image" src={content} alt="decorative motif" loading="lazy" />

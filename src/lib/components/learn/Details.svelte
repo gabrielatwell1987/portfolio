@@ -1,5 +1,6 @@
 <script lang="ts">
 	import './details-globals.css';
+	import DOMPurify from 'dompurify';
 
 	interface Item {
 		summary: string;
@@ -13,6 +14,10 @@
 	let { items = [] }: Props = $props();
 
 	let openStates = $state<boolean[]>([]);
+
+	function sanitize(html: string): string {
+		return DOMPurify.sanitize(html);
+	}
 
 	$effect(() => {
 		openStates.length = items.length;
@@ -62,7 +67,7 @@
 			</button>
 			<div id="content-{index}" class="text" class:open={openStates[index]}>
 				<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-				{@html item.content}
+				{@html sanitize(item.content)}
 			</div>
 		</div>
 	{/each}

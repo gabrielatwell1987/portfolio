@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
+	import DOMPurify from 'dompurify';
+
 	interface Props {
 		title: string;
 		title2?: string;
@@ -28,8 +31,14 @@
 			(width ? ' width="' + (width.match(/^\d+$/) ? width + 'px' : width) + '"' : '');
 
 		const newSvgTag = svgTag.replace('<svg', `<svg ${attrs}`);
+		const sanitized = svg.replace(svgTag, newSvgTag);
 
-		return svg.replace(svgTag, newSvgTag);
+		if (!browser) return sanitized;
+
+		return DOMPurify.sanitize(sanitized, {
+			ALLOWED_TAGS: ['svg', 'path', 'circle', 'rect', 'g', 'defs', 'use'],
+			KEEP_CONTENT: true
+		});
 	});
 </script>
 
@@ -44,6 +53,7 @@
 			loading="lazy"
 		/>
 	{:else if svg}
+		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 		{@html svgElement}
 	{:else}
 		<div class="title-container" style="view-transition-name: {transitionName};">

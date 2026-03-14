@@ -1,5 +1,16 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import skills from '$lib/components/about/skills.json';
+	import DOMPurify from 'dompurify';
+
+	function sanitizeSVG(svg: string) {
+		if (!browser) return svg;
+
+		return DOMPurify.sanitize(svg, {
+			ALLOWED_TAGS: ['svg', 'path', 'circle', 'rect', 'g', 'defs', 'use'],
+			KEEP_CONTENT: true
+		});
+	}
 </script>
 
 <section class="skills-container">
@@ -16,7 +27,7 @@
 						<div class="icons">
 							{#if skill.svg}
 								<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-								{@html skill.svg}
+								{@html sanitizeSVG(skill.svg)}
 							{/if}
 						</div>
 					</a>

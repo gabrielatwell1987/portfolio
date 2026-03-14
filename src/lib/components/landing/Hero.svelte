@@ -201,7 +201,8 @@
 	<section aria-label="Introduction and portfolio overview" class="hero-content">
 		<header class="title-container">
 			<h1 class="hero-title glitch">
-				{#each titleWords as word, wordIndex}
+				<!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
+				{#each titleWords as _, wordIndex}
 					{@const wordData = getWordChars(wordIndex)}
 					<span class="word">
 						{#each wordData.chars as char, charIndex}

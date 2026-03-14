@@ -1,19 +1,44 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
+
+	type DebugCategory =
+		| 'events'
+		| 'installation'
+		| 'userChoice'
+		| 'lifecycle'
+		| 'state'
+		| 'network'
+		| 'performance'
+		| 'error'
+		| 'warning'
+		| 'info';
+
+	type DebugConfig = { enabled: boolean } & { [key in DebugCategory]?: boolean };
+
+	type DebugFunction = (category: DebugCategory, message: string, data?: unknown) => void;
+
+	type DebuggerAPI = {
+		enable: (targetCategories?: DebugCategory[]) => void;
+		disable: () => void;
+		status: () => void;
+		toggle: (category: DebugCategory) => void;
+	};
+
 	interface Props {
 		namespace?: string;
-		categories?: string[];
-		children: (args: { debug: (category: string, message: string, data?: any) => void; isEnabled: boolean }) => any;
+		categories?: DebugCategory[];
+		children: Snippet<[{ debug: DebugFunction; isEnabled: boolean }]>;
 	}
+
 	let { namespace = 'Component', categories = [], children }: Props = $props();
 
-	// Debug configuration state
-	let debugConfig = $state<{ enabled: boolean; [key: string]: boolean }>({
+	let debugConfig = $state<DebugConfig>({
 		enabled: false,
+		// eslint-disable-next-line svelte/valid-compile
 		...categories.reduce((acc, cat) => ({ ...acc, [cat]: false }), {})
 	});
 
-	// Category emojis for visual distinction
-	const categoryEmojis = {
+	const categoryEmojis: Record<DebugCategory, string> = {
 		events: '📡',
 		installation: '⬇️',
 		userChoice: '👤',
@@ -26,18 +51,15 @@
 		info: 'ℹ️'
 	};
 
-	// Global debug control
 	$effect(() => {
 		if (typeof window !== 'undefined') {
 			const debugKey = `${namespace.toLowerCase()}Debug`;
-
-			(window as any)[debugKey] = {
+			(window as unknown as Window & Record<string, DebuggerAPI>)[debugKey] = {
 				enable: (targetCategories = []) => {
 					debugConfig.enabled = true;
 					if (targetCategories.length === 0) {
-						// Enable all categories
 						Object.keys(debugConfig).forEach((key) => {
-							if (key !== 'enabled') debugConfig[key] = true;
+							if (key !== 'enabled') debugConfig[key as DebugCategory] = true;
 						});
 					} else {
 						targetCategories.forEach((cat) => {
@@ -47,11 +69,11 @@
 					console.log(`🐛 ${namespace} debug enabled:`, debugConfig);
 				},
 				disable: () => {
-					Object.keys(debugConfig).forEach((key) => (debugConfig[key] = false));
+					Object.keys(debugConfig).forEach((key) => (debugConfig[key as DebugCategory] = false));
 					console.log(`🐛 ${namespace} debug disabled`);
 				},
 				status: () => console.log(`🐛 ${namespace} debug config:`, debugConfig),
-				toggle: (category: string) => {
+				toggle: (category: DebugCategory) => {
 					if (category in debugConfig) {
 						debugConfig[category] = !debugConfig[category];
 						console.log(`🐛 ${namespace} [${category}] toggled:`, debugConfig[category]);
@@ -61,11 +83,10 @@
 		}
 	});
 
-	// Debug logger function
-	const debug = (category: string, message: string, data: any = null) => {
+	const debug: DebugFunction = (category, message, data = null) => {
 		if (!debugConfig.enabled || !debugConfig[category]) return;
 
-		const emoji = categoryEmojis[category as keyof typeof categoryEmojis] || '🐛';
+		const emoji = categoryEmojis[category];
 		const timestamp = new Date().toISOString().split('T')[1].split('.')[0];
 
 		console.group(`${emoji} ${namespace} [${category}] ${timestamp}`);
