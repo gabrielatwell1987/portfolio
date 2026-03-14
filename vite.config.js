@@ -11,6 +11,7 @@ export default defineConfig({
 	},
 	build: {
 		sourcemap: process.env.NODE_ENV === 'development' ? true : false,
+		chunkSizeWarningLimit: 750,
 		rolldownOptions: {
 			treeshake: true,
 			output: {
@@ -24,6 +25,11 @@ export default defineConfig({
 						{
 							test: /[\\/]node_modules[\\/]three[\\/]/,
 							name: 'three',
+							enforce: true
+						},
+						{
+							test: /[\\/]node_modules[\\/]gsap[\\/]/,
+							name: 'gsap',
 							enforce: true
 						},
 					],
