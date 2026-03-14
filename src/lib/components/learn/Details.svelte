@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import './details-globals.css';
 	import DOMPurify from 'dompurify';
 
@@ -16,11 +17,13 @@
 	let openStates = $state<boolean[]>([]);
 
 	function sanitize(html: string): string {
+		if (!browser) return html;
 		return DOMPurify.sanitize(html);
 	}
 
 	$effect(() => {
 		openStates.length = items.length;
+
 		for (let i = 0; i < items.length; i++) {
 			if (openStates[i] === undefined) openStates[i] = false;
 		}
