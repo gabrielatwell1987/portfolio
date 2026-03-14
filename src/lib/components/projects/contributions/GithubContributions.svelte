@@ -232,7 +232,7 @@
 									)} on {formatDate(day.date)}"
 									aria-describedby="legend-desc"
 								>
-									<!-- prettier-ignore -->
+								<!-- oxfmt-ignore -->
 									<title>{day.contributionCount + ' ' + getContributionText(day.contributionCount) + ' on ' + formatDate(day.date)}</title>
 								</rect>
 							{/each}

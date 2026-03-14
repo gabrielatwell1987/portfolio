@@ -1,8 +1,7 @@
 export async function load() {
 	try {
-		const { default: greensockDetails } = await import(
-			'$lib/components/learn/greensock-details.json'
-		);
+		const { default: greensockDetails } =
+			await import('$lib/components/learn/greensock-details.json');
 		return {
 			greensockDetails
 		};

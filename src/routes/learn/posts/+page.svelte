@@ -138,8 +138,6 @@
 			<ViewTransitionImage
 				src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/CSS-Purple.webp"
 				alt="new css logo"
-				aspectRatio="1/1"
-				class="css-logo"
 				transitionName="css-image"
 			/>
 
@@ -151,8 +149,6 @@
 		<ViewTransitionImage
 			src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/GSAP-Dark.svg"
 			alt="greensock animation platform"
-			aspectRatio="1/1"
-			class="gsap-logo"
 			transitionName="gsap-image"
 		/>
 

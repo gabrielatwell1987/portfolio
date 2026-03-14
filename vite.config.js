@@ -31,8 +31,8 @@ export default defineConfig({
 							test: /[\\/]node_modules[\\/]gsap[\\/]/,
 							name: 'gsap',
 							enforce: true
-						},
-					],
+						}
+					]
 				}
 			}
 		},

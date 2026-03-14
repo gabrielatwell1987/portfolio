@@ -44,7 +44,11 @@ export function handleTimeUpdate(video: HTMLVideoElement | null, currentTime: nu
 	return video.currentTime;
 }
 
-export function handleSeek(video: HTMLVideoElement | null, event: Event, currentTime: number): number {
+export function handleSeek(
+	video: HTMLVideoElement | null,
+	event: Event,
+	currentTime: number
+): number {
 	if (!video) return currentTime;
 	const value = Number((event.target as HTMLInputElement).value);
 	video.currentTime = value;
