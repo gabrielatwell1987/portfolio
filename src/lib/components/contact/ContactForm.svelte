@@ -1,19 +1,22 @@
 <script lang="ts">
-	import SubmitButton from '$lib/components/contact/SubmitButton.svelte';
-	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
-	import Popover from '$lib/components/layout/Popover.svelte';
-	import ModalPopover from '$lib/components/contact/ModalPopover.svelte';
-	import MotifPhoto from './MotifPhoto.svelte';
+	import SubmitButton from '$lib/components/contact/SubmitButton.svelte'
+	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte'
+	import Popover from '$lib/components/layout/Popover.svelte'
+	import ModalPopover from '$lib/components/contact/ModalPopover.svelte'
+	import MotifPhoto from './MotifPhoto.svelte'
 
-	let name = $state<string>('');
-	let email = $state<string>('');
-	let message = $state<string>('');
-	let submitStatus = $state<string>('');
+	let name = $state<string>('')
+	let email = $state<string>('')
+	let message = $state<string>('')
+	let submitStatus = $state<string>('')
 </script>
 
 <div class="contact-icons">
 	<div class="popover-icon">
-		<Popover title="" text="Please provide a working email so I can message you back!" />
+		<Popover
+			title=""
+			text="Please provide a working email so I can message you back!"
+		/>
 	</div>
 
 	<ModalPopover />
@@ -21,7 +24,7 @@
 
 <div class="personal-image">
 	<MotifPhoto
-		content="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/retro-gabe.webp"
+		content="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/gabe-sketch.webp"
 	/>
 </div>
 
