@@ -14,12 +14,12 @@ CSS transitions let you decide which properties to animate (by listing them expl
 
 ```css
 div {
-	transition: <property> <duration> <timing> <delay>;
+    transition: <property> <duration> <timing> <delay>;
 }
 
 .example {
-	transform: translate(100px);
-	transition: transform 1s ease-out;
+    transform: translate(100px);
+    transition: transform 1s ease-out;
 }
 ```
 
@@ -40,19 +40,19 @@ In order to create the animations we need to use the `@keyframes` rule. This rul
 
 ```css
 .example {
-	animation: colors 1s ease-out;
+    animation: colors 1s ease-out;
 }
 
 @keyframes colors {
-	0% {
-		background: yellow;
-	}
-	50% {
-		background: green;
-	}
-	100% {
-		background: blue;
-	}
+    0% {
+        background: yellow;
+    }
+    50% {
+        background: green;
+    }
+    100% {
+        background: blue;
+    }
 }
 ```
 
@@ -73,7 +73,7 @@ The CSS interpolate-size property allows a page to opt in to animations and tran
 
 ```css
 :root {
-	interpolate-size: allow-keywords;
+    interpolate-size: allow-keywords;
 }
 ```
 
@@ -94,8 +94,8 @@ The calc-size() function is a new addition to CSS that allows for the calculatio
 
 ```css
 .example {
-	--size: 50px;
-	height: calc-size(var(--size) + 3rem);
+    --size: 50px;
+    height: calc-size(var(--size) + 3rem);
 }
 ```
 
@@ -117,18 +117,18 @@ Apply specific styles to the `&lt;details&gt;` element and its pseudo-element `:
 
 ```css
 details {
-	inline-size: 50ch;
+    inline-size: 50ch;
 
-	&::details-content {
-		opacity: 0;
-		transition:
-			content-visibility 1s allow-discreet,
-			opacity 1s;
-	}
+    &::details-content {
+        opacity: 0;
+        transition:
+            content-visibility 1s allow-discreet,
+            opacity 1s;
+    }
 
-	&::[open]::details=content {
-		opacity: 1;
-	}
+    &::[open]::details=content {
+        opacity: 1;
+    }
 }
 ```
 
@@ -151,17 +151,17 @@ The example: `::view-transition-old(root), ::view-transition-new(root)` examples
 
 ```css
 @view-transition {
-	navigation: auto;
+    navigation: auto;
 }
 
 :root::view-transition-old(root) {
-	animation: fade-out 2s ease-out forwards;
+    animation: fade-out 2s ease-out forwards;
 }
 
 @keyframes fade-out {
-	to {
-		opacity: 0;
-	}
+    to {
+        opacity: 0;
+    }
 }
 ```
 
@@ -184,7 +184,7 @@ To make an element an anchor, you give it an anchor-name value of any string tha
 
 ```css
 #anchor {
-	anchor-name: --example-anchor;
+    anchor-name: --example-anchor;
 }
 ```
 
@@ -194,9 +194,9 @@ You will need to set a few properties on the positioned element.. You need to pu
 
 ```css
 #positioned-element {
-	position: absolute;
-	position-anchor: --example-anchor;
-	top: anchor(bottom);
+    position: absolute;
+    position-anchor: --example-anchor;
+    top: anchor(bottom);
 }
 ```
 
@@ -221,25 +221,25 @@ The valid pseudo-elements are `::before`, `::after` and `::file-selector-button`
 
 ```html
 <section>
-	<div id="anchor"></div>
-	<div id="positionedElement"></div>
+    <div id="anchor"></div>
+    <div id="positionedElement"></div>
 </section>
 ```
 
 ```css
 section {
-	position: relative;
-	anchor-scope: --anchor;
+    position: relative;
+    anchor-scope: --anchor;
 
-	& #anchor {
-		anchor-name: --anchor;
-	}
+    & #anchor {
+        anchor-name: --anchor;
+    }
 
-	& #positionedElement {
-		position: absolute;
-		position-anchor: --anchor;
-		bottom: anchor(top);
-	}
+    & #positionedElement {
+        position: absolute;
+        position-anchor: --anchor;
+        bottom: anchor(top);
+    }
 }
 ```
 
