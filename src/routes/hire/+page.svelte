@@ -1,42 +1,42 @@
 <script lang="ts">
-	import HireForm from '$lib/components/contact/HireForm.svelte';
-	import SEO from '$lib/data/SEO.svelte';
-	import Heading from '$lib/components/layout/Heading.svelte';
+    import HireForm from '$lib/components/contact/HireForm.svelte';
+    import SEO from '$lib/data/SEO.svelte';
+    import Heading from '$lib/components/layout/Heading.svelte';
 </script>
 
 <SEO
-	title="Need a Website Built?"
-	description="If you need help with web development or design, please fill out the form."
-	keywords="hire gabriel atwell, hire gabe atwell, project questionnaire"
+    title="Need a Website Built?"
+    description="If you need help with web development or design, please fill out the form."
+    keywords="hire gabriel atwell, hire gabe atwell, project questionnaire"
 />
 
 <div class="hire-form">
-	<Heading
-		title="employ"
-		title2="employ"
-		viewTransitionName="employ-heading"
-		popoverText="Please fill out this questionnaire and I'll contact you back 😎"
-	/>
+    <Heading
+        title="employ"
+        title2="employ"
+        viewTransitionName="employ-heading"
+        popoverText="Please fill out this questionnaire and I'll contact you back 😎"
+    />
 
-	<section class="hire-form-wrapper">
-		<HireForm />
-	</section>
+    <section class="hire-form-wrapper">
+        <HireForm />
+    </section>
 </div>
 
 <style>
-	.hire-form {
-		background: linear-gradient(
-			to bottom,
-			oklch(from var(--clr-gray) 0.35 c h) 0%,
-			var(--clr-invert) 30%,
-			var(--clr-invert) var(--100)
-		);
+    .hire-form {
+        background: linear-gradient(
+            to bottom,
+            oklch(from var(--clr-gray) 0.35 c h) 0%,
+            var(--clr-invert) 30%,
+            var(--clr-invert) var(--100)
+        );
 
-		& .hire-form-wrapper {
-			display: grid;
-			place-items: center;
-			height: 100vh;
-			margin: 0;
-		}
-	}
+        & .hire-form-wrapper {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    }
 </style>

@@ -1,70 +1,72 @@
 <script lang="ts">
-	import gsap from 'gsap';
+    import gsap from 'gsap';
 
-	let preloaderVisible: boolean = $state<boolean>(true);
-	let preloaderElement = $state<HTMLElement>();
-	let lines = $state<HTMLElement[]>([]);
+    let preloaderVisible: boolean = $state<boolean>(true);
+    let preloaderElement = $state<HTMLElement>();
+    let lines = $state<HTMLElement[]>([]);
 
-	$effect(() => {
-		const validLines = lines.filter((line) => line !== undefined && line !== null);
-		if (validLines.length !== 10 || !preloaderElement) return;
+    $effect(() => {
+        const validLines = lines.filter(
+            (line) => line !== undefined && line !== null,
+        );
+        if (validLines.length !== 10 || !preloaderElement) return;
 
-		const tl = gsap.timeline();
+        const tl = gsap.timeline();
 
-		// Animate each line from right to left (revealing content)
-		tl.to(validLines, {
-			duration: 1.3,
-			scaleX: 0,
-			transformOrigin: 'right',
-			stagger: 0.1,
-			ease: 'power3.inOut'
-		});
+        // Animate each line from right to left (revealing content)
+        tl.to(validLines, {
+            duration: 1.3,
+            scaleX: 0,
+            transformOrigin: 'right',
+            stagger: 0.1,
+            ease: 'power3.inOut',
+        });
 
-		// Fade out the entire preloader
-		tl.to(
-			preloaderElement,
-			{
-				duration: 0.5,
-				opacity: 0,
-				pointerEvents: 'none',
-				onComplete: () => {
-					preloaderVisible = false;
-				}
-			},
-			'-=0.3'
-		);
+        // Fade out the entire preloader
+        tl.to(
+            preloaderElement,
+            {
+                duration: 0.5,
+                opacity: 0,
+                pointerEvents: 'none',
+                onComplete: () => {
+                    preloaderVisible = false;
+                },
+            },
+            '-=0.3',
+        );
 
-		return () => {
-			tl.kill();
-		};
-	});
+        return () => {
+            tl.kill();
+        };
+    });
 </script>
 
 {#if preloaderVisible}
-	<div bind:this={preloaderElement} class="preloader" id="preloader">
-		{#each Array(10) as _, i}
-			<div bind:this={lines[i]} class="preloader-line"></div>
-		{/each}
-	</div>
+    <div bind:this={preloaderElement} class="preloader" id="preloader">
+        {#each Array(10) as _, i}
+            <div bind:this={lines[i]} class="preloader-line"></div>
+        {/each}
+    </div>
 {/if}
 
 <style>
-	.preloader {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		z-index: 100;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+    .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-		& .preloader-line {
-			flex: 1;
-			height: 100vh;
-			background-color: var(--clr-invert);
-			transform-origin: right;
-		}
-	}
+        & .preloader-line {
+            flex: 1;
+            height: 100vh;
+            background-color: var(--clr-invert);
+            transform-origin: right;
+        }
+    }
 </style>

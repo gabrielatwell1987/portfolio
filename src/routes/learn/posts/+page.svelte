@@ -1,247 +1,254 @@
 <script lang="ts">
-	import CSS from './css.md';
-	import GSAP from './gsap.md';
-	import SEO from '$lib/data/SEO.svelte';
-	import Card from '$lib/components/learn/Card.svelte';
-	import TableOfContents from '$lib/components/learn/TableOfContents.svelte';
-	import GabeMorph from '$lib/components/learn/GabeMorph.svelte';
-	import BackToTop from '$lib/components/learn/BackToTop.svelte';
-	import ViewTransitionImage from '$lib/components/layout/view-transitions/ViewTransitionImage.svelte';
-	import gsap from 'gsap';
-	import { ScrollTrigger } from 'gsap/ScrollTrigger';
-	import Popover from '$lib/components/layout/Popover.svelte';
+    import CSS from './css.md';
+    import GSAP from './gsap.md';
+    import SEO from '$lib/data/SEO.svelte';
+    import Card from '$lib/components/learn/Card.svelte';
+    import TableOfContents from '$lib/components/learn/TableOfContents.svelte';
+    import GabeMorph from '$lib/components/learn/GabeMorph.svelte';
+    import BackToTop from '$lib/components/learn/BackToTop.svelte';
+    import ViewTransitionImage from '$lib/components/layout/view-transitions/ViewTransitionImage.svelte';
+    import gsap from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import Popover from '$lib/components/layout/Popover.svelte';
 
-	let mounted = $state<boolean>(false);
-	let prefersReducedMotion = $state<boolean>(false);
-	let isMobile = $state<boolean>(false);
+    let mounted = $state<boolean>(false);
+    let prefersReducedMotion = $state<boolean>(false);
+    let isMobile = $state<boolean>(false);
 
-	// mobile check
-	$effect(() => {
-		const abortController = new AbortController();
-		const mediaQuery = window.matchMedia('(max-width: 768px)');
+    // mobile check
+    $effect(() => {
+        const abortController = new AbortController();
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
 
-		const handleChange = (e: MediaQueryListEvent) => {
-			isMobile = e.matches;
-		};
+        const handleChange = (e: MediaQueryListEvent) => {
+            isMobile = e.matches;
+        };
 
-		isMobile = mediaQuery.matches;
-		mediaQuery.addEventListener('change', handleChange, { signal: abortController.signal });
+        isMobile = mediaQuery.matches;
+        mediaQuery.addEventListener('change', handleChange, {
+            signal: abortController.signal,
+        });
 
-		return () => {
-			abortController.abort();
-		};
-	});
+        return () => {
+            abortController.abort();
+        };
+    });
 
-	$effect(() => {
-		if (document.startViewTransition) {
-			document.startViewTransition(() => {
-				mounted = true;
-			});
-		} else {
-			mounted = true;
-		}
-	});
+    $effect(() => {
+        if (document.startViewTransition) {
+            document.startViewTransition(() => {
+                mounted = true;
+            });
+        } else {
+            mounted = true;
+        }
+    });
 
-	// prefers-reduced-motion check
-	$effect(() => {
-		const abortController = new AbortController();
-		const media = window.matchMedia('(prefers-reduced-motion: reduce)');
-		const update = () => (prefersReducedMotion = media.matches);
-		update();
-		media.addEventListener('change', update, { signal: abortController.signal });
+    // prefers-reduced-motion check
+    $effect(() => {
+        const abortController = new AbortController();
+        const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const update = () => (prefersReducedMotion = media.matches);
+        update();
+        media.addEventListener('change', update, {
+            signal: abortController.signal,
+        });
 
-		return () => abortController.abort();
-	});
+        return () => abortController.abort();
+    });
 
-	// gsap
-	$effect(() => {
-		if (!mounted) return;
-		if (prefersReducedMotion) return;
+    // gsap
+    $effect(() => {
+        if (!mounted) return;
+        if (prefersReducedMotion) return;
 
-		gsap.registerPlugin(ScrollTrigger);
+        gsap.registerPlugin(ScrollTrigger);
 
-		const paragraphs = document.querySelectorAll('.content p');
-		const images = document.querySelectorAll('.image img');
+        const paragraphs = document.querySelectorAll('.content p');
+        const images = document.querySelectorAll('.image img');
 
-		images.forEach((img) => {
-			gsap.fromTo(
-				img,
-				{
-					scale: 0.8,
-					opacity: 0
-				},
-				{
-					scale: 1,
-					opacity: 1,
-					duration: 1,
-					ease: 'power2.out',
-					scrollTrigger: {
-						trigger: img,
-						start: 'top center+=450'
-					}
-				}
-			);
-		});
+        images.forEach((img) => {
+            gsap.fromTo(
+                img,
+                {
+                    scale: 0.8,
+                    opacity: 0,
+                },
+                {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: img,
+                        start: 'top center+=450',
+                    },
+                },
+            );
+        });
 
-		paragraphs.forEach((para) => {
-			gsap.fromTo(
-				para,
-				{
-					x: -100,
-					opacity: 0
-				},
-				{
-					x: 0,
-					opacity: 1,
-					duration: 1,
-					ease: 'power2.out',
-					scrollTrigger: {
-						trigger: para,
-						start: 'top center+=450'
-					}
-				}
-			);
-		});
+        paragraphs.forEach((para) => {
+            gsap.fromTo(
+                para,
+                {
+                    x: -100,
+                    opacity: 0,
+                },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: para,
+                        start: 'top center+=450',
+                    },
+                },
+            );
+        });
 
-		return () => {
-			ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-		};
-	});
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
+    });
 </script>
 
 <svelte:head>
-	<meta name="view-transition" content="same-origin" />
+    <meta name="view-transition" content="same-origin" />
 </svelte:head>
 
 <SEO
-	title="Web Animation Techniques"
-	description="Web techniques"
-	keywords="animation techniques, web techniques for animation"
-	type="article"
+    title="Web Animation Techniques"
+    description="Web techniques"
+    keywords="animation techniques, web techniques for animation"
+    type="article"
 />
 
 <section class="table-and-logo" id="top">
-	<div class="popover-morph">
-		<GabeMorph />
+    <div class="popover-morph">
+        <GabeMorph />
 
-		{#if !isMobile}
-			<Popover title="" text="click the arrow button on the left to open the table of contents." />
-		{/if}
-	</div>
+        {#if !isMobile}
+            <Popover
+                title=""
+                text="click the arrow button on the left to open the table of contents."
+            />
+        {/if}
+    </div>
 
-	<TableOfContents sideBar={true} />
+    <TableOfContents sideBar={true} />
 </section>
 
 <section class="topics" class:mounted>
-	<div class="css">
-		<div class="tech-stack-logo">
-			<ViewTransitionImage
-				src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/CSS-Purple.webp"
-				alt="new css logo"
-				transitionName="css-image"
-			/>
+    <div class="css">
+        <div class="tech-stack-logo">
+            <ViewTransitionImage
+                src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/CSS-Purple.webp"
+                alt="new css logo"
+                transitionName="css-image"
+            />
 
-			<CSS aria-label="css" />
-		</div>
-	</div>
+            <CSS aria-label="css" />
+        </div>
+    </div>
 
-	<div class="gsap">
-		<ViewTransitionImage
-			src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/GSAP-Dark.svg"
-			alt="greensock animation platform"
-			transitionName="gsap-image"
-		/>
+    <div class="gsap">
+        <ViewTransitionImage
+            src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/GSAP-Dark.svg"
+            alt="greensock animation platform"
+            transitionName="gsap-image"
+        />
 
-		<GSAP aria-label="greensock" />
-	</div>
+        <GSAP aria-label="greensock" />
+    </div>
 
-	<article class="developer-card">
-		<Card
-			src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/blueTriangle.webp"
-			alt="a logo that says atwell developer"
-			href="/projects"
-			title="web design + development"
-			desc="Trying to make the internet look better.. one website at a time."
-			button="Projects"
-		/>
-	</article>
+    <article class="developer-card">
+        <Card
+            src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/blueTriangle.webp"
+            alt="a logo that says atwell developer"
+            href="/projects"
+            title="web design + development"
+            desc="Trying to make the internet look better.. one website at a time."
+            button="Projects"
+        />
+    </article>
 
-	<div class="top-button">
-		<BackToTop />
-	</div>
+    <div class="top-button">
+        <BackToTop />
+    </div>
 </section>
 
 <style>
-	.table-and-logo {
-		padding-top: 5em;
+    .table-and-logo {
+        padding-top: 5em;
 
-		& .popover-morph {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			gap: 2em;
+        & .popover-morph {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
 
-			@media (width <= 768px) {
-				flex-direction: column;
-				gap: 0;
-			}
-		}
-	}
+            @media (width <= 768px) {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    }
 
-	.topics {
-		margin: 0;
+    .topics {
+        margin: 0;
 
-		&.mounted {
-			opacity: 1;
-			scale: 1;
-		}
+        &.mounted {
+            opacity: 1;
+            scale: 1;
+        }
 
-		& .top-button {
-			text-align: center;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 0;
-			margin: 0;
+        & .top-button {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            margin: 0;
 
-			& :global(.back-button) {
-				margin-top: 1em;
-				margin-bottom: 0;
-			}
+            & :global(.back-button) {
+                margin-top: 1em;
+                margin-bottom: 0;
+            }
 
-			@media (width <= 500px) {
-				gap: 1em;
-				margin-top: 3em;
-			}
-		}
+            @media (width <= 500px) {
+                gap: 1em;
+                margin-top: 3em;
+            }
+        }
 
-		& .developer-card {
-			display: flex;
-			justify-content: center;
-			background: transparent;
-			box-shadow: none;
-		}
+        & .developer-card {
+            display: flex;
+            justify-content: center;
+            background: transparent;
+            box-shadow: none;
+        }
 
-		& .gsap {
-			position: relative;
-			contain: layout;
-		}
-	}
+        & .gsap {
+            position: relative;
+            contain: layout;
+        }
+    }
 
-	:global(::view-transition-old(css-image)),
-	:global(::view-transition-new(css-image)),
-	:global(::view-transition-old(gsap-image)),
-	:global(::view-transition-new(gsap-image)) {
-		animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	}
+    :global(::view-transition-old(css-image)),
+    :global(::view-transition-new(css-image)),
+    :global(::view-transition-old(gsap-image)),
+    :global(::view-transition-new(gsap-image)) {
+        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-	:global(::view-transition-old(css-image)),
-	:global(::view-transition-old(gsap-image)) {
-		animation: scale-down 0.25s ease forwards;
-	}
+    :global(::view-transition-old(css-image)),
+    :global(::view-transition-old(gsap-image)) {
+        animation: scale-down 0.25s ease forwards;
+    }
 
-	:global(::view-transition-new(css-image)),
-	:global(::view-transition-new(gsap-image)) {
-		animation: scale-up 0.25s ease forwards;
-	}
+    :global(::view-transition-new(css-image)),
+    :global(::view-transition-new(gsap-image)) {
+        animation: scale-up 0.25s ease forwards;
+    }
 </style>

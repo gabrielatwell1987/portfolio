@@ -1,148 +1,148 @@
 <script lang="ts">
-	let { showDirections = $bindable(false) } = $props();
+    let { showDirections = $bindable(false) } = $props();
 </script>
 
 <button
-	class="directions-toggle"
-	onclick={() => (showDirections = !showDirections)}
-	aria-label="Toggle directions"
-	aria-expanded={showDirections}
+    class="directions-toggle"
+    onclick={() => (showDirections = !showDirections)}
+    aria-label="Toggle directions"
+    aria-expanded={showDirections}
 >
-	directions
+    directions
 </button>
 
 {#if showDirections}
-	<div class="game-directions">
-		<button
-			class="close-directions"
-			onclick={() => (showDirections = false)}
-			aria-label="Close directions"
-		>
-			×
-		</button>
+    <div class="game-directions">
+        <button
+            class="close-directions"
+            onclick={() => (showDirections = false)}
+            aria-label="Close directions"
+        >
+            ×
+        </button>
 
-		<h2>directions</h2>
+        <h2>directions</h2>
 
-		<p>
-			Use W A S D or click/tap to move. Shoot enemies by clicking the shoot button or pressing
-			space.
-		</p>
-	</div>
+        <p>
+            Use W A S D or click/tap to move. Shoot enemies by clicking the
+            shoot button or pressing space.
+        </p>
+    </div>
 {/if}
 
 <style>
-	.directions-toggle {
-		position: fixed;
-		bottom: 0;
-		right: 1rem;
-		inline-size: fit-content;
-		block-size: fit-content;
-		border-radius: var(--radius);
-		background: var(--clr-invert-fade);
-		color: var(--clr-main);
-		font-family: var(--bronova-bold);
-		font-size: clamp(var(--xs), 1.2vw, var(--h5));
-		opacity: 0.8;
-		border: 2px solid var(--clr-invert);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		cursor: pointer;
-		z-index: 100;
+    .directions-toggle {
+        position: fixed;
+        bottom: 0;
+        right: 1rem;
+        inline-size: fit-content;
+        block-size: fit-content;
+        border-radius: var(--radius);
+        background: var(--clr-invert-fade);
+        color: var(--clr-main);
+        font-family: var(--bronova-bold);
+        font-size: clamp(var(--xs), 1.2vw, var(--h5));
+        opacity: 0.8;
+        border: 2px solid var(--clr-invert);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 100;
 
-		@media (width <= 768px) {
-			display: flex;
-		}
+        @media (width <= 768px) {
+            display: flex;
+        }
 
-		&:hover {
-			transform: scale(1.1);
-		}
+        &:hover {
+            transform: scale(1.1);
+        }
 
-		&:active {
-			transform: scale(0.95);
-		}
-	}
+        &:active {
+            transform: scale(0.95);
+        }
+    }
 
-	.game-directions {
-		position: fixed;
-		bottom: 1em;
-		right: 1em;
-		background: var(--clr-invert-fade);
-		padding: 0.5rem 1rem;
-		border: 1px solid var(--clr-invert);
-		border-radius: var(--radius);
-		z-index: 100;
-		max-inline-size: 30vw;
-		opacity: 1;
+    .game-directions {
+        position: fixed;
+        bottom: 1em;
+        right: 1em;
+        background: var(--clr-invert-fade);
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--clr-invert);
+        border-radius: var(--radius);
+        z-index: 100;
+        max-inline-size: 30vw;
+        opacity: 1;
 
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
 
-		@media (width <= 768px) {
-			position: fixed;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			background: var(--clr-invert-fade);
-			border: 1px solid var(--clr-invert);
-			border-radius: var(--radius);
-			padding: 0.2rem 0.75rem;
-			z-index: 150;
-			min-inline-size: 85vw;
-			max-height: 60vh;
-			overflow-y: auto;
-		}
+        @media (width <= 768px) {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--clr-invert-fade);
+            border: 1px solid var(--clr-invert);
+            border-radius: var(--radius);
+            padding: 0.2rem 0.75rem;
+            z-index: 150;
+            min-inline-size: 85vw;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
 
-		& h2 {
-			color: var(--clr-main);
-			font-family: var(--bronova);
-			font-size: clamp(var(--xs), 1.2vw, var(--h5));
-			font-weight: 500;
-			margin: 0;
-			text-transform: uppercase;
-			text-align: center;
+        & h2 {
+            color: var(--clr-main);
+            font-family: var(--bronova);
+            font-size: clamp(var(--xs), 1.2vw, var(--h5));
+            font-weight: 500;
+            margin: 0;
+            text-transform: uppercase;
+            text-align: center;
 
-			@media (width <= 768px) {
-				font-size: var(--h5);
-				margin: 0 0 1rem 0;
-			}
-		}
+            @media (width <= 768px) {
+                font-size: var(--h5);
+                margin: 0 0 1rem 0;
+            }
+        }
 
-		& p {
-			color: var(--clr-main);
-			font-family: var(--bronova);
-			font-size: clamp(var(--xxs), 1.1vw, var(--sm));
-			font-weight: 400;
-			margin: 0;
-			text-align: center;
+        & p {
+            color: var(--clr-main);
+            font-family: var(--bronova);
+            font-size: clamp(var(--xxs), 1.1vw, var(--sm));
+            font-weight: 400;
+            margin: 0;
+            text-align: center;
 
-			@media (width <= 768px) {
-				font-size: var(--sm);
-			}
-		}
-	}
+            @media (width <= 768px) {
+                font-size: var(--sm);
+            }
+        }
+    }
 
-	.close-directions {
-		position: absolute;
-		top: 0.5rem;
-		right: 0.5rem;
-		background: transparent;
-		border: none;
-		color: rgba(255, 255, 255, 0.8);
-		font-size: 2rem;
-		cursor: pointer;
-		padding: 0;
-		width: 2rem;
-		height: 2rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		transition: color 0.2s ease;
-	}
+    .close-directions {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 0;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: color 0.2s ease;
+    }
 
-	.close-directions:hover {
-		color: white;
-	}
+    .close-directions:hover {
+        color: white;
+    }
 </style>

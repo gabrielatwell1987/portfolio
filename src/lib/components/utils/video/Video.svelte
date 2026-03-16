@@ -1,51 +1,60 @@
 <script lang="ts">
-	interface Props {
-		src: string;
-	}
-	let { src }: Props = $props();
+    interface Props {
+        src: string;
+    }
+    let { src }: Props = $props();
 
-	let duration = $state<number>();
-	let videoWidth = $state<number>();
-	let videoHeight = $state<number>();
+    let duration = $state<number>();
+    let videoWidth = $state<number>();
+    let videoHeight = $state<number>();
 </script>
 
 <section class="video">
-	<video bind:duration bind:videoWidth bind:videoHeight autoplay muted playsinline loop>
-		<source {src} type="video/mp4" />
+    <video
+        bind:duration
+        bind:videoWidth
+        bind:videoHeight
+        autoplay
+        muted
+        playsinline
+        loop
+    >
+        <source {src} type="video/mp4" />
 
-		<source src={src.replace('.mp4', '.webm')} type="video/webm" />
+        <source src={src.replace('.mp4', '.webm')} type="video/webm" />
 
-		<p>Your browser does not support this video..</p>
-	</video>
+        <p>Your browser does not support this video..</p>
+    </video>
 </section>
 
 <style>
-	.video {
-		margin-inline: auto;
-		margin-block: 3rem;
-		display: flex;
-		justify-content: center;
+    .video {
+        margin-inline: auto;
+        margin-block: 3rem;
+        display: flex;
+        justify-content: center;
 
-		video {
-			width: 90%;
-			min-width: 320px;
-			max-inline-size: 1200px;
-			border-radius: 12px;
-			mask-image:
-				linear-gradient(transparent, black 20%), linear-gradient(to top, transparent, black 20%),
-				linear-gradient(to right, transparent, black 20%),
-				linear-gradient(to left, transparent, black 20%);
-			mask-composite: intersect;
-		}
-	}
+        video {
+            width: 90%;
+            min-width: 320px;
+            max-inline-size: 1200px;
+            border-radius: 12px;
+            mask-image:
+                linear-gradient(transparent, black 20%),
+                linear-gradient(to top, transparent, black 20%),
+                linear-gradient(to right, transparent, black 20%),
+                linear-gradient(to left, transparent, black 20%);
+            mask-composite: intersect;
+        }
+    }
 
-	@media (max-inline-size: 700px) {
-		.video {
-			margin: 0 auto 18% auto;
+    @media (max-inline-size: 700px) {
+        .video {
+            margin: 0 auto 18% auto;
 
-			video {
-				max-inline-size: 85%;
-			}
-		}
-	}
+            video {
+                max-inline-size: 85%;
+            }
+        }
+    }
 </style>

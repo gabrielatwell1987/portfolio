@@ -1,20 +1,20 @@
 <script lang="ts">
-	interface Props {
-		title: string;
-	}
+    interface Props {
+        title: string;
+    }
 
-	let { title }: Props = $props();
+    let { title }: Props = $props();
 </script>
 
 <span class="heading-title">{title}:</span>
 
 <style>
-	span.heading-title {
-		font-family: var(--ultra);
-		font-size: clamp(var(--h6), 1.5vw, var(--h3));
-		line-height: 1.75;
-		color: var(--clr-main);
-		margin-right: 0.5rem;
-		text-wrap: balance;
-	}
+    span.heading-title {
+        font-family: var(--ultra);
+        font-size: clamp(var(--h6), 1.5vw, var(--h3));
+        line-height: 1.75;
+        color: var(--clr-main);
+        margin-right: 0.5rem;
+        text-wrap: balance;
+    }
 </style>

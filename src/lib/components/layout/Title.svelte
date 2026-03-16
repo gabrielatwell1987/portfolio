@@ -1,206 +1,223 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
-	import DOMPurify from 'dompurify';
+    import { browser } from '$app/environment';
+    import DOMPurify from 'dompurify';
 
-	interface Props {
-		title: string;
-		title2?: string;
-		img?: string;
-		width?: string;
-		svg?: string;
-		viewTransitionName?: string;
-	}
+    interface Props {
+        title: string;
+        title2?: string;
+        img?: string;
+        width?: string;
+        svg?: string;
+        viewTransitionName?: string;
+    }
 
-	let { title, title2, img, width, svg, viewTransitionName }: Props = $props();
+    let { title, title2, img, width, svg, viewTransitionName }: Props =
+        $props();
 
-	let transitionName = $derived(viewTransitionName || 'page-title');
+    let transitionName = $derived(viewTransitionName || 'page-title');
 
-	let svgElement = $derived.by(() => {
-		if (!svg) return '';
+    let svgElement = $derived.by(() => {
+        if (!svg) return '';
 
-		const svgTagMatch = svg.match(/<svg[^>]*>/);
-		if (!svgTagMatch) return svg;
-		const svgTag = svgTagMatch[0];
+        const svgTagMatch = svg.match(/<svg[^>]*>/);
+        if (!svgTagMatch) return svg;
+        const svgTag = svgTagMatch[0];
 
-		const attrs =
-			'class="title exclude-transition" id="title"' +
-			` style="view-transition-name: ${transitionName};"` +
-			' aria-label="' +
-			title +
-			'"' +
-			(width ? ' width="' + (width.match(/^\d+$/) ? width + 'px' : width) + '"' : '');
+        const attrs =
+            'class="title exclude-transition" id="title"' +
+            ` style="view-transition-name: ${transitionName};"` +
+            ' aria-label="' +
+            title +
+            '"' +
+            (width
+                ? ' width="' +
+                  (width.match(/^\d+$/) ? width + 'px' : width) +
+                  '"'
+                : '');
 
-		const newSvgTag = svgTag.replace('<svg', `<svg ${attrs}`);
-		const sanitized = svg.replace(svgTag, newSvgTag);
+        const newSvgTag = svgTag.replace('<svg', `<svg ${attrs}`);
+        const sanitized = svg.replace(svgTag, newSvgTag);
 
-		if (!browser) return sanitized;
+        if (!browser) return sanitized;
 
-		return DOMPurify.sanitize(sanitized, {
-			ALLOWED_TAGS: ['svg', 'path', 'circle', 'rect', 'g', 'defs', 'use'],
-			KEEP_CONTENT: true
-		});
-	});
+        return DOMPurify.sanitize(sanitized, {
+            ALLOWED_TAGS: ['svg', 'path', 'circle', 'rect', 'g', 'defs', 'use'],
+            KEEP_CONTENT: true,
+        });
+    });
 </script>
 
 <div class="title-wrapper">
-	{#if img}
-		<img
-			class="image-title exclude-transition"
-			id="image-title"
-			src={img}
-			alt={title}
-			style="width: {width}; view-transition-name: {transitionName};"
-			loading="lazy"
-		/>
-	{:else if svg}
-		<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-		{@html svgElement}
-	{:else}
-		<div class="title-container" style="view-transition-name: {transitionName};">
-			<h1 class="text-title title-main exclude-transition" id="title" aria-label={title}>
-				{title}
-			</h1>
-			{#if title2}
-				<h1 class="text-title title-overlay exclude-transition" aria-label={title2}>{title2}</h1>
-			{/if}
-		</div>
-	{/if}
+    {#if img}
+        <img
+            class="image-title exclude-transition"
+            id="image-title"
+            src={img}
+            alt={title}
+            style="width: {width}; view-transition-name: {transitionName};"
+            loading="lazy"
+        />
+    {:else if svg}
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+        {@html svgElement}
+    {:else}
+        <div
+            class="title-container"
+            style="view-transition-name: {transitionName};"
+        >
+            <h1
+                class="text-title title-main exclude-transition"
+                id="title"
+                aria-label={title}
+            >
+                {title}
+            </h1>
+            {#if title2}
+                <h1
+                    class="text-title title-overlay exclude-transition"
+                    aria-label={title2}
+                >
+                    {title2}
+                </h1>
+            {/if}
+        </div>
+    {/if}
 </div>
 
 <style>
-	* {
-		position: relative;
-	}
+    * {
+        position: relative;
+    }
 
-	@media (width >= 300px) {
-		.title-wrapper {
-			padding-top: 5em;
+    @media (width >= 300px) {
+        .title-wrapper {
+            padding-top: 5em;
 
-			@media (width <= 768px) {
-				padding-top: 2.5em;
-			}
-		}
+            @media (width <= 768px) {
+                padding-top: 2.5em;
+            }
+        }
 
-		.title-container {
-			position: relative;
-			text-align: center;
-			margin-top: 5rem;
-			view-timeline-name: page-title;
+        .title-container {
+            position: relative;
+            text-align: center;
+            margin-top: 5rem;
+            view-timeline-name: page-title;
 
-			@media (width >= 740px) {
-				margin: 2rem auto;
-			}
-		}
+            @media (width >= 740px) {
+                margin: 2rem auto;
+            }
+        }
 
-		.text-title {
-			font-family: var(--ultra);
-			font-size: clamp(var(--h2), 11vw, 18rem);
-			letter-spacing: -1px;
-			text-transform: uppercase;
-			font-kerning: none;
-			color: var(--clr-main);
-			padding: 0 1em;
+        .text-title {
+            font-family: var(--ultra);
+            font-size: clamp(var(--h2), 11vw, 18rem);
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            font-kerning: none;
+            color: var(--clr-main);
+            padding: 0 1em;
 
-			@media (width >= 990px) {
-				font-weight: 800;
-			}
+            @media (width >= 990px) {
+                font-weight: 800;
+            }
 
-			&.title-main {
-				-webkit-text-stroke: 3px var(--clr-main);
-				text-shadow: none;
+            &.title-main {
+                -webkit-text-stroke: 3px var(--clr-main);
+                text-shadow: none;
 
-				@media (width <= 768px) {
-					-webkit-text-stroke: 1px var(--clr-invert);
-					text-shadow:
-						0 0 1px var(--clr-main),
-						-1px -1px 0 var(--clr-invert),
-						1px -1px 0 var(--clr-invert),
-						-1px 1px 0 var(--clr-invert),
-						1px 1px 0 var(--clr-invert),
-						-1px 0 0 var(--clr-invert),
-						1px 0 0 var(--clr-invert),
-						0 -1px 0 var(--clr-invert),
-						0 1px 0 var(--clr-invert);
-				}
-			}
+                @media (width <= 768px) {
+                    -webkit-text-stroke: 1px var(--clr-invert);
+                    text-shadow:
+                        0 0 1px var(--clr-main),
+                        -1px -1px 0 var(--clr-invert),
+                        1px -1px 0 var(--clr-invert),
+                        -1px 1px 0 var(--clr-invert),
+                        1px 1px 0 var(--clr-invert),
+                        -1px 0 0 var(--clr-invert),
+                        1px 0 0 var(--clr-invert),
+                        0 -1px 0 var(--clr-invert),
+                        0 1px 0 var(--clr-invert);
+                }
+            }
 
-			&.title-overlay {
-				position: absolute;
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -48%);
-				color: var(--clr-main);
-				-webkit-text-stroke: 5px var(--clr-invert);
-				text-shadow: none;
+            &.title-overlay {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -48%);
+                color: var(--clr-main);
+                -webkit-text-stroke: 5px var(--clr-invert);
+                text-shadow: none;
 
-				@media (width <= 768px) {
-					-webkit-text-stroke: 1px var(--clr-invert);
-					transform: translate(-50%, -43.5%);
-					text-shadow:
-						0 0 1px var(--clr-main),
-						-2px -2px 0 var(--clr-invert),
-						2px -2px 0 var(--clr-invert),
-						-2px 2px 0 var(--clr-invert),
-						2px 2px 0 var(--clr-invert),
-						-2px 0 0 var(--clr-invert),
-						2px 0 0 var(--clr-invert),
-						0 -2px 0 var(--clr-invert),
-						0 2px 0 var(--clr-invert);
-				}
-			}
-		}
+                @media (width <= 768px) {
+                    -webkit-text-stroke: 1px var(--clr-invert);
+                    transform: translate(-50%, -43.5%);
+                    text-shadow:
+                        0 0 1px var(--clr-main),
+                        -2px -2px 0 var(--clr-invert),
+                        2px -2px 0 var(--clr-invert),
+                        -2px 2px 0 var(--clr-invert),
+                        2px 2px 0 var(--clr-invert),
+                        -2px 0 0 var(--clr-invert),
+                        2px 0 0 var(--clr-invert),
+                        0 -2px 0 var(--clr-invert),
+                        0 2px 0 var(--clr-invert);
+                }
+            }
+        }
 
-		.image-title {
-			display: block;
-			margin-inline: auto;
-			max-inline-size: 75%;
-			height: auto;
-			text-shadow: none;
-			text-transform: none;
-			letter-spacing: normal;
-			font-kerning: auto;
-			color: initial;
-			view-transition-name: page-title;
-		}
+        .image-title {
+            display: block;
+            margin-inline: auto;
+            max-inline-size: 75%;
+            height: auto;
+            text-shadow: none;
+            text-transform: none;
+            letter-spacing: normal;
+            font-kerning: auto;
+            color: initial;
+            view-transition-name: page-title;
+        }
 
-		#title {
-			font-kerning: none;
-		}
-	}
+        #title {
+            font-kerning: none;
+        }
+    }
 
-	::view-transition-old(page-title),
-	::view-transition-new(page-title) {
-		animation: none;
-		mix-blend-mode: normal;
-	}
+    ::view-transition-old(page-title),
+    ::view-transition-new(page-title) {
+        animation: none;
+        mix-blend-mode: normal;
+    }
 
-	::view-transition-old(page-title) {
-		animation: slide-out var(--title-transition-duration) ease-out forwards;
-	}
+    ::view-transition-old(page-title) {
+        animation: slide-out var(--title-transition-duration) ease-out forwards;
+    }
 
-	::view-transition-new(page-title) {
-		animation: slide-in var(--title-transition-duration) ease-out forwards;
-	}
+    ::view-transition-new(page-title) {
+        animation: slide-in var(--title-transition-duration) ease-out forwards;
+    }
 
-	@keyframes slide-out {
-		from {
-			opacity: 1;
-			transform: translateX(0);
-		}
-		to {
-			opacity: 0;
-			transform: translateX(-100px);
-		}
-	}
+    @keyframes slide-out {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+    }
 
-	@keyframes slide-in {
-		from {
-			opacity: 0;
-			transform: translateX(100px);
-		}
-		to {
-			opacity: 1;
-			transform: translateX(0);
-		}
-	}
+    @keyframes slide-in {
+        from {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
 </style>

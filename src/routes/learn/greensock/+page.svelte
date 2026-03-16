@@ -1,158 +1,158 @@
 <script lang="ts">
-	import SEO from '$lib/data/SEO.svelte';
-	import Title from '$lib/components/layout/Title.svelte';
-	import Button from '$lib/components/layout/Button.svelte';
-	import Iframe from '$lib/components/learn/Iframe.svelte';
-	import Learn from '$lib/components/learn/Learn.svelte';
-	import Details from '$lib/components/learn/Details.svelte';
+    import SEO from '$lib/data/SEO.svelte';
+    import Title from '$lib/components/layout/Title.svelte';
+    import Button from '$lib/components/layout/Button.svelte';
+    import Iframe from '$lib/components/learn/Iframe.svelte';
+    import Learn from '$lib/components/learn/Learn.svelte';
+    import Details from '$lib/components/learn/Details.svelte';
 
-	interface DetailsItem {
-		summary: string;
-		content: string;
-	}
+    interface DetailsItem {
+        summary: string;
+        content: string;
+    }
 
-	interface Props {
-		data: {
-			greensockDetails: DetailsItem[];
-		};
-	}
+    interface Props {
+        data: {
+            greensockDetails: DetailsItem[];
+        };
+    }
 
-	let { data }: Props = $props();
-	// let detailsVisible = $state<boolean>(false);
+    let { data }: Props = $props();
+    // let detailsVisible = $state<boolean>(false);
 
-	// // animations
-	// $effect(() => {
-	// 	setTimeout(() => {
-	// 		detailsVisible = true;
-	// 	}, 100);
-	// });
+    // // animations
+    // $effect(() => {
+    // 	setTimeout(() => {
+    // 		detailsVisible = true;
+    // 	}, 100);
+    // });
 </script>
 
 <SEO
-	title="Web animations with GSAP"
-	description="web animations"
-	keywords="GSAP, greensock animation platform, web animation, greensock how to"
+    title="Web animations with GSAP"
+    description="web animations"
+    keywords="GSAP, greensock animation platform, web animation, greensock how to"
 />
 
 <section class="learn-gsap">
-	<div class="content">
-		<div class="title-spacing">
-			<Title
-				img="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/GSAP-Dark.svg"
-				width="50vw"
-				title="Greensock Animation Platform"
-			/>
-		</div>
+    <div class="content">
+        <div class="title-spacing">
+            <Title
+                img="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/GSAP-Dark.svg"
+                width="50vw"
+                title="Greensock Animation Platform"
+            />
+        </div>
 
-		<main class="gsap-details">
-			<div class="center-detail">
-				<Details items={data.greensockDetails} />
-			</div>
+        <main class="gsap-details">
+            <div class="center-detail">
+                <Details items={data.greensockDetails} />
+            </div>
 
-			<Iframe
-				src="https://www.youtube-nocookie.com/embed/AW1yfBKRMKc?si=Lin0MJK396SD5Rbe"
-				title="YouTube video player"
-			/>
+            <Iframe
+                src="https://www.youtube-nocookie.com/embed/AW1yfBKRMKc?si=Lin0MJK396SD5Rbe"
+                title="YouTube video player"
+            />
 
-			<Learn href="https://greensock.com" title="greensock" />
+            <Learn href="https://greensock.com" title="greensock" />
 
-			<div class="back-button">
-				<Button href="/learn" title="Back" />
-			</div>
-		</main>
-	</div>
+            <div class="back-button">
+                <Button href="/learn" title="Back" />
+            </div>
+        </main>
+    </div>
 </section>
 
 <style>
-	:root {
-		--100: 100%;
-		interpolate-size: allow-keywords;
-	}
+    :root {
+        --100: 100%;
+        interpolate-size: allow-keywords;
+    }
 
-	.learn-gsap {
-		& .title-spacing {
-			margin-top: 3em;
-			margin-bottom: 6em;
+    .learn-gsap {
+        & .title-spacing {
+            margin-top: 3em;
+            margin-bottom: 6em;
 
-			@media (width <= 768px) {
-				margin-bottom: 5em;
-			}
-		}
+            @media (width <= 768px) {
+                margin-bottom: 5em;
+            }
+        }
 
-		& .gsap-details {
-			& .center-detail {
-				max-inline-size: 90vw;
-				margin-inline: auto;
+        & .gsap-details {
+            & .center-detail {
+                max-inline-size: 90vw;
+                margin-inline: auto;
 
-				:global(details) {
-					position: relative;
-					border: none;
-					outline: none;
-					-webkit-appearance: none;
-					appearance: none;
-					overflow: clip;
-					padding: 1rem;
-					inline-size: 100ch;
+                :global(details) {
+                    position: relative;
+                    border: none;
+                    outline: none;
+                    -webkit-appearance: none;
+                    appearance: none;
+                    overflow: clip;
+                    padding: 1rem;
+                    inline-size: 100ch;
 
-					&::details-content {
-						opacity: 0;
-						block-size: 0;
-						overflow-y: clip;
-						transition:
-							content-visibility 1s allow-discrete,
-							opacity 1s,
-							block-size 1s;
-					}
+                    &::details-content {
+                        opacity: 0;
+                        block-size: 0;
+                        overflow-y: clip;
+                        transition:
+                            content-visibility 1s allow-discrete,
+                            opacity 1s,
+                            block-size 1s;
+                    }
 
-					&[open]::details-content {
-						opacity: 1;
-						block-size: auto;
-					}
-				}
+                    &[open]::details-content {
+                        opacity: 1;
+                        block-size: auto;
+                    }
+                }
 
-				:global(summary) {
-					color: var(--clr-blue);
-					border-color: var(--clr-gray);
+                :global(summary) {
+                    color: var(--clr-blue);
+                    border-color: var(--clr-gray);
 
-					@media (width <= 768px) {
-						color: var(--clr-blue);
-						border-color: var(--clr-gray);
-					}
-				}
+                    @media (width <= 768px) {
+                        color: var(--clr-blue);
+                        border-color: var(--clr-gray);
+                    }
+                }
 
-				:global(.text) {
-					color: var(--clr-main);
-				}
+                :global(.text) {
+                    color: var(--clr-main);
+                }
 
-				:global(.image-container img) {
-					border-radius: 0.5rem;
-					box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-					width: 100%;
-					height: auto;
-				}
+                :global(.image-container img) {
+                    border-radius: 0.5rem;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    width: 100%;
+                    height: auto;
+                }
 
-				:global(.image-container) {
-					margin: 1rem 0;
-					text-align: center;
-				}
-			}
+                :global(.image-container) {
+                    margin: 1rem 0;
+                    text-align: center;
+                }
+            }
 
-			& .back-button {
-				text-align: center;
-			}
-		}
-	}
+            & .back-button {
+                text-align: center;
+            }
+        }
+    }
 
-	@keyframes fadeInUp {
-		from {
-			opacity: 0;
-			transform: translateY(100px);
-			visibility: hidden;
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-			visibility: visible;
-		}
-	}
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(100px);
+            visibility: hidden;
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+    }
 </style>

@@ -1,111 +1,117 @@
 <script>
-	import { page } from '$app/stores';
-	import { fade } from 'svelte/transition';
-	import { DEFAULT_DURATION, DEFAULT_DELAY } from '$lib/data/context/animationTimings.svelte';
-	import SEO from '$lib/data/SEO.svelte';
-	import Image from '$lib/components/layout/Image.svelte';
+    import { page } from '$app/stores';
+    import { fade } from 'svelte/transition';
+    import {
+        DEFAULT_DURATION,
+        DEFAULT_DELAY,
+    } from '$lib/data/context/animationTimings.svelte';
+    import SEO from '$lib/data/SEO.svelte';
+    import Image from '$lib/components/layout/Image.svelte';
 
-	$effect(() => {
-		console.log(`There is a ${$page.status} error!`);
-	});
+    $effect(() => {
+        console.log(`There is a ${$page.status} error!`);
+    });
 </script>
 
 <SEO
-	title="There's been an error!"
-	description="You've encountered an error!"
-	keywords="error, gabe's error page"
+    title="There's been an error!"
+    description="You've encountered an error!"
+    keywords="error, gabe's error page"
 />
 
-<div aria-label="error" transition:fade={{ delay: DEFAULT_DELAY, duration: DEFAULT_DURATION }}>
-	<div class="image">
-		<Image
-			src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/error.webp"
-			alt="an error has occurred"
-			width="300"
-			aspectRatio="1/1"
-		/>
-	</div>
+<div
+    aria-label="error"
+    transition:fade={{ delay: DEFAULT_DELAY, duration: DEFAULT_DURATION }}
+>
+    <div class="image">
+        <Image
+            src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/error.webp"
+            alt="an error has occurred"
+            width="300"
+            aspectRatio="1/1"
+        />
+    </div>
 
-	<div class="error">
-		<h2>You have encountered an error</h2>
+    <div class="error">
+        <h2>You have encountered an error</h2>
 
-		<h1>status: {$page.status}</h1>
+        <h1>status: {$page.status}</h1>
 
-		<p>{$page.error?.message}</p>
-	</div>
+        <p>{$page.error?.message}</p>
+    </div>
 </div>
 
 <style>
-	div {
-		padding: 1rem 1.5rem;
-		height: 80vh;
+    div {
+        padding: 1rem 1.5rem;
+        height: 80vh;
 
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-		& .error {
-			inline-size: 100%;
+        & .error {
+            inline-size: 100%;
 
-			display: flex;
-			flex-direction: column;
-			gap: 1em;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
 
-			anchor-name: --error;
+            anchor-name: --error;
 
-			& h1 {
-				font-family: var(--ultra);
-				font-size: clamp(var(--h4), 5vw, var(--xxl));
-				font-weight: 900;
-				-webkit-text-stroke: 1px var(--clr-main);
-				margin-inline: auto;
-				text-align: center;
-				color: var(--clr-blue);
-				font-family: var(--ultra);
-				letter-spacing: 7px;
-				text-wrap: balance;
-				anchor-name: --subtitle;
-			}
+            & h1 {
+                font-family: var(--ultra);
+                font-size: clamp(var(--h4), 5vw, var(--xxl));
+                font-weight: 900;
+                -webkit-text-stroke: 1px var(--clr-main);
+                margin-inline: auto;
+                text-align: center;
+                color: var(--clr-blue);
+                font-family: var(--ultra);
+                letter-spacing: 7px;
+                text-wrap: balance;
+                anchor-name: --subtitle;
+            }
 
-			& h2 {
-				font-family: var(--bronova);
-				font-size: clamp(var(--h3), 2vw, var(--xl));
-				font-weight: 600;
-				margin-inline: auto;
-				margin-block: 0;
-				text-align: center;
-				color: var(--clr-main);
-				font-family: var(--bronova);
-				letter-spacing: 5px;
-				text-wrap: balance;
-			}
+            & h2 {
+                font-family: var(--bronova);
+                font-size: clamp(var(--h3), 2vw, var(--xl));
+                font-weight: 600;
+                margin-inline: auto;
+                margin-block: 0;
+                text-align: center;
+                color: var(--clr-main);
+                font-family: var(--bronova);
+                letter-spacing: 5px;
+                text-wrap: balance;
+            }
 
-			& p {
-				font-family: var(--bronova);
-				font-size: clamp(var(--h5), 3vw, var(--h3));
-				font-weight: 500;
-				letter-spacing: 5px;
-				line-height: 1.1;
-				text-align: start;
-				padding: 2rem 4rem;
-				color: var(--clr-gray);
-				text-align: center;
-				text-wrap: none;
+            & p {
+                font-family: var(--bronova);
+                font-size: clamp(var(--h5), 3vw, var(--h3));
+                font-weight: 500;
+                letter-spacing: 5px;
+                line-height: 1.1;
+                text-align: start;
+                padding: 2rem 4rem;
+                color: var(--clr-gray);
+                text-align: center;
+                text-wrap: none;
 
-				position: absolute;
-				position-anchor: --subtitle;
-				top: calc(anchor(top) + 2em);
-			}
-		}
+                position: absolute;
+                position-anchor: --subtitle;
+                top: calc(anchor(top) + 2em);
+            }
+        }
 
-		& .image {
-			width: clamp(200px, 20vw + 5em, 500px);
-			margin-inline: auto;
+        & .image {
+            width: clamp(200px, 20vw + 5em, 500px);
+            margin-inline: auto;
 
-			position: absolute;
-			position-anchor: --error;
-			top: calc(anchor(center) - 5em);
-		}
-	}
+            position: absolute;
+            position-anchor: --error;
+            top: calc(anchor(center) - 5em);
+        }
+    }
 </style>

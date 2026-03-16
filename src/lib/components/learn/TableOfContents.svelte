@@ -1,291 +1,363 @@
 <script lang="ts">
-	let { sideBar = true } = $props();
-	let isOpen = $state(false);
-	let isMobile = $state(false);
+    let { sideBar = true } = $props();
+    let isOpen = $state(false);
+    let isMobile = $state(false);
 
-	$effect(() => {
-		const abortController = new AbortController();
-		const mediaQuery = window.matchMedia('(max-width: 768px)');
+    $effect(() => {
+        const abortController = new AbortController();
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
 
-		const handleChange = (e: MediaQueryListEvent) => {
-			isMobile = e.matches;
-		};
+        const handleChange = (e: MediaQueryListEvent) => {
+            isMobile = e.matches;
+        };
 
-		isMobile = mediaQuery.matches;
-		mediaQuery.addEventListener('change', handleChange, { signal: abortController.signal });
+        isMobile = mediaQuery.matches;
+        mediaQuery.addEventListener('change', handleChange, {
+            signal: abortController.signal,
+        });
 
-		return () => {
-			abortController.abort();
-		};
-	});
+        return () => {
+            abortController.abort();
+        };
+    });
 </script>
 
 {#if sideBar && !isMobile}
-	<button
-		class="toggle-button"
-		class:open={isOpen}
-		onclick={() => (isOpen = !isOpen)}
-		aria-label="toggle sidebar"
-	>
-		<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-			<polyline points="15 18 9 12 15 6"></polyline>
-		</svg>
-	</button>
+    <button
+        class="toggle-button"
+        class:open={isOpen}
+        onclick={() => (isOpen = !isOpen)}
+        aria-label="toggle sidebar"
+    >
+        <svg
+            class="arrow"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+        >
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+    </button>
 
-	<aside class="side-bar" class:open={isOpen}>
-		<article class="table-of-contents">
-			<div class="css">
-				<dl>
-					<dt>CSS</dt>
+    <aside class="side-bar" class:open={isOpen}>
+        <article class="table-of-contents">
+            <div class="css">
+                <dl>
+                    <dt>CSS</dt>
 
-					<dd><a href="#transitions" onclick={() => (isOpen = false)}>Transitions</a></dd>
-					<dd><a href="#animations" onclick={() => (isOpen = false)}>Animations</a></dd>
-					<dd><a href="#interpolate" onclick={() => (isOpen = false)}>Interpolate</a></dd>
-					<dd><a href="#calc" onclick={() => (isOpen = false)}>Calc</a></dd>
-					<dd><a href="#details" onclick={() => (isOpen = false)}>Details</a></dd>
-					<dd><a href="#view" onclick={() => (isOpen = false)}>View Transitions</a></dd>
-					<dd><a href="#anchor" onclick={() => (isOpen = false)}>Anchor Positions</a></dd>
-				</dl>
-			</div>
+                    <dd>
+                        <a href="#transitions" onclick={() => (isOpen = false)}
+                            >Transitions</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="#animations" onclick={() => (isOpen = false)}
+                            >Animations</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="#interpolate" onclick={() => (isOpen = false)}
+                            >Interpolate</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="#calc" onclick={() => (isOpen = false)}>Calc</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="#details" onclick={() => (isOpen = false)}
+                            >Details</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="#view" onclick={() => (isOpen = false)}
+                            >View Transitions</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="#anchor" onclick={() => (isOpen = false)}
+                            >Anchor Positions</a
+                        >
+                    </dd>
+                </dl>
+            </div>
 
-			<div class="gsap">
-				<dl>
-					<dt>GSAP</dt>
+            <div class="gsap">
+                <dl>
+                    <dt>GSAP</dt>
 
-					<dd><a href="#tweens" onclick={() => (isOpen = false)}>Tweens</a></dd>
-					<dd><a href="#staggers" onclick={() => (isOpen = false)}>Staggers</a></dd>
-					<dd><a href="#timelines" onclick={() => (isOpen = false)}>Timelines</a></dd>
-					<dd><a href="#percentage" onclick={() => (isOpen = false)}>Keyframes</a></dd>
-					<dd><a href="#position" onclick={() => (isOpen = false)}>Positioning</a></dd>
-					<dd><a href="#fouc" onclick={() => (isOpen = false)}>F.O.U.C.</a></dd>
-					<dd><a href="#scrolltrigger" onclick={() => (isOpen = false)}>ScrollTrigger</a></dd>
-					<dd><a href="#morphsvg" onclick={() => (isOpen = false)}>MorphSVG</a></dd>
-				</dl>
-			</div>
-		</article>
-	</aside>
+                    <dd>
+                        <a href="#tweens" onclick={() => (isOpen = false)}
+                            >Tweens</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="#staggers" onclick={() => (isOpen = false)}
+                            >Staggers</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="#timelines" onclick={() => (isOpen = false)}
+                            >Timelines</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="#percentage" onclick={() => (isOpen = false)}
+                            >Keyframes</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="#position" onclick={() => (isOpen = false)}
+                            >Positioning</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="#fouc" onclick={() => (isOpen = false)}
+                            >F.O.U.C.</a
+                        >
+                    </dd>
+                    <dd>
+                        <a
+                            href="#scrolltrigger"
+                            onclick={() => (isOpen = false)}>ScrollTrigger</a
+                        >
+                    </dd>
+                    <dd>
+                        <a href="#morphsvg" onclick={() => (isOpen = false)}
+                            >MorphSVG</a
+                        >
+                    </dd>
+                </dl>
+            </div>
+        </article>
+    </aside>
 {:else}
-	<!-- regular toc -->
-	<h2 class="table-title">Table of Contents</h2>
+    <!-- regular toc -->
+    <h2 class="table-title">Table of Contents</h2>
 
-	<article class="table-of-contents">
-		<div class="css">
-			<dl>
-				<dt>CSS</dt>
+    <article class="table-of-contents">
+        <div class="css">
+            <dl>
+                <dt>CSS</dt>
 
-				<dd><a href="#transitions">Transitions</a></dd>
-				<dd><a href="#animations">Animations</a></dd>
-				<dd><a href="#interpolate">Interpolate</a></dd>
-				<dd><a href="#calc">Calc</a></dd>
-				<dd><a href="#details">Details</a></dd>
-				<dd><a href="#view">View Transitions</a></dd>
-				<dd><a href="#anchor">Anchor Positions</a></dd>
-			</dl>
-		</div>
+                <dd><a href="#transitions">Transitions</a></dd>
+                <dd><a href="#animations">Animations</a></dd>
+                <dd><a href="#interpolate">Interpolate</a></dd>
+                <dd><a href="#calc">Calc</a></dd>
+                <dd><a href="#details">Details</a></dd>
+                <dd><a href="#view">View Transitions</a></dd>
+                <dd><a href="#anchor">Anchor Positions</a></dd>
+            </dl>
+        </div>
 
-		<div class="gsap">
-			<dl>
-				<dt>GSAP</dt>
+        <div class="gsap">
+            <dl>
+                <dt>GSAP</dt>
 
-				<dd><a href="#tweens">Tweens</a></dd>
-				<dd><a href="#staggers">Staggers</a></dd>
-				<dd><a href="#timelines">Timelines</a></dd>
-				<dd><a href="#percentage">Keyframes</a></dd>
-				<dd><a href="#position">Positioning</a></dd>
-				<dd><a href="#fouc">F.O.U.C.</a></dd>
-				<dd><a href="#scrolltrigger">ScrollTrigger</a></dd>
-				<dd><a href="#morphsvg">MorphSVG</a></dd>
-			</dl>
-		</div>
-	</article>
+                <dd><a href="#tweens">Tweens</a></dd>
+                <dd><a href="#staggers">Staggers</a></dd>
+                <dd><a href="#timelines">Timelines</a></dd>
+                <dd><a href="#percentage">Keyframes</a></dd>
+                <dd><a href="#position">Positioning</a></dd>
+                <dd><a href="#fouc">F.O.U.C.</a></dd>
+                <dd><a href="#scrolltrigger">ScrollTrigger</a></dd>
+                <dd><a href="#morphsvg">MorphSVG</a></dd>
+            </dl>
+        </div>
+    </article>
 {/if}
 
 <style>
-	.table-title {
-		display: block;
-		margin-top: 2em;
-		margin-bottom: -2.5em;
-		color: var(--clr-main);
-		font-family: var(--bronova-bold);
-		font-size: clamp(var(--h6), 5vw, var(--h1));
-		font-weight: 800;
-		text-align: center;
-	}
+    .table-title {
+        display: block;
+        margin-top: 2em;
+        margin-bottom: -2.5em;
+        color: var(--clr-main);
+        font-family: var(--bronova-bold);
+        font-size: clamp(var(--h6), 5vw, var(--h1));
+        font-weight: 800;
+        text-align: center;
+    }
 
-	.table-of-contents {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		background: transparent;
-		height: fit-content;
-		box-shadow: none;
-		padding-bottom: 6em;
+    .table-of-contents {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background: transparent;
+        height: fit-content;
+        box-shadow: none;
+        padding-bottom: 6em;
 
-		@media (width <= 1200px) {
-			padding-bottom: 2em;
-		}
+        @media (width <= 1200px) {
+            padding-bottom: 2em;
+        }
 
-		@media (width <= 768px) {
-			grid-template-columns: 1fr;
-		}
+        @media (width <= 768px) {
+            grid-template-columns: 1fr;
+        }
 
-		@media (width <= 500px) {
-			padding-bottom: 2em;
-		}
+        @media (width <= 500px) {
+            padding-bottom: 2em;
+        }
 
-		& dt {
-			display: block;
-			color: var(--clr-light-gray);
-			font-family: var(--bronova-bold);
-			font-size: clamp(var(--h6), 3vw, var(--h4));
-			letter-spacing: 3px;
-			margin-bottom: 1rem;
-		}
+        & dt {
+            display: block;
+            color: var(--clr-light-gray);
+            font-family: var(--bronova-bold);
+            font-size: clamp(var(--h6), 3vw, var(--h4));
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
 
-		& .css,
-		& .gsap {
-			margin: 1em;
+        & .css,
+        & .gsap {
+            margin: 1em;
 
-			& dl {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
+            & dl {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
 
-				& dd {
-					font-size: clamp(var(--sm), 2vw, var(--h6));
-					font-weight: 600;
-					text-wrap: balance;
+                & dd {
+                    font-size: clamp(var(--sm), 2vw, var(--h6));
+                    font-weight: 600;
+                    text-wrap: balance;
 
-					& a {
-						color: var(--clr-link);
+                    & a {
+                        color: var(--clr-link);
 
-						&:visited {
-							color: var(--clr-gray);
-						}
-					}
-				}
-			}
-		}
-	}
+                        &:visited {
+                            color: var(--clr-gray);
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-	.toggle-button {
-		position: fixed;
-		top: 0;
-		left: 0.25em;
-		z-index: 100;
-		background: transparent;
-		border: none;
-		box-shadow: none;
-		cursor: pointer;
-		inline-size: 2em;
-		block-size: 2em;
-		color: var(--clr-main-fade);
-		font-size: clamp(var(--h5), 4.5vw, var(--h1));
-		transition: transform 0.3s ease-out;
-		rotate: 180deg;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-shrink: 0;
+    .toggle-button {
+        position: fixed;
+        top: 0;
+        left: 0.25em;
+        z-index: 100;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        cursor: pointer;
+        inline-size: 2em;
+        block-size: 2em;
+        color: var(--clr-main-fade);
+        font-size: clamp(var(--h5), 4.5vw, var(--h1));
+        transition: transform 0.3s ease-out;
+        rotate: 180deg;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
 
-		@media (width <= 1080px) {
-			top: 3em;
-		}
+        @media (width <= 1080px) {
+            top: 3em;
+        }
 
-		@media (width <= 990px) {
-			top: 4em;
-		}
+        @media (width <= 990px) {
+            top: 4em;
+        }
 
-		@media (width <= 768px) {
-			display: none;
-		}
+        @media (width <= 768px) {
+            display: none;
+        }
 
-		& svg {
-			inline-size: clamp(2em, 5vw, 4em);
-			block-size: clamp(2em, 5vw, 4em);
-		}
+        & svg {
+            inline-size: clamp(2em, 5vw, 4em);
+            block-size: clamp(2em, 5vw, 4em);
+        }
 
-		&:active {
-			transform: scale(0.95);
-		}
-	}
+        &:active {
+            transform: scale(0.95);
+        }
+    }
 
-	.arrow {
-		inline-size: 100%;
-		block-size: 100%;
-		transition: rotate 0.3s ease-out;
-	}
+    .arrow {
+        inline-size: 100%;
+        block-size: 100%;
+        transition: rotate 0.3s ease-out;
+    }
 
-	.toggle-button.open .arrow {
-		rotate: 180deg;
-	}
+    .toggle-button.open .arrow {
+        rotate: 180deg;
+    }
 
-	.side-bar {
-		position: fixed;
-		top: 0;
-		left: 0;
-		block-size: 100vh;
-		inline-size: clamp(200px, 20vw, 300px);
-		background: linear-gradient(to right, var(--clr-dark-gray) 95%, transparent);
-		z-index: 99;
-		transform: translateX(-110%);
-		transition: transform 0.3s ease-out;
-		opacity: 1;
+    .side-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        block-size: 100vh;
+        inline-size: clamp(200px, 20vw, 300px);
+        background: linear-gradient(
+            to right,
+            var(--clr-dark-gray) 95%,
+            transparent
+        );
+        z-index: 99;
+        transform: translateX(-110%);
+        transition: transform 0.3s ease-out;
+        opacity: 1;
 
-		display: flex;
-		justify-content: center;
-		align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-		@media (width <= 768px) {
-			inline-size: 75vw;
-		}
+        @media (width <= 768px) {
+            inline-size: 75vw;
+        }
 
-		&.open {
-			transform: translateX(0);
-		}
+        &.open {
+            transform: translateX(0);
+        }
 
-		& .table-of-contents {
-			grid-template-columns: 1fr;
-			padding-top: 10em;
+        & .table-of-contents {
+            grid-template-columns: 1fr;
+            padding-top: 10em;
 
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-			& .css,
-			& .gsap {
-				margin: 0;
+            & .css,
+            & .gsap {
+                margin: 0;
 
-				& dt {
-					color: var(--clr-invert);
-					font-size: clamp(var(--h6), 1.5vw, var(--h4));
-					font-weight: 200;
-					margin: 0 0 0.2em 0;
-					text-align: center;
-				}
+                & dt {
+                    color: var(--clr-invert);
+                    font-size: clamp(var(--h6), 1.5vw, var(--h4));
+                    font-weight: 200;
+                    margin: 0 0 0.2em 0;
+                    text-align: center;
+                }
 
-				& dd {
-					text-align: center;
-					font-size: clamp(var(--xs), 1.2vw, var(--sm));
+                & dd {
+                    text-align: center;
+                    font-size: clamp(var(--xs), 1.2vw, var(--sm));
 
-					& a {
-						font-family: var(--bronova);
-						font-weight: 200;
+                    & a {
+                        font-family: var(--bronova);
+                        font-weight: 200;
 
-						&:visited {
-							color: var(--clr-main);
-						}
-					}
-				}
-			}
+                        &:visited {
+                            color: var(--clr-main);
+                        }
+                    }
+                }
+            }
 
-			& dl {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-			}
-		}
-	}
+            & dl {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
 </style>

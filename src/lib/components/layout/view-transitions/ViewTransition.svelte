@@ -1,27 +1,28 @@
 <script lang="ts">
-	import { onNavigate } from '$app/navigation';
+    import { onNavigate } from '$app/navigation';
 
-	onNavigate((navigation) => {
-		if (!document.startViewTransition) return;
-		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    onNavigate((navigation) => {
+        if (!document.startViewTransition) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+            return;
 
-		return new Promise((resolve) => {
-			document.startViewTransition(async () => {
-				resolve();
-				await navigation.complete;
-			});
-		});
-	});
+        return new Promise((resolve) => {
+            document.startViewTransition(async () => {
+                resolve();
+                await navigation.complete;
+            });
+        });
+    });
 </script>
 
 <style>
-	@view-transition {
-		navigation: auto;
-	}
+    @view-transition {
+        navigation: auto;
+    }
 
-	::view-transition-old(root),
-	::view-transition-new(root) {
-		animation: none;
-		mix-blend-mode: normal;
-	}
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation: none;
+        mix-blend-mode: normal;
+    }
 </style>

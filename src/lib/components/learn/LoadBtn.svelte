@@ -1,139 +1,139 @@
 <script lang="ts">
-	import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
+    import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 
-	interface Props {
-		loading: string;
-		submit: string;
-		href: string;
-		delay: number;
-	}
+    interface Props {
+        loading: string;
+        submit: string;
+        href: string;
+        delay: number;
+    }
 
-	let isLoading = $state<boolean>(false);
-	let { loading, submit, href, delay }: Props = $props();
-	let statusMessage = $state<string>('');
+    let isLoading = $state<boolean>(false);
+    let { loading, submit, href, delay }: Props = $props();
+    let statusMessage = $state<string>('');
 
-	const handleSubmit = async (event: Event) => {
-		event.preventDefault();
+    const handleSubmit = async (event: Event) => {
+        event.preventDefault();
 
-		isLoading = true;
-		statusMessage = `Loading ${submit}...`;
+        isLoading = true;
+        statusMessage = `Loading ${submit}...`;
 
-		// Simulate an async operation (e.g., API call)
-		await new Promise((resolve) => setTimeout(resolve, delay));
+        // Simulate an async operation (e.g., API call)
+        await new Promise((resolve) => setTimeout(resolve, delay));
 
-		isLoading = false;
-		statusMessage = `${submit} loaded successfully`;
+        isLoading = false;
+        statusMessage = `${submit} loaded successfully`;
 
-		const screenWidth = window.innerWidth;
+        const screenWidth = window.innerWidth;
 
-		// Navigate to the destination
-		if (screenWidth <= 500) {
-			window.location.href = href;
-		} else {
-			window.open(href, '_blank', 'noopener,noreferrer');
-		}
+        // Navigate to the destination
+        if (screenWidth <= 500) {
+            window.location.href = href;
+        } else {
+            window.open(href, '_blank', 'noopener,noreferrer');
+        }
 
-		// Clear status message after navigation
-		setTimeout(() => {
-			statusMessage = '';
-		}, 1000);
-	};
+        // Clear status message after navigation
+        setTimeout(() => {
+            statusMessage = '';
+        }, 1000);
+    };
 </script>
 
 <A11yAnnouncer message={statusMessage} />
 
 <a
-	{href}
-	onclick={handleSubmit}
-	target="_blank"
-	aria-label="Visit {submit} (opens in new tab)"
-	class="loading-button"
-	class:loading={isLoading}
-	aria-live="polite"
+    {href}
+    onclick={handleSubmit}
+    target="_blank"
+    aria-label="Visit {submit} (opens in new tab)"
+    class="loading-button"
+    class:loading={isLoading}
+    aria-live="polite"
 >
-	<span class="loading-text">{isLoading ? loading : submit}</span>
+    <span class="loading-text">{isLoading ? loading : submit}</span>
 
-	{#if isLoading}
-		<div class="spinner"></div>
-	{/if}
+    {#if isLoading}
+        <div class="spinner"></div>
+    {/if}
 </a>
 
 <style>
-	a.loading-button {
-		position: relative;
-		width: fit-content;
-		border: 1px solid var(--clr-main);
-		border-radius: var(--radius);
-		outline: 2px solid var(--clr-main);
-		outline-offset: -7px;
-		padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
-		color: var(--clr-main);
-		background-color: transparent;
-		font-family: var(--bronova);
-		font-size: clamp(var(--h6), 1.5vw, var(--h3));
-		font-weight: 600;
-		cursor: pointer;
-		user-select: none;
-		margin-inline: auto;
-		margin-bottom: 1rem;
-		transition:
-			outline-offset 300ms ease-out,
-			opacity 300ms ease-out,
-			filter 300ms ease-out,
-			scale 0.15s ease-out;
-		display: flex;
-		align-items: center;
-		gap: 0.5em;
-		letter-spacing: 1px;
-		text-decoration: none;
+    a.loading-button {
+        position: relative;
+        width: fit-content;
+        border: 1px solid var(--clr-main);
+        border-radius: var(--radius);
+        outline: 2px solid var(--clr-main);
+        outline-offset: -7px;
+        padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
+        color: var(--clr-main);
+        background-color: transparent;
+        font-family: var(--bronova);
+        font-size: clamp(var(--h6), 1.5vw, var(--h3));
+        font-weight: 600;
+        cursor: pointer;
+        user-select: none;
+        margin-inline: auto;
+        margin-bottom: 1rem;
+        transition:
+            outline-offset 300ms ease-out,
+            opacity 300ms ease-out,
+            filter 300ms ease-out,
+            scale 0.15s ease-out;
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+        letter-spacing: 1px;
+        text-decoration: none;
 
-		&:not(:hover) {
-			filter: opacity(0.85);
-		}
+        &:not(:hover) {
+            filter: opacity(0.85);
+        }
 
-		@media (width <= 768px) {
-			font-weight: 700;
-		}
+        @media (width <= 768px) {
+            font-weight: 700;
+        }
 
-		&:active {
-			scale: 0.95;
-		}
+        &:active {
+            scale: 0.95;
+        }
 
-		&:hover {
-			opacity: 1;
-			outline-offset: 0px;
-		}
+        &:hover {
+            opacity: 1;
+            outline-offset: 0px;
+        }
 
-		&:focus-visible {
-			outline: 1px solid var(--clr-main);
-		}
+        &:focus-visible {
+            outline: 1px solid var(--clr-main);
+        }
 
-		&.loading {
-			cursor: not-allowed;
-			opacity: 0.75;
-		}
+        &.loading {
+            cursor: not-allowed;
+            opacity: 0.75;
+        }
 
-		& .loading-text {
-			grid-area: stack;
-		}
+        & .loading-text {
+            grid-area: stack;
+        }
 
-		& .spinner {
-			width: 1.5rem;
-			height: 1.5rem;
-			border: 2px solid var(--clr-main);
-			border-top-color: transparent;
-			border-radius: 50%;
-			animation: spin 0.6s linear infinite;
-			grid-area: stack;
-		}
-	}
+        & .spinner {
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 2px solid var(--clr-main);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            grid-area: stack;
+        }
+    }
 
-	@keyframes spin {
-		from {
-			transform: rotate(0deg);
-		}
-		to {
-			transform: rotate(360deg);
-		}
-	}
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
 </style>
