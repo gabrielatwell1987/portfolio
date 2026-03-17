@@ -99,18 +99,18 @@ export class Enemy extends GameObject {
         const dt = Math.min(0.05, (now - this.lastTick) / 1000);
         this.lastTick = now;
 
-        // Calculate direction to player
+        // calculate direction to player
         const dx = this.player.position.x - this.position.x;
         const dz = this.player.position.z - this.position.z;
         const dist = Math.hypot(dx, dz);
 
-        // Update facing direction
+        // update facing direction
         if (dist > 0) {
             this.facingDirection.set(dx, 0, dz).normalize();
             this.targetDirection.copy(this.facingDirection);
         }
 
-        // Move towards player if in range and not too close
+        // move towards player if in range and not too close
         if (dist > 1.5 && dist < this.detectionRange) {
             const step = this.moveSpeed * dt;
             const nextX = this.position.x + (dx / dist) * step;
@@ -133,10 +133,10 @@ export class Enemy extends GameObject {
             }
         }
 
-        // Clamp to world bounds
+        // clamp to world bounds
         this.clampToWorldBounds();
 
-        // Update shoot cooldown
+        // update shoot cooldown
         if (this.shootCooldown > 0) {
             this.shootCooldown -= dt;
         }

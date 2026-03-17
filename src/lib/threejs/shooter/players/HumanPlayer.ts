@@ -50,7 +50,7 @@ export class HumanPlayer extends Player {
 
         if (controls) this.controls = controls;
 
-        // Initialize combat system
+        // initialize combat system
         this.combatManager = new CombatManager(this, scene);
         this.shootingSystem = new ShootingSystem(
             this.combatManager,
@@ -59,7 +59,6 @@ export class HumanPlayer extends Player {
             dom,
         );
 
-        // Only attach pointer/touch movement handlers on touch-capable devices.
         const isTouchDevice =
             typeof navigator !== 'undefined' &&
             ((navigator as any).maxTouchPoints > 0 || 'ontouchstart' in window);
@@ -87,10 +86,9 @@ export class HumanPlayer extends Player {
     override update(): void {
         super.update();
 
-        // Update keyboard movement
         this.keyboardMovement.update();
 
-        // Update combat system
+        // update combat system
         const now = performance.now();
         const dt = Math.min(0.016, (now - this.lastTick) / 1000);
         this.lastTick = now;

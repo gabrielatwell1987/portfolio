@@ -138,13 +138,11 @@
             if (isMobile) {
                 camera.position.set(desiredX, desiredY, desiredZ);
             } else {
-                // If orbit rotate is active we must not override camera position
                 if (controls.enableRotate) {
                     if (cameraTween) {
                         cameraTween.kill();
                         cameraTween = null;
                     }
-                    // let OrbitControls handle camera position while keeping its target on the player
                 } else {
                     if (cameraTween) cameraTween.kill();
 
@@ -165,7 +163,7 @@
                 }
             }
 
-            // Always keep the controls target centred on the player so orbiting happens around them
+            // keep the controls target centred on the player so orbiting happens around them
             controls.target.copy(player.position);
             controls.update();
 

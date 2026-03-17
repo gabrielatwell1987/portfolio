@@ -65,27 +65,26 @@ export class Player extends GameObject {
         desiredX: number,
         desiredZ: number,
     ): { x: number; z: number } {
-        // Try full diagonal movement
+        // full diagonal movement
         if (!this.isBlockedPosition(desiredX, desiredZ)) {
             return { x: desiredX, z: desiredZ };
         }
 
-        // Try sliding along X axis only
+        // sliding along X axis only
         if (!this.isBlockedPosition(desiredX, currentZ)) {
             return { x: desiredX, z: currentZ };
         }
 
-        // Try sliding along Z axis only
+        // sliding along Z axis only
         if (!this.isBlockedPosition(currentX, desiredZ)) {
             return { x: currentX, z: desiredZ };
         }
 
-        // Cannot move - stay in place
+        // cannot move - stay in place
         return { x: currentX, z: currentZ };
     }
 
     protected clampToWorldBounds(): void {
-        // Keep player within world bounds (0-30), with buffer for collision radius
         this.position.x = Math.max(0.5, Math.min(29.5, this.position.x));
         this.position.z = Math.max(0.5, Math.min(29.5, this.position.z));
     }
@@ -109,7 +108,7 @@ export class Player extends GameObject {
             const nextX = this.position.x + (dx / dist) * step;
             const nextZ = this.position.z + (dz / dist) * step;
 
-            // Use slide-style collision detection
+            // slide-style collision detection
             const validPos = this.getValidPosition(
                 this.position.x,
                 this.position.z,
@@ -117,7 +116,7 @@ export class Player extends GameObject {
                 nextZ,
             );
 
-            // Update facing direction based on movement
+            // update facing direction based on movement
             this.facingDirection.set(dx, 0, dz).normalize();
 
             this.position.x = validPos.x;
@@ -130,7 +129,7 @@ export class Player extends GameObject {
     }
 
     private getTerrainHeightAt(x: number, z: number): number | null {
-        // Raycast down from above in world coordinates
+        // raycast down from above in world coordinates
         const origin = new Vector3(x, 100, z);
         const dir = new Vector3(0, -1, 0);
         this.raycaster.set(origin, dir);
