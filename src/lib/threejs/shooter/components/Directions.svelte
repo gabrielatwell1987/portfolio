@@ -21,12 +21,15 @@
             ×
         </button>
 
-        <h2>directions</h2>
+        <div class="directions">
+            <h2>directions</h2>
 
-        <p>
-            Use W A S D or click/tap to move. Shoot enemies by clicking the
-            shoot button or pressing space.
-        </p>
+            <ul>
+                <li>Move = W, A, S, D</li>
+                <li>Fire = space bar</li>
+                <li>Orbit controls = letter "r"</li>
+            </ul>
+        </div>
     </div>
 {/if}
 
@@ -110,7 +113,7 @@
             }
         }
 
-        & p {
+        & li {
             color: var(--clr-main);
             font-family: var(--bronova);
             font-size: clamp(var(--xxs), 1.1vw, var(--sm));
@@ -140,9 +143,17 @@
         align-items: center;
         justify-content: center;
         transition: color 0.2s ease;
+
+        &:hover {
+            color: white;
+        }
     }
 
-    .close-directions:hover {
-        color: white;
+    .directions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
     }
 </style>

@@ -88,6 +88,18 @@
             signal: abortController.signal,
         });
 
+        // toggle orbiting with 'r' key
+        function onKeyToggle(e: KeyboardEvent) {
+            if (e.key === 'r' || e.key === 'R') {
+                controls.enableRotate = !controls.enableRotate;
+                console.log('Orbit rotate:', controls.enableRotate);
+            }
+        }
+
+        window.addEventListener('keydown', onKeyToggle, {
+            signal: abortController.signal,
+        });
+
         // animation loop
         renderer.setAnimationLoop(() => {
             player.update();
@@ -126,24 +138,34 @@
             if (isMobile) {
                 camera.position.set(desiredX, desiredY, desiredZ);
             } else {
-                if (cameraTween) cameraTween.kill();
+                // If orbit rotate is active we must not override camera position
+                if (controls.enableRotate) {
+                    if (cameraTween) {
+                        cameraTween.kill();
+                        cameraTween = null;
+                    }
+                    // let OrbitControls handle camera position while keeping its target on the player
+                } else {
+                    if (cameraTween) cameraTween.kill();
 
-                cameraTween = gsap.to(cameraTarget, {
-                    x: desiredX,
-                    y: desiredY,
-                    z: desiredZ,
-                    duration: 0.3,
-                    ease: 'power2.out',
-                    onUpdate: () => {
-                        camera.position.set(
-                            cameraTarget.x,
-                            cameraTarget.y,
-                            cameraTarget.z,
-                        );
-                    },
-                });
+                    cameraTween = gsap.to(cameraTarget, {
+                        x: desiredX,
+                        y: desiredY,
+                        z: desiredZ,
+                        duration: 0.3,
+                        ease: 'power2.out',
+                        onUpdate: () => {
+                            camera.position.set(
+                                cameraTarget.x,
+                                cameraTarget.y,
+                                cameraTarget.z,
+                            );
+                        },
+                    });
+                }
             }
 
+            // Always keep the controls target centred on the player so orbiting happens around them
             controls.target.copy(player.position);
             controls.update();
 
