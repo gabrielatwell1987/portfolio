@@ -62,7 +62,8 @@
                         >
                     </dd>
                     <dd>
-                        <a href="#calc" onclick={() => (isOpen = false)}>Calc</a
+                        <a href="#calc" onclick={() => (isOpen = false)}
+                            >Calc-Size</a
                         >
                     </dd>
                     <dd>
@@ -144,7 +145,7 @@
                 <dd><a href="#transitions">Transitions</a></dd>
                 <dd><a href="#animations">Animations</a></dd>
                 <dd><a href="#interpolate">Interpolate</a></dd>
-                <dd><a href="#calc">Calc</a></dd>
+                <dd><a href="#calc">Calc-Size</a></dd>
                 <dd><a href="#details">Details</a></dd>
                 <dd><a href="#view">View Transitions</a></dd>
                 <dd><a href="#anchor">Anchor Positions</a></dd>
