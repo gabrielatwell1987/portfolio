@@ -63,8 +63,23 @@
 
             &::checkmark {
                 content: '→';
+                display: inline-block;
                 color: var(--clr-main-fade);
+                animation: slideIn 0.3s ease-out;
+
+                -webkit-text-stroke: 0.15em currentColor;
             }
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(-0.75em);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
         }
     }
 </style>
