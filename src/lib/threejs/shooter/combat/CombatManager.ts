@@ -15,6 +15,8 @@ export class CombatManager extends Object3D {
     private lastShotTime: number = 0;
     private playerHealth: number = 10;
     private maxPlayerHealth: number = 10;
+    // Player ammo (null = unlimited)
+    private playerAmmo: number | null = null;
     private knockbackTimeline: gsap.core.Timeline | null = null;
 
     constructor(player: Player, scene: Scene) {
@@ -29,12 +31,17 @@ export class CombatManager extends Object3D {
 
     canShoot(): boolean {
         const now = performance.now() / 1000;
+        if (this.playerAmmo !== null && this.playerAmmo <= 0) return false;
         return now - this.lastShotTime >= this.cooldownDuration;
     }
 
     shoot(shootDirection: Vector3): void {
         if (!this.canShoot()) return;
-
+        // consume ammo when tracked
+        if (this.playerAmmo !== null) {
+            if (this.playerAmmo <= 0) return;
+            this.playerAmmo -= 1;
+        }
         const playerPos = this.player.position.clone();
         const shootPos = playerPos
             .clone()
@@ -165,6 +172,15 @@ export class CombatManager extends Object3D {
 
     getMaxPlayerHealth(): number {
         return this.maxPlayerHealth;
+    }
+
+    // ammo accessors
+    setPlayerAmmo(amount: number | null): void {
+        this.playerAmmo = amount;
+    }
+
+    getPlayerAmmo(): number | null {
+        return this.playerAmmo;
     }
 
     takeDamage(amount: number = 1): void {

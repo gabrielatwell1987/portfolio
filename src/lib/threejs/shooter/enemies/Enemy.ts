@@ -27,6 +27,8 @@ export class Enemy extends GameObject {
     private raycaster = new Raycaster();
     // small offset to avoid z-fighting; reduce so enemies sit near surface
     private heightOffset = 0.05;
+    // ammo for enemy (null = unlimited)
+    private ammo: number | null = 10;
 
     constructor(position: Vector3, world: World, player: Player) {
         super(new Vector3(5.5, 0.5, 5.5));
@@ -156,6 +158,7 @@ export class Enemy extends GameObject {
 
     canShoot(): boolean {
         const dist = this.position.distanceTo(this.player.position);
+        if (this.ammo !== null && this.ammo <= 0) return false;
         return (
             this.shootCooldown <= 0 &&
             dist < this.detectionRange &&
@@ -166,7 +169,16 @@ export class Enemy extends GameObject {
     shoot(): void {
         if (this.canShoot()) {
             this.shootCooldown = this.shootCooldownMax;
+            if (this.ammo !== null) this.ammo -= 1;
         }
+    }
+
+    getAmmo(): number | null {
+        return this.ammo;
+    }
+
+    setAmmo(n: number | null): void {
+        this.ammo = n;
     }
 
     override dispose(): void {

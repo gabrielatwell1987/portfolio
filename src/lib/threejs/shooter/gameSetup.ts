@@ -71,6 +71,12 @@ export function initializeGame(
     scene.add(enemyManager);
 
     player.getCombatManager().setEnemyManager(enemyManager);
+    // start player with limited ammo to reduce projectile spam on mobile
+    try {
+        player.getCombatManager().setPlayerAmmo(10);
+    } catch (e) {
+        // ignore if method missing
+    }
 
     const mobileJoystick = joystickElement
         ? new MobileJoystick(player, world, joystickElement)
