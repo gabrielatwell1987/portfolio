@@ -16,7 +16,7 @@
         reverseUnderline = false,
     }: Props = $props();
 
-    // Only apply view-transition-name when NOT on the target page
+    // only apply view-transition-name when NOT on the target page
     let shouldTransition = $derived(
         viewTransitionName && $page.url.pathname !== href,
     );
@@ -50,9 +50,11 @@
         border-radius: var(--radius);
         isolation: isolate;
         overflow: clip;
+        opacity: 1;
         transition:
             opacity 0.15s ease-out,
             color 0.15s ease-out;
+        will-change: opacity;
 
         &::before {
             content: '';
