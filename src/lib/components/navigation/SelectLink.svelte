@@ -1,17 +1,23 @@
 <script lang="ts">
     import { goto } from '$app/navigation';
 
-    function handleSelect(event: Event) {
-        const value = (event.target as HTMLSelectElement).value;
+    function navigateValue(value: string) {
         if (value === 'hire') {
             goto('/hire');
         } else if (value === 'contact') {
             goto('/contact');
         }
     }
+
+    function handleSelect(event: Event) {
+        const value = (event.target as HTMLSelectElement).value;
+        if (!value) return;
+        navigateValue(value);
+    }
 </script>
 
-<select on:change={handleSelect}>
+<select onchange={handleSelect}>
+    <option value="" disabled selected hidden>Connect</option>
     <option value="hire"><span>Hire Me</span></option>
     <option value="contact"><span>Contact</span></option>
 </select>
@@ -34,13 +40,14 @@
     }
 
     select {
-        background: radial-gradient(
-            ellipse at 50% 50%,
-            var(--clr-invert) 0%,
-            var(--clr-invert) 50%,
-            var(--clr-invert-fade) 75%,
-            var(--clr-main-fade) 100%
-        );
+        background:
+            repeating-radial-gradient(
+                ellipse at 50% 50%,
+                color-mix(in oklch, var(--clr-main) 8%, transparent) 0 0.75em,
+                transparent 0.15em 1.5em
+            ),
+            var(--clr-invert);
+
         backdrop-filter: blur(12px) saturate(180%);
         border: 1px solid var(--clr-main);
         color: var(--clr-main);
