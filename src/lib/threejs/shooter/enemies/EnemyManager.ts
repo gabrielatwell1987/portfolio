@@ -49,6 +49,14 @@ export class EnemyManager extends Object3D {
         );
     }
 
+    spawnEnemy(position: Vector3): Enemy {
+        const enemy = new Enemy(position.clone(), this.world, this.player);
+        this.enemies.push(enemy);
+        this.scene.add(enemy);
+        this.totalEnemiesSpawned++;
+        return enemy;
+    }
+
     update(dt: number): void {
         // update existing enemies
         for (let i = this.enemies.length - 1; i >= 0; i--) {
@@ -75,14 +83,7 @@ export class EnemyManager extends Object3D {
                 for (let attempts = 0; attempts < 5; attempts++) {
                     const spawnPos = this.getRandomSpawnPosition();
                     if (this.isValidSpawnPosition(spawnPos)) {
-                        const enemy = new Enemy(
-                            spawnPos,
-                            this.world,
-                            this.player,
-                        );
-                        this.enemies.push(enemy);
-                        this.scene.add(enemy);
-                        this.totalEnemiesSpawned++;
+                        this.spawnEnemy(spawnPos);
                         break;
                     }
                 }
@@ -92,9 +93,9 @@ export class EnemyManager extends Object3D {
     }
 
     checkProjectileCollisions(projectiles: Projectile[]): void {
-        const hitRadius = 0.5; // Radius around enemy to check for hits
-
         for (const enemy of this.enemies) {
+            const hitRadius = enemy.getHitboxRadius();
+
             for (let i = projectiles.length - 1; i >= 0; i--) {
                 const projectile = projectiles[i];
                 const dist = enemy.position.distanceTo(projectile.position);
@@ -117,12 +118,13 @@ export class EnemyManager extends Object3D {
         for (const enemy of this.enemies) {
             if (enemy.canShoot()) {
                 enemy.shoot();
+                const dir = enemy.getFacingDirection(); // returns a clone
                 const pos = enemy.position
                     .clone()
-                    .add(enemy.getFacingDirection().multiplyScalar(0.5));
+                    .add(dir.clone().multiplyScalar(0.5));
                 projectiles.push({
                     position: pos,
-                    direction: enemy.getFacingDirection(),
+                    direction: dir,
                 });
             }
         }

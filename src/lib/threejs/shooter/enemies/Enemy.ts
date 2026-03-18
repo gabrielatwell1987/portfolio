@@ -23,6 +23,7 @@ export class Enemy extends GameObject {
     protected facingDirection: Vector3 = new Vector3(0, 0, 1);
     protected targetDirection: Vector3 = new Vector3();
     protected model: Object3D | null = null;
+    protected hitboxRadius: number = 0.9;
     private raycaster = new Raycaster();
     // small offset to avoid z-fighting; reduce so enemies sit near surface
     private heightOffset = 0.05;
@@ -47,7 +48,7 @@ export class Enemy extends GameObject {
             (gltf: GLTF) => {
                 const model = gltf.scene;
                 this.model = model;
-                model.scale.multiplyScalar(0.15);
+                model.scale.multiplyScalar(0.2);
 
                 this.add(model);
             },
@@ -76,6 +77,10 @@ export class Enemy extends GameObject {
 
     getFacingDirection(): Vector3 {
         return this.facingDirection.clone();
+    }
+
+    getHitboxRadius(): number {
+        return this.hitboxRadius;
     }
 
     private isBlockedPosition(x: number, z: number): boolean {

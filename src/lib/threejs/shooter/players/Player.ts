@@ -14,8 +14,8 @@ export class Player extends GameObject {
     protected world: World;
     protected facingDirection: Vector3 = new Vector3(0, 0, 1);
     protected model: Object3D | null = null;
+    protected hitboxRadius: number = 0.7;
     private raycaster = new Raycaster();
-    // height offset will be set to 0.25 of a world segment in the constructor
     private heightOffset: number;
 
     constructor(world: World) {
@@ -39,7 +39,7 @@ export class Player extends GameObject {
             this.model = model;
             // align model so its base sits at the object's origin (terrain level)
             model.position.set(0, 0.2, 0);
-            model.scale.multiplyScalar(0.7);
+            model.scale.multiplyScalar(0.8);
 
             this.add(model);
         });
@@ -190,6 +190,10 @@ export class Player extends GameObject {
 
     getFacingDirection(): Vector3 {
         return this.facingDirection.clone();
+    }
+
+    getHitboxRadius(): number {
+        return this.hitboxRadius;
     }
 
     override dispose(): void {
