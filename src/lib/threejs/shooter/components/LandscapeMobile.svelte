@@ -218,24 +218,11 @@
     <div class="rotate-overlay" role="dialog" aria-modal="true">
         <div class="rotate-card">
             <h3>Rotate your device</h3>
-            <p>
-                Please rotate your device to landscape mode for the best
-                experience.
-            </p>
+            <p>Please rotate your device for the best experience.</p>
 
-            <div
-                style="margin-top:0.5rem;display:flex;gap:0.5rem;justify-content:center"
-            >
-                <button
-                    onclick={tryLockLandscape}
-                    style="padding:0.45rem 0.75rem;border-radius:6px;background:var(--clr-invert-fade);color:var(--clr-main);border:0"
-                >
-                    Rotate Device
-                </button>
-                <button
-                    onclick={() => (showing = false)}
-                    style="padding:0.45rem 0.75rem;border-radius:6px;background:transparent;color:var(--clr-main);border:1px solid rgba(255,255,255,0.12)"
-                >
+            <div class="rotate-buttons">
+                <button onclick={tryLockLandscape}> Rotate Device </button>
+                <button onclick={() => (showing = false)}>
                     Continue anyway
                 </button>
             </div>
@@ -266,7 +253,7 @@
         inset: 0;
         display: grid;
         place-items: center;
-        background: var(--clr-invert-fade);
+        background: transparent;
         z-index: 100;
 
         & .rotate-card {
@@ -276,6 +263,20 @@
             border-radius: var(--radius);
             text-align: center;
             inline-size: min(90%, 360px);
+        }
+
+        & .rotate-buttons {
+            margin-top: 0.5rem;
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+
+            & button {
+                background: transparent;
+                border: none;
+                padding: 0.5em 0.75em;
+                color: var(--clr-main);
+            }
         }
     }
 </style>
