@@ -53,6 +53,11 @@
 
         isMobile = window.innerWidth <= 768;
 
+        // loading on mobile, pause game while overlay is open
+        if (isMobile && !gameState) {
+            isPaused = true;
+        }
+
         // initialize game
         gameState = initializeGame(canvas, joystickElement);
         const {
