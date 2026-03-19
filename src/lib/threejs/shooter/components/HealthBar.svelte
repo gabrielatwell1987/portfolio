@@ -7,7 +7,9 @@
         <div
             class="health-fill"
             style="width: {(playerHealth / maxPlayerHealth) * 100}%"
-        ></div>
+        >
+            health
+        </div>
     </div>
 </div>
 
@@ -27,20 +29,31 @@
             bottom: 0;
             left: 0;
         }
-    }
 
-    .health-bar {
-        inline-size: 100%;
-        block-size: clamp(0.75rem, 1.5vw, 1.25rem);
-        background: rgba(255, 255, 255, 0.2);
-        border: 2px solid rgba(255, 255, 255, 0.4);
-        border-radius: 0.25rem;
-        overflow: hidden;
-    }
+        & .health-bar {
+            inline-size: 100%;
+            block-size: clamp(0.75rem, 1.5vw, 1.25rem);
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 0.25rem;
+            overflow: hidden;
+        }
 
-    .health-fill {
-        block-size: 100%;
-        background: linear-gradient(90deg, var(--clr-invert-fade), var(--fail));
-        transition: inline-size 0.1s ease;
+        & .health-fill {
+            block-size: 100%;
+            background: linear-gradient(
+                90deg,
+                var(--clr-invert-fade),
+                var(--fail)
+            );
+            transition: inline-size 0.1s ease;
+            font-size: clamp(var(--xxs), 0.75vw, var(--xs));
+            font-weight: 200;
+            text-align: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 </style>

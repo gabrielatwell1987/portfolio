@@ -54,7 +54,6 @@
             player,
             enemyManager,
             mobileJoystick,
-            stats,
         } = gameState;
 
         // smooth camera movement
@@ -192,7 +191,6 @@
             controls.target.copy(player.position);
             controls.update();
 
-            stats.update();
             renderer.render(scene, camera);
         });
 
@@ -261,69 +259,130 @@
 </div>
 
 <style>
-    .webgl {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 0;
-        min-height: 100vh;
-        max-inline-size: 100vw;
-        display: block;
-        background: transparent;
-        touch-action: none;
+    .mobile-wrapper {
+        & .webgl {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            min-height: 100vh;
+            max-inline-size: 100vw;
+            display: block;
+            background: transparent;
+            touch-action: none;
 
-        mask-image: radial-gradient(
-            ellipse at center,
-            var(--clr-invert) 0%,
-            transparent 80%,
-            transparent 100%
-        );
-        box-shadow: inset 0 0 10px 20px var(--clr-invert);
+            anchor-name: --game;
 
-        @media (width <= 768px) {
             mask-image: radial-gradient(
                 ellipse at center,
                 var(--clr-invert) 0%,
-                transparent 95%,
+                transparent 80%,
                 transparent 100%
             );
-        }
-    }
+            box-shadow: inset 0 0 10px 20px var(--clr-invert);
 
-    .shoot-button {
-        position: absolute;
-        bottom: 0.75em;
-        right: 0.5em;
-
-        width: 4rem;
-        height: 4rem;
-        border-radius: 50%;
-        background: var(--clr-blue);
-        color: white;
-        border: 2px solid var(--clr-blue);
-        font-size: 1.5rem;
-        cursor: pointer;
-        z-index: 100;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.2s ease;
-        touch-action: manipulation;
-        user-select: none;
-
-        &:hover {
-            transform: scale(1.1);
+            @media (width <= 768px) {
+                mask-image: radial-gradient(
+                    ellipse at center,
+                    var(--clr-invert) 0%,
+                    transparent 95%,
+                    transparent 100%
+                );
+            }
         }
 
-        &:active {
-            transform: scale(0.95);
+        & .shoot-button {
+            position: absolute;
+            position-anchor: --game;
+            top: anchor(bottom);
+            right: anchor(right);
+
+            inline-size: calc(1em * 2.2);
+            block-size: calc(1em * 2.2);
+            border-radius: 50%;
+            background: var(--clr-blue);
+            color: var(--clr-main);
+            border: 2px solid var(--clr-blue);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            touch-action: manipulation;
+            user-select: none;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+
+            @media (max-width: 768px) {
+                display: flex;
+                /* anchor() inside calc isn't well-supported — use bottom on small screens */
+                top: auto;
+                bottom: 1em;
+                right: 1em;
+            }
+
+            & svg {
+                inline-size: 2.3em;
+                block-size: 2.3em;
+                scale: 2;
+            }
         }
 
-        @media (max-width: 768px) {
-            display: flex;
-            right: 1em;
+        & .mobile-joystick {
+            position: absolute;
+            position-anchor: --game;
+            bottom: anchor(bottom);
+            left: anchor(left);
+
+            inline-size: calc(1em * 6.5);
+            block-size: calc(1em * 6.5);
+            display: none;
+            z-index: 100;
+            touch-action: none;
+
+            @media (max-width: 768px) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                bottom: calc(1em * 3);
+                left: calc(1em * 3.9);
+            }
+
+            @media (max-width: 500px) {
+                bottom: calc(1em * 2);
+                left: calc(1em * 1.2);
+            }
+
+            & .joystick-base {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.1);
+                border: 2px solid rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            & .joystick-stick {
+                inline-size: calc(1em * 2.5);
+                block-size: calc(1em * 2.5);
+                background: rgba(255, 255, 255, 0.5);
+                border: 2px solid rgba(255, 255, 255, 0.8);
+                border-radius: 50%;
+                transition: transform 0.05s ease-out;
+                pointer-events: none;
+            }
         }
     }
 
@@ -338,44 +397,5 @@
         border-radius: 6px;
         font-size: 0.95rem;
         pointer-events: none;
-    }
-
-    .mobile-joystick {
-        position: fixed;
-        bottom: 2rem;
-        left: 2rem;
-        width: 120px;
-        height: 120px;
-        display: none;
-        z-index: 100;
-        touch-action: none;
-
-        @media (max-width: 768px) {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        & .joystick-base {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        & .joystick-stick {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.5);
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            transition: transform 0.05s ease-out;
-            pointer-events: none;
-        }
     }
 </style>

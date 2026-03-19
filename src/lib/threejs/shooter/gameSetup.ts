@@ -6,7 +6,6 @@ import {
     WebGLRenderer,
 } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import Stats from 'three/addons/libs/stats.module.js';
 import { World } from './world';
 import { HumanPlayer } from './players/HumanPlayer';
 import { EnemyManager } from './enemies/EnemyManager';
@@ -23,7 +22,6 @@ export interface GameState {
     mobileJoystick: MobileJoystick | null;
     sun: DirectionalLight;
     ambient: AmbientLight;
-    stats: Stats;
 }
 
 export function initializeGame(
@@ -71,10 +69,11 @@ export function initializeGame(
     scene.add(enemyManager);
 
     player.getCombatManager().setEnemyManager(enemyManager);
-    // start player with limited ammo to reduce projectile spam on mobile
+
+    // start player with limited ammo
     try {
         player.getCombatManager().setPlayerAmmo(10);
-    } catch (e) {
+    } catch {
         // ignore if method missing
     }
 
@@ -90,9 +89,6 @@ export function initializeGame(
     const ambient = new AmbientLight(0xffffff, 0.5);
     scene.add(ambient);
 
-    const stats = new Stats();
-    document.body.appendChild(stats.dom);
-
     return {
         scene,
         camera,
@@ -104,7 +100,6 @@ export function initializeGame(
         mobileJoystick,
         sun,
         ambient,
-        stats,
     };
 }
 
@@ -119,7 +114,6 @@ export function cleanupGame(
     state.enemyManager?.dispose();
     state.mobileJoystick?.dispose();
     state.renderer.dispose();
-    state.stats.dom.remove();
     state.scene.clear();
     state.controls.dispose();
     state.sun.dispose();
