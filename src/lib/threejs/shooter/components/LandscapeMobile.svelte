@@ -20,6 +20,7 @@
     let footerHidden = false;
     let wasShowing = $state(false);
 
+    // overlay visibility
     $effect(() => {
         showing = isMobile && window.innerHeight > window.innerWidth;
     });

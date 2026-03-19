@@ -36,6 +36,15 @@
     }
 
     $effect(() => {
+        // damage is disabled while paused (open overlay)
+        if (gameState && gameState.player) {
+            try {
+                gameState.player.getCombatManager().setPaused(isPaused);
+            } catch (e) {
+                // ignore if not available yet
+            }
+        }
+
         if (!canvas) return;
         void restartTrigger;
 

@@ -18,6 +18,7 @@ export class CombatManager extends Object3D {
     // Player ammo (null = unlimited)
     private playerAmmo: number | null = null;
     private knockbackTimeline: gsap.core.Timeline | null = null;
+    private paused: boolean = false;
 
     constructor(player: Player, scene: Scene) {
         super();
@@ -124,6 +125,8 @@ export class CombatManager extends Object3D {
     }
 
     update(dt: number): void {
+        if (this.paused) return;
+
         // update player projectiles
         for (let i = this.projectiles.length - 1; i >= 0; i--) {
             const projectile = this.projectiles[i];
@@ -164,6 +167,10 @@ export class CombatManager extends Object3D {
         }
 
         this.checkCollisions();
+    }
+
+    setPaused(paused: boolean): void {
+        this.paused = paused;
     }
 
     getPlayerHealth(): number {
