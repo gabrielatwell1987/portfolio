@@ -442,9 +442,9 @@
                 font-weight: 700;
                 color: var(--clr-invert);
                 text-shadow:
-                    0 0 5px var(--clr-main),
-                    0 0 10px var(--clr-main),
-                    0 0 15px var(--clr-main);
+                    0 0 4px var(--clr-main),
+                    0 0 6px var(--clr-main),
+                    0 0 7px var(--clr-main);
                 line-height: 1;
                 margin: 0;
                 margin-bottom: 0.2em;
@@ -493,14 +493,13 @@
             & .summary {
                 font-family: var(--bronova);
                 font-size: clamp(var(--sm), 1.25vw, var(--h3));
-                font-weight: 600;
+                font-weight: 300;
                 text-align: start;
                 letter-spacing: 1px;
                 line-height: 1.6;
                 color: var(--clr-hero-text);
                 inline-size: clamp(300px, 65vw, 1300px);
                 margin: 0 auto 3rem auto;
-                text-shadow: 0 0 1px oklch(from var(--clr-light-gray) 0.95 c h);
                 user-select: none;
 
                 @media (width >= 990px) {
@@ -538,7 +537,7 @@
                         flex-direction: column;
                         align-items: center;
                         padding: 1rem;
-                        background: rgba(255, 255, 255, 0.1);
+                        background: var(--clr-invert-fade);
                         border-radius: 12px;
                         backdrop-filter: blur(10px);
                         border: 2px solid var(--clr-gray);
@@ -564,7 +563,7 @@
                         &:hover,
                         &:focus-within {
                             transform: translateY(-5px);
-                            background: rgba(255, 255, 255, 0.15);
+                            background: var(--clr-invert);
                             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
                             @media (prefers-reduced-motion: reduce) {
@@ -575,12 +574,11 @@
                         & .stat-number {
                             font-family: var(--ultra);
                             font-size: clamp(var(--h6), 3vw, var(--h2));
-                            font-weight: 700;
                             color: var(--clr-invert);
                             text-shadow:
-                                0 0 5px var(--clr-main),
-                                0 0 10px var(--clr-main),
-                                0 0 15px var(--clr-main);
+                                0 0 3px var(--clr-main),
+                                0 0 4px var(--clr-main),
+                                0 0 5px var(--clr-main);
                             margin: 0;
                         }
 

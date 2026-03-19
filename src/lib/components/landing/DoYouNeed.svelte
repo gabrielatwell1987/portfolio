@@ -43,7 +43,7 @@
 
         .sentence {
             font-family: var(--bronova);
-            font-size: clamp(1.25rem, 2.5vw, 10rem);
+            font-size: clamp(1.25rem, 2.25vw, 10rem);
             font-weight: 100;
             color: var(--clr-main);
             text-align: center;
@@ -67,15 +67,15 @@
             }
 
             .bigWord {
+                inline-size: 100vw;
                 font-family: var(--ultra);
-                font-size: clamp(var(--h2), 8vw + 0.1em, 35rem);
+                font-size: clamp(var(--h4), 10vw + 1.7em, 20rem);
                 text-wrap: none;
                 display: block;
-                letter-spacing: -1px;
+                letter-spacing: 1px;
                 line-height: 1.2;
 
                 @media (width <= 768px) {
-                    font-weight: 600;
                     margin-top: 2%;
                 }
 
@@ -93,25 +93,25 @@
                 color: var(--clr-invert);
                 text-shadow:
                     0 0 5px var(--clr-main),
-                    0 0 10px var(--clr-main),
-                    0 0 15px var(--clr-main);
+                    0 0 6px var(--clr-main),
+                    0 0 7px var(--clr-main);
 
                 @media (width <= 768px) {
                     text-shadow:
-                        0 0 3px #17262c,
-                        0 0 4px #eee,
-                        0 0 4px #eee,
-                        0 0 4px #eee,
-                        0 0 4px #eee,
-                        0 0 4px #eee;
+                        0 0 2px var(--clr-invert),
+                        0 0 3px var(--clr-main-fade),
+                        0 0 3px var(--clr-main-fade),
+                        0 0 3px var(--clr-main-fade),
+                        0 0 3px var(--clr-main-fade),
+                        0 0 3px var(--clr-main-fade);
                 }
             }
 
             & .subtitle {
                 opacity: 0.8;
-                font-family: var(--bronova-bold);
-                font-weight: 500;
-                color: var(--clr-main);
+                font-family: var(--bronova);
+                font-weight: 300;
+                color: oklch(from var(--clr-main) 0.7 c h);
             }
         }
     }
