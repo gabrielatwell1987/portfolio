@@ -14,6 +14,8 @@
     let portal: HTMLDivElement | null = null;
     let portalIframe: HTMLIFrameElement | null = null;
 
+    let attachRoot: HTMLDivElement | null = null;
+
     function updateMouse(e: MouseEvent) {
         // cursor
         mouse = { x: e.clientX, y: e.clientY };
@@ -62,7 +64,7 @@
             portalIframe.style.border = 'none';
             portalIframe.style.pointerEvents = 'none';
             portal.appendChild(portalIframe);
-            document.body.appendChild(portal);
+            (attachRoot ?? document.body).appendChild(portal);
         }
 
         // update portal visibility / src / position
