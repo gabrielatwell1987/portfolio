@@ -120,6 +120,16 @@
             inline-size: 100%;
         }
 
+        @media (width > 768px) and (width < 1098px) {
+            inline-size: 100%;
+            border-radius: var(--radius);
+            padding: 1.2rem 0.75em 0.4rem 0.25em;
+            block-size: 3.75rem;
+            min-block-size: 5rem;
+            justify-content: space-between;
+            flex: 1;
+        }
+
         @media (width > 300px) and (width < 750px) {
             inline-size: 100%;
             border-radius: var(--radius);
