@@ -333,7 +333,7 @@
         --clr-faint-gray: var(--faint-gray);
         --clr-dark-gray: var(--dark-gray);
 
-        --clr-hero-text: #222222;
+        --clr-hero-text: var(--white);
         --clr-link: var(--sky);
         --clr-blue-fade: #08306b;
         --clr-blue: var(--dark-blue);
