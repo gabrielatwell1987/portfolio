@@ -23,6 +23,11 @@
     // overlay visibility
     $effect(() => {
         showing = isMobile && window.innerHeight > window.innerWidth;
+
+        const w = window.innerWidth;
+        const isTablet = w > 768 && w < 1024;
+        showing =
+            (isMobile || isTablet) && window.innerHeight > window.innerWidth;
     });
 
     // notify parent when overlay becomes visible/hidden so the game can pause/resume
@@ -89,6 +94,10 @@
             const isPortrait = window.innerHeight > window.innerWidth;
             const isLandscape = !isPortrait;
 
+            const w = window.innerWidth;
+            const isTablet = w > 768 && w <= 1024;
+            const treatAsMobile = isMobile || isTablet;
+
             const overlay = document.querySelector(
                 '.rotate-overlay',
             ) as HTMLElement | null;
@@ -102,6 +111,9 @@
 
             // ensure overlay hidden once device is rotated to landscape
             if (isLandscape && isMobile) {
+                showing = false;
+            }
+            if (isLandscape && treatAsMobile) {
                 showing = false;
                 // if (overlay) overlay.remove();
 
@@ -139,6 +151,7 @@
 
             // portrait (or not mobile) — restore defaults
             showing = isMobile && isPortrait;
+            showing = treatAsMobile && isPortrait;
 
             if (nav && navHidden) {
                 nav.style.display = '';

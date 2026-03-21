@@ -99,9 +99,10 @@
 
         & [data-close] {
             position: absolute;
-            position-anchor: --close;
-            inset-block-start: calc(anchor(top) - 2.25em);
-            inset-inline-end: calc(anchor(end) - 1em);
+            bottom: 0.5em;
+            right: 0.75em;
+            inset-inline-start: auto;
+            inset-block-start: auto;
 
             background: transparent;
             border: none;
@@ -114,6 +115,13 @@
             & svg {
                 inline-size: clamp(1.5em, 3vw, 2.5rem);
                 block-size: clamp(1.5em, 3vw, 2.5rem);
+            }
+
+            @supports (inset-block-start: anchor(top)) {
+                position: absolute;
+                position-anchor: --close;
+                top: calc(anchor(top) - 11em);
+                right: calc(anchor(end) - 1em);
             }
         }
 
@@ -138,7 +146,7 @@
             font-weight: 600;
 
             & .pwa-title {
-                color: var(--clr-blue);
+                color: var(--clr-link);
                 font-family: var(--bronova-bold);
                 font-size: clamp(var(--h6), 2.5vw, var(--h3));
 
