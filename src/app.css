@@ -307,8 +307,8 @@
         --dark-blue: #0b3d91;
         --darker-blue: #072a6b;
         --darkest-blue: #031727;
-        --pale: #fff3d6;
-        --dark-pale: #f3e0b3;
+        --pale: #ffca28;
+        --dark-pale: #f57f17;
         --light-gray: #bfc5c9;
         --gray: #808080;
         --faint-gray: rgba(128, 128, 128, 0.1);
@@ -426,7 +426,7 @@
             );
 
             --clr-hero-text: light-dark(
-                oklch(from var(--gray) 0.45 c h),
+                oklch(from var(--light-gray) 0.45 c h),
                 var(--white)
             );
             --clr-link: light-dark(var(--darker-blue), var(--sky));

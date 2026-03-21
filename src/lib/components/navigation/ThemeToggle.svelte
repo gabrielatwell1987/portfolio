@@ -4,7 +4,7 @@
 
     const theme = useTheme();
     let themeStatus = $state<string>('');
-    let buttonElement: HTMLButtonElement;
+    let buttonElement = $state<HTMLButtonElement>();
 
     function toggle() {
         const isMobile = window.innerWidth <= 768;
@@ -15,6 +15,7 @@
             y = window.innerHeight / 5;
         } else {
             // desktop
+            if (!buttonElement) return;
             const rect = buttonElement.getBoundingClientRect();
             x = rect.left + rect.width / 2;
             y = rect.top + rect.height / 2;
@@ -121,7 +122,8 @@
             scale: 0.95;
         }
 
-        &:focus {
+        &:focus,
+        &:focus-visible {
             outline: 1px solid var(--clr-main);
             outline-offset: 0 1px;
             background: transparent;
