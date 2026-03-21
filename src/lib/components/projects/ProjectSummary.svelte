@@ -94,6 +94,7 @@
         & .summary-button {
             margin: 0;
             padding: 0;
+            color: var(--warning);
         }
 
         & [data-close] {

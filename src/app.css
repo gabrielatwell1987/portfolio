@@ -296,80 +296,158 @@
 
 @layer theming {
     :root {
-        /* base colors */
-        --blackest: oklch(11% 0 0);
-        --blacker: oklch(0.2809 0 0);
-        --white-gray: oklch(0.8297 0 0 / 90.2%);
-        --white: oklch(0.8853 0 0 / 90.2%);
-        --sky: oklch(0.726 0.1068 207.66 / 50.2%);
-        --purple: oklch(0.6383 0.1895 268.76 / 60%);
-        --yellow: oklch(0.7292 0.148 87.23 / 74.9%);
-        --dark-blue: oklch(0.3506 0.0844 244.06 / 74.9%);
-        --darker-blue: oklch(0.288 0.061 240.78 / 74.9%);
-        --darkest-blue: oklch(0.2285 0.0512 240.51 / 74.9%);
-        --pale: oklch(0.6936 0.1414 83.49);
-        --dark-pale: oklch(0.4936 0.1414 83.49);
-        --light-gray: oklch(0.5957 0.0036 17.26);
-        --gray: oklch(0.5103 0 0);
-        --faint-gray: oklch(0.5103 0 0 / 0.1);
-        --dark-gray: oklch(0.3715 0 0);
-        --dark-faint-gray: oklch(0.3715 0 0 / 0.1);
-        --success-light: oklch(0.5771 0.1593 143.16);
-        --success-dark: oklch(0.4898 0.1434 141.2);
-        --fail-light: oklch(0.5189 0.175 25.76);
-        --fail-dark: oklch(0.2931 0.151 24.57);
-        --warning-light: oklch(0.7126 0.1451 94.89);
-        --warning-dark: oklch(0.4869 0.0938 88.85);
+        /* android fallbacks */
+        --blackest: #0b0f10;
+        --blacker: #0a0a0a;
+        --white-gray: #eceff1;
+        --white: #ffffff;
+        --sky: #4da3ff;
+        --purple: #8a4fff;
+        --yellow: #ffd54a;
+        --dark-blue: #0b3d91;
+        --darker-blue: #072a6b;
+        --darkest-blue: #031727;
+        --pale: #fff3d6;
+        --dark-pale: #f3e0b3;
+        --light-gray: #bfc5c9;
+        --gray: #808080;
+        --faint-gray: rgba(128, 128, 128, 0.1);
+        --dark-gray: #4b4b4b;
+        --dark-faint-gray: rgba(75, 75, 75, 0.1);
+        --success-light: #4caf50;
+        --success-dark: #2e7d32;
+        --fail-light: #ff7043;
+        --fail-dark: #d84315;
+        --warning-light: #ffca28;
+        --warning-dark: #f57f17;
 
-        --clr-bg: light-dark(var(--white), var(--blackest));
-        --clr-main-fade: light-dark(
-            oklch(from var(--blackest) 0.1 c h),
-            oklch(from var(--white) 0.6 c h)
-        );
-        --clr-main: light-dark(
-            oklch(from var(--blackest) 0.1 c h),
-            oklch(from var(--white) 0.8 c h)
-        );
-        --clr-invert: light-dark(
-            oklch(from var(--white) 0.9 c h),
-            oklch(from var(--blackest) 0.1 c h)
-        );
-        --clr-invert-fade: light-dark(
-            oklch(from var(--white) 0.5 c h),
-            oklch(from oklch(from var(--blackest) 0.1 c h) 0.2 c h)
-        );
+        --clr-bg: var(--white);
+        --clr-main-fade: #111827;
+        --clr-main: var(--white);
+        --clr-invert: var(--blackest);
+        --clr-invert-fade: rgba(0, 0, 0, 0.2);
 
-        --clr-light-invert: light-dark(var(--white-gray), var(--blacker));
-        --clr-light-gray: light-dark(var(--dark-gray), var(--light-gray));
-        --clr-gray: light-dark(var(--dark-gray), var(--gray));
-        --clr-faint-gray: light-dark(var(--dark-faint-gray), var(--faint-gray));
-        --clr-dark-gray: light-dark(
-            oklch(0.7018 0.0035 17.24),
-            oklch(0.2982 0.0014 17.24)
-        );
+        --clr-light-invert: var(--white-gray);
+        --clr-light-gray: var(--light-gray);
+        --clr-gray: var(--gray);
+        --clr-faint-gray: var(--faint-gray);
+        --clr-dark-gray: var(--dark-gray);
 
-        --clr-hero-text: light-dark(
-            oklch(from var(--gray) 0.45 c h),
-            var(--white)
-        );
-        --clr-link: light-dark(var(--darker-blue), var(--sky));
-        --clr-blue-fade: light-dark(
-            oklch(from var(--darkest-blue) 0.45 c h),
-            oklch(from var(--sky) 0.7 c h)
-        );
-        --clr-blue: light-dark(var(--darkest-blue), var(--sky));
-        --clr-sky: light-dark(var(--sky), var(--sky));
-        --clr-pale: light-dark(var(--yellow), var(--pale));
-        --clr-dark-pale: light-dark(var(--pale), var(--dark-pale));
-        --clr-green: light-dark(var(--success-dark), var(--success-light));
-        --clr-button-text: light-dark(var(--blackest), var(--white));
-        --clr-button: light-dark(var(--yellow), var(--purple));
-        --sun: light-dark(var(--yellow), var(--pale));
-        --moon: light-dark(var(--darkest-blue), var(--sky));
-        --opacity: light-dark(1, 0.85);
+        --clr-hero-text: #222222;
+        --clr-link: var(--sky);
+        --clr-blue-fade: #08306b;
+        --clr-blue: var(--dark-blue);
+        --clr-sky: var(--sky);
+        --clr-pale: var(--pale);
+        --clr-dark-pale: var(--dark-pale);
+        --clr-green: var(--success-dark);
+        --clr-button-text: var(--blackest);
+        --clr-button: linear-gradient(90deg, var(--yellow), var(--purple));
+        --sun: var(--yellow);
+        --moon: var(--darkest-blue);
+        --opacity: 1;
 
-        --success: light-dark(var(--success-light), var(--success-dark));
-        --fail: light-dark(var(--fail-light), var(--fail-dark));
-        --warning: light-dark(var(--warning-light), var(--warning-dark));
+        --success: var(--success-light);
+        --fail: var(--fail-light);
+        --warning: var(--warning-dark);
+
+        /* swap fallbacks for prefers-color-scheme: dark */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --white-gray: #eceff1;
+                --white: #ffffff;
+                --clr-bg: var(--white);
+                --clr-invert: var(--blackest);
+                --clr-main: #e6eefb;
+                --clr-link: #7ec0ff;
+                --clr-button-text: var(--white);
+                --opacity: 0.85;
+            }
+        }
+
+        @supports (color: oklch(50% 0 0)) {
+            :root {
+                /* base colors (oklch) */
+                --blackest: oklch(11% 0 0);
+                --blacker: oklch(0.2809 0 0);
+                --white-gray: oklch(0.8297 0 0 / 90.2%);
+                --white: oklch(0.8853 0 0 / 90.2%);
+                --sky: oklch(0.726 0.1068 207.66 / 50.2%);
+                --purple: oklch(0.6383 0.1895 268.76 / 60%);
+                --yellow: oklch(0.7292 0.148 87.23 / 74.9%);
+                --dark-blue: oklch(0.3506 0.0844 244.06 / 74.9%);
+                --darker-blue: oklch(0.288 0.061 240.78 / 74.9%);
+                --darkest-blue: oklch(0.2285 0.0512 240.51 / 74.9%);
+                --pale: oklch(0.6936 0.1414 83.49);
+                --dark-pale: oklch(0.4936 0.1414 83.49);
+                --light-gray: oklch(0.5957 0.0036 17.26);
+                --gray: oklch(0.5103 0 0);
+                --faint-gray: oklch(0.5103 0 0 / 0.1);
+                --dark-gray: oklch(0.3715 0 0);
+                --dark-faint-gray: oklch(0.3715 0 0 / 0.1);
+                --success-light: oklch(0.5771 0.1593 143.16);
+                --success-dark: oklch(0.4898 0.1434 141.2);
+                --fail-light: oklch(0.5189 0.175 25.76);
+                --fail-dark: oklch(0.2931 0.151 24.57);
+                --warning-light: oklch(0.7126 0.1451 94.89);
+                --warning-dark: oklch(0.4869 0.0938 88.85);
+            }
+        }
+
+        @supports (color: oklch(50% 0 0)) and (color: light-dark(white, black)) {
+            --clr-bg: light-dark(var(--white), var(--blackest));
+            --clr-main-fade: light-dark(
+                oklch(from var(--blackest) 0.1 c h),
+                oklch(from var(--white) 0.6 c h)
+            );
+            --clr-main: light-dark(
+                oklch(from var(--blackest) 0.1 c h),
+                oklch(from var(--white) 0.8 c h)
+            );
+            --clr-invert: light-dark(
+                oklch(from var(--white) 0.9 c h),
+                oklch(from var(--blackest) 0.1 c h)
+            );
+            --clr-invert-fade: light-dark(
+                oklch(from var(--white) 0.5 c h),
+                oklch(from oklch(from var(--blackest) 0.1 c h) 0.2 c h)
+            );
+
+            --clr-light-invert: light-dark(var(--white-gray), var(--blacker));
+            --clr-light-gray: light-dark(var(--dark-gray), var(--light-gray));
+            --clr-gray: light-dark(var(--dark-gray), var(--gray));
+            --clr-faint-gray: light-dark(
+                var(--dark-faint-gray),
+                var(--faint-gray)
+            );
+            --clr-dark-gray: light-dark(
+                oklch(0.7018 0.0035 17.24),
+                oklch(0.2982 0.0014 17.24)
+            );
+
+            --clr-hero-text: light-dark(
+                oklch(from var(--gray) 0.45 c h),
+                var(--white)
+            );
+            --clr-link: light-dark(var(--darker-blue), var(--sky));
+            --clr-blue-fade: light-dark(
+                oklch(from var(--darkest-blue) 0.45 c h),
+                oklch(from var(--sky) 0.7 c h)
+            );
+            --clr-blue: light-dark(var(--darkest-blue), var(--sky));
+            --clr-sky: light-dark(var(--sky), var(--sky));
+            --clr-pale: light-dark(var(--yellow), var(--pale));
+            --clr-dark-pale: light-dark(var(--pale), var(--dark-pale));
+            --clr-green: light-dark(var(--success-dark), var(--success-light));
+            --clr-button-text: light-dark(var(--blackest), var(--white));
+            --clr-button: light-dark(var(--yellow), var(--purple));
+            --sun: light-dark(var(--yellow), var(--pale));
+            --moon: light-dark(var(--darkest-blue), var(--sky));
+            --opacity: light-dark(1, 0.85);
+
+            --success: light-dark(var(--success-light), var(--success-dark));
+            --fail: light-dark(var(--fail-light), var(--fail-dark));
+            --warning: light-dark(var(--warning-light), var(--warning-dark));
+        }
     }
 }

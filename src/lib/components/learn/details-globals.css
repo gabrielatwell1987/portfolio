@@ -51,3 +51,7 @@
 .text form {
     color: var(--clr-main);
 }
+
+.text strong {
+    color: var(--clr-gray);
+}

@@ -3,16 +3,59 @@
     import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
 
     let submitStatus = $state<string>('');
+
+    // android anchor positioning fallback
+    let anchorEl: HTMLElement | null = null;
+    let buttonEl: HTMLElement | null = null;
+    let ro: ResizeObserver | null = null;
+
+    function updateAnchorPos() {
+        if (!anchorEl || !buttonEl) return;
+        const container = buttonEl.closest(
+            '.hire-form-container',
+        ) as HTMLElement | null;
+        if (!container) return;
+        const aRect = anchorEl.getBoundingClientRect();
+        const cRect = container.getBoundingClientRect();
+        const fontSize = parseFloat(getComputedStyle(container).fontSize) || 16;
+        const top = aRect.top - cRect.top - 5 * fontSize;
+        const right = cRect.right - aRect.right + 1 * fontSize;
+        buttonEl.style.position = 'absolute';
+        buttonEl.style.top = `${Math.round(top)}px`;
+        buttonEl.style.right = `${Math.round(right)}px`;
+    }
+
+    $effect(() => {
+        const abortController = new AbortController();
+
+        updateAnchorPos();
+        ro = new ResizeObserver(updateAnchorPos);
+        if (anchorEl) ro.observe(anchorEl);
+        if (buttonEl) ro.observe(buttonEl);
+        ro.observe(document.documentElement);
+        window.addEventListener('resize', updateAnchorPos, {
+            signal: abortController.signal,
+        });
+        window.addEventListener('orientationchange', updateAnchorPos, {
+            signal: abortController.signal,
+        });
+
+        return () => {
+            if (ro) ro.disconnect();
+            abortController.abort();
+        };
+    });
+    // end of android fallback
 </script>
 
 <A11yAnnouncer message={submitStatus} />
 
 <section class="hire-form-container">
-    <div class="button-positioning">
+    <div class="button-positioning" bind:this={buttonEl}>
         <SubmitButton />
     </div>
 
-    <div class="anchor"></div>
+    <div class="anchor" bind:this={anchorEl}></div>
 
     <form action="https://formspree.io/f/xwpoqdno" method="POST" novalidate>
         <div class="form-grid">
@@ -195,6 +238,10 @@
             position-anchor: --form-container;
             inset-block-start: calc(anchor(top) - 5em);
             inset-inline-end: calc(anchor(right) + 1em);
+
+            @media (width >= 768px) and (width <= 1024px) {
+                inset-block-start: anchor(top);
+            }
 
             @media (width <= 768px) {
                 position: static;

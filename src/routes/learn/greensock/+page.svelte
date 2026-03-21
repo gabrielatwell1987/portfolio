@@ -18,14 +18,6 @@
     }
 
     let { data }: Props = $props();
-    // let detailsVisible = $state<boolean>(false);
-
-    // // animations
-    // $effect(() => {
-    // 	setTimeout(() => {
-    // 		detailsVisible = true;
-    // 	}, 100);
-    // });
 </script>
 
 <SEO
