@@ -344,7 +344,7 @@
         --clr-button-text: var(--blackest);
         --clr-button: linear-gradient(90deg, var(--yellow), var(--purple));
         --sun: var(--yellow);
-        --moon: var(--darkest-blue);
+        --moon: var(--darker-blue);
         --opacity: 1;
 
         --success: var(--success-light);
@@ -442,7 +442,7 @@
             --clr-button-text: light-dark(var(--blackest), var(--white));
             --clr-button: light-dark(var(--yellow), var(--purple));
             --sun: light-dark(var(--yellow), var(--pale));
-            --moon: light-dark(var(--darkest-blue), var(--sky));
+            --moon: light-dark(var(--dark-blue), var(--sky));
             --opacity: light-dark(1, 0.85);
 
             --success: light-dark(var(--success-light), var(--success-dark));
