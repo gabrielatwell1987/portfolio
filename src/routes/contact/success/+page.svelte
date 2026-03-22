@@ -17,7 +17,6 @@
         <img
             src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/success.webp"
             alt="Atwell"
-            width="500"
             loading="lazy"
         />
 
@@ -30,23 +29,33 @@
 </article>
 
 <style>
-    @media (width >=18.75rem) {
+    @media (width >= 18.75rem) {
         :root {
             --100: 100%;
             --5: 5em;
         }
 
         .success-wrapper {
-            min-height: 70vh;
-            padding-top: 7em;
+            min-block-size: 70vh;
+            padding-top: 3em;
             background-color: transparent;
 
             & .success-content {
-                width: var(--100);
+                inline-size: var(--100);
                 padding: clamp(2rem, 5vw, 5em);
                 margin-inline: auto;
                 margin-top: var(--5);
                 text-align: center;
+
+                & img {
+                    margin-inline: auto;
+                    display: block;
+                    inline-size: 100%;
+                    max-inline-size: clamp(12rem, 40vw, 28rem);
+                    block-size: auto;
+                    object-fit: contain;
+                    aspect-ratio: auto;
+                }
             }
 
             & .success-results {
@@ -71,14 +80,14 @@
 
     @media (width >= 720px) {
         section {
-            width: 50%;
+            inline-size: 50vw;
             margin-bottom: 10%;
         }
     }
 
     @media (width <= 500px) {
         article {
-            min-height: 70vh;
+            min-block-size: 70vh;
         }
     }
 </style>

@@ -51,16 +51,12 @@
 <A11yAnnouncer message={submitStatus} />
 
 <section class="hire-form-container">
-    <div class="button-positioning" bind:this={buttonEl}>
-        <SubmitButton />
-    </div>
-
     <div class="anchor" bind:this={anchorEl}></div>
 
-    <form action="https://formspree.io/f/xwpoqdno" method="POST" novalidate>
+    <form action="https://formspree.io/f/xwpoqdno" method="POST">
         <div class="form-grid">
             <label class="form-group">
-                <span class="label-text">Name</span>
+                <span class="label-text">Name*</span>
 
                 <input
                     type="text"
@@ -73,7 +69,7 @@
             </label>
 
             <label class="form-group">
-                <span class="label-text">Email</span>
+                <span class="label-text">Email*</span>
 
                 <input
                     type="email"
@@ -86,7 +82,7 @@
             </label>
 
             <label class="form-group">
-                <span class="label-text">Location</span>
+                <span class="label-text">Location*</span>
 
                 <input
                     type="text"
@@ -119,7 +115,7 @@
 
         <div class="form-grid">
             <label class="form-group">
-                <span class="label-text">Website</span>
+                <span class="label-text">Website*</span>
 
                 <input
                     type="text"
@@ -130,7 +126,7 @@
             </label>
 
             <label class="form-group">
-                <span class="label-text">Company</span>
+                <span class="label-text">Company*</span>
 
                 <input
                     type="text"
@@ -148,7 +144,7 @@
             </label>
 
             <label class="form-group">
-                <span class="label-text">Project Type</span>
+                <span class="label-text">Project Type*</span>
 
                 <select name="project_type" required>
                     <option value="">Select a project type</option>
@@ -161,7 +157,7 @@
             </label>
 
             <label class="form-group">
-                <span class="label-text">New Project?</span>
+                <span class="label-text">New Project?*</span>
 
                 <select name="new_project" required>
                     <option value="">Is this new or a rebrand?</option>
@@ -171,7 +167,7 @@
             </label>
 
             <label class="form-group">
-                <span class="label-text">Timeline</span>
+                <span class="label-text">Timeline*</span>
 
                 <select name="timeline" required>
                     <option value="">What is your timeline?</option>
@@ -182,7 +178,7 @@
             </label>
 
             <label class="form-group">
-                <span class="label-text">Budget</span>
+                <span class="label-text">Budget*</span>
 
                 <select name="budget" required>
                     <option value="">What is your budget?</option>
@@ -198,7 +194,7 @@
         </div>
 
         <label class="form-group full-width">
-            <span class="label-text center-text">Message</span>
+            <span class="label-text center-text">Message*</span>
 
             <textarea
                 name="message"
@@ -208,6 +204,12 @@
                 spellcheck="true"
             ></textarea>
         </label>
+
+        <h3 class="legend">* = required</h3>
+
+        <div class="button-positioning" bind:this={buttonEl}>
+            <SubmitButton />
+        </div>
     </form>
 </section>
 
@@ -231,6 +233,15 @@
 
         & .anchor {
             anchor-name: --form-container;
+        }
+
+        & .legend {
+            color: var(--clr-main-fade);
+            font-family: var(--bronova);
+            font-size: clamp(var(--xs), 0.8vw, var(--h5));
+            font-style: italic;
+            margin: 0;
+            text-align: center;
         }
 
         & .button-positioning {
