@@ -38,7 +38,7 @@
 		"prettier-plugin-svelte": "^3.2.3",
 		"pulltorefreshjs": "^0.1.22",
 		"rehype-pretty-code": "^0.14.1",
-		"shiki": "^3.22.0",
+		"shiki": "^3.23.0",
 		"svelte-check": "^4.4.5",
 		"svelte-language-server": "^0.17.29",
 		"terser": "^5.46.0",
@@ -58,6 +58,7 @@
 		"from": "^0.1.7",
 		"highlight.js": "^11.9.0",
 		"marked": "^15.0.12",
+		"shiki-magic-move": "^1.3.0",
 		"split-type": "^0.3.4",
 		"stats.js": "^0.17.0",
 		"svelte": "^5.54.0"
