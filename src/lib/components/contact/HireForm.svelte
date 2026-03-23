@@ -10,16 +10,31 @@
     let ro: ResizeObserver | null = null;
 
     function updateAnchorPos() {
+        if (window.innerWidth <= 768) {
+            if (buttonEl) {
+                buttonEl.style.position = '';
+                buttonEl.style.top = '';
+                buttonEl.style.right = '';
+                buttonEl.style.marginTop = '1em';
+            }
+
+            return;
+        }
+
         if (!anchorEl || !buttonEl) return;
+
         const container = buttonEl.closest(
             '.hire-form-container',
         ) as HTMLElement | null;
+
         if (!container) return;
+
         const aRect = anchorEl.getBoundingClientRect();
         const cRect = container.getBoundingClientRect();
         const fontSize = parseFloat(getComputedStyle(container).fontSize) || 16;
         const top = aRect.top - cRect.top - 5 * fontSize;
         const right = cRect.right - aRect.right + 1 * fontSize;
+
         buttonEl.style.position = 'absolute';
         buttonEl.style.top = `${Math.round(top)}px`;
         buttonEl.style.right = `${Math.round(right)}px`;
@@ -252,6 +267,11 @@
 
             @media (width >= 768px) and (width <= 1024px) {
                 inset-block-start: anchor(top);
+            }
+
+            @media (width <= 768px) {
+                inset-inline-end: anchor(center);
+                inset-block-start: calc(anchor(top) + 1em);
             }
 
             @media (width <= 768px) {
