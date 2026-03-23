@@ -296,7 +296,7 @@
 
 @layer theming {
     :root {
-        /* base colors (fallback sRGB approximations) */
+        /* fallbacks for older devices */
         --blackest: #1b1b1b;
         --blacker: #0c0c0c;
         --white-gray: rgba(242, 242, 242, 0.9);
@@ -321,14 +321,13 @@
         --warning-light: #ffdd6b;
         --warning-dark: #d7b24a;
 
-        /* explicit light / dark pairs (basic fallback) */
-        --clr-bg: #ffffff;
+        --clr-bg: #111;
         --clr-main-fade: rgba(0, 0, 0, 0.15);
-        --clr-main: #111111;
-        --clr-invert: #f7f7f7;
+        --clr-main: #fff;
+        --clr-invert: #242424;
         --clr-invert-fade: rgba(0, 0, 0, 0.2);
 
-        --clr-light-invert: #f2f2f2;
+        --clr-light-invert: #555;
         --clr-light-gray: #5f5f5f;
         --clr-gray: #808080;
         --clr-faint-gray: rgba(95, 95, 95, 0.1);
@@ -351,6 +350,29 @@
         --success: #57c184;
         --fail: #ff9b7a;
         --warning: #ffdd6b;
+    }
+
+    /* fallbacks for older devices */
+    :root[data-theme='dark'],
+    html[data-theme='dark'] {
+        --clr-invert: #111111;
+        --clr-main: #f7f7f7;
+        --clr-invert-fade: rgba(255, 255, 255, 0.06);
+        --clr-hero-text: #cccccc;
+        --clr-link: #4a90e2;
+        --clr-blue: #4a90e2;
+        --clr-button-text: #ffffff;
+    }
+
+    :root[data-theme='light'],
+    html[data-theme='light'] {
+        --clr-invert: #f7f7f7;
+        --clr-main: #111111;
+        --clr-invert-fade: rgba(0, 0, 0, 0.2);
+        --clr-hero-text: #666666;
+        --clr-link: #172b59;
+        --clr-blue: #0f2246;
+        --clr-button-text: #111111;
     }
 
     @supports (color: oklch(from white 0 0 0)) and

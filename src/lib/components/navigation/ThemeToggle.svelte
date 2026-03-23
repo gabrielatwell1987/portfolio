@@ -21,19 +21,104 @@
             y = rect.top + rect.height / 2;
         }
 
-        document.documentElement.style.viewTransitionName = 'changing-theme';
-
         document.documentElement.style.setProperty('--x', `${x}px`);
-
         document.documentElement.style.setProperty('--y', `${y}px`);
 
-        document.startViewTransition(() => {
+        if (typeof (document as any).startViewTransition === 'function') {
+            document.documentElement.style.viewTransitionName =
+                'changing-theme';
+
+            document.startViewTransition(() => {
+                const newTheme = theme.toggle();
+                themeStatus = `Switched to ${newTheme} theme`;
+                setTimeout(() => {
+                    themeStatus = '';
+                }, 2000);
+            });
+        } else {
+            // fallback for older browsers
             const newTheme = theme.toggle();
+
+            try {
+                document.documentElement.setAttribute('data-theme', newTheme);
+                if (newTheme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.classList.remove('light');
+                    document.documentElement.style.colorScheme = 'dark';
+
+                    // force key CSS variables for older browsers
+                    document.documentElement.style.setProperty(
+                        '--clr-invert',
+                        '#111111',
+                    );
+                    document.documentElement.style.setProperty(
+                        '--clr-main',
+                        '#f7f7f7',
+                    );
+                    document.documentElement.style.setProperty(
+                        '--clr-invert-fade',
+                        'rgba(255,255,255,0.06)',
+                    );
+                    document.documentElement.style.setProperty(
+                        '--clr-hero-text',
+                        '#cccccc',
+                    );
+                    document.documentElement.style.setProperty(
+                        '--clr-link',
+                        '#4a90e2',
+                    );
+                    document.documentElement.style.setProperty(
+                        '--clr-blue',
+                        '#4a90e2',
+                    );
+                    document.documentElement.style.setProperty(
+                        '--clr-button-text',
+                        '#ffffff',
+                    );
+                } else {
+                    document.documentElement.classList.add('light');
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.style.colorScheme = 'light';
+
+                    // restore light variables (match :root defaults)
+                    document.documentElement.style.setProperty(
+                        '--clr-invert',
+                        '#f7f7f7',
+                    );
+                    document.documentElement.style.setProperty(
+                        '--clr-main',
+                        '#111111',
+                    );
+                    document.documentElement.style.setProperty(
+                        '--clr-invert-fade',
+                        'rgba(0, 0, 0, 0.2)',
+                    );
+                    document.documentElement.style.setProperty(
+                        '--clr-hero-text',
+                        '#666666',
+                    );
+                    document.documentElement.style.setProperty(
+                        '--clr-link',
+                        '#172b59',
+                    );
+                    document.documentElement.style.setProperty(
+                        '--clr-blue',
+                        '#0f2246',
+                    );
+                    document.documentElement.style.setProperty(
+                        '--clr-button-text',
+                        '#111111',
+                    );
+                }
+            } catch (e) {
+                console.error('Failed to toggle theme:', e);
+            }
+
             themeStatus = `Switched to ${newTheme} theme`;
             setTimeout(() => {
                 themeStatus = '';
             }, 2000);
-        });
+        }
     }
 </script>
 
