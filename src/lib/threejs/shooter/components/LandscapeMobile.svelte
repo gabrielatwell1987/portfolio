@@ -272,7 +272,7 @@
 
         & .rotate-card {
             background: #111;
-            color: var(--clr-main);
+            color: #eee;
             padding: 0.5em 0.75em;
             border-radius: var(--radius);
             text-align: center;
@@ -289,7 +289,7 @@
                 background: transparent;
                 border: none;
                 padding: 0.5em 0.75em;
-                color: var(--clr-main);
+                color: #888;
             }
         }
     }

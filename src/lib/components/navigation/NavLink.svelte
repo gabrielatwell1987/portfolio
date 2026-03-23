@@ -56,6 +56,10 @@
             color 0.15s ease-out;
         will-change: opacity;
 
+        @media (width >= 300px) and (width <= 750px) {
+            mix-blend-mode: normal;
+        }
+
         &::before {
             content: '';
             position: absolute;
