@@ -65,22 +65,26 @@
         gsap.registerPlugin(ScrollTrigger);
 
         const paragraphs = document.querySelectorAll('.content p');
-        const images = document.querySelectorAll('.image img');
+        const codeBlocks = document.querySelectorAll('pre');
 
-        images.forEach((img) => {
+        codeBlocks.forEach((pre) => {
+            const code = pre.querySelector('code');
+            const targets = code ? [pre, code] : pre;
+
             gsap.fromTo(
-                img,
+                targets,
                 {
-                    scale: 0.8,
+                    x: 100,
                     opacity: 0,
                 },
                 {
-                    scale: 1,
+                    x: 0,
                     opacity: 1,
                     duration: 1,
+                    overflow: 'hidden',
                     ease: 'power2.out',
                     scrollTrigger: {
-                        trigger: img,
+                        trigger: pre,
                         start: 'top center+=450',
                     },
                 },

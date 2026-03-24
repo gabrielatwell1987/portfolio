@@ -41,6 +41,7 @@
     </button>
 
     <aside class="side-bar" class:open={isOpen}>
+        <!-- desktop toc -->
         <article class="table-of-contents">
             <div class="css">
                 <dl>
@@ -134,9 +135,7 @@
         </article>
     </aside>
 {:else}
-    <!-- regular toc -->
-    <h2 class="table-title">Table of Contents</h2>
-
+    <!-- mobile toc -->
     <article class="table-of-contents">
         <div class="css">
             <dl>
@@ -170,17 +169,6 @@
 {/if}
 
 <style>
-    .table-title {
-        display: block;
-        margin-top: 2em;
-        margin-bottom: -2.5em;
-        color: var(--clr-main);
-        font-family: var(--bronova-bold);
-        font-size: clamp(var(--h6), 5vw, var(--h1));
-        font-weight: 800;
-        text-align: center;
-    }
-
     .table-of-contents {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -188,6 +176,8 @@
         height: fit-content;
         box-shadow: none;
         padding-bottom: 6em;
+        margin: 0;
+        padding: 0;
 
         @media (width <= 1200px) {
             padding-bottom: 2em;

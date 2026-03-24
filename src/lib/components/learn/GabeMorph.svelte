@@ -38,6 +38,8 @@
     <svg
         id="sourceSVG"
         viewBox="0 0 450 100"
+        // width="450"
+        // height="100"
         preserveAspectRatio="xMidYMid meet"
     >
         <title>Gabe</title>
@@ -129,7 +131,7 @@
             inline-size: 100%;
             block-size: auto;
             max-inline-size: min(90vw, 25em);
-            min-inline-size: 320px;
+            min-inline-size: 520px;
             margin: 0;
             padding: 0;
             fill: var(--clr-main);
