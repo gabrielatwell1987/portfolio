@@ -186,6 +186,7 @@ div[id] {
     -webkit-overflow-scrolling: touch;
     margin: 1rem 0;
     padding: 0;
+    background-color: var(--clr-invert);
 }
 
 .css :not(pre) > code,
@@ -196,8 +197,8 @@ div[id] {
 
 .css pre code,
 .gsap pre code {
-    background-color: transparent;
-    color: inherit;
+    background-color: var(--clr-invert);
+    color: var(--clr-main);
     display: block;
     padding: 1em;
     border: 3px solid var(--clr-main);
@@ -223,13 +224,7 @@ div[id] {
     }
 }
 
-.css .shiki,
-.css .shiki span,
-.gsap .shiki,
-.gsap .shiki span {
-    color: var(--shiki-light) !important;
-    background-color: var(--shiki-light-bg) !important;
-}
+
 
 @media (max-width: 768px) {
     html {
@@ -244,15 +239,5 @@ div[id] {
 
     #anchor {
         margin-top: 1em;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    .css .shiki,
-    .css .shiki span,
-    .gsap .shiki,
-    .gsap .shiki span {
-        color: var(--shiki-dark) !important;
-        background-color: var(--shiki-dark-bg) !important;
     }
 }
