@@ -56,7 +56,13 @@ const config = {
                 throw new Error(message);
             },
             concurrency: 10,
-            entries: ['/photos'],
+            entries: [
+                '/photos',
+                '/contact/success',
+                '/learn/greensock',
+                '/learn/sveltekit',
+                '/learn/posts',
+            ],
         },
     },
     vitePlugin: {
