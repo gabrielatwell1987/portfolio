@@ -1,6 +1,25 @@
-import adapter from '@sveltejs/adapter-cloudflare'
-import { mdsvex } from 'mdsvex'
-import rehypePrettyCode from 'rehype-pretty-code'
+import adapter from '@sveltejs/adapter-cloudflare';
+import { mdsvex } from 'mdsvex';
+import rehypePrettyCode from 'rehype-pretty-code';
+
+const mdsvexOptions = {
+    extensions: ['.md', '.svx'],
+    rehypePlugins: [
+        [
+            rehypePrettyCode,
+            {
+                theme: {
+                    dark: 'github-dark',
+                    light: 'github-light',
+                },
+                defaultLang: {
+                    block: 'plaintext',
+                    inline: 'plaintext',
+                },
+            },
+        ],
+    ],
+};
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -30,13 +49,14 @@ const config = {
                 if (status === 404) {
                     console.warn(
                         `Prerendering warning: ${status} ${path} (linked from ${referrer})`,
-                    )
-                    return
+                    );
+                    return;
                 }
                 // for other errors, throw to fail the build
-                throw new Error(message)
+                throw new Error(message);
             },
             concurrency: 10,
+            entries: ['/photos'],
         },
     },
     vitePlugin: {
@@ -47,27 +67,7 @@ const config = {
         },
     },
     extensions: ['.svelte', '.md', '.svx'],
-    preprocess: [
-        mdsvex({
-            extensions: ['.md', '.svx'],
-            rehypePlugins: [
-                [
-                    rehypePrettyCode,
-                    {
-                        theme: {
-                            dark: 'github-dark',
-                            light: 'github-light',
-                        },
-                        defaultLang: {
-                            block: 'plaintext',
-                            inline: 'plaintext',
-                        },
-                    },
-                ],
-            ],
-        }),
-    ],
-    prerender: { entries: ['/photos'] },
-}
+    preprocess: [mdsvex(mdsvexOptions)],
+};
 
-export default config
+export default config;

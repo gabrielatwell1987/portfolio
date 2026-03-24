@@ -198,7 +198,7 @@ div[id] {
 .css pre code,
 .gsap pre code {
     background-color: var(--clr-invert);
-    color: var(--clr-main);
+    color: var(--clr-main-fade);
     display: block;
     padding: 1em;
     border: 3px solid var(--clr-main);
