@@ -11,6 +11,10 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import Popover from '$lib/components/layout/Popover.svelte';
 
+    import hljs from 'highlight.js';
+    import 'highlight.js/styles/atom-one-dark.css';
+    import { onMount } from 'svelte';
+
     let mounted = $state<boolean>(false);
     let prefersReducedMotion = $state<boolean>(false);
     let isMobile = $state<boolean>(false);
@@ -114,6 +118,11 @@
         return () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
+    });
+
+    // highlight.js
+    onMount(() => {
+        hljs.highlightAll();
     });
 </script>
 
