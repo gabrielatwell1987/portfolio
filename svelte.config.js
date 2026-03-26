@@ -1,24 +1,8 @@
 import adapter from '@sveltejs/adapter-cloudflare';
 import { mdsvex } from 'mdsvex';
-import rehypePrettyCode from 'rehype-pretty-code';
 
 const mdsvexOptions = {
     extensions: ['.md', '.svx'],
-    rehypePlugins: [
-        [
-            rehypePrettyCode,
-            {
-                theme: {
-                    dark: 'github-dark',
-                    light: 'github-light',
-                },
-                defaultLang: {
-                    block: 'plaintext',
-                    inline: 'plaintext',
-                },
-            },
-        ],
-    ],
 };
 
 /** @type {import('@sveltejs/kit').Config} */
