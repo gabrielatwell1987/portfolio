@@ -448,7 +448,7 @@
                 oklch(0.2982 0.0014 17.24)
             );
 
-            --clr-blue: light-dark(var(--darkest-blue), var(--sky));
+            --clr-blue: light-dark(var(--dark-blue), var(--sky));
             --clr-sky: light-dark(var(--sky), var(--sky));
             --clr-pale: light-dark(var(--yellow), var(--pale));
             --clr-dark-pale: light-dark(var(--pale), var(--dark-pale));

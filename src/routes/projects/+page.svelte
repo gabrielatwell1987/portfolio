@@ -250,24 +250,6 @@
                 grid-template-columns: 1fr;
             }
 
-            & .wholeProject {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 0.25rem;
-                border-radius: var(--radius);
-                will-change: opacity, transform;
-                margin-bottom: 1em;
-                padding: 1em 0 0.5em 0;
-
-                @media (width <= 768px) {
-                    margin: 0.5rem;
-                    margin-bottom: 1.5em;
-                    padding: 0.25 0;
-                }
-            }
-
             &:before {
                 content: '';
                 position: absolute;
@@ -293,6 +275,24 @@
                     calc(40px + 1.03px) 5px,
                     5px calc(40px + 1.03px)
                 );
+            }
+
+            & .wholeProject {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 0.25rem;
+                border-radius: var(--radius);
+                will-change: opacity, transform;
+                margin-bottom: 1em;
+                padding: 1em 0 0.5em 0;
+
+                @media (width <= 768px) {
+                    margin: 0.5rem;
+                    margin-bottom: 1.5em;
+                    padding: 0.25 0;
+                }
             }
         }
     }

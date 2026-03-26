@@ -94,7 +94,7 @@
         & .summary-button {
             margin: 0;
             padding: 0;
-            color: var(--warning);
+            color: var(--clr-dark-pale);
         }
 
         & [data-close] {

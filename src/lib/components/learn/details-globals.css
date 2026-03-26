@@ -49,7 +49,7 @@
 .text dl,
 .text figure,
 .text form {
-    color: var(--clr-main);
+    color: var(--clr-light-gray);
 }
 
 .text strong {

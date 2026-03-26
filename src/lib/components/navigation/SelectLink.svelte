@@ -59,7 +59,12 @@
         transition: none;
 
         & option {
-            color: var(--clr-main-fade);
+            color: var(--clr-main);
+
+            &:hover {
+                text-decoration: line-through;
+                text-decoration-thickness: 1px;
+            }
 
             &::checkmark {
                 content: '→';

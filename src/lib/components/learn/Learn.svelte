@@ -47,7 +47,7 @@
 
             & .link {
                 text-decoration: none;
-                color: var(--clr-link);
+                color: var(--success);
                 font-family: var(--ultra);
                 font-size: clamp(var(--sm), 1.25vw, var(--h4));
                 font-weight: 700;
