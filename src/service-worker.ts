@@ -63,18 +63,47 @@ sw.addEventListener('fetch', (event: FetchEvent) => {
     async function respond(): Promise<Response> {
         const cache = await caches.open(CACHE);
 
-        // Navigation fallback: return cached index for SPA navigations
+        // Navigation requests: prefer network (fresh HTML/CSS), fallback to cache
         const acceptHeader = event.request.headers.get('accept') || '';
         const isNavigation =
             event.request.mode === 'navigate' ||
             acceptHeader.includes('text/html');
         if (isNavigation) {
-            const fallback =
-                (await cache.match('/')) || (await cache.match('/index.html'));
-            if (fallback) return fallback;
+            try {
+                const response = await fetch(event.request);
+                const isHttp = url.protocol === 'http:' || url.protocol === 'https:';
+                const isSuccess = response && response.status === 200;
+                if (isHttp && isSuccess) {
+                    cache.put(event.request, response.clone());
+                }
+
+                return response;
+            } catch {
+                const fallback =
+                    (await cache.match('/')) || (await cache.match('/index.html'));
+                if (fallback) return fallback;
+            }
         }
 
-        // Serve build files from cache
+        // For static JS/CSS assets prefer network (keep styles/scripts fresh), fallback to cache
+        const isStaticScriptOrStyle = /\.(?:css|js|mjs)$/i.test(url.pathname);
+        if (isStaticScriptOrStyle && ASSETS.includes(url.pathname)) {
+            try {
+                const response = await fetch(event.request);
+                const isHttp = url.protocol === 'http:' || url.protocol === 'https:';
+                const isSuccess = response && response.status === 200;
+                if (isHttp && isSuccess) {
+                    cache.put(event.request, response.clone());
+                }
+
+                return response;
+            } catch {
+                const cachedResponse = await cache.match(event.request);
+                if (cachedResponse) return cachedResponse;
+            }
+        }
+
+        // Serve other build files from cache first (images, fonts, etc.) for performance
         if (ASSETS.includes(url.pathname)) {
             const cachedResponse = await cache.match(event.request);
             if (cachedResponse) {
