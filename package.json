@@ -37,6 +37,7 @@
 		"prettier": "^3.2.5",
 		"prettier-plugin-svelte": "^3.2.3",
 		"pulltorefreshjs": "^0.1.22",
+		"shiki": "^4.0.2",
 		"svelte-check": "^4.4.5",
 		"svelte-language-server": "^0.17.29",
 		"terser": "^5.46.0",
