@@ -36,10 +36,12 @@
     $effect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
         const container = document.querySelector('.biography');
         const targets = gsap.utils.toArray(
             '.biography .bio-paragraph, .biography .three-button, .biography [data-flex-container]',
         );
+        const startPoint = isMobile ? 'top 55%' : 'top 90%';
         if (!targets.length) return;
 
         gsap.set(targets, { opacity: 0, y: 30 });
@@ -52,7 +54,7 @@
             stagger: 0.5,
             scrollTrigger: {
                 trigger: container,
-                start: 'top 90%',
+                start: startPoint,
                 scrub: 1,
             },
         });
