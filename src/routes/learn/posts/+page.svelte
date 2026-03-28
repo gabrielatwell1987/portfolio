@@ -11,6 +11,15 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import Popover from '$lib/components/layout/Popover.svelte';
 
+    import hljs from 'highlight.js/lib/core';
+    import javascript from 'highlight.js/lib/languages/javascript';
+    import css from 'highlight.js/lib/languages/css';
+    import 'highlight.js/styles/atom-one-dark.css';
+
+    hljs.registerLanguage('javascript', javascript);
+    hljs.registerLanguage('css', css);
+    let postHtml = $state<string>('');
+
     let mounted = $state<boolean>(false);
     let prefersReducedMotion = $state<boolean>(false);
     let isMobile = $state<boolean>(false);
@@ -115,6 +124,14 @@
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
     });
+
+    // highlight.js
+    $effect(() => {
+        const codeBlocks = document.querySelectorAll('pre code');
+        codeBlocks.forEach((element) =>
+            hljs.highlightElement(element as HTMLElement),
+        );
+    });
 </script>
 
 <svelte:head>
@@ -142,6 +159,10 @@
 
     <TableOfContents sideBar={true} />
 </section>
+
+<article class="code-blocks">
+    {@html postHtml}
+</article>
 
 <section class="topics" class:mounted>
     <div class="css">
@@ -197,6 +218,11 @@
                 gap: 0;
             }
         }
+    }
+
+    .code-blocks {
+        background: transparent;
+        box-shadow: none;
     }
 
     .topics {

@@ -54,7 +54,7 @@
 		"copy-to-clipboard": "^3.3.3",
 		"dat.gui": "^0.7.9",
 		"from": "^0.1.7",
-		"marked": "^15.0.12",
+		"highlight.js": "^11.11.1",
 		"split-type": "^0.3.4",
 		"stats.js": "^0.17.0",
 		"svelte": "^5.54.0"
