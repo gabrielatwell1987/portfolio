@@ -36,23 +36,30 @@
     $effect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        const scrollFade = gsap.fromTo(
-            '.biography',
-            { opacity: 0 },
-            {
-                opacity: 1,
-                ease: 'power2.out',
-                duration: 1,
-                scrollTrigger: {
-                    trigger: '.biography',
-                    start: 'top 70%',
-                    toggleActions: 'play none none none',
-                },
-            },
+        const container = document.querySelector('.biography');
+        const targets = gsap.utils.toArray(
+            '.biography .bio-paragraph, .biography .three-button',
         );
+        if (!targets.length) return;
+
+        gsap.set(targets, { opacity: 0, y: 30 });
+
+        const scrollFade = gsap.to(targets, {
+            opacity: 1,
+            y: 0,
+            ease: 'power2.out',
+            duration: 2,
+            stagger: 0.5,
+            scrollTrigger: {
+                trigger: container,
+                start: 'top 90%',
+                scrub: 1,
+            },
+        });
 
         return () => {
             scrollFade?.kill();
+            ScrollTrigger.getAll().forEach((t) => t.kill());
         };
     });
 </script>
@@ -177,7 +184,7 @@
             & .biography {
                 color: var(--white);
                 position: relative;
-                opacity: 0;
+                opacity: 1;
 
                 @media (width >= 990px) {
                     margin-bottom: -5rem;
@@ -236,6 +243,9 @@
                 }
 
                 & .bio-paragraph {
+                    opacity: 0;
+                    will-change: transform, opacity;
+
                     max-inline-size: var(--100);
                     margin-inline: auto;
                     font-size: clamp(var(--h6), 1.5vw, var(--h4));
