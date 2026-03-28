@@ -38,7 +38,7 @@
 
         const container = document.querySelector('.biography');
         const targets = gsap.utils.toArray(
-            '.biography .bio-paragraph, .biography .three-button',
+            '.biography .bio-paragraph, .biography .three-button, .biography [data-flex-container]',
         );
         if (!targets.length) return;
 
