@@ -380,6 +380,10 @@
         :root {
             /* explicit light / dark pairs */
             --clr-bg: light-dark(var(--white), var(--blackest));
+            --clr-main-light-fade: light-dark(
+                oklch(from var(--blackest) 0.2 c h),
+                oklch(from var(--white) 0.8 c h)
+            );
             --clr-main-fade: light-dark(
                 oklch(from var(--blackest) 0.1 c h),
                 oklch(from var(--white) 0.6 c h)

@@ -22,14 +22,14 @@
             color: var(--clr-invert);
             text-shadow:
                 0 0 1px var(--clr-main),
-                -2px -2px 0 var(--clr-main),
-                2px -2px 0 var(--clr-main),
-                -2px 2px 0 var(--clr-main),
-                2px 2px 0 var(--clr-main),
-                -2px 0 0 var(--clr-main),
-                2px 0 0 var(--clr-main),
-                0 -2px 0 var(--clr-main),
-                0 2px 0 var(--clr-main);
+                -2px -2px 0 var(--clr-main-light-fade),
+                2px -2px 0 var(--clr-main-light-fade),
+                -2px 2px 0 var(--clr-main-light-fade),
+                2px 2px 0 var(--clr-main-light-fade),
+                -2px 0 0 var(--clr-main-light-fade),
+                2px 0 0 var(--clr-main-light-fade),
+                0 -2px 0 var(--clr-main-light-fade),
+                0 2px 0 var(--clr-main-light-fade);
             border: 1px solid var(--clr-main);
             outline: 3px solid var(--clr-main);
             margin-inline: auto;
@@ -38,14 +38,15 @@
             width: fit-content;
             border-radius: var(--button-radius);
             transition:
-                all 0.5s ease-out,
+                outline-offset 300ms ease-out,
+                opacity 300ms ease-out,
                 scale 0.15s ease-out;
             outline-offset: -7px;
             padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
             margin-bottom: 2%;
             user-select: none;
 
-            @media (width >= 500px) {
+            /* @media (width >= 500px) {
                 text-shadow:
                     0 0 1px var(--clr-main),
                     -3px -3px 0 var(--clr-main),
@@ -56,7 +57,7 @@
                     3px 0 0 var(--clr-main),
                     0 -3px 0 var(--clr-main),
                     0 3px 0 var(--clr-main);
-            }
+            } */
 
             &:not(:hover) {
                 opacity: 0.85;

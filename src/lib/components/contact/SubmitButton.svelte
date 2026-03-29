@@ -15,26 +15,27 @@
             color: var(--clr-invert);
             text-shadow:
                 0 0 1px var(--clr-main),
-                -2px -2px 0 var(--clr-main),
-                2px -2px 0 var(--clr-main),
-                -2px 2px 0 var(--clr-main),
-                2px 2px 0 var(--clr-main),
-                -2px 0 0 var(--clr-main),
-                2px 0 0 var(--clr-main),
-                0 -2px 0 var(--clr-main),
-                0 2px 0 var(--clr-main);
+                -2px -2px 0 var(--clr-main-light-fade),
+                2px -2px 0 var(--clr-main-light-fade),
+                -2px 2px 0 var(--clr-main-light-fade),
+                2px 2px 0 var(--clr-main-light-fade),
+                -2px 0 0 var(--clr-main-light-fade),
+                2px 0 0 var(--clr-main-light-fade),
+                0 -2px 0 var(--clr-main-light-fade),
+                0 2px 0 var(--clr-main-light-fade);
             border-radius: var(--radius);
             outline-offset: -7px;
             margin-inline: auto;
             cursor: pointer;
             letter-spacing: 2px;
             width: fit-content;
-            transition:
-                outline-offset 300ms ease-out,
-                opacity 300ms ease-out;
+            transition: all 300ms ease-out;
             padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
             user-select: none;
-            transition: scale 0.15s ease-out;
+            transition:
+                outline-offset 300ms ease-out,
+                opacity 300ms ease-out,
+                scale 0.15s ease-out;
 
             &:not(:hover) {
                 opacity: 0.85;
@@ -54,7 +55,7 @@
             }
         }
 
-        @media (width >= 500px) {
+        /* @media (width >= 500px) {
             text-shadow:
                 0 0 1px var(--clr-main),
                 -3px -3px 0 var(--clr-main),
@@ -65,7 +66,7 @@
                 3px 0 0 var(--clr-main),
                 0 -3px 0 var(--clr-main),
                 0 3px 0 var(--clr-main);
-        }
+        } */
     }
 
     @keyframes right {
