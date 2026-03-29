@@ -15,6 +15,7 @@
     import javascript from 'highlight.js/lib/languages/javascript';
     import css from 'highlight.js/lib/languages/css';
     import 'highlight.js/styles/atom-one-dark.css';
+    import { tick } from 'svelte';
 
     hljs.registerLanguage('javascript', javascript);
     hljs.registerLanguage('css', css);
@@ -127,10 +128,14 @@
 
     // highlight.js
     $effect(() => {
-        const codeBlocks = document.querySelectorAll('pre code');
-        codeBlocks.forEach((element) =>
-            hljs.highlightElement(element as HTMLElement),
-        );
+        async function highlight() {
+            await tick();
+            const codeBlocks = document.querySelectorAll('pre code');
+            codeBlocks.forEach((element) =>
+                hljs.highlightElement(element as HTMLElement),
+            );
+        }
+        highlight();
     });
 </script>
 
