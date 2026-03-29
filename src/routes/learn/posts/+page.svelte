@@ -16,6 +16,7 @@
     import css from 'highlight.js/lib/languages/css';
     import 'highlight.js/styles/atom-one-dark.css';
     import { tick } from 'svelte';
+    import CopyButton from '$lib/components/learn/CopyButton.svelte';
 
     hljs.registerLanguage('javascript', javascript);
     hljs.registerLanguage('css', css);
@@ -169,6 +170,9 @@
 <article class="code-blocks">
     {@html postHtml}
 </article>
+
+<!-- for pre/code blocks -->
+<CopyButton />
 
 <section class="topics" class:mounted>
     <div class="css">

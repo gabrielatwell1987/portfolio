@@ -10,7 +10,6 @@
     import SkipLink from '$lib/components/layout/SkipLink.svelte';
     import ViewTransition from '$lib/components/layout/view-transitions/ViewTransition.svelte';
     import PullToRefresh from '$lib/data/PullToRefresh.svelte';
-    import CopyButton from '$lib/components/learn/CopyButton.svelte';
 
     interface Props {
         children: Snippet;
@@ -72,8 +71,6 @@
 <PullToRefresh />
 <SkipLink />
 <ViewTransition />
-<!-- for pre/code blocks -->
-<CopyButton />
 
 <!-- loading animation -->
 {#if !loading.isLoaded}
