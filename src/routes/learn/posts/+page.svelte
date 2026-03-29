@@ -14,13 +14,16 @@
     import hljs from 'highlight.js/lib/core';
     import javascript from 'highlight.js/lib/languages/javascript';
     import css from 'highlight.js/lib/languages/css';
+    import html from 'highlight.js/lib/languages/xml';
     import 'highlight.js/styles/atom-one-dark.css';
     import { tick } from 'svelte';
     import CopyButton from '$lib/components/learn/CopyButton.svelte';
 
     hljs.registerLanguage('javascript', javascript);
     hljs.registerLanguage('css', css);
+    hljs.registerLanguage('html', html);
     let postHtml = $state<string>('');
+    let sanitizeHtml = $state<string>('');
 
     let mounted = $state<boolean>(false);
     let prefersReducedMotion = $state<boolean>(false);
@@ -131,11 +134,34 @@
     $effect(() => {
         async function highlight() {
             postHtml;
+            if (typeof window === 'undefined') {
+                sanitizeHtml = '';
+                return;
+            }
+
+            // dynamic import of dompurify
+            const { default: DOMPurify } = await import('dompurify');
+            // mitigate XSS risk
+            DOMPurify.addHook('uponSanitizeAttribute', (node, data) => {
+                if (data && data.attrName && data.attrName.startsWith('on')) {
+                    data.keepAttr = false;
+                }
+            });
+            // sanitize the HTML content
+            sanitizeHtml = DOMPurify.sanitize(postHtml, {
+                USE_PROFILES: { html: true },
+            });
+
             await tick();
-            const codeBlocks = document.querySelectorAll('pre code');
-            codeBlocks.forEach((element) =>
-                hljs.highlightElement(element as HTMLElement),
-            );
+            const codeBlocks = Array.from(
+                document.querySelectorAll('pre code'),
+            ) as HTMLElement[];
+            codeBlocks.forEach((element) => {
+                // get raw text (escapes any embedded HTML)
+                const raw = element.textContent ?? element.innerText ?? '';
+                element.textContent = raw;
+                hljs.highlightElement(element);
+            });
         }
         highlight();
     });
@@ -168,7 +194,7 @@
 </section>
 
 <article class="code-blocks">
-    {@html postHtml}
+    {@html sanitizeHtml}
 </article>
 
 <!-- for pre/code blocks -->
