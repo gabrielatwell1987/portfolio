@@ -21,5 +21,15 @@
         "static/threejayess/**",
         "**/*.min.js",
         "**/*-decoder.js"
+    ],
+    "overrides": [
+        {
+            "files": [
+                "src/routes/**/*.svelte"
+            ],
+            "rules": {
+                "no-unused-expressions": "off"
+            }
+        }
     ]
 }

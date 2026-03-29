@@ -129,6 +129,7 @@
     // highlight.js
     $effect(() => {
         async function highlight() {
+            postHtml;
             await tick();
             const codeBlocks = document.querySelectorAll('pre code');
             codeBlocks.forEach((element) =>
