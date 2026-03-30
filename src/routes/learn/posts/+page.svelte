@@ -19,9 +19,10 @@
     import { tick } from 'svelte';
     import CopyButton from '$lib/components/learn/CopyButton.svelte';
 
-    hljs.registerLanguage('javascript', javascript);
+    hljs.registerLanguage('js', javascript);
     hljs.registerLanguage('css', css);
     hljs.registerLanguage('html', html);
+    hljs.registerLanguage('xml', html);
     let postHtml = $state<string>('');
     let sanitizeHtml = $state<string>('');
 
