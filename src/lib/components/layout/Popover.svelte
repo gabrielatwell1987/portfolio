@@ -96,7 +96,7 @@
             letter-spacing: 2px;
             padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
             color: var(--clr-main);
-            background-color: var(--clr-invert-fade);
+            background-color: var(--clr-invert);
 
             @media (width < 500px) {
                 letter-spacing: 1px;

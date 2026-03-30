@@ -434,7 +434,7 @@
             --dark-gray: oklch(0.3715 0 0);
             --dark-faint-gray: oklch(0.3715 0 0 / 0.1);
             --success-light: oklch(0.5771 0.1593 143.16);
-            --success-dark: oklch(0.4898 0.1434 141.2);
+            --success-dark: oklch(0.2898 0.1434 141.2);
             --fail-light: oklch(0.5189 0.175 25.76);
             --fail-dark: oklch(0.2931 0.151 24.57);
             --warning-light: oklch(0.7126 0.1451 94.89);

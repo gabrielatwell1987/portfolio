@@ -150,7 +150,7 @@
             block-size: 76vh;
             border: 2px solid var(--clr-gray);
             border-radius: 1rem;
-            background: var(--clr-invert-fade);
+            background: var(--clr-invert);
             margin-top: 10em;
             overflow: clip;
 
@@ -181,7 +181,7 @@
                     font-size: clamp(var(--h5), 3vw, var(--h2));
                     font-weight: 800;
                     line-height: 1;
-                    color: oklch(from var(--clr-blue) 0.65 c h);
+                    color: var(--clr-blue);
                     margin: -0.5rem 0 -2rem 0;
                     letter-spacing: -1px;
                     text-wrap: pretty;

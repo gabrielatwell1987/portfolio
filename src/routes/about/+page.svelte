@@ -286,6 +286,7 @@
                     }
 
                     & span {
+                        color: var(--clr-main);
                         padding-top: 0.25rem;
 
                         @media (width <= 768px) {
