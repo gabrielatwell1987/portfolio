@@ -67,9 +67,10 @@
         margin-top: 2em;
 
         .skills {
+            --skills-gap: 1.4em 1.8em;
             display: grid;
             grid-template-columns: repeat(3, minmax(100px, 1fr));
-            gap: 1rem;
+            gap: var(--skills-gap);
             align-items: center;
             justify-content: center;
             width: min(40%, 800px);
@@ -77,13 +78,11 @@
 
             @media (width <= 768px) {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
                 width: min(90%, 600px);
                 margin: 2em 0 4em 0;
             }
 
             @media (width <= 500px) {
-                gap: 1rem;
                 width: 90%;
             }
 
@@ -95,7 +94,6 @@
 
                 @media (width <= 768px) {
                     grid-template-columns: repeat(2, 1fr);
-                    gap: 1rem;
                 }
 
                 &:focus {
@@ -141,7 +139,6 @@
         @media (width <= 768px) {
             .skills {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
                 width: min(80%, 600px);
 
                 & li {
@@ -153,7 +150,6 @@
         @media (width <= 500px) {
             .skills {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 0.5rem;
                 width: 90;
                 margin-left: 0;
                 margin-inline: auto;
