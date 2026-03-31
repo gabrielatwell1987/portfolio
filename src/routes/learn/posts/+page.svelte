@@ -10,6 +10,7 @@
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import Popover from '$lib/components/layout/Popover.svelte';
+    import Preloader from '$lib/components/learn/Preloader.svelte';
 
     import hljs from 'highlight.js/lib/core';
     import javascript from 'highlight.js/lib/languages/javascript';
@@ -50,10 +51,15 @@
     });
 
     $effect(() => {
+        let canceled = $state(false);
+
         if (document.startViewTransition) {
             document.startViewTransition(() => {
-                mounted = true;
+                if (!canceled) mounted = true;
             });
+            return () => {
+                canceled = true;
+            };
         } else {
             mounted = true;
         }
@@ -79,54 +85,57 @@
 
         gsap.registerPlugin(ScrollTrigger);
 
-        const paragraphs = document.querySelectorAll('.content p');
-        const codeBlocks = document.querySelectorAll('pre');
+        const ctx = gsap.context(() => {
+            const paragraphs = document.querySelectorAll('.content p');
+            const codeBlocks = document.querySelectorAll('pre');
 
-        codeBlocks.forEach((pre) => {
-            const code = pre.querySelector('code');
-            const targets = code ? [pre, code] : pre;
+            codeBlocks.forEach((pre) => {
+                const code = pre.querySelector('code');
+                const targets = code ? [pre, code] : pre;
 
-            gsap.fromTo(
-                targets,
-                {
-                    x: 100,
-                    opacity: 0,
-                },
-                {
-                    x: 0,
-                    opacity: 1,
-                    duration: 1,
-                    overflow: 'hidden',
-                    ease: 'power2.out',
-                    scrollTrigger: {
-                        trigger: pre,
-                        start: 'top center+=450',
+                gsap.fromTo(
+                    targets,
+                    {
+                        x: 100,
+                        opacity: 0,
                     },
-                },
-            );
-        });
-
-        paragraphs.forEach((para) => {
-            gsap.fromTo(
-                para,
-                {
-                    x: -100,
-                    opacity: 0,
-                },
-                {
-                    x: 0,
-                    opacity: 1,
-                    duration: 1,
-                    ease: 'power2.out',
-                    scrollTrigger: {
-                        trigger: para,
-                        start: 'top center+=450',
+                    {
+                        x: 0,
+                        opacity: 1,
+                        duration: 1,
+                        overflow: 'hidden',
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: pre,
+                            start: 'top center+=450',
+                        },
                     },
-                },
-            );
+                );
+            });
+
+            paragraphs.forEach((para) => {
+                gsap.fromTo(
+                    para,
+                    {
+                        x: -100,
+                        opacity: 0,
+                    },
+                    {
+                        x: 0,
+                        opacity: 1,
+                        duration: 1,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: para,
+                            start: 'top center+=450',
+                        },
+                    },
+                );
+            });
         });
 
         return () => {
+            ctx.revert();
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
     });
@@ -178,6 +187,8 @@
     keywords="animation techniques, web techniques for animation"
     type="article"
 />
+
+<Preloader />
 
 <section class="table-and-logo" id="top">
     <div class="popover-morph">

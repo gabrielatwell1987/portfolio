@@ -13,7 +13,7 @@
 
         const tl = gsap.timeline();
 
-        // Animate each line from right to left (revealing content)
+        // each line from right to left
         tl.to(validLines, {
             duration: 1.3,
             scaleX: 0,
@@ -22,7 +22,7 @@
             ease: 'power3.inOut',
         });
 
-        // Fade out the entire preloader
+        // fade out the entire preloader
         tl.to(
             preloaderElement,
             {
@@ -65,7 +65,7 @@
         & .preloader-line {
             flex: 1;
             height: 100vh;
-            background-color: var(--clr-invert);
+            background-color: var(--clr-invert-fade);
             transform-origin: right;
         }
     }
