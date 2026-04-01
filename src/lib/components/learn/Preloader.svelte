@@ -5,7 +5,22 @@
     let preloaderElement = $state<HTMLElement>();
     let lines = $state<HTMLElement[]>([]);
 
+    function portal(node: HTMLElement) {
+        const host = document.body;
+        host.appendChild(node);
+
+        return {
+            destroy() {
+                if (host.contains(node)) host.removeChild(node);
+            },
+        };
+    }
+
     $effect(() => {
+        gsap.set('.preloader', {
+            zIndex: 2147483647,
+        });
+
         const validLines = lines.filter(
             (line) => line !== undefined && line !== null,
         );
@@ -43,7 +58,12 @@
 </script>
 
 {#if preloaderVisible}
-    <div bind:this={preloaderElement} class="preloader" id="preloader">
+    <div
+        use:portal
+        bind:this={preloaderElement}
+        class="preloader"
+        id="preloader"
+    >
         {#each Array(10) as _, i}
             <div bind:this={lines[i]} class="preloader-line"></div>
         {/each}
@@ -57,10 +77,14 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        z-index: 100;
+        z-index: 2147483647;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        transform: translateZ(0);
+        isolation: isolate;
+        background: var(--clr-invert, #fff);
 
         & .preloader-line {
             flex: 1;

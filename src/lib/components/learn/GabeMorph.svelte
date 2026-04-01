@@ -38,8 +38,6 @@
     <svg
         id="sourceSVG"
         viewBox="0 0 450 100"
-        // width="450"
-        // height="100"
         preserveAspectRatio="xMidYMid meet"
     >
         <title>Gabe</title>
@@ -120,6 +118,7 @@
         padding: 1rem;
         padding-top: 5em;
         margin-inline-start: 2em;
+        z-index: 5;
 
         @media (width <= 768px) {
             padding: 0.5rem;
