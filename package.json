@@ -2,6 +2,7 @@
 	"name": "portfolio",
 	"version": "1.1.0",
 	"private": true,
+	"packageManager": "pnpm@10.0.0",
 	"engines": {
 		"node": ">=22.0.0",
 		"npm": ">=10.0.0"
@@ -29,6 +30,7 @@
 		"@vite-pwa/assets-generator": "^0.2.4",
 		"dompurify": "^3.3.3",
 		"dotenv": "^16.4.5",
+		"esbuild": "0.27.3",
 		"gsap": "^3.14.2",
 		"jsdom": "^28.1.0",
 		"mdsvex": "^0.11.2",
@@ -37,6 +39,7 @@
 		"prettier": "^3.2.5",
 		"prettier-plugin-svelte": "^3.2.3",
 		"pulltorefreshjs": "^0.1.22",
+		"sharp": "^0.34.5",
 		"svelte-check": "^4.4.5",
 		"svelte-language-server": "^0.17.29",
 		"terser": "^5.46.0",
@@ -61,5 +64,15 @@
 	},
 	"overrides": {
 		"cookie": "^0.7.0"
+	},
+	"optionalDependencies": {
+		"@img/sharp-win32-x64": "0.34.5"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"sharp",
+			"esbuild",
+			"workerd"
+		]
 	}
 }
