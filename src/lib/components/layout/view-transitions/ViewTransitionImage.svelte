@@ -88,7 +88,7 @@
     section {
         cursor: pointer;
         width: fit-content;
-        z-index: 500;
+        z-index: 50;
 
         & .img-button {
             padding: 0;
