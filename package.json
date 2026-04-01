@@ -15,7 +15,8 @@
 		"format": "oxfmt --write .",
 		"format:svelte": "prettier --write \"src/**/*.svelte\"",
 		"test": "vitest",
-		"check": "svelte-check"
+		"check": "svelte-check",
+		"skills:add": "skills add https://github.com/greensock/gsap-skills"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^6.1.0",
@@ -40,6 +41,7 @@
 		"prettier-plugin-svelte": "^3.2.3",
 		"pulltorefreshjs": "^0.1.22",
 		"sharp": "^0.34.5",
+		"skills": "^1.4.7",
 		"svelte-check": "^4.4.5",
 		"svelte-language-server": "^0.17.29",
 		"terser": "^5.46.0",
