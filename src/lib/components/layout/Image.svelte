@@ -72,7 +72,7 @@
             block-size: auto;
             object-fit: contain;
             border-radius: var(--radius);
-            z-index: 9;
+            z-index: 20;
             margin-inline: auto;
             display: block;
             pointer-events: none;

@@ -98,7 +98,9 @@
                 cursor: pointer;
 
                 & path {
-                    fill: var(--clr-main);
+                    fill: var(--clr-invert);
+                    stroke: var(--clr-main);
+                    stroke-width: 0.2em;
 
                     &:not(:hover) {
                         opacity: 0.9;

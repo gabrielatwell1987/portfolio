@@ -18,7 +18,6 @@
         isLoading = true;
         statusMessage = `Loading ${submit}...`;
 
-        // Simulate an async operation (e.g., API call)
         await new Promise((resolve) => setTimeout(resolve, delay));
 
         isLoading = false;
@@ -26,14 +25,12 @@
 
         const screenWidth = window.innerWidth;
 
-        // Navigate to the destination
         if (screenWidth <= 500) {
             window.location.href = href;
         } else {
             window.open(href, '_blank', 'noopener,noreferrer');
         }
 
-        // Clear status message after navigation
         setTimeout(() => {
             statusMessage = '';
         }, 1000);
@@ -68,7 +65,7 @@
         outline-offset: -7px;
         padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
         color: var(--clr-main);
-        background-color: transparent;
+        background-color: var(--clr-invert);
         font-family: var(--bronova);
         font-size: clamp(var(--h6), 1.5vw, var(--h3));
         font-weight: 600;
@@ -86,6 +83,7 @@
         gap: 0.5em;
         letter-spacing: 1px;
         text-decoration: none;
+        z-index: 10;
 
         &:not(:hover) {
             filter: opacity(0.85);
