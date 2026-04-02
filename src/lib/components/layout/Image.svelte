@@ -76,6 +76,7 @@
             margin-inline: auto;
             display: block;
             pointer-events: none;
+            opacity: 1;
 
             &:not(.has-width) {
                 inline-size: 100%;

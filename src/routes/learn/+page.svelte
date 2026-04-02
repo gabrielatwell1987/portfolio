@@ -3,7 +3,7 @@
     import Image from '$lib/components/layout/Image.svelte';
     import LearnHeading from '$lib/components/learn/LearnHeading.svelte';
     import UsefulLinks from '$lib/components/learn/UsefulLinks.svelte';
-    import BgCircles from '$lib/components/utils/BgCircles.svelte';
+    import BgCircles from '$lib/components/learn/BgCircles.svelte';
     import BlurOverlay from '$lib/components/learn/BlurOverlay.svelte';
 
     $effect(() => {

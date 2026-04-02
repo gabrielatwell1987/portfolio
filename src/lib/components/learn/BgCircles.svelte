@@ -53,8 +53,6 @@
             <circle r="45" cx="650" cy="1050"></circle>
         </g>
     </svg>
-
-    <!-- mobile -->
 </div>
 
 <style>
