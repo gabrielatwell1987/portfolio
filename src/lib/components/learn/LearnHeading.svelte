@@ -75,6 +75,7 @@
         align-items: center;
         overflow-x: clip;
         padding-top: clamp(1em, 3vw, 3em);
+        z-index: 1;
 
         .left-word,
         .right-word {
