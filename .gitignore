@@ -12,6 +12,6 @@ background.mp4
 .vercel
 .vscode
 docs
-.github
+/.github
 /agents
 /.agents
