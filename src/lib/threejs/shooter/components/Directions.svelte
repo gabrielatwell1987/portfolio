@@ -29,6 +29,11 @@
                 <li>Fire = space bar</li>
                 <li>Orbit controls = letter "r"</li>
             </ul>
+
+            <h3>
+                you only get 10 bullets to start, you get more when you kill an
+                enemy.
+            </h3>
         </div>
     </div>
 {/if}
@@ -109,6 +114,20 @@
 
             @media (width <= 768px) {
                 font-size: var(--h5);
+                margin: 0 0 1rem 0;
+            }
+        }
+
+        & h3 {
+            color: var(--clr-main);
+            font-family: var(--bronova);
+            font-size: clamp(var(--xs), 1vw, var(--h6));
+            font-weight: 300;
+            margin: 0;
+            text-align: center;
+
+            @media (width <= 768px) {
+                font-size: var(--h6);
                 margin: 0 0 1rem 0;
             }
         }
