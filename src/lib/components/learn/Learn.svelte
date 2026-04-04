@@ -47,12 +47,25 @@
 
             & .link {
                 text-decoration: none;
-                color: var(--success);
-                font-family: var(--ultra);
-                font-size: clamp(var(--sm), 1.25vw, var(--h4));
+                color: var(--clr-main-light-fade);
+                font-family: var(--mono);
+                font-size: clamp(var(--sm), 1.5vw, var(--h3));
                 font-weight: 700;
+                letter-spacing: 1px;
                 margin: 0;
                 padding: 0;
+
+                &:visited {
+                    color: var(--clr-main-fade);
+                }
+
+                &:focus-visible,
+                &:focus {
+                    background-color: transparent;
+                    outline: 1px solid var(--clr-main);
+                    outline-offset: 2px;
+                    box-shadow: none;
+                }
             }
         }
     }

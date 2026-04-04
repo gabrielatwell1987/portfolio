@@ -1,9 +1,11 @@
 <script lang="ts">
     import gsap from 'gsap';
+    import { getPreloaderState } from './preloadStore.svelte';
 
     let preloaderVisible: boolean = $state<boolean>(true);
     let preloaderElement = $state<HTMLElement>();
     let lines = $state<HTMLElement[]>([]);
+    const preloaderState = getPreloaderState();
 
     function portal(node: HTMLElement) {
         const host = document.body;
@@ -16,6 +18,7 @@
         };
     }
 
+    // gsap
     $effect(() => {
         gsap.set('.preloader', {
             zIndex: 2147483647,
@@ -46,6 +49,7 @@
                 pointerEvents: 'none',
                 onComplete: () => {
                     preloaderVisible = false;
+                    preloaderState.done = true;
                 },
             },
             '-=0.3',

@@ -63,12 +63,12 @@
         width: 100%;
         height: 100vh;
         pointer-events: none;
-        z-index: 1;
         overflow: clip;
 
         & svg {
             width: 100%;
             height: 100%;
+            z-index: 49;
 
             @media (max-width: 768px) {
                 object-position: center top;

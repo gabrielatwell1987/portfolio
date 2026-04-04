@@ -46,7 +46,7 @@
                 title="YouTube video player"
             />
 
-            <Learn href="https://greensock.com" title="greensock" />
+            <Learn href="https://greensock.com/resources" title="greensock" />
 
             <div class="back-button">
                 <Button href="/learn" title="Back" />

@@ -1,5 +1,6 @@
 <script lang="ts">
     import { browser } from '$app/environment';
+    import { getPreloaderState } from '$lib/components/learn/preloadStore.svelte';
 
     interface Props {
         src: string;
@@ -20,6 +21,9 @@
     let isTransitioning = $state(false);
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     let prefersReducedMedia = $state(false);
+
+    const preloaderState = getPreloaderState();
+    let ready = $derived(preloaderState.done);
 
     // prefers-reduced-motion check
     $effect(() => {
@@ -65,7 +69,7 @@
     let inlineStyle = $derived(`view-transition-name: ${transitionName};`);
 </script>
 
-<section class={expanded ? 'expanded' : ''}>
+<section class={expanded ? 'expanded' : ''} class:hidden={!ready}>
     <button type="button" onclick={toggleExpand} class="img-button">
         <img
             bind:this={imgElement}
@@ -88,7 +92,11 @@
     section {
         cursor: pointer;
         width: fit-content;
-        z-index: 50;
+        /* z-index: 50; */
+
+        &.hidden {
+            visibility: hidden;
+        }
 
         & .img-button {
             padding: 0;
@@ -97,6 +105,7 @@
             cursor: pointer;
             width: fit-content;
             display: block;
+            /* z-index: 50; */
 
             &:focus,
             &:focus-visible,
@@ -111,6 +120,7 @@
                 outline: none;
                 -webkit-user-drag: none;
                 user-select: none;
+                /* z-index: 50; */
 
                 &.svg {
                     object-fit: contain;
@@ -139,7 +149,7 @@
         background: transparent;
         display: grid;
         place-items: center;
-        z-index: 9999;
+        /* z-index: 50; */
         width: 100vw;
         height: 100vh;
         margin: 0;

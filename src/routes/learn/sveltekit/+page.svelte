@@ -18,14 +18,6 @@
     }
 
     let { data }: Props = $props();
-    // let detailsVisible = $state<boolean>(false);
-
-    // // animations
-    // $effect(() => {
-    // 	setTimeout(() => {
-    // 		detailsVisible = true;
-    // 	}, 100);
-    // });
 </script>
 
 <SEO
@@ -54,7 +46,10 @@
                 title="YouTube video player"
             />
 
-            <Learn href="https://svelte.dev" title="svelte" />
+            <Learn
+                href="https://svelte.dev/tutorial/svelte/welcome-to-svelte"
+                title="svelte"
+            />
 
             <div class="back-button">
                 <Button href="/learn" title="Back" />

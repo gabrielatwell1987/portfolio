@@ -138,6 +138,7 @@
                     align-items: center;
                     justify-content: center;
                     margin-top: 0;
+                    z-index: 50;
                     transition:
                         filter 0.5s ease-out,
                         scale 0.15s ease-out;
