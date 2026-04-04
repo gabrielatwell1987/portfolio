@@ -92,7 +92,7 @@
     section {
         cursor: pointer;
         width: fit-content;
-        /* z-index: 50; */
+        z-index: 50;
 
         &.hidden {
             visibility: hidden;
@@ -105,7 +105,6 @@
             cursor: pointer;
             width: fit-content;
             display: block;
-            /* z-index: 50; */
 
             &:focus,
             &:focus-visible,
@@ -120,7 +119,6 @@
                 outline: none;
                 -webkit-user-drag: none;
                 user-select: none;
-                /* z-index: 50; */
 
                 &.svg {
                     object-fit: contain;
