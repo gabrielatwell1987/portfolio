@@ -171,12 +171,12 @@
     body {
         --timing: 0.75s;
         inline-size: 100%;
-        block-size: auto;
         background-color: var(--clr-invert);
         transition:
             background-color var(--timing) ease,
             color var(--timing) ease;
         will-change: background-color, color;
+        scrollbar-gutter: stable;
     }
 
     body {
@@ -190,7 +190,7 @@
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         inline-size: 100%;
-        block-size: 100%;
+        min-block-size: 100svh;
         font-display: swap;
     }
 
