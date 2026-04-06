@@ -1,9 +1,16 @@
+<script lang="ts">
+    import { useSound } from '../utils/sound/uiSounds';
+
+    const { playSoundAsync: playHoverSound } = useSound('/sounds/ui_hover.wav');
+</script>
+
 <nav class="footer" aria-label="Social media links">
     <a
         class="social-link yellow"
         href="https://www.github.com/gabrielatwell1987/portfolio"
         target="_blank"
         aria-label="Visit Gabriel's GitHub profile (opens in new tab)"
+        onmouseenter={playHoverSound}
     >
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -22,6 +29,7 @@
         href="https://codepen.io/gabrielatwell"
         target="_blank"
         aria-label="Visit Gabriel's CodePen profile (opens in new tab)"
+        onmouseenter={playHoverSound}
     >
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -40,6 +48,7 @@
         href="https://www.linkedin.com/in/gabrielatwell/"
         target="_blank"
         aria-label="linkedin link"
+        onmouseenter={playHoverSound}
     >
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -58,6 +67,7 @@
         class="social-link"
         target="_blank"
         aria-label="Visit Gabriel's Behance profile"
+        onmouseenter={playHoverSound}
     >
         <svg
             xmlns="http://www.w3.org/2000/svg"

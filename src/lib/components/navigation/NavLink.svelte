@@ -1,31 +1,47 @@
 <script lang="ts">
     import { page } from '$app/stores';
+    import { useSound } from '../utils/sound/uiSounds';
 
     interface Props {
         href: string;
         title: string;
-        onclick?: () => void;
+        onclick?: (e: MouseEvent) => void | Promise<void>;
         viewTransitionName?: string;
         reverseUnderline?: boolean;
     }
     let {
         href,
         title,
-        onclick = undefined,
+        onclick,
         viewTransitionName = undefined,
         reverseUnderline = false,
     }: Props = $props();
+
+    const { playSoundAsync: playHoverSound } = useSound('/sounds/ui_hover.wav');
+    const { playSoundAsync: playClickSound } = useSound(
+        '/sounds/ui_select.ogg',
+    );
 
     // only apply view-transition-name when NOT on the target page
     let shouldTransition = $derived(
         viewTransitionName && $page.url.pathname !== href,
     );
+
+    async function handleUiSound() {
+        await playHoverSound();
+    }
+
+    async function handleClick(e: MouseEvent) {
+        await playClickSound();
+        await onclick?.(e);
+    }
 </script>
 
 <a
     class={`nav-link ${reverseUnderline ? 'reverse-underline' : ''}`}
     {href}
-    {onclick}
+    onclick={handleClick}
+    onmouseenter={handleUiSound}
     style={shouldTransition
         ? `view-transition-name: ${viewTransitionName};`
         : ''}>{title}</a

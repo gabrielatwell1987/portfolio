@@ -1,8 +1,35 @@
 <script lang="ts">
-    let { title } = $props();
+    import { useSound } from '../utils/sound/uiSounds';
+
+    interface Props {
+        onclick?: (e: MouseEvent) => void | Promise<void>;
+        title: string;
+    }
+
+    let { title, onclick }: Props = $props();
+
+    const { playSoundAsync: playHoverSound } = useSound('/sounds/ui_hover.wav');
+    const { playSoundAsync: playClickSound } = useSound(
+        '/sounds/ui_select.ogg',
+    );
+
+    async function handleMouseEnter() {
+        await playHoverSound();
+    }
+
+    async function handleClick(e: MouseEvent) {
+        await playClickSound();
+        await onclick?.(e);
+    }
 </script>
 
-<a href="/" aria-label="Go to homepage" data-navigation-logo>
+<a
+    href="/"
+    aria-label="Go to homepage"
+    data-navigation-logo
+    onmouseenter={handleMouseEnter}
+    onclick={handleClick}
+>
     <div class="atwell-logo">
         <div class="atwell">
             <div class="atwell-top">{title}</div>

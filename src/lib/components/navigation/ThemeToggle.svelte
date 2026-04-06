@@ -1,6 +1,7 @@
 <script lang="ts">
     import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
     import { useTheme } from '$lib/data/context/theme.svelte';
+    import { useSound } from '../utils/sound/uiSounds';
 
     const theme = useTheme();
     let themeStatus = $state<string>('');
@@ -120,6 +121,12 @@
             }, 2000);
         }
     }
+
+    const { playSoundAsync: playHoverSound } = useSound('/sounds/ui_hover.wav');
+
+    async function handleMouseEnter() {
+        await playHoverSound();
+    }
 </script>
 
 <A11yAnnouncer message={themeStatus} />
@@ -133,6 +140,7 @@
     aria-checked={theme.isLight}
     style="position: relative; touch-action: manipulation; pointer-events: auto;"
     data-debug="theme-toggle"
+    onmouseenter={handleMouseEnter}
 >
     {#if theme.isLight}
         <svg

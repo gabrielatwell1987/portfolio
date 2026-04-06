@@ -1,14 +1,23 @@
 <script lang="ts">
+    import { useSound } from '../utils/sound/uiSounds';
+
     interface Props {
         href?: string;
         title: string;
         class?: string;
+        onclick?: (e: MouseEvent) => void | Promise<void>;
     }
 
-    let { href, title, class: className = '' }: Props = $props();
+    let { href, title, class: className = '', onclick }: Props = $props();
+    const { playSoundAsync } = useSound('/sounds/ui_select.ogg');
+
+    async function handleClick(e: MouseEvent) {
+        await playSoundAsync();
+        await onclick?.(e);
+    }
 </script>
 
-<a class="button {className}" {href}>{title}</a>
+<a class="button {className}" {href} onclick={handleClick}>{title}</a>
 
 <style>
     @media (width >= 300px) {

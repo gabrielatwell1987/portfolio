@@ -1,7 +1,22 @@
-<script>
+<script lang="ts">
+    import { useSound } from '../utils/sound/uiSounds';
+
+    interface Props {
+        onclick?: (e: MouseEvent) => void | Promise<void>;
+    }
+
+    let { onclick }: Props = $props();
+
+    const { playSoundAsync } = useSound('/sounds/ui_select.ogg');
+
+    async function handleClick(e: MouseEvent) {
+        await playSoundAsync();
+        await onclick?.(e);
+    }
 </script>
 
-<button class="submit-button" type="submit">Submit</button>
+<button class="submit-button" type="submit" onclick={handleClick}>Submit</button
+>
 
 <style>
     .submit-button {
