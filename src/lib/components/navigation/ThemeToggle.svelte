@@ -1,7 +1,7 @@
 <script lang="ts">
     import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
     import { useTheme } from '$lib/data/context/theme.svelte';
-    import { useSound } from '../utils/sound/uiSounds';
+    import { useSound } from '../utils/sound/uiSounds.svelte';
 
     const theme = useTheme();
     let themeStatus = $state<string>('');
@@ -126,8 +126,9 @@
         '/sounds/ui_bubble.wav',
     );
 
-    async function handleMouseEnter() {
+    async function handleClick() {
         await playHoverSound();
+        toggle();
     }
 </script>
 
@@ -135,14 +136,13 @@
 
 <button
     bind:this={buttonElement}
-    onclick={toggle}
+    onclick={handleClick}
     type="button"
     role="switch"
     aria-label="Toggle between light and dark theme"
     aria-checked={theme.isLight}
     style="position: relative; touch-action: manipulation; pointer-events: auto;"
     data-debug="theme-toggle"
-    onmouseenter={handleMouseEnter}
 >
     {#if theme.isLight}
         <svg

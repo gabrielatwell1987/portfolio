@@ -1,6 +1,6 @@
 <script lang="ts">
     import { goto } from '$app/navigation';
-    import { useSound } from '../utils/sound/uiSounds';
+    import { useSound } from '../utils/sound/uiSounds.svelte';
 
     const { playSoundAsync: playHoverSound } = useSound(
         '/sounds/ui_bubble.wav',
@@ -21,14 +21,10 @@
     }
 </script>
 
-<select onchange={handleSelect} onmouseenter={playHoverSound}>
+<select onchange={handleSelect} onclick={playHoverSound}>
     <option value="" disabled selected hidden>Connect</option>
-    <option value="hire" onmouseenter={playHoverSound}
-        ><span>Hire Me</span></option
-    >
-    <option value="contact" onmouseenter={playHoverSound}
-        ><span>Contact</span></option
-    >
+    <option value="hire"><span>Hire Me</span></option>
+    <option value="contact"><span>Contact</span></option>
 </select>
 
 <style>

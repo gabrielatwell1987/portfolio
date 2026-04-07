@@ -1,10 +1,11 @@
 <script lang="ts">
     import { page } from '$app/stores';
-    import { useSound } from '../utils/sound/uiSounds';
+    import { useSound } from '../utils/sound/uiSounds.svelte';
 
     interface Props {
         href: string;
         title: string;
+        onclick?: (event: MouseEvent) => void;
         viewTransitionName?: string;
         reverseUnderline?: boolean;
     }
@@ -13,6 +14,7 @@
         title,
         viewTransitionName = undefined,
         reverseUnderline = false,
+        onclick,
     }: Props = $props();
 
     const { playSoundAsync: playHoverSound } = useSound(
@@ -24,15 +26,16 @@
         viewTransitionName && $page.url.pathname !== href,
     );
 
-    async function handleUiSound() {
+    async function handleClick(event: MouseEvent) {
         await playHoverSound();
+        onclick?.(event);
     }
 </script>
 
 <a
     class={`nav-link ${reverseUnderline ? 'reverse-underline' : ''}`}
     {href}
-    onmouseenter={handleUiSound}
+    onclick={handleClick}
     style={shouldTransition
         ? `view-transition-name: ${viewTransitionName};`
         : ''}>{title}</a

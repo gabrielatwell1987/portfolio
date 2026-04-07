@@ -12,11 +12,8 @@
 
     function closeMenu() {
         if (open) {
-            isClosing = true;
-            setTimeout(() => {
-                open = false;
-                isClosing = false;
-            }, 500);
+            open = false;
+            isClosing = false;
         }
     }
 

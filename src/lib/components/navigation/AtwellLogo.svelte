@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { useSound } from '../utils/sound/uiSounds';
+    import { useSound } from '../utils/sound/uiSounds.svelte';
 
     interface Props {
         title: string;
@@ -20,7 +20,7 @@
     href="/"
     aria-label="Go to homepage"
     data-navigation-logo
-    onmouseenter={handleMouseEnter}
+    onclick={handleMouseEnter}
 >
     <div class="atwell-logo">
         <div class="atwell">

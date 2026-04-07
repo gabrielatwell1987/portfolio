@@ -1,7 +1,7 @@
 <script lang="ts">
     import '@fortawesome/fontawesome-free/css/all.css';
     import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
-    import { useSound } from '../utils/sound/uiSounds';
+    import { useSound } from '../utils/sound/uiSounds.svelte';
 
     interface BeforeInstallPromptEvent extends Event {
         prompt(): Promise<void>;
