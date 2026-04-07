@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { Projectile } from './Projectile';
 import type { Player } from '../players/Player';
 import type { EnemyManager } from '../enemies/EnemyManager';
+import { AudioManager } from '../actions/AudioManager';
 
 export class CombatManager extends Object3D {
     private projectiles: Projectile[] = [];
@@ -19,11 +20,15 @@ export class CombatManager extends Object3D {
     private playerAmmo: number | null = null;
     private knockbackTimeline: gsap.core.Timeline | null = null;
     private paused: boolean = false;
+    private audioManager: AudioManager;
+    private audioReady: boolean = false;
 
     constructor(player: Player, scene: Scene) {
         super();
         this.player = player;
         this.scene = scene;
+        this.audioManager = new AudioManager();
+        this.initializeAudio();
     }
 
     setEnemyManager(enemyManager: EnemyManager): void {
@@ -34,6 +39,19 @@ export class CombatManager extends Object3D {
         const now = performance.now() / 1000;
         if (this.playerAmmo !== null && this.playerAmmo <= 0) return false;
         return now - this.lastShotTime >= this.cooldownDuration;
+    }
+
+    private async initializeAudio(): Promise<void> {
+        try {
+            await this.audioManager.initialize();
+            await this.audioManager.loadSound(
+                'playerShoot',
+                'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/sounds/retro-lazer.wav',
+            );
+            this.audioReady = true;
+        } catch (error) {
+            console.warn('Failed to initialize audio:', error);
+        }
     }
 
     shoot(shootDirection: Vector3): void {
@@ -53,6 +71,10 @@ export class CombatManager extends Object3D {
         this.scene.add(projectile);
 
         this.lastShotTime = performance.now() / 1000;
+
+        if (this.audioReady) {
+            this.audioManager.playSound('playerShoot', 0.5);
+        }
     }
 
     private checkCollisions(): void {
@@ -219,5 +241,6 @@ export class CombatManager extends Object3D {
 
         this.projectiles = [];
         this.enemyProjectiles = [];
+        this.audioManager.dispose();
     }
 }

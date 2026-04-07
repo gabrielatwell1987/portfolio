@@ -3,6 +3,7 @@ import { Enemy } from './Enemy';
 import type { Player } from '../players/Player';
 import type { World } from '../world';
 import type { Projectile } from '../combat/Projectile';
+import { AudioManager } from '../actions/AudioManager';
 
 export class EnemyManager extends Object3D {
     private enemies: Enemy[] = [];
@@ -14,12 +15,29 @@ export class EnemyManager extends Object3D {
     private maxEnemies: number = 3;
     private totalEnemiesSpawned: number = 0;
     private onEnemyKilled: (() => void) | null = null;
+    private audioManager: AudioManager;
+    private audioReady: boolean = false;
 
     constructor(player: Player, world: World, scene: Scene) {
         super();
         this.player = player;
         this.world = world;
         this.scene = scene;
+        this.audioManager = new AudioManager();
+        this.initializeAudio();
+    }
+
+    private async initializeAudio(): Promise<void> {
+        try {
+            await this.audioManager.initialize();
+            await this.audioManager.loadSound(
+                'enemyShoot',
+                'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/sounds/enemy-shot.mp3',
+            );
+            this.audioReady = true;
+        } catch (error) {
+            console.warn('Failed to initialize audio:', error);
+        }
     }
 
     private getRandomSpawnPosition(): Vector3 {
@@ -118,6 +136,11 @@ export class EnemyManager extends Object3D {
         for (const enemy of this.enemies) {
             if (enemy.canShoot()) {
                 enemy.shoot();
+
+                if (this.audioReady) {
+                    this.audioManager.playSound('enemyShoot', 0.3);
+                }
+
                 const dir = enemy.getFacingDirection(); // returns a clone
                 const pos = enemy.position
                     .clone()
@@ -158,5 +181,6 @@ export class EnemyManager extends Object3D {
             enemy.dispose();
         }
         this.enemies = [];
+        this.audioManager.dispose();
     }
 }
