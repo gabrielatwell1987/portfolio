@@ -2,7 +2,9 @@
     import { goto } from '$app/navigation';
     import { useSound } from '../utils/sound/uiSounds';
 
-    const { playSoundAsync: playHoverSound } = useSound('/sounds/ui_hover.wav');
+    const { playSoundAsync: playHoverSound } = useSound(
+        '/sounds/ui_bubble.wav',
+    );
 
     function navigateValue(value: string) {
         if (value === 'hire') {

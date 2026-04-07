@@ -5,21 +5,18 @@
     interface Props {
         href: string;
         title: string;
-        onclick?: (e: MouseEvent) => void | Promise<void>;
         viewTransitionName?: string;
         reverseUnderline?: boolean;
     }
     let {
         href,
         title,
-        onclick,
         viewTransitionName = undefined,
         reverseUnderline = false,
     }: Props = $props();
 
-    const { playSoundAsync: playHoverSound } = useSound('/sounds/ui_hover.wav');
-    const { playSoundAsync: playClickSound } = useSound(
-        '/sounds/ui_select.ogg',
+    const { playSoundAsync: playHoverSound } = useSound(
+        '/sounds/ui_bubble.wav',
     );
 
     // only apply view-transition-name when NOT on the target page
@@ -30,17 +27,11 @@
     async function handleUiSound() {
         await playHoverSound();
     }
-
-    async function handleClick(e: MouseEvent) {
-        await playClickSound();
-        await onclick?.(e);
-    }
 </script>
 
 <a
     class={`nav-link ${reverseUnderline ? 'reverse-underline' : ''}`}
     {href}
-    onclick={handleClick}
     onmouseenter={handleUiSound}
     style={shouldTransition
         ? `view-transition-name: ${viewTransitionName};`

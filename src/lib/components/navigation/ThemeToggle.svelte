@@ -122,7 +122,9 @@
         }
     }
 
-    const { playSoundAsync: playHoverSound } = useSound('/sounds/ui_hover.wav');
+    const { playSoundAsync: playHoverSound } = useSound(
+        '/sounds/ui_bubble.wav',
+    );
 
     async function handleMouseEnter() {
         await playHoverSound();

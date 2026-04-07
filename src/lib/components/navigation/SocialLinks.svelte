@@ -1,7 +1,9 @@
 <script lang="ts">
     import { useSound } from '../utils/sound/uiSounds';
 
-    const { playSoundAsync: playHoverSound } = useSound('/sounds/ui_hover.wav');
+    const { playSoundAsync: playHoverSound } = useSound(
+        '/sounds/ui_bubble.wav',
+    );
 </script>
 
 <nav class="footer" aria-label="Social media links">

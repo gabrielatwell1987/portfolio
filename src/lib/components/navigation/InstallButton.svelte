@@ -1,6 +1,7 @@
 <script lang="ts">
     import '@fortawesome/fontawesome-free/css/all.css';
     import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
+    import { useSound } from '../utils/sound/uiSounds';
 
     interface BeforeInstallPromptEvent extends Event {
         prompt(): Promise<void>;
@@ -13,6 +14,14 @@
     let isIOS = $state<boolean>(false);
     let shareFallback = $state<boolean>(false);
     let shareClicked = $state<boolean>(false);
+
+    const { playSoundAsync: playHoverSound } = useSound(
+        '/sounds/ui_bubble.wav',
+    );
+
+    async function handleUiSound() {
+        await playHoverSound();
+    }
 
     // Detect iOS
     $effect(() => {
@@ -89,7 +98,11 @@
 
 {#if isIOS}
     {#if !shareClicked}
-        <button aria-label="Share this app" onclick={shareApp}>
+        <button
+            aria-label="Share this app"
+            onclick={shareApp}
+            onmouseenter={handleUiSound}
+        >
             <i class="fa-solid fa-share-from-square"></i>
 
             <span class="desc">install</span>
@@ -138,6 +151,7 @@
     <button
         aria-label="Install this app as a PWA"
         onclick={installApp}
+        onmouseenter={handleUiSound}
         hidden={!isInstallable}
     >
         <i class="fa-solid fa-file-arrow-down"></i>
