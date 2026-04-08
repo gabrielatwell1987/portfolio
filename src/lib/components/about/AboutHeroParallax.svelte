@@ -1,8 +1,29 @@
 <script lang="ts">
     let container: HTMLElement;
     let scrollY = $state<number>(0);
+    let prefersReducedMotion = $state<boolean>(false);
 
     $effect(() => {
+        const mediaQuery = window.matchMedia(
+            '(prefers-reduced-motion: reduce)',
+        );
+        prefersReducedMotion = mediaQuery.matches;
+
+        const abortController = new AbortController();
+        const handleMediaChange = (event: MediaQueryListEvent) => {
+            prefersReducedMotion = event.matches;
+        };
+
+        mediaQuery.addEventListener('change', handleMediaChange, {
+            signal: abortController.signal,
+        });
+
+        return () => abortController.abort();
+    });
+
+    $effect(() => {
+        if (prefersReducedMotion) return;
+
         const abortController = new AbortController();
 
         const onScroll = () => {

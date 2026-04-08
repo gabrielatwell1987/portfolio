@@ -20,44 +20,72 @@
 
     // gsap
     $effect(() => {
-        gsap.set('.preloader', {
-            zIndex: 2147483647,
+        const mm = gsap.matchMedia();
+
+        mm.add('(prefers-reduced-motion: reduce)', () => {
+            gsap.set('.preloader', {
+                zIndex: 2147483647,
+            });
+
+            const validLines = lines.filter(
+                (line) => line !== undefined && line !== null,
+            );
+
+            if (validLines.length !== 10 || !preloaderElement) return;
+
+            gsap.set(validLines, { scaleX: 0 });
+            gsap.set(preloaderElement, { opacity: 0, pointerEvents: 'none' });
+
+            preloaderVisible = false;
+            preloaderState.done = true;
+
+            return () => {
+                // cleanup
+            };
         });
 
-        const validLines = lines.filter(
-            (line) => line !== undefined && line !== null,
-        );
-        if (validLines.length !== 10 || !preloaderElement) return;
+        mm.add('(prefers-reduced-motion: no-preference)', () => {
+            gsap.set('.preloader', {
+                zIndex: 2147483647,
+            });
 
-        const tl = gsap.timeline();
+            const validLines = lines.filter(
+                (line) => line !== undefined && line !== null,
+            );
+            if (validLines.length !== 10 || !preloaderElement) return;
 
-        // each line from right to left
-        tl.to(validLines, {
-            duration: 1.3,
-            scaleX: 0,
-            transformOrigin: 'right',
-            stagger: 0.1,
-            ease: 'power3.inOut',
-        });
+            const tl = gsap.timeline();
 
-        // fade out the entire preloader
-        tl.to(
-            preloaderElement,
-            {
-                duration: 0.5,
-                opacity: 0,
-                pointerEvents: 'none',
-                onComplete: () => {
-                    preloaderVisible = false;
-                    preloaderState.done = true;
+            // each line from right to left
+            tl.to(validLines, {
+                duration: 1.3,
+                scaleX: 0,
+                transformOrigin: 'right',
+                stagger: 0.1,
+                ease: 'power3.inOut',
+            });
+
+            // fade out the entire preloader
+            tl.to(
+                preloaderElement,
+                {
+                    duration: 0.5,
+                    opacity: 0,
+                    pointerEvents: 'none',
+                    onComplete: () => {
+                        preloaderVisible = false;
+                        preloaderState.done = true;
+                    },
                 },
-            },
-            '-=0.3',
-        );
+                '-=0.3',
+            );
 
-        return () => {
-            tl.kill();
-        };
+            return () => {
+                tl.kill();
+            };
+        });
+
+        return () => mm.revert();
     });
 </script>
 

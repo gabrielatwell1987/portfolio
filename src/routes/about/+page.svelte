@@ -36,33 +36,52 @@
     $effect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        const isMobile = window.matchMedia('(max-width: 768px)').matches;
-        const container = document.querySelector('.biography');
-        const targets = gsap.utils.toArray(
-            '.biography .bio-paragraph, .biography .three-button, .biography [data-flex-container]',
-        );
-        const startPoint = isMobile ? 'top 55%' : 'top 90%';
-        if (!targets.length) return;
+        const mm = gsap.matchMedia();
 
-        gsap.set(targets, { opacity: 0, y: 30 });
+        mm.add('(prefers-reduced-motion: reduce)', () => {
+            const targets = gsap.utils.toArray(
+                '.biography .bio-paragraph, .biography .three-button, .biography [data-flex-container]',
+            );
 
-        const scrollFade = gsap.to(targets, {
-            opacity: 1,
-            y: 0,
-            ease: 'power2.out',
-            duration: 2,
-            stagger: 0.5,
-            scrollTrigger: {
-                trigger: container,
-                start: startPoint,
-                scrub: 1,
-            },
+            gsap.set(targets, { opacity: 1, y: 0 });
+
+            return () => {
+                ScrollTrigger.getAll().forEach((t) => t.kill());
+            };
         });
 
-        return () => {
-            scrollFade?.kill();
-            ScrollTrigger.getAll().forEach((t) => t.kill());
-        };
+        mm.add('(prefers-reduced-motion: no-preference)', () => {
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            const container = document.querySelector('.biography');
+            const targets = gsap.utils.toArray(
+                '.biography .bio-paragraph, .biography .three-button, .biography [data-flex-container]',
+            );
+            const startPoint = isMobile ? 'top 55%' : 'top 90%';
+
+            if (!targets.length) return;
+
+            gsap.set(targets, { opacity: 0, y: 30 });
+
+            const scrollFade = gsap.to(targets, {
+                opacity: 1,
+                y: 0,
+                ease: 'power2.out',
+                duration: 2,
+                stagger: 0.5,
+                scrollTrigger: {
+                    trigger: container,
+                    start: startPoint,
+                    scrub: 1,
+                },
+            });
+
+            return () => {
+                scrollFade?.kill();
+                ScrollTrigger.getAll().forEach((t) => t.kill());
+            };
+        });
+
+        return () => mm.revert();
     });
 </script>
 

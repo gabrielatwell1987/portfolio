@@ -20,39 +20,58 @@
     }
 
     $effect(() => {
+        const mm = gsap.matchMedia();
+
         if (!element || !active) return;
 
         tileElements = new Array(TILE_COUNT);
 
         const order = shuffle(Array.from({ length: TILE_COUNT }, (_, i) => i));
-        let completed = 0;
         let cleanup: (() => void) | null = null;
 
-        tick().then(() => {
-            tileElements = Array.from(
-                element!.querySelectorAll<HTMLDivElement>('.tile'),
-            );
+        mm.add('(prefers-reduced-motion: reduce)', () => {
+            tick().then(() => {
+                tileElements = Array.from(
+                    element!.querySelectorAll<HTMLDivElement>('.tile'),
+                );
+                gsap.set(tileElements, { opacity: 0 });
+                active = false;
+            });
 
-            const nodes = order.map((i) => tileElements[i]).filter(Boolean);
-
-            const ctx = gsap.context(() => {
-                gsap.to(nodes, {
-                    opacity: 0,
-                    duration: 0.5,
-                    stagger: 0.1,
-                    ease: 'power2.out',
-                    onComplete: () => {
-                        active = false;
-                    },
-                });
-            }, element);
-
-            cleanup = () => ctx.revert();
+            return () => {
+                // cleanup
+            };
         });
 
-        return () => {
-            if (cleanup) cleanup();
-        };
+        mm.add('(prefers-reduced-motion: no-preference)', () => {
+            tick().then(() => {
+                tileElements = Array.from(
+                    element!.querySelectorAll<HTMLDivElement>('.tile'),
+                );
+
+                const nodes = order.map((i) => tileElements[i]).filter(Boolean);
+
+                const ctx = gsap.context(() => {
+                    gsap.to(nodes, {
+                        opacity: 0,
+                        duration: 0.5,
+                        stagger: 0.1,
+                        ease: 'power2.out',
+                        onComplete: () => {
+                            active = false;
+                        },
+                    });
+                }, element);
+
+                cleanup = () => ctx.revert();
+            });
+
+            return () => {
+                if (cleanup) cleanup();
+            };
+        });
+
+        return () => mm.revert();
     });
 </script>
 

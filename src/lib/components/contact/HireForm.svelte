@@ -60,7 +60,6 @@
             abortController.abort();
         };
     });
-    // end of android fallback
 </script>
 
 <A11yAnnouncer message={submitStatus} />

@@ -13,48 +13,59 @@
     let { title, viewTransitionName }: Props = $props();
 
     function titleRotate() {
-        gsap.registerPlugin(SplitText, ScrollTrigger);
+        const mm = gsap.matchMedia();
 
-        const split = new SplitText('#title', { type: 'chars' });
-        const titleElement = document.getElementById('title');
-        const isMobile = window.innerWidth <= 768;
-
-        // initial animation
-        gsap.from(split.chars, {
-            opacity: 0,
-            yPercent: -40,
-            duration: 1,
-            ease: 'power2.out',
-            stagger: {
-                each: 0.2,
-                from: 'random',
-                amount: 0.5,
-            },
+        mm.add('(prefers-reduced-motion: reduce)', () => {
+            // If the user prefers reduced motion, skip the animation
+            return () => {};
         });
 
-        // 3d rotation on scroll
-        if (!isMobile) {
-            split.chars.forEach((char, index) => {
-                gsap.to(char, {
-                    scrollTrigger: {
-                        trigger: titleElement,
-                        start: `top ${70 - index * 2.75}%`,
-                        end: `bottom ${70 - index * 2.75}%`,
-                        scrub: 1,
-                    },
-                    rotationX: 360,
-                    transformOrigin: 'center center',
-                    ease: 'none',
-                });
-            });
-        }
+        mm.add('(prefers-reduced-motion: no-preference)', () => {
+            gsap.registerPlugin(SplitText, ScrollTrigger);
 
-        return () => {
-            gsap.killTweensOf(split.chars);
-            gsap.killTweensOf(titleElement);
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-            split.revert();
-        };
+            const split = new SplitText('#title', { type: 'chars' });
+            const titleElement = document.getElementById('title');
+            const isMobile = window.innerWidth <= 768;
+
+            // initial animation
+            gsap.from(split.chars, {
+                opacity: 0,
+                yPercent: -40,
+                duration: 1,
+                ease: 'power2.out',
+                stagger: {
+                    each: 0.2,
+                    from: 'random',
+                    amount: 0.5,
+                },
+            });
+
+            // 3d rotation on scroll
+            if (!isMobile) {
+                split.chars.forEach((char, index) => {
+                    gsap.to(char, {
+                        scrollTrigger: {
+                            trigger: titleElement,
+                            start: `top ${70 - index * 2.75}%`,
+                            end: `bottom ${70 - index * 2.75}%`,
+                            scrub: 1,
+                        },
+                        rotationX: 360,
+                        transformOrigin: 'center center',
+                        ease: 'none',
+                    });
+                });
+            }
+
+            return () => {
+                gsap.killTweensOf(split.chars);
+                gsap.killTweensOf(titleElement);
+                ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+                split.revert();
+            };
+        });
+
+        return () => mm.revert();
     }
 
     $effect(() => {

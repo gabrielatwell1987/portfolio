@@ -66,39 +66,53 @@
 
     // GSAP scroll effect
     $effect(() => {
+        const mm = gsap.matchMedia();
+
         if (!showProjects) return;
 
-        gsap.registerPlugin(ScrollTrigger);
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-
-        if (prefersReducedMotion) {
+        mm.add('(prefers-reduced-motion: reduce)', () => {
             gsap.set('.wholeProject', {
                 opacity: 1,
                 y: 0,
                 clearProps: 'transform',
             });
-            return;
-        }
-
-        gsap.set('.wholeProject', { opacity: 0, y: 30 });
-
-        ScrollTrigger.batch('.wholeProject', {
-            onEnter: (batch) => {
-                gsap.to(batch, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.8,
-                    stagger: 0.3,
-                    ease: 'power2.out',
-                });
-            },
-            start: 'top 80%',
-            once: true,
         });
 
-        return () => {
+        mm.add('(prefers-reduced-motion: no-preference)', () => {
+            gsap.registerPlugin(ScrollTrigger);
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        };
+
+            if (prefersReducedMotion) {
+                gsap.set('.wholeProject', {
+                    opacity: 1,
+                    y: 0,
+                    clearProps: 'transform',
+                });
+                return;
+            }
+
+            gsap.set('.wholeProject', { opacity: 0, y: 30 });
+
+            ScrollTrigger.batch('.wholeProject', {
+                onEnter: (batch) => {
+                    gsap.to(batch, {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        stagger: 0.3,
+                        ease: 'power2.out',
+                    });
+                },
+                start: 'top 80%',
+                once: true,
+            });
+
+            return () => {
+                ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+            };
+        });
+
+        return () => mm.revert();
     });
 </script>
 

@@ -80,64 +80,75 @@
 
     // gsap
     $effect(() => {
-        if (!mounted) return;
-        if (prefersReducedMotion) return;
+        const mm = gsap.matchMedia();
 
-        gsap.registerPlugin(ScrollTrigger);
-
-        const ctx = gsap.context(() => {
-            const paragraphs = document.querySelectorAll('.content p');
-            const codeBlocks = document.querySelectorAll('pre');
-
-            codeBlocks.forEach((pre) => {
-                const code = pre.querySelector('code');
-                const targets = code ? [pre, code] : pre;
-
-                gsap.fromTo(
-                    targets,
-                    {
-                        x: 100,
-                        opacity: 0,
-                    },
-                    {
-                        x: 0,
-                        opacity: 1,
-                        duration: 1,
-                        overflow: 'hidden',
-                        ease: 'power2.out',
-                        scrollTrigger: {
-                            trigger: pre,
-                            start: 'top center+=450',
-                        },
-                    },
-                );
-            });
-
-            paragraphs.forEach((para) => {
-                gsap.fromTo(
-                    para,
-                    {
-                        x: -100,
-                        opacity: 0,
-                    },
-                    {
-                        x: 0,
-                        opacity: 1,
-                        duration: 1,
-                        ease: 'power2.out',
-                        scrollTrigger: {
-                            trigger: para,
-                            start: 'top center+=450',
-                        },
-                    },
-                );
-            });
+        mm.add('(prefers-reduced-motion: reduce)', () => {
+            if (prefersReducedMotion) {
+                gsap.set('.content p, pre', { opacity: 1, x: 0 });
+            }
         });
 
-        return () => {
-            ctx.revert();
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        };
+        mm.add('(prefers-reduced-motion: no-preference)', () => {
+            if (!mounted) return;
+            if (prefersReducedMotion) return;
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            const ctx = gsap.context(() => {
+                const paragraphs = document.querySelectorAll('.content p');
+                const codeBlocks = document.querySelectorAll('pre');
+
+                codeBlocks.forEach((pre) => {
+                    const code = pre.querySelector('code');
+                    const targets = code ? [pre, code] : pre;
+
+                    gsap.fromTo(
+                        targets,
+                        {
+                            x: 100,
+                            opacity: 0,
+                        },
+                        {
+                            x: 0,
+                            opacity: 1,
+                            duration: 1,
+                            overflow: 'hidden',
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: pre,
+                                start: 'top center+=450',
+                            },
+                        },
+                    );
+                });
+
+                paragraphs.forEach((para) => {
+                    gsap.fromTo(
+                        para,
+                        {
+                            x: -100,
+                            opacity: 0,
+                        },
+                        {
+                            x: 0,
+                            opacity: 1,
+                            duration: 1,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: para,
+                                start: 'top center+=450',
+                            },
+                        },
+                    );
+                });
+            });
+
+            return () => {
+                ctx.revert();
+                ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+                mm.revert();
+            };
+        });
     });
 
     // highlight.js
