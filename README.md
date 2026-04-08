@@ -1,6 +1,6 @@
 # Gabriel Atwell's Portfolio
 
-<img src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/shieldy.webp" width="300" height="auto" alt="Shieldy logo" />
+<img src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/shieldy.webp" width="300" height="auto" alt="Shieldy logo" style="margin-left: 10em;" />
 
 [https://gabrielatwell.com](https://gabrielatwell.com)
 
