@@ -67,8 +67,6 @@
             <h2>select a component to view</h2>
         {/if}
     </div>
-
-    <h1>test</h1>
 </div>
 
 <style>
