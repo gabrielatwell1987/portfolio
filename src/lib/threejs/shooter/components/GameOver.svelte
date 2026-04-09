@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { AudioManager } from '../actions/AudioManager';
+
     interface Props {
         isGameOver?: boolean;
         onRestart: () => void;
@@ -7,8 +9,28 @@
 
     let { isGameOver = false, onRestart, won = false }: Props = $props();
     let isClosing = $state(false);
+    let audioManager = $state<AudioManager | null>(null);
+
+    $effect(() => {
+        if (!audioManager) {
+            const manager = new AudioManager();
+            audioManager = manager;
+
+            manager.initialize().then(() => {
+                manager.loadSound('buttonClick', '/sounds/game_select.wav');
+                manager.loadSound('gameOverOpen', '/sounds/ui_bubble.wav');
+            });
+        }
+    });
+
+    $effect(() => {
+        if (isGameOver && audioManager && !isClosing) {
+            audioManager.playSound('gameOverOpen', 0.6);
+        }
+    });
 
     function handleRestart(): void {
+        audioManager?.playSound('buttonClick', 0.75);
         isClosing = true;
         setTimeout(() => {
             isClosing = false;
