@@ -9,7 +9,7 @@
 	},
 	"scripts": {
 		"dev": "vite dev --host --open",
-		"build": "git config user.email 'build@cloudflare.com' && git config user.name 'Cloudflare Build' && pnpm exec standard-version --release-as patch && vite build",
+		"build": "vite build",
 		"preview": "vite preview --host",
 		"lint": "oxlint .",
 		"format": "oxfmt --write .",
