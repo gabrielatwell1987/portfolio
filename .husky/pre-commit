@@ -1,6 +1,0 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-git config user.email "build@cloudflare.com"
-git config user.name "Cloudflare Build"
-pnpm exec standard-version --release-as patch
