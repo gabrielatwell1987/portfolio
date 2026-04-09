@@ -3,4 +3,12 @@
 
 git config user.email "build@cloudflare.com"
 git config user.name "Cloudflare Build"
-pnpm exec standard-version --release-as patch
+pnpm exec standard-version --release-as patchPS C:\Users\Gatwe\Desktop\Projects\portfolio> chmod +x .husky/pre-commit
+chmod : The term 'chmod' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct
+and try again.
+At line:1 char:1
++ chmod +x .husky/pre-commit
++ ~~~~~
+    + CategoryInfo          : ObjectNotFound: (chmod:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
