@@ -2,21 +2,22 @@
     interface Props {
         width: number;
         thickness: number;
+        color: string;
     }
 
-    let { width, thickness }: Props = $props();
+    let { width, thickness, color }: Props = $props();
 </script>
 
 <hr
     class="divider"
     style="--width: {width}%; --thickness: {thickness}px; --min-width: {width /
-        2}%; --max-inline-size: {width}%;"
+        2}%; --max-inline-size: {width}%; --color: {color}"
 />
 
 <style>
     .divider {
         width: var(--width);
-        background-color: var(--clr-gray);
+        background-color: var(--color);
         height: var(--thickness);
         margin-inline: auto;
         margin-bottom: 4rem;

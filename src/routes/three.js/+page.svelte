@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Divider from '$lib/components/learn/Divider.svelte';
     import SEO from '$lib/data/SEO.svelte';
     import type { Component } from 'svelte';
 
@@ -65,6 +66,12 @@
             <SelectedComponent />
         {:else if selectedComponent === 'Select'}
             <h2>select a component to view</h2>
+
+            <Divider
+                width={40}
+                thickness={5}
+                color="var(--clr-main-light-fade)"
+            />
 
             <p>
                 be advised that these components will still work even if you
