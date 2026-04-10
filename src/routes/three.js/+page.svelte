@@ -65,6 +65,11 @@
             <SelectedComponent />
         {:else if selectedComponent === 'Select'}
             <h2>select a component to view</h2>
+
+            <p>
+                be advised that these components will still work even if you
+                have animation effects off.
+            </p>
         {/if}
     </div>
 </div>
@@ -125,6 +130,15 @@
                 @media (width <= 768px) {
                     text-shadow: 1px 1px 0 var(--clr-main);
                 }
+            }
+
+            & p {
+                color: var(--clr-light-gray);
+                font-family: var(--bronova);
+                font-size: clamp(var(--sm), 1.25vw, var(--h5));
+                text-align: center;
+                margin-top: 1em;
+                max-inline-size: 600px;
             }
         }
     }
