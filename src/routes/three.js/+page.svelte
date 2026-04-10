@@ -68,7 +68,7 @@
 
             <p>
                 be advised that these components will still work even if you
-                have animation effects off.
+                have animation effects turned off.
             </p>
         {/if}
     </div>
@@ -133,9 +133,10 @@
             }
 
             & p {
-                color: var(--clr-light-gray);
+                color: var(--clr-main);
                 font-family: var(--bronova);
                 font-size: clamp(var(--sm), 1.25vw, var(--h5));
+                font-weight: 500;
                 text-align: center;
                 margin-top: 1em;
                 max-inline-size: 600px;
