@@ -16,7 +16,8 @@
 		"format:svelte": "prettier --write \"src/**/*.svelte\"",
 		"test": "vitest",
 		"check": "svelte-check",
-		"skills:add": "skills add https://github.com/greensock/gsap-skills"
+		"skills:add": "skills add https://github.com/greensock/gsap-skills",
+		"logs": "wrangler tail --env production"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^6.1.0",
