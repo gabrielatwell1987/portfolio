@@ -22,10 +22,10 @@
         margin-inline: auto;
         margin-bottom: 4rem;
         border: none;
-        border-top-left-radius: 2px;
-        border-top-right-radius: 2px;
-        border-bottom-left-radius: 2px;
-        border-bottom-right-radius: 2px;
+        border-top-left-radius: var(--radius);
+        border-top-right-radius: var(--radius);
+        border-bottom-left-radius: var(--radius);
+        border-bottom-right-radius: var(--radius);
         opacity: 0.5;
     }
 

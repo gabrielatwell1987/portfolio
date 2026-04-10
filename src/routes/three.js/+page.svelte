@@ -2,6 +2,7 @@
     import Divider from '$lib/components/learn/Divider.svelte';
     import SEO from '$lib/data/SEO.svelte';
     import type { Component } from 'svelte';
+    import { clamp } from 'three/src/math/MathUtils.js';
 
     type ComponentType = Component<Record<string, never>>;
 
@@ -69,7 +70,7 @@
 
             <Divider
                 width={40}
-                thickness={5}
+                thickness={8}
                 color="var(--clr-main-light-fade)"
             />
 
