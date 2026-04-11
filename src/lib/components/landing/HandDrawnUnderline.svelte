@@ -40,7 +40,7 @@
     .underline-path {
         stroke-dasharray: 900;
         stroke-dashoffset: 600;
-        animation: dash 2s ease-out forwards;
+        animation: dash 4s ease-out forwards;
     }
 
     @keyframes dash {
