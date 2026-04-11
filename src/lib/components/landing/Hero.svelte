@@ -8,6 +8,7 @@
     import HeroButton from './HeroButton.svelte';
     import ProjectsGrid from './ProjectsGrid.svelte';
     import UltraA from './UltraA.svelte';
+    import HandDrawnUnderline from './HandDrawnUnderline.svelte';
 
     interface Particle {
         id: number;
@@ -223,6 +224,12 @@
                                 >{char}</span
                             >
                         {/each}
+
+                        {#if wordIndex === 0}
+                            <div class="underline-wrapper">
+                                <HandDrawnUnderline width={100} height={50} />
+                            </div>
+                        {/if}
                     </span>
                 {/each}
             </h1>
@@ -466,9 +473,17 @@
                     font-size: clamp(var(--h3), 5vw, var(--xl));
                     color: var(--clr-invert);
                     text-shadow: 0 0 10px var(--clr-bright-blue);
+                    display: inline-block;
+                }
 
+                & .underline-wrapper {
                     display: flex;
-                    gap: clamp(0.1em, 1vw, 0.5em);
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: -1.5em;
+                    margin-left: 0.75em;
+                    margin-bottom: -0.5em;
                 }
 
                 & .word {
