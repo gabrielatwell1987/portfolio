@@ -442,9 +442,9 @@
                 font-weight: 700;
                 color: var(--clr-invert);
                 text-shadow:
-                    0 0 4px var(--clr-main),
-                    0 0 6px var(--clr-main),
-                    0 0 7px var(--clr-main);
+                    0 0 4px var(--clr-main-fade),
+                    0 0 6px var(--clr-main-fade),
+                    0 0 7px var(--clr-main-fade);
                 line-height: 1;
                 margin: 0;
                 margin-bottom: 0.2em;
@@ -459,6 +459,16 @@
                 @media (height <= 768px) {
                     line-height: 1.1;
                     margin-bottom: 1em;
+                }
+
+                & .word:first-child {
+                    font-family: var(--bronova-bold);
+                    font-size: clamp(var(--h3), 5vw, var(--xl));
+                    color: var(--clr-invert);
+                    text-shadow: 0 0 10px var(--clr-bright-blue);
+
+                    display: flex;
+                    gap: clamp(0.1em, 1vw, 0.5em);
                 }
 
                 & .word {

@@ -422,7 +422,9 @@
             --white-gray: oklch(0.8297 0 0 / 90.2%);
             --white: oklch(0.8853 0 0 / 90.2%);
             --sky: oklch(0.726 0.1068 207.66 / 50.2%);
+            --light-sky: oklch(0.726 0.1068 207.66 / 80.2%);
             --purple: oklch(0.6383 0.1895 268.76 / 60%);
+            --light-purple: oklch(0.6383 0.1895 268.76 / 80%);
             --yellow: oklch(0.7292 0.148 87.23 / 74.9%);
             --dark-blue: oklch(0.3506 0.0844 244.06 / 74.9%);
             --darker-blue: oklch(0.288 0.061 240.78 / 74.9%);
@@ -453,6 +455,7 @@
                 oklch(0.2982 0.0014 17.24)
             );
 
+            --clr-bright-blue: light-dark(var(--success), var(--light-sky));
             --clr-blue: light-dark(var(--dark-blue), var(--sky));
             --clr-sky: light-dark(var(--sky), var(--sky));
             --clr-pale: light-dark(var(--yellow), var(--pale));
@@ -460,6 +463,7 @@
             --clr-green: light-dark(var(--success-dark), var(--success-light));
             --clr-button-text: light-dark(var(--blackest), var(--white));
             --clr-button: light-dark(var(--yellow), var(--purple));
+            --clr-light-button: light-dark(var(--purple), var(--light-purple));
             --sun: light-dark(var(--yellow), var(--pale));
             --moon: light-dark(var(--dark-blue), var(--sky));
             --opacity: light-dark(1, 0.85);
