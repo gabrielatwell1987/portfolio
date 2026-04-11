@@ -261,7 +261,7 @@
         & .button-positioning {
             position: absolute;
             position-anchor: --form-container;
-            inset-block-start: calc(anchor(top) - 5em);
+            inset-block-start: calc(anchor(top) - 1em);
             inset-inline-end: calc(anchor(right) + 1em);
 
             @media (width >= 768px) and (width <= 1024px) {

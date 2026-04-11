@@ -67,9 +67,9 @@
             }
 
             .bigWord {
-                inline-size: 100vw;
+                inline-size: 100%;
                 font-family: var(--ultra);
-                font-size: clamp(var(--h4), 10vw + 1.2em, 20rem);
+                font-size: clamp(var(--h4), 12vw + 0.25em, 20rem);
                 text-wrap: none;
                 display: block;
                 letter-spacing: 1px;

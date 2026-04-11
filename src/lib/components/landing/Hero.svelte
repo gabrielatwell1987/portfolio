@@ -2,7 +2,6 @@
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import projects from '$lib/components/projects/projects.json';
-    import DoYouNeed from './DoYouNeed.svelte';
     // import Ribbons from '$lib/threejs/ribbon/Ribbons.svelte';
     import Tunnel from '$lib/threejs/tunnel/Tunnel.svelte';
     import HeroButton from './HeroButton.svelte';
@@ -292,10 +291,6 @@
                 </dl>
             </section>
         </div>
-
-        <div class="do-you-need">
-            <DoYouNeed text="do you need a " span="website?" />
-        </div>
     </section>
 </article>
 
@@ -430,10 +425,6 @@
 
         @media (width <= 768px) {
             padding: 1rem;
-        }
-
-        & .do-you-need {
-            margin-top: -9em;
         }
 
         & .title-container {

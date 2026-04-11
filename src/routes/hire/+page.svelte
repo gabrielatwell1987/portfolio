@@ -1,7 +1,8 @@
 <script lang="ts">
     import HireForm from '$lib/components/contact/HireForm.svelte';
+    import DoYouNeed from '$lib/components/contact/DoYouNeed.svelte';
     import SEO from '$lib/data/SEO.svelte';
-    import Heading from '$lib/components/layout/Heading.svelte';
+    // import Heading from '$lib/components/layout/Heading.svelte';
 </script>
 
 <SEO
@@ -11,12 +12,13 @@
 />
 
 <div class="hire-form">
-    <Heading
+    <!-- <Heading
         title="employ"
         title2="employ"
         viewTransitionName="employ-heading"
         popoverText="Please fill out this questionnaire and I'll contact you back 😎"
-    />
+    /> -->
+    <DoYouNeed text="do you need a " span="website?" />
 
     <section class="hire-form-wrapper">
         <HireForm />
