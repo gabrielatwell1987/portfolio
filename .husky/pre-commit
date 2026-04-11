@@ -1,18 +1,18 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# Fix PATH issues on Windows + VS Code (very important for pnpm)
+# Fix PATH so pnpm works reliably from VS Code Source Control
 export PATH="$(pnpm bin):$PATH"
 
-echo "🔄 Bumping patch version..."
+echo "🔄 Automatically bumping patch version (0.0.1)..."
 
-# Bump version by 0.0.1 (patch)
+# Bump version by one patch
 pnpm version patch --no-git-tag-version
 
-# Update pnpm lockfile
+# Update pnpm-lock.yaml
 pnpm install --lockfile-only
 
-echo "✅ Version bumped and lockfile updated. Staging files..."
+echo "✅ Version bumped + lockfile updated. Files staged."
 
-# Stage the version changes so they go into this commit
+# Stage the version changes so they become part of this commit
 git add package.json pnpm-lock.yaml
