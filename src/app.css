@@ -60,6 +60,7 @@
         --sm: calc(var(--base-size) / var(--scale));
         --xs: calc(var(--sm) / var(--scale));
         --xxs: calc(var(--xs) / var(--scale));
+        --xxxs: calc(var(--xxs) / var(--scale));
 
         /* filters */
         --image-filter: grayscale(80%) brightness(80%);

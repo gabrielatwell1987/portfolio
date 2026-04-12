@@ -25,6 +25,17 @@
     let isPaused = $state(false);
     let ammo = $state<number | null>(null);
 
+    let playerScreenPos = $state({ x: 0, y: 0 });
+    let enemyHealthBars = $state<
+        Array<{
+            id: string;
+            x: number;
+            y: number;
+            health: number;
+            maxHealth: number;
+        }>
+    >([]);
+
     function handleRestart(): void {
         isGameOver = false;
         playerHealth = 10;
@@ -148,6 +159,61 @@
                 enemyManager.update(dt);
             }
 
+            // calculate player's screen position
+            if (gameState?.player && gameState?.camera) {
+                const playerWorldPos = gameState.player.position.clone();
+                const vector = playerWorldPos.project(gameState.camera);
+
+                const screenX = (vector.x * 0.5 + 0.5) * window.innerWidth;
+                const screenY = -(vector.y * 0.5 - 0.5) * window.innerHeight;
+
+                playerScreenPos = { x: screenX, y: screenY - 125 };
+            }
+
+            // calculate enemy screen positions
+            if (gameState?.camera && gameState?.enemyManager) {
+                const enemies = gameState.enemyManager.getEnemies?.() || [];
+                enemyHealthBars = enemies
+                    .map((enemy: any) => {
+                        try {
+                            if (!gameState?.camera) return null;
+                            const enemyWorldPos = enemy.position.clone();
+                            const vector = enemyWorldPos.project(
+                                gameState.camera,
+                            );
+
+                            const screenX =
+                                (vector.x * 0.5 + 0.5) * window.innerWidth;
+                            const screenY =
+                                -(vector.y * 0.5 - 0.5) * window.innerHeight;
+
+                            const health = enemy.getHealth?.() || 0;
+                            const maxHealth = enemy.getMaxHealth?.() || 100;
+
+                            return {
+                                id: String(enemy.id || Math.random()),
+                                x: screenX,
+                                y: screenY - 125,
+                                health: Number(health),
+                                maxHealth: Number(maxHealth),
+                            };
+                        } catch (e) {
+                            return null;
+                        }
+                    })
+                    .filter(
+                        (
+                            bar: any,
+                        ): bar is {
+                            id: string;
+                            x: number;
+                            y: number;
+                            health: number;
+                            maxHealth: number;
+                        } => bar !== null,
+                    );
+            }
+
             // update UI
             if (mobileJoystick) {
                 joystickX = mobileJoystick.getJoystickX();
@@ -157,6 +223,7 @@
             const combatManager = player.getCombatManager();
             playerHealth = combatManager.getPlayerHealth();
             maxPlayerHealth = combatManager.getMaxPlayerHealth();
+
             // update ammo display
             try {
                 ammo = combatManager.getPlayerAmmo();
@@ -223,14 +290,25 @@
     onPause={() => (isPaused = true)}
     onResume={() => (isPaused = false)}
 />
-<HealthBar {playerHealth} {maxPlayerHealth} />
+<HealthBar {playerHealth} {maxPlayerHealth} screenPos={playerScreenPos} />
+{#each enemyHealthBars as enemy (enemy.id)}
+    <HealthBar
+        playerHealth={enemy.health}
+        maxPlayerHealth={enemy.maxHealth}
+        screenPos={{ x: enemy.x, y: enemy.y }}
+    />
+{/each}
 <GameOver {isGameOver} {won} onRestart={handleRestart} />
 {#if !isMobile}
     <Directions bind:showDirections />
 {/if}
 
 <div class="mobile-wrapper">
-    <canvas class="webgl" bind:this={canvas} data-testing="scene-canvas"
+    <canvas
+        class="webgl"
+        bind:this={canvas}
+        data-testing="scene-canvas"
+        style="anchor-name: --health-anchor;"
     ></canvas>
 
     <!-- mobile joystick -->
