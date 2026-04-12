@@ -28,9 +28,15 @@
     let titleText = 'Handcrafted Frontend Interfaces';
     let titleWords = $derived(titleText.split(' '));
     let displayedTitle = $state<string[]>(
-        titleText
-            .split('')
-            .map((char) => (char === ' ' ? ' ' : getRandomChar())),
+        titleText.split('').map((char, index) => {
+            const wordIndex = getWordIndexFromCharIndex(index);
+
+            // keep Handcrafted as is, randomize the rest
+            if (wordIndex === 0) {
+                return char;
+            }
+            return char === ' ' ? ' ' : getRandomChar();
+        }),
     );
     let showContent = $state<boolean>(false);
     let particles = $state<Particle[]>([]);
@@ -55,8 +61,18 @@
         };
     }
 
-    $effect(() => {
-        mounted = true;
+    function getWordIndexFromCharIndex(index: number): number {
+        let charCount = 0;
+        for (let i = 0; i < titleWords.length; i++) {
+            if (index < charCount + titleWords[i].length) {
+                return i;
+            }
+            charCount += titleWords[i].length + 1;
+        }
+        return 0;
+    }
+
+    function animateTitle() {
         const prefersReducedMotion = window.matchMedia(
             '(prefers-reduced-motion: reduce)',
         ).matches;
@@ -64,25 +80,68 @@
         if (prefersReducedMotion) {
             displayedTitle = titleText.split('');
             showContent = true;
-        } else {
-            titleText.split('').forEach((targetChar, index) => {
-                if (targetChar === ' ') return;
+            return;
+        }
 
-                let iterations = 0;
-                const interval = setInterval(
-                    () => {
-                        displayedTitle[index] =
-                            iterations >= 3 ? targetChar : getRandomChar();
-                        displayedTitle = [...displayedTitle];
-                        iterations++;
-                        if (iterations > 3) clearInterval(interval);
-                    },
-                    250 + index * 10,
-                );
+        // animation state for each character
+        const animState = titleText.split('').map((char, index) => ({
+            index,
+            char,
+            iterations: 0,
+            shouldAnimate: char !== ' ' && getWordIndexFromCharIndex(index) > 0,
+        }));
+
+        const startTime = Date.now();
+        const animationDuration = 1800;
+
+        const animate = () => {
+            const elapsed = Date.now() - startTime;
+            const isComplete = elapsed > animationDuration;
+
+            let hasUpdates = false;
+
+            animState.forEach((state) => {
+                if (!state.shouldAnimate) return;
+
+                const delay = state.index * 20; // Reduced from 30 to 20 for faster reveal
+                if (elapsed < delay) return;
+
+                const timeSinceStart = elapsed - delay;
+                const iterations = Math.floor(timeSinceStart / 80); // Reduced from 100 for faster animation
+
+                if (iterations !== state.iterations) {
+                    hasUpdates = true;
+                    state.iterations = iterations;
+                    displayedTitle[state.index] =
+                        iterations >= 2 ? state.char : getRandomChar(); // Reduced from 3 to 2 iterations
+                }
             });
 
-            setTimeout(() => (showContent = true), 1300);
-        }
+            if (hasUpdates) {
+                displayedTitle = [...displayedTitle];
+            }
+
+            if (!isComplete) {
+                requestAnimationFrame(animate);
+            }
+        };
+
+        requestAnimationFrame(animate);
+        setTimeout(() => (showContent = true), 1300);
+    }
+
+    $effect(() => {
+        if (!mounted) return;
+
+        animateTitle();
+    });
+
+    $effect(() => {
+        mounted = true;
+
+        const prefersReducedMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)',
+        ).matches;
 
         // particle
         if (!prefersReducedMotion) {
@@ -215,6 +274,7 @@
                 <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
                 {#each titleWords as _, wordIndex}
                     {@const wordData = getWordChars(wordIndex)}
+
                     <span class="word">
                         {#each wordData.chars as char, charIndex}
                             <span
@@ -463,7 +523,8 @@
                     font-family: var(--bronova-bold);
                     font-size: clamp(var(--h3), 5vw, var(--xl));
                     color: var(--clr-invert);
-                    text-shadow: 0 0 10px var(--clr-bright-blue);
+                    text-shadow: 0 0 5px var(--clr-main);
+                    -webkit-text-stroke: 2px var(--clr-main);
                     display: inline-block;
                 }
 
