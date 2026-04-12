@@ -524,8 +524,13 @@
                     font-size: clamp(var(--h3), 5vw, var(--xl));
                     color: var(--clr-invert);
                     text-shadow: 0 0 5px var(--clr-main);
-                    -webkit-text-stroke: 2px var(--clr-main);
+                    -webkit-text-stroke: 0.05rem var(--clr-main);
                     display: inline-block;
+
+                    @media (width <= 768px) {
+                        text-shadow: 0 0 5px var(--clr-main);
+                        -webkit-text-stroke: 0.02rem var(--clr-main);
+                    }
                 }
 
                 & .underline-wrapper {
