@@ -21,7 +21,7 @@
         <span class="subtitle">{text}</span>
 
         <a href="/three.js"
-            ><span class="bigWord glow">
+            ><span class="bigWord">
                 {#each chars as char, i}
                     <span class="char" style="--delay: {0.05 + i * 0.5}s"
                         >{char}</span
@@ -45,7 +45,6 @@
             font-family: var(--bronova);
             font-size: clamp(1.25rem, 2.25vw, 10rem);
             font-weight: 100;
-            color: var(--clr-main);
             text-align: center;
             margin: 0;
             padding: 2rem;
@@ -75,21 +74,6 @@
                 letter-spacing: 1px;
                 line-height: 1.2;
 
-                @media (width <= 768px) {
-                    margin-top: 2%;
-                }
-
-                .char {
-                    display: inline-block;
-                    transform: translateX(150%);
-                    opacity: 0;
-                    animation: charAnimation 3s
-                        cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
-                    animation-delay: calc(var(--delay) + 2.25s);
-                }
-            }
-
-            .glow {
                 color: var(--clr-invert);
                 text-shadow:
                     0 0 5px var(--clr-main),
@@ -104,6 +88,19 @@
                         0 0 3px var(--clr-main-fade),
                         0 0 3px var(--clr-main-fade),
                         0 0 3px var(--clr-main-fade);
+                }
+
+                @media (width <= 768px) {
+                    margin-top: 2%;
+                }
+
+                .char {
+                    display: inline-block;
+                    transform: translateX(150%);
+                    opacity: 0;
+                    animation: charAnimation 3s
+                        cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+                    animation-delay: calc(var(--delay) + 2.25s);
                 }
             }
 
