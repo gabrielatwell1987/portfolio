@@ -74,8 +74,8 @@
                 letter-spacing: 1px;
                 line-height: 1.2;
 
-                color: var(--clr-invert);
-                text-shadow:
+                color: transparent;
+                /* text-shadow:
                     0 0 5px var(--clr-main),
                     0 0 6px var(--clr-main),
                     0 0 7px var(--clr-main);
@@ -88,7 +88,7 @@
                         0 0 3px var(--clr-main-fade),
                         0 0 3px var(--clr-main-fade),
                         0 0 3px var(--clr-main-fade);
-                }
+                } */
 
                 @media (width <= 768px) {
                     margin-top: 2%;
@@ -101,6 +101,15 @@
                     animation: charAnimation 3s
                         cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
                     animation-delay: calc(var(--delay) + 2.25s);
+
+                    background-image: url('https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/gray-wood.webp');
+                    background-size: cover;
+                    background-position: center;
+                    background-attachment: fixed;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    color: transparent;
                 }
             }
 
