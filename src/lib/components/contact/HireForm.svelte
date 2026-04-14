@@ -239,9 +239,6 @@
 
         @media (width <= 768px) {
             padding: 0.5rem;
-        }
-
-        @media (width <= 500px) {
             overflow-y: auto;
         }
 

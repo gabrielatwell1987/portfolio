@@ -16,11 +16,11 @@
 
         const tl = gsap.timeline({
             defaults: {
-                duration: 2,
+                duration: 3,
                 ease: 'power2.out',
             },
 
-            delay: 0.5,
+            delay: 3,
         });
 
         tl.to('#square1', { morphSVG: '#G' })
