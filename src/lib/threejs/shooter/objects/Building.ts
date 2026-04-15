@@ -34,7 +34,8 @@ export class Building {
     ): Promise<Group> {
         const group = new Group();
         const models = [buildingA, buildingB];
-        const padding = 2;
+        const padding = 3;
+        const buildingSpacing = 4;
         const placedBuildings = new Set<string>();
 
         for (let i = 0; i < count; i++) {
@@ -42,9 +43,9 @@ export class Building {
             let cellZ: number;
             let cellKey: string;
             let attempts = 0;
-            const maxAttempts = 50;
+            const maxAttempts = 100;
 
-            // find unoccupied cell
+            // find unoccupied cell with spacing
             do {
                 cellX =
                     Math.floor(Math.random() * (width - padding * 2)) + padding;
@@ -53,7 +54,16 @@ export class Building {
                     padding;
                 cellKey = `${cellX},${cellZ}`;
                 attempts++;
-            } while (placedBuildings.has(cellKey) && attempts < maxAttempts);
+            } while (
+                (placedBuildings.has(cellKey) ||
+                    this.isNearExistingBuilding(
+                        cellX,
+                        cellZ,
+                        placedBuildings,
+                        buildingSpacing,
+                    )) &&
+                attempts < maxAttempts
+            );
 
             if (attempts >= maxAttempts) continue;
 
@@ -64,20 +74,70 @@ export class Building {
 
                 building.position.set(cellX, 0, cellZ);
 
+                let buildingRadius: number;
                 if (modelUrl === buildingA) {
-                    building.scale.multiplyScalar(2.4);
+                    building.scale.multiplyScalar(2);
+                    buildingRadius = 2.2;
                 } else {
-                    building.scale.multiplyScalar(1.5);
+                    building.scale.multiplyScalar(3.2);
+                    buildingRadius = 2.6;
                 }
 
                 group.add(building);
                 placedBuildings.add(cellKey);
-                occupiedCells.add(cellKey);
+
+                this.markBuildingCells(
+                    cellX,
+                    cellZ,
+                    buildingRadius,
+                    occupiedCells,
+                );
+
+                console.log(`Building placed at (${cellX}, ${cellZ})`);
             } catch (error) {
                 console.error(`Failed to load building model: ${error}`);
             }
         }
 
         return group;
+    }
+
+    private static markBuildingCells(
+        centerX: number,
+        centerZ: number,
+        radius: number,
+        occupiedCells: Set<string>,
+    ): void {
+        // Mark all cells within the building's radius
+        const radiusCeil = Math.ceil(radius);
+        for (let dx = -radiusCeil; dx <= radiusCeil; dx++) {
+            for (let dz = -radiusCeil; dz <= radiusCeil; dz++) {
+                const cellX = centerX + dx;
+                const cellZ = centerZ + dz;
+                // Only mark if within radius distance
+                const dist = Math.hypot(dx, dz);
+                if (dist <= radius) {
+                    occupiedCells.add(`${cellX},${cellZ}`);
+                }
+            }
+        }
+    }
+
+    private static isNearExistingBuilding(
+        x: number,
+        z: number,
+        placedBuildings: Set<string>,
+        spacing: number,
+    ): boolean {
+        // Check if position is too close to any existing building
+        for (let dx = -spacing; dx <= spacing; dx++) {
+            for (let dz = -spacing; dz <= spacing; dz++) {
+                const key = `${x + dx},${z + dz}`;
+                if (placedBuildings.has(key)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

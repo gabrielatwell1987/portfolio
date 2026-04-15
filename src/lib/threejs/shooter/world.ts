@@ -40,8 +40,8 @@ export class World extends Mesh {
         this.width = width;
         this.height = height;
 
-        this.buildingDensity = 2 / 175;
-        this.buildingCount = 3;
+        this.buildingDensity = 1 / 175;
+        this.buildingCount = 2;
         this.buildingCells = new Set<string>();
 
         this.brickGroundsTexture = loadBrickGroundsTexture();
