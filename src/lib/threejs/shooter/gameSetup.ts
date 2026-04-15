@@ -24,10 +24,10 @@ export interface GameState {
     ambient: AmbientLight;
 }
 
-export function initializeGame(
+export async function initializeGame(
     canvas: HTMLCanvasElement,
     joystickElement: HTMLElement | null,
-): GameState {
+): Promise<GameState> {
     const renderer = new WebGLRenderer({ canvas, antialias: true });
     const scene = new Scene();
     const camera = new PerspectiveCamera(
@@ -38,7 +38,7 @@ export function initializeGame(
     );
 
     const controls = new OrbitControls(camera, canvas);
-    // Keep camera locked to player: disable orbiting/panning/zooming
+    // keep camera locked to player: disable orbiting/panning/zooming
     controls.enableRotate = false;
     controls.enablePan = false;
     controls.enableZoom = false;
@@ -52,8 +52,11 @@ export function initializeGame(
     const world = new World(50, 50);
     scene.add(world);
 
-    // Initialize world asynchronously
-    world.generate();
+    console.log('generating world');
+    await world.generate();
+    console.log('generation complete, buildingCells:', world.buildingCells);
+
+    scene.add(world.buildings);
 
     const player = new HumanPlayer(
         camera,

@@ -10,6 +10,7 @@ export class KeyboardMovement {
     private keysPressed: Set<string> = new Set();
     private moveDirection: Vector3 = new Vector3(0, 0, 0);
     private lastTick: number = performance.now();
+    private playerRadius: number = 0.5;
 
     private handleKeyDown: (event: KeyboardEvent) => void;
     private handleKeyUp: (event: KeyboardEvent) => void;
@@ -68,37 +69,33 @@ export class KeyboardMovement {
     }
 
     private isBlockedPosition(x: number, z: number): boolean {
-        const cell = { x: Math.floor(x), z: Math.floor(z) };
+        if (!this.world?.buildingCells) {
+            return false;
+        }
 
+        const checkRadius = this.playerRadius + 0.2; // add buffer zone
         const cellsToCheck = [
-            // center and orthogonal neighbors
-            `${cell.x},${cell.z}`,
-            `${cell.x + 1},${cell.z}`,
-            `${cell.x - 1},${cell.z}`,
-            `${cell.x},${cell.z + 1}`,
-            `${cell.x},${cell.z - 1}`,
-            // diagonal neighbors
-            `${cell.x + 1},${cell.z + 1}`,
-            `${cell.x + 1},${cell.z - 1}`,
-            `${cell.x - 1},${cell.z + 1}`,
-            `${cell.x - 1},${cell.z - 1}`,
+            { x: Math.floor(x), z: Math.floor(z) },
+            { x: Math.floor(x + checkRadius), z: Math.floor(z) },
+            { x: Math.floor(x - checkRadius), z: Math.floor(z) },
+            { x: Math.floor(x), z: Math.floor(z + checkRadius) },
+            { x: Math.floor(x), z: Math.floor(z - checkRadius) },
+            { x: Math.floor(x + checkRadius), z: Math.floor(z + checkRadius) },
+            { x: Math.floor(x + checkRadius), z: Math.floor(z - checkRadius) },
+            { x: Math.floor(x - checkRadius), z: Math.floor(z + checkRadius) },
+            { x: Math.floor(x - checkRadius), z: Math.floor(z - checkRadius) },
         ];
 
-        for (const checkKey of cellsToCheck) {
-            if (
-                this.world.treeCells.has(checkKey) ||
-                this.world.rockCells.has(checkKey) ||
-                this.world.bushCells.has(checkKey)
-            ) {
-                // only block if player would be within 0.1 units of obstacle
-                const cell = checkKey.split(',').map(Number);
-                const cellX = cell[0];
-                const cellZ = cell[1];
-                const distToCell = Math.hypot(
-                    x - (cellX + 0.5),
-                    z - (cellZ + 0.5),
-                );
-                if (distToCell < 0.1) {
+        for (const cell of cellsToCheck) {
+            const cellKey = `${cell.x},${cell.z}`;
+            if (this.world.buildingCells.has(cellKey)) {
+                // Calculate distance from player to cell center
+                const cellCenterX = cell.x + 0.5;
+                const cellCenterZ = cell.z + 0.5;
+                const distToCell = Math.hypot(x - cellCenterX, z - cellCenterZ);
+
+                // Block if closer than collision threshold
+                if (distToCell < this.playerRadius + 0.5) {
                     return true;
                 }
             }

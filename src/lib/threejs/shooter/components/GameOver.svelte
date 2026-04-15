@@ -29,11 +29,16 @@
         }
     });
 
+    $effect(() => {
+        if (isGameOver) {
+            isClosing = false;
+        }
+    });
+
     function handleRestart(): void {
         audioManager?.playSound('buttonClick', 0.75);
         isClosing = true;
         setTimeout(() => {
-            isClosing = false;
             onRestart();
         }, 600);
     }

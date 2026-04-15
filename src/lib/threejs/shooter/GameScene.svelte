@@ -15,7 +15,7 @@
     let joystickX = $state(0);
     let joystickY = $state(0);
     let joystickElement: HTMLElement | null = null;
-    let gameState: GameState | null = null;
+    let gameState = $state<GameState | null>(null);
 
     let enemyKillCount = $state(0);
     let isGameOver = $state(false);
@@ -43,245 +43,266 @@
         restartTrigger += 1;
         enemyKillCount = 0;
         enemiesDisposed = false;
-        isGameOver = false;
     }
 
     $effect(() => {
-        // damage is disabled while paused (open overlay)
-        if (gameState && gameState.player) {
+        if (gameState?.player) {
             try {
                 gameState.player.getCombatManager().setPaused(isPaused);
             } catch (e) {
-                // ignore if not available yet
+                // Ignore
             }
         }
+    });
 
+    // initialize game only when canvas is available or restart is triggered
+    $effect(() => {
         if (!canvas) return;
-        void restartTrigger;
+
+        const trigger = restartTrigger;
 
         const abortController = new AbortController();
         let lastFrameTime = performance.now();
+        let animationLoopRunning = true;
 
         isMobile = window.innerWidth <= 768;
-
-        // loading on mobile, pause game while overlay is open
         if (isMobile && !gameState) {
             isPaused = true;
         }
 
-        // initialize game
-        gameState = initializeGame(canvas, joystickElement);
-        const {
-            renderer,
-            scene,
-            camera,
-            controls,
-            player,
-            enemyManager,
-            mobileJoystick,
-        } = gameState;
+        let cleanup: (() => void) | null = null;
 
-        // smooth camera movement
-        const cameraTarget = {
-            x: camera.position.x,
-            y: camera.position.y,
-            z: camera.position.z,
-        };
-        let cameraTween: gsap.core.Tween | null = null;
+        initializeGame(canvas, joystickElement)
+            .then((state) => {
+                if (!animationLoopRunning) return;
 
-        // kill tracking
-        enemyManager.setOnEnemyKilled(() => {
-            enemyKillCount = enemyManager.getKillCount();
+                gameState = state;
+                const {
+                    renderer,
+                    scene,
+                    camera,
+                    controls,
+                    player,
+                    enemyManager,
+                    mobileJoystick,
+                } = state;
 
-            // reward player with 5 ammo per kill
-            try {
-                const cm = player.getCombatManager();
-                const cur = cm.getPlayerAmmo();
-                if (cur !== null) {
-                    cm.setPlayerAmmo(cur + 5);
-                }
-            } catch (e) {
-                // ignore if not available
-            }
+                const cameraTarget = {
+                    x: camera.position.x,
+                    y: camera.position.y,
+                    z: camera.position.z,
+                };
+                let cameraTween: gsap.core.Tween | null = null;
 
-            if (enemyKillCount >= 3) {
-                console.log('Win condition met!');
-                isGameOver = true;
-            }
-        });
+                enemyManager.setOnEnemyKilled(() => {
+                    enemyKillCount = enemyManager.getKillCount();
 
-        // screen resizing
-        function onResize() {
-            const w = window.innerWidth;
-            const h = window.innerHeight;
-            isMobile = w <= 768;
-            camera.aspect = w / h;
-            camera.updateProjectionMatrix();
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            renderer.setSize(w, h, false);
-        }
-
-        onResize();
-        window.addEventListener('resize', onResize, {
-            signal: abortController.signal,
-        });
-
-        // toggle orbiting with 'r' key
-        function onKeyToggle(e: KeyboardEvent) {
-            if (e.key === 'r' || e.key === 'R') {
-                controls.enableRotate = !controls.enableRotate;
-                console.log('Orbit rotate:', controls.enableRotate);
-            }
-        }
-
-        window.addEventListener('keydown', onKeyToggle, {
-            signal: abortController.signal,
-        });
-
-        // animation loop
-        renderer.setAnimationLoop(() => {
-            if (isPaused) {
-                renderer.render(scene, camera);
-                return;
-            }
-
-            player.update();
-
-            const now = performance.now();
-            const dt = Math.min(0.05, (now - lastFrameTime) / 1000);
-            lastFrameTime = now;
-
-            // only update enemies if game is not over
-            if (isGameOver && !enemiesDisposed) {
-                enemyManager.dispose();
-                enemiesDisposed = true;
-            } else if (!isGameOver) {
-                enemyManager.update(dt);
-            }
-
-            // calculate player's screen position
-            if (gameState?.player && gameState?.camera) {
-                const playerWorldPos = gameState.player.position.clone();
-                const vector = playerWorldPos.project(gameState.camera);
-
-                const screenX = (vector.x * 0.5 + 0.5) * window.innerWidth;
-                const screenY = -(vector.y * 0.5 - 0.5) * window.innerHeight;
-
-                playerScreenPos = { x: screenX, y: screenY - 125 };
-            }
-
-            // calculate enemy screen positions
-            if (gameState?.camera && gameState?.enemyManager) {
-                const enemies = gameState.enemyManager.getEnemies?.() || [];
-                enemyHealthBars = enemies
-                    .map((enemy: any) => {
-                        try {
-                            if (!gameState?.camera) return null;
-                            const enemyWorldPos = enemy.position.clone();
-                            const vector = enemyWorldPos.project(
-                                gameState.camera,
-                            );
-
-                            const screenX =
-                                (vector.x * 0.5 + 0.5) * window.innerWidth;
-                            const screenY =
-                                -(vector.y * 0.5 - 0.5) * window.innerHeight;
-
-                            const health = enemy.getHealth?.() || 0;
-                            const maxHealth = enemy.getMaxHealth?.() || 100;
-
-                            return {
-                                id: String(enemy.id || Math.random()),
-                                x: screenX,
-                                y: screenY - 125,
-                                health: Number(health),
-                                maxHealth: Number(maxHealth),
-                            };
-                        } catch (e) {
-                            return null;
+                    try {
+                        const cm = player.getCombatManager();
+                        const cur = cm.getPlayerAmmo();
+                        if (cur !== null) {
+                            cm.setPlayerAmmo(cur + 5);
                         }
-                    })
-                    .filter(
-                        (
-                            bar: any,
-                        ): bar is {
-                            id: string;
-                            x: number;
-                            y: number;
-                            health: number;
-                            maxHealth: number;
-                        } => bar !== null,
-                    );
-            }
-
-            // update UI
-            if (mobileJoystick) {
-                joystickX = mobileJoystick.getJoystickX();
-                joystickY = mobileJoystick.getJoystickY();
-            }
-
-            const combatManager = player.getCombatManager();
-            playerHealth = combatManager.getPlayerHealth();
-            maxPlayerHealth = combatManager.getMaxPlayerHealth();
-
-            // update ammo display
-            try {
-                ammo = combatManager.getPlayerAmmo();
-            } catch (e) {
-                ammo = null;
-            }
-
-            if (playerHealth <= 0 && !isGameOver) {
-                isGameOver = true;
-            }
-
-            // camera follow
-            const desiredX = player.position.x + 1;
-            const desiredY = player.position.y + 4;
-            const desiredZ = player.position.z + 3;
-
-            if (isMobile) {
-                camera.position.set(desiredX, desiredY, desiredZ);
-            } else {
-                if (controls.enableRotate) {
-                    if (cameraTween) {
-                        cameraTween.kill();
-                        cameraTween = null;
+                    } catch (e) {
+                        // Ignore
                     }
-                } else {
-                    if (cameraTween) cameraTween.kill();
 
-                    cameraTween = gsap.to(cameraTarget, {
-                        x: desiredX,
-                        y: desiredY,
-                        z: desiredZ,
-                        duration: 0.3,
-                        ease: 'power2.out',
-                        onUpdate: () => {
-                            camera.position.set(
-                                cameraTarget.x,
-                                cameraTarget.y,
-                                cameraTarget.z,
-                            );
-                        },
-                    });
+                    if (enemyKillCount >= 3) {
+                        console.log('Win condition met!');
+                        isGameOver = true;
+                    }
+                });
+
+                function onResize() {
+                    const w = window.innerWidth;
+                    const h = window.innerHeight;
+                    isMobile = w <= 768;
+                    camera.aspect = w / h;
+                    camera.updateProjectionMatrix();
+                    renderer.setPixelRatio(
+                        Math.min(window.devicePixelRatio, 2),
+                    );
+                    renderer.setSize(w, h, false);
                 }
-            }
 
-            // keep the controls target centred on the player so orbiting happens around them
-            controls.target.copy(player.position);
-            controls.update();
+                onResize();
+                window.addEventListener('resize', onResize, {
+                    signal: abortController.signal,
+                });
 
-            renderer.render(scene, camera);
-        });
+                function onKeyToggle(e: KeyboardEvent) {
+                    if (e.key === 'r' || e.key === 'R') {
+                        controls.enableRotate = !controls.enableRotate;
+                        console.log('Orbit rotate:', controls.enableRotate);
+                    }
+                }
+
+                window.addEventListener('keydown', onKeyToggle, {
+                    signal: abortController.signal,
+                });
+
+                renderer.setAnimationLoop(() => {
+                    if (isPaused) {
+                        renderer.render(scene, camera);
+                        return;
+                    }
+
+                    player.update();
+
+                    const now = performance.now();
+                    const dt = Math.min(0.05, (now - lastFrameTime) / 1000);
+                    lastFrameTime = now;
+
+                    if (isGameOver && !enemiesDisposed) {
+                        enemyManager.dispose();
+                        enemiesDisposed = true;
+                    } else if (!isGameOver) {
+                        enemyManager.update(dt);
+                    }
+
+                    if (gameState?.player && gameState?.camera) {
+                        const playerWorldPos =
+                            gameState.player.position.clone();
+                        const vector = playerWorldPos.project(gameState.camera);
+
+                        const screenX =
+                            (vector.x * 0.5 + 0.5) * window.innerWidth;
+                        const screenY =
+                            -(vector.y * 0.5 - 0.5) * window.innerHeight;
+
+                        playerScreenPos = { x: screenX, y: screenY - 125 };
+                    }
+
+                    if (gameState?.camera && gameState?.enemyManager) {
+                        const enemies =
+                            gameState.enemyManager.getEnemies?.() || [];
+                        enemyHealthBars = enemies
+                            .map((enemy: any) => {
+                                try {
+                                    if (!gameState?.camera) return null;
+                                    const enemyWorldPos =
+                                        enemy.position.clone();
+                                    const vector = enemyWorldPos.project(
+                                        gameState.camera,
+                                    );
+
+                                    const screenX =
+                                        (vector.x * 0.5 + 0.5) *
+                                        window.innerWidth;
+                                    const screenY =
+                                        -(vector.y * 0.5 - 0.5) *
+                                        window.innerHeight;
+
+                                    const health = enemy.getHealth?.() || 0;
+                                    const maxHealth =
+                                        enemy.getMaxHealth?.() || 100;
+
+                                    return {
+                                        id: String(enemy.id || Math.random()),
+                                        x: screenX,
+                                        y: screenY - 125,
+                                        health: Number(health),
+                                        maxHealth: Number(maxHealth),
+                                    };
+                                } catch (e) {
+                                    return null;
+                                }
+                            })
+                            .filter(
+                                (
+                                    bar: any,
+                                ): bar is {
+                                    id: string;
+                                    x: number;
+                                    y: number;
+                                    health: number;
+                                    maxHealth: number;
+                                } => bar !== null,
+                            );
+                    }
+
+                    if (mobileJoystick) {
+                        joystickX = mobileJoystick.getJoystickX();
+                        joystickY = mobileJoystick.getJoystickY();
+                    }
+
+                    const combatManager = player.getCombatManager();
+                    playerHealth = combatManager.getPlayerHealth();
+                    maxPlayerHealth = combatManager.getMaxPlayerHealth();
+
+                    try {
+                        ammo = combatManager.getPlayerAmmo();
+                    } catch (e) {
+                        ammo = null;
+                    }
+
+                    if (playerHealth <= 0 && !isGameOver) {
+                        isGameOver = true;
+                    }
+
+                    const desiredX = player.position.x + 1;
+                    const desiredY = player.position.y + 4;
+                    const desiredZ = player.position.z + 3;
+
+                    if (isMobile) {
+                        camera.position.set(desiredX, desiredY, desiredZ);
+                    } else {
+                        if (controls.enableRotate) {
+                            if (cameraTween) {
+                                cameraTween.kill();
+                                cameraTween = null;
+                            }
+                        } else {
+                            if (cameraTween) cameraTween.kill();
+
+                            cameraTween = gsap.to(cameraTarget, {
+                                x: desiredX,
+                                y: desiredY,
+                                z: desiredZ,
+                                duration: 0.3,
+                                ease: 'power2.out',
+                                onUpdate: () => {
+                                    camera.position.set(
+                                        cameraTarget.x,
+                                        cameraTarget.y,
+                                        cameraTarget.z,
+                                    );
+                                },
+                            });
+                        }
+                    }
+
+                    controls.target.copy(player.position);
+                    controls.update();
+
+                    renderer.render(scene, camera);
+                });
+
+                cleanup = () => {
+                    animationLoopRunning = false;
+                    if (cameraTween) cameraTween.kill();
+                    cleanupGame(state, abortController);
+                    gameState = null;
+                };
+            })
+            .catch((error) => {
+                console.error('Failed to initialize game:', error);
+            });
 
         return () => {
-            if (cameraTween) cameraTween.kill();
-
-            if (gameState) cleanupGame(gameState, abortController);
-
-            gameState = null;
+            if (cleanup) cleanup();
         };
+    });
+
+    // Update pause state separately
+    $effect(() => {
+        if (gameState?.player) {
+            try {
+                gameState.player.getCombatManager().setPaused(isPaused);
+            } catch (e) {
+                // Ignore
+            }
+        }
     });
 </script>
 

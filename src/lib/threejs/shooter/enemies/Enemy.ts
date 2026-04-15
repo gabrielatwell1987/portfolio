@@ -86,13 +86,12 @@ export class Enemy extends GameObject {
     }
 
     private isBlockedPosition(x: number, z: number): boolean {
-        const cell = { x: Math.floor(x), z: Math.floor(z) };
-        const key = `${cell.x},${cell.z}`;
-        return (
-            this.world.treeCells.has(key) ||
-            this.world.rockCells.has(key) ||
-            this.world.bushCells.has(key)
-        );
+        if (!this.world?.buildingCells) {
+            return false;
+        }
+
+        const cellKey = `${Math.floor(x)},${Math.floor(z)}`;
+        return this.world.buildingCells.has(cellKey);
     }
 
     private clampToWorldBounds(): void {

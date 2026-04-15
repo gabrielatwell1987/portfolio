@@ -55,16 +55,12 @@ export class EnemyManager extends Object3D {
     }
 
     private isValidSpawnPosition(pos: Vector3): boolean {
-        const dist = pos.distanceTo(this.player.position);
-        if (dist < 5) return false;
+        if (!this.world?.buildingCells) {
+            return true; // Allow spawning if buildingCells not initialized yet
+        }
 
-        const cell = { x: Math.floor(pos.x), z: Math.floor(pos.z) };
-        const key = `${cell.x},${cell.z}`;
-        return (
-            !this.world.treeCells.has(key) &&
-            !this.world.rockCells.has(key) &&
-            !this.world.bushCells.has(key)
-        );
+        const cellKey = `${Math.floor(pos.x)},${Math.floor(pos.z)}`;
+        return !this.world.buildingCells.has(cellKey);
     }
 
     spawnEnemy(position: Vector3): Enemy {

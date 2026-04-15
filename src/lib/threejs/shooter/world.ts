@@ -8,17 +8,15 @@ import {
     Texture,
     TextureLoader,
 } from 'three';
-import { Tree } from './objects/Tree';
-import { Rock } from './objects/Rock';
-import { Bush } from './objects/Bush';
+import { Building } from './objects/Building';
 
-const grassUrl =
-    'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/grassy-dirt.webp';
+const brickGroundsUrl =
+    'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/asphalt-texture.webp';
 
-function loadGrassTexture(): Texture | null {
+function loadBrickGroundsTexture(): Texture | null {
     if (typeof document === 'undefined') return null;
 
-    const texture = new TextureLoader().load(grassUrl);
+    const texture = new TextureLoader().load(brickGroundsUrl);
     texture.wrapS = RepeatWrapping;
     texture.wrapT = RepeatWrapping;
     texture.colorSpace = SRGBColorSpace;
@@ -29,24 +27,12 @@ export class World extends Mesh {
     width: number;
     height: number;
 
-    trees!: Group;
-    rocks!: Group;
-    bushes!: Group;
-    tent!: Group;
+    buildings!: Group;
+    buildingCount: number;
+    buildingDensity: number;
+    buildingCells: Set<string>;
 
-    rockCount: number;
-    bushCount: number;
-    treeCount: number;
-
-    treeCells: Set<string>;
-    rockCells: Set<string>;
-    bushCells: Set<string>;
-
-    treeDensity: number;
-    rockDensity: number;
-    bushDensity: number;
-
-    private grassTexture: Texture | null = null;
+    private brickGroundsTexture: Texture | null = null;
 
     constructor(width: number, height: number) {
         super();
@@ -54,19 +40,11 @@ export class World extends Mesh {
         this.width = width;
         this.height = height;
 
-        this.treeDensity = 3 / 250;
-        this.rockDensity = 5 / 250;
-        this.bushDensity = 4 / 175;
+        this.buildingDensity = 2 / 175;
+        this.buildingCount = 3;
+        this.buildingCells = new Set<string>();
 
-        this.treeCount = 3;
-        this.rockCount = 5;
-        this.bushCount = 4;
-
-        this.treeCells = new Set<string>();
-        this.rockCells = new Set<string>();
-        this.bushCells = new Set<string>();
-
-        this.grassTexture = loadGrassTexture();
+        this.brickGroundsTexture = loadBrickGroundsTexture();
     }
 
     private updateCountFromSize() {
@@ -74,27 +52,19 @@ export class World extends Mesh {
         const rows = Math.max(1, Math.floor(this.height));
         const totalCells = cols * rows;
 
-        this.treeCount = Math.min(
+        this.buildingCount = Math.min(
             totalCells,
-            Math.round(totalCells * this.treeDensity),
-        );
-        this.rockCount = Math.min(
-            totalCells,
-            Math.round(totalCells * this.rockDensity),
-        );
-        this.bushCount = Math.min(
-            totalCells,
-            Math.round(totalCells * this.bushDensity),
+            Math.round(totalCells * this.buildingDensity),
         );
     }
 
     async generate(recalculateFromDensity = true) {
         this.clear();
+
         if (recalculateFromDensity) this.updateCountFromSize();
+
         this.createTerrain();
-        await this.createTrees();
-        await this.createRocks();
-        await this.createBushes();
+        await this.createBuildings();
     }
 
     clear() {
@@ -103,48 +73,35 @@ export class World extends Mesh {
             (this.material as MeshStandardMaterial).dispose();
         }
 
-        if (this.trees) {
-            this.trees.children.forEach((tree) => {
-                (tree as Mesh).geometry?.dispose();
-                ((tree as Mesh).material as MeshStandardMaterial)?.dispose();
+        if (this.buildings) {
+            this.buildings.children.forEach((building) => {
+                if (building instanceof Mesh) {
+                    building.geometry?.dispose();
+                    if (building.material instanceof MeshStandardMaterial) {
+                        building.material.dispose();
+                    }
+                }
             });
-            this.trees.clear();
+            this.buildings.clear();
         }
 
-        if (this.rocks) {
-            this.rocks.children.forEach((rock) => {
-                (rock as Mesh).geometry?.dispose();
-                ((rock as Mesh).material as MeshStandardMaterial)?.dispose();
-            });
-            this.rocks.clear();
-        }
-
-        if (this.bushes) {
-            this.bushes.children.forEach((bush) => {
-                (bush as Mesh).geometry?.dispose();
-                ((bush as Mesh).material as MeshStandardMaterial)?.dispose();
-            });
-            this.bushes.clear();
-        }
-
-        this.treeCells.clear();
-        this.rockCells.clear();
-        this.bushCells.clear();
+        this.buildingCells.clear();
 
         return this;
     }
 
     createTerrain() {
-        if (!this.grassTexture) this.grassTexture = loadGrassTexture();
+        if (!this.brickGroundsTexture)
+            this.brickGroundsTexture = loadBrickGroundsTexture();
 
         const cols = Math.max(1, Math.floor(this.width));
         const rows = Math.max(1, Math.floor(this.height));
 
-        if (this.grassTexture) {
-            this.grassTexture.wrapS = RepeatWrapping;
-            this.grassTexture.wrapT = RepeatWrapping;
-            this.grassTexture.repeat.set(cols, rows);
-            this.grassTexture.needsUpdate = true;
+        if (this.brickGroundsTexture) {
+            this.brickGroundsTexture.wrapS = RepeatWrapping;
+            this.brickGroundsTexture.wrapT = RepeatWrapping;
+            this.brickGroundsTexture.repeat.set(cols, rows);
+            this.brickGroundsTexture.needsUpdate = true;
         }
 
         // geometry with more segments for deformation
@@ -160,79 +117,24 @@ export class World extends Mesh {
         this.geometry.computeVertexNormals();
 
         this.material = new MeshStandardMaterial({
-            map: this.grassTexture ?? null,
+            map: this.brickGroundsTexture ?? null,
         });
 
         this.rotation.x = -Math.PI / 2;
         this.position.set(this.width / 2, 0, this.height / 2);
     }
 
-    async createTrees() {
-        if (!this.trees) {
-            this.trees = await Tree.createTrees(
-                this.width,
-                this.height,
-                this.treeCount,
-                this.treeCells,
-            );
-            this.add(this.trees);
-        } else {
-            this.remove(this.trees);
-            this.trees = await Tree.createTrees(
-                this.width,
-                this.height,
-                this.treeCount,
-                this.treeCells,
-            );
-            this.add(this.trees);
+    async createBuildings() {
+        if (this.buildings) {
+            this.remove(this.buildings);
         }
-    }
 
-    async createRocks() {
-        if (!this.rocks) {
-            this.rocks = await Rock.createRocks(
-                this.width,
-                this.height,
-                this.rockCount,
-                this.rockCells,
-                this.treeCells,
-            );
-            this.add(this.rocks);
-        } else {
-            this.remove(this.rocks);
-            this.rocks = await Rock.createRocks(
-                this.width,
-                this.height,
-                this.rockCount,
-                this.rockCells,
-                this.treeCells,
-            );
-            this.add(this.rocks);
-        }
-    }
-
-    async createBushes() {
-        if (!this.bushes) {
-            this.bushes = await Bush.createBushes(
-                this.width,
-                this.height,
-                this.bushCount,
-                this.bushCells,
-                this.treeCells,
-                this.rockCells,
-            );
-            this.add(this.bushes);
-        } else {
-            this.remove(this.bushes);
-            this.bushes = await Bush.createBushes(
-                this.width,
-                this.height,
-                this.bushCount,
-                this.bushCells,
-                this.treeCells,
-                this.rockCells,
-            );
-            this.add(this.bushes);
-        }
+        this.buildings = await Building.createBuildings(
+            this.width,
+            this.height,
+            this.buildingCount,
+            this.buildingCells,
+        );
+        this.add(this.buildings);
     }
 }
