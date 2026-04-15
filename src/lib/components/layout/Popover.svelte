@@ -66,6 +66,10 @@
                 @media (width <= 768px) {
                     stroke-width: calc(5px + 5vw);
                 }
+
+                & path {
+                    stroke: var(--warning);
+                }
             }
 
             &:hover {

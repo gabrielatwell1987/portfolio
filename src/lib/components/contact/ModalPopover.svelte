@@ -330,6 +330,10 @@
                 stroke-width: calc(5px + 5vw);
                 margin-bottom: 0.8rem;
             }
+
+            & path {
+                stroke: var(--clr-link);
+            }
         }
     }
 

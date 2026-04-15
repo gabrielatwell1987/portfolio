@@ -233,9 +233,13 @@
         max-inline-size: 1600px;
         margin-inline: auto;
         padding: 1rem;
-        height: 100dvh;
+        block-size: 100dvh;
         position: relative;
         margin-top: 3em;
+
+        @media (width >= 1200px) and (width <= 1500px) {
+            block-size: auto;
+        }
 
         @media (width <= 768px) {
             padding: 0.5rem;
