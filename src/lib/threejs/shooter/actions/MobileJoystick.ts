@@ -192,11 +192,7 @@ export class MobileJoystick {
         ];
 
         for (const checkKey of cellsToCheck) {
-            if (
-                this.world.treeCells.has(checkKey) ||
-                this.world.rockCells.has(checkKey) ||
-                this.world.bushCells.has(checkKey)
-            ) {
+            if (this.world.buildingCells.has(checkKey)) {
                 // Only block if player would be within 0.1 units of obstacle
                 const cellParts = checkKey.split(',').map(Number);
                 const cellX = cellParts[0];

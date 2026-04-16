@@ -53,7 +53,7 @@
 
 <div class="wholeScreen" style:background-image={backgroundImage}>
     <div class="content">
-        <select bind:value={selectedComponent}>
+        <select bind:value={selectedComponent} class="select">
             <option value="Select" disabled>select a component</option>
             <option value="Environment">environment mapping</option>
             <option value="PictureParticles">picture particles</option>

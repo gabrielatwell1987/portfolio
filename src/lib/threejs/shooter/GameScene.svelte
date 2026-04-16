@@ -66,9 +66,6 @@
         let animationLoopRunning = true;
 
         isMobile = window.innerWidth <= 768;
-        if (isMobile && !gameState) {
-            isPaused = true;
-        }
 
         let cleanup: (() => void) | null = null;
 
@@ -77,6 +74,11 @@
                 if (!animationLoopRunning) return;
 
                 gameState = state;
+
+                if (isMobile) {
+                    isPaused = false;
+                }
+
                 const {
                     renderer,
                     scene,
@@ -294,7 +296,7 @@
         };
     });
 
-    // Update pause state separately
+    // update pause state separately
     $effect(() => {
         if (gameState?.player) {
             try {
@@ -302,6 +304,13 @@
             } catch (e) {
                 // Ignore
             }
+        }
+    });
+
+    // apply pause state after game initializes
+    $effect(() => {
+        if (gameState && isMobile) {
+            isPaused = false;
         }
     });
 </script>
