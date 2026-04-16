@@ -92,7 +92,7 @@
         }));
 
         const startTime = Date.now();
-        const animationDuration = 1800;
+        const animationDuration = 5000;
 
         const animate = () => {
             const elapsed = Date.now() - startTime;
@@ -103,17 +103,17 @@
             animState.forEach((state) => {
                 if (!state.shouldAnimate) return;
 
-                const delay = state.index * 20; // Reduced from 30 to 20 for faster reveal
+                const delay = state.index * 40;
                 if (elapsed < delay) return;
 
                 const timeSinceStart = elapsed - delay;
-                const iterations = Math.floor(timeSinceStart / 80); // Reduced from 100 for faster animation
+                const iterations = Math.floor(timeSinceStart / 175);
 
                 if (iterations !== state.iterations) {
                     hasUpdates = true;
                     state.iterations = iterations;
                     displayedTitle[state.index] =
-                        iterations >= 2 ? state.char : getRandomChar(); // Reduced from 3 to 2 iterations
+                        iterations >= 2 ? state.char : getRandomChar();
                 }
             });
 
