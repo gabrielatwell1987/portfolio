@@ -333,6 +333,7 @@
 
             & path {
                 stroke: var(--clr-link);
+                stroke-width: 1.5;
             }
         }
     }

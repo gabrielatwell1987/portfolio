@@ -69,6 +69,7 @@
 
                 & path {
                     stroke: var(--warning);
+                    stroke-width: 1.5;
                 }
             }
 
