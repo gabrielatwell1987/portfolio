@@ -8,19 +8,12 @@
     import AtwellLogo from './AtwellLogo.svelte';
 
     let open = $state<boolean>(false);
-    let isClosing = $state<boolean>(false);
 
     function closeMenu() {
         if (open) {
             open = false;
-            isClosing = false;
         }
     }
-
-    $effect(() => {
-        if (open) {
-        }
-    });
 </script>
 
 <InstallButton />
@@ -62,7 +55,7 @@
     </ul>
 
     <ul
-        class="mobile {open ? 'open' : ''} {isClosing ? 'closing' : ''}"
+        class="mobile {open ? 'open' : ''}"
         id="mobile-menu"
         aria-label="Main navigation menu"
     >
@@ -171,22 +164,17 @@
         transform: scale(0.8);
         transition:
             opacity 0.3s ease-out,
-            transform 0.3s ease-out;
+            transform 0.15s ease-out;
         opacity: 0;
         transform-origin: top left;
         box-shadow: 0 0 0 1px var(--clr-main);
         visibility: hidden;
 
         &.open {
+            transition-delay: 0ms;
             transform: scale(1);
             opacity: 1;
             visibility: visible;
-        }
-
-        &.closing {
-            transition-delay: 0ms;
-            opacity: 0;
-            visibility: hidden;
         }
 
         @media (width >= 300px) and (width <= 750px) {
