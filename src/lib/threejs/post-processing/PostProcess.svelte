@@ -261,7 +261,7 @@
 				uniform sampler2D tDiffuse;
 				uniform sampler2D uNormalMap;
 				uniform float uDisplacementStrength;
-				
+
 				varying vec2 vUv;
 
 				void main()
@@ -368,6 +368,12 @@
 <canvas class="webgl"></canvas>
 
 <style>
+    :global(.navigation, .footer, .select) {
+        @media (orientation: landscape) {
+            display: none !important;
+        }
+    }
+
     .webgl {
         position: fixed;
         top: 0;

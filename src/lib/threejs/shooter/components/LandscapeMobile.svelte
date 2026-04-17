@@ -198,4 +198,10 @@
         width: 38px;
         height: 38px;
     }
+
+    :global(.navigation, .footer, .select) {
+        @media (orientation: landscape) {
+            display: none;
+        }
+    }
 </style>

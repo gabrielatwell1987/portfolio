@@ -313,6 +313,12 @@
 <canvas class="webgl"></canvas>
 
 <style>
+    :global(.navigation, .footer, .select) {
+        @media (orientation: landscape) {
+            display: none !important;
+        }
+    }
+
     .webgl {
         position: fixed;
         top: 0;
