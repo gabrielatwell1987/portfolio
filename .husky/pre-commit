@@ -14,13 +14,17 @@ MAJOR=$(echo $CURRENT_VERSION | cut -d. -f1)
 MINOR=$(echo $CURRENT_VERSION | cut -d. -f2)
 PATCH=$(echo $CURRENT_VERSION | cut -d. -f3)
 
-# If patch is 9, increment minor and reset patch to 0
-if [ "$PATCH" = "9" ]; then
-  MINOR=$((MINOR + 1))
-  PATCH=0
+# Increment patch first
+PATCH=$((PATCH + 1))
+
+# Calculate if we need to roll over (every 10 patches)
+MINOR_BUMP=$((PATCH / 10))
+PATCH=$((PATCH % 10))
+MINOR=$((MINOR + MINOR_BUMP))
+
+if [ "$MINOR_BUMP" -gt 0 ]; then
   echo "✅ Rolling over: $CURRENT_VERSION → $MAJOR.$MINOR.$PATCH"
 else
-  PATCH=$((PATCH + 1))
   echo "✅ Bumping patch: $CURRENT_VERSION → $MAJOR.$MINOR.$PATCH"
 fi
 
