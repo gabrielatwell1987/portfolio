@@ -4,15 +4,35 @@
 # Fix PATH so pnpm works reliably from VS Code Source Control
 export PATH="$(pnpm bin):$PATH"
 
-echo "🔄 Automatically bumping patch version (0.0.1)..."
+echo "🔄 Automatically bumping version..."
 
-# Bump version by one patch
-pnpm version patch --no-git-tag-version
+# Read current version from package.json
+CURRENT_VERSION=$(grep '"version"' package.json | head -1 | sed 's/.*"\([^"]*\)".*/\1/')
+
+# Parse version into major, minor, patch
+MAJOR=$(echo $CURRENT_VERSION | cut -d. -f1)
+MINOR=$(echo $CURRENT_VERSION | cut -d. -f2)
+PATCH=$(echo $CURRENT_VERSION | cut -d. -f3)
+
+# If patch is 9, increment minor and reset patch to 0
+if [ "$PATCH" = "9" ]; then
+  MINOR=$((MINOR + 1))
+  PATCH=0
+  echo "✅ Rolling over: $CURRENT_VERSION → $MAJOR.$MINOR.$PATCH"
+else
+  PATCH=$((PATCH + 1))
+  echo "✅ Bumping patch: $CURRENT_VERSION → $MAJOR.$MINOR.$PATCH"
+fi
+
+NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+
+# Update package.json with new version
+sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$NEW_VERSION\"/" package.json
 
 # Update pnpm-lock.yaml
 pnpm install --lockfile-only
 
-echo "✅ Version bumped + lockfile updated. Files staged."
+echo "✅ Version updated to $NEW_VERSION"
 
 # Stage the version changes so they become part of this commit
 git add package.json pnpm-lock.yaml
