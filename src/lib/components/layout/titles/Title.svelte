@@ -12,8 +12,15 @@
         scaleY?: number;
     }
 
-    let { title, title2, img, width, svg, viewTransitionName, scaleY }: Props =
-        $props();
+    let {
+        title,
+        title2,
+        img,
+        width,
+        svg,
+        viewTransitionName,
+        scaleY = 1,
+    }: Props = $props();
 
     let transitionName = $derived(viewTransitionName || 'page-title');
 

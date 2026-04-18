@@ -7,7 +7,7 @@
     import testimonials from '$lib/components/projects/testimonials.json';
     import SEO from '$lib/data/SEO.svelte';
     import GithubContributions from '$lib/components/projects/contributions/GithubContributions.svelte';
-    import Heading from '$lib/components/layout/Heading.svelte';
+    import Heading from '$lib/components/layout/titles/Heading.svelte';
 
     let { data } = $props();
     let contributions = $derived(data.contributions);

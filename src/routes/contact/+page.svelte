@@ -1,7 +1,7 @@
 <script lang="ts">
     import SEO from '$lib/data/SEO.svelte';
     import ContactForm from '$lib/components/contact/ContactForm.svelte';
-    import Title from '$lib/components/layout/Title.svelte';
+    import Title from '$lib/components/layout/titles/Title.svelte';
     import SkullBg from '$lib/components/contact/SkullBg.svelte';
 </script>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Title from '$lib/components/layout/Title.svelte';
+    import Title from '$lib/components/layout/titles/Title.svelte';
     import images from '$lib/components/photos/images.json';
 
     interface Image {
