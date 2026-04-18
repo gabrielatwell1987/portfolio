@@ -1,5 +1,5 @@
 <script lang="ts">
-    import HeroTitle from '$lib/components/landing/HeroTitle.svelte';
+    import HeroTitle from '$lib/components/landing/hero-section/HeroTitle.svelte';
     import Button from '$lib/components/layout/Button.svelte';
     import {
         CapsuleGeometry,
