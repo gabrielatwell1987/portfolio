@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { scale } from 'svelte/transition';
     import SEO from '$lib/data/SEO.svelte';
     import Title from '$lib/components/layout/Title.svelte';
     import Button from '$lib/components/layout/Button.svelte';
@@ -33,6 +34,7 @@
                 img="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/GSAP-Dark.svg"
                 width="50vw"
                 title="Greensock Animation Platform"
+                scaleY={2.6}
             />
         </div>
 
@@ -63,7 +65,7 @@
 
     .learn-gsap {
         & .title-spacing {
-            margin-top: 3em;
+            margin-top: 5em;
             margin-bottom: 6em;
 
             @media (width <= 768px) {
@@ -75,6 +77,7 @@
             & .center-detail {
                 max-inline-size: 90vw;
                 margin-inline: auto;
+                padding-top: 4em;
 
                 :global(details) {
                     position: relative;

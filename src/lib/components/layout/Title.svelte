@@ -9,9 +9,10 @@
         width?: string;
         svg?: string;
         viewTransitionName?: string;
+        scaleY?: number;
     }
 
-    let { title, title2, img, width, svg, viewTransitionName }: Props =
+    let { title, title2, img, width, svg, viewTransitionName, scaleY }: Props =
         $props();
 
     let transitionName = $derived(viewTransitionName || 'page-title');
@@ -54,7 +55,7 @@
             id="image-title"
             src={img}
             alt={title}
-            style="width: {width}; view-transition-name: {transitionName};"
+            style="width: {width}; view-transition-name: {transitionName};  transform: scaleY({scaleY});"
             loading="lazy"
         />
     {:else if svg}
