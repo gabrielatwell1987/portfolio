@@ -5,8 +5,8 @@
     // import Ribbons from '$lib/threejs/ribbon/Ribbons.svelte';
     import Tunnel from '$lib/threejs/tunnel/Tunnel.svelte';
     import HeroButton from './HeroButton.svelte';
-    import ProjectsGrid from './ProjectsGrid.svelte';
-    import UltraA from './UltraA.svelte';
+    import ProjectsGrid from '../ProjectsGrid.svelte';
+    import UltraA from '../logos/UltraA.svelte';
     import HandDrawnUnderline from './HandDrawnUnderline.svelte';
 
     interface Particle {

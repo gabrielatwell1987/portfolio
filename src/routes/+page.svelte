@@ -9,9 +9,11 @@
         if (!loaded) {
             loaded = true;
 
-            import('$lib/components/landing/Hero.svelte').then((module) => {
-                Hero = module.default;
-            });
+            import('$lib/components/landing/hero-section/Hero.svelte').then(
+                (module) => {
+                    Hero = module.default;
+                },
+            );
         }
     });
 </script>
