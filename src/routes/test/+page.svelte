@@ -1,5 +1,5 @@
 <script lang="ts">
-    export const prerendering = false;
+    export const prerender = false;
 </script>
 
 <style>
