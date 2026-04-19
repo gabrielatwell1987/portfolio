@@ -1,8 +1,8 @@
 <script lang="ts">
     import SEO from '$lib/data/SEO.svelte';
     import Image from '$lib/components/layout/Image.svelte';
-    import LearnHeading from '$lib/components/learn/LearnHeading.svelte';
-    import UsefulLinks from '$lib/components/learn/UsefulLinks.svelte';
+    import LearnHeading from '$lib/components/learn/pages/LearnHeading.svelte';
+    import UsefulLinks from '$lib/components/learn/pages/UsefulLinks.svelte';
     import BgCircles from '$lib/components/learn/BgCircles.svelte';
     import BlurOverlay from '$lib/components/learn/BlurOverlay.svelte';
 

@@ -1,13 +1,13 @@
 export async function load() {
     try {
         const { default: greensockDetails } =
-            await import('$lib/components/learn/greensock-details.json')
+            await import('$lib/components/learn/pages/greensock-details.json');
         return {
             greensockDetails,
-        }
-    } catch (error) {
+        };
+    } catch {
         return {
             greensockDetails: [],
-        }
+        };
     }
 }

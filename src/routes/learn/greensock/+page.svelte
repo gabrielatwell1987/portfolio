@@ -3,9 +3,9 @@
     import SEO from '$lib/data/SEO.svelte';
     import Title from '$lib/components/layout/titles/Title.svelte';
     import Button from '$lib/components/layout/Button.svelte';
-    import Iframe from '$lib/components/learn/Iframe.svelte';
-    import Learn from '$lib/components/learn/Learn.svelte';
-    import Details from '$lib/components/learn/Details.svelte';
+    import Iframe from '$lib/components/learn/pages/Iframe.svelte';
+    import Learn from '$lib/components/learn/pages/Learn.svelte';
+    import Details from '$lib/components/learn/pages/Details.svelte';
 
     interface DetailsItem {
         summary: string;

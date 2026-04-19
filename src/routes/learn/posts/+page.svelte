@@ -2,15 +2,15 @@
     import CSS from './css.md';
     import GSAP from './gsap.md';
     import SEO from '$lib/data/SEO.svelte';
-    import Card from '$lib/components/learn/Card.svelte';
-    import TableOfContents from '$lib/components/learn/TableOfContents.svelte';
-    import GabeMorph from '$lib/components/learn/GabeMorph.svelte';
-    import BackToTop from '$lib/components/learn/BackToTop.svelte';
+    import Card from '$lib/components/learn/posts-page/Card.svelte';
+    import TableOfContents from '$lib/components/learn/posts-page/TableOfContents.svelte';
+    import GabeMorph from '$lib/components/learn/posts-page/GabeMorph.svelte';
+    import BackToTop from '$lib/components/learn/posts-page/BackToTop.svelte';
     import ViewTransitionImage from '$lib/components/layout/view-transitions/ViewTransitionImage.svelte';
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import Popover from '$lib/components/layout/Popover.svelte';
-    import Preloader from '$lib/components/learn/Preloader.svelte';
+    import Preloader from '$lib/components/learn/posts-page/Preloader.svelte';
 
     import hljs from 'highlight.js/lib/core';
     import javascript from 'highlight.js/lib/languages/javascript';

@@ -1,6 +1,6 @@
 <script lang="ts">
     import { browser } from '$app/environment';
-    import { getPreloaderState } from '$lib/components/learn/preloadStore.svelte';
+    import { getPreloaderState } from '$lib/components/learn/posts-page/preloadStore.svelte';
 
     interface Props {
         src: string;

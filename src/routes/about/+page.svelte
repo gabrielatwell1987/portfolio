@@ -7,8 +7,8 @@
     import AboutHero from '$lib/components/about/AboutHero.svelte';
     import Skills from '$lib/components/about/Skills.svelte';
     import Slider from '$lib/components/about/Slider.svelte';
-    import PWAInstall from '$lib/components/about/PWAInstall.svelte';
-    import PWAVideo from '$lib/components/about/PWAVideo.svelte';
+    import PWAInstall from '$lib/components/about/pwa-popovers/PWAInstall.svelte';
+    import PWAVideo from '$lib/components/about/pwa-popovers/PWAVideo.svelte';
 
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
