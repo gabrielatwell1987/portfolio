@@ -3,11 +3,13 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import projects from '$lib/components/projects/projects.json';
     // import Ribbons from '$lib/threejs/ribbon/Ribbons.svelte';
-    import Tunnel from '$lib/threejs/tunnel/Tunnel.svelte';
+    // import Tunnel from '$lib/threejs/tunnel/Tunnel.svelte';
     import HeroButton from './HeroButton.svelte';
     import ProjectsGrid from '../ProjectsGrid.svelte';
     import UltraA from '../logos/UltraA.svelte';
     import HandDrawnUnderline from './HandDrawnUnderline.svelte';
+
+    type RandomCssBg = boolean | number | 'random';
 
     interface Particle {
         id: number;
@@ -18,10 +20,21 @@
         delay: number;
     }
 
+    interface Props {
+        cssBg?: RandomCssBg;
+    }
+
     const chars = 'Handcrafted Frontend Interfaces';
+    const Tunnel = () => import('$lib/threejs/tunnel/Tunnel.svelte');
+    const Ribbon = () => import('$lib/threejs/ribbon/Ribbons.svelte');
 
     function getRandomChar() {
         return chars[Math.floor(Math.random() * chars.length)];
+    }
+
+    function getRandomBackground(): number | boolean {
+        const options: (number | boolean)[] = [true, 1, 2];
+        return options[Math.floor(Math.random() * options.length)];
     }
 
     let mounted = $state<boolean>(false);
@@ -41,11 +54,10 @@
     let showContent = $state<boolean>(false);
     let particles = $state<Particle[]>([]);
 
-    interface Props {
-        cssBg?: boolean;
-    }
-
     let { cssBg = false }: Props = $props();
+    let selectedBg = $derived(
+        cssBg === 'random' ? getRandomBackground() : cssBg,
+    );
 
     function getWordChars(wordIndex: number) {
         let charIndex = 0;
@@ -211,7 +223,7 @@
 <article role="banner" aria-label="Hero section">
     <!-- css bg -->
     <div class="background-container" aria-hidden="true">
-        {#if cssBg}
+        {#if selectedBg === true}
             <div class="gradient-bg"></div>
 
             <!-- Floating Particles -->
@@ -258,9 +270,16 @@
             <UltraA class="ultra-gradient" />
 
             <div class="shape big-circle" aria-hidden="true"></div>
-        {:else}
-            <!-- <Ribbons /> -->
-            <Tunnel />
+        {:else if selectedBg === 1}
+            {#await Tunnel() then module}
+                {@const Comp = module.default}
+                <Comp />
+            {/await}
+        {:else if selectedBg === 2}
+            {#await Ribbon() then module}
+                {@const Comp = module.default}
+                <Comp />
+            {/await}
         {/if}
     </div>
 

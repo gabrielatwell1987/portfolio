@@ -25,5 +25,5 @@
 />
 
 {#if Hero}
-    <Hero />
+    <Hero cssBg={'random'} />
 {/if}
