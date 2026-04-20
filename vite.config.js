@@ -1,6 +1,6 @@
-import { sveltekit } from '@sveltejs/kit/vite'
-import { svelteTesting } from '@testing-library/svelte/vite'
-import { defineConfig } from 'vite'
+import { sveltekit } from '@sveltejs/kit/vite';
+import { svelteTesting } from '@testing-library/svelte/vite';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
     plugins: [sveltekit(), svelteTesting()],
@@ -10,7 +10,8 @@ export default defineConfig({
         host: 'localhost',
     },
     build: {
-        sourcemap: process.env.NODE_ENV === 'development' ? true : false,
+        // sourcemap: process.env.NODE_ENV === 'development' ? true : false,
+        sourcemap: true,
         chunkSizeWarningLimit: 750,
         rolldownOptions: {
             treeshake: true,
@@ -43,4 +44,4 @@ export default defineConfig({
         environment: 'jsdom',
         setupFiles: ['./vitest-setup.ts'],
     },
-})
+});
