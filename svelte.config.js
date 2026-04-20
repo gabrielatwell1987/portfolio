@@ -39,6 +39,7 @@ const config = {
                 // for other errors, throw to fail the build
                 throw new Error(message);
             },
+            handleUnseenRoutes: 'warn',
             concurrency: 10,
             entries: [
                 '/photos',
@@ -46,6 +47,7 @@ const config = {
                 '/learn/greensock',
                 '/learn/sveltekit',
                 '/learn/posts',
+                '/test',
             ],
         },
     },
