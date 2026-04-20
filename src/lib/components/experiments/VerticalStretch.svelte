@@ -1,22 +1,88 @@
 <script lang="ts">
     interface Props {
-        title1: string;
-        title2: string;
-        letter: string;
+        firstWord: string;
+        secondWord: string;
+        contentTitle?: string;
+        firstMessage?: string;
+        secondMessage?: string;
     }
 
-    let { title1, title2, letter }: Props = $props();
+    let {
+        firstWord,
+        secondWord,
+        contentTitle,
+        firstMessage,
+        secondMessage,
+    }: Props = $props();
 </script>
 
-<div class="vertical-stretch">
-    <span>{title1}</span>
-    <span class="highlight">{letter}</span>
-    <span>{title2}</span>
+<div class="vertical-wrapper">
+    <div class="vertical-stretch-bg">
+        <span>{firstWord}</span>
+        <span>{secondWord}</span>
+    </div>
+
+    <div class="vertical-content">
+        <h3 class="content-title">{contentTitle}</h3>
+
+        <p class="content-message">{firstMessage}</p>
+
+        <p class="content-message">{secondMessage}</p>
+    </div>
 </div>
 
 <style>
-    .vertical-stretch {
+    .vertical-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        inline-size: 100vw;
+        block-size: 100vh;
         position: relative;
+        overflow: hidden;
+    }
+
+    .vertical-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            'title title title'
+            'firstMessage . .'
+            '. . secondMessage';
+        gap: 2em;
+        z-index: 1;
+        position: relative;
+
+        & .content-title {
+            font-family: var(--ultra);
+            font-size: 5.5vw;
+            color: var(--clr-main);
+            -webkit-text-stroke: 2px var(--clr-link);
+
+            grid-area: title;
+        }
+
+        & .content-message {
+            font-family: var(--bronova-regular);
+            font-size: 2vw;
+            color: var(--clr-main);
+
+            &:first-of-type {
+                grid-area: firstMessage;
+            }
+
+            &:last-of-type {
+                grid-area: secondMessage;
+            }
+        }
+    }
+
+    .vertical-stretch-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+
         font-family: var(--bronova-bold);
         font-size: 7vw;
         font-weight: 900;
@@ -26,23 +92,30 @@
         line-height: 0.6;
         user-select: none;
         display: flex;
+        justify-content: center;
+        align-items: center;
         transform: perspective(1200px) rotateX(6deg);
         padding-top: 1.5em;
+        opacity: 0.15;
+        pointer-events: none;
+        z-index: 0;
+        inline-size: 100vw;
+        block-size: 100vh;
 
         & span {
             position: relative;
             display: inline-block;
             padding: 0;
             margin: 0;
-            transform: scaleY(8);
+            transform: scaleY(10);
             text-shadow: 13px -1px 0 var(--clr-invert-fade);
+
+            &:first-of-type {
+                margin-right: 1em;
+            }
 
             @media (width <= 768px) {
                 transform: scaleY(5);
-            }
-
-            &.highlight {
-                color: var(--clr-blue);
             }
         }
     }

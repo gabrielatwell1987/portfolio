@@ -2,8 +2,6 @@
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import projects from '$lib/components/projects/projects.json';
-    // import Ribbons from '$lib/threejs/ribbon/Ribbons.svelte';
-    // import Tunnel from '$lib/threejs/tunnel/Tunnel.svelte';
     import HeroButton from './HeroButton.svelte';
     import ProjectsGrid from '../ProjectsGrid.svelte';
     import UltraA from '../logos/UltraA.svelte';
