@@ -22,6 +22,12 @@ MINOR_BUMP=$((PATCH / 10))
 PATCH=$((PATCH % 10))
 MINOR=$((MINOR + MINOR_BUMP))
 
+# Check if minor needs to roll over to major (every 10 minors)
+if [ "$MINOR" -ge 10 ]; then
+  MAJOR=$((MAJOR + 1))
+  MINOR=$((MINOR - 10))
+fi
+
 if [ "$MINOR_BUMP" -gt 0 ]; then
   echo "✅ Rolling over: $CURRENT_VERSION → $MAJOR.$MINOR.$PATCH"
 else
