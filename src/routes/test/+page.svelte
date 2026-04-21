@@ -1,13 +1,22 @@
 <script>
-    import VerticalStretch from '$lib/components/experiments/VerticalStretch.svelte';
+    import HeroVideo from '$lib/components/experiments/hero-video/HeroVideo.svelte';
+
+    // import VerticalStretch from '$lib/components/experiments/stretch/VerticalStretch.svelte';
 </script>
 
-<VerticalStretch
+<!-- <VerticalStretch
     firstWord="Vertical"
     secondWord="Stretch"
-    contentTitle="this is a test"
+    titleLetters={['t', 'e', 's', 't']}
     firstMessage="i'm testing out some"
     secondMessage="new layout stuff"
+/> -->
+
+<HeroVideo
+    videoSrc="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/videos/Street-Video.mp4"
+    title="component test"
+    subtitle="This is a subtitle for the hero section. you can use this space to provide more information about the content or purpose of the hero section."
+    ctaText="Learn More"
 />
 
 <style>

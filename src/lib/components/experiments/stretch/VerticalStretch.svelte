@@ -1,10 +1,13 @@
 <script lang="ts">
+    import HorizontalStretch from './HorizontalStretch.svelte';
+
     interface Props {
         firstWord: string;
         secondWord: string;
         contentTitle?: string;
         firstMessage?: string;
         secondMessage?: string;
+        titleLetters?: string[];
     }
 
     let {
@@ -13,7 +16,11 @@
         contentTitle,
         firstMessage,
         secondMessage,
+        titleLetters = [],
     }: Props = $props();
+
+    // to use this component:
+    // <VerticalStretch titleLetters={['G', 'A', 'B', 'E']} firstWord="..." secondWord="..." firstMessage="..." secondMessage="..." />
 </script>
 
 <div class="vertical-wrapper">
@@ -23,7 +30,9 @@
     </div>
 
     <div class="vertical-content">
-        <h3 class="content-title">{contentTitle}</h3>
+        <div class="content-title">
+            <HorizontalStretch letters={titleLetters} />
+        </div>
 
         <p class="content-message">{firstMessage}</p>
 

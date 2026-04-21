@@ -1,5 +1,9 @@
 <script lang="ts">
-    let { letters = [] } = $props();
+    interface Props {
+        letters?: string[];
+    }
+
+    let { letters = [] }: Props = $props();
 
     function hoverStretch(event: MouseEvent) {
         const spans = (event.currentTarget as HTMLElement).querySelectorAll(
@@ -9,9 +13,6 @@
             span.style.animation = `stretch 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) ${index * 0.1}s forwards`;
         });
     }
-
-    // to use this component:
-    // <StretchWord letters={['G', 'A', 'B', 'E']} />
 </script>
 
 <div class="stretch-text">
@@ -31,7 +32,7 @@
         z-index: 120;
 
         *:hover span:nth-child(2) {
-            transform: scaleX(1.8);
+            transform: scaleX(2.25);
             margin-inline: 0.5em;
         }
 
