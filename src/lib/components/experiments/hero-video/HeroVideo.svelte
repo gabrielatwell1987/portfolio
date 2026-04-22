@@ -51,20 +51,21 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--clr-invert-fade);
-        border: 2px solid var(--clr-main);
+        background-color: oklch(from var(--clr-invert-fade) 1 c h);
+        /* border: 2px solid var(--clr-main); */
         border-radius: var(--radius);
-        padding: 0.5em;
+        /* padding: 0.5em; */
 
         & .hero-video {
-            border-radius: 3%;
+            /* border-radius: 3%; */
             inline-size: 30vw;
-            block-size: 100%;
+            block-size: stretch;
             object-fit: cover;
             opacity: 0;
             animation: fadeIn 1s ease-in-out forwards;
             padding-left: 1.75em;
             padding: 0;
+            /* margin: 0; */
         }
 
         & .overlay {
