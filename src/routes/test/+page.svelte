@@ -25,7 +25,11 @@
     videos={[
         'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/videos/Waves-Crashing.mp4',
         'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/videos/Street-Video.mp4',
+        'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/videos/Web-Code.mp4',
+        'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/videos/Html-Code.mp4',
     ]}
+    firstTitle="mobile"
+    secondTitle="video"
 />
 
 <style>

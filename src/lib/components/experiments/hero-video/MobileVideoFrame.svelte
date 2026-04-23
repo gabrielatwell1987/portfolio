@@ -1,15 +1,43 @@
 <script lang="ts">
+    import { goto } from '$app/navigation';
     import gsap from 'gsap';
     import { GSDevTools } from 'gsap/GSDevTools';
+    import { SplitText } from 'gsap/SplitText';
 
     interface Props {
+        firstTitle?: string;
+        secondTitle?: string;
         videoSrc?: string;
         videos?: string[];
     }
 
-    let { videoSrc = '', videos = [] }: Props = $props();
+    let {
+        firstTitle = '',
+        secondTitle = '',
+        videoSrc = '',
+        videos = [],
+    }: Props = $props();
     let currentVideoIndex = $state(0);
     let activeVideoSrc = $state('');
+    let isMobile = $state(false);
+
+    $effect.pre(() => {
+        const abortController = new AbortController();
+
+        // mobile check
+        const checkMobile = () => {
+            isMobile = window.matchMedia('(max-width: 768px)').matches;
+        };
+        checkMobile();
+
+        window.addEventListener('resize', checkMobile, {
+            signal: abortController.signal,
+        });
+
+        return () => {
+            abortController.abort();
+        };
+    });
 
     $effect(() => {
         activeVideoSrc = videoSrc;
@@ -17,17 +45,38 @@
 
     function handleVideoSwitch() {
         if (videos.length > 0) {
-            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            let newIndex;
+            do {
+                newIndex = Math.floor(Math.random() * videos.length);
+            } while (newIndex === currentVideoIndex && videos.length > 1);
+
+            currentVideoIndex = newIndex;
             activeVideoSrc = videos[currentVideoIndex];
         }
     }
 
+    function link() {
+        goto('/projects');
+    }
+
+    function splitTitleIntoWords(text: string) {
+        return text.split(' ').map((word) => ({ word }));
+    }
+    let words = $derived(splitTitleIntoWords(firstTitle));
+
     // gsap
     $effect(() => {
-        gsap.registerPlugin(GSDevTools);
+        gsap.registerPlugin(GSDevTools, SplitText);
 
         const textContent = document.querySelector('.text-content');
         const smartphone = document.querySelector('.smartphone');
+
+        let splitTitle = SplitText.create(
+            textContent?.querySelector('h2') as Element,
+            {
+                type: 'chars',
+            },
+        );
 
         if (!textContent || !smartphone) return;
 
@@ -41,25 +90,51 @@
                 duration: 2,
                 ease: 'power2.out',
             },
-        ).fromTo(
-            smartphone,
-            { rotationY: -180, autoAlpha: 0 },
-            {
-                rotationY: 0,
-                autoAlpha: 1,
-                duration: 2.25,
-                ease: 'power2.out',
-            },
-            '<',
-        );
+        )
+            .fromTo(
+                smartphone,
+                { rotation: -180, autoAlpha: 0, scale: 1.5 },
+                {
+                    rotation: 0,
+                    autoAlpha: 1,
+                    scale: 1,
+                    duration: 2.25,
+                    ease: 'power2.out',
+                },
+                '<',
+            )
+            .fromTo(
+                splitTitle.chars,
+                { rotationX: -90, autoAlpha: 0 },
+                {
+                    rotationX: 0,
+                    autoAlpha: 1,
+                    duration: 2,
+                    ease: 'back.out',
+                    letterSpacing: 'clamp(1px, 2vw, 9px)',
+                    stagger: {
+                        amount: 0.5,
+                        from: 'center',
+                    },
+                },
+                '<',
+            );
 
-        GSDevTools.create();
+        const devTools = GSDevTools.create();
 
         return () => {
             tl.kill();
+            devTools?.kill();
         };
     });
 </script>
+
+<div class="background-image">
+    <img
+        src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/mobile-hands.webp"
+        alt=""
+    />
+</div>
 
 <div class="all-content">
     <div class="smartphone">
@@ -82,17 +157,41 @@
     </div>
 
     <div class="text-content">
-        <h2>responsive video</h2>
+        <h2>
+            <span>{firstTitle}</span>
+            <span>{secondTitle}</span>
+        </h2>
 
         <h3>perfect for smartphones</h3>
 
         <h4>click the button on the smartphone to change videos</h4>
 
-        <button>learn more</button>
+        <button onclick={link}>learn more</button>
     </div>
 </div>
 
 <style>
+    .background-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        inline-size: 100%;
+        block-size: auto;
+        overflow: hidden;
+        z-index: 0;
+        pointer-events: none;
+
+        & img {
+            inline-size: 100%;
+            block-size: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.5);
+            /* transform: rotate(14deg) scale(3); */
+            opacity: 0.2;
+        }
+    }
+
     .all-content {
         display: flex;
         justify-content: center;
@@ -195,37 +294,51 @@
             margin: 0;
             padding: 0;
             grid-area: title;
-            transform: scaleY(1.75);
-            letter-spacing: 1px;
+            transform: scaleY(2.5);
+            line-height: 1;
 
             color: var(--clr-invert);
             text-shadow:
                 0 0 1px var(--clr-invert),
-                -1px -1px 0 var(--clr-main),
-                1px -1px 0 var(--clr-main),
-                -1px 1px 0 var(--clr-main),
-                1px 1px 0 var(--clr-main),
-                -1px 0 0 var(--clr-main),
-                1px 0 0 var(--clr-main),
-                0 -1px 0 var(--clr-main),
-                0 1px 0 var(--clr-main);
+                -1px -1px 0 var(--clr-link),
+                1px -1px 0 var(--clr-link),
+                -1px 1px 0 var(--clr-link),
+                1px 1px 0 var(--clr-link),
+                -1px 0 0 var(--clr-link),
+                1px 0 0 var(--clr-link),
+                0 -1px 0 var(--clr-link),
+                0 1px 0 var(--clr-link);
+
+            @media (width <= 768px) {
+                letter-spacing: 1px;
+                margin-inline: auto;
+            }
+
+            & span {
+                @media (width <= 768px) {
+                    display: block;
+                }
+            }
         }
 
         & h3 {
+            color: var(--clr-blue-fade);
             font-family: var(--bronova);
             font-size: clamp(var(--sm), 1.2vw, var(--h4));
             font-weight: 300;
-            margin: 0;
+            margin: 4em 0 0.125em 0;
             padding: 0;
             grid-area: subtitle;
         }
 
         & h4 {
+            color: var(--clr-main-fade);
             font-family: var(--bronova);
             font-size: clamp(var(--xs), 1vw, var(--h5));
-            font-weight: 100;
-            margin: 0;
-            margin-bottom: 3em;
+            font-weight: 400;
+            letter-spacing: 2px;
+            transform: scaleY(1.75);
+            margin: 1em 0;
             padding: 0;
             grid-area: directions;
         }
