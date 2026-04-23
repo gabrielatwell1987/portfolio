@@ -29,32 +29,35 @@
         const textContent = document.querySelector('.text-content');
         const smartphone = document.querySelector('.smartphone');
 
+        if (!textContent || !smartphone) return;
+
         const tl = gsap.timeline();
 
         tl.fromTo(
             textContent,
-            { opacity: 0, y: -75 },
+            { autoAlpha: 0 },
             {
-                opacity: 1,
-                y: 0,
+                autoAlpha: 1,
                 duration: 2,
                 ease: 'power2.out',
             },
-            '-=0.5',
         ).fromTo(
             smartphone,
-            { rotation: -360, yPercent: 100 },
+            { rotationY: -180, autoAlpha: 0 },
             {
-                rotation: 0,
-                yPercent: 0,
+                rotationY: 0,
+                autoAlpha: 1,
                 duration: 2.25,
-                opacity: 1,
                 ease: 'power2.out',
             },
             '<',
         );
 
         GSDevTools.create();
+
+        return () => {
+            tl.kill();
+        };
     });
 </script>
 
@@ -99,8 +102,8 @@
 
     .smartphone {
         position: relative;
-        inline-size: min(90vw, 360px);
-        block-size: min(85vw, 640px);
+        inline-size: clamp(280px, 90vw, 360px);
+        aspect-ratio: 9 / 16;
         margin: auto;
         margin-top: 10em;
         border: clamp(8px, 4vw, 16px) solid var(--clr-main-fade);
@@ -149,6 +152,10 @@
         padding: 0;
         transition: background 0.2s ease;
 
+        @media (width <= 768px) {
+            bottom: -65px;
+        }
+
         &:hover {
             background: #555;
         }
@@ -170,6 +177,17 @@
         block-size: 30vh;
         gap: 1em;
         margin-right: 10vw;
+
+        @media (width <= 768px) {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                'title'
+                'subtitle'
+                'directions'
+                'cta';
+            text-align: center;
+            margin: 0;
+        }
 
         & h2 {
             font-family: var(--ultra);
@@ -222,7 +240,6 @@
             cursor: pointer;
             margin: 0;
             margin-left: 2em;
-            padding: 0.2em 0.4em;
             padding: clamp(0.2em, 1.2vw, 0.4em) clamp(0.4em, 2vw, 0.8em);
             inline-size: clamp(80px, 15vw, 200px);
             block-size: clamp(2em, 4vh, 3em);
@@ -232,6 +249,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
+            @media (width <= 925px) {
+                line-height: 0.75;
+            }
         }
     }
 </style>

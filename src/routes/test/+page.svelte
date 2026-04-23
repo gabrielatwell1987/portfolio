@@ -1,5 +1,5 @@
 <script>
-    import MobileFrame from '$lib/components/experiments/hero-video/MobileFrame.svelte';
+    import MobileFrame from '$lib/components/experiments/hero-video/MobileVideoFrame.svelte';
 
     // import HeroVideo from '$lib/components/experiments/hero-video/HeroVideo.svelte';
     // import VerticalStretch from '$lib/components/experiments/stretch/VerticalStretch.svelte';
