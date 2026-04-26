@@ -25,13 +25,15 @@
     const chars = 'Handcrafted Frontend Interfaces';
     const Tunnel = () => import('$lib/threejs/tunnel/Tunnel.svelte');
     const Ribbon = () => import('$lib/threejs/ribbon/Ribbons.svelte');
+    const Headshot = () =>
+        import('$lib/components/landing/hero-section/HeadshotHero.svelte');
 
     function getRandomChar() {
         return chars[Math.floor(Math.random() * chars.length)];
     }
 
     function getRandomBackground(): number | boolean {
-        const options: (number | boolean)[] = [true, 1, 2];
+        const options: (number | boolean)[] = [true, 1, 2, 3];
         return options[Math.floor(Math.random() * options.length)];
     }
 
@@ -282,93 +284,110 @@
     </div>
 
     <!-- content -->
-    <section
-        aria-label="Introduction and portfolio overview"
-        class="hero-content"
-    >
-        <header class="title-container">
-            <h1 class="hero-title glitch">
-                <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
-                {#each titleWords as _, wordIndex}
-                    {@const wordData = getWordChars(wordIndex)}
-
-                    <span class="word">
-                        {#each wordData.chars as char, charIndex}
-                            <span
-                                class="char"
-                                style="--i: {wordData.start + charIndex}"
-                                >{char}</span
-                            >
-                        {/each}
-
-                        {#if wordIndex === 0}
-                            <div class="underline-wrapper">
-                                <HandDrawnUnderline width={100} height={50} />
-                            </div>
-                        {/if}
-                    </span>
-                {/each}
-            </h1>
-        </header>
-
-        <div
-            class="content-wrapper"
-            class:show={showContent}
-            aria-live="polite"
+    {#if selectedBg === 3}
+        {#await Headshot() then module}
+            {@const Comp = module.default}
+            <Comp
+                title="i build things"
+                text="I am a frontend developer who loves to create beautiful and functional websites. This website showcases my skills with some projects that I created. I focus on creating user-friendly and visually appealing web experiences, along with focusing on performance and accessibility. If you have any questions, feel free to contact me.. I look forward to hearing from you so we can discuss your goals for your online needs!"
+                cta="view work"
+            />
+        {/await}
+    {:else}
+        <section
+            aria-label="Introduction and portfolio overview"
+            class="hero-content"
         >
-            <p class="summary indent">
-                I am a frontend developer who loves to create beautiful and
-                functional websites. This website showcases my skills with some
-                projects that I created. If you have any questions, feel free to
-                contact me.. <br /><br /> I look forward to hearing from you so we
-                can discuss your goals for your online needs!
-            </p>
+            <header class="title-container">
+                <h1 class="hero-title glitch">
+                    <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
+                    {#each titleWords as _, wordIndex}
+                        {@const wordData = getWordChars(wordIndex)}
 
-            <ProjectsGrid {projects} />
+                        <span class="word">
+                            {#each wordData.chars as char, charIndex}
+                                <span
+                                    class="char"
+                                    style="--i: {wordData.start + charIndex}"
+                                    >{char}</span
+                                >
+                            {/each}
 
-            <nav class="button-container" aria-label="Primary navigation">
-                <HeroButton href="/projects" title="Creations" />
-            </nav>
+                            {#if wordIndex === 0}
+                                <div class="underline-wrapper">
+                                    <HandDrawnUnderline
+                                        width={100}
+                                        height={50}
+                                    />
+                                </div>
+                            {/if}
+                        </span>
+                    {/each}
+                </h1>
+            </header>
 
-            <!-- stats -->
-            <section aria-labelledby="stats-heading" class="stats-section">
-                <h2 id="stats-heading" class="visually-hidden">
-                    Portfolio Statistics
-                </h2>
+            <div
+                class="content-wrapper"
+                class:show={showContent}
+                aria-live="polite"
+            >
+                <p class="summary indent">
+                    I am a frontend developer who loves to create beautiful and
+                    functional websites. This website showcases my skills with
+                    some projects that I created. If you have any questions,
+                    feel free to contact me.. <br /><br /> I look forward to hearing
+                    from you so we can discuss your goals for your online needs!
+                </p>
 
-                <dl class="stats-container">
-                    <div class="stat-item a">
-                        <dt class="visually-hidden">Work approach</dt>
-                        <dd
-                            class="stat-number"
-                            aria-label="One hundred percent"
-                        >
-                            100%
-                        </dd>
-                        <dt class="stat-label">Custom</dt>
-                    </div>
+                <ProjectsGrid {projects} />
 
-                    <div class="stat-item b">
-                        <dt class="visually-hidden">
-                            Project delivery timeframe
-                        </dt>
-                        <dd class="stat-number" aria-label="Fast">Fast</dd>
-                        <dt class="stat-label">Delivery</dt>
-                    </div>
+                <nav class="button-container" aria-label="Primary navigation">
+                    <HeroButton href="/projects" title="Creations" />
+                </nav>
 
-                    <div class="stat-item c">
-                        <dt class="visually-hidden">
-                            Responsive design approach
-                        </dt>
-                        <dd class="stat-number" aria-label="Fully responsive">
-                            Fully
-                        </dd>
-                        <dt class="stat-label">Responsive</dt>
-                    </div>
-                </dl>
-            </section>
-        </div>
-    </section>
+                <!-- stats -->
+                <section aria-labelledby="stats-heading" class="stats-section">
+                    <h2 id="stats-heading" class="visually-hidden">
+                        Portfolio Statistics
+                    </h2>
+
+                    <dl class="stats-container">
+                        <div class="stat-item a">
+                            <dt class="visually-hidden">Work approach</dt>
+                            <dd
+                                class="stat-number"
+                                aria-label="One hundred percent"
+                            >
+                                100%
+                            </dd>
+                            <dt class="stat-label">Custom</dt>
+                        </div>
+
+                        <div class="stat-item b">
+                            <dt class="visually-hidden">
+                                Project delivery timeframe
+                            </dt>
+                            <dd class="stat-number" aria-label="Fast">Fast</dd>
+                            <dt class="stat-label">Delivery</dt>
+                        </div>
+
+                        <div class="stat-item c">
+                            <dt class="visually-hidden">
+                                Responsive design approach
+                            </dt>
+                            <dd
+                                class="stat-number"
+                                aria-label="Fully responsive"
+                            >
+                                Fully
+                            </dd>
+                            <dt class="stat-label">Responsive</dt>
+                        </div>
+                    </dl>
+                </section>
+            </div>
+        </section>
+    {/if}
 </article>
 
 <style>
