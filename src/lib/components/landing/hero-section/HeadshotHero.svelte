@@ -1,4 +1,6 @@
 <script lang="ts">
+    import gsap from 'gsap';
+    import { SplitText } from 'gsap/SplitText';
     import { goto } from '$app/navigation';
 
     interface Props {
@@ -13,6 +15,28 @@
     function handleClick() {
         goto('/projects');
     }
+
+    $effect(() => {
+        gsap.registerPlugin(SplitText);
+
+        const split = new SplitText('.hero-title', { type: 'chars' });
+
+        const tl = gsap.timeline();
+
+        tl.from(split.chars, {
+            opacity: 0,
+            scale: 0.5,
+            stagger: {
+                each: 0.05,
+                from: 'random',
+            },
+            ease: 'power2.out',
+        });
+
+        tl.to(split.chars, {
+            scaleY: 1.75,
+        });
+    });
 </script>
 
 <article role="banner" aria-label="hero section">
