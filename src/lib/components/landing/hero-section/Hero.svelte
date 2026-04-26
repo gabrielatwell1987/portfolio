@@ -289,8 +289,8 @@
             {@const Comp = module.default}
             <Comp
                 title="i build things"
-                text="I am a frontend developer who loves to create beautiful and functional websites. This website showcases my skills with some projects that I created. I focus on creating user-friendly and visually appealing web experiences, along with focusing on performance and accessibility. If you have any questions, feel free to contact me.. I look forward to hearing from you so we can discuss your goals for your online needs!"
-                cta="view work"
+                text="I am a frontend developer who loves to create beautiful and functional websites. This website showcases my skills with some projects that I created. I focus on creating user-friendly and visually appealing web experiences, along with focusing on performance and accessibility. If you have any questions or need any help, feel free to contact me.. I'll help you make you online presence a reality'!"
+                cta="view past projects"
             />
         {/await}
     {:else}

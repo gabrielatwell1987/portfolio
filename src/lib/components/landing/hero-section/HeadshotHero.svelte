@@ -15,15 +15,16 @@
     }
 </script>
 
-<div class="bg-image">
-    <img
-        src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/headshot-noBG_a.webp"
-        alt="background headshot"
-    />
-</div>
-
 <article role="banner" aria-label="hero section">
     <section class="hero-content" aria-label="hero content">
+        <div class="bg-image-wrapper">
+            <img
+                class="bg-image"
+                src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/headshot-noBG_a.webp"
+                alt="background headshot"
+            />
+        </div>
+
         <header class="title-wrapper">
             <h1 class="hero-title">{title}</h1>
 
@@ -38,35 +39,104 @@
     article {
         box-shadow: none;
         background: transparent;
+        min-block-size: 100vh;
+        inline-size: 100%;
+        margin: 0;
+        padding: 0;
 
         min-block-size: 100vh;
         inline-size: 100%;
 
         & .hero-content {
             opacity: 1;
+            position: relative;
+            min-block-size: 100vh;
+
+            & .bg-image-wrapper {
+                position: absolute;
+                inset: 0;
+                z-index: 0;
+                overflow: hidden;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    inline-size: 100%;
+                    block-size: 50%;
+                    background: linear-gradient(
+                        to bottom,
+                        transparent 0%,
+                        var(--clr-invert) 75%
+                    );
+                    pointer-events: none;
+                }
+            }
+
+            & .bg-image {
+                inline-size: 100%;
+                block-size: auto;
+
+                object-fit: contain;
+                object-position: left;
+                opacity: 0.25;
+
+                @media (width <= 768px) {
+                    margin-top: 5em;
+                    transform: scaleY(1.75);
+                }
+            }
 
             & .title-wrapper {
+                position: relative;
+                z-index: 1;
+                min-block-size: 100vh;
+
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
-
                 grid-template-areas:
-                    'title title title title'
+                    '. title title title'
                     '. . text text'
                     '. . cta .';
+                align-items: center;
 
                 & .hero-title {
                     font-family: var(--mono);
                     font-size: clamp(var(--h4), 5vw, var(--xl));
+                    font-weight: 700;
                     line-height: 1.1;
                     grid-area: title;
+                    color: var(--warning);
+                    transform: scaleX(1.2) scaleY(1.75);
+
+                    @media (width <= 768px) {
+                        margin-bottom: 5in;
+                        transform: scaleX(1) scaleY(1.25);
+                    }
                 }
 
                 & .hero-text {
-                    grid-area: text;
                     text-align: left;
-
                     font-family: var(--bronova);
-                    font-size: clamp(var(--h6), 1.5vw, var(--h4));
+                    font-size: clamp(var(--sm), 1.5vw, var(--h3));
+                    color: var(--clr-light-gray);
+
+                    position: absolute;
+                    left: 45%;
+
+                    @media (width <= 768px) {
+                        top: 3em;
+                        overflow-y: auto;
+                        block-size: 30ch;
+
+                        /* position: relative; */
+                        mask-image: linear-gradient(
+                            to bottom,
+                            black 79%,
+                            transparent 100%
+                        );
+                    }
                 }
 
                 & .hero-cta {
@@ -79,41 +149,13 @@
                     font-size: clamp(var(--sm), 1.5vw, var(--h5));
                     inline-size: fit-content;
                     z-index: 2;
+
+                    @media (width <= 768px) {
+                        margin-top: -10em;
+                        /* margin-bottom: 0; */
+                    }
                 }
             }
-        }
-    }
-
-    .bg-image {
-        position: absolute;
-        top: 2em;
-        left: 0;
-        inline-size: 100%;
-        block-size: 100%;
-        overflow: hidden;
-        z-index: 0;
-
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            inline-size: 100%;
-            block-size: 50%;
-            background: linear-gradient(
-                to bottom,
-                transparent 0%,
-                var(--clr-invert) 75%
-            );
-            pointer-events: none;
-        }
-
-        & img {
-            inline-size: 100%;
-            block-size: 100%;
-            object-fit: contain;
-            object-position: left;
-            opacity: 0.25;
         }
     }
 </style>
