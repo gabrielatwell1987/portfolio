@@ -3,6 +3,7 @@
     import SEO from '$lib/data/SEO.svelte';
 
     let Hero = $state<Component | null>(null);
+    let ContentLoaded = $state<Component | null>(null);
     let loaded = $state<boolean>(false);
 
     $effect(() => {
@@ -12,6 +13,11 @@
             import('$lib/components/landing/hero-section/Hero.svelte').then(
                 (module) => {
                     Hero = module.default;
+                },
+            );
+            import('$lib/components/landing/hero-section/ContentLoaded.svelte').then(
+                (module) => {
+                    ContentLoaded = module.default;
                 },
             );
         }
@@ -26,4 +32,8 @@
 
 {#if Hero}
     <Hero cssBg={'random'} />
+{/if}
+
+{#if ContentLoaded}
+    <ContentLoaded />
 {/if}

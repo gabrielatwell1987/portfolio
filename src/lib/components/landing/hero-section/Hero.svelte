@@ -115,7 +115,7 @@
             animState.forEach((state) => {
                 if (!state.shouldAnimate) return;
 
-                const delay = state.index * 40;
+                const delay = state.index * 70;
                 if (elapsed < delay) return;
 
                 const timeSinceStart = elapsed - delay;
