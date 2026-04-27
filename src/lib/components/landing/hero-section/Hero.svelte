@@ -33,7 +33,8 @@
     }
 
     function getRandomBackground(): number | boolean {
-        const options: (number | boolean)[] = [true, 1, 2, 3];
+        // 3 = HeadshotHero.svelte
+        const options: (number | boolean)[] = [true, 1, 2];
         return options[Math.floor(Math.random() * options.length)];
     }
 
