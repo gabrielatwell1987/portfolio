@@ -1,7 +1,7 @@
 <script lang="ts">
     import { goto } from '$app/navigation';
     import gsap from 'gsap';
-    import { GSDevTools } from 'gsap/GSDevTools';
+    // import { GSDevTools } from 'gsap/GSDevTools';
     import { SplitText } from 'gsap/SplitText';
 
     interface Props {
@@ -66,7 +66,7 @@
 
     // gsap
     $effect(() => {
-        gsap.registerPlugin(GSDevTools, SplitText);
+        gsap.registerPlugin(SplitText);
 
         const textContent = document.querySelector('.text-content');
         const smartphone = document.querySelector('.smartphone');
@@ -120,11 +120,11 @@
                 '<',
             );
 
-        const devTools = GSDevTools.create();
+        // const devTools = GSDevTools.create();
 
         return () => {
             tl.kill();
-            devTools?.kill();
+            // devTools?.kill();
         };
     });
 </script>

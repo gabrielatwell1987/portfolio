@@ -8,12 +8,22 @@
         cssBg?: boolean | number | 'random';
         text: string;
         cta: string;
+        bgImage: string;
     }
 
-    let { title, cssBg = false, text, cta }: Props = $props();
+    let { title, cssBg = false, text, cta, bgImage }: Props = $props();
+    let heroText = $state<HTMLElement | null>(null);
+    let maskActive = $state(true);
 
     function handleClick() {
         goto('/projects');
+    }
+
+    function handleTextScroll() {
+        if (!heroText) return;
+
+        const { scrollTop, scrollHeight, clientHeight } = heroText;
+        maskActive = scrollTop + clientHeight < scrollHeight - 5;
     }
 
     $effect(() => {
@@ -42,17 +52,20 @@
 <article role="banner" aria-label="hero section">
     <section class="hero-content" aria-label="hero content">
         <div class="bg-image-wrapper">
-            <img
-                class="bg-image"
-                src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/headshot-noBG_a.webp"
-                alt="background headshot"
-            />
+            <img class="bg-image" src={bgImage} alt="background headshot" />
         </div>
 
         <header class="title-wrapper">
             <h1 class="hero-title">{title}</h1>
 
-            <p class="hero-text">{text}</p>
+            <p
+                class="hero-text"
+                class:masked={maskActive}
+                bind:this={heroText}
+                onscroll={handleTextScroll}
+            >
+                {text}
+            </p>
 
             <button class="hero-cta" onclick={handleClick}>{cta}</button>
         </header>
@@ -65,7 +78,7 @@
         background: transparent;
         min-block-size: 100vh;
         inline-size: 100%;
-        margin: 0;
+        margin-top: 6em;
         padding: 0;
 
         min-block-size: 100vh;
@@ -145,21 +158,23 @@
                     font-family: var(--bronova);
                     font-size: clamp(var(--sm), 1.5vw, var(--h3));
                     color: var(--clr-light-gray);
+                    padding-right: 1em;
 
                     position: absolute;
                     left: 45%;
 
-                    @media (width <= 768px) {
+                    @media (width <= 500px) {
                         top: 3em;
                         overflow-y: auto;
                         block-size: 30ch;
 
-                        /* position: relative; */
-                        mask-image: linear-gradient(
-                            to bottom,
-                            black 79%,
-                            transparent 100%
-                        );
+                        &.masked {
+                            mask-image: linear-gradient(
+                                to bottom,
+                                black 79%,
+                                transparent 100%
+                            );
+                        }
                     }
                 }
 
@@ -175,8 +190,8 @@
                     z-index: 2;
 
                     @media (width <= 768px) {
-                        margin-top: -10em;
-                        /* margin-bottom: 0; */
+                        margin-top: -12em;
+                        min-inline-size: 7.5em;
                     }
                 }
             }
