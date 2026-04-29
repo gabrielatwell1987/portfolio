@@ -588,7 +588,7 @@
                         border: none;
 
                         &.none {
-                            background-color: var(--clr-gray);
+                            background-color: var(--clr-gray, #ebedf0);
                         }
 
                         &.low {
