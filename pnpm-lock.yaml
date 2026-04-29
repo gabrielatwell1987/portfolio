@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@analytics/google-analytics':
-        specifier: ^1.0.7
-        version: 1.1.0
       '@fortawesome/fontawesome-free':
         specifier: ^6.6.0
         version: 6.7.2
@@ -20,21 +17,9 @@ importers:
       copy-to-clipboard:
         specifier: ^3.3.3
         version: 3.3.3
-      dat.gui:
-        specifier: ^0.7.9
-        version: 0.7.9
-      from:
-        specifier: ^0.1.7
-        version: 0.1.7
       highlight.js:
         specifier: ^11.11.1
         version: 11.11.1
-      split-type:
-        specifier: ^0.3.4
-        version: 0.3.4
-      stats.js:
-        specifier: ^0.17.0
-        version: 0.17.0
       svelte:
         specifier: ^5.54.0
         version: 5.54.0
@@ -148,9 +133,6 @@ packages:
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
-
-  '@analytics/google-analytics@1.1.0':
-    resolution: {integrity: sha512-i8uGyELMtwEUAf3GNWNLNBzhRvReDn1RUxvMdMhjUA7+GNGxPOM4kkzFfv3giQXKNxTEjfsh75kqNcscbJsuaA==}
 
   '@antfu/utils@0.7.10':
     resolution: {integrity: sha512-+562v9k4aI80m1+VuMHehNJWLOFjBnXn3tdOitzD0il5b7smkSBal4+a3oKiQTbrwMmN/TBUMDvbdoWDehgOww==}
@@ -1328,9 +1310,6 @@ packages:
     resolution: {integrity: sha512-Fm5NvhYathRnXNVndkUsCCuR63DCLVVwGOOwQw782coXFi5HhkXdu289l59HlXZBawsyNccXfWRYvLzcDCdDig==}
     engines: {node: '>=20'}
 
-  dat.gui@0.7.9:
-    resolution: {integrity: sha512-sCNc1OHobc+Erc1HqiswYgHdVNpSJUlk/Hz8vzOCsER7rl+oF/4+v8GXFUyCgtXpoCX6+bnmg07DedLvBLwYKQ==}
-
   data-urls@7.0.0:
     resolution: {integrity: sha512-23XHcCF+coGYevirZceTVD7NdJOqVn+49IHyxgszm+JIiHLoB2TkmPtsYkNWT1pvRSGkc35L6NHs0yHkN2SumA==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
@@ -1452,9 +1431,6 @@ packages:
 
   fflate@0.8.2:
     resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
-
-  from@0.1.7:
-    resolution: {integrity: sha512-twe20eF1OxVxp/ML/kq2p1uc6KvFK/+vs8WjEbeKmV2He22MKm7YF2ANIt+EOqhJ5L3K/SuuPhk0hWQDjOM23g==}
 
   fs-constants@1.0.0:
     resolution: {integrity: sha512-y6OAwoSIf7FyjMIv94u+b5rdheZEjzR63GTyZJm5qh4Bi+2YgwLCcI/fPFZkL5PSixOt6ZNKm+w+Hfp/Bciwow==}
@@ -1864,14 +1840,8 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
-  split-type@0.3.4:
-    resolution: {integrity: sha512-otEk9vnD8qwfLsk3Lx0gz+qRkNIJCx0mlyL47ImP/DjMuV39d75Lpfwjn9fHteDRz0aoOblSzQjSNT9+Sswxcg==}
-
   stackback@0.0.2:
     resolution: {integrity: sha512-1XMJE5fQo1jGH6Y/7ebnwPOBEkIEnT4QF32d5R1+VXdXveM0IBMJt8zfaxX1P3QhVwrYe+576+jkANtSS2mBbw==}
-
-  stats.js@0.17.0:
-    resolution: {integrity: sha512-hNKz8phvYLPEcRkeG1rsGmV5ChMjKDAWU7/OJJdDErPBNChQXxCo3WZurGpnWc6gZhAzEPFad1aVgyOANH1sMw==}
 
   std-env@4.0.0:
     resolution: {integrity: sha512-zUMPtQ/HBY3/50VbpkupYHbRroTRZJPRLvreamgErJVys0ceuzMkD44J/QjqhHjOzK42GQ3QZIeFG1OYfOtKqQ==}
@@ -2228,8 +2198,6 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
-
-  '@analytics/google-analytics@1.1.0': {}
 
   '@antfu/utils@0.7.10': {}
 
@@ -3075,8 +3043,6 @@ snapshots:
       css-tree: 3.2.1
       lru-cache: 11.2.7
 
-  dat.gui@0.7.9: {}
-
   data-urls@7.0.0:
     dependencies:
       whatwg-mimetype: 5.0.0
@@ -3200,8 +3166,6 @@ snapshots:
       picomatch: 4.0.3
 
   fflate@0.8.2: {}
-
-  from@0.1.7: {}
 
   fs-constants@1.0.0: {}
 
@@ -3663,11 +3627,7 @@ snapshots:
 
   source-map@0.6.1: {}
 
-  split-type@0.3.4: {}
-
   stackback@0.0.2: {}
-
-  stats.js@0.17.0: {}
 
   std-env@4.0.0: {}
 
