@@ -109,7 +109,7 @@
         inline-size: 100ch;
 
         & .summary-custom {
-            color: var(--clr-blue-fade);
+            color: var(--clr-link);
             cursor: pointer;
             font-weight: 600;
             background: none;
