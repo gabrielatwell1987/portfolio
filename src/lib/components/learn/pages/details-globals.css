@@ -18,7 +18,8 @@
 }
 
 .text code {
-    background-color: #f1f5f9;
+    background-color: var(--clr-main);
+    color: var(--clr-invert);
     padding: 0.125rem 0.25rem;
     border-radius: 0.25rem;
     font-family: var(--mono);
@@ -26,8 +27,8 @@
 }
 
 .text pre {
-    background-color: #1e293b;
-    color: #e2e8f0;
+    background-color: var(--clr-main);
+    color: var(--clr-invert);
     padding: 1rem;
     border-radius: 0.5rem;
     overflow-x: auto;
