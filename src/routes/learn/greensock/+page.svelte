@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { scale } from 'svelte/transition';
     import SEO from '$lib/data/SEO.svelte';
     import Title from '$lib/components/layout/titles/Title.svelte';
     import Button from '$lib/components/layout/Button.svelte';
