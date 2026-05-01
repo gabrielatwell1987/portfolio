@@ -94,13 +94,16 @@
         onclick={() => (drawState.isEraser = true)}>🧼</button
     >
 
-    <input
-        type="color"
-        id="color-picker"
-        value={drawState.currentColor}
-        oninput={(e) =>
-            (drawState.currentColor = (e.target as HTMLInputElement).value)}
-    />
+    <label
+        >Color:
+        <input
+            type="color"
+            id="color-picker"
+            value={drawState.currentColor}
+            oninput={(e) =>
+                (drawState.currentColor = (e.target as HTMLInputElement).value)}
+        /></label
+    >
 
     <label
         >Size: <input
@@ -191,6 +194,17 @@
             &.active {
                 background-color: var(--clr-main-fade);
             }
+        }
+
+        & label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        & input,
+        & button {
+            outline: 1px solid var(--clr-main-fade);
         }
     }
 
