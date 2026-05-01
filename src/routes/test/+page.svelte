@@ -1,6 +1,6 @@
 <script>
-    import HeadshotHero from '$lib/components/landing/hero-section/HeadshotHero.svelte';
-
+    import DrawingApp from '$lib/components/experiments/draw-canvas/DrawingApp.svelte';
+    // import HeadshotHero from '$lib/components/landing/hero-section/HeadshotHero.svelte';
     // import MobileFrame from '$lib/components/experiments/hero-video/MobileVideoFrame.svelte';
     // import HeroVideo from '$lib/components/experiments/hero-video/HeroVideo.svelte';
     // import VerticalStretch from '$lib/components/experiments/stretch/VerticalStretch.svelte';
@@ -33,12 +33,14 @@
     secondTitle="video"
 /> -->
 
-<HeadshotHero
+<!-- <HeadshotHero
     title="headshot hero"
     text="this is a hero section with a headshot background image. it's designed to be simple and elegant, allowing the content to shine while providing a visually appealing backdrop. It's perfect for personal portfolios, about pages, or any section where you want to make a strong visual impact with a personal touch. This is fake text to fill the space and show how the layout looks with more content. you can replace this with your own text or remove it entirely if you prefer a cleaner look."
     cta="Click Me!"
     bgImage="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/headshot-noBG_a.webp"
-/>
+/> -->
+
+<DrawingApp />
 
 <style>
 </style>
