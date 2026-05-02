@@ -13,7 +13,11 @@
     let installStatus = $state<string>('');
     let isIOS = $state<boolean>(false);
     let shareFallback = $state<boolean>(false);
-    let shareClicked = $state<boolean>(false);
+    let shareClicked = $state<boolean>(
+        typeof localStorage !== 'undefined'
+            ? localStorage.getItem('pwa-instructions-shown') === 'true'
+            : false,
+    );
 
     const { playSoundAsync: playHoverSound } = useSound(
         '/sounds/ui_bubble.wav',
@@ -87,6 +91,7 @@
     const shareApp = () => {
         shareFallback = true;
         shareClicked = true;
+        localStorage.setItem('pwa-instructions-shown', 'true');
     };
 
     const closeFallback = () => {
