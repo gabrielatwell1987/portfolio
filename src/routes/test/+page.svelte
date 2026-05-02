@@ -1,7 +1,7 @@
 <script>
-    import DrawingApp from '$lib/components/experiments/draw-canvas/DrawingApp.svelte';
+    // import DrawingApp from '$lib/components/learn/draw-canvas/DrawingApp.svelte';
     // import HeadshotHero from '$lib/components/landing/hero-section/HeadshotHero.svelte';
-    // import MobileFrame from '$lib/components/experiments/hero-video/MobileVideoFrame.svelte';
+    import MobileFrame from '$lib/components/experiments/hero-video/MobileVideoFrame.svelte';
     // import HeroVideo from '$lib/components/experiments/hero-video/HeroVideo.svelte';
     // import VerticalStretch from '$lib/components/experiments/stretch/VerticalStretch.svelte';
 </script>
@@ -21,7 +21,7 @@
     ctaText="Learn More"
 /> -->
 
-<!-- <MobileFrame
+<MobileFrame
     videoSrc="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/videos/Waves-Crashing.mp4"
     videos={[
         'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/videos/Waves-Crashing.mp4',
@@ -31,7 +31,7 @@
     ]}
     firstTitle="mobile"
     secondTitle="video"
-/> -->
+/>
 
 <!-- <HeadshotHero
     title="headshot hero"
@@ -40,7 +40,7 @@
     bgImage="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/headshot-noBG_a.webp"
 /> -->
 
-<DrawingApp />
+<!-- <DrawingApp /> -->
 
 <style>
 </style>

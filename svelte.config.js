@@ -47,6 +47,7 @@ const config = {
                 '/learn/greensock',
                 '/learn/sveltekit',
                 '/learn/posts',
+                '/learn/posts/drawing-app',
                 '/test',
             ],
         },

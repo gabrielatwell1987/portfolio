@@ -13,6 +13,7 @@
     let mouseX = $state(0);
     let mouseY = $state(0);
     let isOnCanvas = $state(false);
+    let isMobile = $state(false);
 
     function handlePointerMove(e: PointerEvent) {
         const rect = canvas?.getBoundingClientRect();
@@ -78,6 +79,13 @@
             signal: ac.signal,
         });
 
+        // mobile detection
+        isMobile = window.matchMedia('(max-width: 768px)').matches;
+        const mq = window.matchMedia('(max-width: 768px)');
+        const resizeHandler = (e: MediaQueryListEvent) =>
+            (isMobile = e.matches);
+        mq.addEventListener('change', resizeHandler, { signal: ac.signal });
+
         return () => ac.abort();
     });
 </script>
@@ -86,13 +94,30 @@
     <button
         id="btn-pencil"
         class:active={!drawState.isEraser}
-        onclick={() => (drawState.isEraser = false)}>✏️</button
+        onclick={() => (drawState.isEraser = false)}
+        aria-label="draw"
     >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"
+            ><path
+                d="M100.4 417.2C104.5 402.6 112.2 389.3 123 378.5L304.2 197.3L338.1 163.4C354.7 180 389.4 214.7 442.1 267.4L476 301.3L442.1 335.2L260.9 516.4C250.2 527.1 236.8 534.9 222.2 539L94.4 574.6C86.1 576.9 77.1 574.6 71 568.4C64.9 562.2 62.6 553.3 64.9 545L100.4 417.2zM156 413.5C151.6 418.2 148.4 423.9 146.7 430.1L122.6 517L209.5 492.9C215.9 491.1 221.7 487.8 226.5 483.2L155.9 413.5zM510 267.4C493.4 250.8 458.7 216.1 406 163.4L372 129.5C398.5 103 413.4 88.1 416.9 84.6C430.4 71 448.8 63.4 468 63.4C487.2 63.4 505.6 71 519.1 84.6L554.8 120.3C568.4 133.9 576 152.3 576 171.4C576 190.5 568.4 209 554.8 222.5C551.3 226 536.4 240.9 509.9 267.4z"
+                fill="var(--warning)"
+            /></svg
+        >
+    </button>
+
     <button
         id="btn-eraser"
         class:active={drawState.isEraser}
-        onclick={() => (drawState.isEraser = true)}>🧼</button
+        onclick={() => (drawState.isEraser = true)}
+        aria-label="erase"
     >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"
+            ><path
+                d="M210.5 480L333.5 480L398.8 414.7L225.3 241.2L98.6 367.9L210.6 479.9zM256 544L210.5 544C193.5 544 177.2 537.3 165.2 525.3L49 409C38.1 398.1 32 383.4 32 368C32 352.6 38.1 337.9 49 327L295 81C305.9 70.1 320.6 64 336 64C351.4 64 366.1 70.1 377 81L559 263C569.9 273.9 576 288.6 576 304C576 319.4 569.9 334.1 559 345L424 480L544 480C561.7 480 576 494.3 576 512C576 529.7 561.7 544 544 544L256 544z"
+                fill="var(--fail"
+            /></svg
+        >
+    </button>
 
     <label
         >Color:
@@ -105,18 +130,35 @@
         /></label
     >
 
-    <label
-        >Size: <input
-            type="range"
-            id="size-slider"
-            min="1"
-            max="100"
-            value={drawState.currentSize}
-            oninput={(e) =>
-                (drawState.currentSize = Number(e.currentTarget.value))}
-        /></label
-    >
-    <!-- <span id="size-value">{drawState.currentSize}</span> -->
+    {#if isMobile}
+        <label
+            >Size: <select
+                id="size-select"
+                value={drawState.currentSize}
+                oninput={(e) =>
+                    (drawState.currentSize = Number(e.currentTarget.value))}
+            >
+                <option value={2}>XS</option>
+                <option value={6}>S</option>
+                <option value={12}>M</option>
+                <option value={24}>L</option>
+                <option value={48}>XL</option>
+                <option value={100}>XXL</option>
+            </select></label
+        >
+    {:else}
+        <label
+            >Size: <input
+                type="range"
+                id="size-slider"
+                min="1"
+                max="100"
+                value={drawState.currentSize}
+                oninput={(e) =>
+                    (drawState.currentSize = Number(e.currentTarget.value))}
+            /></label
+        >
+    {/if}
 
     <button id="btn-clear" onclick={clearCanvas}>Clear</button>
     <button id="btn-undo" onclick={undo}>Undo</button>
@@ -160,6 +202,10 @@
 </div>
 
 <style>
+    :global(footer) {
+        display: none;
+    }
+
     #toolbar {
         position: fixed;
         bottom: 2em;
@@ -167,7 +213,7 @@
         transform: translateX(-50%);
         inline-size: fit-content;
         block-size: 5em;
-        background-color: var(--clr-invert-fade);
+        background-color: transparent;
         color: var(--clr-main);
         padding: 1em;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -177,6 +223,15 @@
         gap: 1em;
         z-index: 50;
 
+        @media (width <= 768px) {
+            bottom: unset;
+            top: calc(50% + (70vh - 5em) / 2 - 2em + 1.5em);
+            gap: 0.5em;
+            inline-size: 20em;
+            block-size: auto;
+            margin-inline: auto;
+        }
+
         & button,
         & input[type='color'],
         & input[type='range'] {
@@ -184,15 +239,36 @@
             padding: 0.5em 0.75em;
             border: none;
             border-radius: var(--radius);
-            background-color: var(--clr-invert-fade);
             color: var(--clr-main);
             inline-size: fit-content;
             block-size: auto;
+
+            @media (width <= 768px) {
+                padding: 0.4em 0.5em;
+                font-size: 0.8rem;
+            }
+        }
+
+        & input[type='color'] {
+            min-inline-size: 3em;
+            min-block-size: 2em;
+        }
+
+        & #size-slider {
+            max-inline-size: 7em;
         }
 
         & button {
+            background-color: rgba(0, 0, 0, 0.75);
+            color: rgba(155, 155, 155, 1);
+
+            & svg {
+                inline-size: clamp(1.25em, 1.2vw, 1.5em);
+                block-size: clamp(1.25em, 1.2vw, 1.5em);
+            }
+
             &.active {
-                background-color: var(--clr-main-fade);
+                background-color: rgba(0, 0, 0, 0.1);
             }
         }
 
@@ -223,8 +299,14 @@
 
         max-inline-size: 80vw;
         max-block-size: 70vh;
+
         inline-size: 100%;
         block-size: 100%;
+
+        @media (width <= 768px) {
+            max-block-size: calc(70vh - 5em);
+            top: calc(50% - 2em);
+        }
     }
 
     #eraser-cursor {
