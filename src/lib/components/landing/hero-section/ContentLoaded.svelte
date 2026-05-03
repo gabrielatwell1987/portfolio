@@ -10,33 +10,15 @@
 
         gsap.set(sections, { yPercent: 0 });
 
-        // const tl = gsap.timeline({
-        //     // slide all sections back up and remove loader
-        //     onComplete: () => {
-        //         gsap.to(sections, {
-        //             yPercent: -100,
-        //             duration: 0.5,
-        //             stagger: 0.8,
-        //             ease: 'power2.in',
-        //             onComplete: () => {
-        //                 done = true;
-        //             },
-        //         });
-        //     },
-        // });
-
-        // random delay for each section
-
         sections.forEach((section) => {
             const randomDelay = 0.3 + Math.random() * 0.5;
 
             gsap.to(section, {
                 yPercent: -100,
-                duration: 0.6,
+                duration: 1,
                 delay: randomDelay,
-                ease: 'power3.inOut',
+                ease: 'back.in(1.55)',
                 onComplete: () => {
-                    // done when last section finishes
                     if (section === sections[sections.length - 1]) {
                         done = true;
                     }
