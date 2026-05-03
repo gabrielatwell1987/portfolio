@@ -124,20 +124,14 @@
         <input
             type="color"
             id="color-picker"
-            value={drawState.currentColor}
-            oninput={(e) =>
-                (drawState.currentColor = (e.target as HTMLInputElement).value)}
+            bind:value={drawState.currentColor}
+            style="background-color: {drawState.currentColor}"
         /></label
     >
 
     {#if isMobile}
         <label
-            >Size: <select
-                id="size-select"
-                value={drawState.currentSize}
-                oninput={(e) =>
-                    (drawState.currentSize = Number(e.currentTarget.value))}
-            >
+            >Size: <select id="size-select" bind:value={drawState.currentSize}>
                 <option value={2}>XS</option>
                 <option value={6}>S</option>
                 <option value={12}>M</option>

@@ -9,7 +9,8 @@
         return svg
             .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
             .replace(/on\w+="[^"]*"/gi, '')
-            .replace(/on\w+='[^']*'/gi, '');
+            .replace(/on\w+='[^']*'/gi, '')
+            .replace(/overflow="hidden"/gi, 'overflow="visible"');
     }
 </script>
 
@@ -45,12 +46,12 @@
             align-items: center;
             justify-content: center;
             margin-inline: auto;
+            border-radius: 10% var(--radius);
             z-index: 1;
 
             & :global(svg) {
                 width: 100%;
                 height: 100%;
-                border-radius: 10% var(--radius);
             }
         }
 
@@ -61,6 +62,12 @@
             display: block;
             margin-inline: auto;
             z-index: 1;
+            overflow: hidden;
+            object-fit: cover;
+
+            box-shadow:
+                0 0 0 6px var(--clr-invert),
+                0 0 0 9px var(--clr-main);
         }
     }
 </style>
