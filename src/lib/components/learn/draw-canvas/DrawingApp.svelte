@@ -88,6 +88,16 @@
 
         return () => ac.abort();
     });
+
+    $effect(() => {
+        const footer = document.querySelector('footer') as HTMLElement | null;
+
+        if (footer) footer.style.display = 'none';
+
+        return () => {
+            if (footer) footer.style.display = '';
+        };
+    });
 </script>
 
 <div id="toolbar">
@@ -196,10 +206,6 @@
 </div>
 
 <style>
-    :global(footer) {
-        display: none;
-    }
-
     #toolbar {
         position: fixed;
         bottom: 2em;

@@ -287,6 +287,36 @@
             scene.clear();
         };
     });
+
+    $effect(() => {
+        const footer = document.querySelector('footer') as HTMLElement | null;
+        const nav = document.querySelector('.navigation') as HTMLElement | null;
+        const select = document.querySelector('.select') as HTMLElement | null;
+        const isLandscape = window.matchMedia(
+            '(orientation: landscape) and (max-width: 768px)',
+        );
+        const ac = new AbortController();
+
+        if (footer) footer.style.display = 'none';
+        if (select) select.style.display = 'none';
+        if (isLandscape.matches && nav) nav.style.display = 'none';
+
+        const handleOrientationChange = (e: MediaQueryListEvent) => {
+            if (nav) nav.style.display = e.matches ? 'none' : '';
+            if (select) select.style.display = e.matches ? 'none' : '';
+        };
+
+        isLandscape.addEventListener('change', handleOrientationChange, {
+            signal: ac.signal,
+        });
+
+        return () => {
+            ac.abort();
+            if (footer) footer.style.display = '';
+            if (nav) nav.style.display = '';
+            if (select) select.style.display = '';
+        };
+    });
 </script>
 
 <canvas class="webgl"></canvas>

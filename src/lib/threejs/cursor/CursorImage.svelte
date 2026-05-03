@@ -308,17 +308,41 @@
             }
         };
     });
+
+    $effect(() => {
+        const nav = document.querySelector('.navigation') as HTMLElement | null;
+        const footer = document.querySelector('footer') as HTMLElement | null;
+        const select = document.querySelector('.select') as HTMLElement | null;
+        const isLandscape = window.matchMedia(
+            '(orientation: landscape) and (max-width: 768px)',
+        );
+        const ac = new AbortController();
+
+        if (footer) footer.style.display = 'none';
+        if (isLandscape.matches && select) select.style.display = 'none';
+        if (isLandscape.matches && nav) nav.style.display = 'none';
+
+        const handleOrientationChange = (e: MediaQueryListEvent) => {
+            if (select) select.style.display = e.matches ? 'none' : '';
+            if (nav) nav.style.display = e.matches ? 'none' : '';
+        };
+
+        isLandscape.addEventListener('change', handleOrientationChange, {
+            signal: ac.signal,
+        });
+
+        return () => {
+            ac.abort();
+            if (footer) footer.style.display = '';
+            if (select) select.style.display = '';
+            if (nav) nav.style.display = '';
+        };
+    });
 </script>
 
 <canvas class="webgl"></canvas>
 
 <style>
-    :global(.navigation, .footer, .select) {
-        @media (orientation: landscape) {
-            display: none !important;
-        }
-    }
-
     .webgl {
         position: fixed;
         top: 0;

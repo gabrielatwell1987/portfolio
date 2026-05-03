@@ -26,6 +26,7 @@
         if (!browser) return;
 
         gui = new GUI();
+        gui.close();
         gui.domElement.style.position = 'absolute';
         gui.domElement.style.top = 'auto';
         gui.domElement.style.bottom = '0';
@@ -307,17 +308,21 @@
             }
         };
     });
+
+    $effect(() => {
+        const footer = document.querySelector('footer') as HTMLElement | null;
+
+        if (footer) footer.style.display = 'none';
+
+        return () => {
+            if (footer) footer.style.display = '';
+        };
+    });
 </script>
 
 <canvas class="webgl"></canvas>
 
 <style>
-    :global(.navigation, .footer, .select) {
-        @media (orientation: landscape) {
-            display: none !important;
-        }
-    }
-
     .webgl {
         position: fixed;
         top: 0;

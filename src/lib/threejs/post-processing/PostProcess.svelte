@@ -32,6 +32,7 @@
          */
         // Debug
         const gui = new GUI();
+        gui.close();
 
         // Canvas
         const canvas = document.querySelector(
@@ -334,8 +335,6 @@
         const tick = () => {
             const elapsedTime = clock.getElapsedTime();
 
-            // update passes
-
             // Update controls
             controls.update();
 
@@ -363,17 +362,21 @@
             gammaCorrectionPass.dispose();
         };
     });
+
+    $effect(() => {
+        const footer = document.querySelector('footer') as HTMLElement | null;
+
+        if (footer) footer.style.display = 'none';
+
+        return () => {
+            if (footer) footer.style.display = '';
+        };
+    });
 </script>
 
 <canvas class="webgl"></canvas>
 
 <style>
-    :global(.navigation, .footer, .select) {
-        @media (orientation: landscape) {
-            display: none !important;
-        }
-    }
-
     .webgl {
         position: fixed;
         top: 0;
