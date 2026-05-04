@@ -190,18 +190,12 @@
     }
 
     :global(.mobile-joystick.compact .joystick-base) {
-        width: 84px;
-        height: 84px;
+        inline-size: 5.2em;
+        block-size: 5.2em;
     }
 
     :global(.mobile-joystick.compact .joystick-stick) {
-        width: 38px;
-        height: 38px;
-    }
-
-    :global(.navigation, .footer, .select) {
-        @media (orientation: landscape) {
-            display: none;
-        }
+        inline-size: 2.8em;
+        block-size: 2.8em;
     }
 </style>

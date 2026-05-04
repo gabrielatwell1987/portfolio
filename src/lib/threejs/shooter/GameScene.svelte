@@ -323,17 +323,21 @@
         );
         const ac = new AbortController();
 
-        if (footer) footer.style.display = 'none';
-        if (select) select.style.display = 'none';
-        if (isLandscape.matches && nav) nav.style.display = 'none';
-
-        const handleOrientationChange = (e: MediaQueryListEvent) => {
-            if (nav) nav.style.display = e.matches ? 'none' : '';
+        const applyVisibility = (landscape: boolean) => {
+            if (footer) footer.style.display = landscape ? 'none' : '';
+            if (select) select.style.display = landscape ? 'none' : '';
+            if (nav) nav.style.display = landscape ? 'none' : '';
         };
 
-        isLandscape.addEventListener('change', handleOrientationChange, {
-            signal: ac.signal,
-        });
+        applyVisibility(isLandscape.matches);
+
+        isLandscape.addEventListener(
+            'change',
+            (e) => applyVisibility(e.matches),
+            {
+                signal: ac.signal,
+            },
+        );
 
         return () => {
             ac.abort();
@@ -475,7 +479,6 @@
 
             @media (max-width: 768px) {
                 display: flex;
-                /* anchor() inside calc isn't well-supported — use bottom on small screens */
                 top: auto;
                 bottom: 1em;
                 right: 1em;
