@@ -321,13 +321,21 @@
                     svg {
                         inline-size: clamp(5em, 8vw, 15em);
                         block-size: clamp(5em, 8vw, 15em);
-                        fill: transparent;
+                        fill: var(--clr-invert-fade);
                         stroke: var(--success);
-                        stroke-width: 15;
+                        stroke-width: 25;
 
                         @media (width <= 768px) {
                             stroke-width: 30;
                         }
+                    }
+
+                    &:focus,
+                    &:focus-within {
+                        outline: 1px solid var(--clr-main);
+                        outline-offset: 5px;
+                        background-color: transparent;
+                        box-shadow: none;
                     }
                 }
             }

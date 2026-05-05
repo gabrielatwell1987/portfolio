@@ -68,6 +68,12 @@
             box-shadow:
                 0 0 0 6px var(--clr-invert),
                 0 0 0 9px var(--clr-main);
+
+            @media (width <= 768px) {
+                box-shadow:
+                    0 0 0 5px var(--clr-invert),
+                    0 0 0 7px var(--clr-main);
+            }
         }
     }
 </style>
