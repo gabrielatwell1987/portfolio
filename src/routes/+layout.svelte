@@ -7,7 +7,8 @@
     import NavBar from '$lib/components/navigation/NavBar.svelte';
     import Footer from '$lib/components/navigation/Footer.svelte';
     import Loading from '$lib/components/layout/loading/Loading.svelte';
-    import SkipLink from '$lib/components/layout/SkipLink.svelte';
+    import TestLink from '$lib/components/navigation/TestLink.svelte';
+    import SkipLink from '$lib/components/navigation/SkipLink.svelte';
     import ViewTransition from '$lib/components/layout/view-transitions/ViewTransition.svelte';
     import PullToRefresh from '$lib/data/PullToRefresh.svelte';
 
@@ -70,6 +71,7 @@
 
 <PullToRefresh />
 <SkipLink />
+<TestLink />
 <ViewTransition />
 
 <!-- loading animation -->
