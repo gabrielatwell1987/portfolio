@@ -1,4 +1,7 @@
 <script lang="ts">
+    import gsap from 'gsap';
+    import { tick } from 'svelte';
+
     interface Props {
         text: string;
         span: string;
@@ -6,29 +9,54 @@
 
     let { text, span }: Props = $props();
 
-    let mounted = $state<boolean>(false);
-    let chars = $state<string[]>([]);
     let dynamicAriaLabel = $derived(`${text} ${span}`);
+    let chars = $derived(span.split(''));
+    let subtitleElement = $state<HTMLElement | null>(null);
+    let charElements = $state<HTMLElement[]>([]);
 
+    // gsap
     $effect(() => {
-        chars = span.split('');
-        mounted = true;
+        if (chars.length === 0) return;
+
+        tick().then(() => {
+            if (!subtitleElement || !charElements.length) return;
+
+            gsap.set(subtitleElement, { autoAlpha: 0, y: 75 });
+
+            const tl = gsap.timeline();
+
+            tl.to(subtitleElement, {
+                autoAlpha: 0.75,
+                y: 0,
+                duration: 1.5,
+                ease: 'power2.out',
+            }).fromTo(
+                charElements,
+                { x: '150%', opacity: 0 },
+                {
+                    x: 0,
+                    opacity: 1,
+                    duration: 3,
+                    ease: 'circ.out',
+                    stagger: 0.5,
+                },
+                '-=0.5',
+            );
+        });
     });
 </script>
 
 <section class="animated-text" aria-label={dynamicAriaLabel}>
-    <h1 class="sentence" class:animate={mounted}>
-        <span class="subtitle">{text}</span>
+    <h1 class="sentence">
+        <span class="subtitle" bind:this={subtitleElement}>{text}</span>
 
-        <a href="/three.js"
-            ><span class="bigWord">
+        <a href="/three.js">
+            <span class="bigWord">
                 {#each chars as char, i}
-                    <span class="char" style="--delay: {0.05 + i * 0.5}s"
-                        >{char}</span
-                    >
+                    <span class="char" bind:this={charElements[i]}>{char}</span>
                 {/each}
-            </span></a
-        >
+            </span>
+        </a>
     </h1>
 </section>
 
@@ -48,21 +76,9 @@
             text-align: center;
             margin: 0;
             padding: 2rem;
-            transform: translateY(100%);
-            opacity: 0;
-            transition:
-                transform 1.25s ease-out,
-                opacity 1.25s ease-out;
-            transition-delay: 1s;
 
             @media (width <= 768px) {
                 margin-top: 7%;
-                opacity: 0.8;
-            }
-
-            &.animate {
-                transform: translateY(0);
-                opacity: 1;
             }
 
             .bigWord {
@@ -78,20 +94,12 @@
                 letter-spacing: 1px;
                 line-height: 1.2;
 
-                color: transparent;
-
                 @media (width <= 768px) {
                     margin-top: 2%;
                 }
 
                 .char {
                     display: inline-block;
-                    transform: translateX(150%);
-                    opacity: 0;
-                    animation: charAnimation 3s
-                        cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
-                    animation-delay: calc(var(--delay) + 2.25s);
-
                     background-image: url('https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/gray-wood.webp');
                     background-size: cover;
                     background-position: center;
@@ -104,10 +112,10 @@
             }
 
             & .subtitle {
+                display: inline-block;
                 font-family: var(--bronova);
                 font-weight: 300;
                 color: oklch(from var(--clr-main) 0.7 c h);
-                animation: reveal 0.25s ease-out forwards;
             }
         }
     }
@@ -116,34 +124,5 @@
     .bigWord {
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-    }
-
-    @keyframes charAnimation {
-        0% {
-            transform: translateX(150%);
-            opacity: 0;
-        }
-        100% {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes drop {
-        0% {
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-
-        100% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes reveal {
-        from {
-            opacity: 0;
-        }
     }
 </style>
