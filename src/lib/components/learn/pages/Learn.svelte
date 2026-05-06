@@ -31,7 +31,7 @@
         & .learn-title {
             text-align: center;
             font-family: var(--anta);
-            color: var(--clr-blue);
+            color: var(--clr-blue-fade);
             font-size: clamp(var(--h6), 2vw, var(--h3));
             padding: 0;
             margin: 0;
@@ -47,11 +47,11 @@
 
             & .link {
                 text-decoration: none;
-                color: var(--clr-main-light-fade);
+                color: var(--clr-pale);
                 font-family: var(--mono);
-                font-size: clamp(var(--sm), 1.5vw, var(--h3));
-                font-weight: 700;
-                letter-spacing: 1px;
+                font-size: clamp(var(--h6), 1.5vw, var(--h3));
+                font-weight: 900;
+                letter-spacing: 0;
                 margin: 0;
                 padding: 0;
 
