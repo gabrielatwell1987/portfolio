@@ -22,8 +22,10 @@
             if (!subtitleElement || !charElements.length) return;
 
             gsap.set(subtitleElement, { autoAlpha: 0, y: 75 });
+            gsap.set(charElements, { scaleY: 1.5 });
 
             const tl = gsap.timeline();
+            const mm = gsap.matchMedia();
 
             tl.to(subtitleElement, {
                 autoAlpha: 0.75,
@@ -42,6 +44,10 @@
                 },
                 '-=0.5',
             );
+
+            mm.add('(max-width: 768px)', () => {
+                gsap.set(charElements, { scaleY: 1.75 });
+            });
         });
     });
 </script>

@@ -186,6 +186,10 @@
             font-kerning: auto;
             color: initial;
             view-transition-name: page-title;
+
+            @media (width <= 768px) {
+                margin-bottom: -4em;
+            }
         }
 
         #title {
