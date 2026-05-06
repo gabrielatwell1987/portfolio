@@ -124,7 +124,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"
             ><path
                 d="M210.5 480L333.5 480L398.8 414.7L225.3 241.2L98.6 367.9L210.6 479.9zM256 544L210.5 544C193.5 544 177.2 537.3 165.2 525.3L49 409C38.1 398.1 32 383.4 32 368C32 352.6 38.1 337.9 49 327L295 81C305.9 70.1 320.6 64 336 64C351.4 64 366.1 70.1 377 81L559 263C569.9 273.9 576 288.6 576 304C576 319.4 569.9 334.1 559 345L424 480L544 480C561.7 480 576 494.3 576 512C576 529.7 561.7 544 544 544L256 544z"
-                fill="var(--fail"
+                fill="var(--fail)"
             /></svg
         >
     </button>
@@ -169,6 +169,8 @@
 </div>
 
 <div id="canvas-container">
+    <div id="canvas-background"></div>
+
     <canvas
         id="canvas"
         bind:this={canvas}
@@ -184,8 +186,8 @@
         <div
             id="eraser-cursor"
             style="
-                width: {drawState.currentSize * 1.5}px;
-                height: {drawState.currentSize * 1.5}px;
+                width: {drawState.currentSize}px;
+                height: {drawState.currentSize}px;
                 left: {mouseX}px;
                 top: {mouseY}px;
             "
@@ -196,8 +198,8 @@
         <div
             id="draw-cursor"
             style="
-                width: {drawState.currentSize * 1.5}px;
-                height: {drawState.currentSize * 1.5}px;
+                width: {drawState.currentSize}px;
+                height: {drawState.currentSize}px;
                 left: {mouseX}px;
                 top: {mouseY}px;
             "
@@ -285,47 +287,58 @@
     }
 
     #canvas-container {
-        background: var(--clr-invert-fade);
-        border: 5px solid var(--clr-main-fade);
+        background: transparent;
+        border: 3px solid var(--clr-main-fade);
         border-radius: var(--radius);
         outline: 1px solid var(--clr-main-fade);
         outline-offset: 5px;
         overflow: hidden;
+        z-index: 5;
 
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
 
-        max-inline-size: 80vw;
-        max-block-size: 70vh;
+        max-inline-size: 100vw;
+        max-block-size: 100vh;
+        margin-top: 6.5em;
 
         inline-size: 100%;
         block-size: 100%;
 
         @media (width <= 768px) {
-            max-block-size: calc(70vh - 5em);
-            top: calc(50% - 2em);
+            margin-top: 4em;
+            border: 1px solid var(--clr-main-fade);
+        }
+
+        & #canvas-background {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 1);
+            z-index: -1;
+        }
+
+        & #canvas {
+            cursor: none;
         }
     }
 
     #eraser-cursor {
         position: absolute;
-        border: 2px dotted hotpink;
-        border-radius: 50%;
+        background-color: rgb(236, 151, 194);
+        border-radius: var(--radius) 25%;
         pointer-events: none;
         translate: -50% -50%;
         z-index: 10;
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
     }
 
     #draw-cursor {
         position: absolute;
-        border: 2px dotted var(--clr-main);
+        border: 2px dashed var(--clr-main);
         border-radius: 50%;
         pointer-events: none;
         translate: -50% -50%;
         z-index: 10;
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
     }
 </style>
