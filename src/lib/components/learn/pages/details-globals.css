@@ -15,6 +15,8 @@
 /* Styles for elements inside .text (injected HTML) */
 .text a {
     color: var(--clr-blue-350);
+    font-size: clamp(var(--h6), 1vw, var(--h5));
+    font-weight: 700;
 }
 
 .text code {
@@ -23,6 +25,7 @@
     padding: 0.125rem 0.25rem;
     border-radius: 0.25rem;
     font-family: var(--mono);
+    font-size: clamp(var(--sm), 1vw, var(--h4));
     font-weight: 400;
 }
 

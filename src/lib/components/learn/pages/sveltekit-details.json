@@ -34,5 +34,9 @@
     {
         "summary": "derived.by(...)",
         "content": "<p>The <code>derived.by(...)</code> function allows you to create derived state that depends on other pieces of state or derived state, similar to <code>$derived(...)</code>. However, it provides a more explicit way to specify the dependencies of the derived state. The expression inside of <code>derived.by(...)</code> will re-run whenever any of the specified dependencies change.</p><div class=\"responsive-image\"><img src=\"https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/derived-by.webp\" alt=\"derived.by example in code\" loading=\"lazy\" style=\"aspect-ratio: 16/9; width: 100%; height: auto;\"></div>"
+    },
+    {
+        "summary": "cleanup functions",
+        "content": "<p>Cleanup functions are used to prevent memory leaks and unintended behavior when a component is unmounted. In SvelteKit, the cleanup function is defined by a return function from the <code>$effect</code> rune. This will be called when the component is unmounted.</p><pre><code>return () => { animation.kill(); }</code></pre><p>For example, if you have an animation that is running in an effect, you can use a cleanup function to stop the animation when the component is unmounted. This is important because if the animation continues to run after the component is unmounted, it can cause memory leaks and unintended behavior.</p>"
     }
 ]
