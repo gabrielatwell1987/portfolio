@@ -48,13 +48,13 @@
 
 <style>
     .testimonial {
-        --dark-bg-rgb: var(--clr-main);
-        --light-bg-rgb: var(--clr-invert);
+        --dark-bg-rgb: var(--clr-light-500);
+        --light-bg-rgb: var(--clr-dark-500);
         background-color: hsla(var(--light-bg-rgb), 0.25);
         border-radius: var(--radius);
         padding: 2rem;
         position: relative;
-        box-shadow: 0 0 12px var(--clr-main);
+        box-shadow: 0 0 12px var(--clr-light-500);
         margin-top: -6rem;
         margin-bottom: 2rem;
         max-inline-size: 50em;
@@ -90,12 +90,12 @@
             & strong {
                 font-size: clamp(var(--sm), 1.75vw, var(--h5));
                 font-weight: 600;
-                color: var(--clr-main);
+                color: var(--clr-light-500);
                 letter-spacing: 0px;
             }
 
             & span {
-                color: var(--clr-main);
+                color: var(--clr-light-500);
                 font-size: clamp(var(--xs), 1.25vw, var(--h6));
                 font-weight: 400;
                 opacity: 0.5;
@@ -108,7 +108,7 @@
             top: 1rem;
             left: 1.5rem;
             font-size: 4rem;
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             font-family: Georgia, serif;
             line-height: 1;
         }
@@ -118,14 +118,14 @@
             padding-left: 1rem;
             font-size: clamp(var(--h6), 1.5vw, var(--h3));
             font-style: italic;
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             line-height: 1.5;
             border-left: none;
         }
 
         & .testimonial-footer {
             background-color: transparent;
-            border-top: 1px solid var(--clr-main);
+            border-top: 1px solid var(--clr-light-500);
             margin-top: 1rem;
             display: flex;
             justify-content: center;

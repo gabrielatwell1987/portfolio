@@ -47,7 +47,7 @@
         font-size: clamp(var(--h6), 1.25vw, var(--h5));
         font-weight: 900;
         letter-spacing: 2px;
-        color: var(--clr-main);
+        color: var(--clr-light-500);
         background-color: transparent;
         transition: opacity 0.15s ease-out;
         pointer-events: auto;
@@ -75,7 +75,11 @@
             position: absolute;
             inset: 0;
             z-index: -1;
-            background: color-mix(in oklch, var(--clr-main) 15%, transparent);
+            background: color-mix(
+                in oklch,
+                var(--clr-light-500) 15%,
+                transparent
+            );
             transform: translateY(-110%) skewY(2deg);
             transform-origin: bottom;
             transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -102,7 +106,7 @@
 
         &:focus-visible {
             background: transparent;
-            outline: 1px solid var(--clr-main);
+            outline: 1px solid var(--clr-light-500);
             outline-offset: 1px 2px;
         }
 

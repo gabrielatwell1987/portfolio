@@ -48,10 +48,10 @@
         & .section {
             inline-size: 25vw;
             block-size: 100vh;
-            background-color: var(--clr-invert);
+            background-color: var(--clr-dark-500);
             overflow: hidden;
             flex-shrink: 0;
-            border: 2px solid var(--clr-main);
+            border: 2px solid var(--clr-light-500);
         }
     }
 </style>

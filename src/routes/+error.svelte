@@ -64,10 +64,10 @@
                 font-family: var(--ultra);
                 font-size: clamp(var(--h4), 5vw, var(--xxl));
                 font-weight: 900;
-                -webkit-text-stroke: 1px var(--clr-main);
+                -webkit-text-stroke: 1px var(--clr-light-500);
                 margin-inline: auto;
                 text-align: center;
-                color: var(--clr-blue);
+                color: var(--clr-blue-500);
                 font-family: var(--ultra);
                 letter-spacing: 7px;
                 text-wrap: balance;
@@ -81,7 +81,7 @@
                 margin-inline: auto;
                 margin-block: 0;
                 text-align: center;
-                color: var(--clr-main);
+                color: var(--clr-light-500);
                 font-family: var(--bronova);
                 letter-spacing: 5px;
                 text-wrap: balance;
@@ -95,7 +95,7 @@
                 line-height: 1.1;
                 text-align: start;
                 padding: 2rem 4rem;
-                color: var(--clr-gray);
+                color: var(--clr-gray-700);
                 text-align: center;
                 text-wrap: none;
 

@@ -123,7 +123,7 @@
             letter-spacing: -1px;
             text-transform: uppercase;
             font-kerning: none;
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             padding: 0 1em;
 
             @media (width >= 990px) {
@@ -131,21 +131,21 @@
             }
 
             &.title-main {
-                -webkit-text-stroke: 3px var(--clr-main);
+                -webkit-text-stroke: 3px var(--clr-light-500);
                 text-shadow: none;
 
                 @media (width <= 768px) {
-                    -webkit-text-stroke: 1px var(--clr-invert);
+                    -webkit-text-stroke: 1px var(--clr-dark-500);
                     text-shadow:
-                        0 0 1px var(--clr-main),
-                        -1px -1px 0 var(--clr-invert),
-                        1px -1px 0 var(--clr-invert),
-                        -1px 1px 0 var(--clr-invert),
-                        1px 1px 0 var(--clr-invert),
-                        -1px 0 0 var(--clr-invert),
-                        1px 0 0 var(--clr-invert),
-                        0 -1px 0 var(--clr-invert),
-                        0 1px 0 var(--clr-invert);
+                        0 0 1px var(--clr-light-500),
+                        -1px -1px 0 var(--clr-dark-500),
+                        1px -1px 0 var(--clr-dark-500),
+                        -1px 1px 0 var(--clr-dark-500),
+                        1px 1px 0 var(--clr-dark-500),
+                        -1px 0 0 var(--clr-dark-500),
+                        1px 0 0 var(--clr-dark-500),
+                        0 -1px 0 var(--clr-dark-500),
+                        0 1px 0 var(--clr-dark-500);
                 }
             }
 
@@ -154,23 +154,23 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -48%);
-                color: var(--clr-main);
-                -webkit-text-stroke: 5px var(--clr-invert);
+                color: var(--clr-light-500);
+                -webkit-text-stroke: 5px var(--clr-dark-500);
                 text-shadow: none;
 
                 @media (width <= 768px) {
-                    -webkit-text-stroke: 1px var(--clr-invert);
+                    -webkit-text-stroke: 1px var(--clr-dark-500);
                     transform: translate(-50%, -43.5%);
                     text-shadow:
-                        0 0 1px var(--clr-main),
-                        -2px -2px 0 var(--clr-invert),
-                        2px -2px 0 var(--clr-invert),
-                        -2px 2px 0 var(--clr-invert),
-                        2px 2px 0 var(--clr-invert),
-                        -2px 0 0 var(--clr-invert),
-                        2px 0 0 var(--clr-invert),
-                        0 -2px 0 var(--clr-invert),
-                        0 2px 0 var(--clr-invert);
+                        0 0 1px var(--clr-light-500),
+                        -2px -2px 0 var(--clr-dark-500),
+                        2px -2px 0 var(--clr-dark-500),
+                        -2px 2px 0 var(--clr-dark-500),
+                        2px 2px 0 var(--clr-dark-500),
+                        -2px 0 0 var(--clr-dark-500),
+                        2px 0 0 var(--clr-dark-500),
+                        0 -2px 0 var(--clr-dark-500),
+                        0 2px 0 var(--clr-dark-500);
                 }
             }
         }

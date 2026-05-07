@@ -344,7 +344,7 @@
         top: 50%;
         width: 100%;
         height: 1.5em;
-        background-color: var(--clr-light-gray);
+        background-color: var(--clr-gray-600);
         transform: scaleX(0);
         transition: transform 0.5s ease;
         transform-origin: top left;
@@ -375,9 +375,9 @@
                 inline-size: clamp(150px, 15vw, 300px);
                 block-size: fit-content;
                 border-radius: var(--radius);
-                background-color: var(--clr-invert);
-                border: 1px solid var(--clr-main);
-                color: var(--clr-light-gray);
+                background-color: var(--clr-dark-500);
+                border: 1px solid var(--clr-light-500);
+                color: var(--clr-gray-600);
                 font-family: var(--bronova-bold);
                 font-size: clamp(var(--sm), 2vw, var(--h2));
                 text-align: center;
@@ -400,8 +400,8 @@
                 inline-size: clamp(150px, 15vw, 300px);
                 block-size: fit-content;
                 border-radius: var(--radius);
-                background-color: var(--clr-invert);
-                color: var(--clr-gray);
+                background-color: var(--clr-dark-500);
+                color: var(--clr-gray-700);
                 font-family: var(--bronova);
                 font-size: clamp(var(--xs), 1.2vw, var(--h4));
                 font-weight: 100;

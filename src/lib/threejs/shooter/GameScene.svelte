@@ -431,16 +431,16 @@
 
             mask-image: radial-gradient(
                 ellipse at center,
-                var(--clr-invert) 0%,
+                var(--clr-dark-500) 0%,
                 transparent 80%,
                 transparent 100%
             );
-            box-shadow: inset 0 0 10px 20px var(--clr-invert);
+            box-shadow: inset 0 0 10px 20px var(--clr-dark-500);
 
             @media (width <= 768px) {
                 mask-image: radial-gradient(
                     ellipse at center,
-                    var(--clr-invert) 0%,
+                    var(--clr-dark-500) 0%,
                     transparent 95%,
                     transparent 100%
                 );
@@ -456,9 +456,9 @@
             inline-size: calc(1em * 2.2);
             block-size: calc(1em * 2.2);
             border-radius: 50%;
-            background: var(--clr-blue);
-            color: var(--clr-main);
-            border: 2px solid var(--clr-blue);
+            background: var(--clr-blue-500);
+            color: var(--clr-light-500);
+            border: 2px solid var(--clr-blue-500);
             font-size: 1.5rem;
             cursor: pointer;
             z-index: 100;
@@ -545,8 +545,8 @@
         right: 1rem;
         bottom: 0;
         z-index: 200;
-        background: var(--clr-invert);
-        color: var(--clr-main);
+        background: var(--clr-dark-500);
+        color: var(--clr-light-500);
         padding: 0.35rem 0.6rem;
         border-radius: 6px;
         font-size: 0.95rem;

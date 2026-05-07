@@ -251,7 +251,7 @@
         }
 
         & .legend {
-            color: var(--clr-main-fade);
+            color: var(--clr-light-400);
             font-family: var(--bronova);
             font-size: clamp(var(--xs), 0.8vw, var(--h5));
             font-style: italic;
@@ -285,7 +285,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            border: 2px solid var(--clr-gray);
+            border: 2px solid var(--clr-gray-700);
             padding: 1rem 2rem;
             margin-bottom: 1rem;
             border-radius: var(--radius);
@@ -322,8 +322,8 @@
                 background-repeat: no-repeat;
                 background-position: right 0.75rem center;
                 padding-right: 2.5rem;
-                border: 1px solid var(--clr-gray);
-                color: var(--clr-main);
+                border: 1px solid var(--clr-gray-700);
+                color: var(--clr-light-500);
                 font-family: inherit;
                 font-size: clamp(var(--sm), 1vw, var(--h4));
                 cursor: pointer;
@@ -335,26 +335,26 @@
                     background-color 0.2s ease;
 
                 &:focus {
-                    border-color: var(--clr-main);
+                    border-color: var(--clr-light-500);
                     box-shadow: 0 0 0 2px var(--sky);
                 }
 
                 &:user-valid {
-                    border-color: var(--success);
-                    box-shadow: 0 0 0 2px var(--success);
+                    border-color: var(--clr-success-900);
+                    box-shadow: 0 0 0 2px var(--clr-success-900);
                     background-color: hsla(120, 60%, 50%, 0.05);
                 }
 
                 &:user-invalid {
-                    border-color: var(--fail);
-                    box-shadow: 0 0 0 2px var(--fail);
+                    border-color: var(--clr-fail-900);
+                    box-shadow: 0 0 0 2px var(--clr-fail-900);
                     background-color: hsla(0, 70%, 55%, 0.05);
                     animation: wiggle 0.5s ease-out;
                 }
 
                 & option {
-                    background-color: var(--clr-invert);
-                    color: var(--clr-main);
+                    background-color: var(--clr-dark-500);
+                    color: var(--clr-light-500);
                     padding: 0.5rem;
                 }
             }
@@ -362,14 +362,14 @@
             &:has(input:user-valid) .label-text,
             &:has(select:user-valid) .label-text,
             &:has(textarea:user-valid) .label-text {
-                color: var(--success);
+                color: var(--clr-success-900);
                 font-weight: 700;
             }
 
             &:has(input:user-invalid:not(:placeholder-shown)) .label-text,
             &:has(select:user-invalid) .label-text,
             &:has(textarea:user-invalid:not(:placeholder-shown)) .label-text {
-                color: var(--fail);
+                color: var(--clr-fail-900);
                 font-weight: 700;
             }
         }
@@ -382,7 +382,7 @@
     .label-text {
         font-family: var(--bronova-bold);
         font-size: clamp(var(--sm), 1vw, var(--h4));
-        color: var(--clr-blue);
+        color: var(--clr-blue-500);
         transition: color 0.1s ease;
     }
 
@@ -397,7 +397,7 @@
         border: 2px solid var(--gray);
         border-radius: 4px;
         background: transparent;
-        color: var(--clr-main);
+        color: var(--clr-light-500);
         font-size: var(--sm);
         width: 100%;
         transition:
@@ -406,7 +406,7 @@
             background-color 0.2s ease;
 
         &::placeholder {
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             opacity: 0.7;
             font-size: clamp(0.8rem, 1vw, 1.75rem);
             font-weight: 300;
@@ -419,19 +419,19 @@
         }
 
         &:user-valid {
-            border-color: var(--success);
-            box-shadow: 0 0 0 2px var(--success);
+            border-color: var(--clr-success-900);
+            box-shadow: 0 0 0 2px var(--clr-success-900);
             background-color: hsla(120, 60%, 50%, 0.05);
         }
 
         &:user-invalid {
-            border-color: var(--fail);
-            box-shadow: 0 0 0 2px var(--fail);
+            border-color: var(--clr-fail-900);
+            box-shadow: 0 0 0 2px var(--clr-fail-900);
             background-color: hsla(0, 70%, 55%, 0.05);
             animation: wiggle 0.5s ease-out;
 
             &:placeholder-shown {
-                border-color: var(--clr-gray);
+                border-color: var(--clr-gray-700);
                 box-shadow: none;
                 background-color: transparent;
                 animation: none;

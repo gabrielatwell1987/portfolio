@@ -40,17 +40,17 @@
             font-family: var(--ultra);
             font-size: clamp(var(--h4), 50vw, var(--xxxxl));
             font-weight: bold;
-            color: var(--clr-invert-fade);
+            color: var(--clr-dark-400);
             text-shadow:
-                0 0 1px var(--clr-invert),
-                -1px -1px 0 var(--clr-main),
-                1px -1px 0 var(--clr-main),
-                -1px 1px 0 var(--clr-main),
-                1px 1px 0 var(--clr-main),
-                -1px 0 0 var(--clr-main),
-                1px 0 0 var(--clr-main),
-                0 -1px 0 var(--clr-main),
-                0 1px 0 var(--clr-main);
+                0 0 1px var(--clr-dark-500),
+                -1px -1px 0 var(--clr-light-500),
+                1px -1px 0 var(--clr-light-500),
+                -1px 1px 0 var(--clr-light-500),
+                1px 1px 0 var(--clr-light-500),
+                -1px 0 0 var(--clr-light-500),
+                1px 0 0 var(--clr-light-500),
+                0 -1px 0 var(--clr-light-500),
+                0 1px 0 var(--clr-light-500);
             margin: 0;
             padding: 0;
 

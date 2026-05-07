@@ -4,7 +4,7 @@
     max-inline-size: 100%;
     margin-inline: auto;
     padding: 1em;
-    /* color: var(--clr-main); */
+    /* color: var(--clr-light-500); */
     font-family: var(--bronova);
     font-size: clamp(1.25rem, 1.25vw, 1.75rem);
     font-weight: 100;
@@ -37,7 +37,7 @@
     padding: 0;
     line-height: 1.5;
     /* margin-bottom: 1rem; */
-    color: var(--clr-main-fade);
+    color: var(--clr-light-500-fade);
 
     font-size: clamp(1rem, 1.25vw, 1.75rem);
     font-weight: 300;
@@ -62,7 +62,7 @@
     font-family: var(--bronova-bold);
     font-size: clamp(2rem, 5vw, 8rem);
     font-weight: 900;
-    color: var(--clr-gray);
+    color: var(--clr-gray-700);
     letter-spacing: -1px;
     margin-block: 2rem;
     text-shadow: 0 0 3px var(--dark-gray);
@@ -76,17 +76,17 @@
     font-family: var(--ultra);
     font-size: clamp(1.5rem, 3vw, 2.5rem);
     font-weight: 500;
-    color: var(--clr-invert);
+    color: var(--clr-dark-500);
     text-shadow:
-        0 0 1px var(--clr-main),
-        -2px -2px 0 oklch(from var(--clr-blue) 0.5 c h),
-        2px -2px 0 oklch(from var(--clr-blue) 0.5 c h),
-        -2px 2px 0 oklch(from var(--clr-blue) 0.5 c h),
-        2px 2px 0 oklch(from var(--clr-blue) 0.5 c h),
-        -2px 0 0 oklch(from var(--clr-blue) 0.5 c h),
-        2px 0 0 oklch(from var(--clr-blue) 0.5 c h),
-        0 -2px 0 oklch(from var(--clr-blue) 0.5 c h),
-        0 2px 0 oklch(from var(--clr-blue) 0.5 c h);
+        0 0 1px var(--clr-light-500),
+        -2px -2px 0 oklch(from var(--clr-blue-500) 0.5 c h),
+        2px -2px 0 oklch(from var(--clr-blue-500) 0.5 c h),
+        -2px 2px 0 oklch(from var(--clr-blue-500) 0.5 c h),
+        2px 2px 0 oklch(from var(--clr-blue-500) 0.5 c h),
+        -2px 0 0 oklch(from var(--clr-blue-500) 0.5 c h),
+        2px 0 0 oklch(from var(--clr-blue-500) 0.5 c h),
+        0 -2px 0 oklch(from var(--clr-blue-500) 0.5 c h),
+        0 2px 0 oklch(from var(--clr-blue-500) 0.5 c h);
     letter-spacing: 0px;
     margin-block: 1.5rem;
     scroll-margin-top: 8rem; /* Account for fixed navigation */
@@ -97,7 +97,7 @@
     font-family: var(--bronova);
     font-size: clamp(1.25rem, 1.75vw, 2rem);
     font-weight: 900;
-    color: oklch(from var(--clr-green) 0.35 c h);
+    color: oklch(from var(--clr-green-900) 0.35 c h);
     letter-spacing: -1px;
     margin-block: 2rem;
     text-shadow: 0 0 3px var(--dark-gray);
@@ -164,7 +164,7 @@ div[id] {
     background-color: transparent;
     color: inherit;
     padding: 0.2em 0.4em;
-    border: 1px solid var(--clr-light-gray);
+    border: 1px solid var(--clr-gray-600);
     border-radius: var(--radius);
     font-family: var(--mono);
     font-size: clamp(var(--xs), 1.5vw, var(--h6));
@@ -181,13 +181,13 @@ div[id] {
     -webkit-overflow-scrolling: touch;
     margin: 1rem 0;
     padding: 0;
-    background-color: var(--clr-invert);
+    background-color: var(--clr-dark-500);
 }
 
 .css :not(pre) > code,
 .gsap :not(pre) > code {
-    background-color: var(--clr-main);
-    color: var(--clr-invert);
+    background-color: var(--clr-light-500);
+    color: var(--clr-dark-500);
 }
 
 .css pre code,
@@ -196,14 +196,14 @@ div[id] {
     color: inherit;
     display: block;
     padding: 1em;
-    border: 3px solid var(--clr-main);
+    border: 3px solid var(--clr-light-500);
     border-radius: var(--radius);
     overflow-x: auto;
     font-family: var(--mono);
     font-size: clamp(var(--xs), 1.5vw, var(--h6));
     font-weight: 700;
     line-height: 1.4;
-    box-shadow: 0 4px 1px var(--clr-gray);
+    box-shadow: 0 4px 1px var(--clr-gray-700);
 
     box-sizing: border-box;
     max-inline-size: 100%;
@@ -212,7 +212,7 @@ div[id] {
     overflow-wrap: normal;
 
     @media (max-width: 768px) {
-        box-shadow: 0 2px 1px var(--clr-gray);
+        box-shadow: 0 2px 1px var(--clr-gray-700);
         white-space: pre-wrap;
         word-break: break-word;
         padding: 0.75rem;

@@ -25,9 +25,9 @@
     .card {
         inline-size: fit-content;
         block-size: fit-content;
-        background-color: var(--clr-invert-fade);
+        background-color: var(--clr-dark-400);
         border-radius: 8px;
-        border: 2px solid var(--clr-main);
+        border: 2px solid var(--clr-light-500);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         overflow: clip;
         transition: all 0.3s ease-out;
@@ -36,7 +36,7 @@
         margin: 0;
 
         &:hover {
-            box-shadow: 0 0 2em var(--clr-gray);
+            box-shadow: 0 0 2em var(--clr-gray-700);
         }
 
         .card-image {
@@ -61,21 +61,21 @@
             letter-spacing: -1px;
             margin-bottom: 0.5rem;
             text-transform: uppercase;
-            color: var(--clr-invert);
+            color: var(--clr-dark-500);
             text-shadow:
-                0 0 1px var(--clr-invert),
-                -2px -2px 0 var(--clr-gray),
-                2px -2px 0 var(--clr-gray),
-                -2px 2px 0 var(--clr-gray),
-                2px 2px 0 var(--clr-gray),
-                -2px 0 0 var(--clr-gray),
-                2px 0 0 var(--clr-gray),
-                0 -2px 0 var(--clr-gray),
-                0 2px 0 var(--clr-gray);
+                0 0 1px var(--clr-dark-500),
+                -2px -2px 0 var(--clr-gray-700),
+                2px -2px 0 var(--clr-gray-700),
+                -2px 2px 0 var(--clr-gray-700),
+                2px 2px 0 var(--clr-gray-700),
+                -2px 0 0 var(--clr-gray-700),
+                2px 0 0 var(--clr-gray-700),
+                0 -2px 0 var(--clr-gray-700),
+                0 2px 0 var(--clr-gray-700);
         }
 
         .card-description {
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             font-size: clamp(var(--xs), 1.5vw, var(--h4));
             font-weight: 300;
             margin-bottom: 1rem;
@@ -90,8 +90,8 @@
             justify-content: center;
             align-items: center;
             background-color: transparent;
-            color: var(--clr-main);
-            border: 1px solid var(--clr-main);
+            color: var(--clr-light-500);
+            border: 1px solid var(--clr-light-500);
             border-radius: var(--radius);
             font-family: var(--ultra);
             font-size: clamp(var(--sm), 1.2vw, var(--h5));
@@ -101,7 +101,7 @@
             block-size: 10%;
             outline: none;
             margin: 1rem auto;
-            filter: drop-shadow(0 0 0.75rem var(--clr-gray));
+            filter: drop-shadow(0 0 0.75rem var(--clr-gray-700));
             transition: 300ms;
             outline: 3px solid currentColor;
             outline-offset: -7px;
@@ -115,7 +115,7 @@
             }
 
             &:focus-visible {
-                outline: 1px solid var(--clr-main);
+                outline: 1px solid var(--clr-light-500);
                 background: transparent;
             }
 

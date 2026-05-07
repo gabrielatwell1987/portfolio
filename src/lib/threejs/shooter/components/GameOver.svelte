@@ -82,8 +82,8 @@
         backdrop-filter: blur(7px);
 
         & .game-over-container {
-            background: var(--clr-invert);
-            border: 3px solid var(--clr-invert-fade);
+            background: var(--clr-dark-500);
+            border: 3px solid var(--clr-dark-400);
             border-radius: 1rem;
             padding: 3rem;
             text-align: center;
@@ -139,17 +139,17 @@
                     text-transform: uppercase;
                     letter-spacing: 0.2em;
                     font-weight: 900;
-                    color: var(--clr-invert);
+                    color: var(--clr-dark-500);
                     text-shadow:
-                        0 0 1px var(--clr-invert),
-                        -2px -2px 0 var(--success),
-                        2px -2px 0 var(--success),
-                        -2px 2px 0 var(--success),
-                        2px 2px 0 var(--success),
-                        -2px 0 0 var(--success),
-                        2px 0 0 var(--success),
-                        0 -2px 0 var(--success),
-                        0 2px 0 var(--success);
+                        0 0 1px var(--clr-dark-500),
+                        -2px -2px 0 var(--clr-success-900),
+                        2px -2px 0 var(--clr-success-900),
+                        -2px 2px 0 var(--clr-success-900),
+                        2px 2px 0 var(--clr-success-900),
+                        -2px 0 0 var(--clr-success-900),
+                        2px 0 0 var(--clr-success-900),
+                        0 -2px 0 var(--clr-success-900),
+                        0 2px 0 var(--clr-success-900);
                 }
             }
 
@@ -161,24 +161,24 @@
                     text-transform: uppercase;
                     letter-spacing: 0.2em;
                     font-weight: 900;
-                    color: var(--clr-invert);
+                    color: var(--clr-dark-500);
                     text-shadow:
-                        0 0 1px var(--clr-invert),
-                        -2px -2px 0 var(--fail),
-                        2px -2px 0 var(--fail),
-                        -2px 2px 0 var(--fail),
-                        2px 2px 0 var(--fail),
-                        -2px 0 0 var(--fail),
-                        2px 0 0 var(--fail),
-                        0 -2px 0 var(--fail),
-                        0 2px 0 var(--fail);
+                        0 0 1px var(--clr-dark-500),
+                        -2px -2px 0 var(--clr-fail-900),
+                        2px -2px 0 var(--clr-fail-900),
+                        -2px 2px 0 var(--clr-fail-900),
+                        2px 2px 0 var(--clr-fail-900),
+                        -2px 0 0 var(--clr-fail-900),
+                        2px 0 0 var(--clr-fail-900),
+                        0 -2px 0 var(--clr-fail-900),
+                        0 2px 0 var(--clr-fail-900);
                 }
             }
         }
     }
 
     p {
-        color: var(--clr-main);
+        color: var(--clr-light-500);
         font-family: var(--bronova);
         font-size: clamp(var(--sm), 2.5vw, var(--h5));
         font-weight: 500;
@@ -187,8 +187,8 @@
 
     .restart-button {
         background: transparent;
-        color: var(--clr-main);
-        border: 2px solid var(--clr-main-fade);
+        color: var(--clr-light-500);
+        border: 2px solid var(--clr-light-500-fade);
         border-radius: 0.5rem;
         padding: 1rem 2rem;
         font-family: var(--bronova);

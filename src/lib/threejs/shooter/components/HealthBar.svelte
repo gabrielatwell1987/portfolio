@@ -50,8 +50,8 @@
             block-size: 100%;
             background: linear-gradient(
                 90deg,
-                var(--clr-invert-fade),
-                var(--fail)
+                var(--clr-dark-400),
+                var(--clr-fail-900)
             );
             transition: inline-size 0.1s ease;
             font-size: clamp(var(--xxxs), 0.1vw, var(--xxs));

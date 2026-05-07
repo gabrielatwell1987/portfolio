@@ -106,20 +106,20 @@
                 }
 
                 :global(summary) {
-                    color: var(--clr-blue);
-                    border-color: var(--clr-gray);
+                    color: var(--clr-blue-500);
+                    border-color: var(--clr-gray-700);
 
                     @media (width <= 768px) {
-                        color: var(--clr-blue);
-                        border-color: var(--clr-gray);
+                        color: var(--clr-blue-500);
+                        border-color: var(--clr-gray-700);
                     }
                 }
 
                 :global(.text) {
-                    color: var(--clr-main);
+                    color: var(--clr-light-500);
 
                     :global(a) {
-                        color: var(--clr-link);
+                        color: var(--clr-blue-350);
                     }
                 }
 

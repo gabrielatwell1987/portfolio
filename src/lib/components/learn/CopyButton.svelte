@@ -35,9 +35,9 @@
         inline-size: fit-content;
         block-size: fit-content;
         padding: 0.25em 0.75em;
-        background: var(--clr-invert);
-        border: 2px solid var(--clr-gray);
-        color: var(--clr-gray);
+        background: var(--clr-dark-500);
+        border: 2px solid var(--clr-gray-700);
+        color: var(--clr-gray-700);
         border-radius: var(--radius);
         cursor: pointer;
         font-size: clamp(var(--sm), 0.875rem, var(--h5));

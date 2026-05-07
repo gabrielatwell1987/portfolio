@@ -68,7 +68,7 @@
         & button {
             background-color: transparent;
             filter: brightness(1);
-            color: var(--clr-green);
+            color: var(--clr-green-900);
             width: fit-content;
             font-family: var(--bronova);
             font-size: clamp(var(--h6), 1.5vw, var(--h4));
@@ -88,7 +88,7 @@
             }
 
             &:focus {
-                outline: 1px solid var(--clr-main);
+                outline: 1px solid var(--clr-light-500);
                 background: transparent;
             }
 
@@ -103,7 +103,7 @@
 
         [popover]:popover-open .pwa-title {
             view-transition-name: pwa-title;
-            color: var(--clr-green);
+            color: var(--clr-green-900);
             font-size: clamp(var(--h5), 1.5vw, var(--h3));
         }
 
@@ -114,7 +114,7 @@
             font-size: clamp(var(--sm), 5vw, var(--h3));
             letter-spacing: 2px;
             padding: clamp(1rem, 2vw, 2.25rem) clamp(1.5rem, 2vw, 2.75rem);
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             width: 80%;
             overflow-y: auto;
 
@@ -126,7 +126,7 @@
     }
 
     [popover] {
-        border: 3px solid var(--clr-gray);
+        border: 3px solid var(--clr-gray-700);
         border-radius: 0.5rem;
         box-shadow: var(--blackest) 0px 20px 25px -5px;
         padding: 1rem 1.5rem;

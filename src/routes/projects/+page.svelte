@@ -208,7 +208,7 @@
                 & .skeleton-title {
                     height: 2rem;
                     width: 200px;
-                    background: var(--clr-main);
+                    background: var(--clr-light-500);
                     opacity: 0.3;
                     border-radius: 4px;
                     margin: 0 auto 0.5rem;
@@ -217,7 +217,7 @@
                 & .skeleton-subtitle {
                     height: 1rem;
                     width: 150px;
-                    background: var(--clr-main);
+                    background: var(--clr-light-500);
                     opacity: 0.2;
                     border-radius: 4px;
                     margin: 0 auto;
@@ -226,7 +226,7 @@
 
             & .skeleton-chart {
                 height: 150px;
-                background: var(--clr-main);
+                background: var(--clr-light-500);
                 opacity: 0.1;
                 border-radius: 8px;
                 margin-bottom: 1rem;
@@ -235,7 +235,7 @@
             & .skeleton-legend {
                 height: 20px;
                 width: 200px;
-                background: var(--clr-main);
+                background: var(--clr-light-500);
                 opacity: 0.1;
                 border-radius: 4px;
                 margin: 0 auto;
@@ -246,9 +246,9 @@
     .projects {
         background: linear-gradient(
             to bottom,
-            oklch(from var(--clr-gray) 0.35 c h) 0%,
-            var(--clr-invert) 12%,
-            var(--clr-invert) 100%
+            oklch(from var(--clr-gray-700) 0.35 c h) 0%,
+            var(--clr-dark-500) 12%,
+            var(--clr-dark-500) 100%
         );
 
         & .bevel-border {
@@ -268,7 +268,7 @@
                 content: '';
                 position: absolute;
                 inset: 0;
-                background: var(--clr-gray);
+                background: var(--clr-gray-700);
                 clip-path: polygon(
                     0 40px,
                     40px 0,

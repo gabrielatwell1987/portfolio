@@ -18,7 +18,7 @@
 />
 
 <BlurOverlay />
-<BgCircles stroke="var(--clr-gray)" />
+<BgCircles stroke="var(--clr-gray-700)" />
 
 <div class="learn-wrapper">
     <section class="learn-header">
@@ -90,9 +90,9 @@
         min-height: 100vh;
         background: linear-gradient(
             to bottom,
-            oklch(from var(--clr-gray) 0.35 c h) 0%,
-            var(--clr-invert) 30%,
-            var(--clr-invert) var(--100)
+            oklch(from var(--clr-gray-700) 0.35 c h) 0%,
+            var(--clr-dark-500) 30%,
+            var(--clr-dark-500) var(--100)
         );
 
         @media (width <= 768px) {
@@ -148,7 +148,7 @@
                     }
 
                     &:focus {
-                        outline: 1px solid var(--clr-main);
+                        outline: 1px solid var(--clr-light-500);
                         background: transparent;
                         box-shadow: none;
                     }

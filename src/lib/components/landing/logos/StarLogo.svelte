@@ -40,7 +40,7 @@
         >
             <path
                 d="M894.11,202.889L964.808,420.474L1193.59,420.474L1008.501,554.949L1079.199,772.535L894.11,638.059L709.021,772.535L779.719,554.949L594.63,420.474L823.412,420.474L894.11,202.889Z"
-                style="fill:var(--clr-blue);stroke:var(--clr-invert);stroke-width:8.91px;"
+                style="fill:var(--clr-blue-500);stroke:var(--clr-dark-500);stroke-width:8.91px;"
             />
         </g>
         <g transform="matrix(1.391302,0,0,1.361136,-274.220362,154.824193)">
@@ -51,7 +51,7 @@
             <text
                 x="802.937px"
                 y="590.567px"
-                style="font-family:var(--bronova-bold);font-weight:700;font-size:168.996px;fill:var(--clr-invert);"
+                style="font-family:var(--bronova-bold);font-weight:700;font-size:168.996px;fill:var(--clr-dark-500);"
                 >atwell</text
             >
         </g>

@@ -42,7 +42,7 @@
         }
 
         p {
-            color: var(--clr-gray);
+            color: var(--clr-gray-700);
             margin: 0;
             padding: 0;
             text-align: center;

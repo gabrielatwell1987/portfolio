@@ -73,7 +73,7 @@
 
     .project-card {
         block-size: auto;
-        border: 2px solid var(--clr-gray);
+        border: 2px solid var(--clr-gray-700);
         border-radius: 1em 1em var(--radius) var(--radius);
         will-change: opacity, transform;
         display: flex;
@@ -101,7 +101,7 @@
 
             &:focus,
             &:focus-visible {
-                outline: 1px solid var(--clr-main);
+                outline: 1px solid var(--clr-light-500);
                 outline-offset: 2px;
                 box-shadow: none;
                 background-color: transparent;
@@ -117,17 +117,17 @@
                 text-decoration: none;
                 padding: 0;
                 margin: 0;
-                color: var(--clr-invert);
+                color: var(--clr-dark-500);
                 text-shadow:
-                    0 0 1px var(--clr-invert),
-                    -3px -3px 0 var(--clr-main),
-                    3px -3px 0 var(--clr-main),
-                    -3px 3px 0 var(--clr-main),
-                    3px 3px 0 var(--clr-main),
-                    -3px 0 0 var(--clr-main),
-                    3px 0 0 var(--clr-main),
-                    0 -3px 0 var(--clr-main),
-                    0 3px 0 var(--clr-main);
+                    0 0 1px var(--clr-dark-500),
+                    -3px -3px 0 var(--clr-light-500),
+                    3px -3px 0 var(--clr-light-500),
+                    -3px 3px 0 var(--clr-light-500),
+                    3px 3px 0 var(--clr-light-500),
+                    -3px 0 0 var(--clr-light-500),
+                    3px 0 0 var(--clr-light-500),
+                    0 -3px 0 var(--clr-light-500),
+                    0 3px 0 var(--clr-light-500);
                 transition: scale 0.15s ease-out;
                 text-wrap: pretty;
 
@@ -139,15 +139,15 @@
                     margin-top: 1em;
 
                     text-shadow:
-                        0 0 1px var(--clr-invert),
-                        -2px -2px 0 var(--clr-main),
-                        2px -2px 0 var(--clr-main),
-                        -2px 2px 0 var(--clr-main),
-                        2px 2px 0 var(--clr-main),
-                        -2px 0 0 var(--clr-main),
-                        2px 0 0 var(--clr-main),
-                        0 -2px 0 var(--clr-main),
-                        0 2px 0 var(--clr-main);
+                        0 0 1px var(--clr-dark-500),
+                        -2px -2px 0 var(--clr-light-500),
+                        2px -2px 0 var(--clr-light-500),
+                        -2px 2px 0 var(--clr-light-500),
+                        2px 2px 0 var(--clr-light-500),
+                        -2px 0 0 var(--clr-light-500),
+                        2px 0 0 var(--clr-light-500),
+                        0 -2px 0 var(--clr-light-500),
+                        0 2px 0 var(--clr-light-500);
                 }
 
                 &:active {
@@ -197,7 +197,7 @@
             }
 
             &:focus {
-                outline: 1px solid var(--clr-main);
+                outline: 1px solid var(--clr-light-500);
                 background: transparent;
                 box-shadow: none;
             }
@@ -208,7 +208,7 @@
                 border-radius: var(--radius);
                 max-inline-size: var(--100);
                 transition: scale 0.25s ease-out;
-                border: 1px solid var(--clr-main);
+                border: 1px solid var(--clr-light-500);
                 padding: 0.2vw;
                 position: relative;
                 margin: 0;
@@ -235,10 +235,10 @@
                 inline-size: fit-content;
                 visibility: hidden;
                 opacity: 0;
-                background-color: var(--clr-main);
-                color: var(--clr-invert);
+                background-color: var(--clr-light-500);
+                color: var(--clr-dark-500);
                 text-align: center;
-                border: 1px solid var(--clr-invert);
+                border: 1px solid var(--clr-dark-500);
                 border-radius: var(--radius);
                 padding: 5px 1em;
                 font-family: var(--bronova);

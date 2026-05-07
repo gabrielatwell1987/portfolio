@@ -101,7 +101,7 @@
             inline-size: 25vw;
             block-size: 25vh;
             backdrop-filter: blur(10px);
-            background: var(--clr-light-invert);
+            background: var(--clr-dark-200);
             box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.7);
             opacity: 1;
             will-change: opacity;

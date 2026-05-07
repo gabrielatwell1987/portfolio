@@ -97,7 +97,7 @@
                 }
 
                 &:focus {
-                    outline: 1px solid var(--clr-main);
+                    outline: 1px solid var(--clr-light-500);
                     background: transparent;
                     box-shadow: none;
                 }

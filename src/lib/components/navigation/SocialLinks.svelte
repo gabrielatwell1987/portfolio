@@ -115,7 +115,7 @@
             background-color: transparent;
 
             &:focus {
-                outline: 1px solid var(--clr-main);
+                outline: 1px solid var(--clr-light-500);
                 background: transparent;
                 box-shadow: none;
             }
@@ -128,8 +128,8 @@
                 cursor: pointer;
 
                 & path {
-                    fill: var(--clr-invert);
-                    stroke: var(--clr-main);
+                    fill: var(--clr-dark-500);
+                    stroke: var(--clr-light-500);
                     stroke-width: 0.2em;
 
                     &:not(:hover) {

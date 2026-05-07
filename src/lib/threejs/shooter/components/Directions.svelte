@@ -46,12 +46,12 @@
         inline-size: fit-content;
         block-size: fit-content;
         border-radius: var(--radius);
-        background: var(--clr-invert-fade);
-        color: var(--clr-main);
+        background: var(--clr-dark-400);
+        color: var(--clr-light-500);
         font-family: var(--bronova-bold);
         font-size: clamp(var(--xs), 1.2vw, var(--h5));
         opacity: 0.8;
-        border: 2px solid var(--clr-invert);
+        border: 2px solid var(--clr-dark-500);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -75,9 +75,9 @@
         position: fixed;
         bottom: 1em;
         right: 1em;
-        background: var(--clr-invert-fade);
+        background: var(--clr-dark-400);
         padding: 0.5rem 1rem;
-        border: 1px solid var(--clr-invert);
+        border: 1px solid var(--clr-dark-500);
         border-radius: var(--radius);
         z-index: 100;
         max-inline-size: 30vw;
@@ -93,8 +93,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: var(--clr-invert-fade);
-            border: 1px solid var(--clr-invert);
+            background: var(--clr-dark-400);
+            border: 1px solid var(--clr-dark-500);
             border-radius: var(--radius);
             padding: 0.2rem 0.75rem;
             z-index: 150;
@@ -104,7 +104,7 @@
         }
 
         & h2 {
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             font-family: var(--bronova);
             font-size: clamp(var(--xs), 1.2vw, var(--h5));
             font-weight: 500;
@@ -119,7 +119,7 @@
         }
 
         & h3 {
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             font-family: var(--bronova);
             font-size: clamp(var(--xs), 1vw, var(--h6));
             font-weight: 300;
@@ -133,7 +133,7 @@
         }
 
         & li {
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             font-family: var(--bronova);
             font-size: clamp(var(--xxs), 1.1vw, var(--sm));
             font-weight: 400;

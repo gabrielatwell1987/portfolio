@@ -38,7 +38,7 @@
     }
 
     ::picker(select) {
-        background: var(--clr-invert-fade);
+        background: var(--clr-dark-400);
         border: none;
         box-shadow: none;
         overflow: visible;
@@ -48,14 +48,15 @@
         background:
             repeating-radial-gradient(
                 ellipse at 50% 50%,
-                color-mix(in oklch, var(--clr-main) 8%, transparent) 0 0.75em,
+                color-mix(in oklch, var(--clr-light-500) 8%, transparent) 0
+                    0.75em,
                 transparent 0.15em 1.5em
             ),
-            var(--clr-invert);
+            var(--clr-dark-500);
 
         backdrop-filter: blur(12px) saturate(180%);
-        border: 1px solid var(--clr-main);
-        color: var(--clr-main);
+        border: 1px solid var(--clr-light-500);
+        color: var(--clr-light-500);
         max-inline-size: fit-content;
         font-family: var(--bronova-bold);
         font-size: clamp(var(--sm), 1.1vw, var(--h5));
@@ -64,7 +65,7 @@
         transition: none;
 
         & option {
-            color: var(--clr-main);
+            color: var(--clr-light-500);
 
             &:hover {
                 text-decoration: line-through;
@@ -74,7 +75,7 @@
             &::checkmark {
                 content: '→';
                 display: inline-block;
-                color: var(--clr-main-fade);
+                color: var(--clr-light-400);
                 animation: slideIn 0.3s ease-out;
 
                 -webkit-text-stroke: 0.15em currentColor;

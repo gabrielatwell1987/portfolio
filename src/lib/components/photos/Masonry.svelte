@@ -192,8 +192,8 @@
                     justify-content: center;
                     align-items: center;
                     text-align: center;
-                    background: var(--clr-invert);
-                    color: var(--clr-main);
+                    background: var(--clr-dark-500);
+                    color: var(--clr-light-500);
                     white-space: normal;
                     word-wrap: break-word;
                     overflow-wrap: break-word;
@@ -238,8 +238,8 @@
 
         & img {
             cursor: pointer;
-            box-shadow: 0 0 10px var(--clr-invert);
-            border: 2px solid var(--clr-main);
+            box-shadow: 0 0 10px var(--clr-dark-500);
+            border: 2px solid var(--clr-light-500);
             border-radius: var(--radius);
             display: block;
         }

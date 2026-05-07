@@ -116,12 +116,12 @@
 
         transform: translateZ(0);
         isolation: isolate;
-        background: var(--clr-invert, #fff);
+        background: var(--clr-dark-500, #fff);
 
         & .preloader-line {
             flex: 1;
             height: 100vh;
-            background-color: var(--clr-invert-fade);
+            background-color: var(--clr-dark-400);
             transform-origin: right;
         }
     }

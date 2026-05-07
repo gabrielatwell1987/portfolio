@@ -10,19 +10,19 @@
             font-family: var(--ultra);
             font-size: clamp(var(--h5), 1.5vw, var(--h4));
             font-weight: 900;
-            border: 1px solid var(--clr-main);
-            outline: 3px solid var(--clr-main);
-            color: var(--clr-invert);
+            border: 1px solid var(--clr-light-500);
+            outline: 3px solid var(--clr-light-500);
+            color: var(--clr-dark-500);
             text-shadow:
-                0 0 1px var(--clr-main),
-                -2px -2px 0 var(--clr-main-light-fade),
-                2px -2px 0 var(--clr-main-light-fade),
-                -2px 2px 0 var(--clr-main-light-fade),
-                2px 2px 0 var(--clr-main-light-fade),
-                -2px 0 0 var(--clr-main-light-fade),
-                2px 0 0 var(--clr-main-light-fade),
-                0 -2px 0 var(--clr-main-light-fade),
-                0 2px 0 var(--clr-main-light-fade);
+                0 0 1px var(--clr-light-500),
+                -2px -2px 0 var(--clr-light-350),
+                2px -2px 0 var(--clr-light-350),
+                -2px 2px 0 var(--clr-light-350),
+                2px 2px 0 var(--clr-light-350),
+                -2px 0 0 var(--clr-light-350),
+                2px 0 0 var(--clr-light-350),
+                0 -2px 0 var(--clr-light-350),
+                0 2px 0 var(--clr-light-350);
             border-radius: var(--radius);
             outline-offset: -7px;
             margin-inline: auto;
@@ -46,7 +46,7 @@
             }
 
             &:focus-visible {
-                outline: 1px solid var(--clr-main);
+                outline: 1px solid var(--clr-light-500);
                 background: transparent;
             }
 
@@ -57,15 +57,15 @@
 
         /* @media (width >= 500px) {
             text-shadow:
-                0 0 1px var(--clr-main),
-                -3px -3px 0 var(--clr-main),
-                3px -3px 0 var(--clr-main),
-                -3px 3px 0 var(--clr-main),
-                3px 3px 0 var(--clr-main),
-                -3px 0 0 var(--clr-main),
-                3px 0 0 var(--clr-main),
-                0 -3px 0 var(--clr-main),
-                0 3px 0 var(--clr-main);
+                0 0 1px var(--clr-light-500),
+                -3px -3px 0 var(--clr-light-500),
+                3px -3px 0 var(--clr-light-500),
+                -3px 3px 0 var(--clr-light-500),
+                3px 3px 0 var(--clr-light-500),
+                -3px 0 0 var(--clr-light-500),
+                3px 0 0 var(--clr-light-500),
+                0 -3px 0 var(--clr-light-500),
+                0 3px 0 var(--clr-light-500);
         } */
     }
 

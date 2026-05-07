@@ -84,9 +84,11 @@
             const bodyStyles = getComputedStyle(document.body);
             const htmlStyles = getComputedStyle(document.documentElement);
             const newStarColor = bodyStyles
-                .getPropertyValue('--clr-dark-pale')
+                .getPropertyValue('--clr-pale-900')
                 .trim();
-            const grayColor = bodyStyles.getPropertyValue('--clr-gray').trim();
+            const grayColor = bodyStyles
+                .getPropertyValue('--clr-gray-700')
+                .trim();
 
             // detect light mode
             const colorScheme =
@@ -458,7 +460,7 @@
         }
 
         & .summary {
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             font-family: var(--bronova);
             font-size: clamp(var(--sm), 2vw, var(--h5));
             font-weight: 400;

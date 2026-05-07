@@ -174,7 +174,7 @@
             margin-inline: auto;
             text-align: center;
             inline-size: var(--100);
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             margin-top: 0;
 
             @media (width >= 990px) {
@@ -189,7 +189,7 @@
                 margin-inline: auto;
                 background-color: transparent;
                 box-shadow: none;
-                color: var(--clr-main);
+                color: var(--clr-light-500);
                 margin-bottom: 0;
 
                 @media (width >= 990px) {
@@ -221,7 +221,7 @@
 
                     padding: 0;
                     inline-size: fit-content;
-                    color: var(--clr-main);
+                    color: var(--clr-light-500);
                     font-size: clamp(var(--xs), 2vw, var(--sm));
 
                     display: flex;
@@ -273,7 +273,7 @@
                     font-weight: 500;
                     line-height: 1.5;
                     z-index: 7;
-                    color: var(--clr-main);
+                    color: var(--clr-light-500);
                     text-align: start;
                     margin-bottom: 0;
 
@@ -305,7 +305,7 @@
                     }
 
                     & span {
-                        color: var(--clr-main);
+                        color: var(--clr-light-500);
                         padding-top: 0.25rem;
 
                         @media (width <= 768px) {
@@ -322,7 +322,7 @@
 
         & p {
             text-align: start;
-            color: var(--clr-main);
+            color: var(--clr-light-500);
         }
     }
 </style>

@@ -24,11 +24,11 @@
                 letter-spacing: -1px;
                 background-image: linear-gradient(
                     to right,
-                    var(--clr-blue),
-                    var(--clr-main),
-                    var(--clr-blue),
-                    var(--clr-main),
-                    var(--clr-blue)
+                    var(--clr-blue-500),
+                    var(--clr-light-500),
+                    var(--clr-blue-500),
+                    var(--clr-light-500),
+                    var(--clr-blue-500)
                 );
                 background-clip: text;
                 -webkit-background-clip: text;

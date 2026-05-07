@@ -321,8 +321,8 @@
                     svg {
                         inline-size: clamp(5em, 8vw, 15em);
                         block-size: clamp(5em, 8vw, 15em);
-                        fill: var(--clr-invert-fade);
-                        stroke: var(--success);
+                        fill: var(--clr-dark-400);
+                        stroke: var(--clr-success-900);
                         stroke-width: 25;
 
                         @media (width <= 768px) {
@@ -332,7 +332,7 @@
 
                     &:focus,
                     &:focus-within {
-                        outline: 1px solid var(--clr-main);
+                        outline: 1px solid var(--clr-light-500);
                         outline-offset: 5px;
                         background-color: transparent;
                         box-shadow: none;

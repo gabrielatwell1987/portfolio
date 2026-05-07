@@ -52,8 +52,8 @@
         inline-size: var(--size);
         block-size: var(--size);
         border-radius: 50%;
-        border: var(--border-width) solid var(--clr-main);
-        background-color: var(--clr-blue);
+        border: var(--border-width) solid var(--clr-light-500);
+        background-color: var(--clr-blue-500);
         background-image: url('https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/dots.svg');
 
         display: flex;
@@ -99,7 +99,7 @@
                 left: calc(anchor(center) - 3.5em);
             }
 
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             font-family: var(--bronova-bold);
             font-size: clamp(var(--sm), 3.5vw, var(--h3));
             white-space: nowrap;

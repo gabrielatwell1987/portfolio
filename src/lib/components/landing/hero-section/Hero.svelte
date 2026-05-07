@@ -252,7 +252,7 @@
                     cy="50"
                     r="45"
                     fill="transparent"
-                    stroke="var(--clr-main)"
+                    stroke="var(--clr-light-500)"
                     stroke-width="2"
                     opacity="0.3"
                 />
@@ -262,7 +262,7 @@
                 <polygon
                     points="50,5 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35"
                     fill="transparent"
-                    stroke="var(--clr-main)"
+                    stroke="var(--clr-light-500)"
                     stroke-width="2"
                     opacity="0.3"
                 />
@@ -489,7 +489,7 @@
                 height: 50vw;
                 background: linear-gradient(
                     90deg,
-                    var(--clr-blue) 40%,
+                    var(--clr-blue-500) 40%,
                     transparent 60%
                 );
                 animation-delay: 0s;
@@ -535,11 +535,11 @@
                 font-family: var(--ultra);
                 font-size: clamp(var(--h3), 7vw, var(--xxl));
                 font-weight: 700;
-                color: var(--clr-invert);
+                color: var(--clr-dark-500);
                 text-shadow:
-                    0 0 4px var(--clr-main-fade),
-                    0 0 6px var(--clr-main-fade),
-                    0 0 7px var(--clr-main-fade);
+                    0 0 4px var(--clr-light-400),
+                    0 0 6px var(--clr-light-400),
+                    0 0 7px var(--clr-light-400);
                 line-height: 1;
                 margin: 0;
                 margin-bottom: 0.2em;
@@ -559,14 +559,14 @@
                 & .word:first-child {
                     font-family: var(--bronova-bold);
                     font-size: clamp(var(--h3), 5vw, var(--xl));
-                    color: var(--clr-invert);
-                    text-shadow: 0 0 5px var(--clr-main);
-                    -webkit-text-stroke: 0.05rem var(--clr-main);
+                    color: var(--clr-dark-500);
+                    text-shadow: 0 0 5px var(--clr-light-500);
+                    -webkit-text-stroke: 0.05rem var(--clr-light-500);
                     display: inline-block;
 
                     @media (width <= 768px) {
-                        text-shadow: 0 0 5px var(--clr-main);
-                        -webkit-text-stroke: 0.02rem var(--clr-main);
+                        text-shadow: 0 0 5px var(--clr-light-500);
+                        -webkit-text-stroke: 0.02rem var(--clr-light-500);
                     }
                 }
 
@@ -656,10 +656,10 @@
                         flex-direction: column;
                         align-items: center;
                         padding: 1rem;
-                        background: var(--clr-invert-fade);
+                        background: var(--clr-dark-400);
                         border-radius: 12px;
                         backdrop-filter: blur(10px);
-                        border: 2px solid var(--clr-gray);
+                        border: 2px solid var(--clr-gray-700);
                         transition: all 0.3s ease;
 
                         &.a {
@@ -682,7 +682,7 @@
                         &:hover,
                         &:focus-within {
                             transform: translateY(-5px);
-                            background: var(--clr-invert);
+                            background: var(--clr-dark-500);
                             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 
                             @media (prefers-reduced-motion: reduce) {
@@ -693,18 +693,18 @@
                         & .stat-number {
                             font-family: var(--ultra);
                             font-size: clamp(var(--h6), 3vw, var(--h2));
-                            color: var(--clr-invert);
+                            color: var(--clr-dark-500);
                             text-shadow:
-                                0 0 3px var(--clr-main),
-                                0 0 4px var(--clr-main),
-                                0 0 5px var(--clr-main);
+                                0 0 3px var(--clr-light-500),
+                                0 0 4px var(--clr-light-500),
+                                0 0 5px var(--clr-light-500);
                             margin: 0;
                         }
 
                         & .stat-label {
                             font-family: var(--bronova);
                             font-size: clamp(var(--sm), 2.75vw, var(--h3));
-                            color: var(--clr-main);
+                            color: var(--clr-light-500);
                             text-transform: uppercase;
                             letter-spacing: 1px;
                             margin-top: 0.5rem;

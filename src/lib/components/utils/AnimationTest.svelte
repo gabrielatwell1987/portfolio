@@ -172,7 +172,7 @@
 
             & button {
                 padding: 0.75rem 1.5rem;
-                color: var(--clr-main);
+                color: var(--clr-light-500);
                 border: none;
                 border-radius: 8px;
                 cursor: pointer;
@@ -194,7 +194,7 @@
             align-items: center;
             justify-content: center;
             margin-top: 15em;
-            border: 1px solid var(--clr-gray);
+            border: 1px solid var(--clr-gray-700);
 
             @media (width <= 768px) {
                 margin-top: 0;
@@ -202,7 +202,7 @@
         }
 
         & .box {
-            background: var(--clr-main);
+            background: var(--clr-light-500);
             color: white;
             padding: 2rem;
             border-radius: 8px;
@@ -210,7 +210,7 @@
 
             & h2,
             & p {
-                color: var(--clr-invert);
+                color: var(--clr-dark-500);
             }
 
             & h2 {
@@ -226,7 +226,7 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-            color: var(--clr-main);
+            color: var(--clr-light-500);
         }
 
         & input,

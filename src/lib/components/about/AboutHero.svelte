@@ -112,17 +112,17 @@
             font-size: clamp(var(--h2), 8vw, var(--xxxl));
             font-weight: 700;
             letter-spacing: -1px;
-            color: var(--clr-invert);
+            color: var(--clr-dark-500);
             text-shadow:
-                0 0 1px var(--clr-invert),
-                -5px -5px 0 var(--clr-main),
-                5px -5px 0 var(--clr-main),
-                -5px 5px 0 var(--clr-main),
-                5px 5px 0 var(--clr-main),
-                -5px 0 0 var(--clr-main),
-                5px 0 0 var(--clr-main),
-                0 -5px 0 var(--clr-main),
-                0 5px 0 var(--clr-main);
+                0 0 1px var(--clr-dark-500),
+                -5px -5px 0 var(--clr-light-500),
+                5px -5px 0 var(--clr-light-500),
+                -5px 5px 0 var(--clr-light-500),
+                5px 5px 0 var(--clr-light-500),
+                -5px 0 0 var(--clr-light-500),
+                5px 0 0 var(--clr-light-500),
+                0 -5px 0 var(--clr-light-500),
+                0 5px 0 var(--clr-light-500);
 
             @media (width >= 768px) {
                 :global(& .char) {
@@ -138,15 +138,15 @@
 
             @media (width <= 768px) {
                 text-shadow:
-                    0 0 1px var(--clr-invert),
-                    -2px -2px 0 var(--clr-main),
-                    2px -2px 0 var(--clr-main),
-                    -2px 2px 0 var(--clr-main),
-                    2px 2px 0 var(--clr-main),
-                    -2px 0 0 var(--clr-main),
-                    2px 0 0 var(--clr-main),
-                    0 -2px 0 var(--clr-main),
-                    0 2px 0 var(--clr-main);
+                    0 0 1px var(--clr-dark-500),
+                    -2px -2px 0 var(--clr-light-500),
+                    2px -2px 0 var(--clr-light-500),
+                    -2px 2px 0 var(--clr-light-500),
+                    2px 2px 0 var(--clr-light-500),
+                    -2px 0 0 var(--clr-light-500),
+                    2px 0 0 var(--clr-light-500),
+                    0 -2px 0 var(--clr-light-500),
+                    0 2px 0 var(--clr-light-500);
             }
         }
     }

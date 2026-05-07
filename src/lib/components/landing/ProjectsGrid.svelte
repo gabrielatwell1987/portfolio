@@ -49,7 +49,7 @@
                 height: 100%;
                 object-fit: cover;
                 display: block;
-                border: 1px solid var(--clr-main);
+                border: 1px solid var(--clr-light-500);
                 transition:
                     filter 0.3s ease,
                     scale 0.3s ease;
@@ -73,7 +73,7 @@
                     opacity 0.4s ease;
 
                 & p {
-                    color: var(--clr-link);
+                    color: var(--clr-blue-350);
                     font-family: var(--bronova);
                     font-size: clamp(var(--h6), 1.1vw, var(--h4));
                     font-weight: 700;

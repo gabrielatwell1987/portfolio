@@ -13,7 +13,7 @@
         font-family: var(--ultra);
         font-size: clamp(var(--h6), 1.5vw, var(--h3));
         line-height: 1.75;
-        color: var(--clr-main);
+        color: var(--clr-light-500);
         margin-right: 0.5rem;
         text-wrap: balance;
     }

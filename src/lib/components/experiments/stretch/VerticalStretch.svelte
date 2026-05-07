@@ -66,8 +66,8 @@
         & .content-title {
             font-family: var(--ultra);
             font-size: 5.5vw;
-            color: var(--clr-main);
-            -webkit-text-stroke: 2px var(--clr-link);
+            color: var(--clr-light-500);
+            -webkit-text-stroke: 2px var(--clr-blue-350);
 
             grid-area: title;
         }
@@ -75,7 +75,7 @@
         & .content-message {
             font-family: var(--bronova-regular);
             font-size: 2vw;
-            color: var(--clr-main);
+            color: var(--clr-light-500);
 
             &:first-of-type {
                 grid-area: firstMessage;
@@ -95,7 +95,7 @@
         font-family: var(--bronova-bold);
         font-size: 7vw;
         font-weight: 900;
-        color: var(--clr-main-fade);
+        color: var(--clr-light-400);
         text-transform: uppercase;
         letter-spacing: 1px;
         line-height: 0.6;
@@ -117,7 +117,7 @@
             padding: 0;
             margin: 0;
             transform: scaleY(10);
-            text-shadow: 13px -1px 0 var(--clr-invert-fade);
+            text-shadow: 13px -1px 0 var(--clr-dark-400);
 
             &:first-of-type {
                 margin-right: 1em;

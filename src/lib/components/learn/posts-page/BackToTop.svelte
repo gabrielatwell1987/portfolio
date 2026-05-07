@@ -19,7 +19,7 @@
     .to-top {
         position: relative;
         text-decoration: none;
-        color: var(--clr-main);
+        color: var(--clr-light-500);
         font-size: clamp(var(--sm), 1.5vw, var(--h6));
         font-weight: 600;
         display: flex;

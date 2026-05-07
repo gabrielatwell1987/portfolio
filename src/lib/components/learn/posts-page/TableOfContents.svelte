@@ -193,7 +193,7 @@
 
         & dt {
             display: block;
-            color: var(--clr-light-gray);
+            color: var(--clr-gray-600);
             font-family: var(--bronova-bold);
             font-size: clamp(var(--h6), 3vw, var(--h4));
             letter-spacing: 3px;
@@ -216,10 +216,10 @@
                     text-wrap: balance;
 
                     & a {
-                        color: var(--clr-link);
+                        color: var(--clr-blue-350);
 
                         &:visited {
-                            color: var(--clr-gray);
+                            color: var(--clr-gray-700);
                         }
                     }
                 }
@@ -238,7 +238,7 @@
         cursor: pointer;
         inline-size: 2em;
         block-size: 2em;
-        color: var(--clr-main-fade);
+        color: var(--clr-light-400);
         font-size: clamp(var(--h5), 4.5vw, var(--h1));
         transition: transform 0.3s ease-out;
         rotate: 180deg;
@@ -287,7 +287,7 @@
         inline-size: clamp(200px, 20vw, 300px);
         background: linear-gradient(
             to right,
-            var(--clr-dark-gray) 95%,
+            var(--clr-gray-900) 95%,
             transparent
         );
         z-index: 99;
@@ -321,7 +321,7 @@
                 margin: 0;
 
                 & dt {
-                    color: var(--clr-invert);
+                    color: var(--clr-dark-500);
                     font-size: clamp(var(--h6), 1.5vw, var(--h4));
                     font-weight: 200;
                     margin: 0 0 0.2em 0;
@@ -337,7 +337,7 @@
                         font-weight: 200;
 
                         &:visited {
-                            color: var(--clr-main);
+                            color: var(--clr-light-500);
                         }
                     }
                 }

@@ -78,8 +78,8 @@
     :root {
         --space: 1rem;
         --surface-1: transparent;
-        --surface-2: var(--clr-invert);
-        --gradient: radial-gradient(var(--clr-gray), var(--dark) 88%);
+        --surface-2: var(--clr-dark-500);
+        --gradient: radial-gradient(var(--clr-gray-700), var(--dark) 88%);
     }
 
     * {
@@ -105,7 +105,7 @@
 
             &:focus,
             &:focus-visible {
-                outline: 2px solid var(--clr-main);
+                outline: 2px solid var(--clr-light-500);
                 outline-offset: 2px;
                 box-shadow: none;
             }
@@ -165,7 +165,7 @@
                     justify-content: center;
                     align-items: center;
                     padding-block-end: 1em;
-                    border: 2px solid var(--clr-main);
+                    border: 2px solid var(--clr-light-500);
                     border-radius: var(--radius);
                     transition:
                         border 1s ease-out,
@@ -173,11 +173,11 @@
                         transform 0.25s ease-out;
 
                     &[data-position-left] {
-                        box-shadow: 7px 7px 0 var(--clr-main);
+                        box-shadow: 7px 7px 0 var(--clr-light-500);
                     }
 
                     &[data-position-right] {
-                        box-shadow: -7px 7px 0 var(--clr-main);
+                        box-shadow: -7px 7px 0 var(--clr-light-500);
                     }
 
                     &:not(:hover) {
@@ -207,7 +207,7 @@
                         inline-size: fit-content;
                         margin-inline: auto;
                         pointer-events: none;
-                        color: var(--clr-main);
+                        color: var(--clr-light-500);
 
                         &:nth-child(2) {
                             margin-top: 0.5em;
@@ -218,7 +218,7 @@
                         font-family: var(--bronova);
                         font-size: clamp(var(--sm), 1.25vw, var(--h6));
                         font-weight: 300;
-                        color: var(--clr-main);
+                        color: var(--clr-light-500);
                         text-align: center;
                         margin-bottom: 0;
                         letter-spacing: 0px;

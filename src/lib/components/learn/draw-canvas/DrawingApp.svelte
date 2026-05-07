@@ -110,7 +110,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"
             ><path
                 d="M100.4 417.2C104.5 402.6 112.2 389.3 123 378.5L304.2 197.3L338.1 163.4C354.7 180 389.4 214.7 442.1 267.4L476 301.3L442.1 335.2L260.9 516.4C250.2 527.1 236.8 534.9 222.2 539L94.4 574.6C86.1 576.9 77.1 574.6 71 568.4C64.9 562.2 62.6 553.3 64.9 545L100.4 417.2zM156 413.5C151.6 418.2 148.4 423.9 146.7 430.1L122.6 517L209.5 492.9C215.9 491.1 221.7 487.8 226.5 483.2L155.9 413.5zM510 267.4C493.4 250.8 458.7 216.1 406 163.4L372 129.5C398.5 103 413.4 88.1 416.9 84.6C430.4 71 448.8 63.4 468 63.4C487.2 63.4 505.6 71 519.1 84.6L554.8 120.3C568.4 133.9 576 152.3 576 171.4C576 190.5 568.4 209 554.8 222.5C551.3 226 536.4 240.9 509.9 267.4z"
-                fill="var(--warning)"
+                fill="var(--clr-warning-900)"
             /></svg
         >
     </button>
@@ -124,7 +124,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"
             ><path
                 d="M210.5 480L333.5 480L398.8 414.7L225.3 241.2L98.6 367.9L210.6 479.9zM256 544L210.5 544C193.5 544 177.2 537.3 165.2 525.3L49 409C38.1 398.1 32 383.4 32 368C32 352.6 38.1 337.9 49 327L295 81C305.9 70.1 320.6 64 336 64C351.4 64 366.1 70.1 377 81L559 263C569.9 273.9 576 288.6 576 304C576 319.4 569.9 334.1 559 345L424 480L544 480C561.7 480 576 494.3 576 512C576 529.7 561.7 544 544 544L256 544z"
-                fill="var(--fail)"
+                fill="var(--clr-fail-900)"
             /></svg
         >
     </button>
@@ -216,7 +216,7 @@
         inline-size: fit-content;
         block-size: 5em;
         background-color: transparent;
-        color: var(--clr-main);
+        color: var(--clr-light-500);
         padding: 1em;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
@@ -241,7 +241,7 @@
             padding: 0.5em 0.75em;
             border: none;
             border-radius: var(--radius);
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             inline-size: fit-content;
             block-size: auto;
 
@@ -282,15 +282,15 @@
 
         & input,
         & button {
-            outline: 1px solid var(--clr-main-fade);
+            outline: 1px solid var(--clr-light-400);
         }
     }
 
     #canvas-container {
         background: transparent;
-        border: 3px solid var(--clr-main-fade);
+        border: 3px solid var(--clr-light-400);
         border-radius: var(--radius);
-        outline: 1px solid var(--clr-main-fade);
+        outline: 1px solid var(--clr-light-400);
         outline-offset: 5px;
         overflow: hidden;
         z-index: 5;
@@ -309,7 +309,7 @@
 
         @media (width <= 768px) {
             margin-top: 4em;
-            border: 1px solid var(--clr-main-fade);
+            border: 1px solid var(--clr-light-400);
         }
 
         & #canvas-background {
@@ -335,7 +335,7 @@
 
     #draw-cursor {
         position: absolute;
-        border: 2px dashed var(--clr-main);
+        border: 2px dashed var(--clr-light-500);
         border-radius: 50%;
         pointer-events: none;
         translate: -50% -50%;

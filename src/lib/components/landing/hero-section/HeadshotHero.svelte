@@ -8,7 +8,7 @@
         cssBg?: boolean | number | 'random';
         text: string;
         cta: string;
-        bgImage: string;
+        bgImage?: string;
     }
 
     let { title, cssBg = false, text, cta, bgImage }: Props = $props();
@@ -105,7 +105,7 @@
                     background: linear-gradient(
                         to bottom,
                         transparent 0%,
-                        var(--clr-invert) 75%
+                        var(--clr-dark-500) 75%
                     );
                     pointer-events: none;
                 }
@@ -144,7 +144,7 @@
                     font-weight: 700;
                     line-height: 1.1;
                     grid-area: title;
-                    color: var(--warning);
+                    color: var(--clr-warning-900);
                     transform: scaleX(1.2) scaleY(1.75);
 
                     @media (width <= 768px) {
@@ -157,7 +157,7 @@
                     text-align: left;
                     font-family: var(--bronova);
                     font-size: clamp(var(--sm), 1.5vw, var(--h3));
-                    color: var(--clr-light-gray);
+                    color: var(--clr-gray-600);
                     padding-right: 1em;
 
                     position: absolute;
@@ -180,8 +180,8 @@
 
                 & .hero-cta {
                     background-color: transparent;
-                    border: 2px solid var(--clr-link);
-                    color: var(--clr-link);
+                    border: 2px solid var(--clr-blue-350);
+                    color: var(--clr-blue-350);
                     grid-area: cta;
 
                     font-family: var(--bronova-bold);

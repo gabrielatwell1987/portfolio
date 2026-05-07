@@ -8,7 +8,7 @@
             height="60"
             viewBox="0 0 202 60"
             fill="none"
-            stroke="var(--clr-main)"
+            stroke="var(--clr-light-500)"
             xmlns="http://www.w3.org/2000/svg"
             role="img"
             aria-labelledby="logo-title"
@@ -66,7 +66,7 @@
             align-items: center;
 
             &:focus-visible {
-                outline: 1px solid var(--clr-main);
+                outline: 1px solid var(--clr-light-500);
                 background: transparent;
                 box-shadow: none;
             }
@@ -87,7 +87,7 @@
                 & path {
                     stroke-dasharray: 300;
                     stroke-dashoffset: 0;
-                    stroke: var(--clr-main);
+                    stroke: var(--clr-light-500);
                     stroke-width: 2;
                     animation: dash 5s linear;
                     scale: 1.3;

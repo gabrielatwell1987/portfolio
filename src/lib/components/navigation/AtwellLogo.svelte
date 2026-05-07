@@ -35,7 +35,7 @@
         user-select: none;
 
         &:focus {
-            outline: 1px solid var(--clr-main);
+            outline: 1px solid var(--clr-light-500);
             background: transparent;
             box-shadow: none;
         }
@@ -63,30 +63,30 @@
                 --bottom-right: 42%;
                 font-family: var(--bronova-bold);
                 font-size: clamp(var(--h2), 10vw, var(--lg));
-                color: var(--clr-invert);
+                color: var(--clr-dark-500);
                 text-shadow:
-                    0 0 1px var(--clr-invert),
-                    -3px -3px 0 var(--clr-main),
-                    3px -3px 0 var(--clr-main),
-                    -3px 3px 0 var(--clr-main),
-                    3px 3px 0 var(--clr-main),
-                    -3px 0 0 var(--clr-main),
-                    3px 0 0 var(--clr-main),
-                    0 -3px 0 var(--clr-main),
-                    0 3px 0 var(--clr-main);
+                    0 0 1px var(--clr-dark-500),
+                    -3px -3px 0 var(--clr-light-500),
+                    3px -3px 0 var(--clr-light-500),
+                    -3px 3px 0 var(--clr-light-500),
+                    3px 3px 0 var(--clr-light-500),
+                    -3px 0 0 var(--clr-light-500),
+                    3px 0 0 var(--clr-light-500),
+                    0 -3px 0 var(--clr-light-500),
+                    0 3px 0 var(--clr-light-500);
                 display: grid;
 
                 @media (width <= 768px) {
                     text-shadow:
-                        0 0 1px var(--clr-invert),
-                        -1px -1px 0 var(--clr-main),
-                        1px -1px 0 var(--clr-main),
-                        -1px 1px 0 var(--clr-main),
-                        1px 1px 0 var(--clr-main),
-                        -1px 0 0 var(--clr-main),
-                        1px 0 0 var(--clr-main),
-                        0 -1px 0 var(--clr-main),
-                        0 1px 0 var(--clr-main);
+                        0 0 1px var(--clr-dark-500),
+                        -1px -1px 0 var(--clr-light-500),
+                        1px -1px 0 var(--clr-light-500),
+                        -1px 1px 0 var(--clr-light-500),
+                        1px 1px 0 var(--clr-light-500),
+                        -1px 0 0 var(--clr-light-500),
+                        1px 0 0 var(--clr-light-500),
+                        0 -1px 0 var(--clr-light-500),
+                        0 1px 0 var(--clr-light-500);
                 }
 
                 & .atwell-top {

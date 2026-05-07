@@ -39,7 +39,7 @@
         background-color: hsla(0, 0%, 26%, 0.25);
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(4px);
-        border: 2px solid var(--clr-main);
+        border: 2px solid var(--clr-light-500);
         border-radius: var(--radius);
 
         @media (max-width: 989px) {
@@ -50,33 +50,33 @@
             font-family: var(--ultra);
             font-size: clamp(var(--h3), 4.5vw, var(--xxl));
             font-weight: 400;
-            text-shadow: 0 0 5px 3px var(--clr-gray);
+            text-shadow: 0 0 5px 3px var(--clr-gray-700);
             mix-blend-mode: difference;
             letter-spacing: -1px;
-            color: var(--clr-invert);
+            color: var(--clr-dark-500);
             text-shadow:
-                0 0 1px var(--clr-invert),
-                -3px -3px 0 var(--clr-main),
-                3px -3px 0 var(--clr-main),
-                -3px 3px 0 var(--clr-main),
-                3px 3px 0 var(--clr-main),
-                -3px 0 0 var(--clr-main),
-                3px 0 0 var(--clr-main),
-                0 -3px 0 var(--clr-main),
-                0 3px 0 var(--clr-main);
+                0 0 1px var(--clr-dark-500),
+                -3px -3px 0 var(--clr-light-500),
+                3px -3px 0 var(--clr-light-500),
+                -3px 3px 0 var(--clr-light-500),
+                3px 3px 0 var(--clr-light-500),
+                -3px 0 0 var(--clr-light-500),
+                3px 0 0 var(--clr-light-500),
+                0 -3px 0 var(--clr-light-500),
+                0 3px 0 var(--clr-light-500);
 
             @media (max-width: 768px) {
                 font-weight: 600;
                 text-shadow:
-                    0 0 1px var(--clr-invert),
-                    -2px -2px 0 var(--clr-main),
-                    2px -2px 0 var(--clr-main),
-                    -2px 2px 0 var(--clr-main),
-                    2px 2px 0 var(--clr-main),
-                    -2px 0 0 var(--clr-main),
-                    2px 0 0 var(--clr-main),
-                    0 -2px 0 var(--clr-main),
-                    0 2px 0 var(--clr-main);
+                    0 0 1px var(--clr-dark-500),
+                    -2px -2px 0 var(--clr-light-500),
+                    2px -2px 0 var(--clr-light-500),
+                    -2px 2px 0 var(--clr-light-500),
+                    2px 2px 0 var(--clr-light-500),
+                    -2px 0 0 var(--clr-light-500),
+                    2px 0 0 var(--clr-light-500),
+                    0 -2px 0 var(--clr-light-500),
+                    0 2px 0 var(--clr-light-500);
             }
         }
 
@@ -85,7 +85,7 @@
             line-height: 1.35;
             text-align: start;
             font-size: clamp(var(--h6), 1.75vw, var(--h3));
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             margin-top: -1rem;
             hyphens: auto;
             letter-spacing: 0px;
@@ -97,11 +97,11 @@
         }
 
         &.left {
-            box-shadow: -7px 7px 0 var(--clr-main);
+            box-shadow: -7px 7px 0 var(--clr-light-500);
         }
 
         &.right {
-            box-shadow: 7px 7px 0 var(--clr-main);
+            box-shadow: 7px 7px 0 var(--clr-light-500);
         }
     }
 

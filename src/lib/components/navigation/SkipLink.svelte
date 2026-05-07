@@ -9,7 +9,7 @@
         left: 1em;
         border-radius: 5px;
         background-color: transparent;
-        color: var(--clr-pale);
+        color: var(--clr-pale-700);
         padding: 0.5rem 0.75rem;
         z-index: 100;
         text-decoration: none;

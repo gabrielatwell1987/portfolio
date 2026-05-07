@@ -62,7 +62,7 @@
                 margin: -1rem 0 1rem 0;
 
                 & span {
-                    color: var(--clr-blue);
+                    color: var(--clr-blue-500);
                     font-family: var(--bronova);
                     font-size: clamp(var(--sm), 2vw, var(--h4));
                     font-weight: 700;
@@ -70,13 +70,13 @@
             }
 
             & p {
-                color: var(--clr-main);
+                color: var(--clr-light-500);
                 font-family: var(--bronova);
                 font-size: clamp(var(--sm), 1.25vw, var(--h5));
                 margin: -0.5rem 0 2rem 0;
 
                 & a {
-                    color: var(--clr-blue);
+                    color: var(--clr-blue-500);
                     font-weight: 700;
                 }
             }

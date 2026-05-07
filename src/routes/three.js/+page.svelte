@@ -9,7 +9,7 @@
     let selectedComponent = $state<string>('Select');
     let backgroundImage = $derived(
         selectedComponent === 'Select'
-            ? 'repeating-linear-gradient(0deg, transparent, transparent 98px, var(--clr-faint-gray) 98px, var(--clr-faint-gray) 100px), repeating-linear-gradient(90deg, transparent, transparent 98px, var(--clr-faint-gray) 98px, var(--clr-faint-gray) 100px)'
+            ? 'repeating-linear-gradient(0deg, transparent, transparent 98px, var(--clr-gray-500) 98px, var(--clr-gray-500) 100px), repeating-linear-gradient(90deg, transparent, transparent 98px, var(--clr-gray-500) 98px, var(--clr-gray-500) 100px)'
             : 'none',
     );
     let SelectedComponent: ComponentType | null = $state(null);
@@ -68,11 +68,7 @@
         {:else if selectedComponent === 'Select'}
             <h2>select a component to view</h2>
 
-            <Divider
-                width={40}
-                thickness={8}
-                color="var(--clr-main-light-fade)"
-            />
+            <Divider width={40} thickness={8} color="var(--clr-light-350)" />
 
             <p>
                 be advised that these components will still work even if you
@@ -89,7 +85,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        background-color: var(--clr-invert);
+        background-color: var(--clr-dark-500);
 
         @media (width <= 500px) {
             position: relative;
@@ -111,7 +107,7 @@
                 bottom: 1.5em;
                 left: 50%;
                 transform: translateX(-50%);
-                color: var(--clr-light-gray);
+                color: var(--clr-gray-600);
                 font-weight: 700;
                 z-index: 10;
                 touch-action: none;
@@ -130,18 +126,18 @@
             }
 
             & h2 {
-                color: var(--clr-link);
+                color: var(--clr-blue-350);
                 font-family: var(--bronova-bold);
                 font-size: clamp(var(--h6), 3.25vw, var(--lg));
                 text-align: center;
 
                 @media (width <= 768px) {
-                    text-shadow: 1px 1px 0 var(--clr-main);
+                    text-shadow: 1px 1px 0 var(--clr-light-500);
                 }
             }
 
             & p {
-                color: var(--clr-main);
+                color: var(--clr-light-500);
                 font-family: var(--bronova);
                 font-size: clamp(var(--sm), 1.25vw, var(--h5));
                 font-weight: 500;

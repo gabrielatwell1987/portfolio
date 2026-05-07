@@ -47,8 +47,8 @@
             y="0"
             width="80"
             height="80"
-            fill="var(--clr-invert)"
-            stroke="var(--clr-main)"
+            fill="var(--clr-dark-500)"
+            stroke="var(--clr-light-500)"
             stroke-width="2"
         />
         <circle
@@ -56,15 +56,15 @@
             cx="140"
             cy="40"
             r="40"
-            fill="var(--clr-gray)"
-            stroke="var(--clr-main)"
+            fill="var(--clr-gray-700)"
+            stroke="var(--clr-light-500)"
             stroke-width="2"
         />
         <polygon
             id="triangle"
             points="200,80 280,80 240,0"
-            fill="var(--clr-invert)"
-            stroke="var(--clr-main)"
+            fill="var(--clr-dark-500)"
+            stroke="var(--clr-light-500)"
             stroke-width="2"
         />
         <rect
@@ -73,8 +73,8 @@
             y="0"
             width="80"
             height="80"
-            fill="var(--clr-invert)"
-            stroke="var(--clr-main)"
+            fill="var(--clr-dark-500)"
+            stroke="var(--clr-light-500)"
             stroke-width="2"
         />
     </svg>
@@ -133,7 +133,7 @@
             min-inline-size: 520px;
             margin: 0;
             padding: 0;
-            fill: var(--clr-main);
+            fill: var(--clr-light-500);
 
             @media (width >= 1200px) {
                 max-inline-size: 30em;

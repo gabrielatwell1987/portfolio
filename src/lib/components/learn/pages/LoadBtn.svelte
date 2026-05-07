@@ -59,13 +59,13 @@
     a.loading-button {
         position: relative;
         width: fit-content;
-        border: 1px solid var(--clr-main);
+        border: 1px solid var(--clr-light-500);
         border-radius: var(--radius);
-        outline: 2px solid var(--clr-main);
+        outline: 2px solid var(--clr-light-500);
         outline-offset: -7px;
         padding: clamp(0.4em, 1.5vw, 0.3em) clamp(1em, 2vw, 0.7em);
-        color: var(--clr-main);
-        background-color: var(--clr-invert);
+        color: var(--clr-light-500);
+        background-color: var(--clr-dark-500);
         font-family: var(--bronova);
         font-size: clamp(var(--h6), 1.5vw, var(--h3));
         font-weight: 600;
@@ -103,7 +103,7 @@
         }
 
         &:focus-visible {
-            outline: 1px solid var(--clr-main);
+            outline: 1px solid var(--clr-light-500);
         }
 
         &.loading {
@@ -118,7 +118,7 @@
         & .spinner {
             width: 1.5rem;
             height: 1.5rem;
-            border: 2px solid var(--clr-main);
+            border: 2px solid var(--clr-light-500);
             border-top-color: transparent;
             border-radius: 50%;
             animation: spin 0.6s linear infinite;

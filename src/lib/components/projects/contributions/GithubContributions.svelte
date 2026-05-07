@@ -358,7 +358,7 @@
                 font-family: var(--bronova-bold);
                 font-size: clamp(var(--sm), 2vw, var(--h4));
                 font-weight: 700;
-                color: var(--clr-main);
+                color: var(--clr-light-500);
                 margin-bottom: -0.2em;
                 text-transform: lowercase;
                 letter-spacing: 0.5px;
@@ -368,7 +368,7 @@
                 font-family: var(--bronova);
                 font-size: clamp(var(--sm), 1.25vw, var(--h5));
                 font-weight: 600;
-                color: var(--clr-light-gray);
+                color: var(--clr-gray-600);
                 margin-bottom: 0.5rem;
                 text-transform: lowercase;
                 letter-spacing: 0.5px;
@@ -377,7 +377,7 @@
 
         & .total-contributions {
             font-size: clamp(var(--xs), 1.25vw, var(--sm));
-            color: var(--clr-gray);
+            color: var(--clr-gray-700);
             opacity: 0.7;
             margin: 0;
             font-weight: 400;
@@ -413,7 +413,7 @@
 
             & .mobile-tooltip {
                 position: absolute;
-                background: var(--clr-main);
+                background: var(--clr-light-500);
                 color: var(--clr-bg);
                 padding: 0.5rem 0.75rem;
                 border-radius: 6px;
@@ -464,7 +464,7 @@
                 }
 
                 &::-webkit-scrollbar-thumb {
-                    background: var(--clr-main);
+                    background: var(--clr-light-500);
                     opacity: 0.3;
                     border-radius: 3px;
                 }
@@ -507,14 +507,14 @@
 
                     & .month-label {
                         font-size: 1.1rem;
-                        fill: var(--clr-main);
+                        fill: var(--clr-light-500);
                         opacity: 0.7;
                         font-weight: 400;
                     }
 
                     & .day-label {
                         font-size: 0.9rem;
-                        fill: var(--clr-main);
+                        fill: var(--clr-light-500);
                         opacity: 0.7;
                         font-weight: 400;
                     }
@@ -524,7 +524,7 @@
                         cursor: pointer;
 
                         &:hover {
-                            stroke: var(--clr-main);
+                            stroke: var(--clr-light-500);
                             stroke-width: 1px;
                             opacity: 0.8;
                         }
@@ -536,7 +536,7 @@
                         }
 
                         &.none {
-                            fill: var(--clr-gray);
+                            fill: var(--clr-gray-700);
                         }
 
                         &.low {
@@ -556,9 +556,9 @@
                         }
 
                         &:focus-visible {
-                            outline: 3px solid var(--clr-main);
+                            outline: 3px solid var(--clr-light-500);
                             outline-offset: 2px;
-                            stroke: var(--clr-main);
+                            stroke: var(--clr-light-500);
                             stroke-width: 2px;
                         }
                     }
@@ -571,7 +571,7 @@
                 justify-content: flex-end;
                 gap: 0.5rem;
                 font-size: clamp(var(--xs), 2vw, var(--sm));
-                color: var(--clr-main);
+                color: var(--clr-light-500);
                 opacity: 0.6;
                 margin-top: 1rem;
                 font-weight: 400;
@@ -588,7 +588,7 @@
                         border: none;
 
                         &.none {
-                            background-color: var(--clr-gray, #ebedf0);
+                            background-color: var(--clr-gray-700, #ebedf0);
                         }
 
                         &.low {
@@ -613,11 +613,11 @@
     }
 
     :global(body.dark) .contribution-day.none {
-        fill: var(--clr-invert);
+        fill: var(--clr-dark-500);
     }
 
     :global(body.dark) .legend-square.none {
-        background-color: var(--clr-invert);
+        background-color: var(--clr-dark-500);
     }
 
     @container github-contributions (width >= 600px) {

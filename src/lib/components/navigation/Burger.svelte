@@ -56,7 +56,7 @@
             & .bar {
                 width: 100%;
                 height: 0.3rem;
-                background-color: var(--clr-main);
+                background-color: var(--clr-light-500);
                 border-radius: 2px;
                 transition:
                     transform 0.35s ease,
@@ -94,7 +94,7 @@
         /* Hover effects */
         &:hover:not(.open) {
             .bar {
-                background-color: var(--clr-accent, var(--clr-main));
+                background-color: var(--clr-accent, var(--clr-light-500));
             }
         }
 

@@ -65,14 +65,14 @@
                     font-size: clamp(var(--sm), 1.5vw, var(--h4));
                     font-weight: 500;
                     margin: 0.5em 0;
-                    color: var(--clr-blue);
+                    color: var(--clr-blue-500);
                 }
 
                 & .subheading {
                     font-size: clamp(var(--xs), 1.2vw, var(--h6));
                     font-weight: 200;
                     margin: 0.5em 0 -0.5rem 0;
-                    color: var(--clr-gray);
+                    color: var(--clr-gray-700);
                 }
             }
         }

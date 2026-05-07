@@ -133,7 +133,7 @@
 
         @media (width >= 1024px) {
             fieldset {
-                border: 5px solid oklch(from var(--clr-main) 0.35 c h);
+                border: 5px solid oklch(from var(--clr-light-500) 0.35 c h);
 
                 font-weight: bolder;
                 padding: 2rem 5rem;
@@ -167,8 +167,8 @@
             font-size: clamp(var(--h6), 3.75vw, var(--xl));
             font-weight: 800;
             letter-spacing: 1px;
-            color: var(--clr-main);
-            text-shadow: 0 0 5px var(--clr-invert);
+            color: var(--clr-light-500);
+            text-shadow: 0 0 5px var(--clr-dark-500);
             padding-inline: 1rem;
             margin-bottom: 1rem;
 
@@ -194,7 +194,7 @@
                 border-radius: var(--radius);
                 align-self: flex-start;
                 position: relative;
-                color: var(--clr-blue);
+                color: var(--clr-blue-500);
                 transition: color 0.3s ease;
 
                 @media (width <= 500px) {
@@ -220,7 +220,7 @@
                 border: 3px solid var(--gray);
                 border-radius: var(--radius);
                 caret-color: var(--sky);
-                color: var(--clr-main);
+                color: var(--clr-light-500);
                 font-size: clamp(var(--sm), 1.75vw, var(--h5));
                 outline: none;
                 transition:
@@ -235,14 +235,14 @@
                 }
 
                 &:user-valid {
-                    border-color: var(--success);
-                    box-shadow: 0 0 0 2px var(--success);
+                    border-color: var(--clr-success-900);
+                    box-shadow: 0 0 0 2px var(--clr-success-900);
                     background-color: hsla(120, 60%, 50%, 0.05);
                 }
 
                 &:user-invalid {
-                    border-color: var(--fail);
-                    box-shadow: 0 0 0 2px var(--fail);
+                    border-color: var(--clr-fail-900);
+                    box-shadow: 0 0 0 2px var(--clr-fail-900);
                     background-color: hsla(0, 70%, 55%, 0.05);
                     animation: wiggle 0.5s ease-out;
                 }
@@ -255,7 +255,7 @@
                 }
 
                 &::placeholder {
-                    color: var(--clr-main);
+                    color: var(--clr-light-500);
                     font-size: clamp(var(--sm), 1vw, var(--h5));
                     font-weight: 400;
                     opacity: 0.7;
@@ -278,13 +278,13 @@
 
             &:has(input:user-valid) label,
             &:has(textarea:user-valid) label {
-                color: var(--success);
+                color: var(--clr-success-900);
                 font-weight: 600;
             }
 
             &:has(input:user-invalid:not(:placeholder-shown)) label,
             &:has(textarea:user-invalid:not(:placeholder-shown)) label {
-                color: var(--fail);
+                color: var(--clr-fail-900);
                 font-weight: 600;
             }
         }

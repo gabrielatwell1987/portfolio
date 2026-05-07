@@ -33,7 +33,7 @@
                             x="24.48px"
                             y="121.47px"
                             fill="none"
-                            stroke="var(--clr-main)"
+                            stroke="var(--clr-light-500)"
                             stroke-width="5"
                             class="atwell-text"
                             style="font-family: var(--ultra);font-size:125px;"
@@ -70,7 +70,7 @@
             align-items: center;
 
             &:focus-visible {
-                outline: 1px solid var(--clr-main);
+                outline: 1px solid var(--clr-light-500);
                 background: transparent;
             }
         }
@@ -88,7 +88,7 @@
             }
 
             & .underline-path {
-                stroke: var(--clr-main);
+                stroke: var(--clr-light-500);
                 stroke-width: 5;
                 stroke-dasharray: 600;
                 stroke-dashoffset: 0;

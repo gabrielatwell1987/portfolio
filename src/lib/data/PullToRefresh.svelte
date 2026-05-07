@@ -78,106 +78,106 @@
         0%,
         100% {
             box-shadow:
-                0em calc(-1 * var(--ptr-r1)) 0em 0em var(--clr-main),
-                var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em var(--clr-gray),
-                var(--ptr-r3) 0em 0 0em var(--clr-gray),
-                var(--ptr-r2) var(--ptr-r2) 0 0em var(--clr-gray),
-                0em var(--ptr-r3) 0 0em var(--clr-gray),
-                calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em var(--clr-gray),
-                calc(-1 * var(--ptr-r1)) 0em 0 0em var(--clr-light-gray),
+                0em calc(-1 * var(--ptr-r1)) 0em 0em var(--clr-light-500),
+                var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em var(--clr-gray-700),
+                var(--ptr-r3) 0em 0 0em var(--clr-gray-700),
+                var(--ptr-r2) var(--ptr-r2) 0 0em var(--clr-gray-700),
+                0em var(--ptr-r3) 0 0em var(--clr-gray-700),
+                calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em var(--clr-gray-700),
+                calc(-1 * var(--ptr-r1)) 0em 0 0em var(--clr-gray-600),
                 calc(-1 * var(--ptr-r2)) calc(-1 * var(--ptr-r2)) 0 0em
-                    oklch(from var(--clr-main) 0.5 c h);
+                    oklch(from var(--clr-light-500) 0.5 c h);
         }
         12.5% {
             box-shadow:
                 0em calc(-1 * var(--ptr-r1)) 0em 0em
-                    oklch(from var(--clr-main) 0.5 c h),
-                var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em var(--clr-main),
-                var(--ptr-r3) 0em 0 0em var(--clr-gray),
-                var(--ptr-r2) var(--ptr-r2) 0 0em var(--clr-gray),
-                0em var(--ptr-r3) 0 0em var(--clr-gray),
-                calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em var(--clr-gray),
-                calc(-1 * var(--ptr-r1)) 0em 0 0em var(--clr-gray),
+                    oklch(from var(--clr-light-500) 0.5 c h),
+                var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em
+                    var(--clr-light-500),
+                var(--ptr-r3) 0em 0 0em var(--clr-gray-700),
+                var(--ptr-r2) var(--ptr-r2) 0 0em var(--clr-gray-700),
+                0em var(--ptr-r3) 0 0em var(--clr-gray-700),
+                calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em var(--clr-gray-700),
+                calc(-1 * var(--ptr-r1)) 0em 0 0em var(--clr-gray-700),
                 calc(-1 * var(--ptr-r2)) calc(-1 * var(--ptr-r2)) 0 0em
-                    var(--clr-light-gray);
+                    var(--clr-gray-600);
         }
         25% {
             box-shadow:
-                0em calc(-1 * var(--ptr-r1)) 0em 0em var(--clr-light-gray),
+                0em calc(-1 * var(--ptr-r1)) 0em 0em var(--clr-gray-600),
                 var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em
-                    oklch(from var(--clr-main) 0.5 c h),
-                var(--ptr-r3) 0em 0 0em var(--clr-main),
-                var(--ptr-r2) var(--ptr-r2) 0 0em var(--clr-gray),
-                0em var(--ptr-r3) 0 0em var(--clr-gray),
-                calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em var(--clr-gray),
-                calc(-1 * var(--ptr-r1)) 0em 0 0em var(--clr-gray),
+                    oklch(from var(--clr-light-500) 0.5 c h),
+                var(--ptr-r3) 0em 0 0em var(--clr-light-500),
+                var(--ptr-r2) var(--ptr-r2) 0 0em var(--clr-gray-700),
+                0em var(--ptr-r3) 0 0em var(--clr-gray-700),
+                calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em var(--clr-gray-700),
+                calc(-1 * var(--ptr-r1)) 0em 0 0em var(--clr-gray-700),
                 calc(-1 * var(--ptr-r2)) calc(-1 * var(--ptr-r2)) 0 0em
-                    var(--clr-gray);
+                    var(--clr-gray-700);
         }
         37.5% {
             box-shadow:
-                0em calc(-1 * var(--ptr-r1)) 0em 0em var(--clr-gray),
-                var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em
-                    var(--clr-light-gray),
-                var(--ptr-r3) 0em 0 0em oklch(from var(--clr-main) 0.5 c h),
-                var(--ptr-r2) var(--ptr-r2) 0 0em var(--clr-main),
-                0em var(--ptr-r3) 0 0em var(--clr-gray),
-                calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em var(--clr-gray),
-                calc(-1 * var(--ptr-r1)) 0em 0 0em var(--clr-gray),
+                0em calc(-1 * var(--ptr-r1)) 0em 0em var(--clr-gray-700),
+                var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em var(--clr-gray-600),
+                var(--ptr-r3) 0em 0 0em oklch(from var(--clr-light-500) 0.5 c h),
+                var(--ptr-r2) var(--ptr-r2) 0 0em var(--clr-light-500),
+                0em var(--ptr-r3) 0 0em var(--clr-gray-700),
+                calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em var(--clr-gray-700),
+                calc(-1 * var(--ptr-r1)) 0em 0 0em var(--clr-gray-700),
                 calc(-1 * var(--ptr-r2)) calc(-1 * var(--ptr-r2)) 0 0em
-                    var(--clr-gray);
+                    var(--clr-gray-700);
         }
         50% {
             box-shadow:
-                0em calc(-1 * var(--ptr-r1)) 0em 0em var(--clr-gray),
-                var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em var(--clr-gray),
-                var(--ptr-r3) 0em 0 0em var(--clr-light-gray),
+                0em calc(-1 * var(--ptr-r1)) 0em 0em var(--clr-gray-700),
+                var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em var(--clr-gray-700),
+                var(--ptr-r3) 0em 0 0em var(--clr-gray-600),
                 var(--ptr-r2) var(--ptr-r2) 0 0em
-                    oklch(from var(--clr-main) 0.5 c h),
-                0em var(--ptr-r3) 0 0em var(--clr-main),
-                calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em var(--clr-gray),
-                calc(-1 * var(--ptr-r1)) 0em 0 0em var(--clr-gray),
+                    oklch(from var(--clr-light-500) 0.5 c h),
+                0em var(--ptr-r3) 0 0em var(--clr-light-500),
+                calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em var(--clr-gray-700),
+                calc(-1 * var(--ptr-r1)) 0em 0 0em var(--clr-gray-700),
                 calc(-1 * var(--ptr-r2)) calc(-1 * var(--ptr-r2)) 0 0em
-                    var(--clr-gray);
+                    var(--clr-gray-700);
         }
         62.5% {
             box-shadow:
-                0em calc(-1 * var(--ptr-r1)) 0em 0em var(--clr-gray),
-                var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em var(--clr-gray),
-                var(--ptr-r3) 0em 0 0em var(--clr-gray),
-                var(--ptr-r2) var(--ptr-r2) 0 0em var(--clr-light-gray),
-                0em var(--ptr-r3) 0 0em oklch(from var(--clr-main) 0.5 c h),
-                calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em var(--clr-main),
-                calc(-1 * var(--ptr-r1)) 0em 0 0em var(--clr-gray),
+                0em calc(-1 * var(--ptr-r1)) 0em 0em var(--clr-gray-700),
+                var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em var(--clr-gray-700),
+                var(--ptr-r3) 0em 0 0em var(--clr-gray-700),
+                var(--ptr-r2) var(--ptr-r2) 0 0em var(--clr-gray-600),
+                0em var(--ptr-r3) 0 0em oklch(from var(--clr-light-500) 0.5 c h),
+                calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em
+                    var(--clr-light-500),
+                calc(-1 * var(--ptr-r1)) 0em 0 0em var(--clr-gray-700),
                 calc(-1 * var(--ptr-r2)) calc(-1 * var(--ptr-r2)) 0 0em
-                    var(--clr-gray);
+                    var(--clr-gray-700);
         }
         75% {
             box-shadow:
-                0em calc(-1 * var(--ptr-r1)) 0em 0em var(--clr-gray),
-                var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em var(--clr-gray),
-                var(--ptr-r3) 0em 0 0em var(--clr-gray),
-                var(--ptr-r2) var(--ptr-r2) 0 0em var(--clr-gray),
-                0em var(--ptr-r3) 0 0em var(--clr-light-gray),
+                0em calc(-1 * var(--ptr-r1)) 0em 0em var(--clr-gray-700),
+                var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em var(--clr-gray-700),
+                var(--ptr-r3) 0em 0 0em var(--clr-gray-700),
+                var(--ptr-r2) var(--ptr-r2) 0 0em var(--clr-gray-700),
+                0em var(--ptr-r3) 0 0em var(--clr-gray-600),
                 calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em
-                    oklch(from var(--clr-main) 0.5 c h),
-                calc(-1 * var(--ptr-r1)) 0em 0 0em var(--clr-main),
+                    oklch(from var(--clr-light-500) 0.5 c h),
+                calc(-1 * var(--ptr-r1)) 0em 0 0em var(--clr-light-500),
                 calc(-1 * var(--ptr-r2)) calc(-1 * var(--ptr-r2)) 0 0em
-                    var(--clr-gray);
+                    var(--clr-gray-700);
         }
         87.5% {
             box-shadow:
-                0em calc(-1 * var(--ptr-r1)) 0em 0em var(--clr-gray),
-                var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em var(--clr-gray),
-                var(--ptr-r3) 0em 0 0em var(--clr-gray),
-                var(--ptr-r2) var(--ptr-r2) 0 0em var(--clr-gray),
-                0em var(--ptr-r3) 0 0em var(--clr-gray),
-                calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em
-                    var(--clr-light-gray),
+                0em calc(-1 * var(--ptr-r1)) 0em 0em var(--clr-gray-700),
+                var(--ptr-r2) calc(-1 * var(--ptr-r2)) 0 0em var(--clr-gray-700),
+                var(--ptr-r3) 0em 0 0em var(--clr-gray-700),
+                var(--ptr-r2) var(--ptr-r2) 0 0em var(--clr-gray-700),
+                0em var(--ptr-r3) 0 0em var(--clr-gray-700),
+                calc(-1 * var(--ptr-r2)) var(--ptr-r2) 0 0em var(--clr-gray-600),
                 calc(-1 * var(--ptr-r1)) 0em 0 0em
-                    oklch(from var(--clr-main) 0.5 c h),
+                    oklch(from var(--clr-light-500) 0.5 c h),
                 calc(-1 * var(--ptr-r2)) calc(-1 * var(--ptr-r2)) 0 0em
-                    var(--clr-main);
+                    var(--clr-light-500);
         }
     }
 </style>

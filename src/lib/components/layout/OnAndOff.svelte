@@ -54,14 +54,14 @@
             font-family: var(--bronova, sans-serif);
             font-size: clamp(var(--sm), 1.1vw, var(--h5));
             font-weight: 600;
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             letter-spacing: 2px;
             cursor: pointer;
             margin-bottom: 0.8rem;
             transition: color 0.3s ease;
 
             &.checked {
-                color: var(--clr-blue);
+                color: var(--clr-blue-500);
             }
         }
 
@@ -69,7 +69,7 @@
             cursor: not-allowed;
 
             &.checked {
-                color: var(--clr-gray, #ccc);
+                color: var(--clr-gray-700, #ccc);
             }
         }
     }
@@ -81,17 +81,17 @@
         cursor: pointer;
         padding: 0;
         border-radius: 50px;
-        background-color: var(--clr-gray, #ccc);
+        background-color: var(--clr-gray-700, #ccc);
         transition: background-color 0.3s ease;
         outline: none;
 
         &:focus-visible {
-            outline: 2px solid var(--clr-blue, #007bff);
+            outline: 2px solid var(--clr-blue-500, #007bff);
             outline-offset: 2px;
         }
 
         &.checked {
-            background-color: var(--clr-blue, #007bff);
+            background-color: var(--clr-blue-500, #007bff);
         }
 
         &.disabled {
@@ -164,7 +164,7 @@
         font-family: var(--bronova);
         font-size: clamp(var(--xs), 1.1vw, var(--sm));
         font-weight: 200;
-        color: var(--clr-invert);
+        color: var(--clr-dark-500);
         pointer-events: none;
         transition: opacity 0.3s ease;
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);

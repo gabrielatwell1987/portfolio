@@ -99,7 +99,7 @@
         position: fixed;
         top: 0;
         border-radius: var(--radius);
-        box-shadow: 0 0 5px oklch(from var(--clr-main) 0.5 c h);
+        box-shadow: 0 0 5px oklch(from var(--clr-light-500) 0.5 c h);
 
         & .nav-main {
             display: flex;
@@ -136,7 +136,7 @@
         }
 
         @media (width <= 500px) {
-            box-shadow: 0 0 8px oklch(from var(--clr-main) 0.65 c h);
+            box-shadow: 0 0 8px oklch(from var(--clr-light-500) 0.65 c h);
         }
     }
 
@@ -167,7 +167,7 @@
             transform 0.15s ease-out;
         opacity: 0;
         transform-origin: top left;
-        box-shadow: 0 0 0 1px var(--clr-main);
+        box-shadow: 0 0 0 1px var(--clr-light-500);
         visibility: hidden;
 
         &.open {
@@ -185,7 +185,7 @@
             gap: 1.25rem;
             border-radius: 5px;
             padding: 0.75rem;
-            background-color: var(--clr-invert);
+            background-color: var(--clr-dark-500);
             backdrop-filter: blur(125px);
             list-style: none;
             min-width: 150px;

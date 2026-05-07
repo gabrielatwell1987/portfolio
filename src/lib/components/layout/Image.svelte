@@ -62,7 +62,7 @@
         align-items: center;
 
         &:focus {
-            outline: 1px solid var(--clr-main);
+            outline: 1px solid var(--clr-light-500);
             background: transparent;
             box-shadow: none;
         }
@@ -94,9 +94,9 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: var(--clr-invert);
-            border: 1px solid var(--clr-main);
-            color: var(--clr-main);
+            background: var(--clr-dark-500);
+            border: 1px solid var(--clr-light-500);
+            color: var(--clr-light-500);
             white-space: pre-wrap;
             padding: 1em;
             pointer-events: none;

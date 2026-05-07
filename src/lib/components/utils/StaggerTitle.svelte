@@ -28,7 +28,7 @@
         text-align: center;
         font-family: var(--ultra);
         font-size: clamp(2.5rem, 10.5vw, 15rem);
-        color: var(--clr-blue);
+        color: var(--clr-blue-500);
         letter-spacing: 5px;
         text-transform: uppercase;
         font-kerning: none;

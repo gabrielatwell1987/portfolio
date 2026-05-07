@@ -92,7 +92,7 @@
         .open-popover {
             background-color: transparent;
             filter: brightness(1);
-            color: var(--clr-green);
+            color: var(--clr-green-900);
             inline-size: fit-content;
             font-family: var(--bronova);
             font-size: clamp(var(--h6), 1.5vw, var(--h4));
@@ -114,7 +114,7 @@
             }
 
             &:focus {
-                outline: 1px solid var(--clr-main);
+                outline: 1px solid var(--clr-light-500);
                 background: transparent;
             }
         }
@@ -128,7 +128,7 @@
             position: fixed;
             inset: 0;
             overflow: clip;
-            color: var(--clr-main);
+            color: var(--clr-light-500);
 
             @media (width <= 768px) {
                 inline-size: 95%;
@@ -177,7 +177,7 @@
 
     [popover] {
         position: relative;
-        border: 3px solid var(--clr-gray);
+        border: 3px solid var(--clr-gray-700);
         border-radius: 0.5rem;
         box-shadow: var(--blackest) 0px 20px 25px -5px;
         display: none;

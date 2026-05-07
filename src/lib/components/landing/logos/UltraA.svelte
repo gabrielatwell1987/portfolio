@@ -42,7 +42,7 @@
             x="138.158px"
             y="444.757px"
             fill="none"
-            stroke="var(--clr-main)"
+            stroke="var(--clr-light-500)"
             stroke-width="5"
             style="font-family:var(--ultra);font-size:633.799px;">a</text
         ><g
@@ -52,7 +52,7 @@
             ></g><text
                 x="997.6px"
                 y="399.162px"
-                style="font-family:var(--bronova);font-size:88.217px;fill:var(--clr-main);"
+                style="font-family:var(--bronova);font-size:88.217px;fill:var(--clr-light-500);"
                 >atwell</text
             ></g
         ></g

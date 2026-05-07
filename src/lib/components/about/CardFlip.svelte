@@ -88,7 +88,7 @@
                 }
 
                 &:focus {
-                    outline: 2px solid var(--clr-main);
+                    outline: 2px solid var(--clr-light-500);
                     outline-offset: 2px;
                 }
 
@@ -111,7 +111,7 @@
                         position: absolute;
                         top: 0;
                         left: 0;
-                        filter: drop-shadow(0 0 0.25rem var(--clr-main));
+                        filter: drop-shadow(0 0 0.25rem var(--clr-light-500));
                         border-radius: 10px;
                         aspect-ratio: 3 / 4;
 

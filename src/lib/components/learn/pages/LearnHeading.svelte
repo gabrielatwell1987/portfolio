@@ -79,7 +79,7 @@
 
         .left-word,
         .right-word {
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             font-family: var(--bronova);
             font-size: clamp(var(--h6), 8vw, var(--xl));
             font-weight: 900;
@@ -98,17 +98,17 @@
             font-size: clamp(4rem, 10vw, 15rem);
             letter-spacing: 0px;
             z-index: 1;
-            color: var(--clr-invert);
+            color: var(--clr-dark-500);
             text-shadow:
-                0 0 1px var(--clr-invert),
-                -2px -2px 0 var(--clr-main),
-                2px -2px 0 var(--clr-main),
-                -2px 2px 0 var(--clr-main),
-                2px 2px 0 var(--clr-main),
-                -2px 0 0 var(--clr-main),
-                2px 0 0 var(--clr-main),
-                0 -2px 0 var(--clr-main),
-                0 2px 0 var(--clr-main);
+                0 0 1px var(--clr-dark-500),
+                -2px -2px 0 var(--clr-light-500),
+                2px -2px 0 var(--clr-light-500),
+                -2px 2px 0 var(--clr-light-500),
+                2px 2px 0 var(--clr-light-500),
+                -2px 0 0 var(--clr-light-500),
+                2px 0 0 var(--clr-light-500),
+                0 -2px 0 var(--clr-light-500),
+                0 2px 0 var(--clr-light-500);
         }
     }
 

@@ -54,7 +54,7 @@
         & .heading {
             font-family: var(--ultra);
             font-size: clamp(3rem, 5vw, 10rem);
-            color: var(--clr-main);
+            color: var(--clr-light-500);
             text-align: center;
             position: fixed;
             top: 50%;

@@ -14,12 +14,12 @@
 
 /* Styles for elements inside .text (injected HTML) */
 .text a {
-    color: var(--clr-link);
+    color: var(--clr-blue-350);
 }
 
 .text code {
-    background-color: var(--clr-main);
-    color: var(--clr-invert);
+    background-color: var(--clr-light-500);
+    color: var(--clr-dark-500);
     padding: 0.125rem 0.25rem;
     border-radius: 0.25rem;
     font-family: var(--mono);
@@ -27,8 +27,8 @@
 }
 
 .text pre {
-    background-color: var(--clr-main);
-    color: var(--clr-invert);
+    background-color: var(--clr-light-500);
+    color: var(--clr-dark-500);
     padding: 1rem;
     border-radius: 0.5rem;
     overflow-x: auto;
@@ -51,9 +51,9 @@
 .text dl,
 .text figure,
 .text form {
-    color: var(--clr-light-gray);
+    color: var(--clr-gray-600);
 }
 
 .text strong {
-    color: var(--clr-pale);
+    color: var(--clr-pale-700);
 }

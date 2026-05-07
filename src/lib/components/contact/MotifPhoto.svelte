@@ -66,13 +66,13 @@
             object-fit: cover;
 
             box-shadow:
-                0 0 0 6px var(--clr-invert),
-                0 0 0 9px var(--clr-main);
+                0 0 0 6px var(--clr-dark-500),
+                0 0 0 9px var(--clr-light-500);
 
             @media (width <= 768px) {
                 box-shadow:
-                    0 0 0 5px var(--clr-invert),
-                    0 0 0 7px var(--clr-main);
+                    0 0 0 5px var(--clr-dark-500),
+                    0 0 0 7px var(--clr-light-500);
             }
         }
     }
