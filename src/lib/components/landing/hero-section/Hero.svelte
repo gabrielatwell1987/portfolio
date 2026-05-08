@@ -4,8 +4,8 @@
     import projects from '$lib/components/projects/projects.json';
     import HeroButton from './HeroButton.svelte';
     import ProjectsGrid from '../ProjectsGrid.svelte';
-    import UltraA from '../logos/UltraA.svelte';
     import HandDrawnUnderline from './HandDrawnUnderline.svelte';
+    import HeroBackground from './HeroBackground.svelte';
 
     type RandomCssBg = boolean | number | 'random';
 
@@ -23,19 +23,29 @@
     }
 
     const chars = 'Handcrafted Frontend Interfaces';
-    const Tunnel = () => import('$lib/threejs/tunnel/Tunnel.svelte');
-    const Ribbon = () => import('$lib/threejs/ribbon/Ribbons.svelte');
-    const Headshot = () =>
-        import('$lib/components/landing/hero-section/HeadshotHero.svelte');
 
     function getRandomChar() {
         return chars[Math.floor(Math.random() * chars.length)];
     }
 
     function getRandomBackground(): number | boolean {
-        // 3 = HeadshotHero.svelte
+        if (typeof window === 'undefined') return false;
+
         const options: (number | boolean)[] = [true, 1, 2];
-        return options[Math.floor(Math.random() * options.length)];
+        const keys = options;
+        const seenRaw = sessionStorage.getItem('seenBackgrounds');
+        let seen: (number | boolean)[] = seenRaw ? JSON.parse(seenRaw) : [];
+
+        if (seen.length >= keys.length) {
+            seen = [];
+        }
+
+        const remaining = keys.filter((k) => !seen.includes(k));
+        const pick = remaining[Math.floor(Math.random() * remaining.length)];
+        seen.push(pick);
+        sessionStorage.setItem('seenBackgrounds', JSON.stringify(seen));
+
+        return pick;
     }
 
     let mounted = $state<boolean>(false);
@@ -222,173 +232,96 @@
 </script>
 
 <article role="banner" aria-label="Hero section">
-    <!-- css bg -->
-    <div class="background-container" aria-hidden="true">
-        {#if selectedBg === true}
-            <div class="gradient-bg"></div>
-
-            <!-- Floating Particles -->
-            {#if mounted}
-                {#each particles as particle (particle.id)}
-                    <div
-                        class="particle"
-                        aria-hidden="true"
-                        style="
-						left: {particle.x}%;
-						top: {particle.y}%;
-						width: {particle.size}px;
-						height: {particle.size}px;
-						animation-duration: {particle.duration}s;
-						animation-delay: {particle.delay}s;
-					"
-                    ></div>
-                {/each}
-            {/if}
-
-            <!-- shapes -->
-            <svg class="shape circle" aria-hidden="true" viewBox="0 0 100 100">
-                <circle
-                    cx="50"
-                    cy="50"
-                    r="45"
-                    fill="transparent"
-                    stroke="var(--clr-light-500)"
-                    stroke-width="2"
-                    opacity="0.3"
-                />
-            </svg>
-
-            <svg class="shape star" aria-hidden="true" viewBox="0 0 100 100">
-                <polygon
-                    points="50,5 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35"
-                    fill="transparent"
-                    stroke="var(--clr-light-500)"
-                    stroke-width="2"
-                    opacity="0.3"
-                />
-            </svg>
-
-            <UltraA class="ultra-gradient" />
-
-            <div class="shape big-circle" aria-hidden="true"></div>
-        {:else if selectedBg === 1}
-            {#await Tunnel() then module}
-                {@const Comp = module.default}
-                <Comp />
-            {/await}
-        {:else if selectedBg === 2}
-            {#await Ribbon() then module}
-                {@const Comp = module.default}
-                <Comp />
-            {/await}
-        {/if}
-    </div>
+    <HeroBackground {selectedBg} {mounted} {particles} />
 
     <!-- content -->
-    {#if selectedBg === 3}
-        {#await Headshot() then module}
-            {@const Comp = module.default}
-            <Comp
-                title="i build things"
-                text="I am a frontend developer who loves to create beautiful and functional websites. This website showcases my skills with some projects that I created. I focus on creating user-friendly and visually appealing web experiences, along with focusing on performance and accessibility. If you have any questions or need any help, feel free to contact me.. I'll help you make you online presence a reality'!"
-                cta="view past projects"
-            />
-        {/await}
-    {:else}
-        <section
-            aria-label="Introduction and portfolio overview"
-            class="hero-content"
+    <section
+        aria-label="Introduction and portfolio overview"
+        class="hero-content"
+    >
+        <header class="title-container">
+            <h1 class="hero-title glitch">
+                <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
+                {#each titleWords as _, wordIndex}
+                    {@const wordData = getWordChars(wordIndex)}
+
+                    <span class="word">
+                        {#each wordData.chars as char, charIndex}
+                            <span
+                                class="char"
+                                style="--i: {wordData.start + charIndex}"
+                                >{char}</span
+                            >
+                        {/each}
+
+                        {#if wordIndex === 0}
+                            <div class="underline-wrapper">
+                                <HandDrawnUnderline width={100} height={50} />
+                            </div>
+                        {/if}
+                    </span>
+                {/each}
+            </h1>
+        </header>
+
+        <div
+            class="content-wrapper"
+            class:show={showContent}
+            aria-live="polite"
         >
-            <header class="title-container">
-                <h1 class="hero-title glitch">
-                    <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
-                    {#each titleWords as _, wordIndex}
-                        {@const wordData = getWordChars(wordIndex)}
+            <p class="summary indent">
+                I am a frontend developer who loves to create beautiful and
+                functional websites. This website showcases my skills with some
+                projects that I created. If you have any questions, feel free to
+                contact me.. <br /><br /> I look forward to hearing from you so we
+                can discuss your goals for your online needs!
+            </p>
 
-                        <span class="word">
-                            {#each wordData.chars as char, charIndex}
-                                <span
-                                    class="char"
-                                    style="--i: {wordData.start + charIndex}"
-                                    >{char}</span
-                                >
-                            {/each}
+            <ProjectsGrid {projects} />
 
-                            {#if wordIndex === 0}
-                                <div class="underline-wrapper">
-                                    <HandDrawnUnderline
-                                        width={100}
-                                        height={50}
-                                    />
-                                </div>
-                            {/if}
-                        </span>
-                    {/each}
-                </h1>
-            </header>
+            <nav class="button-container" aria-label="Primary navigation">
+                <HeroButton href="/projects" title="Creations" />
+            </nav>
 
-            <div
-                class="content-wrapper"
-                class:show={showContent}
-                aria-live="polite"
-            >
-                <p class="summary indent">
-                    I am a frontend developer who loves to create beautiful and
-                    functional websites. This website showcases my skills with
-                    some projects that I created. If you have any questions,
-                    feel free to contact me.. <br /><br /> I look forward to hearing
-                    from you so we can discuss your goals for your online needs!
-                </p>
+            <!-- stats -->
+            <section aria-labelledby="stats-heading" class="stats-section">
+                <h2 id="stats-heading" class="visually-hidden">
+                    Portfolio Statistics
+                </h2>
 
-                <ProjectsGrid {projects} />
+                <dl class="stats-container">
+                    <div class="stat-item a">
+                        <dt class="visually-hidden">Work approach</dt>
+                        <dd
+                            class="stat-number"
+                            aria-label="One hundred percent"
+                        >
+                            100%
+                        </dd>
+                        <dt class="stat-label">Custom</dt>
+                    </div>
 
-                <nav class="button-container" aria-label="Primary navigation">
-                    <HeroButton href="/projects" title="Creations" />
-                </nav>
+                    <div class="stat-item b">
+                        <dt class="visually-hidden">
+                            Project delivery timeframe
+                        </dt>
+                        <dd class="stat-number" aria-label="Fast">Fast</dd>
+                        <dt class="stat-label">Delivery</dt>
+                    </div>
 
-                <!-- stats -->
-                <section aria-labelledby="stats-heading" class="stats-section">
-                    <h2 id="stats-heading" class="visually-hidden">
-                        Portfolio Statistics
-                    </h2>
-
-                    <dl class="stats-container">
-                        <div class="stat-item a">
-                            <dt class="visually-hidden">Work approach</dt>
-                            <dd
-                                class="stat-number"
-                                aria-label="One hundred percent"
-                            >
-                                100%
-                            </dd>
-                            <dt class="stat-label">Custom</dt>
-                        </div>
-
-                        <div class="stat-item b">
-                            <dt class="visually-hidden">
-                                Project delivery timeframe
-                            </dt>
-                            <dd class="stat-number" aria-label="Fast">Fast</dd>
-                            <dt class="stat-label">Delivery</dt>
-                        </div>
-
-                        <div class="stat-item c">
-                            <dt class="visually-hidden">
-                                Responsive design approach
-                            </dt>
-                            <dd
-                                class="stat-number"
-                                aria-label="Fully responsive"
-                            >
-                                Fully
-                            </dd>
-                            <dt class="stat-label">Responsive</dt>
-                        </div>
-                    </dl>
-                </section>
-            </div>
-        </section>
-    {/if}
+                    <div class="stat-item c">
+                        <dt class="visually-hidden">
+                            Responsive design approach
+                        </dt>
+                        <dd class="stat-number" aria-label="Fully responsive">
+                            Fully
+                        </dd>
+                        <dt class="stat-label">Responsive</dt>
+                    </div>
+                </dl>
+            </section>
+        </div>
+    </section>
 </article>
 
 <style>
@@ -412,94 +345,6 @@
             height: auto;
             padding: 1em 0 0 0;
             margin-top: 3.5em;
-        }
-    }
-
-    .background-container {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-
-        & .gradient-bg {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                135deg,
-                rgba(23, 38, 44, 0.95) 0%,
-                rgba(30, 60, 80, 0.9) 30%,
-                rgba(45, 85, 120, 0.85) 60%,
-                rgba(20, 40, 60, 0.95) 100%
-            );
-            opacity: 0.85;
-            animation: gradientShift 50s ease-out infinite;
-        }
-
-        & .particle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: float linear infinite;
-        }
-
-        & .shape {
-            position: absolute;
-            border-radius: 30%;
-            opacity: 0.2;
-            animation: shapeFloat 20s ease-out infinite;
-
-            @media (width <= 500px) {
-                opacity: 0.3;
-            }
-
-            &.circle {
-                top: 7.5%;
-                left: 10%;
-                width: 10vw;
-                height: 10vw;
-                animation: blink 5s ease-in-out infinite;
-                animation-delay: 0s;
-
-                @media (width <= 500px) {
-                    top: 5%;
-                    left: 5%;
-                    width: 15vw;
-                    height: 15vw;
-                    stroke-width: 8;
-                    opacity: 0.4;
-                }
-            }
-
-            &.star {
-                top: 15%;
-                right: 5%;
-                width: 30vw;
-                height: 30vw;
-                animation-delay: 2s;
-            }
-
-            &.big-circle {
-                top: 70%;
-                right: 12%;
-                width: 50vw;
-                height: 50vw;
-                background: linear-gradient(
-                    90deg,
-                    var(--clr-blue-500) 40%,
-                    transparent 60%
-                );
-                animation-delay: 0s;
-                border-radius: 50%;
-
-                @media (width <= 500px) {
-                    top: 71.5%;
-                    right: 5%;
-                }
-            }
         }
     }
 
@@ -732,23 +577,6 @@
                         padding: 0.75rem;
                     }
                 }
-            }
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .background-container {
-            & .gradient-bg {
-                animation: none;
-            }
-
-            & .particle {
-                animation: none;
-                opacity: 0;
-            }
-
-            & .shape {
-                animation: none;
             }
         }
     }

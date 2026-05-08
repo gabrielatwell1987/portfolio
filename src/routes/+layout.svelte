@@ -20,6 +20,8 @@
     const loading = createLoadingContext();
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const theme = createThemeContext();
+    let SkipLinkComponent = $state<any>(null);
+    let TestLinkComponent = $state<any>(null);
 
     // service worker
     $effect(() => {
@@ -70,9 +72,10 @@
 </script>
 
 <PullToRefresh />
-<SkipLink />
-<TestLink />
 <ViewTransition />
+
+<SkipLink />
+<TestLink title="experiments" />
 
 <!-- loading animation -->
 {#if !loading.isLoaded}

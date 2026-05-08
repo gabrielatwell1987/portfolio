@@ -1,9 +1,13 @@
-<a class="test-link" href="/test">Test</a>
+<script lang="ts">
+    let { title } = $props();
+</script>
+
+<a class="test-link" href="/test">{title}</a>
 
 <style>
     .test-link {
         position: absolute;
-        top: 1.2em;
+        bottom: 1.2em;
         right: 1em;
         border-radius: 5px;
         background-color: transparent;
@@ -26,7 +30,7 @@
         &:focus-visible {
             outline: 3px solid var(--dark-pale);
             transform: scale(1.05);
-            top: 1.5rem;
+            bottom: 1.5rem;
             transition: top 0.2s ease-out;
         }
     }
