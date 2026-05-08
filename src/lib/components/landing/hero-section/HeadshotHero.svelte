@@ -144,7 +144,7 @@
                     font-weight: 700;
                     line-height: 1.1;
                     grid-area: title;
-                    color: var(--clr-warning-900);
+                    color: var(--clr-warning-500);
                     transform: scaleX(1.2) scaleY(1.75);
 
                     @media (width <= 768px) {

@@ -235,14 +235,14 @@
                 }
 
                 &:user-valid {
-                    border-color: var(--clr-success-900);
-                    box-shadow: 0 0 0 2px var(--clr-success-900);
+                    border-color: var(--clr-success-500);
+                    box-shadow: 0 0 0 2px var(--clr-success-500);
                     background-color: hsla(120, 60%, 50%, 0.05);
                 }
 
                 &:user-invalid {
-                    border-color: var(--clr-fail-900);
-                    box-shadow: 0 0 0 2px var(--clr-fail-900);
+                    border-color: var(--clr-fail-500);
+                    box-shadow: 0 0 0 2px var(--clr-fail-500);
                     background-color: hsla(0, 70%, 55%, 0.05);
                     animation: wiggle 0.5s ease-out;
                 }
@@ -278,13 +278,13 @@
 
             &:has(input:user-valid) label,
             &:has(textarea:user-valid) label {
-                color: var(--clr-success-900);
+                color: var(--clr-success-500);
                 font-weight: 600;
             }
 
             &:has(input:user-invalid:not(:placeholder-shown)) label,
             &:has(textarea:user-invalid:not(:placeholder-shown)) label {
-                color: var(--clr-fail-900);
+                color: var(--clr-fail-500);
                 font-weight: 600;
             }
         }

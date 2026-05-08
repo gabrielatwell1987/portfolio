@@ -51,7 +51,7 @@
             background: linear-gradient(
                 90deg,
                 var(--clr-dark-400),
-                var(--clr-fail-900)
+                var(--clr-fail-500)
             );
             transition: inline-size 0.1s ease;
             font-size: clamp(var(--xxxs), 0.1vw, var(--xxs));

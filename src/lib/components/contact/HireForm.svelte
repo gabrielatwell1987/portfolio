@@ -340,14 +340,14 @@
                 }
 
                 &:user-valid {
-                    border-color: var(--clr-success-900);
-                    box-shadow: 0 0 0 2px var(--clr-success-900);
+                    border-color: var(--clr-success-500);
+                    box-shadow: 0 0 0 2px var(--clr-success-500);
                     background-color: hsla(120, 60%, 50%, 0.05);
                 }
 
                 &:user-invalid {
-                    border-color: var(--clr-fail-900);
-                    box-shadow: 0 0 0 2px var(--clr-fail-900);
+                    border-color: var(--clr-fail-500);
+                    box-shadow: 0 0 0 2px var(--clr-fail-500);
                     background-color: hsla(0, 70%, 55%, 0.05);
                     animation: wiggle 0.5s ease-out;
                 }
@@ -362,14 +362,14 @@
             &:has(input:user-valid) .label-text,
             &:has(select:user-valid) .label-text,
             &:has(textarea:user-valid) .label-text {
-                color: var(--clr-success-900);
+                color: var(--clr-success-500);
                 font-weight: 700;
             }
 
             &:has(input:user-invalid:not(:placeholder-shown)) .label-text,
             &:has(select:user-invalid) .label-text,
             &:has(textarea:user-invalid:not(:placeholder-shown)) .label-text {
-                color: var(--clr-fail-900);
+                color: var(--clr-fail-500);
                 font-weight: 700;
             }
         }
@@ -419,14 +419,14 @@
         }
 
         &:user-valid {
-            border-color: var(--clr-success-900);
-            box-shadow: 0 0 0 2px var(--clr-success-900);
+            border-color: var(--clr-success-500);
+            box-shadow: 0 0 0 2px var(--clr-success-500);
             background-color: hsla(120, 60%, 50%, 0.05);
         }
 
         &:user-invalid {
-            border-color: var(--clr-fail-900);
-            box-shadow: 0 0 0 2px var(--clr-fail-900);
+            border-color: var(--clr-fail-500);
+            box-shadow: 0 0 0 2px var(--clr-fail-500);
             background-color: hsla(0, 70%, 55%, 0.05);
             animation: wiggle 0.5s ease-out;
 

@@ -322,7 +322,7 @@
                         inline-size: clamp(5em, 8vw, 15em);
                         block-size: clamp(5em, 8vw, 15em);
                         fill: var(--clr-dark-400);
-                        stroke: var(--clr-success-900);
+                        stroke: var(--clr-success-500);
                         stroke-width: 25;
 
                         @media (width <= 768px) {

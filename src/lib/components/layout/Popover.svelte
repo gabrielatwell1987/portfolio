@@ -68,7 +68,7 @@
                 }
 
                 & path {
-                    stroke: var(--clr-warning-900);
+                    stroke: var(--clr-warning-500);
                     stroke-width: 1.5;
                 }
             }

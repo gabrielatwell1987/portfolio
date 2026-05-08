@@ -97,7 +97,7 @@
     font-family: var(--bronova);
     font-size: clamp(1.25rem, 1.75vw, 2rem);
     font-weight: 900;
-    color: oklch(from var(--clr-green-900) 0.35 c h);
+    color: oklch(from var(--clr-green-500) 0.35 c h);
     letter-spacing: -1px;
     margin-block: 2rem;
     text-shadow: 0 0 3px var(--dark-gray);

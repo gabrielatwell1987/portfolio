@@ -316,12 +316,12 @@
         --faint-gray: rgba(128, 128, 128, 0.1);
         --dark-gray: #5f5f5f;
         --dark-faint-gray: rgba(95, 95, 95, 0.1);
-        --clr-success-900-light: #57c184;
-        --clr-success-900-dark: #2b8b5a;
-        --clr-fail-900-light: #ff9b7a;
-        --clr-fail-900-dark: #c74a2f;
-        --clr-warning-900-light: #ffdd6b;
-        --clr-warning-900-dark: #d7b24a;
+        --clr-success-500-light: #57c184;
+        --clr-success-500-dark: #2b8b5a;
+        --clr-fail-500-light: #ff9b7a;
+        --clr-fail-500-dark: #c74a2f;
+        --clr-warning-500-light: #ffdd6b;
+        --clr-warning-500-dark: #d7b24a;
 
         --clr-bg: #111;
         --clr-light-400: rgba(0, 0, 0, 0.15);
@@ -342,16 +342,16 @@
         --clr-blue-300: #4a90e2;
         --clr-pale-700: #ffd66b;
         --clr-pale-900: #fff3c4;
-        --clr-green-900: #2b8b5a;
+        --clr-green-500: #2b8b5a;
         --clr-btn-900: #111111;
         --clr-btn-600: linear-gradient(90deg, #ffd66b, #7b5cff);
-        --clr-sun-900: #ffd66b;
-        --clr-moon-900: #1f3b6f;
+        --clr-sun-500: #ffd66b;
+        --clr-moon-500: #1f3b6f;
         --opacity: 1;
 
-        --clr-success-900: #57c184;
-        --clr-fail-900: #ff9b7a;
-        --clr-warning-900: #ffdd6b;
+        --clr-success-500: #57c184;
+        --clr-fail-500: #ff9b7a;
+        --clr-warning-500: #ffdd6b;
     }
 
     /* fallbacks for older devices */
@@ -438,13 +438,19 @@
             --faint-gray: oklch(0.5103 0 0 / 0.1);
             --dark-gray: oklch(0.3715 0 0);
             --dark-faint-gray: oklch(0.3715 0 0 / 0.1);
-            --clr-success-900-light: oklch(0.5771 0.1593 143.16);
-            --clr-success-900-dark: oklch(0.4898 0.1434 141.2);
-            --clr-fail-900-light: oklch(0.5189 0.175 25.76);
-            --clr-fail-900-dark: oklch(0.2931 0.151 24.57);
-            --clr-warning-900-light: oklch(0.7126 0.1451 94.89);
-            --clr-warning-900-dark: oklch(0.4869 0.0938 88.85);
+            --clr-success-500-light: oklch(0.5771 0.1593 143.16);
+            --clr-success-500-dark: oklch(0.4898 0.1434 141.2);
+            --clr-fail-500-light: oklch(0.5189 0.175 25.76);
+            --clr-fail-500-dark: oklch(0.2931 0.151 24.57);
+            --clr-warning-500-light: oklch(0.7126 0.1451 94.89);
+            --clr-warning-500-dark: oklch(0.4869 0.0938 88.85);
 
+            --clr-blue-400: light-dark(
+                var(--clr-success-500),
+                var(--light-sky)
+            );
+            --clr-blue-500: light-dark(var(--dark-blue), var(--sky));
+            --clr-blue-300: light-dark(var(--sky), var(--sky));
             --clr-dark-200: light-dark(var(--white-gray), var(--blacker));
             --clr-gray-600: light-dark(var(--dark-gray), var(--light-gray));
             --clr-gray-700: light-dark(var(--dark-gray), var(--gray));
@@ -457,36 +463,30 @@
                 oklch(0.2982 0.0014 17.24)
             );
 
-            --clr-blue-400: light-dark(
-                var(--clr-success-900),
-                var(--light-sky)
-            );
-            --clr-blue-500: light-dark(var(--dark-blue), var(--sky));
-            --clr-blue-300: light-dark(var(--sky), var(--sky));
             --clr-pale-700: light-dark(var(--dark-yellow), var(--pale));
             --clr-pale-900: light-dark(var(--pale), var(--dark-pale));
-            --clr-green-900: light-dark(
-                var(--clr-success-900-dark),
-                var(--clr-success-900-light)
+            --clr-green-500: light-dark(
+                var(--clr-success-500-dark),
+                var(--clr-success-500-light)
             );
             --clr-btn-900: light-dark(var(--blackest), var(--white));
             --clr-btn-600: light-dark(var(--yellow), var(--purple));
             --clr-btn-700: light-dark(var(--purple), var(--light-purple));
-            --clr-sun-900: light-dark(var(--yellow), var(--pale));
-            --clr-moon-900: light-dark(var(--dark-blue), var(--sky));
+            --clr-sun-500: light-dark(var(--yellow), var(--pale));
+            --clr-moon-500: light-dark(var(--dark-blue), var(--sky));
             --opacity: light-dark(1, 0.85);
 
-            --clr-success-900: light-dark(
-                var(--clr-success-900-light),
-                var(--clr-success-900-dark)
+            --clr-success-500: light-dark(
+                var(--clr-success-500-light),
+                var(--clr-success-500-dark)
             );
-            --clr-fail-900: light-dark(
-                var(--clr-fail-900-light),
-                var(--clr-fail-900-dark)
+            --clr-fail-500: light-dark(
+                var(--clr-fail-500-light),
+                var(--clr-fail-500-dark)
             );
-            --clr-warning-900: light-dark(
-                var(--clr-warning-900-light),
-                var(--clr-warning-900-dark)
+            --clr-warning-500: light-dark(
+                var(--clr-warning-500-light),
+                var(--clr-warning-500-dark)
             );
         }
     }

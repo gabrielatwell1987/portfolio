@@ -142,14 +142,14 @@
                     color: var(--clr-dark-500);
                     text-shadow:
                         0 0 1px var(--clr-dark-500),
-                        -2px -2px 0 var(--clr-success-900),
-                        2px -2px 0 var(--clr-success-900),
-                        -2px 2px 0 var(--clr-success-900),
-                        2px 2px 0 var(--clr-success-900),
-                        -2px 0 0 var(--clr-success-900),
-                        2px 0 0 var(--clr-success-900),
-                        0 -2px 0 var(--clr-success-900),
-                        0 2px 0 var(--clr-success-900);
+                        -2px -2px 0 var(--clr-success-500),
+                        2px -2px 0 var(--clr-success-500),
+                        -2px 2px 0 var(--clr-success-500),
+                        2px 2px 0 var(--clr-success-500),
+                        -2px 0 0 var(--clr-success-500),
+                        2px 0 0 var(--clr-success-500),
+                        0 -2px 0 var(--clr-success-500),
+                        0 2px 0 var(--clr-success-500);
                 }
             }
 
@@ -164,14 +164,14 @@
                     color: var(--clr-dark-500);
                     text-shadow:
                         0 0 1px var(--clr-dark-500),
-                        -2px -2px 0 var(--clr-fail-900),
-                        2px -2px 0 var(--clr-fail-900),
-                        -2px 2px 0 var(--clr-fail-900),
-                        2px 2px 0 var(--clr-fail-900),
-                        -2px 0 0 var(--clr-fail-900),
-                        2px 0 0 var(--clr-fail-900),
-                        0 -2px 0 var(--clr-fail-900),
-                        0 2px 0 var(--clr-fail-900);
+                        -2px -2px 0 var(--clr-fail-500),
+                        2px -2px 0 var(--clr-fail-500),
+                        -2px 2px 0 var(--clr-fail-500),
+                        2px 2px 0 var(--clr-fail-500),
+                        -2px 0 0 var(--clr-fail-500),
+                        2px 0 0 var(--clr-fail-500),
+                        0 -2px 0 var(--clr-fail-500),
+                        0 2px 0 var(--clr-fail-500);
                 }
             }
         }

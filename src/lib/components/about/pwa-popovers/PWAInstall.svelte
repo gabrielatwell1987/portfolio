@@ -68,7 +68,7 @@
         & button {
             background-color: transparent;
             filter: brightness(1);
-            color: var(--clr-green-900);
+            color: var(--clr-green-500);
             width: fit-content;
             font-family: var(--bronova);
             font-size: clamp(var(--h6), 1.5vw, var(--h4));
@@ -103,7 +103,7 @@
 
         [popover]:popover-open .pwa-title {
             view-transition-name: pwa-title;
-            color: var(--clr-green-900);
+            color: var(--clr-green-500);
             font-size: clamp(var(--h5), 1.5vw, var(--h3));
         }
 
