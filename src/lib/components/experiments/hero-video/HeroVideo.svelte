@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { scale } from 'svelte/transition';
+    import { goto } from '$app/navigation';
+
     interface Props {
         videoSrc?: string;
         title?: string;
@@ -13,6 +14,10 @@
 
     function handleVideoLoad() {
         isVideoLoaded = true;
+    }
+
+    function handleCTAClick() {
+        goto('/about');
     }
 </script>
 
@@ -36,7 +41,7 @@
     <div class="content">
         <h1 class="title">{title}</h1>
         <h3 class="subtitle">{subtitle}</h3>
-        <button class="cta">{ctaText}</button>
+        <button class="cta" onclick={handleCTAClick}>{ctaText}</button>
     </div>
 </div>
 
@@ -52,20 +57,16 @@
         align-items: center;
         justify-content: center;
         background-color: oklch(from var(--clr-dark-400) 1 c h);
-        /* border: 2px solid var(--clr-light-500); */
         border-radius: var(--radius);
-        /* padding: 0.5em; */
 
         & .hero-video {
-            /* border-radius: 3%; */
-            inline-size: 30vw;
+            inline-size: 45vw;
             block-size: stretch;
             object-fit: cover;
             opacity: 0;
             animation: fadeIn 1s ease-in-out forwards;
             padding-left: 1.75em;
             padding: 0;
-            /* margin: 0; */
         }
 
         & .overlay {
@@ -95,12 +96,11 @@
 
             & .title {
                 font-family: var(--mono);
-                font-size: clamp(var(--h4), 3.5vw, var(--lg));
+                font-size: clamp(var(--h4), 3vw, var(--lg));
                 font-weight: 800;
                 grid-area: title;
                 color: var(--clr-blue-350);
                 line-height: 1.2;
-                letter-spacing: 1px;
 
                 transform: scaleX(1.25);
                 transition: transform 0.5s ease-out;
@@ -120,15 +120,16 @@
             }
 
             & .cta {
+                inline-size: fit-content;
                 font-family: var(--bronova);
-                font-size: clamp(var(--h6), 2vw, var(--h3));
+                font-size: clamp(var(--h6), 1.5vw, var(--h3));
                 font-weight: 800;
                 background-color: transparent;
                 border: 4px solid var(--clr-light-400);
                 color: var(--clr-light-400);
                 grid-area: cta;
                 line-height: 1;
-                padding: 0.25em 0.15em;
+                padding: 0.25em 0.5em;
 
                 &:focus,
                 &:focus-visible {

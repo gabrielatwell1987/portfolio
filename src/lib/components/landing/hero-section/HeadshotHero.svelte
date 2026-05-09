@@ -9,14 +9,17 @@
         text: string;
         cta: string;
         bgImage?: string;
+        link?: string | { href: string; target?: string };
     }
 
-    let { title, cssBg = false, text, cta, bgImage }: Props = $props();
+    let { title, cssBg = false, text, cta, bgImage, link }: Props = $props();
     let heroText = $state<HTMLElement | null>(null);
     let maskActive = $state(true);
 
     function handleClick() {
-        goto('/projects');
+        if (!link) return;
+        const url = typeof link === 'string' ? link : link.href;
+        goto(url);
     }
 
     function handleTextScroll() {
@@ -159,6 +162,7 @@
                     font-size: clamp(var(--sm), 1.5vw, var(--h3));
                     color: var(--clr-gray-600);
                     padding-right: 1em;
+                    anchor-name: --cta;
 
                     position: absolute;
                     left: 45%;
@@ -182,12 +186,16 @@
                     background-color: transparent;
                     border: 2px solid var(--clr-blue-350);
                     color: var(--clr-blue-350);
-                    grid-area: cta;
 
                     font-family: var(--bronova-bold);
                     font-size: clamp(var(--sm), 1.5vw, var(--h5));
                     inline-size: fit-content;
                     z-index: 2;
+
+                    position: absolute;
+                    position-anchor: --cta;
+                    top: calc(anchor(bottom) + 3em);
+                    right: calc(anchor(right) + 9em);
 
                     @media (width <= 768px) {
                         margin-top: -12em;

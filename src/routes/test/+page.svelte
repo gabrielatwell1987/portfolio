@@ -9,11 +9,12 @@
             load: () =>
                 import('$lib/components/landing/hero-section/HeadshotHero.svelte'),
             props: {
-                title: 'headshot hero',
-                cta: 'Click Me!',
+                title: 'frontend design',
+                cta: 'Work With Me',
                 bgImage:
                     'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/headshot-noBG_a.webp',
-                text: 'this is a hero section with a headshot background image.',
+                text: 'If you need a website, app, or just want to chat about design and development, I would love to hear from you.',
+                link: '/contact',
             },
         },
         2: {
@@ -23,7 +24,8 @@
                 videoSrc:
                     'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/videos/Street-Video.mp4',
                 title: 'component test',
-                subtitle: 'This is a subtitle for the hero section.',
+                subtitle:
+                    'This is a subtitle for the hero section. It can be a bit longer to provide more context about the content.',
                 ctaText: 'Learn More',
             },
         },
@@ -31,8 +33,8 @@
             load: () =>
                 import('$lib/components/experiments/stretch/VerticalStretch.svelte'),
             props: {
-                firstWord: 'Vertical',
-                secondWord: 'Stretch',
+                firstWord: 'Content',
+                secondWord: 'Here',
                 titleLetters: ['t', 'e', 's', 't'],
                 firstMessage: "i'm testing out some",
                 secondMessage: 'new layout stuff',
