@@ -10,7 +10,7 @@
         if (!loaded) {
             loaded = true;
 
-            import('$lib/components/landing/hero-section/Hero.svelte').then(
+            import('$lib/components/landing/hero-section/hero/Hero.svelte').then(
                 (module) => {
                     Hero = module.default;
                 },

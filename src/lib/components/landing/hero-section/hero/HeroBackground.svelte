@@ -1,5 +1,5 @@
 <script lang="ts">
-    import UltraA from '../logos/UltraA.svelte';
+    import UltraA from '../../logos/UltraA.svelte';
 
     interface Particles {
         id: number;
@@ -130,11 +130,11 @@
                 animation: blink 5s ease-in-out infinite;
                 animation-delay: 0s;
 
-                @media (width <= 500px) {
-                    top: 5%;
-                    left: 5%;
-                    width: 15vw;
-                    height: 15vw;
+                @media (width <= 768px) {
+                    top: 8%;
+                    left: 7%;
+                    width: 20vw;
+                    height: 20vw;
                     stroke-width: 8;
                     opacity: 0.4;
                 }
@@ -146,11 +146,12 @@
                 width: 30vw;
                 height: 30vw;
                 animation-delay: 2s;
+                transform: rotate(35deg);
             }
 
             &.big-circle {
                 top: 70%;
-                right: 12%;
+                right: 2%;
                 width: 50vw;
                 height: 50vw;
                 background: linear-gradient(
@@ -161,9 +162,14 @@
                 animation-delay: 0s;
                 border-radius: 50%;
 
-                @media (width <= 500px) {
-                    top: 71.5%;
-                    right: 5%;
+                @media (width <= 768px) {
+                    top: 18%;
+                    left: 5%;
+                    background: linear-gradient(
+                        45deg,
+                        transparent 40%,
+                        var(--clr-blue-500) 60%
+                    );
                 }
             }
         }

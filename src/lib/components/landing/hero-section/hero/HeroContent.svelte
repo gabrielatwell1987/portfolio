@@ -1,56 +1,15 @@
 <script lang="ts">
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import HeroButton from '../hero/HeroButton.svelte';
     import projects from '$lib/components/projects/projects.json';
-    import HeroButton from './HeroButton.svelte';
-    import ProjectsGrid from '../ProjectsGrid.svelte';
-    import HandDrawnUnderline from './HandDrawnUnderline.svelte';
-    import HeroBackground from './HeroBackground.svelte';
-
-    type RandomCssBg = boolean | number | 'random';
-
-    interface Particle {
-        id: number;
-        x: number;
-        y: number;
-        size: number;
-        duration: number;
-        delay: number;
-    }
-
-    interface Props {
-        cssBg?: RandomCssBg;
-    }
+    import ProjectsGrid from '../../ProjectsGrid.svelte';
+    import HandDrawnUnderline from '../HandDrawnUnderline.svelte';
 
     const chars = 'Handcrafted Frontend Interfaces';
-
-    function getRandomChar() {
-        return chars[Math.floor(Math.random() * chars.length)];
-    }
-
-    function getRandomBackground(): number | boolean {
-        if (typeof window === 'undefined') return false;
-
-        const options: (number | boolean)[] = [true, 1, 2];
-        const keys = options;
-        const seenRaw = sessionStorage.getItem('seenBackgrounds');
-        let seen: (number | boolean)[] = seenRaw ? JSON.parse(seenRaw) : [];
-
-        if (seen.length >= keys.length) {
-            seen = [];
-        }
-
-        const remaining = keys.filter((k) => !seen.includes(k));
-        const pick = remaining[Math.floor(Math.random() * remaining.length)];
-        seen.push(pick);
-        sessionStorage.setItem('seenBackgrounds', JSON.stringify(seen));
-
-        return pick;
-    }
-
-    let mounted = $state<boolean>(false);
     let titleText = 'Handcrafted Frontend Interfaces';
     let titleWords = $derived(titleText.split(' '));
+    let showContent = $state<boolean>(false);
     let displayedTitle = $state<string[]>(
         titleText.split('').map((char, index) => {
             const wordIndex = getWordIndexFromCharIndex(index);
@@ -61,13 +20,6 @@
             }
             return char === ' ' ? ' ' : getRandomChar();
         }),
-    );
-    let showContent = $state<boolean>(false);
-    let particles = $state<Particle[]>([]);
-
-    let { cssBg = false }: Props = $props();
-    let selectedBg = $derived(
-        cssBg === 'random' ? getRandomBackground() : cssBg,
     );
 
     function getWordChars(wordIndex: number) {
@@ -93,6 +45,10 @@
             charCount += titleWords[i].length + 1;
         }
         return 0;
+    }
+
+    function getRandomChar() {
+        return chars[Math.floor(Math.random() * chars.length)];
     }
 
     function animateTitle() {
@@ -154,35 +110,11 @@
     }
 
     $effect(() => {
-        if (!mounted) return;
-
         animateTitle();
-    });
-
-    $effect(() => {
-        mounted = true;
-
-        const prefersReducedMotion = window.matchMedia(
-            '(prefers-reduced-motion: reduce)',
-        ).matches;
-
-        // particle
-        if (!prefersReducedMotion) {
-            particles = Array.from({ length: 50 }, (_, i) => ({
-                id: i,
-                x: Math.random() * 100,
-                y: Math.random() * 100,
-                size: Math.random() * 4 + 1,
-                duration: Math.random() * 20 + 10,
-                delay: Math.random() * 5,
-            }));
-        }
     });
 
     // gsap
     $effect(() => {
-        if (!mounted) return;
-
         gsap.registerPlugin(ScrollTrigger);
 
         const tl = gsap.timeline({
@@ -231,123 +163,81 @@
     });
 </script>
 
-<article role="banner" aria-label="Hero section">
-    <HeroBackground {selectedBg} {mounted} {particles} />
+<section aria-label="Introduction and portfolio overview" class="hero-content">
+    <header class="title-container">
+        <h1 class="hero-title glitch">
+            <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
+            {#each titleWords as _, wordIndex}
+                {@const wordData = getWordChars(wordIndex)}
 
-    <!-- content -->
-    <section
-        aria-label="Introduction and portfolio overview"
-        class="hero-content"
-    >
-        <header class="title-container">
-            <h1 class="hero-title glitch">
-                <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
-                {#each titleWords as _, wordIndex}
-                    {@const wordData = getWordChars(wordIndex)}
-
-                    <span class="word">
-                        {#each wordData.chars as char, charIndex}
-                            <span
-                                class="char"
-                                style="--i: {wordData.start + charIndex}"
-                                >{char}</span
-                            >
-                        {/each}
-
-                        {#if wordIndex === 0}
-                            <div class="underline-wrapper">
-                                <HandDrawnUnderline width={100} height={50} />
-                            </div>
-                        {/if}
-                    </span>
-                {/each}
-            </h1>
-        </header>
-
-        <div
-            class="content-wrapper"
-            class:show={showContent}
-            aria-live="polite"
-        >
-            <p class="summary indent">
-                I am a frontend developer who loves to create beautiful and
-                functional websites. This website showcases my skills with some
-                projects that I created. If you have any questions, feel free to
-                contact me.. <br /><br /> I look forward to hearing from you so we
-                can discuss your goals for your online needs!
-            </p>
-
-            <ProjectsGrid {projects} />
-
-            <nav class="button-container" aria-label="Primary navigation">
-                <HeroButton href="/projects" title="Creations" />
-            </nav>
-
-            <!-- stats -->
-            <section aria-labelledby="stats-heading" class="stats-section">
-                <h2 id="stats-heading" class="visually-hidden">
-                    Portfolio Statistics
-                </h2>
-
-                <dl class="stats-container">
-                    <div class="stat-item a">
-                        <dt class="visually-hidden">Work approach</dt>
-                        <dd
-                            class="stat-number"
-                            aria-label="One hundred percent"
+                <span class="word">
+                    {#each wordData.chars as char, charIndex}
+                        <span
+                            class="char"
+                            style="--i: {wordData.start + charIndex}"
+                            >{char}</span
                         >
-                            100%
-                        </dd>
-                        <dt class="stat-label">Custom</dt>
-                    </div>
+                    {/each}
 
-                    <div class="stat-item b">
-                        <dt class="visually-hidden">
-                            Project delivery timeframe
-                        </dt>
-                        <dd class="stat-number" aria-label="Fast">Fast</dd>
-                        <dt class="stat-label">Delivery</dt>
-                    </div>
+                    {#if wordIndex === 0}
+                        <div class="underline-wrapper">
+                            <HandDrawnUnderline width={100} height={50} />
+                        </div>
+                    {/if}
+                </span>
+            {/each}
+        </h1>
+    </header>
 
-                    <div class="stat-item c">
-                        <dt class="visually-hidden">
-                            Responsive design approach
-                        </dt>
-                        <dd class="stat-number" aria-label="Fully responsive">
-                            Fully
-                        </dd>
-                        <dt class="stat-label">Responsive</dt>
-                    </div>
-                </dl>
-            </section>
-        </div>
-    </section>
-</article>
+    <div class="content-wrapper" class:show={showContent} aria-live="polite">
+        <p class="summary indent">
+            I am a frontend developer who loves to create beautiful and
+            functional websites. This website showcases my skills with some
+            projects that I created. If you have any questions, feel free to
+            contact me.. <br /><br /> I look forward to hearing from you so we can
+            discuss your goals for your online needs!
+        </p>
+
+        <ProjectsGrid {projects} />
+
+        <nav class="button-container" aria-label="Primary navigation">
+            <HeroButton href="/projects" title="Creations" />
+        </nav>
+
+        <!-- stats -->
+        <section aria-labelledby="stats-heading" class="stats-section">
+            <h2 id="stats-heading" class="visually-hidden">
+                Portfolio Statistics
+            </h2>
+
+            <dl class="stats-container">
+                <div class="stat-item a">
+                    <dt class="visually-hidden">Work approach</dt>
+                    <dd class="stat-number" aria-label="One hundred percent">
+                        100%
+                    </dd>
+                    <dt class="stat-label">Custom</dt>
+                </div>
+
+                <div class="stat-item b">
+                    <dt class="visually-hidden">Project delivery timeframe</dt>
+                    <dd class="stat-number" aria-label="Fast">Fast</dd>
+                    <dt class="stat-label">Delivery</dt>
+                </div>
+
+                <div class="stat-item c">
+                    <dt class="visually-hidden">Responsive design approach</dt>
+                    <dd class="stat-number" aria-label="Fully responsive">
+                        Fully
+                    </dd>
+                    <dt class="stat-label">Responsive</dt>
+                </div>
+            </dl>
+        </section>
+    </div>
+</section>
 
 <style>
-    article {
-        position: relative;
-        min-height: 100vh;
-        height: auto;
-        overflow: clip;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 5rem 0 0 0;
-        margin-top: 1.75em;
-        font-size: clamp(var(--h6), 4vw, var(--h1));
-        background-color: transparent;
-        box-shadow: none;
-
-        @media (height <= 768px) {
-            min-height: auto;
-            height: auto;
-            padding: 1em 0 0 0;
-            margin-top: 3.5em;
-        }
-    }
-
     .hero-content {
         position: relative;
         z-index: 1;
@@ -578,95 +468,6 @@
                     }
                 }
             }
-        }
-    }
-
-    @keyframes gradientShift {
-        0% {
-            background: linear-gradient(
-                135deg,
-                rgba(23, 38, 44, 0.95) 0%,
-                rgba(30, 60, 80, 0.9) 30%,
-                rgba(45, 85, 120, 0.85) 60%,
-                rgba(20, 40, 60, 0.95) 100%
-            );
-        }
-        25% {
-            background: linear-gradient(
-                135deg,
-                rgba(26, 44, 54, 0.95) 0%,
-                rgba(35, 65, 90, 0.9) 30%,
-                rgba(40, 80, 115, 0.85) 60%,
-                rgba(25, 45, 65, 0.95) 100%
-            );
-        }
-        50% {
-            background: linear-gradient(
-                135deg,
-                rgba(30, 50, 70, 0.95) 0%,
-                rgba(40, 70, 100, 0.9) 30%,
-                rgba(25, 45, 65, 0.85) 60%,
-                rgba(35, 55, 75, 0.95) 100%
-            );
-        }
-        75% {
-            background: linear-gradient(
-                135deg,
-                rgba(27, 44, 57, 0.95) 0%,
-                rgba(35, 65, 90, 0.9) 30%,
-                rgba(35, 65, 95, 0.85) 60%,
-                rgba(28, 48, 68, 0.95) 100%
-            );
-        }
-        100% {
-            background: linear-gradient(
-                135deg,
-                rgba(23, 38, 44, 0.95) 0%,
-                rgba(30, 60, 80, 0.9) 30%,
-                rgba(45, 85, 120, 0.85) 60%,
-                rgba(20, 40, 60, 0.95) 100%
-            );
-        }
-    }
-
-    @keyframes float {
-        0% {
-            transform: translateY(0) rotate(0deg);
-            opacity: 0;
-        }
-        10% {
-            opacity: 1;
-        }
-        90% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(-100vh) rotate(180deg);
-            opacity: 0;
-        }
-    }
-
-    @keyframes shapeFloat {
-        0%,
-        100% {
-            transform: translateY(0) rotate(0deg);
-        }
-        33% {
-            transform: translateY(-20px) rotate(120deg);
-        }
-        66% {
-            transform: translateY(10px) rotate(240deg);
-        }
-    }
-
-    @keyframes blink {
-        0%,
-        50% {
-            opacity: 0.1;
-        }
-        51%,
-        100% {
-            opacity: 0;
         }
     }
 </style>
