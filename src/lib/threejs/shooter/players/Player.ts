@@ -1,7 +1,6 @@
 import { Vector3, Object3D, Raycaster } from 'three';
 import type { World } from '../world';
 import { GameObject } from '../objects/GameObject';
-import { worldToCell } from './pathfinding';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
@@ -18,19 +17,57 @@ export class Player extends GameObject {
     private raycaster = new Raycaster();
     private heightOffset: number;
 
+    private findSafeSpawnPosition(): Vector3 {
+        const preferred = [
+            new Vector3(5.5, 0.5, 5.5),
+            new Vector3(2.5, 0.5, 2.5),
+            new Vector3(10.5, 0.5, 10.5),
+            new Vector3(2.5, 0.5, 10.5),
+            new Vector3(10.5, 0.5, 2.5),
+        ];
+
+        for (const pos of preferred) {
+            if (!this.isSpawnBlocked(pos.x, pos.z)) {
+                return pos;
+            }
+        }
+
+        for (let x = 1.5; x < this.world.width - 1; x += 1) {
+            for (let z = 1.5; z < this.world.height - 1; z += 1) {
+                if (!this.isSpawnBlocked(x, z)) {
+                    return new Vector3(x, 0.5, z);
+                }
+            }
+        }
+
+        return new Vector3(5.5, 0.5, 5.5);
+    }
+
+    private isSpawnBlocked(x: number, z: number): boolean {
+        const checkRadius = 1.5;
+        const step = 0.5;
+        for (let dx = -checkRadius; dx <= checkRadius; dx += step) {
+            for (let dz = -checkRadius; dz <= checkRadius; dz += step) {
+                const cx = Math.floor(x + dx);
+                const cz = Math.floor(z + dz);
+                if (this.world.buildingCells.has(`${cx},${cz}`)) return true;
+            }
+        }
+        return false;
+    }
+
     constructor(world: World) {
-        // create an empty container
         super(new Vector3(5.5, 0.5, 5.5));
 
         this.world = world;
-        this.position.set(5.5, 0.5, 5.5);
 
-        // compute height offset as 0.25 of a world segment (cell)
+        const safeSpawn = this.findSafeSpawnPosition();
+        this.position.copy(safeSpawn);
+
         const cols = Math.max(1, Math.floor(this.world.width));
         const segment = this.world.width / cols;
         this.heightOffset = 0.25 * segment;
 
-        // align initial Y to terrain
         const h = this.getTerrainHeightAt(this.position.x, this.position.z);
         if (h !== null) this.position.y = h + this.heightOffset;
 
@@ -46,13 +83,9 @@ export class Player extends GameObject {
     }
 
     protected isBlockedPosition(x: number, z: number): boolean {
-        const cell = worldToCell(x, z);
-        const key = `${cell.x},${cell.z}`;
-        return (
-            this.world.treeCells.has(key) ||
-            this.world.rockCells.has(key) ||
-            this.world.bushCells.has(key)
-        );
+        const cx = Math.floor(x);
+        const cz = Math.floor(z);
+        return this.world.buildingCells.has(`${cx},${cz}`);
     }
 
     /**
