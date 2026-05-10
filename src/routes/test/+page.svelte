@@ -33,9 +33,8 @@
             load: () =>
                 import('$lib/components/experiments/stretch/VerticalStretch.svelte'),
             props: {
-                firstWord: 'Content',
-                secondWord: 'Here',
-                titleLetters: ['t', 'e', 's', 't'],
+                firstWord: 'testing',
+                titleLetters: ['m', 'a', 'g', 'i', 'c'],
                 firstMessage: "i'm testing out some",
                 secondMessage: 'new layout stuff',
             },

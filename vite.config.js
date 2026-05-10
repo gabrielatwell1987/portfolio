@@ -8,6 +8,7 @@ export default defineConfig({
         https: false,
         port: 5173,
         host: 'localhost',
+        open: true,
     },
     build: {
         // sourcemap: process.env.NODE_ENV === 'development' ? true : false,

@@ -1,7 +1,6 @@
 <script lang="ts">
     import { goto } from '$app/navigation';
     import gsap from 'gsap';
-    // import { GSDevTools } from 'gsap/GSDevTools';
     import { SplitText } from 'gsap/SplitText';
 
     interface Props {
@@ -157,16 +156,18 @@
     </div>
 
     <div class="text-content">
-        <h2>
+        <h2 class="title">
             <span>{firstTitle}</span>
             <span>{secondTitle}</span>
         </h2>
 
-        <h3>perfect for smartphones</h3>
+        <h3 class="subtitle">perfect for smartphones</h3>
 
-        <h4>click the button on the smartphone to change videos</h4>
+        <h4 class="directions">
+            click the button on the smartphone to change videos
+        </h4>
 
-        <button onclick={link}>learn more</button>
+        <button class="cta" onclick={link}>learn more</button>
     </div>
 </div>
 
@@ -270,9 +271,9 @@
         grid-template-columns: repeat(minmax(0, 1fr), 2);
         grid-template-areas:
             'title title'
-            '. subtitle'
+            /* '. subtitle' */
             'directions directions'
-            'cta .';
+            /* 'cta .'; */;
         block-size: 30vh;
         gap: 1em;
         margin-right: 10vw;
@@ -288,7 +289,7 @@
             margin: 0;
         }
 
-        & h2 {
+        & .title {
             font-family: var(--ultra);
             font-size: clamp(var(--h5), 4vw, var(--lg));
             margin: 0;
@@ -296,6 +297,7 @@
             grid-area: title;
             transform: scaleY(2.5);
             line-height: 1;
+            anchor-name: --subtitle;
 
             color: var(--clr-dark-500);
             text-shadow:
@@ -321,17 +323,22 @@
             }
         }
 
-        & h3 {
+        & .subtitle {
             color: var(--clr-blue-400);
             font-family: var(--bronova);
             font-size: clamp(var(--sm), 1.2vw, var(--h4));
             font-weight: 300;
             margin: 4em 0 0.125em 0;
             padding: 0;
-            grid-area: subtitle;
+
+            position: absolute;
+            position-anchor: --subtitle;
+            top: calc(anchor(top) + 3em);
+            left: calc(anchor(right) - 15em);
+            anchor-name: --desc;
         }
 
-        & h4 {
+        & .directions {
             color: var(--clr-light-400);
             font-family: var(--bronova);
             font-size: clamp(var(--xs), 1vw, var(--h5));
@@ -341,9 +348,11 @@
             margin: 1em 0;
             padding: 0;
             grid-area: directions;
+
+            anchor-name: --button;
         }
 
-        & button {
+        & .cta {
             font-family: var(--mono);
             font-size: clamp(var(--sm), 1.25vw, var(--h2));
             border: 1px solid var(--clr-blue-350);
@@ -356,12 +365,12 @@
             padding: clamp(0.2em, 1.2vw, 0.4em) clamp(0.4em, 2vw, 0.8em);
             inline-size: clamp(80px, 15vw, 200px);
             block-size: clamp(2em, 4vh, 3em);
-            grid-area: cta;
             overflow: hidden;
             text-overflow: ellipsis;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: absolute;
+            position-anchor: --button;
+            top: calc(anchor(top) + 3em);
+            left: calc(anchor(left) + 2em);
 
             @media (width <= 925px) {
                 line-height: 0.75;

@@ -3,7 +3,7 @@
 
     interface Props {
         firstWord: string;
-        secondWord: string;
+        secondWord?: string;
         contentTitle?: string;
         firstMessage?: string;
         secondMessage?: string;
@@ -13,7 +13,6 @@
     let {
         firstWord,
         secondWord,
-        contentTitle,
         firstMessage,
         secondMessage,
         titleLetters = [],
@@ -49,82 +48,79 @@
         block-size: 100vh;
         position: relative;
         overflow: hidden;
+
+        & .vertical-stretch-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            font-family: var(--bronova-bold);
+            font-size: 7vw;
+            font-weight: 900;
+            color: var(--clr-light-400);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 0.6;
+            user-select: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: perspective(1200px) rotateX(6deg);
+            padding-top: 1.5em;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+            inline-size: 100vw;
+            block-size: 100vh;
+
+            & span {
+                position: relative;
+                display: inline-block;
+                padding: 0;
+                margin: 0;
+                font-family: var(--mono);
+                transform: scaleX(2.75) scaleY(11.75);
+                text-shadow: 13px -1px 0 var(--clr-dark-400);
+
+                &:first-of-type {
+                    margin-right: 1em;
+                }
+
+                @media (width <= 768px) {
+                    transform: scaleY(5);
+                }
+            }
+        }
     }
 
     .vertical-content {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto auto;
-        grid-template-areas:
-            'title title title'
-            'firstMessage . .'
-            '. . secondMessage';
-        gap: 2em;
         z-index: 1;
         position: relative;
 
         & .content-title {
+            anchor-name: --title;
             font-family: var(--ultra);
-            font-size: 5.5vw;
-            color: var(--clr-light-500);
-            -webkit-text-stroke: 2px var(--clr-blue-350);
-
-            grid-area: title;
+            color: var(--clr-blue-400);
         }
 
         & .content-message {
-            font-family: var(--bronova-regular);
-            font-size: 2vw;
+            font-family: var(--bronova);
+            font-size: clamp(var(--h5), 1.5vw, var(--lg));
             color: var(--clr-light-500);
 
             &:first-of-type {
-                grid-area: firstMessage;
+                position: absolute;
+                position-anchor: --title;
+                top: calc(anchor(bottom) + 1.5em);
+                left: calc(anchor(left) - 5em);
+                anchor-name: --firstSpan;
             }
 
             &:last-of-type {
-                grid-area: secondMessage;
-            }
-        }
-    }
-
-    .vertical-stretch-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        font-family: var(--bronova-bold);
-        font-size: 7vw;
-        font-weight: 900;
-        color: var(--clr-light-400);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        line-height: 0.6;
-        user-select: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: perspective(1200px) rotateX(6deg);
-        padding-top: 1.5em;
-        opacity: 0.15;
-        pointer-events: none;
-        z-index: 0;
-        inline-size: 100vw;
-        block-size: 100vh;
-
-        & span {
-            position: relative;
-            display: inline-block;
-            padding: 0;
-            margin: 0;
-            transform: scaleY(10);
-            text-shadow: 13px -1px 0 var(--clr-dark-400);
-
-            &:first-of-type {
-                margin-right: 1em;
-            }
-
-            @media (width <= 768px) {
-                transform: scaleY(5);
+                position: absolute;
+                position-anchor: --firstSpan;
+                top: calc(anchor(bottom) + 1.5em);
+                right: calc(anchor(right) - 15em);
             }
         }
     }

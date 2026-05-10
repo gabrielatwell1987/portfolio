@@ -2,7 +2,9 @@
     let { title } = $props();
 </script>
 
-<a class="test-link" href="/test">{title}</a>
+<a class="test-link" href="/test"
+    ><span class="visually-hidden">frontend</span> {title}</a
+>
 
 <style>
     .test-link {
