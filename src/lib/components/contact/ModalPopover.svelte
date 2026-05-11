@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { scale } from 'svelte/transition';
     import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
     import Image from '$lib/components/layout/Image.svelte';
     import '@fortawesome/fontawesome-free/css/all.css';

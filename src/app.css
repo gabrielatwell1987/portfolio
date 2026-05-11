@@ -493,8 +493,8 @@
                 var(--clr-fail-500-dark)
             );
             --clr-warning-500: light-dark(
-                var(--clr-warning-500-light),
-                var(--clr-warning-500-dark)
+                var(--clr-warning-500-dark),
+                var(--clr-warning-500-light)
             );
         }
     }
