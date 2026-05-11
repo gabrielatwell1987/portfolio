@@ -49,7 +49,7 @@
                 cy="50"
                 r="45"
                 fill="transparent"
-                stroke="var(--clr-light-500)"
+                // stroke="var(--clr-light-500)"
                 stroke-width="2"
                 opacity="0.3"
             />
@@ -59,7 +59,7 @@
             <polygon
                 points="50,5 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35"
                 fill="transparent"
-                stroke="var(--clr-light-500)"
+                // stroke="var(--clr-light-500)"
                 stroke-width="2"
                 opacity="0.3"
             />
@@ -93,20 +93,14 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                135deg,
-                rgba(23, 38, 44, 0.95) 0%,
-                rgba(30, 60, 80, 0.9) 30%,
-                rgba(45, 85, 120, 0.85) 60%,
-                rgba(20, 40, 60, 0.95) 100%
-            );
+            background: var(--clr-hero-gradient);
             opacity: 0.85;
             animation: gradientShift 50s ease-out infinite;
         }
 
         & .particle {
             position: absolute;
-            background: rgba(255, 255, 255, 0.3);
+            background: var(--clr-gray-500);
             border-radius: 50%;
             pointer-events: none;
             animation: float linear infinite;
@@ -129,6 +123,7 @@
                 height: 10vw;
                 animation: blink 5s ease-in-out infinite;
                 animation-delay: 0s;
+                stroke: var(--clr-light-500);
 
                 @media (width <= 768px) {
                     top: 8%;
@@ -147,6 +142,7 @@
                 height: 30vw;
                 animation-delay: 2s;
                 transform: rotate(35deg);
+                stroke: var(--clr-light-500);
             }
 
             &.big-circle {

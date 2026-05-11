@@ -271,10 +271,8 @@
                 font-size: clamp(var(--h3), 7vw, var(--xxl));
                 font-weight: 700;
                 color: var(--clr-dark-500);
-                text-shadow:
-                    0 0 4px var(--clr-light-400),
-                    0 0 6px var(--clr-light-400),
-                    0 0 7px var(--clr-light-400);
+                text-shadow: 0 0 5px var(--clr-light-500);
+                -webkit-text-stroke: 0.13rem var(--clr-light-400);
                 line-height: 1;
                 margin: 0;
                 margin-bottom: 0.2em;
@@ -289,6 +287,8 @@
                 @media (height <= 768px) {
                     line-height: 1.1;
                     margin-bottom: 1em;
+                    -webkit-text-stroke: 0.06rem var(--clr-light-400);
+                    text-shadow: 0 0 2px var(--clr-light-500);
                 }
 
                 & .word:first-child {
@@ -296,12 +296,12 @@
                     font-size: clamp(var(--h3), 5vw, var(--xl));
                     color: var(--clr-dark-500);
                     text-shadow: 0 0 5px var(--clr-light-500);
-                    -webkit-text-stroke: 0.05rem var(--clr-light-500);
+                    -webkit-text-stroke: 0.13rem var(--clr-light-500);
                     display: inline-block;
 
                     @media (width <= 768px) {
-                        text-shadow: 0 0 5px var(--clr-light-500);
-                        -webkit-text-stroke: 0.02rem var(--clr-light-500);
+                        text-shadow: 0 0 2px var(--clr-light-500);
+                        -webkit-text-stroke: 0.06rem var(--clr-light-500);
                     }
                 }
 
@@ -351,7 +351,7 @@
                 text-align: start;
                 letter-spacing: 1px;
                 line-height: 1.6;
-                color: var(--clr-hero-text);
+                color: var(--clr-light-500);
                 inline-size: clamp(300px, 65vw, 1300px);
                 margin: 0 auto 3rem auto;
                 user-select: none;

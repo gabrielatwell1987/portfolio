@@ -352,6 +352,14 @@
         --clr-success-500: #57c184;
         --clr-fail-500: #ff9b7a;
         --clr-warning-500: #ffdd6b;
+
+        --clr-hero-gradient: linear-gradient(
+            135deg,
+            rgba(23, 38, 44, 0.95) 0%,
+            rgba(30, 60, 80, 0.9) 30%,
+            rgba(45, 85, 120, 0.85) 60%,
+            rgba(20, 40, 60, 0.95) 100%
+        );
     }
 
     /* fallbacks for older devices */
@@ -445,12 +453,12 @@
             --clr-warning-500-light: oklch(0.7126 0.1451 94.89);
             --clr-warning-500-dark: oklch(0.4869 0.0938 88.85);
 
+            --clr-blue-300: light-dark(var(--sky), var(--sky));
             --clr-blue-400: light-dark(
                 var(--clr-success-500),
                 var(--light-sky)
             );
             --clr-blue-500: light-dark(var(--dark-blue), var(--sky));
-            --clr-blue-300: light-dark(var(--sky), var(--sky));
             --clr-dark-200: light-dark(var(--white-gray), var(--blacker));
             --clr-gray-600: light-dark(var(--dark-gray), var(--light-gray));
             --clr-gray-700: light-dark(var(--dark-gray), var(--gray));
