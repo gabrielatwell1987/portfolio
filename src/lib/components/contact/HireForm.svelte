@@ -8,6 +8,7 @@
     let anchorEl: HTMLElement | null = null;
     let buttonEl: HTMLElement | null = null;
     let ro: ResizeObserver | null = null;
+    let maskActive = $state(true);
 
     function updateAnchorPos() {
         if (window.innerWidth <= 768) {
@@ -64,7 +65,7 @@
 
 <A11yAnnouncer message={submitStatus} />
 
-<section class="hire-form-container">
+<section class="hire-form-container" class:masked={maskActive}>
     <div class="anchor" bind:this={anchorEl}></div>
 
     <form action="https://formspree.io/f/xwpoqdno" method="POST">
@@ -243,7 +244,17 @@
 
         @media (width <= 768px) {
             padding: 0.5rem;
+
             overflow-y: auto;
+            top: 3em;
+            block-size: 45ch;
+            &.masked {
+                mask-image: linear-gradient(
+                    to bottom,
+                    black 79%,
+                    transparent 100%
+                );
+            }
         }
 
         & .anchor {
