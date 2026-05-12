@@ -3,7 +3,7 @@
 
     const componentMap: Record<
         number,
-        { load: () => Promise<any>; props: Record<string, any> }
+        { load: () => Promise<any>; props?: Record<string, any> }
     > = {
         1: {
             load: () =>
@@ -55,6 +55,10 @@
                 secondTitle: 'video',
             },
         },
+        5: {
+            load: () =>
+                import('$lib/components/experiments/navigation/NewNav.svelte'),
+        },
     };
 
     let Component = $state<any>(null);
@@ -77,7 +81,7 @@
         seen.push(randomKey);
         sessionStorage.setItem('seenComponents', JSON.stringify(seen));
 
-        const { load, props } = componentMap[randomKey];
+        const { load, props = {} } = componentMap[randomKey];
         const module = await load();
         Component = module.default;
         componentProps = props;

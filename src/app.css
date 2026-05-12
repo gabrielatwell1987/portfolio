@@ -304,6 +304,7 @@
         --white-gray: rgba(242, 242, 242, 0.9);
         --white: #ffffff;
         --sky: #4a90e2;
+        --purple-light: #281774;
         --purple: #7b5cff;
         --yellow: #ffd66b;
         --dark-blue: #1f3b6f;
@@ -420,6 +421,8 @@
                 oklch(from var(--darkest-blue) 0.45 c h),
                 oklch(from var(--sky) 0.7 c h)
             );
+
+            --clr-purple-500: light-dark(var(--light-purple), var(--purple));
         }
     }
 
