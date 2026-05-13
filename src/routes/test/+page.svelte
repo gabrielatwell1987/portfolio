@@ -157,7 +157,11 @@
                 inline-size: 3em;
                 fill: none;
                 stroke: var(--clr-light-500);
-                stroke-width: 10;
+                stroke-width: 30;
+
+                &:hover {
+                    stroke: var(--clr-light-400);
+                }
             }
         }
     }

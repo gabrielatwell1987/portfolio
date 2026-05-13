@@ -141,6 +141,8 @@
             padding-bottom: 2em;
 
             & .title-wrapper {
+                user-select: none;
+
                 & .hero-title {
                     font-family: var(--mono);
                     font-size: clamp(var(--h4), 4vw, var(--lg));
