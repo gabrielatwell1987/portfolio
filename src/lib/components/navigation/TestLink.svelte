@@ -2,7 +2,7 @@
     let { title } = $props();
 </script>
 
-<a class="test-link" href="/test"
+<a class="test-link" href="/experiments"
     ><span class="visually-hidden">frontend</span> {title}</a
 >
 

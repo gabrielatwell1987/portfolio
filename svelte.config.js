@@ -48,7 +48,7 @@ const config = {
                 '/learn/sveltekit',
                 '/learn/posts',
                 '/learn/posts/drawing-app',
-                '/test',
+                '/experiments',
             ],
         },
     },
