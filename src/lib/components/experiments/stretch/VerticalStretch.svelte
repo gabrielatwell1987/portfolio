@@ -48,6 +48,7 @@
         block-size: 100vh;
         position: relative;
         overflow: hidden;
+        user-select: none;
 
         & .vertical-stretch-bg {
             position: absolute;

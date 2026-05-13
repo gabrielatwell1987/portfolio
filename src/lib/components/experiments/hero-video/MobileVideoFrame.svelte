@@ -198,6 +198,7 @@
         justify-content: center;
         align-items: center;
         gap: 1em;
+        user-select: none;
     }
 
     .smartphone {

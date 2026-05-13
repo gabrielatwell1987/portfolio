@@ -35,6 +35,7 @@
         display: flex;
         justify-content: center;
         z-index: 200;
+        user-select: none;
 
         & h1 {
             font-family: var(--ultra);

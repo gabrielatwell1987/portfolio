@@ -58,6 +58,7 @@
         justify-content: center;
         background-color: oklch(from var(--clr-dark-400) 1 c h);
         border-radius: var(--radius);
+        user-select: none;
 
         & .hero-video {
             inline-size: 45vw;

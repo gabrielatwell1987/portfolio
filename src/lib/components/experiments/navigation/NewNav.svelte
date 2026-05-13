@@ -25,7 +25,7 @@
                 y1="160"
                 x2="480"
                 y2="480"
-                stroke="var(--clr-dark-500)"
+                stroke="var(--clr-light-400)"
                 stroke-width="75"
                 stroke-linecap="round"
             />
@@ -34,7 +34,7 @@
                 y1="160"
                 x2="160"
                 y2="480"
-                stroke="var(--clr-dark-500)"
+                stroke="var(--clr-light-400)"
                 stroke-width="75"
                 stroke-linecap="round"
             />
@@ -138,18 +138,25 @@
             border-radius: var(--radius);
             inline-size: 3em;
             block-size: 3em;
-            background-color: var(--clr-blue-500);
-            color: var(--clr-dark-500);
+            background-color: transparent;
+            color: var(--clr-light-500);
             border: none;
             cursor: pointer;
             font-size: clamp(var(--h6), 1.3vw, var(--h3));
             transition: transform 0.3s ease-out;
 
+            &:focus,
+            &:focus-visible {
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
+
             &:hover {
                 transform: scale(1.05);
             }
 
-            .icon {
+            & .icon {
                 position: absolute;
                 inset: 0;
                 margin: auto;
