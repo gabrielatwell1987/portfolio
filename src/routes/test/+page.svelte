@@ -7,7 +7,7 @@
             load: () =>
                 import('$lib/components/landing/hero-section/HeadshotHero.svelte'),
             props: {
-                title: 'frontend design',
+                title: 'gabe atwell',
                 cta: 'Creations',
                 bgImage:
                     'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/headshot-noBG_a.webp',
