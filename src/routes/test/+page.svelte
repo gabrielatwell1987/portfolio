@@ -8,10 +8,10 @@
                 import('$lib/components/landing/hero-section/HeadshotHero.svelte'),
             props: {
                 title: 'frontend design',
-                cta: 'Work With Me',
+                cta: 'Creations',
                 bgImage:
                     'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/headshot-noBG_a.webp',
-                text: 'If you need a website, app, or just want to chat about design and development, I would love to hear from you.',
+                text: 'I am a frontend developer who loves to create beautiful and functional websites. This website showcases my skills with some projects that I created. If you have any questions, feel free to contact me.. I look forward to hearing from you so we can discuss your goals for your online needs!',
                 link: '/contact',
             },
         },

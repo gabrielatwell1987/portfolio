@@ -143,7 +143,7 @@
 
                 & .hero-title {
                     font-family: var(--mono);
-                    font-size: clamp(var(--h4), 5vw, var(--xl));
+                    font-size: clamp(var(--h4), 4vw, var(--lg));
                     font-weight: 700;
                     line-height: 1.1;
                     grid-area: title;
@@ -159,7 +159,7 @@
                 & .hero-text {
                     text-align: left;
                     font-family: var(--bronova);
-                    font-size: clamp(var(--sm), 1.5vw, var(--h3));
+                    font-size: clamp(var(--sm), 1.5vw, var(--h4));
                     color: var(--clr-gray-600);
                     padding-right: 1em;
                     anchor-name: --cta;
@@ -184,8 +184,28 @@
 
                 & .hero-cta {
                     background-color: transparent;
-                    border: 2px solid var(--clr-blue-350);
-                    color: var(--clr-blue-350);
+                    color: var(--clr-dark-500);
+                    text-shadow:
+                        0 0 1px var(--clr-light-500),
+                        -2px -2px 0 var(--clr-light-350),
+                        2px -2px 0 var(--clr-light-350),
+                        -2px 2px 0 var(--clr-light-350),
+                        2px 2px 0 var(--clr-light-350),
+                        -2px 0 0 var(--clr-light-350),
+                        2px 0 0 var(--clr-light-350),
+                        0 -2px 0 var(--clr-light-350),
+                        0 2px 0 var(--clr-light-350);
+                    border: 1px solid var(--clr-light-500);
+                    outline: 3px solid var(--clr-light-500);
+                    outline-offset: -7px;
+                    cursor: pointer;
+                    letter-spacing: 2px;
+                    width: fit-content;
+                    border-radius: var(--radius);
+                    transition:
+                        outline-offset 300ms ease-out,
+                        opacity 300ms ease-out,
+                        scale 0.15s ease-out;
 
                     font-family: var(--bronova-bold);
                     font-size: clamp(var(--sm), 1.5vw, var(--h5));
@@ -196,6 +216,10 @@
                     position-anchor: --cta;
                     top: calc(anchor(bottom) + 3em);
                     right: calc(anchor(right) + 9em);
+
+                    &:hover {
+                        outline-offset: 0px;
+                    }
 
                     @media (width <= 768px) {
                         margin-top: -12em;
