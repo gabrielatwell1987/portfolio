@@ -57,6 +57,18 @@
             load: () =>
                 import('$lib/components/experiments/navigation/NewNav.svelte'),
         },
+        6: {
+            load: () =>
+                import('$lib/components/experiments/image-zoom/ImageZoom.svelte'),
+            props: {
+                // src: 'https://assets-global.website-files.com/63ec206c5542613e2e5aa784/643312a6bc4ac122fc4e3afa_main%20home.webp',
+                src: 'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/skull-frame.webp',
+                alt: 'gabe atwell',
+                title: 'image zoom component',
+                bodySrc:
+                    'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/random-stock.webp',
+            },
+        },
     };
 
     const sortedKeys = Object.keys(componentMap)
