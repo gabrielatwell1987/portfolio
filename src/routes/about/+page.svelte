@@ -119,6 +119,13 @@
                             <Button href="/three.js" title="three.js" />
                         </div>
                     </div>
+
+                    <p class="bio-paragraph">
+                        If you want to see stuff I've been working on and you're
+                        on desktop, then press tab. a button should appear that
+                        says "Skip to Main". Press it again and another button
+                        should appear that says "experiments".
+                    </p>
                 </article>
 
                 <p class="bio-paragraph indent">
