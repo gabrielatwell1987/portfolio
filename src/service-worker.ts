@@ -30,6 +30,8 @@ sw.addEventListener('install', (event: ExtendableEvent) => {
     }
 
     event.waitUntil(addFilesToCache());
+    // Skip waiting so this SW activates immediately
+    sw.skipWaiting();
 });
 
 // Activate service worker
@@ -42,7 +44,11 @@ sw.addEventListener('activate', (event: ExtendableEvent) => {
         }
     }
 
-    event.waitUntil(deleteOldCaches());
+    async function claimClients() {
+        await sw.clients.claim();
+    }
+
+    event.waitUntil(Promise.all([deleteOldCaches(), claimClients()]));
 });
 
 // fetch events
@@ -71,7 +77,8 @@ sw.addEventListener('fetch', (event: FetchEvent) => {
         if (isNavigation) {
             try {
                 const response = await fetch(event.request);
-                const isHttp = url.protocol === 'http:' || url.protocol === 'https:';
+                const isHttp =
+                    url.protocol === 'http:' || url.protocol === 'https:';
                 const isSuccess = response && response.status === 200;
                 if (isHttp && isSuccess) {
                     cache.put(event.request, response.clone());
@@ -80,7 +87,8 @@ sw.addEventListener('fetch', (event: FetchEvent) => {
                 return response;
             } catch {
                 const fallback =
-                    (await cache.match('/')) || (await cache.match('/index.html'));
+                    (await cache.match('/')) ||
+                    (await cache.match('/index.html'));
                 if (fallback) return fallback;
             }
         }
@@ -90,7 +98,8 @@ sw.addEventListener('fetch', (event: FetchEvent) => {
         if (isStaticScriptOrStyle && ASSETS.includes(url.pathname)) {
             try {
                 const response = await fetch(event.request);
-                const isHttp = url.protocol === 'http:' || url.protocol === 'https:';
+                const isHttp =
+                    url.protocol === 'http:' || url.protocol === 'https:';
                 const isSuccess = response && response.status === 200;
                 if (isHttp && isSuccess) {
                     cache.put(event.request, response.clone());
