@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { browser } from '$app/environment';
     import Image from '$lib/components/layout/Image.svelte';
     import skills from '$lib/components/about/skills.json';
 
@@ -14,18 +15,22 @@
     let position = $state(0);
 
     const duplicatedSkills = [...typedSkills, ...typedSkills];
-    const prefersReducedMotion = window.matchMedia(
-        '(prefers-reduced-motion: reduce)',
-    ).matches;
-    const isMobile = window.matchMedia('(width <= 768px)').matches;
+    let prefersReducedMotion = $state(false);
+    let isMobile = $state(false);
+    let speed = $state(0.02);
 
-    let speed = $derived.by(() => {
-        if (prefersReducedMotion) return 0.008;
-        return isMobile ? 0.035 : 0.02;
+    $effect(() => {
+        if (!browser) return;
+        prefersReducedMotion = window.matchMedia(
+            '(prefers-reduced-motion: reduce)',
+        ).matches;
+        isMobile = window.matchMedia('(width <= 768px)').matches;
+
+        speed = prefersReducedMotion ? 0.008 : isMobile ? 0.035 : 0.02;
     });
 
     $effect(() => {
-        if (isPaused) return;
+        if (!browser || isPaused) return;
 
         const interval = setInterval(() => {
             position += speed;

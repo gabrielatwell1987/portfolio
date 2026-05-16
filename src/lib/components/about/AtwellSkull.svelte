@@ -1,8 +1,10 @@
 <script>
+    import { browser } from '$app/environment';
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
     $effect(() => {
+        if (!browser) return;
         $effect(() => {
             gsap.registerPlugin(ScrollTrigger);
 

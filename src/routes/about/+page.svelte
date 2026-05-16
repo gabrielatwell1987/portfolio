@@ -35,7 +35,7 @@
         });
 
         mm.add('(prefers-reduced-motion: no-preference)', () => {
-            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            const isMobile = breakpoints.isMobile;
             const container = document.querySelector('.biography');
             const targets = gsap.utils.toArray(
                 '.biography .bio-paragraph, .biography .three-button, .biography [data-flex-container]',

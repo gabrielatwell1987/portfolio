@@ -1,9 +1,12 @@
 <script lang="ts">
+    import { browser } from '$app/environment';
+
     let container: HTMLElement;
     let scrollY = $state<number>(0);
     let prefersReducedMotion = $state<boolean>(false);
 
     $effect(() => {
+        if (!browser) return;
         const mediaQuery = window.matchMedia(
             '(prefers-reduced-motion: reduce)',
         );
@@ -22,7 +25,7 @@
     });
 
     $effect(() => {
-        if (prefersReducedMotion) return;
+        if (!browser || prefersReducedMotion) return;
 
         const abortController = new AbortController();
 
