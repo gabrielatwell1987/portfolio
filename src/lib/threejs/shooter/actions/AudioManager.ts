@@ -4,9 +4,7 @@ export class AudioManager {
 
     async initialize(): Promise<void> {
         if (!this.audioContext) {
-            this.audioContext = new (
-                window.AudioContext || (window as any).webkitAudioContext
-            )();
+            this.audioContext = new AudioContext();
         }
     }
 

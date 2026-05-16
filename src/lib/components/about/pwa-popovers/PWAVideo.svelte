@@ -6,7 +6,7 @@
 
     let { title, videoSrc }: Props = $props();
 
-    const videoId = `video-popover-${Math.random().toString(36).substr(2, 9)}`;
+    const videoId = `video-popover-${Math.random().toString(36).slice(2, 11)}`;
     let videoPopoverElement: HTMLElement | null = $state(null);
 
     function openVideoPopover() {

@@ -43,6 +43,7 @@
     {href}
     onclick={handleSubmit}
     target="_blank"
+    rel="noopener noreferrer"
     aria-label="Visit {submit} (opens in new tab)"
     class="loading-button"
     class:loading={isLoading}

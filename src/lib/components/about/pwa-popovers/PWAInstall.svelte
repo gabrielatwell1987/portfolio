@@ -9,7 +9,7 @@
 
     let { title, popoverTitle, text, text2, text3 }: Props = $props();
 
-    const id = `popover-${Math.random().toString(36).substr(2, 9)}`;
+    const id = `popover-${Math.random().toString(36).slice(2, 11)}`;
 
     let popoverElement: HTMLElement | null = $state(null);
 

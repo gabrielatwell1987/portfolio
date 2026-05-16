@@ -11,6 +11,7 @@
         class="social-link yellow"
         href="https://www.github.com/gabrielatwell1987/portfolio"
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Visit Gabriel's GitHub profile (opens in new tab)"
         onclick={playHoverSound}
     >
@@ -30,6 +31,7 @@
         class="social-link"
         href="https://codepen.io/gabrielatwell"
         target="_blank"
+        rel="noopener noreferrer"
         aria-label="Visit Gabriel's CodePen profile (opens in new tab)"
         onclick={playHoverSound}
     >
@@ -48,6 +50,7 @@
     <a
         class="social-link"
         href="https://www.linkedin.com/in/gabrielatwell/"
+        rel="noopener noreferrer"
         target="_blank"
         aria-label="linkedin link"
         onclick={playHoverSound}
@@ -67,6 +70,7 @@
     <a
         href="https://www.behance.net/gabrielatwell702"
         class="social-link"
+        rel="noopener noreferrer"
         target="_blank"
         aria-label="Visit Gabriel's Behance profile"
         onclick={playHoverSound}
