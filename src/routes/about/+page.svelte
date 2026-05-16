@@ -133,7 +133,7 @@
                     /> <span>and</span>
                     <PWAVideo
                         title="Watch: Building a PWA with Svelte"
-                        videoSrc="https://www.youtube-nocookie.com/embed/_wiOcdEVgks?si=hJdrXH9vH_ENofpF"
+                        videoSrc="https://www.youtube-nocookie.com/embed/_wiOcdEVgks"
                     />
                 </div>
             </div>

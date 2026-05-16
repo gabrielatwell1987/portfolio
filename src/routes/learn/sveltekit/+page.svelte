@@ -42,7 +42,7 @@
             </div>
 
             <Iframe
-                src="https://www.youtube-nocookie.com/embed/B2MhkPtBWs4?si=uEF2BUAyyQwuC-Uz"
+                src="https://www.youtube-nocookie.com/embed/B2MhkPtBWs4"
                 title="YouTube video player"
             />
 
