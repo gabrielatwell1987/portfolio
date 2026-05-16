@@ -12,25 +12,9 @@
 
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
 
-    let isDesktop = $state<boolean>(false);
-
-    $effect(() => {
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-        const abortController = new AbortController();
-
-        isDesktop = mediaQuery.matches;
-
-        const handler = (e: MediaQueryListEvent) => {
-            isDesktop = e.matches;
-        };
-
-        mediaQuery.addEventListener('change', handler, {
-            signal: abortController.signal,
-        });
-
-        return () => abortController.abort();
-    });
+    const { isDesktop } = getBreakpoints();
 
     // gsap scroll
     $effect(() => {
@@ -120,12 +104,13 @@
                         </div>
                     </div>
 
-                    <p class="bio-paragraph">
-                        If you want to see stuff I've been working on and you're
-                        on desktop, then press tab. a button should appear that
-                        says "Skip to Main". Press it again and another button
-                        should appear that says "experiments".
-                    </p>
+                    {#if isDesktop}
+                        <p class="bio-paragraph" data-desktop>
+                            If you want to see stuff I've been working on, when
+                            you load a page press tab twice. a button should
+                            appear that says "<span>experiments</span>".
+                        </p>
+                    {/if}
                 </article>
 
                 <p class="bio-paragraph indent">
@@ -297,6 +282,12 @@
 
                     & span {
                         font-weight: 800;
+                        letter-spacing: 1px;
+                        color: var(--clr-light-350);
+                    }
+
+                    &[data-desktop] {
+                        inline-size: 65%;
                     }
                 }
 
