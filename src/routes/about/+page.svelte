@@ -14,7 +14,7 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
 
-    const { isDesktop } = getBreakpoints();
+    const breakpoints = getBreakpoints();
 
     // gsap scroll
     $effect(() => {
@@ -104,7 +104,7 @@
                         </div>
                     </div>
 
-                    {#if isDesktop}
+                    {#if breakpoints.isDesktop}
                         <p class="bio-paragraph" data-desktop>
                             If you want to see stuff I've been working on, when
                             you load a page press tab twice. a button should
@@ -138,7 +138,7 @@
                 </div>
             </div>
 
-            {#if isDesktop}
+            {#if breakpoints.isDesktop}
                 <Slider />
             {:else}
                 <Skills />
