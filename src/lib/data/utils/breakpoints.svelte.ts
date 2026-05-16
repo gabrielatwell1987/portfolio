@@ -1,3 +1,5 @@
+import { browser } from '$app/environment';
+
 type Breakpoint = 'desktop' | 'laptop' | 'tablet' | 'mobile';
 
 // let isDesktop = $state(false);
@@ -5,7 +7,7 @@ let breakpoint = $state<Breakpoint>('desktop');
 let initialized = false;
 
 export function getBreakpoints() {
-    if (!initialized && typeof window !== 'undefined') {
+    if (!initialized && browser) {
         const queries = {
             mobile: window.matchMedia('(max-width: 767px)'),
             tablet: window.matchMedia(
