@@ -1,8 +1,7 @@
 import { browser } from '$app/environment';
 
-type Breakpoint = 'desktop' | 'laptop' | 'tablet' | 'mobile';
+type Breakpoint = 'desktop' | 'laptop' | 'tablet' | 'mobile' | 'reduced';
 
-// let isDesktop = $state(false);
 let breakpoint = $state<Breakpoint>('desktop');
 let initialized = false;
 
@@ -17,10 +16,12 @@ export function getBreakpoints() {
                 '(min-width: 1024px) and (max-width: 1279px)',
             ),
             desktop: window.matchMedia('(min-width: 1280px)'),
+            reduced: window.matchMedia('(prefers-reduced-motion: reduce)'),
         } as const;
 
         const update = () => {
-            if (queries.mobile.matches) breakpoint = 'mobile';
+            if (queries.reduced.matches) breakpoint = 'reduced';
+            else if (queries.mobile.matches) breakpoint = 'mobile';
             else if (queries.tablet.matches) breakpoint = 'tablet';
             else if (queries.laptop.matches) breakpoint = 'laptop';
             else breakpoint = 'desktop';
@@ -46,6 +47,9 @@ export function getBreakpoints() {
         },
         get isDesktop() {
             return breakpoint === 'desktop';
+        },
+        get isReduced() {
+            return breakpoint === 'reduced';
         },
         get value() {
             return breakpoint;

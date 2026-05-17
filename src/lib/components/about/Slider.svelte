@@ -2,6 +2,7 @@
     import { browser } from '$app/environment';
     import Image from '$lib/components/layout/Image.svelte';
     import skills from '$lib/components/about/skills.json';
+    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
 
     type Skill = {
         alt: string;
@@ -15,19 +16,11 @@
     let position = $state(0);
 
     const duplicatedSkills = [...typedSkills, ...typedSkills];
-    let prefersReducedMotion = $state(false);
-    let isMobile = $state(false);
-    let speed = $state(0.02);
 
-    $effect(() => {
-        if (!browser) return;
-        prefersReducedMotion = window.matchMedia(
-            '(prefers-reduced-motion: reduce)',
-        ).matches;
-        isMobile = window.matchMedia('(width <= 768px)').matches;
-
-        speed = prefersReducedMotion ? 0.008 : isMobile ? 0.035 : 0.02;
-    });
+    const breakpoints = getBreakpoints();
+    let speed = $derived(
+        breakpoints.isReduced ? 0.008 : breakpoints.isMobile ? 0.035 : 0.02,
+    );
 
     $effect(() => {
         if (!browser || isPaused) return;

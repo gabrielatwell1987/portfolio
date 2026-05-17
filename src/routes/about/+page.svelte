@@ -22,18 +22,6 @@
 
         const mm = gsap.matchMedia();
 
-        mm.add('(prefers-reduced-motion: reduce)', () => {
-            const targets = gsap.utils.toArray(
-                '.biography .bio-paragraph, .biography .three-button, .biography [data-flex-container]',
-            );
-
-            gsap.set(targets, { opacity: 1, y: 0 });
-
-            return () => {
-                ScrollTrigger.getAll().forEach((t) => t.kill());
-            };
-        });
-
         mm.add('(prefers-reduced-motion: no-preference)', () => {
             const isMobile = breakpoints.isMobile;
             const container = document.querySelector('.biography');
@@ -321,6 +309,13 @@
         & p {
             text-align: start;
             color: var(--clr-light-500);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .about-me .about-section .biography .bio-paragraph {
+            opacity: 1;
+            transform: none;
         }
     }
 </style>

@@ -5,32 +5,36 @@
     $effect(() => {
         gsap.registerPlugin(MorphSVGPlugin);
 
-        MorphSVGPlugin.convertToPath(
-            '#sourceSVG rect, #sourceSVG circle, #sourceSVG polygon',
-        );
+        const mm = gsap.matchMedia();
 
-        gsap.set('#square1, #G', { transformOrigin: 'center center' });
-        gsap.set('#circle, #A', { transformOrigin: 'center center' });
-        gsap.set('#triangle, #B', { transformOrigin: 'center center' });
-        gsap.set('#square2, #E', { transformOrigin: 'center center' });
+        mm.add('(prefers-reduced-motion: no-preference)', () => {
+            MorphSVGPlugin.convertToPath(
+                '#sourceSVG rect, #sourceSVG circle, #sourceSVG polygon',
+            );
 
-        const tl = gsap.timeline({
-            defaults: {
-                duration: 3,
-                ease: 'power2.out',
-            },
+            gsap.set('#square1, #G', { transformOrigin: 'center center' });
+            gsap.set('#circle, #A', { transformOrigin: 'center center' });
+            gsap.set('#triangle, #B', { transformOrigin: 'center center' });
+            gsap.set('#square2, #E', { transformOrigin: 'center center' });
 
-            delay: 3,
+            const tl = gsap.timeline({
+                defaults: {
+                    duration: 3,
+                    ease: 'power2.out',
+                },
+
+                delay: 3,
+            });
+
+            tl.to('#square1', { morphSVG: '#G' })
+                .to('#circle', { morphSVG: '#A' }, 0)
+                .to('#triangle', { morphSVG: '#B' }, 0)
+                .to('#square2', { morphSVG: '#E' }, 0);
+
+            return () => {
+                tl.kill();
+            };
         });
-
-        tl.to('#square1', { morphSVG: '#G' })
-            .to('#circle', { morphSVG: '#A' }, 0)
-            .to('#triangle', { morphSVG: '#B' }, 0)
-            .to('#square2', { morphSVG: '#E' }, 0);
-
-        return () => {
-            tl.kill();
-        };
     });
 </script>
 

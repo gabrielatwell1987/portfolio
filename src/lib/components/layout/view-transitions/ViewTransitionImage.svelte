@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
     import { browser } from '$app/environment';
     import { getPreloaderState } from '$lib/components/learn/posts-page/preloadStore.svelte';
 
@@ -19,31 +20,15 @@
     });
     let isSVG = $derived(src?.endsWith('.svg'));
     let isTransitioning = $state(false);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    let prefersReducedMedia = $state(false);
 
     const preloaderState = getPreloaderState();
     let ready = $derived(preloaderState.done);
-
-    // prefers-reduced-motion check
-    $effect(() => {
-        if (!browser) return;
-
-        const abortController = new AbortController();
-        const media = window.matchMedia('(prefers-reduced-motion: reduce)');
-        const update = () => (prefersReducedMedia = media.matches);
-        update();
-        media.addEventListener('change', update, {
-            signal: abortController.signal,
-        });
-
-        return () => abortController.abort();
-    });
+    const breakpoints = getBreakpoints();
 
     function toggleExpand() {
         if (isTransitioning) return;
 
-        if (document.startViewTransition) {
+        if (document.startViewTransition && !breakpoints.isReduced) {
             isTransitioning = true;
             document
                 .startViewTransition(() => {

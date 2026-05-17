@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
     import HeroBackground from './HeroBackground.svelte';
     import HeroContent from './HeroContent.svelte';
 
@@ -44,12 +45,12 @@
     );
     let mounted = $state<boolean>(false);
 
+    const breakpoints = getBreakpoints();
+
     $effect(() => {
         mounted = true;
 
-        const prefersReducedMotion = window.matchMedia(
-            '(prefers-reduced-motion: reduce)',
-        ).matches;
+        const prefersReducedMotion = breakpoints.isReduced;
 
         // particle
         if (!prefersReducedMotion) {

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import { beforeNavigate } from '$app/navigation';
@@ -20,6 +21,7 @@
     let showProjects = $state<boolean>(false);
     let isNavigating = $state<boolean>(false);
     let prefersReducedMotion = $state<boolean>(false);
+    const breakpoints = getBreakpoints();
 
     function getTestimonialForProject(projectIndex: number) {
         return testimonials.find((t) => t.projectIndex === projectIndex);
@@ -51,24 +53,11 @@
         };
     });
 
-    // prefers-reduced-motion check
-    $effect(() => {
-        const abortController = new AbortController();
-        const media = window.matchMedia('(prefers-reduced-motion: reduce)');
-        const update = () => (prefersReducedMotion = media.matches);
-        update();
-        media.addEventListener('change', update, {
-            signal: abortController.signal,
-        });
-
-        return () => abortController.abort();
-    });
-
     // GSAP scroll effect
     $effect(() => {
         const mm = gsap.matchMedia();
 
-        if (!showProjects) return;
+        if (!showProjects || breakpoints.isReduced) return;
 
         mm.add('(prefers-reduced-motion: reduce)', () => {
             gsap.set('.wholeProject', {

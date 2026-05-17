@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
     import { goto } from '$app/navigation';
     import gsap from 'gsap';
     import { SplitText } from 'gsap/SplitText';
@@ -20,12 +21,14 @@
     let activeVideoSrc = $state('');
     let isMobile = $state(false);
 
+    const breakpoints = getBreakpoints();
+
     $effect.pre(() => {
         const abortController = new AbortController();
 
         // mobile check
         const checkMobile = () => {
-            isMobile = window.matchMedia('(max-width: 768px)').matches;
+            isMobile = breakpoints.isMobile;
         };
         checkMobile();
 

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import HeroButton from '../hero/HeroButton.svelte';
@@ -6,6 +7,7 @@
     import ProjectsGrid from '../../ProjectsGrid.svelte';
     import HandDrawnUnderline from '../HandDrawnUnderline.svelte';
 
+    const breakpoints = getBreakpoints();
     const chars = 'Handcrafted Frontend Interfaces';
     let titleText = 'Handcrafted Frontend Interfaces';
     let titleWords = $derived(titleText.split(' '));
@@ -52,9 +54,7 @@
     }
 
     function animateTitle() {
-        const prefersReducedMotion = window.matchMedia(
-            '(prefers-reduced-motion: reduce)',
-        ).matches;
+        const prefersReducedMotion = breakpoints.isReduced;
 
         if (prefersReducedMotion) {
             displayedTitle = titleText.split('');
@@ -116,50 +116,37 @@
     // gsap
     $effect(() => {
         gsap.registerPlugin(ScrollTrigger);
+        const mm = gsap.matchMedia();
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.stats-section',
-                start: 'top center+=375',
-            },
+        mm.add('(prefers-reduced-motion: no-preference)', () => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.stats-section',
+                    start: 'top center+=375',
+                },
+            });
+
+            tl.fromTo(
+                '.stat-item.a',
+                { x: -50, opacity: 0 },
+                { x: 0, opacity: 1, duration: 0.35 },
+                0,
+            );
+            tl.fromTo(
+                '.stat-item.b',
+                { scale: 1.5, opacity: 0 },
+                { scale: 1, opacity: 1, duration: 0.5 },
+                0,
+            );
+            tl.fromTo(
+                '.stat-item.c',
+                { x: 50, opacity: 0 },
+                { x: 0, opacity: 1, duration: 0.5 },
+                0,
+            );
+
+            return () => tl.kill();
         });
-
-        tl.fromTo(
-            '.stat-item.a',
-            { x: -50, opacity: 0 },
-            {
-                x: 0,
-                opacity: 1,
-                duration: 0.35,
-            },
-            0,
-        );
-
-        tl.fromTo(
-            '.stat-item.b',
-            { scale: 1.5, opacity: 0 },
-            {
-                scale: 1,
-                opacity: 1,
-                duration: 0.5,
-            },
-            0,
-        );
-
-        tl.fromTo(
-            '.stat-item.c',
-            { x: 50, opacity: 0 },
-            {
-                x: 0,
-                opacity: 1,
-                duration: 0.5,
-            },
-            0,
-        );
-
-        return () => {
-            tl.kill();
-        };
     });
 </script>
 

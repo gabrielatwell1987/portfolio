@@ -1,31 +1,13 @@
 <script lang="ts">
+    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
     import { browser } from '$app/environment';
 
-    let container: HTMLElement;
     let scrollY = $state<number>(0);
-    let prefersReducedMotion = $state<boolean>(false);
+
+    const breakpoints = getBreakpoints();
 
     $effect(() => {
-        if (!browser) return;
-        const mediaQuery = window.matchMedia(
-            '(prefers-reduced-motion: reduce)',
-        );
-        prefersReducedMotion = mediaQuery.matches;
-
-        const abortController = new AbortController();
-        const handleMediaChange = (event: MediaQueryListEvent) => {
-            prefersReducedMotion = event.matches;
-        };
-
-        mediaQuery.addEventListener('change', handleMediaChange, {
-            signal: abortController.signal,
-        });
-
-        return () => abortController.abort();
-    });
-
-    $effect(() => {
-        if (!browser || prefersReducedMotion) return;
+        if (!browser || breakpoints.isReduced) return;
 
         const abortController = new AbortController();
 

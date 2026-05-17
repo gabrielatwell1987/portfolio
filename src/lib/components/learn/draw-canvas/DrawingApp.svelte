@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
     import {
         initCanvas,
         startDrawing,
@@ -14,6 +15,8 @@
     let mouseY = $state(0);
     let isOnCanvas = $state(false);
     let isMobile = $state(false);
+
+    const breakpoints = getBreakpoints();
 
     function handlePointerMove(e: PointerEvent) {
         const rect = canvas?.getBoundingClientRect();
@@ -80,7 +83,7 @@
         });
 
         // mobile detection
-        isMobile = window.matchMedia('(max-width: 768px)').matches;
+        isMobile = breakpoints.isMobile;
         const mq = window.matchMedia('(max-width: 768px)');
         const resizeHandler = (e: MediaQueryListEvent) =>
             (isMobile = e.matches);

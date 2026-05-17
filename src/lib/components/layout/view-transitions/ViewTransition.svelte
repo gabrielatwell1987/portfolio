@@ -1,10 +1,12 @@
 <script lang="ts">
+    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
     import { onNavigate } from '$app/navigation';
+
+    const breakpoints = getBreakpoints();
 
     onNavigate((navigation) => {
         if (!document.startViewTransition) return;
-        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-            return;
+        if (breakpoints.isReduced) return;
 
         return new Promise((resolve) => {
             document.startViewTransition(async () => {

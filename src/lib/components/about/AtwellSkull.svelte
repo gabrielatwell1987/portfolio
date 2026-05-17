@@ -1,15 +1,19 @@
 <script>
+    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
     import { browser } from '$app/environment';
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+    const breakpoints = getBreakpoints();
+
     $effect(() => {
         if (!browser) return;
+
         $effect(() => {
             gsap.registerPlugin(ScrollTrigger);
 
             const skull = document.getElementById('skull');
-            const isMobile = window.matchMedia('(max-width: 767px)').matches;
+            const isMobile = breakpoints.isMobile;
             const start = isMobile ? 'top 60%' : 'top 80%';
             const end = isMobile ? 'bottom 50%' : 'bottom 80%';
 
