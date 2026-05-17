@@ -1,9 +1,17 @@
 import {
     AmbientLight,
+    Color,
     DirectionalLight,
+    FogExp2,
     PerspectiveCamera,
     Scene,
     WebGLRenderer,
+    TextureLoader,
+    RepeatWrapping,
+    PlaneGeometry,
+    MeshStandardMaterial,
+    Mesh,
+    Texture,
 } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { World } from './world';
@@ -37,6 +45,14 @@ export async function initializeGame(
         1000,
     );
 
+    // fog
+    scene.background = new Color('#242424');
+    {
+        const fogColor = 0x242424;
+        const density = 0.085;
+        scene.fog = new FogExp2(fogColor, density);
+    }
+
     const controls = new OrbitControls(camera, canvas);
     // keep camera locked to player: disable orbiting/panning/zooming
     controls.enableRotate = false;
@@ -49,7 +65,10 @@ export async function initializeGame(
     camera.position.set(1, 4, 3);
     controls.update();
 
-    const world = new World(50, 50);
+    // ------------- WORLD DIMENSIONS -------------
+    const WORLD_WIDTH = 50;
+    const WORLD_DEPTH = 50;
+    const world = new World(WORLD_WIDTH, WORLD_DEPTH);
     scene.add(world);
 
     console.log('generating world');
@@ -58,6 +77,102 @@ export async function initializeGame(
 
     scene.add(world.buildings);
 
+    // ------------- ROAD  -------------
+    const loader = new TextureLoader();
+
+    const roadColor = loader.load(
+        'https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/asphalt_track/asphalt_track_diff_4k.jpg',
+    );
+    const roadNormal = loader.load(
+        'https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/asphalt_track/asphalt_track_nor_gl_4k.jpg',
+    );
+    const roadRough = loader.load(
+        'https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/asphalt_track/asphalt_track_arm_4k.jpg',
+    );
+    const sidewalkColor = loader.load(
+        'https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/concrete_pavement_03/concrete_pavement_03_diff_4k.jpg',
+    );
+    const sidewalkNormal = loader.load(
+        'https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/concrete_pavement_03/concrete_pavement_03_nor_gl_4k.jpg',
+    );
+    const sidewalkRough = loader.load(
+        'https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/concrete_pavement_03/concrete_pavement_03_arm_4k.jpg',
+    );
+
+    const configureTextures = (
+        textures: Texture[],
+        repeatX: number,
+        repeatY: number,
+    ) => {
+        textures.forEach((tex) => {
+            tex.wrapS = tex.wrapT = RepeatWrapping;
+            tex.repeat.set(repeatX, repeatY);
+        });
+    };
+
+    const roadWidth = WORLD_WIDTH * 0.18;
+    const sidewalkWidth = roadWidth * 0.35;
+    const roadLength = WORLD_DEPTH;
+    const roadGeo = new PlaneGeometry(roadWidth, roadLength);
+    const roadMat = new MeshStandardMaterial({
+        map: roadColor,
+        normalMap: roadNormal,
+        roughnessMap: roadRough,
+        roughness: 0.95,
+        metalness: 0.05,
+    });
+
+    const sidewalkGeo = new PlaneGeometry(sidewalkWidth, roadLength);
+    const sidewalkMat = new MeshStandardMaterial({
+        map: sidewalkColor,
+        normalMap: sidewalkNormal,
+        roughnessMap: sidewalkRough,
+        roughness: 0.9,
+    });
+    const roadCenters = [-WORLD_WIDTH * 0.25, 0, WORLD_WIDTH * 0.25];
+
+    roadCenters.forEach((centerX) => {
+        // road
+        const road = new Mesh(roadGeo, roadMat);
+        road.rotation.x = -Math.PI / 2;
+        road.position.set(centerX, 0.01, WORLD_DEPTH / 2);
+        road.receiveShadow = true;
+        scene.add(road);
+
+        // left sidewalk
+        const leftSW = new Mesh(sidewalkGeo, sidewalkMat);
+        leftSW.rotation.x = -Math.PI / 2;
+        leftSW.position.set(
+            centerX - (roadWidth / 2 + sidewalkWidth / 2),
+            0.01,
+            WORLD_DEPTH / 2,
+        );
+        leftSW.receiveShadow = true;
+        scene.add(leftSW);
+
+        // right sidewalk
+        const rightSW = leftSW.clone();
+        rightSW.position.set(
+            centerX + (roadWidth / 2 + sidewalkWidth / 2),
+            0.01,
+            WORLD_DEPTH / 2,
+        );
+        scene.add(rightSW);
+    });
+
+    configureTextures(
+        [roadColor, roadNormal, roadRough],
+        roadWidth / 5,
+        roadLength / 5,
+    );
+    configureTextures(
+        [sidewalkColor, sidewalkNormal, sidewalkRough],
+        sidewalkWidth / 2,
+        roadLength / 5,
+    );
+    // ------------- END ROAD -------------
+
+    // player
     const player = new HumanPlayer(
         camera,
         world,

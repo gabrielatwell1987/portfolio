@@ -10,13 +10,13 @@ import {
 } from 'three';
 import { Building } from './objects/Building';
 
-const brickGroundsUrl =
+export const GROUND_TEXTURE_URL =
     'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/asphalt-texture.webp';
 
 function loadBrickGroundsTexture(): Texture | null {
     if (typeof document === 'undefined') return null;
 
-    const texture = new TextureLoader().load(brickGroundsUrl);
+    const texture = new TextureLoader().load(GROUND_TEXTURE_URL);
     texture.wrapS = RepeatWrapping;
     texture.wrapT = RepeatWrapping;
     texture.colorSpace = SRGBColorSpace;
