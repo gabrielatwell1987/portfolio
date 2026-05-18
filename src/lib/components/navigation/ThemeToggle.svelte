@@ -1,5 +1,5 @@
 <script lang="ts">
-    import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
+    import A11yAnnouncer from '$lib/components/utils/A11yAnnouncer.svelte';
     import { useTheme } from '$lib/data/context/theme.svelte';
     import { useSound } from '../utils/sound/uiSounds.svelte';
 

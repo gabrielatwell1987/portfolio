@@ -1,6 +1,6 @@
 <script lang="ts">
     import SubmitButton from '$lib/components/contact/SubmitButton.svelte';
-    import A11yAnnouncer from '$lib/components/layout/A11yAnnouncer.svelte';
+    import A11yAnnouncer from '$lib/components/utils/A11yAnnouncer.svelte';
     import Popover from '$lib/components/layout/Popover.svelte';
     import ModalPopover from '$lib/components/contact/ModalPopover.svelte';
     import MotifPhoto from './MotifPhoto.svelte';

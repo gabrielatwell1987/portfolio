@@ -25,21 +25,6 @@
             popoverElement!.showPopover();
         });
     }
-
-    function closePopover(): void {
-        if (!popoverElement) return;
-
-        if (!document.startViewTransition) {
-            popoverElement.hidePopover();
-            return;
-        }
-
-        document.startViewTransition(() => {
-            setTimeout(() => {
-                popoverElement!.hidePopover();
-            }, 0);
-        });
-    }
 </script>
 
 <section class="instruction-popover" aria-label="pwa instructions">
