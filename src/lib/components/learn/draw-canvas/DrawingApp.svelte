@@ -14,7 +14,6 @@
     let mouseX = $state(0);
     let mouseY = $state(0);
     let isOnCanvas = $state(false);
-    let isMobile = $state(false);
 
     const breakpoints = getBreakpoints();
 
@@ -82,13 +81,6 @@
             signal: ac.signal,
         });
 
-        // mobile detection
-        isMobile = breakpoints.isMobile;
-        const mq = window.matchMedia('(max-width: 768px)');
-        const resizeHandler = (e: MediaQueryListEvent) =>
-            (isMobile = e.matches);
-        mq.addEventListener('change', resizeHandler, { signal: ac.signal });
-
         return () => ac.abort();
     });
 
@@ -142,7 +134,7 @@
         /></label
     >
 
-    {#if isMobile}
+    {#if breakpoints.isMobile}
         <label
             >Size: <select id="size-select" bind:value={drawState.currentSize}>
                 <option value={2}>XS</option>

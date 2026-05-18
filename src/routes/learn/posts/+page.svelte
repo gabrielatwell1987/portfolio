@@ -29,28 +29,8 @@
     let sanitizeHtml = $state<string>('');
 
     let mounted = $state<boolean>(false);
-    let isMobile = $state<boolean>(false);
 
     const breakpoints = getBreakpoints();
-
-    // mobile check
-    $effect(() => {
-        const abortController = new AbortController();
-        const mediaQuery = window.matchMedia('(max-width: 768px)');
-
-        const handleChange = (e: MediaQueryListEvent) => {
-            isMobile = e.matches;
-        };
-
-        isMobile = mediaQuery.matches;
-        mediaQuery.addEventListener('change', handleChange, {
-            signal: abortController.signal,
-        });
-
-        return () => {
-            abortController.abort();
-        };
-    });
 
     $effect(() => {
         let canceled = $state(false);
@@ -195,7 +175,7 @@
     <div class="popover-morph">
         <GabeMorph />
 
-        {#if !isMobile}
+        {#if !breakpoints.isMobile}
             <Popover
                 title=""
                 text="click the arrow button on the left to open the table of contents."

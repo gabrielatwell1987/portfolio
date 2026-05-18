@@ -1,28 +1,13 @@
 <script lang="ts">
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
+
     let { sideBar = true } = $props();
     let isOpen = $state(false);
-    let isMobile = $state(false);
 
-    $effect(() => {
-        const abortController = new AbortController();
-        const mediaQuery = window.matchMedia('(max-width: 768px)');
-
-        const handleChange = (e: MediaQueryListEvent) => {
-            isMobile = e.matches;
-        };
-
-        isMobile = mediaQuery.matches;
-        mediaQuery.addEventListener('change', handleChange, {
-            signal: abortController.signal,
-        });
-
-        return () => {
-            abortController.abort();
-        };
-    });
+    const breakpoints = getBreakpoints();
 </script>
 
-{#if sideBar && !isMobile}
+{#if sideBar && !breakpoints.isMobile}
     <button
         class="toggle-button"
         class:open={isOpen}
