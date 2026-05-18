@@ -1,6 +1,6 @@
 <script lang="ts">
     import { page } from '$app/stores';
-    import { useSound } from '$lib/data/stores/uiSounds.svelte';
+    import { useSound } from '$lib/data/stores/sounds/uiSounds.svelte';
 
     interface Props {
         href: string;

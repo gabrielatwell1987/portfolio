@@ -1,7 +1,7 @@
 <script lang="ts">
     import A11yAnnouncer from '$lib/components/utils/A11yAnnouncer.svelte';
     import { useTheme } from '$lib/data/context/theme.svelte';
-    import { useSound } from '$lib/data/stores/uiSounds.svelte';
+    import { useSound } from '$lib/data/stores/sounds/uiSounds.svelte';
 
     const theme = useTheme();
     let themeStatus = $state<string>('');
