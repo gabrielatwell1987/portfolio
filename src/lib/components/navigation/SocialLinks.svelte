@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { useSound } from '../utils/sound/uiSounds.svelte';
+    import { useSound } from '$lib/data/stores/uiSounds.svelte';
 
     const { playSoundAsync: playHoverSound } = useSound(
         '/sounds/ui_bubble.wav',

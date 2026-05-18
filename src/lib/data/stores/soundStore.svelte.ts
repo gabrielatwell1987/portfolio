@@ -1,5 +1,5 @@
 import { browser } from '$app/environment';
-import { useSound } from '$lib/components/utils/sound/uiSounds.svelte';
+import { useSound } from '$lib/data/stores/uiSounds.svelte';
 
 function createSoundStore() {
     let isMobile = $state(false);

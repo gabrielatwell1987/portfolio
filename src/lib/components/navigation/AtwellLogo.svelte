@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { useSound } from '../utils/sound/uiSounds.svelte';
+    import { useSound } from '$lib/data/stores/uiSounds.svelte';
 
     interface Props {
         title: string;
