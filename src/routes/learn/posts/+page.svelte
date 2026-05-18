@@ -19,6 +19,7 @@
     import 'highlight.js/styles/atom-one-dark.css';
     import { tick } from 'svelte';
     import CopyButton from '$lib/components/learn/CopyButton.svelte';
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
 
     hljs.registerLanguage('js', javascript);
     hljs.registerLanguage('css', css);
@@ -28,8 +29,9 @@
     let sanitizeHtml = $state<string>('');
 
     let mounted = $state<boolean>(false);
-    let prefersReducedMotion = $state<boolean>(false);
     let isMobile = $state<boolean>(false);
+
+    const breakpoints = getBreakpoints();
 
     // mobile check
     $effect(() => {
@@ -65,32 +67,20 @@
         }
     });
 
-    // prefers-reduced-motion check
-    $effect(() => {
-        const abortController = new AbortController();
-        const media = window.matchMedia('(prefers-reduced-motion: reduce)');
-        const update = () => (prefersReducedMotion = media.matches);
-        update();
-        media.addEventListener('change', update, {
-            signal: abortController.signal,
-        });
-
-        return () => abortController.abort();
-    });
-
     // gsap
     $effect(() => {
         const mm = gsap.matchMedia();
 
         mm.add('(prefers-reduced-motion: reduce)', () => {
-            if (prefersReducedMotion) {
+            if (breakpoints.isReduced) {
                 gsap.set('.content p, pre', { opacity: 1, x: 0 });
             }
         });
 
         mm.add('(prefers-reduced-motion: no-preference)', () => {
             if (!mounted) return;
-            if (prefersReducedMotion) return;
+
+            if (breakpoints.isReduced) return;
 
             gsap.registerPlugin(ScrollTrigger);
 

@@ -2,7 +2,7 @@
     import { browser } from '$app/environment';
     import Image from '$lib/components/layout/Image.svelte';
     import skills from '$lib/components/about/skills.json';
-    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
 
     type Skill = {
         alt: string;

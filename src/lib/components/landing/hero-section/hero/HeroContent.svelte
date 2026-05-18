@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import HeroButton from '../hero/HeroButton.svelte';

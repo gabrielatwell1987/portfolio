@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
     import { browser } from '$app/environment';
     import { getPreloaderState } from '$lib/components/learn/posts-page/preloadStore.svelte';
 

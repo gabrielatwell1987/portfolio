@@ -1,5 +1,5 @@
 <script>
-    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
     import { browser } from '$app/environment';
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';

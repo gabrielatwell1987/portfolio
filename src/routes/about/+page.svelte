@@ -12,7 +12,7 @@
 
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
-    import { getBreakpoints } from '$lib/data/utils/breakpoints.svelte';
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
 
     const breakpoints = getBreakpoints();
 
