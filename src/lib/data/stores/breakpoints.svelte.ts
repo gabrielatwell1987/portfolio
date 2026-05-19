@@ -4,6 +4,8 @@ type Breakpoint = 'desktop' | 'laptop' | 'tablet' | 'mobile' | 'reduced';
 
 let breakpoint = $state<Breakpoint>('desktop');
 let initialized = false;
+let isStandalone = $state(false);
+let isLandscape = $state(false);
 
 export function getBreakpoints() {
     if (!initialized && browser) {
@@ -17,9 +19,14 @@ export function getBreakpoints() {
             ),
             desktop: window.matchMedia('(min-width: 1280px)'),
             reduced: window.matchMedia('(prefers-reduced-motion: reduce)'),
+            standalone: window.matchMedia('(display-mode: standalone)'),
+            landscape: window.matchMedia('(orientation: landscape)'),
         } as const;
 
         const update = () => {
+            isStandalone = queries.standalone.matches;
+            isLandscape = queries.landscape.matches;
+
             if (queries.reduced.matches) breakpoint = 'reduced';
             else if (queries.mobile.matches) breakpoint = 'mobile';
             else if (queries.tablet.matches) breakpoint = 'tablet';
@@ -50,6 +57,12 @@ export function getBreakpoints() {
         },
         get isReduced() {
             return breakpoint === 'reduced';
+        },
+        get isStandalone() {
+            return isStandalone;
+        },
+        get isLandscape() {
+            return isLandscape;
         },
         get value() {
             return breakpoint;

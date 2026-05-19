@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte.js';
     import '@fortawesome/fontawesome-free/css/all.css';
     import A11yAnnouncer from '$lib/components/utils/A11yAnnouncer.svelte';
     import { useSound } from '$lib/data/stores/sounds/uiSounds.svelte';
@@ -22,6 +23,7 @@
     const { playSoundAsync: playHoverSound } = useSound(
         '/sounds/ui_bubble.wav',
     );
+    const breakpoints = getBreakpoints();
 
     async function handleUiSound() {
         await playHoverSound();
@@ -36,7 +38,7 @@
         isIOS =
             (isAppleMobile &&
                 !('MSStream' in window) &&
-                !window.matchMedia('(display-mode: standalone)').matches) ||
+                !breakpoints.isStandalone) ||
             isMacSafari;
     });
 

@@ -19,6 +19,7 @@
     import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
     import cursorVert from './shaders/cursor.vert?raw';
     import cursorFrag from './shaders/cursor.frag?raw';
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
 
     let renderer: WebGLRenderer;
     let controls: OrbitControls;
@@ -29,6 +30,8 @@
     // eslint-disable-next-line no-unused-vars
     let pointerMoveListener: ((event: PointerEvent) => void) | undefined;
     let animationFrameId: number | undefined;
+
+    const breakpoints = getBreakpoints();
 
     $effect(() => {
         const abortController = new AbortController();
@@ -310,29 +313,17 @@
     });
 
     $effect(() => {
+        const isLandscapeMobile =
+            breakpoints.isLandscape && breakpoints.isMobile;
         const nav = document.querySelector('.navigation') as HTMLElement | null;
         const footer = document.querySelector('footer') as HTMLElement | null;
         const select = document.querySelector('.select') as HTMLElement | null;
-        const isLandscape = window.matchMedia(
-            '(orientation: landscape) and (max-width: 768px)',
-        );
-        const ac = new AbortController();
 
         if (footer) footer.style.display = 'none';
-        if (isLandscape.matches && select) select.style.display = 'none';
-        if (isLandscape.matches && nav) nav.style.display = 'none';
-
-        const handleOrientationChange = (e: MediaQueryListEvent) => {
-            if (select) select.style.display = e.matches ? 'none' : '';
-            if (nav) nav.style.display = e.matches ? 'none' : '';
-        };
-
-        isLandscape.addEventListener('change', handleOrientationChange, {
-            signal: ac.signal,
-        });
+        if (select) select.style.display = isLandscapeMobile ? 'none' : '';
+        if (nav) nav.style.display = isLandscapeMobile ? 'none' : '';
 
         return () => {
-            ac.abort();
             if (footer) footer.style.display = '';
             if (select) select.style.display = '';
             if (nav) nav.style.display = '';

@@ -25,6 +25,9 @@
     import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
     import { GammaCorrectionShader } from 'three/examples/jsm/shaders/GammaCorrectionShader.js';
     import { SMAAPass } from 'three/examples/jsm/postprocessing/SMAAPass.js';
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
+
+    const breakpoints = getBreakpoints();
 
     $effect(() => {
         /**
@@ -364,11 +367,19 @@
     });
 
     $effect(() => {
+        const nav = document.querySelector('.navigation') as HTMLElement | null;
+        const select = document.querySelector('.select') as HTMLElement | null;
         const footer = document.querySelector('footer') as HTMLElement | null;
+        const isLandscapeMobile =
+            breakpoints.isLandscape && breakpoints.isMobile;
 
-        if (footer) footer.style.display = 'none';
+        if (nav) nav.style.display = isLandscapeMobile ? 'none' : '';
+        if (select) select.style.display = isLandscapeMobile ? 'none' : '';
+        if (footer) footer.style.display = isLandscapeMobile ? 'none' : '';
 
         return () => {
+            if (nav) nav.style.display = '';
+            if (select) select.style.display = '';
             if (footer) footer.style.display = '';
         };
     });

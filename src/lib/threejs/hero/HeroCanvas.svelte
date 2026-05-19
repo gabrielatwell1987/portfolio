@@ -1,6 +1,7 @@
 <script lang="ts">
     import HeroTitle from '$lib/components/landing/hero-section/hero/HeroTitle.svelte';
     import Button from '$lib/components/layout/Button.svelte';
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
     import {
         CapsuleGeometry,
         BufferGeometry,
@@ -32,6 +33,8 @@
     let visibilityListener: ((event: Event) => void) | undefined;
     let themeChangeListener: ((event: Event) => void) | undefined;
     const abortController = new AbortController();
+
+    const breakpoints = getBreakpoints();
 
     $effect(() => {
         // helper function to convert CSS colors to RGB (strip alpha if present)
@@ -391,6 +394,30 @@
             }
         };
     });
+
+    $effect(() => {
+        const footer = document.querySelector('footer') as HTMLElement | null;
+        const nav = document.querySelector('.navigation') as HTMLElement | null;
+        const select = document.querySelector('.select') as HTMLElement | null;
+        const heroContent = document.querySelector(
+            '.hero-content',
+        ) as HTMLElement | null;
+        const isLandscapeMobile =
+            breakpoints.isLandscape && breakpoints.isMobile;
+
+        if (nav) nav.style.display = isLandscapeMobile ? 'none' : '';
+        if (select) select.style.display = isLandscapeMobile ? 'none' : '';
+        if (footer) footer.style.display = isLandscapeMobile ? 'none' : '';
+        if (heroContent)
+            heroContent.style.overflowY = isLandscapeMobile ? 'auto' : '';
+
+        return () => {
+            if (footer) footer.style.display = '';
+            if (nav) nav.style.display = '';
+            if (select) select.style.display = '';
+            if (heroContent) heroContent.style.overflowY = '';
+        };
+    });
 </script>
 
 <canvas class="webgl" aria-label="hero"></canvas>
@@ -495,6 +522,13 @@
         .hero-content {
             backdrop-filter: none;
             transition: none;
+        }
+    }
+
+    @media (orientation: landscape) and (max-width: 767px) {
+        .hero-content {
+            overflow-y: auto !important;
+            max-block-size: 100vh;
         }
     }
 </style>

@@ -17,9 +17,12 @@
     } from 'three';
     import vertexShader from '$lib/threejs/ribbon/shaders/ribbon.vert?raw';
     import fragmentShader from '$lib/threejs/ribbon/shaders/ribbon.frag?raw';
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
 
     let canvas = $state<HTMLCanvasElement>();
     let animationFrameId: number | undefined;
+
+    const breakpoints = getBreakpoints();
 
     $effect(() => {
         if (!canvas) return;
@@ -189,7 +192,7 @@
             depthTest: true,
         });
 
-        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        const isMobile = breakpoints.isMobile;
         const complexity = isMobile ? 0.5 : 1;
 
         // add ribbons

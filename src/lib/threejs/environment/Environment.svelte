@@ -19,8 +19,11 @@
     import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
     import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
     import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
 
     let gui: GUI | undefined;
+
+    const breakpoints = getBreakpoints();
 
     $effect(() => {
         if (!browser) return;
@@ -310,11 +313,19 @@
     });
 
     $effect(() => {
+        const nav = document.querySelector('.navigation') as HTMLElement | null;
+        const select = document.querySelector('.select') as HTMLElement | null;
         const footer = document.querySelector('footer') as HTMLElement | null;
+        const isLandscapeMobile =
+            breakpoints.isLandscape && breakpoints.isMobile;
 
-        if (footer) footer.style.display = 'none';
+        if (nav) nav.style.display = isLandscapeMobile ? 'none' : '';
+        if (select) select.style.display = isLandscapeMobile ? 'none' : '';
+        if (footer) footer.style.display = isLandscapeMobile ? 'none' : '';
 
         return () => {
+            if (nav) nav.style.display = '';
+            if (select) select.style.display = '';
             if (footer) footer.style.display = '';
         };
     });

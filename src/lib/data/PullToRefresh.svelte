@@ -1,8 +1,12 @@
 <script lang="ts">
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte.js';
+
     interface PullToRefreshModule {
         init: (opts: Record<string, unknown>) => void;
         destroyAll?: () => void;
     }
+
+    const breakpoints = getBreakpoints();
 
     $effect(() => {
         if (typeof window === 'undefined') return;
@@ -10,8 +14,7 @@
         const nav = window.navigator as Navigator & { standalone?: boolean };
         const isIOS = /iPad|iPhone|iPod/.test(nav.userAgent);
         const isStandalone =
-            window.matchMedia('(display-mode: standalone)').matches ||
-            nav.standalone === true;
+            breakpoints.isStandalone || nav.standalone === true;
 
         if (!isIOS || !isStandalone) return;
 

@@ -5,6 +5,7 @@
     import Directions from './components/Directions.svelte';
     import LandscapeMobile from './components/LandscapeMobile.svelte';
     import { initializeGame, cleanupGame, type GameState } from './gameSetup';
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
 
     let canvas = $state<HTMLCanvasElement | null>(null);
     let playerHealth = $state(10);
@@ -35,6 +36,8 @@
             maxHealth: number;
         }>
     >([]);
+
+    const breakpoints = getBreakpoints();
 
     function handleRestart(): void {
         isGameOver = false;
@@ -318,29 +321,14 @@
         const footer = document.querySelector('footer') as HTMLElement | null;
         const nav = document.querySelector('.navigation') as HTMLElement | null;
         const select = document.querySelector('.select') as HTMLElement | null;
-        const isLandscape = window.matchMedia(
-            '(orientation: landscape) and (max-width: 768px)',
-        );
-        const ac = new AbortController();
+        const isLandscapeMobile =
+            breakpoints.isLandscape && breakpoints.isMobile;
 
-        const applyVisibility = (landscape: boolean) => {
-            if (footer) footer.style.display = landscape ? 'none' : '';
-            if (select) select.style.display = landscape ? 'none' : '';
-            if (nav) nav.style.display = landscape ? 'none' : '';
-        };
-
-        applyVisibility(isLandscape.matches);
-
-        isLandscape.addEventListener(
-            'change',
-            (e) => applyVisibility(e.matches),
-            {
-                signal: ac.signal,
-            },
-        );
+        if (nav) nav.style.display = isLandscapeMobile ? 'none' : '';
+        if (select) select.style.display = isLandscapeMobile ? 'none' : '';
+        if (footer) footer.style.display = isLandscapeMobile ? 'none' : '';
 
         return () => {
-            ac.abort();
             if (footer) footer.style.display = '';
             if (nav) nav.style.display = '';
             if (select) select.style.display = '';

@@ -20,8 +20,11 @@
     import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
     import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
     import gsap from 'gsap';
+    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
 
     let loadingComplete = $state<boolean>(false);
+
+    const breakpoints = getBreakpoints();
 
     $effect(() => {
         /**
@@ -292,26 +295,14 @@
         const footer = document.querySelector('footer') as HTMLElement | null;
         const nav = document.querySelector('.navigation') as HTMLElement | null;
         const select = document.querySelector('.select') as HTMLElement | null;
-        const isLandscape = window.matchMedia(
-            '(orientation: landscape) and (max-width: 768px)',
-        );
-        const ac = new AbortController();
+        const isLandscapeMobile =
+            breakpoints.isLandscape && breakpoints.isMobile;
 
-        if (footer) footer.style.display = 'none';
-        if (select) select.style.display = 'none';
-        if (isLandscape.matches && nav) nav.style.display = 'none';
-
-        const handleOrientationChange = (e: MediaQueryListEvent) => {
-            if (nav) nav.style.display = e.matches ? 'none' : '';
-            if (select) select.style.display = e.matches ? 'none' : '';
-        };
-
-        isLandscape.addEventListener('change', handleOrientationChange, {
-            signal: ac.signal,
-        });
+        if (footer) footer.style.display = isLandscapeMobile ? 'none' : '';
+        if (select) select.style.display = isLandscapeMobile ? 'none' : '';
+        if (nav) nav.style.display = isLandscapeMobile ? 'none' : '';
 
         return () => {
-            ac.abort();
             if (footer) footer.style.display = '';
             if (nav) nav.style.display = '';
             if (select) select.style.display = '';
