@@ -2,7 +2,6 @@
     import Divider from '$lib/components/learn/Divider.svelte';
     import SEO from '$lib/data/SEO.svelte';
     import type { Component } from 'svelte';
-    import { clamp } from 'three/src/math/MathUtils.js';
 
     type ComponentType = Component<Record<string, never>>;
 
@@ -68,10 +67,10 @@
         {:else if selectedComponent === 'Select'}
             <h2>select a component to view</h2>
 
-            <Divider width={40} thickness={8} color="var(--clr-light-350)" />
+            <Divider width={75} thickness={5} color="var(--clr-light-350)" />
 
             <p>
-                be advised that these components will still work even if you
+                *be advised that these components will still work even if you
                 have animation effects turned off.
             </p>
         {/if}
@@ -128,8 +127,10 @@
             & h2 {
                 color: var(--clr-blue-350);
                 font-family: var(--bronova-bold);
-                font-size: clamp(var(--h6), 3.25vw, var(--lg));
+                font-size: clamp(var(--h4), 5vw, var(--xl));
                 text-align: center;
+                -webkit-text-stroke: 1px var(--clr-light-500);
+                text-shadow: 3px 3px 0 var(--clr-light-500);
 
                 @media (width <= 768px) {
                     text-shadow: 1px 1px 0 var(--clr-light-500);
@@ -137,13 +138,14 @@
             }
 
             & p {
-                color: var(--clr-light-500);
+                color: var(--clr-gray-700);
                 font-family: var(--bronova);
                 font-size: clamp(var(--sm), 1.25vw, var(--h5));
-                font-weight: 500;
+                font-weight: 600;
                 text-align: center;
                 margin-top: 1em;
                 max-inline-size: 600px;
+                padding-inline: 0.2em;
             }
         }
     }
