@@ -9,7 +9,7 @@
     $effect(() => {
         if (!canvas) return;
 
-        setupLoader(canvas);
+        return setupLoader(canvas);
     });
 
     $effect(() => {

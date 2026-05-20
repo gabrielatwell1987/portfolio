@@ -10,7 +10,7 @@
     $effect(() => {
         if (!canvas) return;
 
-        setupHeroCanvas(canvas);
+        return setupHeroCanvas(canvas);
     });
 
     $effect(() => {

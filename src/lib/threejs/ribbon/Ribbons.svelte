@@ -6,7 +6,7 @@
     $effect(() => {
         if (!canvas) return;
 
-        setupRibbons(canvas);
+        return setupRibbons(canvas);
     });
 </script>
 

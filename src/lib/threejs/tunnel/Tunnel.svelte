@@ -6,7 +6,7 @@
     $effect(() => {
         if (!canvas) return;
 
-        setupTunnel(canvas);
+        return setupTunnel(canvas);
     });
 </script>
 

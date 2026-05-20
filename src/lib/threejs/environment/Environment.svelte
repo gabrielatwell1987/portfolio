@@ -8,7 +8,7 @@
     $effect(() => {
         if (!canvas) return;
 
-        setupEnvironment(canvas);
+        return setupEnvironment(canvas);
     });
 
     $effect(() => {
