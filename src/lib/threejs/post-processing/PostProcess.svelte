@@ -8,7 +8,7 @@
     $effect(() => {
         if (!canvas) return;
 
-        setupPostProcess(canvas);
+        return setupPostProcess(canvas);
     });
 
     $effect(() => {
