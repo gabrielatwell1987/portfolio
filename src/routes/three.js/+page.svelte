@@ -134,6 +134,7 @@
 
                 @media (width <= 768px) {
                     text-shadow: 1px 1px 0 var(--clr-light-500);
+                    margin-top: 3em;
                 }
             }
 
