@@ -4,7 +4,6 @@
     max-inline-size: 100%;
     margin-inline: auto;
     padding: 1em;
-    /* color: var(--clr-light-500); */
     font-family: var(--bronova);
     font-size: clamp(1.25rem, 1.25vw, 1.75rem);
     font-weight: 100;
@@ -36,9 +35,7 @@
 .gsap p {
     padding: 0;
     line-height: 1.5;
-    /* margin-bottom: 1rem; */
     color: var(--clr-light-500-fade);
-
     font-size: clamp(1rem, 1.25vw, 1.75rem);
     font-weight: 300;
     margin-block: 1rem;
@@ -168,7 +165,7 @@ div[id] {
     border-radius: var(--radius);
     font-family: var(--mono);
     font-size: clamp(var(--xs), 1.5vw, var(--h6));
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .css pre,
@@ -201,7 +198,7 @@ div[id] {
     overflow-x: auto;
     font-family: var(--mono);
     font-size: clamp(var(--xs), 1.5vw, var(--h6));
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.4;
     box-shadow: 0 4px 1px var(--clr-gray-700);
 

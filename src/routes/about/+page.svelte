@@ -4,7 +4,7 @@
     import Button from '$lib/components/layout/Button.svelte';
     import Grid from '$lib/components/about/Grid.svelte';
     import Bento from '$lib/components/about/Bento.svelte';
-    import AboutHero from '$lib/components/about/AboutHero.svelte';
+    import AboutHero from '$lib/components/about/about-hero/AboutHero.svelte';
     import Skills from '$lib/components/about/Skills.svelte';
     import Slider from '$lib/components/about/Slider.svelte';
     import PWAInstall from '$lib/components/about/pwa-popovers/PWAInstall.svelte';

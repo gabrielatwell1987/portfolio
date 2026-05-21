@@ -12,19 +12,10 @@
     import Popover from '$lib/components/layout/Popover.svelte';
     import Preloader from '$lib/components/learn/posts-page/Preloader.svelte';
 
-    import hljs from 'highlight.js/lib/core';
-    import javascript from 'highlight.js/lib/languages/javascript';
-    import css from 'highlight.js/lib/languages/css';
-    import html from 'highlight.js/lib/languages/xml';
-    import 'highlight.js/styles/atom-one-dark.css';
-    import { tick } from 'svelte';
     import CopyButton from '$lib/components/learn/CopyButton.svelte';
     import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
+    import { sanitizeAndHighlight } from '$lib/components/utils/highlight';
 
-    hljs.registerLanguage('js', javascript);
-    hljs.registerLanguage('css', css);
-    hljs.registerLanguage('html', html);
-    hljs.registerLanguage('xml', html);
     let postHtml = $state<string>('');
     let sanitizeHtml = $state<string>('');
 
@@ -123,38 +114,10 @@
 
     // highlight.js
     $effect(() => {
-        async function highlight() {
-            postHtml;
-            if (typeof window === 'undefined') {
-                sanitizeHtml = '';
-                return;
-            }
-
-            // dynamic import of dompurify
-            const { default: DOMPurify } = await import('dompurify');
-            // mitigate XSS risk
-            DOMPurify.addHook('uponSanitizeAttribute', (node, data) => {
-                if (data && data.attrName && data.attrName.startsWith('on')) {
-                    data.keepAttr = false;
-                }
-            });
-            // sanitize the HTML content
-            sanitizeHtml = DOMPurify.sanitize(postHtml, {
-                USE_PROFILES: { html: true },
-            });
-
-            await tick();
-            const codeBlocks = Array.from(
-                document.querySelectorAll('pre code'),
-            ) as HTMLElement[];
-            codeBlocks.forEach((element) => {
-                // get raw text (escapes any embedded HTML)
-                const raw = element.textContent ?? element.innerText ?? '';
-                element.textContent = raw;
-                hljs.highlightElement(element);
-            });
+        async function updateHighlight() {
+            sanitizeHtml = await sanitizeAndHighlight(postHtml);
         }
-        highlight();
+        updateHighlight();
     });
 </script>
 
