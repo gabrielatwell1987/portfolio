@@ -1,116 +1,17 @@
 <script lang="ts">
-    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
     import gsap from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import HeroButton from '../hero/HeroButton.svelte';
     import projects from '$lib/components/projects/projects.json';
     import ProjectsGrid from '../../ProjectsGrid.svelte';
     import HandDrawnUnderline from '../HandDrawnUnderline.svelte';
+    import { heroContentState } from './contentFunctions.svelte';
 
-    const breakpoints = getBreakpoints();
-    const chars = 'Handcrafted Frontend Interfaces';
-    let titleText = 'Handcrafted Frontend Interfaces';
-    let titleWords = $derived(titleText.split(' '));
-    let showContent = $state<boolean>(false);
-    let displayedTitle = $state<string[]>(
-        titleText.split('').map((char, index) => {
-            const wordIndex = getWordIndexFromCharIndex(index);
-
-            // keep Handcrafted as is, randomize the rest
-            if (wordIndex === 0) {
-                return char;
-            }
-            return char === ' ' ? ' ' : getRandomChar();
-        }),
-    );
-
-    function getWordChars(wordIndex: number) {
-        let charIndex = 0;
-        for (let i = 0; i < wordIndex; i++) {
-            charIndex += titleWords[i].length + 1;
-        }
-        return {
-            start: charIndex,
-            chars: displayedTitle.slice(
-                charIndex,
-                charIndex + titleWords[wordIndex].length,
-            ),
-        };
-    }
-
-    function getWordIndexFromCharIndex(index: number): number {
-        let charCount = 0;
-        for (let i = 0; i < titleWords.length; i++) {
-            if (index < charCount + titleWords[i].length) {
-                return i;
-            }
-            charCount += titleWords[i].length + 1;
-        }
-        return 0;
-    }
-
-    function getRandomChar() {
-        return chars[Math.floor(Math.random() * chars.length)];
-    }
-
-    function animateTitle() {
-        const prefersReducedMotion = breakpoints.isReduced;
-
-        if (prefersReducedMotion) {
-            displayedTitle = titleText.split('');
-            showContent = true;
-            return;
-        }
-
-        // animation state for each character
-        const animState = titleText.split('').map((char, index) => ({
-            index,
-            char,
-            iterations: 0,
-            shouldAnimate: char !== ' ' && getWordIndexFromCharIndex(index) > 0,
-        }));
-
-        const startTime = Date.now();
-        const animationDuration = 5000;
-
-        const animate = () => {
-            const elapsed = Date.now() - startTime;
-            const isComplete = elapsed > animationDuration;
-
-            let hasUpdates = false;
-
-            animState.forEach((state) => {
-                if (!state.shouldAnimate) return;
-
-                const delay = state.index * 70;
-                if (elapsed < delay) return;
-
-                const timeSinceStart = elapsed - delay;
-                const iterations = Math.floor(timeSinceStart / 175);
-
-                if (iterations !== state.iterations) {
-                    hasUpdates = true;
-                    state.iterations = iterations;
-                    displayedTitle[state.index] =
-                        iterations >= 2 ? state.char : getRandomChar();
-                }
-            });
-
-            if (hasUpdates) {
-                displayedTitle = [...displayedTitle];
-            }
-
-            if (!isComplete) {
-                requestAnimationFrame(animate);
-            }
-        };
-
-        requestAnimationFrame(animate);
-        setTimeout(() => (showContent = true), 1300);
-    }
+    let { selectedBg = 0 as number | boolean } = $props();
+    let isTunnel = $derived(selectedBg === 1);
 
     $effect(() => {
-        animateTitle();
+        heroContentState.animateTitle();
     });
 
     // gsap
@@ -153,9 +54,8 @@
 <section aria-label="Introduction and portfolio overview" class="hero-content">
     <header class="title-container">
         <h1 class="hero-title glitch">
-            <!-- eslint-disable-next-line @typescript-eslint/no-unused-vars -->
-            {#each titleWords as _, wordIndex}
-                {@const wordData = getWordChars(wordIndex)}
+            {#each heroContentState.titleWords as _, wordIndex}
+                {@const wordData = heroContentState.getWordChars(wordIndex)}
 
                 <span class="word">
                     {#each wordData.chars as char, charIndex}
@@ -176,8 +76,12 @@
         </h1>
     </header>
 
-    <div class="content-wrapper" class:show={showContent} aria-live="polite">
-        <p class="summary indent">
+    <div
+        class="content-wrapper"
+        class:show={heroContentState.showContent}
+        aria-live="polite"
+    >
+        <p class="summary indent" class:tunnel={isTunnel}>
             I am a frontend developer who loves to create beautiful and
             functional websites. This website showcases my skills with some
             projects that I created. If you have any questions, feel free to
@@ -203,13 +107,13 @@
                     <dd class="stat-number" aria-label="One hundred percent">
                         100%
                     </dd>
-                    <dt class="stat-label">Custom</dt>
+                    <dt class="stat-label" class:tunnel={isTunnel}>Custom</dt>
                 </div>
 
                 <div class="stat-item b">
                     <dt class="visually-hidden">Project delivery timeframe</dt>
                     <dd class="stat-number" aria-label="Fast">Fast</dd>
-                    <dt class="stat-label">Delivery</dt>
+                    <dt class="stat-label" class:tunnel={isTunnel}>Delivery</dt>
                 </div>
 
                 <div class="stat-item c">
@@ -217,7 +121,9 @@
                     <dd class="stat-number" aria-label="Fully responsive">
                         Fully
                     </dd>
-                    <dt class="stat-label">Responsive</dt>
+                    <dt class="stat-label" class:tunnel={isTunnel}>
+                        Responsive
+                    </dt>
                 </div>
             </dl>
         </section>
@@ -350,6 +256,10 @@
                 &.indent {
                     text-indent: 1em;
                 }
+
+                &.tunnel {
+                    color: var(--white-gray);
+                }
             }
 
             & .button-container {
@@ -432,6 +342,10 @@
                             margin-top: 0.5rem;
                             margin-bottom: 0;
                             font-weight: 600;
+
+                            &.tunnel {
+                                color: var(--white-gray);
+                            }
                         }
                     }
                 }

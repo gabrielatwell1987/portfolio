@@ -69,7 +69,7 @@
 <article role="banner" aria-label="Hero section">
     <HeroBackground {selectedBg} {mounted} {particles} />
 
-    <HeroContent />
+    <HeroContent {selectedBg} />
 </article>
 
 <style>

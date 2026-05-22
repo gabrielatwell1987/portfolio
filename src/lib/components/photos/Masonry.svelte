@@ -1,73 +1,18 @@
 <script lang="ts">
-    import Title from '$lib/components/layout/titles/Title.svelte';
+    import Heading from '$lib/components/layout/titles/Heading.svelte';
     import images from '$lib/components/photos/images.json';
+    import {
+        masonryState,
+        openPopover,
+        closePopover,
+        handleImageError,
+        handleImageLoad,
+    } from './masonryFunctions.svelte';
 
-    interface Image {
-        src: string;
-        alt: string;
-    }
-
-    let selectedImage: Image | null = $state<Image | null>(null);
-    let isOpen = $state<boolean>(false);
-    let popoverElement: HTMLElement | null = $state<HTMLElement | null>(null);
-    let popoverImage: HTMLImageElement | null = $state<HTMLImageElement | null>(
-        null,
-    );
-    let imageErrors = $state<Set<string>>(new Set<string>());
-
-    function openPopover(img: { src: string; alt: string }) {
-        if (isOpen) {
-            isOpen = false;
-
-            setTimeout(() => {
-                selectedImage = img;
-                popoverElement?.showPopover();
-                setTimeout(() => {
-                    isOpen = true;
-                }, 10);
-            }, 50);
-        } else {
-            selectedImage = img;
-
-            popoverElement?.showPopover();
-
-            setTimeout(() => {
-                isOpen = true;
-            }, 10);
-        }
-    }
-
-    function closePopover() {
-        isOpen = false;
-
-        setTimeout(() => {
-            popoverElement?.hidePopover();
-            selectedImage = null;
-        }, 1000);
-    }
-
-    function handleImageLoad(event: Event) {
-        const img = event.target as HTMLImageElement;
-        const naturalWidth = img.naturalWidth;
-        const naturalHeight = img.naturalHeight;
-
-        const maxWidth = window.innerWidth * 0.8;
-        const maxHeight = window.innerHeight * 0.8;
-
-        const scaleX = maxWidth / naturalWidth;
-        const scaleY = maxHeight / naturalHeight;
-        const scale = Math.min(scaleX, scaleY, 1);
-
-        img.style.width = `${naturalWidth * scale}px`;
-        img.style.height = `${naturalHeight * scale}px`;
-    }
-
-    function handleImageError(event: Event, imgSrc: string) {
-        imageErrors = new Set([...imageErrors, imgSrc]);
-    }
+    let popoverElement: HTMLElement | null = $state(null);
 </script>
 
-<Title title="snapshots" />
+<Heading title="snapshots" title2="snapshots" />
 
 <section>
     <div class="masonry">
@@ -76,14 +21,14 @@
                 type="button"
                 class="cv-auto"
                 style="animation-delay: {i * 0.2}s;"
-                onclick={() => openPopover(img)}
+                onclick={() => openPopover(popoverElement, img)}
             >
                 <img
                     src={img.src}
                     alt={img.alt}
                     loading="lazy"
                     style="--alt-text: '{img.alt}'"
-                    class:error={imageErrors.has(img.src)}
+                    class:error={masonryState.imageErrors.includes(img.src)}
                     onerror={(e) => handleImageError(e, img.src)}
                 />
             </button>
@@ -96,19 +41,21 @@
     id="image-popover"
     bind:this={popoverElement}
     popover="auto"
-    class:open={isOpen}
+    class:open={masonryState.isOpen}
 >
-    {#if selectedImage}
-        <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-        <!-- svelte-ignore a11y_click_events_have_key_events -->
-        <img
-            bind:this={popoverImage}
-            src={selectedImage.src}
-            alt={selectedImage.alt}
-            onclick={closePopover}
-            onload={handleImageLoad}
-            loading="lazy"
-        />
+    {#if masonryState.selectedImage}
+        <button
+            type="button"
+            onclick={() => closePopover(popoverElement)}
+            style="padding: 0; background: none; border: none; cursor: pointer;"
+        >
+            <img
+                src={masonryState.selectedImage.src}
+                alt={masonryState.selectedImage.alt}
+                onload={(e) => handleImageLoad(e)}
+                loading="lazy"
+            />
+        </button>
     {/if}
 </div>
 

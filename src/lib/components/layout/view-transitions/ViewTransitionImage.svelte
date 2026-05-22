@@ -1,7 +1,7 @@
 <script lang="ts">
     import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
     import { browser } from '$app/environment';
-    import { getPreloaderState } from '$lib/components/learn/posts-page/preloadStore.svelte';
+    import { getPreloaderState } from '$lib/data/stores/preloadStore.svelte';
 
     interface Props {
         src: string;
@@ -13,7 +13,6 @@
 
     let expanded = $state(false);
     let imgElement = $state<HTMLImageElement>();
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     let naturalDimensions = $state<{ width: number; height: number }>({
         width: 0,
         height: 0,

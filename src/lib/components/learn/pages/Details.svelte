@@ -1,7 +1,6 @@
 <script lang="ts">
-    import { browser } from '$app/environment';
     import './details-globals.css';
-    import DOMPurify from 'dompurify';
+    import { sanitize, detailsAccordion } from './detailsFunctions.svelte';
 
     interface Item {
         summary: string;
@@ -14,35 +13,9 @@
 
     let { items = [] }: Props = $props();
 
-    let openStates = $state<boolean[]>([]);
-
-    function sanitize(html: string): string {
-        if (!browser) return html;
-        return DOMPurify.sanitize(html);
-    }
-
     $effect(() => {
-        openStates.length = items.length;
-
-        for (let i = 0; i < items.length; i++) {
-            if (openStates[i] === undefined) openStates[i] = false;
-        }
+        detailsAccordion.init(items.length);
     });
-
-    function toggle(index: number) {
-        if (openStates[index]) {
-            openStates[index] = false;
-        } else {
-            openStates = openStates.map((_, i) => i === index);
-        }
-    }
-
-    function handleKeydown(event: KeyboardEvent, index: number) {
-        if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            toggle(index);
-        }
-    }
 </script>
 
 {#if items && items.length > 0}
@@ -53,14 +26,17 @@
         >
             <button
                 class="summary-custom outline contrast spacing"
-                onclick={() => toggle(index)}
-                onkeydown={(e) => handleKeydown(e, index)}
-                aria-expanded={openStates[index]}
+                onclick={() => detailsAccordion.toggle(index)}
+                onkeydown={(e) => detailsAccordion.handleKeydown(e, index)}
+                aria-expanded={detailsAccordion.openStates[index]}
                 aria-controls="content-{index}"
             >
                 <span class="margin"><b>{item.summary}</b></span>
 
-                <span class="arrow" class:rotated={openStates[index]}>
+                <span
+                    class="arrow"
+                    class:rotated={detailsAccordion.openStates[index]}
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 640 640"
@@ -75,10 +51,9 @@
             <div
                 id="content-{index}"
                 class="text"
-                class:open={openStates[index]}
+                class:open={detailsAccordion.openStates[index]}
                 style="color: var(--clr-gray-600);"
             >
-                <!-- eslint-disable-next-line svelte/no-at-html-tags -->
                 {@html sanitize(item.content)}
             </div>
         </div>
