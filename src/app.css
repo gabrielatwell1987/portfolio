@@ -32,6 +32,14 @@
     src: url('/fonts/Ultra-Regular.woff2') format('woff2');
 }
 
+@font-face {
+    font-family: 'Thunder';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/fonts/Thunder-VF.ttf') format('truetype-variations');
+}
+
 @layer root {
     :root {
         color-scheme: light dark;
@@ -41,6 +49,7 @@
         --bronova: 'Bronova', sans-serif;
         --bronova-bold: 'Bronova Bold', sans-serif;
         --ultra: 'Ultra', sans-serif;
+        --thunder: 'Thunder', sans-serif;
 
         /* sizing */
         --base-size: 1.2rem;

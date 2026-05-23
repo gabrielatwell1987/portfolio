@@ -61,6 +61,10 @@
             load: () =>
                 import('$lib/components/experiments/image-zoom/ImageZoom.svelte'),
         },
+        7: {
+            load: () =>
+                import('$lib/components/experiments/huge-text-intro/HugeTextIntro.svelte'),
+        },
     };
 
     const sortedKeys = Object.keys(componentMap)
