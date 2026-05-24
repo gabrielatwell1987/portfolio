@@ -162,10 +162,9 @@
             & .hero-title {
                 font-family: var(--ultra);
                 font-size: clamp(var(--h3), 7vw, var(--xxl));
-                font-weight: 700;
+                font-weight: 900;
                 color: var(--clr-dark-500);
-                text-shadow: 0 0 5px var(--clr-light-500);
-                -webkit-text-stroke: 0.13rem var(--clr-light-400);
+                filter: drop-shadow(0 0 5px var(--clr-light-500));
                 line-height: 1;
                 margin: 0;
                 margin-bottom: 0.2em;
@@ -180,21 +179,19 @@
                 @media (height <= 768px) {
                     line-height: 1.1;
                     margin-bottom: 1em;
-                    -webkit-text-stroke: 0.06rem var(--clr-light-400);
-                    text-shadow: 0 0 2px var(--clr-light-500);
                 }
 
                 & .word:first-child {
-                    font-family: var(--bronova-bold);
+                    font-family: var(--thunder);
                     font-size: clamp(var(--h3), 5vw, var(--xl));
+                    font-weight: 700;
                     color: var(--clr-dark-500);
-                    text-shadow: 0 0 5px var(--clr-light-500);
-                    -webkit-text-stroke: 0.13rem var(--clr-light-500);
+                    filter: drop-shadow(0 0 5px var(--clr-light-500));
                     display: inline-block;
+                    transform: scaleX(1.7) scaleY(2);
 
                     @media (width <= 768px) {
-                        text-shadow: 0 0 2px var(--clr-light-500);
-                        -webkit-text-stroke: 0.06rem var(--clr-light-500);
+                        transform: scaleX(1.3) scaleY(1.6);
                     }
                 }
 
@@ -203,9 +200,9 @@
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    margin-top: -1.5em;
+                    margin-top: -0.8em;
                     margin-left: 0.75em;
-                    margin-bottom: -0.5em;
+                    transform: scaleX(1.4);
                 }
 
                 & .word {
