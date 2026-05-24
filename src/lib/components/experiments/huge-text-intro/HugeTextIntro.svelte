@@ -8,6 +8,7 @@
         { text: 'is', dataText: 'is', active: false, done: true },
         { text: 'gabe', dataText: 'near', active: false, done: true },
     ]);
+    let introElement: HTMLElement | undefined = $state();
 
     function handleMouseEnter(index: number) {
         words[index].active = true;
@@ -19,25 +20,46 @@
 
     // gsap
     $effect(() => {
+        const intro = introElement;
+        if (!intro) return;
+
+        const wordInners = intro.querySelectorAll<HTMLElement>('.word-inner');
+        const subWords = document.querySelectorAll<HTMLElement>('.sub-word');
+
+        if (!wordInners.length) return;
+
         gsap.registerPlugin(ScrollTrigger);
+
+        gsap.set(wordInners, { y: 50, scale: 0, opacity: 0 });
+        gsap.set(subWords, { '--sub-scale': 0 });
 
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: '.title-intro',
+                trigger: intro,
                 start: 'top 80%',
                 end: 'top 20%',
                 scrub: true,
             },
         });
 
-        tl.from('.word', {
-            y: 50,
-            opacity: 0,
-            scale: 0,
+        tl.to(wordInners, {
+            y: 0,
+            scale: 1,
+            opacity: 1,
             stagger: 0.2,
-            duration: 1,
+            duration: 2,
             ease: 'circ.out',
         });
+
+        tl.to(
+            subWords,
+            {
+                '--sub-scale': 1,
+                duration: 3,
+                ease: 'power3.out',
+            },
+            0,
+        );
 
         return () => {
             tl.scrollTrigger?.kill();
@@ -46,7 +68,7 @@
     });
 </script>
 
-<section class="title-intro">
+<section class="title-intro" bind:this={introElement}>
     {#each words as word, i (i)}
         <!-- svelte-ignore a11y_no_static_element_interactions -->
         <div
@@ -57,7 +79,8 @@
             onmouseenter={() => handleMouseEnter(i)}
             onmouseleave={() => handleMouseLeave(i)}
         >
-            {word.text}
+            <span class="word-inner">{word.text}</span>
+            <span class="sub-word" aria-hidden="true">{word.dataText}</span>
         </div>
     {/each}
 </section>
@@ -82,34 +105,32 @@
             font-size: 20vw;
             font-weight: 800;
             transform: scaleY(1.3);
-            margin-right: 1rem;
+            margin-right: clamp(1rem, 1.5vw, 5rem);
 
-            &::after {
-                content: attr(data-text);
-                position: absolute;
-                inset: 0;
-                display: grid;
-                place-items: center;
-                opacity: 0;
-                transform: translateY(20px);
-                transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-                font-family:
-                    Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                font-family: var(--ultra);
-                font-size: 2rem;
+            & .word-inner {
+                display: inline-block;
             }
 
-            &:hover::after,
-            &.active::after,
-            &.done::after {
-                content: attr(data-text);
+            & .sub-word {
+                -webkit-text-stroke: 2px var(--clr-light-350);
                 position: absolute;
                 inset: 0;
                 display: grid;
                 place-items: center;
                 color: var(--clr-fail-500);
                 opacity: 0.6;
-                transform: translateY(0);
+                transform: translateY(20px) scale(var(--sub-scale, 0));
+                transition: transform 0.75s cubic-bezier(0.23, 1, 0.32, 1);
+                font-family: var(--ultra);
+                font-size: 4vw;
+                pointer-events: none;
+                transform-origin: center;
+            }
+
+            &:hover .sub-word,
+            &.active .sub-word,
+            &.done .sub-word {
+                transform: translateY(0) scale(var(--sub-scale, 1));
             }
         }
     }
