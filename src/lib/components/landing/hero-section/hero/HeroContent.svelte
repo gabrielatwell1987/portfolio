@@ -190,6 +190,7 @@
                     display: inline-block;
                     transform: scaleX(1.7) scaleY(2);
                     text-transform: uppercase;
+                    letter-spacing: -0.0195em;
 
                     @media (width <= 768px) {
                         transform: scaleX(1.3) scaleY(1.4);
