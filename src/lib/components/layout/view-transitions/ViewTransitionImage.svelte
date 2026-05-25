@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { getBreakpoints } from '$lib/data/stores/breakpoints.svelte';
     import { browser } from '$app/environment';
     import { getPreloaderState } from '$lib/data/stores/preloadStore.svelte';
 
@@ -12,55 +11,34 @@
     let { src, alt, transitionName = 'expandable-image' }: Props = $props();
 
     let expanded = $state(false);
-    let imgElement = $state<HTMLImageElement>();
-    let naturalDimensions = $state<{ width: number; height: number }>({
-        width: 0,
-        height: 0,
-    });
     let isSVG = $derived(src?.endsWith('.svg'));
-    let isTransitioning = $state(false);
 
     const preloaderState = getPreloaderState();
     let ready = $derived(preloaderState.done);
-    const breakpoints = getBreakpoints();
+
+    let supportedViewTransitions = $derived(
+        browser &&
+            typeof document !== 'undefined' &&
+            'startViewTransition' in document,
+    );
 
     function toggleExpand() {
-        if (isTransitioning) return;
-
-        if (document.startViewTransition && !breakpoints.isReduced) {
-            isTransitioning = true;
-            document
-                .startViewTransition(() => {
-                    expanded = !expanded;
-                })
-                .finished.then(() => {
-                    isTransitioning = false;
-                });
+        if (supportedViewTransitions) {
+            document.startViewTransition(() => {
+                expanded = !expanded;
+            });
         } else {
             expanded = !expanded;
         }
     }
-
-    function handleImageLoad() {
-        if (imgElement) {
-            naturalDimensions = {
-                width: imgElement.naturalWidth,
-                height: imgElement.naturalHeight,
-            };
-        }
-    }
-
-    let inlineStyle = $derived(`view-transition-name: ${transitionName};`);
 </script>
 
-<section class={expanded ? 'expanded' : ''} class:hidden={!ready}>
+<section class:expanded class:hidden={!ready}>
     <button type="button" onclick={toggleExpand} class="img-button">
         <img
-            bind:this={imgElement}
             {src}
             {alt}
-            onload={handleImageLoad}
-            style={inlineStyle}
+            style="view-transition-name: {transitionName};"
             class:svg={isSVG}
             loading="lazy"
         />
@@ -125,53 +103,25 @@
     }
 
     .expanded {
-        position: fixed;
-        top: var(--view-transition-offset);
-        left: 0;
-        background: transparent;
-        display: grid;
-        place-items: center;
-        /* z-index: 50; */
-        width: 100vw;
-        height: 100vh;
-        margin: 0;
-        padding: 20px;
-        box-sizing: border-box;
-
-        @media (width <= 768px) {
-            top: var(--view-transition-offset-mobile);
-            width: 100dvw;
-            height: 100dvh;
-            padding: 0.5em;
-        }
+        width: fit-content;
 
         & .img-button {
-            width: 100vw;
-            height: 100vh;
-            display: grid;
-            place-items: center;
-            margin: 0;
-            padding: 0;
+            z-index: 60;
 
-            @media (width <= 768px) {
-                width: 100%;
-                height: 100%;
+            & img {
+                width: min(90vw, 1200px);
+                height: auto;
+                max-height: 85vh;
+
+                @media (width <= 768px) {
+                    width: 90vw;
+                    max-height: 80dvh;
+                }
+
+                &.svg {
+                    filter: brightness(1.1);
+                }
             }
-        }
-
-        &:not(.transitioning) img {
-            width: clamp(300px, 80vw, 1200px);
-            height: auto;
-            max-height: 80vh;
-
-            @media (width <= 768px) {
-                width: clamp(200px, 90vw, 100%);
-                max-height: 70vh;
-            }
-        }
-
-        & img.svg {
-            filter: brightness(1.1);
         }
     }
 </style>
