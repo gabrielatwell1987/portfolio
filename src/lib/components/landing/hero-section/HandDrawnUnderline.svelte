@@ -41,7 +41,7 @@
         stroke-dasharray: 900;
         stroke-dashoffset: 600;
         animation: dash 4s ease-out forwards;
-        animation-delay: 1s;
+        animation-delay: 1.5s;
     }
 
     @keyframes dash {

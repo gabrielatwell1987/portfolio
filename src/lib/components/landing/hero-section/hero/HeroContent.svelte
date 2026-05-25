@@ -183,15 +183,16 @@
 
                 & .word:first-child {
                     font-family: var(--thunder);
-                    font-size: clamp(var(--h3), 5vw, var(--xl));
+                    font-size: clamp(var(--h2), 7vw, var(--xxl));
                     font-weight: 700;
                     color: var(--clr-dark-500);
                     filter: drop-shadow(0 0 5px var(--clr-light-500));
                     display: inline-block;
                     transform: scaleX(1.7) scaleY(2);
+                    text-transform: uppercase;
 
                     @media (width <= 768px) {
-                        transform: scaleX(1.3) scaleY(1.6);
+                        transform: scaleX(1.3) scaleY(1.4);
                     }
                 }
 
@@ -200,7 +201,7 @@
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    margin-top: -0.8em;
+                    margin-top: -0.9em;
                     margin-left: 0.75em;
                     transform: scaleX(1.4);
                 }
