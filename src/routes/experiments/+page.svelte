@@ -104,6 +104,32 @@
             cancelled = true;
         };
     });
+
+    $effect(() => {
+        const ac = new AbortController();
+
+        function handleKeydown(event: KeyboardEvent) {
+            if (event.key === 'ArrowRight') {
+                goNext();
+            } else if (event.key === 'ArrowLeft') {
+                goPrev();
+            }
+
+            if (
+                event.target instanceof HTMLInputElement ||
+                event.target instanceof HTMLTextAreaElement
+            )
+                return;
+        }
+
+        window.addEventListener('keydown', handleKeydown, {
+            signal: ac.signal,
+        });
+
+        return () => {
+            ac.abort();
+        };
+    });
 </script>
 
 {#key currentIndex}

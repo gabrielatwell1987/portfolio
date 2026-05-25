@@ -3,12 +3,13 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
     let words = $state([
-        { text: 'My', dataText: 'the', active: false, done: true },
-        { text: 'name', dataText: 'end', active: false, done: true },
-        { text: 'is', dataText: 'is', active: false, done: true },
-        { text: 'gabe', dataText: 'near', active: false, done: true },
+        { text: 'My', dataText: 'and', active: false, done: true },
+        { text: 'name', dataText: 'i', active: false, done: true },
+        { text: 'is', dataText: 'am', active: false, done: true },
+        { text: 'gabe', dataText: 'cool', active: false, done: true },
     ]);
     let introElement: HTMLElement | undefined = $state();
+    let wordsWrapper: HTMLElement | undefined = $state();
 
     function handleMouseEnter(index: number) {
         words[index].active = true;
@@ -18,45 +19,35 @@
         words[index].active = false;
     }
 
-    // gsap
-    $effect(() => {
-        const intro = introElement;
-        if (!intro) return;
+    function scrollText() {
+        const wrapper = wordsWrapper;
+        if (!wrapper) return;
 
-        const wordInners = intro.querySelectorAll<HTMLElement>('.word-inner');
         const subWords = document.querySelectorAll<HTMLElement>('.sub-word');
-
-        if (!wordInners.length) return;
+        if (!subWords.length) return;
 
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.set(wordInners, { y: 50, scale: 0, opacity: 0 });
         gsap.set(subWords, { '--sub-scale': 0 });
 
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: intro,
-                start: 'top 80%',
-                end: 'top 20%',
+                trigger: wrapper,
+                start: 'top center-=70',
+                end: `+=${window.innerHeight * 2}`,
                 scrub: true,
+                pin: true,
+                pinSpacing: true,
             },
-        });
-
-        tl.to(wordInners, {
-            y: 0,
-            scale: 1,
-            opacity: 1,
-            stagger: 0.2,
-            duration: 2,
-            ease: 'circ.out',
         });
 
         tl.to(
             subWords,
             {
                 '--sub-scale': 1,
-                duration: 3,
-                ease: 'power3.out',
+                stagger: 0.2,
+                duration: 1,
+                ease: 'back.out',
             },
             0,
         );
@@ -65,24 +56,31 @@
             tl.scrollTrigger?.kill();
             tl.kill();
         };
+    }
+
+    // gsap
+    $effect(() => {
+        scrollText();
     });
 </script>
 
 <section class="title-intro" bind:this={introElement}>
-    {#each words as word, i (i)}
-        <!-- svelte-ignore a11y_no_static_element_interactions -->
-        <div
-            class="word"
-            class:active={word.active}
-            class:done={word.done}
-            data-text={word.dataText}
-            onmouseenter={() => handleMouseEnter(i)}
-            onmouseleave={() => handleMouseLeave(i)}
-        >
-            <span class="word-inner">{word.text}</span>
-            <span class="sub-word" aria-hidden="true">{word.dataText}</span>
-        </div>
-    {/each}
+    <div class="words-wrapper" bind:this={wordsWrapper}>
+        {#each words as word, i (i)}
+            <!-- svelte-ignore a11y_no_static_element_interactions -->
+            <div
+                class="word"
+                class:active={word.active}
+                class:done={word.done}
+                data-text={word.dataText}
+                onmouseenter={() => handleMouseEnter(i)}
+                onmouseleave={() => handleMouseLeave(i)}
+            >
+                <span class="word-inner">{word.text}</span>
+                <span class="sub-word" aria-hidden="true">{word.dataText}</span>
+            </div>
+        {/each}
+    </div>
 </section>
 
 <style>
@@ -93,7 +91,18 @@
         text-transform: uppercase;
         color: var(--clr-light-500);
         margin-top: clamp(3em, 8.5vw, 10.5em);
-        block-size: 150vh;
+        block-size: 250vh;
+
+        & .words-wrapper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: fit-content;
+        }
 
         & .word {
             display: inline-block;
@@ -120,7 +129,6 @@
                 color: var(--clr-fail-500);
                 opacity: 0.6;
                 transform: translateY(20px) scale(var(--sub-scale, 0));
-                transition: transform 0.75s cubic-bezier(0.23, 1, 0.32, 1);
                 font-family: var(--ultra);
                 font-size: 4vw;
                 pointer-events: none;
