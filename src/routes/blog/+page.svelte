@@ -10,11 +10,11 @@
 
 <div class="post-grid">
     {#each posts as post (post.id)}
-        <article>
+        <section>
             <h2>
                 <a href="/blog/{post.id}">{post.title}</a>
             </h2>
-        </article>
+        </section>
     {/each}
 </div>
 
@@ -26,6 +26,7 @@
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: -0.0075em;
+        color: var(--clr-gray-600);
 
         @media (width <= 980px) {
             margin-top: 2.2em;
@@ -37,11 +38,18 @@
 
     .post-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 1.5em;
-        padding: 1em 17em;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1em;
+        padding: 1em 5em;
 
-        & article {
+        @media (width <= 768px) {
+            padding: 1em 0;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        & section {
             background: transparent;
             display: block;
 
@@ -54,7 +62,7 @@
 
             & a {
                 text-decoration: none;
-                color: var(--clr-warning-500);
+                color: var(--clr-success-500);
             }
         }
     }
