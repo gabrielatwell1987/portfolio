@@ -1,0 +1,51 @@
+import { readdirSync, readFileSync } from 'fs';
+import { join } from 'path';
+
+interface Post {
+    id: number;
+    title: string;
+    content: string;
+}
+
+function parseFrontmatter(file: string) {
+    const match = file.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
+    if (!match) return { data: {}, content: file };
+
+    const frontmatter = match[1];
+    const content = match[2];
+    const data: Record<string, string> = {};
+    for (const line of frontmatter.split('\n')) {
+        const [key, ...rest] = line.split(':');
+        if (key) data[key.trim()] = rest.join(':').trim();
+    }
+    return { data, content };
+}
+
+function extractTitle(content: string): string | undefined {
+    const match = content.match(/^#\s+(.+)$/m);
+    return match?.[1];
+}
+
+export function load(): { posts: Post[] } {
+    const postsDir = join(process.cwd(), 'src', 'content', 'posts');
+    const files = readdirSync(postsDir).filter((f) => f.endsWith('.md'));
+
+    const posts: Post[] = files.map((file) => {
+        const id = Number(file.replace('.md', ''));
+        const rawContent = readFileSync(join(postsDir, file), 'utf-8');
+        const { data, content } = parseFrontmatter(rawContent);
+
+        const title =
+            data.title ?? // from frontmatter
+            extractTitle(content) ?? // from first # heading
+            `Post ${id}`; // fallback
+
+        return {
+            id,
+            title,
+            content: content.slice(0, 200) + '…', // excerpt for listing
+        };
+    });
+
+    return { posts };
+}
