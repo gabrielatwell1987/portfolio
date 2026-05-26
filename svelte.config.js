@@ -49,6 +49,7 @@ const config = {
                 '/learn/posts',
                 '/learn/posts/drawing-app',
                 '/experiments',
+                '/blog',
             ],
         },
     },
