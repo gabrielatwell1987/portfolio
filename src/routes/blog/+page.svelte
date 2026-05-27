@@ -11,9 +11,15 @@
 <div class="post-grid">
     {#each posts as post (post.id)}
         <section>
-            <h2>
+            {#if post.image}
+                <img src={post.image} alt="" />
+            {/if}
+
+            <h2 class="title">
                 <a href="/blog/{post.id}">{post.title}</a>
             </h2>
+
+            <p class="subtitle">{post.subtitle}</p>
         </section>
     {/each}
 </div>
@@ -51,13 +57,30 @@
 
         & section {
             background: transparent;
-            display: block;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid var(--clr-light-400); */
+            padding: 0.15em 0.5em;
 
-            & h2 {
+            & .title {
                 font-family: var(--thunder);
-                font-size: clamp(var(--h6), 1.9vw, var(--lg));
+                font-size: clamp(var(--h6), 2.5vw, var(--lg));
                 font-weight: 800;
                 text-transform: uppercase;
+
+                @media (width <= 768px) {
+                    margin-top: 0.75em;
+                }
+            }
+
+            & .subtitle {
+                margin-block: -3em;
+
+                @media (width <= 768px) {
+                    margin-block: -2em;
+                }
             }
 
             & a {

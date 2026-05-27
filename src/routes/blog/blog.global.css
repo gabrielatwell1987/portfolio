@@ -9,3 +9,8 @@ h2 {
     font-size: clamp(var(--h5), 2.5vw, var(--h2));
     font-weight: 800;
 }
+
+pre,
+code {
+    --code-background-color: var(--clr-dark-500);
+}

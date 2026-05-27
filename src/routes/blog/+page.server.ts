@@ -4,6 +4,8 @@ import { join } from 'path';
 interface Post {
     id: number;
     title: string;
+    subtitle: string;
+    image?: string;
     content: string;
 }
 
@@ -26,6 +28,16 @@ function extractTitle(content: string): string | undefined {
     return match?.[1];
 }
 
+function extractSubtitle(content: string): string | undefined {
+    const match = content.match(/^##\s+(.+)$/m);
+    return match?.[1];
+}
+
+function extractImage(content: string): string | undefined {
+    const match = content.match(/!\[.*?\]\((.+?)\)/);
+    return match?.[1];
+}
+
 export function load(): { posts: Post[] } {
     const postsDir = join(process.cwd(), 'src', 'content', 'posts');
     const files = readdirSync(postsDir).filter((f) => f.endsWith('.md'));
@@ -35,15 +47,16 @@ export function load(): { posts: Post[] } {
         const rawContent = readFileSync(join(postsDir, file), 'utf-8');
         const { data, content } = parseFrontmatter(rawContent);
 
-        const title =
-            data.title ?? // from frontmatter
-            extractTitle(content) ?? // from first # heading
-            `Post ${id}`; // fallback
+        const title = data.title ?? extractTitle(content) ?? `Post ${id}`;
+        const subtitle = data.subtitle ?? extractSubtitle(content);
+        const image = data.image ?? extractImage(content);
 
         return {
             id,
             title,
-            content: content.slice(0, 200) + '…', // excerpt for listing
+            subtitle,
+            image,
+            content: content.slice(0, 200) + '…',
         };
     });
 
