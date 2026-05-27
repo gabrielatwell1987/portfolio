@@ -79,6 +79,9 @@
         <li>
             <NavLink href="/learn" title="Learn the Web" onclick={closeMenu} />
         </li>
+        <li>
+            <NavLink href="/blog" title="Learn Three.js" onclick={closeMenu} />
+        </li>
         <li><NavLink href="/hire" title="Hire Me" onclick={closeMenu} /></li>
         <li>
             <NavLink href="/contact" title="Contact Me" onclick={closeMenu} />
