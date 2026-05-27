@@ -1,4 +1,4 @@
-module gabrielatwell.com/blog
+module portfolio/go-backend
 
 go 1.26.3
 
