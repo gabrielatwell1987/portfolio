@@ -51,6 +51,13 @@
                 viewTransitionName="learn-heading"
             />
         </li>
+        <li>
+            <NavLink
+                href="/blog"
+                title="Three.js"
+                viewTransitionName="three-heading"
+            />
+        </li>
         <SelectLink />
     </ul>
 

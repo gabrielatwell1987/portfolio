@@ -6,7 +6,7 @@
     let posts = $derived(data.posts);
 </script>
 
-<h1>learn three.js</h1>
+<h1 style="view-transition-name: three-heading;">learn three.js</h1>
 
 <div class="post-grid">
     {#each posts as post (post.id)}
