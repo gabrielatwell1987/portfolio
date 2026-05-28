@@ -36,10 +36,12 @@
     class={`nav-link ${reverseUnderline ? 'reverse-underline' : ''}`}
     {href}
     onclick={handleClick}
-    style={shouldTransition
-        ? `view-transition-name: ${viewTransitionName};`
-        : ''}>{title}</a
->
+    ><span
+        style={shouldTransition
+            ? `view-transition-name: ${viewTransitionName};`
+            : ''}>{title}</span
+    >
+</a>
 
 <style>
     .nav-link {
