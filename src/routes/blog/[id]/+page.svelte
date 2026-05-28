@@ -63,6 +63,14 @@
             font-size: 0.8rem;
             inline-size: fit-content;
         }
+
+        & :global(code) {
+            background: var(--clr-dark-500);
+            color: var(--clr-light-500);
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            inline-size: fit-content;
+        }
     }
 
     .go-back {

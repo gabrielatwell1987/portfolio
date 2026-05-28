@@ -99,11 +99,6 @@
         }
     }
 
-    /* :global(::view-transition-old(three-heading)),
-    :global(::view-transition-new(three-heading)) {
-        animation-duration: 0.1s;
-    } */
-
     ::view-transition-group(three-heading) {
         animation-duration: 0.6s;
         animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
