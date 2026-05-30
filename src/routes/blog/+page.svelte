@@ -6,7 +6,7 @@
     let posts = $derived(data.posts);
 </script>
 
-<h1>
+<h1 class="post-title">
     Learn <span style="view-transition-name: three-heading;">Three.js</span>
 </h1>
 
@@ -34,7 +34,6 @@
         font-family: var(--bronova-bold);
         font-size: clamp(var(--h3), 5vw, var(--lg));
         font-weight: 700;
-        /* text-transform: uppercase; */
         letter-spacing: -0.0075em;
         color: var(--clr-gray-600);
 

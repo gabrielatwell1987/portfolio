@@ -29,12 +29,13 @@
     .content {
         line-height: 1.7;
 
-        & :global(h1) {
+        & :global(.post-title) {
             font-family: var(--thunder);
             font-size: clamp(var(--h6), 2.5vw, var(--lg));
             font-weight: 800;
             color: var(--clr-light-500);
             letter-spacing: 1px;
+            line-height: 1;
         }
 
         & :global(h2) {
@@ -45,6 +46,7 @@
 
         & :global(h3) {
             font-family: var(--bronova-bold);
+            font-size: clamp(var(--sm), 1.35vw, var(--h5));
             font-weight: 800;
             color: var(--clr-light-500);
         }

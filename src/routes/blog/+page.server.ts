@@ -60,5 +60,7 @@ export function load(): { posts: Post[] } {
         };
     });
 
+    posts.sort((a, b) => a.id - b.id);
+
     return { posts };
 }
