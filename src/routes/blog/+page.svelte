@@ -68,7 +68,7 @@
 
             & .title {
                 font-family: var(--thunder);
-                font-size: clamp(var(--h4), 2.5vw, var(--lg));
+                font-size: clamp(var(--h4), 2vw, var(--h2));
                 font-weight: 800;
                 text-transform: uppercase;
 
@@ -87,7 +87,7 @@
 
             & a {
                 text-decoration: none;
-                color: var(--clr-success-500);
+                color: var(--clr-green-500);
 
                 &:focus,
                 &:focus-visible {
