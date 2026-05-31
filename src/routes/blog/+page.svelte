@@ -15,7 +15,7 @@
         <section class="complete-post">
             {#if post.image}
                 <a href="/blog/{post.id}">
-                    <img src={post.image} alt="" />
+                    <img class="post-image" src={post.image} alt="" />
                 </a>
             {/if}
 
@@ -45,6 +45,29 @@
             font-size: clamp(var(--sm), 1.15vw, var(--h5));
             font-weight: 400;
             color: var(--clr-light-400);
+        }
+
+        & .post-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        & :global(pre code) {
+            background: var(--clr-dark-500);
+            border: 1px solid var(--clr-light-350);
+            color: var(--clr-light-500);
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            inline-size: fit-content;
+        }
+
+        & :global(code) {
+            background: var(--clr-dark-500);
+            color: var(--clr-light-500);
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            inline-size: fit-content;
         }
     }
 
