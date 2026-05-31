@@ -38,18 +38,18 @@
             line-height: 1;
         }
 
-        & :global(h2) {
+        /* & :global(h2) {
             font-family: var(--bronova-bold);
             font-weight: 800;
             color: var(--clr-gray-700);
-        }
+        } */
 
-        & :global(h3) {
+        /* & :global(h3) {
             font-family: var(--bronova-bold);
             font-size: clamp(var(--sm), 1.35vw, var(--h5));
             font-weight: 800;
             color: var(--clr-light-500);
-        }
+        } */
 
         & :global(img) {
             max-width: 100%;

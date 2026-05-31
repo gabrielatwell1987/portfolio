@@ -6,13 +6,13 @@
     let posts = $derived(data.posts);
 </script>
 
-<h1 class="post-title">
+<h1 class="blog-title">
     Learn <span style="view-transition-name: three-heading;">Three.js</span>
 </h1>
 
 <div class="post-grid">
     {#each posts as post (post.id)}
-        <section>
+        <section class="complete-post">
             {#if post.image}
                 <a href="/blog/{post.id}">
                     <img src={post.image} alt="" />
@@ -29,13 +29,34 @@
 </div>
 
 <style>
-    h1 {
+    .complete-post {
+        border: 1px solid var(--clr-light-500);
+        border-radius: var(--radius);
+        padding: 0 0.05em;
+
+        & .title {
+            font-family: var(--bronova-bold);
+            font-weight: 800;
+            color: var(--clr-gray-700);
+        }
+
+        & .subtitle {
+            font-family: var(--bronova);
+            font-size: clamp(var(--sm), 1.15vw, var(--h5));
+            font-weight: 400;
+            color: var(--clr-light-400);
+        }
+    }
+
+    .blog-title {
         margin-top: 2em;
         font-family: var(--bronova-bold);
         font-size: clamp(var(--h3), 5vw, var(--lg));
         font-weight: 700;
         letter-spacing: -0.0075em;
         color: var(--clr-gray-600);
+        margin-top: 1.75em;
+        padding: 0;
 
         @media (width <= 980px) {
             margin-top: 2.2em;
@@ -64,13 +85,15 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 0.15em 0.5em;
+            gap: 0.05em;
+            padding: 0;
 
             & .title {
                 font-family: var(--thunder);
                 font-size: clamp(var(--h4), 2vw, var(--h2));
                 font-weight: 800;
                 text-transform: uppercase;
+                margin-bottom: 0;
 
                 @media (width <= 768px) {
                     margin-top: 0.75em;
@@ -78,7 +101,7 @@
             }
 
             & .subtitle {
-                margin-block: -3em;
+                margin-block: 0;
 
                 @media (width <= 768px) {
                     margin-bottom: 0.05em;
