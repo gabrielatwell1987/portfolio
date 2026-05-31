@@ -45,6 +45,14 @@
             font-size: 0.8rem;
             inline-size: fit-content;
         }
+
+        & :global(h3) {
+            color: var(--clr-gray-700);
+            /* font-family: var(--thunder); */
+            /* font-size: clamp(var(--h6), 2vw, var(--h4)); */
+            /* font-weight: 700; */
+            /* margin-top: 1.5em; */
+        }
     }
 
     .go-back {
