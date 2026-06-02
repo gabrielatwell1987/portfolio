@@ -1,9 +1,3 @@
-article {
-    background-color: transparent;
-    box-shadow: none;
-    margin-top: 7em;
-}
-
 h2 {
     font-family: var(--thunder);
     font-size: clamp(var(--h5), 2.5vw, var(--h2));

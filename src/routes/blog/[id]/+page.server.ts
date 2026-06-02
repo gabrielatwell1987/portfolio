@@ -26,7 +26,7 @@ function extractTitle(content: string): string | undefined {
 export async function load({ params }) {
     const { id } = params;
 
-    // ── Dev mode: Vite-aware glob imports = HMR on .md edits ──
+    // dev - hmr
     if (import.meta.env.DEV) {
         const modules = import.meta.glob('/src/content/posts/*.md', {
             query: '?raw',
@@ -52,7 +52,7 @@ export async function load({ params }) {
         };
     }
 
-    // ── Production: Go API with local filesystem fallback ──
+    // prod - api
     let rawContent: string | null = null;
 
     try {

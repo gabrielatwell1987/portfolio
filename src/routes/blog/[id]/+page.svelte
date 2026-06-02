@@ -13,20 +13,21 @@
     );
 </script>
 
-<section>
-    <div class="content">{@html renderedHtml}</div>
+<section class="blog-post">
+    <div class="post-content">{@html renderedHtml}</div>
 </section>
 
 <a class="go-back" href="/blog">go back</a>
 
 <style>
-    section {
-        max-width: 720px;
+    .blog-post {
+        max-width: 60vw;
         margin: 5em auto;
         padding: 2em;
     }
 
-    .content {
+    .post-content {
+        inline-size: 100%;
         line-height: 1.7;
 
         & :global(pre code) {
@@ -48,10 +49,6 @@
 
         & :global(h3) {
             color: var(--clr-gray-700);
-            /* font-family: var(--thunder); */
-            /* font-size: clamp(var(--h6), 2vw, var(--h4)); */
-            /* font-weight: 700; */
-            /* margin-top: 1.5em; */
         }
     }
 
