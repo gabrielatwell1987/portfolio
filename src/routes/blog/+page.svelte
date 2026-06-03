@@ -11,7 +11,7 @@
 </h1>
 
 <div class="post-grid">
-    {#each posts as post (post.id)}
+    {#each posts as post, index (post.id)}
         <section class="complete-post">
             {#if post.image}
                 <a href="/blog/{post.id}">
@@ -19,9 +19,12 @@
                 </a>
             {/if}
 
-            <h2 class="title">
-                <a href="/blog/{post.id}">{post.title}</a>
-            </h2>
+            <div class="title-wrapper">
+                <p class="post-index">{index + 1}</p>
+                <h2 class="title">
+                    <a href="/blog/{post.id}">{post.title}</a>
+                </h2>
+            </div>
 
             <p class="subtitle">{post.subtitle}</p>
         </section>
@@ -93,6 +96,7 @@
             align-items: center;
             gap: 0.05em;
             padding: 0;
+            position: relative;
 
             & .title {
                 font-family: var(--thunder);
@@ -103,6 +107,27 @@
 
                 @media (width <= 768px) {
                     margin-top: 0.75em;
+                }
+            }
+
+            & .post-index {
+                position: absolute;
+                inset: 0;
+                transform: translateY(32%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                pointer-events: none;
+                margin: 0;
+
+                font-family: var(--bronova-bold);
+                font-size: clamp(5rem, 7vw, 8rem);
+                color: var(--clr-light-400);
+                opacity: 0.1;
+
+                @media (width <= 768px) {
+                    /* font-size: clamp(3rem, 10vw, 5rem); */
+                    transform: translateY(38%);
                 }
             }
 
