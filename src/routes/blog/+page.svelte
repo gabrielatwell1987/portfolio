@@ -120,7 +120,7 @@
                 pointer-events: none;
                 margin: 0;
 
-                font-family: var(--bronova-bold);
+                font-family: var(--ultra);
                 font-size: clamp(5rem, 7vw, 8rem);
                 color: var(--clr-light-400);
                 opacity: 0.1;
