@@ -33,6 +33,7 @@
             <NavLink
                 href="/about"
                 title="About"
+                index={0}
                 viewTransitionName="about-heading"
             />
         </li>
@@ -40,14 +41,15 @@
             <NavLink
                 href="/projects"
                 title="Builds"
+                index={1}
                 viewTransitionName="build-heading"
-                reverseUnderline
             />
         </li>
         <li>
             <NavLink
                 href="/learn"
                 title="Learn"
+                index={2}
                 viewTransitionName="learn-heading"
             />
         </li>
@@ -55,6 +57,7 @@
             <NavLink
                 href="/blog"
                 title="Three.js"
+                index={3}
                 viewTransitionName="three-heading"
             />
         </li>

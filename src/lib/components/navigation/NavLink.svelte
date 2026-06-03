@@ -5,15 +5,15 @@
     interface Props {
         href: string;
         title: string;
+        index?: number;
         onclick?: (event: MouseEvent) => void;
         viewTransitionName?: string;
-        reverseUnderline?: boolean;
     }
     let {
         href,
         title,
+        index = 0,
         viewTransitionName = undefined,
-        reverseUnderline = false,
         onclick,
     }: Props = $props();
 
@@ -25,6 +25,7 @@
     let shouldTransition = $derived(
         viewTransitionName && $page.url.pathname !== href,
     );
+    let isReverse = $derived(index % 2 === 1);
 
     async function handleClick(event: MouseEvent) {
         await playHoverSound();
@@ -32,10 +33,7 @@
     }
 </script>
 
-<a
-    class={`nav-link ${reverseUnderline ? 'reverse-underline' : ''}`}
-    {href}
-    onclick={handleClick}
+<a class="nav-link" {href} onclick={handleClick} data-reverse={isReverse}
     ><span
         style={shouldTransition
             ? `view-transition-name: ${viewTransitionName};`
@@ -102,7 +100,7 @@
             will-change: transform;
         }
 
-        &.reverse-underline::after {
+        &[data-reverse='true']::after {
             transform-origin: right center;
         }
 
