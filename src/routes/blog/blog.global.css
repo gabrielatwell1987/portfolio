@@ -8,3 +8,21 @@ pre,
 code {
     --code-background-color: var(--clr-dark-500);
 }
+
+.geometry-grid {
+    column-count: 3;
+    column-gap: 1.5em;
+    margin-bottom: 2em;
+
+    @media (max-width: 768px) {
+        column-count: 1;
+    }
+}
+
+a {
+    font-weight: 700;
+}
+
+.post-content ul li {
+    list-style-type: circle;
+}

@@ -21,9 +21,14 @@
 
 <style>
     .blog-post {
-        max-width: 60vw;
+        max-inline-size: 60vw;
         margin: 5em auto;
         padding: 2em;
+
+        @media (width <= 768px) {
+            max-inline-size: 100vw;
+            margin: 2em auto;
+        }
     }
 
     .post-content {
@@ -54,10 +59,11 @@
 
     .go-back {
         text-shadow: none;
+        text-decoration: none;
         color: var(--clr-blue-300);
         font-family: var(--bronova);
         font-size: clamp(var(--sm), 1.52vw, var(--h2));
-        font-weight: 600;
+        font-weight: 500;
         inline-size: fit-content;
         display: block;
         text-align: center;
