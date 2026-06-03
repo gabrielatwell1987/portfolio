@@ -113,7 +113,7 @@
             & .post-index {
                 position: absolute;
                 inset: 0;
-                transform: translateY(32%);
+                transform: translateY(29%);
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -126,8 +126,7 @@
                 opacity: 0.1;
 
                 @media (width <= 768px) {
-                    /* font-size: clamp(3rem, 10vw, 5rem); */
-                    transform: translateY(38%);
+                    transform: translateY(37%);
                 }
             }
 
