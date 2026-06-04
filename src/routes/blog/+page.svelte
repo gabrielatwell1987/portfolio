@@ -122,8 +122,18 @@
 
                 font-family: var(--ultra);
                 font-size: clamp(5rem, 7vw, 8rem);
-                color: var(--clr-light-400);
-                opacity: 0.1;
+                color: var(--clr-dark-500);
+                text-shadow:
+                    0 0 1px var(--clr-dark-500),
+                    -1px -1px 0 var(--clr-light-500),
+                    1px -1px 0 var(--clr-light-500),
+                    -1px 1px 0 var(--clr-light-500),
+                    1px 1px 0 var(--clr-light-500),
+                    -1px 0 0 var(--clr-light-500),
+                    1px 0 0 var(--clr-light-500),
+                    0 -1px 0 var(--clr-light-500),
+                    0 1px 0 var(--clr-light-500);
+                opacity: 0.125;
 
                 @media (width <= 768px) {
                     transform: translateY(37%);
