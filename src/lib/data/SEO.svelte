@@ -31,7 +31,7 @@
         baseUrl =
             origin.includes('localhost') || origin.includes('127.0.0.1')
                 ? origin
-                : 'https://www.gabrielatwell.com';
+                : 'https://atwell.dev';
 
         // Set canonical URL
         const normalizedPath =

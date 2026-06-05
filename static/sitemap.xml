@@ -6,67 +6,67 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://www.gabrielatwell.com/</loc>
+  <loc>https://atwell.dev/</loc>
   <lastmod>2025-01-06T00:00:00+00:00</lastmod>
   <priority>1.00</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>https://www.gabrielatwell.com/landing</loc>
-  <lastmod>2025-01-06T00:00:00+00:00</lastmod>
-  <priority>0.90</priority>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>https://www.gabrielatwell.com/about</loc>
+  <loc>https://atwell.dev/blog</loc>
   <lastmod>2025-01-06T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://www.gabrielatwell.com/projects</loc>
+  <loc>https://atwell.dev/about</loc>
+  <lastmod>2025-01-06T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://atwell.dev/projects</loc>
   <lastmod>2025-01-06T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>https://www.gabrielatwell.com/learn</loc>
+  <loc>https://atwell.dev/learn</loc>
   <lastmod>2025-01-06T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://www.gabrielatwell.com/three.js</loc>
+  <loc>https://atwell.dev/three.js</loc>
   <lastmod>2025-01-06T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://www.gabrielatwell.com/hire</loc>
+  <loc>https://atwell.dev/hire</loc>
   <lastmod>2025-01-06T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://www.gabrielatwell.com/contact</loc>
+  <loc>https://atwell.dev/contact</loc>
   <lastmod>2024-09-03T22:33:15+00:00</lastmod>
   <priority>0.80</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://www.gabrielatwell.com/learn/greensock</loc>
-  <lastmod>2024-09-03T22:33:15+00:00</lastmod>
-  <priority>0.64</priority>
-  <changefreq>monthly</changefreq>
-</url>
-<url>
-  <loc>https://www.gabrielatwell.com/learn/sveltekit</loc>
+  <loc>https://atwell.dev/learn/greensock</loc>
   <lastmod>2024-09-03T22:33:15+00:00</lastmod>
   <priority>0.64</priority>
   <changefreq>monthly</changefreq>
 </url>
 <url>
-  <loc>https://www.gabrielatwell.com/learn/posts</loc>
+  <loc>https://atwell.dev/learn/sveltekit</loc>
+  <lastmod>2024-09-03T22:33:15+00:00</lastmod>
+  <priority>0.64</priority>
+  <changefreq>monthly</changefreq>
+</url>
+<url>
+  <loc>https://atwell.dev/learn/posts</loc>
   <lastmod>2024-09-03T22:33:15+00:00</lastmod>
   <priority>0.64</priority>
   <changefreq>monthly</changefreq>

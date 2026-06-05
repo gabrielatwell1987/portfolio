@@ -5,7 +5,7 @@ Disallow: /.well-known/
 Disallow: /cgi-bin/
 
 # Sitemap location
-Sitemap: https://www.gabrielatwell.com/sitemap.xml
+Sitemap: https://atwell.dev/sitemap.xml
 
 # Crawl delay to prevent overloading
 Crawl-delay: 1
