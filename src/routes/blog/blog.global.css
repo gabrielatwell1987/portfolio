@@ -26,3 +26,8 @@ a {
 .post-content ul li {
     list-style-type: circle;
 }
+
+.blog-post ::view-transition-group(*) {
+    animation-duration: 0.75s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

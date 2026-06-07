@@ -15,7 +15,12 @@
         <section class="complete-post">
             {#if post.image}
                 <a href="/blog/{post.id}">
-                    <img class="post-image" src={post.image} alt="" />
+                    <img
+                        class="post-image"
+                        src={post.image}
+                        alt=""
+                        style="view-transition-name: blog-image-{post.id};"
+                    />
                 </a>
             {/if}
 

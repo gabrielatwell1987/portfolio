@@ -6,11 +6,22 @@
 
     let { data }: { data: PageData } = $props();
 
-    let renderedHtml = $derived(
+    let sanitizedHtml = $derived(
         DOMPurify.sanitize(
             marked.parse(data.post.content, { async: false }) as string,
         ),
     );
+
+    let renderedHtml = $derived(
+        addHtmlTransitionName(sanitizedHtml, data.post.id),
+    );
+
+    function addHtmlTransitionName(html: string, postId: number): string {
+        return html.replace(
+            'img',
+            `img style="view-transition-name: blog-image-${postId};"`,
+        );
+    }
 </script>
 
 <section class="blog-post">

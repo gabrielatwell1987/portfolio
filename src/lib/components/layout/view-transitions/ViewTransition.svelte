@@ -24,7 +24,7 @@
 
     ::view-transition-old(root),
     ::view-transition-new(root) {
-        animation: none;
+        /* animation: none; */
         mix-blend-mode: normal;
     }
 </style>
