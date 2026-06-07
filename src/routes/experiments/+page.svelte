@@ -67,7 +67,7 @@
         },
         8: {
             load: () =>
-                import('$lib/components/experiments/text-intro/TextIntro.svelte'),
+                import('$lib/components/experiments/huge-text-intro/LetterIntro.svelte'),
         },
     };
 
