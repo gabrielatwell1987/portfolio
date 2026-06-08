@@ -82,6 +82,13 @@
             pointer-events: none;
             opacity: 1;
 
+            &:focus,
+            &:focus-within {
+                outline: 1px solid var(--clr-light-500);
+                background: transparent;
+                box-shadow: none;
+            }
+
             &:not(.has-width) {
                 inline-size: 100%;
             }

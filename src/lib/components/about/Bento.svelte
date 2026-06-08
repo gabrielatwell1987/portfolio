@@ -196,6 +196,17 @@
                         inline-size: 100%;
                     }
 
+                    & .bento-link {
+                        text-decoration: none;
+
+                        &:focus,
+                        &:focus-within {
+                            outline: 1px solid var(--clr-light-500);
+                            background: transparent;
+                            box-shadow: none;
+                        }
+                    }
+
                     & h2 {
                         font-family: var(--bronova-bold);
                         font-size: clamp(var(--h4), 3vw, var(--h2));
