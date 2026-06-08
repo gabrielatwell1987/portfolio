@@ -117,7 +117,7 @@
 
         display: none;
         opacity: 0;
-        transform: translateY(-5rem);
+        transform: translateY(5rem);
         transition: all 0.5s allow-discrete ease;
     }
 

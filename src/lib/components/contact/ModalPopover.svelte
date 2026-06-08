@@ -91,11 +91,11 @@
 <style>
     :root {
         --modal-transition:
-            opacity 0.3s ease-out, visibility 0.3s ease-out,
-            transform 0.3s ease-out;
+            opacity 0.3s ease-out, visibility 0.5s ease-out,
+            transform 0.75s ease-out;
         --modal-transition-mobile:
-            opacity 0.5s ease-out, visibility 0.5s ease-out,
-            transform 0.5s ease-out;
+            opacity 0.65s ease-out, visibility 0.75s ease-out,
+            transform 1.5s ease-out;
     }
 
     .contact-modal {
@@ -108,7 +108,7 @@
         justify-content: center;
         opacity: 0;
         visibility: hidden;
-        transform: scale(0.99);
+        transform: scale(0.97);
         transition: var(--modal-transition);
         background: none;
         z-index: 50;
