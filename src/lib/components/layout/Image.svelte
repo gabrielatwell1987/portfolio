@@ -7,6 +7,7 @@
         aspectRatio?: string;
         style?: string;
         class?: string;
+        viewTransitionName?: string;
     }
 
     let {
@@ -17,6 +18,7 @@
         aspectRatio,
         style,
         class: className,
+        viewTransitionName,
     }: Props = $props();
 
     let imageError = $state<boolean>(false);
@@ -40,9 +42,11 @@
         {width}
         class={className}
         height={computedHeight}
-        style="{aspectRatio ? `aspect-ratio: ${aspectRatio};` : ''}{style
-            ? ` ${style}`
-            : ''}"
+        style="{aspectRatio
+            ? `aspect-ratio: ${aspectRatio};`
+            : ''}{viewTransitionName
+            ? `view-transition-name: ${viewTransitionName};`
+            : ''}{style ? ` ${style}` : ''}"
         class:hidden={imageError}
         class:has-width={!!width}
         loading="lazy"

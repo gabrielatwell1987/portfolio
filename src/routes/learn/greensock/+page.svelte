@@ -34,6 +34,7 @@
                 width="50vw"
                 title="Greensock Animation Platform"
                 scaleY={2.6}
+                viewTransitionName="gsap-logo"
             />
         </div>
 

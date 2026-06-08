@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { goto } from '$app/navigation';
     import SEO from '$lib/data/SEO.svelte';
     import Image from '$lib/components/layout/Image.svelte';
     import LearnHeading from '$lib/components/learn/pages/LearnHeading.svelte';
@@ -36,7 +37,7 @@
             <button
                 class="learn-image"
                 onclick={() => {
-                    window.location.href = '/learn/greensock';
+                    goto('/learn/greensock');
                 }}
                 style="width: clamp(15em, 25vw, 30em);"
                 aria-label="greensock"
@@ -46,13 +47,14 @@
                     alt="greensock animation platform logo"
                     width="350"
                     aspectRatio="1/1"
+                    viewTransitionName="gsap-logo"
                 />
             </button>
 
             <button
                 class="learn-image"
                 onclick={() => {
-                    window.location.href = '/learn/sveltekit';
+                    goto('/learn/sveltekit');
                 }}
                 style="width: clamp(10em, 16.5vw, 30em);"
             >
@@ -61,12 +63,13 @@
                     alt="sveltekit web framework logo"
                     width="400"
                     aspectRatio="1/1"
+                    viewTransitionName="sveltekit-logo"
                 />
             </button>
 
             <button
                 onclick={() => {
-                    window.location.href = '/learn/posts';
+                    goto('/learn/posts');
                 }}
                 class="learn-image"
                 style="grid-column: 1/-1; width: clamp(18em, 40vw, 60em); justify-self: center;"
