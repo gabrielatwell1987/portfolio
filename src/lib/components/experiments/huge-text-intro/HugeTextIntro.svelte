@@ -3,10 +3,10 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
     let words = $state([
-        { text: 'My', dataText: 'and', active: false, done: true },
-        { text: 'name', dataText: 'i', active: false, done: true },
-        { text: 'is', dataText: 'am', active: false, done: true },
-        { text: 'gabe', dataText: 'cool', active: false, done: true },
+        { text: 'My', dataText: 'and', active: false, done: false },
+        { text: 'name', dataText: 'i', active: false, done: false },
+        { text: 'is', dataText: 'am', active: false, done: false },
+        { text: 'gabe', dataText: 'cool', active: false, done: false },
     ]);
     let introElement: HTMLElement | undefined = $state();
     let wordsWrapper: HTMLElement | undefined = $state();
@@ -28,13 +28,13 @@
 
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.set(subWords, { '--sub-scale': 0 });
+        gsap.set(subWords, { scale: 0, y: 20 });
 
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: wrapper,
-                start: 'top center-=70',
-                end: `+=${window.innerHeight * 2}`,
+                start: 'top center-=150',
+                end: `+=${window.innerHeight * 1.5}`,
                 scrub: true,
                 pin: true,
                 pinSpacing: true,
@@ -44,7 +44,8 @@
         tl.to(
             subWords,
             {
-                '--sub-scale': 1,
+                scale: 1,
+                opacity: 1,
                 stagger: 0.2,
                 duration: 1,
                 ease: 'back.out',
@@ -83,15 +84,18 @@
     </div>
 </section>
 
+<h2>scroll down 👇🏻</h2>
+
 <style>
     .title-intro {
         line-height: 0.88;
         letter-spacing: -0.045em;
         font-weight: 700;
         text-transform: uppercase;
-        color: var(--clr-light-500);
+        /* color: var(--clr-light-500); */
         margin-top: clamp(3em, 8.5vw, 10.5em);
         block-size: 250vh;
+        anchor-name: --text;
 
         & .words-wrapper {
             position: absolute;
@@ -118,6 +122,17 @@
 
             & .word-inner {
                 display: inline-block;
+                color: var(--clr-dark-200);
+                text-shadow:
+                    0 0 1px var(--clr-light-500),
+                    -3px -3px 0 var(--clr-success-500),
+                    3px -3px 0 var(--clr-success-500),
+                    -3px 3px 0 var(--clr-success-500),
+                    3px 3px 0 var(--clr-success-500),
+                    -3px 0 0 var(--clr-success-500),
+                    3px 0 0 var(--clr-success-500),
+                    0 -3px 0 var(--clr-success-500),
+                    0 3px 0 var(--clr-success-500);
             }
 
             & .sub-word {
@@ -127,8 +142,8 @@
                 display: grid;
                 place-items: center;
                 color: var(--clr-fail-500);
-                opacity: 0.6;
-                transform: translateY(20px) scale(var(--sub-scale, 0));
+                opacity: 0;
+                transform: translateY(20px) scale(0);
                 font-family: var(--ultra);
                 font-size: 4vw;
                 pointer-events: none;
@@ -138,8 +153,19 @@
             &:hover .sub-word,
             &.active .sub-word,
             &.done .sub-word {
-                transform: translateY(0) scale(var(--sub-scale, 1));
+                transform: translateY(0) scale(1);
             }
         }
+    }
+
+    h2 {
+        font-family: var(--thunder);
+        font-size: clamp(1.3rem, 2.5vw, 2.9rem);
+        text-align: center;
+
+        position: absolute;
+        position-anchor: --text;
+        top: calc(anchor(top) + 0.5em);
+        left: calc(anchor(center) - 3em);
     }
 </style>
