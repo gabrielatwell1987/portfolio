@@ -63,7 +63,11 @@
 <section class="animated-title">
     <h1 class="left-word">{title1}</h1>
     <span class="middle-word">{span}</span>
-    <h2 class="right-word" style="view-transition-name: {transitionName};">
+    <h2
+        class="right-word"
+        style:view-transition-name={transitionName}
+        style:view-transition-class="learn-heading"
+    >
         {title2}
     </h2>
 </section>
@@ -112,22 +116,22 @@
         }
     }
 
-    ::view-transition-old(learn-heading) {
+    ::view-transition-old(.learn-heading) {
         opacity: 0;
     }
 
-    ::view-transition-group(learn-heading) {
+    ::view-transition-group(.learn-heading) {
         animation-duration: var(--link-transition-duration);
         animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     @media (width <= 768px) {
-        ::view-transition-old(learn-heading) {
+        ::view-transition-old(.learn-heading) {
             animation: none;
             opacity: 1;
         }
 
-        ::view-transition-new(learn-heading) {
+        ::view-transition-new(.learn-heading) {
             animation: none;
         }
     }

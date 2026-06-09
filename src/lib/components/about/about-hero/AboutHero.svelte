@@ -77,8 +77,9 @@
     <AboutHeroParallax />
 
     <h1 id="title">
-        <span style="view-transition-name: {viewTransitionName || ''};"
-            >About</span
+        <span
+            style:view-transition-name={viewTransitionName}
+            style:view-transition-class="heading-transition">About</span
         >
         {title}
     </h1>
@@ -165,22 +166,22 @@
         }
     }
 
-    ::view-transition-old(about-heading) {
+    ::view-transition-old(.heading-transition) {
         opacity: 0;
     }
 
-    ::view-transition-group(about-heading) {
+    ::view-transition-group(.heading-transition) {
         animation-duration: var(--link-transition-duration);
         animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     @media (width <= 768px) {
-        ::view-transition-old(about-heading) {
+        ::view-transition-old(.heading-transition) {
             animation: none;
             opacity: 1;
         }
 
-        ::view-transition-new(about-heading) {
+        ::view-transition-new(.heading-transition) {
             animation: none;
         }
     }

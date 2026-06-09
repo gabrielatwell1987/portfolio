@@ -23,23 +23,24 @@
     style:--easing={easing}
     style:--blend-mode={blendMode}
     style:view-transition-name={name}
+    style:view-transition-class="scale-transition"
 >
     {@render children()}
 </div>
 
 <style>
-    :global(::view-transition-old(hero-image)),
-    :global(::view-transition-new(hero-image)) {
+    :global(::view-transition-old(.scale-transition)),
+    :global(::view-transition-new(.scale-transition)) {
         animation: none;
         mix-blend-mode: var(--blend-mode, normal);
     }
 
-    :global(::view-transition-old(hero-image)) {
-        animation: scale-out var(--duration, 0.75s) var(--easing, ease-ou) t
+    :global(::view-transition-old(.scale-transition)) {
+        animation: scale-out var(--duration, 0.75s) var(--easing, ease-out)
             forwards;
     }
 
-    :global(::view-transition-new(hero-image)) {
+    :global(::view-transition-new(.scale-transition)) {
         animation: scale-in var(--duration, 0.75s) var(--easing, ease-out)
             forwards;
     }

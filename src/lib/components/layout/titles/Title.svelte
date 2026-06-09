@@ -34,6 +34,7 @@
         const attrs =
             'class="title exclude-transition" id="title"' +
             ` style="view-transition-name: ${transitionName};"` +
+            'view-transition-class="slide-transition"' +
             ' aria-label="' +
             title +
             '"' +
@@ -63,6 +64,7 @@
             src={img}
             alt={title}
             style="width: {width}; view-transition-name: {transitionName};  transform: scaleY({scaleY});"
+            style:view-transition-class="slide-transition"
             loading="lazy"
         />
     {:else if svg}
@@ -71,7 +73,7 @@
     {:else}
         <div
             class="title-container"
-            style="view-transition-name: {transitionName};"
+            style="view-transition-name: {transitionName}; style:view-transition-class: slide-transition;"
         >
             <h1
                 class="text-title title-main exclude-transition"
@@ -185,7 +187,6 @@
             letter-spacing: normal;
             font-kerning: auto;
             color: initial;
-            view-transition-name: page-title;
 
             @media (width <= 768px) {
                 margin-bottom: -4em;
@@ -197,17 +198,17 @@
         }
     }
 
-    ::view-transition-old(page-title),
-    ::view-transition-new(page-title) {
+    ::view-transition-old(.slide-transition),
+    ::view-transition-new(.slide-transition) {
         animation: none;
         mix-blend-mode: normal;
     }
 
-    ::view-transition-old(page-title) {
+    ::view-transition-old(.slide-transition) {
         animation: slide-out var(--title-transition-duration) ease-out forwards;
     }
 
-    ::view-transition-new(page-title) {
+    ::view-transition-new(.slide-transition) {
         animation: slide-in var(--title-transition-duration) ease-out forwards;
     }
 
