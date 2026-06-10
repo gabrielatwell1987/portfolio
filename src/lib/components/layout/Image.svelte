@@ -4,6 +4,7 @@
         alt: string;
         width?: string;
         height?: string;
+        scaleY?: string;
         aspectRatio?: string;
         style?: string;
         class?: string;
@@ -15,6 +16,7 @@
         alt,
         width,
         height,
+        scaleY,
         aspectRatio,
         style,
         class: className,
@@ -33,6 +35,33 @@
         }
         return undefined;
     });
+
+    let inlineStyles = $derived.by(() => {
+        const parts: string[] = [];
+
+        if (aspectRatio) parts.push(`aspect-ratio: ${aspectRatio}`);
+        if (viewTransitionName)
+            parts.push(`view-transition-name: ${viewTransitionName}`);
+        if (scaleY) {
+            const value = isSmallScreen ? '1.3' : scaleY;
+            parts.push(`transform: scaleY(${value})`);
+        }
+        if (style) parts.push(style);
+
+        return parts.join('; ');
+    });
+
+    let isSmallScreen = $state<boolean>(false);
+
+    $effect(() => {
+        const mobileScreen = window.matchMedia('(width <= 768px)');
+        isSmallScreen = mobileScreen.matches;
+
+        const handler = (e: MediaQueryListEvent) => (isSmallScreen = e.matches);
+        mobileScreen.addEventListener('change', handler);
+
+        return () => mobileScreen.removeEventListener('change', handler);
+    });
 </script>
 
 <div class="image-container">
@@ -42,11 +71,7 @@
         {width}
         class={className}
         height={computedHeight}
-        style="{aspectRatio
-            ? `aspect-ratio: ${aspectRatio};`
-            : ''}{viewTransitionName
-            ? `view-transition-name: ${viewTransitionName};`
-            : ''}{style ? ` ${style}` : ''}"
+        style={inlineStyles}
         class:hidden={imageError}
         class:has-width={!!width}
         loading="lazy"

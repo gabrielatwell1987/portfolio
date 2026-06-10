@@ -42,7 +42,9 @@
                                     width="350"
                                     aspectRatio="1/1"
                                     class="learn_svg"
+                                    scaleY="3"
                                 />
+                                <div class="space"></div>
                             </div>
 
                             <h2>learn</h2>
@@ -186,6 +188,14 @@
 
                     & .bento-icons {
                         scale: 0.7;
+
+                        & .space {
+                            block-size: 5em;
+
+                            @media (width <= 768px) {
+                                block-size: 0;
+                            }
+                        }
                     }
 
                     & [data-position-center] {
