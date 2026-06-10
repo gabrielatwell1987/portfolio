@@ -8,22 +8,33 @@
         delay: number;
     }
 
-    let isLoading = $state<boolean>(false);
     let { loading, submit, href, delay }: Props = $props();
     let statusMessage = $state<string>('');
 
+    type ButtonState = 'idle' | 'sending' | 'done';
+    let currentState = $state<ButtonState>('idle');
+
+    let label = $derived.by(() => {
+        if (currentState === 'idle') return submit;
+        if (currentState === 'sending') return `${loading} `;
+        return '✓ done!';
+    });
+
     const handleSubmit = async (event: Event) => {
         event.preventDefault();
+        if (currentState !== 'idle') return;
 
-        isLoading = true;
+        currentState = 'sending';
         statusMessage = `Loading ${submit}...`;
 
         await new Promise((resolve) => setTimeout(resolve, delay));
 
-        isLoading = false;
+        currentState = 'done';
         statusMessage = `${submit} loaded successfully`;
 
         const screenWidth = window.innerWidth;
+
+        await new Promise((resolve) => setTimeout(resolve, 800));
 
         if (screenWidth <= 500) {
             window.location.href = href;
@@ -35,6 +46,27 @@
             statusMessage = '';
         }, 1000);
     };
+
+    function setState(newState: ButtonState) {
+        if (!document.startViewTransition) {
+            currentState = newState;
+        } else {
+            document.startViewTransition(() => {
+                currentState = newState;
+            });
+        }
+    }
+
+    $effect(() => {
+        if (currentState !== 'done') return;
+
+        const timer = setTimeout(() => {
+            setState('idle');
+            statusMessage = '';
+        }, 5000);
+
+        return () => clearTimeout(timer);
+    });
 </script>
 
 <A11yAnnouncer message={statusMessage} />
@@ -46,12 +78,13 @@
     rel="noopener noreferrer"
     aria-label="Visit {submit} (opens in new tab)"
     class="loading-button"
-    class:loading={isLoading}
+    class:sending={currentState === 'sending'}
+    class:done={currentState === 'done'}
     aria-live="polite"
 >
-    <span class="loading-text">{isLoading ? loading : submit}</span>
+    <span class="loading-text">{label}</span>
 
-    {#if isLoading}
+    {#if currentState === 'sending'}
         <div class="spinner"></div>
     {/if}
 </a>
@@ -105,11 +138,6 @@
 
         &:focus-visible {
             outline: 1px solid var(--clr-light-500);
-        }
-
-        &.loading {
-            cursor: not-allowed;
-            opacity: 0.75;
         }
 
         & .loading-text {
