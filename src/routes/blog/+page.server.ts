@@ -1,7 +1,6 @@
 import { readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
-
-const API_BASE = 'https://blog-backend-kgtm.onrender.com';
+import { fetchPostMd } from '$lib/data/blog/fetchMD.server';
 
 interface Post {
     id: number;
@@ -44,12 +43,8 @@ async function fetchContent(
     id: number,
     localPath: string,
 ): Promise<string | null> {
-    try {
-        const res = await fetch(`${API_BASE}/api/md/${id}`);
-        if (res.ok) return await res.text();
-    } catch {
-        // fall through to local
-    }
+    const md = await fetchPostMd(String(id));
+    if (md) return md;
 
     try {
         return readFileSync(localPath, 'utf-8');

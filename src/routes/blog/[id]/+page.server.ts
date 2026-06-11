@@ -1,8 +1,7 @@
 import { error } from '@sveltejs/kit';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-
-const API_BASE = 'https://blog-backend-kgtm.onrender.com';
+import { fetchPostMd } from '$lib/data/blog/fetchMD.server';
 
 function parseFrontmatter(file: string) {
     const match = file.match(/^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/);
@@ -52,15 +51,8 @@ export async function load({ params }) {
         };
     }
 
-    // prod - api
-    let rawContent: string | null = null;
-
-    try {
-        const res = await fetch(`${API_BASE}/api/md/${id}`);
-        if (res.ok) rawContent = await res.text();
-    } catch {
-        // fall through to local
-    }
+    // prod - api (with local fallback)
+    let rawContent: string | null = await fetchPostMd(id);
 
     if (!rawContent) {
         const filePath = join(
