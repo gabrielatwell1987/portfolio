@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { componentImportMap } from './componentImports';
     import Divider from '$lib/components/learn/Divider.svelte';
     import SEO from '$lib/data/SEO.svelte';
     import type { Component } from 'svelte';
@@ -14,30 +15,9 @@
     let SelectedComponent: ComponentType | null = $state(null);
 
     $effect(() => {
-        if (selectedComponent === 'PictureParticles') {
-            import('$lib/threejs/cursor/CursorImage.svelte').then(
-                (mod) => (SelectedComponent = mod.default),
-            );
-        } else if (selectedComponent === 'HeroCanvas') {
-            import('$lib/threejs/hero/HeroCanvas.svelte').then(
-                (mod) => (SelectedComponent = mod.default),
-            );
-        } else if (selectedComponent === 'Environment') {
-            import('$lib/threejs/environment/Environment.svelte').then(
-                (mod) => (SelectedComponent = mod.default),
-            );
-        } else if (selectedComponent === 'PostProcess') {
-            import('$lib/threejs/post-processing/PostProcess.svelte').then(
-                (mod) => (SelectedComponent = mod.default),
-            );
-        } else if (selectedComponent === 'Loader') {
-            import('$lib/threejs/loader/Loader.svelte').then(
-                (mod) => (SelectedComponent = mod.default),
-            );
-        } else if (selectedComponent === 'Shooting Game') {
-            import('$lib/threejs/shooter/GameScene.svelte').then(
-                (mod) => (SelectedComponent = mod.default),
-            );
+        const loader = componentImportMap[selectedComponent];
+        if (loader) {
+            loader().then((mod) => (SelectedComponent = mod.default));
         } else {
             SelectedComponent = null;
         }
