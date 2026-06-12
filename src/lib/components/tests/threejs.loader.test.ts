@@ -1,4 +1,13 @@
-import { describe, it, expect, vi, beforeAll, afterAll, beforeEach, afterEach } from 'vitest';
+import {
+    describe,
+    it,
+    expect,
+    vi,
+    beforeAll,
+    afterAll,
+    beforeEach,
+    afterEach,
+} from 'vitest';
 import { setupLoader } from '../../threejs/loader/threejs.svelte';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { Group } from 'three';
