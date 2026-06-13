@@ -9,6 +9,7 @@
         width?: string;
         svg?: string;
         viewTransitionName?: string;
+        viewTransitionClass?: string;
         scaleY?: number;
     }
 
@@ -19,6 +20,7 @@
         width,
         svg,
         viewTransitionName,
+        viewTransitionClass = 'slide-transition',
         scaleY = 1,
     }: Props = $props();
 
@@ -34,7 +36,7 @@
         const attrs =
             'class="title exclude-transition" id="title"' +
             ` style="view-transition-name: ${transitionName};"` +
-            'view-transition-class="slide-transition"' +
+            ` view-transition-class="${viewTransitionClass}"` +
             ' aria-label="' +
             title +
             '"' +
@@ -64,7 +66,7 @@
             src={img}
             alt={title}
             style="width: {width}; view-transition-name: {transitionName};  transform: scaleY({scaleY});"
-            style:view-transition-class="slide-transition"
+            style:view-transition-class={viewTransitionClass}
             loading="lazy"
         />
     {:else if svg}
@@ -73,7 +75,8 @@
     {:else}
         <div
             class="title-container"
-            style="view-transition-name: {transitionName}; style:view-transition-class: slide-transition;"
+            style="view-transition-name: {transitionName};
+            style:view-transition-class: {viewTransitionClass};"
         >
             <h1
                 class="text-title title-main exclude-transition"
@@ -198,18 +201,34 @@
         }
     }
 
-    ::view-transition-old(.slide-transition),
-    ::view-transition-new(.slide-transition) {
-        animation: none;
-        mix-blend-mode: normal;
-    }
+    :global {
+        ::view-transition-old(.slide-transition),
+        ::view-transition-new(.slide-transition) {
+            animation: none;
+            mix-blend-mode: normal;
+        }
 
-    ::view-transition-old(.slide-transition) {
-        animation: slide-out var(--title-transition-duration) ease-out forwards;
-    }
+        ::view-transition-old(.slide-transition) {
+            animation: slide-out var(--title-transition-duration) ease-out
+                forwards;
+        }
 
-    ::view-transition-new(.slide-transition) {
-        animation: slide-in var(--title-transition-duration) ease-out forwards;
+        ::view-transition-new(.slide-transition) {
+            animation: slide-in var(--title-transition-duration) ease-out
+                forwards;
+        }
+
+        ::view-transition-old(.sveltekit-logo-transition),
+        ::view-transition-new(.sveltekit-logo-transition) {
+            animation: none;
+            mix-blend-mode: normal;
+        }
+        ::view-transition-old(.sveltekit-logo-transition) {
+            animation: slide-out 50ms ease-out forwards;
+        }
+        ::view-transition-new(.sveltekit-logo-transition) {
+            animation: slide-in 100ms ease-out forwards;
+        }
     }
 
     @keyframes slide-out {

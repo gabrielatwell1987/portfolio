@@ -64,6 +64,7 @@
                     width="400"
                     aspectRatio="1/1"
                     viewTransitionName="sveltekit-logo"
+                    viewTransitionClass="sveltekit-logo-transition"
                 />
             </button>
 

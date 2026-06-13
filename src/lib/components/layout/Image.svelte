@@ -9,6 +9,7 @@
         style?: string;
         class?: string;
         viewTransitionName?: string;
+        viewTransitionClass?: string;
     }
 
     let {
@@ -21,10 +22,11 @@
         style,
         class: className,
         viewTransitionName,
+        viewTransitionClass,
     }: Props = $props();
 
     let imageError = $state<boolean>(false);
-
+    let imageElement = $state<HTMLImageElement | null>(null);
     let computedHeight = $derived.by(() => {
         if (height) return height;
         if (width && aspectRatio) {
@@ -62,10 +64,29 @@
 
         return () => mobileScreen.removeEventListener('change', handler);
     });
+
+    $effect(() => {
+        if (!imageElement) return;
+
+        if (viewTransitionClass) {
+            imageElement.style.setProperty(
+                'view-transition-class',
+                viewTransitionClass,
+            );
+            imageElement.setAttribute(
+                'view-transition-class',
+                viewTransitionClass,
+            );
+        } else {
+            imageElement.style.removeProperty('view-transition-class');
+            imageElement.removeAttribute('view-transition-class');
+        }
+    });
 </script>
 
 <div class="image-container">
     <img
+        bind:this={imageElement}
         {src}
         {alt}
         {width}

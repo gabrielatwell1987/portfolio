@@ -34,6 +34,7 @@
                 width="40vw"
                 title="SvelteKit Framework"
                 viewTransitionName="sveltekit-logo"
+                viewTransitionClass="sveltekit-logo-transition"
             />
         </div>
 
