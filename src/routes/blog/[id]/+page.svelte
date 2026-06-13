@@ -3,7 +3,7 @@
     import { marked } from 'marked';
     import DOMPurify from 'isomorphic-dompurify';
     import type { PageData } from './$types';
-    import Avatar2 from '$lib/components/about/FaceAvatar.svelte';
+    import Avatar2 from '$lib/components/blog/FaceAvatar.svelte';
 
     let { data }: { data: PageData } = $props();
 
