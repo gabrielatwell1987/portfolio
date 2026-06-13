@@ -5,6 +5,7 @@
         radius?: string;
         name?: string;
         center?: boolean;
+        scale?: string;
     }
 
     let {
@@ -13,11 +14,12 @@
         radius = '0 1vw 0 0',
         name = '',
         center = false,
+        scale = '1',
     }: Props = $props();
 </script>
 
-<section class="avatar" class:center>
-    <img {src} {alt} loading="lazy" style="border-radius: {radius}" />
+<section class="avatar" class:center style="transform: scale({scale});">
+    <img {src} {alt} loading="lazy" style="border-radius: {radius};" />
 
     {#if name}
         <h2 class="title">{name}</h2>
@@ -26,28 +28,10 @@
 
 <style>
     .avatar {
-        --size: clamp(2rem, 250px, 8rem);
+        --size: clamp(2rem, 15vw, 8rem);
         --head: calc(var(--size) * 0.25);
         --height-with-head: calc(var(--size) + var(--head));
         --border-width: calc(var(--size) * 0.015);
-        --mask-size: calc(var(--size) / 2 - var(--border-width));
-        --mask-image:
-            linear-gradient(
-                to bottom,
-                #000000 0%,
-                #000000 50%,
-                transparent 50%
-            ),
-            radial-gradient(
-                circle at center center,
-                #000000 0%,
-                #000000 var(--mask-size),
-                transparent var(--mask-size),
-                transparent 100%
-            );
-        --mask-repeat: no-repeat, no-repeat;
-        --mask-position:
-            center center, center calc(var(--head) / 2 + var(--border-width));
 
         inline-size: var(--size);
         block-size: var(--size);
@@ -59,31 +43,19 @@
         display: flex;
         align-items: end;
         position: relative;
+        overflow: hidden;
 
         &.center {
             margin-inline: auto;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            inline-size: 100%;
-            block-size: var(--height-with-head);
-            border-radius: 50%;
-            background-image: var(--mask-image);
-            display: none;
         }
 
         & img {
             width: 100%;
             height: var(--height-with-head);
             object-fit: cover;
-            mask-image: var(--mask-image);
-            mask-repeat: var(--mask-repeat);
-            mask-position: var(--mask-position);
-            mask-mode: alpha;
+            object-position: center 35%;
+            flex-shrink: 0;
+            display: block;
 
             anchor-name: --avatar;
         }

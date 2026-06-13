@@ -3,6 +3,7 @@
     import { marked } from 'marked';
     import DOMPurify from 'isomorphic-dompurify';
     import type { PageData } from './$types';
+    import Avatar2 from '$lib/components/about/FaceAvatar.svelte';
 
     let { data }: { data: PageData } = $props();
 
@@ -25,10 +26,16 @@
 </script>
 
 <section class="blog-post">
-    <div class="post-content">{@html renderedHtml}</div>
+    <div class="post-content">
+        {@html renderedHtml}
+    </div>
 </section>
 
 <a class="go-back" href="/blog">go back</a>
+
+<div class="avatar">
+    <Avatar2 name="gabe atwell" size="7.5em" />
+</div>
 
 <style>
     .blog-post {
@@ -80,11 +87,29 @@
         text-align: center;
         margin-inline: auto;
 
+        anchor-name: --back;
+
         &:focus,
         &:focus-visible {
             background-color: transparent;
             box-shadow: none;
             outline: 1px solid var(--clr-light-500);
+        }
+    }
+
+    .avatar {
+        margin-inline: auto;
+        inline-size: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 8em;
+
+        @media (width <= 990px) {
+            margin-top: 5.5em;
+        }
+        @media (width <= 768px) {
+            margin-top: 3em;
         }
     }
 </style>
