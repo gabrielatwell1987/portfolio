@@ -2,7 +2,15 @@
     import {
         type ContributionDay,
         type ContributionsData,
-        useContributionsGrid,
+        type MobileTooltip,
+        getCurrentDimensions,
+        getMonthPositions,
+        getTotalWidth,
+        DAYS,
+        DAY_INDICES,
+        getContributionLevel,
+        formatDate,
+        getContributionText,
     } from './contributions.svelte';
 
     let { contributions = $bindable<ContributionsData | null>(null) } =
@@ -11,7 +19,6 @@
     let weeks = $derived(contributions?.weeks ?? []);
     let yearRange = $derived.by(() => {
         if (weeks.length === 0) return '';
-
         const firstDate = weeks[0]?.contributionDays[0]?.date;
         const lastWeek = weeks[weeks.length - 1];
         const lastDate =
@@ -20,22 +27,141 @@
         if (!firstDate || !lastDate) return '';
         const startYear = firstDate.split('-')[0];
         const endYear = lastDate.split('-')[0];
-
         return startYear === endYear ? startYear : `${startYear}-${endYear}`;
     });
 
-    const grid = useContributionsGrid(() => weeks);
+    // ── Local reactive state ──
+    let isSmallContainer = $state(false);
+    let containerEl = $state<HTMLElement | null>(null);
+    let wrapperEl = $state<HTMLElement | null>(null);
+    let mobileTooltip = $state<MobileTooltip>({
+        visible: false,
+        x: 0,
+        y: 0,
+        content: '',
+        date: '',
+    });
+    let announcement = $state('');
+
+    // ── Derived ──
+    let dimensions = $derived(getCurrentDimensions(isSmallContainer));
+    let monthPositions = $derived(getMonthPositions(weeks, isSmallContainer));
+    let totalWidth = $derived(getTotalWidth(weeks, isSmallContainer));
+
+    // ── Handlers (closures over reactive state) ──
+    function handleDayTouch(event: Event, day: ContributionDay) {
+        announcement = `${day.contributionCount} ${getContributionText(day.contributionCount)} on ${formatDate(day.date)}`;
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        const rect = (event.target as HTMLElement).getBoundingClientRect();
+        const containerRect = containerEl!.getBoundingClientRect();
+
+        const x = rect.left + rect.width / 2 - containerRect.left;
+        const y = rect.top - containerRect.top - 40;
+
+        mobileTooltip = {
+            visible: true,
+            x: Math.max(50, Math.min(x, containerRect.width - 50)),
+            y: Math.max(10, y),
+            content: `${day.contributionCount} ${getContributionText(day.contributionCount)}`,
+            date: formatDate(day.date),
+        };
+
+        setTimeout(() => {
+            if (mobileTooltip.visible) {
+                mobileTooltip = { ...mobileTooltip, visible: false };
+            }
+        }, 3000);
+    }
+
+    function handleDayKeydown(
+        event: KeyboardEvent,
+        day: ContributionDay,
+        weekIndex: number,
+        dayIndex: number,
+    ) {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            handleDayTouch(event, day);
+            return;
+        }
+
+        if (
+            !['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(
+                event.key,
+            )
+        )
+            return;
+        event.preventDefault();
+
+        const moves: Record<string, [number, number]> = {
+            ArrowLeft: [-1, 0],
+            ArrowRight: [1, 0],
+            ArrowUp: [0, -1],
+            ArrowDown: [0, 1],
+        };
+        const [dw, dd] = moves[event.key];
+        const maxWeek = weeks.length - 1;
+        const newWeek = Math.max(0, Math.min(maxWeek, weekIndex + dw));
+        const newDay = Math.max(0, Math.min(6, dayIndex + dd));
+
+        const el = document.querySelector(
+            `[data-week="${newWeek}"][data-day="${newDay}"]`,
+        ) as HTMLElement;
+        el?.focus();
+    }
+
     const dayTooltip = (day: ContributionDay) =>
-        `${day.contributionCount} ${grid.getContributionText(day.contributionCount)} on ${grid.formatDate(day.date)}`;
+        `${day.contributionCount} ${getContributionText(day.contributionCount)} on ${formatDate(day.date)}`;
+
+    // ── Effects ──
+
+    $effect(() => {
+        if (typeof window === 'undefined' || !containerEl) return;
+        isSmallContainer = containerEl.clientWidth <= 600;
+        const ro = new ResizeObserver(([entry]) => {
+            isSmallContainer = entry.contentRect.width <= 600;
+        });
+        ro.observe(containerEl);
+        return () => ro.disconnect();
+    });
+
+    $effect(() => {
+        if (typeof window === 'undefined' || !isSmallContainer) return;
+        const handler = (e: Event) => {
+            if (!mobileTooltip.visible) return;
+            const target = e.target as HTMLElement;
+            if (
+                target.closest('.mobile-tooltip') ||
+                target.classList.contains('contribution-day')
+            )
+                return;
+            mobileTooltip = { ...mobileTooltip, visible: false };
+        };
+        document.addEventListener('click', handler);
+        return () => document.removeEventListener('click', handler);
+    });
+
+    $effect(() => {
+        if (typeof window === 'undefined' || !isSmallContainer || !wrapperEl)
+            return;
+        const el = wrapperEl;
+        const timer = setTimeout(() => {
+            el.scrollLeft = 0;
+        }, 100);
+        return () => clearTimeout(timer);
+    });
 </script>
 
 <section
     class="github-contributions"
     aria-label="GitHub Contributions Calendar"
-    bind:this={grid.containerEl}
+    bind:this={containerEl}
 >
     <div class="visually-hidden" aria-live="polite" aria-atomic="true">
-        {grid.announcement}
+        {announcement}
     </div>
 
     <header class="contributions-header">
@@ -50,33 +176,31 @@
 
         <p class="total-contributions">
             {totalContributions}
-            {grid.getContributionText(totalContributions)} this year
+            {getContributionText(totalContributions)} this year
         </p>
     </header>
 
     {#if weeks.length > 0}
         <div class="calendar-container">
-            {#if grid.mobileTooltip.visible && grid.isSmallContainer}
+            {#if mobileTooltip.visible && isSmallContainer}
                 <div
                     class="mobile-tooltip"
-                    style="left: {grid.mobileTooltip.x}px; top: {grid
-                        .mobileTooltip.y}px;"
+                    style="left: {mobileTooltip.x}px; top: {mobileTooltip.y}px;"
                     role="tooltip"
                     aria-live="polite"
                     id="mobile-tooltip"
                 >
                     <div class="tooltip-content">
-                        {grid.mobileTooltip.content}
+                        {mobileTooltip.content}
                     </div>
-                    <div class="tooltip-date">{grid.mobileTooltip.date}</div>
+                    <div class="tooltip-date">{mobileTooltip.date}</div>
                 </div>
             {/if}
 
-            <div class="calendar-svg-wrapper" bind:this={grid.wrapperEl}>
+            <div class="calendar-svg-wrapper" bind:this={wrapperEl}>
                 <svg
-                    width={grid.totalWidth}
-                    height={grid.dimensions.monthLabelHeight +
-                        grid.dimensions.gridHeight}
+                    width={totalWidth}
+                    height={dimensions.monthLabelHeight + dimensions.gridHeight}
                     class="contributions-svg"
                     role="img"
                     aria-labelledby="contributions-title"
@@ -94,10 +218,10 @@
 
                     <!-- Month labels -->
                     <g role="group" aria-label="Month labels">
-                        {#each grid.monthPositions as month}
+                        {#each monthPositions as month}
                             <text
                                 x={month.x}
-                                y={grid.isSmallContainer ? 12 : 15}
+                                y={isSmallContainer ? 12 : 15}
                                 class="month-label"
                                 text-anchor="start"
                             >
@@ -108,14 +232,14 @@
 
                     <!-- Day labels -->
                     <g role="group" aria-label="Day labels">
-                        {#each grid.DAYS as day, i}
+                        {#each DAYS as day, i}
                             <text
-                                x={grid.dimensions.dayLabelWidth - 5}
-                                y={grid.dimensions.monthLabelHeight +
-                                    grid.DAY_INDICES[i] *
-                                        (grid.dimensions.cellSize +
-                                            grid.dimensions.cellGap) +
-                                    grid.dimensions.cellSize / 2 +
+                                x={dimensions.dayLabelWidth - 5}
+                                y={dimensions.monthLabelHeight +
+                                    DAY_INDICES[i] *
+                                        (dimensions.cellSize +
+                                            dimensions.cellGap) +
+                                    dimensions.cellSize / 2 +
                                     4}
                                 class="day-label"
                                 text-anchor="end"
@@ -130,27 +254,29 @@
                         {#each weeks as week, weekIndex}
                             {#each week.contributionDays as day, dayIndex}
                                 <rect
-                                    x={grid.dimensions.dayLabelWidth +
+                                    x={dimensions.dayLabelWidth +
                                         weekIndex *
-                                            (grid.dimensions.cellSize +
-                                                grid.dimensions.cellGap)}
-                                    y={grid.dimensions.monthLabelHeight +
+                                            (dimensions.cellSize +
+                                                dimensions.cellGap)}
+                                    y={dimensions.monthLabelHeight +
                                         dayIndex *
-                                            (grid.dimensions.cellSize +
-                                                grid.dimensions.cellGap)}
-                                    width={grid.dimensions.cellSize}
-                                    height={grid.dimensions.cellSize}
-                                    rx={grid.isSmallContainer ? '1' : '2'}
-                                    class="contribution-day {grid.getContributionLevel(
+                                            (dimensions.cellSize +
+                                                dimensions.cellGap)}
+                                    width={dimensions.cellSize}
+                                    height={dimensions.cellSize}
+                                    rx={isSmallContainer ? '1' : '2'}
+                                    class="contribution-day {getContributionLevel(
                                         day.contributionCount,
                                     )}"
                                     data-count={day.contributionCount}
                                     data-date={day.date}
                                     data-week={weekIndex}
                                     data-day={dayIndex}
-                                    onclick={(e) => grid.handleDayTouch(e, day)}
+                                    onclick={(e) => handleDayTouch(e, day)}
+                                    onpointerdown={(e) =>
+                                        handleDayTouch(e, day)}
                                     onkeydown={(e) =>
-                                        grid.handleDayKeydown(
+                                        handleDayKeydown(
                                             e,
                                             day,
                                             weekIndex,
@@ -158,9 +284,9 @@
                                         )}
                                     role="button"
                                     tabindex="0"
-                                    aria-label="{day.contributionCount} {grid.getContributionText(
+                                    aria-label="{day.contributionCount} {getContributionText(
                                         day.contributionCount,
-                                    )} on {grid.formatDate(day.date)}"
+                                    )} on {formatDate(day.date)}"
                                     aria-describedby="legend-desc"
                                 >
                                     <title>{dayTooltip(day)}</title>
