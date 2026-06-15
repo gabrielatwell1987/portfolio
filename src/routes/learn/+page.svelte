@@ -76,8 +76,8 @@
                 style="grid-column: 1/-1; width: clamp(18em, 40vw, 60em); justify-self: center;"
             >
                 <Image
-                    src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/animation.webp"
-                    alt="A logo that says web animation techniques."
+                    src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/advanced-web.webp"
+                    alt="A logo that says advanced web design"
                     width="600"
                     aspectRatio="16/9"
                 />
