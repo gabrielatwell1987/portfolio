@@ -11,6 +11,11 @@
         getContributionLevel,
         formatDate,
         getContributionText,
+        clampTooltipPosition,
+        useResizeObserver,
+        useClickOutsideTooltip,
+        useScrollReset,
+        useTooltipViewportClamp,
     } from './contributions.svelte';
 
     let { contributions = $bindable<ContributionsData | null>(null) } =
@@ -30,10 +35,10 @@
         return startYear === endYear ? startYear : `${startYear}-${endYear}`;
     });
 
-    // ── Local reactive state ──
     let isSmallContainer = $state(false);
     let containerEl = $state<HTMLElement | null>(null);
     let wrapperEl = $state<HTMLElement | null>(null);
+    let calendarEl = $state<HTMLElement | null>(null);
     let mobileTooltip = $state<MobileTooltip>({
         visible: false,
         x: 0,
@@ -43,12 +48,10 @@
     });
     let announcement = $state('');
 
-    // ── Derived ──
     let dimensions = $derived(getCurrentDimensions(isSmallContainer));
     let monthPositions = $derived(getMonthPositions(weeks, isSmallContainer));
     let totalWidth = $derived(getTotalWidth(weeks, isSmallContainer));
 
-    // ── Handlers (closures over reactive state) ──
     function handleDayTouch(event: Event, day: ContributionDay) {
         announcement = `${day.contributionCount} ${getContributionText(day.contributionCount)} on ${formatDate(day.date)}`;
 
@@ -57,14 +60,15 @@
 
         const rect = (event.target as HTMLElement).getBoundingClientRect();
         const containerRect = containerEl!.getBoundingClientRect();
+        const calRect = calendarEl!.getBoundingClientRect();
 
-        const x = rect.left + rect.width / 2 - containerRect.left;
-        const y = rect.top - containerRect.top - 40;
+        const x = rect.left + rect.width / 2 - calRect.left;
+        const y = rect.bottom - calRect.top + 8;
+        const pos = clampTooltipPosition(x, y, calRect.width);
 
         mobileTooltip = {
             visible: true,
-            x: Math.max(50, Math.min(x, containerRect.width - 50)),
-            y: Math.max(10, y),
+            ...pos,
             content: `${day.contributionCount} ${getContributionText(day.contributionCount)}`,
             date: formatDate(day.date),
         };
@@ -116,43 +120,27 @@
     const dayTooltip = (day: ContributionDay) =>
         `${day.contributionCount} ${getContributionText(day.contributionCount)} on ${formatDate(day.date)}`;
 
-    // ── Effects ──
+    useResizeObserver(
+        () => containerEl,
+        (v) => (isSmallContainer = v),
+    );
 
-    $effect(() => {
-        if (typeof window === 'undefined' || !containerEl) return;
-        isSmallContainer = containerEl.clientWidth <= 600;
-        const ro = new ResizeObserver(([entry]) => {
-            isSmallContainer = entry.contentRect.width <= 600;
-        });
-        ro.observe(containerEl);
-        return () => ro.disconnect();
-    });
+    useClickOutsideTooltip(
+        () => isSmallContainer,
+        () => mobileTooltip.visible,
+        () => (mobileTooltip = { ...mobileTooltip, visible: false }),
+    );
 
-    $effect(() => {
-        if (typeof window === 'undefined' || !isSmallContainer) return;
-        const handler = (e: Event) => {
-            if (!mobileTooltip.visible) return;
-            const target = e.target as HTMLElement;
-            if (
-                target.closest('.mobile-tooltip') ||
-                target.classList.contains('contribution-day')
-            )
-                return;
-            mobileTooltip = { ...mobileTooltip, visible: false };
-        };
-        document.addEventListener('click', handler);
-        return () => document.removeEventListener('click', handler);
-    });
+    useScrollReset(
+        () => isSmallContainer,
+        () => wrapperEl,
+    );
 
-    $effect(() => {
-        if (typeof window === 'undefined' || !isSmallContainer || !wrapperEl)
-            return;
-        const el = wrapperEl;
-        const timer = setTimeout(() => {
-            el.scrollLeft = 0;
-        }, 100);
-        return () => clearTimeout(timer);
-    });
+    useTooltipViewportClamp(
+        () => calendarEl,
+        () => mobileTooltip,
+        (x, y) => (mobileTooltip = { ...mobileTooltip, x, y }),
+    );
 </script>
 
 <section
@@ -181,7 +169,7 @@
     </header>
 
     {#if weeks.length > 0}
-        <div class="calendar-container">
+        <div class="calendar-container" bind:this={calendarEl}>
             {#if mobileTooltip.visible && isSmallContainer}
                 <div
                     class="mobile-tooltip"
