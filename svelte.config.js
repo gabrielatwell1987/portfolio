@@ -53,6 +53,11 @@ const config = {
             ],
         },
     },
+    compilerOptions: {
+        experimental: {
+            async: true,
+        },
+    },
     vitePlugin: {
         inspector: {
             toggleButtonPos: 'bottom-left',
