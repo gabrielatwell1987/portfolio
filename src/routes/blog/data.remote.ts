@@ -1,4 +1,4 @@
-import { query } from '$app/server';
+import { prerender } from '$app/server';
 import * as v from 'valibot';
 import { readFileSync, readdirSync } from 'fs';
 import { join } from 'path';
@@ -41,7 +41,7 @@ function extractImage(content: string): string | undefined {
     return match?.[1];
 }
 
-export const getPosts = query(async (): Promise<Post[]> => {
+export const getPosts = prerender(async (): Promise<Post[]> => {
     // dev - hmr
     if (import.meta.env.DEV) {
         const modules = import.meta.glob('/src/content/posts/*.md', {
@@ -117,47 +117,50 @@ export const getPosts = query(async (): Promise<Post[]> => {
     return posts; // ✅ was return { posts };
 });
 
-export const getPost = query(v.number(), async (id): Promise<Post | null> => {
-    // dev - hmr
-    if (import.meta.env.DEV) {
-        const modules = import.meta.glob('/src/content/posts/*.md', {
-            query: '?raw',
-            import: 'default',
-            eager: true,
-        });
+export const getPost = prerender(
+    v.number(),
+    async (id): Promise<Post | null> => {
+        // dev - hmr
+        if (import.meta.env.DEV) {
+            const modules = import.meta.glob('/src/content/posts/*.md', {
+                query: '?raw',
+                import: 'default',
+                eager: true,
+            });
 
-        const filePath = Object.keys(modules).find((p) =>
-            p.endsWith(`/${id}.md`),
-        );
-        if (!filePath) return null;
+            const filePath = Object.keys(modules).find((p) =>
+                p.endsWith(`/${id}.md`),
+            );
+            if (!filePath) return null;
 
-        const rawContent = modules[filePath] as string;
+            const rawContent = modules[filePath] as string;
+            const { data, content } = parseFrontmatter(rawContent);
+            const title = data.title ?? extractTitle(content) ?? `Post ${id}`;
+
+            return { id: Number(id), title, content };
+        }
+
+        // prod - api (with local fallback)
+        let rawContent: string | null = await fetchPostMd(String(id));
+
+        if (!rawContent) {
+            const filePath = join(
+                process.cwd(),
+                'src',
+                'content',
+                'posts',
+                `${id}.md`,
+            );
+            try {
+                rawContent = readFileSync(filePath, 'utf-8');
+            } catch {
+                return null;
+            }
+        }
+
         const { data, content } = parseFrontmatter(rawContent);
         const title = data.title ?? extractTitle(content) ?? `Post ${id}`;
 
         return { id: Number(id), title, content };
-    }
-
-    // prod - api (with local fallback)
-    let rawContent: string | null = await fetchPostMd(String(id));
-
-    if (!rawContent) {
-        const filePath = join(
-            process.cwd(),
-            'src',
-            'content',
-            'posts',
-            `${id}.md`,
-        );
-        try {
-            rawContent = readFileSync(filePath, 'utf-8');
-        } catch {
-            return null;
-        }
-    }
-
-    const { data, content } = parseFrontmatter(rawContent);
-    const title = data.title ?? extractTitle(content) ?? `Post ${id}`;
-
-    return { id: Number(id), title, content };
-});
+    },
+);
