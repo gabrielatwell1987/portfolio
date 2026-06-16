@@ -1,8 +1,8 @@
-import { prerender } from '$app/server';
+import { query } from '$app/server';
 import { generateFallbackData } from '$lib/components/projects/contributions/githubContributions';
 import { GITHUB_TOKEN, GITHUB_USERNAME } from '$env/static/private';
 
-export const getContributions = prerender(async () => {
+export const getContributions = query(async () => {
     try {
         const query = `
             query($username: String!, $from: DateTime!, $to: DateTime!) {
