@@ -9,9 +9,9 @@
     import SEO from '$lib/data/SEO.svelte';
     import GithubContributions from '$lib/components/projects/contributions/GithubContributions.svelte';
     import Heading from '$lib/components/layout/titles/Heading.svelte';
+    import { getContributions } from './data.remote';
 
-    let { data } = $props();
-    let contributions = $derived(data.contributions);
+    let contributions = await getContributions();
 
     let ProjectComponent:
         | typeof import('$lib/components/projects/Project.svelte').default
