@@ -50,6 +50,7 @@ const config = {
                 '/learn/posts/drawing-app',
                 '/experiments',
                 '/blog',
+                '/projects',
             ],
         },
     },
