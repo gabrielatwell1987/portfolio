@@ -1,9 +1,7 @@
 <script lang="ts">
-    import './blog.global.css';
-    import type { PageData } from './$types';
+    import { getPosts } from './data.remote';
 
-    let { data } = $props<{ data: PageData }>();
-    let posts = $derived(data.posts);
+    let posts = await getPosts();
 </script>
 
 <h1 class="blog-title">

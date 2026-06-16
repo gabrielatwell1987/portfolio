@@ -1,20 +1,22 @@
 <script lang="ts">
     import '../blog.global.css';
+    import { getPost } from '../data.remote';
     import { marked } from 'marked';
     import DOMPurify from 'isomorphic-dompurify';
-    import type { PageData } from './$types';
     import Avatar2 from '$lib/components/blog/FaceAvatar.svelte';
 
-    let { data }: { data: PageData } = $props();
+    let { params } = $props();
+    let post = $derived(await getPost(Number(params.id)));
 
     let sanitizedHtml = $derived(
-        DOMPurify.sanitize(
-            marked.parse(data.post.content, { async: false }) as string,
-        ),
+        post?.content &&
+            DOMPurify.sanitize(
+                marked.parse(post.content, { async: false }) as string,
+            ),
     );
 
     let renderedHtml = $derived(
-        addHtmlTransitionName(sanitizedHtml, data.post.id),
+        sanitizedHtml && addHtmlTransitionName(sanitizedHtml, post!.id),
     );
 
     function addHtmlTransitionName(html: string, postId: number): string {
@@ -25,17 +27,21 @@
     }
 </script>
 
-<section class="blog-post">
-    <div class="post-content">
-        {@html renderedHtml}
+{#if post}
+    <section class="blog-post">
+        <div class="post-content">
+            {@html renderedHtml}
+        </div>
+    </section>
+
+    <a class="go-back" href="/blog">go back</a>
+
+    <div class="avatar">
+        <Avatar2 name="gabe atwell" size="7.5em" />
     </div>
-</section>
-
-<a class="go-back" href="/blog">go back</a>
-
-<div class="avatar">
-    <Avatar2 name="gabe atwell" size="7.5em" />
-</div>
+{:else}
+    <p class="not-found">Post not found..</p>
+{/if}
 
 <style>
     .blog-post {
@@ -111,5 +117,13 @@
         @media (width <= 768px) {
             margin-top: 3em;
         }
+    }
+
+    .not-found {
+        text-align: center;
+        font-family: var(--thunder);
+        font-size: clamp(var(--sm), 1.52vw, var(--h4));
+        font-weight: 700;
+        color: var(--clr-gray-500);
     }
 </style>
