@@ -1,18 +1,36 @@
 <script lang="ts">
+    import { page } from '$app/stores';
     import { useSound } from '$lib/data/stores/sounds/uiSounds.svelte';
 
     const { playSoundAsync: playHoverSound } = useSound(
         '/sounds/ui_bubble.wav',
     );
+    const REPO_BASE = 'https://www.github.com/gabrielatwell1987/portfolio';
+    const githubUrl = $derived.by(() => {
+        const path = $page.url.pathname;
+
+        if (path === '/')
+            return `${REPO_BASE}/tree/main/src/routes/+page.svelte`;
+
+        // handle blog posts:: /blog/3 -> src/content/posts/3.md
+        const blogMatch = path.match(/^\/blog\/(\d+)$/);
+        if (blogMatch) {
+            return `${REPO_BASE}/tree/main/src/content/posts/${blogMatch[1]}.md`;
+        }
+
+        const segment = path.split('/').filter(Boolean)[0];
+
+        return `${REPO_BASE}/tree/main/src/routes/${segment}/+page.svelte`;
+    });
 </script>
 
 <nav class="footer" aria-label="Social media links">
     <a
         class="social-link yellow"
-        href="https://www.github.com/gabrielatwell1987/portfolio"
+        href={githubUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Visit Gabriel's GitHub profile (opens in new tab)"
+        aria-label="View source code for this page on Github (in a new tab)"
         onclick={playHoverSound}
     >
         <svg
