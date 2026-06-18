@@ -1,12 +1,18 @@
 <script lang="ts">
+    import { selectedThreeComponent } from '$lib/data/stores/threejsComponent';
     import { componentImportMap } from './componentImports';
     import Divider from '$lib/components/learn/Divider.svelte';
     import SEO from '$lib/data/SEO.svelte';
     import type { Component } from 'svelte';
+    import { page } from '$app/stores';
+    import { onMount } from 'svelte';
 
     type ComponentType = Component<Record<string, never>>;
 
-    let selectedComponent = $state<string>('Select');
+    // let selectedComponent = $state<string>('Select');
+    let selectedComponent = $state(
+        $page.url.searchParams.get('component') ?? 'Select',
+    );
     let backgroundImage = $derived(
         selectedComponent === 'Select'
             ? 'repeating-linear-gradient(0deg, transparent, transparent 98px, var(--clr-gray-500) 98px, var(--clr-gray-500) 100px), repeating-linear-gradient(90deg, transparent, transparent 98px, var(--clr-gray-500) 98px, var(--clr-gray-500) 100px)'
@@ -21,6 +27,17 @@
         } else {
             SelectedComponent = null;
         }
+    });
+
+    onMount(() => {
+        // cleanup when navigating away
+        return () => selectedThreeComponent.set(null);
+    });
+
+    $effect(() => {
+        selectedThreeComponent.set(
+            selectedComponent === 'Select' ? null : selectedComponent,
+        );
     });
 </script>
 

@@ -1,6 +1,7 @@
 <script lang="ts">
     import { page } from '$app/stores';
     import { useSound } from '$lib/data/stores/sounds/uiSounds.svelte';
+    import { selectedThreeComponent } from '$lib/data/stores/threejsComponent';
 
     const { playSoundAsync: playHoverSound } = useSound(
         '/sounds/ui_bubble.wav',
@@ -18,7 +19,30 @@
             return `${REPO_BASE}/tree/main/src/content/posts/${blogMatch[1]}.md`;
         }
 
+        // handle three.js with selected component
         const segment = path.split('/').filter(Boolean)[0];
+        if (segment === 'three.js') {
+            const component =
+                $page.url.searchParams.get('component') ??
+                $selectedThreeComponent;
+
+            if (component && component !== 'Select') {
+                const threeMap: Record<string, string> = {
+                    Environment: 'environment/Environment.svelte',
+                    PictureParticles: 'cursor/CursorImage.svelte',
+                    HeroCanvas: 'hero/HeroCanvas.svelte',
+                    PostProcess: 'post-processing/PostProcess.svelte',
+                    Loader: 'loader/Loader.svelte',
+                    'Shooting Game': 'shooter/GameScene.svelte',
+                };
+                const file = threeMap[component];
+                if (file) {
+                    return `${REPO_BASE}/tree/main/src/lib/threejs/${file}`;
+                }
+            }
+
+            return `${REPO_BASE}/tree/main/src/routes/three.js/+page.svelte`;
+        }
 
         return `${REPO_BASE}/tree/main/src/routes/${segment}/+page.svelte`;
     });
