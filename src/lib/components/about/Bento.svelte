@@ -13,13 +13,16 @@
                         aria-label="Navigate to contact page"
                     >
                         <div class="bento-icons">
-                            <Image
-                                src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/speech-bubble.svg"
-                                alt="contact icon"
-                                width="350"
-                                aspectRatio="1/1"
-                                class="contact_svg"
-                            />
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="250"
+                                height="300"
+                                fill="var(--clr-blue-500)"
+                                viewBox="0 0 256 256"
+                                ><path
+                                    d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"
+                                ></path></svg
+                            >
                         </div>
 
                         <h2>contact</h2>
@@ -36,14 +39,18 @@
                             aria-label="Navigate to learn page"
                         >
                             <div class="bento-icons">
-                                <Image
-                                    src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/learn-icon.svg"
-                                    alt="learn icon"
-                                    width="350"
-                                    aspectRatio="1/1"
-                                    class="learn_svg"
-                                    scaleY="3"
-                                />
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="250"
+                                    height="300"
+                                    fill="var(--clr-warning-500)"
+                                    viewBox="0 0 256 256"
+                                    class="lightbulb"
+                                    ><path
+                                        d="M176,232a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,232Zm40-128a87.55,87.55,0,0,1-33.64,69.21A16.24,16.24,0,0,0,176,186v6a16,16,0,0,1-16,16H96a16,16,0,0,1-16-16v-6a16,16,0,0,0-6.23-12.66A87.59,87.59,0,0,1,40,104.49C39.74,56.83,78.26,17.14,125.88,16A88,88,0,0,1,216,104Zm-16,0a72,72,0,0,0-73.74-72c-39,.92-70.47,33.39-70.26,72.39a71.65,71.65,0,0,0,27.64,56.3A32,32,0,0,1,96,186v6h64v-6a32.15,32.15,0,0,1,12.47-25.35A71.65,71.65,0,0,0,200,104Zm-16.11-9.34a57.6,57.6,0,0,0-46.56-46.55,8,8,0,0,0-2.66,15.78c16.57,2.79,30.63,16.85,33.44,33.45A8,8,0,0,0,176,104a9,9,0,0,0,1.35-.11A8,8,0,0,0,183.89,94.66Z"
+                                    ></path></svg
+                                >
+
                                 <div class="space"></div>
                             </div>
 
@@ -62,13 +69,18 @@
                     >
                         <h2>projects</h2>
 
-                        <Image
-                            src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/lowgow.svg"
-                            alt="atwell logo"
-                            width="350"
-                            aspectRatio="1/1"
-                            class="atwell_svg"
-                        />
+                        <div class="bento-icons">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="250"
+                                height="250"
+                                fill="var(--clr-success-500)"
+                                viewBox="0 0 256 256"
+                                ><path
+                                    d="M216,56H176V48a24,24,0,0,0-24-24H104A24,24,0,0,0,80,48v8H40A16,16,0,0,0,24,72V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V72A16,16,0,0,0,216,56ZM40,112H216v48H40ZM96,48a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM216,72V96H40V72Zm0,128H40V176H216v24Z"
+                                ></path></svg
+                            >
+                        </div>
                     </a>
                 </div>
             </div>
@@ -188,6 +200,20 @@
 
                     & .bento-icons {
                         scale: 0.7;
+
+                        & .lightbulb {
+                            transform: scaleY(1.9);
+
+                            @media (width <= 990px) {
+                                transform: scaleY(1.5);
+                            }
+                            @media (width <= 768px) {
+                                transform: scaleY(1.2);
+                            }
+                            @media (width <= 500px) {
+                                transform: scaleY(1);
+                            }
+                        }
 
                         & .space {
                             block-size: 5em;
