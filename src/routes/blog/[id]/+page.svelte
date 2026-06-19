@@ -6,7 +6,12 @@
     import Avatar2 from '$lib/components/blog/FaceAvatar.svelte';
 
     let { params } = $props();
-    let post = $derived(await getPost(Number(params.id)));
+    let post = $state<Awaited<ReturnType<typeof getPost>>>(null);
+
+    $effect(() => {
+        const id = params.id;
+        getPost(Number(id)).then((p) => (post = p));
+    });
 
     let sanitizedHtml = $derived(
         post?.content &&
@@ -34,11 +39,11 @@
         </div>
     </section>
 
-    <a class="go-back" href="/blog">go back</a>
-
     <div class="avatar">
         <Avatar2 name="gabe atwell" size="7.5em" />
     </div>
+
+    <a class="go-back" href="/blog">go back</a>
 {:else}
     <p class="not-found">Post not found..</p>
 {/if}

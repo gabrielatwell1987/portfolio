@@ -44,6 +44,12 @@
             return `${REPO_BASE}/tree/main/src/routes/three.js/+page.svelte`;
         }
 
+        // handle multi-segment routes
+        const segments = path.split('/').filter(Boolean);
+        if (segments.length >= 2) {
+            return `${REPO_BASE}/tree/main/src/routes/${segments.join('/')}/+page.svelte`;
+        }
+
         return `${REPO_BASE}/tree/main/src/routes/${segment}/+page.svelte`;
     });
 </script>
