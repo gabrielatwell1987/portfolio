@@ -41,17 +41,6 @@ const config = {
             },
             handleUnseenRoutes: 'warn',
             concurrency: 10,
-            entries: [
-                '/photos',
-                '/contact/success',
-                '/learn/greensock',
-                '/learn/sveltekit',
-                '/learn/posts',
-                '/learn/posts/drawing-app',
-                '/experiments',
-                '/blog',
-                '/projects',
-            ],
         },
     },
     compilerOptions: {
