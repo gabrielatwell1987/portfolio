@@ -23,21 +23,21 @@
     aria-label="error"
     transition:fade={{ delay: DEFAULT_DELAY, duration: DEFAULT_DURATION }}
 >
-    <div class="image">
-        <Image
-            src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/error.webp"
-            alt="an error has occurred"
-            width="300"
-            aspectRatio="1/1"
-        />
-    </div>
-
     <div class="error">
-        <h2>You have encountered an error</h2>
+        <div class="image">
+            <Image
+                src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/error.webp"
+                alt="an error has occurred"
+                width="300"
+                aspectRatio="1/1"
+            />
+        </div>
 
-        <h1>status: {page.status}</h1>
+        <h2 class="subtitle">You have encountered an error</h2>
 
-        <p>{page.error?.message}</p>
+        <h1 class="status">{page.status}</h1>
+
+        <p class="message">{page.error?.message}</p>
     </div>
 </div>
 
@@ -53,6 +53,7 @@
 
         & .error {
             inline-size: 100%;
+            margin-top: clamp(5em, 5vh, 10em);
 
             display: flex;
             flex-direction: column;
@@ -60,23 +61,29 @@
 
             anchor-name: --error;
 
-            & h1 {
+            @media (width <= 768px) {
+                transform: translateX(-12%);
+            }
+
+            & .status {
                 font-family: var(--ultra);
-                font-size: clamp(var(--h4), 5vw, var(--xxl));
+                font-size: clamp(var(--h5), 40vw, var(--xxxxl));
                 font-weight: 900;
-                -webkit-text-stroke: 1px var(--clr-light-500);
+                -webkit-text-stroke: 5px var(--clr-success-500);
                 margin-inline: auto;
                 text-align: center;
-                color: var(--clr-blue-500);
+                color: lightblue;
                 font-family: var(--ultra);
                 letter-spacing: 7px;
                 text-wrap: balance;
-                anchor-name: --subtitle;
+                z-index: 5;
+
+                anchor-name: --status;
             }
 
-            & h2 {
+            & .subtitle {
                 font-family: var(--bronova);
-                font-size: clamp(var(--h3), 2vw, var(--xl));
+                font-size: clamp(var(--h6), 1.25vw, var(--xl));
                 font-weight: 600;
                 margin-inline: auto;
                 margin-block: 0;
@@ -85,33 +92,52 @@
                 font-family: var(--bronova);
                 letter-spacing: 5px;
                 text-wrap: balance;
+
+                @media (width <= 768px) {
+                    transform: translateX(15%);
+                }
             }
 
-            & p {
+            & .message {
                 font-family: var(--bronova);
                 font-size: clamp(var(--h5), 3vw, var(--h3));
-                font-weight: 500;
+                font-weight: 400;
                 letter-spacing: 5px;
                 line-height: 1.1;
                 text-align: start;
                 padding: 2rem 4rem;
-                color: var(--clr-gray-700);
+                color: var(--clr-light-500);
+                text-shadow: 0 0 8px var(--clr-dark-500);
                 text-align: center;
                 text-wrap: none;
+                z-index: 6;
 
                 position: absolute;
-                position-anchor: --subtitle;
-                top: calc(anchor(top) + 2em);
+                position-anchor: --status;
+                top: anchor(center);
+                left: anchor(center);
+                transform: translate(-50%, -50%);
+
+                @media (width <= 768px) {
+                    text-shadow: 0 0 5px var(--clr-dark-500);
+                }
             }
-        }
 
-        & .image {
-            width: clamp(200px, 20vw + 5em, 500px);
-            margin-inline: auto;
+            & .image {
+                inline-size: clamp(300px, 28vw, 400px);
 
-            position: absolute;
-            position-anchor: --error;
-            top: calc(anchor(center) - 5em);
+                position: absolute;
+                position-anchor: --status;
+                top: anchor(center);
+                left: anchor(center);
+                transform: translate(-50%, -50%);
+
+                z-index: 4;
+
+                @media (width <= 768px) {
+                    left: calc(anchor(center) - 0.25em);
+                }
+            }
         }
     }
 </style>
