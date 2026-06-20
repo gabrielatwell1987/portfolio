@@ -4,14 +4,14 @@
     import Divider from '$lib/components/learn/Divider.svelte';
     import SEO from '$lib/data/SEO.svelte';
     import type { Component } from 'svelte';
-    import { page } from '$app/stores';
+    import { page } from '$app/state';
     import { onMount } from 'svelte';
 
     type ComponentType = Component<Record<string, never>>;
 
     // let selectedComponent = $state<string>('Select');
     let selectedComponent = $state(
-        $page.url.searchParams.get('component') ?? 'Select',
+        page.url.searchParams.get('component') ?? 'Select',
     );
     let backgroundImage = $derived(
         selectedComponent === 'Select'

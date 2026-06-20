@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { page } from '$app/stores';
+    import { page } from '$app/state';
     import { useSound } from '$lib/data/stores/sounds/uiSounds.svelte';
     import { selectedThreeComponent } from '$lib/data/stores/threejsComponent';
 
@@ -8,7 +8,7 @@
     );
     const REPO_BASE = 'https://www.github.com/gabrielatwell1987/portfolio';
     const githubUrl = $derived.by(() => {
-        const path = $page.url.pathname;
+        const path = page.url.pathname;
 
         if (path === '/')
             return `${REPO_BASE}/tree/main/src/routes/+page.svelte`;
@@ -23,7 +23,7 @@
         const segment = path.split('/').filter(Boolean)[0];
         if (segment === 'three.js') {
             const component =
-                $page.url.searchParams.get('component') ??
+                page.url.searchParams.get('component') ??
                 $selectedThreeComponent;
 
             if (component && component !== 'Select') {

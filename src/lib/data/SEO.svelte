@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { page } from '$app/stores';
+    import { page } from '$app/state';
 
     interface Props {
         title?: string;
@@ -24,7 +24,7 @@
     let fullTitle = $derived(title);
 
     $effect(() => {
-        const currentPage = $page;
+        const currentPage = page;
         const { origin, pathname } = currentPage.url;
 
         // Set base URL

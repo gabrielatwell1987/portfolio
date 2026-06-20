@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { page } from '$app/stores';
+    import { page } from '$app/state';
     import { useSound } from '$lib/data/stores/sounds/uiSounds.svelte';
 
     interface Props {
@@ -23,7 +23,7 @@
 
     // only apply view-transition-name when NOT on the target page
     let shouldTransition = $derived(
-        viewTransitionName && $page.url.pathname !== href,
+        viewTransitionName && page.url.pathname !== href,
     );
     let isReverse = $derived(index % 2 === 1);
 

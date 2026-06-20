@@ -1,5 +1,5 @@
 <script>
-    import { page } from '$app/stores';
+    import { page } from '$app/state';
     import { fade } from 'svelte/transition';
     import {
         DEFAULT_DURATION,
@@ -9,7 +9,7 @@
     import Image from '$lib/components/layout/Image.svelte';
 
     $effect(() => {
-        console.log(`There is a ${$page.status} error!`);
+        console.log(`There is a ${page.status} error!`);
     });
 </script>
 
@@ -35,9 +35,9 @@
     <div class="error">
         <h2>You have encountered an error</h2>
 
-        <h1>status: {$page.status}</h1>
+        <h1>status: {page.status}</h1>
 
-        <p>{$page.error?.message}</p>
+        <p>{page.error?.message}</p>
     </div>
 </div>
 
