@@ -92,9 +92,11 @@
                 font-family: var(--bronova);
                 letter-spacing: 5px;
                 text-wrap: balance;
+                line-height: 1.1;
 
                 @media (width <= 768px) {
                     transform: translateX(15%);
+                    letter-spacing: 0;
                 }
             }
 
