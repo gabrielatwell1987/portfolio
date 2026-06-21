@@ -1,19 +1,11 @@
 <script lang="ts">
     import '../blog.global.css';
-    import { getPost } from '../data.remote';
     import { marked } from 'marked';
     import DOMPurify from 'isomorphic-dompurify';
     import Avatar2 from '$lib/components/blog/FaceAvatar.svelte';
 
-    let { params } = $props();
-    let post = $state<Awaited<ReturnType<typeof getPost>>>(null);
-
-    $effect(() => {
-        const id = params.id;
-        getPost(Number(id)).then((p) => {
-            if (p) post = p;
-        });
-    });
+    let { data } = $props();
+    let post = $derived(data.post);
 
     let sanitizedHtml = $derived(
         post?.content &&
