@@ -10,7 +10,9 @@
 
     $effect(() => {
         const id = params.id;
-        getPost(Number(id)).then((p) => (post = p));
+        getPost(Number(id)).then((p) => {
+            if (p) post = p;
+        });
     });
 
     let sanitizedHtml = $derived(
