@@ -10,13 +10,19 @@ export class Projectile extends Object3D {
     private mesh: Mesh;
     private velocity: Vector3;
     private speed: number = 10; // Units per second
-    private maxDistance: number = 5; // Travel exactly 5 spaces
+    private maxDistance: number; // Configurable range
     private distanceTraveled: number = 0;
     private createdAt: number = performance.now();
     private maxLifetime: number = 5000; // 5 seconds in milliseconds
+    private playerOwned: boolean = false;
 
-    constructor(startPosition: Vector3, direction: Vector3) {
+    constructor(
+        startPosition: Vector3,
+        direction: Vector3,
+        maxDistance: number = 5,
+    ) {
         super();
+        this.maxDistance = maxDistance;
 
         // projectile mesh
         const geometry = new CapsuleGeometry(0.02, 0.15, 8, 8);
@@ -35,6 +41,19 @@ export class Projectile extends Object3D {
 
         // projectiles face the player
         this.lookAt(startPosition.clone().add(direction));
+    }
+
+    /** Make the projectile more visible (brighter, slightly bigger) */
+    setPlayerOwned(owned: boolean): void {
+        this.playerOwned = owned;
+        if (owned) {
+            this.mesh.scale.set(3, 3, 3);
+            (this.mesh.material as MeshStandardMaterial).color.setHex(0x00ccff);
+            (this.mesh.material as MeshStandardMaterial).emissive.setHex(
+                0x00ccff,
+            );
+            (this.mesh.material as MeshStandardMaterial).emissiveIntensity = 2;
+        }
     }
 
     update(dt: number): boolean {

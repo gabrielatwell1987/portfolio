@@ -18,6 +18,8 @@ export class CombatManager extends Object3D {
     private maxPlayerHealth: number = 10;
     // Player ammo (null = unlimited)
     private playerAmmo: number | null = null;
+    /** How far enemy projectiles can travel before expiring */
+    private enemyProjectileRange: number = 30;
     private knockbackTimeline: gsap.core.Timeline | null = null;
     private paused: boolean = false;
     private audioManager: AudioManager;
@@ -54,19 +56,25 @@ export class CombatManager extends Object3D {
         }
     }
 
-    shoot(shootDirection: Vector3): void {
+    shoot(shootDirection: Vector3, origin?: Vector3): void {
         if (!this.canShoot()) return;
         // consume ammo when tracked
         if (this.playerAmmo !== null) {
             if (this.playerAmmo <= 0) return;
             this.playerAmmo -= 1;
         }
-        const playerPos = this.player.position.clone();
-        const shootPos = playerPos
-            .clone()
-            .add(shootDirection.clone().normalize().multiplyScalar(0.5));
 
-        const projectile = new Projectile(shootPos, shootDirection);
+        const startPos = origin
+            ? origin.clone()
+            : this.player.position
+                  .clone()
+                  .add(shootDirection.clone().normalize().multiplyScalar(0.5));
+
+        // Player projectiles need longer range to reach distant enemies
+        const projRange = origin ? 15 : 5;
+        const projectile = new Projectile(startPos, shootDirection, projRange);
+        // players projectiles are more visible
+        projectile.setPlayerOwned(true);
         this.projectiles.push(projectile);
         this.scene.add(projectile);
 
@@ -182,6 +190,7 @@ export class CombatManager extends Object3D {
                 const projectile = new Projectile(
                     proj.position,
                     proj.direction,
+                    this.enemyProjectileRange,
                 );
                 this.enemyProjectiles.push(projectile);
                 this.scene.add(projectile);

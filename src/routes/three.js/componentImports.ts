@@ -9,4 +9,5 @@ export const componentImportMap: Record<
         import('$lib/threejs/post-processing/PostProcess.svelte'),
     Loader: () => import('$lib/threejs/loader/Loader.svelte'),
     'Shooting Game': () => import('$lib/threejs/shooter/GameScene.svelte'),
+    FPS: () => import('$lib/threejs/fps/FirstPerson.svelte'),
 };

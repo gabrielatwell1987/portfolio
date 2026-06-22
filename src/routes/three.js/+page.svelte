@@ -57,6 +57,7 @@
             <option value="PostProcess">post-processing</option>
             <option value="Loader">loading bar</option>
             <option value="Shooting Game">shooting game</option>
+            <option value="FPS">first person shooter</option>
         </select>
 
         {#if SelectedComponent}
