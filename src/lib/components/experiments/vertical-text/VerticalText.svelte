@@ -34,9 +34,9 @@
         letterSpacing = '-0.02em',
         lineHeight = 1,
         intensity = 0.64,
-        amplitude = 32,
+        amplitude = 64,
         centerOffset = 22,
-        pace = 5, // per-segment frame delay
+        pace = 2, // per-segment frame delay
         enter = 40, // frames for enter phase
         hold = 5, // frames for hold phase
         exit = 36, // frames for exit phase

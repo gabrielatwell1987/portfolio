@@ -69,6 +69,10 @@
             load: () =>
                 import('$lib/components/experiments/huge-text-intro/LetterIntro.svelte'),
         },
+        9: {
+            load: () =>
+                import('$lib/components/experiments/vertical-text/VerticalText.svelte'),
+        },
     };
 
     const sortedKeys = Object.keys(componentMap)
