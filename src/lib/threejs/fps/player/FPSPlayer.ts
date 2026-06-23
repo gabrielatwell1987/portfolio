@@ -2,7 +2,7 @@ import { Object3D, Vector3 } from 'three';
 
 export class FPSPlayer extends Object3D {
     getHitboxRadius(): number {
-        return 0.5;
+        return 0.7;
     }
 
     getFacingDirection(): Vector3 {

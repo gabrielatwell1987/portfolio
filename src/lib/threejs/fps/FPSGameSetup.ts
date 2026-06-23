@@ -53,6 +53,51 @@ export class FPSGame {
     private gunModel: Object3D | null = null;
     private muzzleOffset = new Vector3(0.35, -0.35, -0.8);
 
+    // --- Mobile touch controls ---
+    private mobileMode = false;
+    private moveX = 0;
+    private moveY = 0;
+    private lookYaw = 0; // accumulated yaw from touch drag
+    private lookPitch = 0; // accumulated pitch from touch drag
+    private lookSpeed = 0.005;
+    private autoShootCooldown = 0;
+
+    /** Enable mobile mode (no pointer lock, camera controlled by setMobileLook) */
+    setMobile(enabled: boolean): void {
+        this.mobileMode = enabled;
+    }
+
+    /** Left-side touch joystick: values -1 to 1 */
+    setMobileMove(x: number, y: number): void {
+        this.moveX = Math.max(-1, Math.min(1, x));
+        this.moveY = Math.max(-1, Math.min(1, y));
+    }
+
+    /** Right-side touch drag delta (pixels moved since last frame) */
+    setMobileLook(dx: number, dy: number): void {
+        this.lookYaw -= dx * this.lookSpeed;
+        this.lookPitch -= dy * this.lookSpeed;
+        this.lookPitch = Math.max(
+            -Math.PI / 2.5,
+            Math.min(Math.PI / 2.5, this.lookPitch),
+        );
+    }
+
+    /** Check if any enemy is under the crosshair (for auto-shoot) */
+    private checkAutoShoot(): boolean {
+        const raycaster = new Raycaster();
+        raycaster.setFromCamera(new Vector2(0, 0), this.camera);
+        const enemies = this.enemyManager.getEnemies();
+        for (const enemy of enemies) {
+            const hitbox = new Sphere(
+                enemy.position,
+                enemy.getHitboxRadius?.() ?? 0.9,
+            );
+            if (raycaster.ray.intersectsSphere(hitbox)) return true;
+        }
+        return false;
+    }
+
     async init(canvas: HTMLCanvasElement) {
         this.renderer = new WebGLRenderer({ canvas });
         this.renderer.setSize(window.innerWidth, window.innerHeight);
@@ -245,23 +290,69 @@ export class FPSGame {
 
         const dt = 1 / 60;
 
-        const forward = new Vector3();
-        this.camera.getWorldDirection(forward);
-        forward.y = 0;
-        forward.normalize();
+        if (this.mobileMode) {
+            // Camera rotation via yaw/pitch
+            const euler = new Vector3(this.lookPitch, this.lookYaw, 0);
+            this.camera.rotation.order = 'YXZ';
+            this.camera.rotation.set(euler.x, euler.y, 0);
 
-        const right = new Vector3();
-        right.crossVectors(forward, this.camera.up).normalize();
+            // Movement from touch joystick (camera-relative)
+            const camForward = new Vector3();
+            this.camera.getWorldDirection(camForward);
+            camForward.y = 0;
+            camForward.normalize();
+            const camRight = new Vector3();
+            camRight.crossVectors(camForward, this.camera.up).normalize();
 
-        this.direction.set(0, 0, 0);
-        if (this.moveForward) this.direction.add(forward);
-        if (this.moveBackward) this.direction.sub(forward);
-        if (this.moveLeft) this.direction.sub(right);
-        if (this.moveRight) this.direction.add(right);
-        this.direction.normalize();
+            this.direction.set(0, 0, 0);
+            if (this.moveY < -0.2)
+                this.direction.add(
+                    camForward.clone().multiplyScalar(-this.moveY),
+                );
+            if (this.moveY > 0.2)
+                this.direction.sub(
+                    camForward.clone().multiplyScalar(this.moveY),
+                );
+            if (this.moveX > 0.2)
+                this.direction.add(camRight.clone().multiplyScalar(this.moveX));
+            if (this.moveX < -0.2)
+                this.direction.sub(
+                    camRight.clone().multiplyScalar(-this.moveX),
+                );
+            this.direction.normalize();
 
-        const speed = this.isRunning ? 8 : 5;
-        this.fpsPlayer.position.add(this.direction.multiplyScalar(speed * dt));
+            const speed = 5;
+            this.fpsPlayer.position.add(
+                this.direction.multiplyScalar(speed * dt),
+            );
+
+            // Auto-shoot when crosshair is on an enemy
+            this.autoShootCooldown -= dt;
+            if (this.autoShootCooldown <= 0 && this.checkAutoShoot()) {
+                this.shoot();
+                this.autoShootCooldown = 0.3;
+            }
+        } else {
+            const forward = new Vector3();
+            this.camera.getWorldDirection(forward);
+            forward.y = 0;
+            forward.normalize();
+
+            const right = new Vector3();
+            right.crossVectors(forward, this.camera.up).normalize();
+
+            this.direction.set(0, 0, 0);
+            if (this.moveForward) this.direction.add(forward);
+            if (this.moveBackward) this.direction.sub(forward);
+            if (this.moveLeft) this.direction.sub(right);
+            if (this.moveRight) this.direction.add(right);
+            this.direction.normalize();
+
+            const speed = this.isRunning ? 8 : 5;
+            this.fpsPlayer.position.add(
+                this.direction.multiplyScalar(speed * dt),
+            );
+        }
 
         // Clamp to world bounds
         this.fpsPlayer.position.x = Math.max(

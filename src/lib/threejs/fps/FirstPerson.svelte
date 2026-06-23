@@ -2,11 +2,14 @@
     import { onMount } from 'svelte';
     import { FPSGame } from './FPSGameSetup';
     import GameOver from '$lib/threejs/shooter/components/GameOver.svelte';
+    import LandscapeMobile from '$lib/threejs/shooter/components/LandscapeMobile.svelte';
+    import FPSMobileControls from './FPSMobileControls.svelte';
 
     // oxlint-disable-next-line no-unassigned-vars
     let canvas!: HTMLCanvasElement;
-    let game: FPSGame | null = null;
+    let game: FPSGame | null = $state(null);
     let isLocked = $state(false);
+    let isMobile = $state(false);
     let playerHealth = $state(10);
     let maxPlayerHealth = $state(10);
     let ammo = $state<number | null>(null);
@@ -25,9 +28,31 @@
         game.init(canvas);
     }
 
+    function startGame(): void {
+        if (game) {
+            if (!isMobile) {
+                game.controls.lock();
+            } else {
+                // On mobile, no pointer lock — enable touch controls
+                game.setMobile(true);
+                isLocked = true;
+            }
+        }
+    }
+
     onMount(() => {
+        isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
         game = new FPSGame();
         game.init(canvas);
+
+        // On mobile, auto-start since we can't use pointer lock
+        if (isMobile) {
+            game.setMobile(true);
+            setTimeout(() => {
+                isLocked = true;
+            }, 500);
+        }
 
         const hudInterval = setInterval(() => {
             if (!game) return;
@@ -40,13 +65,12 @@
 
             if (playerHealth <= 0 || won) {
                 if (!isGameOver) {
-                    game.controls.unlock();
+                    if (!isMobile) game.controls.unlock();
                 }
                 isGameOver = true;
             }
         }, 100);
 
-        // listen for pointer-lock changes
         const onLockChange = () => {
             isLocked = document.pointerLockElement === canvas;
         };
@@ -64,21 +88,32 @@
 <div class="wrapper">
     <canvas bind:this={canvas} class="webgl"></canvas>
 
-    <!-- click to lock overlay -->
+    <!-- click/tap to lock overlay -->
     {#if !isLocked}
         <!-- svelte-ignore a11y_no_static_element_interactions -->
         <div
             class="lock-overlay"
-            onclick={() => game?.controls.lock()}
+            onclick={startGame}
+            ontouchstart={(e) => {
+                e.preventDefault();
+                startGame();
+            }}
             onkeydown={() => {}}
             role="button"
             tabindex="0"
         >
-            <p>Click to start!</p>
-            <div class="directions">
-                <p class="hint">WASD to move &middot; Click to shoot</p>
-                <p class="hint">SPACE to jump &middot; SHIFT to run</p>
-            </div>
+            {#if isMobile}
+                <p>Tap to start!</p>
+                <div class="directions">
+                    <p class="hint">Touch to look &middot; Tap to shoot</p>
+                </div>
+            {:else}
+                <p>Click to start!</p>
+                <div class="directions">
+                    <p class="hint">WASD to move &middot; Click to shoot</p>
+                    <p class="hint">SPACE to jump &middot; SHIFT to run</p>
+                </div>
+            {/if}
         </div>
     {/if}
 
@@ -111,6 +146,8 @@
     <div class="kills">Kills: {enemyKillCount}</div>
 </div>
 
+<FPSMobileControls {game} enabled={isMobile} />
+<LandscapeMobile {isMobile} onPause={() => {}} onResume={() => {}} />
 <GameOver {isGameOver} {won} onRestart={handleRestart} />
 
 <style>
@@ -119,7 +156,6 @@
         inset: 0;
         width: 100vw;
         height: 100vh;
-        anchor-name: --viewport;
 
         & .webgl {
             z-index: 0;
@@ -228,10 +264,8 @@
 
         .health-bar {
             position: fixed;
-            position-anchor: --viewport;
-            bottom: anchor(bottom);
-            left: anchor(left);
-            margin: 1.5rem;
+            bottom: 1.5rem;
+            left: 1.5rem;
             width: 200px;
             height: 12px;
             background: rgba(0, 0, 0, 0.5);
@@ -240,6 +274,13 @@
             overflow: hidden;
             z-index: 5;
             pointer-events: none;
+
+            @media (width <= 768px) {
+                width: 120px;
+                height: 10px;
+                bottom: 1rem;
+                left: 1rem;
+            }
         }
 
         .health-fill {
@@ -251,10 +292,8 @@
 
         .ammo {
             position: fixed;
-            position-anchor: --viewport;
-            bottom: anchor(bottom);
-            right: anchor(right);
-            margin: 1.5rem;
+            bottom: 1.5rem;
+            right: 1.5rem;
             font-family: monospace;
             font-size: 1.2rem;
             font-weight: bold;
@@ -262,6 +301,12 @@
             text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
             z-index: 5;
             pointer-events: none;
+
+            @media (width <= 768px) {
+                bottom: 1rem;
+                right: 1rem;
+                font-size: 1rem;
+            }
         }
 
         .kills {
