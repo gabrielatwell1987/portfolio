@@ -1,21 +1,26 @@
 import { PointerLockControls } from 'three/examples/jsm/controls/PointerLockControls.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import {
     Scene,
     PerspectiveCamera,
     WebGLRenderer,
     Color,
-    FogExp2,
+    Fog,
     Vector3,
     AmbientLight,
     DirectionalLight,
+    HemisphereLight,
     Raycaster,
     Vector2,
     Sphere,
+    Group,
+    Object3D,
 } from 'three';
 import { World } from '../shooter/world';
-import { EnemyManager } from '../shooter/enemies/EnemyManager';
 import { CombatManager } from '../shooter/combat/CombatManager';
-import { FPSPlayer } from './FPSPlayer';
+import { FPSPlayer } from './player/FPSPlayer';
+import { FPSEnemyManager } from './enemy/FPSEnemyManager';
+import { FPSBuilding } from './buildings/FPSBuilding';
 
 export class FPSGame {
     scene!: Scene;
@@ -24,27 +29,29 @@ export class FPSGame {
     controls!: PointerLockControls;
     fpsPlayer!: FPSPlayer;
     world!: World;
-    enemyManager!: EnemyManager;
+    buildings!: Group;
+    enemyManager!: FPSEnemyManager;
     combatManager!: CombatManager;
 
     private moveForward = false;
     private moveBackward = false;
     private moveLeft = false;
     private moveRight = false;
-    private velocity = new Vector3();
     private direction = new Vector3();
     private boundOnKeyDown: (e: KeyboardEvent) => void = () => {};
     private boundOnKeyUp: (e: KeyboardEvent) => void = () => {};
     private boundOnMouseDown: (e: MouseEvent) => void = () => {};
     private boundOnResize: () => void = () => {};
+    private gunModel: Object3D | null = null;
+    private muzzleOffset = new Vector3(0.35, -0.35, -0.8);
 
     async init(canvas: HTMLCanvasElement) {
         this.renderer = new WebGLRenderer({ canvas });
         this.renderer.setSize(window.innerWidth, window.innerHeight);
 
         this.scene = new Scene();
-        this.scene.background = new Color('#242424');
-        this.scene.fog = new FogExp2(0x242424, 0.05);
+        this.scene.background = new Color('#87ceeb'); // sky blue so we can see the horizon
+        this.scene.fog = new Fog(0x87ceeb, 30, 60);
 
         this.camera = new PerspectiveCamera(
             75,
@@ -52,38 +59,79 @@ export class FPSGame {
             0.1,
             1000,
         );
-        this.camera.position.set(0, 1.6, 0); // eye level
+        // Camera stays at scene root — NOT parented to player.
+        // PointerLockControls only works reliably on root-level cameras.
+        // We'll sync the camera position to the player each frame in animate().
+        this.camera.position.set(5.5, 1.6, 5.5);
 
         this.controls = new PointerLockControls(this.camera, canvas);
 
-        // --- World ---
+        // --- World terrain (from shooter, no GLTF) ---
         this.world = new World(50, 50);
         await this.world.generate();
         this.scene.add(this.world);
-        this.scene.add(this.world.buildings);
 
-        // --- FPS Player ---
-        this.fpsPlayer = new FPSPlayer(this.world);
-        this.fpsPlayer.rotation.y = Math.PI; // face +Z instead of -Z
-        this.fpsPlayer.add(this.camera); // camera follows player
+        // Remove the GLTF buildings from the world, replace with simple boxes
+        if (this.world.buildings) {
+            this.world.remove(this.world.buildings);
+        }
+        const buildingCells = new Set<string>();
+        this.buildings = await FPSBuilding.createBuildings(
+            50,
+            50,
+            8,
+            buildingCells,
+        );
+        // Merge building cells so enemy AI knows where to avoid
+        for (const cell of buildingCells) {
+            this.world.buildingCells.add(cell);
+        }
+        this.scene.add(this.buildings);
+
+        // --- FPS Player (plain Object3D — invisible, just tracks position) ---
+        this.fpsPlayer = new FPSPlayer();
+        this.fpsPlayer.rotation.y = Math.PI;
+        this.fpsPlayer.position.set(5.5, 0, 5.5);
         this.scene.add(this.fpsPlayer);
 
+        // --- Gun Model ---
+        const gltfLoader = new GLTFLoader();
+        gltfLoader.load(
+            '/threejayess/models/ray_gun.glb',
+            (gltf) => {
+                const gun = gltf.scene;
+                gun.scale.set(0.5, 0.5, 0.5);
+                gun.position.set(0.35, -0.35, -0.8);
+                this.gunModel = gun;
+                this.camera.add(gun);
+            },
+            undefined,
+            (error) => console.error('Failed to load ray_gun.glb', error),
+        );
+
         // --- Lighting ---
-        const ambient = new AmbientLight(0x404040, 0.5);
+        // HemisphereLight gives a natural sky/ground fill
+        const hemi = new HemisphereLight(0x87ceeb, 0x362d25, 0.8);
+        this.scene.add(hemi);
+        const ambient = new AmbientLight(0xffffff, 0.4);
         this.scene.add(ambient);
-        const sun = new DirectionalLight(0xffffff, 1);
+        const sun = new DirectionalLight(0xffffff, 1.2);
         sun.position.set(10, 20, 10);
         this.scene.add(sun);
 
         // --- Combat & Enemies ---
-        this.combatManager = new CombatManager(this.fpsPlayer, this.scene);
-        this.enemyManager = new EnemyManager(
+        // CombatManager expects Player type — FPSPlayer satisfies the interface at runtime
+        this.combatManager = new CombatManager(
+            this.fpsPlayer as any,
+            this.scene,
+        );
+        this.enemyManager = new FPSEnemyManager(
             this.fpsPlayer,
             this.world,
             this.scene,
         );
         this.scene.add(this.enemyManager);
-        this.combatManager.setEnemyManager(this.enemyManager);
+        this.combatManager.setEnemyManager(this.enemyManager as any);
         this.combatManager.setPlayerAmmo(50);
 
         // --- Store bound references for cleanup ---
@@ -117,7 +165,6 @@ export class FPSGame {
             case 'KeyD':
                 this.moveRight = pressed;
                 break;
-            // Shooting is now on mouse click, not Space
         }
     }
 
@@ -133,18 +180,29 @@ export class FPSGame {
                 enemy.position,
                 enemy.getHitboxRadius?.() ?? 0.9,
             );
-            const hit = raycaster.ray.intersectsSphere(hitbox);
-            if (hit) {
+            if (raycaster.ray.intersectsSphere(hitbox)) {
                 enemy.takeDamage(1);
-                // One bullet hits at most one enemy
                 break;
             }
         }
 
-        // Fire projectile from camera position so it's visible at eye level
-        const cameraPos = new Vector3();
-        this.camera.getWorldPosition(cameraPos);
-        this.combatManager.shoot(dir, cameraPos);
+        // // Fire visible projectile from camera position
+        // const cameraPos = new Vector3();
+        // this.camera.getWorldPosition(cameraPos);
+        // this.combatManager.shoot(dir, cameraPos);
+
+        // Fire projectile from the gun barrel toward the crosshair
+        const muzzleWorld = new Vector3();
+        if (this.gunModel) {
+            this.gunModel.getWorldPosition(muzzleWorld);
+        } else {
+            // Fallback: compute from camera + offset before gun model loaded
+            const offset = this.muzzleOffset
+                .clone()
+                .applyQuaternion(this.camera.quaternion);
+            muzzleWorld.copy(this.camera.position).add(offset);
+        }
+        this.combatManager.shoot(dir, muzzleWorld);
     }
 
     private animate() {
@@ -180,6 +238,11 @@ export class FPSGame {
             Math.min(49.5, this.fpsPlayer.position.z),
         );
 
+        // Sync camera to player eye-level (camera is NOT parented — at scene root)
+        this.camera.position.x = this.fpsPlayer.position.x;
+        this.camera.position.z = this.fpsPlayer.position.z;
+        this.camera.position.y = this.fpsPlayer.position.y + 1.6;
+
         this.fpsPlayer.update();
         this.enemyManager.update(dt);
         this.combatManager.update(dt);
@@ -199,6 +262,10 @@ export class FPSGame {
         document.removeEventListener('keyup', this.boundOnKeyUp);
         document.removeEventListener('mousedown', this.boundOnMouseDown);
         window.removeEventListener('resize', this.boundOnResize);
+        if (this.gunModel) {
+            this.camera.remove(this.gunModel);
+            this.gunModel = null;
+        }
         this.enemyManager.dispose();
         this.combatManager.dispose();
     }

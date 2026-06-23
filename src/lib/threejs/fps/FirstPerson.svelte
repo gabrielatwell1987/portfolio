@@ -13,7 +13,6 @@
     let enemyKillCount = $state(0);
     let isGameOver = $state(false);
     let won = $derived(enemyKillCount >= 3);
-    let restartTrigger = $state(0);
 
     function handleRestart(): void {
         game?.dispose();
@@ -22,7 +21,6 @@
         playerHealth = 10;
         maxPlayerHealth = 10;
         enemyKillCount = 0;
-        restartTrigger += 1;
         game = new FPSGame();
         game.init(canvas);
     }
