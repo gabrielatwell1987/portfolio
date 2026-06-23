@@ -37,14 +37,14 @@ export class FPSEnemy extends Object3D {
 
         // Body
         const bodyGeo = new BoxGeometry(0.8, 1.2, 0.8);
-        const bodyMat = new MeshStandardMaterial({ color: 0xff4444 });
+        const bodyMat = new MeshStandardMaterial({ color: 0xdd1214 });
         this.body = new Mesh(bodyGeo, bodyMat);
         this.body.position.y = 0.6;
         this.add(this.body);
 
         // Head
         const headGeo = new SphereGeometry(0.35, 8, 8);
-        const headMat = new MeshStandardMaterial({ color: 0xff8888 });
+        const headMat = new MeshStandardMaterial({ color: 0xaa4132 });
         this.head = new Mesh(headGeo, headMat);
         this.head.position.y = 1.3;
         this.add(this.head);
