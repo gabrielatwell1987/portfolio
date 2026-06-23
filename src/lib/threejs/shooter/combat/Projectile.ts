@@ -14,7 +14,6 @@ export class Projectile extends Object3D {
     private distanceTraveled: number = 0;
     private createdAt: number = performance.now();
     private maxLifetime: number = 5000; // 5 seconds in milliseconds
-    private playerOwned: boolean = false;
 
     constructor(
         startPosition: Vector3,
@@ -43,17 +42,21 @@ export class Projectile extends Object3D {
         this.lookAt(startPosition.clone().add(direction));
     }
 
-    /** Make the projectile more visible (brighter, slightly bigger) */
-    setPlayerOwned(owned: boolean): void {
-        this.playerOwned = owned;
-        if (owned) {
-            this.mesh.scale.set(3, 3, 3);
-            (this.mesh.material as MeshStandardMaterial).color.setHex(0x00ccff);
-            (this.mesh.material as MeshStandardMaterial).emissive.setHex(
-                0x00ccff,
-            );
-            (this.mesh.material as MeshStandardMaterial).emissiveIntensity = 2;
-        }
+    /**
+     * Override the projectile's mesh appearance (scale, color, emissive).
+     * Useful for FPS vs top-down shooter variants.
+     */
+    setAppearance(
+        scale: number,
+        color: number,
+        emissive: number,
+        emissiveIntensity: number,
+    ): void {
+        this.mesh.scale.set(scale, scale, scale);
+        const mat = this.mesh.material as MeshStandardMaterial;
+        mat.color.setHex(color);
+        mat.emissive.setHex(emissive);
+        mat.emissiveIntensity = emissiveIntensity;
     }
 
     update(dt: number): boolean {

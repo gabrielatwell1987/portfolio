@@ -10,11 +10,13 @@ import {
     AmbientLight,
     DirectionalLight,
     HemisphereLight,
+    PointLight,
     Raycaster,
     Vector2,
     Sphere,
     Group,
     Object3D,
+    DoubleSide,
 } from 'three';
 import { World } from '../shooter/world';
 import { CombatManager } from '../shooter/combat/CombatManager';
@@ -37,7 +39,13 @@ export class FPSGame {
     private moveBackward = false;
     private moveLeft = false;
     private moveRight = false;
+    private isRunning = false;
     private direction = new Vector3();
+    private verticalVelocity = 0;
+    private isGrounded = true;
+    private jumpForce = 5;
+    private gravity = -15;
+    private groundLevel = 0;
     private boundOnKeyDown: (e: KeyboardEvent) => void = () => {};
     private boundOnKeyUp: (e: KeyboardEvent) => void = () => {};
     private boundOnMouseDown: (e: MouseEvent) => void = () => {};
@@ -94,16 +102,36 @@ export class FPSGame {
         this.fpsPlayer.position.set(5.5, 0, 5.5);
         this.scene.add(this.fpsPlayer);
 
-        // --- Gun Model ---
+        // --- Gun Model (added to scene, NOT camera — camera children don't render) ---
         const gltfLoader = new GLTFLoader();
         gltfLoader.load(
             '/threejayess/models/ray_gun.glb',
             (gltf) => {
                 const gun = gltf.scene;
-                gun.scale.set(0.5, 0.5, 0.5);
-                gun.position.set(0.35, -0.35, -0.8);
+                console.log('gun loaded - children:', gun.children.length);
+
+                // Fix materials to be visible without replacing them entirely
+                gun.traverse((child: any) => {
+                    if (child.isMesh) {
+                        const mat = child.material;
+                        mat.side = DoubleSide;
+                        mat.envMapIntensity = 2;
+                        mat.metalness = 0.2;
+                        mat.roughness = 0.6;
+                        // Add subtle emissive so the gun is always visible
+                        if (mat.emissive) {
+                            mat.emissiveIntensity = 0.3;
+                        }
+                        child.frustumCulled = false;
+                        mat.needsUpdate = true;
+                    }
+                });
+
+                // Scale up significantly — model is only 0.087 units at 1×
+                gun.scale.set(16, 16, 16);
                 this.gunModel = gun;
-                this.camera.add(gun);
+                this.scene.add(gun);
+                console.log('Gun added to scene');
             },
             undefined,
             (error) => console.error('Failed to load ray_gun.glb', error),
@@ -118,6 +146,10 @@ export class FPSGame {
         const sun = new DirectionalLight(0xffffff, 1.2);
         sun.position.set(10, 20, 10);
         this.scene.add(sun);
+        // Extra light near player so the gun is always lit
+        const playerLight = new PointLight(0xffffff, 0.8, 10);
+        playerLight.position.set(5.5, 3, 5.5);
+        this.scene.add(playerLight);
 
         // --- Combat & Enemies ---
         // CombatManager expects Player type — FPSPlayer satisfies the interface at runtime
@@ -165,6 +197,16 @@ export class FPSGame {
             case 'KeyD':
                 this.moveRight = pressed;
                 break;
+            case 'Space':
+                if (pressed && this.isGrounded) {
+                    this.verticalVelocity = this.jumpForce;
+                    this.isGrounded = false;
+                }
+                break;
+            case 'ShiftLeft':
+            case 'ShiftRight':
+                this.isRunning = pressed;
+                break;
         }
     }
 
@@ -186,23 +228,16 @@ export class FPSGame {
             }
         }
 
-        // // Fire visible projectile from camera position
-        // const cameraPos = new Vector3();
-        // this.camera.getWorldPosition(cameraPos);
-        // this.combatManager.shoot(dir, cameraPos);
-
-        // Fire projectile from the gun barrel toward the crosshair
-        const muzzleWorld = new Vector3();
-        if (this.gunModel) {
-            this.gunModel.getWorldPosition(muzzleWorld);
-        } else {
-            // Fallback: compute from camera + offset before gun model loaded
-            const offset = this.muzzleOffset
-                .clone()
-                .applyQuaternion(this.camera.quaternion);
-            muzzleWorld.copy(this.camera.position).add(offset);
+        // Fire projectile from just below camera center (matches gun visual on screen)
+        const cameraPos = this.camera.position;
+        const spawnOffset = new Vector3(0.25, -0.3, -1.2);
+        spawnOffset.applyQuaternion(this.camera.quaternion);
+        const spawnPos = cameraPos.clone().add(spawnOffset);
+        const proj = this.combatManager.shoot(dir, spawnPos);
+        if (proj) {
+            // FPS-specific projectile appearance
+            proj.setAppearance(4, 0xcccccc, 0xcccccc, 1);
         }
-        this.combatManager.shoot(dir, muzzleWorld);
     }
 
     private animate() {
@@ -225,7 +260,7 @@ export class FPSGame {
         if (this.moveRight) this.direction.add(right);
         this.direction.normalize();
 
-        const speed = 5;
+        const speed = this.isRunning ? 8 : 5;
         this.fpsPlayer.position.add(this.direction.multiplyScalar(speed * dt));
 
         // Clamp to world bounds
@@ -242,6 +277,27 @@ export class FPSGame {
         this.camera.position.x = this.fpsPlayer.position.x;
         this.camera.position.z = this.fpsPlayer.position.z;
         this.camera.position.y = this.fpsPlayer.position.y + 1.6;
+
+        // Apply gravity and vertical velocity (jumping)
+        if (!this.isGrounded) {
+            this.verticalVelocity += this.gravity * dt;
+            this.fpsPlayer.position.y += this.verticalVelocity * dt;
+            if (this.fpsPlayer.position.y <= this.groundLevel) {
+                this.fpsPlayer.position.y = this.groundLevel;
+                this.verticalVelocity = 0;
+                this.isGrounded = true;
+            }
+        }
+
+        // Sync gun model to follow camera (added to scene, not as camera child)
+        if (this.gunModel) {
+            // Bottom-right of screen. X=right, Y=down, Z=forward
+            const gunOffset = new Vector3(0.6, -1.5, -1.2);
+            gunOffset.applyQuaternion(this.camera.quaternion);
+            this.gunModel.position.copy(this.camera.position).add(gunOffset);
+            // Match camera rotation so gun faces the crosshair direction
+            this.gunModel.quaternion.copy(this.camera.quaternion);
+        }
 
         this.fpsPlayer.update();
         this.enemyManager.update(dt);
@@ -263,7 +319,7 @@ export class FPSGame {
         document.removeEventListener('mousedown', this.boundOnMouseDown);
         window.removeEventListener('resize', this.boundOnResize);
         if (this.gunModel) {
-            this.camera.remove(this.gunModel);
+            this.scene.remove(this.gunModel);
             this.gunModel = null;
         }
         this.enemyManager.dispose();

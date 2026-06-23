@@ -75,7 +75,10 @@
             tabindex="0"
         >
             <p>Click to start!</p>
-            <p class="hint">WASD to move &middot; Click to shoot</p>
+            <div class="directions">
+                <p class="hint">WASD to move &middot; Click to shoot</p>
+                <p class="hint">SPACE to jump &middot; SHIFT to run</p>
+            </div>
         </div>
     {/if}
 
@@ -142,12 +145,21 @@
 
             & p {
                 font-size: clamp(var(--h5), 3vw, var(--h2));
+                margin: 0;
+                padding: 0;
             }
 
-            & .hint {
-                font-size: clamp(var(--sm), 1.5vw, var(--h4));
-                opacity: 0.7;
-                margin-top: 0.5em;
+            & .directions {
+                display: flex;
+                flex-direction: column;
+                gap: 0.05rem;
+                align-items: center;
+                justify-content: center;
+
+                & .hint {
+                    font-size: clamp(var(--sm), 1.5vw, var(--h4));
+                    opacity: 0.7;
+                }
             }
         }
 

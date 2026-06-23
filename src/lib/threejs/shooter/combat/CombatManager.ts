@@ -56,11 +56,11 @@ export class CombatManager extends Object3D {
         }
     }
 
-    shoot(shootDirection: Vector3, origin?: Vector3): void {
-        if (!this.canShoot()) return;
+    shoot(shootDirection: Vector3, origin?: Vector3): Projectile | null {
+        if (!this.canShoot()) return null;
         // consume ammo when tracked
         if (this.playerAmmo !== null) {
-            if (this.playerAmmo <= 0) return;
+            if (this.playerAmmo <= 0) return null;
             this.playerAmmo -= 1;
         }
 
@@ -73,8 +73,6 @@ export class CombatManager extends Object3D {
         // Player projectiles need longer range to reach distant enemies
         const projRange = origin ? 15 : 5;
         const projectile = new Projectile(startPos, shootDirection, projRange);
-        // players projectiles are more visible
-        projectile.setPlayerOwned(true);
         this.projectiles.push(projectile);
         this.scene.add(projectile);
 
@@ -83,6 +81,8 @@ export class CombatManager extends Object3D {
         if (this.audioReady) {
             this.audioManager.playSound('playerShoot', 0.5);
         }
+
+        return projectile;
     }
 
     private checkCollisions(): void {
