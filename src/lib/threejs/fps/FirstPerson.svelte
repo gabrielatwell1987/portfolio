@@ -1,9 +1,9 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import { FPSGame } from './FPSGameSetup';
-    import GameOver from '$lib/threejs/shooter/components/GameOver.svelte';
+    import Confetti from './components/Confetti.svelte';
     import LandscapeMobile from '$lib/threejs/shooter/components/LandscapeMobile.svelte';
-    import FPSMobileControls from './FPSMobileControls.svelte';
+    import FPSMobileControls from './components/FPSMobileControls.svelte';
 
     // oxlint-disable-next-line no-unassigned-vars
     let canvas!: HTMLCanvasElement;
@@ -15,26 +15,54 @@
     let ammo = $state<number | null>(null);
     let enemyKillCount = $state(0);
     let isGameOver = $state(false);
-    let won = $derived(enemyKillCount >= 3);
+    let won = $derived(enemyKillCount >= 5);
+
+    // Fallback: if isGameOver stays true for 5s, force restart
+    $effect(() => {
+        if (isGameOver) {
+            const timer = setTimeout(() => {
+                handleRestart();
+            }, 3000);
+            return () => clearTimeout(timer);
+        }
+    });
 
     function handleRestart(): void {
-        game?.dispose();
+        try {
+            game?.dispose();
+        } catch (_) {
+            // ignore dispose errors
+        }
         game = null;
         isGameOver = false;
         playerHealth = 10;
         maxPlayerHealth = 10;
         enemyKillCount = 0;
-        game = new FPSGame();
-        game.init(canvas);
+        try {
+            game = new FPSGame();
+            game.init(canvas);
+        } catch (_) {
+            // ignore init errors
+        }
+        if (isMobile) {
+            isLocked = false;
+            if (game) game.setMobile(true);
+            setTimeout(() => {
+                isLocked = true;
+                game?.start();
+            }, 500);
+        }
     }
 
     function startGame(): void {
         if (game) {
             if (!isMobile) {
                 game.controls.lock();
+                game.start();
             } else {
                 // On mobile, no pointer lock — enable touch controls
                 game.setMobile(true);
+                game.start();
                 isLocked = true;
             }
         }
@@ -51,12 +79,15 @@
             game.setMobile(true);
             setTimeout(() => {
                 isLocked = true;
+                game?.start();
             }, 500);
         }
 
         const hudInterval = setInterval(() => {
             if (!game) return;
             if (isGameOver) return;
+
+            if (!game.combatManager || !game.enemyManager) return;
 
             playerHealth = game.combatManager.getPlayerHealth();
             maxPlayerHealth = game.combatManager.getMaxPlayerHealth();
@@ -66,6 +97,10 @@
             if (playerHealth <= 0 || won) {
                 if (!isGameOver) {
                     if (!isMobile) game.controls.unlock();
+                    game?.stop();
+                    setTimeout(() => {
+                        handleRestart();
+                    }, 2500);
                 }
                 isGameOver = true;
             }
@@ -146,9 +181,9 @@
     <div class="kills">Kills: {enemyKillCount}</div>
 </div>
 
-<FPSMobileControls {game} enabled={isMobile} />
+<FPSMobileControls {game} enabled={isMobile && isLocked && !isGameOver} />
 <LandscapeMobile {isMobile} onPause={() => {}} onResume={() => {}} />
-<GameOver {isGameOver} {won} onRestart={handleRestart} />
+<Confetti active={isGameOver} color={won ? 'green' : 'red'} />
 
 <style>
     .wrapper {

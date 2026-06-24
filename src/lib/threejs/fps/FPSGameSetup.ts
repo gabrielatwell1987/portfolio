@@ -61,6 +61,13 @@ export class FPSGame {
     private lookPitch = 0; // accumulated pitch from touch drag
     private lookSpeed = 0.005;
     private autoShootCooldown = 0;
+    private animationFrameId: number | null = null;
+    private started = false;
+
+    /** Start the game simulation (enemies, combat, player updates) */
+    start(): void {
+        this.started = true;
+    }
 
     /** Enable mobile mode (no pointer lock, camera controlled by setMobileLook) */
     setMobile(enabled: boolean): void {
@@ -286,7 +293,7 @@ export class FPSGame {
     }
 
     private animate() {
-        requestAnimationFrame(() => this.animate());
+        this.animationFrameId = requestAnimationFrame(() => this.animate());
 
         const dt = 1 / 60;
 
@@ -391,8 +398,10 @@ export class FPSGame {
         }
 
         this.fpsPlayer.update();
-        this.enemyManager.update(dt);
-        this.combatManager.update(dt);
+        if (this.started) {
+            this.enemyManager.update(dt);
+            this.combatManager.update(dt);
+        }
 
         this.renderer.render(this.scene, this.camera);
     }
@@ -403,7 +412,16 @@ export class FPSGame {
         this.renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
+    /** Pause the game loop (freezes everything in place) */
+    stop(): void {
+        if (this.animationFrameId !== null) {
+            cancelAnimationFrame(this.animationFrameId);
+            this.animationFrameId = null;
+        }
+    }
+
     dispose() {
+        this.stop();
         this.controls.unlock();
         document.removeEventListener('keydown', this.boundOnKeyDown);
         document.removeEventListener('keyup', this.boundOnKeyUp);
