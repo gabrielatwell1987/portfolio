@@ -181,7 +181,9 @@
     <div class="kills">Kills: {enemyKillCount}</div>
 </div>
 
-<FPSMobileControls {game} enabled={isMobile && isLocked && !isGameOver} />
+{#key game}
+    <FPSMobileControls {game} enabled={isMobile && isLocked && !isGameOver} />
+{/key}
 <LandscapeMobile {isMobile} onPause={() => {}} onResume={() => {}} />
 <Confetti active={isGameOver} color={won ? 'green' : 'red'} />
 
