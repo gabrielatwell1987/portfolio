@@ -35,7 +35,7 @@
             ? image.startsWith('http')
                 ? image
                 : `${baseUrl}${image}`
-            : `${baseUrl}https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/atwellUI_social-media.webp`,
+            : 'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/atwellUI_social-media.webp',
     );
     const siteName = 'atwellUI';
 </script>
@@ -87,25 +87,25 @@
 
     <!-- Structured Data: (JSON-LD) -->
     <script type="application/ld+json">
-            {JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": type === 'article' ? 'Article' : 'WebSite',
-                "name": title,
-                "description": description,
-                "url": canonicalUrl,
-                "image": ogImage,
-                "author": {
-                    "@type": "Person",
-                    "name": "Gabriel Atwell",
-                    "url": baseUrl
-                },
-                ...(type === 'website' && {
-                    "potentialAction": {
-                        "@type": "SearchAction",
-                        "target": `${baseUrl}/search?q={search_term_string}`,
-                        "query-input": "required name=search_term_string"
-                    }
-                })
-            })}
+        {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": type === 'article' ? 'Article' : 'WebSite',
+            "name": title,
+            "description": description,
+            "url": canonicalUrl,
+            "image": ogImage,
+            "author": {
+                "@type": "Person",
+                "name": "Gabriel Atwell",
+                "url": baseUrl
+            },
+            ...(type === 'website' && {
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": `${baseUrl}/search?q={search_term_string}`,
+                    "query-input": "required name=search_term_string"
+                }
+            })
+        })}
     </script>
 </svelte:head>
