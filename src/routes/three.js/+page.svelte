@@ -56,8 +56,8 @@
             <option value="HeroCanvas">hero section</option>
             <option value="PostProcess">post-processing</option>
             <option value="Loader">loading bar</option>
-            <option value="Shooting Game">shooting game</option>
-            <option value="FPS">first person shooter</option>
+            <option value="slaynet">slaynet</option>
+            <option value="killgrid">killgrid</option>
         </select>
 
         {#if SelectedComponent}

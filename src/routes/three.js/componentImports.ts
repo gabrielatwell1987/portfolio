@@ -8,6 +8,6 @@ export const componentImportMap: Record<
     PostProcess: () =>
         import('$lib/threejs/post-processing/PostProcess.svelte'),
     Loader: () => import('$lib/threejs/loader/Loader.svelte'),
-    'Shooting Game': () => import('$lib/threejs/shooter/GameScene.svelte'),
-    FPS: () => import('$lib/threejs/fps/FirstPerson.svelte'),
+    slaynet: () => import('$lib/threejs/shooter/Slaynet.svelte'),
+    killgrid: () => import('$lib/threejs/fps/Killgrid.svelte'),
 };

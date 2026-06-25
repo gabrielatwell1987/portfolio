@@ -1,7 +1,8 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
+    import { onMount, tick } from 'svelte';
     import { FPSGame } from './FPSGameSetup';
     import Confetti from './components/Confetti.svelte';
+    import TitleScreen from './TitleScreen.svelte';
     import LandscapeMobile from '$lib/threejs/shooter/components/LandscapeMobile.svelte';
     import FPSMobileControls from './components/FPSMobileControls.svelte';
 
@@ -16,8 +17,13 @@
     let enemyKillCount = $state(0);
     let isGameOver = $state(false);
     let won = $derived(enemyKillCount >= 5);
+    let showTitle = $state(true);
 
-    // Fallback: if isGameOver stays true for 5s, force restart
+    // Refs for cleanup set by startTitleGame
+    let hudIntervalRef: ReturnType<typeof setInterval> | null = null;
+    let lockChangeRef: (() => void) | null = null;
+
+    // Fallback: if isGameOver stays true for 3s, force restart
     $effect(() => {
         if (isGameOver) {
             const timer = setTimeout(() => {
@@ -38,49 +44,62 @@
         playerHealth = 10;
         maxPlayerHealth = 10;
         enemyKillCount = 0;
-        try {
-            game = new FPSGame();
-            game.init(canvas);
-        } catch (_) {
-            // ignore init errors
-        }
+        game = new FPSGame();
+        // Init runs once; then we lock/start
+        const initPromise = game.init(canvas).catch(() => {});
         if (isMobile) {
             isLocked = false;
             if (game) game.setMobile(true);
-            setTimeout(() => {
+            initPromise.then(() => {
                 isLocked = true;
                 game?.start();
-            }, 500);
-        }
-    }
-
-    function startGame(): void {
-        if (game) {
-            if (!isMobile) {
-                game.controls.lock();
-                game.start();
-            } else {
-                // On mobile, no pointer lock — enable touch controls
-                game.setMobile(true);
-                game.start();
+            });
+            setTimeout(() => {
+                if (!isLocked) {
+                    isLocked = true;
+                    game?.start();
+                }
+            }, 2000);
+        } else {
+            // Desktop — re-lock pointer after init completes
+            initPromise.then(() => {
+                game?.controls.lock();
+                game?.start();
                 isLocked = true;
-            }
+            });
         }
     }
 
-    onMount(() => {
+    async function startTitleGame(): Promise<void> {
+        showTitle = false;
         isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-        game = new FPSGame();
-        game.init(canvas);
+        // Wait for Svelte to render the canvas in the {:else} block
+        await tick();
 
-        // On mobile, auto-start since we can't use pointer lock
-        if (isMobile) {
-            game.setMobile(true);
-            setTimeout(() => {
+        game = new FPSGame();
+        // Await init so controls, combatManager, etc. exist
+        game.init(canvas).then(() => {
+            if (isMobile) {
+                game?.setMobile(true);
                 isLocked = true;
                 game?.start();
-            }, 500);
+            } else {
+                // Desktop — lock pointer immediately
+                game?.controls.lock();
+                game?.start();
+                isLocked = true;
+            }
+        });
+        // Keep a short mobile fallback in case .then is delayed
+        if (isMobile) {
+            setTimeout(() => {
+                if (!isLocked) {
+                    game?.setMobile(true);
+                    isLocked = true;
+                    game?.start();
+                }
+            }, 2000);
         }
 
         const hudInterval = setInterval(() => {
@@ -106,86 +125,74 @@
             }
         }, 100);
 
+        hudIntervalRef = hudInterval;
+
         const onLockChange = () => {
             isLocked = document.pointerLockElement === canvas;
         };
+        lockChangeRef = onLockChange;
         document.addEventListener('pointerlockchange', onLockChange);
+    }
 
+    onMount(() => {
+        // Title screen shown initially — game starts via startTitleGame
         return () => {
-            clearInterval(hudInterval);
-            document.removeEventListener('pointerlockchange', onLockChange);
+            if (hudIntervalRef) clearInterval(hudIntervalRef);
+            if (lockChangeRef)
+                document.removeEventListener(
+                    'pointerlockchange',
+                    lockChangeRef,
+                );
             game?.dispose();
             game = null;
         };
     });
 </script>
 
-<div class="wrapper">
-    <canvas bind:this={canvas} class="webgl"></canvas>
+{#if showTitle}
+    <TitleScreen onStart={startTitleGame} />
+{:else}
+    <div class="wrapper">
+        <canvas bind:this={canvas} class="webgl"></canvas>
 
-    <!-- click/tap to lock overlay -->
-    {#if !isLocked}
-        <!-- svelte-ignore a11y_no_static_element_interactions -->
-        <div
-            class="lock-overlay"
-            onclick={startGame}
-            ontouchstart={(e) => {
-                e.preventDefault();
-                startGame();
-            }}
-            onkeydown={() => {}}
-            role="button"
-            tabindex="0"
-        >
-            {#if isMobile}
-                <p>Tap to start!</p>
-                <div class="directions">
-                    <p class="hint">Touch to look &middot; Tap to shoot</p>
-                </div>
+        <!-- crosshair -->
+        <div class="crosshair" class:visible={isLocked}>
+            <div class="dot"></div>
+            <div class="line top"></div>
+            <div class="line bottom"></div>
+            <div class="line left"></div>
+            <div class="line right"></div>
+        </div>
+
+        <!-- HUD -->
+        <div class="health-bar">
+            <div
+                class="health-fill"
+                style="width: {(playerHealth / maxPlayerHealth) * 100}%"
+            ></div>
+        </div>
+
+        <div class="ammo">
+            ammo:
+            {#if ammo === null}
+                &infin;
             {:else}
-                <p>Click to start!</p>
-                <div class="directions">
-                    <p class="hint">WASD to move &middot; Click to shoot</p>
-                    <p class="hint">SPACE to jump &middot; SHIFT to run</p>
-                </div>
+                {ammo}
             {/if}
         </div>
-    {/if}
 
-    <!-- crosshair -->
-    <div class="crosshair" class:visible={isLocked}>
-        <div class="dot"></div>
-        <div class="line top"></div>
-        <div class="line bottom"></div>
-        <div class="line left"></div>
-        <div class="line right"></div>
+        <div class="kills">Kills: {enemyKillCount}</div>
     </div>
 
-    <!-- HUD -->
-    <div class="health-bar">
-        <div
-            class="health-fill"
-            style="width: {(playerHealth / maxPlayerHealth) * 100}%"
-        ></div>
-    </div>
-
-    <div class="ammo">
-        ammo:
-        {#if ammo === null}
-            &infin;
-        {:else}
-            {ammo}
-        {/if}
-    </div>
-
-    <div class="kills">Kills: {enemyKillCount}</div>
-</div>
-
-{#key game}
-    <FPSMobileControls {game} enabled={isMobile && isLocked && !isGameOver} />
-{/key}
-<LandscapeMobile {isMobile} onPause={() => {}} onResume={() => {}} />
-<Confetti active={isGameOver} color={won ? 'green' : 'red'} />
+    {#key game}
+        <FPSMobileControls
+            {game}
+            enabled={isMobile && isLocked && !isGameOver}
+        />
+    {/key}
+    <LandscapeMobile {isMobile} onPause={() => {}} onResume={() => {}} />
+    <Confetti active={isGameOver} color={won ? 'green' : 'red'} />
+{/if}
 
 <style>
     .wrapper {
@@ -201,39 +208,6 @@
             display: block;
             background: transparent;
             touch-action: none;
-        }
-
-        & .lock-overlay {
-            position: fixed;
-            inset: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.6);
-            color: var(--clr-light-500);
-            font-family: var(--thunder);
-            z-index: 10;
-            cursor: pointer;
-
-            & p {
-                font-size: clamp(var(--h5), 3vw, var(--h2));
-                margin: 0;
-                padding: 0;
-            }
-
-            & .directions {
-                display: flex;
-                flex-direction: column;
-                gap: 0.05rem;
-                align-items: center;
-                justify-content: center;
-
-                & .hint {
-                    font-size: clamp(var(--sm), 1.5vw, var(--h4));
-                    opacity: 0.7;
-                }
-            }
         }
 
         & .crosshair {
