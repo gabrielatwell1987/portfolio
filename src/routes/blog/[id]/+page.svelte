@@ -3,6 +3,7 @@
     import { marked } from 'marked';
     import DOMPurify from 'isomorphic-dompurify';
     import Avatar2 from '$lib/components/blog/FaceAvatar.svelte';
+    import SEO from '$lib/data/SEO.svelte';
 
     let { data } = $props();
     let post = $derived(data.post);
@@ -25,6 +26,13 @@
         );
     }
 </script>
+
+<SEO
+    title={post?.title ?? 'Blog Post'}
+    description={post?.subtitle ?? "Read more on Gabriel Atwell's blog"}
+    image={post?.image}
+    type="article"
+/>
 
 {#if post}
     <section class="blog-post">

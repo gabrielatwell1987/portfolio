@@ -1,8 +1,15 @@
 <script lang="ts">
     import { getPosts } from './data.remote';
+    import SEO from '$lib/data/SEO.svelte';
 
     let posts = await getPosts();
 </script>
+
+<SEO
+    title="Blog - Learn Three.js"
+    description="Learn Three.js with Gabriel Atwell's blog"
+    keywords="three.js blog, three.js tutorial, web development, gabe atwell blog, gabe three.js blog"
+/>
 
 <h1 class="blog-title">
     Learn <span style="view-transition-name: three-heading;">Three.js</span>

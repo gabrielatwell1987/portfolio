@@ -17,68 +17,52 @@
         type = 'website',
     }: Props = $props();
 
-    let url = $state<string>('');
-    let baseUrl = $state<string>('');
-    let ogImage = $state<string>('');
-    let siteName = 'atwellUI';
-    let fullTitle = $derived(title);
-
-    $effect(() => {
-        const currentPage = page;
-        const { origin, pathname } = currentPage.url;
-
-        // Set base URL
-        baseUrl =
-            origin.includes('localhost') || origin.includes('127.0.0.1')
-                ? origin
-                : 'https://atwell.dev';
-
-        // Set canonical URL
-        const normalizedPath =
-            pathname === '/' ? '/' : pathname.replace(/\/$/, '');
-        url = `${baseUrl}${normalizedPath}`;
-
-        // Set OG image
-        if (image) {
-            ogImage = image.startsWith('http') ? image : `${baseUrl}${image}`;
-        } else {
-            ogImage = `${baseUrl}https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/atwellUI_social-media.webp`;
-        }
-    });
+    const currentUrl = $derived(page.url);
+    const baseUrl = $derived(
+        currentUrl.origin.includes('localhost') ||
+            currentUrl.origin.includes('127.168.0.1')
+            ? currentUrl.origin
+            : 'https://atwell.dev',
+    );
+    const normalizedPath = $derived(
+        currentUrl.pathname === '/'
+            ? '/'
+            : currentUrl.pathname.replace(/\/$/, ''),
+    );
+    const canonicalUrl = $derived(`${baseUrl}${normalizedPath}`);
+    const ogImage = $derived(
+        image
+            ? image.startsWith('http')
+                ? image
+                : `${baseUrl}${image}`
+            : `${baseUrl}https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/atwellUI_social-media.webp`,
+    );
+    const siteName = 'atwellUI';
 </script>
 
 <svelte:head>
-    <title>{fullTitle}</title>
-    {#if url}
-        <link rel="canonical" href={url} />
-    {/if}
-
+    <!-- critical -->
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalUrl} />
     <meta name="description" content={description} />
-    {#if keywords}
-        <meta name="keywords" content={keywords} />
-    {/if}
-
-    <!-- Essential meta tags -->
     <meta
         name="robots"
         content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
     />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="author" content="Gabriel Atwell" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <meta name="language" content="en-US" />
-    <meta name="revisit-after" content="7 days" />
 
-    <!-- Open Graph -->
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={description} />
-    {#if url}
-        <meta property="og:url" content={url} />
+    <!-- helpful -->
+    {#if keywords}
+        <meta name="keywords" content={keywords} />
     {/if}
+    <meta name="author" content="Gabriel Atwell" />
+
+    <!-- required: Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content="en_US" />
     {#if ogImage}
         <meta property="og:image" content={ogImage} />
         <meta
@@ -89,9 +73,9 @@
         <meta property="og:image:height" content="630" />
     {/if}
 
-    <!-- Twitter Card -->
+    <!-- required: Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     {#if ogImage}
         <meta name="twitter:image" content={ogImage} />
@@ -101,15 +85,14 @@
         />
     {/if}
 
-    <!-- Structured Data -->
-    {#if url && baseUrl && ogImage}
-        <script type="application/ld+json">
+    <!-- Structured Data: (JSON-LD) -->
+    <script type="application/ld+json">
             {JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": type === 'article' ? 'Article' : 'WebSite',
-                "name": fullTitle,
+                "name": title,
                 "description": description,
-                "url": url,
+                "url": canonicalUrl,
                 "image": ogImage,
                 "author": {
                     "@type": "Person",
@@ -124,6 +107,5 @@
                     }
                 })
             })}
-        </script>
-    {/if}
+    </script>
 </svelte:head>

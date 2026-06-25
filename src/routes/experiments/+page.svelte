@@ -1,4 +1,6 @@
 <script lang="ts">
+    import SEO from '$lib/data/SEO.svelte';
+
     const componentMap: Record<
         number,
         { load: () => Promise<any>; props?: Record<string, any> }
@@ -139,6 +141,12 @@
         };
     });
 </script>
+
+<SEO
+    title="Frontend Experiments"
+    description="Explore Gabriel Atwell's interactive web experiments"
+    keywords="three.js experiments, web development experiments, creative coding, gabe atwell, gabe experiments"
+/>
 
 {#key currentIndex}
     {#if Component}
