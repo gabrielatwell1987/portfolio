@@ -102,7 +102,7 @@
                 inline-size: clamp(200px, 20vw, 300px);
                 position: absolute;
                 bottom: 1.5em;
-                left: 50%;
+                left: 25%;
                 transform: translateX(-50%);
                 color: var(--clr-gray-600);
                 font-weight: 700;
