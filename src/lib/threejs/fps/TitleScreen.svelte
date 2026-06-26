@@ -9,9 +9,9 @@
         function updateChrome() {
             const isLandscape = window.innerWidth > window.innerHeight;
             const nav = document.querySelector('nav') as HTMLElement | null;
-            const select = document.querySelector(
-                '.select',
-            ) as HTMLElement | null;
+            // const select = document.querySelector(
+            //     '.select',
+            // ) as HTMLElement | null;
             const footer = document.querySelector(
                 'footer',
             ) as HTMLElement | null;
@@ -21,7 +21,7 @@
             if (isLandscape) {
                 if (nav) nav.style.display = 'none';
                 if (footer) footer.style.display = 'none';
-                if (select) select.style.display = 'none';
+                // if (select) select.style.display = 'none';
                 body.style.overflow = 'hidden';
                 body.style.width = '100vw';
                 body.style.height = '100vh';
@@ -35,7 +35,7 @@
             } else {
                 if (nav) nav.style.display = '';
                 if (footer) footer.style.display = '';
-                if (select) select.style.display = '';
+                // if (select) select.style.display = '';
                 body.style.overflow = '';
                 body.style.width = '';
                 body.style.height = '';
@@ -69,10 +69,13 @@
 <div class="title-screen">
     <div class="content">
         <h1 class="title">KILLGRID</h1>
+
         <div class="tagline">Survive the grid</div>
+
         <button class="start-button" onclick={onStart} ontouchstart={onStart}>
             Start
         </button>
+
         <div class="controls-hint">
             <p>WASD to move &middot; Click to shoot</p>
             <p>SPACE to jump &middot; SHIFT to run</p>

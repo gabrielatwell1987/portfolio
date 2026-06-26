@@ -1,7 +1,6 @@
 <script lang="ts">
     import { selectedThreeComponent } from '$lib/data/stores/threejsComponent';
     import { componentImportMap } from './componentImports';
-    import Divider from '$lib/components/learn/Divider.svelte';
     import SEO from '$lib/data/SEO.svelte';
     import type { Component } from 'svelte';
     import { page } from '$app/state';
@@ -39,6 +38,15 @@
             selectedComponent === 'Select' ? null : selectedComponent,
         );
     });
+
+    $effect(() => {
+        function onExit() {
+            selectedComponent = 'Select';
+        }
+        window.addEventListener('exit-game', onExit);
+
+        return () => window.removeEventListener('exit-game', onExit);
+    });
 </script>
 
 <SEO
@@ -49,23 +57,10 @@
 
 <div class="wholeScreen" style:background-image={backgroundImage}>
     <div class="content">
-        <select bind:value={selectedComponent} class="select">
-            <option value="Select" disabled>select a component</option>
-            <option value="Environment">environment mapping</option>
-            <option value="PictureParticles">picture particles</option>
-            <option value="HeroCanvas">hero section</option>
-            <option value="PostProcess">post-processing</option>
-            <option value="Loader">loading bar</option>
-            <option value="slaynet">slaynet</option>
-            <option value="killgrid">killgrid</option>
-        </select>
-
         {#if SelectedComponent}
             <SelectedComponent />
         {:else if selectedComponent === 'Select'}
             <h2>select a component to view</h2>
-
-            <Divider width={75} thickness={5} color="var(--clr-light-350)" />
 
             <p>
                 *be advised that these components will still work even if you
@@ -75,7 +70,42 @@
     </div>
 </div>
 
+<select bind:value={selectedComponent} class="select">
+    <option value="Select" disabled>select a component</option>
+    <option value="Environment">environment mapping</option>
+    <option value="PictureParticles">picture particles</option>
+    <option value="HeroCanvas">hero section</option>
+    <option value="PostProcess">post-processing</option>
+    <option value="Loader">loading bar</option>
+    <option value="slaynet">slaynet</option>
+    <option value="killgrid">killgrid</option>
+</select>
+
 <style>
+    .select {
+        inline-size: clamp(200px, 20vw, 300px);
+        position: fixed;
+        bottom: 1.5em;
+        left: 25%;
+        transform: translateX(-50%);
+        color: var(--clr-gray-600);
+        font-weight: 700;
+        z-index: 999;
+        touch-action: auto;
+
+        @media (width <= 768px) {
+            top: 3.5em;
+            bottom: auto;
+            left: 50%;
+        }
+
+        & option {
+            font-family: var(--bronova);
+            font-size: clamp(var(--sm), 1.2vw, var(--h4));
+            font-weight: 500;
+        }
+    }
+
     .wholeScreen {
         inline-size: 100vw;
         block-size: 100vh;
@@ -97,30 +127,6 @@
             align-items: center;
             min-height: 100vh;
             position: relative;
-
-            & select {
-                inline-size: clamp(200px, 20vw, 300px);
-                position: absolute;
-                bottom: 1.5em;
-                left: 25%;
-                transform: translateX(-50%);
-                color: var(--clr-gray-600);
-                font-weight: 700;
-                z-index: 10;
-                touch-action: none;
-
-                @media (width <= 768px) {
-                    top: 5em;
-                    bottom: auto;
-                    left: 50%;
-                }
-
-                & option {
-                    font-family: var(--bronova);
-                    font-size: clamp(var(--sm), 1.2vw, var(--h4));
-                    font-weight: 500;
-                }
-            }
 
             & h2 {
                 color: var(--clr-blue-350);

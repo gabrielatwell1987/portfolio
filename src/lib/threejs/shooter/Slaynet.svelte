@@ -152,6 +152,17 @@
                     signal: abortController.signal,
                 });
 
+                function onEscape(e: KeyboardEvent) {
+                    if (e.key === 'Escape') {
+                        cleanupGame(state, abortController);
+                        gameState = null;
+                        window.dispatchEvent(new CustomEvent('exit-game'));
+                    }
+                }
+                window.addEventListener('keydown', onEscape, {
+                    signal: abortController.signal,
+                });
+
                 renderer.setAnimationLoop(() => {
                     if (isPaused) {
                         renderer.render(scene, camera);

@@ -90,6 +90,7 @@
                 isLocked = true;
             }
         });
+
         // Keep a short mobile fallback in case .then is delayed
         if (isMobile) {
             setTimeout(() => {
@@ -131,6 +132,17 @@
         };
         lockChangeRef = onLockChange;
         document.addEventListener('pointerlockchange', onLockChange);
+
+        const onEscape = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                game?.dispose();
+                game = null;
+                clearInterval(hudInterval);
+                document.removeEventListener('pointerlockchange', onLockChange);
+                window.dispatchEvent(new CustomEvent('exit-game'));
+            }
+        };
+        document.addEventListener('keydown', onEscape);
     }
 
     onMount(() => {
