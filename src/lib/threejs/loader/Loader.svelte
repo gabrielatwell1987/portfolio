@@ -33,7 +33,9 @@
 
 <canvas class="webgl" bind:this={canvas}></canvas>
 
-<section class="loading-bar"></section>
+<div class="loading-overlay">
+    <section class="loading-bar"></section>
+</div>
 
 <div class="point point-0">
     <div class="content">
@@ -44,6 +46,12 @@
 </div>
 
 <style>
+    :global(body.loading-complete .loading-overlay) {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 3s ease;
+    }
+
     .webgl {
         position: fixed;
         top: 0;
@@ -51,17 +59,25 @@
         outline: 0;
     }
 
-    .loading-bar {
-        position: absolute;
-        top: 50%;
-        width: 100%;
-        height: 1.5em;
-        background-color: var(--clr-gray-600);
-        transform: scaleX(0);
-        transition: transform 0.5s ease;
-        transform-origin: top left;
-        border-radius: 1vw;
-        will-change: transform;
+    .loading-overlay {
+        position: fixed;
+        inset: 0;
+        background-color: var(--clr-dark-500);
+        z-index: 200;
+        pointer-events: none;
+
+        & .loading-bar {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            height: 1.5em;
+            background-color: var(--clr-gray-600);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+            transform-origin: top left;
+            border-radius: 1vw;
+            will-change: transform;
+        }
     }
 
     .point {

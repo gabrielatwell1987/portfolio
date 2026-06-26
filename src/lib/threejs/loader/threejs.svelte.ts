@@ -1,7 +1,5 @@
 import {
     LoadingManager,
-    PlaneGeometry,
-    ShaderMaterial,
     Group,
     CubeTexture,
     CubeTextureLoader,
@@ -33,10 +31,7 @@ export function setupLoader(canvas: HTMLCanvasElement) {
         // loaded
         () => {
             gsap.delayedCall(0.5, () => {
-                gsap.to(overlayMaterial.uniforms.uAlpha, {
-                    duration: 3,
-                    value: 0,
-                });
+                document.body.classList.add('loading-complete');
                 loadingBarElement.style.transform = 'translateX(100%)';
 
                 gsap.delayedCall(0.5, () => {
@@ -64,26 +59,6 @@ export function setupLoader(canvas: HTMLCanvasElement) {
 
     const scene = new Scene();
 
-    const overlayGeometry = new PlaneGeometry(2, 2, 1, 1);
-    const overlayMaterial = new ShaderMaterial({
-        transparent: true,
-        uniforms: { uAlpha: { value: 1.0 } },
-        vertexShader: `
-                void main() {
-                    gl_Position = vec4(position, 1.0);
-                }
-            `,
-        fragmentShader: `
-                uniform float uAlpha;
-
-                void main() {
-                    gl_FragColor = vec4(0.0, 0.0, 0.0, uAlpha);
-                }
-            `,
-    });
-    const overlay = new Mesh(overlayGeometry, overlayMaterial);
-    scene.add(overlay);
-
     // cleanup references
     let model = $state<Group | null>(null);
     let environmentMap = $state<CubeTexture | null>(null);
@@ -103,18 +78,26 @@ export function setupLoader(canvas: HTMLCanvasElement) {
         });
     };
 
-    environmentMap = cubeTextureLoader.load([
-        '/threejayess/environmentMaps/2/px.webp',
-        '/threejayess/environmentMaps/2/nx.webp',
-        '/threejayess/environmentMaps/2/py.webp',
-        '/threejayess/environmentMaps/2/ny.webp',
-        '/threejayess/environmentMaps/2/pz.webp',
-        '/threejayess/environmentMaps/2/nz.webp',
-    ]);
+    const envMap = cubeTextureLoader.load(
+        [
+            '/threejayess/environmentMaps/2/px.webp',
+            '/threejayess/environmentMaps/2/nx.webp',
+            '/threejayess/environmentMaps/2/py.webp',
+            '/threejayess/environmentMaps/2/ny.webp',
+            '/threejayess/environmentMaps/2/pz.webp',
+            '/threejayess/environmentMaps/2/nz.webp',
+        ],
+        () => {
+            // success — textures loaded
+            envMap.colorSpace = SRGBColorSpace;
+            scene.background = envMap;
+            scene.environment = envMap;
+        },
+        undefined,
+        () => console.warn('Failed to load environment map'),
+    );
 
-    environmentMap.colorSpace = SRGBColorSpace;
-    scene.background = environmentMap;
-    scene.environment = environmentMap;
+    environmentMap = envMap;
 
     gltfLoader.load('/threejayess/models/shark.glb', (gltf) => {
         gltf.scene.scale.set(0.5, 0.5, 0.25);
