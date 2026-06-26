@@ -68,7 +68,7 @@
 
 <div class="title-screen">
     <div class="content">
-        <h1 class="title">KILLGRID</h1>
+        <h1 class="title">SLAYNET</h1>
         <div class="tagline">Kill the putahmen</div>
         <button class="start-button" onclick={onStart} ontouchstart={onStart}>
             Start

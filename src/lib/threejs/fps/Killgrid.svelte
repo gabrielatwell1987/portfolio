@@ -6,8 +6,7 @@
     import LandscapeMobile from '$lib/threejs/shooter/components/LandscapeMobile.svelte';
     import FPSMobileControls from './components/FPSMobileControls.svelte';
 
-    // oxlint-disable-next-line no-unassigned-vars
-    let canvas!: HTMLCanvasElement;
+    let canvas = $state<HTMLCanvasElement | null>(null);
     let game: FPSGame | null = $state(null);
     let isLocked = $state(false);
     let isMobile = $state(false);
@@ -46,7 +45,7 @@
         enemyKillCount = 0;
         game = new FPSGame();
         // Init runs once; then we lock/start
-        const initPromise = game.init(canvas).catch(() => {});
+        const initPromise = game.init(canvas!).catch(() => {});
         if (isMobile) {
             isLocked = false;
             if (game) game.setMobile(true);
@@ -79,7 +78,7 @@
 
         game = new FPSGame();
         // Await init so controls, combatManager, etc. exist
-        game.init(canvas).then(() => {
+        game.init(canvas!).then(() => {
             if (isMobile) {
                 game?.setMobile(true);
                 isLocked = true;
