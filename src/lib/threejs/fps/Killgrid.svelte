@@ -15,8 +15,17 @@
     let ammo = $state<number | null>(null);
     let enemyKillCount = $state(0);
     let isGameOver = $state(false);
-    let won = $derived(enemyKillCount >= 5);
     let showTitle = $state(true);
+
+    // ─── Boss flow ───────────────────────────────────────────
+    let bossSpawned = $state(false);
+    let bossAlive = $state(false);
+    let bossHealth = $state(0);
+    let bossMaxHealth = $state(0);
+    let won = $state(false);
+    // Screen position for boss health bar (above boss head)
+    let bossScreenX = $state(-1000);
+    let bossScreenY = $state(-1000);
 
     // Refs for cleanup set by startTitleGame
     let hudIntervalRef: ReturnType<typeof setInterval> | null = null;
@@ -40,78 +49,92 @@
         }
         game = null;
         isGameOver = false;
+        won = false;
+        bossSpawned = false;
+        bossAlive = false;
+        bossHealth = 0;
+        bossMaxHealth = 0;
         playerHealth = 10;
         maxPlayerHealth = 10;
         enemyKillCount = 0;
         game = new FPSGame();
-        // Init runs once; then we lock/start
-        const initPromise = game.init(canvas!).catch(() => {});
+        game.init(canvas!).catch(() => {});
         if (isMobile) {
-            isLocked = false;
-            if (game) game.setMobile(true);
-            initPromise.then(() => {
-                isLocked = true;
-                game?.start();
-            });
-            setTimeout(() => {
-                if (!isLocked) {
-                    isLocked = true;
-                    game?.start();
-                }
-            }, 2000);
-        } else {
-            // Desktop — re-lock pointer after init completes
-            initPromise.then(() => {
-                game?.controls.lock();
-                game?.start();
-                isLocked = true;
-            });
+            game.setMobile(true);
         }
+        const checkInit = setInterval(() => {
+            if (game && game.combatManager && game.enemyManager) {
+                clearInterval(checkInit);
+                game.start();
+                isLocked = document.pointerLockElement === canvas;
+            }
+        }, 50);
     }
 
     async function startTitleGame(): Promise<void> {
         showTitle = false;
         isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-        // Wait for Svelte to render the canvas in the {:else} block
         await tick();
 
         game = new FPSGame();
-        // Await init so controls, combatManager, etc. exist
         game.init(canvas!).then(() => {
-            if (isMobile) {
-                game?.setMobile(true);
-                isLocked = true;
-                game?.start();
-            } else {
-                // Desktop — lock pointer immediately
-                game?.controls.lock();
-                game?.start();
-                isLocked = true;
-            }
+            if (isMobile) game?.setMobile(true);
+            game?.start();
+            isLocked = document.pointerLockElement === canvas;
         });
-
-        // Keep a short mobile fallback in case .then is delayed
-        if (isMobile) {
-            setTimeout(() => {
-                if (!isLocked) {
-                    game?.setMobile(true);
-                    isLocked = true;
-                    game?.start();
-                }
-            }, 2000);
-        }
 
         const hudInterval = setInterval(() => {
             if (!game) return;
             if (isGameOver) return;
-
             if (!game.combatManager || !game.enemyManager) return;
 
+            const mgr = game.enemyManager;
+
+            // Read game state
             playerHealth = game.combatManager.getPlayerHealth();
             maxPlayerHealth = game.combatManager.getMaxPlayerHealth();
             ammo = game.combatManager.getPlayerAmmo();
-            enemyKillCount = game.enemyManager.getKillCount();
+            enemyKillCount = mgr.getKillCount();
+
+            // ─── Spawn boss when threshold reached ──────────
+            if (enemyKillCount >= 5 && !mgr.hasBossSpawned()) {
+                mgr.spawnBoss();
+                bossSpawned = true;
+                bossAlive = true;
+                // Read boss HP after a short delay
+                setTimeout(() => {
+                    bossHealth = mgr.getBossHealth();
+                    bossMaxHealth = mgr.getBossMaxHealth();
+                }, 100);
+            }
+
+            // ─── Track boss HP while alive ─────────────────
+            const bossStillAlive = mgr.isBossAlive();
+            if (bossStillAlive) {
+                bossHealth = mgr.getBossHealth();
+                bossMaxHealth = mgr.getBossMaxHealth();
+                bossAlive = true;
+
+                // Project boss position to screen coordinates for floating health bar
+                const bossEnemy = mgr.getEnemies().find((e: any) => e.isBoss);
+                if (bossEnemy && game.camera) {
+                    const pos = bossEnemy.position.clone();
+                    pos.y += 2.8; // above the head
+                    const projected = pos.clone().project(game.camera);
+                    bossScreenX = ((projected.x + 1) / 2) * window.innerWidth;
+                    bossScreenY = ((-projected.y + 1) / 2) * window.innerHeight;
+                    // Hide if behind camera
+                    if (projected.z > 1) {
+                        bossScreenX = -1000;
+                        bossScreenY = -1000;
+                    }
+                }
+            } else if (bossSpawned && bossAlive) {
+                // Boss was alive last tick, now dead → win!
+                won = true;
+                bossAlive = false;
+            }
 
             if (playerHealth <= 0 || won) {
                 if (!isGameOver) {
@@ -146,7 +169,6 @@
     }
 
     onMount(() => {
-        // Title screen shown initially — game starts via startTitleGame
         return () => {
             if (hudIntervalRef) clearInterval(hudIntervalRef);
             if (lockChangeRef)
@@ -175,7 +197,7 @@
             <div class="line right"></div>
         </div>
 
-        <!-- HUD -->
+        <!-- HUD: Player health -->
         <div class="health-bar">
             <div
                 class="health-fill"
@@ -183,6 +205,21 @@
             ></div>
         </div>
 
+        <!-- HUD: Boss health bar (floating above boss head) -->
+        {#if bossAlive && bossMaxHealth > 0}
+            <div
+                class="boss-bar"
+                style="left: {bossScreenX}px; top: {bossScreenY}px;"
+            >
+                <div class="boss-label">BOSS</div>
+                <div
+                    class="boss-fill"
+                    style="width: {(bossHealth / bossMaxHealth) * 100}%"
+                ></div>
+            </div>
+        {/if}
+
+        <!-- HUD: Ammo -->
         <div class="ammo">
             ammo:
             {#if ammo === null}
@@ -192,7 +229,14 @@
             {/if}
         </div>
 
-        <div class="kills">Kills: {enemyKillCount}</div>
+        <!-- HUD: Kill progress -->
+        <div class="kills">
+            {#if bossSpawned}
+                BOSS
+            {:else}
+                Kills: {enemyKillCount}/5
+            {/if}
+        </div>
     </div>
 
     {#key game}
@@ -310,6 +354,47 @@
             background: #e74c3c;
             border-radius: 6px;
             transition: width 0.2s;
+        }
+
+        .boss-bar {
+            position: fixed;
+            transform: translate(-50%, -100%);
+            width: 300px;
+            height: 18px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 68, 0, 0.8);
+            border-radius: 9px;
+            overflow: hidden;
+            z-index: 6;
+            pointer-events: none;
+            box-shadow: 0 0 12px rgba(255, 68, 0, 0.4);
+            margin-top: -8px;
+
+            @media (width <= 768px) {
+                width: 200px;
+                height: 14px;
+            }
+        }
+
+        .boss-label {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: monospace;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #ff8844;
+            text-shadow: 0 0 6px rgba(255, 68, 0, 0.8);
+            z-index: 1;
+            letter-spacing: 2px;
+        }
+
+        .boss-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff4400, #ff8800);
+            border-radius: 8px;
+            transition: width 0.15s;
         }
 
         .ammo {

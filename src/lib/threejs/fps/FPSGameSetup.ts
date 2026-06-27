@@ -19,10 +19,10 @@ import {
     DoubleSide,
 } from 'three';
 import { World } from '../shooter/world';
-import { CombatManager } from '../shooter/combat/CombatManager';
 import { FPSPlayer } from './player/FPSPlayer';
 import { FPSEnemyManager } from './enemy/FPSEnemyManager';
 import { FPSBuilding } from './buildings/FPSBuilding';
+import { FPSCombatManager } from './combat/FPSCombatManager';
 
 export class FPSGame {
     scene!: Scene;
@@ -33,7 +33,10 @@ export class FPSGame {
     world!: World;
     buildings!: Group;
     enemyManager!: FPSEnemyManager;
-    combatManager!: CombatManager;
+    combatManager!: FPSCombatManager;
+
+    /** Combined mesh array of buildings for AI line-of-sight checks */
+    private obstacles: Object3D[] = [];
 
     private moveForward = false;
     private moveBackward = false;
@@ -110,7 +113,7 @@ export class FPSGame {
         this.renderer.setSize(window.innerWidth, window.innerHeight);
 
         this.scene = new Scene();
-        this.scene.background = new Color('#87ceeb'); // sky blue so we can see the horizon
+        this.scene.background = new Color('#87ceeb');
         this.scene.fog = new Fog(0x87ceeb, 30, 60);
 
         this.camera = new PerspectiveCamera(
@@ -119,19 +122,23 @@ export class FPSGame {
             0.1,
             1000,
         );
-        // Camera stays at scene root — NOT parented to player.
-        // PointerLockControls only works reliably on root-level cameras.
-        // We'll sync the camera position to the player each frame in animate().
         this.camera.position.set(5.5, 1.6, 5.5);
 
         this.controls = new PointerLockControls(this.camera, canvas);
 
-        // --- World terrain (from shooter, no GLTF) ---
+        // ═══ Lock pointer IMMEDIATELY ═══
+        // Must happen before any await or the user gesture expires.
+        // If it fails (e.g. no user gesture), that's OK — we fall through.
+        // Pointer lock may not succeed (e.g. no gesture, sandboxed iframe).
+        // This is non-fatal — the player can click the canvas to lock later.
+        this.controls.lock();
+
+        // --- World terrain ---
         this.world = new World(50, 50);
         await this.world.generate();
         this.scene.add(this.world);
 
-        // Remove the GLTF buildings from the world, replace with simple boxes
+        // Swap GLTF buildings for simple boxes
         if (this.world.buildings) {
             this.world.remove(this.world.buildings);
         }
@@ -142,27 +149,23 @@ export class FPSGame {
             8,
             buildingCells,
         );
-        // Merge building cells so enemy AI knows where to avoid
         for (const cell of buildingCells) {
             this.world.buildingCells.add(cell);
         }
         this.scene.add(this.buildings);
 
-        // --- FPS Player (plain Object3D — invisible, just tracks position) ---
+        // --- FPS Player ---
         this.fpsPlayer = new FPSPlayer();
         this.fpsPlayer.rotation.y = Math.PI;
         this.fpsPlayer.position.set(5.5, 0, 5.5);
         this.scene.add(this.fpsPlayer);
 
-        // --- Gun Model (added to scene, NOT camera — camera children don't render) ---
+        // --- Gun Model (async callback — doesn't hold up init) ---
         const gltfLoader = new GLTFLoader();
         gltfLoader.load(
             '/threejayess/models/ray_gun.glb',
             (gltf) => {
                 const gun = gltf.scene;
-                console.log('gun loaded - children:', gun.children.length);
-
-                // Fix materials to be visible without replacing them entirely
                 gun.traverse((child: any) => {
                     if (child.isMesh) {
                         const mat = child.material;
@@ -170,20 +173,14 @@ export class FPSGame {
                         mat.envMapIntensity = 2;
                         mat.metalness = 0.2;
                         mat.roughness = 0.6;
-                        // Add subtle emissive so the gun is always visible
-                        if (mat.emissive) {
-                            mat.emissiveIntensity = 0.3;
-                        }
+                        if (mat.emissive) mat.emissiveIntensity = 0.3;
                         child.frustumCulled = false;
                         mat.needsUpdate = true;
                     }
                 });
-
-                // Scale up significantly — model is only 0.087 units at 1×
                 gun.scale.set(16, 16, 16);
                 this.gunModel = gun;
                 this.scene.add(gun);
-                console.log('Gun added to scene');
             },
             undefined,
             (error) => console.error('Failed to load ray_gun.glb', error),
@@ -203,20 +200,24 @@ export class FPSGame {
         playerLight.position.set(5.5, 3, 5.5);
         this.scene.add(playerLight);
 
-        // --- Combat & Enemies ---
-        // CombatManager expects Player type — FPSPlayer satisfies the interface at runtime
-        this.combatManager = new CombatManager(
-            this.fpsPlayer as any,
-            this.scene,
-        );
+        // --- Collect obstacle meshes for AI line-of-sight ---
+        this.obstacles = [];
+        this.buildings.traverse((child) => {
+            if ((child as any).isMesh) this.obstacles.push(child);
+        });
+
+        // --- AI Combat & Enemies ---
+        this.combatManager = new FPSCombatManager(this.fpsPlayer, this.scene);
+        this.combatManager.setPlayerAmmo(50);
+
         this.enemyManager = new FPSEnemyManager(
             this.fpsPlayer,
             this.world,
             this.scene,
         );
+        this.enemyManager.setObstacles(this.obstacles);
         this.scene.add(this.enemyManager);
-        this.combatManager.setEnemyManager(this.enemyManager as any);
-        this.combatManager.setPlayerAmmo(50);
+        this.combatManager.setEnemyManager(this.enemyManager);
 
         // --- Store bound references for cleanup ---
         this.boundOnKeyDown = (e: KeyboardEvent) => this.onKeyChange(e, true);
@@ -267,29 +268,14 @@ export class FPSGame {
         raycaster.setFromCamera(new Vector2(0, 0), this.camera);
         const dir = raycaster.ray.direction.clone();
 
-        // Hit scan check against enemies
-        const enemies = this.enemyManager.getEnemies();
-        for (const enemy of enemies) {
-            const hitbox = new Sphere(
-                enemy.position,
-                enemy.getHitboxRadius?.() ?? 0.9,
-            );
-            if (raycaster.ray.intersectsSphere(hitbox)) {
-                enemy.takeDamage(1);
-                break;
-            }
-        }
-
-        // Fire projectile from just below camera center (matches gun visual on screen)
+        // Spawn projectile from just below camera center
         const cameraPos = this.camera.position;
         const spawnOffset = new Vector3(0.25, -0.3, -1.2);
         spawnOffset.applyQuaternion(this.camera.quaternion);
         const spawnPos = cameraPos.clone().add(spawnOffset);
-        const proj = this.combatManager.shoot(dir, spawnPos);
-        if (proj) {
-            // FPS-specific projectile appearance
-            proj.setAppearance(4, 0xcccccc, 0xcccccc, 1);
-        }
+
+        // FPSCombatManager handles hitscan + projectile internally
+        this.combatManager.shoot(dir, spawnPos);
     }
 
     private animate() {
@@ -376,6 +362,9 @@ export class FPSGame {
         this.camera.position.z = this.fpsPlayer.position.z;
         this.camera.position.y = this.fpsPlayer.position.y + 1.6;
 
+        // Sync player facing direction to camera (for AI flanking awareness)
+        this.camera.getWorldDirection(this.fpsPlayer.facingDirection);
+
         // Apply gravity and vertical velocity (jumping)
         if (!this.isGrounded) {
             this.verticalVelocity += this.gravity * dt;
@@ -401,6 +390,21 @@ export class FPSGame {
         if (this.started) {
             this.enemyManager.update(dt);
             this.combatManager.update(dt);
+
+            // Melee damage from rushers / close-range enemies
+            const meleeDmg = this.enemyManager.checkMeleeAttacks(
+                this.fpsPlayer.position,
+            );
+            if (meleeDmg > 0) {
+                const dir = new Vector3()
+                    .subVectors(
+                        this.fpsPlayer.position,
+                        this.enemyManager.getEnemies()[0]?.position ??
+                            new Vector3(),
+                    )
+                    .normalize();
+                this.combatManager.takeDamage(meleeDmg, dir);
+            }
         }
 
         this.renderer.render(this.scene, this.camera);
