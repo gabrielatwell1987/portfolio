@@ -21,7 +21,7 @@
 
         // handle three.js with selected component
         const segment = path.split('/').filter(Boolean)[0];
-        if (segment === 'three.js') {
+        if (segment === 'three-components') {
             const component =
                 page.url.searchParams.get('component') ??
                 $selectedThreeComponent;
@@ -41,7 +41,7 @@
                 }
             }
 
-            return `${REPO_BASE}/tree/main/src/routes/three.js/+page.svelte`;
+            return `${REPO_BASE}/tree/main/src/routes/three-components/+page.svelte`;
         }
 
         // handle multi-segment routes

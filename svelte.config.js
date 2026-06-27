@@ -10,7 +10,7 @@ const config = {
     kit: {
         adapter: adapter({
             routes: {
-                include: ['/three.js'],
+                include: ['/three-components'],
                 exclude: [
                     '/_app/*',
                     '/.well-known/*',
