@@ -126,12 +126,15 @@ export class FPSGame {
 
         this.controls = new PointerLockControls(this.camera, canvas);
 
-        // ═══ Lock pointer IMMEDIATELY ═══
-        // Must happen before any await or the user gesture expires.
-        // If it fails (e.g. no user gesture), that's OK — we fall through.
-        // Pointer lock may not succeed (e.g. no gesture, sandboxed iframe).
-        // This is non-fatal — the player can click the canvas to lock later.
-        this.controls.lock();
+        // ═══ Attempt pointer lock (desktop only) ═══
+        // On mobile, requestPointerLock throws — catch it and switch to mobile mode.
+        // The lock must be attempted before any await so the click gesture is active.
+        try {
+            this.controls.lock();
+        } catch (_) {
+            // Pointer lock failed — likely mobile. Switch to touch controls.
+            this.mobileMode = true;
+        }
 
         // --- World terrain ---
         this.world = new World(50, 50);
