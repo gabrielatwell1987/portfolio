@@ -215,6 +215,8 @@
 
             @media (width <= 768px) {
                 scale: 0.8;
+                margin: 1.5em 0 0.75em 0;
+                letter-spacing: -1px;
             }
 
             &:hover {
