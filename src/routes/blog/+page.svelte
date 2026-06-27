@@ -15,6 +15,12 @@
     Learn <span style="view-transition-name: three-heading;">Three.js</span>
 </h1>
 
+<aside class="examples-link">
+    <a href="/three-components">
+        <h2 class="examples">examples</h2>
+    </a>
+</aside>
+
 <div class="post-grid">
     {#each posts as post, index (post.id)}
         <section class="complete-post">
@@ -167,6 +173,52 @@
                     box-shadow: none;
                     background-color: transparent;
                 }
+            }
+        }
+    }
+
+    .examples-link {
+        block-size: fit-content;
+        inline-size: 30vw;
+        position: absolute;
+        top: 9em;
+        right: 1em;
+
+        @media (width <= 1100px) {
+            top: 6em;
+            /* right: auto; */
+        }
+
+        @media (width <= 768px) {
+            position: static;
+            inline-size: auto;
+            text-align: center;
+            top: auto;
+            right: auto;
+            margin-top: -3em;
+        }
+
+        & a {
+            text-decoration: none;
+        }
+
+        & .examples {
+            font-family: var(--thunder);
+            font-size: clamp(var(--h5), 10vw, var(--xl));
+            font-weight: 700;
+            transform: rotate(15deg);
+            letter-spacing: 1px;
+            color: var(--clr-blue-500);
+            text-wrap: nowrap;
+            margin: 0;
+            padding: 0;
+
+            @media (width <= 768px) {
+                scale: 0.8;
+            }
+
+            &:hover {
+                opacity: 0.8;
             }
         }
     }

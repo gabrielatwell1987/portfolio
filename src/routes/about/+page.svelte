@@ -81,17 +81,6 @@
                     aria-label="bio"
                     data-three-section
                 >
-                    <p class="bio-paragraph" data-three-desc>
-                        The components on this page were built with three.js...
-                        Feel free to check them out!
-                    </p>
-
-                    <div class="three-text">
-                        <div class="three-button">
-                            <Button href="/three.js" title="three.js" />
-                        </div>
-                    </div>
-
                     {#if breakpoints.isDesktop}
                         <p class="bio-paragraph" data-desktop>
                             If you want to see stuff I've been working on, when
@@ -217,30 +206,6 @@
                 & [data-three-section] {
                     inline-size: 80vw;
                     margin-inline: auto;
-
-                    & [data-three-desc] {
-                        text-align: center;
-                        text-wrap: pretty;
-                        margin-bottom: 0;
-
-                        @media (width <= 768px) {
-                            margin-bottom: 1.2em;
-                        }
-                    }
-
-                    & .three-button {
-                        margin-inline: auto;
-                        margin-top: -2em;
-                        padding: 0;
-                        inline-size: fit-content;
-                        padding-block: 1em;
-
-                        @media (width <= 500px) {
-                            inline-size: 100%;
-                            margin-inline: auto;
-                            padding-block: 0;
-                        }
-                    }
                 }
 
                 & .bio-paragraph {
@@ -262,11 +227,11 @@
                         line-height: 1.75;
                     }
 
-                    &:not([data-three-desc]) {
+                    /* &:not([data-three-desc]) {
                         @media (width <= 768px) {
                             inline-size: 100vw;
                         }
-                    }
+                    } */
 
                     & span {
                         font-weight: 800;
@@ -275,7 +240,7 @@
                     }
 
                     &[data-desktop] {
-                        inline-size: 65%;
+                        inline-size: 85%;
                     }
                 }
 
