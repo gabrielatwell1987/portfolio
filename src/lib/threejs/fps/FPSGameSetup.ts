@@ -131,7 +131,7 @@ export class FPSGame {
         // The lock must be attempted before any await so the click gesture is active.
         try {
             this.controls.lock();
-        } catch (_) {
+        } catch {
             // Pointer lock failed — likely mobile. Switch to touch controls.
             this.mobileMode = true;
         }

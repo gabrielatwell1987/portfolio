@@ -66,7 +66,9 @@
             if (game && game.combatManager && game.enemyManager) {
                 clearInterval(checkInit);
                 game.start();
-                isLocked = document.pointerLockElement === canvas;
+                isLocked = isMobile
+                    ? true
+                    : document.pointerLockElement === canvas;
             }
         }, 50);
     }
@@ -81,7 +83,7 @@
         game.init(canvas!).then(() => {
             if (isMobile) game?.setMobile(true);
             game?.start();
-            isLocked = document.pointerLockElement === canvas;
+            isLocked = isMobile ? true : document.pointerLockElement === canvas;
         });
 
         const hudInterval = setInterval(() => {
