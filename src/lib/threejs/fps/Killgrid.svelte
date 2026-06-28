@@ -75,6 +75,13 @@
 
     async function startTitleGame(): Promise<void> {
         showTitle = false;
+        // Hide nav and footer while game is active
+        document
+            .querySelector('nav')
+            ?.style.setProperty('display', 'none', 'important');
+        document
+            .querySelector('footer')
+            ?.style.setProperty('display', 'none', 'important');
         isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
         await tick();
@@ -164,6 +171,12 @@
                 game = null;
                 clearInterval(hudInterval);
                 document.removeEventListener('pointerlockchange', onLockChange);
+
+                const navEl = document.querySelector('nav');
+                const footerEl = document.querySelector('footer');
+                if (navEl) navEl.style.display = '';
+                if (footerEl) footerEl.style.display = '';
+
                 window.dispatchEvent(new CustomEvent('exit-game'));
             }
         };
@@ -178,6 +191,12 @@
                     'pointerlockchange',
                     lockChangeRef,
                 );
+
+            const navEl = document.querySelector('nav');
+            const footerEl = document.querySelector('footer');
+            if (navEl) navEl.style.display = '';
+            if (footerEl) footerEl.style.display = '';
+
             game?.dispose();
             game = null;
         };

@@ -8,20 +8,18 @@
     $effect(() => {
         function updateChrome() {
             const isLandscape = window.innerWidth > window.innerHeight;
-            const nav = document.querySelector('nav') as HTMLElement | null;
-            // const select = document.querySelector(
-            //     '.select',
-            // ) as HTMLElement | null;
-            const footer = document.querySelector(
-                'footer',
-            ) as HTMLElement | null;
             const body = document.body;
             const html = document.documentElement;
 
-            if (isLandscape) {
+            // On mobile portrait, hide nav/footer so they don't overlap title screen
+            if (!isLandscape && window.innerWidth <= 768) {
+                const nav = document.querySelector('nav');
+                const footer = document.querySelector('footer');
                 if (nav) nav.style.display = 'none';
                 if (footer) footer.style.display = 'none';
-                // if (select) select.style.display = 'none';
+            }
+
+            if (isLandscape) {
                 body.style.overflow = 'hidden';
                 body.style.width = '100vw';
                 body.style.height = '100vh';
@@ -33,9 +31,6 @@
                 html.style.margin = '0';
                 html.style.padding = '0';
             } else {
-                if (nav) nav.style.display = '';
-                if (footer) footer.style.display = '';
-                // if (select) select.style.display = '';
                 body.style.overflow = '';
                 body.style.width = '';
                 body.style.height = '';
@@ -56,10 +51,8 @@
         return () => {
             window.removeEventListener('resize', updateChrome);
             window.removeEventListener('orientationchange', updateChrome);
-            const nav = document.querySelector('nav') as HTMLElement | null;
-            const footer = document.querySelector(
-                'footer',
-            ) as HTMLElement | null;
+            const nav = document.querySelector('nav');
+            const footer = document.querySelector('footer');
             if (nav) nav.style.display = '';
             if (footer) footer.style.display = '';
         };
@@ -102,6 +95,10 @@
             align-items: center;
             gap: 1.5rem;
             text-align: center;
+
+            @media (width <= 768px) {
+                margin-top: 5em;
+            }
 
             & .title {
                 font-family: var(--thunder);
@@ -157,6 +154,10 @@
                 opacity: 0.4;
                 font-size: clamp(var(--xs, 0.75rem), 1.5vw, var(--sm, 0.9rem));
                 color: var(--clr-light-500, #fff);
+
+                @media (width <= 768px) {
+                    margin-top: -2.5em;
+                }
 
                 & p {
                     margin: 0.2rem 0;
