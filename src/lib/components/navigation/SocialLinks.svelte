@@ -20,8 +20,8 @@
         }
 
         // handle three.js with selected component
-        const segment = path.split('/').filter(Boolean)[0];
-        if (segment === 'three-components') {
+        // const pathParts = path.split('/').filter(Boolean);
+        if (path.includes('three-components')) {
             const component =
                 page.url.searchParams.get('component') ??
                 $selectedThreeComponent;
@@ -33,7 +33,8 @@
                     HeroCanvas: 'hero/HeroCanvas.svelte',
                     PostProcess: 'post-processing/PostProcess.svelte',
                     Loader: 'loader/Loader.svelte',
-                    'Shooting Game': 'shooter/GameScene.svelte',
+                    slaynet: 'shooter/Slaynet.svelte',
+                    killgrid: 'fps/Killgrid.svelte',
                 };
                 const file = threeMap[component];
                 if (file) {
@@ -50,7 +51,7 @@
             return `${REPO_BASE}/tree/main/src/routes/${segments.join('/')}/+page.svelte`;
         }
 
-        return `${REPO_BASE}/tree/main/src/routes/${segment}/+page.svelte`;
+        return `${REPO_BASE}/tree/main/src/routes/${segments}/+page.svelte`;
     });
 </script>
 

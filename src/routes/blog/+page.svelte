@@ -207,7 +207,7 @@
             font-size: clamp(var(--h5), 10vw, var(--xl));
             font-weight: 700;
             transform: rotate(15deg);
-            letter-spacing: 1px;
+            letter-spacing: -1px;
             color: var(--clr-blue-500);
             text-wrap: nowrap;
             margin: 0;
@@ -216,7 +216,7 @@
             @media (width <= 768px) {
                 scale: 0.8;
                 margin: 1.5em 0 0.75em 0;
-                letter-spacing: -1px;
+                letter-spacing: 1px;
             }
 
             &:hover {
