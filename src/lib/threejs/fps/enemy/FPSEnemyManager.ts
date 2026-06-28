@@ -28,6 +28,7 @@ export class FPSEnemyManager extends Object3D {
     private wave: number = 1;
     private totalSpawned: number = 0;
     private onEnemyKilled: (() => void) | null = null;
+    private onAmmoBrickSpawn: ((position: Vector3) => void) | null = null;
 
     // ─── Boss tracking ───────────────────────────────────────
     /** Set by the game when to spawn the boss (e.g. after 5 kills) */
@@ -200,10 +201,19 @@ export class FPSEnemyManager extends Object3D {
             if (!enemy.isAlive()) {
                 // Wait for death animation to finish before removal
                 if (enemy.isDead()) {
+                    const deathPos = enemy.position.clone();
                     this.scene.remove(enemy);
                     enemy.dispose();
                     this.enemies.splice(i, 1);
                     this.onEnemyKilled?.();
+
+                    // Spawn ammo brick every 3 kills
+                    if (
+                        this.onAmmoBrickSpawn &&
+                        this.getKillCount() % 3 === 0
+                    ) {
+                        this.onAmmoBrickSpawn(deathPos);
+                    }
                 }
             } else {
                 enemy.update(dt);
@@ -385,6 +395,10 @@ export class FPSEnemyManager extends Object3D {
 
     setOnEnemyKilled(callback: () => void): void {
         this.onEnemyKilled = callback;
+    }
+
+    setOnAmmoBrickSpawn(callback: (position: Vector3) => void): void {
+        this.onAmmoBrickSpawn = callback;
     }
 
     getKillCount(): number {

@@ -36,7 +36,6 @@ export class FPSEnemy extends Object3D {
     readonly maxHealth: number;
     private shootCooldown: number = 0;
     private ammo: number | null = 10;
-    private readonly hitboxRadius: number = 0.9;
 
     // ─── Movement ────────────────────────────────────────────
     private facingDirection: Vector3 = new Vector3(0, 0, 1);
@@ -86,6 +85,10 @@ export class FPSEnemy extends Object3D {
     /** If true, this enemy is a boss — bigger, glowier, mini-boss fight */
     readonly isBoss: boolean = false;
 
+    // ─── Hitbox ─────────────────────────────────────────────
+    /** Hit detection sphere radius — scales with boss size */
+    private readonly hitboxRadius: number;
+
     // ─── Id ──────────────────────────────────────────────────
     readonly enemyId: number;
     private static nextEnemyId = 0;
@@ -114,6 +117,9 @@ export class FPSEnemy extends Object3D {
 
         // Boss gets bonus HP on top of archetype base
         const bossHpBonus = isBoss ? 10 : 0;
+
+        // Hitbox scales with boss size
+        this.hitboxRadius = isBoss ? 1.8 : 0.9;
 
         // Stats from archetype config
         this.health = this.config.health + bossHpBonus;

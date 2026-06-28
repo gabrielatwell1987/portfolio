@@ -23,6 +23,7 @@ import { FPSPlayer } from './player/FPSPlayer';
 import { FPSEnemyManager } from './enemy/FPSEnemyManager';
 import { FPSBuilding } from './buildings/FPSBuilding';
 import { FPSCombatManager } from './combat/FPSCombatManager';
+import { FPSAmmoBrick } from './combat/FPSAmmoBricks';
 
 export class FPSGame {
     scene!: Scene;
@@ -221,6 +222,13 @@ export class FPSGame {
         this.enemyManager.setObstacles(this.obstacles);
         this.scene.add(this.enemyManager);
         this.combatManager.setEnemyManager(this.enemyManager);
+
+        // ─── Ammo brick spawning ────────────────────────────
+        this.enemyManager.setOnAmmoBrickSpawn((position) => {
+            const brick = new FPSAmmoBrick(position);
+            this.scene.add(brick);
+            this.combatManager.addAmmoBrick(brick);
+        });
 
         // --- Store bound references for cleanup ---
         this.boundOnKeyDown = (e: KeyboardEvent) => this.onKeyChange(e, true);

@@ -15,11 +15,15 @@ import { Projectile } from '../../shooter/combat/Projectile';
 import type { FPSEnemyManager } from '../enemy/FPSEnemyManager';
 import type { FPSPlayer } from '../player/FPSPlayer';
 import { AudioManager } from '../../shooter/actions/AudioManager';
+import { FPSAmmoBrick } from './FPSAmmoBricks';
 
 export class FPSCombatManager extends Object3D {
     // --- Projectiles ---
     private playerProjectiles: Projectile[] = [];
     private enemyProjectiles: Projectile[] = [];
+
+    // --- Ammo Bricks ---
+    private ammoBricks: FPSAmmoBrick[] = [];
 
     // --- Dependencies ---
     private player: FPSPlayer;
@@ -68,6 +72,10 @@ export class FPSCombatManager extends Object3D {
 
     setEnemyManager(manager: FPSEnemyManager): void {
         this.enemyManager = manager;
+    }
+
+    addAmmoBrick(brick: FPSAmmoBrick): void {
+        this.ammoBricks.push(brick);
     }
 
     setOnHealthChanged(cb: () => void): void {
@@ -240,6 +248,20 @@ export class FPSCombatManager extends Object3D {
         if (this.flashTimer > 0) {
             this.flashTimer -= dt;
         }
+
+        // ─── Ammo brick pickup ──────────────────────────────
+        for (let i = this.ammoBricks.length - 1; i >= 0; i--) {
+            const brick = this.ammoBricks[i];
+            brick.update(dt);
+            if (brick.tryCollect(this.player.position)) {
+                if (this.playerAmmo !== null) {
+                    this.playerAmmo += brick.getAmmoAmount();
+                }
+                this.scene.remove(brick);
+                brick.dispose();
+                this.ammoBricks.splice(i, 1);
+            }
+        }
     }
 
     private updateProjectileList(list: Projectile[], dt: number): void {
@@ -310,6 +332,11 @@ export class FPSCombatManager extends Object3D {
         this.playerProjectiles = [];
         this.enemyProjectiles = [];
         this.projDamageMap.clear();
+        for (const brick of this.ammoBricks) {
+            this.scene.remove(brick);
+            brick.dispose();
+        }
+        this.ammoBricks = [];
         this.audioManager.dispose();
     }
 }
