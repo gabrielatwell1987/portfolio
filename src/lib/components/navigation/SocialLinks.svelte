@@ -41,7 +41,7 @@
                 }
             }
 
-            return `${REPO_BASE}/tree/main/src/routes/three-components/+page.svelte`;
+            return `${REPO_BASE}/tree/main/src/routes/blog/three-components/+page.svelte`;
         }
 
         // handle multi-segment routes

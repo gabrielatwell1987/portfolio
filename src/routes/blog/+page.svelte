@@ -16,7 +16,7 @@
 </h1>
 
 <aside class="examples-link">
-    <a href="/three-components">
+    <a href="/blog/three-components">
         <h2 class="examples">examples</h2>
     </a>
 </aside>

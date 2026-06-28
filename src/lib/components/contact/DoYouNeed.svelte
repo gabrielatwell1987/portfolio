@@ -66,7 +66,7 @@
     <h1 class="sentence">
         <span class="subtitle" bind:this={subtitleElement}>{text}</span>
 
-        <a href="/three-components">
+        <a href="/blog/three-components">
             <span class="bigWord">
                 {#each chars as char, i}
                     <span class="char" bind:this={charElements[i]}>{char}</span>
