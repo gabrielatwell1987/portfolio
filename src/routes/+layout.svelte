@@ -67,7 +67,9 @@
     });
 
     $effect(() => {
-        loading.isLoaded = true;
+        if (typeof window !== 'undefined') {
+            loading.isLoaded = true;
+        }
     });
 </script>
 
