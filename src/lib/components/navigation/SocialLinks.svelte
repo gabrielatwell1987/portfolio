@@ -2,6 +2,7 @@
     import { page } from '$app/state';
     import { useSound } from '$lib/data/stores/sounds/uiSounds.svelte';
     import { selectedThreeComponent } from '$lib/data/stores/threejsComponent';
+    import { componentImportMap } from '$lib/data/threeComponentImports';
 
     const { playSoundAsync: playHoverSound } = useSound(
         '/sounds/ui_bubble.wav',
@@ -20,25 +21,16 @@
         }
 
         // handle three.js with selected component
-        // const pathParts = path.split('/').filter(Boolean);
         if (path.includes('three-components')) {
             const component =
                 page.url.searchParams.get('component') ??
                 $selectedThreeComponent;
 
             if (component && component !== 'Select') {
-                const threeMap: Record<string, string> = {
-                    Environment: 'environment/Environment.svelte',
-                    PictureParticles: 'cursor/CursorImage.svelte',
-                    HeroCanvas: 'hero/HeroCanvas.svelte',
-                    PostProcess: 'post-processing/PostProcess.svelte',
-                    Loader: 'loader/Loader.svelte',
-                    slaynet: 'shooter/Slaynet.svelte',
-                    killgrid: 'fps/Killgrid.svelte',
-                };
-                const file = threeMap[component];
-                if (file) {
-                    return `${REPO_BASE}/tree/main/src/lib/threejs/${file}`;
+                const entry = componentImportMap[component];
+
+                if (entry) {
+                    return `${REPO_BASE}/tree/main/${entry.githubPath}`;
                 }
             }
 

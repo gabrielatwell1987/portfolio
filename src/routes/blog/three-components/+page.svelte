@@ -1,6 +1,6 @@
 <script lang="ts">
     import { selectedThreeComponent } from '$lib/data/stores/threejsComponent';
-    import { componentImportMap } from './componentImports';
+    import { componentImportMap } from '$lib/data/threeComponentImports';
     import SEO from '$lib/data/SEO.svelte';
     import type { Component } from 'svelte';
     import { page } from '$app/state';
@@ -20,9 +20,10 @@
     let SelectedComponent: ComponentType | null = $state(null);
 
     $effect(() => {
-        const loader = componentImportMap[selectedComponent];
-        if (loader) {
-            loader().then((mod) => (SelectedComponent = mod.default));
+        const entry = componentImportMap[selectedComponent];
+
+        if (entry) {
+            entry.import().then((mod) => (SelectedComponent = mod.default));
         } else {
             SelectedComponent = null;
         }
