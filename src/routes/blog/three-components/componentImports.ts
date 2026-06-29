@@ -10,4 +10,5 @@ export const componentImportMap: Record<
     Loader: () => import('$lib/threejs/loader/Loader.svelte'),
     slaynet: () => import('$lib/threejs/shooter/Slaynet.svelte'),
     killgrid: () => import('$lib/threejs/fps/Killgrid.svelte'),
+    Carousel: () => import('$lib/threejs/image-carousel/ImageCarousel.svelte'),
 };

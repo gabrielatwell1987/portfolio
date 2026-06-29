@@ -79,6 +79,7 @@
     <option value="Loader">loading bar</option>
     <option value="slaynet">slaynet</option>
     <option value="killgrid">killgrid</option>
+    <option value="Carousel">image carousel</option>
 </select>
 
 <style>
