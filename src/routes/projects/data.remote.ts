@@ -48,7 +48,10 @@ export const getContributions = prerender(async () => {
 
         const data = await response.json();
 
-        if (data.errors) throw new Error('GraphQL query failed');
+        if (data.errors) {
+            console.error('GraphQL Errors:', JSON.stringify(data.errors));
+            throw new Error('GraphQL query failed');
+        }
 
         const calendar =
             data.data.user.contributionsCollection.contributionCalendar;
