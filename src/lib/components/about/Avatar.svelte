@@ -38,7 +38,7 @@
         border-radius: 50%;
         border: var(--border-width) solid var(--clr-light-500);
         background-color: var(--clr-blue-500);
-        background-image: url('https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/dots.svg');
+        background-image: url('https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/dots.svg');
 
         display: flex;
         align-items: end;

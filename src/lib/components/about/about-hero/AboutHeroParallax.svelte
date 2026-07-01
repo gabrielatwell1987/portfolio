@@ -29,19 +29,19 @@
     <div
         class="layer background"
         style="transform: translateY({scrollY *
-            0.1}px); background-image: url('https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/svelte-magick_background.webp');"
+            0.1}px); background-image: url('https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/svelte-magick_background.webp');"
     ></div>
 
     <div
         class="layer middle"
         style="transform: translateY({scrollY *
-            0.3}px); background-image: url('https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/svelte-magick_middle.webp');"
+            0.3}px); background-image: url('https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/svelte-magick_middle.webp');"
     ></div>
 
     <div
         class="layer foreground"
         style="transform: translateY({scrollY *
-            0.5}px); background-image: url('https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/svelte-magick_foreground.webp');"
+            0.5}px); background-image: url('https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/svelte-magick_foreground.webp');"
     ></div>
 </section>
 

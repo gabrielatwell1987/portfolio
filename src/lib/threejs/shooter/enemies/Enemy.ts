@@ -7,7 +7,7 @@ import type { GLTF } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 const loader = new GLTFLoader();
 loader.setResourcePath(
-    'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/glb/',
+    'https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/glb/',
 );
 
 export class Enemy extends GameObject {

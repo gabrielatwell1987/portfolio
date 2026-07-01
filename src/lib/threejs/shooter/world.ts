@@ -11,7 +11,7 @@ import {
 import { Building } from './objects/Building';
 
 export const GROUND_TEXTURE_URL =
-    'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/asphalt-texture.webp';
+    'https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/asphalt-texture.webp';
 
 function loadBrickGroundsTexture(): Texture | null {
     if (typeof document === 'undefined') return null;

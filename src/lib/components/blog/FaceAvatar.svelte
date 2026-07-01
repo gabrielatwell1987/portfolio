@@ -8,7 +8,7 @@
     }
 
     let {
-        src = 'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/gabe-face.webp',
+        src = 'https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/gabe-face.webp',
         alt = 'gabe atwell',
         name = '',
         size = '',

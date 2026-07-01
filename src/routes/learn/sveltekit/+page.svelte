@@ -30,7 +30,7 @@
     <div class="content">
         <div class="title-spacing">
             <Title
-                img="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/Svelte-Dark.svg"
+                img="https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/Svelte-Dark.svg"
                 width="40vw"
                 title="SvelteKit Framework"
                 viewTransitionName="sveltekit-logo"

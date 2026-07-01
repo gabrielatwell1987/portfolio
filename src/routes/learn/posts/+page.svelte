@@ -161,7 +161,7 @@
         <div class="tech-stack-logo">
             <div class="aside-links">
                 <ViewTransitionImage
-                    src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/CSS-Purple.webp"
+                    src="https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/CSS-Purple.webp"
                     alt="new css logo"
                     transitionName="css-image"
                 />
@@ -187,7 +187,7 @@
 
     <div class="gsap">
         <ViewTransitionImage
-            src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/GSAP-Dark.svg"
+            src="https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/GSAP-Dark.svg"
             alt="greensock animation platform"
             transitionName="gsap-image"
         />
@@ -197,7 +197,7 @@
 
     <article class="developer-card">
         <Card
-            src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/blueTriangle.webp"
+            src="https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/blueTriangle.webp"
             alt="a logo that says atwell developer"
             href="/projects"
             title="web design + development"

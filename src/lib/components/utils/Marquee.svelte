@@ -28,7 +28,7 @@
         <li>
             <a
                 class="size yellow"
-                href="https://www.github.com/gabrielatwell1987/portfolio"
+                href="https://www.github.com/gabeatwell/portfolio"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"

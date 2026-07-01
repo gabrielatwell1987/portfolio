@@ -116,7 +116,7 @@
 
                 .char {
                     display: inline-block;
-                    background-image: url('https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/gray-wood.webp');
+                    background-image: url('https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/gray-wood.webp');
                     background-size: cover;
                     background-position: center;
                     background-attachment: fixed;

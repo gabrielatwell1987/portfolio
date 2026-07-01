@@ -7,17 +7,17 @@
     const { playSoundAsync: playHoverSound } = useSound(
         '/sounds/ui_bubble.wav',
     );
-    const REPO_BASE = 'https://www.github.com/gabrielatwell1987/portfolio';
+    const REPO_URL = 'https://www.github.com/gabeatwell/portfolio';
     const githubUrl = $derived.by(() => {
         const path = page.url.pathname;
 
         if (path === '/')
-            return `${REPO_BASE}/tree/main/src/routes/+page.svelte`;
+            return `${REPO_URL}/tree/main/src/routes/+page.svelte`;
 
         // handle blog posts:: /blog/3 -> src/content/posts/3.md
         const blogMatch = path.match(/^\/blog\/(\d+)$/);
         if (blogMatch) {
-            return `${REPO_BASE}/tree/main/src/content/posts/${blogMatch[1]}.md`;
+            return `${REPO_URL}/tree/main/src/content/posts/${blogMatch[1]}.md`;
         }
 
         // handle three.js with selected component
@@ -30,20 +30,20 @@
                 const entry = componentImportMap[component];
 
                 if (entry) {
-                    return `${REPO_BASE}/tree/main/${entry.githubPath}`;
+                    return `${REPO_URL}/tree/main/${entry.githubPath}`;
                 }
             }
 
-            return `${REPO_BASE}/tree/main/src/routes/blog/three-components/+page.svelte`;
+            return `${REPO_URL}/tree/main/src/routes/blog/three-components/+page.svelte`;
         }
 
         // handle multi-segment routes
         const segments = path.split('/').filter(Boolean);
         if (segments.length >= 2) {
-            return `${REPO_BASE}/tree/main/src/routes/${segments.join('/')}/+page.svelte`;
+            return `${REPO_URL}/tree/main/src/routes/${segments.join('/')}/+page.svelte`;
         }
 
-        return `${REPO_BASE}/tree/main/src/routes/${segments}/+page.svelte`;
+        return `${REPO_URL}/tree/main/src/routes/${segments}/+page.svelte`;
     });
 </script>
 

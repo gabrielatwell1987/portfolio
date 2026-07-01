@@ -32,7 +32,7 @@ export class EnemyManager extends Object3D {
             await this.audioManager.initialize();
             await this.audioManager.loadSound(
                 'enemyShoot',
-                'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/sounds/enemy-shot.mp3',
+                'https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/sounds/enemy-shot.mp3',
             );
             this.audioReady = true;
         } catch (error) {

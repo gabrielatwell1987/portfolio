@@ -48,7 +48,7 @@ export class CombatManager extends Object3D {
             await this.audioManager.initialize();
             await this.audioManager.loadSound(
                 'playerShoot',
-                'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/sounds/retro-lazer.wav',
+                'https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/sounds/retro-lazer.wav',
             );
             this.audioReady = true;
         } catch (error) {

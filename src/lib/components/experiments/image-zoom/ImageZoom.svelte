@@ -77,7 +77,7 @@
 
     <div class="image-container">
         <img
-            src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/concrete-hole.webp"
+            src="https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/concrete-hole.webp"
             alt="frame"
         />
     </div>
@@ -124,7 +124,7 @@
         }
 
         & .section.hero {
-            background-image: url('https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/random-stock.webp');
+            background-image: url('https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/random-stock.webp');
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;

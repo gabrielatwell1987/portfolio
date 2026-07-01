@@ -35,7 +35,7 @@
             ? image.startsWith('http')
                 ? image
                 : `${baseUrl}${image}`
-            : 'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/atwellUI_social-media.webp',
+            : 'https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/atwellUI_social-media.webp',
     );
     const siteName = 'atwellUI';
 </script>

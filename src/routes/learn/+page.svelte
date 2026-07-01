@@ -43,7 +43,7 @@
                 aria-label="greensock"
             >
                 <Image
-                    src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/GSAP-Dark.svg"
+                    src="https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/GSAP-Dark.svg"
                     alt="greensock animation platform logo"
                     width="350"
                     aspectRatio="1/1"
@@ -59,7 +59,7 @@
                 style="width: clamp(10em, 16.5vw, 30em);"
             >
                 <Image
-                    src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/Svelte-Dark.svg"
+                    src="https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/Svelte-Dark.svg"
                     alt="sveltekit web framework logo"
                     width="400"
                     aspectRatio="1/1"
@@ -76,7 +76,7 @@
                 style="grid-column: 1/-1; width: clamp(18em, 40vw, 60em); justify-self: center;"
             >
                 <Image
-                    src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/advanced-web.webp"
+                    src="https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/advanced-web.webp"
                     alt="A logo that says advanced web design"
                     width="600"
                     aspectRatio="16/9"

@@ -92,11 +92,11 @@ export class FPSCombatManager extends Object3D {
             await Promise.all([
                 this.audioManager.loadSound(
                     'playerShoot',
-                    'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/sounds/retro-lazer.wav',
+                    'https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/sounds/retro-lazer.wav',
                 ),
                 this.audioManager.loadSound(
                     'playerHit',
-                    'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/sounds/enemy-shot.mp3',
+                    'https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/sounds/enemy-shot.mp3',
                 ),
             ]);
             this.audioReady = true;

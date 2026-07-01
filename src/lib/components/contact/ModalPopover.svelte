@@ -44,7 +44,7 @@
 
         <div class="modal-image">
             <Image
-                src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/newspaper.webp"
+                src="https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/newspaper.webp"
                 alt="newspaper clipping for a frontend developer"
                 width="500"
                 aspectRatio="16/9"

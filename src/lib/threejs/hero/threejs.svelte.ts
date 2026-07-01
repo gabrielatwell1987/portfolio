@@ -137,7 +137,7 @@ export function setupHeroCanvas(canvas: HTMLCanvasElement) {
         } else {
             const textureLoader = new TextureLoader();
             star = textureLoader.load(
-                'https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/star.webp',
+                'https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/star.webp',
             );
             particlesMaterial.map = star!;
             particlesMaterial.alphaMap = null;

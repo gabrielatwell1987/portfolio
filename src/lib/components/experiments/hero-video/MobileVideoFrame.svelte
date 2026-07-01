@@ -133,7 +133,7 @@
 
 <div class="background-image">
     <img
-        src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/mobile-hands.webp"
+        src="https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/mobile-hands.webp"
         alt=""
     />
 </div>

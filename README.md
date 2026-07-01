@@ -1,7 +1,7 @@
 # Gabriel Atwell's Portfolio
 
 <div style="text-align: center;">
-    <img src="https://cdn.jsdelivr.net/gh/gabrielatwell1987/portfolio-assets@main/images/shieldy.webp" width="500" height="auto" alt="Shieldy logo" />
+    <img src="https://cdn.jsdelivr.net/gh/gabeatwell/portfolio-assets@main/images/shieldy.webp" width="500" height="auto" alt="Shieldy logo" />
 </div>
 
 [https://atwell.dev](https://atwell.dev)
