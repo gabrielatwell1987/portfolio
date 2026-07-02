@@ -1,4 +1,3 @@
-import adapter from '@sveltejs/adapter-cloudflare';
 import { mdsvex } from 'mdsvex';
 
 const mdsvexOptions = {
@@ -7,54 +6,6 @@ const mdsvexOptions = {
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-    kit: {
-        adapter: adapter({
-            routes: {
-                include: ['/blog/three-components'],
-                exclude: [
-                    '/_app/*',
-                    '/.well-known/*',
-                    '/favicon.*',
-                    '/fonts/*',
-                    '/manifest.json',
-                    '/robots.txt',
-                    '/service-worker.js',
-                    '/sitemap.xml',
-                    '/threejayess/*',
-                ],
-            },
-        }),
-        experimental: {
-            remoteFunctions: true,
-        },
-        prerender: {
-            handleHttpError: ({ status, path, referrer, message }) => {
-                // Suppress 404 errors
-                if (status === 404) {
-                    console.warn(
-                        `Prerendering warning: ${status} ${path} (linked from ${referrer})`,
-                    );
-                    return;
-                }
-                // for other errors, throw to fail the build
-                throw new Error(message);
-            },
-            handleUnseenRoutes: 'warn',
-            concurrency: 10,
-        },
-    },
-    compilerOptions: {
-        experimental: {
-            async: true,
-        },
-    },
-    vitePlugin: {
-        inspector: {
-            toggleButtonPos: 'bottom-left',
-            toggleKeyCombo: 'alt-x',
-            showToggleButton: 'always',
-        },
-    },
     extensions: ['.svelte', '.md', '.svx'],
     preprocess: [mdsvex(mdsvexOptions)],
 };
